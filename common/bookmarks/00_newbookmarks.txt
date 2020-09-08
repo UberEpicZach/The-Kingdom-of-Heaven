@@ -1,0 +1,217 @@
+﻿bm_1066_posthastings = {
+	start_date = 1068.9.15
+	is_playable = yes
+	
+
+	# William the Bastard ID: 140
+	character = {
+		name = "bookmark_hastings_normandyengland" # William the Bastard #This is used for localization BUT this is ALSO referenced in a file in bookmark_portraits (for William this is bookmark_hastings_normandy). File is auto generated using the command mentioned in the file
+		dynasty = 752
+		dynasty_splendor_level = 4
+		type = male
+		history_id = 140
+		birth = 1027.1.15
+		title = k_england
+		government = feudal_government
+		culture = norman
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 250 620 }
+		
+		animation = personality_callous
+
+		#Sidekick: Count Robert 'Curthose', son and heir (ID: 142)
+		character = {
+			name = "bookmark_hastings_normandy_alt_robert"
+			relation = "BOOKMARK_RELATION_SON"
+			dynasty = 752
+			type = male
+			birth = 1054.1.1
+			title = c_maine
+			government = feudal_government
+			culture = norman
+			religion = catholic
+			history_id = 142
+		}
+
+		#Sidekick: William the Red, third son (ID: 146)
+		character = {
+			name = "bookmark_hastings_normandy_alt_william"
+			relation = "BOOKMARK_RELATION_SON"
+			dynasty = 752
+			type = male
+			birth = 1056.1.1
+			#title = k_east_francia
+			#government = feudal_government
+			culture = norman
+			religion = catholic
+			history_id = 146
+		}
+	}
+
+}
+
+#2nd test bookmark
+#Characters: Otto I, Caliph al-Qaim, King Æthelstan of England, Árpád Zoltán, Hakon the Good of Norway
+#Characters in CK3 have the SAME ID'S as they did in CK2
+
+bm_otto_the_first = { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
+	start_date = 936.8.7
+	is_playable = yes
+	
+
+	# Otto I ID: 1282
+	character = {
+		name = "bookmark_otto" # Otto I
+		dynasty = 669
+		dynasty_splendor_level = 2
+		type = male
+		history_id = 1282
+		birth = 912.11.23
+		title = e_hre
+		government = feudal_government
+		culture = saxon
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 250 620 }
+		
+		animation = personality_callous
+
+	}
+
+}
+
+#3rd bookmark
+#This start is when the map starts not being fully correct and will need further edits in the titles files. For example k_rum was referred to as a liege but did not exist in the titles files itself. This is also when I found out that it appears a bookmark will not load if there are ANY history/character file errors as once I fixed all the issues in these files I could get later bookmarks to load.
+
+
+
+bm_komnenos_dynasty = { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
+	start_date = 1081.4.1
+	is_playable = yes
+	
+
+	# Alexios I Komnenos ID: 1742
+	character = {
+		name = "bookmark_alexios" # Alexios
+		dynasty = 669
+		dynasty_splendor_level = 4
+		type = male
+		history_id = 1742
+		birth = 1056.1.1
+		title = e_byzantium
+		government = feudal_government
+		culture = greek
+		religion = orthodox
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 250 620 }
+		
+		animation = personality_callous
+
+	}
+	
+	# Suleyman I of Rum ID: 3046
+	character = {
+		name = "bookmark_suleyman" # Suleyman
+		dynasty = 613
+		dynasty_splendor_level = 4
+		type = male
+		history_id = 3046
+		birth = 1039.1.2
+		title = k_rum
+		government = clan_government
+		culture = turkish
+		religion = ashari
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 180 820 }
+		
+		animation = personality_callous
+
+	}
+
+}
+
+
+#4th bookmark 
+
+bm_jerusalem = { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
+	start_date = 1184.1.1
+	is_playable = yes
+	
+
+	# King Baudouin II of Jerusalem ID: 232007
+	character = {
+		name = "bookmark_baud" # King Baudouin II of Jerusalem
+		dynasty = 20035
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 232007
+		birth = 1075.1.15
+		title = k_jerusalem
+		government = feudal_government
+		culture = french
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 250 620 }
+		
+		animation = personality_callous
+
+	}
+
+}
+
+#5th bookmark 
+
+BM_SELJUK = { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
+	start_date = 1157.10.8
+	is_playable = yes
+	
+
+	#  Muhammed I of Esfahan ID: 144054
+	character = {
+		name = "bookmark_esfa" #  Muhammed I of Esfahan
+		dynasty = 613
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 144054
+		birth = 1123.1.1
+		title = k_persia
+		government = clan_government
+		culture = turkish
+		religion = ashari
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 250 620 }
+		
+		animation = personality_callous
+
+	}
+
+}
+
+#6th Bookmark
+
+bm_charlemagne = { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
+	start_date = 769.1.1
+	is_playable = yes
+	
+
+	#  Charlemagne ID: 6392
+	character = {
+		name = "bookmark_charle" #  Charlemagne
+		dynasty = 25061
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 6392
+		birth = 742.1.2
+		title = k_france
+		government = feudal_government
+		culture = frankish
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 250 620 }
+		
+		animation = personality_callous
+
+	}
+
+}

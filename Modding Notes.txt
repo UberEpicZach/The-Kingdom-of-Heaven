@@ -1,0 +1,63 @@
+CK3 is more or less just CK2's data ported over similar to how EU4 was mostly EU3 ported over at release. Due to this it's easy to port over aspects of SWMH as there will be no overlap. Provinces will be a bit tough but that's mostly since CK3 uses a different projection. 
+
+
+CULTURE MODDING:
+
+
+Add culture into the cultures folder. Can just copy another cultures cadet dynasties as it's no big deal if those are shared. For example I used bedouin for hijazi
+
+Make sure to add the new culture into innovations. Basically just make sure it shares things with its sister groups like hijazi with bedouin
+
+Add the dynasties to the dynasties folder and make sure there are do duplicates
+
+Modify any needed events files
+
+Modify needed dynasties to use the new culture
+
+Localization
+
+Add cultures into provinces k_ title. If the province isn't there it's since it's mapped in province_mapping. Problem is that Paradox used no real logic with that/didn't double check their work and so there are provinces all over the damn place in that file so stuff may need moved around. For example to add Hijazi I had to modify province mapping then had a province all the way in Oman become Hijazi. Make sure to move ALL provinces in the county when that needs done. In most cases only the barony with a castle/county capital actually needs history even if Paradox has redundant history in the baronies.
+
+
+BOOKMARK MODDING:
+
+Add the new bookmark to the file in bookmarks. Can just base it off an already added bookmark
+
+bookmark_portraits is created by teh command mentioned in the file. Needs done or you see a naked dude
+
+\gfx\interface\bookmarks Files here are .dds and are custom made. Placeholders for now since I always pick a custom ruler anyway. The poisitions part in the bookmark file looks at this file for where to put a character. What can be done is just screenshotting the map then putting it in a .dds file. Won't be as pretty as what Paradox did but it works
+
+Localization
+
+A bookmark WILL NOT LOAD if it has any character/title history errors.
+
+
+COA MODDING
+
+For some reason Paradox decided to make CoA's made with various templates which is great for making your own CoA but the biggest pain in the ass for adding historical CoA's. To circumvent this cut out the CoA from a CK2 CoA file and make it into its own individual .dds file and place it in the gfx\textured_emblems  AND  gfx\colored_emblems. In the common\coat_of_arms\coast_of_arms\90_dynasties.txt copy in something like this:
+
+106 = { # Plantagenet
+	pattern = "plant.dds"
+	color1 = "black"
+	color2 = "black"
+	textured_emblem = {
+		texture = "plant.dds"
+		color1 = "black"
+		color2 = "black"
+	}
+}
+
+It's not perfect as there's still some discoloration but it's far easier and better than creating CoA's the way CK3 does it. 
+
+
+
+
+TO DO:
+
+Load up HIP at the bookmark I want and look at Direct Vassals and compare to CK3. There are a LOT of titles in CK3 which don't have full history (Scotland had many that ended at 1018) which leaves a lot of historical characters unlanded. No idea why this is the case when CK3 literally copies the history from CK2's files for so many provinces and this is something that a single dev could have checked in a week. 
+
+Fix up character histories like characters that are broken off from the main tree or create proper cadet branches. For example there's only a Bagrationi house in CK3 and not a Bagratuni when the former descended from the later
+
+Check de-jure settup. CK3 does some wierd things like how instead of a Kingdom title for Polotsk there was some wierd White Rus Kingdom title that I then broke apart to make a proper Kingdom title for Polotsk.
+
+Map edits: I kind of want to hold off on this till an initial version of SWMH is out though that may be a long while. I may at the very least fix some of the more terribly done areas like whatever the hell Paradox did with Anatolia that keeps me from doing historical borders in the 1157 bookmark. Areas like teh HRE just aren't worth touching since I don't have a good reference sheet for counties the way SWMH's author does. 
