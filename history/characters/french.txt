@@ -7688,7 +7688,7 @@
 	stewardship = 7
 	religion = "catholic"
 	culture = french
-	trait = leper
+	trait = leper_king
 	trait = education_diplomacy_3
 	father = 223520
 	mother = 223521
@@ -47000,10 +47000,32 @@ arpitan0001 = {
 	father = 1176
 	mother = 1177
 	
-	1017.1.1 = {
+	1024.1.1 = {
 		birth = yes
 	}
 	1063.1.1 = {
 		death = yes
 	}
+}
+
+800141 = {
+	name = "Balian" #Balian of Ibelin
+	martial = 8
+	diplomacy = 6
+	intrigue = 2
+	stewardship = 4
+	trait = balian_of_ibelin
+	dynasty = 23102
+	religion = "catholic"
+	culture = french
+	1160.1.1 = {
+		birth = yes
+		effect = {
+			add_character_flag = flag_balian_of_ibelin
+		}
+	}
+	1193.1.1 = {
+		death = yes
+	}
+	trait = education_martial_4
 }

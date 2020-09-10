@@ -1,0 +1,110 @@
+richard_the_lionheart = {
+	index = 280
+	martial = 2
+	diplomacy = 1
+	prowess = 5
+	
+	monthly_piety_gain_mult = 0.2
+	monthly_prestige = 1
+	
+	opinion_of_liege = 15
+	
+	stress_gain_mult = -0.25
+	
+	ai_war_cooldown = -0.25
+	ai_war_chance = 1
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_ambitious_desc
+			}
+			desc = trait_ambitious_character_desc
+		}
+	}
+
+	ai_honor = high_positive_ai_value
+	ai_energy = very_high_positive_ai_value
+	ai_boldness = high_positive_ai_value
+	ai_zeal = dominant_positive_ai_value
+}
+
+lion_of_the_empire = {
+	index = 281
+	opposites = {
+		fredrick_barbarossa
+	}
+	intrigue = 3
+	stewardship = 3
+	martial = 2
+	
+	opinion_of_liege = -40
+	opposite_opinion = -100
+	general_opinion = 10
+	
+	desc = {
+		desc = what_harm_could_i_possibly_do
+	}
+
+
+	ai_honor = low_negative_ai_value
+}
+
+fredrick_barbarossa = {
+	index = 282
+	opposites = {
+		lion_of_the_empire
+	}
+	levy_size = 0.1
+	tolerance_advantage_mod = 12
+	opposite_opinion = -100
+	
+	desc = {
+		desc = drowned
+	}
+	ai_zeal = dominant_positive_ai_value
+}
+
+balian_of_ibelin = {
+	index = 283
+	prowess = 10
+	hard_casualty_modifier = -0.3
+	monthly_piety = 1
+	
+	desc = {
+		desc = balian_of_ibelin_desc
+	}
+	ai_zeal = dominant_positive_ai_value
+}
+
+leper_king = {
+	index = 284
+	health = -1
+	prowess = -8
+	fertility = -0.95
+
+	dread_baseline_add = -20
+	dread_loss_mult = 1
+
+	attraction_opinion = -35
+	
+	monthly_piety = 0.5
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_leper_desc
+			}
+			desc = trait_leper_character_desc
+		}
+	}
+
+	ai_energy = -15
+}
+}

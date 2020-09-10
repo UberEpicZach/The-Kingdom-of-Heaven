@@ -570,6 +570,7 @@ c_agenais = {
 	}
 	1180.1.1 = {
 		holder = 138324 #Bishop Pierre I
+		liege = k_england
 	}
 	1182.1.1 = {
 		holder = 138325 #Bishop Betrand I de Béceyras
@@ -1274,6 +1275,7 @@ d_toulouse = {
 	}
 	1148.4.16 = {
 		holder = 205530 #Raymond V de Toulouse
+		liege = 0
 	}
 	1194.12.1 = {
 		holder = 205532 #Raymond VI de Toulouse
@@ -1707,6 +1709,7 @@ c_albi = {
 	}
 	1167.1.1 = {
 		holder = 205570	#Roger II
+		liege = d_toulouse
 	}
 }
 
@@ -2147,6 +2150,7 @@ c_bigorre = {
 	}
 	1170.4.30 = {
 		holder = 205541 #marie de Béarn
+		liege = k_england
 	}
 	1173.10.1 = {
 		holder = 205540 #Gaston VI de béarn
@@ -2446,6 +2450,7 @@ c_auvergne = {
 	}
 	1182.1.1 = {
 		holder = 206030 #Robert IV d'Auvergne
+		liege = k_england
 	}
 	1187.1.1 = {
 		liege = "d_gascogne"
@@ -2783,6 +2788,7 @@ c_bourbon = {
 	}
 	1171.1.1 = {
 		holder = 205652
+		liege = k_england
 	}
 	1228.6.15 = {
 		holder = 7483
@@ -2833,7 +2839,6 @@ c_bellac = {
 	}
 	866.1.30 = {
 		holder = 90123
-		liege = "d_aquitaine"
 	}
 	879.1.1 = {
 		holder = 90155
@@ -2856,7 +2861,8 @@ c_bellac = {
 		holder = 322
 	}
 	1047.6.16 = {
-		holder = 324 #Adalbert II de la marche since 1047
+		holder = 37715 #Adalbert II de la marche since 1047
+		liege = d_aquitaine
 	}
 	1088.1.1 = {
 		holder = 138047 #Boson III de la marche
@@ -2883,17 +2889,8 @@ c_bellac = {
 		holder = 138064 #Boson V de montgommery
 	}
 	1172.1.1 = {
-		holder = 138062 #Aldebert IV de montgommery
-	}
-	
-	#Kings of England 1177-1199
-	
-	#House de Lusignan
-	1199.1.1 = {
-		holder = 205660 #Hugues IX de Lusignan
-	}
-	1219.1.2 = {
-		holder = 138001 #Hugues X de Lusignan
+		holder = 37715 #Aldebert IV de montgommery
+		liege = "k_england"
 	}
 	1242.7.21 = {
 		liege = "k_france"
@@ -3017,7 +3014,6 @@ c_la_marche = {
 	}
 	866.1.30 = {
 		holder = 90123
-		liege = "d_aquitaine"
 	}
 	879.1.1 = {
 		holder = 90155
@@ -3040,7 +3036,8 @@ c_la_marche = {
 		holder = 322
 	}
 	1047.6.16 = {
-		holder = 324 #Adalbert II de la marche since 1047
+		holder = 37716 #Adalbert II de la marche since 1047
+		liege = d_aquitaine
 	}
 	1088.1.1 = {
 		holder = 138047 #Boson III de la marche
@@ -3067,7 +3064,8 @@ c_la_marche = {
 		holder = 138064 #Boson V de montgommery
 	}
 	1172.1.1 = {
-		holder = 138062 #Aldebert IV de montgommery
+		holder = 37716 #Aldebert IV de montgommery
+		liege = k_england
 	}
 	
 	#Kings of England 1177-1199
