@@ -2837,6 +2837,29 @@ clothes = {
 	# 	}
 	# }
 
+	baldwin = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = clothes
+				template = western_crusades
+				value = 0.0
+				#range = { 1 1 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 30
+				portrait_baldwin_trigger = yes
+				is_female = no
+			}
+			modifier = {
+				add = 130
+				this = character:223523
+			}
+		}
+	}
 	religious_african_high_clothes = {
 	    dna_modifiers = {
 	        accessory = {
