@@ -1,0 +1,77 @@
+namespace = KoH_saladin
+
+KoH_saladin.1 = {
+	type = character_event
+	title = KoH_saladin.1.t
+	desc = KoH_saladin.1.d
+	
+	theme = faith
+	override_background = {
+		event_background = temple_scope
+	}
+	left_portrait = ROOT
+	
+	option = {
+		name = KoH_saladin.1.a
+		
+		custom_tooltip = KoH_saladins_jihad
+		
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_jerusalem
+                }
+            }
+            save_scope_as = jerusalem_ruler
+        }
+		start_war = {
+			casus_belli = claim_cb
+			target = scope:jerusalem_ruler
+			target_title = k_jerusalem
+			claimant = ROOT
+		}
+		spawn_army = {
+			uses_supply = no
+			inheritable = no
+			name = saladins_fanatics
+			levies = {
+				value = 5000
+			}
+			location = capital_province
+		}
+		
+		scope:jerusalem_ruler = {
+			trigger_event = KoH_saladin.2
+		}
+	}
+}
+
+KoH_saladin.2 = {
+	type = character_event
+	title = KoH_saladin.2.t
+	desc = KoH_saladin.2.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = ROOT
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_saladin.2.a
+		
+		custom_tooltip = ride_for_jerusalem
+		
+		spawn_army = {
+			uses_supply = no
+			inheritable = no
+			name = knights_of_jerusalem
+			men_at_arms = {
+				type = heavy_cavalry
+				stacks = 8
+			}
+			location = capital_province
+		}
+	}
+}
