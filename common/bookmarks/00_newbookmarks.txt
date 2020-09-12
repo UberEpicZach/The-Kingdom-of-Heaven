@@ -139,23 +139,39 @@ bm_jerusalem = { #The initial map for bookmarks is set in interface\bookmarks. T
 	is_playable = yes
 	
 
-	# King Baudouin II of Jerusalem ID: 232007
+	# King Baudouin IV of Jerusalem ID: 27867
 	character = {
-		name = "bookmark_baud" # King Baudouin II of Jerusalem
-		dynasty = 20035
+		name = "bookmark_baud" # King Baudouin IV of Jerusalem
+		dynasty = 723
 		dynasty_splendor_level = 3
 		type = male
-		history_id = 232007
-		birth = 1075.1.15
+		history_id = 27867
+		birth = 1161.1.2
 		title = k_jerusalem
 		government = feudal_government
 		culture = french
 		religion = catholic
-		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
-		position = { 250 620 }
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
+		position = { 750 400 }
 		
 		animation = personality_callous
 
 	}
-
+	# Saladin ID: 27867
+	character = {
+		name = "bookmark_saladin" # saladin
+		dynasty = 24000
+		dynasty_splendor_level = 3
+		type = male
+		history_id = id:226000
+		birth = 1138.1.1
+		title = k_egypt
+		government = feudal_government
+		culture = levantine
+		religion = ashari
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 750 700 }
+		
+		animation = personality_callous
+}
 }
