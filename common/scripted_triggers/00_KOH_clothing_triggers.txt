@@ -5,3 +5,15 @@ portrait_baldwin_trigger = {
         }
     }
 }
+
+portrait_ayyubid_clothing_trigger = {
+	culture = { has_graphical_culture = ayyubid_clothing_gfx }
+}
+
+portrait_saladin_trigger = {
+    AND = {
+        OR = {
+            this = character:226000
+        }
+    }
+}
