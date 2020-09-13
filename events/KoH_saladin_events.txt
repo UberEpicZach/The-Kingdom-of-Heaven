@@ -43,6 +43,7 @@ KoH_saladin.1 = {
 		scope:jerusalem_ruler = {
 			trigger_event = KoH_saladin.2
 		}
+		save_scope_as = KoH_saladin
 	}
 }
 
@@ -68,10 +69,48 @@ KoH_saladin.2 = {
 			inheritable = no
 			name = knights_of_jerusalem
 			men_at_arms = {
-				type = heavy_cavalry
-				stacks = 8
+				type = armored_horsemen
+				stacks = 10
 			}
 			location = capital_province
+		}
+	}
+}
+
+KoH_saladin.3 = { #King's Crusade
+	type = character_event
+	title = KoH_saladin.3.t
+	desc = KoH_saladin.3.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:france_ruler
+		animation = personality_bold
+	}
+	
+	immediate = {
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_france
+                }
+            }
+            save_scope_as = france_ruler
+        }
+	}
+	
+	option = {
+		name = KoH_saladin.3.a
+		start_war = {
+			casus_belli = claim_cb
+			target = scope:KoH_saladin
+			target_title = k_jerusalem
+			claimant = scope:france_ruler
 		}
 	}
 }

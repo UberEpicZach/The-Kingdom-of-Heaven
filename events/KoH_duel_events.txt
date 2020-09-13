@@ -1,0 +1,133 @@
+namespace = KoH_duels
+
+KoH_duels.2 = {
+	type = character_event
+	title = KoH_duels.2.t
+	desc = KoH_duels.2.d
+	is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_duels.2.a
+			trigger_event = {
+				id = KoH_duels.3
+				days = 2
+			}
+	}
+}
+
+KoH_duels.3 = { #A challenger approaches
+	type = character_event
+	title = KoH_duels.3.t
+	desc = KoH_duels.3.d
+	is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_duels.3.a
+		duel = {
+			skill = prowess
+			target = scope:combatant_2
+			value = 10
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+				}
+				trigger_event = {
+					id = KoH_duels.4 #I won
+					days = 1
+				}
+			}
+			10 = {
+				trigger_event = {
+					id = KoH_duels.5 #I lost
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+KoH_duels.4 = { #A challenger approaches
+	type = character_event
+	title = KoH_duels.4.t
+	desc = KoH_duels.4.d
+	is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_duels.4.a
+		
+		
+		scope:combatant_1 = {
+			add_prestige = 50
+			add_prowess = 1
+		}
+		
+		scope:combatant_2 = {
+			add_prestige = -50
+		}
+	}
+}
+
+KoH_duels.5 = { #A challenger approaches
+	type = character_event
+	title = KoH_duels.5.t
+	desc = KoH_duels.5.d
+	is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_duels.5.a
+		
+		
+		scope:combatant_1 = {
+			add_prestige = -50
+		}
+		
+		scope:combatant_2 = {
+			add_prestige = 50
+			add_prowess = 1
+		}
+	}
+}
