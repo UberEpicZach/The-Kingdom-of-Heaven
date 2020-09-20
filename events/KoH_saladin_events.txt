@@ -43,7 +43,6 @@ KoH_saladin.1 = {
 		scope:jerusalem_ruler = {
 			trigger_event = KoH_saladin.2
 		}
-		save_scope_as = KoH_saladin
 	}
 }
 
@@ -63,14 +62,17 @@ KoH_saladin.2 = {
 		name = KoH_saladin.2.a
 		
 		custom_tooltip = ride_for_jerusalem
+		change_chivalry_effect = { 
+			Chivalry = 3
+		}
 		
 		spawn_army = {
 			uses_supply = no
 			inheritable = no
 			name = knights_of_jerusalem
 			men_at_arms = {
-				type = armored_horsemen
-				stacks = 10
+				type = jerusalem_knights
+				stacks = 20
 			}
 			location = capital_province
 		}
@@ -88,12 +90,16 @@ KoH_saladin.3 = { #King's Crusade
 		character = root
 		animation = personality_bold
 	}
-	right_portrait = {
-		character = scope:france_ruler
-		animation = personality_bold
-	}
 	
 	immediate = {
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_england
+                }
+            }
+            save_scope_as = england_ruler
+        }
 		every_ruler = {
             limit = {
                 any_held_title = {
@@ -102,6 +108,22 @@ KoH_saladin.3 = { #King's Crusade
             }
             save_scope_as = france_ruler
         }
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:e_hre
+                }
+            }
+            save_scope_as = hre_ruler
+        }
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:k_jerusalem
+				}
+			}
+			save_scope_as = KoH_saladin
+		}
 	}
 	
 	option = {
@@ -110,7 +132,43 @@ KoH_saladin.3 = { #King's Crusade
 			casus_belli = claim_cb
 			target = scope:KoH_saladin
 			target_title = k_jerusalem
-			claimant = scope:france_ruler
+			claimant = root
 		}
+		hidden_effect = {
+			scope:england_ruler = {
+				trigger_event = {
+					id = KoH_saladin.4
+				}
+			}
+			scope:france_ruler = {
+				trigger_event = {
+					id = KoH_saladin.4
+				}
+			}
+			scope:hre_ruler = {
+				trigger_event = {
+					id = KoH_saladin.4
+				}
+			}
+		}
+	}
+}
+
+KoH_saladin.4 = { #King's Crusade
+	type = character_event
+	title = KoH_saladin.4.t
+	desc = KoH_saladin.4.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_saladin.4.a
+		
+		custom_tooltip = to_jerusalem
 	}
 }

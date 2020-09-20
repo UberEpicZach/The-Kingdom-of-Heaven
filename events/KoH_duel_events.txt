@@ -45,23 +45,34 @@ KoH_duels.3 = { #A challenger approaches
 	
 	option = {
 		name = KoH_duels.3.a
-		duel = {
-			skill = prowess
-			target = scope:combatant_2
-			value = 10
-			10 = {
-				compare_modifier = {
-					value = scope:duel_value
+		
+		custom_tooltip = duel_can_go_either_way
+		hidden_effect = {
+			duel = {
+				skill = prowess
+				target = scope:combatant_2
+				value = 10
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
+						min = -19
+					}
+					trigger_event = {
+						id = KoH_duels.4 #I won
+						days = 1
+					}
 				}
-				trigger_event = {
-					id = KoH_duels.4 #I won
-					days = 1
-				}
-			}
-			10 = {
-				trigger_event = {
-					id = KoH_duels.5 #I lost
-					days = 1
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -1
+						min = -19
+					}
+					trigger_event = {
+						id = KoH_duels.5 #I lost
+						days = 1
+					}
 				}
 			}
 		}
@@ -82,7 +93,7 @@ KoH_duels.4 = { #A challenger approaches
 	}
 	right_portrait = {
 		character = scope:combatant_2
-		animation = personality_bold
+		animation = severelywounded
 	}
 	
 	option = {
@@ -91,11 +102,12 @@ KoH_duels.4 = { #A challenger approaches
 		
 		scope:combatant_1 = {
 			add_prestige = 50
-			add_prowess = 1
+			knight_increase_prowess_chance_effect = yes
 		}
 		
 		scope:combatant_2 = {
 			add_prestige = -50
+			increase_wounds_no_death_effect = { REASON = fight }
 		}
 	}
 }
@@ -110,7 +122,7 @@ KoH_duels.5 = { #A challenger approaches
 	
 	left_portrait = {
 		character = scope:combatant_1
-		animation = personality_bold
+		animation = severelywounded
 	}
 	right_portrait = {
 		character = scope:combatant_2
@@ -123,11 +135,12 @@ KoH_duels.5 = { #A challenger approaches
 		
 		scope:combatant_1 = {
 			add_prestige = -50
+			increase_wounds_no_death_effect = { REASON = fight }
 		}
 		
 		scope:combatant_2 = {
 			add_prestige = 50
-			add_prowess = 1
+			knight_increase_prowess_chance_effect = yes
 		}
 	}
 }
