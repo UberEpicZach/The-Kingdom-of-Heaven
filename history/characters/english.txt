@@ -721,6 +721,7 @@
 
 204509 = {
 	name = "Matilda" #Plantagenet
+	dna = 204509_matilda_of_england
 	female = yes
 	dynasty = 106
 	martial = 8
@@ -734,7 +735,10 @@
 	father = 204500
 	mother = 205730
 	1156.1.2 = {
-		birth = "1156.1.2"
+		birth = "1156.1.6"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1206.1.2 = {
 		death = "1206.1.2"
@@ -848,6 +852,7 @@
 
 204514 = {
 	name = "John" # "Lackland", "Prince_John"
+	dna = 204514_john_lackland
 	dynasty = 106
 	martial = 4
 	diplomacy = 2
@@ -864,6 +869,9 @@
 	mother = 205730
 	1166.12.24 = {
 		birth = "1166.12.24"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1189.8.29 = {
 		add_spouse = 204665

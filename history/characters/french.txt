@@ -2549,7 +2549,7 @@
 	trait = lustful # should clash with Matilda being chaste
 	trait = wrathful
 	trait = education_martial_3
-	trait = bastard
+	# trait = bastard # Why he wasn't one though
 	father = 223525
 	mother = 232009
 	1113.8.24 = {
@@ -3148,6 +3148,7 @@
 205506 = {
 	name = "Philippe" #Philippe II Auguste
 	# AKA: Philippe Auguste
+	dna = 205506_phillip_augustus
 	dynasty_house = house_capet
 	martial = 8
 	diplomacy = 7
@@ -3165,6 +3166,9 @@
 	mother = 205505 #Adèle de Champagne
 	1165.8.21 = {
 		birth = "1165.8.21"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1179.1.1 = {
 		trait = wounded_1
@@ -3378,8 +3382,9 @@
 }
 
 205518 = {
-	name = "AdE_le" #Adèle de France
+	name = "Alys" #Adèle de France
 	# AKA: Alix
+	dna = 205518_alys_of_france
 	female = yes
 	dynasty_house = house_capet
 	religion = "catholic"
@@ -3387,7 +3392,10 @@
 	father = 205500 #Louis VII le Jeune
 	mother = 207503 #Constance de Castille
 	1160.10.1 = {
-		birth = "1160.10.1"
+		birth = "1160.10.4"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	#Guillaume III de Ponthieu (1195.8.20)
 	1215.1.1 = {
@@ -7681,7 +7689,7 @@
 
 223523 = {
 	name = "Baudouin"
-	dna = 27866_Baudouin_The_Leper
+	dna = 223523_Baudouin_The_Leper
 	dynasty = 723
 	martial = 7
 	diplomacy = 10
@@ -7694,7 +7702,10 @@
 	father = 223520
 	mother = 223521
 	1161.1.2 = {
-		birth = "1161.1.2"
+		birth = "1161.1.6"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1185.3.16 = {
 		death = "1185.3.16"
@@ -31393,6 +31404,7 @@
 
 223500 = {
 	name = "Guy"
+	dna = 223500_guy_de_lusignan
 	dynasty = 93 #Guy de Lusignan
 	religion = "catholic"
 	culture = french
@@ -31400,6 +31412,9 @@
 	mother = 205662 #Burgondie de Rançon
 	1159.1.1 = {
 		birth = "1159.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1174.1.1 = {
 		trait = faith_warrior

@@ -3,12 +3,11 @@ CK3 is more or less just CK2's data ported over similar to how EU4 was mostly EU
 
 CULTURE MODDING:
 
-
 Add culture into the cultures folder. Can just copy another cultures cadet dynasties as it's no big deal if those are shared. For example I used bedouin for hijazi
 
 Make sure to add the new culture into innovations. Basically just make sure it shares things with its sister groups like hijazi with bedouin
 
-Add the dynasties to the dynasties folder and make sure there are do duplicates
+Add the dynasties to the dynasties folder and make sure there are no duplicates
 
 Modify any needed events files
 
@@ -16,14 +15,14 @@ Modify needed dynasties to use the new culture
 
 Localization
 
-Add cultures into provinces k_ title. If the province isn't there it's since it's mapped in province_mapping. Problem is that Paradox used no real logic with that/didn't double check their work and so there are provinces all over the damn place in that file so stuff may need moved around. For example to add Hijazi I had to modify province mapping then had a province all the way in Oman become Hijazi. Make sure to move ALL provinces in the county when that needs done. In most cases only the barony with a castle/county capital actually needs history even if Paradox has redundant history in the baronies.
+Add cultures into provinces k_title. If the province isn't there it's since it's mapped in province_mapping. Problem is that Paradox used no real logic with that/didn't double check their work and so there are provinces all over the damn place in that file so stuff may need moved around. For example to add Hijazi I had to modify province mapping then had a province all the way in Oman become Hijazi. Make sure to move ALL provinces in the county when that needs done. In most cases only the barony with a castle/county capital actually needs history even if Paradox has redundant history in the baronies.
 
 
 BOOKMARK MODDING:
 
 Add the new bookmark to the file in bookmarks. Can just base it off an already added bookmark
 
-bookmark_portraits is created by teh command mentioned in the file. Needs done or you see a naked dude
+bookmark_portraits is created by the command mentioned in the file. Needs done or you see a naked dude
 
 \gfx\interface\bookmarks Files here are .dds and are custom made. Placeholders for now since I always pick a custom ruler anyway. The poisitions part in the bookmark file looks at this file for where to put a character. What can be done is just screenshotting the map then putting it in a .dds file. Won't be as pretty as what Paradox did but it works
 

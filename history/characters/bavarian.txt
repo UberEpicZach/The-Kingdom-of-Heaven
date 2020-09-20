@@ -1756,6 +1756,7 @@
 212600 = {
 	name = "Heinrich"
 	# AKA: Heinrich der Löwe
+	dna = 212600_henry_the_lion
 	dynasty = 650
 	martial = 10
 	diplomacy = 9
@@ -1772,6 +1773,9 @@
 	mother = 212603
 	1129.1.2 = {
 		birth = "1129.1.2"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 		effect = {
 			add_character_flag = flag_fredrick_barbarossa
 		}

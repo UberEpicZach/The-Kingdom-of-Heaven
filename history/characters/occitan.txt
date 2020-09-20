@@ -1276,6 +1276,7 @@
 
 205730 = {
 	name = "AliE_nor" #d'Aquitaine
+	dna = 205730_eleanor_of_aquitaine
 	female = yes
 	dynasty = 413
 	martial = 5
@@ -1295,6 +1296,9 @@
 	mother = 205732
 	1122.1.1 = {
 		birth = "1122.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1204.4.1 = {
 		death = "1204.4.1"
