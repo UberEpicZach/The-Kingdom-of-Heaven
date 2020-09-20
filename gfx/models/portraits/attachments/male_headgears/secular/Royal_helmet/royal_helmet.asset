@@ -1,0 +1,17 @@
+pdxmesh = {
+	name = "royal_helmet_mesh"
+	file = "royal_helmet.mesh"
+
+	meshsettings = {
+		name = "royal_helmetShape"
+		index = 0
+		texture_diffuse = "royal_helm_diffuse.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "royal_helmet_entity"
+	pdxmesh = "royal_helmet_mesh"
+}
