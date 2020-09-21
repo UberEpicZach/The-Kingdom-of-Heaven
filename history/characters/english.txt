@@ -563,6 +563,7 @@
 
 204500 = {
 	name = "Henry" # Henry II
+	dna = 204500_henry_curtmantle
 	dynasty = 106
 	martial = 7
 	diplomacy = 4
@@ -579,6 +580,9 @@
 	mother = 202991
 	1133.3.5 = {
 		birth = "1133.3.5"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1152.5.18 = {
 		add_spouse = 205730
@@ -748,6 +752,7 @@
 204510 = {
 	name = "Richard"
 	# AKA: Richard the Lionheart
+	dna = 204510_richard_the_lionheart
 	dynasty = 106
 	martial = 8
 	diplomacy = 6
@@ -767,6 +772,9 @@
 		birth = "1157.9.8"
 		effect = {
 			add_character_flag = flag_richard_the_lionheart
+		}
+		effect = {
+			add_character_flag = has_scripted_appearance
 		}
 		give_nickname = nick_the_lionheart
 		trait = faith_warrior
@@ -829,6 +837,7 @@
 
 204513 = {
 	name = "Joan"
+	dna = 204513_joan_of_england
 	female = yes
 	dynasty = 106
 	martial = 8
@@ -844,6 +853,9 @@
 	mother = 205730
 	1165.1.2 = {
 		birth = "1165.1.2"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1215.1.2 = {
 		death = "1215.1.2"

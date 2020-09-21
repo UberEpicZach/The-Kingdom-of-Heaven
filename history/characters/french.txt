@@ -3126,6 +3126,7 @@
 
 205505 = {
 	name = "Adelaide"
+	dna = 205505_adele_of_champagne
 	female = yes
 	dynasty = 721
 	martial = 6
@@ -3139,6 +3140,9 @@
 	mother = 205893
 	1140.1.2 = {
 		birth = "1140.1.2"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1190.1.2 = {
 		death = "1190.1.2"
@@ -3391,7 +3395,7 @@
 	culture = french
 	father = 205500 #Louis VII le Jeune
 	mother = 207503 #Constance de Castille
-	1160.10.1 = {
+	1160.10.4 = {
 		birth = "1160.10.4"
 		effect = {
 			add_character_flag = has_scripted_appearance
@@ -7664,6 +7668,7 @@
 
 223521 = {
 	name = "Agnes"
+	dna = 223521_agnes_de_courtenay
 	female = yes
 	dynasty = 23100
 	martial = 7
@@ -7679,6 +7684,9 @@
 	mother = 231014
 	1132.1.1 = {
 		birth = "1132.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	#1148 married Renaud of Marash
 	#1158 married Amaury d'Anjou, king of Jerusalem
@@ -31433,6 +31441,7 @@
 
 223522 = {
 	name = "Sibylla" #  Sibylla de Jerusalem
+	dna = 223522_sibylla_de_jerusalem
 	female = yes
 	dynasty = 723 #d'Anjou
 	religion = "catholic"
@@ -31441,6 +31450,9 @@
 	mother = 223521
 	1160.1.1 = {
 		birth = "1160.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	#1176 married William of Montferrat
 	#1177 son Baudoin V
@@ -31631,6 +31643,7 @@
 
 223524 = {
 	name = "Isabelle" #Isabelle de Jerusalem/Anjou
+	dna = 223524_isabella_of_jerusalem
 	female = yes
 	dynasty = 723
 	martial = 7
@@ -31642,8 +31655,11 @@
 	trait = education_diplomacy_2
 	father = 223520
 	mother = 215560
-	1171.1.2 = {
-		birth = "1171.1.2"
+	1172.1.2 = {
+		birth = "1172.1.2"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1205.4.5 = {
 		death = "1205.4.5"
@@ -47026,6 +47042,7 @@ arpitan0001 = {
 
 800141 = {
 	name = "Balian" #Balian of Ibelin
+	dna = 800141_balian_of_ibelin
 	martial = 8
 	diplomacy = 6
 	intrigue = 2
@@ -47038,6 +47055,9 @@ arpitan0001 = {
 		birth = yes
 		effect = {
 			add_character_flag = flag_balian_of_ibelin
+		}
+		effect = {
+			add_character_flag = has_scripted_appearance
 		}
 	}
 	1193.1.1 = {
