@@ -10648,6 +10648,7 @@
 
 223650 = {
 	name = "Raimond" #Raimond III
+	dna = 223650_raymond_of_tripoli
 	dynasty = 727
 	martial = 7
 	diplomacy = 7
@@ -10664,6 +10665,9 @@
 	mother = 223661
 	1140.1.1 = {
 		birth = "1140.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1171.1.1 = {
 		add_spouse = 31384

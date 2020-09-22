@@ -3429,6 +3429,7 @@
 
 205522 = {
 	name = "Isabella" #countess of Artois
+	dna = 205522_isabella_of_hainault
 	female = yes
 	dynasty = 724
 	martial = 8
@@ -3440,8 +3441,8 @@
 	trait = education_diplomacy_3
 	father = 205520
 	mother = 212589
-	1170.1.29 = {
-		birth = "1170.1.29"
+	1170.4.5 = {
+		birth = "1170.4.5"
 	}
 	1190.3.15 = {
 		death = "1190.3.15"
@@ -3714,6 +3715,7 @@
 
 205599 = {
 	name = "BE_atrix"
+	dna = 205599_beatrice_of_hainault
 	female = yes
 	dynasty = 681
 	martial = 5
@@ -3727,6 +3729,9 @@
 	father = 232556
 	1140.1.1 = {
 		birth = "1140.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1184.1.16 = {
 		death = "1184.1.16"
@@ -32951,7 +32956,7 @@
 
 223570 = {
 	name = "Balian"
-	dna = 800141_balian_of_ibelin
+	dna = 223570_balian_of_ibelin
 	dynasty = 23102
 	martial = 8
 	diplomacy = 6
@@ -32961,11 +32966,17 @@
 	culture = french
 	trait = balian_of_ibelin
 	trait = diligent
-	trait = education_stewardship_2
+	trait = education_martial_4
 	father = 144166
 	mother = 223581
 	1140.1.1 = {
 		birth = "1140.1.1"
+		effect = {
+			add_character_flag = flag_balian_of_ibelin
+		}
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1185.1.2 = {
 		add_spouse = 215560
@@ -47042,28 +47053,28 @@ arpitan0001 = {
 	}
 }
 
-800141 = {
-	name = "Balian" #Balian of Ibelin
-	dna = 800141_balian_of_ibelin
-	martial = 8
-	diplomacy = 6
-	intrigue = 2
-	stewardship = 4
-	trait = balian_of_ibelin
-	dynasty = 23102
-	religion = "catholic"
-	culture = french
-	1160.1.1 = {
-		birth = yes
-		effect = {
-			add_character_flag = flag_balian_of_ibelin
-		}
-		effect = {
-			add_character_flag = has_scripted_appearance
-		}
-	}
-	1193.1.1 = {
-		death = yes
-	}
-	trait = education_martial_4
-}
+# 800141 = {
+# 	name = "Balian" #Balian of Ibelin
+# 	dna = 800141_balian_of_ibelin
+# 	martial = 8
+# 	diplomacy = 6
+# 	intrigue = 2
+# 	stewardship = 4
+# 	trait = balian_of_ibelin
+# 	dynasty = 23102
+# 	religion = "catholic"
+# 	culture = french
+# 	1160.1.1 = {
+# 		birth = yes
+# 		effect = {
+# 			add_character_flag = flag_balian_of_ibelin
+# 		}
+# 		effect = {
+# 			add_character_flag = has_scripted_appearance
+# 		}
+# 	}
+# 	1193.1.1 = {
+# 		death = yes
+# 	}
+# 	trait = education_martial_4
+# }

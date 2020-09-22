@@ -2676,8 +2676,36 @@
 		add_pressed_claim = d_amman
 		add_pressed_claim = d_oultrejourdain
 	}
+	1176.1.1 = {
+		add_spouse = 1000230506
+		effect = {
+			set_relation_soulmate = character:1000230506 # Ismat
+		}
+	}
 	1193.3.4 = {
 		death = "1193.3.4"
+	}
+}
+
+1000230506 = {
+	name = "Ismat_ad-Din_Khatun"
+	dna = 1000230506_ismat_ad_din
+	female = yes
+	trait = education_learning_2
+	trait = zealous
+	trait = brave
+	trait = generous
+	trait = beauty_good_3
+	culture = levantine
+	religion = ashari
+	1138.1.1 = {
+		birth = "1138.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
+	}
+	1186.1.26 = {
+		death = "1186.1.1"
 	}
 }
 
@@ -8711,3 +8739,4 @@ levantine000010 = { #fictional ruler of Banu Kilab
 		death = yes
 	}
 }
+
