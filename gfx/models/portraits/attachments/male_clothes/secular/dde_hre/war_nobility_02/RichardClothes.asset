@@ -1,0 +1,20 @@
+pdxmesh = {
+	name = "RichardClothes_mesh"
+	file = "RichardClothes.mesh"
+
+	meshsettings = {
+		name = "RichardClothes"
+		index = 0
+		texture_diffuse = "RichardClothes_diffuse.dds"
+		texture_normal = "RichardClothes_normal.dds"
+		texture_specular = "RichardClothes_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "RichardClothes_low_entity"
+	pdxmesh = "RichardClothes_mesh"
+}
+

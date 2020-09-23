@@ -2522,7 +2522,28 @@ headgear = {
 			}
 		}
 	}
-
+	richard = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = royal_helmet 
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			weight = {
+				base = 0
+				modifier = {
+					add = 30
+					portrait_richard_trigger = yes
+					is_female = no
+				}
+				modifier = {
+					add = 130
+					this = character:204510
+				}
+			}
+		}
+	}	
 
 	# religious_muslim_head_clothes = {
 	#     dna_modifiers = {
