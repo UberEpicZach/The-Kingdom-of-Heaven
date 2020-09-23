@@ -1,10 +1,10 @@
-namespace = KoH_duels
+﻿namespace = KoH_duels
 
 KoH_duels.2 = {
 	type = character_event
 	title = KoH_duels.2.t
 	desc = KoH_duels.2.d
-	is_triggered_only = yes
+	#is_triggered_only = yes
 	
 	theme = war
 	
@@ -19,10 +19,10 @@ KoH_duels.2 = {
 	
 	option = {
 		name = KoH_duels.2.a
-			trigger_event = {
-				id = KoH_duels.3
-				days = 2
-			}
+		trigger_event = {
+			id = KoH_duels.3
+			days = 2
+		}
 	}
 }
 
@@ -30,7 +30,7 @@ KoH_duels.3 = { #A challenger approaches
 	type = character_event
 	title = KoH_duels.3.t
 	desc = KoH_duels.3.d
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
 	theme = war
 	
@@ -83,7 +83,7 @@ KoH_duels.4 = { #A challenger approaches
 	type = character_event
 	title = KoH_duels.4.t
 	desc = KoH_duels.4.d
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
 	theme = war
 	
@@ -116,7 +116,7 @@ KoH_duels.5 = { #A challenger approaches
 	type = character_event
 	title = KoH_duels.5.t
 	desc = KoH_duels.5.d
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
 	theme = war
 	
