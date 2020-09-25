@@ -57199,6 +57199,83 @@ e_arabia = {
 			}
 		}
 		
+		d_lebanon = {
+			color = { 71 150 32 }
+			color2 = { 255 255 255 }
+			
+			capital = c_beirut
+			
+			c_beirut = {
+				color = { 77 156 38 }
+				color2 = { 255 255 255 }
+				
+				b_beirut = {
+					province = 5919
+					
+					color = { 77 156 38 }
+					color2 = { 255 255 255 }
+				}
+				b_beaufort = { #beaufort
+					province = 9672
+					
+					color = { 203 56 41 }
+					color2 = { 255 255 255 }
+				}
+				b_saida = { #Sidon
+					province = 5920
+					
+					color = { 77 156 38 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_torone = {
+				color = { 163 203 41 }
+				color2 = { 255 255 255 }
+				
+				b_torone = {
+					province = 9673
+					
+					color = { 163 203 41 }
+					color2 = { 255 255 255 }
+				}
+				b_anjar = {
+					province = 5937
+					
+					color = { 134 255 15 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_tripoli = {
+				color = { 75 154 36 }
+				color2 = { 255 255 255 }
+				
+				b_syrtripolis = {
+					province = 5918
+					
+					color = { 75 154 36 }
+					color2 = { 255 255 255 }
+				}
+				b_gibelet = {
+					province = 9664
+					
+					color = { 170 190 82 }
+					color2 = { 255 255 255 }
+				}
+				b_boutron = {
+					province = 9665
+					
+					color = { 190 129 82 }
+					color2 = { 255 255 255 }
+				}
+				b_antartus = {
+					province = 5916
+					
+					color = { 75 154 36 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
+		
 		d_urdunn = { #AKA Galilee
 			color = { 225 200 160 }
 			color2 = { 255 255 255 }
@@ -57225,6 +57302,18 @@ e_arabia = {
 					province = 9669
 					
 					color = { 30 198 109 }
+					color2 = { 255 255 255 }
+				}
+				b_baniyas = {
+					province = 5922
+					
+					color = { 225 220 160 }
+					color2 = { 255 255 255 }
+				}
+				b_hattin = {
+					province = 9663
+					
+					color = { 38 76 43 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -57255,29 +57344,17 @@ e_arabia = {
 					color = { 194 41 203 }
 					color2 = { 255 255 255 }
 				}
-				b_baniyas = {
-					province = 5922
-					
-					color = { 225 220 160 }
-					color2 = { 255 255 255 }
-				}
-				b_hattin = {
-					province = 9663
-					
-					color = { 38 76 43 }
-					color2 = { 255 255 255 }
-				}
 			}
 		}
 	}
 	
 	k_antioch = {
-		color = { 120 150 88 }
+		color = { 142 63 129 }
 		color2 = { 255 255 255 }
 		
 		capital = c_antiocheia
 		
-	d_antioch = {
+		d_antioch = {
 			color = { 142 63 129 }
 			color2 = { 255 255 255 }
 			
@@ -57311,21 +57388,15 @@ e_arabia = {
 					color = { 152 69 135 }
 					color2 = { 255 255 255 }
 				}
-				b_antartus = {
-					province = 5916
-					
-					color = { 75 154 36 }
-					color2 = { 255 255 255 }
-				}
 			}
 			c_kerake = {
-				color = { 231 1 0 }
+				color = { 93 252 34 }
 				color2 = { 255 255 255 }
 				
 				b_kerake = {
 					province = 9671
 					
-					color = { 231 1 0 }
+					color = { 93 252 34 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -57608,18 +57679,23 @@ e_arabia = {
 					color2 = { 255 255 255 }
 				}
 			}
+			c_masyaf = {
+				color = { 93 252 34 }
+				color2 = { 255 255 255 }
+				
+				b_masyaf = {
+					province = 5914
+					
+					color = { 231 1 0 }
+					color2 = { 255 255 255 }
+				}
+			}
 			c_shayzar = {
 				color = { 93 252 34 }
 				color2 = { 255 255 255 }
 				
 				b_shayzar = {
 					province = 5915
-					
-					color = { 93 252 34 }
-					color2 = { 255 255 255 }
-				}
-				b_masyaf = {
-					province = 5914
 					
 					color = { 93 252 34 }
 					color2 = { 255 255 255 }
@@ -57645,78 +57721,6 @@ e_arabia = {
 					province = 5932
 					
 					color = { 95 242 30 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-	
-		
-		d_lebanon = {
-			color = { 71 150 32 }
-			color2 = { 255 255 255 }
-			
-			capital = c_beirut
-			
-			c_beirut = {
-				color = { 77 156 38 }
-				color2 = { 255 255 255 }
-				
-				b_beirut = {
-					province = 5919
-					
-					color = { 77 156 38 }
-					color2 = { 255 255 255 }
-				}
-				b_beaufort = { #beaufort
-					province = 9672
-					
-					color = { 203 56 41 }
-					color2 = { 255 255 255 }
-				}
-				b_saida = { #Sidon
-					province = 5920
-					
-					color = { 77 156 38 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_torone = {
-				color = { 163 203 41 }
-				color2 = { 255 255 255 }
-				
-				b_torone = {
-					province = 9673
-					
-					color = { 163 203 41 }
-					color2 = { 255 255 255 }
-				}
-				b_anjar = {
-					province = 5937
-					
-					color = { 134 255 15 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_tripoli = {
-				color = { 75 154 36 }
-				color2 = { 255 255 255 }
-				
-				b_syrtripolis = {
-					province = 5918
-					
-					color = { 75 154 36 }
-					color2 = { 255 255 255 }
-				}
-				b_gibelet = {
-					province = 9664
-					
-					color = { 170 190 82 }
-					color2 = { 255 255 255 }
-				}
-				b_boutron = {
-					province = 9665
-					
-					color = { 190 129 82 }
 					color2 = { 255 255 255 }
 				}
 			}
