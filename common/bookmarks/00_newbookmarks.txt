@@ -92,7 +92,7 @@ bm_jerusalem = { #The initial map for bookmarks is set in interface\bookmarks. T
 		animation = personality_callous
 	}
 }
-bm_kings= { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
+bm_kings = { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
 	start_date = 1184.1.1
 	is_playable = yes
 	
@@ -110,25 +110,59 @@ bm_kings= { #The initial map for bookmarks is set in interface\bookmarks. This i
 		culture = french
 		religion = catholic
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
-		position = { 750 400 }
+		position = { 450 750 }
 		
 		animation = personality_callous
 
 	}
-	# Saladin ID:
+	# Richard The Lionheart ID:
 	character = {
-		name = "bookmark_saladin" # saladin
-		dynasty = 24000
+		name = "bookmark_richard" # richard
+		dynasty = 106
 		dynasty_splendor_level = 3
 		type = male
-		history_id = 226000
-		birth = 1138.1.1
-		title = k_egypt
+		history_id = 204510
+		birth = 1157.9.8
+		title = c_anjou
 		government = feudal_government
-		culture = levantine
-		religion = ashari
+		culture = french
+		religion = catholic
 		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
-		position = { 750 700 }
+		position = { 340 375 }
+		
+		animation = personality_callous
+	}
+	# Frederick Barbarossa  ID:
+	character = {
+		name = "bookmark_hre" # Frederick Barbarossa
+		dynasty = 529
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 212501
+		birth = 1122.1.1
+		title = e_hre
+		government = feudal_government
+		culture = swabian
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 900 700 }
+		
+		animation = personality_callous
+	}
+	# Frederick Barbarossa  ID:
+	character = {
+		name = "bookmark_balian" # Frederick Barbarossa
+		dynasty = 23102
+		dynasty_splendor_level = 1
+		type = male
+		history_id = 223570
+		birth = 1140.1.1
+		title = 
+		government = feudal_government
+		culture = french
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
+		position = { 750 400 }
 		
 		animation = personality_callous
 	}
