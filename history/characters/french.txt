@@ -1457,6 +1457,20 @@
 	dynasty = 738
 	religion = "catholic"
 	culture = french
+	female = yes
+	1120.1.3 = {
+		birth = "1120.1.3"
+	}
+	1150.1.1 = {
+		death = yes
+	}
+}
+
+800503 = {
+	name = "Blanche"
+	religion = "catholic"
+	culture = french
+	female = yes
 	1120.1.3 = {
 		birth = "1120.1.3"
 	}
@@ -33021,7 +33035,7 @@
 	trait = diligent
 	trait = education_martial_4
 	father = 144166
-	mother = 223581
+	mother = 800503
 	1146.1.1 = {
 		birth = "1146.1.1"
 		effect = {
@@ -33036,6 +33050,33 @@
 	}
 	1193.1.1 = {
 		death = "1193.1.1"
+	}
+}
+
+800504 = {
+	name = "Michal" # BALIAN's BROTHER
+	religion = "catholic"
+	culture = french
+	father = 800505
+	mother = 800503
+	trait = education_learning_2
+	1144.1.1 = {
+		birth = "1144.1.1"
+	}
+}
+
+800505 = { #BAILIANS FATHER "HIS NAMESAKE"
+	name = "Balian"
+	religion = "catholic"
+	culture = french
+	1119.1.1 = {
+		birth = "1119.1.1"
+	}
+	1135.1.1 = {
+		add_spouse = 800503
+	}
+	1146.2.2 = {
+		death = yes
 	}
 }
 
