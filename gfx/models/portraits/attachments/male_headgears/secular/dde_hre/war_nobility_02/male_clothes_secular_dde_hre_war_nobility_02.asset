@@ -1,0 +1,19 @@
+pdxmesh = {
+	name = "male_clothes_secular_dde_hre_war_nobility_02_mesh"
+	file = "male_clothes_secular_dde_hre_war_nobility_02.mesh"
+
+	meshsettings = {
+		name = "male_clothes_secular_dde_hre_war_nobility_02Shape"
+		index = 0
+		texture_diffuse = "male_clothes_secular_dde_hre_war_nobility_02_diffuse.dds"
+		texture_normal = "male_clothes_secular_dde_hre_war_nobility_02_normal.dds"
+		texture_specular = "male_clothes_secular_dde_hre_war_nobility_02_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "male_clothes_secular_dde_hre_war_nobility_02_low_entity"
+	pdxmesh = "male_clothes_secular_dde_hre_war_nobility_02_mesh"
+}
