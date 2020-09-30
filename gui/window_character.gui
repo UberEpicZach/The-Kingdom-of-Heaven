@@ -2455,6 +2455,38 @@ window = {
 								blockoverride "expand_button" {}
 							}
 
+							vbox_character_row_item = {
+								name = "adoptee"
+								layoutpolicy_vertical = expanding
+
+								blockoverride "portrait_datamodel" {
+									datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'adoptee' ) )]"
+								}
+
+								blockoverride "header_text"
+								{
+									text = "ADOPTEE_LABEL"
+								}
+
+								blockoverride "expand_button" {}
+							}
+
+							vbox_character_row_item = {
+								name = "adoptor"
+								layoutpolicy_vertical = expanding
+
+								blockoverride "portrait_datamodel" {
+									datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'adoptor' ) )]"
+								}
+
+								blockoverride "header_text"
+								{
+									text = "ADOPTOR_LABEL"
+								}
+
+								blockoverride "expand_button" {}
+							}
+
 							expand = {}
 						}
 					}
