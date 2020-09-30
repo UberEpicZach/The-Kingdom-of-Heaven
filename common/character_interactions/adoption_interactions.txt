@@ -40,7 +40,37 @@ adopt_child = {
 	}
 
 	ai_accept = {
-
+		base = 0
+		# if orphan
+		modifier = {
+			add = 50
+			scope:recipient = {
+				has_father = no
+			}
+		}
+		modifier = {
+			add = 50
+			scope:recipient = {
+				has_mother = no
+			}
+		}
+		# recipient's opinion
+		opinion_modifier = {
+			opinion_target = scope:actor
+			who = scope:recipient
+			multiplier = 1
+		}
+		# recipient parent's opinion
+		opinion_modifier = {
+			opinion_target = scope:actor
+			who = scope:recipient.father
+			multiplier = 1
+		}
+		opinion_modifier = {
+			opinion_target = scope:actor
+			who = scope:recipient.mother
+			multiplier = 1
+		}
 	}
 
 	on_accept = {
@@ -66,14 +96,16 @@ adopt_child = {
 		prestige = 500
 	}
 
-	# AI to do adoption (TODO)
+	# AI to do adoption
 	ai_potential = {
-
+		is_imprisoned = no
+		NOT = { has_trait = incapable }
 	}
-	ai_will_do = 0
-	ai_frequency = 0
+	ai_will_do = 25
+	ai_frequency = 6
 	ai_targets = {
-		
+		ai_recipients = courtiers
+		chance = 1
 	}
 }
 
@@ -120,5 +152,16 @@ set_adoptee_as_successor = {
 
 	cost = {
 		prestige = 500
+	}
+
+	ai_potential = {
+		is_imprisoned = no
+		NOT = { has_trait = incapable }
+	}
+	ai_will_do = 25
+	ai_frequency = 6
+	ai_targets = {
+		ai_recipients = courtiers
+		chance = 1
 	}
 }
