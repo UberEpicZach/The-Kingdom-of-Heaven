@@ -1,54 +1,6 @@
 ﻿#3rd bookmark
 #This start is when the map starts not being fully correct and will need further edits in the titles files. For example k_rum was referred to as a liege but did not exist in the titles files itself. This is also when I found out that it appears a bookmark will not load if there are ANY history/character file errors as once I fixed all the issues in these files I could get later bookmarks to load.
 
-
-
-bm_komnenos_dynasty = { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
-	start_date = 1081.4.1
-	is_playable = yes
-	
-
-	# Alexios I Komnenos ID: 1742
-	character = {
-		name = "bookmark_alexios" # Alexios
-		dynasty = 669
-		dynasty_splendor_level = 4
-		type = male
-		history_id = 1742
-		birth = 1056.1.1
-		title = e_byzantium
-		government = feudal_government
-		culture = greek
-		religion = orthodox
-		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
-		position = { 250 620 }
-		
-		animation = personality_callous
-
-	}
-	
-	# Suleyman I of Rum ID: 3046
-	character = {
-		name = "bookmark_suleyman" # Suleyman
-		dynasty = 613
-		dynasty_splendor_level = 4
-		type = male
-		history_id = 3046
-		birth = 1039.1.2
-		title = k_rum
-		government = clan_government
-		culture = turkish
-		religion = ashari
-		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
-		position = { 180 820 }
-		
-		animation = personality_callous
-
-	}
-
-}
-
-
 #4th bookmark 
 
 bm_jerusalem = { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
