@@ -1569,6 +1569,26 @@ window = {
 									align = center|nobaseline
 								}
 							}
+							
+							vbox = {
+								visible = "[Character.HasLandedTitles]"
+								spacing = -2
+								min_width = 40
+								tooltip = "Chivalry_values_tt"
+
+								icon = {
+									name = "chivalry_icon"
+									size = { 30 30 }
+									texture = "gfx/interface/icons/portraits/knight.dds"
+								}
+
+								text_single = {
+									name = "total_gold"
+									text = "[Character.MakeScope.Var('Chivalry').GetValue|0]"
+									default_format = "#high"
+									align = center|nobaseline
+								}
+							}
 
 							vbox = {
 								tooltip = "[Character.GetGoldTooltipWithBalance]"
