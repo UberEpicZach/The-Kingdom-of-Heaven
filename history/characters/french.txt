@@ -1251,7 +1251,7 @@
 
 144157 = {
 	name = "Guy"
-	dynasty = 4003
+	dynasty = 4003 #de Monfort
 	religion = "catholic"
 	culture = french
 	father = 205824
@@ -1260,7 +1260,7 @@
 		birth = "1177.1.1"
 	}
 	1204.1.1 = {
-		add_spouse = 144179
+		add_spouse = 144179 #Helvis d'Ibelin
 	}
 	1228.1.31 = {
 		death = "1228.1.31"
@@ -1268,11 +1268,11 @@
 }
 
 144158 = {
-	name = "Jean"
+	name = "Jean" #Jean II, Lord of Beiruit
 	dynasty = 23102 #d'Ibelin
 	religion = "catholic"
 	culture = french
-	father = 144165
+	father = 144165 #Balian III
 	mother = 144164
 	1231.1.1 = {
 		birth = "1231.1.1"
@@ -1286,14 +1286,14 @@
 }
 
 144159 = {
-	name = "Jean"
-	dynasty = 23102
+	name = "Jean" #of Ibelin, Lord of Beirut
+	dynasty = 23102 #Ibelin
 	religion = "catholic"
 	culture = french
-	father = 223570
-	mother = 215560
-	1185.1.1 = {
-		birth = "1178.1.1"
+	father = 223570 #Balian of Ibelin
+	mother = 215560	#Maria Comnene
+	1187.1.1 = {
+		birth = "1187.1.1"
 	}
 
 	1236.1.1 = {
@@ -1303,7 +1303,7 @@
 
 144160 = {
 	name = "Gauthier"
-	dynasty = 7287
+	dynasty = 7287 #Montbéliard
 	religion = "catholic"
 	culture = french
 	father = 161765
@@ -1311,7 +1311,7 @@
 		birth = "1180.1.1"
 	}
 	1205.1.1 = {
-		add_spouse = 223506
+		add_spouse = 223506 #Bourgogne, Princess of Cyprus
 	}
 	1212.1.1 = {
 		death = "1212.1.1"
@@ -1321,11 +1321,11 @@
 
 144161 = {
 	name = "Hugo"
-	dynasty = 7287
+	dynasty = 7287 #Montbéliard
 	religion = "catholic"
 	culture = french
-	father = 144160
-	mother = 223506
+	father = 144160 #Gauthier
+	mother = 223506 #Bourgogne, Princess of Cyprus
 	1206.1.1 = {
 		birth = "1206.1.1"
 	}
@@ -1341,7 +1341,7 @@
 144162 = {
 	name = "Eschiva"
 	female = yes
-	dynasty = 7194
+	dynasty = 7194 #Saint-Omer
 	religion = "catholic"
 	culture = french
 	father = 31368
@@ -1386,11 +1386,11 @@
 }
 
 144165 = {
-	name = "Balian"
-	dynasty = 23102
+	name = "Balian" #Balian of Ibelin III, Lord of Beiruit
+	dynasty = 23102 #Ibelin
 	religion = "catholic"
 	culture = french
-	father = 144159
+	father = 144159 #Jean of Ibelin
 	1198.1.1 = {
 		birth = "1198.1.1"
 	}
@@ -1403,19 +1403,32 @@
 }
 
 144166 = {
-	name = "Godfrey"
-	dynasty = 23102
+	name = "Godfrey" #Barisan of Ibelin (I), father of Balian (II)
+	dna = 144166_godfrey_of_ibelin
+	dynasty = 23102 #Ibelin
 	religion = "catholic"
 	culture = french
-	father = 129023
-	1118.1.1 = {
+	father = 129023 #Hugues le Puiset
+	trait = bastard_founder
+	trait = just
+	trait = humble
+	trait = brave
+	trait = logistician
+	trait = education_martial_4
+	diplomacy = 7
+	martial = 13
+	stewardship = 2
+	intrigue = 4
+	learning = 6
+	prowess = 18
+		1118.1.1 = {
 		birth = "1118.1.1"
 	}
 	1135.1.1 = {
 		add_spouse = 223581
 	}
 	1185.1.1 = {
-		death = "1150.1.1"
+		death = "1185.1.1"
 	}
 }
 
@@ -1468,11 +1481,15 @@
 
 800503 = {
 	name = "Blanche"
+	dna = 800503_mother_of_balian
 	religion = "catholic"
 	culture = french
 	female = yes
 	1120.1.3 = {
 		birth = "1120.1.3"
+		effect = {
+		add_character_flag = has_scripted_appearance
+		}
 	}
 	1150.1.1 = {
 		death = yes
@@ -1480,17 +1497,33 @@
 }
 
 144167 = {
-	name = "Baudoin"
-	dynasty = 23102
+	name = "Baudouin"
+	dna = 144167_baudouin_of_ibelin
+	dynasty = 23102 #d'Ibelin
 	religion = "catholic"
 	culture = french
-	father = 144166
-	mother = 223581
+	father = 144166 #Godfrey of Ibelin
+	mother = 223581 #Helvis of Ramla
 	1138.1.1 = {
 		birth = "1138.1.1"
+		effect = {
+		add_character_flag = has_scripted_appearance
+		}
 	}
-	1186.1.1 = {
-		death = "1186.1.1"
+	1157.1.1 = {
+		add_spouse = KOH0001 #Richilde de Bethsan
+	}
+	1174.1.1 = {
+		remove_spouse = KOH0001 #Richilde de Bethsan
+	}
+	1175.1.1 = {
+		add_spouse = KOH0002 #Isabelle Gothman
+	}
+	1180.4.1 = {
+		add_spouse = KOH0003 #Marie of Tripoli, daughter of Constable Renier
+	}
+	1184.1.1 = {
+		death = "1184.1.1"
 	}
 }
 
@@ -1499,7 +1532,7 @@
 	dynasty = 23102
 	religion = "catholic"
 	culture = french
-	father = 144159
+	father = 144159 #Jean of Ibelin
 	1195.1.1 = {
 		birth = "1195.1.1"
 	}
@@ -1509,11 +1542,11 @@
 }
 
 144169 = {
-	name = "Baudoin"
+	name = "Baudoin" #Baudoin, Seneschal of Cyprus
 	dynasty = 23102
 	religion = "catholic"
 	culture = french
-	father = 144159
+	father = 144159 #Jean of Ibelin
 	1194.1.1 = {
 		birth = "1194.1.1"
 	}
@@ -1523,11 +1556,11 @@
 }
 
 144170 = {
-	name = "Phillipe"
+	name = "Phillipe" #Phillipe, Constable of Cyprus
 	dynasty = 23102
 	religion = "catholic"
 	culture = french
-	father = 144169
+	father = 144169 #Baudoin d'Ibelin
 	1232.1.1 = {
 		birth = "1232.1.1"
 	}
@@ -1560,10 +1593,10 @@
 	dynasty = 23102
 	religion = "catholic"
 	culture = french
-	father = 223570
-	mother = 215560
-	1185.1.1 = {
-		birth = "1180.1.1"
+	father = 223570 #Balian of Ibelin
+	mother = 215560 #Maria Comnene
+	1189.1.1 = {
+		birth = "1189.1.1"
 	}
 	1227.1.1 = {
 		death = "1227.1.1"
@@ -1571,13 +1604,14 @@
 }
 
 144173 = {
-	name = "Jean"
-	dynasty = 23102
-	religion = "catholic"
+	name = "Jean" #Count of Jaffa
+	dynasty = 23102 #d'Ibelin
+	religion = "catholic" 
 	culture = french
-	father = 144172
-	1200.1.1 = {
-		birth = "1200.1.1"
+	father = 144172 #Philippe d'Ibelin
+	mother = KOH0016 #Alix Montbéliard
+	1215.1.1 = {
+		birth = "1215.1.1"
 	}
 	1266.1.1 = {
 		death = "1266.1.1"
@@ -1632,8 +1666,8 @@
 }
 
 144177 = {
-	name = "Baudoin"
-	dynasty = 23102
+	name = "Baudoin" #Crusader of Cyprus
+	dynasty = 23102 #d'Ibelin
 	religion = "catholic"
 	culture = french
 	father = 144178
@@ -1647,10 +1681,10 @@
 
 144178 = {
 	name = "Jean"
-	dynasty = 23102
+	dynasty = 23102 #d'Ibelin
 	religion = "catholic"
 	culture = french
-	father = 144169
+	father = 144169 #Baudoin d'Ibelin
 	1230.1.1 = {
 		birth = "1230.1.1"
 	}
@@ -1662,13 +1696,13 @@
 144179 = {
 	name = "Helvis"
 	female = yes
-	dynasty = 23102
+	dynasty = 23102 d'Ibelin
 	religion = "catholic"
 	culture = french
-	father = 223570
-	mother = 215560
-	1185.1.1 = {
-		birth = "1181.1.1"
+	father = 223570 #Balian of Ibelin
+	mother = 215560 #Maria Comnene
+	1186.1.1 = {
+		birth = "1186.1.1"
 	}
 	1216.1.1 = {
 		death = "1216.1.1"
@@ -1677,11 +1711,11 @@
 
 144180 = {
 	name = "Philippe"
-	dynasty = 4003
+	dynasty = 4003 #de Montfort
 	religion = "catholic"
 	culture = french
-	father = 144157
-	mother = 144179
+	father = 144157 #Guy de Montfort
+	mother = 144179 #Helvis d'Ibelin
 	1207.1.1 = {
 		birth = "1207.1.1"
 	}
@@ -1698,7 +1732,7 @@
 
 144181 = {
 	name = "Philippe"
-	dynasty = 4003
+	dynasty = 4003 #de Montfort
 	religion = "catholic"
 	culture = french
 	father = 144180
@@ -1747,7 +1781,7 @@
 	dynasty = 23102 #d'Ibelin
 	religion = "catholic"
 	culture = french
-	father = 144165
+	father = 144165 #Balian III
 	mother = 144164
 	1230.1.1 = {
 		birth = "1230.1.1"
@@ -1789,10 +1823,10 @@
 
 144187 = {
 	name = "Hugues"
-	dynasty = 23102
+	dynasty = 23102 #d'Ibelin
 	religion = "catholic"
 	culture = french
-	father = 144166
+	father = 144166 #Godfrey d'Ibelin
 	mother = 223581
 	1136.1.1 = {
 		birth = "1136.1.1"
@@ -1804,10 +1838,10 @@
 
 144188 = {
 	name = "Guy"
-	dynasty = 23102
+	dynasty = 23102 #d'Ibelin
 	religion = "catholic"
 	culture = french
-	father = 144173
+	father = 144173 #Jean, Count of Jaffa
 	1240.1.1 = {
 		birth = "1240.1.1"
 	}
@@ -1824,7 +1858,7 @@
 	dynasty = 23102
 	religion = "catholic"
 	culture = french
-	father = 144173
+	father = 144173 #Jean, Count of Jaffa
 	1238.1.1 = {
 		birth = "1238.1.1"
 	}
@@ -7706,7 +7740,8 @@
 }
 
 223520 = {
-	name = "Amaury"
+	name = "Amaury" #King of Jerusalem
+	dna = 223520_amaury_king
 	dynasty = 723
 	martial = 5
 	diplomacy = 4
@@ -7744,12 +7779,15 @@
 	dynasty = 23100
 	martial = 7
 	diplomacy = 6
-	intrigue = 7
+	intrigue = 15
 	stewardship = 8
 	religion = "catholic"
 	culture = french
 	trait = lustful
-	trait = just
+	trait = gregarious
+	trait = vengeful
+	trait =  intellect_good_1
+	trait = beauty_good_2
 	trait = education_intrigue_2
 	father = 231013
 	mother = 231014
@@ -7761,6 +7799,9 @@
 	}
 	#1148 married Renaud of Marash
 	#1158 married Amaury d'Anjou, king of Jerusalem
+	1184.1.2 = {
+		set_relation_lover = character:223505 #Amaury de Lusignan
+	}
 	1184.9.1 = {
 		death = "1184.9.1"
 	}
@@ -7778,6 +7819,19 @@
 	culture = french
 	trait = leper_king
 	trait = education_diplomacy_3
+	trait = calm
+	trait = honest
+	trait = patient
+	trait = infertile
+	trait = beauty_good_2
+	trait = intellect_good_3
+	trait = desert_warrior
+	diplomacy = 17
+	martial = 13
+	stewardship = 9
+	intrigue = 9
+	learning = 15
+	prowess = 1
 	father = 223520
 	mother = 223521
 	1161.1.2 = {
@@ -7866,7 +7920,8 @@
 
 223541 = {
 	name = "Baudouin"
-	dynasty = 206
+	dna = 223541_baudouin_the_younger
+	dynasty = 723 #matrilinial marriage with father in dynasty 206
 	martial = 6
 	diplomacy = 7
 	intrigue = 4
@@ -7874,12 +7929,16 @@
 	religion = "catholic"
 	culture = french
 	trait = generous
-	trait = ill
+	trait = beauty_good_3
+	trait = physique_bad_2
 	trait = education_intrigue_1
 	father = 223540
 	mother = 223522
 	1177.1.1 = {
 		birth = "1177.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1186.8.2 = {
 		death = "1186.8.2"
@@ -7939,7 +7998,7 @@
 }
 
 223581 = {
-	name = "Helvis"
+	name = "Helvis" #of Ramla
 	female = yes
 	dynasty = 164
 	martial = 5
@@ -7952,6 +8011,7 @@
 	trait = calm
 	trait = education_learning_3
 	mother = 232699
+	father = KOH0010
 	1118.1.2 = {
 		birth = "1118.1.2"
 	}
@@ -9239,33 +9299,41 @@
 	1090.1.2 = {
 		birth = "1090.1.2"
 	}
-	1110.1.2 = {
+	1120.1.2 = {
 		add_spouse = 232699
 	}
-	1146.1.1 = {
-		trait = faith_warrior
-	}
-	1150.1.2 = {
-		death = "1150.1.2"
+	1126.1.2 = {
+		death = "1126.1.2"
 	}
 }
 
 232699 = {
 	name = "Stephanie"
 	female = yes
-	dynasty = 555
+	dynasty = 724 #Vlaanderen, not "Bluome" 555
+	father = 10074
+	mother = 94017
 	martial = 7
 	diplomacy = 6
 	intrigue = 5
 	stewardship = 4
 	religion = "catholic"
-	culture = french
+	culture = dutch
 	trait = education_intrigue_2
 	1080.1.2 = {
 		birth = "1080.1.2"
 	}
-	1150.1.2 = {
-		death = "1150.1.2"
+	1115.1.1 = {
+		add_spouse = KOH0010 #Baudouin de Ramla
+	}
+	1119.1.1 = {
+		remove_spouse = KOH0010
+	}
+	1120.1.2 = {
+		add_spouse = 232698
+	}
+	1156.1.2 = {
+		death = "1156.1.2"
 	}
 }
 
@@ -9283,6 +9351,7 @@
 	trait = honest
 	trait = education_learning_2
 	father = 232698
+	mother = 232699
 	1120.1.2 = {
 		birth = "1120.1.2"
 	}
@@ -9326,6 +9395,7 @@
 	culture = french
 	trait = education_martial_2
 	father = 232698
+	mother = 232699
 	1122.1.2 = {
 		birth = "1122.1.2"
 	}
@@ -10453,7 +10523,7 @@
 }
 
 31032 = {
-	name = "Plaisance"
+	name = "Plaisance" #of Antioch
 	female = yes
 	dynasty = 413
 	religion = "catholic"
@@ -10464,7 +10534,7 @@
 		birth = "1236.1.1"
 	}
 	#1250 married Henri de Lusignan
-	#1254 married Balian d'Ibelin
+	#1254 married Balian d'Ibelin III
 	1261.9.27 = {
 		death = "1261.9.27"
 	}
@@ -29881,7 +29951,7 @@
 	1152.1.1 = {
 		add_spouse = 31383
 	}
-	1159.1.1 = {
+	1162.1.1 = {
 		add_spouse = 31384
 	}
 	1171.1.1 = {
@@ -30058,13 +30128,13 @@
 	culture = french
 	father = 31355
 	mother = 31384
-	1160.1.1 = {
+	1163.1.1 = {
 		birth = "1160.1.1"
 	}
-	#1196.1.1 = {
-	#	add_spouse = 223574
-	#}
-	1205.1.1 = {
+	1196.1.1 = {
+		add_spouse = KOH0017 #Marguerite d'Ibelin
+	}
+		1205.1.1 = {
 		death = "1205.1.1"
 	}
 }
@@ -30076,8 +30146,11 @@
 	culture = french
 	father = 31355
 	mother = 31384
-	1161.1.1 = {
+	1164.1.1 = {
 		birth = "1161.1.1"
+	}
+	1184.2.1 = {
+		add_spouse = KOH0003
 	}
 	1201.1.1 = {
 		death = "1201.1.1"
@@ -30090,7 +30163,7 @@
 	culture = french
 	father = 31355
 	mother = 31384
-	1161.1.1 = {
+	1164.1.1 = {
 		birth = "1161.1.1"
 	}
 	1211.1.1 = {
@@ -30104,7 +30177,7 @@
 	culture = french
 	father = 31355
 	mother = 31384
-	1165.1.1 = {
+	1168.1.1 = {
 		birth = "1165.1.1"
 	}
 	1215.1.1 = {
@@ -30119,7 +30192,7 @@
 	culture = french
 	father = 31355
 	mother = 31384
-	1163.1.1 = {
+	1166.1.1 = {
 		birth = "1163.1.1"
 	}
 	1213.1.1 = {
@@ -30247,7 +30320,8 @@
 	religion = "catholic"
 	culture = french
 	father = 31392
-	1142.1.1 = {
+	mother = KOH0014
+	1149.1.1 = {
 		birth = "1142.1.1"
 	}
 	1187.1.1 = {
@@ -31490,6 +31564,18 @@
 	culture = french
 	father = 205661 #Hugues VIII de Lusignan
 	mother = 205662 #Burgondie de Rançon
+	trait = stubborn
+	trait = ambitious
+	trait = zealous
+	trait = education_martial_4
+	trait = aggressive_attacker
+	trait = strong
+	diplomacy = 4
+	martial = 18
+	stewardship = 7
+	intrigue = 9
+	learning = 8
+	prowess = 16
 	1159.1.1 = {
 		birth = "1159.1.1"
 		effect = {
@@ -31520,6 +31606,18 @@
 	culture = french
 	father = 223520
 	mother = 223521
+	trait = fickle
+	trait = content
+	trait = compassionate
+	trait = education_intrigue_2
+	trait = reclusive
+	trait = beauty_good_3
+	diplomacy = 9
+	martial = 5
+	stewardship = 9
+	intrigue = 17
+	learning = 15
+	prowess = 4
 	1160.1.1 = {
 		birth = "1160.1.1"
 		effect = {
@@ -31537,15 +31635,20 @@
 223502 = {
 	#secondary character could be deleted
 	name = "Alice"
+	dna = 223502_alice_de_lusignan
 	female = yes
 	dynasty = 93
 	religion = "catholic"
 	culture = french
 	father = 223500
 	mother = 223522
-	trait = ill
+	trait = beauty_good_2
+	trait = physique_bad_1
 	1181.1.1 = {
 		birth = "1181.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1190.08.1 = {
 		death = "1190.08.1"
@@ -31555,38 +31658,44 @@
 223503 = {
 	#secondary character could be deleted
 	name = "Marie"
+	dna = 223503_marie_de_lusignan
 	female = yes
 	dynasty = 93
 	religion = "catholic"
 	culture = french
 	father = 223500
 	mother = 223522
-	trait = ill
+	trait = beauty_good_2
+	trait = physique_bad_1
 	1183.1.1 = {
 		birth = "1183.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1190.08.1 = {
 		death = "1190.08.1"
 	}
 }
 
-223504 = {
-	#secondary character could be deleted
-	name = "Bourguigne"
-	female = yes
-	dynasty = 93
-	religion = "catholic"
-	culture = french
-	trait = ill
-	father = 223500
-	mother = 223522
-	1185.1.1 = {
-		birth = "1185.1.1"
-	}
-	1190.09.1 = {
-		death = "1190.09.1"
-	}
-}
+#223504 = {
+#	#secondary character could be deleted
+#	name = "Bourguigne"
+#	female = yes
+#	dynasty = 93
+#	religion = "catholic"
+#	culture = french
+#	trait = beauty_good_2
+#	trait = physique_bad_1
+#	father = 223500
+#	mother = 223522
+#	1185.1.1 = {
+#		birth = "1185.1.1"
+#	}
+#	1190.09.1 = {
+#		death = "1190.09.1"
+#	}
+#}
 
 
 223505 = {
@@ -31605,6 +31714,9 @@
 	}
 	1174.10.28 = {
 		add_spouse = 223582 #Echive d'Ibelin
+	}
+	1184.1.2 = {
+		set_relation_lover = character:223521 #Agnes de Courtenay
 	}
 	1197.9.10 = {
 		add_pressed_claim = c_jerusalem
@@ -31625,7 +31737,8 @@
 	dynasty = 23102 #d'Ibelin
 	religion = "catholic"
 	culture = french
-	father = 144167
+	father = 144167 #Baudouin d'Ibelin
+	mother = KOH0001 #Richilde de Bethsan
 	1160.1.1 = {
 		birth = "1160.1.1"
 	}
@@ -31726,7 +31839,7 @@
 	culture = french
 	trait = education_diplomacy_2
 	father = 223520
-	mother = 215560
+	mother = 215560 #Maria Comnene
 	1172.1.2 = {
 		birth = "1172.1.2"
 		effect = {
@@ -33025,14 +33138,18 @@
 	name = "Balian"
 	dna = 223570_balian_of_ibelin
 	dynasty = 23102
-	martial = 8
-	diplomacy = 6
+	martial = 9
+	diplomacy = 10
 	intrigue = 2
-	stewardship = 5
+	stewardship = 14
+	prowess = 16
 	religion = "catholic"
 	culture = french
 	trait = balian_of_ibelin
 	trait = diligent
+	trait = brave
+	trait = just
+	trait = military_engineer
 	trait = education_martial_4
 	father = 144166
 	mother = 800503
@@ -33054,14 +33171,21 @@
 }
 
 800504 = {
-	name = "Michal" # BALIAN's BROTHER
+	name = "Michel" # BALIAN's BROTHER
+	dna = 800504_michel_priest
 	religion = "catholic"
 	culture = french
 	father = 800505
 	mother = 800503
+	trait = deceitful
+	trait = greedy
+	trait = craven
 	trait = education_learning_2
 	1144.1.1 = {
 		birth = "1144.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 }
 
@@ -34924,8 +35048,11 @@
 	religion = "catholic"
 	culture = french
 	father = 32189
-	1140.1.1 = {
-		birth = "1140.1.1"
+	1129.1.1 = {
+		birth = "1129.1.1"
+	}
+	1142.1.1 = {
+		add_spouse = 93510
 	}
 	1174.1.1 = {
 		death = "1174.1.1"
@@ -38333,10 +38460,11 @@
 	}
 }
 147009 = {
-	name = "Garnier"
-	dynasty = 1023009
+	name = "Garnier" #de Naplouse, Grand Master of the Knights Hospitaller
+	dynasty = 23106 #de Milly
 	religion = "catholic"
 	culture = french
+	father = 232700
 	1147.1.1 = {
 		birth = "1147.1.1"
 	}
@@ -39991,6 +40119,9 @@
 	1127.1.1 = {
 		birth = "1127.1.1"
 	}
+	1142.1.1 = {
+		add_spouse = 32193 #Marguerite de Brisebarre
+	}
 	1174.1.1 = {
 		death = "1174.1.1"
 	}
@@ -40001,7 +40132,8 @@
 	dynasty = 102030
 	religion = "catholic"
 	culture = french
-	father = 93510	
+	father = 93510 #Gremont de Bethune
+	mother = 32193 #Marguerite de Brisebarre
 	1145.1.1 = {
 		birth = "1145.1.1"
 	}
@@ -47172,3 +47304,300 @@ arpitan0001 = {
 # 	}
 # 	trait = education_martial_4
 # }
+
+KOH0001 = {
+	name = "Richilde"
+	dynasty = 102030 #Bethune
+	female = yes
+	religion = catholic
+	culture = french
+	father = 93510 #Gremont de Bethune
+	mother = 32193 #Marguerite de Brisebarre
+	trait = education_intrigue_1
+	1143.1.1 = {
+		birth = "1143.1.1"
+	}
+	1157.1.1 = {
+		add_spouse = 144167 #Baudouin d'Ibelin
+	}
+	1174.1.1 = {
+		remove_spouse = 144167 #divorced and annulled marriage to Baudouin d'Ibelin
+	}
+	1183.1.1 = {
+		death = "1183.1.1"
+	}
+}
+
+KOH0002 = {
+	name = "Isabelle" #Gothman
+	female = yes
+	religion = catholic
+	culture = french
+	1159.1.1 = {
+		birth = "1159.1.1"
+	}
+	1175.1.1 = {
+		add_spouse = 144167 #Baudouin d'Ibelin
+	}
+	1177.1.1 = {
+		death = "1177.1.1"
+	}
+}
+
+KOH0003 = {
+	name = "Marie" #daughter of Constable Renier of Tripoli
+	female = yes
+	religion = catholic
+	culture = french
+	1150.1.1 = {
+		birth = "1150.1.1"
+	}
+	1180.4.1 = {
+		add_spouse = 144167 #Baudouin d'Ibelin
+	}
+	1184.2.1 = {
+		add_spouse = 31400
+	}
+	1229.12.31 = {
+		death = "1229.1.1"
+	}
+}
+
+KOH0004 = {
+	name = "Thomas"
+	dynasty = 23102 #d'Ibelin
+	religion = catholic
+	culture = french
+	father = 144167 #Baudouin d'Ibelin
+	mother = KOH0001 #Richilde de Bethsan
+	1173.1.1 = {
+		birth = "1173.1.1"
+	}
+	1184.1.1 = {
+		death = "1184.1.1"
+	}
+}
+
+KOH0005 = {
+	name = "Stephanie"
+	dynasty = 23102 #d'Ibelin
+	female = yes
+	religion = catholic
+	culture = french
+	father = 144167 #Baudouin d'Ibelin
+	mother = KOH0001 #Richilde de Bethsan
+	1168.1.1 = {
+		birth = "1168.1.1"
+	}
+	1184.1.1 = {
+		add_spouse = KOH0006 #Amaury de Naplouse
+	}
+	1191.1.1 = {
+		death = "1191.1.1"
+	}
+}
+
+KOH0006 = {
+	name = "Amaury"
+	dynasty = 1023009 #de Naplouse
+	religion = catholic
+	culture = french
+	father = KOH0008 #Baudouin de Naplouse
+	1165.1.1 = {
+		birth = "1168.1.1"
+	}
+	1184.1.1 = {
+		add_spouse = KOH0005 #Stéphanie d'Ibelin
+	}
+	1188.1.1 = {
+		death = "1188.1.1"
+	}
+}
+
+KOH0007 = {
+	name = "Raimond"
+	dynasty = 1023009 #de Naplouse
+	religion = catholic
+	culture = french
+	father = KOH0006
+	mother = KOH0005
+	1186.1.1 = {
+		birth = "1186.1.1"
+	}
+	1191.1.1 = {
+		death = "1191.1.1"
+	}
+}
+
+KOH0008 = {
+	name = "Baudouin"
+	dynasty = 1023009 #de Naplouse
+	religion = catholic
+	culture = french
+	father = KOH0009
+	1150.1.1 = {
+		birth = "1150.1.1"
+	}
+	1182.1.1 = {
+		death = "1182.1.1"
+	}
+}
+
+KOH0009 = {
+	name = "Ulric"
+	dynasty = 1023009 #de Naplouse
+	religion = catholic
+	culture = french
+	1100.1.1 = {
+		birth = "1100.1.1"
+	}
+	1155.1.1 = {
+		death = "1155.1.1"
+	}
+}
+
+KOH0010 = {
+	name = "Baudouin"
+	dynasty = 164 #de Ramla
+	religion = catholic
+	culture = dutch
+	1082.1.1 = {
+		birth = "1082.1.1"
+	}
+	1115.1.1 = {
+		add_spouse = 232699 #Stephanie von Vlaanderen
+	}
+	1119.1.1 = {
+		remove_spouse = 232699
+	}
+	1138.1.1 = {
+		death = "1138.1.1"
+	}
+}
+
+KOH0011 = {
+	name = "Renier"
+	dynasty = 164 #de Ramla
+	religion = catholic
+	culture = french
+	father = KOH0010
+	mother = 232699
+	1116.1.1 = {
+		birth = "1116.1.1"
+	}
+	1148.1.1 = {
+		death = "1148.1.1"
+	}
+}
+
+KOH0012 = {
+	name = "Payen"
+	dynasty = 724 #Vlaanderen
+	religion = catholic
+	culture = dutch
+	father = 10074
+	mother = 94017
+	1078.1.1 = {
+		birth = "1078.1.1"
+	}
+	1119.1.1 = {
+		death = "1119.1.1"
+	}
+}
+
+KOH0013 = {
+	name = "Gui"
+	dynasty = 23106 #de Milly
+	religion = catholic
+	culture = french
+	father = 232698
+	mother = 232699
+	1121.1.1 = {
+		birth = "1121.1.1"
+	}
+	1165.1.1 = {
+		death = "1165.1.1"
+	}
+}
+
+KOH0014 = {
+	name = "Ermengarde"
+	dynasty = 23102 #d'Ibelin
+	female = yes
+	religion = catholic
+	culture = french
+	father = 144166
+	mother = 223581
+	1135.1.1 = {
+		birth = "1135.1.1"
+	}
+	1148.1.1 = {
+		add_spouse = 31392
+	}
+	1165.1.1 = {
+		death = "1165.1.1"
+	}
+}
+
+KOH0015 = {
+	name = "Stephanie"
+	dynasty = 23102 #d'Ibelin
+	female = yes
+	religion = catholic
+	culture = french
+	father = 144166
+	mother = 223581
+	1140.1.1 = {
+		birth = "1140.1.1"
+	}
+	1165.1.1 = {
+		death = "1167.1.1"
+	}
+}
+
+KOH0016 = {
+	name = "Alix"
+	dynasty = 7287 #Montbéliard
+	female = yes
+	religion = "catholic"
+	culture = french
+	father = 144160
+	mother = 223506 
+	1207.1.1 = {
+		birth = "1207.1.1"
+	}
+	1245.1.1 = {
+		death = "1245.1.1"
+	}
+}
+
+KOH0017 = {
+	name = "Marguerite"
+	dynasty = 23102 #Ibelin
+	female = yes
+	religion = "catholic"
+	culture = french
+	father = 223570 #Balian of Ibelin
+	mother = 215560 #Maria Comnene
+	1188.1.1 = {
+		birth = "1188.1.1"
+	}
+	1227.1.1 = {
+		death = "1227.1.1"
+	}
+}
+
+KOH0018 = {
+	name = "Balian" #Prince of Galilee
+	dynasty = 23102 #Ibelin
+	religion = "catholic"
+	culture = french
+	father = 144170
+	mother = 144163
+	1254.1.1 = {
+		birth = "1254.1.1"
+	}
+	1315.1.1 = {
+		death = "1315.1.1"
+	}
+}
