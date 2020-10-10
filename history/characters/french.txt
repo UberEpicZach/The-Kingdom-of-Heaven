@@ -1251,7 +1251,7 @@
 
 144157 = {
 	name = "Guy"
-	dynasty = 4003 #de Monfort
+	dynasty = 4003 #de Montfort
 	religion = "catholic"
 	culture = french
 	father = 205824
@@ -1451,14 +1451,24 @@
 }
 
 800501 = {
-	name = "Hugues"
-	dynasty = 561
+	name = "Hugues" #Hugues F
+	dna = 800501_hugh_f
+	dynasty = 561 #Puiset
 	religion = "catholic"
 	culture = french
+	trait = greedy
+	trait = impatient
+	trait = ambitious
+	martial = 11
+	prowess = 13
+	trait = beauty_good_1
 	father = 800500
 	mother = 800502
 	1145.1.3 = { 
 		birth = "1145.1.3"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1189.1.1 = {
 		death = yes
@@ -1485,14 +1495,16 @@
 	religion = "catholic"
 	culture = french
 	female = yes
-	1120.1.3 = {
-		birth = "1120.1.3"
+	1130.1.3 = {
+		birth = "1130.1.3"
 		effect = {
 		add_character_flag = has_scripted_appearance
 		}
 	}
-	1150.1.1 = {
-		death = yes
+	1158.1.1 = {
+		death = {
+			death_reason = death_childbirth
+		}
 	}
 }
 
@@ -1522,8 +1534,8 @@
 	1180.4.1 = {
 		add_spouse = KOH0003 #Marie of Tripoli, daughter of Constable Renier
 	}
-	1184.1.1 = {
-		death = "1184.1.1"
+	1183.6.1 = {
+		death = "1183.6.1"
 	}
 }
 
@@ -1696,7 +1708,7 @@
 144179 = {
 	name = "Helvis"
 	female = yes
-	dynasty = 23102 d'Ibelin
+	dynasty = 23102 #d'Ibelin
 	religion = "catholic"
 	culture = french
 	father = 223570 #Balian of Ibelin
@@ -8000,6 +8012,7 @@
 
 223581 = {
 	name = "Helvis" #of Ramla
+	dna = 223581_helvis_of_ramla
 	female = yes
 	dynasty = 164
 	martial = 5
@@ -8015,6 +8028,9 @@
 	father = KOH0010
 	1118.1.2 = {
 		birth = "1118.1.2"
+		effect = {
+			add_character_flag = has_scripted_appearance
+			}
 	}
 	1160.1.4 = {
 		death = "1160.1.4"
@@ -30150,7 +30166,7 @@
 	1164.1.1 = {
 		birth = "1161.1.1"
 	}
-	1184.2.1 = {
+	1183.12.1 = {
 		add_spouse = KOH0003
 	}
 	1201.1.1 = {
@@ -30324,6 +30340,7 @@
 	mother = KOH0014
 	1149.1.1 = {
 		birth = "1142.1.1"
+		give_nickname = nick_the_ladylord_of_tiberias
 	}
 	1187.1.1 = {
 		death = "1187.1.1"
@@ -33154,14 +33171,17 @@
 	trait = education_martial_4
 	father = 144166
 	mother = 800503
-	1146.1.1 = {
-		birth = "1146.1.1"
+	1156.1.1 = {
+		birth = "1156.1.1"
 		effect = {
 			add_character_flag = flag_balian_of_ibelin
 		}
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
+	}
+	1176.1.1 = {
+		add_spouse = KOH0019
 	}
 	1185.1.2 = {
 		add_spouse = 215560
@@ -33182,8 +33202,8 @@
 	trait = greedy
 	trait = craven
 	trait = education_learning_2
-	1144.1.1 = {
-		birth = "1144.1.1"
+	1158.1.1 = {
+		birth = "1158.1.1"
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
@@ -33194,13 +33214,13 @@
 	name = "Balian"
 	religion = "catholic"
 	culture = french
-	1119.1.1 = {
-		birth = "1119.1.1"
+	1129.1.1 = {
+		birth = "1129.1.1"
 	}
-	1135.1.1 = {
+	1155.1.1 = {
 		add_spouse = 800503
 	}
-	1146.2.2 = {
+	1175.2.2 = {
 		death = yes
 	}
 }
@@ -47350,13 +47370,14 @@ KOH0003 = {
 	female = yes
 	religion = catholic
 	culture = french
+	father = KOH0020
 	1150.1.1 = {
 		birth = "1150.1.1"
 	}
 	1180.4.1 = {
 		add_spouse = 144167 #Baudouin d'Ibelin
 	}
-	1184.2.1 = {
+	1183.12.1 = {
 		add_spouse = 31400
 	}
 	1229.12.31 = {
@@ -47534,6 +47555,7 @@ KOH0014 = {
 	}
 	1148.1.1 = {
 		add_spouse = 31392
+		give_nickname = nick_the_ladylord_of_tiberias
 	}
 	1165.1.1 = {
 		death = "1165.1.1"
@@ -47600,5 +47622,55 @@ KOH0018 = {
 	}
 	1315.1.1 = {
 		death = "1315.1.1"
+	}
+}
+
+KOH0019 = {
+ 	name = "Célia"
+ 	dna = KOH0019_wife_of_balian
+	female = yes
+ 	religion = "catholic"
+ 	culture = french
+	trait = compassionate
+	trait = trusting
+	trait = shy
+	trait = beauty_good_2
+	trait = education_stewardship_1
+ 	1160.1.1 = {
+ 		birth = yes
+ 		effect = {
+ 			add_character_flag = has_scripted_appearance
+ 		}
+ 	}
+	1176.1.1 = {
+		add_spouse = 223570
+	}
+	1183.9.1. = {
+		add_trait = depressed_1
+	}
+ 	1183.11.1 = {
+		death = {
+			death_reason = death_suicide
+		}
+	}
+}
+
+KOH0020 = {
+	name = "Renier" #Constable of Tripoli
+	religion = "catholic"
+	culture = french
+	trait = education_martial_3 
+	martial = 18
+	prowess = 14
+	1115.1.1 = {
+		birth = "1115.1.1"
+		}
+	1140.1.1 = {
+		employer = 223650 #Raimond III of Tripoli
+		}
+	1155.1.1 = {
+		death = {
+		death_reason = death_battle
+		}
 	}
 }
