@@ -1424,7 +1424,10 @@
 		1118.1.1 = {
 		birth = "1118.1.1"
 	}
-	1135.1.1 = {
+	1134.1.1 = {
+		add_pressed_claim = c_jaffa
+	}
+		1135.1.1 = {
 		add_spouse = 223581
 	}
 	1185.1.1 = {
@@ -35611,6 +35614,9 @@
 	1122.1.1 = {
 		birth = "1122.1.1"
 	}
+	1139.1.1 = {
+		add_spouse = KOH0002
+	}
 	1166.1.1 = {
 		death = "1166.1.1"
 	}
@@ -35622,6 +35628,7 @@
 	religion = "catholic"
 	culture = french
 	father = 32302
+	mother = KOH0002
 	1140.1.1 = {
 		birth = "1140.1.1"
 	}
@@ -35636,6 +35643,7 @@
 	religion = "catholic"
 	culture = french
 	father = 32302
+	mother = KOH0002
 	1145.1.1 = {
 		birth = "1145.1.1"
 	}
@@ -35651,8 +35659,15 @@
 	religion = "catholic"
 	culture = french
 	father = 32302
+	mother = KOH0002
 	1146.1.1 = {
 		birth = "1146.1.1"
+	}
+	1180.1.1 = {
+		add_spouse = 32191 #Guy de Brisbarre
+	}
+	1183.1.1 = {
+		add_spouse = KOH0021 #Aymar de Lairon
 	}
 	1213.10.18 = {
 		death = "1213.10.18"
@@ -47354,8 +47369,8 @@ KOH0002 = {
 	female = yes
 	religion = catholic
 	culture = french
-	1159.1.1 = {
-		birth = "1159.1.1"
+	1125.1.1 = {
+		birth = "1125.1.1"
 	}
 	1175.1.1 = {
 		add_spouse = 144167 #Baudouin d'Ibelin
@@ -47673,4 +47688,38 @@ KOH0020 = {
 		death_reason = death_battle
 		}
 	}
+}
+
+KOH0021 = {
+	name = "Aymar" #de Lairon, Marshall of Jerusalem
+	religion = "catholic"
+	culture = french
+	trait = education_martial_3 
+	martial = 18
+	prowess = 14
+	1115.1.1 = {
+		birth = "1115.1.1"
+		}
+	1220.1.1 = {
+		death = "1220.1.1"
+	}
+}
+
+KOH0022 = {
+	name = "Gauthier"
+	dynasty = 7266 #de Brisebarre
+	religion = "catholic"
+	culture = french
+	father = 32191
+	mother = 32305
+	1181.1.1 = {
+		birth = "1161.1.1"
+		}
+	1205.2.2 = {
+		add_spouse = KOH0017
+	}
+	1229.6.24 = {
+		death = {
+		death_reason = death_battle
+		}
 }
