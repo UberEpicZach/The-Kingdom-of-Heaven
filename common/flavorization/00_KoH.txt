@@ -25,3 +25,31 @@ barony_ibelin = {
     priority = 18
     top_liege = no
 }
+
+barony_lepuiset = {
+    type = title
+    tier = county
+    titles = { c_lepuiset }
+    priority = 18
+    top_liege = no 
+}
+
+baron_female_lepuiset = {
+    type = character
+    gender = female
+    special = holder
+    tier = county
+    priority = 18
+    titles = { c_lepuiset }
+    top_liege = no
+}
+
+baron_male_lepuiset = {
+    type = character
+    gender = male
+    special = holder
+    tier = county
+    priority = 18
+    titles = { c_lepuiset }
+    top_liege = no
+}
