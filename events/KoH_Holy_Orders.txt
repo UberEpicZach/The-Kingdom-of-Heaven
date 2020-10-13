@@ -6,6 +6,7 @@ KoH_holy_orders.1 = {
 	desc = KoH_holy_orders.1.d
 	is_triggered_only = yes
 	theme = war
+	hidden = yes
 	
 
 	left_portrait = {
@@ -73,7 +74,7 @@ KoH_holy_orders.2 = {
 	desc = KoH_holy_orders.2.d
 	is_triggered_only = yes
 	theme = war
-	
+	hidden = yes
 
 	left_portrait = {
 		character = root
@@ -88,21 +89,16 @@ KoH_holy_orders.2 = {
                 }
             }
             save_scope_as = leader
-        }
-	}
-	
-	option = {
-	name = KoH_holy_orders.2
-	
-	hidden_effect = {
+		}
+		hidden_effect = {
 		if = {
-			limit = { NOT = { title:b_baalbek.holder = scope:leader } }
+			limit = { NOT = { title:b_bethgibelin.holder = scope:leader } }
 			create_title_and_vassal_change = {
 				type = leased_out
 				save_scope_as = change
 				add_claim_on_loss = no
 			}
-			title:b_baalbek = {
+			title:b_bethgibelin = {
 				change_title_holder_include_vassals = {
 					holder = scope:leader
 					change = scope:change
@@ -114,8 +110,8 @@ KoH_holy_orders.2 = {
 
 		create_holy_order = {
 			leader = scope:leader
-			capital = title:b_baalbek
-			save_scope_as = templar_holy_order
+			capital = title:b_bethgibelin
+			save_scope_as = hospitaler_holy_order
 		}
 	
 		hidden_effect = {
@@ -129,15 +125,15 @@ KoH_holy_orders.2 = {
 			}
 	}
 	templar_holy_order = {
-		copy_title_history = title:d_knights_templars
+		copy_title_history = title:d_knights_hospitaler
 			}  
 	}
 }
 
-KOH_Crusades.1 = { 
+KoH_holy_orders.3 = { 
 	type = character_event
-	title = KOH_Crusades.1.t
-	desc = KOH_Crusades.1.d
+	title = KoH_holy_orders.3.t
+	desc = KoH_holy_orders.3.d
 	is_triggered_only = yes
 	theme = war
 	hidden = yes
@@ -212,5 +208,29 @@ KOH_Crusades.1 = {
 	}
 }	
 
-  
+KoH_holy_orders.4 = {
+	type = character_event
+	title = KoH_holy_orders.4.t
+	desc = KoH_holy_orders.4.d
+	is_triggered_only = yes
+	theme = war
+	hidden = yes
+
+	immediate = {
+		every_living_character = {
+            limit = {
+                any_held_title = {
+                    this = title:b_toro
+                }
+            }
+            save_scope_as = leader
+        }
+		
+		title:b_beaufort = {
+			lease_out_to = scope:leader
+		}
+	}
+}
+
+
 

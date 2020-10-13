@@ -1,0 +1,29 @@
+# Philips War for Flander Dowry
+war = {
+	name = "war_1184_french_dowry"	# the name can be left out, will be generated then
+	start_date = 1181.1.1
+	end_date = 1185.1.1
+	targeted_titles={
+		c_vermandois
+	}
+	casus_belli = ducal_conquest_cb
+	attackers = { 205506 }
+	defenders = { 212591 206850 }
+	claimant = 205506
+
+	205506 = {
+		1184.1.1 = {
+			location = 2400
+		}
+	}
+	212591 = {
+		1184.1.1 = {
+			location = 2186
+		}
+	}
+	206850 = {
+		1184.1.1 = {
+			location = 2118
+		}
+	}	
+}

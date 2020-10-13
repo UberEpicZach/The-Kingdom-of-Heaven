@@ -6,5 +6,39 @@ on_game_start = {
 				value = 10
 			}
 		}
+		character:27758 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+			trigger_event = {
+				id = KoH_holy_orders.1
+				days = 1
+				}
+			}
+		}
+		character:27758 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.2
+				}
+			}
+		}
+		character:22275 = { 
+			if = {
+				limit = {
+					is_alive = yes
+			trigger_event = {
+				id = KoH_holy_orders.3
+				days = 1
+					}
+				}
+			}
+		}
 	}
 }
