@@ -12,9 +12,9 @@ on_game_start = {
 					is_alive = yes
 					is_landed = yes
 				}
-			trigger_event = {
-				id = KoH_holy_orders.1
-				days = 1
+				trigger_event = {
+					id = KoH_holy_orders.1
+					days = 1
 				}
 			}
 		}
@@ -33,10 +33,10 @@ on_game_start = {
 			if = {
 				limit = {
 					is_alive = yes
-			trigger_event = {
-				id = KoH_holy_orders.3
-				days = 1
-					}
+				}
+				trigger_event = {
+					id = KoH_holy_orders.3
+					days = 1
 				}
 			}
 		}
