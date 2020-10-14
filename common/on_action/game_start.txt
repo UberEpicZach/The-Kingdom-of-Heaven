@@ -5,7 +5,41 @@ on_game_start = {
 		every_living_character = {
 			set_variable = {
 				name = Chivalry
-				value = 0
+				value = 10
+			}
+		}
+		character:223523 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.1
+					days = 1
+				}
+			}
+		}
+		character:223523 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.2
+				}
+			}
+		}
+		character:71811 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.3
+					days = 1
+				}
 			}
 		}
 	}
