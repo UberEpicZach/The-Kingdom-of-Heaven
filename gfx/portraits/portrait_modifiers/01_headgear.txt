@@ -2543,6 +2543,52 @@ headgear = {
 				this = character:204510
 			}
 		}
+	}
+	altair = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = western_stealth
+				#value = 100
+				range = { 1 1 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 30
+				portrait_altair_trigger = yes
+				is_female = no
+			}
+			modifier = {
+				add = 130
+				this = character:KOH0030
+			}
+		}
+	}
+	sinan = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = western_stealth
+				#value = 100
+				range = { 1 1 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 30
+				portrait_sinan_trigger = yes
+				is_female = no
+			}
+			modifier = {
+				add = 130
+				this = character:227012
+			}
+		}
 	}	
 
 	# religious_muslim_head_clothes = {

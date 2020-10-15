@@ -7973,18 +7973,21 @@
 	culture = french
 	trait = chaste
 	trait = humble
-	trait = education_martial_2
+	trait = forgiving
+	disallow_random_traits = yes
+	learning = 16
+	trait = education_learning_2
 	father = 223561
 	mother = 223592
 	1171.1.1 = {
 		birth = "1171.1.1"
 	}
-	1187.1.1 = {
-		add_spouse = 223524
-	}
-	1190.1.1 = {
-		remove_spouse = 223524
-	}
+	#1187.1.1 = {
+	#	add_spouse = 223524
+	#}
+	#1190.1.1 = {
+	#	remove_spouse = 223524
+	#}
 	1192.1.1 = {
 		death = "1192.1.1"
 	}
@@ -7999,9 +8002,6 @@
 	stewardship = 5
 	religion = "catholic"
 	culture = french
-	trait = chaste
-	trait = humble
-	trait = education_martial_2
 	father = 93008
 	1136.1.1 = {
 		birth = "1136.1.1"
@@ -8211,6 +8211,11 @@
 	mother = 223751
 	1171.1.1 = {
 		birth = "1171.1.1"
+	}
+	1180.1.2 = {
+		effect = {
+			create_betrothal = character:223005
+		}
 	}
 	1196.1.1 = {
 		add_spouse = 223005 #Alix Rubenid
@@ -8433,8 +8438,8 @@
 	intrigue = 5
 	stewardship = 4
 	religion = "catholic"
-	culture = french
-	trait = clubfooted
+	culture = levantine
+	trait = witch
 	trait = education_learning_2
 	1160.1.1 = {
 		birth = "1160.1.1"
@@ -8459,6 +8464,11 @@
 	mother = 223751
 	1172.1.1 = {
 		birth = "1172.1.1"
+	}
+	1082.1.2 = {
+		effect = {
+			create_betrothal = character:31022
+		}
 	}
 	1194.1.1 = {
 		add_spouse = 31022 #Plaisance Embracio
@@ -8507,8 +8517,11 @@
 	1183.1.1 = {
 		birth = "1183.1.1"
 	}
-	#married Guy I Embracio
-	
+	1083.1.2 = {
+		effect = {
+			create_betrothal = character:32806
+		}
+	}
 	1233.1.1 = {
 		death = "1233.1.1"
 	}
@@ -31860,12 +31873,28 @@
 	religion = "catholic"
 	culture = french
 	trait = education_diplomacy_2
+	trait = beauty_good_2
 	father = 223520
 	mother = 215560 #Maria Comnene
 	1172.1.2 = {
 		birth = "1172.1.2"
 		effect = {
 			add_character_flag = has_scripted_appearance
+		}
+	}
+	1172.1.3 = {
+		effect = {
+			create_betrothal = character:223560
+		}
+	}
+	1178.1.1 = {
+		effect = {
+			break_betrothal = character:223560
+		}
+	}
+	1183.1.1 = {
+		effect = {
+			create_betrothal = character:213521
 		}
 	}
 	1205.4.5 = {
@@ -35714,6 +35743,9 @@
 	1135.1.1 = {
 		birth = "1135.1.1"
 	}
+	1174.1.1 = {
+		add_spouse = KOH0015
+	}
 	1200.11.1 = {
 		death = "1200.11.1"
 	}
@@ -35725,6 +35757,7 @@
 	religion = "catholic"
 	culture = french
 	father = 32308
+	mother = KOH0015
 	1175.1.1 = {
 		birth = "1175.1.1"
 	}
@@ -37115,6 +37148,11 @@
 	mother = 232704
 	1176.1.1 = {
 		birth = "1176.1.1"
+	}
+	1177.1.2 = {
+		effect = {
+			create_betrothal = character:KOH0029
+		}
 	}
 	1245.1.1 = {
 		death = "1245.1.1"
@@ -47590,8 +47628,8 @@ KOH0015 = {
 	1140.1.1 = {
 		birth = "1140.1.1"
 	}
-	1165.1.1 = {
-		death = "1167.1.1"
+	1180.1.1 = {
+		death = "1180.1.1"
 	}
 }
 
@@ -47621,6 +47659,11 @@ KOH0017 = {
 	mother = 215560 #Maria Comnene
 	1188.1.1 = {
 		birth = "1188.1.1"
+	}
+	1188.1.2 = {
+		effect = {
+			create_betrothal = character:31366
+		}
 	}
 	1227.1.1 = {
 		death = "1227.1.1"
@@ -47724,5 +47767,65 @@ KOH0022 = {
 		death = {
 		death_reason = death_battle
 		}
+	}
 }
-#KOH0023 #KOH0024 #KOH0025 in Levantine
+
+KOH0026 = {
+	name = "Agnes"
+	dynasty = 7265
+	female = yes
+	religion = "catholic"
+	culture = french
+	father = 32308
+	mother = KOH0015
+	1176.1.1 = {
+		birth = "1176.1.1"
+	}
+	1177.1.1 = {
+		effect = {
+			create_betrothal = character:31368
+		}
+	}
+	1240.1.1 = {
+		death = "1220.1.1"
+	}
+}
+
+KOH0027 = {
+	name = "Femie"
+	dynasty = 7265
+	female = yes
+	religion = "catholic"
+	culture = french
+	father = 32308
+	mother = KOH0015
+	1177.1.1 = {
+		birth = "1177.1.1"
+	}
+	1178.1.1 = {
+		effect = {
+			create_betrothal = character:31367
+		}
+	}
+	1240.1.1 = {
+		death = "1225.1.1"
+	}
+}
+
+KOH0032 = {
+	name = "Gautier"
+	dynasty = 102030 #Bethune
+	religion = catholic
+	culture = french
+	father = 93510 #Gremont de Bethune
+	mother = 32193 #Marguerite de Brisebarre
+	1146.1.1 = {
+		birth = "1143.1.1"
+	}
+	1182.1.1 = {
+		add_spouse = 223752 #Theodora Komnenos
+	}
+	1220.1.1 = {
+		death = "1220.1.1"
+	}
+}
