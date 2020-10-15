@@ -787,6 +787,16 @@
 		give_nickname = nick_the_lionheart
 		trait = faith_warrior
 	}
+	1166.1.1 = {
+		effect = {
+			create_betrothal = character:205518
+		}
+	}
+	1190.1.1 = {
+		effect = {
+			break_betrothal = character:205518
+		}
+	}
 	1191.5.1 = {
 		add_spouse = 206501 #Berengaria de Navarra
 	}	
@@ -12980,6 +12990,26 @@
 		add_spouse = 161670
 	}
 	1376.1.24 = {
+		death = yes
+	}
+}
+
+KOH0031 = {
+	name = "Maria"
+	dna = KOH0031_maria_thorpe
+	female = yes
+	dynasty = KOHD0003
+	religion = "catholic"
+	culture = "english"
+	trait = brave
+	trait = education_intrigue_3
+	1161.1.1 = {
+		birth = yes
+		effect = {
+ 			add_character_flag = has_scripted_appearance
+ 		}
+	}
+	1228.1.24 = {
 		death = yes
 	}
 }

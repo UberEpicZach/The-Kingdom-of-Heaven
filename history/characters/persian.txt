@@ -374,20 +374,38 @@
 	}
 }
 227012 = {
-	name = "Sinan"
+	name = "Rashid ad-Din Sinan"
+	dna = 227012_sinan_al_mualim
 	dynasty = 100765
 	martial = 5
 	diplomacy = 4
-	intrigue = 6
+	intrigue = 18
 	stewardship = 8
 	religion = "ismaili"
 	culture = "persian"
 	trait = diligent
 	trait = zealous
-	trait = education_martial_3
+	trait = education_intrigue_4
 	trait = order_member
+	
 	1129.1.1 = {
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
+	}
+	1160.1.1 = {
+		give_nickname = nick_al_mualim
+	}
+	1175.1.1 = {
+		effect = {
+			set_relation_adoptee = character:KOH0030
+		}
+	}
+	1170.1.1 = {
+		effect = {
+			set_relation_rival = character:226000
+		}
 	}
 	1192.1.1 = {
 		death = "1192.1.1"
@@ -5231,5 +5249,34 @@
 	}
 	956.1.1 = {
 		death = yes
+	}
+}
+
+KOH0030 = {
+	name = "Altaïr"
+	dna = koh0030_altair
+	dynasty = KOHD0002
+	intrigue = 17
+	learning = 18
+	prowess = 17
+	religion = "ismaili"
+	culture = "persian"
+	trait = diligent
+	trait = patient
+	trait = calm
+	trait = education_intrigue_4
+	trait = athletic
+	trait = blademaster_3
+	1165.1.1 = {
+		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
+	}
+	1183.1.1 = {
+		add_spouse = KOH0031
+	}
+	1257.1.1 = {
+		death = "1257.1.1"
 	}
 }
