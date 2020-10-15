@@ -1,7 +1,7 @@
-version="1.0.3"
-tags={
+version = "1.0.3"
+tags = {
 	"Historical"
 	"Bookmarks"
 }
-name="KingdomOfHeaven"
-supported_version="1.1.2"
+name = "KingdomOfHeaven"
+supported_version = "1.1.3"
