@@ -1,7 +1,7 @@
 #######################################
 ######## Adopt child ##################
 # the maximum adoptee is 2
-# adoption cost 500 prestige
+# adoption cost 50 prestige
 # one adoptee could only have one adoptor
 
 adopt_child = {
@@ -24,6 +24,7 @@ adopt_child = {
 		}
 		scope:recipient = {
 			is_adult = no
+			is_courtier_of = scope:actor
 			num_of_relation_adoptor = 0
 		}
 	}
@@ -44,16 +45,18 @@ adopt_child = {
 		base = 0
 		# if orphan
 		modifier = {
-			add = 50
 			scope:recipient = {
 				has_father = no
 			}
+			add = 50
+			desc = NOT_HAS_FATHER_REASON
 		}
 		modifier = {
-			add = 50
 			scope:recipient = {
 				has_mother = no
 			}
+			add = 50
+			desc = NOT_HAS_MOTHER_REASON
 		}
 		# recipient's opinion
 		opinion_modifier = {
@@ -63,11 +66,21 @@ adopt_child = {
 		}
 		# recipient parent's opinion
 		opinion_modifier = {
+			trigger = {
+				scope:recipient = {
+					has_father = yes
+				}
+			}
 			opinion_target = scope:actor
 			who = scope:recipient.father
 			multiplier = 1
 		}
 		opinion_modifier = {
+			trigger = {
+				scope:recipient = {
+					has_mother = yes
+				}
+			}
 			opinion_target = scope:actor
 			who = scope:recipient.mother
 			multiplier = 1
@@ -94,7 +107,7 @@ adopt_child = {
 	}
 
 	cost = {
-		prestige = 500
+		prestige = 50
 	}
 
 	# AI to do adoption
@@ -102,7 +115,7 @@ adopt_child = {
 		is_imprisoned = no
 		NOT = { has_trait = incapable }
 	}
-	ai_will_do = 25
+	ai_will_do = 50
 	ai_frequency = 6
 	ai_targets = {
 		ai_recipients = courtiers
@@ -153,7 +166,7 @@ set_adoptee_as_successor = {
 	}
 
 	cost = {
-		prestige = 500
+		prestige = 300
 	}
 
 	ai_potential = {
