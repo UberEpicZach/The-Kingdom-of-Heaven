@@ -4,7 +4,6 @@ KoH_holy_orders.1 = {
 	type = character_event
 	title = KoH_holy_orders.1.t
 	desc = KoH_holy_orders.1.d
-	is_triggered_only = yes
 	theme = war
 	hidden = yes
 	
@@ -16,42 +15,42 @@ KoH_holy_orders.1 = {
 	
 	immediate = {
 		every_living_character = {
-            limit = {
-                any_held_title = {
-                    this = title:d_knights_templar
-                }
-            }
-            save_scope_as = leader
-        }
+			limit = {
+				any_held_title = {
+					this = title:d_knights_templar
+				}
+			}
+			save_scope_as = leader
+		}
 	}
 	
 	option = {
-	name = KoH_holy_orders.1.a
-	
-	hidden_effect = {
-		if = {
-			limit = { NOT = { title:b_toron.holder = scope:leader } }
-			create_title_and_vassal_change = {
-				type = leased_out
-				save_scope_as = change
-				add_claim_on_loss = no
-			}
-			title:b_toron = {
-				change_title_holder_include_vassals = {
-					holder = scope:leader
-					change = scope:change
+		name = KoH_holy_orders.1.a
+		
+		hidden_effect = {
+			if = {
+				limit = { NOT = { title:b_toron.holder = scope:leader } }
+				create_title_and_vassal_change = {
+					type = leased_out
+					save_scope_as = change
+					add_claim_on_loss = no
 				}
+				title:b_toron = {
+					change_title_holder_include_vassals = {
+						holder = scope:leader
+						change = scope:change
+					}
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
 		}
-	}
 
 		create_holy_order = {
 			leader = scope:leader
 			capital = title:b_toron
 			save_scope_as = templar_holy_order
 		}
-	
+		
 		hidden_effect = {
 			scope:leader = {
 				add_gold = 100 #So that they have some money to lend out
@@ -61,18 +60,17 @@ KoH_holy_orders.1 = {
 					add_trait = order_member
 				}
 			}
+		}
+		templar_holy_order = {
+			copy_title_history = title:d_knights_templars
+		}
 	}
-	templar_holy_order = {
-		copy_title_history = title:d_knights_templars
-	}  
-  }
 }
 
 KoH_holy_orders.2 = {
 	type = character_event
 	title = KoH_holy_orders.2.t
 	desc = KoH_holy_orders.2.d
-	is_triggered_only = yes
 	theme = war
 	hidden = yes
 
@@ -83,30 +81,30 @@ KoH_holy_orders.2 = {
 	
 	immediate = {
 		every_living_character = {
-            limit = {
-                any_held_title = {
-                    this = title:d_knights_hospitaler
-                }
-            }
-            save_scope_as = leader
-		}
-		hidden_effect = {
-		if = {
-			limit = { NOT = { title:b_bethgibelin.holder = scope:leader } }
-			create_title_and_vassal_change = {
-				type = leased_out
-				save_scope_as = change
-				add_claim_on_loss = no
-			}
-			title:b_bethgibelin = {
-				change_title_holder_include_vassals = {
-					holder = scope:leader
-					change = scope:change
+			limit = {
+				any_held_title = {
+					this = title:d_knights_hospitaler
 				}
 			}
-			resolve_title_and_vassal_change = scope:change
+			save_scope_as = leader
 		}
-	}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { title:b_bethgibelin.holder = scope:leader } }
+				create_title_and_vassal_change = {
+					type = leased_out
+					save_scope_as = change
+					add_claim_on_loss = no
+				}
+				title:b_bethgibelin = {
+					change_title_holder_include_vassals = {
+						holder = scope:leader
+						change = scope:change
+					}
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+		}
 
 		create_holy_order = {
 			leader = scope:leader
@@ -123,10 +121,10 @@ KoH_holy_orders.2 = {
 					add_trait = order_member
 				}
 			}
-	}
-	templar_holy_order = {
-		copy_title_history = title:d_knights_hospitaler
-			}  
+		}
+		templar_holy_order = {
+			copy_title_history = title:d_knights_hospitaler
+		}  
 	}
 }
 
@@ -134,105 +132,104 @@ KoH_holy_orders.3 = {
 	type = character_event
 	title = KoH_holy_orders.3.t
 	desc = KoH_holy_orders.3.d
-	is_triggered_only = yes
 	theme = war
 	hidden = yes
 	
 	immediate = {
-	   faith:catholic = {
-		change_fervor = 200
-		save_scope_as = awakening_faith
-		if = {
-			limit = {
-				exists = religious_head
+	faith:catholic = {
+			change_fervor = 200
+			save_scope_as = awakening_faith
+			if = {
+				limit = {
+					exists = religious_head
+				}
+				religious_head = { save_scope_as = ghw_first_sponsor }
 			}
-			religious_head = { save_scope_as = ghw_first_sponsor }
-		}
-		else = {
-			random_theocratic_ruler = {
-				limit = { faith = root }
-				save_scope_as = ghw_first_sponsor
-			}
-		}
-		if = { # Fallback
-			limit = {
-				NOT = {
-					exists = scope:ghw_first_sponsor
+			else = {
+				random_theocratic_ruler = {
+					limit = { faith = root }
+					save_scope_as = ghw_first_sponsor
 				}
 			}
-			random_ruler = {
-				limit = { faith = root }
-				save_scope_as = ghw_first_sponsor
+			if = { # Fallback
+				limit = {
+					NOT = {
+						exists = scope:ghw_first_sponsor
+					}
+				}
+				random_ruler = {
+					limit = { faith = root }
+					save_scope_as = ghw_first_sponsor
+				}
+			}
+			religion = {
+				set_variable = {
+					name = variable_ghw_unlocked # Crusades
+					value = yes
+				}
 			}
 		}
-		religion = {
-			set_variable = {
-				name = variable_ghw_unlocked # Crusades
-				value = yes
-			}
-		}
-	 }
 		faith:ashari = {
-				change_fervor = 200
-				save_scope_as = awakening_faith
-				if = {
-					limit = {
-						exists = religious_head
-					}
-					religious_head = { save_scope_as = ghw_first_sponsor }
+			change_fervor = 200
+			save_scope_as = awakening_faith
+			if = {
+				limit = {
+					exists = religious_head
 				}
-				else = {
-					random_theocratic_ruler = {
-						limit = { faith = root }
-						save_scope_as = ghw_first_sponsor
-					}
+				religious_head = { save_scope_as = ghw_first_sponsor }
+			}
+			else = {
+				random_theocratic_ruler = {
+					limit = { faith = root }
+					save_scope_as = ghw_first_sponsor
 				}
-				if = { # Fallback
-					limit = {
-						NOT = {
-							exists = scope:ghw_first_sponsor
-						}
-					}
-					random_ruler = {
-						limit = { faith = root }
-						save_scope_as = ghw_first_sponsor
+			}
+			if = { # Fallback
+				limit = {
+					NOT = {
+						exists = scope:ghw_first_sponsor
 					}
 				}
-				religion = {
-					set_variable = {
-						name = variable_ghw_unlocked # Crusades
-						value = yes
-					}
-				}	
+				random_ruler = {
+					limit = { faith = root }
+					save_scope_as = ghw_first_sponsor
+				}
+			}
+			religion = {
+				set_variable = {
+					name = variable_ghw_unlocked # Crusades
+					value = yes
+				}
+			}
 		}	
 	}
-}	
+}
 
 KoH_holy_orders.4 = {
 	type = character_event
 	title = KoH_holy_orders.4.t
 	desc = KoH_holy_orders.4.d
-	is_triggered_only = yes
 	theme = war
 	hidden = yes
 
 	immediate = {
 		every_living_character = {
-            limit = {
-                any_held_title = {
-                    this = title:x_ho_348
-                }
-            }
-            save_scope_as = holy_order
+			limit = {
+				any_held_title = {
+					this = title:x_ho_348
+				}
+			}
+			save_scope_as = holy_order
 		}
 		random_held_title = {
 			limit = {
 				tier = tier_barony
 				barony_is_valid_for_holy_order_lease_trigger = { CHARACTER = root }
 			}
+			save_scope_as = province
+		}
 		scope:province = {
 			lease_out_to = scope:holy_order
-			}
 		}
 	}
 }
@@ -241,7 +238,6 @@ KoH_holy_orders.5 = {
 	type = character_event
 	title = KoH_holy_orders.5.t
 	desc = KoH_holy_orders.5.d
-	is_triggered_only = yes
 	theme = war
 	hidden = yes
 
@@ -252,30 +248,30 @@ KoH_holy_orders.5 = {
 	
 	immediate = {
 		every_living_character = {
-            limit = {
-                any_held_title = {
-                    this = title:d_knights_calatrava
-                }
-            }
-            save_scope_as = leader
-		}
-		hidden_effect = {
-		if = {
-			limit = { NOT = { title:b_mentesa.holder = scope:leader } }
-			create_title_and_vassal_change = {
-				type = leased_out
-				save_scope_as = change
-				add_claim_on_loss = no
-			}
-			title:b_mentesa = {
-				change_title_holder_include_vassals = {
-					holder = scope:leader
-					change = scope:change
+			limit = {
+				any_held_title = {
+					this = title:d_knights_calatrava
 				}
 			}
-			resolve_title_and_vassal_change = scope:change
+			save_scope_as = leader
 		}
-	}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { title:b_mentesa.holder = scope:leader } }
+				create_title_and_vassal_change = {
+					type = leased_out
+					save_scope_as = change
+					add_claim_on_loss = no
+				}
+				title:b_mentesa = {
+					change_title_holder_include_vassals = {
+						holder = scope:leader
+						change = scope:change
+					}
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+		}
 
 		create_holy_order = {
 			leader = scope:leader
@@ -292,10 +288,10 @@ KoH_holy_orders.5 = {
 					add_trait = order_member
 				}
 			}
-	}
-	templar_holy_order = {
-		copy_title_history = title:d_knights_calatrava
-			}  
+		}
+		templar_holy_order = {
+			copy_title_history = title:d_knights_calatrava
+		}
 	}
 }
 
@@ -303,7 +299,6 @@ KoH_holy_orders.6 = {
 	type = character_event
 	title = KoH_holy_orders.6.t
 	desc = KoH_holy_orders.6.d
-	is_triggered_only = yes
 	theme = war
 	hidden = yes
 
@@ -317,22 +312,22 @@ KoH_holy_orders.6 = {
 			template = holy_order_leader_character
 			location = b_mora
 			save_scope_as = leader
-								}
+		}
 		hidden_effect = {
-		if = {
-			limit = { NOT = { title:b_mora.holder = scope:leader } }
-			create_title_and_vassal_change = {
-				type = leased_out
-				save_scope_as = change
-				add_claim_on_loss = no
-			}
-			title:b_mora = {
-				change_title_holder_include_vassals = {
-					holder = scope:leader
-					change = scope:change
+			if = {
+				limit = { NOT = { title:b_mora.holder = scope:leader } }
+				create_title_and_vassal_change = {
+					type = leased_out
+					save_scope_as = change
+					add_claim_on_loss = no
 				}
-			}
-			resolve_title_and_vassal_change = scope:change
+				title:b_mora = {
+					change_title_holder_include_vassals = {
+						holder = scope:leader
+						change = scope:change
+					}
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
 		}
 		create_holy_order = {
@@ -350,6 +345,6 @@ KoH_holy_orders.6 = {
 					add_trait = order_member
 				}
 			}
-		}  
+		}
 	}
 }
