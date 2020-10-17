@@ -1,5 +1,7 @@
 ﻿namespace = KoH_holy_orders
 
+#Title Cleanup
+#Templar Holdings
 KoH_holy_orders.1 = {
 	type = character_event
 	title = KoH_holy_orders.1.t
@@ -67,6 +69,32 @@ KoH_holy_orders.1 = {
 	}
 }
 
+#Beaufort
+KoH_holy_orders.4 = {
+	type = character_event
+	title = KoH_holy_orders.4.t
+	desc = KoH_holy_orders.4.d
+	theme = war
+	hidden = yes
+
+	immediate = {
+		faith = {
+			random_faith_holy_order = {
+				limit = {
+					leader = {
+						this = character:231001
+					}
+				}
+				save_scope_as = holy_order
+			}
+		}
+		title:b_beaufort = {
+			lease_out_to = scope:holy_order
+		}
+	}
+}
+
+#Hospitaler Cleanup
 KoH_holy_orders.2 = {
 	type = character_event
 	title = KoH_holy_orders.2.t
@@ -127,88 +155,11 @@ KoH_holy_orders.2 = {
 		}  
 	}
 }
-
-KoH_holy_orders.3 = { 
+#Kerake for hospitaler WILL NOT WORK UNTIL NEW BARONY
+KoH_holy_orders.3 = {
 	type = character_event
 	title = KoH_holy_orders.3.t
 	desc = KoH_holy_orders.3.d
-	theme = war
-	hidden = yes
-	
-	immediate = {
-	faith:catholic = {
-			change_fervor = 200
-			save_scope_as = awakening_faith
-			if = {
-				limit = {
-					exists = religious_head
-				}
-				religious_head = { save_scope_as = ghw_first_sponsor }
-			}
-			else = {
-				random_theocratic_ruler = {
-					limit = { faith = root }
-					save_scope_as = ghw_first_sponsor
-				}
-			}
-			if = { # Fallback
-				limit = {
-					NOT = {
-						exists = scope:ghw_first_sponsor
-					}
-				}
-				random_ruler = {
-					limit = { faith = root }
-					save_scope_as = ghw_first_sponsor
-				}
-			}
-			religion = {
-				set_variable = {
-					name = variable_ghw_unlocked # Crusades
-					value = yes
-				}
-			}
-		}
-		faith:ashari = {
-			change_fervor = 200
-			save_scope_as = awakening_faith
-			if = {
-				limit = {
-					exists = religious_head
-				}
-				religious_head = { save_scope_as = ghw_first_sponsor }
-			}
-			else = {
-				random_theocratic_ruler = {
-					limit = { faith = root }
-					save_scope_as = ghw_first_sponsor
-				}
-			}
-			if = { # Fallback
-				limit = {
-					NOT = {
-						exists = scope:ghw_first_sponsor
-					}
-				}
-				random_ruler = {
-					limit = { faith = root }
-					save_scope_as = ghw_first_sponsor
-				}
-			}
-			religion = {
-				set_variable = {
-					name = variable_ghw_unlocked # Crusades
-					value = yes
-				}
-			}
-		}	
-	}
-}
-
-KoH_holy_orders.4 = {
-	type = character_event
-	title = KoH_holy_orders.4.t
-	desc = KoH_holy_orders.4.d
 	theme = war
 	hidden = yes
 
@@ -217,18 +168,19 @@ KoH_holy_orders.4 = {
 			random_faith_holy_order = {
 				limit = {
 					leader = {
-						this = character:231000
+						this = character:231001
 					}
 				}
-				save_scope_as = holy_order
+				save_scope_as = holy_order1
 			}
 		}
-		title:b_beaufort = {
-			lease_out_to = scope:holy_order
+		title:c_kerake = {
+			lease_out_to = scope:holy_order1
 		}
 	}
 }
 
+#Setting up Knights of Calatrava
 KoH_holy_orders.5 = {
 	type = character_event
 	title = KoH_holy_orders.5.t
@@ -248,7 +200,7 @@ KoH_holy_orders.5 = {
 					this = title:d_knights_calatrava
 				}
 			}
-			save_scope_as = leader
+			save_scope_as = leader #73153 #207510
 		}
 		hidden_effect = {
 			if = {
@@ -284,12 +236,12 @@ KoH_holy_orders.5 = {
 				}
 			}
 		}
-		templar_holy_order = {
+		calatrava_holy_order = {
 			copy_title_history = title:d_knights_calatrava
 		}
 	}
 }
-
+#Setting Up Knights of Santiago 
 KoH_holy_orders.6 = {
 	type = character_event
 	title = KoH_holy_orders.6.t
@@ -305,7 +257,7 @@ KoH_holy_orders.6 = {
 	immediate = {
 		create_character = {
 			template = holy_order_leader_character
-			location = b_mora
+			location = 1953
 			save_scope_as = leader
 		}
 		hidden_effect = {
@@ -338,6 +290,105 @@ KoH_holy_orders.6 = {
 				add_gold = holy_order_starting_gold
 				every_courtier = {
 					add_trait = order_member
+				}
+			}
+		}
+	}
+}
+
+#AGE OF CRUSADES AND JIHADS
+KoH_holy_orders.100 = { 
+	type = character_event
+	title = KoH_holy_orders.100.t
+	desc = KoH_holy_orders.100.d
+	theme = war
+	hidden = yes
+	
+	immediate = {
+		faith:ashari = {
+			change_fervor = 200
+			save_scope_as = awakening_faith
+			if = {
+				limit = {
+					exists = religious_head
+				}
+				religious_head = { save_scope_as = ghw_first_sponsor }
+			}
+			else = {
+				random_theocratic_ruler = {
+					limit = { faith = root }
+					save_scope_as = ghw_first_sponsor
+				}
+			}
+			if = { # Fallback
+				limit = {
+					NOT = {
+						exists = scope:ghw_first_sponsor
+					}
+				}
+				random_ruler = {
+					limit = { faith = root }
+					save_scope_as = ghw_first_sponsor
+				}
+			}
+			religion = {
+				set_variable = {
+					name = variable_ghw_unlocked # Crusades
+					value = yes
+				}
+			}
+		}	
+	}
+}
+#AGE OF CRUSADES, WILL DELAY
+KoH_holy_orders.101 = { 
+	type = character_event
+	title = KoH_holy_orders.101.t
+	desc = KoH_holy_orders.101.d
+	theme = war
+	hidden = yes
+	
+	trigger = { 
+		if = {
+			limit = { 
+				title:c_jerusalem.holder = {
+				NOT = { faith.religion = religion:christianity_religion }
+			}
+		}
+	}
+}
+
+	immediate = {
+		faith:catholic = {
+			change_fervor = 200
+			save_scope_as = awakening_faith
+			if = {
+				limit = {
+					exists = religious_head
+				}
+				religious_head = { save_scope_as = ghw_first_sponsor }
+			}
+			else = {
+				random_theocratic_ruler = {
+					limit = { faith = root }
+					save_scope_as = ghw_first_sponsor
+				}
+			}
+			if = { # Fallback
+				limit = {
+					NOT = {
+						exists = scope:ghw_first_sponsor
+					}
+				}
+				random_ruler = {
+					limit = { faith = root }
+					save_scope_as = ghw_first_sponsor
+				}
+			}
+			religion = {
+				set_variable = {
+					name = variable_ghw_unlocked # Crusades
+					value = yes
 				}
 			}
 		}

@@ -26,7 +26,7 @@
 				}
 				trigger_event = {
 					id = KoH_holy_orders.2
-					days = -1
+					days = 2
 				}
 			}
 		}
@@ -38,6 +38,18 @@
 				trigger_event = {
 					id = KoH_holy_orders.3
 					days = -1
+				}
+			}
+		}
+		character:223523 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.4
+					days = 1
 				}
 			}
 		}
