@@ -213,22 +213,17 @@ KoH_holy_orders.4 = {
 	hidden = yes
 
 	immediate = {
-		every_living_character = {
-			limit = {
-				any_held_title = {
-					this = title:x_ho_348
+		faith = {
+			random_faith_holy_order = {
+				limit = {
+					leader = {
+						this = character:231000
+					}
 				}
+				save_scope_as = holy_order
 			}
-			save_scope_as = holy_order
 		}
-		random_held_title = {
-			limit = {
-				tier = tier_barony
-				barony_is_valid_for_holy_order_lease_trigger = { CHARACTER = root }
-			}
-			save_scope_as = province
-		}
-		scope:province = {
+		title:b_beaufort = {
 			lease_out_to = scope:holy_order
 		}
 	}
