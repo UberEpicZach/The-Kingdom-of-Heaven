@@ -7428,8 +7428,7 @@
 }
 
 213116 = {
-	name = "Alix"
-	# AKA: Eleonore
+	name = "Eleonore"
 	female = yes
 	dynasty = 240
 	martial = 2
@@ -8065,13 +8064,12 @@
 	name = "Renaud"
 	dna = 223590_raynauld_de_chatillon
 	dynasty = 23113
-	martial = 6
+	martial = 9
 	diplomacy = 4
-	intrigue = 3
+	intrigue = 10
 	stewardship = 3
 	religion = "catholic"
 	culture = french
-	trait = lustful
 	trait = greedy
 	trait = deceitful
 	trait = wrathful
@@ -8080,6 +8078,9 @@
 	mother = 223601
 	1131.1.1 = {
 		birth = "1131.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1153.1.1 = {
 		add_spouse = 223720 #Constance de Hauteville
@@ -8119,6 +8120,7 @@
 
 223593 = {
 	name = "Agnes"
+	dna = 223593_agnes_chatillon
 	female = yes
 	dynasty = 23113
 	martial = 6
@@ -8132,9 +8134,15 @@
 	mother = 223720
 	1154.1.2 = {
 		birth = "1154.1.2"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
-	1184.1.9 = {
-		death = "1184.1.9"
+	1172.1.2 = {
+		name = "Agnes-Anna"
+	}
+	1184.1.1 = {
+		death = "1184.1.1"
 	}
 }
 
@@ -8150,9 +8158,9 @@
 	culture = french
 	trait = education_learning_3
 	father = 223590
-	mother = 223720
-	1157.1.2 = {
-		birth = "1157.1.2"
+	mother = 223592
+	1178.1.2 = {
+		birth = "1178.1.2"
 	}
 	1207.1.2 = {
 		death = "1207.1.2"
@@ -47827,5 +47835,39 @@ KOH0032 = {
 	}
 	1220.1.1 = {
 		death = "1220.1.1"
+	}
+}
+
+KOH0033 = {
+	name = "Jeanne"
+	dynasty = 23113
+	female = yes
+	religion = "catholic"
+	culture = french
+	father = 223590
+	mother = 223720
+	1154.1.1 = {
+		birth = "1154.1.1"
+	}
+	1183.1.1 = {
+		add_spouse = 223720 #Bonifazio 
+	}
+	1183.12.1 = {
+		death = "1184.12.1"
+	}
+}
+
+KOH0034 = {
+	name = "Renaud"
+	dynasty = 23113
+	religion = "catholic"
+	culture = french
+	father = 223590
+	mother = 223592
+	1177.1.1 = {
+		birth = "1177.1.1"
+	}
+	1178.1.1 = {
+		death = "1178.1.1"
 	}
 }
