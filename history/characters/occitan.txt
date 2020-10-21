@@ -10673,12 +10673,23 @@
 			add_character_flag = has_scripted_appearance
 		}
 	}
-	1171.1.1 = {
+	1144.1.1 = {	
+		effect = {
+			set_relation_friend = character:223750
+		}
+	}
+		1171.1.1 = {
 		add_spouse = 31384
+	}
+	1180.1.1 = {
+		effect = {
+			set_relation_rival = character:223500
+		}
 	}
 	1184.1.1 = {
 		effect = {
 			set_relation_adoptee = character:223651
+			set_designated_heir = character:223651
 		}
 	}
 	1187.9.1 = {
@@ -10720,6 +10731,8 @@
 	religion = "catholic"
 	culture = "occitan"
 	trait = education_diplomacy_3
+	trait = disputed_heritage
+	trait = physique_bad_2
 	father = 223660
 	mother = 223661
 	1142.1.1 = {

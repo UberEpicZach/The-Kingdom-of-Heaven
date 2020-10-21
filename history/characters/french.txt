@@ -8002,6 +8002,7 @@
 	religion = "catholic"
 	culture = french
 	father = 93008
+	mother = KOH0040
 	1136.1.1 = {
 		birth = "1136.1.1"
 	}
@@ -8096,22 +8097,26 @@
 223592 = {
 	name = "Stephanie"
 	# AKA: Stephanie de Milly
+	dna = 223592_stephanie_de_milly
 	female = yes
 	dynasty = 23106
-	martial = 7
+	martial = 14
 	diplomacy = 8
 	intrigue = 7
 	stewardship = 5
 	religion = "catholic"
 	culture = french
-	trait = lustful
+	trait = callous
 	trait = just
 	trait = honest
-	trait = education_learning_2
+	trait = education_martial_2
 	father = 232700
 	mother = 232701
 	1145.1.2 = {
 		birth = "1145.1.2"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1197.1.2 = {
 		death = "1197.1.2"
@@ -8244,6 +8249,9 @@
 	religion = "catholic"
 	culture = french
 	trait = zealous
+	trait = lustful
+	trait = beauty_good_3
+	trait = adulterer
 	trait = education_learning_2
 	father = 232007
 	mother = 90025
@@ -8282,6 +8290,7 @@
 
 223720 = {
 	name = "Constance"
+	dna = 223720_constance_of_kerak
 	female = yes
 	dynasty = 678
 	martial = 6
@@ -8291,10 +8300,14 @@
 	religion = "catholic"
 	culture = french
 	trait = education_learning_3
+	trait = beauty_good_2
 	father = 223700
 	mother = 223532
 	1124.1.1 = {
 		birth = "1124.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1163.1.5 = {
 		death = "1163.1.5"
@@ -8324,8 +8337,8 @@
 }
 
 223743 = {
-	name = "Marie"
-	# AKA: Marie
+	name = "Marie" #Dowager Empress of Byzantium
+	dna = 223743_maria_xene
 	female = yes
 	dynasty = 413
 	martial = 6
@@ -8335,39 +8348,48 @@
 	religion = "catholic"
 	culture = french
 	trait = arbitrary
-	trait = lustful
+	trait = fickle
+	trait = sadistic
 	trait = education_intrigue_3
+	trait = beauty_good_3
 	father = 223740
 	mother = 223720
 	1145.1.1 = {
 		birth = "1145.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	#1161 married Manuel I Komnenos
 	1161.1.1 = {
-		name = "Marie-Xena"
+		name = "Maria-Xene"
 	}
 	1182.8.27 = {
-		death = "1182.8.27"
+		death = {
+		death_reason = death_execution
+		}
 	}
 }
 
 223744 = {
 	name = "Philippa"
+	dna = 223744_philippa_de_poitou
 	female = yes
 	dynasty = 413
-	martial = 4
-	diplomacy = 4
-	intrigue = 7
-	stewardship = 5
 	religion = "catholic"
 	culture = french
-	trait = zealous
+	trait = lustful
+	trait = infertile
 	trait = stuttering
 	trait = education_diplomacy_2
+	trait = beauty_good_2
 	father = 223740
 	mother = 223720
 	1148.1.1 = {
 		birth = "1148.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1178.1.1 = {
 		death = "1178.1.1"
@@ -8376,20 +8398,29 @@
 
 223750 = {
 	name = "Bohemond" #Bohemond III
+	dna = 223750_bohemond_iii
 	dynasty = 413
 	martial = 8
-	diplomacy = 8
+	diplomacy = 14
 	intrigue = 6
-	stewardship = 8
+	stewardship = 10
+	learning = 10
 	religion = "catholic"
 	culture = french
 	trait = lustful
 	trait = stuttering
-	trait = education_intrigue_2
+	trait = patient
+	trait = temperate
+	trait = education_diplomacy_3
+	trait = beauty_good_1
+	trait = intellect_good_1
 	father = 223740
 	mother = 223720
 	1144.1.1 = {
 		birth = "1144.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1168.1.1 = {
 		add_spouse = 223751 #Orgueilleuse de Harenc
@@ -8401,7 +8432,8 @@
 		add_spouse = 223752 #Theodora Komnenos
 	}
 	1181.1.1 = {
-		remove_spouse = 223752
+		divorce = character:223752
+		trait = excommunicated
 	}
 	1182.1.1 = {
 		add_spouse = 223753 #Sybille Mansel
@@ -8439,18 +8471,24 @@
 
 223753 = {
 	name = "Sibylle"
+	dna = 223753_sibylle_of_toron
 	female = yes
-	dynasty = 7187
+	dynasty = 166
+	father = 93008
+	mother = KOH0040
 	martial = 8
 	diplomacy = 8
 	intrigue = 5
 	stewardship = 4
 	religion = "catholic"
-	culture = levantine
+	culture = french
 	trait = witch
 	trait = education_learning_2
 	1160.1.1 = {
 		birth = "1160.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1210.1.1 = {
 		death = "1210.1.1"
@@ -8940,6 +8978,9 @@
 	mother = 232006
 	1130.1.2 = {
 		birth = "1130.1.2"
+	}
+	1158.1.1 = {
+		add_spouse = 231066
 	}
 	1162.2.10 = {
 		death = "1162.2.10"
@@ -30357,15 +30398,23 @@
 }
 31384 = {
 	name = "Eschiva"
+	dna = 31384_eschiva_lady_of_galilee
 	female = yes
 	dynasty = 7208 #de Bures
 	religion = "catholic"
 	culture = french
 	father = 31392
 	mother = KOH0014
+	trait = brave
+	trait = calm
+	trait = content
+	trait = education_stewardship_4
 	1149.1.1 = {
 		birth = "1142.1.1"
 		give_nickname = nick_the_ladylord_of_tiberias
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1187.1.1 = {
 		death = "1187.1.1"
@@ -35625,6 +35674,9 @@
 	1100.1.1 = {
 		birth = "1100.1.1"
 	}
+	1129.1.1 = {
+		add_spouse = KOH0038
+		}
 	1171.1.1 = {
 		death = "1171.1.1"
 	}
@@ -35734,6 +35786,7 @@
 	religion = "catholic"
 	culture = french
 	father = 32300
+	mother = KOH0038
 	1130.1.1 = {
 		birth = "1130.1.1"
 	}
@@ -35748,6 +35801,7 @@
 	religion = "catholic"
 	culture = french
 	father = 32300
+	mother = KOH0038
 	1135.1.1 = {
 		birth = "1135.1.1"
 	}
@@ -39986,6 +40040,9 @@
 	father = 93007
 	1117.1.1 = {
 		birth = "1117.1.1"
+	}
+	1135.1.1 = {
+		add_spouse = KOH0040
 	}
 	1168.1.1 = {
 		add_spouse = 223744
@@ -47869,5 +47926,53 @@ KOH0034 = {
 	}
 	1178.1.1 = {
 		death = "1178.1.1"
+	}
+}
+
+KOH0038 = {
+	name = "Agnes"
+	female = yes
+	dynasty = 7208 #de Bures
+	religion = "catholic"
+	culture = french
+	father = 31387
+	1101.1.1 = {
+		birth = "1101.1.1"
+	}
+	1135.1.1 = {
+		death = {
+		death_reason = death_childbirth
+		}
+	}
+}
+
+KOH0039 = {
+	name = "Renier"
+	dynasty = KOHD0004 #Brus
+	religion = "catholic"
+	culture = french
+	1101.1.1 = {
+		birth = "1101.1.1"
+	}
+	1125.1.1 = {
+		add_spouse = KOH0038
+	}
+	1128.1.1 = {
+		death = "1128.1.1"
+	}
+}
+
+KOH0040 = {
+	name = "Isabelle"
+	female = yes
+	dynasty = KOHD0004 #Brus
+	religion = "catholic"
+	culture = french
+	father = KOH0039
+	1120.1.1 = {
+		birth = "1120.1.1"
+	}
+	1167.1.1 = {
+		death = "1167.1.1"
 	}
 }
