@@ -242,7 +242,7 @@
 	}
 	1157.1.1 = {
 		add_spouse = 144015
-	}		
+	}
 	1210.1.2 = {
 		death = "1210.1.2"
 	}
@@ -890,27 +890,36 @@
 
 466517 = {
 	name = "Tamar"
+	dna = 466517_tamar_the_great
 	female = yes
 	dynasty = 507
-	martial = 12
-	diplomacy = 10
+	martial = 9
+	diplomacy = 9
 	intrigue = 7
 	stewardship = 8
+	learning = 10
+	prowess = 14
 	religion = "orthodox"
 	culture = "georgian"
 	trait = diligent
-	trait = calm
+	trait = ambitious
 	trait = zealous
+	trait = mystic_2
+	trait = intellect_good_3
 	trait = education_diplomacy_4
 	father = 216515
 	mother = 216540
 	1160.1.1 = {
 		birth = "1160.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1184.1.1 = {
 		give_nickname = nick_the_great
 		set_relation_ward = character:215519
 		set_relation_ward = character:215520
+		add_matrilineal_spouse = 466516
 	}
 	1212.1.8 = {
 		death = "1212.1.8"

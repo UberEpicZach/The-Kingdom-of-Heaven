@@ -269,25 +269,31 @@
 466516 = {
 	name = "Soslan"
 	# AKA: Davit / Soslan
+	dna = 466516_davit_soslan
 	dynasty = 507
-	martial = 7
+	martial = 9
 	diplomacy = 7
 	intrigue = 5
 	stewardship = 8
+	prowess = 10
 	religion = "orthodox"
 	culture = "alan"
-	trait = lustful
 	trait = brave
 	trait = humble
 	trait = diligent
-	trait = education_martial_4
+	trait = education_martial_3
+	trait = physique_good_2
+	trait = aggressive_attacker
+	trait = blademaster_2
 	father = 216524
 	1155.1.1 = {
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1184.1.1 = {
 		name = "Davit Soslan"
-		add_spouse = 466517		#Tamar
 	}
 	1207.1.1 = {
 		death = yes
