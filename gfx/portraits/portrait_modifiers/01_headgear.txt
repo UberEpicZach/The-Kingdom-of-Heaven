@@ -2470,6 +2470,647 @@ headgear = {
 			}
 	    }
 	}
+	
+	# religious_muslim_head_clothes = {
+	#     dna_modifiers = {
+	#         accessory = {
+	#             mode = add
+	#             gene = clothes
+	#             template = religious_muslim_high_clothes
+	#             range = { 0 1 }
+	#         }
+	#     }
+	#     weight = {
+	#         base = 0
+	#         modifier = {
+	#             add = 60
+	# 			is_ruler = yes
+	# 			primary_title = {
+	# 				exists = controlled_faith
+	# 				controlled_faith = faith:orthodox
+	# 			}
+	#         }
+	#     }
+	# }	
+
+
+
+
+
+
+######Han
+
+
+han_war = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = steppe_war
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}	
+	weight = {
+		base = 0
+		modifier = {
+			add = 100
+			portrait_wear_helmet_trigger = yes
+			portrait_han_clothing_trigger = yes
+		}
+	}
+}
+
+
+#### Tribal sub_saharan African
+
+
+## Sub-Saharan Tribal Africans ##
+
+african_tribal_commoners = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = no_headgear
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}	
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			highest_held_title_tier < tier_county
+			NOR = {
+				AND = {
+					exists = primary_spouse
+					primary_spouse = {
+						highest_held_title_tier > tier_county
+					}
+				}
+				AND = {
+					has_government = republic_government
+					primary_title.tier > 1
+				}
+				has_government = theocracy_government
+			}
+			portrait_sub_saharan_african_tribal_clothing_trigger = yes
+		}
+	}
+}
+
+sub_saharan_tribal_high_nobles = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = religious_northern_high
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}		
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			OR = {
+				AND = {
+					OR = {
+						highest_held_title_tier = tier_duchy
+						AND = {
+							has_government = republic_government
+							primary_title.tier > 2
+						}
+						has_government = theocracy_government
+					}
+					NOT = { has_government = mercenary_government } # Blocked for mercenaries
+					portrait_sub_saharan_african_tribal_clothing_trigger = yes
+				}
+				AND = {
+					exists = primary_spouse
+					is_ruler = no
+					primary_spouse = {
+						OR = {
+							highest_held_title_tier = tier_duchy
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 2
+							}
+							has_government = theocracy_government
+						}
+						portrait_sub_saharan_african_tribal_clothing_trigger = yes
+					}
+				}
+			}
+
+		}
+	}
+}
+
+sub_saharan_tribal_royalty = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = religious_african_high
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}		
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			OR = {
+				AND = {
+					OR = {
+						highest_held_title_tier = tier_kingdom
+						has_government = theocracy_government
+					}
+					NOT = { has_government = mercenary_government } # Blocked for mercenaries
+					NOT = { has_government = republic_government }
+					portrait_sub_saharan_african_tribal_clothing_trigger = yes
+				}
+				AND = {
+					exists = primary_spouse
+					is_ruler = no
+					primary_spouse = {
+						OR = {
+							highest_held_title_tier = tier_kingdom
+							has_government = theocracy_government
+						}
+						NOT = { has_government = mercenary_government } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						portrait_sub_saharan_african_tribal_clothing_trigger = yes
+					}
+				}
+			}
+
+		}
+	}
+}
+
+sub_saharan_tribal_imperial = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = western_high_nobility
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}	
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			highest_held_title_tier = tier_empire
+			NOR = {
+				has_government = mercenary_government
+				has_government = republic_government
+				has_government = theocracy_government
+			}
+			portrait_sub_saharan_african_tribal_clothing_trigger = yes
+		}
+	}
+}
+
+sub_saharan_tribal_war = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = mena_war
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}	
+	weight = {
+		base = 0
+		modifier = {
+			add = 100
+			portrait_wear_helmet_trigger = yes
+			portrait_sub_saharan_african_tribal_clothing_trigger = yes
+		}
+	}
+}
+
+
+## Iranian ##
+
+iranian_commoners = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = iranian_common
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}	
+	weight = {
+		base = 0
+		modifier = {
+			add = 20
+			highest_held_title_tier < tier_county
+			NOR = {
+				AND = {
+					exists = primary_spouse
+					primary_spouse = {
+						highest_held_title_tier > tier_county
+					}
+				}
+				has_government = republic_government
+				has_government = theocracy_government
+			}
+			portrait_iranian_clothing_trigger = yes
+		}
+	}
+}
+
+iranian_mayors = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = iranian_low_nobility
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}	
+	weight = {
+		base = 0
+		modifier = {
+			add = 60
+			highest_held_title_tier < tier_county
+			has_government = republic_government
+			portrait_iranian_clothing_trigger = yes
+		}
+	}
+}
+
+iranian_low_nobles = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = iranian_low_nobility
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}	
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			OR = {
+				AND = {
+					highest_held_title_tier = tier_county
+					NOR = {
+						# has_dynasty = no
+						AND = {
+							has_government = republic_government
+							primary_title.tier > 1
+						}
+						has_government = theocracy_government
+					}
+					portrait_iranian_clothing_trigger = yes
+				}
+				AND = {
+					exists = primary_spouse
+					is_ruler = no
+					primary_spouse = {
+						highest_held_title_tier = tier_county
+						NOR = {
+							# has_dynasty = no
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							has_government = theocracy_government
+						}
+						portrait_iranian_clothing_trigger = yes
+					}
+				}
+			}
+
+		}
+	}
+}
+
+iranian_high_nobles = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = iranian_high_nobility
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}		
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			OR = {
+				AND = {
+					OR = {
+						highest_held_title_tier = tier_duchy
+						AND = {
+							has_government = republic_government
+							primary_title.tier > 2
+						}
+						has_government = theocracy_government
+					}
+					NOT = { has_government = mercenary_government } # Blocked for mercenaries
+					portrait_iranian_clothing_trigger = yes
+				}
+				AND = {
+					exists = primary_spouse
+					is_ruler = no
+					primary_spouse = {
+						OR = {
+							highest_held_title_tier = tier_duchy
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 2
+							}
+							has_government = theocracy_government
+						}
+						portrait_iranian_clothing_trigger = yes
+					}
+				}
+			}
+
+		}
+	}
+}
+
+iranian_royalty = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = iranian_royalty
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}		
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			OR = {
+				AND = {
+					OR = {
+						highest_held_title_tier = tier_kingdom
+						has_government = theocracy_government
+					}
+					NOT = { has_government = mercenary_government } # Blocked for mercenaries
+					NOT = { has_government = republic_government }
+					portrait_iranian_clothing_trigger = yes
+				}
+				AND = {
+					exists = primary_spouse
+					is_ruler = no
+					primary_spouse = {
+						OR = {
+							highest_held_title_tier = tier_kingdom
+							has_government = theocracy_government
+						}
+						NOT = { has_government = mercenary_government } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						portrait_iranian_clothing_trigger = yes
+					}
+				}
+			}
+
+		}
+	}
+}
+
+iranian_imperial = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = iranian_imperial
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}	
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			highest_held_title_tier = tier_empire
+			NOR = {
+				has_government = mercenary_government
+				has_government = republic_government
+				has_government = theocracy_government
+			}
+			portrait_iranian_clothing_trigger = yes
+		}
+	}
+}
+
+iranian_war = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = iranian_war
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}	
+	weight = {
+		base = 0
+		modifier = {
+			add = 100
+			portrait_wear_helmet_trigger = yes
+			portrait_iranian_clothing_trigger = yes
+		}
+	}
+}	
+
+
+## turkish ##
+
+turkish_commoners = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = turkish_common
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}	
+	weight = {
+		base = 0
+		modifier = {
+			add = 20
+			highest_held_title_tier < tier_county
+			NOR = {
+				AND = {
+					exists = primary_spouse
+					primary_spouse = {
+						highest_held_title_tier > tier_county
+					}
+				}
+				AND = {
+					has_government = republic_government
+					primary_title.tier > 1
+				}
+				has_government = theocracy_government
+			}
+			portrait_turkish_clothing_trigger = yes
+		}
+	}
+}
+
+turkish_low_nobles = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = turkish_nobility
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}		
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			OR = {
+				AND = {
+					OR = {
+						highest_held_title_tier = tier_duchy
+						AND = {
+							has_government = republic_government
+							primary_title.tier > 1
+						}
+						has_government = theocracy_government
+					}
+					NOT = { has_government = mercenary_government } # Blocked for mercenaries
+					portrait_turkish_clothing_trigger = yes
+				}
+				AND = {
+					exists = primary_spouse
+					is_ruler = no
+					primary_spouse = {
+						OR = {
+							highest_held_title_tier = tier_duchy
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							has_government = theocracy_government
+						}
+						portrait_turkish_clothing_trigger = yes
+					}
+				}
+			}
+
+		}
+	}
+}
+
+turkish_high_nobles = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = turkish_high_nobility
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}		
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			OR = {
+				AND = {
+					OR = {
+						highest_held_title_tier = tier_duchy
+						AND = {
+							has_government = republic_government
+							primary_title.tier > 2
+						}
+						has_government = theocracy_government
+					}
+					NOT = { has_government = mercenary_government } # Blocked for mercenaries
+					portrait_turkish_clothing_trigger = yes
+				}
+				AND = {
+					exists = primary_spouse
+					is_ruler = no
+					primary_spouse = {
+						OR = {
+							highest_held_title_tier = tier_duchy
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 2
+							}
+							has_government = theocracy_government
+						}
+						portrait_turkish_clothing_trigger = yes
+					}
+				}
+			}
+
+		}
+	}
+}
+
+turkish_royalty = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = turkish_royalty
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}		
+	weight = {
+		base = 0
+		modifier = {
+			add = 50
+			OR = {
+				AND = {
+					OR = {
+						highest_held_title_tier > tier_duchy
+						has_government = theocracy_government
+					}
+					NOT = { has_government = mercenary_government } # Blocked for mercenaries
+					NOT = { has_government = republic_government }
+					portrait_turkish_clothing_trigger = yes
+				}
+				AND = {
+					exists = primary_spouse
+					is_ruler = no
+					primary_spouse = {
+						OR = {
+							highest_held_title_tier > tier_duchy
+							has_government = theocracy_government
+						}
+						NOT = { has_government = mercenary_government } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						portrait_turkish_clothing_trigger = yes
+					}
+				}
+			}
+
+		}
+	}
+}
+
+turkish_war = {
+	dna_modifiers = {
+		accessory = {
+			mode = add
+			gene = headgear
+			template = turkish_war
+			range = { 0 1 } # For the randomness to work correctly
+		}
+	}	
+	weight = {
+		base = 0
+		modifier = {
+			add = 100
+			portrait_wear_helmet_trigger = yes
+			portrait_turkish_clothing_trigger = yes
+		}
+	}
+}	
 	baldwin = {
 		dna_modifiers = {
 			accessory = {
@@ -2589,30 +3230,7 @@ headgear = {
 				this = character:227012
 			}
 		}
-	}
-	tamar = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = byzantine_royalty
-				#value = 100
-				range = { 1 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 30
-				portrait_tamar_trigger = yes
-				is_female = yes
-			}
-			modifier = {
-				add = 130
-				this = character:466517
-			}
-		}
-	}		
+	}	
 
 	# religious_muslim_head_clothes = {
 	#     dna_modifiers = {

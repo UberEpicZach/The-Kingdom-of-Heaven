@@ -43,11 +43,31 @@ portrait_sinan_trigger = {
         }
     }
 }
-
 portrait_tamar_trigger = {
 	AND = {
 		OR = {
 			this = character:466517
 		}
 	}
+}
+portrait_han_clothing_trigger = {
+	culture = { has_graphical_culture = han_clothing_gfx }
+}
+
+
+portrait_sub_saharan_african_tribal_clothing_trigger = {
+	culture = { has_graphical_culture = sub_saharan_african_tribal_clothing_gfx }
+}
+
+portrait_ayyubid_clothing_trigger = {
+	culture = { has_graphical_culture = ayyubid_clothing_gfx }
+}
+
+
+portrait_iranian_clothing_trigger = {
+	culture = { has_graphical_culture = iranian_clothing_gfx }
+}
+
+portrait_turkish_clothing_trigger = {
+	culture = { has_graphical_culture = turkish_clothing_gfx }
 }
