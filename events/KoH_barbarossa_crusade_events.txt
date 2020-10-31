@@ -182,7 +182,16 @@ KoH_barbarossa_crusade.5 = {
 KoH_barbarossa_crusade.6 = {
 	type = character_event
 	title = KoH_barbarossa_crusade.6.t
-	desc = KoH_barbarossa_crusade.6.d
+	desc = { first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_character_flag = denied_passage
+				}
+				desc = KoH_barbarossa_crusade.6.d
+			}
+			desc = KoH_barbarossa_crusade.6.d.alternate
+		}
+	}
 	is_triggered_only = yes
 	theme = war
 	
