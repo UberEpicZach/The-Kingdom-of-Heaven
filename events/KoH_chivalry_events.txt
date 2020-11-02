@@ -1,22 +1,251 @@
 ﻿namespace = chivalry
 
 chivalry.1 = {
-	hidden = yes
-	trigger = {
-		is_ai = no
-		is_ruler = yes
-	}
-	
-	immediate = {
-		every_living_character = {
-			set_variable = {
-				name = Chivalry
-				value = 10
-			}
-		}
+	type = character_event
+	title = chivalry.1.t
+	desc = chivalry.1.d
+	theme = default
+	left_portrait = {
+		character = root
 	}
 	
 	option = {
 		name = chivalry.1.a
+		
+		add_gold = -100
+		
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		
+		if = {
+			limit = {
+				has_trait = trait_generous
+			}
+			add_stress = -10
+		}
+		else_if = {
+			limit = {
+				has_trait = trait_greedy
+			}
+			add_stress = 10
+		}
+	}
+	
+	option = {
+		name = chivalry.1.b
+		
+		add_gold = 10
+		
+		change_chivalry_effect = { 
+			Chivalry = -1
+		}
+		add_tyranny = 5
+		add_dread = 10
+		
+		if = {
+			limit = {
+				has_trait = trait_generous
+			}
+			add_stress = 10
+		}
+		else_if = {
+			limit = {
+				has_trait = trait_greedy
+			}
+			add_stress = -10
+		}
+	}
+}
+
+chivalry.2 = {
+	type = character_event
+	title = chivalry.2.t
+	desc = chivalry.2.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	
+	right_portrait = {
+		character = scope:challenger
+	}
+
+	immediate = {
+		root = { random_dummy_gender_landholder_effect = yes }
+        create_character = {
+			age = { 20 30 }
+			location = root.capital_province
+			gender = scope:dummy_gender
+			faith = this.faith
+			culture = this.culture
+			dynasty = none
+			prowess = { 5 20 }
+			save_scope_as = challenger
+        }
+	}
+	
+	option = {
+		name = chivalry.2.a
+		
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		
+		trigger_event = {
+			id = chivalry.3
+			days = 2
+		}
+	}
+	
+	option = {
+		name = chivalry.2.b
+		
+		change_chivalry_effect = { 
+			Chivalry = -1
+		}
+		
+		add_prestige = -50
+	}
+}
+
+chivalry.3 = {
+	type = character_event
+	title = chivalry.3.t
+	desc = chivalry.3.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	right_portrait = {
+		character = scope:challenger
+	}
+	
+	option = {
+		name = chivalry.3.a
+		
+		custom_tooltip = duel_can_go_either_way
+		
+		random_list = {
+			50 = {
+				add_character_flag = {
+					flag = enemy_goes_on_offensive
+				}
+			}
+			50 = {
+				add_character_flag = {
+					flag = you_go_on_offensive
+				}
+			}
+		}
+		duel = {
+			skill = prowess
+			target = scope:challenger
+			value = 10
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+					min = -19
+				}
+				trigger_event = {
+					id = chivalry.4
+					days = 2
+				}
+			}
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+					min = -19
+				}
+				trigger_event = {
+					id = chivalry.5
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+chivalry.4 = {
+	type = character_event
+	title = chivalry.4.t
+	desc = chivalry.4.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:challenger
+		animation = severelywounded
+	}
+	
+	option = {
+		name = chivalry.4.a
+		
+		
+		root = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+		}
+		
+		scope:challenger = {
+			add_prestige = -50
+			increase_wounds_no_death_effect = { REASON = fight }
+		}
+	}
+	
+	option = {
+		name = chivalry.4.b
+		
+		
+		root = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+			add_tyranny = 5
+			add_dread = 10
+			change_chivalry_effect = { 
+				Chivalry = -2
+			}
+		}
+		
+		scope:challenger = {
+			death = {
+				killer = root
+				REASON = fight
+			}
+		}
+	}
+}
+
+chivalry.5 = {
+	type = character_event
+	title = chivalry.5.t
+	desc = chivalry.5.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:challenger
+		animation = severelywounded
+	}
+	
+	option = {
+		name = chivalry.5.a
+		
+		
+		scope:challenger = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+		}
+		
+		root = {
+			add_prestige = -50
+			increase_wounds_no_death_effect = { REASON = fight }
+		}
 	}
 }
