@@ -6,6 +6,41 @@
 				value = 10
 			}
 		}
+		trigger_event = { # Artifact Equipper
+			on_action = on_monthly
+		}
+		
+		character:1316 = { #HRE 1066 ARTIFACTS
+			set_variable = has_artifact_1
+			add_character_modifier = {
+				modifier = artifact_1_passive
+			}
+			set_variable = has_artifact_3
+			add_character_modifier = {
+				modifier = artifact_3_passive
+			}
+		}
+
+		character:1732 = { #BYZANTINE 1066 ARTIFACTS
+			set_variable = has_artifact_2
+			add_character_modifier = {
+				modifier = artifact_2_passive
+			}
+		}
+
+		character:1700 = { #BYZANTINE 867 ARTIFACTS
+			set_variable = has_artifact_2
+			add_character_modifier = {
+				modifier = artifact_2_passive
+			}
+		}
+
+		character:30228 = { #LOMBARD 867 ARTIFACTS
+			set_variable = has_artifact_3
+			add_character_modifier = {
+				modifier = artifact_3_passive
+			}
+		}
 		character:223523 = {
 			if = {
 				limit = {
@@ -25,19 +60,20 @@
 					is_landed = yes
 				}
 				trigger_event = {
-					id = KoH_holy_orders.2
-					days = 2
+					id = KoH_holy_orders.4
+					days = -1
 				}
 			}
 		}
-		character:71811 = {
+	 	character:223523 = {
 			if = {
 				limit = {
 					is_alive = yes
+					is_landed = yes
 				}
 				trigger_event = {
-					id = KoH_holy_orders.3
-					days = -1
+					id = KoH_holy_orders.2
+					days = 2
 				}
 			}
 		}
@@ -45,11 +81,10 @@
 			if = {
 				limit = {
 					is_alive = yes
-					is_landed = yes
 				}
 				trigger_event = {
-					id = KoH_holy_orders.4
-					days = 1
+					id = KoH_holy_orders.3
+					days = 2
 				}
 			}
 		}
@@ -60,7 +95,7 @@
 				}
 				trigger_event = {
 					id = KoH_holy_orders.5
-					days = -1
+					days = 3
 				}
 			}
 		}
@@ -71,7 +106,7 @@
 				}
 				trigger_event = {
 					id = KoH_holy_orders.6
-					days = -1
+					days = 4
 				}
 			}
 		}
