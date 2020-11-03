@@ -67,6 +67,7 @@ artifacts_has_no_artifacts = {
 				has_variable = has_artifact_29
 				has_variable = has_artifact_30
 				has_variable = has_artifact_31
+				has_variable = has_artifact_32
 			}
 		}
 	}
@@ -746,6 +747,27 @@ artifacts_equipped_artifact_31 = {
 	}
 }
 
+artifacts_scripted_artifact_32 = {
+	scope = character		
+	
+	is_shown = {
+		has_variable = has_artifact_32
+	}
+	
+	effect = {
+		clear_all_artifacts = yes
+		set_variable = selected_artifact_32
+	}
+}
+
+artifacts_equipped_artifact_32 = {
+	scope = character
+	
+	is_shown = {
+		has_variable = equipped_artifact_32
+	}
+}
+
 artifacts_destroy_artifact = {
 	scope = character
 	
@@ -782,6 +804,7 @@ artifacts_destroy_artifact = {
 			has_variable = selected_artifact_29
 			has_variable = selected_artifact_30
 			has_variable = selected_artifact_31
+			has_variable = selected_artifact_32
 		}
 	}
 	
@@ -1040,6 +1063,14 @@ artifacts_destroy_artifact = {
 			remove_variable = has_artifact_31
 			remove_variable = equipped_artifact_31
 		}
+		else_if = {
+			limit = {
+				has_variable = selected_artifact_32
+			}
+			remove_variable = selected_artifact_32
+			remove_variable = has_artifact_32
+			remove_variable = equipped_artifact_32
+		}
 	}
 }
 
@@ -1171,6 +1202,10 @@ artifacts_equip_artifact = {
 			AND = {
 				has_variable = selected_artifact_31
 				NOT = { has_variable = equipped_artifact_31 }
+			}
+			AND = {
+				has_variable = selected_artifact_32
+				NOT = { has_variable = equipped_artifact_32 }
 			}
 		}
 	}
@@ -1493,6 +1528,16 @@ artifacts_equip_artifact = {
 				modifier = artifact_31_modifier
 			}
 		}
+		else_if = {
+			limit = {
+				has_variable = selected_artifact_32
+			}
+			uneqiup_armor_artifacts = yes
+			set_variable = equipped_artifact_32
+			add_character_modifier = {
+				modifier = artifact_32_modifier
+			}
+		}
 	}
 }
 
@@ -1624,6 +1669,10 @@ artifacts_unequip_artifact = {
 			AND = {
 				has_variable = selected_artifact_31
 				has_variable = equipped_artifact_31 
+			}
+			AND = {
+				has_variable = selected_artifact_32
+				has_variable = equipped_artifact_32 
 			}
 		}
 	}
@@ -1855,6 +1904,13 @@ artifacts_unequip_artifact = {
 			}
 			remove_variable = equipped_artifact_31
 			remove_character_modifier = artifact_31_modifier
+		}
+		else_if = {
+			limit = {
+				has_variable = selected_artifact_32
+			}
+			remove_variable = equipped_artifact_32
+			remove_character_modifier = artifact_32_modifier
 		}
 	}
 }

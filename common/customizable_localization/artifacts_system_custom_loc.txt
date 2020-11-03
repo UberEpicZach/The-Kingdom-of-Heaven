@@ -187,6 +187,12 @@
 		}
 	}
 	text = {
+		localization_key = artifact_32_name
+		trigger = {
+			has_variable = selected_artifact_32
+		}
+	}
+	text = {
 		localization_key = artifact_name_fallback
 	}
 }
@@ -377,6 +383,12 @@ GetSelectedArtifactDesc = {
 		localization_key = artifact_31_desc
 		trigger = {
 			has_variable = selected_artifact_31
+		}
+	}
+	text = {
+		localization_key = artifact_32_desc
+		trigger = {
+			has_variable = selected_artifact_32
 		}
 	}
 	text = {
@@ -604,6 +616,13 @@ GetSelectedArtifactEquipped = {
 			has_variable = equipped_artifact_31
 		}
 	}
+	text = {
+		localization_key = equipped_artifact
+		trigger = {
+			has_variable = selected_artifact_32
+			has_variable = equipped_artifact_32
+		}
+	}
 	
 	# Unquipped Artifacts
 	
@@ -822,6 +841,13 @@ GetSelectedArtifactEquipped = {
 		trigger = {
 			has_variable = selected_artifact_31
 			NOT = { has_variable = equipped_artifact_31 }
+		}
+	}
+	text = {
+		localization_key = unequipped_artifact
+		trigger = {
+			has_variable = selected_artifact_32
+			NOT = { has_variable = equipped_artifact_32 }
 		}
 	}
 	text = {

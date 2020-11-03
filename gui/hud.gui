@@ -3741,6 +3741,116 @@ widget = {
 									}
 								}
 								
+								vbox = {
+									name = "artifact_32"
+									datacontext = "[GetScriptedGui('artifacts_scripted_artifact_32')]"
+									visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									
+									button_standard = {
+										size = { 500 100 }
+										maximumsize = { 500 100 }
+										
+										datacontext = "[GetScriptedGui('artifacts_scripted_artifact_32')]"
+										onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										
+										block "artifact_entry"
+										{}
+										hbox = {
+											background = {
+												texture = "gfx/artifacts/tile_selected_gold.dds"
+												spriteType = Corneredtiled
+												spriteborder = { 6 6 }
+												shaderfile = "gfx/FX/pdxgui_default.shader"
+												block "artifact_entry_border"
+												{}
+											}
+									
+											button = {
+												size = { 100 100 }
+												alwaystransparent = yes
+												background = {
+													texture = "gfx/artifacts/tile_selected_gold.dds"
+													spriteType = Corneredtiled
+													spriteborder = { 6 6 }
+													shaderfile = "gfx/FX/pdxgui_default.shader"
+													block "artifact_entry_border"
+													{}
+												}
+												icon = {
+													texture = "gfx/artifacts/artifact_excalibur.dds"
+													size = { 95 95 }
+													parentanchor = center
+												}
+												icon = {
+													texture = "gfx/artifacts/artifacts_entry_bg.dds"
+													position = { 100 2 }
+													alwaystransparent = yes
+													layer = bottom
+												}
+											}
+											artifact_spacer_horizontal = {}
+											
+											vbox = {
+												artifact_spacer_vertical = {}
+												layoutpolicy_horizontal = expanding
+												layoutpolicy_vertical = expanding
+												artifact_spacer_vertical = {}
+												hbox = {
+													layoutpolicy_horizontal = expanding
+													textbox = {
+														font = StandardGameFont
+														fontcolor = { 1 1 1 1 }
+														fontsize = 16
+														text = artifact_32_name
+														autoresize = no
+														layoutpolicy_horizontal = expanding
+														elide = right
+														minimumsize = { -1 16 }
+														align = left
+														block "artifact_name"
+														{}
+													}
+													textbox = {
+														font = StandardGameFont
+														fontcolor = { 1 1 1 1 }
+														fontsize = 16
+														text = artifact_rarity_4
+														autoresize = no
+														layoutpolicy_horizontal = expanding
+														elide = right
+														minimumsize = { -1 16 }
+														align = right
+													}
+													artifact_spacer_horizontal = {}
+													icon = {
+														texture = "gfx/artifacts/icon_check.dds"
+														size = { 22 16 }
+														datacontext = "[GetScriptedGui('artifacts_equipped_artifact_32')]"
+														visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+													}
+													artifact_spacer_horizontal = {}
+												}
+												artifact_spacer_vertical = {}
+												textbox = {
+													font = StandardGameFont
+													fontcolor = { 0.8 0.8 0.8 1 }
+													fontsize = 12
+													text = artifact_32_stats
+													autoresize = no
+													layoutpolicy_horizontal = expanding
+													layoutpolicy_vertical = expanding
+													elide = right
+													multiline = yes
+													align = top|left
+													block "artifact_description"
+													{}
+												}
+												artifact_spacer_vertical = {}
+											}
+										}
+									}
+								}
+								
 							}
 						}
 					}
