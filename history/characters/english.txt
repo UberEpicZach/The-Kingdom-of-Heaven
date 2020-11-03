@@ -587,6 +587,11 @@
 	1152.5.18 = {
 		add_spouse = 205730
 	}
+	1176.1.1 = {
+		effect = {
+			set_relation_ward = character:204772
+		}
+	}
 	1180.1.1 = {
 		effect = {
 			imprison = {
@@ -1201,7 +1206,7 @@
 204539 = {
 	name = "John"
 	dynasty = 101709
-	martial = 5
+	martial = 15
 	diplomacy = 4
 	intrigue = 5
 	stewardship = 2
@@ -1218,18 +1223,19 @@
 		employer = 204500
 		give_council_position = councillor_marshal
 	}
-	1194.3.1 = {
-		death = "1194.3.1"
+	1183.3.1 = {
+		death = "1183.3.1"
 	}
 }
 
 204540 = {
 	name = "William"
 	dynasty = 101709
-	martial = 6
+	martial = 14
 	diplomacy = 7
 	intrigue = 6
 	stewardship = 8
+	prowess = 20
 	religion = "catholic"
 	culture = "english"
 	trait = lustful
@@ -1242,11 +1248,12 @@
 	1146.1.1 = {
 		birth = "1146.1.1"
 	}
+	1183.3.1 = {
+		employer = 204500
+		give_council_position = councillor_marshal
+	}
 	1189.8.1 = {
 		add_spouse = 204772
-	}
-	1194.3.1 = {
-		give_council_position = councillor_marshal
 	}
 	1219.5.14 = {
 		death = "1219.5.14"
@@ -1733,7 +1740,7 @@
 
 204600 = {
 	name = "Henry"
-	dynasty = 359
+	dynasty = 359 #de Bohun
 	martial = 7
 	diplomacy = 8
 	intrigue = 8
@@ -2894,7 +2901,7 @@
 }
 
 204741 = {
-	name = "Hawise"
+	name = "Hawise" #Countess of Aumale
 	female = yes
 	dynasty = 343
 	martial = 4
@@ -2902,13 +2909,19 @@
 	intrigue = 7
 	stewardship = 4
 	religion = "catholic"
-	culture = "english"
+	culture = "french"
 	trait = education_learning_3
-	1131.1.2 = {
-		birth = "1131.1.2"
+	1162.1.2 = {
+		birth = "1162.1.2"
 	}
-	1181.1.2 = {
-		death = "1181.1.2"
+	1180.1.1 = {
+		add_spouse = 204740
+		}
+	1195.2.2 = {
+		add_spouse = 161754
+		}
+	1214.3.14 = {
+		death = "1214.3.14"
 	}
 }
 
@@ -3040,8 +3053,8 @@
 	1173.1.2 = {
 		birth = "1173.1.2"
 	}
-	1185.7.1 = {
-		death = "1185.7.1"
+	1184.1.1 = {
+		death = "1184.1.1"
 	}
 }
 
@@ -3061,6 +3074,11 @@
 	mother = 214553
 	1172.1.1 = {
 		birth = "1172.1.1"
+	}
+	1172.1.2 = {
+		effect = {
+			create_betrothal = character:204540
+		}
 	}
 	1220.1.1 = {
 		death = "1220.1.1"
@@ -6242,7 +6260,7 @@
 
 454562 = {
 	name = "William"
-	dynasty = 359
+	dynasty = 359 #de Bohun
 	martial = 7
 	diplomacy = 8
 	intrigue = 8

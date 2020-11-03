@@ -203,6 +203,9 @@ c_middlesex = {
 	1154.10.25 = {
 		holder = 204500 #Henry II
 	}
+	1166.1.1 = {
+		holder = 204740 #William de Mandeville
+	}
 	1189.7.6 = {
 		holder = 204510 #Richard I Lionheart
 	}
@@ -331,7 +334,7 @@ c_bedford = {
 		holder = 204795
 	}
 	1173.1.7 = {
-		holder = 129064
+		holder = 204740
 	}
 	1217.10.14 = {
 		holder = 204801
@@ -447,6 +450,9 @@ c_hertfordshire = {
 	1154.10.25 = {
 		holder = 204500 #Henry II
 	}
+	1166.1.1 = {
+		holder = 204740
+	}
 	1189.7.6 = {
 		holder = 204510 #Richard I Lionheart
 	}
@@ -559,12 +565,15 @@ c_buckinghamshire = {
 	1154.10.25 = {
 		holder = 204500 #Henry II
 	}
-	1189.7.6 = {
-		holder = 204510 #Richard I Lionheart
+	1184.1.1 = {
+		holder = 204540 #William Marshal
 	}
-	1199.4.6 = {
-		holder = 204514 #John
-	}
+	#1189.7.6 = {
+	#	holder = 204510 #Richard I Lionheart
+	#}
+	#1199.4.6 = {
+	#	holder = 204514 #John
+	#}
 	1216.10.28 = {
 		holder = 454522 #Henry III
 	}
@@ -669,7 +678,7 @@ c_northumberland = {
 	1157.1.1 = {
 		holder = 82078 #Henry II Plantagenet
 	}
-	1189.1.1 = {
+	1184.1.1 = {
 		holder = 129024 #Hugh de Puiset, House of Blois
 	}
 	1191.6.1 = {
@@ -803,9 +812,12 @@ c_cumberland = {
 	1154.10.25 = {
 		holder = 82078
 	}
-	1189.7.6 = {
-		holder = 204510
+	1182.4.6 = {
+		holder = 83310 #Robert de Umfraville
 	}
+	#1189.7.6 = {
+	#	holder = 204510
+	#}
 	1199.4.6 = {
 		holder = 83312 #Richard de Umfraville
 	}
@@ -889,10 +901,10 @@ d_lancaster = {
 	1154.10.25 = {
 		holder = 82078 #Henry II
 	}
-	1189.7.6 = {
-		holder = 204510 #Richard I Lionheart
-	}
-	1199.4.6 = {
+	#1189.7.6 = {
+	#	holder = 204510 #Richard I Lionheart
+	#}
+	1184.1.1 = {
 		holder = 204514 #John
 	}
 	1203.1.1 = {
@@ -941,7 +953,7 @@ c_lancashire = {
 	1154.10.25 = {
 		holder = 82078 #Henry II
 	}
-	1187.1.1 = {
+	1184.1.1 = {
 		holder = 204514 #John
 	}
 	1203.1.1 = {
@@ -1206,26 +1218,29 @@ d_york = {
 		holder = 205851
 	}
 	1154.10.25 = {
-		holder = 204500
+		holder = 129024
 	}
-	1189.7.6 = {
-		holder = 204510
+	1171.1.1 = {
+		holder = 204511
 	}
-	1199.1.1 = {
-		holder = 204694
-	}
-	1216.10.28 = {
-		holder = 454522
-	}
-	1272.11.16 = {
-		holder = 454520
-	}
-	1307.7.8 = {
-		holder = 454510 #Edward II of England
-	}
-	1327.2.1 = {
-		holder = 454500
-	}
+	#1189.7.6 = {
+	#	holder = 204510
+	#}
+	#1199.1.1 = {
+	#	holder = 204694
+	#}
+	#1216.10.28 = {
+	#	holder = 454522
+	#}
+	#1272.11.16 = {
+	#	holder = 454520
+	#}
+	#1307.7.8 = {
+	#	holder = 454510 #Edward II of England
+	#}
+	#1327.2.1 = {
+	#	holder = 454500
+	#}
 	
 	
 	
@@ -1285,6 +1300,10 @@ c_north_riding = {
 	}
 	1154.10.25 = {
 		holder = 129024 #Henry II
+		liege = k_england
+	}
+	1171.1.1 = {
+		holder = 204511
 	}
 	1189.7.6 = {
 		holder = 204510 #Richard I Lionheart
@@ -1361,6 +1380,9 @@ c_east_riding = {
 	1154.10.25 = {
 		holder = 129024 #Henry II
 	}
+	1171.1.1 = {
+		holder = 204511
+	}
 	1189.7.6 = {
 		holder = 204510 #Richard I Lionheart
 	}
@@ -1436,6 +1458,9 @@ c_west_riding = {
 	1154.10.25 = {
 		holder = 203520 #Henry II
 	}
+	1171.1.1 = {
+		holder = 204511
+	}
 	1189.7.6 = {
 		holder = 204510 #Richard I Lionheart
 	}
@@ -1510,7 +1535,7 @@ c_lincolnshire = {
 		holder = 203520 #Henry II
 	}
 	1187.1.1 = {
-		holder = 155241
+		holder = 155241 #William III de Roumare
 	}
 	1190.1.1 = {
 		holder = 204582 #Robert (IV) de Beaumont
@@ -1584,9 +1609,6 @@ c_norfolk = {
 	855.1.8 = {
 		holder = 163064
 	}
-	
-	
-	
 	879.1.1 = {
 		holder = 168650
 	}
@@ -1683,15 +1705,18 @@ c_suffolk = {
 	1154.10.25 = {
 		holder = 204500 #Henry II
 	}
-	1189.7.6 = {
-		holder = 204510 #Richard I Lionheart
-	}
-	1199.4.6 = {
-		holder = 204514 #John
-	}
-	1216.10.18 = {
+	1177.1.1 = {
 		holder = 204730 #Roger de Bigod
 	}
+	#1189.7.6 = {
+	#	holder = 204510 #Richard I Lionheart
+	#}
+	#1199.4.6 = {
+	#	holder = 204514 #John
+	#}
+	#1216.10.18 = {
+	#	holder = 204730 #Roger de Bigod
+	#}
 	1216.10.28 = {
 		holder = 454522 #Henry III
 	}
@@ -1751,15 +1776,18 @@ c_cambridgeshire = {
 	1154.10.25 = {
 		holder = 204500 #Henry II
 	}
-	1189.7.6 = {
-		holder = 204510 #Richard I Lionheart
-	}
-	1199.4.6 = {
-		holder = 204514 #John
-	}
-	1216.10.18 = {
+	1177.1.1 = {
 		holder = 204730 #Roger de Bigod
 	}
+	#1189.7.6 = {
+	#	holder = 204510 #Richard I Lionheart
+	#}
+	#1199.4.6 = {
+	#	holder = 204514 #John
+	#}
+	#1216.10.18 = {
+	#	holder = 204730 #Roger de Bigod
+	#}
 	1216.10.28 = {
 		holder = 454522 #Henry III
 	}
@@ -2256,6 +2284,9 @@ c_shropshire = {
 		liege = "d_hereford"
 		holder = 90027 #Eadric the Wild
 	}
+	1102.1.1 = {
+		holder = 0
+	}
 }
 
 
@@ -2312,14 +2343,14 @@ c_hereford = {
 	}
 	1155.9.22 = {
 		holder = 129064 #Henry II
+	#}
+	#1189.7.6 = {
+	#	holder = 204510 #Richard I Lionheart
+	#}
+	#1199.4.6 = {
+	#	holder = 204514 #John
 	}
-	1189.7.6 = {
-		holder = 204510 #Richard I Lionheart
-	}
-	1199.4.6 = {
-		holder = 204514 #John
-	}
-	1199.6.1 = {
+	1184.1.1 = {
 		holder = 204600 #Henry de Bohun
 	}
 	1220.6.1 = {
@@ -2774,6 +2805,7 @@ c_kent = {
 
 b_canterbury = {
 	597.1.1 = {
+		government = theocracy_government
 		holder = 180660 # Augustine
 	}
 	604.5.25 = {
@@ -3288,11 +3320,14 @@ c_somerset = {
 		holder = 205851 #Stephen
 	}
 	1154.10.25 = {
-		holder = 204530 #Henry II
+		holder = 204530
 	}
-	1187.1.1 = {
-		holder = 204514 #John
-	}
+	#1154.10.25 = {
+	#	holder = 204530 #Henry II
+	#}
+	#1187.1.1 = {
+	#	holder = 204514 #John
+	#}
 	1216.10.28 = {
 		holder = 232682
 	}
