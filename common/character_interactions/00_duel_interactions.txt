@@ -31,6 +31,17 @@
 		NOT = {
 			scope:recipient = scope:actor
 		}
+		scope:actor = {
+			NOT = { has_character_flag = recently_invited_to_duel }
+			adult = yes
+			NOT = { has_trait = incapable }
+		}
+		
+		scope:recipient = {
+			adult = yes
+			NOT = { has_trait = incapable }
+			NOT = { has_character_flag = recently_invited_to_duel }
+		}
 	}
 	
 	
@@ -40,14 +51,16 @@
 		}
 	}
 	
+	auto_accept = yes
+	
 	on_accept = {
-		scope:recipient = {
-			save_scope_as = combatant_2
-		}
 		scope:actor = {
 			save_scope_as = combatant_1
+		}
+		scope:recipient = {
+			save_scope_as = combatant_2
 			trigger_event = {
-				id = KoH_duels.2
+				id = KoH_duels.3
 			}
 		}
 	}

@@ -17,6 +17,7 @@ chivalry.1 = {
 		change_chivalry_effect = { 
 			Chivalry = 1
 		}
+		custom_tooltip = add_1_chivalry_tt
 		
 		if = {
 			limit = {
@@ -40,6 +41,8 @@ chivalry.1 = {
 		change_chivalry_effect = { 
 			Chivalry = -1
 		}
+		custom_tooltip = remove_1_chivalry_tt
+		
 		add_tyranny = 5
 		add_dread = 10
 		
@@ -91,6 +94,7 @@ chivalry.2 = {
 		change_chivalry_effect = { 
 			Chivalry = 1
 		}
+		custom_tooltip = add_1_chivalry_tt
 		
 		trigger_event = {
 			id = chivalry.3
@@ -104,6 +108,7 @@ chivalry.2 = {
 		change_chivalry_effect = { 
 			Chivalry = -1
 		}
+		custom_tooltip = remove_1_chivalry_tt
 		
 		add_prestige = -50
 	}
@@ -209,6 +214,7 @@ chivalry.4 = {
 			change_chivalry_effect = { 
 				Chivalry = -2
 			}
+			custom_tooltip = remove_2_chivalry_tt
 		}
 		
 		scope:challenger = {
@@ -246,6 +252,160 @@ chivalry.5 = {
 		root = {
 			add_prestige = -50
 			increase_wounds_no_death_effect = { REASON = fight }
+		}
+	}
+}
+
+chivalry.6 = {
+	type = character_event
+	title = chivalry.6.t
+	desc = chivalry.6.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	
+	option = {
+		name = chivalry.6.a
+		
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+		
+		add_stress = 10
+		random_list = {
+			50 = {
+				knight_increase_prowess_chance_effect = yes
+			}
+			50 = {
+			
+			}
+		}
+	}
+	option = {
+		name = chivalry.6.b
+		
+		change_chivalry_effect = { 
+			Chivalry = -1
+		}
+		custom_tooltip = remove_1_chivalry_tt
+		
+		add_dread = 10
+		
+		random_list = {
+			80 = {
+				knight_increase_prowess_chance_effect = yes
+			}
+			20 = {
+			
+			}
+		}
+	}
+}
+
+chivalry.7 = {
+	type = character_event
+	title = chivalry.7.t
+	desc = chivalry.7.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	
+	option = {
+		name = chivalry.7.a
+		
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+		
+		random_list = {
+			20 = {
+				add_trait = unyielding_defender
+				add_prestige = 100
+			}
+			80 = {
+				add_prestige = 50
+			}
+		}
+	}
+	
+	option = {
+		name = chivalry.7.b
+		
+		change_chivalry_effect = { 
+			Chivalry = -1
+		}
+		custom_tooltip = remove_1_chivalry_tt
+		
+		random_list = {
+			20 = {
+				add_trait = aggressive_attacker
+				add_dread = 30
+			}
+			80 = {
+				add_dread = 10
+			}
+		}
+	}
+}
+
+chivalry.8 = {
+	type = character_event
+	title = chivalry.8.t
+	desc = chivalry.8.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	
+	right_portrait = {
+		character = scope:enemy_commander
+	
+	immediate = {
+		random_side_commander = {
+			save_scope_as = enemy_commander
+	
+	option = {
+		name = chivalry.8.a
+		
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+		
+		random_list = {
+			20 = {
+				add_trait = brave
+			}
+		}
+		
+		root = {
+			save_scope_as = combatant_2
+		}
+		scope:enemy_commander = {
+			save_scope_as = combatant_1
+			trigger_event = {
+				id = KoH_duels.3
+			}
+		}
+	}
+	
+	option = {
+		name = chivalry.8.b
+		
+		change_chivalry_effect = { 
+			Chivalry = -1
+		}
+		custom_tooltip = remove_1_chivalry_tt
+		
+		add_prestige = -50
+		random_list = {
+			20 = {
+				add_trait = craven
+			}
 		}
 	}
 }

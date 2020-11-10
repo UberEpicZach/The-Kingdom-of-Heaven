@@ -44,6 +44,14 @@
 			name = total_prestige
 			divide = 5
 		}
+		set_variable = {
+			name = total_dread_loss
+			value = var:Chivalry
+		}
+		change_variable = {
+			name = total_dread_loss
+			multiply = 10
+		}
 		if = {
 			limit = {
 				var:Chivalry = 0
