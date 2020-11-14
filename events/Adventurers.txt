@@ -1,0 +1,322 @@
+﻿namespace = KoH_Adventurers
+
+#Adventureers
+KoH_Adventurers.1 = {
+	type = character_event
+	title =KoH_Adventurers.1.t
+	desc = KoH_Adventurers.1.d
+	theme = mental_health
+	
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+
+	trigger = { 
+
+		NOT = {
+			has_game_rule = {
+				name = adventurers
+				value = none
+			}
+		}
+		ai = yes
+
+		is_ruler = no
+
+		is_imprisoned = no
+
+		NOT = { any_spouse = { is_ruler = yes } }
+
+		any_claim = {
+			holder = {
+				is_independent_ruler = yes
+				OR = {
+					NOT = { target_is_vassal_or_below = ROOT }
+					ROOT = { has_trait = ambitious }
+				}
+				OR = {
+					NOT = { has_government = republic_government }
+						}
+			save_scope_as = AdventureTarget
+				}		
+			OR = {
+				tier = tier_kingdom
+				holder = { tier = tier_kingdom }
+			}
+			save_scope_as = adventureclaim
+		}
+
+		NOT = {
+			any_heir_title = {
+				always = yes
+			}
+		}
+
+		diplomacy = 7
+
+		health = 4
+
+		NOT = { has_trait = content }
+		NOT = { has_trait = craven }
+
+		NOT = { has_character_modifier = planning_claimant_adventure  }
+	}
+	
+	immediate = { 
+		scope:adventureclaim = {
+			holder = {
+				reverse_add_opinion = {
+					target = ROOT
+					opinion = -15
+					modifier = opinion_claimant_adventure_target
+					}
+				trigger_event = {
+					id = KoH_Adventurers.2
+					days = 20
+					}
+				}
+			ROOT = {
+				add_character_modifier = {
+					name = planning_claimant_adventure
+					hidden = yes
+					years = 2
+				}
+				trigger_event = {
+					id = KoH_Adventurers.3
+					years = 2
+					}
+				}
+			if = {
+				limit = {
+					holder = {
+						target_is_vassal_or_below = ROOT
+					}
+				}
+			ROOT = { banish = yes }
+		}
+	}
+	trigger_event = { 
+		id = KoH_Adventurers.4
+		years = 2
+	}
+	option = {
+		name = KoH_Adventurers.1.a
+		}		
+	}
+}
+
+KoH_Adventurers.2 = {
+	type = character_event
+	title =KoH_Adventurers.2.t
+	desc = KoH_Adventurers.2.d
+	theme = mental_health
+	
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+
+	immediate = {
+		opinion = {
+			who = FROM 
+
+			}
+		}
+	option = {
+		name = KoH_Adventurers.2.a
+	}
+}
+
+KoH_Adventurers.3 = {
+	type = character_event
+	title =KoH_Adventurers.3.t
+	desc = KoH_Adventurers.3.d
+	theme = mental_health
+	
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+
+	trigger = {
+		ai = yes
+
+		is_ruler = no
+
+		is_imprisoned = no
+
+		NOT = { any_spouse = { is_ruler = yes } }
+
+		scope:adventureclaim = {
+			holder = {
+				is_independent_ruler = yes
+				OR = {
+					NOT = { target_is_vassal_or_below = ROOT }
+					ROOT = { has_trait = ambitious }
+				}
+				OR = {
+					NOT = { has_government = republic_government }
+						}
+				}		
+			OR = {
+				tier = tier_kingdom
+				holder = { tier = tier_kingdom }
+			}
+		}
+		NOT = {
+			any_heir_title = {
+				always = yes
+			}
+		}
+	}
+
+	immediate = {
+
+		add_gold = 500
+		
+		liege = {
+			trigger_event = { 
+				id = KoH_Adventurers.5
+				day = 1
+			}
+		}
+		liege = { 
+			capital_barony = {
+				ROOT = {
+					#set_de_jure_lieg
+					create_dynamic_title = { 
+						tier = tier_duchy
+						cutlure = ROOT
+						holder = ROOT
+						name = "CLAIMANT_ADVENTURE"
+					}
+					scope:adventureclaim = {
+						holder = {
+							is_independent_ruler = yes
+							OR = {
+								NOT = { target_is_vassal_or_below = ROOT }
+								ROOT = { has_trait = ambitious }
+							}
+							OR = {
+								NOT = { has_government = republic_government }
+									}
+							}		
+						OR = {
+							tier = tier_kingdom
+							holder = { tier = tier_kingdom }
+						}
+					NOT = {
+						any_heir_title = {
+							always = yes
+						}
+					}
+					holder = {
+						ROOT = { 
+							save_scope_as = claimant
+							add_character_flag = claimant_adventurer
+									spawn_army = {
+										uses_supply = no
+										inheritable = no
+										name = saladins_fanatics
+										location = capital_barony
+										levies = {
+											if = { 
+												limit = {
+													scope:AdventureTarget = {
+														highest_held_title_tier > tier_county
+														add = 1300
+													}
+												}
+											}
+											else_if = {
+												limit = {
+													scope:AdventureTarget = {
+														highest_held_title_tier > tier_duchy
+														add = 2000
+													}
+												}
+											else_if = {
+												limit = {
+													scope:AdventureTarget = {
+														highest_held_title_tier > tier_kingdom
+														add = 5000
+														}
+													}
+												}
+											else_if = {
+												limit = {
+													scope:AdventureTarget = {
+														highest_held_title_tier > tier_empire
+														add = 7000
+														}
+													}
+												}
+
+											}
+										}
+									}
+
+								}
+							}
+						}
+					}
+
+				}
+			}
+			holder = {
+				start_war = {
+					casus_belli = claim_cb
+					target = scope:AdventureTarget
+					target_title = scope:adventureclaim 
+					claimant = scope:claimant
+				}
+				remove_opinion = {
+					who = ROOT
+					modifier = opinion_claimant_adventure_target
+				}
+			}
+		}
+	}
+	option = {
+		name = KoH_Adventurers.3.a
+	}
+}
+
+KoH_Adventurers.4 = {
+	type = character_event
+	title =KoH_Adventurers.4.t
+	desc = KoH_Adventurers.4.d
+	theme = mental_health
+	
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+
+	trigger = {
+		scope:claimant = {
+			is_ruler = yes }
+		}
+	immediate = {
+		scope:claimant = {
+			add_trait = adventurer
+		}
+		any_liege = {
+			trigger_event = {
+				id = KoH_Adventurers.5
+				days = 1
+			}
+		}
+	}
+
+
+	option = {
+		name = KoH_Adventurers.4.a
+	}
+}
+
+
+		
+
+

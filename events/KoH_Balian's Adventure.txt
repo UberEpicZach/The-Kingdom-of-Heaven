@@ -4,17 +4,23 @@ KoH_balians_adventure.1 = {
 	type = character_event
 	title = KoH_balians_adventure.1.t
 	desc = KoH_balians_adventure.1.d
-	is_triggered_only = yes
 	theme = mental_health
 	
 	left_portrait = {
 		character = root
 		animation = sadness
 	}
+	right_portrait = {
+		character = character:KOH0017
+		animation = grief
+	}
 	
 	option = {
 		name = KoH_balians_adventure.a
-		
+		trigger_event = {
+			id = KoH_balians_adventure.2
+			days = { 10 20 }
+		}
 	}
 }
 
@@ -22,7 +28,6 @@ KoH_balians_adventure.2 = {
 	type = character_event
 	title = KoH_balians_adventure.2.t
 	desc = KoH_balians_adventure.2.d
-	is_triggered_only = yes
 	theme = martial_chivalry_focus
 	override_background = {
 		event_background = armory
@@ -33,9 +38,17 @@ KoH_balians_adventure.2 = {
 		animation = personality_bold
 	}
 	
+	right_portrait = {
+		character = character:205506
+		animation = personality_bold
+	}
+
 	option = {
 		name = KoH_balians_adventure.2.a
-		
+		trigger_event = {
+			id = KoH_balians_adventure.3
+			days = 1
+		}
 	}
 }
 
@@ -51,11 +64,21 @@ KoH_balians_adventure.3 = {
 	
 	left_portrait = {
 		character = root
-		animation = personality_bold
+		animation = boredom 
 	}
 	
+	right_portrait = {
+		character = 144166
+		animation = personality_rational
+	}
+
 	option = {
 		name = KoH_balians_adventure.3.a
+		
+		trigger_event = {
+			id = KoH_balians_adventure.4
+			days = 6
+		}
 		
 		}
 		
@@ -75,10 +98,19 @@ KoH_balians_adventure.4 = {
 		character = root
 		animation = personality_bold
 	}
+
+	right_portrait = {
+		character = 800504
+		animation = disapproval
+	}
 	
 	option = {
 		name = KoH_balians_adventure.4.a
 		
+		trigger_event = {
+			id = KoH_balians_adventure.5
+			days = 6
+		}
 	}
 }
 
@@ -86,7 +118,6 @@ KoH_balians_adventure.5 = {
 	type = character_event
 	title = KoH_balians_adventure.5.t
 	desc = KoH_balians_adventure.5.d
-	is_triggered_only = yes
 	theme = death
 	override_background = {
 		event_background = farmland
@@ -100,6 +131,10 @@ KoH_balians_adventure.5 = {
 	option = {
 		name = KoH_balians_adventure.5.a
 		
+		trigger_event = {
+			id = KoH_balians_adventure.6
+			days = 10
+		}
 	}
 }
 
@@ -107,7 +142,7 @@ KoH_balians_adventure.6 = {
 	type = character_event
 	title = KoH_balians_adventure.6.t
 	desc = KoH_balians_adventure.6.d
-	is_triggered_only = yes
+
 	theme = war
 	override_background = {
 		event_background = wilderness_forest_pine
@@ -121,30 +156,131 @@ KoH_balians_adventure.6 = {
 	option = {
 		name = KoH_balians_adventure.6.a
 		
+		trigger_event = {
+			id = KoH_balians_adventure.7
 		}
-	}	
 
-
-KoH_balians_adventure.7 = {
-	type = character_event
-	title = KoH_balians_adventure.7.t
-	desc = KoH_balians_adventure.7.d
-	is_triggered_only = yes
-	theme = war
-	override_background = {
-		event_background = wilderness_forest
 	}
+}	
+
+
+KoH_KoH_balians_adventure.7a = { #A challenger approaches
+	type = character_event
+	title = KoH_balians_adventure.7a.t
+	desc = KoH_balians_adventure.7a.d
+
+	theme = war
 	
 	left_portrait = {
-		character = root
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_2
 		animation = personality_bold
 	}
 	
 	option = {
-		name = KoH_balians_adventure.7.a
+		name = KoH_balians_adventure.7a.a
+		
+		custom_tooltip = duel_can_go_either_way
+		hidden_effect = {
+			duel = {
+				skill = prowess
+				target = scope:combatant_2
+				value = 10
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
+						min = -19
+					}
+					trigger_event = {
+						id = KoH_balians_adventure.4 #I won
+						days = 1
+					}
+				}
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -1
+						min = -19
+					}
+					trigger_event = {
+						id = KoH_balians_adventure.5 #I lost
+						days = 1
+					}
+				}
+			}
 		}
 	}
+}
 
+KoH_balians_adventure.7b = { #A challenger approaches
+	type = character_event
+	title = KoH_balians_adventure.7b.t
+	desc = KoH_balians_adventure.7b.d
+	# is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = severelywounded
+	}
+	
+	option = {
+		name = KoH_balians_adventure.7b.a
+		
+		
+		scope:combatant_1 = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+		}
+		
+		scope:combatant_2 = {
+			add_prestige = -50
+			increase_wounds_no_death_effect = { REASON = fight }
+		}
+	}
+}
+
+KoH_balians_adventure.7c = { #A challenger approaches
+	type = character_event
+	title = KoH_balians_adventure.7c.t
+	desc = KoH_balians_adventure.7c.d
+	# is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = scope:combatant_1
+		animation = severelywounded
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_balians_adventure.7c.a
+		
+		
+		scope:combatant_1 = {
+			add_prestige = -50
+			increase_wounds_no_death_effect = { REASON = fight }
+		}
+		
+		scope:combatant_2 = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+		}
+	}
+}
 
 KoH_balians_adventure.8 = {
 	type = character_event

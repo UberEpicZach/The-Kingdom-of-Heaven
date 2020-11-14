@@ -63,7 +63,7 @@ KoH_holy_orders.1 = {
 				}
 			}
 		}
-		templar_holy_order = {
+		scope:templar_holy_order = {
 			copy_title_history = title:d_knights_templars
 		}
 	}
@@ -150,7 +150,7 @@ KoH_holy_orders.2 = {
 				}
 			}
 		}
-		templar_holy_order = {
+		scope:hospitaler_holy_order = {
 			copy_title_history = title:d_knights_hospitaler
 		}  
 	}
@@ -168,14 +168,14 @@ KoH_holy_orders.3 = {
 			random_faith_holy_order = {
 				limit = {
 					leader = {
-						this = character:231001
+						this = character:231000
 					}
 				}
-				save_scope_as = holy_order1
+				save_scope_as = holy_order
 			}
 		}
-		title:c_kerake = {
-			lease_out_to = scope:holy_order1
+		title:b_kerake = {
+			lease_out_to = scope:holy_order
 		}
 	}
 }

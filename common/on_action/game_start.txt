@@ -3,7 +3,7 @@
 		every_living_character = {
 			set_variable = {
 				name = Chivalry
-				value = 0
+				value = 10
 			}
 		}
 		trigger_event = { # Artifact Equipper
@@ -61,7 +61,7 @@
 				}
 				trigger_event = {
 					id = KoH_holy_orders.4
-					days = -1
+					days = 2
 				}
 			}
 		}
@@ -73,7 +73,7 @@
 				}
 				trigger_event = {
 					id = KoH_holy_orders.2
-					days = 2
+					days = 1
 				}
 			}
 		}
@@ -98,7 +98,7 @@
 					days = 3
 				}
 			}
-		}
+		} 
 		character:207510 = {
 			if = {
 				limit = {

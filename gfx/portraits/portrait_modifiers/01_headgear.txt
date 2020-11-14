@@ -528,9 +528,11 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 100
+				add = 1000
 				portrait_wear_helmet_trigger = yes
 				portrait_western_clothing_trigger = yes
+				portrait_only_before = yes
+				
 			}
 		}
 	}
@@ -3115,7 +3117,7 @@ turkish_war = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
-				gene = special_headgear_face_mask
+				gene = baldwin_face_mask
 				template = face_mask
 				#value = 1.0
 				range = { 1 1 } # For the randomness to work correctly

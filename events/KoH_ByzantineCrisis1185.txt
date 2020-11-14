@@ -1,0 +1,428 @@
+﻿namespace = KoH_byzantinecrisis
+
+#The Governor
+KoH_byzantinecrisis.1 = {
+	type = character_event
+	title = KoH_byzantinecrisis.1.t
+	desc = KoH_byzantinecrisis.1.d
+	theme = mental_health
+
+	trigger = { 
+		current_date >= 1185.1.1
+		
+	}
+	
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+	immediate = {
+		character:223020 = { 
+			get_title = c_famagusta
+
+			create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			becomes_independent = { change = scope:change 
+			}
+			resolve_title_and_vassal_change = scope:change
+
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = Isaac's_Mercenaries
+				levies = {
+					value = 2500
+				}
+				location = 757
+			}
+
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:d_cyprus
+                }
+            }
+            save_scope_as = cyprus_ruler
+        }
+		start_war = {
+			casus_belli = claim_cb
+			target = scope:cyprus_ruler
+			target_title = d_nicosia
+			claimant = character:223020
+		}
+			
+	}
+	option = {
+		name = KoH_byzantinecrisis.1.a
+
+		hidden_effect = {
+			trigger_event = {
+				id = KoH_byzantinecrisis.2
+				days = 40
+			}		
+		}
+	}
+}
+
+KoH_byzantinecrisis.2 = {
+	type = character_event
+	title = KoH_byzantinecrisis.2.t
+	desc = KoH_byzantinecrisis.2.d
+	is_triggered_only = yes
+	theme = martial_chivalry_focus
+	override_background = {
+		event_background = armory
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	option = {
+		name = KoH_byzantinecrisis.2.a
+		
+		if = {
+			limit = {
+				is_ai = yes
+				can_start_scheme = {
+					type = murder
+					target = character:215670
+				}
+			}
+				start_scheme = {
+					target = character:215670
+					type = murder
+			}
+		}
+		add_scheme_modifier = { type = murderer_adndronikos  days = 12000 }
+	}
+
+	option = {
+		name = KoH_byzantinecrisis.2.b
+
+		add_hook = {
+			type = manipulation_hook
+			target = {
+				every_ruler = {
+					limit = {
+						AND = {  
+							liege = title:e_byzantium
+							highest_held_title_tier = tier_duchy
+						}
+					}
+				}	
+			}
+		}
+	}
+}
+
+KoH_byzantinecrisis.3 = {
+	type = character_event
+	title = KoH_byzantinecrisis.3.t
+	desc = KoH_byzantinecrisis.3.d
+	is_triggered_only = yes
+	theme = martial_chivalry_focus
+	override_background = {
+		event_background = armory
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.3.a
+		
+		immediate = { 
+			every_ruler = {
+				limit = {
+					any_held_title = {
+						this = title:e_byzantium
+					}
+				}
+				save_scope_as = ByzantineEmperor
+			}
+			every_ruler = {
+				limit = {
+					any_held_title = {
+						this = title:k_sicily
+					}
+				}
+				save_scope_as = NormanKing
+			}
+
+			start_war = {
+				casus_belli = claim_cb
+				target = scope:ByzantineEmperor
+				target_title = k_epirus
+				claimant = scope:NormanKing
+			}
+			
+			scope:NormanKing = {
+
+				add_gold = 500
+
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = Normans
+					levies = {
+						value = 2500
+					}
+					location = 3711
+				}
+				spawn_army = {
+					uses_supply = no
+					inheritable = yes
+					name = Normans
+					levies = {
+						value = 2500
+					}
+					location = 3712
+				}
+			}
+		}	
+	}
+}
+KoH_byzantinecrisis.4 = {
+	type = character_event
+	title = KoH_byzantinecrisis.4.t
+	desc = KoH_byzantinecrisis.4.d
+	is_triggered_only = yes
+	theme = martial_chivalry_focus
+	override_background = {
+		event_background = armory
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.4.a
+		
+	}
+}
+
+KoH_byzantinecrisis.5 = {
+	type = character_event
+	title = KoH_byzantinecrisis.5.t
+	desc = KoH_byzantinecrisis.5.d
+	is_triggered_only = yes
+	theme = death
+	override_background = {
+		event_background = farmland
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.5.a
+		
+	}
+}
+
+KoH_byzantinecrisis.6 = {
+	type = character_event
+	title = KoH_byzantinecrisis.6.t
+	desc = KoH_byzantinecrisis.6.d
+	is_triggered_only = yes
+	theme = war
+	override_background = {
+		event_background = wilderness_forest_pine
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.6.a
+		
+		}
+	}	
+
+
+KoH_byzantinecrisis.7 = {
+	type = character_event
+	title = KoH_byzantinecrisis.7.t
+	desc = KoH_byzantinecrisis.7.d
+	is_triggered_only = yes
+	theme = war
+	override_background = {
+		event_background = wilderness_forest
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.7.a
+		}
+	}
+
+
+KoH_byzantinecrisis.8 = {
+	type = character_event
+	title = KoH_byzantinecrisis.8.t
+	desc = KoH_byzantinecrisis.9.d
+	is_triggered_only = yes
+	theme = war
+	override_background = {
+		event_background = embarked
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.8.a
+		
+		}
+	}
+
+KoH_byzantinecrisis.9 = {
+	type = character_event
+	title = KoH_byzantinecrisis.9.t
+	desc = KoH_byzantinecrisis.9.d
+	is_triggered_only = yes
+	theme = war
+	override_background = {
+		event_background = wilderness_desert
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.9.a
+		
+		}
+	}
+
+KoH_byzantinecrisis.10 = {
+	type = character_event
+	title = KoH_byzantinecrisis.10.t
+	desc = KoH_byzantinecrisis.10.d
+	is_triggered_only = yes
+	theme = war
+	override_background = {
+		event_background = wilderness_desert
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.10.a
+		
+			}
+		}
+
+KoH_byzantinecrisis.11 = {
+	type = character_event
+	title = KoH_byzantinecrisis.11.t
+	desc = KoH_byzantinecrisis.11.d
+	is_triggered_only = yes
+	theme = war
+	override_background = {
+		event_background = wilderness_desert
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.11.a
+
+	}
+
+	option = {
+		name = KoH_byzantinecrisis.11.b	
+    }
+}
+
+KoH_byzantinecrisis.12 = {
+	type = character_event
+	title = KoH_byzantinecrisis.12.t
+	desc = KoH_byzantinecrisis.12.d
+	is_triggered_only = yes
+	theme = war
+	override_background = {
+		event_background = wilderness_desert
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.12.a
+		
+		}
+	option = {
+		name = KoH_byzantinecrisis.12.b	
+		}
+	}
+
+KoH_byzantinecrisis.13 = {
+	type = character_event
+	title = KoH_byzantinecrisis.13.t
+	desc = KoH_byzantinecrisis.13.d
+	is_triggered_only = yes
+	theme = war
+	override_background = {
+		event_background = market_east
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.13.a
+		
+		}
+	}
+
+KoH_byzantinecrisis.14 = {
+	type = character_event
+	title = KoH_byzantinecrisis.14.t
+	desc = KoH_byzantinecrisis.14.d
+	is_triggered_only = yes
+	theme = war
+	override_background = {
+		event_background = wilderness_desert
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_byzantinecrisis.14.a
+		
+		}
+	}
