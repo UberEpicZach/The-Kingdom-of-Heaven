@@ -14,7 +14,7 @@ baron_female_ibelin = {
     special = holder
     tier = county
     priority = 18
-    titles = { c_ibelin }
+    titles = { c_ibelin } 
     top_liege = no
 }
 
@@ -34,6 +34,14 @@ barony_lepuiset = {
     top_liege = no 
 }
 
+barony_chartres = {
+    type = title
+    tier = county
+    titles = { c_chartres } 
+    priority = 19
+    top_liege = no
+}
+
 baron_female_lepuiset = {
     type = character
     gender = female
@@ -51,5 +59,15 @@ baron_male_lepuiset = {
     tier = county
     priority = 18
     titles = { c_lepuiset }
+    top_liege = no
+}
+
+baron_male_chartres = {
+    type = character
+    gender = male
+    special = holder
+    tier = county
+    priority = 19
+    titles = { c_chartres }
     top_liege = no
 }

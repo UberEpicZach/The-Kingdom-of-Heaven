@@ -173,7 +173,7 @@ KoH_duels.5 = { #A challenger approaches
 			show_as_tooltip = {
 				death = {
 					killer = scope:winner
-					reason = fight
+					death_reason = fight
 				}
 			}
 		}
@@ -240,7 +240,7 @@ KoH_duels.7 = { #A challenger approaches
 		
 		death = {
 			killer = scope:winner
-			reason = fight
+			death_reason = fight
 		}
 		clear_saved_scope = winner
 		clear_saved_scope = loser
