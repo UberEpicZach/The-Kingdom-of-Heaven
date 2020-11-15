@@ -14856,12 +14856,12 @@
 	1171.8.15 = {
 		birth = "1171.8.15"
 	}
-	1191.2.15 = {
-		add_spouse = 209504
-	}
-	1195.1.1 = {
-		remove_spouse = 209504
-	}
+	#1191.2.15 = {
+	#	add_spouse = 209504
+	#}
+	#1195.1.1 = {
+	#	remove_spouse = 209504
+	#}
 	1197.12.17 = {
 		add_spouse = 457651
 	}
@@ -14889,6 +14889,17 @@
 	mother = 204512
 	1180.6.1 = {
 		birth = "1180.6.1"
+	}
+	1181.1.1 = {
+		add_spouse = 212505 #Konrad, prince of HRE
+	}
+	1183.1.1 = {
+		divorce = character:212505
+	}
+	1184.1.1 = {
+		effect = {
+			create_betrothal = character:457650 #Alfonso IX of León
+		}
 	}
 	1217.6.6 = {
 		give_nickname = nick_the_great

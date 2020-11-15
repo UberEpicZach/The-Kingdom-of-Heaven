@@ -3574,17 +3574,17 @@
 	# AKA: Friedrich Barbarossa
 	dna = 212501_barbarossa
 	dynasty = 529
-	martial = 7
-	diplomacy = 7
+	martial = 15
+	diplomacy = 9
 	intrigue = 7
-	stewardship = 4
+	stewardship = 16
+	prowess = 17
 	religion = "catholic"
 	culture = swabian
 	trait = fredrick_barbarossa
 	trait = wrathful
 	trait = arrogant
 	trait = diligent
-	trait = cynical
 	trait = education_diplomacy_4
 	father = 212495
 	mother = 212498
@@ -3602,7 +3602,7 @@
 		add_spouse = 31519 #Adelheid Ratoponen
 	}
 	1153.3.1 = {
-		remove_spouse = 31519 #Adelheid Ratoponen
+		divorce = character:31519 #Adelheid Ratoponen
 	}	
 	1156.1.1 = {
 		add_spouse = 205599 #Beatrice of Burgundy
@@ -3621,9 +3621,11 @@
 	stewardship = 8
 	religion = "catholic"
 	culture = swabian
-	trait = honest
+	trait = lustful
 	trait = wrathful
+	trait = sadistic
 	trait = ill
+	trait = bleeder
 	trait = education_learning_2
 	father = 212501
 	mother = 205599
@@ -3677,7 +3679,7 @@
 	1165.1.1 = {
 		birth = "1165.1.1"
 	}
-	1186.1.1 = {
+	1184.1.1 = {
 		add_spouse = 212508
 	}
 	1197.9.28 = {
@@ -4078,6 +4080,9 @@
 	mother = 205599
 	1166.1.1 = {
 		birth = "1166.1.1"
+	}
+	1184.1.1 = {
+		add_spouse = 213541 #Guglielmo (IV) Aleramicci
 	}
 	1187.1.1 = {
 		death = "1187.1.1"

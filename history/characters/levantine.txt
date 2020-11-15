@@ -2648,7 +2648,7 @@
 
 226000 = {
 	name = "Saladin" #Egypt
-	# AKA: Salah ad
+	# AKA: Salah ad-Din
 	dna = 226000_Saladin
 	dynasty = 24000
 	martial = 7
@@ -2676,6 +2676,12 @@
 		add_pressed_claim = d_damascus
 		add_pressed_claim = d_amman
 		add_pressed_claim = d_oultrejourdain
+	}
+	1175.1.1 = {
+		effect = {
+			set_relation_friend = character:KOH0041
+			set_relation_friend = character:KOH0025
+		}
 	}
 	1176.1.1 = {
 		add_spouse = 1000230506

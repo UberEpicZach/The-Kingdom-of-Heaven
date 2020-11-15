@@ -779,6 +779,7 @@
 	trait = arrogant
 	trait = education_martial_4
 	trait = richard_the_lionheart
+	sexuality = bisexual
 	father = 204500
 	mother = 205730
 	1157.9.8 = {
@@ -797,6 +798,11 @@
 			create_betrothal = character:205518
 		}
 	}
+	1181.1.1 = {
+		effect = {
+			set_relation_lover = character:205506
+		}
+	}
 	1190.1.1 = {
 		effect = {
 			break_betrothal = character:205518
@@ -804,7 +810,12 @@
 	}
 	1191.5.1 = {
 		add_spouse = 206501 #Berengaria de Navarra
-	}	
+	}
+	1194.1.1 = {
+		effect = {
+			remove_relation_lover = character:205506
+		}
+	}
 	1199.4.6 = {
 		death = "1199.4.6"
 	}

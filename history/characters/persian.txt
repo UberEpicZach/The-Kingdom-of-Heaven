@@ -5256,8 +5256,8 @@ KOH0030 = {
 	name = "AltaI_r"
 	dna = koh0030_altair
 	dynasty = KOHD0002
-	intrigue = 17
-	learning = 18
+	intrigue = 16
+	learning = 16
 	prowess = 17
 	religion = "ismaili"
 	culture = "persian"
@@ -5278,5 +5278,36 @@ KOH0030 = {
 	}
 	1257.1.1 = {
 		death = "1257.1.1"
+	}
+}
+
+KOH0041 = {
+	name = "Imad_ad-Din"
+	dna = koh0041_imad
+	dynasty = 115754
+	intrigue = 13
+	learning = 16
+	prowess = 12
+	diplomacy = 17
+	religion = "ismaili"
+	culture = "persian"
+	trait = humble
+	trait = patient
+	trait = calm
+	trait = education_diplomacy_4
+	trait = scholar
+	trait = journaller
+	1125.1.1 = {
+		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
+	}
+	1175.1.1 = {
+		employer = 226000
+		give_council_position = councillor_chancellor
+	}
+	1201.1.1 = {
+		death = "1201.1.1"
 	}
 }

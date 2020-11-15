@@ -4045,15 +4045,17 @@
 215500 = {
 	name = "Isaakios" #Emperor of Byzantium
 	dynasty = 195
-	martial = 4
+	martial = 10
 	diplomacy = 3
 	intrigue = 5
 	stewardship = 2
+	prowess = 16
 	religion = "orthodox"
 	culture = "greek"
 	trait = arbitrary
-	trait = lazy
-	trait = education_stewardship_1
+	trait = gregarious
+	trait = generous
+	trait = education_martial_1
 	father = 215504
 	mother = 215525
 	1156.9.2 = {
@@ -4177,6 +4179,15 @@
 	mother = 232548
 	1181.1.2 = {
 		birth = "1181.1.2"
+	}
+	1181.1.3 = {
+		effect = {
+			create_betrothal = character:212506
+		}
+	}
+	1197.1.1 = {
+		add_spouse = 212506
+		name = Irene-Maria
 	}
 	1208.1.2 = {
 		death = "1208.1.2"
@@ -4469,8 +4480,13 @@
 	dynasty = 101124
 	religion = "orthodox"
 	culture = "greek"
-	1185.1.2 = {
-		birth = "1185.1.2"
+	1184.1.1 = {
+		birth = "1184.1.1"
+	}
+	1184.1.2 = {
+		effect = {
+			create_betrothal = character:215514
+		}
 	}
 	1230.1.2 = {
 		death = "1230.1.2"
@@ -11059,10 +11075,13 @@
 	1180.1.1 = {
 		birth = "1180.1.1"
 	}
-	1180.1.2 = {
+	1183.1.2 = {
 		effect = {
-			create_betrothal = character:212533
+			create_betrothal = character:222520
 		}
+	}
+	1197.1.2 = {
+		name = Anna-Helena
 	}
 	1253.6.23 = {
 		death = "1253.6.23"
@@ -13876,9 +13895,6 @@
 	1162.1.1 = {
 		birth = "1162.1.1"
 	}
-	1204.1.1 = {
-		add_spouse = 34415
-	}	
 	1212.1.1 = {
 		death = "1212.1.1"
 	}
@@ -13893,6 +13909,11 @@
 	father = 215508
 	1179.1.1 = {
 		birth = "1179.1.1"
+	}
+	1180.1.2 = {
+		effect = {
+			create_betrothal = character:212533 #Leopold VI
+		}
 	}
 	1219.1.1 = {
 		death = "1219.1.1"
