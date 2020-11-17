@@ -41,6 +41,19 @@
 				modifier = artifact_3_passive
 			}
 		}
+		character:223570 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = KoH_balians_adventure.1
+					days = { 50 121 }
+					}
+			} 
+		}
+
 		character:223523 = {
 			if = {
 				limit = {

@@ -4185,39 +4185,39 @@ clothes = {
 		}
 	}
 
-	templar_knight_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = templar_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1.0
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1.0
-				template = body_shape_average_clothed
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				portrait_wear_armor_trigger = yes
-				OR = {
-					liege = { has_primary_title = title:x_ho_347 }
-					has_primary_title = title:x_ho_347
-				}
-			}
-		}
-	}
+	#templar_knight_clothes = {
+	#	dna_modifiers = {
+	#		accessory = {
+	#			mode = add
+	#			gene = clothes
+	#			template = templar_knight_clothes
+	#			range = { 0 1 } # For the randomness to work correctly
+	#		}
+	#		morph = {
+	#			mode = modify_multiply
+	#			gene = gene_bs_bust
+	#			value = 1.0
+	#			template = bust_clothes
+	#		}
+	#		morph = {
+	#			mode = modify_multiply
+	#			gene = gene_bs_body_shape
+	#			value = 1.0
+	#			template = body_shape_average_clothed
+	#		}
+	#	}	
+	#	weight = {
+	#		base = 0
+	#		modifier = {
+	#			add = 100
+	#			portrait_wear_armor_trigger = yes
+	#			OR = {
+	#				liege = { has_primary_title = title:x_ho_347 }
+	#				has_primary_title = title:x_ho_347
+	#			}
+	#		}
+	#	}
+	#}
 
 	english_knight_clothes = {
 		dna_modifiers = {
@@ -4323,39 +4323,39 @@ clothes = {
 		}
 	}
 
-	hospitaller_knight_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = hospitaller_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1.0
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1.0
-				template = body_shape_average_clothed
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				portrait_wear_armor_trigger = yes
-				OR = {
-					liege = { has_primary_title = title:x_ho_348 }
-					has_primary_title = title:x_ho_348
-				}
-			}
-		}
-	}
+	#hospitaller_knight_clothes = {
+	#	dna_modifiers = {
+	#		accessory = {
+	#			mode = add
+	#			gene = clothes
+	#			template = hospitaller_knight_clothes
+	#			range = { 0 1 } # For the randomness to work correctly
+	#		}
+	#		morph = {
+	#			mode = modify_multiply
+	#			gene = gene_bs_bust
+	#			value = 1.0
+	#			template = bust_clothes
+	#		}
+	#		morph = {
+	#			mode = modify_multiply
+	#			gene = gene_bs_body_shape
+	#			value = 1.0
+	#			template = body_shape_average_clothed
+	#		}
+	#	}	
+	#	weight = {
+	#		base = 0
+	#		modifier = {
+	#			add = 100
+	#			portrait_wear_armor_trigger = yes
+	#			OR = {
+	#				liege = { has_primary_title = title:x_ho_348 }
+	#				has_primary_title = title:x_ho_348
+	#			}
+	#		}
+	#	}
+	#}
 
 	hre_knight_clothes = {
 		dna_modifiers = {
