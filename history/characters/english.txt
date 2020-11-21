@@ -947,6 +947,7 @@
 
 204515 = {
 	name = "Ida" #Ida de Tosny
+	dynasty = 385
 	female = yes
 	martial = 8
 	diplomacy = 7
@@ -954,8 +955,9 @@
 	stewardship = 7
 	religion = "catholic"
 	culture = "english"
-	trait = wrathful
 	trait = education_learning_3
+	father = 161601
+	mother = 161602
 	1159.1.1 = {
 		birth = "1159.1.1"
 	}
@@ -987,18 +989,19 @@
 
 204517 = {
 	name = "William"
-	dynasty = 20050
+	dynasty_house = house_longespee
 	martial = 8
 	diplomacy = 4
 	intrigue = 6
 	stewardship = 6
 	religion = "catholic"
 	culture = "english"
-	trait = bastard
+	trait = legitimized_bastard
 	trait = honest
 	trait = gluttonous
 	trait = education_martial_2
 	father = 204500
+	mother = 204515
 	1173.1.18 = {
 		birth = "1173.1.18"
 	}
@@ -1106,8 +1109,13 @@
 	culture = "english"
 	father = 204530
 	mother = 204531
-	1186.1.1 = {
-		birth = "1186.1.1"
+	1183.1.1 = {
+		birth = "1183.1.1"
+	}
+	1184.1.1 = {
+		effect = {
+			create_betrothal = character:204517
+		}
 	}
 	1261.8.24 = {
 		death = "1261.8.24"
@@ -3690,7 +3698,7 @@
 
 232000 = {
 	name = "Philip"
-	dynasty = 40016
+	dynasty_house = house_cognac
 	martial = 5
 	diplomacy = 6
 	intrigue = 7
@@ -3698,8 +3706,8 @@
 	religion = "catholic"
 	culture = "english"
 	trait = bastard
-	trait = education_martial_2
-	trait = wrathful
+	trait = beauty_good_1
+	trait = patient
 	father = 204510
 	1181.1.2 = {
 		birth = "1181.1.2"
@@ -4612,7 +4620,7 @@
 454041 = {
 	name = "Margaret"
 	female = yes
-	dynasty = 20050
+	dynasty_house = house_longespee
 	martial = 5
 	diplomacy = 5
 	intrigue = 6
@@ -9952,7 +9960,7 @@
 
 161368 = {
 	name = "William"
-	dynasty = 20050
+	dynasty_house = house_longespee
 	religion = "catholic"
 	culture = "english"
 	father = 204517
@@ -9968,7 +9976,7 @@
 161369 = {
 	name = "Ida"
 	female = yes
-	dynasty = 20050
+	dynasty_house = house_longespee
 	religion = "catholic"
 	culture = "english"
 	father = 204517
@@ -9983,7 +9991,7 @@
 
 161370 = {
 	name = "Stephen"
-	dynasty = 20050
+	dynasty_house = house_longespee
 	religion = "catholic"
 	culture = "english"
 	father = 204517
@@ -9998,7 +10006,7 @@
 
 161371 = {
 	name = "Nicholas"
-	dynasty = 20050
+	dynasty_house = house_longespee
 	religion = "catholic"
 	culture = "english"
 	father = 204517
@@ -10014,7 +10022,7 @@
 161372 = {
 	name = "Ela"
 	female = yes
-	dynasty = 20050
+	dynasty_house = house_longespee
 	religion = "catholic"
 	culture = "english"
 	father = 204517
@@ -10029,7 +10037,7 @@
 
 161373 = {
 	name = "William"
-	dynasty = 20050
+	dynasty_house = house_longespee
 	religion = "catholic"
 	culture = "english"
 	father = 161368
@@ -10587,7 +10595,7 @@
 161457 = {
 	name = "Emeline"
 	female = yes
-	dynasty = 20050
+	dynasty_house = house_longespee
 	religion = "catholic"
 	culture = "english"
 	father = 161370
@@ -11700,7 +11708,7 @@
 161678 = {
 	name = "Ela"
 	female = yes
-	dynasty = 20050
+	dynasty_house = house_longespee
 	religion = "catholic"
 	culture = "english"
 	father = 161368

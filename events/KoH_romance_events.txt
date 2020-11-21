@@ -1,0 +1,426 @@
+﻿#Richard chooses a bride
+
+namespace = KOH_richard_bride
+
+KOH_richard_bride.1 = { 
+	type = character_event
+	title = richard.bride.t
+	desc = {
+		desc = richard.bride.desc
+	}
+	theme = marriage
+	left_portrait = character:204500 #Henry
+	right_portrait = {
+		character = character:205506 #Philippe
+		animation = flirtation
+	}
+	trigger = {
+			is_adult = yes
+			NOT = { has_character_flag = had_event_richard_bride.1 }
+			is_ai = no
+		}
+	
+	immediate = {
+		add_character_flag = {
+			flag = had_event_richard_bride.1
+		}
+	}
+
+
+	#Choose between two brides
+	option = {
+		name = richard.bride.a
+		custom_tooltip = richard.bride.a.tt
+
+		hidden_effect = {
+			trigger_event = {
+						id = KOH_richard_bride.2
+						days = 1
+					}
+		}
+	}
+
+	#Do Not Marry
+	option = {
+		name = richard.bride.b
+		custom_tooltip = richard.bride.b.tt
+		
+		reverse_add_opinion = {
+			target = character:204500
+			modifier = angry_opinion
+			opinion = -15
+		}
+		
+		reverse_add_opinion = {
+			target = character:205506
+			modifier = romantic_gesture_opinion
+			opinion = 10
+		}
+		
+		character:204510 = {
+			set_sexuality = homosexual
+			add_trait = unwed
+		}
+		hidden_effect = {
+			character:205518 = {
+				remove_trait = unwed
+			}
+			character:206501 = {
+				remove_trait = unwed
+			}
+			trigger_event = {
+						id = KOH_richard_bride.4
+						days = 1
+					}
+		}
+	}	
+}
+
+#Which lady?
+KOH_richard_bride.2 = {
+	type = character_event
+	title = richard.bride.2.t
+	desc = {
+		desc = richard.bride.2.desc
+	}
+	theme = marriage
+	left_portrait = {
+		character = character:205518 #Alys
+		animation = admiration
+	}
+	right_portrait = { 
+		character = character:206501 #Berengaria
+		animation = ecstasy
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_richard_bride.2 }
+		}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_richard_bride.2
+		}
+		hidden_effect = {
+			character:205518 = {
+				remove_trait = unwed
+			}
+			character:206501 = {
+				remove_trait = unwed
+			}
+		}
+	}
+	
+	#Choose Alys
+	option = {
+		name = richard.bride.2.a
+		
+		character:204510 = {
+			marry = character:205518
+		}
+		
+		reverse_add_opinion = {
+			target = character:205506
+			modifier = amused_opinion
+			opinion = 10
+		}
+		reverse_add_opinion = {
+			target = character:204500
+			modifier = pleased_opinion
+			opinion = 5
+		}
+		reverse_add_opinion = {
+			target = character:205730
+			modifier = disappointed_opinion
+			opinion = -5
+		}
+		hidden_effect = {
+			character:206501 = {
+				add_trait = devoted
+			}
+		}
+	}
+	
+	#Choose Berengaria
+	option = {
+		name = richard.bride.2.b
+		
+		character:204510 = {
+			marry = character:206501
+		}
+		
+		reverse_add_opinion = {
+			target = character:205506
+			modifier = lover_let_me_down_opinion
+			opinion = -10
+		}
+		reverse_add_opinion = {
+			target = character:205518
+			modifier = broke_promise
+			opinion = -20
+		}
+		reverse_add_opinion = {
+			target = character:204500
+			modifier = disappointed_opinion
+			opinion = -5
+		}
+		reverse_add_opinion = {
+			target = character:205730 #Eleanor
+			modifier = pleased_opinion
+			opinion = 5
+		}
+		hidden_effect = {
+			character:KOH0046 = {
+				create_betrothal = character:205518
+				}
+		}
+	}
+}
+
+#Philippe's version of this event
+
+KOH_richard_bride.3 = {
+	type = character_event
+	title = richard.bride.t
+	desc = {
+		desc = richard.bride.3.desc
+	}
+	theme = marriage
+	left_portrait = {
+		character = character:204510 #Richard
+		animation = worry
+	}
+	right_portrait = {
+		character = character:205518 #Alys
+		animation = admiration
+	}
+	
+	trigger = {
+			is_adult = yes
+			NOT = { has_character_flag = had_event_richard_bride.3 }
+			is_ai = no
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_richard_bride.3
+		}
+			hidden_effect = {
+				character:205518 = {
+				remove_trait = unwed
+				}
+				character:206501 = {
+				remove_trait = unwed
+				}
+			}
+	}
+
+	#Choose Alys
+	option = {
+		name = richard.bride.3.a
+	
+		character:204510 = {
+			marry = character:205518
+		}
+		reverse_add_opinion = {
+			target = character:204510
+			modifier = romantic_gesture_opinion
+			opinion = 10
+		}
+		hidden_effect = {
+			character:206501 = {
+				add_trait = devoted
+			}
+		}
+	}
+	
+	#Richard Chooses
+	option = {
+		name = richard.bride.3.b
+		
+		random_list = {
+				40 = {
+					add_opinion = {
+						target = character:204510
+						modifier = romantic_gesture_opinion
+						opinion = 10
+					}
+					character:204510 = {
+						set_sexuality = homosexual
+						add_trait = unwed
+					}
+					hidden_effect = {
+						trigger_event = {
+						id = KOH_richard_bride.5
+						days = 1
+						}
+					}
+				}
+				60 = {
+					add_opinion = {
+						target = character:204510
+						modifier = lover_let_me_down_opinion
+						opinion = -10
+					}
+					character:204510 = {
+						marry = character:206501
+					}
+					hidden_effect = {
+						character:KOH0046 = {
+							create_betrothal = character:205518
+						}
+					}
+				}
+		}
+	}
+}
+
+#Richard chooses an heir
+KOH_richard_bride.4 = {
+	type = character_event
+	title = richard.bride.4.t
+	desc = {
+		desc = richard.bride.4.desc
+	}
+	theme = dynasty
+	right_portrait = {
+		character = character:205506
+		animation = ai_compassionate
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_richard_bride.4 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_richard_bride.4
+		}
+	}
+	
+	#Soulmate / Philip becomes heir
+	option = {
+		name = richard.bride.4.a
+		
+		character:204510 = {
+			set_relation_soulmate = character:205506
+		}
+		character:232000 = {
+			remove_trait = bastard
+			add_trait = legitimized_bastard
+		}
+		hidden_effect = {
+			character:KOH0046 = {
+				create_betrothal = character:205518
+				}
+			character:206501 = {
+				add_trait = devoted
+			}
+		}
+	}
+	#End Relationship
+	option = {
+		name = richard.bride.4.b
+		
+		character:204510 = {
+			remove_relation_lover = character:205506
+			remove_trait = unwed
+		}
+		reverse_add_opinion = {
+			target = character:205506
+			modifier = lover_breakup_opinion
+			opinion = -30
+		}
+	}
+}
+#Richard chooses an heir, Philippe side
+KOH_richard_bride.5 = {
+	type = character_event
+	title = richard.bride.5.t
+	desc = {
+		desc = richard.bride.5.desc
+	}
+	theme = dynasty
+	right_portrait = {
+		character = character:204510
+		animation = ai_compassionate
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_richard_bride.5 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_richard_bride.5
+		}
+	}
+	
+	#Soulmate / Philip becomes heir
+	option = {
+		name = richard.bride.5.a
+		
+		character:205506 = {
+			set_relation_soulmate = character:204510
+		}
+		character:232000 = {
+			remove_trait = bastard
+			add_trait = legitimized_bastard
+		}
+		hidden_effect = {
+			character:KOH0046 = {
+				create_betrothal = character:205518
+				}
+			character:206501 = {
+				add_trait = devoted
+			}
+		}
+	}
+	#End relationship
+	option = {
+		name = richard.bride.5.b
+		
+		character:205506 = {
+			remove_relation_lover = character:204510
+			remove_trait = unwed
+		}
+		reverse_add_opinion = {
+			target = character:204510
+			modifier = lover_breakup_opinion
+			opinion = -30
+		}
+	}
+}
+
+#AI Richard makes a marriage decision
+KOH_richard_bride.6 = {
+	type = character_event
+	title = richard.bride.t
+	desc = {
+		desc = richard.bride.6.desc
+	}
+	theme = marriage
+	hidden = yes
+	left_portrait = root
+	trigger = {
+			character:205506 = { is_ai = yes }
+			character:204510 = { is_ai = yes }
+		}
+	
+	#Go with the historical choice
+	option = {
+		name = richard.bride.6.a
+		
+		character:205518 = {
+			remove_trait = unwed
+			}
+		character:206501 = {
+			remove_trait = unwed
+		}
+		character:204510 = {
+			marry = character:206501
+		}
+		character:KOH0046 = {
+			create_betrothal = character:205518
+			}
+		}
+	}
+}
+	

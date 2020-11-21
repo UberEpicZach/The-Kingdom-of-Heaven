@@ -41,6 +41,18 @@
 				modifier = artifact_3_passive
 			}
 		}
+		character:223570 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = KoH_balians_adventure.1
+					days = { 50 121 }
+					}
+			} 
+		}
 		character:223523 = {
 			if = {
 				limit = {
@@ -108,6 +120,39 @@
 					id = KoH_holy_orders.6
 					days = 4
 				}
+			}
+		}
+		character:204510 = {
+		   if = {
+                limit = {
+ 					is_alive = yes
+					}			
+                trigger_event = {
+                    id = KOH_richard_bride.1
+                    days = 1
+                }
+			}
+		}
+		character:205506 = {
+            if = {
+                limit = {
+					is_alive = yes
+					}
+                trigger_event = {
+                    id = KOH_richard_bride.3
+                    days = 1
+                }
+            }
+		}
+		character:204510 = {
+		   if = {
+                limit = {
+ 					is_alive = yes
+					}			
+                trigger_event = {
+                    id = KOH_richard_bride.6
+                    days = 2
+                }
 			}
 		}
 	}

@@ -3,7 +3,7 @@
 		every_living_character = {
 			set_variable = {
 				name = Chivalry
-				value = 10
+				value = 0
 			}
 		}
 		trigger_event = { # Artifact Equipper
@@ -74,7 +74,7 @@
 				}
 				trigger_event = {
 					id = KoH_holy_orders.4
-					days = 2
+					days = -1
 				}
 			}
 		}
@@ -86,7 +86,7 @@
 				}
 				trigger_event = {
 					id = KoH_holy_orders.2
-					days = 1
+					days = 2
 				}
 			}
 		}
@@ -111,7 +111,7 @@
 					days = 3
 				}
 			}
-		} 
+		}
 		character:207510 = {
 			if = {
 				limit = {
@@ -121,6 +121,39 @@
 					id = KoH_holy_orders.6
 					days = 4
 				}
+			}
+		}
+		character:204510 = {
+		   if = {
+                limit = {
+ 					is_alive = yes
+					}			
+                trigger_event = {
+                    id = KOH_richard_bride.1
+                    days = 1
+                }
+			}
+		}
+		character:205506 = {
+            if = {
+                limit = {
+					is_alive = yes
+					}
+                trigger_event = {
+                    id = KOH_richard_bride.3
+                    days = 1
+                }
+            }
+		}
+		character:204510 = {
+		   if = {
+                limit = {
+ 					is_alive = yes
+					}			
+                trigger_event = {
+                    id = KOH_richard_bride.6
+                    days = 2
+                }
 			}
 		}
 	}
