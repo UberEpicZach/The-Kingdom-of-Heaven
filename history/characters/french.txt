@@ -33272,22 +33272,20 @@
 223570 = {
 	name = "Balian"
 	dna = 223570_balian_of_ibelin
-	dynasty = 23102
 	martial = 9
 	diplomacy = 10
 	intrigue = 2
-	stewardship = 14
-	prowess = 16
+	stewardship = 13
+	prowess = 9
 	religion = "catholic"
 	culture = french
-	trait = balian_of_ibelin
 	trait = diligent
 	trait = brave
 	trait = just
 	trait = no_levy
 	trait = military_engineer
 	trait = education_martial_4
-	father = 144166
+	father = 800505
 	mother = 800503
 	1156.1.1 = {
 		birth = "1156.1.1"
@@ -33300,6 +33298,10 @@
 	}
 	1176.1.1 = {
 		add_spouse = KOH0019
+	}
+	1183.11.1 = {
+		add_trait = depressed_1
+		add_trait = unwed
 	}
 	1185.1.2 = {
 		add_spouse = 215560
@@ -33326,6 +33328,13 @@
 			add_character_flag = has_scripted_appearance
 		}
 	}
+	1170.1.1 = {
+		add_trait = devoted
+	}
+	1184.12.12 = {
+		death = "1184.12.12"
+	}
+	
 }
 
 800505 = { #BAILIANS FATHER "HIS NAMESAKE"
@@ -48109,5 +48118,57 @@ KOH0048 = {
 	}
 	1218.1.1 = {
 		death = "1218.1.1"
+	}
+}
+KOH0049 = {
+	name = "PE_tronille"
+	female = yes
+	dynasty = 80
+	religion = "catholic"
+	culture = french
+	trait = beauty_good_2
+	father = 461741
+	mother = 161766
+	1166.1.1 = {
+		birth = "1166.1.1"
+	}
+	1182.1.1 = {
+		add_spouse = 800501
+	}
+	1216.1.11 = {
+		death = "1216.1.1"
+	}
+}
+
+KOH0050 = {
+	name = "Milton"
+	dynasty = 561
+	religion = "catholic"
+	culture = french
+	trait = beauty_good_1
+	father = 800501
+	mother = KOH0049
+	1182.10.1 = {
+		birth = "1182.10.1"
+	}
+	1219.1.1 = {
+		death = "1219.1.1"
+	}
+}
+
+KOH0051 = {
+	name = "Helvis"
+	female = yes
+	dynasty = 561
+	religion = "catholic"
+	culture = french
+	trait = beauty_good_2
+	father = 800501
+	mother = KOH0049
+	1183.10.1 = {
+		birth = "1183.10.1"
+	}
+	1215.1.1 = {
+		death = "1215.1.1"
 	}
 }
