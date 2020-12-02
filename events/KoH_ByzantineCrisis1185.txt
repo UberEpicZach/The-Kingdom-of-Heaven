@@ -17,6 +17,16 @@ KoH_byzantinecrisis.1 = {
 		animation = idle
 	}
 	immediate = {
+
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:d_cyprus
+                }
+            }
+            save_scope_as = cyprus_ruler
+		}
+
 		character:223020 = { 
 			get_title = c_famagusta
 
@@ -39,22 +49,13 @@ KoH_byzantinecrisis.1 = {
 				location = 757
 			}
 
+			start_war = {
+				casus_belli = claim_cb
+				target = scope:cyprus_ruler
+				target_title = title:d_cyprus
+				claimant = character:223020
+			}
 		}
-		every_ruler = {
-            limit = {
-                any_held_title = {
-                    this = title:d_cyprus
-                }
-            }
-            save_scope_as = cyprus_ruler
-        }
-		start_war = {
-			casus_belli = claim_cb
-			target = scope:cyprus_ruler
-			target_title = d_nicosia
-			claimant = character:223020
-		}
-			
 	}
 	option = {
 		name = KoH_byzantinecrisis.1.a
@@ -72,7 +73,6 @@ KoH_byzantinecrisis.2 = {
 	type = character_event
 	title = KoH_byzantinecrisis.2.t
 	desc = KoH_byzantinecrisis.2.d
-	is_triggered_only = yes
 	theme = martial_chivalry_focus
 	override_background = {
 		event_background = armory
@@ -82,39 +82,47 @@ KoH_byzantinecrisis.2 = {
 		character = root
 		animation = personality_bold
 	}
+
+	immediate = {
+		every_ruler = {
+			limit = {
+				AND = {  
+					top_liege = { has_primary_title = title:e_byzantium }
+					highest_held_title_tier = tier_duchy
+				}
+			}
+			save_scope_as = hook	
+		}	
+	}
+
 	option = {
 		name = KoH_byzantinecrisis.2.a
 		
-		if = {
-			limit = {
-				is_ai = yes
-				can_start_scheme = {
-					type = murder
-					target = character:215670
-				}
+		
+		start_scheme = {
+			target = character:215670
+			type = murder
 			}
-				start_scheme = {
-					target = character:215670
-					type = murder
+		save_scope_as = scheme
+
+		scope:scheme = {
+			add_scheme_modifier = { type = murderer_adndronikos  days = 12000 }	
+
+
+		trigger_event = {
+				id = KoH_byzantinecrisis.3
+				days = 30
+			
 			}
+
 		}
-		add_scheme_modifier = { type = murderer_adndronikos  days = 12000 }
-	}
 
 	option = {
 		name = KoH_byzantinecrisis.2.b
 
 		add_hook = {
 			type = manipulation_hook
-			target = {
-				every_ruler = {
-					limit = {
-						AND = {  
-							liege = title:e_byzantium
-							highest_held_title_tier = tier_duchy
-						}
-					}
-				}	
+			target = scope:hook
 			}
 		}
 	}
@@ -124,102 +132,341 @@ KoH_byzantinecrisis.3 = {
 	type = character_event
 	title = KoH_byzantinecrisis.3.t
 	desc = KoH_byzantinecrisis.3.d
-	is_triggered_only = yes
 	theme = martial_chivalry_focus
 	override_background = {
 		event_background = armory
-	}
+		}
 	
-	left_portrait = {
+		left_portrait = {
 		character = root
 		animation = personality_bold
-	}
+		}
 	
-	option = {
-		name = KoH_byzantinecrisis.3.a
-		
 		immediate = { 
 			every_ruler = {
 				limit = {
 					any_held_title = {
-						this = title:e_byzantium
+						this = title:d_epirus
 					}
 				}
-				save_scope_as = ByzantineEmperor
+			save_scope_as = ByzantineEmperor
+				}
+
+			scope:ByzantineEmperor = {
+				get_title = k_epirus
 			}
+
 			every_ruler = {
 				limit = {
 					any_held_title = {
 						this = title:k_sicily
 					}
 				}
-				save_scope_as = NormanKing
-			}
+			save_scope_as = NormanKing
+				}
+		}
 
+	option = {
+		name = KoH_byzantinecrisis.3.a
+
+		trigger_event = {
+			id = KoH_byzantinecrisis.4
+			days = 91
+		}
+
+		scope:NormanKing = {
 			start_war = {
 				casus_belli = claim_cb
 				target = scope:ByzantineEmperor
-				target_title = k_epirus
+				target_title = title:k_epirus
 				claimant = scope:NormanKing
-			}
-			
-			scope:NormanKing = {
-
-				add_gold = 500
-
-				spawn_army = {
-					uses_supply = no
-					inheritable = yes
-					name = Normans
-					levies = {
-						value = 2500
+				}
+			add_gold = 500
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = Normans
+				levies = {
+					value = 3000
 					}
 					location = 3711
 				}
 				spawn_army = {
-					uses_supply = no
-					inheritable = yes
-					name = Normans
-					levies = {
-						value = 2500
+				uses_supply = no
+				inheritable = yes
+				name = Normans
+				levies = {
+					value = 3000
 					}
-					location = 3712
-				}
+				location = 3712
 			}
-		}	
-	}
+		}
+	}	
 }
+
 KoH_byzantinecrisis.4 = {
 	type = character_event
 	title = KoH_byzantinecrisis.4.t
 	desc = KoH_byzantinecrisis.4.d
-	is_triggered_only = yes
 	theme = martial_chivalry_focus
 	override_background = {
 		event_background = armory
 	}
 	
 	left_portrait = {
-		character = root
+		character = character:217501
+		animation = personality_bold
+	}
+
+	right_portrait = {
+		character = character:217500
 		animation = personality_bold
 	}
 	
 	option = {
 		name = KoH_byzantinecrisis.4.a
+
+		trigger_event = {
+			id = KoH_byzantinecrisis.50
+		}
+
+		character:217501 = {
+			get_title = c_turnovo
+			get_title = c_kran
+			get_title = c_silistra
+			get_title = c_aytos
+			get_title = d_turnovo
+			get_title = d_philippopolis
+			get_title = k_bulgaria
+			
+			add_pressed_claim = d_bulgaria
+			add_pressed_claim = d_vidin
+			add_pressed_claim = d_macva
+			add_pressed_claim = d_philippopolis
+			add_pressed_claim = d_thrace
+			add_pressed_claim = d_muntenia
+			add_pressed_claim = d_oltenia
+			add_pressed_claim = d_temes
+			add_pressed_claim = d_transylvaninia
+
+			add_gold = 500
+			add_prestige = 500
+
+			spawn_army = {
+				name = event_troop_default_name
+				levies = 2000
+				location = 499
+				origin = 499
+				inheritable = yes
+				men_at_arms = {
+					type = horse_archers
+					stacks = 5
+				}
+			}
+
+			spawn_army = {
+				name = event_troop_default_name
+				levies = 2000
+				levies = 2000
+				location = 499
+				origin = 499
+				inheritable = yes
+				men_at_arms = {
+					type = armored_footmen
+					stacks = 5
+				}
+			}
+
+			create_title_and_vassal_change = {
+				type = independency
+				save_scope_as = change1
+				add_claim_on_loss = yes
+			}
+			becomes_independent = { change = scope:change1
+			}
+			resolve_title_and_vassal_change = scope:change1
+		}
+
+		character:217500 = {
+			get_title = c_constanta
+			get_title = c_mesembria
+			get_title = c_dorostorum
+			get_title = d_dobrudja
 		
+			add_pressed_claim = d_bulgaria
+			add_pressed_claim = d_vidin
+			add_pressed_claim = d_macva
+			add_pressed_claim = d_philippopolis
+			add_pressed_claim = d_thrace
+			add_pressed_claim = d_muntenia
+			add_pressed_claim = d_oltenia
+			add_pressed_claim = d_temes
+			add_pressed_claim = d_transylvaninia
+
+			create_title_and_vassal_change = {
+				type = independency #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:217501
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		
+		character:232506 = {
+
+			create_title_and_vassal_change = {
+				type = independency #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:217501
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		character:217500 = {
+			get_title = c_constanta
+	
+		}
 	}
 }
+KoH_byzantinecrisis.50 = {
+	type = character_event
+	title = KoH_byzantinecrisis.50.t
+	desc = KoH_byzantinecrisis.50.d
+	theme = death
+	hidden = no
+	
+	left_portrait = {
+		character = character:217501
+		animation = personality_bold
+	}
+
+	right_portrait = {
+		character = character:217500
+		animation = personality_bold
+	}
+
+	immediate = { 
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:d_vidin
+				}
+			}
+		save_scope_as = ByzantineEmperor
+			}
+
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:k_bulgaria
+					}
+				}
+			save_scope_as = Bulgarian
+		}
+	}
+
+	option = {
+		name = KoH_byzantinecrisis.50.a
+
+		character:217501 = {
+			start_war = {
+				casus_belli = claim_cb
+				target = scope:ByzantineEmperor
+				target_title = title:d_vidin
+				claimant = scope:Bulgarian
+				take_occupied = yes
+			}
+		}
+	}
+}
+
+#artifact_siege.0001 = {
+#	hidden = yes
+#	
+#	### Copied from vanilla
+#	
+#	trigger = {
+#		scope:county.holder = scope:previous_controller
+#		OR = {
+#			any_war_enemy = { this = scope:previous_controller }
+#			any_war_enemy = { any_vassal_or_below = { this = scope:previous_controller } }
+#		}
+#	}
+#
+#	immediate = {
+#		save_scope_as = occupant
+#		scope:barony.holder = { save_scope_as = artifact_holder }
+#		scope:barony = { save_scope_as = artifact_barony }
+#
+#		# Depending on if the occupier is an attacker or defender in this war, get the primary attacker/defender of the siege.
+#		scope:war = {
+#			if = {
+#				limit = {
+#					is_attacker = scope:occupant
+#				}
+#				# If occupier is an attacker, the war's primary attacker is also the primary attacker in this siege (the attackers have occupied one of the defender's provinces).
+#				primary_attacker = {
+#					save_scope_as = primary_siege_attacker
+#				}
+#				primary_defender = {
+#					save_scope_as = primary_siege_defender
+#				}
+#			}
+#			else = {
+#				# Otherwise the occupier is a defender, so the primary defender in the war is the primary attacker in the siege (the defenders have occupied one of the attacker's provinces).
+#				primary_defender = {
+#					save_scope_as = primary_siege_attacker
+#				}
+#				primary_attacker = {
+#					save_scope_as = primary_siege_defender
+#				}
+#			}
+#		}
+#
+#		artifact_changing_hands_calculator = {
+#			OCCUPIED = scope:previous_controller
+#			OCCUPIER = scope:primary_siege_attacker
+#			CHANCE = @artifact_gain_chance
+#			ARTIFACT = has_artifact_1
+#		}
+#	}
+#
+
 
 KoH_byzantinecrisis.5 = {
 	type = character_event
 	title = KoH_byzantinecrisis.5.t
 	desc = KoH_byzantinecrisis.5.d
-	is_triggered_only = yes
 	theme = death
 	override_background = {
 		event_background = farmland
 	}
 	
+	trigger = {
+		any_character_war = {
+			attacker_war_score > 50
+				}
+			casus_belli = {
+				primary_attacker = scope:Bulgarian
+			}
+		}
+
+	immediate = {
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:k_sicily
+				}
+			}
+		save_scope_as = NormanKing
+			}
+	}
 	left_portrait = {
 		character = root
 		animation = personality_bold
@@ -228,6 +475,20 @@ KoH_byzantinecrisis.5 = {
 	option = {
 		name = KoH_byzantinecrisis.5.a
 		
+		scope:NormanKing = {
+			spawn_army = {
+				name = event_troop_default_name
+				levies = 1000
+				men_at_arms = {
+					type = onager
+					location = 490
+					stacks = 10
+				}
+				location = 490
+				origin = 2622
+				inheritable = yes
+			}
+		}
 	}
 }
 
@@ -235,7 +496,6 @@ KoH_byzantinecrisis.6 = {
 	type = character_event
 	title = KoH_byzantinecrisis.6.t
 	desc = KoH_byzantinecrisis.6.d
-	is_triggered_only = yes
 	theme = war
 	override_background = {
 		event_background = wilderness_forest_pine
@@ -257,7 +517,6 @@ KoH_byzantinecrisis.7 = {
 	type = character_event
 	title = KoH_byzantinecrisis.7.t
 	desc = KoH_byzantinecrisis.7.d
-	is_triggered_only = yes
 	theme = war
 	override_background = {
 		event_background = wilderness_forest
@@ -278,7 +537,6 @@ KoH_byzantinecrisis.8 = {
 	type = character_event
 	title = KoH_byzantinecrisis.8.t
 	desc = KoH_byzantinecrisis.9.d
-	is_triggered_only = yes
 	theme = war
 	override_background = {
 		event_background = embarked
@@ -299,7 +557,6 @@ KoH_byzantinecrisis.9 = {
 	type = character_event
 	title = KoH_byzantinecrisis.9.t
 	desc = KoH_byzantinecrisis.9.d
-	is_triggered_only = yes
 	theme = war
 	override_background = {
 		event_background = wilderness_desert
@@ -319,7 +576,6 @@ KoH_byzantinecrisis.10 = {
 	type = character_event
 	title = KoH_byzantinecrisis.10.t
 	desc = KoH_byzantinecrisis.10.d
-	is_triggered_only = yes
 	theme = war
 	override_background = {
 		event_background = wilderness_desert
@@ -340,7 +596,6 @@ KoH_byzantinecrisis.11 = {
 	type = character_event
 	title = KoH_byzantinecrisis.11.t
 	desc = KoH_byzantinecrisis.11.d
-	is_triggered_only = yes
 	theme = war
 	override_background = {
 		event_background = wilderness_desert
@@ -365,7 +620,6 @@ KoH_byzantinecrisis.12 = {
 	type = character_event
 	title = KoH_byzantinecrisis.12.t
 	desc = KoH_byzantinecrisis.12.d
-	is_triggered_only = yes
 	theme = war
 	override_background = {
 		event_background = wilderness_desert
@@ -389,7 +643,6 @@ KoH_byzantinecrisis.13 = {
 	type = character_event
 	title = KoH_byzantinecrisis.13.t
 	desc = KoH_byzantinecrisis.13.d
-	is_triggered_only = yes
 	theme = war
 	override_background = {
 		event_background = market_east
@@ -410,7 +663,6 @@ KoH_byzantinecrisis.14 = {
 	type = character_event
 	title = KoH_byzantinecrisis.14.t
 	desc = KoH_byzantinecrisis.14.d
-	is_triggered_only = yes
 	theme = war
 	override_background = {
 		event_background = wilderness_desert

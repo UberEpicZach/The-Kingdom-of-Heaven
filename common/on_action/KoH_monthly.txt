@@ -1,0 +1,53 @@
+﻿yearly_playable_pulse = {
+    on_actions = {
+        # Monthly pulses
+        abs_pulse_monthly
+        delay = { months = 1 }
+        abs_pulse_monthly
+        delay = { months = 2 }
+        abs_pulse_monthly
+        delay = { months = 3 }
+        abs_pulse_monthly
+        delay = { months = 4 }
+        abs_pulse_monthly
+        delay = { months = 5 }
+        abs_pulse_monthly
+        delay = { months = 6 }
+        abs_pulse_monthly
+        delay = { months = 7 }
+        abs_pulse_monthly
+        delay = { months = 8 }
+        abs_pulse_monthly
+        delay = { months = 9 }
+        abs_pulse_monthly
+        delay = { months = 10 }
+        abs_pulse_monthly
+        delay = { months = 11 }
+        abs_pulse_monthly
+    }
+}
+
+abs_pulse_monthly = {
+    effect = {
+		if = {
+			limit = {
+				AND = {
+					any_ruler = { 
+						top_liege = { has_primary_title = title:k_egypt } 
+					}
+		
+					has_opinion_modifier = {
+						target = character:223590
+						modifier = raided_me_opinion
+					}
+					
+				}
+			}
+			character:223523 = {
+				trigger_event = {
+					id = KoH_saladin.100
+				}
+			}
+		}
+	}
+}

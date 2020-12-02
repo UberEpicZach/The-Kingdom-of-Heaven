@@ -86,40 +86,6 @@ world_buffing.1 = {
 	
 		else_if = {
 			limit = { 
-				highest_held_title_tier > tier_kingdom 
-				NOT = { has_government = tribal_government }
-			}
-			add_gold = 8000
-			add_prestige = 5000
-			add_piety = 2000
-			spawn_army = {
-				levies = 900
-				location = root.capital_province
-				inheritable = yes
-				uses_supply = yes
-				name = event_troop_default_name
-				}
-		}
-		
-		else_if = {
-			limit = { 
-				highest_held_title_tier = tier_kingdom 
-				NOT = { has_government = tribal_government }
-			}
-			add_gold = 5000
-			add_prestige = 2000
-			add_piety = 1500
-			spawn_army = {
-				levies = 500
-				location = root.capital_province
-				inheritable = yes
-				uses_supply = yes
-				name = event_troop_default_name
-				}
-		}
-		
-		else_if = {
-			limit = { 
 				NOT = { has_government = tribal_government }
 				highest_held_title_tier = tier_duchy
 			}

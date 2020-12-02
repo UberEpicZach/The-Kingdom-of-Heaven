@@ -100,6 +100,15 @@ KoH_balians_adventure.4 = {
 		animation = disapproval
 	}
 	
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+			}
+			pan_camera_to_title = title:b_lepuiset
+			}
+		}
+
 	option = {
 		name = KoH_balians_adventure.4.a
 		
@@ -136,9 +145,20 @@ KoH_balians_adventure.5 = {
 		animation = personality_bold
 	}
 	
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+			}
+			pan_camera_to_title = title:b_nevers
+			}
+		}
+
 	option = {
 		name = KoH_balians_adventure.5.a
 		
+		add_gold = 10
+
 		trigger_event = {
 			id = KoH_balians_adventure.6
 			days = 10
@@ -175,8 +195,15 @@ KoH_balians_adventure.6 = {
 			culture = this.culture
 			gender_female_chance = 0
 			save_scope_as = combatant_2
+			}
+
+			if = {
+				limit = {
+					is_ai = no
+					}
+				pan_camera_to_title = title:b_ambert
+					}
 			}	
-		}	
 	
 	option = {
 		name = KoH_balians_adventure.6.a
@@ -339,7 +366,7 @@ KoH_balians_adventure.9 = { #A challenger approaches
 
 		trigger_event = {
 			id = KoH_balians_adventure.10
-			days = 1
+			days = 13
 		}
 		scope:800501 = { #Hugh Gets Murdered
 			death = {
@@ -372,6 +399,15 @@ KoH_balians_adventure.10 = {
 		animation = severelywounded
 	}
 
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+				}
+			pan_camera_to_title = title:b_chiusi
+				}
+		}
+
 	option = {
 		name = KoH_balians_adventure.10.a
 		
@@ -388,7 +424,7 @@ KoH_balians_adventure.10 = {
 
 		trigger_event = {
 			id = KoH_balians_adventure.11
-			days = 5
+			days = 11
 		
 		}
 	}
@@ -398,6 +434,38 @@ KoH_balians_adventure.11 = {
 	type = character_event
 	title = KoH_balians_adventure.11.t
 	desc = KoH_balians_adventure.11.d
+	theme = war 
+	override_background = {
+		event_background = market_west
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+				}
+			pan_camera_to_title = title:b_messina
+			}
+		}
+
+	option = {
+		name = KoH_balians_adventure.11.a
+		trigger_event = {
+			id = KoH_balians_adventure.110
+			days = 3
+		}
+	}
+}
+
+KoH_balians_adventure.110 = {
+	type = character_event
+	title = KoH_balians_adventure.110.t
+	desc = KoH_balians_adventure.110.d
 
 	theme = war
 	override_background = {
@@ -414,7 +482,7 @@ KoH_balians_adventure.11 = {
 	}
 	
 	option = {
-		name = KoH_balians_adventure.11.a
+		name = KoH_balians_adventure.110.a
 		
 		character:KOH0050 = {
 			get_title = c_lepuiset
@@ -449,7 +517,16 @@ KoH_balians_adventure.12 = {
 		character = root
 		animation = personality_bold
 	}
-	
+
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+				}
+				pan_camera_to_province = province:8663
+			}	
+		}	
+
 	option = {
 		name = KoH_balians_adventure.12.a
 
@@ -484,6 +561,12 @@ KoH_balians_adventure.13 = {
 	}
 	
 	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+				}
+				pan_camera_to_province = province:6038
+			}	
 		create_character = {
 			template = new_warrior_character
 			name = "Muhammed Al Fais"
@@ -701,6 +784,15 @@ KoH_balians_adventure.18 = {
 		event_background = market_east
 	}
 	
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+				}
+				pan_camera_to_province = province:5965
+			}
+	}	
+
 	left_portrait = {
 		character = root
 		animation = personality_bold
@@ -748,6 +840,14 @@ KoH_balians_adventure.20 = {
 		animation = personality_bold
 	}
 	
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+				}
+				pan_camera_to_province = province:6037
+			}
+
 	option = {
 		name = KoH_balians_adventure.20.a
 	

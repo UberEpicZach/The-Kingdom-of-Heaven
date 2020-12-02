@@ -1,5 +1,93 @@
 ﻿namespace = KoH_saladin
 
+KoH_saladin.105 = {
+	type = character_event
+	title = "The Templars, propose a raid..."
+	desc = "The Kings Peace, has been hard on buisness, now if we could simply gather the templars, we could do successfully in raiding a nearby Muslim Caravan."
+	hidden = yes
+	theme = faith
+	override_background = {
+		event_background = temple_scope
+	}
+
+	option = {
+		name = KoH_saladin.100.a
+		
+		spawn_army = {
+			name = "Knights Templar"
+			men_at_arms = {
+				type = teutonic_knights
+				location = 490
+				stacks = 10
+			}
+			location = 5980
+			origin = 9666
+			inheritable = no
+		}	
+	}
+}
+
+
+
+KoH_saladin.100 = {
+	type = character_event
+	title = "you shouldn't see this actually"
+	desc = KoH_saladin.100.d
+	hidden = yes
+	theme = faith
+	override_background = {
+		event_background = temple_scope
+	}
+
+	immediate = {
+		character:226000 = {
+			add_character_flag = Jihad_incoming
+		}
+	}
+
+	trigger = {
+		character:226000 = {
+			NOT = {	has_character_flag = Jihad_incoming }
+		}
+	}
+
+	option = {
+		name = KoH_saladin.100.a
+		
+		character:226000 = {
+			trigger_event = {
+			id = KoH_saladin.1
+			days = 100
+			}
+		}
+
+		character:223523 = {
+			trigger_event = {
+			id = KoH_saladin.101
+			days = 30
+			}
+		}
+	}
+}
+
+KoH_saladin.101 = {
+	type = character_event
+	title = "Reynald has attacked a muslim carvan!"
+	desc = "He Fucked up!!!"
+	theme = faith
+	override_background = {
+		event_background = temple_scope
+	}
+
+	option = {
+		name = "Punish Him!"
+	}
+
+	option = {
+		name = "Let Saladin have his way with him"
+	}
+}
+
 KoH_saladin.1 = {
 	type = character_event
 	title = KoH_saladin.1.t
