@@ -7805,9 +7805,6 @@
 	1170.1.2 = {
 		add_spouse = 215560
 	}
-	1173.1.2 = {
-		divorce = character:215560
-	}
 	1174.7.11 = {
 		death = "1174.7.11"
 	}
@@ -7829,7 +7826,7 @@
 	trait = vengeful
 	trait =  intellect_good_1
 	trait = beauty_good_2
-	trait = education_intrigue_2
+	trait = education_intrigue_4
 	father = 231013
 	mother = 231014
 	1132.1.1 = {
@@ -7840,6 +7837,11 @@
 	}
 	#1148 married Renaud of Marash
 	#1158 married Amaury d'Anjou, king of Jerusalem
+	1169.1.2 = {
+		effect = {
+			set_relation_rival = character:215560 #Maria Komnenos
+		}
+	}
 	1184.1.1 = {
 		effect = {
 			set_relation_lover = character:223505 #Amaury de Lusignan
