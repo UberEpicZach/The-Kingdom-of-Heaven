@@ -1,0 +1,511 @@
+﻿namespace = KoH_RichardTheLionheart
+
+KoH_RichardTheLionheart.1 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.1.t
+	desc = KoH_RichardTheLionheart.1.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.1.a
+
+		title:b_angers.title_province = {
+			add_building = curtain_walls_01
+		}
+		
+		remove_gold = -200
+
+		trigger_event = {
+			id = KoH_RichardTheLionheart.2
+			days = 730
+		}
+
+		character:204510 = {
+			get_title = d_aquitaine
+			get_title = d_poitou
+			get_title = d_gascogne
+			get_title = d_auvergne
+		}
+
+		title:c_bourbon.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_bordeaux.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_limousin.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_labourd.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_auvergne.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_angouleme.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_perigord.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_agenais.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_bigorre.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_armagnac.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_montaigu.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_lusignan.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204510
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+	}
+}
+
+
+KoH_RichardTheLionheart.2 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.2.t
+	desc = KoH_RichardTheLionheart.2.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		trigger_event = {
+			id = KoH_RichardTheLionheart.3
+			days = 730
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.2.a
+
+		character:204511 = {
+			death = {
+				death_reason = death_jousting_tournament
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.3 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.3.t
+	desc = KoH_RichardTheLionheart.3.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_france
+                }
+            }
+            save_scope_as = french_ruler
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.3.a
+		reverse_add_opinion = {
+			target = character:204500 #Henry
+			modifier = pleased_opinion
+			opinion = 15
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.3.b
+		create_alliance = scope:french_ruler
+		character:204500 = {
+			set_designated_heir = character:204514
+		}
+	}
+}
+
+KoH_RichardTheLionheart.4 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.4.t
+	desc = KoH_RichardTheLionheart.4.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = { #He can take it
+		name = KoH_RichardTheLionheart.4.a
+
+		character:204514 = {
+			get_title = d_aquitaine
+			get_title = d_poitou
+			get_title = d_gascogne
+			get_title = d_auvergne
+		}
+
+		title:c_bourbon.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_bordeaux.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_limousin.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_labourd.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_auvergne.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_angouleme.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_perigord.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_agenais.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_bigorre.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_armagnac.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_montaigu.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		title:c_lusignan.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:204514
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.4.b
+
+		
+	}
+
+}
+
+KoH_RichardTheLionheart.5 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.1.t
+	desc = KoH_RichardTheLionheart.1.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.5.a
+		create_faction = {
+			type = claimant_faction
+			target = title:k_england.holder
+			target_titles = k_england
+		}
+	}
+}
+
+KoH_RichardTheLionheart.6 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.1.t
+	desc = KoH_RichardTheLionheart.1.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.6.a
+	}
+}
+
+KoH_RichardTheLionheart.7 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.1.t
+	desc = KoH_RichardTheLionheart.1.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.7.a
+	}
+}
+
+KoH_RichardTheLionheart.8 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.1.t
+	desc = KoH_RichardTheLionheart.1.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.8.a
+	}
+}
+
+KoH_RichardTheLionheart.9 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.1.t
+	desc = KoH_RichardTheLionheart.1.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.9.a
+	}
+}
+

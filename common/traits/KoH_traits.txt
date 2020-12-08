@@ -174,3 +174,24 @@ unwed = {
 		desc = trait_unwed_desc
 	}
 }
+
+stress_gain_remove = {
+	index = 290
+
+	stress_gain_mult = -1
+	
+	genetic = no
+	good = yes
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_stress_gain_remove_desc
+			}
+			desc = trait_stress_gain_remove_character_desc
+		}
+	}
+}

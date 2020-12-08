@@ -65,7 +65,7 @@
 }
 
 31408 = {
-	name = "Gugghiermu" # Guglielmo di Candia
+	name = "William" # Guglielmo di Candia
 	dynasty = 7212
 	religion = "catholic"
 	culture = "sicilian"
@@ -550,7 +550,7 @@
 }
 
 32570 = {
-	name = "Gugghiermu" # Guglielmo Ruffo, Count of Reggio, Cosenza and Rossano (1332-1361)
+	name = "William" # Guglielmo Ruffo, Count of Reggio, Cosenza and Rossano (1332-1361)
 	dynasty = 13077
 	religion = "catholic"
 	culture = "sicilian"
@@ -1183,7 +1183,7 @@
 }
 
 461510 = {
-	name = "Gugghiermu" # Guglielmo di Sicilia, Duke of Athens (1317-1338)
+	name = "William" # Guglielmo di Sicilia, Duke of Athens (1317-1338)
 	dynasty_house = house_aragon-sicily
 	martial = 7
 	diplomacy = 7
@@ -1326,7 +1326,7 @@
 }
 
 461555 = {
-	name = "Gugghiermu" # Guglielmo Fadrique
+	name = "William" # Guglielmo Fadrique
 	dynasty_house = house_sicily-fadrique
 	martial = 6
 	diplomacy = 8
@@ -1548,7 +1548,7 @@ sicilian0001 = {
 }
 
 sicilian0002 = {
-	name = "Gugghiermu" # Guglielmo di Montescaglioso
+	name = "William" # Guglielmo di Montescaglioso
 	dynasty_house = house_montescaglioso
 	religion = "catholic"
 	culture = "sicilian"
@@ -1726,7 +1726,7 @@ sicilian0008 = {
 }
 
 30880 = {
-	name = "Gugghiermu" # William (II) de Hauteville, Count of Salerno and Amalfi (1141-1160)
+	name = "William" # William (II) de Hauteville, Count of Salerno and Amalfi (1141-1160)
 	dynasty = 678
 	religion = "catholic"
 	culture = "sicilian"
@@ -1742,7 +1742,7 @@ sicilian0008 = {
 }
 
 30881 = {
-	name = "Gugghiermu" # William (I) de Hauteville, Count of Salerno and Amalfi (1099-1128)
+	name = "William" # William (I) de Hauteville, Count of Salerno and Amalfi (1099-1128)
 	dynasty = 678
 	religion = "catholic"
 	culture = "sicilian"
@@ -1759,7 +1759,7 @@ sicilian0008 = {
 }
 
 30893 = {
-	name = "Gugghiermu" # William de Hauteville
+	name = "William" # William de Hauteville
 	dynasty = 678
 	religion = "catholic"
 	culture = "sicilian"
@@ -1865,7 +1865,7 @@ sicilian0008 = {
 }
 
 30901 = {
-	name = "Gugghiermu" # William de Bassonville
+	name = "William" # William de Bassonville
 	dynasty = 7192
 	religion = "catholic"
 	culture = "sicilian"
@@ -2103,7 +2103,7 @@ sicilian0008 = {
 }
 
 127063 = {
-	name = "Gugghiermu" # William de Hauteville
+	name = "William" # William de Hauteville
 	dynasty = 678
 	religion = "catholic"
 	culture = "sicilian"
@@ -2211,7 +2211,7 @@ sicilian0008 = {
 }
 
 211500 = {
-	name = "Gugghiermu" # William (II) de Hauteville, King of Sicily (1166-1189)
+	name = "William" # William (II) de Hauteville, King of Sicily (1166-1189)
 	dynasty = 678
 	martial = 4
 	diplomacy = 7
@@ -2221,12 +2221,15 @@ sicilian0008 = {
 	culture = "sicilian"
 	trait = lazy
 	trait = education_intrigue_2
-
+	dna = koh_williamII
 	father = 211501
 	mother = 206512
 
 	1155.1.1 = {
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1166.5.7 = {
 		capital = c_palermo
@@ -2242,7 +2245,7 @@ sicilian0008 = {
 }
 
 211501 = {
-	name = "Gugghiermu" # William (I) de Hauteville, King of Sicily (1145-1166), Duke of Apulia (1148-1154)
+	name = "William" # William (I) de Hauteville, King of Sicily (1145-1166), Duke of Apulia (1148-1154)
 	dynasty = 678
 	martial = 4
 	diplomacy = 4
@@ -2414,7 +2417,7 @@ sicilian0008 = {
 }
 
 211512 = {
-	name = "Gugghiermu" # William (III) de Hauteville, King of Sicily (1194), later Count of Lecce and Taranto (1194-1198)
+	name = "William" # William (III) de Hauteville, King of Sicily (1194), later Count of Lecce and Taranto (1194-1198)
 	dynasty = 678
 	martial = 6
 	diplomacy = 6
@@ -2577,7 +2580,7 @@ sicilian0008 = {
 }
 
 211525 = {
-	name = "Gugghiermu" # Guglielmo (II) Gesualdo
+	name = "William" # Guglielmo (II) Gesualdo
 	dynasty_house = house_gesualdo
 	religion = "catholic"
 	culture = "sicilian"
@@ -2663,7 +2666,7 @@ sicilian0008 = {
 }
 
 200337 = {
-	name = "Gugghiermu" # Guglielmo Paldolfidi
+	name = "William" # Guglielmo Paldolfidi
 	dynasty_house = house_paldolfidi
 	religion = catholic
 	culture = sicilian
@@ -2695,7 +2698,7 @@ sicilian0008 = {
 }
 
 200339 = {
-	name = "Gugghiermu" # Guglielmo Paldolfidi
+	name = "William" # Guglielmo Paldolfidi
 	dynasty_house = house_paldolfidi
 	religion = catholic
 	culture = sicilian
@@ -3062,7 +3065,7 @@ sicilian0008 = {
 }
 
 70995 = {
-	name = "Gugghiermu" # Guglielmo Lancia
+	name = "William" # Guglielmo Lancia
 	dynasty_house = house_lancia
 	martial = 7
 	diplomacy = 6
@@ -3749,7 +3752,7 @@ sicilian0018 = {
 }
 
 sicilian0019 = {
-	name = "Gugghiermu" # Guglielmo de Sanseverino
+	name = "William" # Guglielmo de Sanseverino
 	dynasty = 101843
 	religion = catholic
 	culture = sicilian
@@ -3818,7 +3821,7 @@ sicilian0022 = {
 }
 
 sicilian0023 = {
-	name = "Gugghiermu" # Guglielmo de Sanseverino
+	name = "William" # Guglielmo de Sanseverino
 	dynasty = 101843
 	religion = catholic
 	culture = sicilian
@@ -4077,7 +4080,7 @@ sicilian0037 = {
 }
 
 sicilian0038 = {
-	name = "Gugghiermu" # Guglielmo di Marsico
+	name = "William" # Guglielmo di Marsico
 	dynasty_house = house_marsico
 	religion = catholic
 	culture = sicilian
@@ -4142,7 +4145,7 @@ sicilian0041 = {
 }
 
 sicilian0042 = {
-	name = "Gugghiermu" # Guglielmus Ademaridi
+	name = "William" # Guglielmus Ademaridi
 	dynasty_house = house_ademaridi
 	religion = catholic
 	culture = sicilian

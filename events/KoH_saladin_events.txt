@@ -182,7 +182,7 @@ KoH_saladin.3 = { #King's Crusade
 	immediate = {
 		every_ruler = {
             limit = {
-                any_held_title = {
+                every_held_title = {
                     this = title:k_england
                 }
             }
@@ -190,7 +190,7 @@ KoH_saladin.3 = { #King's Crusade
         }
 		every_ruler = {
             limit = {
-                any_held_title = {
+                every_held_title = {
                     this = title:k_france
                 }
             }
@@ -198,7 +198,7 @@ KoH_saladin.3 = { #King's Crusade
         }
 		every_ruler = {
             limit = {
-                any_held_title = {
+                every_held_title = {
                     this = title:e_hre
                 }
             }
@@ -206,7 +206,7 @@ KoH_saladin.3 = { #King's Crusade
         }
 		every_ruler = {
 			limit = {
-				any_held_title = {
+				every_held_title = {
 					this = title:k_jerusalem
 				}
 			}
@@ -221,19 +221,11 @@ KoH_saladin.3 = { #King's Crusade
 			target = scope:KoH_saladin
 			target_title = k_jerusalem
 			claimant = root
+			save_scope_as = Crusade
 		}
+
 		hidden_effect = {
 			scope:england_ruler = {
-				trigger_event = {
-					id = KoH_saladin.4
-				}
-			}
-			scope:france_ruler = {
-				trigger_event = {
-					id = KoH_saladin.4
-				}
-			}
-			scope:hre_ruler = {
 				trigger_event = {
 					id = KoH_saladin.4
 				}
@@ -254,6 +246,26 @@ KoH_saladin.4 = { #King's Crusade
 		animation = personality_bold
 	}
 	
+	immediate = {
+        every_character_war = {
+            limit = {
+                primary_defender = title:k_egypt.holder
+                primary_attacker = title:k_england.holder
+            }
+            
+            add_attacker = title:k_france.holder
+            add_attacker = title:e_hre.holder 
+		}
+		title:e_hre.holder = {
+			trigger_event = {
+				id = KoH_barbarossa_crusade.1
+
+			}
+		}
+
+
+    }
+
 	option = {
 		name = KoH_saladin.4.a
 		

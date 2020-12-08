@@ -54,7 +54,7 @@ KoH_barbarossa_crusade.2 = {
 		name = KoH_barbarossa_crusade.2.a
 		trigger_event = {
 			id = KoH_barbarossa_crusade.3
-			days = 30
+			days = 40
 		}
 	}
 }
@@ -75,7 +75,7 @@ KoH_barbarossa_crusade.3 = {
 		name = KoH_barbarossa_crusade.3.a
 		trigger_event = {
 			id = KoH_barbarossa_crusade.4
-			days = 70
+			days = 80
 		}
 		change_variable = {
 			name = num_of_knights
@@ -355,6 +355,17 @@ KoH_barbarossa_crusade.11 = {
 		animation = personality_bold
 	}
 	
+	immediate = {
+        every_character_war = {
+            limit = {
+                primary_defender = title:k_egypt.holder
+                primary_attacker = title:k_england.holder
+            }
+            
+            remove_participant = title:e_hre.holder 
+        }
+    }
+
 	option = {
 		name = KoH_barbarossa_crusade.11.a
 		set_variable = {
