@@ -1,0 +1,57 @@
+bloodlines_toggle = {
+	scope = character
+	
+	is_shown = {
+		has_variable = bloodlines_toggle_var
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_variable = bloodlines_toggle_var
+			}
+			remove_variable = bloodlines_toggle_var
+		}
+		else = {
+			set_variable = bloodlines_toggle_var
+		}
+	}
+}
+
+bloodlines_close = {
+	scope = character
+	
+	is_shown = {
+		always = yes
+	}
+
+	effect = {
+		remove_variable = bloodlines_toggle_var
+	}
+}
+
+bloodlines_has_no_bloodlines = {
+	scope = character
+
+	is_shown = {
+		NOT = {
+			OR = {
+				has_variable = has_bloodline_1
+				has_variable = has_bloodline_2
+			}
+		}
+	}
+}
+
+bloodlines_bloodline_1 = {
+	scope = character
+	
+	is_shown = {
+		has_variable = has_bloodline_1
+	}
+	
+	effect = {
+		clear_all_bloodlines = yes
+		set_variable = selected_bloodline_1
+	}
+}

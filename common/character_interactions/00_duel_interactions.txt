@@ -17,7 +17,7 @@
 		max = 10
 	}
 	ai_target_quick_trigger = {
-		adult = yes
+		is_adult = yes
 	}
 	ai_frequency = 60
 	
@@ -33,12 +33,12 @@
 		}
 		scope:actor = {
 			NOT = { has_character_flag = recently_invited_to_duel }
-			adult = yes
+			is_adult = yes
 			NOT = { has_trait = incapable }
 		}
 		
 		scope:recipient = {
-			adult = yes
+			is_adult = yes
 			NOT = { has_trait = incapable }
 			NOT = { has_character_flag = recently_invited_to_duel }
 		}

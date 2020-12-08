@@ -18,6 +18,11 @@ chivalry.1 = {
 			Chivalry = 1
 		}
 		custom_tooltip = add_1_chivalry_tt
+		set_variable = has_bloodline_1
+		set_variable = {
+			name = bloodline_founder
+			value = root
+		}
 		
 		if = {
 			limit = {
@@ -131,42 +136,44 @@ chivalry.3 = {
 		
 		custom_tooltip = duel_can_go_either_way
 		
-		random_list = {
-			50 = {
-				add_character_flag = {
-					flag = enemy_goes_on_offensive
+		hidden_effect = {
+			random_list = {
+				50 = {
+					add_character_flag = {
+						flag = enemy_goes_on_offensive
+					}
+				}
+				50 = {
+					add_character_flag = {
+						flag = you_go_on_offensive
+					}
 				}
 			}
-			50 = {
-				add_character_flag = {
-					flag = you_go_on_offensive
+			duel = {
+				skill = prowess
+				target = scope:challenger
+				value = 10
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
+						min = -19
+					}
+					trigger_event = {
+						id = chivalry.4
+						days = 2
+					}
 				}
-			}
-		}
-		duel = {
-			skill = prowess
-			target = scope:challenger
-			value = 10
-			10 = {
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = 1
-					min = -19
-				}
-				trigger_event = {
-					id = chivalry.4
-					days = 2
-				}
-			}
-			10 = {
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = -1
-					min = -19
-				}
-				trigger_event = {
-					id = chivalry.5
-					days = 2
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -1
+						min = -19
+					}
+					trigger_event = {
+						id = chivalry.5
+						days = 2
+					}
 				}
 			}
 		}
@@ -363,11 +370,13 @@ chivalry.8 = {
 	
 	right_portrait = {
 		character = scope:enemy_commander
+	}
 	
 	immediate = {
 		random_side_commander = {
 			save_scope_as = enemy_commander
-	
+		}
+	}
 	option = {
 		name = chivalry.8.a
 		
@@ -407,5 +416,165 @@ chivalry.8 = {
 				add_trait = craven
 			}
 		}
+	}
+}
+
+chivalry.9 = {
+	type = character_event
+	title = chivalry.9.t
+	desc = chivalry.9.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	trigger = {
+		is_landed = yes
+	}
+	
+	immediate = {
+		random_held_title = {
+			save_scope_as = town_scope
+		}
+	}
+	
+	option = {
+		name = chivalry.9.a
+		
+		scope:town_scope = {
+			add_province_modifier = {
+				modifier = koh_did_not_hunt_beast
+				years = 5
+			}
+		}
+	}
+	
+	option = {
+		name = chivalry.9.b
+		
+		add_martial_skill = 1
+		scope:town_scope = {
+			add_province_modifier = {
+				modifier = koh_mocked_beast
+				years = 5
+			}
+		}
+	}
+	
+	option = {
+		name = chivalry.9.c
+		
+		add_prestige = 100
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+		custom_tooltip = start_dragon_hunting
+		##start event chain here
+	}
+}
+
+chivalry.10 = {
+	type = character_event
+	title = chivalry.10.t
+	desc = chivalry.10.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	
+	immediate = {
+		create_character = {
+			age = { 20 30 }
+			location = scope:town_scope
+			gender = male
+			faith = this.faith
+			culture = this.culture
+			dynasty = none
+			prowess = { 70 }
+			save_scope_as = challenger
+        }
+	}
+	
+	option = {
+		name = chivalry.10.a
+		
+		duel = {
+			skill = prowess
+			target = scope:challenger
+			value = 10
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+					min = -19
+				}
+				trigger_event = {
+					id = chivalry.4
+					days = 2
+				}
+			}
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+					min = -19
+				}
+				trigger_event = {
+					id = chivalry.5
+					days = 2
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = chivalry.10.b
+		
+		add_prestige = -1000
+		scope:town_scope = {
+			add_province_modifier = {
+				modifier = koh_did_not_hunt_beast
+				years = 5
+			}
+		}
+		change_chivalry_effect = { 
+			Chivalry = -5
+		}
+		custom_tooltip = remove_5_chivalry_tt
+	}
+}
+
+chivalry.11 = {
+	type = character_event
+	title = chivalry.11.t
+	desc = chivalry.11.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+
+	option = {
+		name = chivalry.11.a
+
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+
+		random_list = {
+			20 = {
+				add_trait = kind
+			}
+		}
+
+		add_dread = -10
+		add_prestige = -100
+	}
+
+	option = {
+		name = chivalry.11.b
+
+		add_prestige = 50
+		add_piety = 50
 	}
 }
