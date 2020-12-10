@@ -195,3 +195,23 @@
 		}
 	}
 }
+
+yearly_global_pulse = {
+	effect = {
+		if = {
+			limit = {
+				has_variable = has_bloodline_1
+			}
+			every_child = {
+				limit = {
+					dynasty = yes
+				}
+				set_variable = has_bloodline_1
+				add_character_modifier = {
+					modifier = bloodline_1_modifier
+					days = -1
+				}
+			}
+		}
+	}
+}
