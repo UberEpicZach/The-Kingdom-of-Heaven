@@ -177,7 +177,7 @@ KoH_RichardTheLionheart.1 = {
 			resolve_title_and_vassal_change = scope:change
 		}
 	}
-}
+} 
 
 
 KoH_RichardTheLionheart.2 = {
@@ -461,12 +461,23 @@ KoH_RichardTheLionheart.6 = {
 	}
 }
 
+#jerusalem
 KoH_RichardTheLionheart.7 = {
 	type = character_event
 	title = KoH_RichardTheLionheart.1.t
 	desc = KoH_RichardTheLionheart.1.d
 	theme = war
 	
+	trigger = {
+		AND = { # Historical setup.
+			title:k_jerusalem.holder = {
+				NOT = {
+					faith.religion = root.religion
+				}
+			}
+			title:k_jerusalem.holder = character:226000 }
+		}
+
 	left_portrait = {
 		character = root
 		animation = personality_bold
@@ -474,6 +485,16 @@ KoH_RichardTheLionheart.7 = {
 	
 	option = {
 		name = KoH_RichardTheLionheart.7.a
+
+		custom_tooltip = "We pledge to Crusade for Jerusalem, will fire in 2 year"
+		trigger_event = {
+			id = KoH_saladin.3
+			days = 730
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.7.b
 	}
 }
 

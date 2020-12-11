@@ -100,9 +100,6 @@ d_diyarrabia = {
 	1170.9.16 = {
 		holder = 144041
 	}
-	1176.1.1 = {
-		liege = "k_egypt"
-	}
 	1180.1.1 = {
 		holder = 144042
 	}
@@ -462,7 +459,8 @@ c_sinjar = {
 		holder = 144041
 	}
 	1180.1.1 = {
-		holder = 144042
+		holder = KOH_GOKBORI
+		liege = d_diyarmudar
 	}
 	1193.1.1 = {
 		holder = 93311
@@ -562,7 +560,8 @@ c_nasibin = {
 		holder = 32914
 	}
 	1181.1.1 = {
-		holder = 144042
+		holder = KOH_TURK1001
+		liege = d_diyarmudar
 	}
 	1193.1.1 = {
 		holder = 93311
@@ -663,6 +662,7 @@ c_khabur = {
 	}
 	1180.1.1 = {
 		holder = 93480
+		liege = d_diyarmudar
 	}
 	1220.1.1 = {
 		holder = 93481
@@ -763,7 +763,8 @@ c_upper_khabur = {
 		holder = 144041
 	}
 	1180.1.1 = {
-		holder = 144042
+		holder = KOH_TURK1003
+		liege = d_diyarmudar
 	}
 	1193.1.1 = {
 		holder = 93311
@@ -995,7 +996,8 @@ c_harran = {
 		holder = 144033
 	}
 	1183.1.1 = {
-		holder = 226052
+		holder = KOH_GOKBORI
+		liege = d_diyarmudar
 	}
 	1186.1.1 = {
 		holder = 226054
@@ -1095,7 +1097,8 @@ c_dausar = {
 		holder = 144033
 	}
 	1183.1.1 = {
-		holder = 226052
+		holder = KOH_RANDOM2399
+		liege = d_diyarmudar
 	}
 	1186.1.1 = {
 		holder = 226054
@@ -1137,7 +1140,10 @@ d_diyarmudar = {
 	890.1.1 = {
 		holder = 0
 	}
-	
+	1180.1.1 = {
+		liege = e_arabia
+		holder = 226052
+	}
 }
 
 c_raqqa = {
@@ -1183,6 +1189,7 @@ c_raqqa = {
 	}
 	1180.1.1 = {
 		holder = 93472
+		liege = d_diyarmudar
 	}
 	1220.1.1 = {
 		holder = 93473
@@ -1286,7 +1293,8 @@ c_tall_basma = {
 		liege = "d_edessa"
 	}
 	1183.1.1 = {
-		holder = 226052
+		holder = 34252
+		liege = e_arabia
 	}
 	1196.1.1 = {
 		holder = 32918
@@ -1305,7 +1313,165 @@ c_tall_basma = {
 	}
 }
 
+c_tall_fafan = {
+	646.1.1 = {
+		liege = "d_greater_armenia"
+	}
+	646.1.1 = {
+		holder = 159570
+	}
+	650.8.29 = {
+		holder = 159571
+	}
+	693.8.29 = {
+		holder = 159572
+	}
+	710.1.1 = {
+		holder = 159573
+	}
+	750.1.1 = {
+		holder = 145998
+	} # Duke of Armenia and "Lord of Taron"
+	761.1.1 = {
+		holder = 159574
+	}
+	780.1.1 = {
+		holder = 159575
+	}
+	840.1.1 = {
+		holder = levantine000002
+		liege = e_arabia
+	}
+	852.1.1 = {
+		holder = levantine000003
+	}
+	968.1.1 = {
+		liege = "d_mesopotamia"
+	}
+	1060.1.1 = {
+		holder = 85001
+	}
+	1067.1.1 = {
+		holder = 724
+	}
+	1071.8.26 = {
+		holder = 144065
+	}
+	1091.1.1 = {
+		holder = 144067
+	}
+	1103.1.1 = {
+		holder = 144070
+	}
+	1144.1.1 = {
+		holder = 144071
+	}
+	1166.1.1 = {
+		holder = 144072
+	}
+	1183.1.1 = {
+		liege = "d_edessa"
+	}
+	1183.1.1 = {
+		holder = KOHTurk1
+		liege = e_arabia
+	}
+	1196.1.1 = {
+		holder = 32918
+	}
+	1216.10.8 = {
+		holder = 32920
+	}
+	1250.1.1 = {
+		holder = 93422
+	}
+	1283.1.1 = {
+		holder = 93423
+	}
+	1320.1.1 = {
+		holder = 93424
+	}
+}
 
+c_hisn_kaifa = {
+	646.1.1 = {
+		liege = "d_greater_armenia"
+	}
+	646.1.1 = {
+		holder = 159570
+	}
+	650.8.29 = {
+		holder = 159571
+	}
+	693.8.29 = {
+		holder = 159572
+	}
+	710.1.1 = {
+		holder = 159573
+	}
+	750.1.1 = {
+		holder = 145998
+	} # Duke of Armenia and "Lord of Taron"
+	761.1.1 = {
+		holder = 159574
+	}
+	780.1.1 = {
+		holder = 159575
+	}
+	840.1.1 = {
+		holder = levantine000002
+		liege = e_arabia
+	}
+	852.1.1 = {
+		holder = levantine000003
+	}
+	968.1.1 = {
+		liege = "d_mesopotamia"
+	}
+	1060.1.1 = {
+		holder = 85001
+	}
+	1067.1.1 = {
+		holder = 724
+	}
+	1071.8.26 = {
+		holder = 144065
+	}
+	1091.1.1 = {
+		holder = 144067
+	}
+	1103.1.1 = {
+		holder = 144070
+	}
+	1144.1.1 = {
+		holder = 144071
+	}
+	1166.1.1 = {
+		holder = 144072
+	}
+	1183.1.1 = {
+		liege = "d_edessa"
+	}
+	1183.1.1 = {
+		holder = KOHTurk1
+		liege = e_arabia
+	}
+	1196.1.1 = {
+		holder = 32918
+	}
+	1216.10.8 = {
+		holder = 32920
+	}
+	1250.1.1 = {
+		holder = 93422
+	}
+	1283.1.1 = {
+		holder = 93423
+	}
+	1320.1.1 = {
+		holder = 93424
+	}
+}
 c_hakkari = {
 	742.1.1 = {
 		liege = "d_diyarbakr"
@@ -1351,7 +1517,8 @@ c_hakkari = {
 		holder = 32914
 	}
 	1181.1.1 = {
-		holder = 144042
+		holder = KOHTurk1
+		liege = e_arabia
 	}
 	1193.1.1 = {
 		holder = 93311
@@ -1475,7 +1642,8 @@ c_mayyafariqin = {
 		liege = "d_edessa"
 	}
 	1183.1.1 = {
-		holder = 226052
+		holder = 34252
+		liege = "d_edessa"
 	}
 	1196.1.1 = {
 		holder = 32918
@@ -1554,7 +1722,8 @@ c_bakriya = {
 		liege = "d_edessa"
 	}
 	1183.1.1 = {
-		holder = 226052
+		holder = KOH_RANDOM2969
+		liege = "d_edessa"
 	}
 	1196.1.1 = {
 		holder = 32918
@@ -1620,7 +1789,8 @@ c_amida = {
 		liege = "d_edessa"
 	}
 	1183.1.1 = {
-		holder = 226052
+		holder = KOH_RANDOM5299
+		liege = "d_edessa"
 	}
 	1196.1.1 = {
 		holder = 32918
@@ -1685,6 +1855,10 @@ c_rahba = {
 	1160.1.1 = {
 		holder = 93393
 	}
+	1180.1.1 = {
+		holder = 93393
+		liege = d_diyarmudar
+	}
 	1200.1.1 = {
 		holder = 93394
 	}
@@ -1746,6 +1920,10 @@ c_hadithat-ana = {
 	}
 	1160.1.1 = {
 		holder = 93393
+	}
+	1180.1.1 = {
+		holder = 93393
+		liege = d_diyarmudar
 	}
 	1200.1.1 = {
 		holder = 93394
@@ -1940,7 +2118,8 @@ c_kurdistan = {
 		holder = 32914
 	}
 	1181.1.1 = {
-		holder = 144042
+		holder = KOH_TURK1004
+		liege = e_arabia
 	}
 	1193.1.1 = {
 		holder = 93311
@@ -2065,7 +2244,8 @@ c_irbil = {
 		holder = 144041
 	}
 	1180.1.1 = {
-		holder = 144042
+		holder = KOH_TURK1004
+		liege = e_arabia
 	}
 	1193.1.1 = {
 		holder = 93311
@@ -2183,7 +2363,8 @@ c_shahrazur = {
 		holder = 144041
 	}
 	1180.1.1 = {
-		holder = 144042
+		holder = KOH_TURK1004
+		liege = egypt
 	}
 	1193.1.1 = {
 		holder = 93311

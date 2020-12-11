@@ -2201,6 +2201,7 @@ release_from_prison_interaction = {
 	
 	is_shown = {
 		scope:recipient = {
+			NOT ={ is_ranchy_woman_in_my_dungeon = yes }
 			is_imprisoned_by = scope:actor
 		}
 	}
@@ -2904,11 +2905,6 @@ release_from_prison_interaction = {
 		base = 0
 
 		modifier = {
-			add = -100
-			is_ranchy_woman_in_my_dungeon = yes
-		}
-
-		modifier = {
 			add = 20
 			scope:demand_conversion = yes
 		}
@@ -2935,6 +2931,18 @@ release_from_prison_interaction = {
 			add = 10
 			scope:recruit = yes
 		}
+
+		modifier = {
+			add = -1000
+			is_ranchy_woman_in_my_dungeon = yes
+		}
+		modifier = {
+			add = -1000
+			character:205730 = {
+				is_imprisoned_by = character:204500
+			}
+		}
+
 		modifier = { # Rivals can rot
 			add = -40
 			scope:actor = {
