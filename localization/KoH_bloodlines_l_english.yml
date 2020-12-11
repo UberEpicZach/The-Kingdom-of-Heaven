@@ -2,10 +2,12 @@
 
   BLOODLINES_VIEW_TITLE: "Bloodlines"
 
-  bloodline_1_name: "Barbarossa" 
+  bloodline_1_name: "Knightly Bloodline" 
 
   bloodline_1_owner_name: "Bloodline Founder = [GetPlayer.MakeScope.Var('bloodline_founder').Char.GetFirstNameNicknamed]"
 
-  bloodline_1_stats_description: "[prestige|E]: @prestige_icon! #P +2.0#!\n[prowess|E]: @skill_prowess_icon! #P +3.0#!\n-Unlocks random mechanic\n[dread|E]: @dread_icon! #P +15#!\n[dread|E] Gain: #P +20%#!\n[dread|E] Decay: #P -20%#!\n[dread|E] Decay: #P -20%#!\n\n\n"
+  bloodline_1_stats_description: "[prestige|E]: @prestige_icon! #P +2#!\n[prowess|E]: @skill_prowess_icon! #P +5#!\n-Attracts great warriors over time"
 
-  bloodline_1_description: "A legandary hero, [GetPlayer.MakeScope.Var('bloodline_founder').Char.GetFirstNameNicknamedNoTooltip] was known for being one of the most chivalrous kings of Europe, atrracting with him many great knights.""
+  bloodline_1_description: "A legendary hero, [GetPlayer.MakeScope.Var('bloodline_founder').Char.GetFirstNameNoTooltip] was known for being one \nof the most chivalrous kings of Europe, attracting with him many\n great knights."
+  
+  bloodline_1_creator_tooltip: "Becomes known as the founder of a #Y bloodline#!, giving the following effects:\n[prestige|E]: @prestige_icon! #P +2#!\n[prowess|E]: @skill_prowess_icon! #P +5#!\n-Attracts great warriors over time"
