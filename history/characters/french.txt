@@ -149,7 +149,7 @@
 	name = "Hedwige" #Hedwige [Avoie] de France
 	# AKA: Adelaide Havoise
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 206 #Robert II de France
@@ -695,7 +695,7 @@
 
 127000 = {
 	name = "Alphonse"
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 7
 	diplomacy = 6
 	intrigue = 5
@@ -735,7 +735,7 @@
 127010 = {
 	name = "HE_lie"
 	# AKA: Helie
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	female = yes
 	martial = 6
 	diplomacy = 4
@@ -775,7 +775,7 @@
 
 127022 = {
 	name = "Guillaume" #Guillaume Ier d'Aquitaine
-	dynasty = 100217
+	dynasty_house = house_artois217
 	martial = 7
 	diplomacy = 8
 	intrigue = 5
@@ -817,7 +817,7 @@
 
 127024 = {
 	name = "Adelinda"
-	dynasty = 100217
+	dynasty_house = house_artois217
 	female = yes
 	martial = 5
 	diplomacy = 7
@@ -2310,7 +2310,7 @@
 
 200 = { #Hugh Capet, founder of house Capet
 	name = "Hugues"
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 4
 	diplomacy = 5
 	intrigue = 7
@@ -2536,7 +2536,7 @@
 	name = "Edwige" #Edwige de France, countess of Mons, wife of Rainier IV of Hainaut.
 	# AKA: Hedwige
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 200 #Hugues Capet
@@ -3009,7 +3009,7 @@
 204986 = {
 	name = "Alix" #Alix de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 205508 #Robert I le Grand
@@ -3025,7 +3025,7 @@
 
 204987 = {
 	name = "Robert" #Robert II de Dreux
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 205508 #Robert I le Grand
@@ -3055,7 +3055,7 @@
 
 204988 = {
 	name = "Henri" #Henri de Dreux, bishop of Orléans
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	trait = education_learning_2
@@ -3071,7 +3071,7 @@
 
 204989 = {
 	name = "Robert" #Robert III Gasteblé
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 204987 #Robert II de Dreux
@@ -3115,7 +3115,7 @@
 	name = "GisE_le" #Gisèle de France, wife of Hugh I of Ponthieu
 	# AKA: Gisele
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 200 #Hugues Capet
@@ -3132,7 +3132,7 @@
 205500 = {
 	name = "Louis" #Louis VII le Jeune
 	dna = 205500_louis_le_jeune
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 205502 #Louis VI le Gros
@@ -3184,7 +3184,7 @@
 
 205502 = {
 	name = "Louis" #Louis VI le Gros
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = gluttonous
@@ -3210,7 +3210,7 @@
 205503 = {
 	name = "Constance" #Constance de France
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 205502 #Louis VI le Gros
@@ -3229,7 +3229,7 @@
 	name = "Alix" #Alix de France
 	dna = 205504_alix_of_france
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 205500 #Louis VII le Jeune
@@ -3272,7 +3272,7 @@
 	name = "Philippe" #Philippe II Auguste
 	# AKA: Philippe Auguste
 	dna = 205506_phillip_augustus
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 8
 	diplomacy = 7
 	intrigue = 7
@@ -3355,7 +3355,7 @@
 
 205508 = {
 	name = "Robert" #Robert I le Grand
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = ambitious
@@ -3366,7 +3366,7 @@
 	}
 	1137.8.1 = {
 		give_nickname = nick_the_great
-		dynasty = 86 #Capetian house of Dreux
+		dynasty_house = house_dreux #Capetian house of Dreux
 	}
 	1140.1.1 = {
 		add_spouse = 91133 #Agnès de Garlande
@@ -3390,7 +3390,7 @@
 
 205509 = {
 	name = "Pierre" #Pierre I de Courtenay, lord of Courtenay, Montargis, Châteaurenard, Champignelles, Tanley, Charny and Chantecoq
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 205502 #Louis VI le Gros
@@ -3406,7 +3406,7 @@
 	}
 	1150.1.1 = {
 		add_spouse = 231017 #Élisabeth de Courtenay
-		dynasty = 9301 #Capetian house of Courtenay
+		dynasty_house = house_courtenay #Capetian house of Courtenay
 	}
 	1179.1.1 = {
 		trait = faith_warrior
@@ -3419,7 +3419,7 @@
 205511 = {
 	name = "Constance" #Constance de France (1078-1126)
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 214 #Philippe I de France
@@ -3439,7 +3439,7 @@
 	name = "Marie" #Marie de France
 	DNA = 205512_marie_of_france
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 205500 #Louis VII le Jeune
@@ -3461,7 +3461,7 @@
 205513 = {
 	name = "Cecile" #Cécile de France (princesse)
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -3481,7 +3481,7 @@
 	name = "Marguerite" #Marguerite de France
 	dna = 205515_marguerite_of_france
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 205500 #Louis VII le Jeune
@@ -3500,7 +3500,7 @@
 	name = "Mamilie" #Mamilie de Dreux
 	# AKA: Mabille
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	trait = education_learning_3 #nun
@@ -3519,7 +3519,7 @@
 	# AKA: Alix
 	dna = 205518_alys_of_france
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 205500 #Louis VII le Jeune
@@ -3545,7 +3545,7 @@
 	dna = 205519_agnes_of_france
 	# AKA: Agnes
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 205500 #Louis VII le Jeune
@@ -3800,7 +3800,7 @@
 205595 = {
 	name = "Mathilde" #Mathilde de Bourgogne
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206003 #Hugues II le Pacifique
@@ -3817,7 +3817,7 @@
 205596 = {
 	name = "Alix" #Alix de Bourgogne
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206001 #Eudes II de Bourgogne
@@ -4281,7 +4281,7 @@
 	name = "Mahaut" #Mahaut de Bourgogne
 	# AKA: Mathilda
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206018 #Raimond de Bourgogne
@@ -4334,7 +4334,7 @@
 
 205725 = {
 	name = "Pierre" #Pierre II de Courtenay, eastern emperor
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	trait = greedy
@@ -4363,7 +4363,7 @@
 205726 = {
 	name = "Mahaut" #Mahaut/Mathilde de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205725 #Pierre II de Courtenay
@@ -4380,7 +4380,7 @@
 
 205727 = {
 	name = "Robert" #Robert II de Courtenay
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205509 #Pierre I de Courtenay
@@ -4395,7 +4395,7 @@
 
 217508 = {
 	name = "Pierre" #Pierre de Courtenay
-	dynasty = 9301 #de Courtenay
+	dynasty_house = house_courtenay #de Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205727 #Robert II de Courtenay
@@ -4413,7 +4413,7 @@
 
 217509 = {
 	name = "Amicie" #Amicie de Courtenay
-	dynasty = 9301 #de Courtenay
+	dynasty_house = house_courtenay #de Courtenay
 	religion = "catholic"
 	culture = french
 	father = 217508 #Pierre de Courtenay
@@ -4432,7 +4432,7 @@
 
 205728 = {
 	name = "Guillaume" #Guillaume de Courtenay, lord of Tanlay
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205509 #Pierre I de Courtenay
@@ -4449,7 +4449,7 @@
 	name = "Alice" #Alice de Courtenay
 	# AKA: Alix
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205509 #Pierre I de Courtenay
@@ -5790,7 +5790,7 @@
 
 206 = {
 	name = "Robert" #Robert II le Pieux
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = education_learning_2
@@ -5823,7 +5823,7 @@
 
 206000 = {
 	name = "Hugues" #Hugues III de Bourgogne
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206001
@@ -5850,7 +5850,7 @@
 
 206001 = {
 	name = "Eudes" #Eudes II de Bourgogne
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	trait = cynical
@@ -5893,7 +5893,7 @@
 
 206003 = {
 	name = "Hugues" #Hugues II le Pacifique
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 225 #Eudes I de Bourgogne
@@ -5911,7 +5911,7 @@
 
 206006 = {
 	name = "Henri" #Henri de France
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = ill
@@ -5927,7 +5927,7 @@
 
 206007 = {
 	name = "Hugues" #Hugues le Roux, lord of Navilly
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206003 #Hugues II le Pacifique
@@ -5942,7 +5942,7 @@
 
 206008 = {
 	name = "Guillaume"
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	religion = "catholic"
 	culture = french
 	father = 206007 #Hugues le Roux
@@ -5957,7 +5957,7 @@
 206009 = {
 	name = "Sibylle"
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206007 #Hugues le Roux
@@ -5971,7 +5971,7 @@
 
 206011 = {
 	name = "Eudes" #Eudes III de Bourgogne
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	martial = 7
 	stewardship = 9
 	religion = "catholic"
@@ -6015,7 +6015,7 @@
 
 206012 = {
 	name = "Alexandre" #Alexandre de Bourgogne, lord of Montagu
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206000 #Hugues III de Bourgogne
@@ -6032,7 +6032,7 @@
 	name = "Douce" #Douce de Bourgogne
 	# AKA: Marie
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206000 #Hugues III de Bourgogne
@@ -6049,7 +6049,7 @@
 206014 = {
 	name = "Alix" #Alix de Bourgogne
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206000 #Hugues III de Bourgogne
@@ -6066,7 +6066,7 @@
 206016 = {
 	name = "AndrE_" #Guigues VIII d'Albon
 	# AKA: Andre
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206000 #Hugues III de Bourgogne
@@ -6094,7 +6094,7 @@
 206017 = {
 	name = "Mahaut" #Mahaut de Bourgogne
 	female = yes
-	dynasty = 741 #Capetian house of burgundy
+	dynasty_house = house_bourgogne #Capetian house of burgundy
 	religion = "catholic"
 	culture = french
 	father = 206001 #Eudes II de Bourgogne
@@ -6110,7 +6110,7 @@
 
 206018 = {
 	name = "Raimond" #Raimond de Bourgogne, lord of Grignon and Montpensier
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206003 #Hugues II le Pacifique
@@ -6186,7 +6186,7 @@
 
 208 = {
 	name = "Henri" #Henri I de France
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 206 #Robert II of France
@@ -6227,7 +6227,7 @@
 
 210 = {
 	name = "Robert" #Robert Ier de Bourgogne
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 206 #Robert II le Pieux
@@ -6245,7 +6245,7 @@
 		remove_claim = c_beaumont
 		
 		#Capetian house of Burgundy
-		dynasty = 741
+		dynasty_house = house_bourgogne
 
 	}
 	1033.1.1 = {
@@ -6855,7 +6855,7 @@
 212662 = {
 	name = "Angeline" #Angeline de Bourgogne
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206003 #Hugues II le Pacifique
@@ -7017,7 +7017,7 @@
 
 212740 = {
 	name = "Guillaume" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	martial = 5
 	diplomacy = 7
 	intrigue = 7
@@ -7043,7 +7043,7 @@
 
 212741 = {
 	name = "AmE_dE_e" #Count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	martial = 4
 	diplomacy = 5
 	intrigue = 4
@@ -7065,7 +7065,7 @@
 
 212742 = {
 	name = "Humbert" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	martial = 6
 	diplomacy = 4
 	intrigue = 7
@@ -7087,7 +7087,7 @@
 212743 = {
 	name = "Beatrice"
 	female = yes
-	dynasty = 100239
+	dynasty_house = house_artois239
 	martial = 8
 	diplomacy = 4
 	intrigue = 6
@@ -7110,7 +7110,7 @@
 212744 = {
 	name = "Nicole"
 	female = yes
-	dynasty = 100239
+	dynasty_house = house_artois239
 	martial = 6
 	diplomacy = 6
 	intrigue = 7
@@ -7131,7 +7131,7 @@
 
 212745 = {
 	name = "Guillaume" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	martial = 6
 	diplomacy = 8
 	intrigue = 6
@@ -7151,7 +7151,7 @@
 212746 = {
 	name = "Marguerite"
 	female = yes
-	dynasty = 100239
+	dynasty_house = house_artois239
 	martial = 8
 	diplomacy = 4
 	intrigue = 6
@@ -7331,7 +7331,7 @@
 213 = {
 	name = "Adele" #Adèle de France
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 206 #Robert II of France
@@ -7566,7 +7566,7 @@
 214 = {
 	name = "Philippe" #Philippe Ier de France
 	dna = 214_king_philippe
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 208 #Henri Ier de France
@@ -7602,7 +7602,7 @@
 
 216 = {
 	name = "Hugues" #Hugues Ier de Vermandois
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 208 #Henri I de France
@@ -7612,7 +7612,7 @@
 	}
 	1080.1.1 = {
 		add_spouse = 419 #Adélaïde de Vermandois
-		dynasty = 100113 #Capetian house of Vermandois
+		dynasty_house = house_vermandois #Capetian house of Vermandois
 	}
 	1096.8.15 = {
 		trait = faith_warrior
@@ -7632,7 +7632,7 @@
 
 218 = {
 	name = "Henri" #Henri le Damoiseau (1035-1070-74)
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	trait = chaste
@@ -7653,7 +7653,7 @@
 219 = {
 	name = "Constance" #Constance de Bourgogne, spouse of Alphose VI of Castilla
 	female = yes
-	dynasty = 741 #Capetian of Burgundy
+	dynasty_house = house_bourgogne #Capetian of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 210 #Robert I of Burgundy
@@ -7670,7 +7670,7 @@
 
 220 = {
 	name = "Robert" #Robert de Bourgogne
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	martial = 7
 	diplomacy = 5
 	intrigue = 5
@@ -7702,7 +7702,7 @@
 	name = "AurE_ade" #Audéarde/Hildegarde, wife of Guillaume VIII of Aquitaine
 	# AKA: Hildegarde
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 210 #Robert I de Bourgogne
@@ -7717,7 +7717,7 @@
 
 222 = {
 	name = "Simon" #Simon de Bourgogne
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 210 #Robert I de Bourgogne
@@ -8605,7 +8605,7 @@
 
 224 = {
 	name = "Hugues" #Hugues Ier de Bourgogne
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	religion = "catholic"
 	culture = french
 	trait = ambitious
@@ -8629,7 +8629,7 @@
 225 = {
 	name = "Eudes" #Eudes Ier de Bourgogne
 	# AKA: Eudes Borel
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	trait = wrathful
@@ -8652,7 +8652,7 @@
 
 226 = {
 	name = "Robert" #Robert (1059 † 1111), bishop of Langres
-	dynasty = 741 #capetian house of Burgundy
+	dynasty_house = house_bourgogne #capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	trait = education_learning_1 #Bishop of Langres
@@ -9560,7 +9560,7 @@
 241 = {
 	name = "Papia"
 	female = yes
-	dynasty = 100097
+	dynasty_house = house_artois097
 	martial = 7
 	diplomacy = 7
 	intrigue = 5
@@ -11497,7 +11497,7 @@
 
 31344 = {
 	name = "Louis"
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	religion = "catholic"
 	culture = french
 	father = 455535
@@ -12976,7 +12976,7 @@
 40320 = {
 	name = "MannassE_s"
 	# AKA: Mannasses
-	dynasty = 100240
+	dynasty_house = house_artois240
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -12993,7 +12993,7 @@
 
 40322 = {
 	name = "Gilbert"
-	dynasty = 100240
+	dynasty_house = house_artois240
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -13016,7 +13016,7 @@
 	name = "AdE_laI_de"
 	# AKA: Adelaide
 	female = yes
-	dynasty = 100240
+	dynasty_house = house_artois240
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -13036,7 +13036,7 @@
 40325 = {
 	name = "Ermangarde"
 	female = yes
-	dynasty = 100240
+	dynasty_house = house_artois240
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -13054,7 +13054,7 @@
 
 40330 = {
 	name = "Lambert"
-	dynasty = 100225
+	dynasty_house = house_artois225
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -13074,7 +13074,7 @@
 
 40332 = {
 	name = "Hugues"
-	dynasty = 100225
+	dynasty_house = house_artois225
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -13094,7 +13094,7 @@
 40333 = {
 	name = "Ermengarde"
 	female = yes
-	dynasty = 100225
+	dynasty_house = house_artois225
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -13113,7 +13113,7 @@
 40335 = {
 	name = "Mahaut"
 	female = yes
-	dynasty = 100225
+	dynasty_house = house_artois225
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -14205,7 +14205,7 @@
 40441 = {
 	name = "Alix"
 	female = yes
-	dynasty = 100131
+	dynasty_house = house_artois131
 	martial = 5
 	diplomacy = 7
 	intrigue = 6
@@ -14947,7 +14947,7 @@
 421 = {
 	name = "Mathilde"
 	female = yes
-	dynasty = 100221
+	dynasty_house = house_artois221
 	martial = 4
 	diplomacy = 4
 	intrigue = 4
@@ -15318,7 +15318,7 @@
 454524 = {
 	name = "Blanche"
 	female = yes
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 5
 	diplomacy = 7
 	intrigue = 8
@@ -15788,7 +15788,7 @@
 
 455402 = {
 	name = "Louis" #Louis VIII le Lion
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 9
 	religion = "catholic"
 	culture = french
@@ -15818,7 +15818,7 @@
 
 455404 = {
 	name = "Louis"
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 7
 	diplomacy = 6
 	intrigue = 5
@@ -15849,7 +15849,7 @@
 
 455405 = {
 	name = "Robert"
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 7
 	diplomacy = 6
 	intrigue = 5
@@ -15900,7 +15900,7 @@
 455411 = {
 	name = "Isabelle"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 5
 	diplomacy = 7
 	intrigue = 8
@@ -15921,7 +15921,7 @@
 455412 = {
 	name = "Blanche"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 4
 	diplomacy = 4
 	intrigue = 4
@@ -15962,7 +15962,7 @@
 
 455414 = {
 	name = "Charles"
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 5
 	diplomacy = 7
 	intrigue = 4
@@ -15992,7 +15992,7 @@
 
 455416 = {
 	name = "Philippe"
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 6
 	diplomacy = 7
 	intrigue = 4
@@ -16013,7 +16013,7 @@
 455417 = {
 	name = "Jeanne"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -16057,7 +16057,7 @@
 455419 = {
 	name = "Jeanne"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -16078,7 +16078,7 @@
 455420 = {
 	name = "Marie"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 4
 	diplomacy = 4
 	intrigue = 4
@@ -16099,7 +16099,7 @@
 455421 = {
 	name = "Blanche"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -16120,7 +16120,7 @@
 455422 = {
 	name = "Blanche"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -16876,7 +16876,7 @@
 
 455505 = {
 	name = "Robert"
-	dynasty_house = house_capet #Robertine (dynasty of house Capet)
+	dynasty = KOHD0005 #Capet #Robertine (dynasty of house Capet)
 	
 	religion = "catholic"
 	culture = french
@@ -16889,7 +16889,7 @@
 	}
 	
 	1270.5.25 = {
-		dynasty = 89 #Capetian house of Clermont
+		dynasty_house = house_clermont #Capetian house of Clermont
 	}
 	
 	1278.1.2 = {
@@ -16926,7 +16926,7 @@
 455508 = {
 	name = "Marguerite"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 5
 	diplomacy = 7
 	intrigue = 8
@@ -16947,7 +16947,7 @@
 455509 = {
 	name = "Philippe"
 	# AKA: Philippe V
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 4
 	diplomacy = 6
 	intrigue = 4
@@ -17087,7 +17087,7 @@
 
 455515 = {
 	name = "Robert"
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 4
 	diplomacy = 6
 	intrigue = 5
@@ -17111,7 +17111,7 @@
 
 455516 = {
 	name = "Philippe"
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 4
 	diplomacy = 4
 	intrigue = 4
@@ -17135,7 +17135,7 @@
 455517 = {
 	name = "Blanche" #Blanche de Bretagne
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	martial = 4
 	diplomacy = 7
 	intrigue = 4
@@ -17160,7 +17160,7 @@
 455518 = {
 	name = "Catherine"
 	female = yes
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 5
 	diplomacy = 4
 	intrigue = 8
@@ -17180,7 +17180,7 @@
 
 455519 = {
 	name = "Louis"
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 6
 	diplomacy = 7
 	intrigue = 8
@@ -17202,7 +17202,7 @@
 
 455520 = {
 	name = "Jean"
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 4
 	diplomacy = 7
 	intrigue = 4
@@ -17223,7 +17223,7 @@
 455521 = {
 	name = "Jeanne"
 	female = yes
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 6
 	diplomacy = 5
 	intrigue = 7
@@ -17244,7 +17244,7 @@
 
 455522 = {
 	name = "Jacques"
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 7
 	diplomacy = 8
 	intrigue = 7
@@ -17264,7 +17264,7 @@
 
 455523 = {
 	name = "Robert"
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 7
 	diplomacy = 7
 	intrigue = 5
@@ -17286,7 +17286,7 @@
 
 455524 = {
 	name = "Charles"
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 6
 	diplomacy = 4
 	intrigue = 5
@@ -17308,7 +17308,7 @@
 455525 = {
 	name = "Isabelle"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 7
 	diplomacy = 6
 	intrigue = 4
@@ -17328,7 +17328,7 @@
 
 455526 = {
 	name = "Philippe"
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 8
 	diplomacy = 7
 	intrigue = 8
@@ -17353,7 +17353,7 @@
 455527 = {
 	name = "Marguerite"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 5
 	diplomacy = 5
 	intrigue = 4
@@ -17375,7 +17375,7 @@
 455528 = {
 	name = "Philippe"
 	# AKA: Philippe
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 7
 	diplomacy = 4
 	intrigue = 5
@@ -17423,7 +17423,7 @@
 455532 = {
 	name = "Jeanne"
 	female = yes
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	martial = 6
 	diplomacy = 5
 	intrigue = 4
@@ -17447,7 +17447,7 @@
 455533 = {
 	name = "Beatrice"
 	female = yes
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	martial = 8
 	diplomacy = 4
 	intrigue = 6
@@ -17468,7 +17468,7 @@
 455534 = {
 	name = "Blanche"
 	female = yes
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	martial = 8
 	diplomacy = 6
 	intrigue = 4
@@ -17490,7 +17490,7 @@
 
 455535 = {
 	name = "Robert"
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	martial = 8
 	diplomacy = 8
 	intrigue = 4
@@ -17515,7 +17515,7 @@
 455536 = {
 	name = "Marguerite"
 	female = yes
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	martial = 5
 	diplomacy = 6
 	intrigue = 5
@@ -17558,7 +17558,7 @@
 455545 = {
 	name = "Jeanne" #d'Artois
 	female = yes
-	dynasty = 100
+	dynasty_house = house_artois
 	religion = "catholic"
 	culture = french
 	father = 455516
@@ -17574,7 +17574,7 @@
 
 455546 = {
 	name = "Robert"
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 4
 	diplomacy = 4
 	intrigue = 4
@@ -17744,7 +17744,7 @@
 
 455650 = {
 	name = "Louis"
-	dynasty = 100146
+	dynasty_house = house_artois146
 	martial = 6
 	diplomacy = 7
 	intrigue = 8
@@ -17767,7 +17767,7 @@
 
 455651 = {
 	name = "Pierre"
-	dynasty = 100146
+	dynasty_house = house_artois146
 	martial = 6
 	diplomacy = 7
 	intrigue = 4
@@ -17793,7 +17793,7 @@
 455652 = {
 	name = "Jeanne" #Jeanne de Clermont
 	female = yes
-	dynasty = 100146 #de Bourbon should be 89
+	dynasty_house = house_artois146 #de Bourbon should be 89
 	religion = "catholic"
 	culture = french
 	father = 455650
@@ -17810,7 +17810,7 @@
 455653 = {
 	name = "Marguerite"
 	female = yes
-	dynasty = 100146
+	dynasty_house = house_artois146
 	martial = 5
 	diplomacy = 8
 	intrigue = 4
@@ -17831,7 +17831,7 @@
 455655 = {
 	name = "Philippa"
 	female = yes
-	dynasty = 100146
+	dynasty_house = house_artois146
 	martial = 7
 	diplomacy = 8
 	intrigue = 5
@@ -17852,7 +17852,7 @@
 
 455656 = {
 	name = "Jaques"
-	dynasty = 100146
+	dynasty_house = house_artois146
 	martial = 8
 	diplomacy = 8
 	intrigue = 4
@@ -17877,7 +17877,7 @@
 455657 = {
 	name = "Beatrix"
 	female = yes
-	dynasty = 100146
+	dynasty_house = house_artois146
 	martial = 8
 	diplomacy = 5
 	intrigue = 8
@@ -18093,7 +18093,7 @@
 	name = "BE_atrice" #Béatrice de Clermont
 	# AKA: Beatrix
 	female = yes
-	dynasty = 89 #Capetian house of Clermont	
+	dynasty_house = house_clermont #Capetian house of Clermont	
 	religion = "catholic"
 	culture = french	
 	father = 91144 #Jean de Charolais
@@ -18474,7 +18474,7 @@
 455753 = {
 	name = "Jeanne"
 	female = yes
-	dynasty = 86
+	dynasty_house = house_dreux
 	martial = 5
 	diplomacy = 5
 	intrigue = 6
@@ -18544,7 +18544,7 @@
 455762 = {
 	name = "Marie"
 	female = yes
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	martial = 4
 	diplomacy = 7
 	intrigue = 5
@@ -18986,7 +18986,7 @@
 455788 = {
 	name = "Marie"
 	female = yes
-	dynasty = 86
+	dynasty_house = house_dreux
 	martial = 6
 	diplomacy = 5
 	intrigue = 6
@@ -19009,7 +19009,7 @@
 
 455789 = {
 	name = "Jean"
-	dynasty = 86
+	dynasty_house = house_dreux
 	martial = 7
 	diplomacy = 5
 	intrigue = 5
@@ -19327,7 +19327,7 @@
 455825 = {
 	name = "Marguerite" #d'Artois
 	female = yes
-	dynasty = 100
+	dynasty_house = house_artois
 	religion = "catholic"
 	culture = french
 	father = 455516
@@ -19343,7 +19343,7 @@
 455830 = {
 	name = "Agnes"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 6
 	diplomacy = 5
 	intrigue = 7
@@ -19366,7 +19366,7 @@
 455835 = {
 	name = "Jeanne"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 8
 	diplomacy = 6
 	intrigue = 6
@@ -19401,7 +19401,7 @@
 455836 = {
 	name = "Louis"
 	# AKA: Louis X
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 5
 	diplomacy = 4
 	intrigue = 6
@@ -19517,7 +19517,7 @@
 
 455910 = {
 	name = "Eudes"
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	martial = 8
 	diplomacy = 5
 	intrigue = 6
@@ -19540,7 +19540,7 @@
 
 455911 = {
 	name = "Hugues"
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	martial = 8
 	diplomacy = 5
 	intrigue = 6
@@ -19560,7 +19560,7 @@
 
 455912 = {
 	name = "Philippe"
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	martial = 6
 	diplomacy = 6
 	intrigue = 7
@@ -19582,7 +19582,7 @@
 	name = "Jeanne"
 	# AKA: Jeanne
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 6
 	diplomacy = 5
 	intrigue = 6
@@ -19628,7 +19628,7 @@
 455941 = {
 	name = "Marie"
 	female = yes
-	dynasty = 100
+	dynasty_house = house_artois
 	martial = 8
 	diplomacy = 7
 	intrigue = 6
@@ -21926,7 +21926,7 @@
 550 = {
 	name = "Raoul" #Raoul Ier le Vaillant
 	# AKA: Ralph
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	trait = brave
@@ -21958,7 +21958,7 @@
 	name = "Isabelle" #Isabelle de Vermandois (1085-1131)
 	# AKA: Elizabeth
 	female = yes
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	father = 216 #Hugues Ier le Grand de Vermandois
@@ -21976,7 +21976,7 @@
 5626 = {
 	name = "Guillaume"
 	# AKA: Guillaume 'Walcher'
-	dynasty = 100116
+	dynasty_house = house_artois116
 	martial = 6
 	diplomacy = 8
 	intrigue = 6
@@ -22334,7 +22334,7 @@
 
 6442 = {
 	name = "Robert" #Robert I of France
-	dynasty_house = house_capet
+	dynasty = 743 #Robertine
 	religion = "catholic"
 	culture = french
 	father = 6440 #Robert the Strong of Anjou
@@ -22481,7 +22481,7 @@
 
 6530 = {
 	name = "Renaud" #Renaud, abbot of Saint-Pierre at Flavigny
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	trait = education_learning_3 #abbot
@@ -22497,7 +22497,7 @@
 
 6531 = {
 	name = "Henri" #Henri de Bourgogne (comte de Portugal)
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 
 	father = 218 #Henri of Burgundy
 	mother = 110531 #Sibylle of Barcelone
@@ -22522,7 +22522,7 @@
 6532 = {
 	name = "HE_lie" #Hélie de Bourgogne
 	# AKA: Helie
-	dynasty = 741 #capetian house of Burgundy
+	dynasty_house = house_bourgogne #capetian house of Burgundy
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -22540,7 +22540,7 @@
 	name = "BE_atrix" #Béatrix de Bourgogne, wife of Guy III of Vignory
 	# AKA: Beatrix
 	female = yes
-	dynasty = 741 #capetian of burgundy
+	dynasty_house = house_bourgogne #capetian of burgundy
 	religion = "catholic"
 	culture = french
 	father = 218 #Henri de Bourgogne
@@ -22684,7 +22684,7 @@
 70137 = {
 	name = "Jean"
 	# AKA: Jean I
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	martial = 6
 	diplomacy = 7
 	intrigue = 6
@@ -22705,7 +22705,7 @@
 
 70725 = {
 	name = "Antoine"
-	dynasty = 8690
+	dynasty_house = house_dreux90
 	martial = 6
 	diplomacy = 5
 	intrigue = 6
@@ -22728,7 +22728,7 @@
 70737 = {
 	name = "AgnE_s"
 	# AKA: Agnes
-	dynasty = 8686
+	dynasty_house = house_dreux86
 	female = yes
 	martial = 4
 	diplomacy = 6
@@ -22750,7 +22750,7 @@
 
 70741 = {
 	name = "Guy"
-	dynasty = 8686
+	dynasty_house = house_dreux86
 	martial = 5
 	diplomacy = 7
 	intrigue = 6
@@ -22777,7 +22777,7 @@
 
 70742 = {
 	name = "Othon"
-	dynasty = 8686
+	dynasty_house = house_dreux86
 	martial = 6
 	diplomacy = 5
 	intrigue = 7
@@ -23133,7 +23133,7 @@
 	name = "AdE_laI_de" #spouse of 213118 (1120)
 	# AKA: Adelaide de Valromey
 	female = yes	
-	dynasty = 8696 #Valromey
+	dynasty_house = house_dreux96 #Valromey
 	martial = 6
 	diplomacy = 7
 	intrigue = 4
@@ -23373,7 +23373,7 @@
 	name = "Marguerite" #spouse of 70897 (1222), also called Anne or Louise
 	# AKA: Marguerite de Bourgogne
 	female = yes	
-	dynasty = 741 #Capetian house of Bourgogne
+	dynasty_house = house_bourgogne #Capetian house of Bourgogne
 	religion = "catholic"
 	culture = french
 	father = 206000
@@ -23391,7 +23391,7 @@
 	name = "Marguerite" #spouse of 70897 (1233)
 	# AKA: Marguerite de Bourgogne
 	female = yes	
-	dynasty = 741 #Bourgogne
+	dynasty_house = house_bourgogne #Bourgogne
 	martial = 5
 	diplomacy = 3
 	intrigue = 8
@@ -23651,7 +23651,7 @@
 	name = "AgnE_s" #spouse of 70909 (1236.6.25)
 	# AKA: Agnes de Faucigny
 	female = yes	
-	dynasty = 8687 #Faucigny
+	dynasty_house = house_dreux87 #Faucigny
 	martial = 3
 	diplomacy = 3
 	intrigue = 4
@@ -24233,7 +24233,7 @@
 70940 = {
 	name = "Humbert"
 	# AKA: Humbert de Thoire
-	dynasty = 8695 #Thoire
+	dynasty_house = house_dreux95 #Thoire
 	martial = 3
 	diplomacy = 7
 	intrigue = 8
@@ -24520,7 +24520,7 @@
 
 70959 = {
 	name = "Nicole"
-	dynasty = 8681
+	dynasty_house = house_dreux81
 	female = yes
 	martial = 6
 	diplomacy = 7
@@ -24540,7 +24540,7 @@
 
 70960 = {
 	name = "Humbert"
-	dynasty = 8693
+	dynasty_house = house_dreux93
 	martial = 7
 	diplomacy = 6
 	intrigue = 4
@@ -24759,7 +24759,7 @@
 
 71093 = {
 	name = "Agathe"
-	dynasty = 100239
+	dynasty_house = house_artois239
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -24775,7 +24775,7 @@
 
 71367 = {
 	name = "Audebert"
-	dynasty = 100216
+	dynasty_house = house_artois216
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -25067,7 +25067,7 @@
 
 7431 = {
 	name = "Jean"
-	dynasty = 86
+	dynasty_house = house_dreux
 	religion = "catholic"
 	culture = french
 	father = 455789
@@ -25145,7 +25145,7 @@
 7472 = {
 	name = "Blanche" #Blanche de Clermont
 	female = yes
-	dynasty = 89
+	dynasty_house = house_clermont
 	religion = "catholic"
 	culture = french
 	father = 455505
@@ -25406,7 +25406,7 @@
 
 7495 = {
 	name = "Jean" 	
-	dynasty = 741	
+	dynasty_house = house_bourgogne	
 	religion = "catholic"
 	culture = french
 	father = 7499
@@ -25422,7 +25422,7 @@
 7498 = {
 	name = "Anne"
 	female = yes	
-	dynasty = 741	
+	dynasty_house = house_bourgogne	
 	religion = "catholic"
 	culture = french
 	father = 7499
@@ -25437,7 +25437,7 @@
 
 7499 = {
 	name = "Guigues" #Guigues IX de Viennois
-	dynasty = 741 #Capetian house of Burgundy	
+	dynasty_house = house_bourgogne #Capetian house of Burgundy	
 	religion = "catholic"
 	culture = french
 	father = 206016	#Guigues VIII d'Albon	
@@ -25606,7 +25606,7 @@
 
 7618 = {
 	name = "Hugues"
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	martial = 6
 	diplomacy = 5
 	intrigue = 8
@@ -25630,7 +25630,7 @@
 
 7619 = {
 	name = "Jean"
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	martial = 8
 	diplomacy = 8
 	intrigue = 4
@@ -25655,7 +25655,7 @@
 7620 = {
 	name = "Pierre" #Pierre I Mauclerc
 	# AKA: Peter
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	trait = education_learning_1 #Mauclerc
@@ -25683,7 +25683,7 @@
 
 7621 = {
 	name = "Jean" #Jean I de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 7620 #Pierre I Mauclerc
@@ -25703,7 +25703,7 @@
 	name = "Yolande"
 	# AKA: Yolanda
 	female = yes
-	dynasty = 86
+	dynasty_house = house_dreux
 	martial = 7
 	diplomacy = 7
 	intrigue = 7
@@ -27826,7 +27826,7 @@
 91008 = {
 	name = "Florine" #Florine de Bourgogne
 	# AKA: Florine de Bourgogne
-	dynasty = 741 #capetian house of Burgundy
+	dynasty_house = house_bourgogne #capetian house of Burgundy
 	female = yes
 	
 	religion = "catholic"
@@ -27848,7 +27848,7 @@
 
 91009 = {
 	name = "Charles" #Charles de France
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	
 	religion = "catholic"
 	culture = french
@@ -27870,7 +27870,7 @@
 91010 = {
 	name = "Philippe" #Philippe de Mantes
 	# AKA: Philippe de Mantes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	
 	martial = 7
 	diplomacy = 3
@@ -27904,7 +27904,7 @@
 
 91011 = {
 	name = "Fleury" #Fleury de France
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	
 	religion = "catholic"
 	culture = french
@@ -27927,7 +27927,7 @@
 91012 = {
 	name = "Emma" #Emma of France
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 208 #Henri I of France
@@ -27944,7 +27944,7 @@
 	name = "Mahaut" #Mahaut (/Maud/Mathilde) de Vermandois, wife of Raoul Ier de Beaugency
 	# AKA: Mahaut de Vermandois
 	female = yes
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	father = 216 #Hugues le Grand de Vermandois
@@ -27962,7 +27962,7 @@
 	name = "BE_atrice" #Béatrice de Vermandois, wife of Hugues III of Gournay
 	# AKA: Beatrice
 	female = yes
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	father = 216 #Hugues le Grand de Vermandois
@@ -27979,7 +27979,7 @@
 91015 = {
 	name = "Constance" #Constance de Vermandois, wife of Godefroy de la Ferté-Gaucher
 	female = yes
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	father = 216 #Hugues le Grand de Vermandois
@@ -27997,7 +27997,7 @@
 	name = "AgnE_s" #Agnès de Vermandois, wife of Boniface de Savone
 	# AKA: Agnes
 	female = yes
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	father = 216 #Hugues le Grand de Vermandois
@@ -28014,7 +28014,7 @@
 91017 = {
 	name = "Henri" #Henri de Chaumont
 	# AKA: Henri de Chaumont
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	father = 216 #Hugues Ier le Grand
@@ -28030,7 +28030,7 @@
 91018 = {
 	name = "Simon" #Simon de Vermandois, bishop of Noyon
 	# AKA: Simon de Vermandois
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	trait = education_learning_3
@@ -28047,7 +28047,7 @@
 91019 = {
 	name = "Guillaume" #Guillaume de Vermandois
 	# AKA: Guillaume de Vermandois
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	trait = ill
@@ -28064,7 +28064,7 @@
 91020 = {
 	name = "HE_lE_ne" #Hélène de Bourgogne, spouse of Bernard, count of Toulouse.
 	# AKA: Helene de Bourgogne
-	dynasty = 741 #capetian house of Burgundy
+	dynasty_house = house_bourgogne #capetian house of Burgundy
 	female = yes
 	religion = "catholic"	
 	culture = french
@@ -28114,7 +28114,7 @@
 91022 = {
 	name = "Henri" #Henri de Bourgogne
 	# AKA: Henri de Bourgogne
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	trait = education_learning_1 #Monk
@@ -28131,7 +28131,7 @@
 91023 = {
 	name = "Philippe" #Philippe de France
 	# AKA: Philippe de France
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 205502 #Louis VI le Gros
@@ -28146,7 +28146,7 @@
 
 91024 = {
 	name = "Isabelle"
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -28163,7 +28163,7 @@
 91025 = {
 	name = "Jean" #Jean Tristan
 	# AKA: Jean Tristan, son of Louis VIII
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 455402 #Louis VIII le Lion
@@ -28179,7 +28179,7 @@
 91026 = {
 	name = "Philippe" #One of the twins of Philippe II Auguste and Isabelle de Hainaut
 	# AKA: first twin of Philippe August
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = twin
@@ -28196,7 +28196,7 @@
 91027 = {
 	name = "Hugues" #One of the twins of Philippe II Auguste and Isabelle de Hainaut
 	# AKA: second twin of Philippe Auguste
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = twin
@@ -28214,7 +28214,7 @@
 	name = "Marie" #Marie de France
 	# AKA: Marie de France
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 205506 #Philippe Auguste
@@ -28238,7 +28238,7 @@
 91029 = {
 	name = "Jean" #Jean Tristan
 	# AKA: Jean Tristan
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -28256,7 +28256,7 @@
 91030 = {
 	name = "Philippe" #Philippe Hurepel
 	#AKA: Philippe Hurepel
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -28285,7 +28285,7 @@
 91031 = {
 	name = "Pierre" #Pierre I Charlot
 	# AKA: Pierre I Charlot
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -28303,7 +28303,7 @@
 91032 = {
 	name = "Philippe" #Philippe bâtard de France
 	# AKA: Philippe batard de France
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -28319,7 +28319,7 @@
 91033 = {
 	name = "Henri" #Henri de France, bishop of Beauvais, archibishop of Reims
 	# AKA: Henri de France, archbishop of Reims
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	stewardship = 3
 	religion = "catholic"
 	culture = french
@@ -28337,7 +28337,7 @@
 91034 = {
 	name = "Hugues" #Hugues de France
 	# AKA: Hugues de France
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 205502 #Louis VI le Gros
@@ -28353,7 +28353,7 @@
 91035 = {
 	name = "Simon" #Simon de Dreux
 	# AKA: Simon de Dreux
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 205508 #Robert I le Grand
@@ -28370,7 +28370,7 @@
 	name = "AdE_le" #Adèle de Dreux
 	# AKA: Adele de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 205508 #Robert I le Grand
@@ -28387,7 +28387,7 @@
 	name = "E_lE_onore" #Éléonore de Dreux
 	# AKA: Eleonore de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 204987 #Robert II de Dreux
@@ -28430,7 +28430,7 @@
 	name = "Isabelle" #Isabelle de Dreux
 	# AKA: Isabelle de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 204987 #Robert II de Dreux
@@ -28448,7 +28448,7 @@
 	name = "Alix" #Alix de Dreux
 	# AKA: Alix de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 204987 #Robert II de Dreux
@@ -28467,7 +28467,7 @@
 	name = "Philippa" #Philippa de Dreux
 	# AKA: Philippa de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 204987 #Robert II de Dreux
@@ -28484,7 +28484,7 @@
 91044 = {
 	name = "Henri" #Henri de Dreux
 	# AKA: Henri de Dreux, archbishop of Reims
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	trait = education_learning_3
@@ -28502,7 +28502,7 @@
 	name = "AgnE_s" #Agnès de Dreux
 	# AKA: Agnes de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 204987 #Robert II de Dreux
@@ -28520,7 +28520,7 @@
 	name = "Yolande" #Yolande de Dreux
 	# AKA: Yolande de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 204987 #Robert II de Dreux
@@ -28536,7 +28536,7 @@
 91047 = {
 	name = "Jean" #Jean de Dreux, count of Mâcon and Vienne
 	# AKA: Jean de Dreux, count of Macon and Vienne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 204987 #Robert II de Dreux
@@ -28559,7 +28559,7 @@
 	name = "Jeanne" #Jeanne de Dreux
 	# AKA: Jeanne de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	trait = education_learning_1
@@ -28576,7 +28576,7 @@
 91049 = {
 	name = "Geoffroy" #Geoffroy de Dreux
 	# AKA: Geoffroy de Dreux
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 204987 #Robert II de Dreux
@@ -28592,7 +28592,7 @@
 91050 = {
 	name = "Philippe" #Philippe de Dreux, archbishop of Reims, bishop of Beauvais
 	# AKA: Philippe de Dreux, archbishop of Reims
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	trait = education_learning_2
@@ -28613,7 +28613,7 @@
 	name = "Isabeau" #Isabeau de Dreux
 	# AKA: Isabeau de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 205508 #Robert I le Grand
@@ -28630,7 +28630,7 @@
 91052 = {
 	name = "Pierre" #Pierre de Dreux
 	# AKA: Pierre de Dreux
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 205508 #Robert I le Grand
@@ -28646,7 +28646,7 @@
 91053 = {
 	name = "Guillaume" #Guillaume de Dreux
 	# AKA: Guillaume de Dreux
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 205508 #Robert I le Grand
@@ -28662,7 +28662,7 @@
 91054 = {
 	name = "Jean" #Jean de Dreux
 	# AKA: Jean de Dreux
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 205508 #Robert I le Grand
@@ -28699,7 +28699,7 @@
 	name = "Marguerite" #Marguerite de Dreux
 	# AKA: Marguerite de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	trait = education_learning_4
@@ -28717,7 +28717,7 @@
 	name = "Marguerite" #Marguerite de Courtenay
 	# AKA: Marguerite de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205725 #Pierre II de Courtenay
@@ -28735,7 +28735,7 @@
 91058 = {
 	name = "Philippe" #Philippe II à la Lèvre, marquess of Namur
 	# AKA: Philippe II a la Levre, marquess of Namur
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205725 #Pierre II de Courtenay
@@ -28756,7 +28756,7 @@
 	name = "Sibylle" #Sybille de Courtenay
 	# AKA: Sibylle de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	trait = education_learning_1
@@ -28774,7 +28774,7 @@
 	name = "E_lisabeth" #Élisabeth de Courtenay
 	# AKA: Elisabeth de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205725 #Pierre II de Courtenay
@@ -28810,7 +28810,7 @@
 91062 = {
 	name = "Robert" #Robert I de Courtenay, latin emperor
 	# AKA: Robert I de Courtenay, latin emperor
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	stewardship = 3
 	religion = "catholic"
 	culture = french
@@ -28834,7 +28834,7 @@
 	name = "AgnE_s" #Agnès de Courtenay
 	# AKA: Agnes de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205725 #Pierre II de Courtenay
@@ -28852,7 +28852,7 @@
 	name = "Marie" #Marie de Courtenay
 	# AKA: Marie de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205725 #Pierre II de Courtenay
@@ -28869,7 +28869,7 @@
 91065 = {
 	name = "Henri" #Henri de Courtenay, marquess of Namur
 	# AKA: Henri de Courtenay, marquess of Namur
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205725 #Pierre II de Courtenay
@@ -28887,7 +28887,7 @@
 	name = "E_lE_onore" #Éléonore de Courtenay
 	# AKA: Eleonore de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205725 #Pierre II de Courtenay
@@ -28905,7 +28905,7 @@
 	name = "Constance" #Constance de Courtenay
 	# AKA: Constance de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	trait = education_learning_3
@@ -28922,7 +28922,7 @@
 91068 = {
 	name = "Baudouin" #Baudouin II de Courtenay
 	# AKA: Baudouin II de Courtenay
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205725 #Pierre II de Courtenay
@@ -28942,7 +28942,7 @@
 	name = "AdE_laI_de" #An unamed daughter of Pierre I de Courtenay
 	# AKA: Adelaide, daughter of Pierre I de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205509 #Pierre I de Courtenay
@@ -28960,7 +28960,7 @@
 	name = "Eustachie" #Eustachie de Courtenay
 	# AKA: Eustachie de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205509 #Pierre I de Courtenay
@@ -28980,7 +28980,7 @@
 	name = "ClE_mence" #Clémence de Courtenay
 	# AKA: Clemence de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205509 #Pierre I de Courtenay
@@ -28997,7 +28997,7 @@
 91072 = {
 	name = "Philippe" #Philippe de Courtenay
 	# AKA: Philippe de Courtenay
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205509 #Pierre I de Courtenay
@@ -29014,7 +29014,7 @@
 	name = "Isabelle" #Isabelle de Courtenay
 	# AKA: Isabelle de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205509 #Pierre I de Courtenay
@@ -29032,7 +29032,7 @@
 	name = "Constance" #Constance de Courtenay
 	# AKA: Constance de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205509 #Pierre I de Courtenay
@@ -29049,7 +29049,7 @@
 91075 = {
 	name = "Philippe" #Philippe de France
 	# AKA: Philippe de France
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = education_learning_3
@@ -29068,7 +29068,7 @@
 	name = "AdE_le"
 	# AKA: Adele, a daughter of Louis VI le Gros
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = ill
@@ -29086,7 +29086,7 @@
 	name = "Isabelle" #Isabelle, bâtarde de France
 	# AKA: Isabelle, bastard of France
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -29100,10 +29100,10 @@
 	}
 }
 
-91078 = {
+#91078 = {
 	name = "Hugues" #Hugues II de Vermandois
 	# AKA: Hugues II de Vermandois
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	trait = zealous
@@ -29114,6 +29114,10 @@
 	1127.4.9 = {
 		birth = "1127.4.9"
 	}
+	1160 = {
+		trait = devoted
+		name = "FE_lix"
+	}
 	1212.11.4 = {
 		death = "1212.11.4"
 	}
@@ -29123,7 +29127,7 @@
 	name = "E_lisabeth"
 	# AKA: Elisabeth de Vermandois
 	female = yes
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	father = 550 #Raoul I le Vaillant
@@ -29140,7 +29144,7 @@
 91080 = {
 	name = "Raoul" #Raoul II le Lépreux, count of Vermandois and Valois
 	# AKA: Raoul II le Lepreux
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	father = 550 #Raoul I le Vaillant
@@ -29165,7 +29169,7 @@
 	name = "E_lE_onore" #Éléonore de Vermandois
 	# AKA: Eleonore de Vermandois
 	female = yes
-	dynasty = 100113 #Capetian house of Vermandois
+	dynasty_house = house_vermandois #Capetian house of Vermandois
 	religion = "catholic"
 	culture = french
 	father = 550 #Raoul I le Vaillant
@@ -29186,7 +29190,7 @@
 	name = "ClE_mence" #Clémence de Bourgogne
 	# AKA: Clemence de Bourgogne
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206003 #Hugues II le Pacifique
@@ -29204,7 +29208,7 @@
 	name = "Mahaut" #Mahaut
 	# AKA: Mahaut de Bourgogne
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206000 #Hugues III de Bourgogne
@@ -29221,7 +29225,7 @@
 91084 = {
 	name = "Gauthier" #Gauthier de Bourgogne, archbishop of Besançon
 	# AKA: Gauthier de Bourgogne
-	dynasty = 741 #Capetian house of burgundy
+	dynasty_house = house_bourgogne #Capetian house of burgundy
 	religion = "catholic"
 	culture = french
 	trait = education_learning_4
@@ -29239,7 +29243,7 @@
 91085 = {
 	name = "Robert" #Robert de Bourgogne, bishop of Autun
 	# AKA: Robert de Bourgogne, bishop of Autun
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	trait = education_learning_1
@@ -29256,7 +29260,7 @@
 91086 = {
 	name = "Henri" #Henri de Bourgogne, bishop of Autun, lord of Flavigny
 	# AKA: Henri de Bourgogne, bishop of Autun
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	trait = education_learning_1
@@ -29274,7 +29278,7 @@
 	name = "Sibylle" #Sibylle de Bourgogne
 	# AKA: Sybille de Bourgogne
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206003 #Hugues II le Pacifique
@@ -29292,7 +29296,7 @@
 	name = "Douce" #Douce de Bourgogne
 	# AKA: Douce de Bourgogne
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 206003 #Hugues II le Pacifique
@@ -29310,7 +29314,7 @@
 	name = "Arembourge" #Arembourge de Bourgogne
 	# AKA: Arembourge de Bourgogne
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	trait = education_learning_1
@@ -29347,7 +29351,7 @@
 	name = "AdE_le" #Adèle du Maine, spouse of Robert I of France
 	# AKA: Adele du Mans
 	female = yes
-	dynasty = 100108 #du Maine
+	dynasty_house = house_artois108 #du Maine
 	religion = "catholic"
 	culture = french
 	865.1.1 = {
@@ -29362,7 +29366,7 @@
 	name = "ThE_odE_rade" #Théodorade de Troyes, grand daughter of Aleran, count of Troyes
 	# AKA: Theoderade de Troyes
 	female = yes
-	dynasty = 100130 #Troyes
+	dynasty_house = house_artois130 #Troyes
 	religion = "catholic"
 	culture = french
 	866.1.1 = { # A little earlier to make her adult on marriage
@@ -29411,7 +29415,7 @@
 	name = "Alix" #Alix de Bretagne
 	# AKA: Alix de Bretagne
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 7621 #Jean I le Roux
@@ -29623,7 +29627,7 @@
 91144 = {
 	name = "Jean" #Jean de Charolais
 	# AKA: Jean de Charolais
-	dynasty = 89 #Capetian house of Clermont
+	dynasty_house = house_clermont #Capetian house of Clermont
 	religion = "catholic"
 	culture = french
 	father = 455505 #Robert de France
@@ -29669,7 +29673,7 @@
 	name = "Mahaut" #Mahaut d'Artois
 	# AKA: Mahaut d'Artois
 	female = yes
-	dynasty = 100 #Capetian dynasty of Artois
+	dynasty_house = house_artois #Capetian dynasty of Artois
 	religion = "catholic"
 	culture = french
 	trait = ambitious
@@ -29809,7 +29813,7 @@
 	name = "Yolande" #Yolande de Bourgogne
 	# AKA: Yolande de Bourgogne
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 91157 #Eudes de Bourgogne
@@ -29827,7 +29831,7 @@
 91157 = {
 	name = "Eudes" #Eudes de Bourgogne
 	# AKA: Eudes de Bourgogne
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 7618 #Hugues IV Bourgogne
@@ -29847,7 +29851,7 @@
 	name = "Alix" #Alix de Bourgogne
 	# AKA: Alix de Bourgogne, comtesse d'Auxerre
 	female = yes
-	dynasty = 741 #Capetian house of Burgundy
+	dynasty_house = house_bourgogne #Capetian house of Burgundy
 	religion = "catholic"
 	culture = french
 	father = 91157 #Eudes de Bourgogne
@@ -29950,7 +29954,7 @@
 98024 = {
 	name = "Yolande" #Yolande de Courtenay
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205725 #Pierre II de Courtenay
@@ -30808,7 +30812,7 @@
 	name = "Yolande" #Yolande de Bretagne
 	#AKA Yolande de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 7620 #Pierre I Mauclerc
@@ -31508,7 +31512,7 @@
 138026 = {
 	name = "BE_atrice" #de Bourgogne
 	female = yes
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	religion = "catholic"
 	culture = french
 	father = 7618 #Hugues IV of Burgundy
@@ -32269,7 +32273,7 @@
 455654 = {
 	name = "Marie" #de Bourbon
 	female = yes
-	dynasty = 100146
+	dynasty_house = house_artois146
 	religion = "catholic"
 	culture = french
 	father = 455650
@@ -34023,7 +34027,7 @@
 
 322 = {
 	name = "Bernard" #Bernard I de la marche
-	dynasty = 100145
+	dynasty_house = house_artois145
 	religion = "catholic"
 	culture = french
 	father = 320 #Adalbert I de la marche
@@ -34042,7 +34046,7 @@
 40071 = {
 	name = "Rangearde"
 	female = yes
-	dynasty = 100145 #de la marche
+	dynasty_house = house_artois145 #de la marche
 	religion = "catholic"
 	culture = french
 	father = 322 #Bernard I de la marche
@@ -34058,7 +34062,7 @@
 
 54002 = {
 	name = "Lucie"
-	dynasty = 100145 #de la marche
+	dynasty_house = house_artois145 #de la marche
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -34076,7 +34080,7 @@
 
 138044 = {
 	name = "Eudes" #Eudes I de la marche
-	dynasty = 100145
+	dynasty_house = house_artois145
 	religion = "catholic"
 	culture = french
 	father = 322 #Bernard I de la marche
@@ -34091,7 +34095,7 @@
 
 324 = {
 	name = "Adalbert" #Adalbert II de la marche
-	dynasty = 100145
+	dynasty_house = house_artois145
 	religion = "catholic"
 	culture = french
 	father = 322 #Bernard I de la marche
@@ -34108,7 +34112,7 @@
 	name = "Almodis" #Almodis de la marche
 	# AKA: Almodis
 	female = yes
-	dynasty = 100145
+	dynasty_house = house_artois145
 	religion = "catholic"
 	culture = french
 	father = 324 #Adalbert II de la marche
@@ -34123,7 +34127,7 @@
 
 138047 = {
 	name = "Boson" #Boson III de la marche
-	dynasty = 100145
+	dynasty_house = house_artois145
 	religion = "catholic"
 	culture = french
 	father = 324
@@ -34137,7 +34141,7 @@
 
 40068 = {
 	name = "Sulpice" #Sulpice I de la Marche
-	dynasty = 100145
+	dynasty_house = house_artois145
 	religion = "catholic"
 	culture = french
 	884.1.1 = {
@@ -34150,7 +34154,7 @@
 
 40070 = {
 	name = "Boson" #Boson I The Old de la Marche
-	dynasty = 100145
+	dynasty_house = house_artois145
 	religion = "catholic"
 	culture = french
 	father = 40068 #Sulpice
@@ -34168,7 +34172,7 @@
 
 40072 = {
 	name = "Boson" #Boson II de la marche/périgord
-	#dynasty = 100145
+	#dynasty_house = house_artois145
 	dynasty = 98 #trick to have the perigord dynasty appear correctly in dynasty tree
 	religion = "catholic"
 	culture = french
@@ -34187,7 +34191,7 @@
 
 320 = {
 	name = "Adalbert" #Adalbert I de la Marche
-	dynasty = 100145
+	dynasty_house = house_artois145
 	religion = "catholic"
 	culture = french
 	father = 40070 #Boson I de la marche
@@ -34208,7 +34212,7 @@
 	name = "Almodis" #Almodis de la marche
 	# AKA: Almodis
 	female = yes
-	dynasty = 100145
+	dynasty_house = house_artois145
 	religion = "catholic"
 	culture = french
 	father = 322 #Bernard I de la marche
@@ -34435,7 +34439,7 @@
 
 32790 = {
 	name = "Philippe"
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 91068 #Baudouin II
@@ -34454,7 +34458,7 @@
 32791 = {
 	name = "Catherine"
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 32790
@@ -34471,7 +34475,7 @@
 32792 = {
 	name = "Helene"
 	female = yes
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 91068 #Baudouin II
@@ -34594,7 +34598,7 @@
 
 32731 = {
 	name = "Ida"
-	dynasty = 8687
+	dynasty_house = house_dreux87
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -34608,7 +34612,7 @@
 
 32732 = {
 	name = "GE_raud"
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 10079
@@ -34624,7 +34628,7 @@
 32733 = {
 	name = "Comtesson"
 	female = yes
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 212741
@@ -34638,7 +34642,7 @@
 
 32734 = {
 	name = "AmE_dE_e"
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 212741
@@ -34652,7 +34656,7 @@
 
 32735 = {
 	name = "Guillaume"
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 10079
@@ -34666,7 +34670,7 @@
 
 32736 = {
 	name = "Eudes"
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 212742
@@ -34680,7 +34684,7 @@
 
 32737 = {
 	name = "Pierre"
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 212742
@@ -34694,7 +34698,7 @@
 
 32738 = {
 	name = "AmE_dE_e" #bishop of Maurienne
-	dynasty = 100239
+	dynasty_house = house_artois239
 	martial = 6
 	diplomacy = 8
 	intrigue = 6
@@ -34713,7 +34717,7 @@
 
 32739 = {
 	name = "Aymon"
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 212740
@@ -34728,7 +34732,7 @@
 
 32740 = {
 	name = "Rodolphe" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 212745
@@ -34743,7 +34747,7 @@
 
 32741 = {
 	name = "AmE_dE_e"
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 212745
@@ -34757,7 +34761,7 @@
 
 32742 = {
 	name = "Aymon" 
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 212745
@@ -34771,7 +34775,7 @@
 
 32743 = {
 	name = "Henri" 
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 212745
@@ -34786,7 +34790,7 @@
 32744 = {
 	name = "Eleonore" 
 	female = yes
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32743
@@ -34800,7 +34804,7 @@
 
 32745 = {
 	name = "Aymon" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32740
@@ -34819,7 +34823,7 @@
 
 32746 = {
 	name = "Guy" 
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32740
@@ -34833,7 +34837,7 @@
 
 32747 = {
 	name = "Henri" 
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32740
@@ -34847,7 +34851,7 @@
 
 32748 = {
 	name = "AmE_dE_e" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32740
@@ -34881,7 +34885,7 @@
 32749 = {
 	name = "Marguerite" 
 	female = yes
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32740
@@ -34895,7 +34899,7 @@
 
 32750 = {
 	name = "Guillaume" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32748
@@ -34913,7 +34917,7 @@
 
 32751 = {
 	name = "AmE_dE_e" 
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32748
@@ -34929,7 +34933,7 @@
 32752 = {
 	name = "Jeanne" 
 	female = yes
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32748
@@ -34944,7 +34948,7 @@
 
 32753 = {
 	name = "Hugues" 
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32748
@@ -34959,7 +34963,7 @@
 
 32754 = {
 	name = "AmE_dE_e" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32750
@@ -34977,7 +34981,7 @@
 
 32755 = {
 	name = "Pierre"
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -34992,7 +34996,7 @@
 
 32757 = {
 	name = "Aymon" 
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32754
@@ -35007,7 +35011,7 @@
 
 32758 = {
 	name = "AmE_dE_e" 
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 32754
@@ -36312,7 +36316,7 @@
 
 91200 = {
 	name = "Jeanne" #Jeanne de Dammartin
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -36328,7 +36332,7 @@
 
 91195 = {
 	name = "Aubry" #Aubry de Dammartin
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 91030 #Philippe Hurepel
@@ -36397,7 +36401,7 @@
 
 91170 = {
 	name = "Jean" #Jean I de Courtenay-Champignelles
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	trait = education_learning_2
@@ -36416,7 +36420,7 @@
 
 91171 = {
 	name = "Guillaume" #Guillaume I de Courtenay
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	father = 205727 #Robert I de Courtenay
@@ -36431,7 +36435,7 @@
 
 91172 = {
 	name = "Robert" #Robert de Courtenay-Champignelles
-	dynasty = 9301 #Capetian house of Courtenay
+	dynasty_house = house_courtenay #Capetian house of Courtenay
 	religion = "catholic"
 	culture = french
 	trait = education_learning_3
@@ -36936,7 +36940,7 @@
 33189 = {
 	name = "Aleyde"
 	female = yes
-	dynasty = 741
+	dynasty_house = house_bourgogne
 	religion = "catholic"
 	culture = french
 	father = 7618
@@ -37163,7 +37167,7 @@
 
 10079 = {
 	name = "Aymon" #Count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	martial = 5
 	diplomacy = 7
 	intrigue = 5
@@ -37186,7 +37190,7 @@
 10080 = {
 	name = "Jeanne"
 	female = yes
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 20292
@@ -37201,7 +37205,7 @@
 
 20292 = {
 	name = "GE_raud" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	martial = 7
 	diplomacy = 6
 	intrigue = 6
@@ -37375,7 +37379,7 @@
 
 138333 = {
 	name = "Pierre" #Pierre II de Reims Bishop of Agen
-	dynasty = 100114
+	dynasty_house = house_artois114
 	religion = "catholic"
 	culture = french
 	1200.1.1 = {
@@ -37851,7 +37855,7 @@
 
 91225 = {
 	name = "Arthur" #Arthur de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 7620 #Pierre Mauclerc
@@ -37866,7 +37870,7 @@
 
 91226 = {
 	name = "Olivier" #Olivier I de Machecoul
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 7620 #Pierre Mauclerc
@@ -37881,7 +37885,7 @@
 
 91227 = {
 	name = "Pierre" #Pierre de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 7621 #Jean I le Roux
@@ -37899,7 +37903,7 @@
 
 91228 = {
 	name = "Thibaut" #Thibaut de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 7621 #Jean I le Roux
@@ -37914,7 +37918,7 @@
 
 91229 = {
 	name = "Thibaut" #Thibaut de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 7621 #Jean I le Roux
@@ -37929,7 +37933,7 @@
 
 91230 = {
 	name = "AliE_nor" #Aliénor de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -37945,7 +37949,7 @@
 
 91231 = {
 	name = "Nicolas" #Aliénor de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 7621 #Jean I le Roux
@@ -37959,7 +37963,7 @@
 }
 91232 = {
 	name = "Robert" #Robert de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 7621 #Jean I le Roux
@@ -37973,7 +37977,7 @@
 }
 91233 = {
 	name = "Pierre" #Pierre de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 455789 #Jean II de Bretagne
@@ -37988,7 +37992,7 @@
 91234 = {
 	name = "AliE_nor" #Aliénor de Bretagne
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 455789 #Jean II de Bretagne
@@ -38002,7 +38006,7 @@
 }
 91235 = {
 	name = "Jean" #Jean bâtard de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -38017,7 +38021,7 @@
 
 91236 = {
 	name = "Pierre" #Pierre de Bretagne, seigneur d'Avesnes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 455751 #Arthur II de Bretagne
@@ -38032,7 +38036,7 @@
 
 91237 = {
 	name = "Jean" #Jean I de Dreux
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 204989 #Robert III Gasteblé
@@ -38066,7 +38070,7 @@
 }
 91239 = {
 	name = "Robert" #Robert IV de Dreux
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 91237 #Jean I de Dreux
@@ -38082,7 +38086,7 @@
 91240 = {
 	name = "Yolande" #Yolande de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 91239 #Robert IV de Dreux
@@ -38098,7 +38102,7 @@
 91241 = {
 	name = "BE_atrix" #Béatrix de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 455751 #Arthur II de Bretagne
@@ -38113,7 +38117,7 @@
 91242 = {
 	name = "Jeanne" #Jeanne de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 455751 #Arthur II de Bretagne
@@ -38128,7 +38132,7 @@
 91243 = {
 	name = "Blanche" #Blanche de Dreux
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 455751 #Arthur II de Bretagne
@@ -38309,7 +38313,7 @@
 
 91324 = {
 	name = "Gilles" #Gilles le Melchin
-	dynasty = 100139 #Bourges
+	dynasty_house = house_artois139 #Bourges
 	religion = "catholic"
 	culture = french
 	#Geoffroy III le Noble
@@ -38323,7 +38327,7 @@
 
 91325 = {
 	name = "E_tienne" #Étienne de Bourges
-	dynasty = 100139 #Bourges
+	dynasty_house = house_artois139 #Bourges
 	religion = "catholic"
 	culture = french
 	father = 91324 #Gilles le Melchin
@@ -38338,7 +38342,7 @@
 91326 = {
 	name = "Edelburge" #Edelburge de Bourges
 	female = yes
-	dynasty = 100139 #Bourges
+	dynasty_house = house_artois139 #Bourges
 	religion = "catholic"
 	culture = french
 	father = 91324 #Gilles le Melchin
@@ -41155,7 +41159,7 @@
 
 455755 = {
 	name = "Jean" #Jean IV de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 455751 #Arthur II de Bretagne
@@ -41174,7 +41178,7 @@
 455756 = {
 	name = "Alix" #Alix de Bretagne
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 455751 #Arthur II de Bretagne
@@ -41190,7 +41194,7 @@
 455757 = {
 	name = "Marie" #Marie de Bretagne
 	female = yes
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 455751 #Arthur II de Bretagne
@@ -41205,7 +41209,7 @@
 
 455751 = {
 	name = "Arthur" #Arthur II de Bretagne
-	dynasty = 86 #Capetian house of Dreux
+	dynasty_house = house_dreux #Capetian house of Dreux
 	religion = "catholic"
 	culture = french
 	father = 455789 #Jean II de Bretagne
@@ -42726,7 +42730,7 @@
 
 455750 = {
 	name = "Jean" #Jean III le Bon de Bretagne
-	dynasty = 86
+	dynasty_house = house_dreux
 	religion = "catholic"
 	culture = french
 	trait = just
@@ -42746,7 +42750,7 @@
 
 455754 = {
 	name = "Guy" #Guy VII de Limoges
-	dynasty = 86
+	dynasty_house = house_dreux
 	religion = "catholic"
 	culture = french
 	father = 455751  #Arthur II de Bretagne
@@ -42815,7 +42819,7 @@
 161905 = {
 	name = "Blanche"
 	female = yes
-	dynasty_house = house_capet
+	dynasty = KOHD0005 #Capet
 	religion = "catholic"
 	culture = french
 	father = 455528
@@ -45719,7 +45723,7 @@
 
 168139 = {
 	name = "Herbert"
-	dynasty = 100217
+	dynasty_house = house_artois217
 	religion = "catholic"
 	culture = french
 	father = 168130
@@ -45735,7 +45739,7 @@
 168140 = {
 	name = "Kunigunde"
 	female = yes
-	dynasty = 100217
+	dynasty_house = house_artois217
 	religion = "catholic"
 	culture = french
 	father = 168139
@@ -45750,7 +45754,7 @@
 168142 = {
 	name = "Regelinda"
 	female = yes
-	dynasty = 100217
+	dynasty_house = house_artois217
 
 	religion = "catholic"
 	culture = french
@@ -45769,7 +45773,7 @@
 168146 = {
 	name = "Senegunde"
 	female = yes
-	dynasty = 100217
+	dynasty_house = house_artois217
 	religion = "catholic"
 	culture = french
 	father = 168139
@@ -46124,7 +46128,7 @@
 
 168247 = {
 	name = "Ratbert" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	870.1.1 = {
@@ -46138,7 +46142,7 @@
 
 168248 = {
 	name = "Albitius" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 168247
@@ -46153,7 +46157,7 @@
 
 168249 = {
 	name = "Conrad" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 168248
@@ -46168,7 +46172,7 @@
 
 168250 = {
 	name = "Conrad" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 168249
@@ -46183,7 +46187,7 @@
 
 168251 = {
 	name = "Albert" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 168249
@@ -46198,7 +46202,7 @@
 
 168252 = {
 	name = "GE_raud" #count of Geneve
-	dynasty = 100239
+	dynasty_house = house_artois239
 	religion = "catholic"
 	culture = french
 	father = 168251
@@ -46966,7 +46970,7 @@
 }
 127019 = {
 	name = "Bernard"	#Bernard II of Gothia
-	dynasty = 100217
+	dynasty_house = house_artois217
 	father = 163063
 	mother = 168141
 	martial = 7
@@ -47198,7 +47202,7 @@
 ##Adrien of Orleans' family
 303421 = {
 	name = "Adrien"	#Adrian count of Orleans
-	dynasty = 100138 #Orléans
+	dynasty_house = house_artois138 #Orléans
 	religion = catholic
 	culture = french
 	father = 167825	#Gerold, in swabian file
@@ -47212,7 +47216,7 @@
 303422 = {
 	name = "Guillaume"	#Guillaume of Orleans
 	#AKA William
-	dynasty = 100138 #Orléans
+	dynasty_house = house_artois138 #Orléans
 	religion = catholic
 	culture = french
 	father = 303421	#Adrien of Orleans
@@ -47226,7 +47230,7 @@
 167829 = {
 	name = "Eudes"	#Eudes of Orleans
 	#AKA Odo I
-	dynasty = 100138 #Orléans	
+	dynasty_house = house_artois138 #Orléans	
 	religion = catholic	
 	culture = french
 	father = 303421		
@@ -47241,7 +47245,7 @@
 	name = "Waldrade" #Waldrade
 	# AKA: Waldrade d'Orleans
 	female = yes
-	dynasty = 100138 #Orléans
+	dynasty_house = house_artois138 #Orléans
 	religion = "catholic"
 	culture = french
 	father = 303421	#Adrien of Orleans
@@ -47256,7 +47260,7 @@
 	name = "Irmintrud"
 	#AKA Ermentrude, wife of Charles the Bald
 	female = yes	
-	dynasty = 100138 #Orléans	
+	dynasty_house = house_artois138 #Orléans	
 	religion = catholic	
 	culture = french
 	father = 167829		
@@ -47270,7 +47274,7 @@
 303423 = {	
 	name = "Guillaume"	#Guillaume d'Orleans, son of Eudes d'Orleans
 	#AKA William
-	dynasty = 100138 #Orléans	
+	dynasty_house = house_artois138 #Orléans	
 	religion = catholic	
 	culture = french
 	father = 167829		
@@ -47403,7 +47407,7 @@
 
 71179 = {
 	name = "Godefroy" # Godefroy de Salvaing, a Templar Knight
-	dynasty = 8694
+	dynasty_house = house_dreux94
 	religion = catholic
 	culture = french
 	martial = 5
