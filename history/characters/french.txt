@@ -3900,7 +3900,7 @@
 	1160.1.1 = {
 		birth = "1160.1.1"
 	}
-	1186.1.1 = {
+	1184.1.1 = {
 		add_spouse = 205729 #Alix de Courtenay
 	}
 	1202.6.16 = {
@@ -4285,7 +4285,7 @@
 	religion = "catholic"
 	culture = french
 	father = 206018 #Raimond de Bourgogne
-	#Agnès of Montpensier
+	mother = KOH0070 #Agnès of Montpensier
 	1150.1.1 = {
 		birth = "1150.1.1"
 	}
@@ -5935,6 +5935,9 @@
 	1121.1.1 = {
 		birth = "1121.1.1"
 	}
+	1149 = {
+		add_spouse = KOH0067 #Isabelle de Chalon
+	}
 	1171.1.1 = {
 		death = "1171.1.1"
 	}
@@ -5946,6 +5949,7 @@
 	religion = "catholic"
 	culture = french
 	father = 206007 #Hugues le Roux
+	mother = KOH0067
 	1150.1.2 = {
 		birth = "1150.1.2"
 	}
@@ -5961,6 +5965,7 @@
 	religion = "catholic"
 	culture = french
 	father = 206007 #Hugues le Roux
+	mother = KOH0067
 	1152.1.2 = {
 		birth = "1152.1.2"
 	}
@@ -13388,6 +13393,25 @@
 	}
 }
 
+KOH0060 = {
+	name = "Blanche"
+	female = yes
+	dynasty = 40022
+	religion = "catholic"
+	culture = french
+	father = 40340
+	mother = 40335
+	995.1.2 = {
+		birth = "995.1.2"
+	}
+	1015.1.1 = {
+		add_spouse = 40140
+	}
+	1060.1.1 = {
+		death = "1060.1.1"
+	}
+}
+
 40363 = {
 	name = "Mahaut"
 	female = yes
@@ -20452,7 +20476,7 @@
 }
 
 461742 = {
-	name = "Jean"
+	name = "Jean" #de Brienne, King of Jerusalem, Latin Emperor
 	dynasty = 80
 	martial = 7
 	diplomacy = 6
@@ -20466,11 +20490,12 @@
 	trait = education_martial_2
 	father = 461741
 	mother = 161766
-	1168.1.11 = {
-		birth = "1168.1.11"
+	1170.1.11 = {
+		birth = "1170.1.11"
 	}
+	
 	1210.1.1 = {
-		add_spouse = 34994 #Maria de Montferrat
+		add_spouse = 34994 #Maria de Montferrat, Queen of Jerusalem
 	}
 	
 	1214.1.1 = {
@@ -28988,7 +29013,7 @@
 	1165.1.1 = {
 		birth = "1165.1.1"
 	}
-	#Gui VI de Thiers
+	#Gui V de Thiers
 	1250.1.1 = {
 		death = "1250.1.1"
 	}
