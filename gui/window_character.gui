@@ -1168,9 +1168,22 @@ window = {
 								}
 							}
 						}
+						button_hud_main_tab = {
+							name = "tab_bloodlines_open"
+							tooltip = "BLOODLINES_BUTTON"
+							
+							blockoverride "maintab_button"
+							{
+								texture = "gfx/bloodlines/bloodlines_button.dds"
+								
+								datacontext = "[GetScriptedGui('bloodlines_toggle')]"
+								onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								down = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							}
+						}
 
 						spacer = {
-							size = { 10 0 }
+							size = { 0 0 }
 						}
 
 						vbox = {

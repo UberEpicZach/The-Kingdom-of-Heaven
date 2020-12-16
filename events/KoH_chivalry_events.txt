@@ -654,3 +654,41 @@ chivalry.13 = {
 		
 	}
 }
+
+chivalry.14 = {
+	type = character_event
+	title = chivalry.14.t
+	desc = chivalry.14.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	
+	right_portrait = {
+		character = scope:recruiter
+	}
+	
+	immediate = {
+        create_character = {
+			age = { 25 40 }
+			location = root.capital_province
+			gender = male
+			dynasty = none
+			culture = this.culture
+			faith = this.faith
+			prowess = { 15 25 }
+			martial = { 14 30 }
+			save_scope_as = recruiter
+        }
+	}
+	
+	option = {
+		name = chivalry.14.a
+		recruit_courtier = scope:recruiter
+	}
+	
+	option = {
+		name = chivalry.14.b
+		
+	}
+}

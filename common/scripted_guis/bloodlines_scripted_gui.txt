@@ -15,6 +15,12 @@ bloodlines_toggle = {
 		else = {
 			set_variable = bloodlines_toggle_var
 		}
+		if = {
+			limit = {
+				has_variable = artifacts_gui_toggle
+			}
+			remove_variable = artifacts_gui_toggle
+		}
 	}
 }
 
@@ -26,6 +32,7 @@ bloodlines_close = {
 	}
 
 	effect = {
+		remove_variable = bloodlines_toggle_var
 		remove_variable = bloodlines_toggle_var
 	}
 }

@@ -5041,20 +5041,6 @@ widget = {
 						down = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					}
 				}
-				
-				button_hud_main_tab = {
-					name = "tab_bloodlines_open"
-					tooltip = "BLOODLINES_BUTTON"
-					
-					blockoverride "maintab_button"
-					{
-						texture = "gfx/artifacts/maintab_artifacts.dds"
-						
-						datacontext = "[GetScriptedGui('bloodlines_toggle')]"
-						onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-						down = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-					}
-				}
 			}
 
 			# Invisible button to ensure that these shortcuts don't get hidden
