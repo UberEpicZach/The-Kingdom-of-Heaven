@@ -3196,6 +3196,12 @@
 	1108.7.29 = {
 		give_nickname = nick_the_fat
 	}
+	1104.1.1 = {
+		add_spouse = KOH0096 #Lucienne de Rochefort
+	}
+	1107.1.1 = {
+		divorce = character:KOH0096
+	}
 	1115.3.28 = {
 		add_spouse = 213118 #Adèle de Savoie
 	}
@@ -3750,6 +3756,11 @@
 	1179.1.1 = {
 		birth = "1179.1.1"
 	}
+	1180.1.1 = {
+		effect = {
+			create_betrothal = character:200187
+		}
+	}
 	1217.2.1 = {
 		death = "1217.2.1"
 	}
@@ -3899,9 +3910,6 @@
 	mother = 205617 #Marguerite de Turenne
 	1160.1.1 = {
 		birth = "1160.1.1"
-	}
-	1184.1.1 = {
-		add_spouse = 205729 #Alix de Courtenay
 	}
 	1202.6.16 = {
 		death = "1202.6.16"
@@ -4084,7 +4092,7 @@
 	1159.1.2 = {
 		birth = "1159.1.2"
 	}
-	1185.1.2 = {
+	1184.1.1 = {
 		add_spouse = 205963
 	}
 	1224.1.1 = {
@@ -4457,8 +4465,15 @@
 	1160.1.1 = {
 		birth = "1160.1.1"
 	}
-	#Guillaume de Joigny
-	#1186 Aymar Taillefer d'Angoulême 205640	
+	1178.1.1 = {
+		add_spouse = KOH0112 #Guillaume de Joigny
+	}
+	1183.10.1 = {
+		divorce = character:KOH0112
+	}
+	1184.1.1 = {
+		add_spouse = 205640 #1186 Aymar Taillefer d'Angoulême
+	}
 	1218.2.12 = {
 		death = "1218.2.12"
 	}
@@ -14341,6 +14356,9 @@ KOH0060 = {
 		effect = {
 			create_betrothal = character:90070
 		}
+	}
+	1077.1.1 = {
+		add_spouse = 90070
 	}
 	1110.1.2 = {
 		death = "1110.1.2"
@@ -25402,10 +25420,11 @@ KOH0060 = {
 	religion = "catholic"
 	culture = french
 	father = 161932 #Guillaume de Dampierre
-	1145.1.1 = {
-		birth = "1145.1.1"
+	mother = KOH0082
+	1155.11.1 = {
+		birth = "1155.11.1"
 	}
-	1196.1.1 = {
+	1184.1.1 = {
 		add_spouse = 205652
 	}
 	1216.1.18 = {
@@ -26942,7 +26961,7 @@ KOH0060 = {
 }
 
 90076 = {
-	name = "Guy"
+	name = "Guy" #Guy II of Rochefort
 	dynasty = 23112
 	martial = 4
 	diplomacy = 4
@@ -39836,11 +39855,13 @@ KOH0060 = {
 }
 
 34597 = {
-	name = "Narjot"
+	name = "Narjot" #Regent of the Latin Empire
 	dynasty = 7211
 	religion = "catholic"
 	culture = french
-	1187.1.1 = {
+	father = KOH0079 #Narjot II de Toucy
+	mother = KOH0078 #Agnès de Montréal
+	1184.1.1 = {
 		birth = "1187.1.1"
 	}
 	1210.1.1 = {
@@ -43977,11 +43998,16 @@ KOH0060 = {
 	dynasty = 92 #De Dampierre
 	culture = french
 	religion = "catholic"
-	1100.1.1 = {
+	father = KOH0074
+	mother = KOH0073
+	1130.1.1 = {
 		birth = "1100.1.1"
 	}
-	1161.1.1 = {
-		death = "1161.1.1"
+	1155.1.1 = {
+		add_spouse = KOH0082 #Ermengarde de Toucy
+	}
+	1174.1.1 = {
+		death = "1174.1.1"
 	}
 }
 
@@ -43992,6 +44018,7 @@ KOH0060 = {
 	culture = french
 	religion = "catholic"
 	father = 161932
+	mother = KOH0082
 	1155.1.1 = {
 		birth = "1155.1.1"
 	}
@@ -44007,6 +44034,7 @@ KOH0060 = {
 	culture = french
 	religion = "catholic"
 	father = 161932
+	mother = KOH0082
 	1159.1.1 = {
 		birth = "1159.1.1"
 	}
@@ -46743,9 +46771,10 @@ KOH0060 = {
 200187 = {
 	name = "Guigues"
 	dynasty = 5092
-
+	father = KOH0098 #Humbert IV de Beaujeu
+	mother = KOH0070 #Agnès of Montpensier
 	religion = catholic
-	culture = french
+	culture = occitan
 
 	1160.1.1 = {
 		birth = yes
@@ -46759,7 +46788,7 @@ KOH0060 = {
 }
 
 200188 = {
-	name = "Agnes"
+	name = "AinE_s"
 	female = yes
 	dynasty = 5092
 
@@ -46767,7 +46796,7 @@ KOH0060 = {
 	mother = 205527
 
 	religion = catholic
-	culture = french
+	culture = occitan
 
 	1205.1.1 = {
 		birth = yes
@@ -48203,5 +48232,615 @@ KOH0051 = {
 	}
 	1215.1.1 = {
 		death = "1215.1.1"
+	}
+}
+
+KOH0072 = {
+	name = "Hugues" #de Montréal
+	dynasty = KOHD0006
+	religion = "catholic"
+	culture = french
+	1085.1.2 = {
+		birth = "1085.1.2"
+	}
+	1100.1.1  = {
+		add_spouse = KOH0073 #Hélvide de Baudément
+	}
+	1125.1.1 = {
+		death = "1125.1.1"
+	}
+}
+
+KOH0073 = {
+	name = "HE_lvide" #Hélvide de Baudément
+	female = yes
+	dynasty = KOHD0007
+	religion = "catholic"
+	culture = french
+	1098.1.2 = {
+		birth = "1098.1.2"
+	}
+	1143.1.1 = {
+		death = "1143.1.1"
+	}
+}
+
+KOH0074 = {
+	name = "Gui"
+	dynasty = 92 #De Dampierre 
+	religion = "catholic"
+	culture = french
+	1095.1.2 = {
+		birth = "yes"
+	}
+	1127.1.1  = {
+		add_spouse = KOH0073 #Hélvide de Baudément
+	}
+	1151.1.1 = {
+		death = "1151.1.1"
+	}
+}
+
+KOH0075 = {
+	name = "AnsE_ric" #Anséric I de Montréal
+	dynasty = KOHD0006
+	religion = "catholic"
+	culture = french
+	father = KOH0072 #Hugues de Montréal
+	mother = KOH0073 #Hélvide de Baudément
+	1118.1.2 = {
+		birth = "yes"
+	}
+	1145.1.1  = {
+		add_spouse = KOH0076 #Adélaïde de Pleurs
+	}
+	1174.1.26 = {
+		death = "1174.1.26"
+	}
+}
+
+KOH0076 = {
+	name = "AdE_laI_de" #Adélaïde de Pleurs
+	female = yes
+	dynasty = KOHD0008
+	religion = "catholic"
+	culture = french
+	father = KOH0109 #Manasses de Pleurs
+	1120.1.2 = {
+		birth = "yes"
+	}
+	1171.1.1 = {
+		death = "1171.1.1"
+	}
+}
+
+KOH0077 = {
+	name = "AnsE_ric" #Anséric II de Montréal
+	dynasty = KOHD0006
+	religion = "catholic"
+	culture = french
+	father = KOH0075 #Anséric I de Montréal
+	mother = KOH0076 #Adélaïde de Pleurs
+	1150.1.2 = {
+		birth = "yes"
+	}
+	1170.1.1  = {
+		add_spouse = 206009 #Sibylle de Bourgogne
+		employer = 206000
+	}
+	1191.1.1 = {
+		death = "1191.1.1"
+	}
+}
+
+KOH0078 = {
+	name = "AgnE_s" #Agnès de Montréal
+	female = yes
+	dynasty = KOHD0006
+	religion = "catholic"
+	culture = french
+	father = KOH0075 #Anséric III de Montréal
+	mother = KOH0076 #Adélaïde de Pleurs
+	1146.1.2 = {
+		birth = "yes"
+	}
+	1205.1.1 = {
+		death = "1205.1.1"
+	}
+}
+
+KOH0079 = {
+	name = "Narjot" #Narjot II de Toucy
+	dynasty = 7211
+	religion = "catholic"
+	culture = french
+	father = KOH0080 #Ithier III de Toucy
+	mother = KOH0081 #Élisabeth de Joigny
+	1135.1.2 = {
+		birth = "yes"
+	}
+	1162.1.1  = {
+		add_spouse = KOH0078 #Agnès de Montréal
+	}
+	1192.1.1 = {
+		death = "1192.1.1"
+	}
+}
+
+KOH0080 = {
+	name = "Ithier" #Ithier III de Toucy
+	dynasty = 7211
+	religion = "catholic"
+	culture = french
+	1100.1.2 = {
+		birth = "yes"
+	}
+	1130.1.1  = {
+		add_spouse = KOH0081 #Élisabeth de Joigny
+	}
+	1147.1.1 = {
+		death = "1147.1.1"
+	}
+}
+
+KOH0081 = {
+	name = "E_lisabeth" #Élisabeth de Joigny
+	female = yes
+	dynasty = 5090
+	religion = "catholic"
+	culture = french
+	father = KOH0089 #Renaud III de Joigny
+	mother = KOH0090 #Wandalmode de Beaujeu
+	1112.1.2 = {
+		birth = "yes"
+	}
+	1157.1.1 = {
+		death = "1157.1.1"
+	}
+}
+
+KOH0082 = {
+	name = "Ermengarde" #Ermengarde de Toucy
+	female = yes
+	dynasty = 7211
+	religion = "catholic"
+	culture = french
+	father = KOH0080 #Ithier III de Toucy
+	mother = KOH0081 #Élisabeth de Joigny
+	1137.1.2 = {
+		birth = "yes"
+	}
+	1188.1.1 = {
+		death = "1188.1.1"
+	}
+}
+
+KOH0083 = {
+	name = "Ithier" #Ithier IV de Toucy
+	dynasty = 7211
+	religion = "catholic"
+	culture = french
+	father = KOH0079 #Narjot II de Toucy
+	mother = KOH0078 #Agnès de Montréal
+	1170.1.2 = {
+		birth = "yes"
+	}
+	1218.1.1 = {
+		death = "1218.1.1"
+	}
+}
+
+KOH0084 = {
+	name = "Jean" #Jean de Toucy
+	dynasty = 7211
+	religion = "catholic"
+	culture = french
+	father = KOH0079 #Narjot II de Toucy
+	mother = KOH0078 #Agnès de Montréal
+	1175.1.2 = {
+		birth = "yes"
+	}
+	1177.1.1 = {
+		death = "1177.1.1"
+	}
+}
+
+KOH0085 = {
+	name = "AnsE_ric" #Anséric de Toucy
+	dynasty = 7211
+	religion = "catholic"
+	culture = french
+	father = KOH0079 #Narjot II de Toucy
+	mother = KOH0078 #Agnès de Montréal
+	1175.1.2 = {
+		birth = "yes"
+	}
+	1218.1.1 = {
+		death = "1218.1.1"
+	}
+}
+
+KOH0086 = {
+	name = "Mathilde" #Mathilde de Toucy
+	female = yes
+	dynasty = 7211
+	religion = "catholic"
+	culture = french
+	father = KOH0079 #Narjot II de Toucy
+	mother = KOH0078 #Agnès de Montréal
+	trait = zealous
+	trait = compassionate
+	1177.1.2 = {
+		birth = "yes"
+	}
+	1184.1.1 = {
+		trait = devoted
+	}
+	1237.1.1 = {
+		death = "1237.1.1"
+	}
+}
+
+KOH0087 = {
+	name = "HE_loI_se" #Héloïse de Toucy
+	female = yes
+	dynasty = 7211
+	religion = "catholic"
+	culture = french
+	father = KOH0079 #Narjot II de Toucy
+	mother = KOH0078 #Agnès de Montréal
+	1179.1.2 = {
+		birth = "yes"
+	}
+	1224.1.1 = {
+		death = "1224.1.1"
+	}
+}
+
+KOH0088 = {
+	name = "Constance" #Constance de Toucy
+	female = yes
+	dynasty = 7211
+	religion = "catholic"
+	culture = french
+	father = KOH0079 #Narjot II de Toucy
+	mother = KOH0078 #Agnès de Montréal
+	1183.1.2 = {
+		birth = "yes"
+	}
+	1183.6.1 = {
+		effect = {	
+			create_betrothal = character:205727
+		}
+	}
+	1208.1.1 = {
+		death = "1208.1.1"
+	}
+}
+
+KOH0089 = {
+	name = "Renaud" #Renaud III de Joigny
+	dynasty = 5090
+	religion = "catholic"
+	culture = french
+	father = 40446 #Renaud II de Joigny
+	mother = 90070 #Vainmonde de Courtenay
+	1090.1.2 = {
+		birth = "yes"
+	}
+	1109.1.1  = {
+		add_spouse = KOH0090 #Wandalmode de Beajeu
+	}
+	1120.1.1 = {
+		add_spouse = KOH0091 #Alix de Blois
+	}
+	1154.1.1 = {
+		death = "1154.1.1"
+	}
+}
+
+
+KOH0091 = {
+	name = "Alix" #Alix de Blois
+	female = yes
+	dynasty = 721
+	religion = "catholic"
+	culture = french
+	father = 205897 #Étienne II de Blois
+	mother = 205898 #Adèle d'Angleterre
+	1104.1.2 = {
+		birth = "yes"
+	}
+	1148.1.1 = {
+		death = "1148.1.1"
+	}
+}
+
+KOH0092 = {
+	name = "Renaud" #Renaud IV de Joigny
+	dynasty = 5090
+	religion = "catholic"
+	culture = french
+	father = KOH0089 #Renaud III de Joigny
+	mother = KOH0091 #Alix de Blois
+	1120.11.2 = {
+		birth = "yes"
+	}
+	1160.1.1  = {
+		add_spouse = KOH0102 #Adélaïde de Nevers
+	}
+	1179.1.1 = {
+		death = "1179.1.1"
+	}
+}
+
+KOH0096 = {
+	name = "Lucienne" #Lucienne de Rochefort
+	female = yes
+	dynasty = 23112
+	religion = "catholic"
+	culture = french
+	father = 90076 #Guy II de Rochefort
+	#Adelais de Crécy
+	1090.1.2 = {
+		birth = "yes"
+	}
+	1138.1.1 = {
+		death = "1138.1.1"
+	}
+}
+
+KOH0101 = {
+	name = "Renaud" #Renaud de Nevers
+	dynasty = 320 #Bauchemont
+	religion = "catholic"
+	culture = french
+	father = 205711 #Guillaume IV de Nevers
+	mother = 205712 #Ida von Sponheim
+	1151.1.2 = {
+		birth = "yes"
+	}
+	1178.1.1  = {
+		add_spouse = KOH0100 #Alix de Beaujeu
+	}
+	1191.1.1 = { #died at siege of Acre
+		death = "1191.1.1"
+	}
+}
+
+KOH0102 = {
+	name = "AdE_laI_de" #Adélaïde de Nevers
+	female = yes
+	dynasty = 320 #Bauchemont
+	religion = "catholic"
+	culture = french
+	father = 205711 #Guillaume IV de Nevers
+	mother = 205712 #Ida von Sponheim
+	1144.1.2 = {
+		birth = "yes"
+	}
+	1198.1.1 = {
+		death = "1198.1.1"
+	}
+}
+
+KOH0103 = {
+	name = "AnsE_ric" #Anséric III de Montréal
+	dynasty = KOHD0006
+	religion = "catholic"
+	culture = french
+	father = KOH0077 #Anséric II de Montréal
+	mother = 206009 #Sibylle de Bourgogne
+	1171.1.2 = {
+		birth = "yes"
+	}
+	1228.8.1 = {
+		death = "1228.8.1"
+	}
+}
+
+KOH0104 = {
+	name = "Jean" #Jean de Montréal
+	dynasty = KOHD0006
+	religion = "catholic"
+	culture = french
+	father = KOH0077 #Anséric II de Montréal
+	mother = 206009 #Sibylle de Bourgogne
+	1173.1.2 = {
+		birth = "yes"
+	}
+	1224.6.1 = {
+		death = "1224.6.1"
+	}
+}
+
+KOH0105 = {
+	name = "Milon" #Milon de Montréal
+	dynasty = KOHD0006
+	religion = "catholic"
+	culture = french
+	father = KOH0077 #Anséric II de Montréal
+	mother = 206009 #Sibylle de Bourgogne
+	1175.1.2 = {
+		birth = "yes"
+	}
+	1209.1.1 = {
+		death = "1209.1.1"
+	}
+}
+
+KOH0106 = {
+	name = "Andre" #Andre de Montréal
+	dynasty = KOHD0006
+	religion = "catholic"
+	culture = french
+	father = KOH0077 #Anséric II de Montréal
+	mother = 206009 #Sibylle de Bourgogne
+	1177.1.2 = {
+		birth = "yes"
+	}
+	1240.10.1 = {
+		death = "1240.10.1"
+	}
+}
+
+KOH0107 = {
+	name = "Hugues" #Hugues de Montréal
+	dynasty = KOHD0006
+	religion = "catholic"
+	culture = french
+	father = KOH0077 #Anséric II de Montréal
+	mother = 206009 #Sibylle de Bourgogne
+	1179.1.2 = {
+		birth = "yes"
+	}
+	1183.1.1 = {
+		trait = devoted
+	}
+	1232.3.15 = {
+		death = "1232.3.15"
+	}
+}
+
+KOH0108 = {
+	name = "E_lisabeth" #Élisabeth de Montréal
+	female = yes
+	dynasty = KOHD0006
+	religion = "catholic"
+	culture = french
+	father = KOH0077 #Anséric II de Montréal
+	mother = 206009 #Sibylle de Bourgogne
+	1181.1.2 = {
+		birth = "yes"
+	}
+	1222.1.1 = {
+		death = "1222.1.1"
+	}
+}
+
+KOH0109 = {
+	name = "ManassE_s" #Manasses de Pleurs
+	dynasty = KOHD0008
+	religion = "catholic"
+	culture = french
+	1100.1.2 = {
+		birth = "yes"
+	}
+	1148.1.1 = {
+		death = "1148.1.1"
+	}
+}
+
+KOH0110 = {
+	name = "Guillaume"
+	dynasty = 80 #de Brienne
+	religion = "catholic"
+	culture = french
+	father = 461741
+	mother = 161766
+	1168.1.1 = {
+		birth = "1164.1.1"
+	}
+	1184.1.1 = {
+		add_spouse = 91070
+	}
+	1199.1.1 = {
+		death = "1199.1.1"
+	}
+}
+
+KOH0112 = {
+	name = "Guillaume" #Guillaume de Joigny
+	dynasty = 5090
+	religion = "catholic"
+	culture = french
+	father = KOH0092 #Renaud IV de Joigny
+	mother = KOH0102 #Adélaïde de Nevers
+	1160.11.2 = {
+		birth = "yes"
+	}
+	1220.1.1 = {
+		death = "1220.1.1"
+	}
+}
+
+KOH0113 = {
+	name = "Gaucher" #Gaucher de Joigny
+	dynasty = 5090
+	religion = "catholic"
+	culture = french
+	father = KOH0092 #Renaud IV de Joigny
+	mother = KOH0102 #Adélaïde de Nevers
+	1165.1.2 = {
+		birth = "yes"
+	}
+	1237.1.1 = {
+		death = "1237.1.1"
+	}
+}
+
+KOH0114 = {
+	name = "AgnE_s " #Agnès de Joigny
+	female = yes
+	dynasty = 5090
+	religion = "catholic"
+	culture = french
+	father = KOH0092 #Renaud IV de Joigny
+	mother = KOH0102 #Adélaïde de Nevers
+	1168.1.2 = {
+		birth = "yes"
+	}
+	1213.1.1 = {
+		death = "1213.1.1"
+	}
+}
+KOH0115 = {
+	name = "HE_lisende" #Hélisende de Joigny
+	female = yes
+	dynasty = 5090
+	religion = "catholic"
+	culture = french
+	father = KOH0092 #Renaud IV de Joigny
+	mother = KOH0102 #Adélaïde de Nevers
+	1175.1.2 = {
+		birth = "yes"
+	}
+	1176.1.1 = {
+		effect = {
+			create_betrothal = character:KOH0104
+		}
+	}
+	1220.1.1 = {
+		death = "1220.1.1"
+	}
+}
+
+KOH0116 = {
+	name = "Gui" #Gui de Joigny
+	dynasty = 5090
+	religion = "catholic"
+	culture = french
+	father = KOH0112 #Guillaume de Joigny
+	mother = 205729 #Alice de Courtenay
+	1179.1.1 = {
+		birth = "yes"
+	}
+	1179.4.1 = {
+		death = "1179.4.1"
+	}
+}
+
+KOH0117 = {
+	name = "Pierre" #Pierre de Joigny
+	dynasty = 5090
+	religion = "catholic"
+	culture = french
+	father = KOH0112 #Guillaume de Joigny
+	mother = 205729 #Alice de Courtenay
+	1183.1.1 = {
+		birth = "yes"
+	}
+	1222.4.1 = {
+		death = "1222.4.1"
 	}
 }

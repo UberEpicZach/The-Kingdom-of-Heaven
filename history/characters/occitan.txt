@@ -10990,10 +10990,12 @@
 205682 = {
 	name = "AliC_" #Alix de Beaujeu
 	female = yes
-	dynasty = 5092 #was 322 de Méziriac
+	dynasty = 5092
+	father = KOH0095 #Guichard IV de Beaujeu
+	mother = KOH0096 #Lucienne de Rochefort	
 	religion = "catholic"
 	culture = "occitan"
-	1105.1.2 = {
+	1122.1.2 = {
 		birth = "1105.1.2"
 	}
 	1160.1.2 = {
@@ -11423,14 +11425,14 @@ KOH0069 = {
 	religion = "catholic"
 	culture = "occitan"
 	father = 91149 #Guy III de Thiers	
-	1058.1.1 = {
-		birth = "1058.1.1" #unknown
+	1065.1.1 = {
+		birth = "1065.1.1" #unknown
 	}
 	1079.12.1 = {
 		dynasty_house = house_chalon #Chalon
 	}	
-	1100.1.1 = {
-		death = "1100.1.1" #unknown
+	1127.1.1 = {
+		death = "1127.1.1" #unknown
 	}
 }
 
@@ -11441,8 +11443,8 @@ KOH0070 = {
 	religion = "catholic"
 	culture = "occitan"
 	father = KOH0069 #Guy de Chalon
-	1118.1.1 = {
-		birth = "1118.1.1" #unknown
+	1125.1.1 = {
+		birth = "1125.1.1" #unknown
 	}
 	1148.1.1 = {
 		add_spouse = 206018 #Raimond Bourgogne
@@ -12168,7 +12170,7 @@ KOH0071 = {
 	1095.1.1 = {
 		birth = "1095.1.1"
 	}
-	1129.1.1 = {
+	1138.1.1 = {
 		add_spouse = 205682 #Alix de Beaujeu
 	}
 	1138.10.27 = {
@@ -12183,12 +12185,27 @@ KOH0071 = {
 	culture = "occitan"
 	father = 205681 #Guy d'Albon
 	mother = 205682 #Alix de Beaujeu
-	1130.1.1 = {
-		birth = "1130.1.1"
+	1138.11.1 = {
+		birth = "1138.11.1"
 	}
-	# married 1158 Guillelme ?
+	1158 = {
+		add_spouse = KOH0111 #Guillelme
+	}
 	1206.6.12 = {
 		death = "1206.6.12"
+	}
+}
+
+KOH0111 = {
+	name = "Guillelme"
+	female = yes
+	religion = "catholic"
+	culture = "occitan"
+	1142.1.1 = {
+		birth = "1142.1.1"
+	}
+	1187.1.1 = {
+		death = "1187.1.1"
 	}
 }
 
@@ -12198,6 +12215,7 @@ KOH0071 = {
 	religion = "catholic"
 	culture = "occitan"
 	father = 205680 #Guigues II de Forez
+	mother = KOH0111 #Guillelme
 	1160.1.2 = {
 		birth = "1160.1.2"
 	}
@@ -12216,6 +12234,7 @@ KOH0071 = {
 	religion = "catholic"
 	culture = "occitan"
 	father = 205680#Guigues II de Forez
+	mother = KOH0111 #Guillelme
 	1178.1.1 = {
 		birth = "1178.1.1"
 	}
@@ -14580,5 +14599,142 @@ KOH0071 = {
 	}
 	1001.1.1 = {
 		death = yes
+	}
+}
+
+KOH0090 = {
+	name = "Wandalmode" #Wandalmode de Beajeu
+	female = yes
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0093 #Humbert II de Beajeu
+	mother = KOH0094 #Auxilia
+	1093.1.2 = {
+		birth = "yes"
+	}
+	1113.1.1 = {
+		death = "1113.1.1"
+	}
+}
+
+KOH0093 = {
+	name = "Umbert" #Humbert II de Beaujeu
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	1042.1.2 = {
+		birth = "yes"
+	}
+	1060.1.1  = {
+		add_spouse = KOH0062 #Wandelmode de Thiern
+	}
+	1080.1.1 = {
+		add_spouse = KOH0094 #Auxilia
+	}
+	1102.1.1 = {
+		death = "1102.1.1"
+	}
+}
+
+KOH0094 = {
+	name = "Auxilia"
+	female = yes
+	religion = "catholic"
+	culture = occitan
+	1060.1.2 = {
+		birth = "yes"
+	}
+	1100.1.1 = {
+		death = "1100.1.1"
+	}
+}
+
+KOH0095 = {
+	name = "Guigues" #Guichard IV de Beaujeu
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0093 #Humbert II de Beaujeu
+	mother = KOH0094 #Auxilia
+	1080.11.2 = {
+		birth = "yes"
+	}
+	1108.1.1  = {
+		add_spouse = KOH0096 #Lucienne de Rochefort
+	}
+	1137.9.23 = {
+		death = "1137.9.23"
+	}
+}
+
+KOH0097 = {
+	name = "Umbert" #Humbert III de Beaujeu
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0095 #Guichard IV de Beaujeu
+	mother = KOH0096 #Lucienne de Rochefort
+	1120.1.2 = {
+		birth = "yes"
+	}
+	1138.1.1  = {
+		add_spouse = 70889 #Alix de Savoie
+	}
+	1192.1.1 = {
+		death = "1192.1.1"
+	}
+}
+
+KOH0098 = {
+	name = "Umbert" #Humbert IV de Beaujeu
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0097 #Humbert III de Beaujeu
+	mother = 70889 #Alix de Savoie
+	1141.1.2 = {
+		birth = "yes"
+	}
+	1156.8.1  = {
+		add_spouse = KOH0070 #Agnès of Montpensier
+	}
+	1189.1.1 = {
+		death = "1189.1.1"
+	}
+}
+
+KOH0099 = {
+	name = "Pontia" #Pontia de Beaujeu
+	female = yes
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0097 #Humbert III de Beaujeu
+	mother = 70889 #Alix de Savoie
+	1145.1.2 = {
+		birth = "yes"
+	}
+	1157.1.1  = {
+		add_spouse = 205700 #Guillaume de Macon
+	}
+	1183.1.1 = {
+		death = "1183.1.1"
+	}
+}
+
+KOH0100 = {
+	name = "AliC_" #Alix de Beaujeu
+	female = yes
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0098 #Humbert IV de Beaujeu
+	mother = KOH0070 #Agnès of Montpensier
+	1162.1.2 = {
+		birth = "yes"
+	}
+	1189.1.1 = {
+		death = "1189.1.1"
 	}
 }
