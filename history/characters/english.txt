@@ -721,6 +721,8 @@
 	trait = beauty_good_1
 	trait = blademaster_1
 	trait = diligent
+	trait = forgiving
+	trait = gregarious
 	trait = education_learning_2
 	father = 204500
 	mother = 205730
@@ -748,6 +750,8 @@
 	religion = "catholic"
 	culture = "english"
 	trait = zealous
+	trait = generous
+	trait = compassionate
 	trait = education_intrigue_2
 	father = 204500
 	mother = 205730
@@ -798,6 +802,11 @@
 			create_betrothal = character:205518
 		}
 	}
+	1167.1.1 = {
+		effect = {
+			set_relation_friend = character:204513
+		}
+	}
 	1181.1.1 = {
 		effect = {
 			set_relation_lover = character:205506
@@ -831,11 +840,18 @@
 	religion = "catholic"
 	culture = "english"
 	trait = deceitful
-	trait = education_learning_3
+	trait = gregarious
+	trait = fickle
+	trait = education_intrigue_4
 	father = 204500
 	mother = 205730
 	1158.9.23 = {
 		birth = "1158.9.23"
+	}
+	1181.1.1 = {
+		effect = {
+			set_relation_friend = character:205506
+		}
 	}
 	1178.1.1 = {
 		add_spouse = 205740
@@ -856,10 +872,11 @@
 	stewardship = 8
 	religion = "catholic"
 	culture = "english"
-	trait = lazy
+	trait = ambitious
 	trait = generous
-	trait = cynical
-	trait = education_learning_2
+	trait = zealous
+	trait = Shrewd
+	trait = education_stewardship_4
 	father = 204500
 	mother = 205730
 	1161.10.13 = {
@@ -881,8 +898,10 @@
 	stewardship = 5
 	religion = "catholic"
 	culture = "english"
-	trait = deceitful
-	trait = cynical
+	trait = chaste
+	trait = brave
+	trait = humble
+	trait = cautious_leader
 	trait = education_learning_3
 	father = 204500
 	mother = 205730
@@ -890,6 +909,11 @@
 		birth = "1165.1.2"
 		effect = {
 			add_character_flag = has_scripted_appearance
+		}
+	}
+	1178.1.1 = {
+		effect = {
+			set_relation_friend = character:212508
 		}
 	}
 	1215.1.2 = {
