@@ -1920,3 +1920,463 @@ KOH_balian_women.25 = {
 		}
 	}
 }
+
+#Georgia start
+
+namespace = KOH_georgian_wedding
+
+KOH_georgian_wedding.1 = { 
+	type = character_event
+	title = georgian.wedding.t
+	desc = {
+		desc = georgian.weddding.desc
+	}
+	theme = marriage
+	left_portrait = {	
+		character = character:466517 #Tamar
+		animation = rage
+		}
+	right_portrait = {
+		character = character:222828 #Yuriy
+		animation = personality_dishonorable
+	}
+	trigger = {
+			is_adult = yes
+			NOT = { has_character_flag = had_event_georgian_wedding.1 }
+			is_ai = no
+		}
+	
+	immediate = {
+		add_character_flag = {
+			flag = had_event_georgian_wedding.1
+		}
+		hidden_effect = {
+			character:466516 = {
+				add_trait = unwed
+			}
+		}
+	}
+
+
+	#Accuse Yuri of Drunkenness
+	option = {
+		name = georgian.wedding.a
+
+
+		random_list = {
+				65 = {
+					character:466517 = {
+						add_prestige = 50
+					}
+					reverse_add_opinion = {
+						target = character:222828
+						modifier = angry_opinion
+						opinion = -15
+					}
+					character:222828 = {
+						add_trait = drunkard
+					}
+					hidden_effect = {
+						trigger_event = {
+							id = KOH_georgian_wedding.2
+							days = {10 30}
+						}
+					}
+				}
+				35 = {
+					character:466517 = {
+						add_prestige = -50
+					}
+					reverse_add_opinion = {
+						target = character:222828
+						modifier = angry_opinion
+						opinion = -30
+					}
+					hidden_effect = {
+						trigger_event = {
+							id = KOH_georgian_wedding.3
+							days = {10 30}
+						}
+					}
+
+				}
+		}
+	}
+
+	#Accuse Yuri of Sodomy
+	option = {
+		name = georgian.wedding.b
+
+		random_list = {
+				25 = {
+					character:466517 = {
+						add_prestige = 150
+					}
+					reverse_add_opinion = {
+						target = character:222828
+						modifier = angry_opinion
+						opinion = -15
+					}
+					character:222828 = {
+						add_trait = sodomite
+					}
+					hidden_effect = {
+						trigger_event = {
+							id = KOH_georgian_wedding.2
+							days = {10 30}
+						}
+					}
+				}
+				75 = {
+					character:466517 = {
+						add_prestige = -50
+					}
+					reverse_add_opinion = {
+						target = character:222828
+						modifier = angry_opinion
+						opinion = -30
+					}
+					hidden_effect = {
+						trigger_event = {
+							id = KOH_georgian_wedding.3
+							days = {10 30}
+						}
+					}
+
+				}
+		}
+	}
+}
+
+#Divorce Yuri with Cause
+KOH_georgian_wedding.2 = { 
+	type = character_event
+	title = georgian.wedding.2.t
+	desc = {
+		desc = georgian.weddding.2.desc
+	}
+	theme = marriage
+	left_portrait = {	
+		character = character:466517 #Tamar
+		animation = dismissal		
+		}
+	right_portrait = {
+		character = character:222828 #Yuriy
+		animation = personality_vengeful
+	}
+	trigger = {
+			is_adult = yes
+			NOT = { has_character_flag = had_event_georgian_wedding.2 }
+			is_ai = no
+		}
+	
+	immediate = {
+		add_character_flag = {
+			flag = had_event_georgian_wedding.2
+		}
+	}
+	
+	option = {
+		name = georgian.wedding.2.a
+		
+		character:466517 = {
+			divorce = character:222828
+		}
+		hidden_effect = {
+			character:466517 = {
+				add_trait = unwed
+			}
+			trigger_event = {
+				id = KOH_georgian_wedding.4
+				days = {10 30}
+				}
+		}
+	}
+}
+
+#Divorce Yuri without Cause
+KOH_georgian_wedding.3 = { 
+	type = character_event
+	title = georgian.wedding.3.t
+	desc = {
+		desc = georgian.weddding.3.desc
+	}
+	theme = marriage
+	left_portrait = {	
+		character = character:466517 #Tamar
+		animation = dismissal
+		}
+	right_portrait = {
+		character = character:222828 #Yuriy
+		animation = personality_vengeful
+	}
+	trigger = {
+			is_adult = yes
+			NOT = { has_character_flag = had_event_georgian_wedding.3 }
+			is_ai = no
+		}
+	
+	immediate = {
+		add_character_flag = {
+			flag = had_event_georgian_wedding.3
+		}
+	}
+	
+	option = {
+		name = georgian.wedding.3.a
+		
+		character:466517 = {
+			divorce = character:222828
+		}
+		hidden_effect = {
+			character:466547 = {
+				add_trait = unwed
+			}
+			trigger_event = {
+				id = KOH_georgian_wedding.4
+				days = {10 30}
+				}
+		}
+	}
+}
+
+#Enter Soslan
+KOH_georgian_wedding.4 = { 
+	type = character_event
+	title = georgian.wedding.4.t
+	desc = {
+		desc = georgian.weddding.4.desc
+	}
+	theme = marriage
+	override_background = {
+		event_background = garden
+	}
+	left_portrait = {	
+		character = character:466517 #Tamar
+		animation = personality_rational
+		}
+	right_portrait = {
+		character = character:466516 #Soslan
+		animation = flirtation
+	}
+	trigger = {
+			is_adult = yes
+			NOT = { has_character_flag = had_event_georgian_wedding.4 }
+			is_ai = no
+		}
+	
+	immediate = {
+		add_character_flag = {
+			flag = had_event_georgian_wedding.4
+		}
+	}
+	
+	#Woo him with a present
+	option = {
+		name = georgian.wedding.4.a
+
+			character:466517 = {
+				remove_short_term_gold = 10
+			}
+			reverse_add_opinion = {
+				target = character:466516
+				modifier = romance_opinion
+				opinion = 30
+			}
+			hidden_effect = {
+				trigger_event = {
+					id = KOH_georgian_wedding.5
+					days = {10 30}
+					}
+			}
+	}
+
+	#Woo him with poetry
+	option = {
+		name = georgian.wedding.4.b
+
+			character:466517 = {
+				add_prestige = -5
+			}
+			reverse_add_opinion = {
+				target = character:466516
+				modifier = romance_opinion
+				opinion = 30
+			}
+			hidden_effect = {
+				trigger_event = {
+					id = KOH_georgian_wedding.5
+					days = {10 30}
+					}
+			}
+	}
+}
+
+#Marry Solsan
+KOH_georgian_wedding.5 = { 
+	type = character_event
+	title = georgian.wedding.5.t
+	desc = {
+		desc = georgian.weddding.5.desc
+	}
+	theme = marriage
+	override_background = {
+		event_background = garden
+	}
+	left_portrait = {	
+		character = character:466517 #Tamar
+		animation = personality_compassionate
+		}
+	right_portrait = {
+		character = character:466516 #Soslan
+		animation = personality_content
+	}
+	trigger = {
+			is_adult = yes
+			NOT = { has_character_flag = had_event_georgian_wedding.5 }
+			is_ai = no
+		}
+	
+	immediate = {
+		add_character_flag = {
+			flag = had_event_georgian_wedding.5
+		}
+		character:466517 = {
+			set_relation_lover = character:466516
+		}
+	}
+	option = {
+		name = georgian.wedding.5.a
+
+		character:466517 = {
+			remove_trait = unwed
+		}
+		character:466516 = {
+			remove_trait = unwed
+			marry_matrilineal = character:466517
+			change_first_name = "Davit Solsan"
+		}
+		hidden_effect = {
+			trigger_event = {
+				id = KOH_georgian_wedding.6
+				days = {10 30}
+					}
+			}
+	}
+}
+
+#War with Yuri
+
+KOH_georgian_wedding.6 = {
+	type = character_event
+	title = georgian.weddding.6.t
+	desc = georgian.weddding.6.desc
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+		}
+	
+	trigger = {
+			NOT = { has_character_flag = had_event_georgian_wedding.6 }
+		}
+	
+	immediate = {
+		add_character_flag = {
+			flag = had_event_georgian_wedding.6
+		}
+		character:222828 = {
+			get_title = c_odishi
+			add_gold = 1000
+		}
+	}
+
+	option = {
+		name = georgian.wedding.6.a
+
+		character:222828 = {
+		
+			start_war = {
+				casus_belli = KOH_georgian_cb
+				target = character:466517
+				target_title = title:k_georgia
+				claimant = character:222828
+			}
+			spawn_army = {
+				uses_supply = no
+				inheritable = no
+				levies = {
+					value = 500
+				}
+					location = 601
+			}
+		}
+	}
+}
+
+#Aftermath with Yuri
+KOH_georgian_wedding.7 = {
+	type = character_event
+	title = georgian.weddding.7.t
+	desc = georgian.weddding.7.desc
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_callous
+	}
+	right_portrait = {
+		character = character:222828 #Yuriy
+		animation = disbelief
+	}
+	trigger = {
+		NOT = { has_character_flag = had_event_georgian_wedding.7 }
+	}
+	
+	immediate = {
+		add_character_flag = {
+			flag = had_event_georgian_wedding.7
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:e_byzantium 
+                }
+            }
+            save_scope_as = ByzantineEmperor
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:d_abkhazia
+                }
+            }
+            save_scope_as = DukeAbkhazia
+		}
+		scope:DukeAbkhazia = {
+			get_title = c_odishi
+		}
+	}
+	
+	#Banish Yuri
+	option = {
+		name = georgian.wedding.7.a	
+		
+		character:222828 = {
+			set_employer = scope:ByzantineEmperor
+		}
+	}
+	
+	#End Yuri
+	option = {
+		name = georgian.wedding.7.b
+		
+	
+		character:222828 = {
+			death = {
+				death_reason = death_execution
+			}
+		}
+	}
+}
