@@ -2306,8 +2306,9 @@ KOH_georgian_wedding.6 = {
 			spawn_army = {
 				uses_supply = no
 				inheritable = no
+				name = event_troop_default_name
 				levies = {
-					value = 500
+					value = 300
 				}
 					location = 601
 			}
@@ -2327,7 +2328,7 @@ KOH_georgian_wedding.7 = {
 		animation = personality_callous
 	}
 	right_portrait = {
-		character = character:222828 #Yuriy
+		character = scope:Failure
 		animation = disbelief
 	}
 	trigger = {
@@ -2338,6 +2339,14 @@ KOH_georgian_wedding.7 = {
 		add_character_flag = {
 			flag = had_event_georgian_wedding.7
 		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:c_odishi
+                }
+            }
+            save_scope_as = Failure
+		}	
 		every_ruler = {
             limit = {
                 any_held_title = {
@@ -2363,7 +2372,7 @@ KOH_georgian_wedding.7 = {
 	option = {
 		name = georgian.wedding.7.a	
 		
-		character:222828 = {
+		scope:Failure = {
 			set_employer = scope:ByzantineEmperor
 		}
 	}
@@ -2373,9 +2382,117 @@ KOH_georgian_wedding.7 = {
 		name = georgian.wedding.7.b
 		
 	
-		character:222828 = {
+		scope:Failure = {
 			death = {
 				death_reason = death_execution
+			}
+		}
+	}
+}
+
+#Alania start
+
+KOH_georgian_wedding.8 = { 
+	type = character_event
+	title = georgian.wedding.8.t
+	desc = {
+		desc = georgian.weddding.8.desc
+	}
+	theme = marriage
+	override_background = {
+		event_background = garden
+	}
+	left_portrait = {	
+		character = character:466517 #Tamar
+		animation = personality_compassionate
+		}
+	right_portrait = {
+		character = character:466516 #Soslan
+		animation = personality_content
+	}
+	trigger = {
+			is_adult = yes
+			character:466517 = { is_ai = yes }
+			NOT = { has_character_flag = had_event_georgian_wedding.8 }
+		}
+	
+	immediate = {
+		add_character_flag = {
+			flag = had_event_georgian_wedding.8
+		}
+		hidden_effect = {
+			character:466517 = {
+				divorce = character:222828
+				set_relation_lover = character:466516
+				add_prestige = 300
+			}
+		}
+		character:466516 = {
+			marry_matrilineal = character:466517
+			change_first_name = "Davit Solsan"
+			add_prestige = 300
+		}
+	}
+	option = {
+		name = georgian.wedding.8.a
+
+		hidden_effect = {
+			trigger_event = {
+				id = KOH_georgian_wedding.9
+				days = {10 30}
+					}
+			}
+	}
+}
+
+#Hidden war with Yuri trigger 
+
+KOH_georgian_wedding.9 = {
+	type = character_event
+	title = georgian.weddding.6.t
+	desc = georgian.weddding.6.desc
+	theme = war
+	hidden = yes
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+		}
+	
+	trigger = {
+			character:466517 = { is_ai = yes }
+			NOT = { has_character_flag = had_event_georgian_wedding.9 }
+		}
+	
+	immediate = {
+		add_character_flag = {
+			flag = had_event_georgian_wedding.9
+		}
+		character:222828 = {
+			get_title = c_odishi
+			add_gold = 1000
+		}
+	}
+
+	option = {
+		name = georgian.wedding.6.a
+
+		character:222828 = {
+		
+			start_war = {
+				casus_belli = KOH_georgian_cb
+				target = character:466517
+				target_title = title:k_georgia
+				claimant = character:222828
+			}
+			spawn_army = {
+				uses_supply = no
+				inheritable = no
+				name = event_troop_default_name
+				levies = {
+					value = 300
+				}
+					location = 601
 			}
 		}
 	}
