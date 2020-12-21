@@ -1655,7 +1655,17 @@ house_british_isles_loairn = 554
 	}				
 }
 
-741 = d_porto # Bourgogne of Portugal
+741 = {	
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "blue"
+	colored_emblem = {
+		texture = "ce_ordinary_cross_5.dds"
+		color1 = "blue"
+		color2 = "blue"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }		
+	}
+}
 
 # Existing entry
 678 = c_apulia # Hauteville

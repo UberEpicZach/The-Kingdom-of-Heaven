@@ -578,7 +578,23 @@ house_courtenay = 9301
 
 house_vermandois = 743
 
-house_bourgogne = d_burgundy
+house_bourgogne = {
+	pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "yellow"
+	colored_emblem = {
+		texture = "ce_diagonal_stripes_01.dds"
+		color1 = "blue"
+		color2 = "yellow"
+		instance = { position = { 0.364 0.610 } scale = { 1.230 1.230 }  }
+	}	
+	colored_emblem = {
+		texture = "ce_border_shield.dds"
+		color1 = "red"
+		color2 = "red"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }
+	}
+}
 
 house_dreux = {
 	pattern = "pattern_solid.dds"
@@ -601,3 +617,5 @@ house_dreux = {
 house_chalon = 736
 
 house_brabant = d_brabant
+
+KOHD0010 = c_beaumont

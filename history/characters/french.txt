@@ -2493,6 +2493,11 @@
 	1170.1.1 = {
 		birth = "1170.1.1"
 	}
+	1171.1.1 = {
+		effect = {
+			create_betrothal = character:202999 #King William of Scotland
+		}
+	}
 	1220.1.1 = {
 		death = "1220.1.1"
 	}
@@ -42657,6 +42662,9 @@ KOH0118 = {
 	1160.1.1 = {
 		birth = "1160.1.1"
 	}
+	1176.1.1 = {
+		add_spouse = 161603
+	}
 	1236.10.2 = {
 		death = "1236.10.2"
 	}
@@ -48884,7 +48892,7 @@ KOH0113 = {
 }
 
 KOH0114 = {
-	name = "AgnE_s " #Agnès de Joigny
+	name = "AgnE_s" #Agnès de Joigny
 	female = yes
 	dynasty = 5090
 	religion = "catholic"
@@ -48946,5 +48954,380 @@ KOH0117 = {
 	}
 	1222.4.1 = {
 		death = "1222.4.1"
+	}
+}
+
+KOH0123 = {
+	name = "Ives" #Comte de Beaumont
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	990.1.1 = {		
+		birth = yes
+	}
+	1059.4.12 = {		
+		death = yes
+	}
+}
+
+KOH0124 = {
+	name = "Geoffroy" #Comte de Beaumont
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0123
+	1010.1.1 = {		
+		birth = yes
+	}
+	1070.1.10 = {		
+		death = yes
+	}
+}
+
+KOH0125 = {
+	name = "Ives" #Comte de Beaumont
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0123
+	1012.1.1 = {		
+		birth = yes
+	}
+	1083.5.22 = {		
+		death = yes
+	}
+}
+
+KOH0126 = {
+	name = "Aubry" #Seigneur de Coucy
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0123
+	1014.1.1 = {		
+		birth = yes
+	}
+	1089.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0127 = {
+	name = "Eudes" #Viscomte de Chaumont
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0123
+	1016.1.1 = {		
+		birth = yes
+	}
+	1089.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0128 = {
+	name = "Adelise"
+	female = yes
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0125
+	1032.1.1 = {		
+		birth = yes
+	}
+	#married Hugues de Grantmesnil
+	1091.7.11 = {		
+		death = yes
+	}
+}
+
+KOH0129 = {
+	name = "Adela"
+	female = yes
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0125
+	1068.1.1 = {		
+		birth = yes
+	}
+	#married Guillaume du Puy-du-Fou
+	1113.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0130 = {
+	name = "Mathieu" #Comte de Beaumont
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0125
+	1070.1.1 = {		
+		birth = yes
+	}
+	#married Beatrix de Clermont
+	1155.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0131 = {
+	name = "Hugues" 
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0125
+	1072.1.1 = {		
+		birth = yes
+	}
+	#married Agnes de Croisilles
+	1117.7.15 = {		
+		death = yes
+	}
+}
+
+KOH0132 = {
+	name = "AgnE_s" 
+	female = yes
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0125
+	1074.1.1 = {		
+		birth = yes
+	}
+	#married Bouchard Seigneur de Montmorency
+	1104.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0133 = {
+	name = "Ives" 
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0130
+	1108.1.1 = {		
+		birth = yes
+	}
+	1130.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0134 = {
+	name = "Mathieu" #Mathieu II, Comte de Beaumont
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0130
+	1111.1.1 = {		
+		birth = yes
+	}
+	#married Mathilde de Chateaudun
+	1171.7.1 = {		
+		death = yes
+	}
+}
+
+KOH0135 = {
+	name = "Hugues"
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0130
+	1116.1.1 = {		
+		birth = yes
+	}
+	1180.5.1 = {		
+		death = yes
+	}
+}
+
+KOH0136 = {
+	name = "Hugues"
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0135
+	1151.1.1 = {		
+		birth = yes
+	}
+	#married Ada de Persan
+	1204.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0137 = {
+	name = "Ives" #Seigneur de Luzarches
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0135
+	1153.1.1 = {		
+		birth = yes
+	}
+	1220.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0138 = {
+	name = "Guillaume"
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0135
+	1155.1.1 = {		
+		birth = yes
+	}
+	1222.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0139 = {
+	name = "Heudeborge"
+	female = yes
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0135
+	1157.1.1 = {		
+		birth = yes
+	}
+	1205.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0140 = {
+	name = "Beatrix"
+	female = yes
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0135
+	1160.1.1 = {		
+		birth = yes
+	}
+	1205.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0141 = {
+	name = "Marie"
+	female = yes
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0135
+	1162.1.1 = {		
+		birth = yes
+	}
+	1220.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0142 = {
+	name = "Hugues"
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0134
+	1146.1.1 = {		
+		birth = yes
+	}
+	1154.1.1 = {		
+		death = yes
+	}
+}
+
+KOH0143 = {
+	name = "Mathieu" #Mathieu III, Comte de Beaumont
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0134
+	1148.1.1 = {		
+		birth = yes
+	}
+	1175.1.1 = {
+		add_spouse = 91081
+	}
+	1208.11.21 = {		
+		death = yes
+	}
+}
+
+KOH0144 = {
+	name = "Alix"
+	female = yes
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0134
+	1160.1.1 = {		
+		birth = yes
+	}
+	#married Anseau de l'Isle-Adam
+	1186.12.4 = {		
+		death = yes
+	}
+}
+
+KOH0145 = {
+	name = "Jean"
+	dynasty = KOHD0010 #Beaumont-sur-Oise 
+	culture = french
+	religion = catholic
+	father = KOH0134
+	1162.1.1 = {		
+		birth = yes
+	}
+	#married Gertrude de Soissons before 1193
+	#married Jeanne de Garlade before 1214
+	1222.6.15 = {		
+		death = yes
+	}
+}
+
+KOH0146 = {
+	name = "Petronille"
+	female = yes
+	dynasty = 335 #de Beaumont au Maine
+	religion = "catholic"
+	culture = french
+	father = 202988
+	1171.1.1 = {
+		birth = "1171.1.1"
+	}
+	1172.1.1 = {
+		effect = {
+			create_betrothal = character:205742
+		}
+	}
+	1220.1.1 = {
+		death = "1220.1.1"
+	}
+}
+
+KOH0147 = {
+	name = "Raoul"
+	dynasty = 335 #de Beaumont au Maine
+	religion = "catholic"
+	culture = french
+	father = 202988
+	1158.1.1 = {
+		birth = "1158.1.1"
+	}
+	1220.1.1 = {
+		death = "1220.1.1"
 	}
 }
