@@ -1656,18 +1656,22 @@
 
 204585 = {
 	name = "Roger"
-	dynasty = 101859
+	dynasty = 5061
 	martial = 7
-	diplomacy = 4
+	diplomacy = 16
 	intrigue = 4
 	stewardship = 6
 	religion = "catholic"
 	culture = "english"
 	trait = bastard
-	trait = education_learning_2
+	trait = education_diplomacy_3
 	father = 204580
 	1161.1.2 = {
 		birth = "1161.1.2"
+	}
+	1180.1.1 = {
+		set_employer = character:202999
+		give_council_position = councillor_chancellor
 	}
 	1211.1.2 = {
 		death = "1211.1.2"

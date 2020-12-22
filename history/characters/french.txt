@@ -1485,8 +1485,8 @@
 	culture = french
 	female = yes
 	father = 204990
-	1117.1.1 = {
-		birth = "1117.1.1"
+	1112.1.1 = {
+		birth = "1112.1.1"
 	}
 	1150.1.1 = {
 		death = yes
@@ -1908,7 +1908,7 @@
 	1120.1.1 = {
 		birth = "1120.1.1"
 	}
-	1136.1.1 = {
+	1151.1.1 = {
 		add_spouse = 161353
 	}
 	1191.6.19 = {
@@ -3016,7 +3016,6 @@
 	1145.1.1 = {
 		birth = "1145.1.1"
 	}
-	#Raoul I de Coucy (1174.1.1)
 	1217.1.1 = {
 		death = "1217.1.1"
 	}
@@ -3496,7 +3495,7 @@
 	}
 	#Henri le Jeune (1172.8.21)
 	1177.1.20 = {
-		trait = sterile
+		add_trait = sterile
 	}
 	#Béla III (1186.1.1)
 	1197.1.1 = {
@@ -5195,7 +5194,7 @@
 	1166.1.2 = {
 		birth = "1166.1.2"
 	}
-	1184.1.2 = {
+	1184.1.1 = {
 		add_spouse = 205896
 	}
 	1216.1.2 = {
@@ -5206,16 +5205,16 @@
 205896 = {
 	name = "Catherine"
 	female = yes
-	dynasty = 5066
+	dynasty = 89 #de Clermont
 	martial = 6
-	diplomacy = 5
+	diplomacy = 8
 	intrigue = 5
-	stewardship = 5
+	stewardship = 9
 	religion = "catholic"
 	culture = french
 	trait = humble
-	trait = gluttonous
-	trait = education_intrigue_1
+	trait = education_stewardship_3
+	father = KOH0167
 	1167.1.2 = {
 		birth = "1167.1.2"
 	}
@@ -17857,7 +17856,7 @@ KOH0060 = {
 455652 = {
 	name = "Jeanne" #Jeanne de Clermont
 	female = yes
-	dynasty = 100146 #de Bourbon should be 89
+	dynasty = 100146 #de Bourbon
 	religion = "catholic"
 	culture = french
 	father = 455650
@@ -41505,7 +41504,7 @@ KOH0060 = {
 }
 
 161350 = {
-	name = "Hugues"
+	name = "Hugues" #Hugues III, Comte de Saint-Pol
 	dynasty = 7244
 	religion = "catholic"
 	culture = french
@@ -41513,22 +41512,24 @@ KOH0060 = {
 	1066.1.1 = {
 		birth = "1066.1.1"
 	}
-	1119.1.1 = {
-		death = "1119.1.1"
+	1145.1.1 = {
+		death = "1145.1.1"
 	}
 }
 
 161351 = {
-	name = "Enguerrand"
+	name = "Enguerrand" #Enguerrand, Comte de Saint-Pol
 	dynasty = 7244
 	religion = "catholic"
 	culture = french
 	father = 161350
-	1082.1.1 = {
-		birth = "1082.1.1"
+	mother = KOH0163
+	1130.1.1 = {
+		birth = "1130.1.1"
 	}
-	1099.1.1 = {
-		death = "1099.1.1"
+	#married Ida d'Avesnes
+	1170.1.1 = {
+		death = "1170.1.1"
 	}
 }
 
@@ -41538,11 +41539,27 @@ KOH0060 = {
 	religion = "catholic"
 	culture = french
 	father = 161350
-	1085.1.1 = {
-		birth = "1085.1.1"
+	mother = KOH0163
+	1131.1.1 = {
+		birth = "1131.1.1"
 	}
 	1145.1.1 = {
 		death = "1145.1.1"
+	}
+}
+
+KOH0165 = {
+	name = "Anselme" #Comte de Saint-Pol
+	dynasty = 7244
+	religion = "catholic"
+	culture = french
+	father = 161350
+	mother = KOH0163
+	1133.1.1 = {
+		birth = "1131.1.1"
+	}
+	1175.1.1 = {
+		death = "1175.1.1"
 	}
 }
 
@@ -41553,7 +41570,8 @@ KOH0060 = {
 	religion = "catholic"
 	culture = french
 	father = 161350
-	1100.1.1 = {
+	mother = KOH0163
+	1135.1.1 = {
 		birth = "1100.1.1"
 	}
 	1191.1.1 = {
@@ -41618,7 +41636,6 @@ KOH0060 = {
 	religion = "catholic"
 	culture = french
 	father = 161355
-	mother = 161356
 	1142.1.1 = {
 		birth = "1142.1.1"
 	}
@@ -42706,6 +42723,9 @@ KOH0118 = {
 	1070.1.1 = {
 		birth = "1070.1.1"
 	}
+	1090.1.1 = {
+		add_spouse = KOH0161
+	}
 	1117.1.1 = {
 		death = "1117.1.1"
 	}
@@ -42717,6 +42737,7 @@ KOH0118 = {
 	religion = "catholic"
 	culture = french
 	father = 161709
+	mother = KOH0161
 	1100.1.1 = {
 		birth = "1100.1.1"
 	}
@@ -47217,18 +47238,18 @@ KOH0118 = {
 		death = yes
 	}
 }
-303412 = {
-	name = "Renaud"	#Renaud I count of Clermont
-	religion = catholic
-	culture = french
-	father = 303411
-	1007.1.1 = {
-		birth = yes
-	}
-	1088.1.1 = {
-		death = yes
-	}
-}
+#303412 = {
+#	name = "Renaud"	#Renaud I count of Clermont
+#	religion = catholic
+#	culture = french
+#	father = 303411
+#	1007.1.1 = {
+#		birth = yes
+#	}
+#	1088.1.1 = {
+#		death = yes
+#	}
+#}
 #End of counts of Clermont
 303413 = {
 	name = "HervE_"
@@ -48160,7 +48181,7 @@ KOH0119 = {
 	culture = french
 	father = 144236 #Robert de Coucy
 	mother = 161353
-	1137.1.1 = {
+	1152.1.1 = {
 		birth = "1137.1.1"
 	}
 	1224.1.1 = {
@@ -48175,7 +48196,7 @@ KOH0120 = {
 	culture = french
 	father = 144236 #Robert de Coucy
 	mother = 161353
-	1138.1.1 = {
+	1154.1.1 = {
 		birth = "1138.1.1"
 	}
 	1224.6.1 = {
@@ -48190,7 +48211,7 @@ KOH0121 = {
 	culture = french
 	father = 144236 #Robert de Coucy
 	mother = 161353
-	1139.1.1 = {
+	1156.1.1 = {
 		birth = "1139.1.1"
 	}
 	1216.1.1 = {
@@ -48205,7 +48226,7 @@ KOH0122 = {
 	culture = french
 	father = 144236 #Robert de Coucy
 	mother = 161353
-	1140.1.1 = {
+	1158.1.1 = {
 		birth = "1138.1.1"
 	}
 	1220.1.1 = {
@@ -48249,7 +48270,7 @@ KOH0046 = {
 	}
 }
 
-KOH0047 = {
+KOH0047a = {
 	name = "Marguerite"
 	female = yes
 	dynasty_house = house_ponthieu
@@ -48265,7 +48286,7 @@ KOH0047 = {
 	}
 }
 
-KOH0047 = {
+KOH0047b = {
 	name = "Helene"
 	female = yes
 	dynasty_house = house_ponthieu
@@ -49067,7 +49088,9 @@ KOH0130 = {
 	1070.1.1 = {		
 		birth = yes
 	}
-	#married Beatrix de Clermont
+	1100.1.1 = {
+		add_spouse = KOH0162 #Beatrix de Clermont
+	}
 	1155.1.1 = {		
 		death = yes
 	}
@@ -49110,6 +49133,7 @@ KOH0133 = {
 	culture = french
 	religion = catholic
 	father = KOH0130
+	mother = KOH0162
 	1108.1.1 = {		
 		birth = yes
 	}
@@ -49124,6 +49148,7 @@ KOH0134 = {
 	culture = french
 	religion = catholic
 	father = KOH0130
+	mother = KOH0162
 	1111.1.1 = {		
 		birth = yes
 	}
@@ -49139,6 +49164,7 @@ KOH0135 = {
 	culture = french
 	religion = catholic
 	father = KOH0130
+	mother = KOH0162
 	1116.1.1 = {		
 		birth = yes
 	}
@@ -49329,5 +49355,502 @@ KOH0147 = {
 	}
 	1220.1.1 = {
 		death = "1220.1.1"
+	}
+}
+
+KOH0154 = {
+	name = "Renaud" #Seigneur de Clermont
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	1009.1.1 = {
+		birth = "yes"
+	}
+	1059.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0155 = {
+	name = "Hugues" #Hugues, Seigneur de Creil
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0154
+	1039.1.1 = {
+		birth = "yes"
+	}
+	1100.5.1 = {
+		death = "yes"
+	}
+}
+
+KOH0156 = {
+	name = "Renaud" #Renaud, 1st Comte de Clermont
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0155
+	1070.1.1 = {
+		birth = "yes"
+	}
+	1103.1.1 = {
+		add_spouse = 419 #Adélaïde de Vermandois
+	}
+	#elevated to comte by marriage
+	1135.1.1 = {
+		add_spouse = 34308 #Clémence de Bar
+	}
+	1155.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0157 = {
+	name = "Guy"
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0155
+	1062.1.1 = {
+		birth = "yes"
+	}
+	1119.11.1 = {
+		death = "yes"
+	}
+}
+
+KOH0158 = {
+	name = "Ermentrude"
+	female = yes
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0155
+	1066.1.1 = {
+		birth = "yes"
+	}
+	#married Hugues d'Avranches, Earl of Chester
+	1108.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0159 = {
+	name = "Adelisa"
+	female = yes
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0155
+	1068.1.1 = {
+		birth = "yes"
+	}
+	#married Gilbert Fitzrichard de Clare, son of Richard de Brionne
+	#married Bouchard de Montmorency as 3rd wife
+	1108.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0160 = {
+	name = "Marguerite"
+	female = yes
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0155
+	1070.1.1 = {
+		birth = "yes"
+	}
+	#married Gerard de Gerberoy
+	1136.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0161 = {
+	name = "Richilde"
+	female = yes
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0155
+	1072.1.1 = {
+		birth = "yes"
+	}
+	#married Dreux de Mello
+	1117.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0162 = {
+	name = "Beatrix"
+	female = yes
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0155
+	1074.1.1 = {
+		birth = "yes"
+	}
+	#married Mathieu I Comte de Beaumont
+	1112.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0163 = {
+	name = "Marguerite"
+	female = yes
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0156
+	mother = 419
+	1104.1.1 = {
+		birth = "yes"
+	}
+	1118.1.1 = {
+		add_spouse = 31158 #Prince Karl of Denmark, Duke of Flanders
+	}
+	1128.8.1 = {
+		add_spouse = 161350 #Hugues, Comte de Saint-Pol
+	}
+	1146.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0164 = {
+	name = "Raoul"
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0156
+	mother = 419
+	1106.1.1 = {
+		birth = "yes"
+	}
+	1119.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0166 = {
+	name = "Guy"
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0156
+	mother = 34308
+	1136.1.1 = {
+		birth = "yes"
+	}
+	1152.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0167 = {
+	name = "Raoul"  #Comte de Clermont
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0156
+	mother = 34308
+	1137.1.1 = {
+		birth = "yes"
+	}
+	1164.1.1 = {
+		add_spouse = KOH0182 #Alix de Breteuil
+	}
+	1191.10.15 = { #Battle of Acre
+		death = "yes"
+	}
+}
+
+KOH0168 = {
+	name = "Marguerite"
+	female = yes
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0156
+	mother = 34308
+	1138.1.1 = {
+		birth = "yes"
+	}
+	#married Guy III de Senlis, Seigneur de Chantilly
+	1187.10.27 = {
+		death = "yes"
+	}
+}
+
+KOH0169 = {
+	name = "Simon"
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0156
+	mother = 34308
+	1139.1.1 = {
+		birth = "yes"
+	}
+	1166.1.1 = {
+		add_spouse = KOH0183
+	}
+	1187.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0170 = {
+	name = "Hugues" #Bishop of Metz 1171
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0156
+	mother = 34308
+	1141.1.1 = {
+		birth = "yes"
+	}
+	1160.1.1 = {
+		trait = devoted
+	}
+	1200.5.28 = {
+		death = "yes"
+	}
+}
+
+KOH0171 = {
+	name = "Mathilde"
+	female = yes
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0156
+	mother = 34308
+	1143.1.1 = {
+		birth = "yes"
+	}
+	#married Aubry, Comte de Dammartin
+	1218.7.1 = {
+		death = "yes"
+	}
+}
+
+KOH0172 = {
+	name = "Constance"
+	female = yes
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0156
+	mother = 34308
+	1144.1.1 = {
+		birth = "yes"
+	}
+	#married Roricon de la Tournelle
+	1189.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0173 = {
+	name = "Aelis"
+	female = yes
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0167
+	mother = KOH0182
+	1166.1.1 = {
+		birth = "yes"
+	}
+	1182.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0174 = {
+	name = "Mathilde"
+	female = yes
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0167
+	mother = KOH0182
+	1168.1.1 = {
+		birth = "yes"
+	}
+	#married Guillaume, Seigneur de Vierzon
+	1201.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0175 = {
+	name = "Philippe"
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0167
+	mother = KOH0182
+	1179.1.1 = {
+		birth = "yes"
+	}
+	1182.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0176 = {
+	name = "Guillaume" #de Vierzon
+	religion = "catholic"
+	culture = french
+	1166.1.1 = {
+		birth = "yes"
+	}
+	1182.1.1 = {
+		add_spouse = KOH0174
+	}
+	1197.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0177 = {
+	name = "Raoul"
+	dynasty = 89 #de Clermont
+	religion = "catholic"
+	culture = french
+	father = KOH0169
+	mother = KOH0183
+	1168.1.1 = {
+		birth = "yes"
+	}
+	1225.3.30 = {
+		death = "yes"
+	}
+}
+
+KOH0178 = {
+	name = "E_rrard"
+	dynasty = 101859 #de Breteuil
+	religion = "catholic"
+	culture = french
+	1113.1.1 = {
+		birth = "yes"
+	}
+	1127.1.1 = {
+		add_spouse = 800502
+	}
+	1130.1.1 = {
+		divorce = character:800502
+	}
+	1148.1.19 = {
+		death = "yes"
+	}
+}
+
+KOH0179 = {
+	name = "Valeran"
+	dynasty = 101859 #de Breteuil
+	religion = "catholic"
+	culture = french
+	father = KOH0178
+	mother = 800502
+	1128.1.1 = {
+		birth = "yes"
+	}
+	1146.1.1 = {
+		add_spouse = KOH0180 #Holdeburge
+	}
+	1157.1.1 = {
+		add_spouse = 204986 #Alix de Dreux
+	}
+	1162.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0180 = {
+	name = "Holdeburge" #d'Ailly-sur-Noye
+	religion = "catholic"
+	culture = french
+	1126.1.1 = {
+		birth = "yes"
+	}
+	1156.8.1 = {
+		death = "yes"
+	}
+}
+
+KOH0181 = {
+	name = "E_rrard"
+	dynasty = 101859 #de Breteuil
+	religion = "catholic"
+	culture = french
+	father = KOH0178
+	mother = 800502
+	1129.1.1 = {
+		birth = "yes"
+	}
+	#married Remburge, daughter of Roger Ferat
+	1169.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0182 = {
+	name = "Alix"
+	female = yes
+	dynasty = 101859 #de Breteuil
+	religion = "catholic"
+	culture = french
+	father = KOH0179
+	mother = KOH0180
+	1148.1.1 = {
+		birth = "yes"
+	}
+	#married Raoul, Comte de Clermont
+	1197.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0183 = {
+	name = "Mathilde"
+	female = yes
+	dynasty = 101859 #de Breteuil
+	religion = "catholic"
+	culture = french
+	father = KOH0179
+	mother = KOH0180
+	1150.1.1 = {
+		birth = "yes"
+	}
+	#married Simon, Comte de Clermont
+	1208.3.14 = {
+		death = "yes"
+	}
+}
+
+KOH0184 = {
+	name = "Amicie"
+	female = yes
+	dynasty = 101859 #de Breteuil
+	religion = "catholic"
+	culture = french
+	father = KOH0179
+	mother = 204986
+	1159.1.1 = {
+		birth = "yes"
+	}
+	#married Baudouin du Donjon
+	1226.10.1 = {
+		death = "yes"
 	}
 }
