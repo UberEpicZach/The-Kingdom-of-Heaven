@@ -2884,8 +2884,8 @@
 	1160.1.1 = {
 		add_spouse = 205529
 	}
-	1173.1.1 = {
-		add_spouse = 204986
+	1180.1.1 = {
+		add_spouse = 91036
 	}
 	1191.11.1 = {
 		death = "1191.11.1"
@@ -2903,7 +2903,7 @@
 	religion = "catholic"
 	culture = french
 	father = 204980
-	mother = 204986
+	mother = 91036
 	1182.1.1 = {
 		birth = "1182.1.1"
 	}
@@ -3495,7 +3495,7 @@
 	}
 	#Henri le Jeune (1172.8.21)
 	1177.1.20 = {
-		add_trait = sterile
+		fertility = 0
 	}
 	#Béla III (1186.1.1)
 	1197.1.1 = {
@@ -4354,7 +4354,7 @@
 	1165.1.1 = {
 		birth = "1165.1.1"
 	}
-	1184.1.1 = {
+	1183.1.1 = {
 		add_spouse = 205710 #Agnès I de Nevers
 	}
 	1190.6.24 = {
@@ -4377,8 +4377,13 @@
 	culture = french
 	father = 205725 #Pierre II de Courtenay
 	mother = 205710 #Agnès de Nevers
-	1188.1.1 = {
-		birth = "1188.1.1"
+	1183.12.1 = {
+		birth = "1183.12.1"
+	}
+	1184.1.1 = {
+		effect = {
+			create_betrothal = character:KOH0198
+		}
 	}
 	#Hervé IV de Donzy (1199.10.1)
 	#Guy IV de Forez (1226.7.1)
@@ -29067,7 +29072,7 @@ KOH0060 = {
 	mother = 231017 #Élisabeth de Courtenay
 	1163.1.1 = {
 		birth = "1163.1.1"
-	}
+	)
 	#Guillaume de Brienne
 	#Guillaume I de Champlitte
 	#Guillaume I de Sancesse
@@ -29299,8 +29304,8 @@ KOH0060 = {
 		birth = "1117.1.1"
 	}
 	#Henri III de Donzy
-	1160.1.1 = {
-		death = "1160.1.1"
+	1139.1.1 = {
+		death = "1139.1.1"
 	}
 }
 
@@ -29862,7 +29867,7 @@ KOH0060 = {
 	dynasty = 5093 #Donzy
 	religion = "catholic"
 	culture = french
-	#Hervé IV de Donzy
+	father = KOH0198
 	mother = 205726 #Mathilde de Courtenay
 	1205.1.1 = {
 		birth = "1205.1.1"
@@ -41650,7 +41655,6 @@ KOH0165 = {
 	religion = "catholic"
 	culture = french
 	father = 161355
-	mother = 161356
 	1163.1.1 = {
 		birth = "1163.1.1"
 	}
@@ -41669,7 +41673,6 @@ KOH0118 = {
 	religion = "catholic"
 	culture = french
 	father = 161355
-	mother = 161356
 	1155.1.1 = {
 		birth = "1155.1.1"
 	}
@@ -41999,8 +42002,8 @@ KOH0118 = {
 	1140.1.1 = {
 		birth = "1140.1.1"
 	}
-	1182.1.1 = {
-		add_spouse = 91036
+	1180.1.1 = {
+		add_spouse = 204986
 	}
 	1235.1.4 = {
 		death = "1235.1.4"
@@ -42014,9 +42017,9 @@ KOH0118 = {
 	religion = "catholic"
 	culture = french
 	father = 161394
-	mother = 91036
-	1182.1.1 = {
-		birth = "1182.1.1"
+	mother = 204986
+	1181.1.1 = {
+		birth = "1181.1.1"
 	}
 	1220.9.26 = {
 		death = "1220.9.26"
@@ -42030,7 +42033,7 @@ KOH0118 = {
 	religion = "catholic"
 	culture = french
 	father = 161394
-	mother = 91036
+	mother = 204986
 	1183.1.1 = {
 		birth = "1183.1.1"
 	}
@@ -42247,6 +42250,9 @@ KOH0118 = {
 	1133.1.1 = {
 		birth = "1133.1.1"
 	}
+	1173.1.1 = {
+		add_spouse = KOH0195
+	}
 	1191.1.1 = {
 		death = "1191.1.1"
 	}
@@ -42258,6 +42264,7 @@ KOH0118 = {
 	religion = "catholic"
 	culture = french
 	father = 161410
+	mother = KOH0195
 	1176.1.1 = {
 		birth = "1176.1.1"
 	}
@@ -42275,6 +42282,7 @@ KOH0118 = {
 	religion = "catholic"
 	culture = french
 	father = 161410
+	mother = KOH0195
 	1178.1.1 = {
 		birth = "1178.1.1"
 	}
@@ -42289,6 +42297,7 @@ KOH0118 = {
 	religion = "catholic"
 	culture = french
 	father = 161410
+	mother = KOH0195
 	1180.1.1 = {
 		birth = "1180.1.1"
 	}
@@ -44150,6 +44159,11 @@ KOH0118 = {
 	mother = 204986
 	1172.1.1 = {
 		birth = "1172.1.1"
+	}
+	1180.1.1 = {
+		effect = {
+			create_betrothal = character:161934
+		}
 	}
 	1189.1.1 = {
 		add_spouse = 161934 #Odette De Dampierre
@@ -48505,6 +48519,7 @@ KOH0080 = {
 	dynasty = 7211
 	religion = "catholic"
 	culture = french
+	father = KOH0185
 	1100.1.2 = {
 		birth = "yes"
 	}
@@ -49851,6 +49866,246 @@ KOH0184 = {
 	}
 	#married Baudouin du Donjon
 	1226.10.1 = {
+		death = "yes"
+	}
+}
+
+KOH0185 = {
+	name = "Narjot"
+	dynasty = 7211 #de Toucy
+	religion = "catholic"
+	culture = french
+	1080.1.1 = {
+		birth = "yes"
+	}
+	1109.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0186 = {
+	name = "Garna"
+	female = yes
+	dynasty = 7211 #de Toucy
+	religion = "catholic"
+	culture = french
+	father = KOH0185
+	1109.1.1 = {
+		birth = "yes"
+	}
+	1177.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0187 = {
+	name = "Geoffroy"
+	dynasty = 5093 #de Donzy
+	religion = "catholic"
+	culture = french
+	1101.1.1 = {
+		birth = "yes"
+	}
+	1137.1.1 = {
+		add_spouse = 91082
+	}
+	1140.1.1 = {
+		add_spouse = KOH0186
+	}
+	1157.4.29 = {
+		death = "yes"
+	}
+}
+
+KOH0188 = {
+	name = "Mathilde_FE_licitE_" #Mathilde Félicité de Donzy
+	female = yes
+	dynasty = 5093 #de Donzy
+	religion = "catholic"
+	culture = french
+	father = KOH0187
+	mother = 91082
+	1139.1.1 = {
+		birth = "yes"
+	}
+	1183.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0189 = {
+	name = "E_rard"
+	dynasty = KOHD0011 #de Chacenay
+	religion = "catholic"
+	culture = french
+	1135.1.1 = {
+		birth = "yes"
+	}
+	1155.1.1 = {
+		add_spouse = KOH0188
+	}
+	1191.6.1 = { #died at Acre
+		death = "yes"
+	}
+}
+
+KOH0190 = {
+	name = "Jacques"
+	dynasty = KOHD0011 #de Chacenay
+	religion = "catholic"
+	culture = french
+	father = KOH0189
+	mother = KOH0188
+	1156.1.1 = {
+		birth = "yes"
+	}
+	1191.5.1 = { #died at Acre
+		death = "yes"
+	}
+}
+
+KOH0191 = {
+	name = "E_rard"
+	dynasty = KOHD0011 #de Chacenay
+	religion = "catholic"
+	culture = french
+	father = KOH0189
+	mother = KOH0188
+	1158.1.1 = {
+		birth = "yes"
+	}
+	#married Emmeline de Broyes
+	1236.6.16 = {
+		death = "yes"
+	}
+}
+
+KOH0192 = {
+	name = "ClE_mence"
+	female = yes
+	dynasty = KOHD0011 #de Chacenay
+	religion = "catholic"
+	culture = french
+	father = KOH0189
+	mother = KOH0188
+	1160.1.1 = {
+		birth = "yes"
+	}
+	#married Eudes de Grancey
+	1225.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0193 = {
+	name = "HervE_" #Herve III de Donzy
+	dynasty = 5093 #de Donzy
+	religion = "catholic"
+	culture = french
+	father = KOH0187
+	mother = KOH0186
+	1142.1.1 = {
+		birth = "yes"
+	}
+	1166.1.1 = {
+		add_spouse = KOH0197
+	}
+	1187.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0194 = {
+	name = "Geoffroy"
+	dynasty = 5093 #de Donzy
+	religion = "catholic"
+	culture = french
+	father = KOH0187
+	mother = KOH0186
+	1144.1.1 = {
+		birth = "yes"
+	}
+	1153.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0195 = {
+	name = "Alix Mathilde"
+	female = yes
+	dynasty = 5093 #de Donzy
+	religion = "catholic"
+	culture = french
+	father = KOH0187
+	mother = KOH0186
+	1146.1.1 = {
+		birth = "yes"
+	}
+	1180.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0196 = {
+	name = "Guillaume"
+	dynasty = KOHD0012 #Goët
+	religion = "catholic"
+	culture = french
+	1130.1.1 = {
+		birth = "yes"
+	}
+	1149.1.1 = {
+		add_spouse = 73288
+	}
+	1169.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0197 = {
+	name = "Mathilde"
+	female = yes
+	dynasty = KOHD0012 #Goët
+	religion = "catholic"
+	culture = french
+	father = KOH0196
+	mother = 73288
+	1150.1.1 = {
+		birth = "yes"
+	}
+	1169.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0198 = {
+	name = "HervE_" #Herve IV de Donzy
+	dynasty = 5093 #de Donzy
+	religion = "catholic"
+	culture = french
+	father = KOH0193
+	mother = KOH0197
+	1171.1.1 = {
+		birth = "yes"
+	}
+	1222.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0199 = {
+	name = "Marguerite"
+	female = yes
+	dynasty = 5093 #de Donzy
+	religion = "catholic"
+	culture = french
+	father = KOH0193
+	mother = KOH0197
+	1175.1.1 = {
+		birth = "yes"
+	}
+	#married Gervais de Châteauneuf
+	1203.1.1 = {
 		death = "yes"
 	}
 }
