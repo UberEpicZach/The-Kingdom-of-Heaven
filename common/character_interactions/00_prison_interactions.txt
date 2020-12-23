@@ -1039,6 +1039,9 @@ ransom_interaction = {
 	}
 	
 	is_shown = {
+		scope:recipient = {
+			NOT = { has_character_flag = ImprisonedByHenry }
+		}
 		scope:secondary_recipient = {
 			#exists = liege
 			is_imprisoned_by = scope:actor
@@ -2201,7 +2204,7 @@ release_from_prison_interaction = {
 	
 	is_shown = {
 		scope:recipient = {
-			NOT ={ is_ranchy_woman_in_my_dungeon = yes }
+			NOT = { has_character_flag = ImprisonedByHenry }
 			is_imprisoned_by = scope:actor
 		}
 	}
@@ -2934,15 +2937,16 @@ release_from_prison_interaction = {
 
 		modifier = {
 			add = -1000
-			is_ranchy_woman_in_my_dungeon = yes
-		}
-		modifier = {
-			add = -1000
 			character:205730 = {
-				is_imprisoned_by = character:204500
+				has_character_flag = ImprisonedByHenry
+				}
+			}
+		modifier = {
+			add = -5000
+			scope:recipient = {
+				has_character_flag = ImprisonedByHenry
 			}
 		}
-
 		modifier = { # Rivals can rot
 			add = -40
 			scope:actor = {

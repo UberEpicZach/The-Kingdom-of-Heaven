@@ -7078,6 +7078,9 @@
 	1167.1.1 = {
 		birth = "1167.1.1"
 	}
+	1181.1.1 = {
+		set_primary_title_to = title:c_innsbruck
+	}
 	1183.1.1 = {
 		add_spouse = 212381 #Agnes von Wangen
 	}
@@ -9965,6 +9968,622 @@ bavarian0001 = {
 		birth = yes
 	}
 	1055.2.25 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN01 = {
+	name = "Heinrich"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_03
+
+	1118.1.1 = {
+		birth = yes
+	}
+
+	1196.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN02 = {
+	name = "Markwart"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_04
+
+	1102.1.1 = {
+		birth = yes
+	}
+
+	1130.1.1 = {
+		add_spouce = KOH_BAVARIAN03 
+	}
+
+	1165.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN03 = {
+	name = "Williberg"
+	female = yes
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_05 
+	father = KOH_BAVARIAN04
+	1111.1.1 = {
+		birth = yes
+	}
+
+	1167.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN04 = {
+	name = "Eberhard"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_05 
+	father = KOH_BAVARIAN05
+	1091.1.1 = {
+		birth = yes
+	}
+
+	1112.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN05 = {
+	name = "Theodoric"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_05 
+
+	1068 = {
+		birth = yes
+	}
+
+	1108.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN06 = {
+	name = "Manegold"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_05
+	father = KOH_BAVARIAN02
+	mother = KOH_BAVARIAN03
+	1138.1.1 = {
+		birth = yes
+	}
+
+	1186.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN07 = {
+	name = "Hatwig"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_06
+
+	1140.1.1 = {
+		birth = yes
+	}
+
+	1184.12.12 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN08 = {
+	name = "Werinher"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_07
+
+	1140.1.1 = {
+		birth = yes
+	}
+	1160.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN09 = {
+	name = "Heinrich"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_07
+
+	1159.1.1 = {
+		birth = yes
+	}
+	1201.1.1 = {
+		death = yes
+	}
+}
+#Weyarn and Falkenstien
+KOH_BAVARIAN10 = {
+	name = "Patto"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+
+	1000.1.1 = {
+		birth = yes
+	}
+	1080.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN11 = {
+	name = "Sigiboto"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN10
+
+	1055.1.1 = {
+		birth = yes
+	}
+	1084.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN12 = {
+	name = "Herrand"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN10
+
+	1056.1.1 = {
+		birth = yes
+	}
+	1083.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN13 = {
+	name = "Sigiboto" #2
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN11
+	1080.1.1 = {
+		birth = yes
+	}
+	1120.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN014 = {
+	name = "Friderun"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN11
+	1082.1.1 = {
+		birth = yes
+	}
+	1111.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN015 = {
+	name = "Sigiboto" #III
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN13
+	1059.1.1 = {
+		birth = yes
+	}
+	1133.1.1.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN016 = {
+	name = "Gertrud"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN13
+	1055.1.1 = {
+		birth = yes
+	}
+	1132.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN017 = {
+	name = "Berthold" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN13
+	trait = bastard
+	1120.1.1 = {
+		birth = yes
+	}
+	1147.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN018 = {
+	name = "Sigiboto" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN017
+	
+	1159.1.1 = {
+		birth = yes
+	}
+	1190.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN019 = {
+	name = "Gerolt" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN018
+	1189.1.1 = {
+		birth = yes
+	}
+	1230.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN020 = {
+	name = "Heinrich" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN018
+	1189.1.1 = {
+		birth = yes
+	}
+	1215.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN021 = {
+	name = "Adelheid" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN018
+	1189.1.1 = {
+		birth = yes
+	}
+	1250.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN022 = {
+	name = "Rudolf" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN12
+	1099.1.1 = {
+		birth = yes
+	}
+	1133.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN023 = {
+	name = "Sigiboto" #IV
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN022
+	1130.1.1 = {
+		birth = yes
+	}
+	1200.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN024 = {
+	name = "Kuno" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN023
+	1155.1.1 = {
+		birth = yes
+	}
+	1190.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN025 = {
+	name = "Sigiboto" #V
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN023
+	1155.5.1 = {
+		birth = yes
+	}
+	1231.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN026 = {
+	name = "Sigiboto" #VI
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN025
+	1231.1.1 = {
+		birth = yes
+	}
+	1245.1.1 = {
+		death = yes
+
+	}
+}
+
+KOH_BAVARIAN026 = {
+	name = "Konrad" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN025
+	1231.1.1 = {
+		birth = yes
+	}
+	1260.1.1 = {
+		death = yes
+		
+	}
+}
+
+KOH_BAVARIAN026 = {
+	name = "Konrad" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN025
+	1204.1.1 = {
+		birth = yes
+	}
+	1226.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN027 = {
+	name = "Herrand" #II
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN022
+	1130.1.1 = {
+		birth = yes
+	}
+	1155.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN028 = {
+	name = "Sigiboto "
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN027
+	1130.1.1 = {
+		birth = yes
+	}
+	1180.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN029 = {
+	name = "Herrand" #iii
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN027
+	1132.5.1 = {
+		birth = yes
+	}
+	1200.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN030 = {
+	name = "Judith"
+	female = yes
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN027
+	1131.5.1 = {
+		birth = yes
+	}
+	1200.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN031 = {
+	name = "Mathilde"
+	female = yes
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN022
+	1139.5.1 = {
+		birth = yes
+	}
+	1200.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN032 = {
+	name = "Reginold" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN12
+	1080.1.1 = {
+		birth = yes
+	}
+	1149.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN033 = {
+	name = "Wolfker" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN12
+	1080.1.1 = {
+		birth = yes
+	}
+	1130.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN034 = {
+	name = "Adelheid" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN12
+	1080.1.1 = {
+		birth = yes
+	}
+	1150.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN035 = {
+	name = "Otto" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN032
+	trait = bastard
+	1115.1.1 = {
+		birth = yes
+	}
+	1190.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN035 = {
+	name = "Lazarius" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_08
+	father = KOH_BAVARIAN032
+	trait = bastard
+	1119.1.1 = {
+		birth = yes
+	}
+	1156.1.1 = {
+		death = yes
+	}
+}
+
+# Other people
+
+KOH_BAVARIAN036 = {
+	name = "Burkhard" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_09
+	
+	1093.1.1 = {
+		birth = yes
+	}
+	1133.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN037 = {
+	name = "Burkhard" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_09
+	father = KOH_BAVARIAN036
+	
+	1109.1.1 = {
+		birth = yes
+	}
+	1135.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN038 = {
+	name = "Burkhard" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_09
+	father = KOH_BAVARIAN037
+	
+	1132.1.1 = {
+		birth = yes
+	}
+	1161.1.1 = {
+		death = yes
+	}
+}
+
+KOH_BAVARIAN039 = {
+	name = "Konrad" 
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_09
+	father = KOH_BAVARIAN038
+	
+	1155.1.1 = {
+		birth = yes
+	}
+	1218.1.1 = {
 		death = yes
 	}
 }

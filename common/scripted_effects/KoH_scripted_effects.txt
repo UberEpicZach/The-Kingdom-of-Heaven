@@ -263,3 +263,93 @@
 		}
 	}
 }
+
+add_my_faction ={
+	root = {
+	set_variable = {
+		name = claiming_title
+		value = title:k_england
+	}
+
+	if = {
+		limit = {
+			can_create_faction = {
+				type = claimant_faction
+				target = title:k_england.holder
+			}
+		}
+
+		create_faction = {
+			type = claimant_faction
+			target = title:k_england.holder
+		}
+		joined_faction = {
+			set_special_character = root
+			set_special_title = title:k_england
+		}
+		title:k_england.holder = {
+			add_to_variable_list = {
+				name = claimant_factions
+				target = root.joined_faction
+			}
+		}
+
+		if = {
+			limit = { NOT = { this = title:k_england.holder } }
+			save_scope_as = faction_invite_from
+			joined_faction = { save_scope_as = faction }
+			title:k_england.holder = { save_scope_as = faction_target }
+			title:k_england.holder = {
+				trigger_event = faction_invitation.0001
+			}
+		}
+	}
+
+	remove_variable = claiming_title
+}
+}
+
+MothersFaction ={
+	root = {
+	set_variable = {
+		name = claiming_title
+		value = title:d_aquitaine
+	}
+
+	if = {
+		limit = {
+			can_create_faction = {
+				type = claimant_faction
+				target = title:d_aquitaine.holder
+			}
+		}
+
+		create_faction = {
+			type = claimant_faction
+			target = title:d_aquitaine.holder
+		}
+		joined_faction = {
+			set_special_character = root
+			set_special_title = title:d_aquitaine
+		}
+		title:d_aquitaine.holder = {
+			add_to_variable_list = {
+				name = claimant_factions
+				target = root.joined_faction
+			}
+		}
+
+		if = {
+			limit = { NOT = { this = title:d_aquitaine.holder } }
+			save_scope_as = faction_invite_from
+			joined_faction = { save_scope_as = faction }
+			title:d_aquitaine.holder = { save_scope_as = faction_target }
+			title:d_aquitaine.holder = {
+				trigger_event = faction_invitation.0001
+			}
+		}
+	}
+
+	remove_variable = claiming_title
+}
+}

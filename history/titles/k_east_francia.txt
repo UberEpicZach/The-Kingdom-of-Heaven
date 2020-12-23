@@ -3245,6 +3245,9 @@ c_colmar = {
 	1156.10.2 = {
 		holder = 212490
 	}
+	1178.1.1 = {
+		holder = 161464
+	}
 	1195.11.8 = {
 		holder = 212605
 	}
@@ -3274,7 +3277,67 @@ c_colmar = {
 	}
 
 }
-
+c_montbelliard = {
+	732.1.1 = {
+		liege = d_swabia
+	}
+	732.1.1 = {
+		holder = 190361 #Hadrad
+	}
+	760.1.1 = {
+		holder = 190362 #Rothard
+	}
+	796.1.1 = {
+		holder = 7985 #Welf
+	}
+	820.1.1 = {
+		liege = "k_lotharingia"
+		holder = 161483
+	}
+	837.10.27 = {
+		holder = 163055
+	}
+	864.1.1 = {
+		holder = 163095
+	}
+	925.1.1 = {
+		liege = "d_swabia"
+	}
+	1057.1.1 = {
+		holder = 11000 #Ludwig
+	}
+	1073.1.1 = {
+		holder = 20250 #Thierry
+	}
+	1103.1.2 = {
+		holder = 34302 #Friedrich
+		liege = d_swabia
+	}
+	1163.1.1 = {
+		holder = 161765 #Amedee
+	}
+	1185.1.1 = {
+		holder = 161767 #Richard
+	}
+	1198.1.1 = {
+		holder = 7659 #Friedrich
+	}
+	1234.1.1 = {
+		holder = 7661 #Ulrich
+	}
+	1268.10.29 = {
+		liege = "e_hre"
+	}
+	1275.2.1 = {
+		holder = 462307 #Theobald
+	}
+	1310.1.1 = {
+		holder = 462034 #Ulrich
+	}
+	1324.11.3 = {
+		holder = 462020
+	}
+}
 
 c_sundgau = {
 	732.1.1 = {
@@ -3474,6 +3537,182 @@ d_swabia = {
 
 }
 
+c_tubingen = {
+	c_teck = {
+		740.1.1 = {
+			holder = 190455 #Theoderic
+	
+			government = tribal_government
+		}
+		#781.1.1 = {
+		#	holder = 0
+		#}
+		867.1.1 = {
+			liege = d_lausitz
+			holder = 168584
+		}
+		898.1.1 = {
+			holder = 168590
+		}
+		920.1.1 = {
+			holder = 168591
+		}
+		929.1.1 = {
+			liege = d_ostmark
+			holder = 168562
+	
+			government = feudal_government
+		}
+		965.5.20 = {
+			holder = 168524
+		}
+		985.8.25 = {
+			holder = 168528
+		}
+		1018.1.1 = {
+			holder = 168529
+		}
+		1051.1.1 = {
+			holder = 168531
+		}
+		1056.9.10 = {
+			holder = 1350 #Lothar-Udo I
+		}
+		1057.11.7 = {
+			holder = 7032 #Lothar-Udo II
+		}
+		1066.1.1 = {
+			holder = bear_1
+		}
+		1082.1.2 = {
+			holder = 7034 #Heinrich I
+		}
+		
+		1087.6.27 = {
+			holder = 30229 #Lothar-Udo III
+		}
+		
+		1106.6.2 = {
+			holder = 30230 #Rudolf I
+		}
+		
+		#Rudolf I deposed
+		
+		1114.1.1 = {
+			holder = 30231 #Heinrich II
+		}
+		1114.1.1 = {
+			holder = 30231 #Heinrich II
+		}
+		1123.1.1 = {
+			holder = 33551
+		}
+		1152.1.1 = {
+			holder = 33553
+		}
+		1182.1.1 = {
+			holder = 33553
+		}
+		1212.2.2 = {
+			holder = 462118
+		}
+		1252.1.26 = {
+			holder = 462120
+		}
+		1287.1.1 = {
+			holder = 462122
+		}
+		
+		1323.12.26 = {
+			holder = 462390
+		}
+	}
+}
+
+c_teck = {
+	740.1.1 = {
+		holder = 190455 #Theoderic
+
+		government = tribal_government
+	}
+	#781.1.1 = {
+	#	holder = 0
+	#}
+	867.1.1 = {
+		liege = d_lausitz
+		holder = 168584
+	}
+	898.1.1 = {
+		holder = 168590
+	}
+	920.1.1 = {
+		holder = 168591
+	}
+	929.1.1 = {
+		liege = d_ostmark
+		holder = 168562
+
+		government = feudal_government
+	}
+	965.5.20 = {
+		holder = 168524
+	}
+	985.8.25 = {
+		holder = 168528
+	}
+	1018.1.1 = {
+		holder = 168529
+	}
+	1051.1.1 = {
+		holder = 168531
+	}
+	1056.9.10 = {
+		holder = 1350 #Lothar-Udo I
+	}
+	1057.11.7 = {
+		holder = 7032 #Lothar-Udo II
+	}
+	1066.1.1 = {
+		holder = bear_1
+	}
+	1082.1.2 = {
+		holder = 7034 #Heinrich I
+	}
+	
+	1087.6.27 = {
+		holder = 30229 #Lothar-Udo III
+	}
+	
+	1106.6.2 = {
+		holder = 30230 #Rudolf I
+	}
+	
+	#Rudolf I deposed
+	
+	1114.1.1 = {
+		holder = 30231 #Heinrich II
+	}
+	
+	1123.9.2 = {
+		holder = 212908
+	}
+	1152.2.15 = {
+		holder = 33529
+	}
+	1212.2.2 = {
+		holder = 462118
+	}
+	1252.1.26 = {
+		holder = 462120
+	}
+	1287.1.1 = {
+		holder = 462122
+	}
+	
+	1323.12.26 = {
+		holder = 462390
+	}
+}
 
 c_ulm = {
 	693.1.1 = {
@@ -3532,8 +3771,8 @@ c_ulm = {
 	
 	#dukes of Teck (von Zahringen)
 	
-	1152.2.15 = {
-		holder = 33529
+	1170.1.1 = {
+		holder = 212501
 	}
 	1195.1.1 = {
 		holder = 33530
@@ -3619,27 +3858,19 @@ c_grunningen = {
 	1028.1.1 = {
 		holder = 7053
 	}
-	1054.1.7 = {
-		holder = 7054 #Friedrich I von Hohenstaufen
+	1068.1.1 = {
+		holder = KOH_BAVARIAN05 #Friedrich I von Hohenstaufen
 	}
-	1105.7.21 = {
-		holder = 212495 #Friedrich II von Hohenstaufen
+	1091.1.1 = {
+		holder = KOH_BAVARIAN04 #Friedrich II von Hohenstaufen
 	}
-	1147.1.22 = {
-		holder = 212501 #Friedrich III von Hohenstaufen
+	1111.1.1 = {
+		holder = KOH_BAVARIAN03 #Friedrich III von Hohenstaufen
 	}
-	1152.2.15 = {
-		holder = 7904 #Friedrich IV von Hohenstaufen
+	1150.1.1 = {
+		holder = KOH_BAVARIAN06
 	}
-	1167.1.1 = {
-		holder = 7905 #Friedrich V von Hohenstaufen
-	}
-	1170.1.1 = {
-		holder = 212500 #Friedrich VI von Hohenstaufen
-	}
-	1191.1.20 = {
-		holder = 212505 #Konrad II von Hohenstaufen
-	}
+
 	1196.8.15 = {
 		holder = 212506 #Phillip I von Hohenstaufen
 	}
@@ -3823,32 +4054,23 @@ c_zollern = {
 	876.8.28 = {
 		liege = k_east_francia
 	}
-	1066.1.1 = {
-		liege = "d_swabia"
+	950.1.1 = {
+		liege = e_hre
 	}
-	1066.1.1 = {
-		holder = 1337
+	1030.1.1 = {
+		holder = 40550
 	}
-	1080.10.15 = {
-		holder = 1390
-	}
-	1090.5.18 = {
-		holder = 7054
-	}
-	1105.7.21 = {
+	1061.1.1 = {
 		holder = 212495
 	}
-	1110.1.1 = {
-		holder = 33706
+	1125.1.1 = {
+		holder = 212396
 	}
-	1143.1.1 = {
-		holder = 33707
+	1135.1.1 = {
+		holder = 212394
 	}
-	1158.1.1 = {
-		holder = 212421
-	}
-	1181.5.18 = {
-		holder = 212420
+	1145.1.1 = {
+		holder = 212393
 	}
 	1240.8.19 = {
 		holder = 33711
@@ -3911,23 +4133,14 @@ c_hohenberg = {
 	1066.1.1 = {
 		holder = 1337
 	}
-	1079.1.1 = {
-		holder = 7054 #Friedrich I von Hohenstaufen
+	1061.1.1 = {
+		holder = 212495
 	}
-	1105.7.21 = {
-		holder = 212495 #Friedrich II von Hohenstaufen
+	1125.1.1 = {
+		holder = 212396
 	}
-	1147.1.22 = {
-		holder = 212501 #Friedrich III von Hohenstaufen
-	}
-	1152.2.15 = {
-		holder = 7904 #Friedrich IV von Hohenstaufen
-	}
-	1167.1.1 = {
-		holder = 7905 #Friedrich V von Hohenstaufen
-	}
-	1170.1.1 = {
-		holder = 212500 #Friedrich VI von Hohenstaufen
+	1152.1.1 = {
+		holder = 212397
 	}
 	1191.1.20 = {
 		holder = 212505 #Konrad II von Hohenstaufen
