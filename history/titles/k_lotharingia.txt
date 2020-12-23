@@ -311,26 +311,23 @@ c_bouillon = {
 	988.10.28 = {
 		holder = 1254 #Heinrich I
 	}
-	1026.2.27 = {
-		holder = 1258 #Heinrich II
+	1006.1.1 = {
+		holder = 161916 
 	}
-	1047.10.16 = {
-		holder = 106652 #Giselbert I
+	1025.1.1 = {
+		holder = 161917
 	}
-	1059.8.14 = {
-		holder = 106650 #Konrad ##Tweaked from 1066 to be more accurate.
+	1065.1.1 = {
+		holder = 161918  #Giselbert I
 	}
-	1086.1.1 = {
-		holder = 500000
-	}
-	1096.1.1 = {
-		holder = 500001
+	1106.4.16 = {
+		holder = 33207 #Konrad ##Tweaked from 1066 to be more accurate.
 	}
 	1131.1.1 = {
-		holder = 500002
+		holder = 161914
 	}
-	1136.1.1 = {
-		holder = 212690
+	1162.1.1 = {
+		holder = KOH_FRENCH02
 	}
 	1196.1.1 = {
 		holder = 212511
@@ -485,43 +482,28 @@ c_namur = {
 	855.1.1 = {
 		liege = "k_lotharingia"
 	}
-	858.1.1 = {
-		holder = 163050
+	920.1.1 = {
+		holder = 161534
 	}
-	903.1.1 = {
-		liege = "d_lower_lorraine"
+	946.1.1 = {
+		holder = 90116
 	}
-	1066.1.1 = {
-		holder = 106610
+	981.1.1 = { 
+		holder = 90117
 	}
-	1075.6.23 = {
-		holder = 33204
+	1011.1.1 = {
+		holder = 90118
 	}
-	1091.1.1 = {
-		holder = 33205
+	1063.1.1 = {
+		holder = 90119
 	}
-	1119.1.1 = {
-		holder = 32286
+	1102.6.22 = {
+		holder = 212691
 	}
-	1121.5.2 = {
-		holder = 41727
+	1139.8.19 = {
+		holder = 212690
 	}
-	1128.1.1 = {
-		holder = 30088
-	}
-	1135.7.6 = {
-		holder = 33208
-	}
-	1145.1.1 = {
-		holder = 33211
-	}
-	1164.10.6 = {
-		holder = 33212
-	}
-	1167.8.9 = {
-		holder = 213148
-	}
-	1183.8.21 = {
+	1190.8.21 = {
 		liege = "d_brabant"
 	}
 	1191.8.5 = {
@@ -904,6 +886,7 @@ c_cambray = {
 	769.1.1 = {
 		holder = 194170
 		liege = d_brabant
+		government = theocracy_government
 	}
 	817.1.1 = {
 		liege = "k_lotharingia"
@@ -947,6 +930,7 @@ c_cambray = {
 	1070.7.17 = {
 		liege = "d_flanders"
 		holder = 366 #Arnulf III
+		government = theocracy_government
 	}
 	1071.2.22 = {
 		liege = "d_lower_lorraine"
@@ -959,7 +943,8 @@ c_cambray = {
 		holder = 205521 #Boudewijn
 	}
 	1171.11.8 = {
-		holder = 205520 #Boudewijn
+		holder = KOH_FRANCE01
+		government = theocracy_government
 	}
 	1183.8.21 = {
 		liege = "d_brabant"
@@ -988,6 +973,109 @@ c_cambray = {
 
 }
 
+c_limbourg = {
+	21.1.1 = {
+		change_development_level = 10
+	}
+	
+	1001.1.1 = {
+		change_development_level = 16
+	}
+	
+	1101.1.1 = {
+		change_development_level = 20
+	}
+	
+	
+	740.1.1 = {
+		holder = 131717 #Agnerald de Chaumontis
+		liege = k_france
+	}
+	817.1.1 = {
+		liege = "k_lotharingia"
+	}
+	817.1.1 = {
+		holder = 30227
+	}
+	841.1.1 = {
+		holder = 7815
+	}
+	867.1.1 = {
+		holder = 161525
+	}
+	892.1.1 = {
+		holder = 7812
+	}
+	903.1.1 = {
+		liege = "d_lower_lorraine"
+	}
+	903.1.1 = {
+		holder = 7961
+	}
+	910.1.1 = {
+		holder = 31705
+	}
+	949.1.1 = {
+		holder = 1306
+	}
+	953.1.1 = {
+		holder = 1290
+	}
+	959.1.1 = {
+		holder = 144992
+	}
+	964.1.1 = {
+		holder = 144991
+	}
+	973.1.1 = {
+		holder = 90121
+	}
+	990.1.1 = {
+		holder = 30090 #Gerhard I
+	}
+	1029.6.2 = {
+		holder = 20252 #Eberhard I
+	}
+	1051.1.1 = {
+		holder = 20253 #Gerhard II
+	}
+	#1065.1.1 = {
+	#	liege = e_hre
+	#}
+	1085.1.1 = {
+		holder = 20254 #Gerhard III
+	}
+	1119.1.1 = {
+		holder = 33141
+	}
+	1139.7.16 = {
+		holder = 33142
+	}
+	1167.8.19 = {
+		holder = 33147
+	}
+	1190.8.21 = {
+		liege = "d_lower_lorraine"
+	}
+	
+	1207.1.1 = {
+		holder = 30611 #Wilhelm III
+	}
+	1218.1.1 = {
+		holder = 30623 #Wilhelm IV
+	}
+	1278.3.6 = {
+		holder = 30626 #Walram I
+	}
+	1297.11.1 =
+	
+	{
+	holder = 462940 #Gerhard V
+	}
+	1328.1.31 = {
+		holder = 462930 #Wilhelm V
+	}
+}
 
 c_aachen = {
 	#TODO_CD: COPIED FROM C_JULICH, LOOK INTO HISTORY
@@ -1097,6 +1185,108 @@ c_aachen = {
 
 }
 
+c_duren = {
+	21.1.1 = {
+		change_development_level = 10
+	}
+	
+	1001.1.1 = {
+		change_development_level = 16
+	}
+	
+	1101.1.1 = {
+		change_development_level = 20
+	}
+	
+	
+	740.1.1 = {
+		holder = 131717 #Agnerald de Chaumontis
+		liege = k_france
+	}
+	817.1.1 = {
+		liege = "k_lotharingia"
+	}
+	817.1.1 = {
+		holder = 30227
+	}
+	841.1.1 = {
+		holder = 7815
+	}
+	867.1.1 = {
+		holder = 161525
+	}
+	892.1.1 = {
+		holder = 7812
+	}
+	903.1.1 = {
+		liege = "d_lower_lorraine"
+	}
+	903.1.1 = {
+		holder = 7961
+	}
+	910.1.1 = {
+		holder = 31705
+	}
+	949.1.1 = {
+		holder = 1306
+	}
+	953.1.1 = {
+		holder = 1290
+	}
+	959.1.1 = {
+		holder = 144992
+	}
+	964.1.1 = {
+		holder = 144991
+	}
+	973.1.1 = {
+		holder = 90121
+	}
+	990.1.1 = {
+		holder = 30090 #Gerhard I
+	}
+	1029.6.2 = {
+		holder = 20252 #Eberhard I
+	}
+	1051.1.1 = {
+		holder = 20253 #Gerhard II
+	}
+	#1065.1.1 = {
+	#	liege = e_hre
+	#}
+	1085.1.1 = {
+		holder = 20254 #Gerhard III
+	}
+	1126.1.1 = {
+		holder = 30091 #Gerhard IV
+	}
+	
+	1143.1.1 = {
+		holder = 30089 #Wilhelm I
+	}
+	1176.1.1 = {
+		holder = 206900 #Wilhelm II
+	}
+	1190.8.21 = {
+		liege = "d_lower_lorraine"
+	}
+	
+	1207.1.1 = {
+		holder = 30611 #Wilhelm III
+	}
+	1218.1.1 = {
+		holder = 30623 #Wilhelm IV
+	}
+	1278.3.6 = {
+		holder = 30626 #Walram I
+	}
+	1297.11.1 = {
+	holder = 462940 #Gerhard V
+	}
+	1328.1.31 = {
+		holder = 462930 #Wilhelm V
+	}
+}
 
 c_cleves = {
 	769.1.1 = {
@@ -1228,24 +1418,29 @@ c_maastricht = {
 	990.1.1 = {
 		holder = 30090 #Gerhard I
 	}
-	1029.6.2 = {
-		holder = 20252 #Eberhard I
+	1000.1.1 = {
+		holder = 106572
 	}
-	1051.1.1 = {
-		holder = 20253 #Gerhard II
+	1044.1.1 = {
+		holder = 106570 #Eberhard I
 	}
-	1085.1.1 = {
-		holder = 20254 #Gerhard III
+	1078.1.17 = {
+		holder = 41725 #Gerhard II
 	}
 	1126.1.1 = {
-		holder = 30091 #Gerhard IV
+		holder = 33063 #Gerhard III
 	}
-	
+	1135.4.11 = {
+		holder = 33066 #Gerhard IV
+	}
+	1138.1.1 = {
+		holder = 206801
+	}
 	1143.1.1 = {
 		holder = 30089 #Wilhelm I
 	}
-	1176.1.1 = {
-		holder = 206900 #Wilhelm II
+	1171.8.11 = {
+		holder = 206800 #Wilhelm II
 	}
 	1190.8.21 = {
 		liege = "d_lower_lorraine"
@@ -1366,6 +1561,80 @@ d_upper_lorraine = {
 	}
 }
 
+d_trier = {
+	867.1.1 = { change_development_level = 8 }
+	1066.1.1 = { change_development_level = 13 }
+	
+	755.1.1 = {
+		liege = "k_lotharingia"
+		holder = 91501 #Wido, historical as placeholder
+	}
+	842.1.1 = {
+		holder = 7979
+	}
+	863.1.1 = {
+		holder = 144998 #Lothair II
+	}
+	864.1.1 = {
+		holder = 31702
+	}
+	903.1.1 = {
+		liege = "d_lower_lorraine"
+	}
+	1016.1.1 = {
+		holder = 183189 #Poppo von Babenberg
+		government = theocracy_government
+		liege = e_hre
+	}
+	1066.6.1 = {
+		holder = 33109 #Udo von Nellenburg
+	}
+	1078.11.1 = {
+		holder = 33110 #Egilbert
+	}
+	1101.1.1 = {
+		holder = 33111 #Bruno
+	}
+	1124.4.25 = {
+		holder = 33112 #Gottfried
+	}
+	1127.1.1 = {
+		holder = 33113 #Meginher
+	}
+	1130.10.1 = {
+		holder = 33114 #Adelbero
+	}
+	1152.1.18 = {
+		holder = 33115 #Hillin
+	}
+	1169.10.23 = {
+		holder = 33116 #Arnold
+	}
+	1183.5.25 = {
+		holder = 33117 #Folmar
+	}
+	1189.1.1 = {
+		holder = 33118 #Johann
+	}
+	1212.7.15 = {
+		holder = 33119 #Theodorich
+	}
+	1242.3.28 = {
+		holder = 33120 #Arnold
+	}
+	1259.11.5 = {
+		holder = 33121 #Heinrich
+	}
+	1286.4.26 = {
+		holder = 33122 #Bohemond
+	}
+	1299.12.8 = {
+		holder = 30702 #Diether von Nassau
+	}
+	1307.12.22 = {
+		holder = 462621 #Baldewin von Luxemburg
+	}
+}
 
 c_trier = {
 	867.1.1 = { change_development_level = 8 }
@@ -1388,7 +1657,9 @@ c_trier = {
 		liege = "d_lower_lorraine"
 	}
 	1016.1.1 = {
-			holder = 183189 #Poppo von Babenberg
+		holder = 183189 #Poppo von Babenberg
+		government = theocracy_government
+		liege = e_hre
 	}
 	1066.6.1 = {
 		holder = 33109 #Udo von Nellenburg
@@ -1613,7 +1884,7 @@ c_metz = {
 		holder = 212585 #Dietrich Chatenois
 	}
 	1180.1.1 = {
-		holder = 30305 #Bertram
+		holder = 161464 #Bertram
 	}
 	1212.4.6 = {
 		holder = 31553 #Konrad von Scharfenberg
@@ -1741,16 +2012,16 @@ c_saarbrucken = {
 		holder = 20208
 	}
 	1034.1.1 = {
-		holder = 20206
+		holder = 260463
 	}
-	1045.1.1 = {
-		holder = 20216
+	1105.1.1 = {
+		holder = 260464
 	}
-	1060.1.1 = {
-		holder = 20217
+	1135.1.1 = {
+		holder = 260465
 	}
-	1066.1.1 = {
-		holder = 70825
+	1182.1.1 = {
+		holder = 260466
 	}
 	1085.9.20 = {
 		holder = 7586
@@ -1876,7 +2147,7 @@ c_puttlingen = {
 		holder = 212585 #Dietrich Chatenois
 	}
 	1180.1.1 = {
-		holder = 30305 #Bertram
+		holder = 161464 #Bertram
 	}
 	1212.4.6 = {
 		holder = 31553 #Konrad von Scharfenberg
@@ -1977,19 +2248,16 @@ c_neufchateau = {
 		holder = 6642 #Gerhard Chatenois (667)
 	}
 	1070.4.14 = {
-		holder = 6644 #Dietrich Chatenois (667)
+		holder = 40711 #Dietrich Chatenois (667)
 	}
-	1115.12.30 = {
-		holder = 394999 #Simon Chatenois (667)
+	1108.1.1 = {
+		holder = 212632 #Simon Chatenois (667)
 	}
-	1139.1.13 = {
-		holder = 212581 #Matthias Chatenois (667)
-	}
-	1176.5.13 = {
-		holder = 212580 #Simon Chatenois (667)
+	1155.2.4 = {
+		holder = 212630 #Matthias Chatenois (667)
 	}
 	1206.4.1 = {
-		holder = 212583 #Ferry Chatenois (667)
+		holder = 212633 #Ferry Chatenois (667)
 	}
 	1207.4.7 = {
 		holder = 212594 #Ferry Chatenois (667)
@@ -2106,7 +2374,104 @@ d_lower_lorraine = {
 		holder = 0
 	}
 }
-
+d_cologne = {
+	865.1.1 = {
+		government = theocracy_government
+		holder = 163052
+	}
+	903.1.1 = {
+		liege = "d_lower_lorraine"
+	}
+	924.1.1 = {
+		holder = 161539
+	}
+	953.7.9 = {
+		holder = 1290
+		liege = e_hre
+	}
+	
+	969.1.1 = {
+		holder = 168572
+	}
+	1056.1.1 = {
+		holder = 20228
+	}
+	#1065.1.1 = {
+	#	liege = e_hre
+	#}
+	1075.12.4 = {
+		holder = 33157
+	}
+	1078.7.21 = {
+		holder = 33158
+	}
+	1089.5.31 = {
+		holder = 33159
+	}
+	1099.11.21 = {
+		holder = 33160
+	}
+	1131.10.5 = {
+		holder = 33161
+	}
+	1137.5.29 = {
+		holder = 33162
+	}
+	1137.7.1 = {
+		holder = 33163
+	}
+	1151.4.3 = {
+		holder = 33164
+	}
+	1156.5.4 = {
+		holder = 30344 #Friedrich von Berg
+	}
+	1158.12.15 = {
+		holder = 33165
+	}
+	1167.8.14 = {
+		holder = 213181
+	}
+	1190.8.21 = {
+		liege = "d_lower_lorraine"
+	}
+	1191.8.13 = {
+		holder = 30345 #Bruno von Berg
+	}
+	1193.1.1 = {
+		holder = 30347 #Adolf von Berg
+	}
+	1205.1.1 = {
+		holder = 33166
+	}
+	1208.11.2 = {
+		holder = 33167
+	}
+	1216.1.1 = {
+		holder = 33168
+	}
+	1225.11.7 = {
+		holder = 33169
+	}
+	1238.3.26 = {
+		holder = 33170
+	}
+	1261.9.28 = {
+		holder = 33171
+	}
+	1274.10.20 = {
+		holder = 33172
+	}
+	1297.4.7 = {
+		holder = 30329 #Wigbold von Holte
+	}
+	1304.3.26 = {
+		holder = 33173
+	}
+	1332.1.5 = {
+		holder = 487032 #Walram von Jülich
+	}
+}
 
 c_cologne = {
 	867.1.1 = { change_development_level = 10 }
@@ -2555,7 +2920,7 @@ c_koblenz = {
 		holder = 31702
 	}
 	867.1.1 = {
-		government = theocracy_government
+		government = feudal_government
 		holder = 163051
 	}
 	903.1.1 = {
@@ -2564,38 +2929,33 @@ c_koblenz = {
 	1016.1.1 = {
 			holder = 183189 #Poppo von Babenberg
 	}
-	#1065.1.1 = {
-	#	liege = e_hre
-	#}
-	1066.6.1 = {
-		holder = 33109 #Udo von Nellenburg
+	1065.1.1 = {
+		holder = 33134
+		government = feudal_government
+	}
+	1070.1.1 = {
+		holder = 33109
 	}
 	1078.11.1 = {
-		holder = 33110 #Egilbert
+		holder = 33123 
 	}
-	1101.1.1 = {
-		holder = 33111 #Bruno
+	1080.1.1 = {
+		holder = 33124 
 	}
-	1124.4.25 = {
-		holder = 33112 #Gottfried
+	1118.1.1 = {
+		holder = 33125 
 	}
-	1127.1.1 = {
-		holder = 33113 #Meginher
+	1145.1.1 = {
+		holder = 33126 
 	}
-	1130.10.1 = {
-		holder = 33114 #Adelbero
+	1156.10.1 = {
+		holder = 33128 
 	}
 	1152.1.18 = {
-		holder = 33115 #Hillin
-	}
-	1169.10.23 = {
-		holder = 33116 #Arnold
-	}
-	1183.5.25 = {
-		holder = 33117 #Folmar
+		holder = 33115 
 	}
 	1189.1.1 = {
-		holder = 33118 #Johann
+		holder = 33118 
 	}
 	1212.7.15 = {
 		holder = 33119 #Theodorich

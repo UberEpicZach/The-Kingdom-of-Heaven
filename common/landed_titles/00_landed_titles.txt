@@ -5607,14 +5607,14 @@ e_germany = {
 				color = { 100 110 180 }
 				color2 = { 255 255 255 }
 
-				b_bouillon = {
-					province = 2091
+				b_chiny = {
+					province = 2686
 
 					color = { 100 110 180 }
 					color2 = { 255 255 255 }
 				}
-				b_chiny = {
-					province = 2686
+				b_bouillon = {
+					province = 2091
 
 					color = { 100 110 180 }
 					color2 = { 255 255 255 }
@@ -5638,12 +5638,6 @@ e_germany = {
 			
 				b_liege = {
 					province = 2097
-
-					color = { 90 95 135 }
-					color2 = { 255 255 255 }
-				}
-				b_la_roche = {
-					province = 2094
 
 					color = { 90 95 135 }
 					color2 = { 255 255 255 }
@@ -5814,20 +5808,39 @@ e_germany = {
 						sicilian = cn_aquisgrana
 					}
 				}
+
+				b_eschweiler = {
+					province = 2683
+
+					color = { 130 125 175 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_limbourg = {
+				color = { 130 125 175 }
+				color2 = { 255 255 255 }
+
 				b_limbourg = {
 					province = 2448
 
 					color = { 130 125 175 }
 					color2 = { 255 255 255 }
 				}
-				b_duren = {
-					province = 2093
 
-					color = { 130 125 175 }
+				b_la_roche = {
+					province = 2094
+
+					color = { 90 95 135 }
 					color2 = { 255 255 255 }
 				}
-				b_eschweiler = {
-					province = 2683
+			}
+
+			c_duren = {
+				color = { 130 125 175 }
+				color2 = { 255 255 255 }
+			
+				b_duren = {
+					province = 2093
 
 					color = { 130 125 175 }
 					color2 = { 255 255 255 }
@@ -5893,11 +5906,12 @@ e_germany = {
 			}
 		}	
 
-		d_upper_lorraine = {
+
+		d_trier = {
 			color = { 90 90 125 }
 			color2 = { 255 255 255 }
-					
-			capital = c_trier #Trier		
+
+			capital = c_trier
 
 			c_trier = {
 				color = { 90 90 125 }
@@ -5928,6 +5942,14 @@ e_germany = {
 					color2 = { 255 255 255 }
 				}
 			}
+		}
+
+		d_upper_lorraine = {
+			color = { 90 90 125 }
+			color2 = { 255 255 255 }
+					
+			capital = c_nancy #nancy		
+
 			c_nancy = {
 				color = { 65 65 100 }
 				color2 = { 255 255 255 }
@@ -5944,6 +5966,11 @@ e_germany = {
 					color = { 65 65 100 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_salm = {
+				color = { 65 65 100 }
+				color2 = { 255 255 255 }
+			
 				b_blankenberg = {
 					province = 2713
 
@@ -6030,14 +6057,15 @@ e_germany = {
 				color = { 75 75 125 }
 				color2 = { 255 255 255 }
 			
-				b_neufchateau = {
-					province = 2384
+				b_vaudemont = {
+					province = 2715
 
 					color = { 75 75 125 }
 					color2 = { 255 255 255 }
 				}
-				b_vaudemont = {
-					province = 2715
+
+				b_neufchateau = {
+					province = 2384
 
 					color = { 75 75 125 }
 					color2 = { 255 255 255 }
@@ -6050,6 +6078,44 @@ e_germany = {
 				}
 			}
 		}
+
+		d_cologne = {
+			color = { 150 145 180 }
+			color2 = { 255 255 255 }
+
+			capital = c_cologne # Cologne
+
+			c_cologne = {
+				color = { 150 145 180 }
+				color2 = { 255 255 255 }
+
+				b_cologne = {
+					province = 2088
+
+					color = { 150 145 180 }
+					color2 = { 255 255 255 }
+				}
+				b_bonn = {
+					province = 2087
+
+					color = { 150 145 180 }
+					color2 = { 255 255 255 }
+				}
+				b_neuss = {
+					province = 2682
+
+					color = { 150 145 180 }
+					color2 = { 255 255 255 }
+				}
+				b_nauenahr = {
+					province = 2685
+
+					color = { 150 145 180 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
+
 
 		d_lower_lorraine = {
 			color = { 150 145 180 }
@@ -6153,6 +6219,13 @@ e_germany = {
 				color = { 150 140 190 }
 				color2 = { 255 255 255 }
 
+				b_sponhem = {
+					province = 2696
+
+					color = { 150 140 190 }
+					color2 = { 255 255 255 }
+				}
+
 				b_koblenz = {
 					province = 2084
 
@@ -6168,12 +6241,6 @@ e_germany = {
 				}
 				b_cochem = {
 					province = 2697
-
-					color = { 150 140 190 }
-					color2 = { 255 255 255 }
-				}
-				b_sponhem = {
-					province = 2696
 
 					color = { 150 140 190 }
 					color2 = { 255 255 255 }
@@ -8226,6 +8293,78 @@ e_germany = {
 					color2 = { 255 255 255 }
 				}
 			}
+			c_colmar = {
+				color = { 210 200 220 }
+				color2 = { 255 255 255 }
+			
+				b_colmar = {
+					province = 2717
+
+					color = { 210 200 220 }
+					color2 = { 255 255 255 }
+				}
+				b_selestat = {
+					province = 2719
+
+					color = { 210 200 220 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_sundgau = {
+				color = { 215 200 215 }
+				color2 = { 255 255 255 }
+			
+				b_ferrette = {
+					province = 2720
+
+					color = { 215 200 215 }
+					color2 = { 255 255 255 }
+				}
+
+				b_mulhouse = {
+					province = 2058
+
+					color = { 215 200 215 }
+					color2 = { 255 255 255 }
+				}
+				b_porrentruy = {
+					province = 2056
+
+					color = { 215 200 215 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
+		
+		d_baden = {
+				color = { 195 195 210 }
+				color2 = { 255 255 255 }
+
+				capital = c_baden
+
+			c_baden = {
+				color = { 195 195 210 }
+				color2 = { 255 255 255 }
+				
+				b_baden = {
+					province = 2746
+
+					color = { 165 159 159 }
+					color2 = { 255 255 255 }
+				}
+				b_sulz = {
+					province = 2755
+
+					color = { 165 159 159 }
+					color2 = { 255 255 255 }
+				}
+				b_calw = {
+					province = 2747
+
+					color = { 165 159 159 }
+					color2 = { 255 255 255 }
+				}
+			}
 			c_breisgau = {
 				color = { 185 185 200 }
 				color2 = { 255 255 255 }
@@ -8255,54 +8394,8 @@ e_germany = {
 					color2 = { 255 255 255 }
 				}
 			}
-			c_colmar = {
-				color = { 210 200 220 }
-				color2 = { 255 255 255 }
-			
-				b_colmar = {
-					province = 2717
-
-					color = { 210 200 220 }
-					color2 = { 255 255 255 }
-				}
-				b_selestat = {
-					province = 2719
-
-					color = { 210 200 220 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_sundgau = {
-				color = { 215 200 215 }
-				color2 = { 255 255 255 }
-			
-				b_montbelliard = {
-					province = 2057
-
-					color = { 215 200 215 }
-					color2 = { 255 255 255 }
-				}
-				b_mulhouse = {
-					province = 2058
-
-					color = { 215 200 215 }
-					color2 = { 255 255 255 }
-				}
-				b_ferrette = {
-					province = 2720
-
-					color = { 215 200 215 }
-					color2 = { 255 255 255 }
-				}
-				b_porrentruy = {
-					province = 2056
-
-					color = { 215 200 215 }
-					color2 = { 255 255 255 }
-				}
-			}
 		}
-		
+
 		d_swabia = {
 			color = { 210 210 210 }
 			color2 = { 255 255 255 }
@@ -8376,13 +8469,24 @@ e_germany = {
 					
 					color = { 200 205 200 }
 					color2 = { 255 255 255 }
+					}
 				}
+			c_tubingen = {
+				color = { 200 205 200 }
+				color2 = { 255 255 255 }	
+				
 				b_tubingen = {
 					province = 2749
 					
 					color = { 200 205 200 }
 					color2 = { 255 255 255 }
 				}
+			}
+
+			c_teck = {
+				color = { 200 205 200 }
+				color2 = { 255 255 255 }
+
 				b_teck = {
 					province = 2771
 					
@@ -8390,29 +8494,7 @@ e_germany = {
 					color2 = { 255 255 255 }
 				}
 			}
-			c_baden = {
-				color = { 195 195 210 }
-				color2 = { 255 255 255 }
-				
-				b_baden = {
-					province = 2746
-
-					color = { 165 159 159 }
-					color2 = { 255 255 255 }
-				}
-				b_sulz = {
-					province = 2755
-
-					color = { 165 159 159 }
-					color2 = { 255 255 255 }
-				}
-				b_calw = {
-					province = 2747
-
-					color = { 165 159 159 }
-					color2 = { 255 255 255 }
-				}
-			}
+		
 			c_zollern = {
 				color = { 225 225 225 }
 				color2 = { 255 255 255 }
@@ -46759,6 +46841,11 @@ e_france = {
 					color = { 15 40 210 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_coucy = {
+				color = { 15 40 210 }
+				color2 = { 255 255 255 }
+				
 				b_crepy = {
 					province = 2360
 
@@ -47796,14 +47883,15 @@ e_france = {
 				color = { 15 80 220 }
 				color2 = { 255 255 255 }
 			
-				b_vaucouleurs = {
-					province = 2387
+				b_toul = {
+					province = 2079
 
 					color = { 15 80 220 }
 					color2 = { 255 255 255 }
 				}
-				b_toul = {
-					province = 2079
+
+				b_vaucouleurs = {
+					province = 2387
 
 					color = { 15 80 220 }
 					color2 = { 255 255 255 }
@@ -49522,6 +49610,12 @@ e_france = {
 			
 			capital = c_besancon # Besancon
 			
+			cultural_names = {
+				french = "Franche-Comté"
+				german = "Freigrafschaft"
+				 
+			}
+
 			c_besancon = {
 				color = { 139 10 38 }
 				color2 = { 255 255 255 }
@@ -49556,6 +49650,17 @@ e_france = {
 					color = { 139 10 38 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_montbelliard = {
+				color = { 215 200 215 }
+				color2 = { 255 255 255 }
+
+				b_montbelliard = {
+					province = 2057
+
+					color = { 215 200 215 }
+					color2 = { 255 255 255 }
+					}
 			}
 			c_bresse = {
 				color = { 199 82 112 }
@@ -54619,7 +54724,6 @@ e_arabia = {
 	color = { 32 150 85 }
 	color2 = { 255 255 255 }
 	
-	capital = c_aleppo
 	
 	definite_form = yes
 		

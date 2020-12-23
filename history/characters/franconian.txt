@@ -2510,7 +2510,7 @@
 
 30671 = {
 	name = "Burchard"
-	dynasty = 247
+	dynasty_house = house_Lechsgemund
 	religion = "catholic"
 	culture = franconian
 	father = 31528
@@ -2926,7 +2926,7 @@
 31527 = {
 	name = "Adelheid"
 	female = yes
-	dynasty = 247
+	dynasty_house = house_Lechsgemund
 	religion = "catholic"
 	culture = franconian
 	father = 31528
@@ -2940,7 +2940,7 @@
 
 31528 = {
 	name = "Kuno"
-	dynasty = 247
+	dynasty_house = house_Lechsgemund
 	religion = "catholic"
 	culture = franconian
 	father = 11061
@@ -3014,7 +3014,7 @@
 
 33469 = {
 	name = "Heinrich"
-	dynasty = 247
+	dynasty_house = house_Lechsgemund
 	religion = "catholic"
 	culture = franconian
 	father = 31528
@@ -3028,7 +3028,7 @@
 
 33470 = {
 	name = "Heinrich"
-	dynasty = 247
+	dynasty_house = house_Lechsgemund
 	religion = "catholic"
 	culture = franconian
 	father = 33469
@@ -3042,7 +3042,7 @@
 
 33471 = {
 	name = "Heinrich"
-	dynasty = 247
+	dynasty_house = house_Lechsgemund
 	religion = "catholic"
 	culture = franconian
 	father = 33470
@@ -3056,7 +3056,7 @@
 
 33472 = {
 	name = "Konrad" #bishop of Regensburg
-	dynasty = 247
+	dynasty_house = house_Lechsgemund
 	religion = "catholic"
 	culture = franconian
 	father = 33471
@@ -3070,7 +3070,7 @@
 
 33473 = {
 	name = "Volkrat"
-	dynasty = 247
+	dynasty_house = house_Lechsgemund
 	religion = "catholic"
 	culture = franconian
 	father = 33470
@@ -3087,7 +3087,7 @@
 
 33475 = {
 	name = "Dietpold"
-	dynasty = 247
+	dynasty_house = house_Lechsgemund
 	religion = "catholic"
 	culture = franconian
 	father = 33473
@@ -3102,7 +3102,7 @@
 
 33476 = {
 	name = "Berthold"
-	dynasty = 247
+	dynasty_house = house_Lechsgemund
 	religion = "catholic"
 	culture = franconian
 	father = 33475
@@ -12328,7 +12328,7 @@
 }
 
 33128 = {
-	name = "Gottfried"
+	name = "Gottfried" #III
 	dynasty = 12439
 	religion = "catholic"
 	culture = saxon
@@ -13098,6 +13098,9 @@
 	father = 33100
 	1145.1.1 = {
 		birth = "1145.1.1"
+	}
+	1167.8.14 = {
+		capital = c_cologne
 	}
 	1191.8.13 = {
 		death = "1191.8.13"
@@ -18825,6 +18828,7 @@
 	religion = "catholic"
 	culture = franconian
 	trait = education_learning_2
+	dynasty = KOHD0009
 	1135.1.1 = {
 		birth = "1135.1.1"
 	}
@@ -19728,5 +19732,34 @@ KOH0029 = {
 	}
 	1244.1.1 = {
 		death = "1244.1.1"
+	}
+}
+
+KOH_FRANCONIAN01 = {
+	name = "Thierry"
+	dynasty = 7287
+	religion = "catholic"
+	culture = french
+	father = 161764
+	mother = 161762
+	1126.1.1 = {
+		birth = "1126.1.1"
+	}
+	1190.1.1 = {
+		death = "1190.1.1"
+	}
+}
+
+KOH_FRANCONIAN02 = {
+	name = "Ulric II"
+	dynasty = KOH_D_01
+	religion = "catholic"
+	culture = french
+	
+	1169.1.1 = {
+		birth = "1169.1.1"
+	}
+	1220.1.1 = {
+		death = "1220.1.1"
 	}
 }
