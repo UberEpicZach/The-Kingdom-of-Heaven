@@ -918,7 +918,9 @@
 	holding = city_holding
 }
 2772 = {	#LOWENSTEIN
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 	#1123
 }
 
@@ -942,16 +944,25 @@
 	holding = castle_holding
 }
 2728 = {	#LETNINGEN
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
+}
 }
 2707 = {	#KREUSNACH
 	holding = church_holding
+	culture = franconian
+	religion = catholic
 }
 2727 = {	#ROCKENHAUSEN
-	holding = none
+	holding = castle_holding
+	culture = franconian
+	religion = catholic
 }
 2701 = {	#VELDENZ
-	holding = none
+	holding = castle_holding
+	culture = franconian
+	religion = catholic
 }
 
 ##d_east_franconia ###################################
@@ -981,7 +992,9 @@
 	}
 }
 2880 = {	#TRUBENDING
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_coburg
@@ -1060,9 +1073,16 @@
 }
 2926 = {	#SCHWEINFURT
 	holding = city_holding
+	culture = franconian
+	religion = catholic
 }
 2925 = {	#HENNEBERG
 	holding = none
+	1100.1.1 = {
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
+	}
 }
 
 ##d_hesse ###################################

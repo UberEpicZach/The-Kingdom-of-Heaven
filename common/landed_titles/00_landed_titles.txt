@@ -6940,6 +6940,18 @@ e_germany = {
 					color = { 110 100 85 }
 					color2 = { 255 255 255 }
 				}
+			}
+
+			c_truhendingen = {
+				color = { 220 220 240 }
+				color2 = { 255 255 255 }
+
+				b_trubending = {
+					province = 2880
+					
+					color = { 220 220 240 }
+					color2 = { 255 255 255 }
+				}
 				b_neue_weissenburg = {
 					province = 2882
 
@@ -6947,6 +6959,7 @@ e_germany = {
 					color2 = { 255 255 255 }
 				}
 			}
+
 			c_leuchtenburg = {
 				color = { 130 120 105 }
 				color2 = { 255 255 255 }
@@ -6974,6 +6987,13 @@ e_germany = {
 				color = { 100 90 70 }
 				color2 = { 255 255 255 }
 		
+				b_sulzbach = {
+					province = 2988
+
+					color = { 100 90 70 }
+					color2 = { 255 255 255 }
+				}
+				
 				b_parsberg = {
 					province = 2987
 
@@ -6982,12 +7002,6 @@ e_germany = {
 				}
 				b_lengenfeld = {
 					province = 2986
-
-					color = { 100 90 70 }
-					color2 = { 255 255 255 }
-				}
-				b_sulzbach = {
-					province = 2988
 
 					color = { 100 90 70 }
 					color2 = { 255 255 255 }
@@ -7765,14 +7779,25 @@ e_germany = {
 					color = { 140 140 140 }
 					color2 = { 255 255 255 }
 				}
-				b_heilbronn = {
-					province = 2743
+				b_calw = {
+					province = 2747
+
+					color = { 165 159 159 }
+					color2 = { 255 255 255 }
+				}
+			}
+
+			c_lowenstein = {
+				color = { 140 140 140 }
+				color2 = { 255 255 255 }
+				b_lowenstein = {
+					province = 2772
 					
 					color = { 140 140 140 }
 					color2 = { 255 255 255 }
 				}
-				b_lowenstein = {
-					province = 2772
+				b_heilbronn = {
+					province = 2743
 					
 					color = { 140 140 140 }
 					color2 = { 255 255 255 }
@@ -7811,26 +7836,38 @@ e_germany = {
 					color = { 145 140 153 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_leiningen = {
+				color = { 145 140 153 }
+				color2 = { 255 255 255 }
+		
 				b_letningen = {
 					province = 2728
 					
 					color = { 145 140 153 }
 					color2 = { 255 255 255 }
 				}
-				b_kreusnach = {
-					province = 2707
-					
-					color = { 145 140 153 }
-					color2 = { 255 255 255 }
-				}
+
 				b_rockenhausen = {
 					province = 2727
 
 					color = { 145 140 153 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_veldenz = {
+				color = { 145 140 153 }
+				color2 = { 255 255 255 }
+
 				b_veldenz = {
 					province = 2701
+					
+					color = { 145 140 153 }
+					color2 = { 255 255 255 }
+				}
+
+				b_kreusnach = {
+					province = 2707
 					
 					color = { 145 140 153 }
 					color2 = { 255 255 255 }
@@ -7896,12 +7933,6 @@ e_germany = {
 				}
 				b_uffenheim = {
 					province = 2891
-					
-					color = { 220 220 240 }
-					color2 = { 255 255 255 }
-				}
-				b_trubending = {
-					province = 2880
 					
 					color = { 220 220 240 }
 					color2 = { 255 255 255 }
@@ -8037,6 +8068,12 @@ e_germany = {
 				color = { 255 245 245 }
 				color2 = { 255 255 255 }
 				
+				b_henneberg = {
+					province = 2925
+					
+					color = { 255 245 245 }
+					color2 = { 255 255 255 }
+				}
 				b_wiltberg = {
 					province = 2927
 					
@@ -8045,12 +8082,6 @@ e_germany = {
 				}
 				b_schweinfurt = {
 					province = 2926
-					
-					color = { 255 245 245 }
-					color2 = { 255 255 255 }
-				}
-				b_henneberg = {
-					province = 2925
 					
 					color = { 255 245 245 }
 					color2 = { 255 255 255 }
@@ -8354,12 +8385,6 @@ e_germany = {
 				}
 				b_sulz = {
 					province = 2755
-
-					color = { 165 159 159 }
-					color2 = { 255 255 255 }
-				}
-				b_calw = {
-					province = 2747
 
 					color = { 165 159 159 }
 					color2 = { 255 255 255 }
@@ -54724,6 +54749,7 @@ e_arabia = {
 	color = { 32 150 85 }
 	color2 = { 255 255 255 }
 	
+	capital = c_damascus # Damascus
 	
 	definite_form = yes
 		
