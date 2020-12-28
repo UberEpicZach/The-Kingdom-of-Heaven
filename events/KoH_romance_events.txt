@@ -2,7 +2,7 @@
 
 namespace = KOH_richard_bride
 
-KOH_richard_bride.1 = { 
+KOH_richard_bride.1 = {
 	type = character_event
 	title = richard.bride.t
 	desc = {
@@ -19,7 +19,7 @@ KOH_richard_bride.1 = {
 			NOT = { has_character_flag = had_event_richard_bride.1 }
 			is_ai = no
 		}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_richard_bride.1
@@ -44,19 +44,19 @@ KOH_richard_bride.1 = {
 	option = {
 		name = richard.bride.b
 		custom_tooltip = richard.bride.b.tt
-		
+
 		reverse_add_opinion = {
 			target = character:204500
 			modifier = angry_opinion
 			opinion = -15
 		}
-		
+
 		reverse_add_opinion = {
 			target = character:205506
 			modifier = romantic_gesture_opinion
 			opinion = 10
 		}
-		
+
 		character:204510 = {
 			set_sexuality = homosexual
 			add_trait = unwed
@@ -73,7 +73,7 @@ KOH_richard_bride.1 = {
 						days = 1
 					}
 		}
-	}	
+	}
 }
 
 #Which lady?
@@ -88,7 +88,7 @@ KOH_richard_bride.2 = {
 		character = character:205518 #Alys
 		animation = admiration
 	}
-	right_portrait = { 
+	right_portrait = {
 		character = character:206501 #Berengaria
 		animation = ecstasy
 	}
@@ -109,15 +109,15 @@ KOH_richard_bride.2 = {
 			}
 		}
 	}
-	
+
 	#Choose Alys
 	option = {
 		name = richard.bride.2.a
-		
+
 		character:204510 = {
 			marry = character:205518
 		}
-		
+
 		reverse_add_opinion = {
 			target = character:205506
 			modifier = amused_opinion
@@ -139,23 +139,23 @@ KOH_richard_bride.2 = {
 			}
 		}
 	}
-	
+
 	#Choose Berengaria
 	option = {
 		name = richard.bride.2.b
-		
+
 		character:204510 = {
 			marry = character:206501
 		}
-		
+
 		reverse_add_opinion = {
 			target = character:205506
 			modifier = lover_let_me_down_opinion
-			opinion = -10
+			opinion = -30
 		}
 		reverse_add_opinion = {
 			target = character:205518
-			modifier = broke_promise
+			modifier = broke_betrothal_opinion
 			opinion = -20
 		}
 		reverse_add_opinion = {
@@ -193,7 +193,7 @@ KOH_richard_bride.3 = {
 		character = character:205518 #Alys
 		animation = admiration
 	}
-	
+
 	trigger = {
 			is_adult = yes
 			NOT = { has_character_flag = had_event_richard_bride.3 }
@@ -217,7 +217,7 @@ KOH_richard_bride.3 = {
 	#Choose Alys
 	option = {
 		name = richard.bride.3.a
-	
+
 		character:204510 = {
 			marry = character:205518
 		}
@@ -231,12 +231,16 @@ KOH_richard_bride.3 = {
 				add_trait = devoted
 			}
 		}
+		trigger_event = {
+			id = KOH_flemish_war.1
+			days = 10
+		}
 	}
-	
+
 	#Richard Chooses
 	option = {
 		name = richard.bride.3.b
-		
+
 		random_list = {
 				40 = {
 					add_opinion = {
@@ -269,6 +273,10 @@ KOH_richard_bride.3 = {
 							create_betrothal = character:205518
 						}
 					}
+					trigger_event = {
+						id = KOH_flemish_war.1
+						days = 10
+					}
 				}
 		}
 	}
@@ -295,11 +303,11 @@ KOH_richard_bride.4 = {
 			flag = had_event_richard_bride.4
 		}
 	}
-	
+
 	#Soulmate / Philip becomes heir
 	option = {
 		name = richard.bride.4.a
-		
+
 		character:204510 = {
 			set_relation_soulmate = character:205506
 		}
@@ -319,7 +327,7 @@ KOH_richard_bride.4 = {
 	#End Relationship
 	option = {
 		name = richard.bride.4.b
-		
+
 		character:204510 = {
 			remove_relation_lover = character:205506
 			remove_trait = unwed
@@ -352,11 +360,11 @@ KOH_richard_bride.5 = {
 			flag = had_event_richard_bride.5
 		}
 	}
-	
+
 	#Soulmate / Philip becomes heir
 	option = {
 		name = richard.bride.5.a
-		
+
 		character:205506 = {
 			set_relation_soulmate = character:204510
 		}
@@ -372,11 +380,15 @@ KOH_richard_bride.5 = {
 				add_trait = devoted
 			}
 		}
+		trigger_event = {
+			id = KOH_flemish_war.1
+			days = 10
+		}
 	}
 	#End relationship
 	option = {
 		name = richard.bride.5.b
-		
+
 		character:205506 = {
 			remove_relation_lover = character:204510
 			remove_trait = unwed
@@ -385,6 +397,10 @@ KOH_richard_bride.5 = {
 			target = character:204510
 			modifier = lover_breakup_opinion
 			opinion = -30
+		}
+		trigger_event = {
+			id = KOH_flemish_war.1
+			days = 10
 		}
 	}
 }
@@ -403,11 +419,11 @@ KOH_richard_bride.6 = {
 			character:205506 = { is_ai = yes }
 			character:204510 = { is_ai = yes }
 		}
-	
+
 	#Go with the historical choice
 	option = {
 		name = richard.bride.6.a
-		
+
 		character:205518 = {
 			remove_trait = unwed
 			}
@@ -428,7 +444,7 @@ namespace = KOH_balian_women
 
 #Balian meets Sibylla
 
-KOH_balian_women.1 = { 
+KOH_balian_women.1 = {
 	type = character_event
 	title = balian.women.1.t
 	desc = {
@@ -452,7 +468,7 @@ KOH_balian_women.1 = {
 			character:223522 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_balian_women.1 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.1
@@ -464,7 +480,7 @@ KOH_balian_women.1 = {
 	option = {
 		name = balian.women.1.a
 		custom_tooltip = balian.women.1.a.tt
-		
+
 		reverse_add_opinion = {
 			target = character:223522
 			modifier = respect_opinion
@@ -482,7 +498,7 @@ KOH_balian_women.1 = {
 	option = {
 		name = balian.women.1.b
 		custom_tooltip = balian.women.1.b.tt
-		
+
 		reverse_add_opinion = {
 			target = character:223522
 			modifier = respect_opinion
@@ -496,7 +512,7 @@ KOH_balian_women.1 = {
 }
 
 #Balin offered her water
-KOH_balian_women.2 = { 
+KOH_balian_women.2 = {
 	type = character_event
 	title = balian.women.2.t
 	desc = {
@@ -520,7 +536,7 @@ KOH_balian_women.2 = {
 			character:223522 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_balian_women.2 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.2
@@ -531,7 +547,7 @@ KOH_balian_women.2 = {
 	option = {
 		name = balian.women.2.a
 		custom_tooltip = balian.women.2.tt
-		
+
 		hidden_effect = {
 			trigger_event = {
 						id = KoH_balians_adventure.22
@@ -542,7 +558,7 @@ KOH_balian_women.2 = {
 }
 
 #Balin refused her water
-KOH_balian_women.3 = { 
+KOH_balian_women.3 = {
 	type = character_event
 	title = balian.women.3.t
 	desc = {
@@ -566,7 +582,7 @@ KOH_balian_women.3 = {
 			character:223522 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_balian_women.3 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.3
@@ -577,7 +593,7 @@ KOH_balian_women.3 = {
 	option = {
 		name = balian.women.3.a
 		custom_tooltip = balian.women.3.tt
-		
+
 		hidden_effect = {
 			trigger_event = {
 						id = KoH_balians_adventure.19
@@ -589,7 +605,7 @@ KOH_balian_women.3 = {
 
 #Balian meets Maria
 
-KOH_balian_women.4 = { 
+KOH_balian_women.4 = {
 	type = character_event
 	title = balian.women.4.t
 	desc = {
@@ -610,7 +626,7 @@ KOH_balian_women.4 = {
 			is_adult = yes
 			NOT = { has_character_flag = had_event_balian_women.4 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.4
@@ -618,11 +634,11 @@ KOH_balian_women.4 = {
 	}
 
 
-	
+
 	option = {
 		name = balian.women.4.a
 		custom_tooltip = balian.women.4.a.tt
-		
+
 		reverse_add_opinion = {
 			target = character:215560
 			modifier = pleased_opinion
@@ -639,7 +655,7 @@ KOH_balian_women.4 = {
 
 #The story of two queens
 
-KOH_balian_women.5 = { 
+KOH_balian_women.5 = {
 	type = character_event
 	title = balian.women.5.t
 	desc = {
@@ -658,7 +674,7 @@ KOH_balian_women.5 = {
 			is_adult = yes
 			NOT = { has_character_flag = had_event_balian_women.5 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.5
@@ -669,7 +685,7 @@ KOH_balian_women.5 = {
 	#Call me Balian
 	option = {
 		name = balian.women.5.a
-		
+
 		reverse_add_opinion = {
 			target = character:215560
 			modifier = romantic_gesture_opinion
@@ -686,7 +702,7 @@ KOH_balian_women.5 = {
 	#I cannot be so bold
 	option = {
 		name = balian.women.5.b
-		
+
 		trigger_event = {
 			id = KOH_balian_women.7
 				days = 10
@@ -696,7 +712,7 @@ KOH_balian_women.5 = {
 
 #Call me Balian
 
-KOH_balian_women.6 = { 
+KOH_balian_women.6 = {
 	type = character_event
 	title = balian.women.6.t
 	desc = {
@@ -718,7 +734,7 @@ KOH_balian_women.6 = {
 			is_adult = yes
 			NOT = { has_character_flag = had_event_balian_women.6 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.6
@@ -728,7 +744,7 @@ KOH_balian_women.6 = {
 	#Call me Maria
 	option = {
 		name = balian.women.6.a
-		
+
 		hidden_effect = {
 			trigger_event = {
 						id = KOH_balian_women.7
@@ -740,7 +756,7 @@ KOH_balian_women.6 = {
 
 #Maria's problem
 
-KOH_balian_women.7 = { 
+KOH_balian_women.7 = {
 	type = character_event
 	title = balian.women.7.t
 	desc = {
@@ -762,7 +778,7 @@ KOH_balian_women.7 = {
 			is_adult = yes
 			NOT = { has_character_flag = had_event_balian_women.7 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.7
@@ -773,7 +789,7 @@ KOH_balian_women.7 = {
 	option = {
 		name = balian.women.7.a
 		custom_tooltip = balian.women.7.a.tt
-		
+
 		hidden_effect = {
 			trigger_event = {
 						id = KOH_balian_women.8
@@ -784,7 +800,7 @@ KOH_balian_women.7 = {
 }
 
 #Sibylla returns
-KOH_balian_women.8 = { 
+KOH_balian_women.8 = {
 	type = character_event
 	title = balian.women.8.t
 	desc = {
@@ -805,7 +821,7 @@ KOH_balian_women.8 = {
 			character:223522 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_balian_women.8 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.8
@@ -817,7 +833,7 @@ KOH_balian_women.8 = {
 	option = {
 		name = balian.women.8.a
 		custom_tooltip = balian.women.8.a.tt
-		
+
 		reverse_add_opinion = {
 			target = character:223522
 			modifier = romance_opinion
@@ -838,7 +854,7 @@ KOH_balian_women.8 = {
 	option = {
 		name = balian.women.8.b
 		custom_tooltip = balian.women.8.b.tt
-		
+
 		reverse_add_opinion = {
 			target = character:223522
 			modifier = rejected_opinion
@@ -853,7 +869,7 @@ KOH_balian_women.8 = {
 
 #Balian and Sibylla together
 
-KOH_balian_women.9 = { 
+KOH_balian_women.9 = {
 	type = character_event
 	title = balian.women.9.t
 	desc = {
@@ -883,7 +899,7 @@ KOH_balian_women.9 = {
 			character:223522 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_balian_women.9 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.9
@@ -895,7 +911,7 @@ KOH_balian_women.9 = {
 	option = {
 		name = balian.women.9.a
 		custom_tooltip = balian.women.9.a.tt
-		
+
 		hidden_effect = {
 			trigger_event = {
 						id = KOH_balian_women.10
@@ -906,7 +922,7 @@ KOH_balian_women.9 = {
 }
 
 #Balian has caught feelings
-KOH_balian_women.10 = { 
+KOH_balian_women.10 = {
 	type = character_event
 	title = balian.women.10.t
 	desc = {
@@ -927,7 +943,7 @@ KOH_balian_women.10 = {
 			character:223522 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_balian_women.10 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.10
@@ -939,7 +955,7 @@ KOH_balian_women.10 = {
 	option = {
 		name = balian.women.10.a
 		custom_tooltip = balian.women.10.a.tt
-		
+
 		hidden_effect = {
 			trigger_event = {
 						id = KOH_balian_women.11
@@ -952,7 +968,7 @@ KOH_balian_women.10 = {
 	option = {
 		name = balian.women.10.b
 		custom_tooltip = balian.women.10.b.tt
-		
+
 		trigger_event = {
 			id = KOH_balian_women.12
 				days = 5
@@ -962,7 +978,7 @@ KOH_balian_women.10 = {
 
 #Balian and Maria together
 
-KOH_balian_women.11 = { 
+KOH_balian_women.11 = {
 	type = character_event
 	title = balian.women.11.t
 	desc = {
@@ -985,7 +1001,7 @@ KOH_balian_women.11 = {
 			is_adult = yes
 			NOT = { has_character_flag = had_event_balian_women.11 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.11
@@ -1014,7 +1030,7 @@ KOH_balian_women.11 = {
 }
 
 #The Offer v. 1
-KOH_balian_women.12 = { 
+KOH_balian_women.12 = {
 	type = character_event
 	title = balian.women.12.t
 	desc = {
@@ -1041,7 +1057,7 @@ KOH_balian_women.12 = {
 			NOT = { has_character_flag = had_event_balian_women.12 }
 			NOT = { has_character_flag = had_event_balian_women.13}
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.12
@@ -1053,7 +1069,7 @@ KOH_balian_women.12 = {
 	option = {
 		name = balian.women.12.a
 		custom_tooltip = balian.women.12.a.tt
-		
+
 		reverse_add_opinion = {
 			target = character:223523
 			modifier = angry_opinion
@@ -1083,7 +1099,7 @@ KOH_balian_women.12 = {
 	option = {
 		name = balian.women.12.b
 		custom_tooltip = balian.women.12.b.tt
-		
+
 		add_stress = medium_stress_gain
 
 		reverse_add_opinion = {
@@ -1121,7 +1137,7 @@ KOH_balian_women.12 = {
 
 #The Offer v 2
 
-KOH_balian_women.13 = { 
+KOH_balian_women.13 = {
 	type = character_event
 	title = balian.women.13.t
 	desc = {
@@ -1147,7 +1163,7 @@ KOH_balian_women.13 = {
 			NOT = { has_character_flag = had_event_balian_women.12 }
 			NOT = { has_character_flag = had_event_balian_women.13}
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.13
@@ -1159,7 +1175,7 @@ KOH_balian_women.13 = {
 	option = {
 		name = balian.women.13.a
 		custom_tooltip = balian.women.13.a.tt
-		
+
 		hidden_effect = {
 			trigger_event = {
 						id = KOH_balian_women.14
@@ -1172,7 +1188,7 @@ KOH_balian_women.13 = {
 	option = {
 		name = balian.women.13.b
 		custom_tooltip = balian.women.13.b.tt
-		
+
 		trigger_event = {
 			id = KOH_balian_women.15
 				days = 1
@@ -1181,7 +1197,7 @@ KOH_balian_women.13 = {
 }
 
 #the counteroffer
-KOH_balian_women.14 = { 
+KOH_balian_women.14 = {
 	type = character_event
 	title = balian.women.14.t
 	desc = {
@@ -1205,7 +1221,7 @@ KOH_balian_women.14 = {
 			character:223522 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_balian_women.14 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.14
@@ -1217,7 +1233,7 @@ KOH_balian_women.14 = {
 	option = {
 		name = balian.women.14.a
 		custom_tooltip = balian.women.14.a.tt
-		
+
 		reverse_add_opinion = {
 			target = character:223523
 			modifier = respect_opinion
@@ -1241,7 +1257,7 @@ KOH_balian_women.14 = {
 	option = {
 		name = balian.women.14.b
 		custom_tooltip = balian.women.14.b.tt
-		
+
 		add_stress = medium_stress_gain
 		reverse_add_opinion = {
 			target = character:223523
@@ -1284,7 +1300,7 @@ KOH_balian_women.14 = {
 }
 
 #marry maria
-KOH_balian_women.15 = { 
+KOH_balian_women.15 = {
 	type = character_event
 	title = balian.women.15.t
 	desc = {
@@ -1309,7 +1325,7 @@ KOH_balian_women.15 = {
 			character:223522 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_balian_women.15 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.15
@@ -1318,7 +1334,7 @@ KOH_balian_women.15 = {
 
 	option = {
 		name = balian.women.15.a
-		
+
 		character:215560 = {
 			remove_trait = unwed
 		}
@@ -1337,7 +1353,7 @@ KOH_balian_women.15 = {
 
 #a wife at ibelin
 
-KOH_balian_women.16 = { 
+KOH_balian_women.16 = {
 	type = character_event
 	title = balian.women.16.t
 	desc = {
@@ -1361,7 +1377,7 @@ KOH_balian_women.16 = {
 			character:223570 = { is_ai = no }
 			NOT = { has_character_flag = had_event_balian_women.16 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.16
@@ -1372,7 +1388,7 @@ KOH_balian_women.16 = {
 	option = {
 		name = balian.women.16.a
 		custom_tooltip = balian.women.16.a.tt
-		
+
 		add_stress = minor_stress_loss
 		reverse_add_opinion = {
 			target = character:223522
@@ -1393,7 +1409,7 @@ KOH_balian_women.16 = {
 			}
 		}
 	}
-	
+
 	#no, potential to continue chain in future
 	option = {
 		name = balian.women.16.b
@@ -1409,7 +1425,7 @@ KOH_balian_women.16 = {
 	}
 }
 
-KOH_balian_women.17 = { 
+KOH_balian_women.17 = {
 	type = character_event
 	title = balian.women.16.t
 	desc = {
@@ -1433,7 +1449,7 @@ KOH_balian_women.17 = {
 			character:223570 = { is_ai = no }
 			NOT = { has_character_flag = had_event_balian_women.17 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.17
@@ -1444,7 +1460,7 @@ KOH_balian_women.17 = {
 	option = {
 		name = balian.women.16.a
 		custom_tooltip = balian.women.16.a.tt
-		
+
 		add_stress = minor_stress_loss
 		reverse_add_opinion = {
 			target = character:215560
@@ -1482,7 +1498,7 @@ KOH_balian_women.17 = {
 
 #Sibylla meets Balian
 
-KOH_balian_women.18 = { 
+KOH_balian_women.18 = {
 	type = character_event
 	title = balian.women.18.t
 	desc = {
@@ -1506,19 +1522,19 @@ KOH_balian_women.18 = {
 			character:223570 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_balian_women.18 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.18
 		}
 	}
-	
+
 	#Balian gives her water
-	
+
 	option = {
 		name = balian.women.18.a
 		custom_tooltip = balian.women.18.a.tt
-		
+
 		reverse_add_opinion = {
 			target = character:223570
 			modifier = respect_opinion
@@ -1535,7 +1551,7 @@ KOH_balian_women.18 = {
 
 #Sibylla starts a romance
 
-KOH_balian_women.19 = { 
+KOH_balian_women.19 = {
 	type = character_event
 	title = balian.women.19.t
 	desc = {
@@ -1556,7 +1572,7 @@ KOH_balian_women.19 = {
 			character:223522 = { is_ai = no }
 			NOT = { has_character_flag = had_event_balian_women.19 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.19
@@ -1568,7 +1584,7 @@ KOH_balian_women.19 = {
 	option = {
 		name = balian.women.19.a
 		custom_tooltip = balian.women.19.a.tt
-		
+
 		reverse_add_opinion = {
 			target = character:223522
 			modifier = romance_opinion
@@ -1587,7 +1603,7 @@ KOH_balian_women.19 = {
 }
 
 #Balian and Sibylla in bed
-KOH_balian_women.20 = { 
+KOH_balian_women.20 = {
 	type = character_event
 	title = balian.women.20.t
 	desc = {
@@ -1599,7 +1615,7 @@ KOH_balian_women.20 = {
 	}
 	left_portrait = {
 		character = root
-		animation = love		
+		animation = love
 		triggered_outfit = {
 			outfit_tags = { no_clothes }
 		}
@@ -1617,7 +1633,7 @@ KOH_balian_women.20 = {
 			character:223522 = { is_ai = no }
 			NOT = { has_character_flag = had_event_balian_women.20 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.20
@@ -1628,7 +1644,7 @@ KOH_balian_women.20 = {
 	#give him your ring
 	option = {
 		name = balian.women.20.a
-		
+
 		hidden_effect = {
 			trigger_event = {
 				id = KOH_balian_women.21
@@ -1640,7 +1656,7 @@ KOH_balian_women.20 = {
 
 #Sibylla suspects Maria
 
-KOH_balian_women.21 = { 
+KOH_balian_women.21 = {
 	type = character_event
 	title = balian.women.21.t
 	desc = {
@@ -1652,7 +1668,7 @@ KOH_balian_women.21 = {
 	}
 	left_portrait = {
 		character = character:223570
-		animation = flirtation		
+		animation = flirtation
 	}
 	right_portrait = {
 		character = character:215560
@@ -1664,7 +1680,7 @@ KOH_balian_women.21 = {
 			character:223522 = { is_ai = no }
 			NOT = { has_character_flag = had_event_balian_women.21 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.21
@@ -1675,7 +1691,7 @@ KOH_balian_women.21 = {
 	#call them out, lose romance
 	option = {
 		name = balian.women.21.a
-		
+
 		add_stress = medium_stress_gain
 
 		hidden_effect = {
@@ -1685,11 +1701,11 @@ KOH_balian_women.21 = {
 			}
 		}
 	}
-	
+
 	#keep silent, keep romance, move to guy's offer
 	option = {
 		name = balian.women.21.b
-				
+
 		add_stress = minor_stress_gain
 		hidden_effect = {
 			trigger_event = {
@@ -1701,7 +1717,7 @@ KOH_balian_women.21 = {
 }
 
 #Sibylla betrayed
-KOH_balian_women.22 = { 
+KOH_balian_women.22 = {
 	type = character_event
 	title = balian.women.22.t
 	desc = {
@@ -1713,7 +1729,7 @@ KOH_balian_women.22 = {
 	}
 	left_portrait = {
 		character = character:223570
-		animation = shock	
+		animation = shock
 	}
 	right_portrait = {
 		character = character:215560
@@ -1725,7 +1741,7 @@ KOH_balian_women.22 = {
 			character:223522 = { is_ai = no }
 			NOT = { has_character_flag = had_event_balian_women.22 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.22
@@ -1735,7 +1751,7 @@ KOH_balian_women.22 = {
 
 	option = {
 		name = balian.women.22.a
-		
+
 		character:223570 = {
 			remove_relation_lover = character:223522
 		}
@@ -1745,7 +1761,7 @@ KOH_balian_women.22 = {
 		character:223522 = {
 			set_relation_rival = character:215560
 		}
-		
+
 		hidden_effect = {
 			trigger_event = {
 				id = KOH_balian_women.23
@@ -1756,7 +1772,7 @@ KOH_balian_women.22 = {
 }
 
 #Guy's Bargain
-KOH_balian_women.23 = { 
+KOH_balian_women.23 = {
 	type = character_event
 	title = balian.women.23.t
 	desc = {
@@ -1779,7 +1795,7 @@ KOH_balian_women.23 = {
 			character:223522 = { is_ai = no }
 			NOT = { has_character_flag = had_event_balian_women.23 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.23
@@ -1789,7 +1805,7 @@ KOH_balian_women.23 = {
 
 	option = {
 		name = balian.women.23.a
-		
+
 		hidden_effect = {
 			trigger_event = {
 				id = KOH_balian_women.24
@@ -1801,7 +1817,7 @@ KOH_balian_women.23 = {
 
 
 #Balian and Maria wed
-KOH_balian_women.24 = { 
+KOH_balian_women.24 = {
 	type = character_event
 	title = balian.women.24.t
 	desc = {
@@ -1821,7 +1837,7 @@ KOH_balian_women.24 = {
 			character:223522 = { is_ai = no }
 			NOT = { has_character_flag = had_event_balian_women.24 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.24
@@ -1831,9 +1847,9 @@ KOH_balian_women.24 = {
 
 	option = {
 		name = balian.women.24.a
-		
+
 		add_stress = medium_stress_gain
-		
+
 		character:215560 = {
 			remove_trait = unwed
 		}
@@ -1847,13 +1863,13 @@ KOH_balian_women.24 = {
 					father = character:223570
 				}
 			}
-		}		
+		}
 
 	}
 }
 
 #Balian and Maria wed AI style
-KOH_balian_women.25 = { 
+KOH_balian_women.25 = {
 	type = character_event
 	title = balian.women.25.t
 	desc = {
@@ -1865,7 +1881,7 @@ KOH_balian_women.25 = {
 	}
 	left_portrait = {
 		character = character:223570
-		animation = flirtation		
+		animation = flirtation
 	}
 	right_portrait = {
 		character = character:215560
@@ -1877,7 +1893,7 @@ KOH_balian_women.25 = {
 			character:223522 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_balian_women.25 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balian_women.25
@@ -1887,13 +1903,13 @@ KOH_balian_women.25 = {
 
 	option = {
 		name = balian.women.25.a
-			
+
 		add_opinion = {
 			target = character:215560
 			modifier = romance_opinion
 			opinion = 30
 		}
-		
+
 		reverse_add_opinion = {
 			target = character:215560
 			modifier = romance_opinion
@@ -1903,14 +1919,14 @@ KOH_balian_women.25 = {
 		character:223570 = {
 			set_relation_lover = character:215560
 		}
-		
+
 		character:215560 = {
 			remove_trait = unwed
 		}
 		character:223570 = {
 			remove_trait = unwed
 			marry = character:215560
-		}	
+		}
 		hidden_effect = {
 			character:215560 = {
 				make_pregnant = {
@@ -1925,14 +1941,14 @@ KOH_balian_women.25 = {
 
 namespace = KOH_georgian_wedding
 
-KOH_georgian_wedding.1 = { 
+KOH_georgian_wedding.1 = {
 	type = character_event
 	title = georgian.wedding.t
 	desc = {
 		desc = georgian.weddding.desc
 	}
 	theme = marriage
-	left_portrait = {	
+	left_portrait = {
 		character = character:466517 #Tamar
 		animation = rage
 		}
@@ -1945,7 +1961,7 @@ KOH_georgian_wedding.1 = {
 			NOT = { has_character_flag = had_event_georgian_wedding.1 }
 			is_ai = no
 		}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_georgian_wedding.1
@@ -2049,16 +2065,16 @@ KOH_georgian_wedding.1 = {
 }
 
 #Divorce Yuri with Cause
-KOH_georgian_wedding.2 = { 
+KOH_georgian_wedding.2 = {
 	type = character_event
 	title = georgian.wedding.2.t
 	desc = {
 		desc = georgian.weddding.2.desc
 	}
 	theme = marriage
-	left_portrait = {	
+	left_portrait = {
 		character = character:466517 #Tamar
-		animation = dismissal		
+		animation = dismissal
 		}
 	right_portrait = {
 		character = character:222828 #Yuriy
@@ -2069,16 +2085,16 @@ KOH_georgian_wedding.2 = {
 			NOT = { has_character_flag = had_event_georgian_wedding.2 }
 			is_ai = no
 		}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_georgian_wedding.2
 		}
 	}
-	
+
 	option = {
 		name = georgian.wedding.2.a
-		
+
 		character:466517 = {
 			divorce = character:222828
 		}
@@ -2095,14 +2111,14 @@ KOH_georgian_wedding.2 = {
 }
 
 #Divorce Yuri without Cause
-KOH_georgian_wedding.3 = { 
+KOH_georgian_wedding.3 = {
 	type = character_event
 	title = georgian.wedding.3.t
 	desc = {
 		desc = georgian.weddding.3.desc
 	}
 	theme = marriage
-	left_portrait = {	
+	left_portrait = {
 		character = character:466517 #Tamar
 		animation = dismissal
 		}
@@ -2115,16 +2131,16 @@ KOH_georgian_wedding.3 = {
 			NOT = { has_character_flag = had_event_georgian_wedding.3 }
 			is_ai = no
 		}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_georgian_wedding.3
 		}
 	}
-	
+
 	option = {
 		name = georgian.wedding.3.a
-		
+
 		character:466517 = {
 			divorce = character:222828
 		}
@@ -2141,7 +2157,7 @@ KOH_georgian_wedding.3 = {
 }
 
 #Enter Soslan
-KOH_georgian_wedding.4 = { 
+KOH_georgian_wedding.4 = {
 	type = character_event
 	title = georgian.wedding.4.t
 	desc = {
@@ -2151,7 +2167,7 @@ KOH_georgian_wedding.4 = {
 	override_background = {
 		event_background = garden
 	}
-	left_portrait = {	
+	left_portrait = {
 		character = character:466517 #Tamar
 		animation = personality_rational
 		}
@@ -2164,13 +2180,13 @@ KOH_georgian_wedding.4 = {
 			NOT = { has_character_flag = had_event_georgian_wedding.4 }
 			is_ai = no
 		}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_georgian_wedding.4
 		}
 	}
-	
+
 	#Woo him with a present
 	option = {
 		name = georgian.wedding.4.a
@@ -2213,7 +2229,7 @@ KOH_georgian_wedding.4 = {
 }
 
 #Marry Solsan
-KOH_georgian_wedding.5 = { 
+KOH_georgian_wedding.5 = {
 	type = character_event
 	title = georgian.wedding.5.t
 	desc = {
@@ -2223,7 +2239,7 @@ KOH_georgian_wedding.5 = {
 	override_background = {
 		event_background = garden
 	}
-	left_portrait = {	
+	left_portrait = {
 		character = character:466517 #Tamar
 		animation = personality_compassionate
 		}
@@ -2236,7 +2252,7 @@ KOH_georgian_wedding.5 = {
 			NOT = { has_character_flag = had_event_georgian_wedding.5 }
 			is_ai = no
 		}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_georgian_wedding.5
@@ -2272,16 +2288,16 @@ KOH_georgian_wedding.6 = {
 	title = georgian.weddding.6.t
 	desc = georgian.weddding.6.desc
 	theme = war
-	
+
 	left_portrait = {
 		character = root
 		animation = personality_bold
 		}
-	
+
 	trigger = {
 			NOT = { has_character_flag = had_event_georgian_wedding.6 }
 		}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_georgian_wedding.6
@@ -2296,7 +2312,7 @@ KOH_georgian_wedding.6 = {
 		name = georgian.wedding.6.a
 
 		character:222828 = {
-		
+
 			start_war = {
 				casus_belli = KOH_georgian_cb
 				target = character:466517
@@ -2322,7 +2338,7 @@ KOH_georgian_wedding.7 = {
 	title = georgian.weddding.7.t
 	desc = georgian.weddding.7.desc
 	theme = war
-	
+
 	left_portrait = {
 		character = root
 		animation = personality_callous
@@ -2334,7 +2350,7 @@ KOH_georgian_wedding.7 = {
 	trigger = {
 		NOT = { has_character_flag = had_event_georgian_wedding.7 }
 	}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_georgian_wedding.7
@@ -2346,11 +2362,11 @@ KOH_georgian_wedding.7 = {
                 }
             }
             save_scope_as = Failure
-		}	
+		}
 		every_ruler = {
             limit = {
                 any_held_title = {
-                    this = title:e_byzantium 
+                    this = title:e_byzantium
                 }
             }
             save_scope_as = ByzantineEmperor
@@ -2367,21 +2383,21 @@ KOH_georgian_wedding.7 = {
 			get_title = c_odishi
 		}
 	}
-	
+
 	#Banish Yuri
 	option = {
-		name = georgian.wedding.7.a	
-		
+		name = georgian.wedding.7.a
+
 		scope:Failure = {
 			set_employer = scope:ByzantineEmperor
 		}
 	}
-	
+
 	#End Yuri
 	option = {
 		name = georgian.wedding.7.b
-		
-	
+
+
 		scope:Failure = {
 			death = {
 				death_reason = death_execution
@@ -2392,7 +2408,7 @@ KOH_georgian_wedding.7 = {
 
 #Alania start
 
-KOH_georgian_wedding.8 = { 
+KOH_georgian_wedding.8 = {
 	type = character_event
 	title = georgian.wedding.8.t
 	desc = {
@@ -2402,7 +2418,7 @@ KOH_georgian_wedding.8 = {
 	override_background = {
 		event_background = garden
 	}
-	left_portrait = {	
+	left_portrait = {
 		character = character:466517 #Tamar
 		animation = personality_compassionate
 		}
@@ -2415,7 +2431,7 @@ KOH_georgian_wedding.8 = {
 			character:466517 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_georgian_wedding.8 }
 		}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_georgian_wedding.8
@@ -2445,7 +2461,7 @@ KOH_georgian_wedding.8 = {
 	}
 }
 
-#Hidden war with Yuri trigger 
+#Hidden war with Yuri trigger
 
 KOH_georgian_wedding.9 = {
 	type = character_event
@@ -2453,17 +2469,17 @@ KOH_georgian_wedding.9 = {
 	desc = georgian.weddding.6.desc
 	theme = war
 	hidden = yes
-	
+
 	left_portrait = {
 		character = root
 		animation = personality_bold
 		}
-	
+
 	trigger = {
 			character:466517 = { is_ai = yes }
 			NOT = { has_character_flag = had_event_georgian_wedding.9 }
 		}
-	
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_georgian_wedding.9
@@ -2478,7 +2494,7 @@ KOH_georgian_wedding.9 = {
 		name = georgian.wedding.6.a
 
 		character:222828 = {
-		
+
 			start_war = {
 				casus_belli = KOH_georgian_cb
 				target = character:466517

@@ -1,7 +1,7 @@
-# Philips War for Flander Dowry
+﻿# Philip's War for Flanders Dowry
 war = {
 	name = "war_1184_french_dowry"
-	start_date = 1183.3.28
+	start_date = 1181.1.1
 	end_date = 1185.1.1
 	targeted_titles={
 		d_flanders
@@ -9,12 +9,22 @@ war = {
 		c_valois
 		c_amiens
 	}
-	casus_belli = claim_cb
+	casus_belli = KOH_flemish_cb
 	attackers = { 205506 205520 KOH0143 }
 	defenders = { 212591 206850 }
 	claimant = 205506
 
 	205506 = {
+		1184.1.1 = {
+			location = 2352
+		}
+	}
+	205520 = {
+		1184.1.1 = {
+			location = 2117
+		}
+	}
+	KOH0143 = {
 		1184.1.1 = {
 			location = 2400
 		}
@@ -28,5 +38,5 @@ war = {
 		1184.1.1 = {
 			location = 2118
 		}
-	}	
+	}
 }
