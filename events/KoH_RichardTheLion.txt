@@ -4,73 +4,21 @@ KoH_RichardTheLionheart.1 = {
 	type = character_event
 	title = KoH_RichardTheLionheart.1.t
 	desc = KoH_RichardTheLionheart.1.d
-	theme = war
+	theme = mental_health
+	override_background = {
+		event_background = throne_room
+	}
+
 	
 	left_portrait = {
 		character = root
-		animation = personality_bold
+		animation = sad
 	}
 	
 	immediate = {
-		character:204500 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.2
-				days = 730
-			}
-		}
-		character:205730 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.2
-				days = 730
-			}
-		}
-		character:204510 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.2
-				days = 730
-			}
-		}
-		character:205512 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.2
-				days = 730
-			}
-		}
-		character:205504 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.2
-				days = 730
-			}
-		}
-		character:204516 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.2
-				days = 730
-			}
-		}
-		character:204509 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.2
-				days = 730
-			}
-		}
-		character:204513 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.2
-				days = 730
-			}
-		}
-		character:204514 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.2
-				days = 730
-			}
-		}
-		character:204517 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.2
-				days = 730
-			}
+		trigger_event = {
+			id = KoH_RichardTheLionheart.2
+			days = 730
 		}
 	}
 
@@ -91,150 +39,158 @@ KoH_RichardTheLionheart.1 = {
 			get_title = d_gascogne
 			get_title = d_auvergne
 		}
-
-		title:c_bourbon.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+		hidden_effect = {
+			title:c_bourbon.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
+			title:c_bordeaux.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_bordeaux.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+			title:c_limousin.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
+			title:c_labourd.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_limousin.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+			title:c_auvergne.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
+			title:c_angouleme.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_labourd.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+			title:c_perigord.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
+			title:c_agenais.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_auvergne.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+			title:c_bigorre.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
+			title:c_armagnac.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_angouleme.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+			title:c_montaigu.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
+			title:c_lusignan.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_perigord.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+			character:205740 = {
+				make_pregnant = {
+				father = character:204511
+				number_of_children = 1
+				gender = male
+				name = "Arthur"
 			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_agenais.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
-			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_bigorre.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
-			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_armagnac.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
-			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_montaigu.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
-			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_lusignan.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
-			}
-			
-			change_liege = {
-				liege = character:204510
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
 		}
 	}
 } 
@@ -244,11 +200,18 @@ KoH_RichardTheLionheart.2 = {
 	type = character_event
 	title = KoH_RichardTheLionheart.2.t
 	desc = KoH_RichardTheLionheart.2.d
-	theme = war
-	
+	theme = mental_health
+	override_background = {
+		event_background = bedchamber
+	}
+
 	left_portrait = {
-		character = character:204511
-		animation = personality_bold
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = character:205506
+		animation = grief
 	}
 
 	immediate = {
@@ -258,16 +221,23 @@ KoH_RichardTheLionheart.2 = {
 				days = 30 
 			}
 		}
+		character:204511 = {
+			death = {
+				death_reason = death_horse_riding_accident
+			}
+		}
 	}
 	option = {
 		name = KoH_RichardTheLionheart.2.a
 
 		character:204511 = {
 			death = {
-				death_reason = death_jousting_tournament
+				death_reason = death_horse_riding_accident
 			}
 		}
 		character:205740 = {
+			add_spouse = character:205930
+
 			create_title_and_vassal_change = {
 				type = swear_fealty #or whatever
 				save_scope_as = change
@@ -335,6 +305,20 @@ KoH_RichardTheLionheart.3 = {
 			target = character:204500 #Henry
 			modifier = pleased_opinion
 			opinion = 50
+		}
+
+		hidden_effect = {
+
+			character:204510 = {
+				trigger_event = {
+					id = KoH_RichardTheLionheart.4
+					days = 30 
+				}
+			}
+
+			character:204500 = {
+				set_designated_heir = character:204514
+			}
 		}
 	}
 
@@ -420,150 +404,151 @@ KoH_RichardTheLionheart.4 = {
 			get_title = d_gascogne
 			get_title = d_auvergne
 		}
-
-		title:c_bourbon.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+		hidden_effect = {
+			title:c_bourbon.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
+			title:c_bordeaux.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_bordeaux.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+			title:c_limousin.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
+			title:c_labourd.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_limousin.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+			title:c_auvergne.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
+			title:c_angouleme.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_labourd.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+			title:c_perigord.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
+			title:c_agenais.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_auvergne.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+			title:c_bigorre.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
+			title:c_armagnac.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_angouleme.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
+			title:c_montaigu.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
+			title:c_lusignan.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204514
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
 			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_perigord.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
-			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_agenais.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
-			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_bigorre.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
-			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_armagnac.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
-			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_montaigu.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
-			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
-		}
-		title:c_lusignan.holder = {
-			create_title_and_vassal_change = {
-				type = granted #or whatever
-				save_scope_as = change
-			}
-			
-			change_liege = {
-				liege = character:204514
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
 		}
 	}
 
@@ -575,13 +560,13 @@ KoH_RichardTheLionheart.4 = {
 		reverse_add_opinion = {
 			target = character:204500 #Henry
 			modifier = angry_opinion
-			opinion = -75
+			opinion = -50
 		}
 
 		reverse_add_opinion = {
 			target = character:204514 #John
 			modifier = angry_opinion
-			opinion = -75
+			opinion = -50
 		}
 
 		character:204510 = {
