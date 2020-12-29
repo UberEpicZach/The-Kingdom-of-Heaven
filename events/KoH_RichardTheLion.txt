@@ -14,8 +14,13 @@ KoH_RichardTheLionheart.1 = {
 		character = root
 		animation = sad
 	}
-	
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.1}
+	}
 	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.1
+		}
 		trigger_event = {
 			id = KoH_RichardTheLionheart.2
 			days = 730
@@ -29,8 +34,6 @@ KoH_RichardTheLionheart.1 = {
 		title:b_angers.title_province = {
 			add_building = curtain_walls_01
 		}
-		
-		remove_gold = -200
 
 		
 		character:204510 = {
@@ -184,13 +187,6 @@ KoH_RichardTheLionheart.1 = {
 				}
 				resolve_title_and_vassal_change = scope:change
 			}
-			character:205740 = {
-				make_pregnant = {
-				father = character:204511
-				number_of_children = 1
-				gender = male
-				name = "Arthur"
-			}
 		}
 	}
 } 
@@ -230,13 +226,27 @@ KoH_RichardTheLionheart.2 = {
 	option = {
 		name = KoH_RichardTheLionheart.2.a
 
-		character:204511 = {
-			death = {
-				death_reason = death_horse_riding_accident
-			}
+		create_character = {
+			name = "Arthur"
+			age = 0.1
+			gender = male
+			mother = character:205740
+			father = character:204511
+			dynasty = 106
+			faith = "catholic"
+			culture = "english"
+			trait = beauty_good_2
+			save_scope_as = arthur
+		}
+		character:205930 = {
+			remove_trait = unwed
+		}
+		scope:arthur = {
+			get_title = c_west_riding
+			get_title = c_nantes
 		}
 		character:205740 = {
-			add_spouse = character:205930
+			marry = character:205930
 
 			create_title_and_vassal_change = {
 				type = swear_fealty #or whatever
@@ -248,7 +258,7 @@ KoH_RichardTheLionheart.2 = {
 				change = scope:change
 			}
 			resolve_title_and_vassal_change = scope:change
-			}
+		}
 	}
 }
 

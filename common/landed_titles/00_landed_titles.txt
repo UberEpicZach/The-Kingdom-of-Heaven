@@ -1432,7 +1432,7 @@ e_britannia = {
 				}
 			}
 			
-			c_north_riding = {
+			c_north_riding = { #YORK
 				color = { 255 95 20 }
 				color2 = { 255 255 255 }
 					
@@ -1477,22 +1477,13 @@ e_britannia = {
 					color = { 255 95 20 }
 					color2 = { 255 255 255 }
 				}
-				b_richmond = {
-					province = 1598
 
-					color = { 255 95 20 }
-					color2 = { 255 255 255 }
-				}
 				b_yarlestre = {
 					province = 1500
 
 					color = { 255 95 20 }
 					color2 = { 255 255 255 }
 				}
-			}
-			c_east_riding = {
-				color = { 255 139 15 }
-				color2 = { 255 255 255 }
 
 				b_pockington = {
 					cultural_names = {
@@ -1516,7 +1507,8 @@ e_britannia = {
 					color2 = { 255 255 255 }
 				}
 			}
-			c_west_riding = {
+
+			c_west_riding = { #RICHMOND
 				color = { 255 120 35 }
 				color2 = { 255 255 255 }
 				cultural_names = {
@@ -1526,7 +1518,12 @@ e_britannia = {
 					breton = cn_elmet
 					pictish = cn_elmet
 				}
+				b_richmond = {
+					province = 1598
 
+					color = { 255 95 20 }
+					color2 = { 255 255 255 }
+				}
 				b_leeds = {
 					cultural_names = {
 						welsh = cn_ladenses
