@@ -4659,7 +4659,7 @@
 ## Start of Rapotonen
 212388 = {
 	name = "Konrad" #1137-1143
-	dynasty = 7220
+	dynasty_house = house_raabs
 	martial = 7
 	diplomacy = 7
 	intrigue = 5
@@ -4678,7 +4678,7 @@
 
 212390 = {
 	name = "Konrad" #Nurnberg 1160-1192
-	dynasty = 7220
+	dynasty_house = house_raabs
 	martial = 6
 	diplomacy = 8
 	intrigue = 5
@@ -4722,7 +4722,7 @@
 212392 = {
 	name = "Sofie"
 	female = yes
-	dynasty = 7220
+	dynasty_house = house_raabs
 	martial = 7
 	diplomacy = 8
 	intrigue = 5
@@ -5171,7 +5171,7 @@
 
 33296 = {
 	name = "Gottfried"
-	dynasty = 7220 #Rapotonen
+	dynasty_house = house_raabs #Rapotonen
 	religion = "catholic"
 	culture = bavarian
 	father = 33295
@@ -5185,7 +5185,7 @@
 
 33297 = {
 	name = "Gottfried" #Nurnberg 1105-1137
-	dynasty = 7220 #Rapotonen
+	dynasty_house = house_raabs #Rapotonen
 	religion = "catholic"
 	culture = bavarian
 	father = 33296
@@ -5199,7 +5199,7 @@
 
 33298 = {
 	name = "Gottfried" #Nurnberg 1143-1160
-	dynasty = 7220 #Rapotonen
+	dynasty_house = house_raabs #Rapotonen
 	religion = "catholic"
 	culture = bavarian
 	father = 33297
@@ -5213,7 +5213,7 @@
 
 33310 = {
 	name = "Gebhard" #Regensburg 1089-1105
-	dynasty = 7220 #Rapotonen
+	dynasty_house = house_raabs #Rapotonen
 	religion = "catholic"
 	culture = bavarian
 	father = 33296
@@ -5896,6 +5896,9 @@
 	}
 	1135.1.2 = {
 		add_spouse = 212931
+	}
+	1157.1.1 = {
+		capital = c_worms
 	}
 	1175.1.15 = {
 		add_spouse = 201519
@@ -10615,12 +10618,27 @@ KOH_BAVARIAN041 = {
 		death = yes
 	}
 }
+
+KOH_BAVARIAN142 = {
+	name = "Ludovicus"
+	religion = "catholic"
+	culture = "bavarian"
+	dynasty = KOH_D_011
+
+	1100.1.1 = {
+		birth = yes
+	}
+	1160.1.1 = {
+		death = yes
+	}
+}
+
 KOH_BAVARIAN042 = {
 	name = "Hatwig"
 	religion = "catholic"
 	culture = "bavarian"
 	dynasty = KOH_D_011
-	father = KOH_BAVARIAN041
+	father = KOH_BAVARIAN142
 	1144.1.1 = {
 		birth = yes
 	}
@@ -10707,7 +10725,7 @@ KOH_BAVARIAN048 = {
 	religion = "catholic"
 	culture = "bavarian"
 	dynasty = KOH_D_013
-	father = KOH_BAVARIAN046
+	father = KOH_BAVARIAN047
 
 	1130.1.1 = {
 		birth = yes
@@ -10722,7 +10740,7 @@ KOH_BAVARIAN049 = {
 	religion = "catholic"
 	culture = "bavarian"
 	dynasty = KOH_D_013
-	father = KOH_BAVARIAN046
+	father = KOH_BAVARIAN047
 	
 	1150.1.1 = {
 		birth = yes
@@ -11056,13 +11074,3 @@ KOH_BAVARIAN070 = {
 		death = yes
 	}
 }
-
-
-
-
-
-
-
-
-
-
