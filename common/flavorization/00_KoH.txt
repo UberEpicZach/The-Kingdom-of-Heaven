@@ -8,6 +8,281 @@
     top_liege = no
 }
 
+duke_male_thuringia = {
+ type = character
+    gender = male
+    special = holder
+    tier = duchy
+    priority = 120
+    titles = { d_thuringia d_hesse }
+    top_liege = no
+}
+
+duke_female_thuringia = {
+ type = character
+    gender = female
+    special = holder
+    tier = duchy
+    priority = 120
+    titles = { d_thuringia d_hesse }
+    top_liege = no
+}
+
+duchy_thuringia = {
+    type = title
+    tier = duchy
+    titles = { d_thuringia d_hesse } 
+    priority = 120
+    top_liege = no
+}
+
+duke_male_comital = {
+ type = character
+    gender = male
+    special = holder
+    tier = duchy
+    priority = 120
+    titles = { d_holland d_luxembourg d_flanders d_toulouse d_provence d_languedoc d_savoy d_barcelona }
+    top_liege = no
+}
+
+duke_female_comital = {
+ type = character
+    gender = female
+    special = holder
+    tier = duchy
+    priority = 120
+    titles = { d_holland d_luxembourg d_flanders d_toulouse d_provence d_languedoc d_savoie d_barcelona }
+    top_liege = no
+}
+
+duchy_comital = {
+    type = title
+    tier = duchy
+    titles = { d_holland d_luxembourg d_flanders d_toulouse d_provence d_languedoc d_savoy d_barcelona } 
+    priority = 120
+    top_liege = no
+}
+
+duke_male_palatine = {
+ type = character
+    gender = male
+    special = holder
+    tier = duchy
+    priority = 120
+    titles = { d_upper_burgundy d_west_franconia }
+    top_liege = no
+}
+
+duke_female_palatine = {
+ type = character
+    gender = female
+    special = holder
+    tier = duchy
+    priority = 120
+    titles = { d_upper_burgundy d_west_franconia }
+    top_liege = no
+}
+
+duchy_palatine = {
+    type = title
+    tier = duchy
+    titles = { d_upper_burgundy d_west_franconia } 
+    priority = 120
+    top_liege = no
+}
+
+count_male_palatine = {
+ type = character
+    gender = male
+    special = holder
+    tier = county
+    priority = 80
+    titles = { c_tubingen }
+    top_liege = no
+}
+
+count_female_palatine = {
+ type = character
+    gender = female
+    special = holder
+    tier = county
+    priority = 80
+    titles = { c_tubingen }
+    top_liege = no
+}
+count_palatine = {
+    type = title
+    tier = county
+    titles = { c_tubingen } 
+    priority = 80
+    top_liege = no
+}
+
+count_male_viscount = {
+ type = character
+    gender = male
+    special = holder
+    tier = county
+    priority = 18
+    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau }
+    top_liege = no
+}
+
+count_female_viscount = {
+ type = character
+    gender = female
+    special = holder
+    tier = count
+    priority = 18
+    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau }
+    top_liege = no
+}
+county_viscounty = {
+    type = title
+    tier = county
+    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau } 
+    priority = 18
+    top_liege = no
+}
+
+
+count_male_sire = {
+ type = character
+    gender = male
+    special = holder
+    tier = county
+    priority = 18
+    titles = { c_bourbon }
+    top_liege = no
+}
+
+count_female_sire = {
+ type = character
+    gender = female
+    special = holder
+    tier = county
+    priority = 18
+    titles = { c_bourbon }
+    top_liege = no
+}
+county_siredom = {
+    type = title
+    tier = county
+    titles = { c_bourbon } 
+    priority = 18
+    top_liege = no
+}
+
+count_male_burgrave = {
+ type = character
+    gender = male
+    special = holder
+    tier = county
+    priority = 80
+    titles = { c_nurnberg }
+    top_liege = no
+}
+
+count_female_burgrave = {
+ type = character
+    gender = female
+    special = holder
+    tier = county
+    priority = 80
+    titles = { c_nurnberg }
+    top_liege = no
+}
+county_burgraviate = {
+    type = title
+    tier = county
+    titles = { c_nurnberg } 
+    priority = 80
+    top_liege = no
+}
+
+duke_male_margrave = {
+ type = character
+    gender = male
+    special = holder
+    tier = duchy
+    priority = 120
+    titles = { d_lausitz d_meissen d_nordgau d_ostmark d_osterreich d_steyermark d_istria d_baden }
+    top_liege = no
+}
+
+duke_female_margrave = {
+ type = character
+    gender = female
+    special = holder
+    tier = duchy
+    priority = 120
+    titles = { d_lausitz d_meissen d_nordgau d_ostmark d_osterreich d_steyermark d_istria d_frisia }
+    top_liege = no
+}
+
+duchy_margraviate = {
+    type = title
+    tier = duchy
+    titles = { d_lausitz d_meissen d_nordgau d_ostmark d_osterreich d_steyermark d_istria d_frisia } 
+    priority = 120
+    top_liege = no
+}
+
+ count_male_margrave = {
+ type = character
+    gender = male
+    special = holder
+    tier = county
+    priority = 18
+    titles = { c_baden }
+    top_liege = no
+}
+count_female_margrave = {
+ type = character
+    gender = female
+    special = holder
+    tier = county
+    priority = 18
+    titles = { c_baden }
+    top_liege = no
+}
+county_margraviate = {
+    type = title
+    tier = county
+    titles = { c_baden } 
+    priority = 18
+    top_liege = no
+}
+
+duke_male_prince = {
+ type = character
+    gender = male
+    special = holder
+    tier = duchy
+    priority = 120
+    titles = { d_anhalt }
+    top_liege = no
+}
+
+duke_female_prince = {
+ type = character
+    gender = female
+    special = holder
+    tier = duchy
+    priority = 120
+    titles = { d_anhalt }
+    top_liege = no
+}
+
+duchy_principality = {
+    type = title
+    tier = duchy
+    titles = { d_anhalt } 
+    priority = 120
+    top_liege = no
+}
+
 baron_female_ibelin = {
     type = character
     gender = female
