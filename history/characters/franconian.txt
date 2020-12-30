@@ -7009,6 +7009,7 @@
 	trait = temperate
 	trait = education_intrigue_1
 	father = 40708
+	mother = 30225
 	1115.1.1 = {
 		birth = "1115.1.1"
 	}
@@ -7018,7 +7019,7 @@
 }
 
 40707 = {
-	name = "Hermann"
+	name = "Hermann" #King of Germany in Opposition
 	dynasty = 420
 	martial = 7
 	diplomacy = 5
@@ -7053,6 +7054,9 @@
 	mother = 33411
 	1080.1.1 = {
 		birth = "1080.1.1"
+	}
+	1114.1.1 = {
+		add_spouse = 30225
 	}
 	1150.1.1 = {
 		death = "1150.1.1"
@@ -15983,6 +15987,7 @@
 	culture = franconian
 	trait = honest
 	trait = education_intrigue_2
+	father = KOH0220
 	1129.1.2 = {
 		birth = "1129.1.2"
 	}
@@ -19987,5 +19992,185 @@ KOH_FRANCONIAN019 = {
 	}
 	1260.1.1 = {
 		death = yes
+	}
+}
+
+KOH0215 = {
+	name = "Hermann"
+	dynasty = 420
+	religion = "catholic"
+	culture = franconian
+	father = 40707
+	mother = 33411
+	1076.1.1 = {
+		birth = "1076.1.1"
+	}
+	1135.1.1 = {
+		death = "1135.1.1"
+	}
+}
+KOH0216 = {
+	name = "Hermann"
+	dynasty = 420
+	religion = "catholic"
+	culture = franconian
+	father = KOH0215
+	1100.1.1 = {
+		birth = "1110.1.1"
+	}
+	1150.1.1 = {
+		death = "1150.1.1"
+	}
+}
+
+KOH0217 = {
+	name = "Heinrich"
+	dynasty = 420
+	religion = "catholic"
+	culture = franconian
+	father = KOH0215
+	1105.1.1 = {
+		birth = "1105.1.1"
+	}
+	1154.1.1 = {
+		death = "1154.1.1"
+	}
+}
+
+KOH0218 = {
+	name = "Elisabeth"
+	female = yes
+	dynasty = 420
+	religion = "catholic"
+	culture = franconian
+	father = KOH0217
+	1154.1.1 = {
+		birth = "1154.1.1"
+	}
+	1201.1.1 = {
+		death = "1201.1.1"
+	}
+}
+
+KOH0219 = {
+	name = "Heinrich"
+	dynasty = 420
+	religion = "catholic"
+	culture = franconian
+	father = KOH0217
+	1156.1.1 = {
+		birth = "1156.1.1"
+	}
+	1176.1.1 = {
+		add_spouse = KOH0224
+	}
+	1200.1.1 = {
+		death = "1200.1.1"
+	}
+}
+
+KOH0220 = {
+	name = "Friedrich"
+	dynasty = 283
+	religion = "catholic"
+	culture = franconian
+	1100.1.1 = {
+		birth = "yes"
+	}
+	1156.10.1 = {
+		death = "yes"
+	}
+}
+
+KOH0221 = {
+	name = "Friedrich"
+	dynasty = 283
+	religion = "catholic"
+	culture = franconian
+	father = KOH0220
+	1125.1.1 = {
+		birth = "yes"
+	}
+	1172.1.1 = {
+		add_spouse = KOH0218
+	}
+	1190.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0222 = {
+	name = "Friedrich"
+	dynasty = 283
+	religion = "catholic"
+	culture = franconian
+	father = KOH0221
+	mother = KOH0218
+	1174.1.1 = {
+		birth = "yes"
+	}
+	1223.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0223 = {
+	name = "Wilhelm"
+	dynasty = 283
+	religion = "catholic"
+	culture = franconian
+	father = KOH0221
+	mother = KOH0218
+	1176.1.1 = {
+		birth = "yes"
+	}
+	1224.9.5 = {
+		death = "yes"
+	}
+}
+
+KOH0224 = {
+	name = "Jutta"
+	female = yes
+	religion = "catholic"
+	culture = franconian
+	1157.1.1 = {
+		birth = "yes"
+	}
+	1190.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0225 = {
+	name = "Heinrich"
+	dynasty = 420
+	religion = "catholic"
+	culture = franconian
+	father = KOH0219
+	mother = KOH0224
+	1180.1.1 = {
+		birth = "1180.1.1"
+	}
+	1246.8.1 = {
+		death = "1246.8.1"
+	}
+}
+
+KOH0226 = {
+	name = "Moritz"
+	dynasty = 420
+	religion = "catholic"
+	culture = franconian
+	father = KOH0219
+	mother = KOH0224
+	1182.1.1 = {
+		birth = "1182.1.1"
+	}
+	1183.1.1 = {
+		add_trait = devoted
+	}
+	1260.1.1 = {
+		death = "1260.1.1"
 	}
 }

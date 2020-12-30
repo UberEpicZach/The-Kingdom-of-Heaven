@@ -6441,6 +6441,9 @@
 	1144.1.2 = {
 		birth = "1144.1.2"
 	}
+	1179.1.1 = {
+		add_spouse = KOH0236
+	}
 	1194.1.2 = {
 		death = "1194.1.2"
 	}
@@ -50404,5 +50407,218 @@ KOH0214 = {
 	}
 	1230.1.1 = {
 		death = "1230.1.1"
+	}
+}
+KOH0227 = {
+	name = "FrE_dE_ric" #Frédéric I, Comte de Toul
+	dynasty = KOHD0013 #Toul
+	religion = "catholic"
+	culture = french
+	1030.1.1 = {
+		birth = "yes"
+	}
+	#married Gertrude de Toul
+	1081.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0228 = {
+	name = "Rainard" #Rainard, Comte de Toul
+	dynasty = KOHD0013 #Toul
+	religion = "catholic"
+	culture = french
+	father = KOH0227
+	1070.1.1 = {
+		birth = "yes"
+	}
+	#married Gisele de Vaudemont, who then married Renaud, Comte de Bar
+	1119.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0229 = {
+	name = "Hadwide"
+	female = yes
+	dynasty = 667
+	religion = "catholic"
+	culture = french
+	trait = education_stewardship_3
+	father = 394999
+	mother = 129001
+	1110.1.2 = {
+		birth = "1110.1.2"
+	}
+	1155.2 = {
+		death = "1155.1.2"
+	}
+}
+
+KOH0230 = {
+	name = "FrE_dE_ric" #Frédéric II, Comte de Toul
+	dynasty = KOHD0013 #Toul
+	religion = "catholic"
+	culture = french
+	father = KOH0228
+	1105.1.1 = {
+		birth = "yes"
+	}
+	1140.1.1 = {
+		add_spouse = KOH0229 #Hadewide de Lorraine
+	}
+	1142.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0231 = {
+	name = "Henri"
+	dynasty = KOHD0013 #Toul
+	religion = "catholic"
+	culture = french
+	father = KOH0228
+	1101.1.1 = {
+		birth = "yes"
+	}
+	1145.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0232 = {
+	name = "Henri" #Comte de Toul
+	dynasty = KOHD0013 #Toul
+	religion = "catholic"
+	culture = french
+	father = KOH0230
+	1141.1.1 = {
+		birth = "yes"
+	}
+	1162.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0233 = {
+	name = "Rainard" #Comte de Dampierre
+	dynasty_house = house_dampierre_en_astenois #Dampierre-en-Astenois
+	religion = "catholic"
+	culture = french
+	father = KOH0231
+	1126.1.1 = {
+		birth = "yes"
+	}
+	1146.1.1 = {
+		add_spouse = KOH0235
+	}
+	1191.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0234 = {
+	name = "FrE_dE_ric" #Frédéric III, Comte de Toul
+	dynasty = KOHD0013 #Toul
+	religion = "catholic"
+	culture = french
+	father = KOH0232
+	1161.1.1 = {
+		birth = "yes"
+	}
+	1180.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0235 = {
+	name = "EuphE_mie" #Euphémie
+	female = yes
+	religion = "catholic"
+	culture = french
+	1130.1.1 = {
+		birth = "yes"
+	}
+	1185.1.1 = {
+		death = yes
+	}
+}
+
+KOH0236 = {
+	name = "BE_atrice" #Comtess de Toul
+	female = yes
+	dynasty_house = house_dampierre_en_astenois #Dampierre-en-Astenois
+	religion = "catholic"
+	culture = french
+	father = KOH0233
+	mother = KOH0235
+	1147.1.1 = {
+		birth = "yes"
+	}
+	#married Mathieu de Lorraine
+	1206.1.1 = {
+		death = "yes"
+	}
+}
+
+KOH0237 = {
+	name = "Rainard" #Comte de Dampierre
+	dynasty_house = house_dampierre_en_astenois #Dampierre-en-Astenois
+	religion = "catholic"
+	culture = french
+	father = KOH0233
+	mother = KOH0235
+	1149.1.1 = {
+		birth = "yes"
+	}
+	#married Helvise, widow of Henri de Vitry, of Rethel
+	1234.3.1 = {
+		death = "yes"
+	}
+}
+
+KOH0238 = {
+	name = "Henri"
+	dynasty_house = house_dampierre_en_astenois #Dampierre-en-Astenois
+	religion = "catholic"
+	culture = french
+	father = KOH0233
+	mother = KOH0235
+	1149.1.1 = {
+		birth = "yes"
+	}
+	#married Cecile de Clermont
+	1234.3.1 = {
+		death = "yes"
+	}
+}
+
+KOH0239 = {
+	name = "Ferry"
+	dynasty = 667
+	religion = "catholic"
+	culture = french
+	father = 212584
+	mother = KOH0236
+	1181.1.2 = {
+		birth = "1181.1.2"
+	}
+	1208.1.2 = {
+		death = "1208.1.2"
+	}
+}
+
+KOH0240 = {
+	name = "Renard"
+	dynasty = 667
+	religion = "catholic"
+	culture = french
+	father = 212584
+	mother = KOH0236
+	1183.1.2 = {
+		birth = "1183.1.2"
+	}
+	1240.1.2 = {
+		death = "1240.1.2"
 	}
 }
