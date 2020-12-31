@@ -1150,6 +1150,10 @@ c_aachen = {
 	1085.1.1 = {
 		holder = 20254 #Gerhard III
 	}
+	1101.1.1 = {
+		government = free_imperial_city_government
+		add_realm_law_skip_effects = imperial_city_succession_law
+	}
 	1126.1.1 = {
 		holder = 30091 #Gerhard IV
 	}
@@ -1158,12 +1162,11 @@ c_aachen = {
 		holder = 30089 #Wilhelm I
 	}
 	1176.1.1 = {
-		holder = 206900 #Wilhelm II
+		holder = KOH_FREECITY01 #Wilhelm II
 	}
 	1190.8.21 = {
 		liege = "d_lower_lorraine"
 	}
-	
 	1207.1.1 = {
 		holder = 30611 #Wilhelm III
 	}
@@ -1173,9 +1176,7 @@ c_aachen = {
 	1278.3.6 = {
 		holder = 30626 #Walram I
 	}
-	1297.11.1 =
-	
-	{
+	1297.11.1 = {
 	holder = 462940 #Gerhard V
 	}
 	1328.1.31 = {
@@ -2616,56 +2617,26 @@ c_dortmund = {
 	1137.7.1 = {
 		holder = 33163
 	}
-	1151.4.3 = {
-		holder = 33164
+	1156.11.22 = {
+		holder = 30350
 	}
-	1156.5.4 = {
-		holder = 30344 #Friedrich von Berg
+	1202.8.8 = {
+		holder = 31803
 	}
-	1158.12.15 = {
-		holder = 33165
+	1263.9.11 = {
+		holder = 31805
 	}
-	1167.8.14 = {
-		holder = 213181
+	1279.1.1 = {
+		holder = 31806
 	}
-	1190.8.21 = {
-		liege = "d_lower_lorraine"
+	1285.1.1 = {
+		holder = 31807
 	}
-	1191.8.13 = {
-		holder = 30345 #Bruno von Berg
+	1307.5.3 = {
+		holder = 33285
 	}
-	1193.1.1 = {
-		holder = 30347 #Adolf von Berg
-	}
-	1205.1.1 = {
-		holder = 33166
-	}
-	1208.11.2 = {
-		holder = 33167
-	}
-	1216.1.1 = {
-		holder = 33168
-	}
-	1225.11.7 = {
-		holder = 33169
-	}
-	1238.3.26 = {
-		holder = 33170
-	}
-	1261.9.28 = {
-		holder = 33171
-	}
-	1274.10.20 = {
-		holder = 33172
-	}
-	1297.4.7 = {
-		holder = 30329 #Wigbold von Holte
-	}
-	1304.3.26 = {
-		holder = 33173
-	}
-	1332.1.5 = {
-		holder = 487032 #Walram von Jülich
+	1328.5.4 = {
+		holder = 33288
 	}
 }
 
@@ -2675,63 +2646,42 @@ c_arnsberg = {
 		liege = d_westfalen
 	}
 	761.1.1 = {
-		holder = 190472 #Unwan
+		holder = 190472 #Unwan 
 	}
-	#782.1.1 = {
-	#	holder = 0
-	#}
-	800.1.1 = {
-		liege = 0
+	782.1.1 = {
+		holder = 0
 	}
 	842.1.1 = {
-		government = theocracy_government
 		liege = "d_westfalen"
 		holder = 163054
+	}
+	900.1.1 = {
+		holder = 0
 	}
 	1063.1.1 = {
 		holder = 20218 #Friedrich Wettin
 	}
-	
 	1084.4.18 = {
 		holder = 30314 #Erpho von Münster
 	}
-	
-	1097.11.9 = {
-		holder = 30315 #Burchard von Holte
+	1092.1.1 = {
+		holder = KOH_ARNSBERG015
 	}
-	
-	
-	1118.3.19 = {
-		holder = 30221 #Diederik van Zutphen
+	1102.1.1 = {
+		holder = KOH_ARNSBERG05 
 	}
-	
-	1127.2.28 =
-	
-	{
-	holder = 30316 #Ekbert von Braunschweig
+	1124.1.1 = {
+		holder = KOH_ARNSBERG06 
 	}
-	
-	1132.1.9 = {
-		holder = 30317 #Werner von Steutzlingen
+	1130.1.1 = {
+		holder = KOH_ARNSBERG012 
 	}
-	
-	
-	1151.12.1 = {
-		holder = 30318 #Friedrich von Are
+	1167.1.1 = {
+		holder = KOH_ARNSBERG013
 	}
-	1168.1.1 = {
-		holder = 30319 #Ludwig von Wippra
+	1200.1.1 = {
+		holder = KOH_ARNSBERG013 
 	}
-	1173.1.1 = {
-		holder = 231041 #Hermann von Katzenelnbogen
-	}
-	1180.9.16 = {
-		liege = "e_hre"
-	}
-	1203.6.9 = {
-		holder = 30072 #Otto von Oldenburg
-	}
-	
 	1218.3.12 = {
 		holder = 30320 #Dietrich von Isenberg
 	}
@@ -2839,8 +2789,11 @@ c_mark = {
 	1158.12.15 = {
 		holder = 33165
 	}
-	1167.8.14 = {
-		holder = 213181 #Philip of Cologe
+	1160.1.1 = {
+		holder = 30346
+	}
+	1180.1.1 = {
+		holder = 212398
 	}
 	1190.8.21 = {
 		liege = "d_lower_lorraine"
@@ -3052,37 +3005,16 @@ c_sayn = {
 		holder = 7530
 	}
 	1088.1.1 = {
-		holder = 7531
-	}
-	1109.1.1 = {
-		holder = 7532
-	}
-	1137.1.1 = {
-		holder = 7533
-	}
-	1141.1.1 = {
-		holder = 7534
-	}
-	1142.1.1 = {
-		holder = 7535
+		holder = 0
 	}
 	1153.1.1 = {
-		holder = 7536
+		holder = 183250
 	}
-	1160.6.24 = {
-		holder = 7537
+	1176.1.1 = {
+		holder = 183251
 	}
-	1161.6.20 = {
-		holder = 7557
-	}
-	1165.1.1 = {
-		holder = 7537
-	}
-	1183.8.23 = {
-		holder = 7557
-	}
-	1200.10.25 = {
-		holder = 7542
+	1210.1.1 = {
+		holder = 183252
 	}
 	1230.9.9 = {
 		holder = 7543

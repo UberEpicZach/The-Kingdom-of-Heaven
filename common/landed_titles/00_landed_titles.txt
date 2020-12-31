@@ -4396,12 +4396,7 @@ e_germany = {
 					color = { 240 160 90 }
 					color2 = { 255 255 255 }
 				}
-				b_ravensberg = {
-					province = 2443
-
-					color = { 240 160 90 }
-					color2 = { 255 255 255 }
-				}
+			
 				b_vechta = {
 					province = 2444
 
@@ -4412,6 +4407,24 @@ e_germany = {
 					province = 2445
 
 					color = { 240 160 90 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_ravensberg = {
+				color = { 240 160 90 }
+				color2 = { 255 255 255 }
+
+				b_ravensberg = {
+					province = 2443
+
+					color = { 240 160 90 }
+					color2 = { 255 255 255 }
+				}
+
+				b_wiedenbruck = {
+					province = 2841
+
+					color = { 230 180 75 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -4437,6 +4450,13 @@ e_germany = {
 					color = { 250 170 65 }
 					color2 = { 255 255 255 }
 				}
+			}
+
+
+			c_bentheiem = {
+				color = { 250 170 65 }
+				color2 = { 255 255 255 }
+			
 				b_bentheim = {
 					province = 2430
 
@@ -4508,12 +4528,6 @@ e_germany = {
 				}
 				b_brakel = {
 					province = 2848
-
-					color = { 230 180 75 }
-					color2 = { 255 255 255 }
-				}
-				b_wiedenbruck = {
-					province = 2841
 
 					color = { 230 180 75 }
 					color2 = { 255 255 255 }
@@ -5905,7 +5919,7 @@ e_germany = {
 
 
 		d_trier = {
-			color = { 107 132 199 }
+			color = { 90 90 125 }
 			color2 = { 255 255 255 }
 
 			capital = c_trier
@@ -6077,7 +6091,7 @@ e_germany = {
 		}
 
 		d_cologne = {
-			color = { 187 199 233 }
+			color = { 150 145 180 }
 			color2 = { 255 255 255 }
 
 			capital = c_cologne # Cologne
@@ -7533,6 +7547,49 @@ e_germany = {
 			}
 		}
 
+
+		d_mainz = {
+			color = { 165 165 180 }
+			color2 = { 255 255 255 }
+
+			capital = c_mainz
+
+			c_mainz = {
+				color = { 165 165 180 }
+				color2 = { 255 255 255 }
+			
+				b_mainz = {
+					province = 2694
+
+					color = { 165 165 180 }
+					color2 = { 255 255 255 }
+				}
+				b_boppard = {
+					province = 2695
+
+					color = { 165 165 180 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_katzenelnbogen = {
+				color = { 165 165 180 }
+				color2 = { 255 255 255 }
+
+				b_katzenelnbogen = {
+					province = 2692
+	
+					color = { 165 165 180 }
+					color2 = { 255 255 255 }
+				}
+				b_wiesbaden = {
+					province = 2693
+	
+					color = { 165 165 180 }
+					color2 = { 255 255 255 }
+				}
+			} 
+		}
+
 		d_west_franconia = {
 			color = { 170 170 170 }
 			color2 = { 255 255 255 }
@@ -7574,35 +7631,6 @@ e_germany = {
 					color2 = { 255 255 255 }
 				}
 			}
-			c_mainz = {
-				color = { 165 165 180 }
-				color2 = { 255 255 255 }
-			
-				b_mainz = {
-					province = 2694
-
-					color = { 165 165 180 }
-					color2 = { 255 255 255 }
-				}
-				b_wiesbaden = {
-					province = 2693
-
-					color = { 165 165 180 }
-					color2 = { 255 255 255 }
-				}
-				b_katzenelnbogen = {
-					province = 2692
-
-					color = { 165 165 180 }
-					color2 = { 255 255 255 }
-				}
-				b_boppard = {
-					province = 2695
-
-					color = { 165 165 180 }
-					color2 = { 255 255 255 }
-				}
-			}
 			#c_pfalz = {
 			#	color = { 140 140 170 }
 			#	color2 = { 255 255 255 }
@@ -7620,6 +7648,13 @@ e_germany = {
 				color = { 175 160 160 }
 				color2 = { 255 255 255 }
 			
+				b_rieneck = {
+					province = 2866
+
+					color = { 175 160 160 }
+					color2 = { 255 255 255 }
+				}
+
 				b_klingenberg = {
 					province = 2862
 
@@ -7628,12 +7663,6 @@ e_germany = {
 				}
 				b_gelnhausen = {
 					province = 2864
-
-					color = { 175 160 160 }
-					color2 = { 255 255 255 }
-				}
-				b_rieneck = {
-					province = 2866
 
 					color = { 175 160 160 }
 					color2 = { 255 255 255 }
@@ -8073,12 +8102,6 @@ e_germany = {
 					color = { 180 160 160 }
 					color2 = { 255 255 255 }
 				}
-				b_ziegenhain = {
-					province = 2858
-					
-					color = { 180 160 160 }
-					color2 = { 255 255 255 }
-				}
 				b_hofgeismar = {
 					province = 2915
 					
@@ -8153,12 +8176,25 @@ e_germany = {
 				color = { 190 170 170 }
 				color2 = { 255 255 255 }
 				
+				b_ziegenhain = {
+					province = 2858
+					
+					color = { 180 160 160 }
+					color2 = { 255 255 255 }
+				}
+
 				b_marburg = {
 					province = 2859
 					
 					color = { 190 170 170 }
 					color2 = { 255 255 255 }
 				}
+			}
+
+			c_nidda = {
+				color = { 190 170 170 }
+				color2 = { 255 255 255 }
+
 				b_nidda = {
 					province = 2861
 					
@@ -8336,7 +8372,7 @@ e_germany = {
 		}
 		
 		d_baden = {
-				color = { 218 223 211 }
+				color = { 195 195 210 }
 				color2 = { 255 255 255 }
 
 				capital = c_baden

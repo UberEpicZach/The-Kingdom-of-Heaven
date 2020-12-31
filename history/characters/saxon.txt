@@ -13518,10 +13518,29 @@
 	culture = saxon
 	father = 30350 #Simon von Tecklenburg
 	mother = 30349 #Oda von Berg
-	1186.1.1 = {
+	1184.1.1 = {
 		birth = "1186.1.1"
 	}
 	1224.6.30 = {
+		death = "1224.6.30"
+	}
+}
+
+KOH_SAXON01 = {
+	name = "Oda" #Bishop of Osnabruck
+	dynasty = 7123 #von Tecklenburg
+	religion = "catholic"
+	culture = saxon
+	female = yes
+	father = 30350 #Simon von Tecklenburg
+	mother = 30349 #Oda von Berg
+	1180 .1.1 = {
+		birth = "1186.1.1"
+	}
+	1200.1.1 = {
+		add_spouse = 30323
+	}
+	1221.6.30 = {
 		death = "1224.6.30"
 	}
 }
@@ -13585,7 +13604,7 @@
 	religion = "catholic"
 	father = 30350 #Simon von Tecklenburg
 	mother = 30349 #Oda von Berg
-	1185.1.1 = {
+	1183.1.1 = {
 		birth = "1185.1.1"
 	}
 	1263.9.11 = {
@@ -14526,7 +14545,8 @@
 	}
 	1200.1.1 = {
 		add_spouse = 31790
-	}	1224.1.2 = {
+	}	
+	1224.1.2 = {
 		death = "1224.1.2"
 	}
 }
@@ -15897,3 +15917,452 @@ saxon0001 = {
 		death = yes
 	}
 }
+
+KOH_SAXON02 = {
+	name = "Hermann"
+	dynasty = KOH_D_021
+	religion = "catholic"
+	culture = "saxon"
+
+	1100.1.1 = {
+		birth = yes
+	}
+	1144.1.1 = {
+		death = yes
+	}
+}
+
+KOH_SAXON03 = {
+	name = "Otto"
+	dynasty = KOH_D_021
+	father = KOH_SAXON02
+	religion = "catholic"
+	culture = "saxon"
+
+	1130.1.1 = {
+		birth = yes
+	}
+	1170.1.1 = {
+		death = yes
+	}
+}
+
+KOH_SAXON04 = {
+	name = "Heinrich"
+	dynasty = KOH_D_021
+	father = KOH_SAXON03
+	religion = "catholic"
+	culture = "saxon"
+
+	1149.1.1 = {
+		birth = yes
+	}
+	1180.1.1 = {
+		death = yes
+	}
+}
+
+KOH_SAXON05 = {
+	name = "Hermann"
+	dynasty = KOH_D_021
+	father = KOH_SAXON04
+	religion = "catholic"
+	culture = "saxon"
+
+	1167.1.1 = {
+		birth = yes
+	}
+	1220.1.1 = {
+		death = yes
+	}
+}
+
+KOH_SAXON06 = {
+	name = "Otto"
+	dynasty = KOH_D_021
+	father = KOH_SAXON05
+	religion = "catholic"
+	culture = "saxon"
+
+	1185.1.1 = {
+		birth = yes
+	}
+	1244.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN01 = {
+	name = "Erkanbert"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	760.1.1 = {
+		birth = yes
+	}
+	813.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN02 = {
+	name = "Hardward"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	790.1.1 = {
+		birth = yes
+	}
+	853.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN03 = {
+	name = "Theodoric"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	800.1.1 = {
+		birth = yes
+	}
+	880.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN04 = {
+	name = "Wulfhar"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	806.1.1 = {
+		birth = yes
+	}
+	886.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN05 = {
+	name = "Drogo"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	820.1.1 = {
+		birth = yes
+	}
+	902.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN06 = {
+	name = "Adalbert"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	820.1.1 = {
+		birth = yes
+	}
+	905.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN066 = {
+	name = "Bernhard"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	836.1.1 = {
+		birth = yes
+	}
+	914.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN07 = {
+	name = "Lothar"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	860.1.1 = {
+		birth = yes
+	}
+	927.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN08 = {
+	name = "Ebergisl"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	870.1.1 = {
+		birth = yes
+	}
+	950.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN09 = {
+	name = "Helmward"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	890.1.1 = {
+		birth = yes
+	}
+	958.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN010 = {
+	name = "Landward"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	900.1.1 = {
+		birth = yes
+	}
+	969.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN011 = {
+	name = "Milo"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	940.1.1 = {
+		birth = yes
+	}
+	996.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN012 = {
+	name = "Ramward"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	950.1.1 = {
+		birth = yes
+	}
+	1002.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN013 = {
+	name = "Dietrich"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	980.1.1 = {
+		birth = yes
+	}
+	1022.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN014 = {
+	name = "Sigebert"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	1000.1.1 = {
+		birth = yes
+	}
+	1036.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN015 = {
+	name = "Bruno"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	dynasty = 7125
+	1000.1.1 = {
+		birth = yes
+	}
+	1055.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN016 = {
+	name = "Egilbert"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	1020.1.1 = {
+		birth = yes
+	}
+	1080.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN017 = {
+	name = "Reinward"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	1040.1.1 = {
+		birth = yes
+	}
+	1089.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN018 = {
+	name = "Ulrich"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	1060.1.1 = {
+		birth = yes
+	}
+	1097.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN019 = {
+	name = "Gottschalk"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	1060.1.1 = {
+		birth = yes
+	}
+	1112.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN020 = {
+	name = "Widelo"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	1060.1.1 = {
+		birth = yes
+	}
+	1119.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN021 = {
+	name = "Sigward"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	1080.1.1 = {
+		birth = yes
+	}
+	1140.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN022 = {
+	name = "Heinrich"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	1099.1.1 = {
+		birth = yes
+	}
+	1170.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN023 = {
+	name = "Werner"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	1153.1.1 = {
+		birth = yes
+	}
+	1170.1.1 = {
+		death = yes
+	}
+}
+
+KOH_MINDEN024 = {
+	name = "Anno"
+	religion = "catholic"
+	culture = "saxon"
+	trait = devoted
+	1100.1.1 = {
+		birth = yes
+	}
+	1185.1.1 = {
+		death = yes
+	}
+}
+
+KOH_SAXONY01 = {
+	name = "Bernhard"
+	dynasty = KOH_D_22
+	religion = "catholic"
+	culture = "saxon"
+	father = KOH_SAXONY02
+	1176.1.1 = {
+		birth = yes
+	}
+	1221.1.1 = {
+		death = yes
+	}
+}
+
+KOH_SAXONY02 = {
+	name = "Bernhard"
+	dynasty = KOH_D_22
+	religion = "catholic"
+	culture = "saxon"
+
+	1140.1.1 = {
+		birth = yes
+	}
+	1186.1.1 = {
+		death = yes
+	}
+}
+
+KOH_SAXONY03 = {
+	name = "Iso"
+	dynasty = KOH_D_22
+	religion = "catholic"
+	culture = "saxon"
+	father = KOH_SAXONY02
+	trait = devoted
+	1177.1.1 = {
+		birth = yes
+	}
+	1221.1.1 = {
+		death = yes
+	}
+}
+
+
+
+
+
+

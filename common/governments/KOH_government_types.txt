@@ -66,6 +66,33 @@ republic_government = {
 	color = hsv{ 0.00 1.00 0.98 }
 }
 
+free_imperial_city_government = {
+	primary_holding = city_holding
+	valid_holdings = { castle_holding }
+	required_county_holdings = { city_holding castle_holding church_holding }
+
+	ai = {
+		arrange_marriage = no
+		use_goals = no
+		use_scripted_guis = no
+		perform_religious_reformation = no
+	}
+
+	character_modifier = {
+		development_growth_factor = 0.20
+		stewardship = 1
+		domain_tax_mult = 0.05
+		army_maintenance_mult = -0.5
+		ai_war_chance = 0
+		knight_limit = 10
+		build_speed = -0.15
+		build_gold_cost = -0.05
+	}
+
+	vassal_contract = { republic_government_obligations }
+	color = hsv{ 0.00 1.00 0.98 }
+}
+
 # Head of faith will always get this if possible
 theocracy_government = {
 	primary_holding = church_holding

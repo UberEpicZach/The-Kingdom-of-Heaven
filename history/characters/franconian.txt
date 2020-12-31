@@ -16390,27 +16390,6 @@
 	}
 }
 
-212371 = {
-	name = "Kunigunde"
-	# AKA: Kunigunde von Zieghain
-	female = yes
-	dynasty = 7173
-	martial = 4
-	diplomacy = 7
-	intrigue = 7
-	stewardship = 6
-	religion = "catholic"
-	culture = franconian
-	trait = temperate
-	trait = education_intrigue_1
-	1150.1.1 = {
-		birth = "1150.1.1"
-	}
-	1198.1.1 = {
-		death = "1198.1.1"
-	}
-}
-
 31550 = {
 	name = "Friedrich"
 	dynasty = 7222
@@ -20175,5 +20154,893 @@ KOH0226 = {
 	}
 	1260.1.1 = {
 		death = "1260.1.1"
+	}
+}
+
+KOH_FRANCONIAN020 = {
+	name = "Eberhard" 
+	dynasty = KOH_D_017
+	religion = "catholic"
+	culture = franconian
+
+	1120.1.1 = {
+		birth = yes
+	}
+	1170.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FRANCONIAN021 = {
+	name = "Eberhard" 
+	dynasty = KOH_D_017
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANCONIAN020
+	1160.1.1 = {
+		birth = yes
+	}
+	1210.1.1 = {
+		death = yes
+	}
+}
+
+212371 = {
+	name = "Kunigunde"
+	# AKA: Kunigunde von Zieghain
+	female = yes
+	father = KOH_FRANCONIAN022
+	dynasty = 7173
+	martial = 4
+	diplomacy = 7
+	intrigue = 7
+	stewardship = 6
+	religion = "catholic"
+	culture = franconian
+	trait = temperate
+	trait = education_intrigue_1
+	1150.1.1 = {
+		birth = "1150.1.1"
+	}
+	1198.1.1 = {
+		death = "1198.1.1"
+	}
+}
+
+KOH_FRANCONIAN022 = {
+	name = "Gottfried"
+	dynasty = 7173
+	religion = "catholic"
+	culture = franconian
+
+	1099.1.1 = {
+		birth = yes
+	}
+	1168.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FRANCONIAN023 = {
+	name = "Gozmar"
+	dynasty = 7173
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANCONIAN022
+	1130.1.1 = {
+		birth = yes
+	}
+	1184.5.3 = {
+		death = yes
+	}
+}
+
+KOH_FRANCONIAN024 = {
+	name = "Rudolf"
+	dynasty = 7173
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANCONIAN022
+	1132.1.1 = {
+		birth = yes
+	}
+	1188.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA01 = {
+	name = "Sturmius"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	714.1.1 = {
+		birth = yes
+	}
+	779.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA02 = {
+	name = "Baugulf"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	759.1.1 = {
+		birth = yes
+	}
+	802.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA03 = {
+	name = "Ratgar"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	762.1.1 = {
+		birth = yes
+	}
+	817.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA04 = {
+	name = "Eigil"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	790.1.1 = {
+		birth = yes
+	}
+	822.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA05 = {
+	name = "Rabanus Marurus"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	800.1.1 = {
+		birth = yes
+	}
+	842.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA06 = {
+	name = "Hatto"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	822.1.1 = {
+		birth = yes
+	}
+	856.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA07 = {
+	name = "Thioto"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	806.1.1 = {
+		birth = yes
+	}
+	869.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA08 = {
+	name = "Sigihart"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	839.1.1 = {
+		birth = yes
+	}
+	891.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA09 = {
+	name = "Huoggi"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	851.1.1 = {
+		birth = yes
+	}
+	915.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA010 = {
+	name = "Helmfried"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	900.1.1 = {
+		birth = yes
+	}
+	916.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA011 = {
+	name = "Halcho"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	900.1.1 = {
+		birth = yes
+	}
+	923.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA012 = {
+	name = "Hildebert"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	900.1.1 = {
+		birth = yes
+	}
+	927.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA013 = {
+	name = "Hadamar"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	900.1.1 = {
+		birth = yes
+	}
+	927.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA014 = {
+	name = "Hatto"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	920.1.1 = {
+		birth = yes
+	}
+	968.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA015 = {
+	name = "Werinhenri"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	938.1.1 = {
+		birth = yes
+	}
+	982.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA016 = {
+	name = "Bratnthoh"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	982.1.1 = {
+		birth = yes
+	}
+	991.1.1 = {
+		death = yes
+	}
+}
+KOH_FULDA017 = {
+	name = "Hatto"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	920.1.1 = {
+		birth = yes
+	}
+	997.1.1 = {
+		death = yes
+	}
+}
+KOH_FULDA018 = {
+	name = "Erkanbald"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	970.1.1 = {
+		birth = yes
+	}
+	1011.1.1 = {
+		death = yes
+	}
+}
+KOH_FULDA019 = {
+	name = "Bratnthoh"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	980.1.1 = {
+		birth = yes
+	}
+	1013.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA020 = {
+	name = "Poppo"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1000.1.1 = {
+		birth = yes
+	}
+	1018.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA021 = {
+	name = "Richard"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1000.1.1 = {
+		birth = yes
+	}
+	1039.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA022 = {
+	name = "Sigiwart"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1010.1.1 = {
+		birth = yes
+	}
+	1043.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA023 = {
+	name = "Rohing"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1003.1.1 = {
+		birth = yes
+	}
+	1047.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA024 = {
+	name = "Egbert"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1000.1.1 = {
+		birth = yes
+	}
+	1058.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA025 = {
+	name = "Siegfried"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1020.1.1 = {
+		birth = yes
+	}
+	1060.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA026 = {
+	name = "Widerad"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1020.1.1 = {
+		birth = yes
+	}
+	1075.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA027 = {
+	name = "Ruothart"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1050.1.1 = {
+		birth = yes
+	}
+	1096.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA028 = {
+	name = "Godefrid"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1036.1.1 = {
+		birth = yes
+	}
+	1109.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA029 = {
+	name = "Wolfhelm"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1060.1.1 = {
+		birth = yes
+	}
+	1114.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA030 = {
+	name = "Erlolf"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1050.1.1 = {
+		birth = yes
+	}
+	1122.1.1 = {
+		death = yes
+	}
+}
+KOH_FULDA031 = {
+	name = "Ulrich"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1040.1.1 = {
+		birth = yes
+	}
+	1126.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA032 = {
+	name = "Heinrich"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1090.1.1 = {
+		birth = yes
+	}
+	1132.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA033 = {
+	name = "Bertho"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1100.1.1 = {
+		birth = yes
+	}
+	1134.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA034 = {
+	name = "Konrad"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1100.1.1 = {
+		birth = yes
+	}
+	1134.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA035 = {
+	name = "Aleholf"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1100.1.1 = {
+		birth = yes
+	}
+	1148.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA036 = {
+	name = "Rugger"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1030.1.1 = {
+		birth = yes
+	}
+	1148.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA037 = {
+	name = "Heinrcih"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1100.1.1 = {
+		birth = yes
+	}
+	1149.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA038 = {
+	name = "Markward"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1100.1.1 = {
+		birth = yes
+	}
+	1165.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA039 = {
+	name = "Gernot"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1100.1.1 = {
+		birth = yes
+	}
+	1165.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA040 = {
+	name = "Hermann"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1100.1.1 = {
+		birth = yes
+	}
+	1168.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA041 = {
+	name = "Burchard"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1130.1.1 = {
+		birth = yes
+	}
+	1176.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA042 = {
+	name = "Rugger"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1130.1.1 = {
+		birth = yes
+	}
+	1177.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA043 = {
+	name = "Konrad"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1130.1.1 = {
+		birth = yes
+	}
+	1192.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA044 = {
+	name = "Henry"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1150.1.1 = {
+		birth = yes
+	}
+	1216.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA045 = {
+	name = "Hartmann"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1180.1.1 = {
+		birth = yes
+	}
+	1217.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FULDA046 = {
+	name = "Kuno"
+	religion = "catholic"
+	culture = franconian
+	trait = devoted
+	1180.1.1 = {
+		birth = yes
+	}
+	1217.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG01 = {
+	name = "Konrad" 
+	religion = "catholic"
+	culture = franconian
+	dynasty = KOH_D_018
+	1040.1.1 = {
+		birth = yes
+	}
+	1070.1.1 = {
+		add_spouse = KOH_ARNSBERG015
+	}
+	1092.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG02 = {
+	name = "Herrmann"
+	religion = "catholic"
+	culture = franconian
+	father = KOH_ARNSBERG01
+	mother = KOH_ARNSBERG015
+	dynasty = KOH_D_018
+	1070.1.1 = {
+		birth = yes
+	}
+	1092.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG03 = {
+	name = "Edelherren"
+	religion = "catholic"
+	culture = franconian
+	father = KOH_ARNSBERG02
+	dynasty = KOH_D_018
+	female = yes
+	1090.1.1 = {
+		birth = yes
+	}
+	1120.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG04 = {
+	name = "Heinrich"
+	religion = "catholic"
+	culture = franconian
+	father = KOH_ARNSBERG01
+	mother = KOH_ARNSBERG015
+	dynasty = KOH_D_018
+	1074.1.1 = {
+		birth = yes
+	}
+	1115.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG05 = {
+	name = "Friedrich"
+	religion = "catholic"
+	culture = franconian
+	father = KOH_ARNSBERG01
+	mother = KOH_ARNSBERG015
+	dynasty = KOH_D_018
+	1072.1.1 = {
+		birth = yes
+	}
+	1124.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG06 = {
+	name = "Ida"
+	religion = "catholic"
+	culture = franconian
+	father = KOH_ARNSBERG05
+	dynasty = KOH_D_018
+	1103.1.1 = {
+		birth = yes
+	}
+	1154.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG09 = { #Cappenberg
+	name = "Gottfried" #Cappenberg
+	religion = "catholic"
+	culture = franconian
+	dynasty = KOH_D_019
+	father = KOH_ARNSBERG010
+	mother = KOH_ARNSBERG011
+	1097.1.1 = {
+		birth = yes
+	}
+	1120.1.1 = {
+		add_spouse = KOH_ARNSBERG06
+	}
+	1127.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG010 = { 
+	name = "Gottfried" #Cappenberg
+	religion = "catholic"
+	culture = franconian
+	dynasty = KOH_D_019
+	father = KOH_ARNSBERG04
+	1055.1.1 = {
+		birth = yes
+	}
+	1100.1.1 = {
+		add_spouse = KOH_ARNSBERG011
+	}
+	1106.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG011 = { 
+	name = "Beatrix" #Cappenberg
+	religion = "catholic"
+	dynasty = KOH_D_019
+	culture = franconian
+	female = yes
+	
+	1075.1.1 = {
+		birth = yes
+	}
+	1115 .1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG012 = { 
+	name = "Gottfried " #Cuijk
+	religion = "catholic"
+	culture = franconian
+	dynasty = KOH_D_020
+	1100.1.1 = {
+		birth = yes
+	}
+
+	1128.1.1 = {
+		add_spouse = KOH_ARNSBERG06
+	} 
+
+	1167.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG013 = { 
+	name = "Heinrich " #Cuijk-Arnsberg
+	religion = "catholic"
+	culture = franconian
+	father = KOH_ARNSBERG012
+	mother = KOH_ARNSBERG06
+	dynasty = KOH_D_021
+	1128.1.1 = {
+		birth = yes
+	} 
+
+	1200.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG014 = { 
+	name = "Gottfried " #uijk-Arnsberg
+	religion = "catholic"
+	culture = franconian
+	father = KOH_ARNSBERG013
+	dynasty = KOH_D_021
+	1157.1.1 = {
+		birth = yes
+	} 
+	1236.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG015 = { 
+	name = "Mathilde Northeim" #Arnsberg
+	female = yes
+	religion = "catholic"
+	culture = franconian
+	dynasty = KOH_D_018
+	1058.1.1 = {
+		birth = yes
+	} 
+	1205.1.1 = {
+		death = yes
 	}
 }
