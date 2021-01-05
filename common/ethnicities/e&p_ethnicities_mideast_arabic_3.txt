@@ -87,9 +87,13 @@ mid_east_arabic_3_egyptian = {
         100 = { name = eye_height_pos    range = { 0.6 0.75 }    }
     }
 
-	gene_eye_distance = {
-	    100 = { name = eye_distance_neg    range = { 0.42 0.51 }    }
-	}
+    gene_eye_distance = {
+        5 = { name = eye_distance_pos    range = { 0.4 0.43 }    }
+        25 = { name = eye_distance_pos    range = { 0.43 0.46 }    }
+        35 = { name = eye_distance_pos    range = { 0.46 0.5 }    }
+        25 = { name = eye_distance_pos    range = { 0.5 0.52 }    }
+        10 = { name = eye_distance_pos    range = { 0.52 0.56 }    }
+    }
 	
 	gene_eye_shut = {
 	    100 = { name = eye_shut_neg    range = { 0.42 0.52 }    }
@@ -243,7 +247,7 @@ mid_east_arabic_3_egyptian = {
     }
 
 	gene_bs_eye_upper_lid_size = {
-        50 = { name = eye_upper_lid_size_pos    range = { 0.0 0.45 }    }
+        50 = { name = eye_upper_lid_size_pos    range = { 0.0 0.65 }    }
         50 = { name = eye_upper_lid_size_neg    range = { 0.0 0.25 }    }
 	}
 
@@ -252,20 +256,27 @@ mid_east_arabic_3_egyptian = {
     }
 
     gene_bs_forehead_brow_forward = {
-        100 = { name = forehead_brow_forward_pos    range = { 0.1 0.45 }    }
+        100 = { name = forehead_brow_forward_pos    range = { 0.1 0.4 }    }
     }
 
     gene_bs_forehead_brow_inner_height = {
-        100 = { name = forehead_brow_inner_height_neg    range = { 0.0 0.1 }    }
+        50 = { name = forehead_brow_inner_height_neg    range = { 0.0 0.1 }    }
+        25 = { name = forehead_brow_inner_height_neg    range = { 0.1 0.2 }    }
+        25 = { name = forehead_brow_inner_height_pos    range = { 0.0 0.2 }    }
     }
 
     gene_bs_forehead_brow_outer_height = {
-        100 = { name = forehead_brow_outer_height_neg    range = { 0.0 0.15 }    }
+        20 = { name = forehead_brow_outer_height_neg    range = { 0.0 0.1 }    }
+        20 = { name = forehead_brow_outer_height_neg    range = { 0.1 0.15 }    }
+        10 = { name = forehead_brow_outer_height_neg    range = { 0.15 0.25 }    }
+        20 = { name = forehead_brow_outer_height_pos    range = { 0.0 0.1 }    }
+        20 = { name = forehead_brow_outer_height_pos    range = { 0.1 0.15 }    }
+        10 = { name = forehead_brow_outer_height_pos    range = { 0.15 0.25 }    }
     }
 
     gene_bs_forehead_brow_width = {
-        50 = { name = forehead_brow_width_neg    range = { 0.0 0.3 }    }
-        50 = { name = forehead_brow_width_pos    range = { 0.0 0.3 }    }
+        50 = { name = forehead_brow_width_neg    range = { 0.0 0.5 }    }
+        50 = { name = forehead_brow_width_pos    range = { 0.0 0.5 }    }
     }
     
     gene_bs_jaw_def = {

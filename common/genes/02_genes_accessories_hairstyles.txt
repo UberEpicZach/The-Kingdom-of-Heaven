@@ -15,6 +15,7 @@ accessory_genes = {
 	hairstyles = {
 		index = 99
 		inheritable = no
+		group = hair
 		
 		all_hairstyles = {
 			index = 0
@@ -123,6 +124,7 @@ accessory_genes = {
 				1 = female_hair_western_08
 				1 = female_hair_western_09
 				1 = female_hair_western_10
+				1 = female_hair_western_cover
 			}
 			boy = male
 			girl = female
@@ -140,6 +142,8 @@ accessory_genes = {
 			female = {
 				1 = female_hair_mena_01
 				1 = female_hair_mena_02
+				1 = female_hair_custom_04	
+				1 = female_hair_custom_05					
 			}
 			boy = male
 			girl = female
@@ -344,25 +348,17 @@ accessory_genes = {
 			index = 14
 			male = {
 				#weight = <object in gfx/portrait/accessories/>
-				1 = male_hair_western_01
-				1 = male_hair_western_06
-				1 = male_hair_western_07				
-				1 = male_hair_western_09
-				1 = male_hair_mena_01
-				1 = male_hair_byzantine_02
+				2 = male_hair_chinese_01				
 				1 = male_hair_indian_01
-				3 = male_hair_indian_03
-				3 = male_hair_northern_02
+				1 = male_hair_indian_03
 			}
 
 			female = {
 				1 = female_hair_western_03
 				1 = female_hair_western_10
-				2 = female_hair_custom_03
-				2 = female_hair_custom_02
-				1 = female_hair_northern_01
-				3 = female_hair_northern_02
-				2 = female_hair_custom_08
+				1 = female_hair_indian_01
+				1 = female_hair_steppe_01
+				1 = female_hair_steppe_02
 			}
 			boy = male
 			girl = female
@@ -371,35 +367,17 @@ accessory_genes = {
 		turkish_hairstyles = {
 			index = 15
 			male = {
-				15 = male_hair_steppe_02
-				15 = male_hair_mena_02
-				15 = male_hair_western_06
-				5 = male_hair_western_05				
-				2 = male_hair_western_09
-				2 = male_hair_byzantine_02
-				15 = male_hair_rtt_01
-				15 = male_hair_northern_01
-				15 = male_hair_northern_02
+				4 = male_hair_turkic_01
+				4 = male_hair_turkic_02			
+				1 = male_hair_steppe_01
+				1 = male_hair_steppe_02
 			}
 
 			female = {
-				1 = female_hair_mena_01
-				3 = female_hair_northern_02
-				1 = female_hair_western_04				
-				1 = female_hair_western_07				
-				5 = female_hair_steppe_01
-				5 = female_hair_steppe_02
+				1 = female_hair_steppe_01
+				1 = female_hair_steppe_02
 			}
-			boy = {
-				1 = male_hair_western_09
-				1 = male_hair_western_07
-				1 = male_hair_steppe_02
-				1 = male_hair_western_06
-				1 = male_hair_western_01
-				3 = male_hair_mena_01
-				5 = male_hair_byzantine_02
-				5 = male_hair_indian_01
-			}
+			boy = male
 			girl = female
 		}
 
@@ -413,13 +391,10 @@ accessory_genes = {
 				1 = male_hair_western_05
 				1 = male_hair_western_06
 				1 = male_hair_western_08
-				1 = male_hair_northern_03
-				1 = male_hair_mena_04
 			}
 
 			female = {
 				3 = female_hair_rtt_02
-				5 = female_hair_northern_03
 				4 = female_hair_custom_05				
 				4 = female_hair_western_06				
 				5 = female_hair_western_05
@@ -438,7 +413,6 @@ accessory_genes = {
 			}
 			girl = {
 				4 = female_hair_rtt_02
-				3 = female_hair_northern_03
 				4 = female_hair_western_baby_01				
 				3 = female_hair_western_06				
 				5 = female_hair_western_05
@@ -468,9 +442,7 @@ accessory_genes = {
 				3 = female_hair_western_04
 				3 = female_hair_western_07				
 				3 = female_hair_western_06				
-				5 = female_hair_steppe_01
-				4 = female_hair_mena_01
-				3 = female_hair_mena_02				
+				5 = female_hair_steppe_01		
 			}
 			boy = male
 			girl = female
@@ -487,10 +459,7 @@ accessory_genes = {
 				2 = male_hair_western_07
 				2 = male_hair_western_08
 				2 = male_hair_western_09
-				# 2 = male_hair_western_10 # Tonsure 
-				2 = male_hair_mena_01
-				2 = male_hair_mena_02
-				2 = male_hair_mena_03				
+				# 2 = male_hair_western_10 # Tonsure 			
 			}
 
 			female = {
@@ -501,9 +470,6 @@ accessory_genes = {
 				2 = female_hair_western_08
 				1 = female_hair_western_09
 				1 = female_hair_western_10
-				2 = female_hair_custom_01				
-				2 = female_hair_custom_05
-				2 = female_hair_custom_06				
 			}
 			boy = male
 			girl = female
@@ -530,11 +496,62 @@ accessory_genes = {
 			}
 			boy = male
             girl = female
-		}		
+		}
 		
+		###15th century western hairstyles
+				late_western_hairstyles = {
+					index = 20
+					male = {
+						2 = male_hair_15th_western_01
+						2 = male_hair_15th_western_02
+						2 = male_hair_15th_western_03
+						2 = male_hair_15th_western_04
+						2 = male_hair_15th_western_05
+						2 = male_hair_15th_western_06
+					}
+					
+					female = {
+						1 = female_hair_western_01
+						1 = female_hair_western_02
+						1 = female_hair_western_03
+						1 = female_hair_western_04
+						1 = female_hair_western_05
+						1 = female_hair_western_06
+						1 = female_hair_western_07
+						1 = female_hair_western_08
+						1 = female_hair_western_09
+						1 = female_hair_western_10
+					}
+					boy = male
+					girl = female
+				}
 		
-
-
+								##############
+								### East  africa ###
+								##############
+		
+				ethiopian_hairstyles = {
+					index = 21
+					male = {
+						1 = empty
+						5 = male_hair_sub_saharan_01
+						5 = male_hair_sub_saharan_02
+						5 = male_hair_sub_saharan_03			
+					}
+					
+					female = {
+						5 = female_hair_ethiopian_01
+						5 = female_hair_ethiopian_02
+						5 = female_hair_ethiopian_03
+						5 = female_hair_ethiopian_03_jewelry				
+						#5 = female_hair_ethiopian_04				
+						1 = female_hair_sub_saharan_01
+						1 = female_hair_sub_saharan_02
+						1 = female_hair_sub_saharan_03				
+					}
+					boy = male
+					girl = female
+				}
 	}
 
 }

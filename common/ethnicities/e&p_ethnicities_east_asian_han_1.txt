@@ -81,7 +81,7 @@ east_asian_han_1 = {
     }
 
     gene_eye_distance = {
-        50 = { name = eye_distance_pos    range = { 0.45 0.53 }    }
+        50 = { name = eye_distance_pos    range = { 0.41 0.53 }    }
         50 = { name = eye_distance_pos    range = { 0.53 0.57 }    }
     }
 
@@ -102,7 +102,7 @@ east_asian_han_1 = {
     }
 
     gene_forehead_width = {
-        100 = { name = forehead_width_neg    range = { 0.35 0.36 }    }
+        100 = { name = forehead_width_neg    range = { 0.4 0.65 }    }
     }
 
     gene_forehead_height = {
@@ -110,14 +110,21 @@ east_asian_han_1 = {
     }
 
     gene_head_height = {
+        2 = { name = head_height_pos    range = { 0.58 0.62 }    }
+        8 = { name = head_height_pos    range = { 0.54 0.58 }    }
+        15 = { name = head_height_pos    range = { 0.51 0.54 }    }
         20 = { name = head_height_pos    range = { 0.48 0.51 }    }
         20 = { name = head_height_pos    range = { 0.44 0.48 }    }
-        40 = { name = head_height_pos    range = { 0.38 0.44 }    }
-        20 = { name = head_height_pos    range = { 0.34 0.38 }    }
+        15 = { name = head_height_pos    range = { 0.38 0.44 }    }
+        15 = { name = head_height_pos    range = { 0.34 0.38 }    }
     }
 
     gene_head_width = {
-        100 = { name = head_width_pos    range = { 0.3 0.48 }    }
+        5 = { name = head_width_pos    range = { 0.6 0.7 }    }
+        20 = { name = head_width_pos    range = { 0.5 0.6 }    }
+        35 = { name = head_width_pos    range = { 0.4 0.5 }    }
+        25 = { name = head_width_pos    range = { 0.3 0.4 }    }
+        15 = { name = head_width_pos    range = { 0.25 0.3 }    }
     }
 
     gene_head_profile = {
@@ -129,7 +136,8 @@ east_asian_han_1 = {
     }
 
     gene_head_top_width = {
-        100 = { name = head_top_width_neg    range = { 0.3 0.6 }    }
+        50 = { name = head_top_width_neg    range = { 0.35 0.45 }    }
+        50 = { name = head_top_width_neg    range = { 0.45 0.6 }    }
     }
 
     gene_jaw_angle = {
@@ -145,7 +153,7 @@ east_asian_han_1 = {
     }
 
     gene_jaw_width = {
-        100 = { name = jaw_width_neg    range = { 0.35 0.40 }    }
+        100 = { name = jaw_width_neg    range = { 0.35 0.55 }    }
     }
 
     gene_mouth_corner_depth = {
@@ -165,15 +173,15 @@ east_asian_han_1 = {
     }
 
     gene_mouth_width = {
-        100 = { name = mouth_width_neg    range = { 0.4 0.5 }    }
+        100 = { name = mouth_width_neg    range = { 0.35 0.48 }    }
     }
 
     gene_mouth_upper_lip_size = {
-        100 = { name = mouth_upper_lip_size_neg    range = { 0.2 0.3 }    }
+        100 = { name = mouth_upper_lip_size_neg    range = { 0.2 0.35 }    }
     }
 
     gene_mouth_lower_lip_size = {
-        100 = { name = mouth_lower_lip_size_pos    range = { 0.4 0.45 }    }
+        100 = { name = mouth_lower_lip_size_pos    range = { 0.4 0.5 }    }
     }
 
     gene_mouth_open = {
@@ -199,7 +207,7 @@ east_asian_han_1 = {
     }
 
     gene_bs_cheek_width = {
-        100 = { name = cheek_width_pos    range = { 0.0 0.2 }    }
+        100 = { name = cheek_width_pos    range = { 0.0 0.7 }    }
     }
 
     gene_bs_ear_angle = {
@@ -240,24 +248,31 @@ east_asian_han_1 = {
     }
 
     gene_bs_forehead_brow_curve = {
-        100 = { name = forehead_brow_curve_neg    range = { 0.60 0.61 }    }
+        100 = { name = forehead_brow_curve_neg    range = { 0.0 0.61 }    }
     }
 
     gene_bs_forehead_brow_forward = {
-        100 = { name = forehead_brow_forward_neg    range = { 0.0 0.75 }    }
+        100 = { name = forehead_brow_forward_pos    range = { 0.1 0.4 }    }
     }
 
     gene_bs_forehead_brow_inner_height = {
-        100 = { name = forehead_brow_inner_height_neg    range = { 0.0 0.1 }    }
+        50 = { name = forehead_brow_inner_height_neg    range = { 0.0 0.1 }    }
+        25 = { name = forehead_brow_inner_height_neg    range = { 0.1 0.2 }    }
+        25 = { name = forehead_brow_inner_height_pos    range = { 0.0 0.2 }    }
     }
 
     gene_bs_forehead_brow_outer_height = {
-        100 = { name = forehead_brow_outer_height_pos    range = { 0.0 0.2 }    }
+        20 = { name = forehead_brow_outer_height_neg    range = { 0.0 0.1 }    }
+        20 = { name = forehead_brow_outer_height_neg    range = { 0.1 0.15 }    }
+        10 = { name = forehead_brow_outer_height_neg    range = { 0.15 0.25 }    }
+        20 = { name = forehead_brow_outer_height_pos    range = { 0.0 0.1 }    }
+        20 = { name = forehead_brow_outer_height_pos    range = { 0.1 0.15 }    }
+        10 = { name = forehead_brow_outer_height_pos    range = { 0.15 0.25 }    }
     }
 
     gene_bs_forehead_brow_width = {
-        50 = { name = forehead_brow_width_neg    range = { 0.0 0.25 }    }
-        50 = { name = forehead_brow_width_pos    range = { 0.0 0.25 }    }
+        50 = { name = forehead_brow_width_neg    range = { 0.0 0.5 }    }
+        50 = { name = forehead_brow_width_pos    range = { 0.0 0.5 }    }
     }
 
     gene_bs_jaw_def = {
@@ -318,10 +333,12 @@ east_asian_han_1 = {
     }
 
     gene_bs_nose_height = {
-		10 = { name = nose_height_pos    range = { 0.05 0.1 }    }
+        10 = { name = nose_height_pos    range = { 0.2 0.3 }    }
+        10 = { name = nose_height_pos    range = { 0.1 0.2 }    }
+        10 = { name = nose_height_pos    range = { 0.05 0.1 }    }
         20 = { name = nose_height_pos    range = { 0.0 0.05 }    }
-        20 = { name = nose_height_neg    range = { 0.0 0.05 }    }
-        20 = { name = nose_height_neg    range = { 0.05 0.1 }    }
+        10 = { name = nose_height_neg    range = { 0.0 0.05 }    }
+        10 = { name = nose_height_neg    range = { 0.05 0.1 }    }
         10 = { name = nose_height_neg    range = { 0.1 0.15 }    }
         10 = { name = nose_height_neg    range = { 0.15 0.2 }    }
         10 = { name = nose_height_neg    range = { 0.2 0.25 }    }
@@ -358,7 +375,7 @@ east_asian_han_1 = {
     }
 
     gene_bs_nose_tip_angle = {
-        100 = { name = nose_tip_angle_pos    range = { 0.0 0.1 }    }
+        100 = { name = nose_tip_angle_pos    range = { 0.0 0.35 }    }
     }
 
     gene_bs_nose_tip_forward = {
@@ -375,9 +392,9 @@ east_asian_han_1 = {
     }
 
     face_detail_cheek_fat = {
-		30 = {  name = cheek_fat_01_pos             range = { 0.2 0.5 }     }
-		20 = {  name = cheek_fat_02_pos             range = { 0.2 0.5 }     }
-		20 = {  name = cheek_fat_03_pos             range = { 0.2 0.5 }     }
+		30 = {  name = cheek_fat_01_pos             range = { 0.2 0.6 }     }
+		20 = {  name = cheek_fat_02_pos             range = { 0.2 0.6 }     }
+		20 = {  name = cheek_fat_03_pos             range = { 0.2 0.6 }     }
 		30 = {  name = cheek_fat_04_pos             range = { 0.2 0.5 }     }
     }
 

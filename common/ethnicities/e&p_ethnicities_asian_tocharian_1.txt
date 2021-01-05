@@ -229,15 +229,18 @@ asian_tocharian_1 = {
     }
 
     gene_bs_eye_fold_shape = {
-        100 = { name = eye_fold_shape_neg    range = { 0.0 0.0 }    }
+        75 = { name = eye_fold_shape_neg    range = { 0.0 0.3 }    }
+        25 = { name = eye_fold_shape_pos    range = { 0.0 0.3 }    }
     }
 
     gene_bs_eye_size = {
-        100 = { name = eye_size_neg    range = { 0.0 0.5 }    }
+        60 = { name = eye_size_neg    range = { 0.25 0.6 }    }
+        40 = { name = eye_size_neg    range = { 0.0 0.25 }    }
     }
 
     gene_bs_eye_upper_lid_size = {
-        100 = { name = eye_upper_lid_size_neg    range = { 0.0 0.15 }    }
+        60 = { name = eye_upper_lid_size_pos    range = { 0.0 0.25 }    }
+        40 = { name = eye_upper_lid_size_neg    range = { 0.0 0.45 }    }
     }
 
     gene_bs_forehead_brow_curve = {
@@ -245,20 +248,27 @@ asian_tocharian_1 = {
     }
 
     gene_bs_forehead_brow_forward = {
-        100 = { name = forehead_brow_forward_pos    range = { 0.14 0.15 }    }
+        100 = { name = forehead_brow_forward_pos    range = { 0.1 0.4 }    }
     }
 
     gene_bs_forehead_brow_inner_height = {
-        100 = { name = forehead_brow_inner_height_neg    range = { 0.0 0.1 }    }
+        50 = { name = forehead_brow_inner_height_neg    range = { 0.0 0.1 }    }
+        25 = { name = forehead_brow_inner_height_neg    range = { 0.1 0.2 }    }
+        25 = { name = forehead_brow_inner_height_pos    range = { 0.0 0.2 }    }
     }
 
     gene_bs_forehead_brow_outer_height = {
-        100 = { name = forehead_brow_outer_height_neg    range = { 0.0 0.15 }    }
+        20 = { name = forehead_brow_outer_height_neg    range = { 0.0 0.1 }    }
+        20 = { name = forehead_brow_outer_height_neg    range = { 0.1 0.15 }    }
+        10 = { name = forehead_brow_outer_height_neg    range = { 0.15 0.25 }    }
+        20 = { name = forehead_brow_outer_height_pos    range = { 0.0 0.1 }    }
+        20 = { name = forehead_brow_outer_height_pos    range = { 0.1 0.15 }    }
+        10 = { name = forehead_brow_outer_height_pos    range = { 0.15 0.25 }    }
     }
 
     gene_bs_forehead_brow_width = {
-        50 = { name = forehead_brow_width_neg    range = { 0.0 0.25 }    }
-        50 = { name = forehead_brow_width_pos    range = { 0.0 0.25 }    }
+        50 = { name = forehead_brow_width_neg    range = { 0.0 0.5 }    }
+        50 = { name = forehead_brow_width_pos    range = { 0.0 0.5 }    }
     }
 
     gene_bs_jaw_def = {
@@ -319,13 +329,14 @@ asian_tocharian_1 = {
     }
 
     gene_bs_nose_height = {
-		10 = { name = nose_height_pos    range = { 0.05 0.1 }    }
-        20 = { name = nose_height_pos    range = { 0.0 0.05 }    }
+        10 = { name = nose_height_pos    range = { 0.2 0.4 }    }
+        15 = { name = nose_height_pos    range = { 0.1 0.2 }    }
+        15 = { name = nose_height_pos    range = { 0.0 0.1 }    }
         20 = { name = nose_height_neg    range = { 0.0 0.05 }    }
-        20 = { name = nose_height_neg    range = { 0.05 0.1 }    }
-        10 = { name = nose_height_neg    range = { 0.1 0.15 }    }
+        20 = { name = nose_height_neg    range = { 0.05 0.15 }    }
         10 = { name = nose_height_neg    range = { 0.15 0.2 }    }
-        10 = { name = nose_height_neg    range = { 0.2 0.25 }    }
+        5 = { name = nose_height_neg    range = { 0.2 0.3 }    }
+        5 = { name = nose_height_neg    range = { 0.3 0.35 }    }
     }
 
     gene_bs_nose_length = {
@@ -370,8 +381,8 @@ asian_tocharian_1 = {
     }
 
     face_detail_cheek_def = {
-        50 = {  name = cheek_def_01             range = { 0.0 0.45 }     }
-        50 = {  name = cheek_def_02             range = { 0.0 0.45 }     }
+        50 = {  name = cheek_def_01             range = { 0.0 0.75 }     }
+        50 = {  name = cheek_def_02             range = { 0.0 0.75 }     }
     }
 
     face_detail_cheek_fat = {

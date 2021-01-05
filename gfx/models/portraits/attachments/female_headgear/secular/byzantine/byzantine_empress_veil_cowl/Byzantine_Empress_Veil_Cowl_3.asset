@@ -1,0 +1,161 @@
+pdxmesh = {
+	name = "Byzantine_Empress_Veil_Cowl_3_mesh"
+	file = "Byzantine_Empress_Veil_Cowl_3.mesh"
+
+	meshsettings = {
+		name = "CrownShape"
+		index = 0
+		texture_diffuse = "male_headgear_secular_byzantine_imperial_01_diffuse.dds"
+		texture_normal = "male_headgear_secular_byzantine_imperial_01_normal.dds"
+		texture_specular = "male_headgear_secular_byzantine_imperial_01_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+
+	meshsettings = {
+		name = "VeilShape"
+		index = 0
+		texture_diffuse = "female_headgear_secular_byzantine_high_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_byzantine_high_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_byzantine_high_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+		
+		
+	}
+
+	meshsettings = {
+		name = "CowlShape"
+		index = 0
+		texture_diffuse = "female_headgear_secular_byzantine_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_byzantine_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_byzantine_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+		
+		
+	}
+
+}
+
+entity = {
+	name = "Byzantine_Empress_Veil_Cowl_3_entity"
+	pdxmesh = "Byzantine_Empress_Veil_Cowl_3_mesh"
+	
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_headgear/secular/byzantine/high_nobility_01/female_headgear_secular_byzantine_high_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "western_nobility_high_01"	#A "variation" object in gfx/portraits/accessory_variations/
+
+		}
+	}	
+}
+
+
+########################
+
+##transparent
+
+entity = {
+	name = "Byzantine_Empress_Veil_Cowl_3_transparent_entity"
+	pdxmesh = "Byzantine_Empress_Veil_Cowl_3_mesh"
+	
+	
+	meshsettings = {
+		name = "CrownShape"
+		index = 0
+		texture_diffuse = "male_headgear_secular_byzantine_imperial_01_diffuse.dds"
+		texture_normal = "male_headgear_secular_byzantine_imperial_01_normal.dds"
+		texture_specular = "male_headgear_secular_byzantine_imperial_01_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+
+	meshsettings = {
+		name = "VeilShape"
+		index = 0
+		texture_diffuse = "Byzantine_Empress_Veil_Cowl_3_transparent_diffuse.dds"
+		texture_normal = "female_headgear_secular_byzantine_high_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_byzantine_high_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+		
+		
+	}
+
+	meshsettings = {
+		name = "CowlShape"
+		index = 0
+		texture_diffuse = "female_headgear_secular_byzantine_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_byzantine_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_byzantine_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+		
+		
+	}	
+	
+	
+	
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_headgear/secular/byzantine/high_nobility_01/female_headgear_secular_byzantine_high_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "western_nobility_high_01"	#A "variation" object in gfx/portraits/accessory_variations/
+
+		}
+	}	
+}
+
+
+####no vail
+
+
+entity = {
+	name = "Byzantine_Empress_Veil_Cowl_3_novail_entity"
+	pdxmesh = "Byzantine_Empress_Veil_Cowl_3_mesh"
+	
+	
+	meshsettings = {
+		name = "CrownShape"
+		index = 0
+		texture_diffuse = "male_headgear_secular_byzantine_imperial_01_diffuse.dds"
+		texture_normal = "male_headgear_secular_byzantine_imperial_01_normal.dds"
+		texture_specular = "male_headgear_secular_byzantine_imperial_01_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+
+	meshsettings = {
+		name = "VeilShape"
+		index = 0
+		texture_diffuse = "Byzantine_Empress_Veil_Cowl_3_novail_diffuse.dds"
+		texture_normal = "female_headgear_secular_byzantine_high_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_byzantine_high_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+		
+		
+	}
+
+	meshsettings = {
+		name = "CowlShape"
+		index = 0
+		texture_diffuse = "female_headgear_secular_byzantine_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_byzantine_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_byzantine_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+		
+		
+	}	
+	
+	
+	
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_headgear/secular/byzantine/high_nobility_01/female_headgear_secular_byzantine_high_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "western_nobility_high_01"	#A "variation" object in gfx/portraits/accessory_variations/
+
+		}
+	}	
+}

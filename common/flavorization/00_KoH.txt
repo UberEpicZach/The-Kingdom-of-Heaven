@@ -8,6 +8,204 @@
     top_liege = no
 }
 
+baron_female_ibelin = {
+    type = character
+    gender = female
+    special = holder
+    tier = county
+    priority = 18
+    titles = { c_ibelin } 
+    top_liege = no
+}
+
+barony_ibelin = {
+    type = title
+    tier = county
+    titles = { c_ibelin }
+    priority = 18
+    top_liege = no
+}
+
+barony_lepuiset = {
+    type = title
+    tier = county
+    titles = { c_lepuiset }
+    priority = 18
+    top_liege = no 
+}
+
+barony_chartres = {
+    type = title
+    tier = county
+    titles = { c_chartres } 
+    priority = 19
+    top_liege = no
+}
+
+baron_female_lepuiset = {
+    type = character
+    gender = female
+    special = holder
+    tier = county
+    priority = 18
+    titles = { c_lepuiset }
+    top_liege = no
+}
+
+baron_male_lepuiset = {
+    type = character
+    gender = male
+    special = holder
+    tier = county
+    priority = 18
+    titles = { c_lepuiset }
+    top_liege = no
+}
+
+baron_male_chartres = {
+    type = character
+    gender = male
+    special = holder
+    tier = county
+    priority = 19
+    titles = { c_chartres }
+    top_liege = no
+}
+
+empire_cumania = {
+    type = title
+    tier = empire
+    titles = { e_caspian-pontic_steppe } 
+    priority = 19
+    top_liege = no
+}
+
+baron_county_holy_order_male = {
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 6
+	top_liege = no
+	governments = { holy_order_county_government }
+}
+baron_county_holy_order_female = {
+	type = character
+	gender = female
+	special = holder
+	tier = barony
+	priority = 6
+	top_liege = no
+	governments = { holy_order_county_government }
+}
+barony_county_holy_order = {
+	type = title
+	tier = barony
+	top_liege = no
+	priority = 6
+	governments = { holy_order_county_government }
+}
+count_county_holy_order_male = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 16
+	top_liege = no
+	governments = { holy_order_county_government }
+}
+count_county_holy_order_female = {
+	type = character
+	gender = female
+	special = holder
+	tier = county
+	priority = 16
+	top_liege = no
+	governments = { holy_order_county_government }
+}
+county_county_holy_order = {
+	type = title
+	tier = county
+	top_liege = no
+	priority = 16
+	governments = { holy_order_county_government }
+}
+duke_county_holy_order_male = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 26
+	top_liege = no
+	governments = { holy_order_county_government }
+}
+duke_county_holy_order_female = {
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 26
+	top_liege = no
+	governments = { holy_order_county_government }
+}
+duchy_county_holy_order = {
+	type = title
+	tier = duchy
+	top_liege = no
+	priority = 26
+	governments = { holy_order_county_government }
+}
+king_county_holy_order_male = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 46
+	top_liege = no
+	governments = { holy_order_county_government }
+}
+king_county_holy_order_female = {
+	type = character
+	gender = female
+	special = holder
+	tier = kingdom
+	priority = 46
+	top_liege = no
+	governments = { holy_order_county_government }
+}
+kingdom_county_holy_order = {
+	type = title
+	tier = kingdom
+	top_liege = no
+	priority = 46
+	governments = { holy_order_county_government }
+}
+emperor_county_holy_order_male = {
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 101
+	top_liege = no
+	governments = { holy_order_county_government }
+}
+emperor_county_holy_order_female = {
+	type = character
+	gender = female
+	special = holder
+	tier = empire
+	priority = 101
+	top_liege = no
+	governments = { holy_order_county_government }
+}
+empire_county_holy_order = {
+	type = title
+	tier = empire
+	top_liege = no
+	priority = 101
+	governments = { holy_order_county_government }
+}
+
 duke_male_thuringia = {
  type = character
     gender = male
@@ -283,200 +481,126 @@ duchy_principality = {
     top_liege = no
 }
 
-baron_female_ibelin = {
-    type = character
-    gender = female
-    special = holder
-    tier = county
-    priority = 18
-    titles = { c_ibelin } 
-    top_liege = no
-}
-
-barony_ibelin = {
-    type = title
-    tier = county
-    titles = { c_ibelin }
-    priority = 18
-    top_liege = no
-}
-
-barony_lepuiset = {
-    type = title
-    tier = county
-    titles = { c_lepuiset }
-    priority = 18
-    top_liege = no 
-}
-
-barony_chartres = {
-    type = title
-    tier = county
-    titles = { c_chartres } 
-    priority = 19
-    top_liege = no
-}
-
-baron_female_lepuiset = {
-    type = character
-    gender = female
-    special = holder
-    tier = county
-    priority = 18
-    titles = { c_lepuiset }
-    top_liege = no
-}
-
-baron_male_lepuiset = {
-    type = character
-    gender = male
-    special = holder
-    tier = county
-    priority = 18
-    titles = { c_lepuiset }
-    top_liege = no
-}
-
-baron_male_chartres = {
-    type = character
-    gender = male
-    special = holder
-    tier = county
-    priority = 19
-    titles = { c_chartres }
-    top_liege = no
-}
-
-empire_cumania = {
-    type = title
-    tier = empire
-    titles = { e_caspian-pontic_steppe } 
-    priority = 19
-    top_liege = no
-}
-
-baron_county_holy_order_male = {
+baron_free_city_republic_male = {
 	type = character
 	gender = male
 	special = holder
 	tier = barony
-	priority = 6
+	priority = 7
 	top_liege = no
-	governments = { holy_order_county_government }
+	governments = { free_imperial_city_government }
 }
-baron_county_holy_order_female = {
+baron_free_city_republic_female = {
 	type = character
 	gender = female
 	special = holder
 	tier = barony
-	priority = 6
+	priority = 7
 	top_liege = no
-	governments = { holy_order_county_government }
+	governments = { free_imperial_city_government }
 }
-barony_county_holy_order = {
+barony_free_city_republic = {
 	type = title
 	tier = barony
 	top_liege = no
-	priority = 6
-	governments = { holy_order_county_government }
+	priority = 7
+	governments = { free_imperial_city_government }
 }
-count_county_holy_order_male = {
+count_free_city_republic_male = {
 	type = character
 	gender = male
 	special = holder
 	tier = county
-	priority = 16
+	priority = 17
 	top_liege = no
-	governments = { holy_order_county_government }
+	governments = { free_imperial_city_government }
 }
-count_county_holy_order_female = {
+count_free_city_republic_female = {
 	type = character
 	gender = female
 	special = holder
 	tier = county
-	priority = 16
+	priority = 17
 	top_liege = no
-	governments = { holy_order_county_government }
+	governments = { free_imperial_city_government }
 }
-county_county_holy_order = {
+county_free_city_republic = {
 	type = title
 	tier = county
+	priority = 17
 	top_liege = no
-	priority = 16
-	governments = { holy_order_county_government }
+	governments = { free_imperial_city_government }
 }
-duke_county_holy_order_male = {
+duke_free_city_republic_male = {
 	type = character
 	gender = male
 	special = holder
 	tier = duchy
-	priority = 26
+	priority = 27
 	top_liege = no
-	governments = { holy_order_county_government }
+	governments = { free_imperial_city_government }
 }
-duke_county_holy_order_female = {
+duke_free_city_republic_female = {
 	type = character
 	gender = female
 	special = holder
 	tier = duchy
-	priority = 26
+	priority = 27
 	top_liege = no
-	governments = { holy_order_county_government }
+	governments = { free_imperial_city_government }
 }
-duchy_county_holy_order = {
+duchy_free_city_republic = {
 	type = title
 	tier = duchy
+	priority = 28
 	top_liege = no
-	priority = 26
-	governments = { holy_order_county_government }
+	governments = { free_imperial_city_government }
 }
-king_county_holy_order_male = {
+king_free_city_republic_male = {
 	type = character
 	gender = male
 	special = holder
 	tier = kingdom
-	priority = 46
-	top_liege = no
-	governments = { holy_order_county_government }
+	priority = 47
+	governments = { free_imperial_city_government }
 }
-king_county_holy_order_female = {
+king_free_city_republic_female = {
 	type = character
 	gender = female
 	special = holder
 	tier = kingdom
-	priority = 46
-	top_liege = no
-	governments = { holy_order_county_government }
+	priority = 47
+	governments = { free_imperial_city_government }
 }
-kingdom_county_holy_order = {
+kingdom_free_city_republic = {
 	type = title
 	tier = kingdom
 	top_liege = no
-	priority = 46
-	governments = { holy_order_county_government }
+	priority = 47
+	governments = { free_imperial_city_government }
 }
-emperor_county_holy_order_male = {
+emperor_free_city_republic_male = {
 	type = character
 	gender = male
 	special = holder
 	tier = empire
-	priority = 101
+	priority = 102
 	top_liege = no
-	governments = { holy_order_county_government }
+	governments = { free_imperial_city_government }
 }
-emperor_county_holy_order_female = {
+emperor_free_city_republic_female = {
 	type = character
 	gender = female
 	special = holder
 	tier = empire
-	priority = 101
+	priority = 102
 	top_liege = no
-	governments = { holy_order_county_government }
+	governments = { free_imperial_city_government }
 }
-empire_county_holy_order = {
+empire_free_city_republic = {
 	type = title
 	tier = empire
 	top_liege = no
-	priority = 101
-	governments = { holy_order_county_government }
+	priority = 102
+	governments = { free_imperial_city_government }
 }

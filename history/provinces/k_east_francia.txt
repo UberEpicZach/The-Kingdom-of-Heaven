@@ -225,6 +225,8 @@
 	holding = none
 	1066.1.1 = {
 		holding = castle_holding
+		culture = saxon
+	 religion = catholic
 	}
 }
 2444 = {	#VECHTA
@@ -252,7 +254,9 @@
 2430 = {	#BENTHEIM
 	holding = none
 	1050.1.1 = {
-		holding = city_holding
+		culture = saxon
+	    religion = catholic
+		holding = castle_holding
 	}
 }
 
@@ -820,22 +824,29 @@
 }
 2693 = {	#WIESBADEN
 	holding = castle_holding
+	culture = franconian
+	religion = catholic
 }
 2692 = {	#KATZENELNBOGEN
 	holding = none
 	1095.1.1 = {
+		culture = franconian
+		religion = catholic
 		holding = castle_holding
+
 	}
 }
 2695 = {	#BOPPARD
 	holding = city_holding
+	culture = franconian
+	religion = catholic
 }
 
 ###c_frankfurt
 2855 = {	#FRANKFURT
 	culture = franconian
 	religion = catholic
-	holding = castle_holding
+	holding = city_holding
 }
 2854 = {	#LIMBURG
 	holding = castle_holding
@@ -845,10 +856,14 @@
 }
 2863 = {	#HANAU
 	holding = none
-	#1143
+	1143.1.1 = {
+		holding = city_holding
+	}
 }
 2856 = {	#KRONBERG
 	holding = none
+	culture = franconian
+	religion = catholic
 	#1220
 }
 
@@ -860,10 +875,17 @@
 }
 2864 = {	#GELNHAUSEN
 	holding = none
+	culture = franconian
+	religion = catholic
 	#1170
 }
 2866 = {	#RIENECK
 	holding = city_holding
+	culture = franconian
+	religion = catholic
+	1110.1.1 = {
+		holding = castle_holding
+	}
 }
 
 ###c_erbach
@@ -1094,6 +1116,11 @@
 }
 2858 = {	#ZIEGENHAIN
 	holding = none
+	1100.1.1 = {
+		culture = franconian
+		religion = catholic
+		holding = castle_holding
+	}
 }
 2915 = {	#HOFGEISMAR
 	holding = city_holding
@@ -1116,7 +1143,7 @@
 2867 = {	#LAUTERBACH
 	holding = none
 	900.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 		culture = franconian
 		religion = catholic
 	}
@@ -1281,7 +1308,7 @@
 2768 = {	# ULM
 	culture = swabian
 	religion = catholic
-	holding = castle_holding
+	holding = city_holding
 }
 2769 = {	#HELLENSTEIN castle in Heidenheim
 	holding = none

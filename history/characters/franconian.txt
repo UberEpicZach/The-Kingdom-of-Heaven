@@ -19827,7 +19827,7 @@ KOH_FRANCONIAN09 = {
 	religion = "catholic"
 	culture = franconian
 	trait = murderer
-	trait = crusader 
+	trait = trait_crusader
 	trait = peasant_leader
 	trait = raider
 	trait = reaver
@@ -20843,29 +20843,29 @@ KOH_FULDA046 = {
 	}
 }
 
-KOH_ARNSBERG01 = {
-	name = "Konrad" 
-	religion = "catholic"
-	culture = franconian
-	dynasty = KOH_D_018
-	1040.1.1 = {
-		birth = yes
-	}
-	1070.1.1 = {
-		add_spouse = KOH_ARNSBERG015
-	}
-	1092.1.1 = {
-		death = yes
-	}
-}
+#KOH_ARNSBERG01 = {
+#	name = "Konrad" 
+#	religion = "catholic"
+#	culture = franconian
+#	dynasty = 111
+#	1040.1.1 = {
+#		birth = yes
+#	}
+#	1070.1.1 = {
+#		add_spouse = KOH_ARNSBERG015
+#	}
+#	1092.1.1 = {
+#		death = yes
+#	}
+#}
 
 KOH_ARNSBERG02 = {
 	name = "Herrmann"
 	religion = "catholic"
 	culture = franconian
-	father = KOH_ARNSBERG01
-	mother = KOH_ARNSBERG015
-	dynasty = KOH_D_018
+	father = 144218
+	mother = 112607
+	dynasty = 111
 	1070.1.1 = {
 		birth = yes
 	}
@@ -20879,7 +20879,7 @@ KOH_ARNSBERG03 = {
 	religion = "catholic"
 	culture = franconian
 	father = KOH_ARNSBERG02
-	dynasty = KOH_D_018
+	dynasty = 111
 	female = yes
 	1090.1.1 = {
 		birth = yes
@@ -20889,28 +20889,28 @@ KOH_ARNSBERG03 = {
 	}
 }
 
-KOH_ARNSBERG04 = {
-	name = "Heinrich"
-	religion = "catholic"
-	culture = franconian
-	father = KOH_ARNSBERG01
-	mother = KOH_ARNSBERG015
-	dynasty = KOH_D_018
-	1074.1.1 = {
-		birth = yes
-	}
-	1115.1.1 = {
-		death = yes
-	}
-}
+#KOH_ARNSBERG04 = {
+#	name = "Heinrich"
+##	religion = "catholic"
+#	culture = franconian
+##	father = 114218
+#	mother = 112607
+#	dynasty = 111
+#	1074.1.1 = {
+#		birth = yes
+#	}
+#	1115.1.1 = {
+#		death = yes
+#	}
+#}
 
 KOH_ARNSBERG05 = {
 	name = "Friedrich"
 	religion = "catholic"
 	culture = franconian
-	father = KOH_ARNSBERG01
-	mother = KOH_ARNSBERG015
-	dynasty = KOH_D_018
+	father = 144218
+	mother = 112607
+	dynasty = 111
 	1072.1.1 = {
 		birth = yes
 	}
@@ -20921,10 +20921,11 @@ KOH_ARNSBERG05 = {
 
 KOH_ARNSBERG06 = {
 	name = "Ida"
+	female = yes
 	religion = "catholic"
 	culture = franconian
 	father = KOH_ARNSBERG05
-	dynasty = KOH_D_018
+	dynasty = 111
 	1103.1.1 = {
 		birth = yes
 	}
@@ -20956,7 +20957,7 @@ KOH_ARNSBERG010 = {
 	religion = "catholic"
 	culture = franconian
 	dynasty = KOH_D_019
-	father = KOH_ARNSBERG04
+	father = 144219
 	1055.1.1 = {
 		birth = yes
 	}
@@ -20984,7 +20985,7 @@ KOH_ARNSBERG011 = {
 }
 
 KOH_ARNSBERG012 = { 
-	name = "Gottfried " #Cuijk
+	name = "Gottfried" #Cuijk
 	religion = "catholic"
 	culture = franconian
 	dynasty = KOH_D_020
@@ -21002,12 +21003,12 @@ KOH_ARNSBERG012 = {
 }
 
 KOH_ARNSBERG013 = { 
-	name = "Heinrich " #Cuijk-Arnsberg
+	name = "Heinrich" #Cuijk-Arnsberg
 	religion = "catholic"
 	culture = franconian
 	father = KOH_ARNSBERG012
 	mother = KOH_ARNSBERG06
-	dynasty = KOH_D_021
+	dynasty = KOH_D_020
 	1128.1.1 = {
 		birth = yes
 	} 
@@ -21018,11 +21019,11 @@ KOH_ARNSBERG013 = {
 }
 
 KOH_ARNSBERG014 = { 
-	name = "Gottfried " #uijk-Arnsberg
+	name = "Gottfried" #uijk-Arnsberg
 	religion = "catholic"
 	culture = franconian
 	father = KOH_ARNSBERG013
-	dynasty = KOH_D_021
+	dynasty = KOH_D_020
 	1157.1.1 = {
 		birth = yes
 	} 
@@ -21031,16 +21032,16 @@ KOH_ARNSBERG014 = {
 	}
 }
 
-KOH_ARNSBERG015 = { 
-	name = "Mathilde Northeim" #Arnsberg
-	female = yes
-	religion = "catholic"
-	culture = franconian
-	dynasty = KOH_D_018
-	1058.1.1 = {
-		birth = yes
-	} 
-	1205.1.1 = {
-		death = yes
-	}
-}
+#KOH_ARNSBERG015 = { 
+##	name = "Mathilde Northeim" #Arnsberg
+#	female = yes
+#	religion = "catholic"
+#	culture = franconian
+#	dynasty = KOH_D_018
+#	1058.1.1 = {
+#		birth = yes
+#	} 
+#	1105.1.1 = {
+#		death = yes
+#	}
+#}

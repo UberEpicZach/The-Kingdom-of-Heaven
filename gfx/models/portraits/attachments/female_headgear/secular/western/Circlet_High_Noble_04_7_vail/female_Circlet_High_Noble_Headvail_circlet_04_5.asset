@@ -1,0 +1,363 @@
+pdxmesh = {
+	name = "female_Circlet_High_Noble_Headvail_circlet_04_mesh"
+	file = "female_Circlet_High_Noble_Headvail_circlet_04.mesh"
+
+	meshsettings = {
+		name = "female_headgear_secular_western_nobility_0Shape1"
+		index = 0
+		texture_diffuse = "female_headgear_secular_western_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_western_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_western_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "female_western_high_noble_circlet_4Shape"
+		index = 0
+		texture_diffuse = "fsecular_western_high_nobility_04_diffuse.dds"
+		texture_normal = "fsecular_western_high_nobility_04_normal.dds"
+		texture_specular = "fsecular_western_high_nobility_04_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}	
+}
+
+entity = {
+	name = "female_Circlet_High_Noble_Headvail_circlet_04_entity"
+	pdxmesh = "female_Circlet_High_Noble_Headvail_circlet_04_mesh"
+
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_headgear/secular/western/nobility_01/female_headgear_secular_western_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "western_veil_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+########Gold 5#############
+
+pdxmesh = {
+	name = "female_Circlet_High_Noble_Headvail_circlet_05_mesh"
+	file = "female_Circlet_High_Noble_Headvail_circlet_04.mesh"
+
+	meshsettings = {
+		name = "female_headgear_secular_western_nobility_0Shape1"
+		index = 0
+		texture_diffuse = "female_headgear_secular_western_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_western_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_western_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "female_western_high_noble_circlet_4Shape"
+		index = 0
+		texture_diffuse = "fsecular_western_high_nobility_05_diffuse.dds"
+		texture_normal = "fsecular_western_high_nobility_05_normal.dds"
+		texture_specular = "fsecular_western_high_nobility_05_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}	
+}
+
+entity = {
+	name = "female_Circlet_High_Noble_Headvail_circlet_05_entity"
+	pdxmesh = "female_Circlet_High_Noble_Headvail_circlet_05_mesh"
+
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_headgear/secular/western/nobility_01/female_headgear_secular_western_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "western_veil_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+###################################cover vail gold 4######################
+
+
+pdxmesh = {
+	name = "female_Circlet_High_Noble_covervail_circlet_04_mesh"
+	file = "female_Circlet_High_Noble_covervail_circlet_04.mesh"
+
+	blend_shape = { id = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat"		type = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat.mesh" }
+	#blend_shape = { id = "female_headgear_secular_western_nobility_01_2_bs_old"		type = "female_headgear_secular_western_nobility_01_2_01_bs_old.mesh" }
+
+
+	meshsettings = {
+		name = "female_headgear_secular_western_nobility_01_2Shape"
+		index = 0
+		texture_diffuse = "female_headgear_secular_western_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_western_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_western_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "female_western_high_noble_circlet_4Shape"
+		index = 0
+		texture_diffuse = "fsecular_western_high_nobility_04_diffuse.dds"
+		texture_normal = "fsecular_western_high_nobility_04_normal.dds"
+		texture_specular = "fsecular_western_high_nobility_04_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}	
+}
+
+entity = {
+	name = "female_Circlet_High_Noble_covervail_circlet_04_entity"
+	pdxmesh = "female_Circlet_High_Noble_covervail_circlet_04_mesh"
+
+	attribute = { name = "bs_fat_1"								blend_shape = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat" }
+	#attribute = { name = "bs_old_1"								blend_shape = "female_headgear_secular_western_nobility_01_2_bs_old" }
+
+
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_headgear/secular/western/nobility_01/female_headgear_secular_western_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "western_veil_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+
+
+###################################cover vail Gold 5######################
+
+
+pdxmesh = {
+	name = "female_Circlet_High_Noble_covervail_circlet_05_mesh"
+	file = "female_Circlet_High_Noble_covervail_circlet_04.mesh"
+
+	blend_shape = { id = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat"		type = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat.mesh" }
+	#blend_shape = { id = "female_headgear_secular_western_nobility_01_2_bs_old"		type = "female_headgear_secular_western_nobility_01_2_01_bs_old.mesh" }
+
+
+	meshsettings = {
+		name = "female_headgear_secular_western_nobility_01_2Shape"
+		index = 0
+		texture_diffuse = "female_headgear_secular_western_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_western_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_western_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "female_western_high_noble_circlet_4Shape"
+		index = 0
+		texture_diffuse = "fsecular_western_high_nobility_05_diffuse.dds"
+		texture_normal = "fsecular_western_high_nobility_05_normal.dds"
+		texture_specular = "fsecular_western_high_nobility_05_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}	
+}
+
+entity = {
+	name = "female_Circlet_High_Noble_covervail_circlet_05_entity"
+	pdxmesh = "female_Circlet_High_Noble_covervail_circlet_05_mesh"
+
+	attribute = { name = "bs_fat_1"								blend_shape = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat" }
+	#attribute = { name = "bs_old_1"								blend_shape = "female_headgear_secular_western_nobility_01_2_bs_old" }
+
+
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_headgear/secular/western/nobility_01/female_headgear_secular_western_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "western_veil_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+########silver 6#############
+
+pdxmesh = {
+	name = "female_Circlet_High_Noble_Headvail_circlet_06_mesh"
+	file = "female_Circlet_High_Noble_Headvail_circlet_04.mesh"
+
+	meshsettings = {
+		name = "female_headgear_secular_western_nobility_0Shape1"
+		index = 0
+		texture_diffuse = "female_headgear_secular_western_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_western_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_western_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "female_western_high_noble_circlet_4Shape"
+		index = 0
+		texture_diffuse = "secular_western_high_nobility_06_diffuse.dds"
+		texture_normal = "secular_western_high_nobility_06_normal.dds"
+		texture_specular = "secular_western_high_nobility_06_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}	
+}
+
+entity = {
+	name = "female_Circlet_High_Noble_Headvail_circlet_06_entity"
+	pdxmesh = "female_Circlet_High_Noble_Headvail_circlet_06_mesh"
+
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_headgear/secular/western/nobility_01/female_headgear_secular_western_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "western_veil_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+
+###################################cover vail silver 6######################
+
+
+pdxmesh = {
+	name = "female_Circlet_High_Noble_covervail_circlet_06_mesh"
+	file = "female_Circlet_High_Noble_covervail_circlet_04.mesh"
+
+	blend_shape = { id = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat"		type = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat.mesh" }
+	#blend_shape = { id = "female_headgear_secular_western_nobility_01_2_bs_old"		type = "female_headgear_secular_western_nobility_01_2_01_bs_old.mesh" }
+
+
+	meshsettings = {
+		name = "female_headgear_secular_western_nobility_01_2Shape"
+		index = 0
+		texture_diffuse = "female_headgear_secular_western_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_western_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_western_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "female_western_high_noble_circlet_4Shape"
+		index = 0
+		texture_diffuse = "secular_western_high_nobility_06_diffuse.dds"
+		texture_normal = "secular_western_high_nobility_06_normal.dds"
+		texture_specular = "secular_western_high_nobility_06_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}	
+}
+
+entity = {
+	name = "female_Circlet_High_Noble_covervail_circlet_06_entity"
+	pdxmesh = "female_Circlet_High_Noble_covervail_circlet_06_mesh"
+
+	attribute = { name = "bs_fat_1"								blend_shape = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat" }
+	#attribute = { name = "bs_old_1"								blend_shape = "female_headgear_secular_western_nobility_01_2_bs_old" }
+
+
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_headgear/secular/western/nobility_01/female_headgear_secular_western_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "western_veil_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+
+########silver 7#############
+
+pdxmesh = {
+	name = "female_Circlet_High_Noble_Headvail_circlet_07_mesh"
+	file = "female_Circlet_High_Noble_Headvail_circlet_04.mesh"
+
+	meshsettings = {
+		name = "female_headgear_secular_western_nobility_0Shape1"
+		index = 0
+		texture_diffuse = "female_headgear_secular_western_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_western_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_western_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "female_western_high_noble_circlet_4Shape"
+		index = 0
+		texture_diffuse = "secular_western_high_nobility_07_diffuse.dds"
+		texture_normal = "secular_western_high_nobility_07_normal.dds"
+		texture_specular = "secular_western_high_nobility_07_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}	
+}
+
+entity = {
+	name = "female_Circlet_High_Noble_Headvail_circlet_07_entity"
+	pdxmesh = "female_Circlet_High_Noble_Headvail_circlet_07_mesh"
+
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_headgear/secular/western/nobility_01/female_headgear_secular_western_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "western_veil_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+
+###################################cover vail silver 7######################
+
+
+pdxmesh = {
+	name = "female_Circlet_High_Noble_covervail_circlet_07_mesh"
+	file = "female_Circlet_High_Noble_covervail_circlet_04.mesh"
+
+	blend_shape = { id = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat"		type = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat.mesh" }
+	#blend_shape = { id = "female_headgear_secular_western_nobility_01_2_bs_old"		type = "female_headgear_secular_western_nobility_01_2_01_bs_old.mesh" }
+
+
+	meshsettings = {
+		name = "female_headgear_secular_western_nobility_01_2Shape"
+		index = 0
+		texture_diffuse = "female_headgear_secular_western_nobility_01_diffuse.dds"
+		texture_normal = "female_headgear_secular_western_nobility_01_normal.dds"
+		texture_specular = "female_headgear_secular_western_nobility_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "female_western_high_noble_circlet_4Shape"
+		index = 0
+		texture_diffuse = "secular_western_high_nobility_07_diffuse.dds"
+		texture_normal = "secular_western_high_nobility_07_normal.dds"
+		texture_specular = "secular_western_high_nobility_07_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}	
+}
+
+entity = {
+	name = "female_Circlet_High_Noble_covervail_circlet_07_entity"
+	pdxmesh = "female_Circlet_High_Noble_covervail_circlet_07_mesh"
+
+	attribute = { name = "bs_fat_1"								blend_shape = "female_Circlet_High_Noble_covervail_circlet_04_bs_fat" }
+	#attribute = { name = "bs_old_1"								blend_shape = "female_headgear_secular_western_nobility_01_2_bs_old" }
+
+
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_headgear/secular/western/nobility_01/female_headgear_secular_western_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "western_veil_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

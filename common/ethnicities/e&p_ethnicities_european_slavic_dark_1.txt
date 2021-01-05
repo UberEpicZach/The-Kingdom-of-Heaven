@@ -40,9 +40,9 @@ european_slavic_dark_1 = {
 	@low_point_neutral = 0.0
 
     template = "ethnicity_template"
-	# skin_color = {
-	# 	10 = { 0.0 0.1 0.5 0.15 }
-	# }
+    skin_color = {
+        10 = { 0.0 0.12 0.5 0.2 }
+   }
 	eye_color = {
 		# Brown
 		20 = { 0.05 0.5 0.33 0.8 }
@@ -87,8 +87,11 @@ european_slavic_dark_1 = {
     }
 
     gene_eye_distance = {
-        50 = { name = eye_distance_pos    range = { 0.45 0.5 }    }
-        50 = { name = eye_distance_pos    range = { 0.5 0.57 }    }
+        5 = { name = eye_distance_pos    range = { 0.4 0.43 }    }
+        25 = { name = eye_distance_pos    range = { 0.43 0.46 }    }
+        35 = { name = eye_distance_pos    range = { 0.46 0.5 }    }
+        25 = { name = eye_distance_pos    range = { 0.5 0.52 }    }
+        10 = { name = eye_distance_pos    range = { 0.52 0.56 }    }
     }
 
     gene_eye_shut = {
@@ -119,14 +122,21 @@ european_slavic_dark_1 = {
     }
 
     gene_head_height = {
+        5 = { name = head_height_pos    range = { 0.58 0.62 }    }
+        10 = { name = head_height_pos    range = { 0.54 0.58 }    }
+        15 = { name = head_height_pos    range = { 0.51 0.54 }    }
         20 = { name = head_height_pos    range = { 0.48 0.51 }    }
-        30 = { name = head_height_pos    range = { 0.44 0.48 }    }
-        30 = { name = head_height_pos    range = { 0.38 0.44 }    }
-        20 = { name = head_height_pos    range = { 0.34 0.38 }    }
+        15 = { name = head_height_pos    range = { 0.44 0.48 }    }
+        15 = { name = head_height_pos    range = { 0.38 0.44 }    }
+        15 = { name = head_height_pos    range = { 0.34 0.38 }    }
     }
 
     gene_head_width = {
-        100 = { name = head_width_pos    range = { 0.3 0.48 }    }
+        5 = { name = head_width_pos    range = { 0.6 0.7 }    }
+        20 = { name = head_width_pos    range = { 0.5 0.6 }    }
+        35 = { name = head_width_pos    range = { 0.4 0.5 }    }
+        25 = { name = head_width_pos    range = { 0.3 0.4 }    }
+        15 = { name = head_width_pos    range = { 0.25 0.3 }    }
     }
 
     gene_head_profile = {
@@ -138,7 +148,7 @@ european_slavic_dark_1 = {
     }
 
     gene_head_top_width = {
-        100 = { name = head_top_width_neg    range = { 0.35 0.6 }    }
+        100 = { name = head_top_width_neg    range = { 0.35 0.75 }    }
     }
 
     gene_jaw_angle = {
@@ -178,11 +188,11 @@ european_slavic_dark_1 = {
     }
 
     gene_mouth_upper_lip_size = {
-        100 = { name = mouth_upper_lip_size_neg    range = { 0.35 0.5 }    }
+        100 = { name = mouth_upper_lip_size_neg    range = { 0.3 0.45 }    }
     }
 
     gene_mouth_lower_lip_size = {
-        100 = { name = mouth_lower_lip_size_pos    range = { 0.4 0.55 }    }
+        100 = { name = mouth_lower_lip_size_pos    range = { 0.3 0.45 }    }
     }
 
     gene_mouth_open = {
@@ -243,7 +253,7 @@ european_slavic_dark_1 = {
 
     gene_bs_eye_size = {
         30 = { name = eye_size_pos    range = { 0.0 0.1 }    }
-        70 = { name = eye_size_neg    range = { 0.0 0.45 }    }
+        70 = { name = eye_size_neg    range = { 0.0 0.6 }    }
     }
 
     gene_bs_eye_upper_lid_size = {
@@ -282,39 +292,44 @@ european_slavic_dark_1 = {
 	}
 
     gene_bs_mouth_lower_lip_def = {
-        100 = { name = mouth_lower_lip_def_pos    range = { 0.14 0.15 }    }
+        100 = { name = mouth_lower_lip_def_pos    range = { 0.14 0.85 }    }
     }
 
     gene_bs_mouth_lower_lip_full = {
-        100 = { name = mouth_lower_lip_full_pos    range = { 0.28 0.5 }    }
+        100 = { name = mouth_lower_lip_full_pos    range = { 0.0 0.5 }    }
     }
 
     gene_bs_mouth_lower_lip_pad = {
-        100 = { name = mouth_lower_lip_pad_pos    range = { 0.0 0.1 }    }
+        100 = { name = mouth_lower_lip_pad_pos    range = { 0.0 0.5 }    }
     }
 
     gene_bs_mouth_lower_lip_width = {
-        100 = { name = mouth_lower_lip_width_neg    range = { 0.0 0.3 }    }
+        10 = { name = mouth_lower_lip_width_neg    range = { 0.35 0.5 }    }
+        15 = { name = mouth_lower_lip_width_neg    range = { 0.25 0.35 }    }
+        30 = { name = mouth_lower_lip_width_neg    range = { 0.0 0.25 }    }
+        30 = { name = mouth_lower_lip_width_pos    range = { 0.0 0.1 }    }
+        10 = { name = mouth_lower_lip_width_pos    range = { 0.1 0.15 }    }
+        5 = { name = mouth_lower_lip_width_pos    range = { 0.15 0.2 }    }
     }
 
     gene_bs_mouth_philtrum_def = {
-        100 = { name = mouth_philtrum_def_pos    range = { 0.0 0.6 }    }
+        100 = { name = mouth_philtrum_def_pos    range = { 0.1 0.75 }    }
     }
 
     gene_bs_mouth_philtrum_shape = {
-		100 = { name = mouth_philtrum_shape_neg    range = { 0.0 0.2 }    }
+		100 = { name = mouth_philtrum_shape_neg    range = { 0.0 0.8 }    }
     }
 
     gene_bs_mouth_philtrum_width = {
-        100 = { name = mouth_philtrum_width_pos    range = { 0.0 0.2 }    }
+        100 = { name = mouth_philtrum_width_pos    range = { 0.0 0.7 }    }
     }
 
     gene_bs_mouth_upper_lip_def = {
-        100 = { name = mouth_upper_lip_def_pos    range = { 0.0 0.49 }    }
+        100 = { name = mouth_upper_lip_def_pos    range = { 0.0 0.8 }    }
     }
 
     gene_bs_mouth_upper_lip_full = {
-        100 = { name = mouth_upper_lip_full_pos    range = { 0.18 0.5 }    }
+        100 = { name = mouth_upper_lip_full_pos    range = { 0.0 0.5 }    }
     }
 
     gene_bs_mouth_upper_lip_profile = {
@@ -322,7 +337,8 @@ european_slavic_dark_1 = {
     }
 
     gene_bs_mouth_upper_lip_width = {
-        100 = { name = mouth_upper_lip_width_pos    range = { 0.0 0.2 }    }
+        50 = { name = mouth_upper_lip_width_pos    range = { 0.0 0.5 }    }
+        50 = { name = mouth_upper_lip_width_neg    range = { 0.0 0.4 }    }
     }
 
     gene_bs_nose_forward = {
@@ -330,13 +346,14 @@ european_slavic_dark_1 = {
     }
 
     gene_bs_nose_height = {
-		10 = { name = nose_height_pos    range = { 0.1 0.2 }    }
-        20 = { name = nose_height_pos    range = { 0.0 0.1 }    }
+        5 = { name = nose_height_pos    range = { 0.2 0.3 }    }
+        10 = { name = nose_height_pos    range = { 0.1 0.2 }    }
+        15 = { name = nose_height_pos    range = { 0.0 0.1 }    }
         20 = { name = nose_height_neg    range = { 0.0 0.05 }    }
         20 = { name = nose_height_neg    range = { 0.05 0.15 }    }
-        10 = { name = nose_height_neg    range = { 0.15 0.2 }    }
+        15 = { name = nose_height_neg    range = { 0.15 0.2 }    }
         10 = { name = nose_height_neg    range = { 0.2 0.3 }    }
-        10 = { name = nose_height_neg    range = { 0.3 0.35 }    }
+        5 = { name = nose_height_neg    range = { 0.3 0.35 }    }
     }
 
     gene_bs_nose_length = {
@@ -383,7 +400,12 @@ european_slavic_dark_1 = {
     }
 
     gene_bs_nose_tip_width = {
-        100 = { name = nose_tip_width_neg    range = { 0.0 0.85 }    }
+        25 = { name = nose_tip_width_neg    range = { 0.0 0.35 }    }
+        25 = { name = nose_tip_width_neg    range = { 0.35 0.65 }    }
+        10 = { name = nose_tip_width_neg    range = { 0.65 0.95 }    }
+        20 = { name = nose_tip_width_pos    range = { 0.0 0.35 }    }
+        15 = { name = nose_tip_width_pos    range = { 0.35 0.65 }    }
+        5 = { name = nose_tip_width_pos    range = { 0.65 0.85 }    }
     }
 
     face_detail_cheek_def = {

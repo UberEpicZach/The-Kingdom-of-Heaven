@@ -459,7 +459,7 @@ c_frankfurt = {
 	1125.8.24 = {
 		liege = "e_hre"
 		government = free_imperial_city_government
-		add_realm_law_skip_effects = imperial_city_succession_law
+		succession_laws = { imperial_city_succession_law }
 	}
 	1154.5.13 = {
 		holder = KOH_FREECITY02
@@ -2426,6 +2426,7 @@ c_bamberg = {
 	1007.2.1 = {
 		holder = KOH_BAVARIAN052 #Eberhard_1
 		government = theocracy_government
+		liege = "e_hre"
 	}
 	1040.1.1 = { 
 		holder = 7818
@@ -2982,6 +2983,7 @@ c_lauterbach = {
 	}
 	1066.1.1 = {
 		holder = 1316
+		liege = "e_hre"
 	}
 	1099.1.1 = {
 		holder = KOH_FRANCONIAN022
@@ -3089,6 +3091,7 @@ c_marburg = {
 	}
 	1066.1.1 = {
 		holder = 1316
+		liege = "e_hre"
 	}
 	1099.1.1 = {
 		holder = KOH_FRANCONIAN022
@@ -4234,7 +4237,7 @@ c_ulm = {
 	
 	1150.1.1 = {
 		government = free_imperial_city_government
-		add_realm_law_skip_effects = imperial_city_succession_law
+		succession_laws = { imperial_city_succession_law }
 		holder = KOH_FREECITY03
 	}
 	1195.1.1 = {
@@ -4809,6 +4812,7 @@ c_minden = {
 	803.1.1 = {
 		holder = KOH_MINDEN01
 		government = theocracy_government
+		liege = "e_hre"
 	}
 	813.1.1 = {
 		holder = KOH_MINDEN02
@@ -4849,11 +4853,12 @@ c_minden = {
 	1002.1.1 = {
 		holder = KOH_MINDEN013
 	}
-	102.1.12 = {
-		holder = #KOH_MINDEN014
+	1020.1.12 = {
+		holder = KOH_MINDEN014
 	}
 	1037.1.1 = {
 		holder = KOH_MINDEN015
+		liege = "e_hre"
 	}
 	1055.1.1 = {
 		holder = KOH_MINDEN016
@@ -4881,7 +4886,7 @@ c_minden = {
 	}
 	1180.9.16 = {
 		holder = KOH_MINDEN024
-		liege = "d_colonge"
+		liege = "d_cologne"
 	}
 	1195.8.6 = {
 		holder = 462801
@@ -6407,7 +6412,7 @@ d_mainz = {
 		holder = 168593
 	}
 	865.1.1 = {
-		liege = d_west_franconia
+		liege = "e_hre"
 	}
 	937.1.1 = {
 		holder = 163046
@@ -6419,7 +6424,7 @@ d_mainz = {
 		holder = 163048
 	}
 	1059.1.1 = {
-		liege = "d_west_franconia"
+		liege = "e_hre"
 	}
 	1059.1.1 = {
 		holder = 20256
@@ -8553,6 +8558,7 @@ c_bentheiem = {
 c_ravensberg = {
 	1120.1.1 = {
 		holder = KOH_SAXON02
+		liege = "e_hre"
 	}
 	1144.1.1 = {
 		holder = KOH_SAXON03

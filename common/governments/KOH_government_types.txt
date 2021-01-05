@@ -81,7 +81,7 @@ free_imperial_city_government = {
 	character_modifier = {
 		development_growth_factor = 0.20
 		stewardship = 1
-		domain_tax_mult = 0.05
+		domain_tax_mult = 0.20
 		army_maintenance_mult = -0.5
 		ai_war_chance = 0
 		knight_limit = 10
@@ -89,7 +89,7 @@ free_imperial_city_government = {
 		build_gold_cost = -0.05
 	}
 
-	vassal_contract = { republic_government_obligations }
+	vassal_contract = { free_imperial_city_government_obligations }
 	color = hsv{ 0.00 1.00 0.98 }
 }
 
