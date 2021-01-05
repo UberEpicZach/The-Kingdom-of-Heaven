@@ -5,11 +5,11 @@
 	culture = "occitan"
 	father = 40260 #Etienne II de gévaudan
 	mother = 127009 #Adelais d'Anjou
-	970.1.1 = {
-		birth = "970.1.1"
+	969.1.1 = { # Unattested, set to 969 for now.
+		birth = yes
 	}
 	1036.1.1 = {
-		death = "1036.1.1"
+		death = yes
 	}
 }
 
@@ -1903,7 +1903,7 @@
 	1045.1.1 = {
 		add_spouse = 325
 	}
-	1053.6.30 = {
+	1053.6.28 = {
 		remove_spouse = 325
 	}
 	1060.1.1 = {
@@ -7919,13 +7919,13 @@
 	culture = "occitan"
 	father = 40258 #Bertrand I de Gévaudan
 	920.1.1 = {
-		birth = "920.1.1"
+		birth = yes
 	}
-	966.1.1 = {
+	955.1.1 = {
 		add_spouse = 127009 #Adélais d'Anjou
 	}
-	982.1.1 = {
-		death = "982.1.1"
+	970.1.1 = {
+		death = yes
 	}
 }
 
@@ -7987,12 +7987,12 @@
 	culture = "occitan"
 	father = 40260 #Etienne II de Gévaudan/Brioude
 	mother = 127009 #Adélais d'Anjou
-	982.1.1 = {
-		birth = "982.1.1"
+	970.1.1 = { #Birth date appears to be unattested, set to 970 to be born before father dies, assuming parents are correct. She'll be quite old by the time she marries though...
+		birth = yes
 	}
 	#1023 married Guillaume V d'auvergne
 	1042.1.1 = {
-		death = "1042.1.1"
+		death = yes
 	}
 }
 
@@ -8759,9 +8759,6 @@
 	}
 	1174.1.1 = {
 		add_spouse = 215505 #Eudoxie Comnène
-	}
-	1180.1.1 = {
-		set_primary_title_to = title:c_montpellier
 	}
 	#1199 married Inès de Castille
 	1202.11.4 = {
@@ -10665,7 +10662,7 @@
 	trait = temperate
 	trait = education_martial_3
 	trait = cautious_leader
-	trait = marshal_of_jerusalem
+	trait = marshall_of_jerusalem
 	trait = infertile
 	trait = scarred
 	father = 223660
@@ -10994,10 +10991,12 @@
 205682 = {
 	name = "AliC_" #Alix de Beaujeu
 	female = yes
-	dynasty = 5092 #was 322 de Méziriac
+	dynasty = 5092
+	father = KOH0095 #Guichard IV de Beaujeu
+	mother = KOH0096 #Lucienne de Rochefort	
 	religion = "catholic"
 	culture = "occitan"
-	1105.1.2 = {
+	1122.1.2 = {
 		birth = "1105.1.2"
 	}
 	1160.1.2 = {
@@ -11042,63 +11041,214 @@
 	905.1.1 = {
 		birth = "905.1.1" #unknown
 	}
-	962.2.1 = {
-		death = "962.2.1" #before
+	920.1.1 = {
+		dynasty = 13113 #de Thiern
+	}
+	942.2.1 = {
+		death = "942.2.1" #before
+	}
+}
+
+KOH0052 = {
+	name = "Gui" #Gui I de Thiern
+	dynasty = 13113 #de Thiern
+	religion = "catholic"
+	culture = "occitan"
+	father = 40132 #Malfroid de Thiern
+	920.1.1 = {
+		birth = "920.1.1" #unknown
+	}
+	962.1.1 = {
+		death = "962.1.1" 
 	}
 }
 
 40134 = {
 	name = "EstE_ve" #Etienne I de Thiern
 	# AKA: Etienne
-	dynasty = 13113 #was 733 Auvergne
+	dynasty = 13113 #de Thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 40132 #Malfroid de Thiern
 	925.1.1 = {
 		birth = "925.1.1" #unknown
 	}
+	1030.1.1 = {
+		add_spouse = KOH0053
+	}
 	982.1.1 = {
 		death = "982.1.1" #unknown
 	}
 }
 
+KOH0053 = {
+	name = "Ermengarde" #wife of Etienne I de Thiern
+	female = yes
+	religion = "catholic"
+	culture = "occitan"
+	939.1.1 = {
+		birth = "939.1.1" #unknown
+	}
+	965.1.1 = {
+		death = "965.1.1" #unknown
+	}
+}
+
 40136 = {
 	name = "Gui" #Guy II de Thiern
-	dynasty = 13113 #was 733 Auvergne
+	dynasty = 13113 
 	religion = "catholic"
 	culture = "occitan"
 	father = 40134 #Etienne I de Thiern
-	965.1.1 = {
-		birth = "965.1.1" #unknown
+	mother = KOH0053
+	961.1.1 = {
+		birth = "961.1.1" #unknown
+	}
+	995.1.1 = {
+		add_spouse = KOH0056
 	}
 	1031.1.1 = {
 		death = "1031.1.1"
 	}
 }
 
+KOH0054 = {
+	name = "Théotard"
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = 40134 #Etienne I de Thiern
+	mother = KOH0053
+	963.1.1 = {
+		birth = "963.1.1" #unknown
+	}
+	980.1.1 = {
+		death = "980.1.1" #after
+	}
+}
+
+KOH0055 = {
+	name = "Gilbert"
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = 40134 #Etienne I de Thiern
+	mother = KOH0053
+	965.1.1 = {
+		birth = "965.1.1" #unknown
+	}
+	979.1.1 = {
+		death = "979.1.1" #after
+	}
+}
+
+KOH0056 = {
+	name = "Riclende" #wife of Gui II de Thiern
+	female = yes
+	religion = "catholic"
+	culture = "occitan"
+	979.1.1 = {
+		birth = "979.1.1" #unknown
+	}
+	1049.1.1 = {
+		death = "1049.1.1" #after
+	}
+}
+
+KOH0057 = {
+	name = "Théotard"
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = 40136 #Guy II de Thiern
+	mother = KOH0056
+	997.1.1 = {
+		birth = "997.1.1" #unknown
+	}
+	1013.1.1 = {
+		death = "1013.1.1" #after
+	}
+}
+
+KOH0058 = {
+	name = "GuilhE_m" #Guillaume I de Thiern
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = 40136 #Guy II de Thiern
+	mother = KOH0056
+	998.1.1 = {
+		birth = "998.1.1"
+	}
+	1012 = {
+		add_spouse = KOH0059
+	}
+	1076.1.1 = {
+		death = "1076.1.1"
+	}
+}
+
+KOH0059 = {
+	name = "Ponce" #wife of Guillaume I de Thiern
+	female = yes
+	religion = "catholic"
+	culture = "occitan"
+	995.1.1 = {
+		birth = "995.1.1" #unknown
+	}
+	1015.1.1 = {
+		death = "1015.1.1" #unknown
+	}
+}
+
 40140 = {
 	name = "EstE_ve" #Etienne II de Thiern
+	# AKA: Etienne
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = 40136 #Guy II de Thiern
+	mother = KOH0056
+	985.1.1 = {
+		birth = "985.1.1"
+	}
+	#1015 married Blanche Semur de Chalon
+	1060.1.1 = {
+		death = "1060.1.1"
+	}
+}
+
+40141 = {
+	name = "EstE_ve" #Etienne III de Thiern
 	# AKA: Etienne
 	dynasty = 13113 #was 733 Auvergne
 	religion = "catholic"
 	culture = "occitan"
-	father = 40136 #Guy II de Thiern
-	985.1.1 = {
-		birth = "985.1.1"
+	father = 40140 #Etienne II de Thiern
+	mother = KOH0060 #Blanche de Chalon
+	trait = zealous
+	trait = shy
+	trait = compassionate
+	1044.1.1 = {
+		birth = "1044.1.1"
 	}
-	#1015 married Blanche de Chalon
-	1060.1.1 = {
-		death = "1060.1.1"
+	1074.1.1 = (
+		trait = devoted #abdicated for religious life
+	)
+	1124.2.8 = {
+		death = "1124.2.8"
+		trait = saint
 	}
 }
 
 40142 = {
 	name = "GuilhE_m" #Guillaume II de Thiern
 	# AKA: Guilhem
-	dynasty = 13113 #was 733 Auvergne
+	dynasty = 13113 
 	religion = "catholic"
 	culture = "occitan"
-	father = 40140 #Etienne d'Auvergne
+	father = KOH0058 #Guillaume I de Thiern
+	mother = KOH0060
 	1015.1.1 = {
 		birth = "1015.1.1"
 	}
@@ -11113,7 +11263,7 @@
 40144 = {
 	name = "GuilhE_m" #Guillaume III de Thiern
 	# AKA: Guilhem
-	dynasty = 13113 #was 733 Auvergne
+	dynasty = 13113 
 	religion = "catholic"
 	culture = "occitan"
 	trait = education_martial_2
@@ -11130,7 +11280,7 @@
 91149 = {
 	name = "Gui" #Guy III de Thiern/Chalon
 	# AKA: Guy
-	dynasty = 736 #was 733 Auvergne
+	dynasty = 13113 
 	religion = "catholic"
 	culture = "occitan"
 	father = 40142 #Guillaume II de Thiern
@@ -11138,42 +11288,206 @@
 	1036.1.1 = {
 		birth = "1036.1.1" #unknown
 	}
+	1079.12.1 = {
+		dynasty_house = house_chalon #Chalon
+	}
 	1113.1.1 = {
 		death = "1113.1.1"
 	}
 }
 
+KOH0061 = {
+	name = "Hugues" 
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = 40142 #Guillaume II de Thiern
+	mother = 91148 #Adelais de Chalon
+	1037.1.1 = {
+		birth = "1037.1.1" #unknown, third son
+	}
+	1047.1.1 = {
+		death = "1147.1.1" #unknown
+	}
+}
+
+KOH0062 = {
+	name = "Wandelmode"
+	female = yes
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = 40142 #Guillaume II de Thiern
+	mother = 91148 #Adelais de Chalon
+	1040.1.1 = {
+		birth = "1040.1.1" #unknown
+	}
+	#married Humbert Beaujeu II
+	1070.1.1 = {
+		death = "1070.1.1" #unknown, no children
+	}
+}
+
+KOH0063 = {
+	name = "Gui" #Guy III de Thiern
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = 40144 #Guillaume III de Thiern
+	1065.1.1 = {
+		birth = "1065.1.1" #unknown
+	}
+	1131.1.1 = {
+		death = "1131.1.1" #after
+	}
+}
+
+KOH0064 = {
+	name = "Gui" #Guy IV de Thiern
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = KOH0063 #Guy III de Thiern
+	1095.1.1 = {
+		birth = "1095.1.1" #unknown
+	}
+	1156.1.1 = {
+		death = "1156.1.1" #after
+	}
+}
+
+KOH0065 = {
+	name = "Gui" #Guy V de Thiern
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = KOH0064 #Guy IV de Thiern
+	1125.1.1 = {
+		birth = "1125.1.1" #unknown
+	}
+	1181.1.1 = {
+		add_spouse = 91071 #Clémence de Courtenay
+	}
+	1185.1.1 = {
+		death = "1185.1.1" #after
+	}
+}
+
+KOH0068 = {
+	name = "Gui" #Guy VI de Thiern
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = KOH0065 #Guy V de Thiern
+	mother = 91071 #Clémence de Courtenay
+	1182.1.1 = {
+		birth = "1182.1.1"
+	}
+	1237.1.1 = {
+		death = "1237.1.1" #after
+	}
+}
+
+KOH0066 = {
+	name = "EstE_ve"
+	dynasty = 13113 
+	religion = "catholic"
+	culture = "occitan"
+	father = KOH0065 #Guy V de Thiern
+	mother = 91071 #Clémence de Courtenay
+	1183.1.1 = {
+		birth = "1183.1.1"
+	}
+	1240.1.1 = {
+		death = "1240.1.1" #unknown
+	}
+}
+
 205691 = {
 	name = "GuilhE_m" #Guillaume I de Chalon
-	dynasty = 736 #was 733 Auvergne
+	dynasty = 13113 
 	religion = "catholic"
 	culture = "occitan"
 	father = 91149 #Guy III de Thiers	
 	1055.1.1 = {
 		birth = "1055.1.1" #unknown
+	}
+	1079.12.1 = {
+		dynasty_house = house_chalon #Chalon
+	}
+	1148.1.1 = {
+		death = "1148.1.1"
+	}
+}
+
+KOH0069 = {
+	name = "Gui" #lord of Montpensier
+	dynasty = 13113
+	religion = "catholic"
+	culture = "occitan"
+	father = 91149 #Guy III de Thiers	
+	1065.1.1 = {
+		birth = "1065.1.1" #unknown
+	}
+	1079.12.1 = {
+		dynasty_house = house_chalon #Chalon
 	}	
-	1166.1.1 = {
-		death = "1166.1.1"
+	1127.1.1 = {
+		death = "1127.1.1" #unknown
+	}
+}
+
+KOH0070 = {
+	name = "AinE_s" #Agnès of Montpensier
+	female = yes
+	dynasty_house = house_chalon 
+	religion = "catholic"
+	culture = "occitan"
+	father = KOH0069 #Guy de Chalon
+	1125.1.1 = {
+		birth = "1125.1.1" #unknown
+	}
+	1148.1.1 = {
+		add_spouse = 206018 #Raimond Bourgogne
+	}
+	#married Humbert IV Beaujeu
+	1175.1.1 = {
+		death = "1175.1.1" #unknown
 	}
 }
 
 205690 = {
 	name = "GuilhE_m" #Guillaume II de Chalon
-	dynasty = 736 #was 733 Auvergne
+	dynasty_house = house_chalon
+	religion = "catholic"
+	culture = "occitan"
+	father = 205691 #Guillaume I de Chalon
+	1115.1.1 = {
+		birth = "1115.1.1"
+	}
+	1174.1.1 = {
+		death = "1174.1.1"
+	}
+}
+
+KOH0067 = {
+	name = "Isabelle"
+	female = yes
+	dynasty_house = house_chalon
 	religion = "catholic"
 	culture = "occitan"
 	father = 205691 #Guillaume I de Chalon
 	1120.1.1 = {
 		birth = "1120.1.1"
 	}
-	1202.1.1 = {
-		death = "1202.1.1"
+	1165.6.1 = {
+		death = "1165.6.1"
 	}
 }
 
 138432 = {
 	name = "GuilhE_m" #Guillaume III de Chalon
-	dynasty = 736 #was 733 Auvergne
+	dynasty_house = house_chalon 
 	religion = "catholic"
 	culture = "occitan"
 	father = 205690 #Guillaume II de Chalon
@@ -11188,10 +11502,26 @@
 	}
 }
 
+KOH0071 = {
+	name = "AliC_"
+	dynasty_house = house_chalon 
+	religion = "catholic"
+	culture = "occitan"
+	father = 205690 #Guillaume II de Chalon
+	1155.1.1 = {
+		birth = "1155.1.1"
+	}
+	#married Josserand Grossus
+	#married Ulric de Bage
+	1203.1.3 = {
+		death = "1203.1.3"
+	}
+}
+
 205692 = {
 	name = "Beatritz" #Béatrice de Chalon
 	female = yes
-	dynasty = 736 #was 733 Auvergne
+	dynasty_house = house_chalon
 	religion = "catholic"
 	culture = "occitan"
 	father = 138432 #Guillaume III de Chalon
@@ -11841,7 +12171,7 @@
 	1095.1.1 = {
 		birth = "1095.1.1"
 	}
-	1129.1.1 = {
+	1138.1.1 = {
 		add_spouse = 205682 #Alix de Beaujeu
 	}
 	1138.10.27 = {
@@ -11856,12 +12186,27 @@
 	culture = "occitan"
 	father = 205681 #Guy d'Albon
 	mother = 205682 #Alix de Beaujeu
-	1130.1.1 = {
-		birth = "1130.1.1"
+	1138.11.1 = {
+		birth = "1138.11.1"
 	}
-	# married 1158 Guillelme ?
+	1158 = {
+		add_spouse = KOH0111 #Guillelme
+	}
 	1206.6.12 = {
 		death = "1206.6.12"
+	}
+}
+
+KOH0111 = {
+	name = "Guillelme"
+	female = yes
+	religion = "catholic"
+	culture = "occitan"
+	1142.1.1 = {
+		birth = "1142.1.1"
+	}
+	1187.1.1 = {
+		death = "1187.1.1"
 	}
 }
 
@@ -11871,6 +12216,7 @@
 	religion = "catholic"
 	culture = "occitan"
 	father = 205680 #Guigues II de Forez
+	mother = KOH0111 #Guillelme
 	1160.1.2 = {
 		birth = "1160.1.2"
 	}
@@ -11889,6 +12235,7 @@
 	religion = "catholic"
 	culture = "occitan"
 	father = 205680#Guigues II de Forez
+	mother = KOH0111 #Guillelme
 	1178.1.1 = {
 		birth = "1178.1.1"
 	}
@@ -14253,5 +14600,142 @@
 	}
 	1001.1.1 = {
 		death = yes
+	}
+}
+
+KOH0090 = {
+	name = "Wandalmode" #Wandalmode de Beajeu
+	female = yes
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0093 #Humbert II de Beajeu
+	mother = KOH0094 #Auxilia
+	1093.1.2 = {
+		birth = "yes"
+	}
+	1113.1.1 = {
+		death = "1113.1.1"
+	}
+}
+
+KOH0093 = {
+	name = "Umbert" #Humbert II de Beaujeu
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	1042.1.2 = {
+		birth = "yes"
+	}
+	1060.1.1  = {
+		add_spouse = KOH0062 #Wandelmode de Thiern
+	}
+	1080.1.1 = {
+		add_spouse = KOH0094 #Auxilia
+	}
+	1102.1.1 = {
+		death = "1102.1.1"
+	}
+}
+
+KOH0094 = {
+	name = "Auxilia"
+	female = yes
+	religion = "catholic"
+	culture = occitan
+	1060.1.2 = {
+		birth = "yes"
+	}
+	1100.1.1 = {
+		death = "1100.1.1"
+	}
+}
+
+KOH0095 = {
+	name = "Guigues" #Guichard IV de Beaujeu
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0093 #Humbert II de Beaujeu
+	mother = KOH0094 #Auxilia
+	1080.11.2 = {
+		birth = "yes"
+	}
+	1108.1.1  = {
+		add_spouse = KOH0096 #Lucienne de Rochefort
+	}
+	1137.9.23 = {
+		death = "1137.9.23"
+	}
+}
+
+KOH0097 = {
+	name = "Umbert" #Humbert III de Beaujeu
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0095 #Guichard IV de Beaujeu
+	mother = KOH0096 #Lucienne de Rochefort
+	1120.1.2 = {
+		birth = "yes"
+	}
+	1138.1.1  = {
+		add_spouse = 70889 #Alix de Savoie
+	}
+	1192.1.1 = {
+		death = "1192.1.1"
+	}
+}
+
+KOH0098 = {
+	name = "Umbert" #Humbert IV de Beaujeu
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0097 #Humbert III de Beaujeu
+	mother = 70889 #Alix de Savoie
+	1141.1.2 = {
+		birth = "yes"
+	}
+	1156.8.1  = {
+		add_spouse = KOH0070 #Agnès of Montpensier
+	}
+	1189.1.1 = {
+		death = "1189.1.1"
+	}
+}
+
+KOH0099 = {
+	name = "Pontia" #Pontia de Beaujeu
+	female = yes
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0097 #Humbert III de Beaujeu
+	mother = 70889 #Alix de Savoie
+	1145.1.2 = {
+		birth = "yes"
+	}
+	1157.1.1  = {
+		add_spouse = 205700 #Guillaume de Macon
+	}
+	1183.1.1 = {
+		death = "1183.1.1"
+	}
+}
+
+KOH0100 = {
+	name = "AliC_" #Alix de Beaujeu
+	female = yes
+	dynasty = 5092
+	religion = "catholic"
+	culture = occitan
+	father = KOH0098 #Humbert IV de Beaujeu
+	mother = KOH0070 #Agnès of Montpensier
+	1162.1.2 = {
+		birth = "yes"
+	}
+	1189.1.1 = {
+		death = "1189.1.1"
 	}
 }
