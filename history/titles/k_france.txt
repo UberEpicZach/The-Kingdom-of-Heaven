@@ -629,6 +629,7 @@ c_beaumont = {
 	}
 	1013.1.1 = {
 		holder = KOH0123
+		liege = k_france
 	}
 	1059.4.12 = {
 		holder = KOH0124
@@ -819,7 +820,7 @@ c_tourraine = {
 	}
 	1183.1.1 = {
 		holder = 204510 #Richard I Cœur-de-Lion
-		liege = k_england
+		liege = d_aquitaine
 	}
 	1199.4.6 = {
 		holder = 204514 #Jean I Sans Terre
@@ -946,8 +947,6 @@ c_issoudun = {
 	}
 }
 
-#Undoing the silly logic to not have this duchy populated.
-
 d_anjou = {
 	#Not as the Duchy of Anjou, but placeholder for the March of Neustria against the Bretons
 	#Note : there were 2 Marches of Neustria, the other one being the March against the Normands
@@ -971,60 +970,9 @@ d_anjou = {
 	960.1.1 = {
 		holder = 200	#Hughes Capet
 	}
-987.7.3 = {
-	liege = k_france
-	holder = 372 # Geoffroy I Grisegonelle	
-}
-987.7.21 = {
-	holder = 374 # Foulque III Nerra
-}
-1040.6.21 = {
-	holder = 376 # Geoffroy II Martel
-}
-1060.1.1 = {
-	holder = 378 # Geoffroy III le Barbu
-}
-1068.1.1 = {
-	holder = 380 # Foulque IV le Réchin
-}
-1109.4.14 = {
-	holder = 223525 # Foulque V le Jeune
-}
-1129.1.1 = {
-	holder = 204506 # Geoffroy V le Bel
-}
-1151.9.7 = {
-	liege = k_england
-	holder = 204500 # Henri I Courtmanteau
-}
-1189.7.6 = {
-	holder = 204510 # Richard I Cœur-de-Lion
-}
-1199.4.6 = {
-	holder = 204505 # Arthur I de Bretagne
-}
-1203.1.1 = {
-	liege = k_france
-	holder = 205506 # Philippe II Auguste
-}
-1223.7.14 = {
-	holder = 455402 # Louis VIII le Lion
-}
-1226.11.8 = {
-	holder = 455406 # Charles I
-}
-1285.1.7 = {
-	holder = 461710 # Charles II
-}
-1290.8.16 = {
-	holder = 455512 # Marguerite
-}
-1299.12.13 = {
-	holder = 455500 # Philippe
-}
-1328.4.1 = {
-	holder = 455502 # Jean II
-}
+	987.1.1 = {		#End of the march of Neustria
+		holder = 0
+	}
 	
 	#Duchy of Anjou created in 1360
 }
@@ -4306,7 +4254,7 @@ c_sens = {
 c_lepuiset = { 
 	1183.1.1 = {
 		holder = 223570
-		liege = k_france
+		liege = d_champagne
 	}
 }
 
@@ -4322,9 +4270,10 @@ b_lepuiset = {
 	}
 }
 
-b_coucy = {
+c_coucy = {
 	1080.1.1 = {
 		holder = 144235
+		liege = k_france
 	}
 	1116.1.1 = {
 		holder = 204990

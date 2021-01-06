@@ -40,7 +40,6 @@ KoH_RichardTheLionheart.1 = {
 			get_title = d_aquitaine
 			get_title = d_poitou
 			get_title = d_gascogne
-			get_title = d_auvergne
 		}
 		hidden_effect = {
 			title:c_bourbon.holder = {
@@ -187,6 +186,42 @@ KoH_RichardTheLionheart.1 = {
 				}
 				resolve_title_and_vassal_change = scope:change
 			}
+			title:c_clermont_sur_allier.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_thiers.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_bellac.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+					
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
 		}
 	}
 } 
@@ -209,8 +244,16 @@ KoH_RichardTheLionheart.2 = {
 		character = character:205506
 		animation = grief
 	}
-
+	trigger = {
+			character:204511 = { is_alive = yes }
+			character:205506 = { is_alive = yes }
+			character:205506 = { is_local_player = no }
+			NOT = { has_character_flag = had_event_RichardTheLionheart.2}
+	}
 	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.2
+		}
 		character:204510 = {
 			trigger_event = {
 				id = KoH_RichardTheLionheart.3
@@ -225,39 +268,40 @@ KoH_RichardTheLionheart.2 = {
 	}
 	option = {
 		name = KoH_RichardTheLionheart.2.a
-
-		create_character = {
-			name = "Arthur"
-			age = 0.1
-			gender = male
-			mother = character:205740
-			father = character:204511
-			dynasty = 106
-			faith = "catholic"
-			culture = "english"
-			trait = beauty_good_2
-			save_scope_as = arthur
-		}
-		character:205930 = {
-			remove_trait = unwed
-		}
-		scope:arthur = {
-			get_title = c_west_riding
-			get_title = c_nantes
-		}
-		character:205740 = {
-			marry = character:205930
-
-			create_title_and_vassal_change = {
-				type = swear_fealty #or whatever
-				save_scope_as = change
+		hidden_effect = {
+			create_character = {
+				name = "Arthur"
+				age = 0.1
+				gender = male
+				mother = character:205740
+				father = character:204511
+				dynasty = 106
+				faith = "catholic"
+				culture = "english"
+				trait = beauty_good_2
+				save_scope_as = arthur
 			}
-	
-			change_liege = {
-				liege = character:204500
-				change = scope:change
+			character:205930 = {
+				remove_trait = unwed
 			}
-			resolve_title_and_vassal_change = scope:change
+			scope:arthur = {
+				get_title = c_west_riding
+				get_title = c_nantes
+			}
+			character:205740 = {
+				marry = character:205930
+
+				create_title_and_vassal_change = {
+					type = swear_fealty #or whatever
+					save_scope_as = change
+				}
+		
+				change_liege = {
+					liege = character:204500
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
 		}
 	}
 }
@@ -294,15 +338,15 @@ KoH_RichardTheLionheart.3 = {
 		every_ruler = {
             limit = {
                 any_held_title = {
-                    this = title:d_toulouse
+                    this = title:k_castille
                 }
             }
-            save_scope_as = toulouse_ruler
+            save_scope_as = castille_ruler
 		}
 		every_ruler = {
             limit = {
                 any_held_title = {
-                    this = title:k_scotland
+                    this = title:k_aragon
                 }
             }
             save_scope_as = aragon_ruler
@@ -317,18 +361,15 @@ KoH_RichardTheLionheart.3 = {
 			opinion = 50
 		}
 
-		hidden_effect = {
-
-			character:204510 = {
-				trigger_event = {
-					id = KoH_RichardTheLionheart.4
-					days = 30 
-				}
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.4
+				days = 30 
 			}
+		}
 
-			character:204500 = {
-				set_designated_heir = character:204514
-			}
+		character:204500 = {
+			set_designated_heir = character:204514
 		}
 	}
 
@@ -366,7 +407,7 @@ KoH_RichardTheLionheart.3 = {
 				}
 			}
 			25 = {
-				create_alliance = scope:toulouse_ruler
+				create_alliance = scope:castille_ruler
 				scope:toulouse_ruler = {
 					add_opinion = {
 						target = character:204510
@@ -397,197 +438,96 @@ KoH_RichardTheLionheart.4 = {
 		character = root
 		animation = personality_bold
 	}
-	
-	option = { #He can take it
-		name = KoH_RichardTheLionheart.4.a
-
-		character:204510 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.9
-				days = 30 
-			}
-		}
-
-		character:204514 = {
-			get_title = d_aquitaine
-			get_title = d_poitou
-			get_title = d_gascogne
-			get_title = d_auvergne
-		}
-		hidden_effect = {
-			title:c_bourbon.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_bordeaux.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_limousin.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_labourd.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_auvergne.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_angouleme.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_perigord.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_agenais.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_bigorre.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_armagnac.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_montaigu.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_lusignan.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:204514
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.4}
+		character:204500 = { is_alive = yes }
+		character:204514 = { is_alive = yes }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.4
 		}
 	}
 
 	option = {
-		name = KoH_RichardTheLionheart.4.b
+		name = KoH_RichardTheLionheart.4.a
 
 		add_pressed_claim = title:k_england
 
 		reverse_add_opinion = {
 			target = character:204500 #Henry
 			modifier = angry_opinion
-			opinion = -50
+			opinion = -40
 		}
 
 		reverse_add_opinion = {
 			target = character:204514 #John
 			modifier = angry_opinion
-			opinion = -50
+			opinion = -20
 		}
 
 		character:204510 = {
 			trigger_event = {
 				id = KoH_RichardTheLionheartWar.1
+				days = 1
+			}
+			trigger_event = {
+				id = KoH_RichardTheLionheart.5
 				days = 15 
 			}
 		}
 	}
-
 }
+
+#The Odds
+KoH_RichardTheLionheart.5 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.5.t
+	desc = KoH_RichardTheLionheart.5.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.5}
+		character:204500 = { is_alive = yes }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.5
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_scotland
+                }
+            }
+            save_scope_as = scotland_ruler
+		}
+	}
+	option = {
+		name = KoH_RichardTheLionheart.5.a
+		custom_tooltip = KoH_RichardTheLionheart.5.a.tt
+		
+		hidden_effect = {
+			create_alliance = scope:scotland_ruler
+			scope:scotland_ruler = {
+				add_opinion = {
+					target = character:204510
+					modifier = perk_negotiated_alliance_opinion
+				}
+			}
+		}
+		trigger_event = {
+			id = KoH_RichardTheLionheart.6
+			days = 15 
+		}
+	}
+}
+	
 
 KoH_RichardTheLionheart.6 = {
 	type = character_event
@@ -600,7 +540,14 @@ KoH_RichardTheLionheart.6 = {
 		animation = personality_bold
 	}
 	
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.6}
+		character:204500 = { is_alive = yes }
+	}
 	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.6
+		}
 		character:204500 = {
 			random_targeting_faction = {
 				limit = {
@@ -621,10 +568,13 @@ KoH_RichardTheLionheart.6 = {
 
 	option = {
 		name = KoH_RichardTheLionheart.6.a
-
-		scope:the_faction = {
-			faction_start_war = {
-				title = title:k_england
+		custom_tooltip = KoH_RichardTheLionheart.6.a.tt
+		
+		hidden_effect = {
+			scope:the_faction = {
+				faction_start_war = {
+					title = title:k_england
+				}
 			}
 		}
 		character:204510 = {
@@ -637,6 +587,7 @@ KoH_RichardTheLionheart.6 = {
 	
 	option = {
 		name = KoH_RichardTheLionheart.6.b
+		custom_tooltip = KoH_RichardTheLionheart.6.b.tt
 
 		character:204510 = {
 			trigger_event = {
@@ -645,13 +596,24 @@ KoH_RichardTheLionheart.6 = {
 			}
 		}
 	}
+	after = {
+			every_character_war = {
+			limit = {
+				primary_defender = title:k_england.holder
+				primary_attacker = title:c_anjou.holder
+			}
+			add_attacker = title:k_france.holder
+			add_attacker = title:k_scotland.holder
+			add_defender = title:d_brittany.holder
+			}
+	}
 }
 
 #jerusalem
 KoH_RichardTheLionheart.7 = {
 	type = character_event
-	title = KoH_RichardTheLionheart.1.t
-	desc = KoH_RichardTheLionheart.1.d
+	title = KoH_RichardTheLionheart.7.t
+	desc = KoH_RichardTheLionheart.7.d
 	theme = war
 	
 	trigger = {
@@ -661,8 +623,9 @@ KoH_RichardTheLionheart.7 = {
 					faith.religion = root.religion
 				}
 			}
-			title:k_jerusalem.holder = character:226000 }
+			title:k_jerusalem.holder = character:226000 
 		}
+	}
 
 	left_portrait = {
 		character = root
@@ -688,8 +651,8 @@ KoH_RichardTheLionheart.7 = {
 #Mother Released
 KoH_RichardTheLionheart.8 = {
 	type = character_event
-	title = KoH_RichardTheLionheart.1.t
-	desc = KoH_RichardTheLionheart.1.d
+	title = KoH_RichardTheLionheart.8.t
+	desc = KoH_RichardTheLionheart.8.d
 	theme = war
 	
 	left_portrait = {
@@ -697,7 +660,15 @@ KoH_RichardTheLionheart.8 = {
 		animation = personality_bold
 	}
 	
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.8}
+		character:204500 = { is_alive = yes }
+		character:205730 = { is_alive = yes }
+	}
 	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.8
+		}
 		character:205730 = {
 			if = {
 				limit = {
@@ -706,8 +677,13 @@ KoH_RichardTheLionheart.8 = {
 				release_from_prison = yes
 			}
 			add_pressed_claim = title:d_aquitaine
-			}
 		}
+		hidden_effect = {
+			character:205730 = {
+				set_designated_heir = character:204510
+			}	
+		}
+	}
 
 	option = {
 		name = KoH_RichardTheLionheart.8.a
@@ -728,165 +704,200 @@ KoH_RichardTheLionheart.8 = {
 		}
 
 		character:205730 = {
-				get_title = d_aquitaine
-				get_title = d_poitou
-				get_title = d_gascogne
-				get_title = d_auvergne
+			get_title = d_aquitaine
+			get_title = d_poitou
+			get_title = d_gascogne
 			
-	
-			title:c_bourbon.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
+			hidden_effect = {
+				title:c_bourbon.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
 				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
+				title:c_bordeaux.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
 				}
-				resolve_title_and_vassal_change = scope:change
+				title:c_limousin.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_labourd.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_auvergne.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_angouleme.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_perigord.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_agenais.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_bigorre.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_armagnac.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_montaigu.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_lusignan.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_clermont_sur_allier.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_thiers.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_bellac.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
 			}
-			title:c_bordeaux.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_limousin.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_labourd.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_auvergne.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_angouleme.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_perigord.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_agenais.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_bigorre.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_armagnac.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_montaigu.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			title:c_lusignan.holder = {
-				create_title_and_vassal_change = {
-					type = granted #or whatever
-					save_scope_as = change
-				}
-				
-				change_liege = {
-					liege = character:205730
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
-			reverse_add_opinion = {
-				target = character:204510 #Henry
+			add_opinion = {
+				target = character:204510 #Richard
 				modifier = pleased_opinion
-				opinion = 70
+				opinion = 50
 			}
 			create_alliance = character:204510
 		}
-		create_alliance = character:205730
-
+		
 		character:204510 = {
 			add_opinion = {
 				target = character:205730
@@ -906,6 +917,17 @@ KoH_RichardTheLionheart.9 = {
 		character = root
 		animation = personality_bold
 	}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.9}
+		character:204500 = { is_alive = yes }
+		character:205730 = { is_alive = yes }
+		character:205506 = { is_alive = yes }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.9
+		}
+	}
 	
 	option = {
 		name = KoH_RichardTheLionheart.9.a
@@ -920,8 +942,14 @@ KoH_RichardTheLionheart.9 = {
 
 	option = {
 		name = KoH_RichardTheLionheart.9.b
+		
+		character:204500 = {
+			set_designated_heir = character:204510
+		}
+		add_prestige = -500
 	}
 }
+
 #Philip Reads Letter
 KoH_RichardTheLionheart.10 = {
 	type = character_event
@@ -933,163 +961,91 @@ KoH_RichardTheLionheart.10 = {
 		character = root
 		animation = personality_bold
 	}
-	
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.10}
+		character:204500 = { is_alive = yes }
+		character:205506 = { is_alive = yes }
+		character:204510 = { is_alive = yes }
+	}
 	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.10
+		}
 		every_ruler = {
             limit = {
                 any_held_title = {
                     this = title:c_anjou
                 }
             }
-            save_scope_as = french_ruler
+            save_scope_as = anjou_ruler
 		}
 	}
 
 	option = {
 		name = KoH_RichardTheLionheart.10.a
 
-		character:205506 = {
+		character:204510 = {
 			trigger_event = {
 				id = KoH_RichardTheLionheart.11
 				days = 20
 			}
 		}
 
-		create_alliance = scope:french_ruler
-				scope:french_ruler = {
-					add_opinion = {
-						target = character:205506
-						modifier = perk_negotiated_alliance_opinion
-						}
-					}
-			reverse_add_opinion = {
-				target = character:204510 #Henry
-					modifier = pleased_opinion
-					opinion = 75
-					}			
-		}
-
-	option = {
-		name = KoH_RichardTheLionheart.10.b
-
-		reverse_add_opinion = {
-			target = character:204510 #Henry
-			modifier = angry_opinion
-			opinion = -75
-		}
-		character:205506 = {
-				trigger_event = {
-					id = KoH_RichardTheLionheart.20
-					days = 20
+		create_alliance = scope:anjou_ruler
+		scope:anjou_ruler = {
+			add_opinion = {
+				target = character:205506
+				modifier = perk_negotiated_alliance_opinion
 			}
 		}
+		reverse_add_opinion = {
+			target = character:204510 #Richard
+			modifier = pleased_opinion
+			opinion = 75
+		}			
 	}
 }
 
-#Richard gets repsonse - Philip Allies
+#Richard gets response - Philip Allies
 KoH_RichardTheLionheart.11 = {
 	type = character_event
 	title = KoH_RichardTheLionheart.11.t
 	desc = KoH_RichardTheLionheart.11.d
 	theme = war
 	
-	immediate = {
-		character:204500 = {
-			random_targeting_faction = {
-				limit = {
-					faction_is_type = claimant_faction
-				}
-				save_scope_as = the_faction
-			}
-		}	
-		character:204500 = {
-			random_targeting_faction = {
-				limit = {
-					faction_is_type = claimant_faction
-			}
-			special_title = {
-				save_scope_as = target_title
-				}
-			}
-		}
-		every_ruler = {
-            limit = {
-                any_held_title = {
-                    this = title:k_france
-                }
-            }
-            save_scope_as = french_ruler
-		}
-	}
-
-
 	left_portrait = {
 		character = root
 		animation = personality_bold
+	}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.11}
+		character:204500 = { is_alive = yes }
+		character:205506 = { is_alive = yes }
+		character:204510 = { is_alive = yes }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.11
+		}
 	}
 	
 	option = {
 		name = KoH_RichardTheLionheart.11.a
 
-		scope:the_faction = {
-			faction_start_war = {
-				title = title:k_england
-			}
-		}
-		trigger_event = KoH_RichardTheLionheart.12
-	}
-
-	option = {
-		name = KoH_RichardTheLionheart.11.b
-	}
-}
-
-#Richard gets repsonse - Philip Declines
-KoH_RichardTheLionheart.20 = {
-	type = character_event
-	title = KoH_RichardTheLionheart.20.t
-	desc = KoH_RichardTheLionheart.20.d
-	theme = war
-	
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
-
-	immediate = {
-		character:204500 = {
-			random_targeting_faction = {
-				limit = {
-					faction_is_type = claimant_faction
+		hidden_effect = {
+			character:204510 = {
+				start_war = {
+					casus_belli = richards_independence_cb
+					target = character:204500
 				}
-				save_scope_as = the_faction
 			}
-		}	
-		if = {
-			limit = {
-				faction_is_type = claimant_faction
-			}
-			special_title = {
-				save_scope_as = target_title
+			trigger_event = {
+				id = KoH_RichardTheLionheart.12
+				days = 1
 			}
 		}
-	}
-	
-	option = {
-		name = KoH_RichardTheLionheart.20.a
-
-		scope:the_faction = {
-			faction_start_war = {
-				title = title:k_england
-			}
-		}
-	}
-
-	option = {
-		name = KoH_RichardTheLionheart.20.b
 	}
 }
-
 
 KoH_RichardTheLionheart.12 = {
 	type = character_event
@@ -1112,40 +1068,12 @@ KoH_RichardTheLionheart.12 = {
 				primary_attacker = title:c_anjou.holder
 			}
 			add_attacker = title:k_france.holder
-		}
+			add_attacker = title:k_scotland.holder
+			}
 	}
 }
 
 #Peace At Last
-KoH_RichardTheLionheart.13 = {
-	type = character_event
-	title = KoH_RichardTheLionheart.13.t
-	desc = KoH_RichardTheLionheart.13.d
-	theme = war
-	
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
-	
-	option = {
-		name = KoH_RichardTheLionheart.13.a
-
-		character:204500 = {
-			set_designated_heir = character:204510
-			death = {
-				death_reason = death_ill
-			}
-		}
-
-		get_title = title:k_aquitaine
-		set_primary_title_to = title:k_england
-	}
-	option = {
-		name = KoH_RichardTheLionheart.13.b
-	}
-}
-
 KoH_RichardTheLionheart.13 = {
 	type = character_event
 	title = KoH_RichardTheLionheart.13.t
@@ -1172,14 +1100,12 @@ KoH_RichardTheLionheart.13 = {
 				target = title:k_france.holder
 				gold = root.major_gold_value
 			}
-		get_title = title:k_aquitaine
-		set_primary_title_to = title:k_england
+			get_title = title:d_aquitaine
+			set_primary_title_to = title:k_england
 		}
 	}
-	option = {
-		name = KoH_RichardTheLionheart.13.b
-	}
 }
+
 #CORONATION EVENT = MAYBE IMPLEMENT THE CORONATION MODULE? 
 KoH_RichardTheLionheart.14 = {
 	type = character_event
@@ -1198,7 +1124,7 @@ KoH_RichardTheLionheart.14 = {
 		add_prestige = 1000
 		}
 	option = {
-		name = KoH_RichardTheLionheart.13.b
+		name = KoH_RichardTheLionheart.14.b
 	}
 }
 

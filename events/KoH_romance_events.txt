@@ -108,6 +108,22 @@ KOH_richard_bride.2 = {
 				remove_trait = unwed
 			}
 		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_france
+                }
+            }
+            save_scope_as = french_ruler
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_navarra
+                }
+            }
+            save_scope_as = navarra_ruler
+		}
 	}
 
 	#Choose Alys
@@ -117,7 +133,11 @@ KOH_richard_bride.2 = {
 		character:204510 = {
 			marry = character:205518
 		}
-
+		create_alliance = {
+			target = scope:french_ruler
+			allied_through_owner = character:204510
+			allied_through_target = character:205518
+		}
 		reverse_add_opinion = {
 			target = character:205506
 			modifier = amused_opinion
@@ -146,6 +166,11 @@ KOH_richard_bride.2 = {
 
 		character:204510 = {
 			marry = character:206501
+		}
+		create_alliance = {
+			target = scope:navarra_ruler
+			allied_through_owner = character:204510
+			allied_through_target = character:206501
 		}
 
 		reverse_add_opinion = {
@@ -212,6 +237,22 @@ KOH_richard_bride.3 = {
 				remove_trait = unwed
 				}
 			}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_france
+                }
+            }
+            save_scope_as = french_ruler
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_navarra
+                }
+            }
+            save_scope_as = navarra_ruler
+		}
 	}
 
 	#Choose Alys
@@ -220,6 +261,13 @@ KOH_richard_bride.3 = {
 
 		character:204510 = {
 			marry = character:205518
+		}
+		character:204510 = {
+			create_alliance = {
+				target = scope:french_ruler
+				allied_through_owner = character:204510
+				allied_through_target = character:205518
+			}
 		}
 		reverse_add_opinion = {
 			target = character:204510
@@ -267,6 +315,13 @@ KOH_richard_bride.3 = {
 					}
 					character:204510 = {
 						marry = character:206501
+					}
+					character:204510 = {
+						create_alliance = {
+							target = scope:navarra_ruler
+							allied_through_owner = character:204510
+							allied_through_target = character:206501
+						}
 					}
 					hidden_effect = {
 						character:KOH0046 = {
@@ -418,7 +473,17 @@ KOH_richard_bride.6 = {
 	trigger = {
 			character:205506 = { is_ai = yes }
 			character:204510 = { is_ai = yes }
+	}
+	immediate = {
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_navarra
+                }
+            }
+            save_scope_as = navarra_ruler
 		}
+	}
 
 	#Go with the historical choice
 	option = {
@@ -426,12 +491,17 @@ KOH_richard_bride.6 = {
 
 		character:205518 = {
 			remove_trait = unwed
-			}
+		}
 		character:206501 = {
 			remove_trait = unwed
 		}
 		character:204510 = {
 			marry = character:206501
+		}
+		create_alliance = {
+			target = scope:navarra_ruler
+			allied_through_owner = character:204510
+			allied_through_target = character:206501
 		}
 		character:KOH0046 = {
 			create_betrothal = character:205518
@@ -1122,6 +1192,11 @@ KOH_balian_women.12 = {
 			marry_matrilineal = character:223522
 			get_title = d_ascalon
 			get_title = c_jaffa
+			create_alliance = {
+				target = character:223523
+				allied_through_owner = character:223570
+				allied_through_target = character:223522
+			}
 		}
 		hidden_effect = {
 		character:215560 = {
@@ -1282,6 +1357,11 @@ KOH_balian_women.14 = {
 			marry_matrilineal = character:223522
 			get_title = d_ascalon
 			get_title = c_jaffa
+			create_alliance = {
+				target = character:223523
+				allied_through_owner = character:223570
+				allied_through_target = character:223522
+			}
 		}
 		character:223500 = {
 			set_relation_rival = character:223570
@@ -1344,14 +1424,14 @@ KOH_balian_women.15 = {
 		}
 		hidden_effect = {
 			trigger_event = {
-						id = KOH_balian_women.16
+						id = KOH_balian_women.17
 						days = 20
 					}
 		}
 	}
 }
 
-#a wife at ibelin
+#a wife at ibelin (Sibylla)
 
 KOH_balian_women.16 = {
 	type = character_event
@@ -1425,6 +1505,7 @@ KOH_balian_women.16 = {
 	}
 }
 
+#a wife at ibelin (Maria)
 KOH_balian_women.17 = {
 	type = character_event
 	title = balian.women.16.t
@@ -2266,6 +2347,7 @@ KOH_georgian_wedding.5 = {
 
 		character:466517 = {
 			remove_trait = unwed
+			create_alliance = character:466516
 		}
 		character:466516 = {
 			remove_trait = unwed
@@ -2328,6 +2410,15 @@ KOH_georgian_wedding.6 = {
 				}
 					location = 601
 			}
+		}
+	}
+	after = {
+		every_character_war = {
+			limit = {
+				primary_defender = title:k_georgia.holder
+				primary_attacker = title:c_odishi.holder
+			}
+			add_defender = title:k_alan.holder
 		}
 	}
 }
@@ -2445,6 +2536,7 @@ KOH_georgian_wedding.8 = {
 		}
 		character:466516 = {
 			marry_matrilineal = character:466517
+			create_alliance = character:466517
 			change_first_name = "Davit Solsan"
 			add_prestige = 300
 		}
@@ -2510,6 +2602,15 @@ KOH_georgian_wedding.9 = {
 				}
 					location = 601
 			}
+		}
+	}
+	after = {
+		every_character_war = {
+			limit = {
+				primary_defender = title:k_georgia.holder
+				primary_attacker = title:c_odishi.holder
+			}
+			add_defender = title:k_alan.holder
 		}
 	}
 }

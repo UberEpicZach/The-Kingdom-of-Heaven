@@ -4002,10 +4002,8 @@ e_britannia = {
 		color2 = { 220 220 0 }
 		
 		can_create = {
-			trigger_if = {
-				limit = {
-					is_ai = yes
-				}
+			trigger_if = 
+				NOT = { date >= 1184.1.1 }
 				has_culture_group = culture_group:brythonic_group
 			}
 		}
@@ -47071,7 +47069,7 @@ e_france = {
 			color2 = { 255 255 255 }
 			
 			capital = c_anjou # Angers
-			
+				
 			c_anjou = {
 				color = { 5 95 235 }
 				color2 = { 255 255 255 }
@@ -48070,9 +48068,7 @@ e_france = {
 		
 		can_create = {
 			trigger_if = {
-				limit = {
-					is_ai = yes
-				}
+				NOT = { date >= 1184.1.1 }
 				NOT = { has_title = title:k_france }
 			}
 		}
@@ -49056,9 +49052,7 @@ e_france = {
 		
 		can_create = {
 			trigger_if = {
-				limit = {
-					is_ai = yes
-				}
+				NOT = { date >= 1184.1.1 }
 				has_culture_group = culture_group:brythonic_group
 			}
 		}
@@ -49259,6 +49253,11 @@ e_france = {
 					}
 				}
 				add = @better_than_the_alternatives_score
+			}
+		}
+		can_create = {
+			trigger_if = {
+				NOT = { date >= 1184.1.1 }
 			}
 		}
 		

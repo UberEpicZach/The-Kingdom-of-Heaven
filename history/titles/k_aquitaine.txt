@@ -2386,33 +2386,22 @@ c_comminges = {
 
 }
 
-d_auvergne = {
-	1184.1.1 = {
-		holder = 205730
-	}
-	1337.1.1 = {
-		liege = "k_france"
-	}
-	1337.1.1 = {
-		holder = 455500
-	}
-}
+#d_auvergne
 
 c_auvergne = {
-743.1.1={
-	holder = 190506 #Stephan
-}
-743.1.1={
-	liege=k_lotharingia
-}
-770.1.1={
-	holder = 190507 #Hugh
-}
-819.1.1={
-	holder = 190508 #Hugh (II)
-}
+	743.1.1 = {
+		holder = 190506 #Stephan
+	}
+	743.1.1 = {
+		liege = k_lotharingia
+	}
+	770.1.1 = {
+		holder = 190507 #Hugh
+	}
+	819.1.1 = {
+		holder = 190508 #Hugh (II)
+	}
 	864.1.1 = {
-		liege = d_aquitaine
 		holder = 127021	#Bernard I
 	}
 	
@@ -2448,15 +2437,14 @@ c_auvergne = {
 	1147.1.1 = {
 		holder = 206040 #Guillaume VII "le jeune" d'Auvergne
 	}
+	1152.5.18 = {
+		liege = d_aquitaine
+	}
 	1155.1.1 = {
 		holder = 206033 #Guillaume "the old" VIII d'Auvergne
 	}
 	1182.1.1 = {
 		holder = 206030 #Robert IV d'Auvergne
-		liege = d_auvergne
-	}
-	1187.1.1 = {
-		liege = "d_gascogne"
 	}
 	1194.1.1 = {
 		holder = 206031 #Guillaume IX d'Auvergne
@@ -2508,8 +2496,8 @@ c_clermont_sur_allier = {
 		holder = 303433	#Robert III de Clermont
 	}
 	979.1.1 = {
-		liege = k_france
 		holder = 138430	#Guy I d'Auvergne
+		liege = "k_france"
 	}
 	989.1.1 = {
 		holder = 40126	#Guillaume IV d'Auvergne
@@ -2532,12 +2520,14 @@ c_clermont_sur_allier = {
 	1147.1.1 = {
 		holder = 206040 #Guillaume VII "le jeune" d'Auvergne
 	}
+	1152.5.18 = {
+		liege = "d_aquitaine"
+	}
 	1155.1.1 = {
 		holder = 206033 #Guillaume "the old" VIII d'Auvergne
 	}
 	1182.1.1 = {
 		holder = 206030 #Robert IV d'Auvergne
-		liege = d_auvergne
 	}
 	1187.1.1 = {
 		liege = "d_gascogne"
@@ -2620,9 +2610,6 @@ c_thiers = {
 	1156.1.1 = {
 		holder = KOH0065 #Guy V de Thiern
 	}
-	1182.1.1 = {
-		liege = d_auvergne
-	}
 	1185.1.1 = {
 		holder = KOH0068 #Guy VI de Thiern
 	}
@@ -2645,83 +2632,38 @@ c_velay = {
 		liege = d_aquitaine
 	}
 	
-	#Viscounts of Gevaudan
-	924.1.1 = {
-		holder = 40258	#Bertrand of Gevaudan
-	}
-	954.1.1 = {
-		holder = 40260	#Etienne de Gevaudan
-	}
-	993.1.1 = {
-		holder = 138226 #Pons I de gévaudan	
-	}
-	
-	#Viscounts of Millau
-	1013.1.1 = {
-		holder = 138234 #Richard I of Millau
-	}
-	1023.7.28 = {
-		holder = 10032 #Richard II de Millau
-	}
-	1051.1.1 = {
-		holder = 10034 #Bérenger II de MIllau
-	}
-	
-	#Counts of Gevaudan
-	1060.1.1 = {
-		holder = 10040 #Gilbert I de Gévaudan
+	979.1.1 = {
 		liege = k_france
+		holder = 138430	#Guy I d'Auvergne
 	}
-	1111.1.1 = {
-		holder = 40806 #Douce I de gévaudan
+	989.1.1 = {
+		holder = 40126	#Guillaume IV d'Auvergne
 	}
-	1127.1.1 = {
-		holder = 40807 #Berenger Raymond de Provence
+	1016.1.1 = {
+		holder = 40128	#Robert I d'Auvergne
 	}
-	1144.3.1 = {
-		holder = 40808 #Raymond Bérenger II de Provence
+	1032.1.1 = {
+		holder = 40130	#Guillaume V d'Auvergne
 	}
-	1166.1.1 = {
-		holder = 71638 #Dolca II de Provence
+	1064.1.1 = {
+		holder = 306 #Robert II d'Auvergne
+	}
+	1096.1.1 = {
+		holder = 206034 #Guillaume VI d'Auvergne
+	}
+	1136.1.1 = {
+		holder = 206038 #Robert III d'Auvergne
+	}
+	1147.1.1 = {
+		holder = 206040 #Guillaume VII "le jeune" d'Auvergne
 	}
 	1167.1.1 = {
-		holder = 210500 #Alfons II d'Aragon
-		liege = "k_aragon"
-	}
-	1195.4.25 = {
-		holder = 210501 #Pierre II d'Aragon
-	}
-	1213.9.14 = {
-		holder = 460600 #Jacques I d'Aragon
-	}
-	1258.1.1 = {
-		liege = "k_france"
-	}
-	1258.1.1 = {
-		holder = 455404 #Louis IX (saint Louis)
-	}
-	1270.8.25 = {
-		holder = 455528 # Philippe III le Hardi
-	}
-	1285.10.5 = {
-		holder = 455526 # Philippe IV le Bel
-	}
-	#bishopric of Gévaudan
-	1307.1.1 = {
-		holder = 138401 #Bishop Guillaume VI Durand
-	}
-	1330.8.10 = {
-		holder = 138400 #Bishop Jean II d'Arcy
-	}
-	1331.1.1 = {
-		holder = 138402 #Bishop Albert Lordet
+		holder = KOH0241 #Bishop Pierre
+		government = theocracy_government
 	}
 }
 
 d_bourbon = {
-	1183.12.27 = {
-		liege = "d_aquitaine"
-	}
 	1327.12.27 = {
 		holder = 455650
 	}
@@ -2801,7 +2743,7 @@ c_bourbon = {
 c_bellac = {
 	1184.1.1 = {
 		holder = 205730 #Adalbert II de la marche since 1047
-		liege = k_england
+		liege = d_aquitaine
 	}
 }
 
@@ -2941,9 +2883,6 @@ d_poitou = {
 	}
 	1152.5.18 = {
 		liege = "k_england"
-	}
-	1152.5.18 = {
-		holder = 204500 #Henry II
 	}
 	1189.7.6 = {
 		holder = 204510 #Richard I
@@ -3196,7 +3135,7 @@ c_montaigu = {
 		liege = "d_anjou"
 	}
 	1160.1.1 = {
-		liege = "k_england"
+		liege = "d_poitou"
 	}
 	1176.1.15 = {
 		holder = 138035 #Aimery VII de Thouars
@@ -3309,7 +3248,7 @@ c_thouars = {
 		liege = "d_anjou"
 	}
 	1160.1.1 = {
-		liege = "k_england"
+		liege = "d_poitou"
 	}
 	1176.1.15 = {
 		holder = 138035 #Aimery VII de Thouars
