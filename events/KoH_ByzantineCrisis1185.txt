@@ -195,7 +195,7 @@ KoH_byzantinecrisis.3 = {
 					}
 					location = 3711
 				}
-				spawn_army = {
+			spawn_army = {
 				uses_supply = no
 				inheritable = yes
 				name = Normans
@@ -232,6 +232,7 @@ KoH_byzantinecrisis.4 = {
 
 		trigger_event = {
 			id = KoH_byzantinecrisis.50
+			days = 1
 		}
 
 		character:217501 = {
@@ -343,7 +344,7 @@ KoH_byzantinecrisis.50 = {
 	title = KoH_byzantinecrisis.50.t
 	desc = KoH_byzantinecrisis.50.d
 	theme = death
-	hidden = no
+	hidden = yes
 	
 	left_portrait = {
 		character = character:217501
@@ -384,7 +385,6 @@ KoH_byzantinecrisis.50 = {
 				target = scope:ByzantineEmperor
 				target_title = title:d_vidin
 				claimant = scope:Bulgarian
-				take_occupied = yes
 			}
 		}
 	}

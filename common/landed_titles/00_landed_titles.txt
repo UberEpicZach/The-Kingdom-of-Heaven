@@ -4451,7 +4451,7 @@ e_germany = {
 			}
 
 
-			c_bentheiem = {
+			c_bentheim = {
 				color = { 250 170 65 }
 				color2 = { 255 255 255 }
 			
@@ -6922,24 +6922,6 @@ e_germany = {
 				}
 			}
 
-			c_truhendingen = {
-				color = { 220 220 240 }
-				color2 = { 255 255 255 }
-
-				b_trubending = {
-					province = 2880
-					
-					color = { 220 220 240 }
-					color2 = { 255 255 255 }
-				}
-				b_neue_weissenburg = {
-					province = 2882
-
-					color = { 110 100 85 }
-					color2 = { 255 255 255 }
-				}
-			}
-
 			c_leuchtenburg = {
 				color = { 130 120 105 }
 				color2 = { 255 255 255 }
@@ -7930,6 +7912,23 @@ e_germany = {
 					province = 2891
 					
 					color = { 220 220 240 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_truhendingen = {
+				color = { 220 220 240 }
+				color2 = { 255 255 255 }
+
+				b_trubending = {
+					province = 2880
+					
+					color = { 220 220 240 }
+					color2 = { 255 255 255 }
+				}
+				b_neue_weissenburg = {
+					province = 2882
+
+					color = { 110 100 85 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -49253,11 +49252,6 @@ e_france = {
 					}
 				}
 				add = @better_than_the_alternatives_score
-			}
-		}
-		can_create = {
-			trigger_if = {
-				NOT = { date >= 1184.1.1 }
 			}
 		}
 		
