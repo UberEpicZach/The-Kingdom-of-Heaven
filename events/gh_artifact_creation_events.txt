@@ -10,13 +10,13 @@ scripted_effect artifact_give_effect = {
 			limit = { var:artifact_level = 1 }
 			random_list = {
 				34 = {
-					set_variable = has_artifact_4
+					add_artifact = {ARTIFACT = artifact_4}
 				}
 				33 = {
-					set_variable = has_artifact_16
+					add_artifact = {ARTIFACT = artifact_16}
 				}
 				33 = {
-					set_variable = has_artifact_20
+					add_artifact = {ARTIFACT = artifact_20}
 				}
 			}
 		}
@@ -24,13 +24,13 @@ scripted_effect artifact_give_effect = {
 			limit = { var:artifact_level = 2 }
 			random_list = {
 				34 = {
-					set_variable = has_artifact_5
+					add_artifact = {ARTIFACT = artifact_5}
 				}
 				33 = {
-					set_variable = has_artifact_17
+					add_artifact = {ARTIFACT = artifact_17}
 				}
 				33 = {
-					set_variable = has_artifact_21
+					add_artifact = {ARTIFACT = artifact_21}
 				}
 			}
 		}
@@ -39,13 +39,13 @@ scripted_effect artifact_give_effect = {
 			limit = { var:artifact_level = 3 }
 			random_list = {
 				34 = {
-					set_variable = has_artifact_6
+					add_artifact = {ARTIFACT = artifact_6}
 				}
 				33 = {
-					set_variable = has_artifact_18
+					add_artifact = {ARTIFACT = artifact_18}
 				}
 				33 = {
-					set_variable = has_artifact_22
+					add_artifact = {ARTIFACT = artifact_22}
 				}
 			}
 		}
@@ -54,13 +54,13 @@ scripted_effect artifact_give_effect = {
 			limit = { var:artifact_level = 4 }
 			random_list = {
 				34 = {
-					set_variable = has_artifact_7
+					add_artifact = {ARTIFACT = artifact_7}
 				}
 				33 = {
-					set_variable = has_artifact_19
+					add_artifact = {ARTIFACT = artifact_19}
 				}
 				33 = {
-					set_variable = has_artifact_23
+					add_artifact = {ARTIFACT = artifact_23}
 				}
 			}
 		}
@@ -71,21 +71,21 @@ scripted_effect artifact_give_effect = {
 		}
 		if = {
 			limit = { var:artifact_level = 1 }
-			set_variable = has_artifact_28
+			add_artifact = {ARTIFACT = artifact_28}
 		}
 		else_if = {
 			limit = { var:artifact_level = 2 }
-			set_variable = has_artifact_29
+			add_artifact = {ARTIFACT = artifact_29}
 		}
 
 		else_if = {
 			limit = { var:artifact_level = 3 }
-			set_variable = has_artifact_30
+			add_artifact = {ARTIFACT = artifact_30}
 		}
 
 		else_if = {
 			limit = { var:artifact_level = 4 }
-			set_variable = has_artifact_31
+			add_artifact = {ARTIFACT = artifact_31}
 		}
 	}
 	else_if = {
@@ -94,29 +94,29 @@ scripted_effect artifact_give_effect = {
 		}
 		if = {
 			limit = { var:artifact_level = 1 }
-			set_variable = has_artifact_8
-			set_variable = has_artifact_12
-			set_variable = has_artifact_23
+			add_artifact = {ARTIFACT = artifact_8}
+			add_artifact = {ARTIFACT = artifact_12}
+			add_artifact = {ARTIFACT = artifact_23}
 		}
 		else_if = {
 			limit = { var:artifact_level = 2 }
-			set_variable = has_artifact_9
-			set_variable = has_artifact_13
-			set_variable = has_artifact_24
+			add_artifact = {ARTIFACT = artifact_9}
+			add_artifact = {ARTIFACT = artifact_13}
+			add_artifact = {ARTIFACT = artifact_24}
 		}
 
 		else_if = {
 			limit = { var:artifact_level = 3 }
-			set_variable = has_artifact_10
-			set_variable = has_artifact_14
-			set_variable = has_artifact_26
+			add_artifact = {ARTIFACT = artifact_10}
+			add_artifact = {ARTIFACT = artifact_14}
+			add_artifact = {ARTIFACT = artifact_26}
 		}
 
 		else_if = {
 			limit = { var:artifact_level = 4 }
-			set_variable = has_artifact_11
-			set_variable = has_artifact_15
-			set_variable = has_artifact_27
+			add_artifact = {ARTIFACT = artifact_11}
+			add_artifact = {ARTIFACT = artifact_15}
+			add_artifact = {ARTIFACT = artifact_27}
 		}
 	}
 }

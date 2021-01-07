@@ -54,61 +54,61 @@ artifact_siege.0001 = {
 			OCCUPIED = scope:previous_controller
 			OCCUPIER = scope:primary_siege_attacker
 			CHANCE = @artifact_gain_chance
-			ARTIFACT = has_artifact_1
+			ARTIFACT = artifact_1
 		}
 		artifact_changing_hands_calculator = {
 			OCCUPIED = scope:previous_controller
 			OCCUPIER = scope:primary_siege_attacker
 			CHANCE = @artifact_gain_chance
-			ARTIFACT = has_artifact_2
+			ARTIFACT = artifact_2
 		}
 		artifact_changing_hands_calculator = {
 			OCCUPIED = scope:previous_controller
 			OCCUPIER = scope:primary_siege_attacker
 			CHANCE = @artifact_gain_chance
-			ARTIFACT = has_artifact_3
+			ARTIFACT = artifact_3
 		}
 		artifact_changing_hands_calculator = {
 			OCCUPIED = scope:previous_controller
 			OCCUPIER = scope:primary_siege_attacker
 			CHANCE = @artifact_gain_chance
-			ARTIFACT = has_artifact_4
+			ARTIFACT = artifact_4
 		}
 		artifact_changing_hands_calculator = {
 			OCCUPIED = scope:previous_controller
 			OCCUPIER = scope:primary_siege_attacker
 			CHANCE = @artifact_gain_chance
-			ARTIFACT = has_artifact_5
+			ARTIFACT = artifact_5
 		}
 		artifact_changing_hands_calculator = {
 			OCCUPIED = scope:previous_controller
 			OCCUPIER = scope:primary_siege_attacker
 			CHANCE = @artifact_gain_chance
-			ARTIFACT = has_artifact_6
+			ARTIFACT = artifact_6
 		}
 		artifact_changing_hands_calculator = {
 			OCCUPIED = scope:previous_controller
 			OCCUPIER = scope:primary_siege_attacker
 			CHANCE = @artifact_gain_chance
-			ARTIFACT = has_artifact_7
+			ARTIFACT = artifact_7
 		}
 		artifact_changing_hands_calculator = {
 			OCCUPIED = scope:previous_controller
 			OCCUPIER = scope:primary_siege_attacker
 			CHANCE = @artifact_gain_chance
-			ARTIFACT = has_artifact_8
+			ARTIFACT = artifact_8
 		}
 		artifact_changing_hands_calculator = {
 			OCCUPIED = scope:previous_controller
 			OCCUPIER = scope:primary_siege_attacker
 			CHANCE = @artifact_gain_chance
-			ARTIFACT = has_artifact_9
+			ARTIFACT = artifact_9
 		}
 		artifact_changing_hands_calculator = {
 			OCCUPIED = scope:previous_controller
 			OCCUPIER = scope:primary_siege_attacker
 			CHANCE = @artifact_gain_chance
-			ARTIFACT = has_artifact_10
+			ARTIFACT = artifact_10
 		}
 	}
 }
@@ -300,7 +300,7 @@ artifact_hunt.0007 = {
 	#will change when a list of valid random artifacts is created
 	option = {
 		name = artifact_hunt.0007.a
-		set_variable = has_artifact_2
+		add_artifact = {ARTIFACT = artifact_2}
 	}
 	option = { #nothanks
 		name = artifact_hunt.0007.b

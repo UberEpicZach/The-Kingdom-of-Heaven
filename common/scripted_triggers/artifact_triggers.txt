@@ -1,0 +1,200 @@
+﻿# THESE ARE USED IN A LOT OF PLACES; DO NOT CHANGE THE STRUCTURE, ONLY ADD TO THE APPROPRIATE LISTS
+# -By Tobbzn, from The Way of Kings CK3 mod.
+
+## NOTE FOR MODDERS:
+# To use complicated strings as arguments, you MUST call the core or custom artifact list *directly*, because strings will get resolved after being passed from one function to the next. I have not been able to find a workaround, but there might exist one if one implements arguments of the form TYPE = "$TYPE$".
+# This restriction includes empty "" strings! Those are perhaps the most complicated of all!
+
+##### How to add a new artifact:
+# Add the line
+#     $APPLY$ = $PREFIX$artifact_YourArtifactNameGoesHere$SUFFIX$
+# to one of the for_TYPE_artifacts_core functions in common/scripted_effects/artifacts_core.txt
+# Add the line 
+#     $APPLY$ = {ARTIFACT = $PREFIX$artifact_YourArtifactNameGoesHere$SUFFIX$ A = $A$ B = $B$ }
+# to one of the for_TYPE_artifacts_custom functions in common/scripted_effects/artifacts_custom.txt
+# Add the effects of equipping the artifact in common/modifier/artifact_modifiers.txt
+# Add the localization to localization/english/artifacts_loc_l_english.yml or the equivalent if you're localizing for a differet language. Inspect the examples in the existing file.
+# Add an icon to the gfx/artifacts folder as artifact_YourArtifactNameGoesHere.dds
+
+##### How to add a new artifact slot or type:
+# for_TYPE_artifacts_core in artifacts_core.txt
+# for_TYPE_artifacts_custom in artifacts_custom.txt
+# IF SLOT TYPE: The above core and custom commands must be added to for_all_artifacts_core and for_all_artifacts_custom
+# Useful functions to add to your type:
+#for_TYPE_artifacts_(core/custom)_prefix 
+#for_TYPE_artifacts_(core/custom)_suffix 
+#for_TYPE_artifacts_(core/custom)_nofix <- Particularly useful as the global list system is dependent on it
+#for_TYPE_artifacts_(core/custom)_no_arguments <- Useful for tinkering
+# These can be copied from an existing slot or type; just change the TYPE in their name to match your type.
+# Then add your type to listify_all_typed_artifacts_as_flags in artifacts_custom.txt
+# Finally add your type or slot to artifact_triggers.txt in the scripted_triggers folder.
+
+
+#Artifact triggers sorted by slot
+has_any_handheld_artifacts = {
+	any_in_list = {
+		variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_handheld
+			target = this
+		}
+	}
+}
+has_any_armor_artifacts = {
+	any_in_list = {
+	variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_armor
+			target = this
+		}
+	}
+}
+has_any_headgear_artifacts = {
+	any_in_list = {
+		variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_headgear
+			target = this
+		}
+	}			
+}
+has_any_jewelry_artifacts = { 
+	any_in_list = {
+		variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_jewelry
+			target = this
+		}
+	}
+}
+has_any_mount_artifacts = { 
+	any_in_list = {
+		variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_mount
+			target = this
+		}
+	}			
+}
+# The following trigger iterates through artifact slots
+has_any_artifact = {
+	OR = {
+		has_any_handheld_artifacts = yes
+		has_any_armor_artifacts = yes
+		has_any_headgear_artifacts = yes
+		has_any_jewelry_artifacts = yes
+		has_any_mount_artifacts = yes
+	}
+}
+
+# Non-slot-dependent classifications that may need checking:
+has_any_shard_artifacts= {
+	any_in_list = {
+		variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_shard
+			target = this
+		}
+	}		
+}
+has_any_fabrial_artifacts = {
+	any_in_list = {
+		variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_fabrial
+			target = this
+		}
+	}		
+}
+
+has_any_all_artifacts = {
+	OR = {
+    has_any_handheld_artifacts = yes
+    has_any_armor_artifacts = yes
+    has_any_headgear_artifacts = yes
+    has_any_jewelry_artifacts = yes
+    has_any_mount_artifacts = yes
+}}
+
+is_artifact_of_type = {# ARTIFACT = X TYPE = Y 
+	is_target_in_global_variable_list = {
+		name = global_artifact_list_$TYPE$
+		target = $ARTIFACT$
+	}
+}
+is_unflagged_artifact_of_type = {# ARTIFACT = X TYPE = Y 
+	is_target_in_global_variable_list = {
+		name = global_artifact_list_$TYPE$
+		target = flag:$ARTIFACT$
+	}
+}
+
+has_spanreed = {has_variable = artifact_spanreed}
+
+has_artifact = {has_variable = $ARTIFACT$} # ARTIFACT = x (x should be a flag)
+
+#compare_artifacts = {$ARTIFACT_1$ = $ARTIFACT_2$}
+
+is_artifact_selected = { # ARTIFACT = x (x should be a flag)
+	has_variable = $ARTIFACT$_selected
+}
+is_artifact_equipped = { # ARTIFACT = x (x should be a flag)
+	has_variable = $ARTIFACT$_equipped
+}
+
+is_artifact_equipped_and_selected = {# ARTIFACT = x (x should be a flag)
+		AND = {
+			is_artifact_selected = {ARTIFACT = $ARTIFACT$ }
+			is_artifact_equipped = {ARTIFACT = $ARTIFACT$ }
+		}
+	}
+
+is_selection_equipped = {
+	#exists = var:artifact_selection
+	is_target_in_variable_list = {
+		name = artifact_list_equipped
+		target = var:artifact_selection
+	}
+}
+
+is_selection_of_rarity = {# RARITY = N
+#exists = var:artifact_selection
+	is_target_in_global_variable_list = {
+		name = global_artifact_list_rarity_$RARITY$
+		target = var:artifact_selection
+	}
+}
+
+
+is_selection_indestructible = {
+	#exists = var:artifact_selection
+	is_target_in_global_variable_list = {
+		name = global_artifact_list_indestructible
+		target = var:artifact_selection
+	}
+}
+
+is_artifact_of_same_slot = {# ARTIFACT A B
+	OR = {
+		AND = {
+			is_artifact_of_type = {ARTIFACT = $A$ TYPE = handheld}
+			is_artifact_of_type = {ARTIFACT = $B$ TYPE = handheld}
+		}
+		AND = {
+			is_artifact_of_type = {ARTIFACT = $A$ TYPE = armor}
+			is_artifact_of_type = {ARTIFACT = $B$ TYPE = armor}
+		}
+		AND = {
+			is_artifact_of_type = {ARTIFACT = $A$ TYPE = headgear}
+			is_artifact_of_type = {ARTIFACT = $B$ TYPE = headgear}
+		}
+		AND = {
+			is_artifact_of_type = {ARTIFACT = $A$ TYPE = jewelry}
+			is_artifact_of_type = {ARTIFACT = $B$ TYPE = jewelry}
+		}
+		AND = {
+			is_artifact_of_type = {ARTIFACT = $A$ TYPE = mount}
+			is_artifact_of_type = {ARTIFACT = $B$ TYPE = mount}
+		}
+	}
+}
