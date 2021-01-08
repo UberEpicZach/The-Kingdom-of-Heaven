@@ -1548,16 +1548,21 @@ house_vimaranes = 8626
 }
 
 528 = { # Wettin
-	pattern = "pattern_solid.dds"
+	pattern = "pattern_solid.dds"	
 	color1 = "yellow"
-	color2 = "black"
+	color2 = "black"	
 	colored_emblem = {
-		texture = "ce_ordinary_pale_5.dds"
-		color1 = "black"
+		texture = "ce_horizontal_stripes_03.dds"
+		color1 = "yellow"
 		color2 = "black"
-		instance = { position = { 0.344 0.5 } scale = { 0.79 1.0 }  }	
-		instance = { position = { 0.656 0.5 } scale = { 0.79 1.0 }  }			
-	}
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }		
+	}	
+	colored_emblem = {
+		texture = "ce_crancelin.dds"
+		color1 = "green"
+		color2 = "green"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }		
+	}	
 }
 
 22007 = { # Wigeriche
@@ -9831,7 +9836,7 @@ house_british_isles_mathrafal = 548
 	}	
 }
 
-KKOH_D_011 = { # Oettingen
+KOH_D_011 = { # Oettingen
         pattern = "pattern_solid.dds"
 	color1 = "yellow"	
 	color2 = "red"
@@ -9982,6 +9987,112 @@ KOH_D_05 = { # Nellenburg
 		texture = "ce_lozengy_bend.dds"
 		color1 = "blue"
 		color2 = "white"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }		
+	}	
+}
+
+7123 = { #Tecklenburg
+        pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "red"
+	colored_emblem = {
+		texture = "ce_waterlily.dds"
+		color1 = "red"
+		color2 = "red"
+		instance = { position = { 0.32 0.3 } scale = { 0.50 0.50 }  }
+		instance = { position = { 0.68 0.3 } scale = { 0.50 0.50 }  }
+		instance = { position = { 0.5 0.68 } scale = { 0.50 0.50 }  }
+	}
+}
+
+KOH_D_014 = { #Durn
+        pattern = "pattern_solid.dds"
+	color1 = "blue"	
+	color2 = "white"
+	colored_emblem = {
+		texture = "ce_cinquefoil_01.dds"
+		color1 = "white"
+		color2 = "white"
+		instance = { position = { 0.315 0.30 } scale = { 0.48 0.48 }  }
+		instance = { position = { 0.685 0.30 } scale = { 0.48 0.48 }  }
+		instance = { position = { 0.5 0.64 } scale = { 0.48 0.48 }  }
+	}
+}
+
+KOH_D_017 = { #Erbach
+        pattern = "pattern_solid.dds"
+	color1 = "white"	
+	color2 = "red"
+	colored_emblem = {
+		texture = "ce_per_fess.dds"
+		color1 = "red"
+		color2 = "white"
+		instance = { position = { 0.5 0.48 } scale = { 1.0 1.0 }  }
+	}	
+	colored_emblem = {
+		texture = "ce_star_06.dds"
+		color1 = "white"
+		color2 = "white"
+		instance = { position = { 0.315 0.26 } scale = { 0.48 0.48 }  }
+		instance = { position = { 0.685 0.26 } scale = { 0.48 0.48 }  }
+	}
+	colored_emblem = {
+		texture = "ce_star_06.dds"
+		color1 = "red"
+		color2 = "red"
+		instance = { position = { 0.5 0.68 } scale = { 0.48 0.48 }  }
+	}	
+}
+
+7126 = { #Ravensberg
+        pattern = "pattern_solid.dds"	
+	color1 = "yellow"
+	color2 = "red"
+	colored_emblem = {
+		texture = "ce_chevronny.dds"
+		color1 = "red"
+		color2 = "white"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }		
+	}	
+}
+
+KOH_D_020 = { #Cuijk
+	pattern = "pattern_solid.dds"	
+	color1 = "yellow"	
+	color2 = "black"
+	colored_emblem = {
+		texture = "ce_ordinary_fess_5.dds"
+		color1 = "red"
+		color2 = "red"		
+		instance = { position = { 0.5 0.31 } scale = { 1.0 0.66 }  }		
+	}
+	colored_emblem = {
+		texture = "ce_ordinary_fess_5.dds"
+		color1 = "red"
+		color2 = "red"		
+		instance = { position = { 0.5 0.67 } scale = { 1.0 0.66 }  }			
+	}
+	colored_emblem = {
+		texture = "ce_martlet.dds"
+		color1 = "red"
+		color2 = "red"
+		instance = { position = { 0.25 0.14 } rotation = -10 scale = { 0.30 0.30 }  }
+		instance = { position = { 0.50 0.14 } rotation = -10 scale = { 0.30 0.30 }  }
+		instance = { position = { 0.75 0.14 } rotation = -10 scale = { 0.30 0.30 }  }
+		instance = { position = { 0.25 0.50 } rotation = -10 scale = { 0.30 0.30 }  }
+		instance = { position = { 0.75 0.50 } rotation = -10 scale = { 0.30 0.30 }  }
+		instance = { position = { 0.50 0.86 } rotation = -10 scale = { 0.30 0.30 }  }		
+	}
+}
+
+177 = { #Gryf
+        pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "red"
+	colored_emblem = {
+		texture = "ce_griffin_rampant.dds"
+		color1 = "red"
+		color2 = "yellow"
 		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }		
 	}	
 }

@@ -913,8 +913,8 @@ c_bentheim = {
 	color2 = "yellow"
 	colored_emblem = {
 		texture = "ce_circle.dds"
-		color1 = "red"
-		color2 = "red"
+		color1 = "yellow"
+		color2 = "yellow"
 		instance = { position = { 0.22 0.18 } scale = { 0.3 0.3 }  }
 		instance = { position = { 0.405 0.18 } scale = { 0.3 0.3 }  }
 		instance = { position = { 0.595 0.18 } scale = { 0.3 0.3 }  }
@@ -1060,4 +1060,39 @@ d_ostfalen = { #
         instance = { offset = { 0.5 0.0 } scale = { 0.5 0.5 }  } # top right
         instance = { offset = { 0.0 0.5 } scale = { 0.5 0.5 }  } # bottom left
     }
+}
+
+c_parsberg = {
+        pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "white"
+	colored_emblem = {
+		texture = "ce_fleur.dds"
+		color1 = "white"
+		color2 = "white"		
+		instance = { position = { 0.5 0.22 } scale = { 0.31 0.31 }  }	
+		instance = { position = { 0.5 0.78 } scale = { 0.31 0.31 }  }	
+		instance = { position = { 0.26 0.22 } scale = { 0.31 0.31 }  }	
+		instance = { position = { 0.74 0.22 } scale = { 0.31 0.31 }  }	
+		instance = { position = { 0.37 0.50 } scale = { 0.31 0.31 }  }	
+		instance = { position = { 0.63 0.50 } scale = { 0.31 0.31 }  }			
+	}			
+}
+
+c_coucy = {
+        pattern = "pattern_solid.dds"	
+	color1 = "white"	
+	color2 = "blue"
+	colored_emblem = {
+		texture = "ce_vair_pattern.dds"
+		color1 = "blue"
+		color2 = "blue"
+		instance = { position = { 0.5 0.59 } scale = { 1.0 1.16 }  }
+	}	
+	colored_emblem = {
+		texture = "ce_bars_03.dds"
+		color1 = "red"
+		color2 = "red"
+		instance = { position = { 0.5 0.59 } scale = { 1.0 1.16 }  }	
+	}	
 }
