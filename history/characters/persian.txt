@@ -5098,34 +5098,6 @@
 	}
 }
 
-1000230504 = {
-	name = "Imad_ad-Din"
-	dna = 1000230504_imad_ad_din
-	dynasty = 115754
-	religion = ashari
-	culture = "persian"
-	trait = education_learning_4
-	trait = just
-	trait = zealous
-	#trait = poet
-	trait = scholar
-	1125.1.1 = {
-		birth = yes
-		effect = {
-			add_character_flag = has_scripted_appearance
-		}
-	}
-	1155.6.1 = {
-		add_spouse = 1000230505
-	}
-	1174.1.1 = {
-		employer = 226000
-	}
-	1201.6.20 = {
-		death = yes
-	}
-}
-
 1000230505 = {
 	name = "Zumurrud"
 	dna = 1000230505_zumurrud
@@ -5297,12 +5269,15 @@ KOH0041 = {
 	trait = education_diplomacy_4
 	trait = scholar
 	trait = journaller
+	trait = hale
 	1125.1.1 = {
 		birth = yes
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
 	}
+	1155.6.1 = {
+		add_spouse = 1000230505
 	1175.1.1 = {
 		employer = 226000
 		give_council_position = councillor_chancellor
