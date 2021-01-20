@@ -1,0 +1,323 @@
+﻿
+namespace = soz_actone_branchone
+namespace = soz_acttwo_branchone
+namespace = soz_actthree_branchone
+
+# The Sword of Zengi by Seljuk Shah
+
+## SOZ EVENT CHAIN Act 1
+
+soz_actone_branchone.1 = {
+	title = soz.maintitle1.t													
+	desc = soz_actone_branchone.1.desc					# set up setting, highlight Ismat's traits and hint at path to gaining the sword
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+	immediate = {
+		scope:recipient = {
+			add_character_flag = had_event_soz.1
+		}
+	}
+
+	option = {                                        # How are you?
+		name = soz_actone_branchone.1.a
+		trigger_event = soz_actone_branchone.2
+	}
+
+
+	option = {                                        # INTIMIDATE FAIL OPTION, TRIGGERS NORMALFAIL
+		name = soz_actone_branchone.1.b
+		custom_tooltip = soz_actone_branchone.1.tt
+		trigger_event = soz.normalfail.1
+	}
+}
+
+soz_actone_branchone.2 = {
+	title = soz.maintitle1.t													
+	desc = soz_actone_branchone.2.desc					# ismat opens up about her day, she asks saladin if he needs something
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Tell me about Nur Al Din
+		name = soz_actone_branchone.2.a
+		custom_tooltip = soz_actone_branchone.2.tt
+		trigger_event = soz_actone_branchone.3
+	}
+
+
+	option = {                                        # Tell me about her father, Unur of Damascus. (begins branch2)
+		name = soz_actone_branchone.2.b
+		custom_tooltip = soz.1.tt
+		trigger_event = 
+	}
+}
+
+soz_actone_branchone.3 = {
+	title = soz.maintitle1.t													
+	desc = soz_actone_branchone.3.desc				# Ismat talks tells saladin he should know more
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Regret over schism with Nur and wants to know the man
+		name = soz_actone_branchone.3.a
+		custom_tooltip = soz_actone_branchone.3.tt
+		trigger_event = soz_actone_branchone.4
+	}
+
+}
+
+soz_actone_branchone.4 = {
+	title = soz.maintitle1.t													
+	desc = soz_actone_branchone.4.desc					# Ismat is happy to highlight Nur's zealous nature and need to complete the vision of his father
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin shares something funny about Nur
+		name = soz_actone_branchone.4.a
+		custom_tooltip = soz_actone_branchone.4.tt
+		trigger_event = soz_actone_branchone.5
+	}
+
+}
+
+soz_actone_branchone.5 = {
+	title = soz.maintitle1.t													
+	desc = soz_actone_branchone.5.desc					# Ismat laughs and connects with saladin and says something about him as well
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin says something flirty
+		name = soz_actone_branchone.5.a
+		custom_tooltip = soz_actone_branchone.5.tt
+		trigger_event = soz_actone_branchone.6
+	}
+
+}
+
+soz_actone_branchone.6 = {
+	title = soz.maintitle1.t													
+	desc = soz_actone_branchone.6.desc					# Ismat invites him to dine with her. Narration suggests waiting until bringing up the sword.
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin agrees
+		name = soz_actone_branchone.6.a
+		custom_tooltip = soz_actone_branchone.6.tt
+		trigger_event = {
+			id = soz_acttwo_branchone.1
+			days = 20
+		}
+	}
+
+}
+
+## SOZ EVENT CHAIN PART 2
+
+soz_acttwo_branchone.1 = {
+	title = soz.maintitle1.t													
+	desc = soz_acttwo_branchone.1.desc					# Ismat is requesting help to save a hadith school in Damascus
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin offers a 100 gold
+		name = soz_acttwo_branchone.1.a
+		custom_tooltip = soz_acttwo_branchone.1.tt
+		trigger_event = soz_acttwo_branchone.2
+	}
+
+}
+
+soz_acttwo_branchone.2 = {
+	title = soz.maintitle1.t													
+	desc = soz_acttwo_branchone.2.desc				# Ismat is requesting help to save a hadith school in Damascus
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin offers a 100 gold
+		name = soz_acttwo_branchone.2.a
+		custom_tooltip = soz_acttwo_branchone.2.tt
+		trigger_event = {
+			id = soz_actthree_branchone.1
+			days = 20
+		}
+	}
+
+}
+
+
+## SOZ EVENT CHAIN PART 3
+
+soz_actthree_branchone.1 = {
+	title = soz.maintitle1.t													
+	desc = soz_actthree_branchone.1.desc				# The couple are walking through the garden and Ismat brings up Nur Al Din again and if Saladin was planning on fighting with Nur
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin says that he was in a better position to win back Jerusalem
+		name = soz_actthree_branchone.1.a
+		custom_tooltip = soz_actthree_branchone.1.tt
+		trigger_event = soz_actthree_branchone.2
+	}
+
+}
+
+soz_actthree_branchone.2 = {
+	title = soz.maintitle1.t													
+	desc = soz_actthree_branchone.2.desc			 # Ismat is saddened by his answer but understand what is best for the realm, and asks him to follow.
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin is intrigued, where are we going?
+		name = soz_actthree_branchone.2.a
+		custom_tooltip = soz_actthree_branchone.2.tt
+		trigger_event = soz_actthree_branchone.3
+	}
+
+}
+
+soz_actthree_branchone.3 = {
+	title = soz.maintitle1.t													
+	desc = soz_actthree_branchone.3.desc			 # Ismat reveals the sword, it was being used to hold up flower-vines in Ismat's garden. Ismat says that she had a duty to give the sword to a true Ghazi and faithful servant of God. She hands the sword to Saladin.
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin is honored (SALADIN GAINS THE SWORD OF ZENGI ARTIFACT FROM ISMAT)
+		name = soz_actthree_branchone.3.a
+		custom_tooltip = soz_actthree_branchone.3.tt
+	}
+
+}
+
+
+## QUEST FAIL EVENTS
+
+soz.normalfail.1 = {
+	title = soz.questfail.t
+	desc = soz.normalfail.1.desc
+	theme = dynasty
+
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = war_defender
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+	option = {
+		name = soz.normalfail.1.a
+		custom_tooltip = soz.normalfail.1.tt
+	}
+}
