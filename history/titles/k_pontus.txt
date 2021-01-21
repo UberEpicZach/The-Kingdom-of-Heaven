@@ -1471,14 +1471,7 @@ c_cerasus = {
 	}
 	1170.1.1 = {
 		holder = 34402
-	}
-	
-	#Komnenos
-	1183.9.24 = {
-		holder = 215529
-	}
-	1185.9.12 = {
-		holder = 215519
+		liege = "e_byzantium"
 	}
 	
 	#Empire of Trebizond
@@ -1549,11 +1542,7 @@ c_trebizond = {
 	}
 	1170.1.1 = {
 		holder = 34402
-	}
-	
-	#Komnenos
-	1183.9.24 = {
-		holder = 215529
+		liege = "e_byzantium"
 	}
 	1185.9.12 = {
 		holder = 215519
@@ -1602,6 +1591,26 @@ c_trebizond = {
 
 }
 
+c_nicopolis_ARM = {
+	1060.1.1 = {
+		holder = 41537
+	}
+	1071.8.26 = {
+		holder = 144073
+	}
+	1118.1.1 = {
+		holder = 144074
+		liege = "k_rum"
+	}
+	1142.1.1 = {
+		holder = 144075
+	}
+	1162.1.1 = {
+		holder = 215043
+	}
+
+	
+}
 
 c_colonea = {
 	855.1.1 = {
@@ -1720,3 +1729,60 @@ c_satala = {
 
 }
 
+c_baeberdon = {
+	c_colonea = {
+		855.1.1 = {
+			holder = 145156
+			liege = d_chaldia
+		}
+		1060.1.1 = {
+			holder = 41537
+		}
+		
+		1071.8.26 = {
+			holder = 144073
+		}
+		1118.1.1 = {
+			holder = 144074
+		}
+		1142.1.1 = {
+			holder = 144075
+		}
+		1162.1.1 = {
+			holder = 215043
+		}
+		
+		#Rum
+		1178.1.1 = {
+			liege = "k_rum"
+		}
+		1198.1.1 = {
+			holder = 34234
+		}
+		1227.1.1 = {
+			holder = 34235
+		}
+		1251.1.1 = {
+			holder = 34236
+		}
+		1277.1.1 = {
+			holder = 34194
+		}
+		1284.1.1 = {
+			holder = 34195
+		}
+		1296.1.1 = {
+			holder = 34196
+		}
+		1302.1.1 = {
+			holder = 34195
+		}
+		1308.1.1 = {
+			liege = "e_ilkhanate"
+			holder = 34401
+		}
+		1335.1.1 = {
+			liege = "k_eretnid"
+		}
+	}
+}

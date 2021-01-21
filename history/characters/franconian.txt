@@ -5212,6 +5212,7 @@
 	dynasty = 7230
 	religion = "catholic"
 	culture = franconian
+	father = KOH_FRANKCONIAN01
 	1142.1.2 = {
 		birth = "1142.1.2"
 	}
@@ -5219,6 +5220,35 @@
 		death = "1192.1.2"
 	}
 }
+
+KOH_FRANKCONIAN01 = {
+	name = "Sizzo"
+	dynasty = 7230
+	religion = "catholic"
+	culture = franconian
+
+	1070.1.2 = {
+		birth = yes
+	}
+	1160.1.2 = {
+		death = yes
+	}
+}
+
+KOH_FRANKCONIAN02 = { #COUNTS OF SCHWARZBURG Schwarzburg
+	name = "Henry"
+	dynasty = 7230
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANKCONIAN01
+	1142.1.2 = {
+		birth = yes
+	}
+	1184.5.5 = {
+		death = yes
+	}
+}
+
 183258 = {
 	name = "Agnes"
 	female = yes
@@ -21041,16 +21071,139 @@ KOH_ARNSBERG014 = {
 	}
 }
 
-#KOH_ARNSBERG015 = { 
-##	name = "Mathilde Northeim" #Arnsberg
-#	female = yes
-#	religion = "catholic"
-#	culture = franconian
-#	dynasty = KOH_D_018
-#	1058.1.1 = {
-#		birth = yes
-#	} 
-#	1105.1.1 = {
-#		death = yes
-#	}
-#}
+KOH_FRANCONIAN025 = {
+	name = "Godfried"
+	dynasty = 7173
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANCONIAN024
+	1156.1.1 = {
+		birth = yes
+	}
+	1200.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FRANCONIAN026 = {
+	name = "Giso"
+	dynasty = 7173
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANCONIAN024
+	1165.1.1 = {
+		birth = yes
+	}
+
+	1180.1.1 = {
+		employer = KOH_FUlDA043
+	}
+
+	1213.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FRANCONIAN027 = {
+	name = "Adelheid"
+	female = yes
+	dynasty = 7173
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANCONIAN024
+	1170.1.1 = {
+		birth = yes
+	}
+	1226.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FRANCONIAN028 = {
+	name = "Gozmar"
+	dynasty = 7173
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANCONIAN024
+	1184.1.1 = {
+		birth = yes
+	}
+	1242.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FRANCONIAN029 = {
+	name = "Ludwig"
+	dynasty = 7173
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANCONIAN024
+	1167.1.1 = {
+		birth = yes
+	}
+	1229.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FRANCONIAN030 = {
+	name = "Lukardis"
+	dynasty = 7173
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANCONIAN024
+	1187.1.1 = {
+		birth = yes
+	}
+	1252.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FRANCONIAN031 = {
+	name = "Mechthild"
+	female = yes
+	dynasty = 7173
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANCONIAN024
+	1187.1.1 = {
+		birth = yes
+	}
+	1229.1.1 = {
+		death = yes
+	}
+}
+
+KOH_FRANCONIAN032 = {
+	name = "Rudolf"
+	dynasty = 7173
+	religion = "catholic"
+	culture = franconian
+	father = KOH_FRANCONIAN024
+	1150.1.1 = {
+		birth = yes
+	}
+	1200.1.1 = {
+		death = yes
+	}
+}
+
+KOH_ARNSBERG015 = { 
+	name = "Alverade" #Cuijk-Arnsberg
+	female = yes
+	religion = "catholic"
+	culture = franconian
+	father = KOH_ARNSBERG012
+	mother = KOH_ARNSBERG06
+	dynasty = KOH_D_020
+	1150.1.1 = {
+		birth = yes
+	} 
+
+	1205.1.1 = {
+		death = yes
+	}
+}
+

@@ -241,7 +241,6 @@ KoH_byzantinecrisis.4 = {
 			get_title = c_silistra
 			get_title = c_aytos
 			get_title = d_turnovo
-			get_title = d_philippopolis
 			get_title = k_bulgaria
 			
 			add_pressed_claim = d_bulgaria
@@ -360,7 +359,7 @@ KoH_byzantinecrisis.50 = {
 		every_ruler = {
 			limit = {
 				any_held_title = {
-					this = title:d_vidin
+					this = title:d_philippopolis
 				}
 			}
 		save_scope_as = ByzantineEmperor
@@ -383,7 +382,7 @@ KoH_byzantinecrisis.50 = {
 			start_war = {
 				casus_belli = claim_cb
 				target = scope:ByzantineEmperor
-				target_title = title:d_vidin
+				target_title = title:d_philippopolis
 				claimant = scope:Bulgarian
 			}
 		}

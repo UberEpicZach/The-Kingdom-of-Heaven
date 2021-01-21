@@ -377,9 +377,9 @@
 }
 2895 = {	#LUCHOW
 	holding = none
-	#1150.1.1 = {
-	#	holding = city_holder
-	#}
+	1150.1.1 = {
+		holding = city_holding
+	}
 }
 2905 = {	#GIFHORN
 	holding = city_holding
@@ -723,10 +723,16 @@
 }
 2799 = {	#NEUMUNSTER
 	holding = none
-	#1127
+	1127.1.1 = {
+		culture = saxon
+		religion = catholic
+		holding = castle_holding
+	}
 }
 2798 = {	#ITZEHOE
 	holding = city_holding
+	culture = saxon
+	religion = catholic
 }
 
 ##d_thuringia ###################################
@@ -774,6 +780,10 @@
 	1070.1.1 = {
 		holding = castle_holding
 	}
+	1120.1.1 = {
+		culture = franconian
+		religion = catholic
+	}
 }
 3008 = {	#KAFERNBURG
 	holding = none
@@ -799,6 +809,9 @@
 }
 3007 = {	#BEICHTINEN
 	holding = none
+	1100.1.1 = {
+		holding = city_holding
+	}
 }
 
 ###c_lobdaburg
@@ -1192,7 +1205,7 @@
 2055 = {	#CHUR
 	culture = swabian
 	religion = catholic
-	holding = castle_holding
+	holding = temple_holding
 }
 2052 = {	#LIECHTENSTEIN = b_farduzes
 	holding = none
@@ -1201,7 +1214,9 @@
 	holding = none
 }
 2788 = {	#WERDENBURG
-	holding = none
+	culture = swabian
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_sankt_gallen

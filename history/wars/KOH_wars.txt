@@ -40,3 +40,37 @@ war = {
 		}
 	}
 }
+
+war = {
+	name = "war_1184_hungarianbyzantine"
+	start_date = 1183.1.1
+	end_date = 1185.1.1
+	targeted_titles={
+		c_szerem
+		c_macva
+		c_beograd
+		c_branicevo
+		d_syrmia
+		d_macva
+	}
+	casus_belli = KOH_hungarianbyzantine_cb
+	attackers = { 219500 218500 }
+	defenders = { 215529 }
+	claimant = 219500
+
+	219500 = {
+		1184.1.1 = {
+			location = 505
+		}
+	}
+	218500 = {
+		1184.1.1 = {
+			location = 3594
+		}
+	}
+	215529 = {
+		1184.1.1 = {
+			location = 496
+		}
+	}
+}

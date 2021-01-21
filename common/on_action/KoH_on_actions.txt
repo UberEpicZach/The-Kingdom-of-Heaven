@@ -1,4 +1,12 @@
 ﻿on_game_start = {
+	on_actions = {
+		KOH_ON_START
+		on_artifact_initialization
+		on_monthly_artifacts
+	}
+}
+
+KOH_ON_START = {
 	effect = {
 		every_living_character = {
 			set_variable = {
@@ -6,45 +14,12 @@
 				value = 0
 			}
 		}
-		trigger_event = { # Artifact Equipper
-			on_action = on_monthly
-		}
-		
-		character:223570 = { #TEST BLOODLINE
-			set_variable = has_bloodline_1
-		}
-			
-		character:1316 = { #HRE 1066 ARTIFACTS
-			set_variable = has_artifact_1
+		character:212501 = { 
 			add_character_modifier = {
-				modifier = artifact_1_passive
-			}
-			set_variable = has_artifact_3
-			add_character_modifier = {
-				modifier = artifact_3_passive
+				modifier = EmperorVassals
 			}
 		}
 
-		character:1732 = { #BYZANTINE 1066 ARTIFACTS
-			set_variable = has_artifact_2
-			add_character_modifier = {
-				modifier = artifact_2_passive
-			}
-		}
-
-		character:1700 = { #BYZANTINE 867 ARTIFACTS
-			set_variable = has_artifact_2
-			add_character_modifier = {
-				modifier = artifact_2_passive
-			}
-		}
-
-		character:30228 = { #LOMBARD 867 ARTIFACTS
-			set_variable = has_artifact_3
-			add_character_modifier = {
-				modifier = artifact_3_passive
-			}
-		}
 		character:223570 = {
 			if = {
 				limit = {
@@ -181,6 +156,8 @@
 					days = 474
 				}
 			}
+			add_trait = stress_gain_remove
+		
 		}
 		character:223590 = {
 			if = {
@@ -200,7 +177,7 @@
 				}
 				trigger_event = {
 					id = KOH_balian_women.18
-					days = 105
+					days = 110
 				}
 			}
 		}
@@ -215,10 +192,76 @@
 				}
 			}
 		}
+		character:466517 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KOH_georgian_wedding.1
+					days = 1
+				}
+			}
+		}
+		character:466516 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KOH_georgian_wedding.8
+					days = 1
+				}
+			}
+		}
+		
+		
+		character:204510 = {
+			if = {
+				 limit = {
+					  is_alive = yes
+					 }			
+				 trigger_event = {
+					 id = KoH_RichardTheLionheart.1
+					 days = 100
+				 }
+			 }
+		 }
 	}
 }
 
 yearly_global_pulse = {
+	on_action = {
+		# Monthly pulses
+        KOH_pulse_monthly
+        delay = { months = 1 }
+        KOH_pulse_monthly
+        delay = { months = 2 }
+        KOH_pulse_monthly
+        delay = { months = 3 }
+        KOH_pulse_monthly
+        delay = { months = 4 }
+        KOH_pulse_monthly
+        delay = { months = 5 }
+        KOH_pulse_monthly
+        delay = { months = 6 }
+        KOH_pulse_monthly
+        delay = { months = 7 }
+        KOH_pulse_monthly
+        delay = { months = 8 }
+        KOH_pulse_monthly
+        delay = { months = 9 }
+        KOH_pulse_monthly
+        delay = { months = 10 }
+        KOH_pulse_monthly
+        delay = { months = 11 }
+        KOH_pulse_monthly
+		# Vara's Bloodlines
+		KOH_BLOODLINE_ON_ACTION
+	}
+}
+
+KOH_BLOODLINE_ON_ACTION = {
 	effect = {
 		if = {
 			limit = {
@@ -232,8 +275,187 @@ yearly_global_pulse = {
 				add_character_modifier = {
 					modifier = bloodline_1_modifier
 					days = -1
+				}	
+			}
+		}
+	}
+}
+	
+on_raid_action_completion = {
+	on_actions = {
+		KOH_REYNALD_ACTION
+	}
+}
+
+KOH_REYNALD_ACTION = {
+	effect = {	
+			if = {
+				limit = {
+					AND = {
+						any_ruler = { 
+							top_liege = { has_primary_title = title:e_arabia } 
+						}
+			
+						has_opinion_modifier = {
+							target = character:223590
+							modifier = raided_me_opinion
+						}
+						
+					}
+				}
+				character:223523 = {
+					trigger_event = {
+					id = KoH_saladin.100
 				}
 			}
+		}
+	}
+}
+
+on_birth_child = {
+	on_actions = {
+		KOH_HENRYHENRY
+		KOH_bloodline_birth
+	}
+}
+
+KOH_HENRYHENRY = {
+	effect = {
+			if = {
+            	limit = {
+					AND = {
+						dynasty = KOH_D_023
+						is_male = yes
+					}
+				}
+			change_first_name = "Heinrich"
+			add_trait = fecund
+		} 
+	}
+}
+
+KOH_bloodline_birth = {
+	effect = {
+		#Add bastardy traits and set correct House
+		if = {
+			limit = {
+				any_parent = {
+					has_dynasty = yes
+					has_variable = has_bloodline_1
+				}
+			}
+			set_variable = has_bloodline_1
+			add_character_modifier = {
+				modifier = bloodline_1_modifier
+				days = -1
+			}
+		}
+	}
+}
+
+KOH_HOLY_ORDER_GOVERNMENT = {
+	effect = {
+        if = {
+            limit = {
+                scope:title = {  
+                    NOT = { has_trait = order_member }
+                    OR = {
+						has_government = holy_order_county_government
+         	       }
+				}
+			}
+            add_trait = order_member
+        }
+	}
+}
+
+KOH_pulse_monthly = { 
+    effect = {
+			if = {
+				limit = {
+					AND = {
+						any_ruler = { 
+							top_liege = { has_primary_title = title:e_arabia } 
+						}
+			
+						has_opinion_modifier = {
+							target = character:223590
+							modifier = raided_me_opinion
+						}
+					}
+				}
+				character:223523 = {
+					trigger_event = {
+						id = KoH_saladin.100
+					}
+				}
+			}
+		}
+	events = { 
+        KoH_SicillianConflict.1
+    }
+}
+
+#ARTIFACT SYSTEM
+on_death = {
+	on_actions = {
+		on_artifact_inheritance
+	}
+}
+
+on_monthly_artifacts = {
+	effect = {
+		every_artifact_holder = { #Equips Artifacts
+			limit = { is_ai = yes }
+			equip_all_owned_artifacts = {} #Crudely equips all artifacts in the order defined in common/scripted_effects/artifacts_custom.txt.
+		}
+	}
+	on_actions = {
+		delay = { months = 1 }
+		on_monthly_artifacts
+	}
+}
+
+on_artifact_initialization = { # Can be called by the scripted effect "initialize_artifacts" 
+	effect = { # Add any artifact-specific setup that you don't want to put in your on_game_start.
+	# For example, in vanilla:
+		listify_all_typed_artifacts_as_flags = yes
+		character:212501 = { #HRE 1066 ARTIFACTS
+			add_artifact = {ARTIFACT = artifact_1 }
+			add_artifact = {ARTIFACT = artifact_3 } 
+		}
+
+		character:1732 = { #BYZANTINE 1066 ARTIFACTS
+			add_artifact = {ARTIFACT = artifact_2 }
+		}
+
+		character:215529 = { #BYZANTINE 867 ARTIFACTS
+			add_artifact = {ARTIFACT = artifact_2 }
+		}
+
+		character:212501 = { #LOMBARD 867 ARTIFACTS
+			add_artifact = {ARTIFACT = artifact_3 }
+		}
+	}
+}
+
+on_artifact_inheritance = {
+	effect = {
+		save_temporary_scope_as = root_character
+		if = {
+			limit = { exists = scope:killer }
+			transfer_all_artifacts = { A = root B = scope:killer }	
+		}
+		else_if = {
+			limit = { exists = root.primary_heir }
+			transfer_all_artifacts = {A = root B = root.primary_heir}
+		}
+		else_if = {
+			limit = { exists = root.liege_or_court_owner }
+			transfer_all_artifacts = {A = root B = root.liege_or_court_owner}
+		}
+		else = {
+			transfer_all_artifacts = {A = root B = root.location.barony_controller }
 		}
 	}
 }
