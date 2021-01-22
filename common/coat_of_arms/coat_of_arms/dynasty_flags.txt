@@ -1548,21 +1548,16 @@ house_vimaranes = 8626
 }
 
 528 = { # Wettin
-	pattern = "pattern_solid.dds"	
+	pattern = "pattern_solid.dds"
 	color1 = "yellow"
-	color2 = "black"	
+	color2 = "black"
 	colored_emblem = {
-		texture = "ce_horizontal_stripes_03.dds"
-		color1 = "yellow"
+		texture = "ce_ordinary_pale_5.dds"
+		color1 = "black"
 		color2 = "black"
-		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }		
-	}	
-	colored_emblem = {
-		texture = "ce_crancelin.dds"
-		color1 = "green"
-		color2 = "green"
-		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }		
-	}	
+		instance = { position = { 0.344 0.5 } scale = { 0.79 1.0 }  }	
+		instance = { position = { 0.656 0.5 } scale = { 0.79 1.0 }  }			
+	}
 }
 
 22007 = { # Wigeriche
@@ -10094,5 +10089,78 @@ KOH_D_020 = { #Cuijk
 		color1 = "red"
 		color2 = "yellow"
 		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }		
+	}	
+}
+
+KOH_D_023 = { #Reuss
+        pattern = "pattern_solid.dds"
+	color1 = "black"
+	color2 = "yellow"
+	colored_emblem = {
+		texture = "ce_lion_rampant.dds"
+		color1 = "yellow"
+		color2 = "yellow"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }
+	}				
+}
+
+
+KOH_D_024 = { #Mansfeld
+        pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "red"
+	colored_emblem = {
+		texture = "ce_checkers_diagonal_6x3.dds"
+		color1 = "white"
+		color2 = "red"
+		instance = { position = { 0.5 0.50 } scale = { 1.15 1.0 }  }		
+	}			
+}
+
+KOH_D_025 = { #Blankenburg
+	pattern = "pattern_solid.dds"
+	color1 = "white"
+	color2 = "yellow"
+	colored_emblem = {
+		texture = "ce_antler_pale.dds"
+		color1 = "red"
+		color2 = "red"
+		instance = { position = { 0.5 0.48 } scale = { 1.0 1.0 }  }		
+	}
+}
+
+KOH_D_026 = { #Lobdeburg
+        pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "white"	
+	colored_emblem = {
+		texture = "ce_ordinary_bend_dexter_5.dds"
+		color1 = "white"
+		color2 = "white"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }		
+	}
+}
+
+7111 = { #Wolpe
+        pattern = "pattern_solid.dds"
+	color1 = "blue"
+	color2 = "white"
+	colored_emblem = {
+		texture = "ce_bulls_massacre.dds"
+		color1 = "white"
+		color2 = "white"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }
+	}	
+}
+
+12463 = { #Schauenburg
+        pattern = "pattern_solid.dds"
+	color1 = "red"
+	color2 = "white"
+	colored_emblem = {
+		texture = "ce_nettle_leaf.dds"
+		color1 = "white"
+		color2 = "white"
+		instance = { position = { 0.5 0.5 } scale = { 1.0 1.0 }  }
 	}	
 }
