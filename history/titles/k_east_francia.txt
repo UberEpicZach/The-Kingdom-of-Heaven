@@ -4633,7 +4633,7 @@ c_furstenberg = {
 d_angria = {
 	700.1.1 = {
 		liege = k_saxony
-		de_jure_liege = k_saxony
+		
 	}
 	740.1.1 = {
 		holder = 190455 #Theoderic
@@ -5616,6 +5616,7 @@ c_mersenburg = {
 	}
 	913.1.1 = {
 		holder = 106517
+		government = theocracy_government
 	}
 	960.1.24 = {
 		holder = 106518
@@ -6307,7 +6308,7 @@ d_meissen = {
 		holder = 33463
 	}
 	1024.7.13 = {
-		de_jure_liege = k_saxony
+		
 		liege = e_hre
 	}
 	1031.1.1 = {
@@ -6947,83 +6948,10 @@ c_gorlitz = {
 
 
 d_ostfalen = {
-	700.1.1 = {
-		liege = k_saxony
-		de_jure_liege = k_saxony
-	}
-	740.1.1 = {
-		holder = 190455 #Theoderic
-	}
-	781.1.1 = {
-		holder = 0
-		de_jure_liege = k_east_francia
-	}
-	844.1.1 = {
-		liege = k_east_francia
-	}
-	844.1.1 = {
-		holder = 7959
-	}
-	866.1.1 = {
-		holder = 7908
-	}
-	912.11.12 = {
-		holder = 1280
-	}
-	936.7.2 = {
-		#de_jure_liege = k_east_francia
-		holder = 1282
-	}
-	961.1.1 = {
-		holder = 1410
-	}
-	963.3.27 = {
-		holder = 1412
-	}
-	1011.2.9 = {
-		holder = 1414
-	}
-	1024.7.13 = {
-		liege = e_hre
-	}
-	1059.6.29 = {
-		holder = 1416
-	}
-	1072.3.28 = {
-		holder = 1418
-	}
-	1106.1.2 = {
-		holder = 30219
-	}
-	1137.12.4 = {
-		holder = 212602
-	}
-	1139.10.20 = {
-		holder = 212908
-	}
-	1142.1.1 = {
-		holder = 212600
-	}
-	
 	1180.9.16 = {
-		holder = 212905
 		de_jure_liege = k_east_francia
 		name = BRUNSWICKLUNEBURG
 	}
-	1212.2.2 = {
-		holder = 462114
-	}
-	1260.10.7 = {
-		holder = 33336
-	}
-	1282.1.1 = {
-		holder = 462101
-	}
-	
-	1298.5.24 = {
-		holder = 462100
-	}
-
 }
 
 
@@ -7224,6 +7152,7 @@ c_hamburg = {
 	}
 	1164.7.6 = {
 		holder = 212360 #Adolf III
+		government = feudal_government
 	}
 	1180.9.16 = {
 		liege = "e_hre"
@@ -7666,12 +7595,24 @@ c_gleichenstein = {
 }
 
 c_schwarzburg = {
+	1030.1.1 = {
+		holder = KOH_FRANKCONIAN033
+	}
+	1050.1.1 = {
+		holder = KOH_FRANKCONIAN034
+	}
+	1118.1.1 = {
+		holder = KOH_FRANKCONIAN01
+	}
 	1130.1.1 = {
 		holder = KOH_FRANKCONIAN01
 		liege = e_hre
 	}
 	1160.1.1 = {
 		holder = KOH_FRANKCONIAN02
+	}
+	1184.5.10 = {
+		holder = KOH_FRANKCONIAN036
 	}
 }
 c_orlamunde = {
@@ -7881,7 +7822,7 @@ c_lobdaburg = {
 d_westfalen = {
 	700.1.1 = {
 		liege = k_saxony
-		de_jure_liege = k_saxony
+	
 	}
 	740.1.1 = {
 		holder = 190455 #Theoderic
@@ -8537,6 +8478,7 @@ c_ditmarschen = {
 	
 	1183.1.1 = {
 		holder = 212360
+		government = feudal_government
 	}
 
 	1207.11.3 = {
@@ -8620,6 +8562,7 @@ c_holstein = {
 	}
 	1164.7.6 = {
 		holder = 212360 #Adolf III
+		government = feudal_government
 	}
 	1180.9.16 = {
 		liege = "e_hre"
