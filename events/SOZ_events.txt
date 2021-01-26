@@ -1,5 +1,6 @@
 ﻿
 namespace = soz_actone_branchone
+namespace = soz_actone_branchtwo
 namespace = soz_acttwo_branchone
 namespace = soz_actthree_branchone
 
@@ -67,7 +68,7 @@ soz_actone_branchone.2 = {
 	option = {                                        # Tell me about her father, Unur of Damascus. (begins branch2)
 		name = soz_actone_branchone.2.b
 		custom_tooltip = soz.1.tt
-		trigger_event = 
+		trigger_event = soz_actone_branchtwo.1
 	}
 }
 
@@ -170,6 +171,83 @@ soz_actone_branchone.6 = {
 
 }
 
+soz_actone_branchtwo.1 = {
+	title = soz.maintitle1.t													
+	desc = soz_actone_branchtwo.1.desc					# Ismat says that she never knew her father that well.
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin talks about how his father admired Muin Al Din tenacity
+		name = soz_actone_branchtwo.1.a
+		custom_tooltip = soz_actone_branchtwo.1.tt
+		trigger_event = soz_actone_branchtwo.2
+	}
+
+}
+
+soz_actone_branchtwo.2 = {
+	title = soz.maintitle1.t													
+	desc = soz_actone_branchtwo.2.desc					# Ismat said he gave his own daughter to protect his city
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin says that he hopes he never has to make a choice like that with his children
+		name = soz_actone_branchtwo.2.a
+		custom_tooltip = soz_actone_branchtwo.2.tt
+		trigger_event = soz_actone_branchtwo.3
+	}
+
+}
+
+soz_actone_branchtwo.3 = {
+	title = soz.maintitle1.t													
+	desc = soz_actone_branchtwo.3.desc					# Ismat sees a bit of her father in Saladin
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin confirms his love for her and his family
+		name = soz_actone_branchtwo.3.a
+		custom_tooltip = soz_actone_branchtwo.3.tt
+		trigger_event = {
+			id = soz_acttwo_branchone.1
+			days = 20
+		}
+		
+	}
+
+}
+
+
 ## SOZ EVENT CHAIN PART 2
 
 soz_acttwo_branchone.1 = {
@@ -198,7 +276,7 @@ soz_acttwo_branchone.1 = {
 
 soz_acttwo_branchone.2 = {
 	title = soz.maintitle1.t													
-	desc = soz_acttwo_branchone.2.desc				# Ismat is requesting help to save a hadith school in Damascus
+	desc = soz_acttwo_branchone.2.desc				# Ismat is impressed by Saladin's generosity.
 	theme = dynasty
 	override_background = {
 		event_background = corridor_night
@@ -212,7 +290,7 @@ soz_acttwo_branchone.2 = {
 		animation = content
 	}
 
-	option = {                                        # Saladin offers a 100 gold
+	option = {                                        # Saladin says it is what Nur Al Din would have wanted
 		name = soz_acttwo_branchone.2.a
 		custom_tooltip = soz_acttwo_branchone.2.tt
 		trigger_event = {
@@ -244,12 +322,70 @@ soz_actthree_branchone.1 = {
 
 	option = {                                        # Saladin says that he was in a better position to win back Jerusalem
 		name = soz_actthree_branchone.1.a
-		custom_tooltip = soz_actthree_branchone.1.tt
+		custom_tooltip = soz_actthree_branchone.1.tta
 		trigger_event = soz_actthree_branchone.2
+	}
+
+	option = {                                        # Saladin says that he would never do anything to hurt Isamt's family.
+		name = soz_actthree_branchone.1.b
+		custom_tooltip = soz_actthree_branchone.1.ttb
+		trigger_event = soz_actthree_branchtwo.1
+	}
+
+	option = {                                        # Saladin says that he would never betray the great Nur Al Din
+		name = soz_actthree_branchone.1.c
+		custom_tooltip = soz_actthree_branchone.1.ttc
+		trigger_event = soz_actthree_branchthree.1
 	}
 
 }
 
+soz_actthree_branchtwo.1 = {
+	title = soz.maintitle1.t													
+	desc = soz_actthree_branchtwo.1.desc			 # Ismat smiles and embraces Saladin and promises to stick by him forever
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin declares his love. Ismat becomes lover (reward)
+		name = soz_actthree_branchtwo.1.a
+		custom_tooltip = soz_actthree_branchtwo.1.tt
+	}
+
+}
+
+soz_actthree_branchthree.1 = {
+	title = soz.maintitle1.t													
+	desc = soz_actthree_branchthree.1.desc			 # Ismat is thankful for his loyalty to his liege.
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin gains prestige (reward)
+		name = soz_actthree_branchthree.1.a
+		custom_tooltip = soz_actthree_branchthree.1.tt
+	}
+
+}
+		
 soz_actthree_branchone.2 = {
 	title = soz.maintitle1.t													
 	desc = soz_actthree_branchone.2.desc			 # Ismat is saddened by his answer but understand what is best for the realm, and asks him to follow.
