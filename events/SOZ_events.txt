@@ -3,6 +3,8 @@ namespace = soz_actone_branchone
 namespace = soz_actone_branchtwo
 namespace = soz_acttwo_branchone
 namespace = soz_actthree_branchone
+namespace = soz_actthree_branchtwo
+namespace = soz_actthree_branchthree
 
 # The Sword of Zengi by Seljuk Shah
 
@@ -23,11 +25,11 @@ soz_actone_branchone.1 = {
 		character = scope:actor
 		animation = content
 	}
-	immediate = {
-		scope:recipient = {
-			add_character_flag = had_event_soz.1
-		}
-	}
+	#immediate = {
+		#scope:recipient = {
+			#add_character_flag = had_event_soz.1
+		#}
+	#}
 
 	option = {                                        # How are you?
 		name = soz_actone_branchone.1.a
@@ -290,9 +292,26 @@ soz_acttwo_branchone.2 = {
 		animation = content
 	}
 
-	option = {                                        # Saladin says it is what Nur Al Din would have wanted
+	option = {                                        # Saladin says it is what Nur Al Din would have wanted (normal response)
 		name = soz_acttwo_branchone.2.a
 		custom_tooltip = soz_acttwo_branchone.2.tt
+		pay_short_term_gold = {
+			target = scope:recipient
+			gold = scope:actor.minor_gold_value
+		}
+		trigger_event = {
+			id = soz_actthree_branchone.1
+			days = 100
+		}
+	}
+
+	option = {                                        # Saladin says the ummah needs a lot more! (fanatic response)
+		name = soz_acttwo_branchone.2.a
+		custom_tooltip = soz_acttwo_branchone.2.tt
+		pay_short_term_gold = {
+			target = scope:recipient
+			gold = scope:actor.major_gold_value
+		}
 		trigger_event = {
 			id = soz_actthree_branchone.1
 			days = 20
@@ -359,6 +378,7 @@ soz_actthree_branchtwo.1 = {
 	option = {                                        # Saladin declares his love. Ismat becomes lover (reward)
 		name = soz_actthree_branchtwo.1.a
 		custom_tooltip = soz_actthree_branchtwo.1.tt
+		set_relation_lover = scope:recipient
 	}
 
 }
@@ -455,5 +475,13 @@ soz.normalfail.1 = {
 	option = {
 		name = soz.normalfail.1.a
 		custom_tooltip = soz.normalfail.1.tt
+		reverse_add_opinion = {
+			target = scope:recipient
+			modifier = angry_opinion
+			opinion = -200
+		}
+		
 	}
+	
+	
 }
