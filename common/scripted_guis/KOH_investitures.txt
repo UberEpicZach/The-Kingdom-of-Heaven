@@ -1,0 +1,96 @@
+
+i_papal_can_enact = {
+	scope = character 
+    is_shown = {
+		#is_holy_order = no
+		is_independent_ruler = yes
+    }
+    is_valid = {
+		#is_holy_order = no
+		is_independent_ruler = yes		
+	}
+}
+i_papal_enacted = {
+	scope = character 
+    is_shown = {
+		#is_holy_order = no
+		is_independent_ruler = yes
+		has_character_flag = papal_enacted
+    }
+    is_valid = {
+		#is_holy_order = no
+		is_independent_ruler = yes
+		has_character_flag = papal_enacted
+	}
+}
+i_papal_enact = {
+	scope = character 
+    is_shown = {
+		is_holy_order = no
+		is_independent_ruler = yes
+		
+    }
+    is_valid = {
+		#is_holy_order = no
+		is_independent_ruler = yes		
+	}
+
+    effect = {
+		custom_tooltip = [investiture|E]
+		root = {
+			add_character_flag = papal_enacted
+			# Add your stuff below here #
+			#
+			###############################
+		}
+    }
+}
+
+i_free_can_enact = {
+	scope = character 
+    is_shown = {
+		#is_holy_order = no
+		is_independent_ruler = yes
+		has_character_flag = papal_enacted
+    }
+    is_valid = {
+		#is_holy_order = no
+		is_independent_ruler = yes
+		has_character_flag = papal_enacted		
+	}
+}
+i_free_enacted = {
+	scope = character 
+    is_shown = {
+		#is_holy_order = no
+		is_independent_ruler = yes
+		has_character_flag = free_enacted
+    }
+    is_valid = {
+		#is_holy_order = no
+		is_independent_ruler = yes
+		has_character_flag = free_enacted
+	}
+}
+i_free_enact = {
+	scope = character 
+    is_shown = {
+		#is_holy_order = no
+		is_independent_ruler = yes
+		has_character_flag = papal_enacted	
+    }
+    is_valid = {
+		#is_holy_order = no
+		is_independent_ruler = yes
+		has_character_flag = papal_enacted	
+	}
+
+    effect = {
+		custom_tooltip = $game_concept_free_investiture$
+		root = {
+			add_character_flag = free_enacted
+			
+			
+		}		
+    }
+}

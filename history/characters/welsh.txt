@@ -34,7 +34,7 @@
 	}
 	1010.1.1 = {
 		death = "1010.1.1"
-	}
+	} 
 }
 
 131702 = {
@@ -1491,7 +1491,9 @@
 	}
 	#married Hunedd ferch Einudd
 	#mistress Cristin ferch Bledrus
-
+	1111.1.1 = {
+		employer = 138452 #Owain ap Cadwgan
+	}
 	1132.2.9 = {
 		death = "1132.2.9"
 	}
@@ -3465,6 +3467,9 @@
 	819.1.2 = {
 		add_spouse = 159088
 	}
+	820.1.1 = {
+		give_nickname = nick_the_oppressor	#Technically, the translation is "Oppression", not "the Oppressor", which is a fair bit grimmer. Alternately known as "the Freckled", so swings and roundabouts, really.
+	}
 	844.1.1 = {
 		death = "844.1.1"
 	}
@@ -5291,12 +5296,15 @@
 }
 159352 = {
 	name = "Bledrig"
-	dynasty_house = house_british_isles_dyfed #Dyfed
+	dynasty = welsh_ap_bleddri
 	religion = "catholic"
 	culture = "welsh"
-	father = 159697
+	trait = peasant_leader	#Not in the sense of being a rebel, but he was either a villein or an elevated villein. Possibly simply the son of one.
 	790.1.1 = {
 		birth = "790.1.1"
+	}
+	820.1.1 = {
+		add_spouse = 159351
 	}
 	850.1.1 = {
 		death = "850.1.1"
@@ -5304,21 +5312,21 @@
 }
 159353 = {
 	name = "Hyfaidd"
-	dynasty_house = house_british_isles_dyfed #Dyfed
+	dynasty = welsh_ap_bleddri
 	religion = "catholic"
 	culture = "welsh"
 	father = 159352
 	mother = 159351
-	810.1.1 = {
+	830.1.1 = {
 		birth = "810.1.1"
 	}
-	890.1.1 = {
+	893.1.1 = {
 		death = "890.1.1"
 	}
 }
 159354 = {
 	name = "Llywarch"
-	dynasty_house = house_british_isles_dyfed #Dyfed
+	dynasty = welsh_ap_bleddri
 	religion = "catholic"
 	culture = "welsh"
 	father = 159353
@@ -5332,7 +5340,7 @@
 159355 = {
 	name = "Elen"
 	female = yes
-	dynasty_house = house_british_isles_dyfed #Dyfed
+	dynasty = welsh_ap_bleddri
 	religion = "catholic"
 	culture = "welsh"
 	father = 159354
@@ -5413,7 +5421,7 @@
 }
 159361 = {
 	name = "Rhodri"
-	dynasty_house = house_british_isles_dyfed #Dyfed
+	dynasty = welsh_ap_bleddri
 	religion = "catholic"
 	culture = "welsh"
 	father = 159353
@@ -6033,7 +6041,7 @@
 	name = "Macsen" # Wledig
 	dynasty = 1029129 #Gwent
 	religion = "catholic"
-	culture = "welsh"
+	culture = "roman"
 	325.1.1 = {
 		birth = yes
 	}
@@ -8318,11 +8326,11 @@
 	religion = "catholic"
 	culture = "welsh"
 	father = 159111
-	790.1.1 = {
+	800.1.1= {
 		birth = yes
 	}
-	840.1.1 = {
-		death = "840.1.1"
+	874.1.1= {
+		death = yes
 	}
 }
 160259 = {
@@ -8393,6 +8401,48 @@
 		death = "680.1.1"
 	}
 }
+252370 = {
+	name = "Naufedd" #Naufedd Hen
+	dynasty_house = house_british_isles_dyfed #Dyfed
+	religion = "catholic"
+	culture = "welsh"
+	father = 159347
+	703.1.1 = {
+		birth = yes
+	}
+	785.1.1 = {
+		death = yes
+		give_nickname = nick_the_old
+	}
+}
+252371 = {
+	name = "Elisedd" #Elisedd
+	dynasty_house = house_british_isles_dyfed #Dyfed
+	religion = "catholic"
+	culture = "welsh"
+	father = 159347
+	705.1.1 = {
+		birth = yes
+	}
+	770.1.1 = {
+		death = yes
+	}
+}
+252372 = {
+	name = "Tewdwr" 
+	dynasty_house = house_british_isles_brycheiniog
+	religion = "catholic"
+	culture = "welsh"
+	father = 159366
+	848.1.1 = {
+		birth = yes
+		add_pressed_claim = c_gwent
+	}
+	910.1.1={
+		death = yes
+	}
+}
+
 301020 = { #305139
 	name = "Bleddyn" #ap Maenarch
 	dynasty = 1029032 #1066 Brycheiniog

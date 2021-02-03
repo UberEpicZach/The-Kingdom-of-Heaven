@@ -1,1 +1,13 @@
-﻿
+﻿KOH_Council = {
+	type = character
+	text = {
+		trigger = {
+			has_character_flag = Free_City
+		}
+		localization_key = KOH_Council_Name
+	}
+	text = {
+		fallback = yes
+		localization_key =	KOH_Council_Fallback_Name
+	}
+}

@@ -25,6 +25,24 @@
 		}
 	}
 
+	portrait_dragon = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = legwear
+				template = no_legwear
+				value = 0
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 2000
+				has_trait = koh_dragon
+			}
+		}
+	}
+
 ## No Leg wear for children under 4 ## 
 
 	children_no_headgear = {

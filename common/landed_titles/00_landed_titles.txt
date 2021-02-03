@@ -5181,11 +5181,7 @@ e_germany = {
 		can_create = {
 			trigger_if = {
 				limit = {
-					is_ai = yes
-				}
-				OR = {
 					culture = culture:frisian
-					culture = culture:dutch
 				}
 			}
 		}
@@ -5195,7 +5191,6 @@ e_germany = {
 				limit = {
 					OR = {
 						culture = culture:frisian
-						culture = culture:dutch
 					}
 				}
 				add = @correct_culture_primary_score
@@ -5687,6 +5682,78 @@ e_germany = {
 					color2 = { 255 255 255 }
 				}
 			}	
+		}
+
+		d_alsace = {
+			color = { 205 205 230 }
+			color2 = { 255 255 255 }
+
+			capital = c_strassburg #Strassburg
+
+			c_strassburg = {
+				color = { 205 205 230 }
+				color2 = { 255 255 255 }
+			
+				b_strassburg = {
+					province = 2721
+
+					color = { 205 205 230 }
+					color2 = { 255 255 255 }
+				}
+				b_haguenau = {
+					province = 2722
+
+					color = { 205 205 230 }
+					color2 = { 255 255 255 }
+				}
+				b_lichtberg = {
+					province = 2723
+
+					color = { 205 205 230 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_colmar = {
+				color = { 210 200 220 }
+				color2 = { 255 255 255 }
+			
+				b_colmar = {
+					province = 2717
+
+					color = { 210 200 220 }
+					color2 = { 255 255 255 }
+				}
+				b_selestat = {
+					province = 2719
+
+					color = { 210 200 220 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_sundgau = {
+				color = { 215 200 215 }
+				color2 = { 255 255 255 }
+			
+				b_ferrette = {
+					province = 2720
+
+					color = { 215 200 215 }
+					color2 = { 255 255 255 }
+				}
+
+				b_mulhouse = {
+					province = 2058
+
+					color = { 215 200 215 }
+					color2 = { 255 255 255 }
+				}
+				b_porrentruy = {
+					province = 2056
+
+					color = { 215 200 215 }
+					color2 = { 255 255 255 }
+				}
+			}
 		}
 
 		d_brabant = {
@@ -7580,7 +7647,7 @@ e_germany = {
 			color = { 170 170 170 }
 			color2 = { 255 255 255 }
 			
-			capital = c_frankfurt
+			capital = c_worms
 			
 			c_frankfurt = {
 				color = { 190 190 190 }
@@ -16154,6 +16221,12 @@ e_byzantium = {
 					color = { 240 209 100 }
 					color2 = { 255 255 255 }
 				}
+			}
+			
+			c_cassino = {
+				color = { 240 209 100 }
+				color2 = { 255 255 255 }
+
 				b_cassino = {
 					province = 2602
 					
@@ -16695,6 +16768,11 @@ e_italy = {
 					color = { 195 130 145 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_saluzzo = {
+				color = { 195 130 145 }
+				color2 = { 255 255 255 }
+
 				b_saluzzo = {
 					province = 2044
 
@@ -16867,6 +16945,11 @@ e_italy = {
 					color = { 255 160 195 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_piacenza = {
+				color = { 255 160 195 }
+				color2 = { 255 255 255 }
+				
 				b_piacenza = {
 					province = 2488
 
@@ -17078,12 +17161,21 @@ e_italy = {
 					color = { 235 210 65 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_pistorja = {
+				color = { 235 210 65 }
+				color2 = { 255 255 255 }
 				b_pistorja = { #Pistoia
 					province = 2538
 
 					color = { 235 210 65 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_prato = {
+				color = { 235 210 65 }
+				color2 = { 255 255 255 }
+
 				b_prato = {
 					province = 2545
 
@@ -17459,14 +17551,20 @@ e_italy = {
 					color = { 209 125 105 }
 					color2 = { 255 255 255 }
 				}
-				b_montefeltro = {
-					province = 2552
+				b_camaldoli = {
+					province = 2551
 
 					color = { 209 125 105 }
 					color2 = { 255 255 255 }
 				}
-				b_camaldoli = {
-					province = 2551
+			}
+
+			c_montefeltro = {
+				color = { 209 125 105 }
+				color2 = { 255 255 255 }
+
+				b_montefeltro = {
+					province = 2552
 
 					color = { 209 125 105 }
 					color2 = { 255 255 255 }
@@ -65406,7 +65504,18 @@ e_guinea = {
 					color2 = { 255 255 255 }
 				}
 			}
+			c_unlanded = {
+				color = { 23 38 255 }
+				color2 = { 255 255 255 }
+
+				b_unlanded = { 
+					province = 9676
+
+					color = { 23 38 255 }
+					color2 = { 255 255 255 }
+			}
 		}
+	}
 		
 		d_kru = {
 			color = { 200 200 189 }

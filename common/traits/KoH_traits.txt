@@ -1,30 +1,4 @@
-﻿richard_the_lionheart = {
-	index = 291
-	martial = 2
-	diplomacy = 1
-	prowess = 5
-	
-	monthly_piety_gain_mult = 0.2
-	monthly_prestige = 1
-	
-	opinion_of_liege = 15
-	
-	stress_gain_mult = -0.25
-	
-	ai_war_cooldown = -0.25
-	ai_war_chance = 1
-	
-	desc = {
-		desc = trait_richard_the_lionheart_desc
-	}
-
-	ai_honor = high_positive_ai_value
-	ai_energy = very_high_positive_ai_value
-	ai_boldness = high_positive_ai_value
-	ai_zeal = dominant_positive_ai_value
-}
-
-lion_of_the_empire = {
+﻿lion_of_the_empire = {
 	index = 281
 	opposites = {
 		fredrick_barbarossa
@@ -211,4 +185,106 @@ KOH_Reynald = {
 	ai_vengefulness = very_high_positive_ai_value
 	ai_rationality = very_low_negative_ai_value
 	ai_energy = dominant_positive_ai_value
+}
+
+KOH_Free_City = {
+	index = 292
+
+	good = yes
+	flag = can_not_marry
+	can_have_children = no
+	can_inherit = no
+	blocks_from_claim_inheritance = yes
+	hostile_scheme_resistance_mult = -100
+	enemy_hostile_scheme_success_chance_add = -100
+	personal_scheme_power_mult = -100
+	ai_war_cooldown = 100
+	ai_war_chance = -100
+	disables_combat_leadership = yes
+	incapacitating = yes
+	monthly_lifestyle_xp_gain_mult = -100
+	immortal = yes	
+	
+
+	desc = {
+		desc = KOH_Free_City_desc
+	}
+
+	shown_in_ruler_designer = no 
+}
+
+KOH_guelph = {
+	index = 293
+	diplomacy = -1
+	monthly_piety_gain_mult = 0.25
+	intrigue = 1
+    learning = 1
+	same_opinion = 25 
+	clergy_opinion = 20
+	opposite_opinion = -75
+	ai_zeal = 50
+
+	desc = {
+		desc = KOH_guelph_desc
+	}
+
+	opposites = {
+		KOH_ghibelline
+		fredrick_barbarossa
+	}
+	shown_in_ruler_designer = no 
+}
+
+KOH_ghibelline = {
+	index = 294
+	diplomacy = -1
+	intrigue = 2
+	opposite_opinion = -75
+	same_opinion = 20
+	clergy_opinion = -25
+	tax_mult = 0.05
+	ai_zeal = 50
+	monthly_piety_gain_mult = -0.25
+	monthly_prestige_gain_mult = 0.25
+	opposites = {
+		KOH_guelph
+		lion_of_the_empire
+	}
+	shown_in_ruler_designer = no 
+}
+
+richard_the_lionheart = {
+	index = 295
+	martial = 2
+	diplomacy = 1
+	prowess = 5
+	
+	monthly_piety_gain_mult = 0.2
+	monthly_prestige = 1
+	
+	opinion_of_liege = 15
+	
+	stress_gain_mult = -0.25
+	
+	ai_war_cooldown = -0.25
+	ai_war_chance = 1
+	
+	desc = {
+		desc = trait_richard_the_lionheart_desc
+	}
+
+	ai_honor = high_positive_ai_value
+	ai_energy = very_high_positive_ai_value
+	ai_boldness = high_positive_ai_value
+	ai_zeal = dominant_positive_ai_value
+}
+
+koh_dragon = {
+	index = 296
+	martial = 10
+	prowess = 10
+
+	desc = {
+		desc = trait_richard_the_lionheart_desc
+	}
 }
