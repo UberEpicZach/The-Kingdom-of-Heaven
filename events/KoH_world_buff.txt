@@ -118,24 +118,6 @@ world_buffing.1 = {
 				}
 		}
 
-		else_if = {
-			limit = {
-				title:k_rum.holder = 225000
-			}
-			spawn_army = {
-				name = event_troop_default_name
-				levies = 2000
-				men_at_arms = {
-					type = horse_archers
-					stacks = 20
-				}
-				location = root.capital_province
-				uses_supply = no
-				war = scope:war
-				inheritable = no
-			}
-		}
-
 		else = {
 			add_gold = 1000
 			add_prestige = 500

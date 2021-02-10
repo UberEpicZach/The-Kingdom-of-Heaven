@@ -451,7 +451,7 @@ chivalry.9 = {
 		
 		scope:town_scope = {
 			add_county_modifier = {
-				modifier = koh_did_not_hunt_beast
+				modifier = koh_did_not_hunt_beast 
 				years = 5
 			}
 		}
@@ -459,7 +459,10 @@ chivalry.9 = {
 	
 	option = {
 		name = chivalry.9.b
-		
+		trigger = {
+			has_trait = brave
+		}
+
 		add_martial_skill = 1
 		scope:town_scope = {
 			add_county_modifier = {
@@ -467,11 +470,20 @@ chivalry.9 = {
 				years = 5
 			}
 		}
+
+		add_character_modifier = {
+			modifier = BraverThenADragon
+			years = 5
+		}
 	}
 	
 	option = {
 		name = chivalry.9.c
 		
+		stress_impact = {
+			craven = medium_stress_impact_gain
+		}
+
 		add_prestige = 100
 		change_chivalry_effect = { 
 			Chivalry = 1
@@ -479,8 +491,20 @@ chivalry.9 = {
 		custom_tooltip = add_1_chivalry_tt
 		custom_tooltip = start_dragon_hunting
 		trigger_event = {
-			days = 2
+			days = 10
 			id = chivalry.10
+		}
+	}
+
+	option = {
+		name = chivalry.9.dd
+		trigger = {
+			has_trait = lunatic_1
+			has_trait = diplomat
+		}
+		trigger_event = {
+			days = 10
+			id = chivalry.17
 		}
 	}
 }
@@ -517,13 +541,6 @@ chivalry.10 = {
 	option = {
 		name = chivalry.10.a
 		
-		scope:town_scope = {
-			add_county_modifier = {
-				modifier = koh_did_not_hunt_beast
-				years = 5
-			}
-		}
-
 		duel = {
 			skill = prowess
 			target = scope:challenger
@@ -549,17 +566,30 @@ chivalry.10 = {
 	option = {
 		name = chivalry.10.b
 		
-		add_prestige = -1000
-		scope:town_scope = {
-			add_county_modifier = {
-				modifier = koh_did_not_hunt_beast
-				years = 5
+		random_list = {
+			40 = {
+				scope:town_scope = {
+					add_county_modifier = {
+						modifier = koh_levies_occupied
+						years = 5
+					}
+				}
+				change_chivalry_effect = { 
+					Chivalry = -5
+				}
+				custom_tooltip = remove_5_chivalry_tt
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "You Escape Unharmed"
+					left_icon = root
+				}
+			}
+
+			60 = {
+				trigger_event = chivalry.16
 			}
 		}
-		change_chivalry_effect = { 
-			Chivalry = -5
-		}
-		custom_tooltip = remove_5_chivalry_tt
+		add_prestige = -100
 	}
 }
 
@@ -688,10 +718,12 @@ chivalry.14 = {
 	theme = martial_chivalry_focus
 	left_portrait = {
 		character = root
+		animation = idle
 	}
 	
 	right_portrait = {
 		character = scope:recruiter
+		animation = idle
 	}
 	
 	immediate = {
@@ -724,42 +756,32 @@ chivalry.15 = {
 	title = chivalry.15.t
 	desc = chivalry.15.d
 	theme = martial_chivalry_focus
+	override_background = {
+		event_background = wilderness
+	}
 	left_portrait = {
 		character = root
 		animation = personality_bold
 	}
 	right_portrait = {
 		character = scope:challenger
-		animation = severelywounded
 	}
 	
 	option = {
-		name = chivalry.4.a
-		
-		
-		root = {
-			add_prestige = 50
-			knight_increase_prowess_chance_effect = yes
-		}
-		
-		scope:challenger = {
-			add_prestige = -50
-			increase_wounds_no_death_effect = { REASON = fight }
-		}
-	}
-	
-	option = {
-		name = chivalry.15.b
-		
+		name = chivalry.15.a
 		
 		root = {
-			add_prestige = 50
+			add_prestige = 300
 			knight_increase_prowess_chance_effect = yes
 			add_dread = 10
 			change_chivalry_effect = { 
-				Chivalry = -2
+				Chivalry = 2
 			}
-			custom_tooltip = remove_2_chivalry_tt
+			custom_tooltip = add_2_chivalry_tt
+		}
+
+		scope:town_scope = {
+			change_county_control = 30
 		}
 		
 		scope:challenger = {
@@ -777,27 +799,148 @@ chivalry.16 = {
 	title = chivalry.16.t
 	desc = chivalry.16.d
 	theme = martial_chivalry_focus
+	override_background = {
+		event_background = wilderness
+	}
 	left_portrait = {
 		character = root
 		animation = personality_bold
 	}
 	right_portrait = {
 		character = scope:challenger
-		animation = severelywounded
 	}
 	
 	option = {
-		name = chivalry.5.a
+		name = chivalry.16.a
 		
-		
-		scope:challenger = {
-			add_prestige = 50
-			knight_increase_prowess_chance_effect = yes
+		random_list = {
+			10 = {
+				add_trait = wounded
+			}
+			20 = {
+				add_trait = wounded_2
+			}
+			25 = {
+				add_trait = maimed
+			}
+			5 = {
+				add_trait = one_legged
+			}
+			5 = {
+				add_trait = one_handed
+			}
+			35 = {
+				death = {
+					killer = scope:challenger
+					death_reason = death_dragon
+				}
+			}
 		}
-		
-		root = {
-			add_prestige = -50
-			increase_wounds_no_death_effect = { REASON = fight }
+		scope:challenger = {
+			death = {
+				death_reason = death_disappearance
+			}
 		}
 	}
 }
+
+chivalry.17 = {
+	type = character_event
+	title = chivalry.17.t
+	desc = chivalry.17.d
+	theme = martial_chivalry_focus
+	right_portrait = {
+		character = scope:challenger
+		animation = idle
+	}
+	
+	option = {
+		name = chivalry.17.a
+		
+		scope:town_scope = {
+			add_county_modifier = {
+				modifier = koh_ravaged_by_unknown_force 
+				years = 20
+			}
+		}
+		trigger_event = chivalry.18
+	}
+
+	option = {
+		name = chivalry.17.b
+		
+		add_character_modifier = {
+			modifier = koh_offerings_to_a_cave
+			years = 20
+		}
+		trigger_event = chivalry.18
+		
+	}
+
+	option = {
+		name = chivalry.17.c
+		
+		random_list = {
+			20 = {
+				death = {
+					killer = scope:challenger
+					death_reason = death_dragon
+				}
+			}
+
+			30 = {
+				add_trait = wounded
+			}
+			50 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "The Dragon lets you leave, unharmed"
+					left_icon = root
+				}
+			}
+		}
+		scope:town_scope = {
+			add_county_modifier = {
+				modifier = koh_levies_occupied 
+				years = 20
+			}
+		}
+	}
+}
+
+chivalry.18 = {
+	type = character_event
+	title = chivalry.18.t
+	desc = chivalry.18.d
+	theme = martial_chivalry_focus
+	override_background = {
+		event_background = bedchamber
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = chivalry.18.a
+
+		add_trait = strong
+		add_trait = scaly
+		add_trait = possessed
+
+		add_character_modifier = {
+			modifier = Dragonskin
+		}
+		random_list = {
+			50 = {
+				set_nickname_effect = { NICKNAME = nick_the_dragon }
+			}
+		}
+		scope:challenger = {
+			death = {
+				death_reason = death_disappearance
+			}
+		}
+	}
+}
+

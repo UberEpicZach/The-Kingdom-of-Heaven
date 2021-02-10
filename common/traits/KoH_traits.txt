@@ -288,3 +288,30 @@ koh_dragon = {
 		desc = trait_richard_the_lionheart_desc
 	}
 }
+
+one_handed = {
+	index = 297
+	health_trait = yes
+	learning = 1
+	prowess = -4
+	
+	dread_baseline_add = -10
+
+	attraction_opinion = -10
+	
+	ruler_designer_cost = -5
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_one_handed_desc
+			}
+			desc = trait_one_handed_character_desc
+		}
+	}
+
+	ai_energy = -10
+}

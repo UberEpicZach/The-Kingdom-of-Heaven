@@ -53,6 +53,11 @@ KoH_holy_orders.1 = {
 			save_scope_as = templar_holy_order
 		}
 		
+		set_global_variable = {
+			name = templar_holy_order_title
+			value = scope:templar_holy_order.title
+		}
+
 		hidden_effect = {
 			scope:leader = {
 				add_gold = 100 #So that they have some money to lend out
@@ -63,36 +68,40 @@ KoH_holy_orders.1 = {
 				}
 			}
 		}
-		scope:templar_holy_order = {
-			copy_title_history = title:d_knights_templars
+		global_var:templar_holy_order_title = {
+			copy_title_history = title:d_knights_templar
+		}
+
+		title:b_beaufort = {
+			lease_out_to = scope:templar_holy_order
 		}
 	}
 }
 
 #Beaufort
-KoH_holy_orders.4 = {
-	type = character_event
-	title = KoH_holy_orders.4.t
-	desc = KoH_holy_orders.4.d
-	theme = war
-	hidden = yes
-
-	immediate = {
-		faith = {
-			random_faith_holy_order = {
-				limit = {
-					leader = {
-						this = character:231001
-					}
-				}
-				save_scope_as = holy_order
-			}
-		}
-		title:b_beaufort = {
-			lease_out_to = scope:holy_order
-		}
-	}
-}
+#KoH_holy_orders.4 = {
+#	type = character_event
+#	title = KoH_holy_orders.4.t
+#	desc = KoH_holy_orders.4.d
+#	theme = war
+#	hidden = yes
+#
+#	immediate = {
+#		faith = {
+#			random_faith_holy_order = {
+#				limit = {
+#					leader = {
+#						this = character:231001
+#					}
+#				}
+#				save_scope_as = holy_order
+#			}
+#		}
+#		title:b_beaufort = {
+#			lease_out_to = scope:holy_order
+#		}
+#	}
+#}
 
 #Hospitaler Cleanup
 KoH_holy_orders.2 = {
@@ -137,9 +146,14 @@ KoH_holy_orders.2 = {
 		create_holy_order = {
 			leader = scope:leader
 			capital = title:b_bethgibelin
-			save_scope_as = hospitaler_holy_order
+			save_scope_as = hospitaller_holy_order
 		}
-	
+
+		set_global_variable = {
+			name = hospitaller_holy_order_title
+			value = scope:hospitaller_holy_order.title
+		}
+
 		hidden_effect = {
 			scope:leader = {
 				add_gold = 100 #So that they have some money to lend out
@@ -148,37 +162,45 @@ KoH_holy_orders.2 = {
 				every_courtier = {
 					add_trait = order_member
 				}
-			}
+			} 
 		}
-		scope:hospitaler_holy_order = {
+		global_var:hospitaller_holy_order_title = {
 			copy_title_history = title:d_knights_hospitaler
-		}  
+		}
+		
+		title:b_kerake = {
+			lease_out_to = scope:hospitaller_holy_order
+		}
+
+
+
+
 	}
 }
 #Kerake for hospitaler WILL NOT WORK UNTIL NEW BARONY
-KoH_holy_orders.3 = {
-	type = character_event
-	title = KoH_holy_orders.3.t
-	desc = KoH_holy_orders.3.d
-	theme = war
-	hidden = yes
-
-	immediate = {
-		faith = {
-			random_faith_holy_order = {
-				limit = {
-					leader = {
-						this = character:231000
-					}
-				}
-				save_scope_as = holy_order
-			}
-		}
-		title:b_kerake = {
-			lease_out_to = scope:holy_order
-		}
-	}
-}
+#KoH_holy_orders.3 = {
+#	type = character_event
+#	title = KoH_holy_orders.3.t
+#	desc = KoH_holy_orders.3.d
+#	theme = war
+#	hidden = yes
+#
+#	immediate = {
+#		faith = {
+#			random_faith_holy_order = {
+#				limit = {
+#					leader = {
+#						this = character:231000
+#					}
+#				}
+#				save_scope_as = holy_order
+#			}
+#		}
+#		title:b_kerake = {
+#			lease_out_to = scope:holy_order
+#		}
+#	}
+#}
 
 #Setting up Knights of Calatrava
 KoH_holy_orders.5 = {
@@ -202,15 +224,16 @@ KoH_holy_orders.5 = {
 			}
 			save_scope_as = leader #73153 #207510
 		}
+
 		hidden_effect = {
 			if = {
-				limit = { NOT = { title:b_mentesa.holder = scope:leader } }
+				limit = { NOT = { title:b_calatrava.holder = scope:leader } }
 				create_title_and_vassal_change = {
 					type = leased_out
 					save_scope_as = change
 					add_claim_on_loss = no
 				}
-				title:b_mentesa = {
+				title:b_calatrava = {
 					change_title_holder_include_vassals = {
 						holder = scope:leader
 						change = scope:change
@@ -222,8 +245,23 @@ KoH_holy_orders.5 = {
 
 		create_holy_order = {
 			leader = scope:leader
-			capital = title:b_mentesa
+			capital = title:b_calatrava
 			save_scope_as = calatrava_holy_order
+		}
+
+		title:b_alcaniz = { 
+			lease_out_to = scope:calatrava_holy_order 
+		} 
+		title:b_malagon = { 
+			lease_out_to = scope:calatrava_holy_order 
+		} 
+		title:b_alarcos = { 
+			lease_out_to = scope:calatrava_holy_order
+		}
+
+		set_global_variable = {
+			name = calatrava_holy_order_title
+			value = scope:calatrava_holy_order.title
 		}
 	
 		hidden_effect = {
@@ -236,16 +274,47 @@ KoH_holy_orders.5 = {
 				}
 			}
 		}
-		calatrava_holy_order = {
+		global_var:calatrava_holy_order_title = {
 			copy_title_history = title:d_knights_calatrava
 		}
 	}
 }
+
+#KoH_holy_orders.6 = {
+#	type = character_event
+#	title = KoH_holy_orders.6.t
+#	desc = KoH_holy_orders.6.d
+#	theme = war
+#	hidden = yes
+#
+#	immediate = {
+#		faith = {
+#			random_faith_holy_order = {
+#				limit = {
+#					leader = {
+#						this = character:73153
+#					}
+#				}
+#				save_scope_as = holy_order
+#			}
+#		}
+#		title:b_alcaniz = {
+#			lease_out_to = scope:holy_order
+#		}
+#		title:b_malagon = {
+#			lease_out_to = scope:holy_order
+#		}
+#		title:b_alarcos = {
+#			lease_out_to = scope:holy_order
+#		}
+#	}
+#}
+
 #Setting Up Knights of Santiago 
-KoH_holy_orders.6 = {
+KoH_holy_orders.7 = {
 	type = character_event
-	title = KoH_holy_orders.6.t
-	desc = KoH_holy_orders.6.d
+	title = KoH_holy_orders.7.t
+	desc = KoH_holy_orders.7.d
 	theme = war
 	hidden = yes
 
@@ -255,20 +324,23 @@ KoH_holy_orders.6 = {
 	}
 	
 	immediate = {
-		create_character = {
-			template = holy_order_leader_character
-			location = 1953
+		every_living_character = {
+			limit = {
+				any_held_title = {
+					this = title:d_knights_santiago
+				}
+			}
 			save_scope_as = leader
 		}
 		hidden_effect = {
 			if = {
-				limit = { NOT = { title:b_mora.holder = scope:leader } }
+				limit = { NOT = { title:b_ucles.holder = scope:leader } }
 				create_title_and_vassal_change = {
 					type = leased_out
 					save_scope_as = change
 					add_claim_on_loss = no
 				}
-				title:b_mora = {
+				title:b_ucles = {
 					change_title_holder_include_vassals = {
 						holder = scope:leader
 						change = scope:change
@@ -279,8 +351,13 @@ KoH_holy_orders.6 = {
 		}
 		create_holy_order = {
 			leader = scope:leader
-			capital = title:b_mora
-			save_scope_as = calatrava_holy_order
+			capital = title:b_ucles
+			save_scope_as = santiago_holy_order
+		}
+
+		set_global_variable = {
+			name = santiago_holy_order_title
+			value = scope:santiago_holy_order.title
 		}
 	
 		hidden_effect = {
@@ -293,8 +370,39 @@ KoH_holy_orders.6 = {
 				}
 			}
 		}
+		global_var:santiago_holy_order_title = {
+			copy_title_history = title:d_knights_santiago
+		}
+		title:b_mentesa = {
+			lease_out_to = scope:santiago_holy_order
+		}
+
+		title:b_altotajo = {
+			lease_out_to = scope:santiago_holy_order
+		}
+		title:b_zurita= {
+			lease_out_to = scope:santiago_holy_order
+		}
+		title:b_huete = {
+			lease_out_to = scope:santiago_holy_order
+		}
 	}
 }
+
+#KoH_holy_orders.8 = {
+#	type = character_event
+#	title = KoH_holy_orders.8.t
+#	desc = KoH_holy_orders.8.d
+#	theme = war
+#	hidden = yes
+#
+#	immediate = {
+#		global_var:calatrava_holy_order_title.holder = {
+#				save_scope_as = holy_order
+#		}
+#	
+#	}
+#}
 
 #AGE OF CRUSADES AND JIHADS
 KoH_holy_orders.100 = { 
@@ -348,15 +456,13 @@ KoH_holy_orders.101 = {
 	theme = war
 	hidden = yes
 	
-	trigger = { 
-		if = {
+	trigger_if = { 
 			limit = { 
 				title:c_jerusalem.holder = {
 				NOT = { faith.religion = religion:christianity_religion }
 			}
 		}
 	}
-}
 
 	immediate = {
 		faith:catholic = {
@@ -402,9 +508,21 @@ KoH_holy_orders.102 = {
 	theme = war
 	hidden = yes
 
+	immediate = {
+		every_living_character = {
+			limit = {
+				any_held_title = {
+					this = title:d_hashshashin
+				}
+			}
+			save_scope_as = asssassin
+		}
+	}
+
 	option = {
 		name = KoH_holy_orders.102.a
-		title:d_hashshashin.holder = {
+
+		scope:asssassin = {
 			add_gold = 100 #So that they have some money to lend out
 			add_piety_level = 2
 			add_gold = holy_order_starting_gold

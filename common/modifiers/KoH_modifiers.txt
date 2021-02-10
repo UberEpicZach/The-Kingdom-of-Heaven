@@ -84,5 +84,42 @@ EmperorVassals = {
 
 koh_did_not_hunt_beast = {
 	icon = martial_negative
+	county_opinion_add = -30
+	levy_size = -0.5
+}
+
+koh_mocked_beast = {
+	icon = feast_negative
+	levy_size = -0.4
+	county_opinion_add = -10
+}
+
+BraverThenADragon = {
+	icon = martial_positive
+	prowess = 5
+}
+
+koh_levies_occupied = {
+	icon = martial_negative
 	levy_size = -0.3
+}
+
+koh_offerings_to_a_cave = {
+	icon = stress_negative
+	monthly_income_mult = -0.2
+}
+
+koh_ravaged_by_unknown_force = {
+	icon = martial_negative
+	county_opinion_add = -30
+	change_county_control = -50
+	development_growth_factor = large_development_growth_loss
+}
+
+dynasty_guelph = {
+	icon = martial_positive
+}
+
+dynasty_ghibelline = {
+	icon = martial_positive
 }

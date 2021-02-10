@@ -201,6 +201,56 @@ d_friuli = {
 	}
 }
 
+c_reggio_emilia = {
+	1115.7.24 = {
+		liege = e_hre
+	}
+	1116.5.6 = {
+		holder = 1061931 # Guido III
+	}
+	1125.5.23 = {
+		liege=k_italy
+	}
+	1136.1.1 = {
+		government = republic_government
+	}
+	1145.10.13 = {
+		holder = 1061934 # Sigifredo
+	}
+	1168.1.1 = {
+		liege = e_hre # joined in 1168
+	}
+	1169.1.1 = {
+		holder = 1062084 # Ugolino da Sesso consul of Reggio 1169 1184, 1200 and 1208.
+	}
+	1180.1.1 = {
+		holder = 1061961 # Albreto da Foglino consul of Reggio 1180
+	}
+	1184.1.1 = {
+		holder = 1062084 # Ugolino da Sesso consul of Reggio 1169 1184, 1200 and 1208.
+	}
+	1186.1.1 = {
+		holder = 1062084 # Guido da Canossa consul of Reggio 1186
+	}
+	1190.1.1 = {
+		holder = 1061961 # Albreto da Foglino consul of Reggio 1180
+	}
+	1195.1.1 = {
+		holder = 1061948 # Giacomo della Palude
+	}
+	1200.1.1 = {
+		holder = 1062084 # Ugolino da Sesso consul of Reggio 1169 1184, 1200 and 1208.
+	}
+	1202.1.1 = {
+		holder = 1062115 # Gherardo Rangoni podesta of Reggio 1202
+	}
+	1203.1.1 = {
+		holder = 1064896 #Isacco da Dovara podesta of Reggio 1203-1204 and 1213-1214
+	}
+	1205.1.1 = {
+		holder = 1062086 #Raimondo da Sesso. consul of Reggio 1205, 1210 and 1226.
+	}
+}
 
 c_aquileia = {
 	569.1.1 = {
@@ -373,6 +423,9 @@ c_friuli = {
 	}
 	1152.2.15 = {
 		holder = 212501 #Friedrich I von Hohenstaufen
+	}
+	1184.1.1 = {
+		holder = 213023
 	}
 	1187.1.1 = {
 		holder = 213023
@@ -613,10 +666,6 @@ d_verona = {
 	1090.5.12 = {
 		holder = 0
 	}
-	1180.1.1 = {
-		holder = 223597
-	}
-
 	1305.1.1 = {
 		liege = 0
 		holder = 412070
@@ -987,18 +1036,18 @@ c_padua = {
 	}
 	1090.5.12={
 	liege="e_hre"
-}
-1097.4.13={
-	holder=20299
-}
-1128.12.15={
-	holder=70644
-}
-1172.1.1={
-	holder=223597
-}
+	}
+	1097.4.13={
+		holder=20299
+	}
+	1128.12.15={
+		holder=70644
+	}
+	1172.1.1={
+		holder=223597
+	}
 	1177.1.1 = {
-		holder = 223597 # Obizzo I of Lombardia
+		holder = KOH_ITALY26 # Obizzo I of Lombardia
 		government = republic_government
 	}
 	1237.1.1 = {
@@ -1156,18 +1205,18 @@ c_polesine = {
 	1078.1.1 = {
 		holder = 70623
 	}
-	1090.5.12={
-	liege="e_hre"
-}
-1097.4.13={
-	holder=20299
-}
-1128.12.15={
-	holder=70644
-}
-1172.1.1={
-	holder=223597
-}
+	1090.5.12 = {
+		liege= "e_hre"
+	}
+	1097.4.13 = {
+		holder=20299
+	}
+	1128.12.15={
+		holder=70644
+	}
+	1172.1.1={
+		holder=223597
+	}
 	1305.1.1 = {
 		liege = 0
 		holder = 412070
@@ -1178,6 +1227,13 @@ c_polesine = {
 	}
 }
 
+c_vicenza = {
+	1180.1.1 = {
+		holder = KOH_ITALY027
+		liege = e_hre
+		government = republic_government
+	}
+}
 
 c_monferrato = {
 	757.1.1 = {
@@ -1333,6 +1389,22 @@ d_piedmonte = {
 	}
 	1091.12.27 = {
 		holder = 0 # With the death of Adelaide, Turin becomes a republic
+	}
+}
+
+c_vercelli = {
+	1180.1.1 = {
+		holder = KOH_ITALY024
+		government = republic_government
+		liege = e_hre
+	}
+}
+
+c_lodi = {
+	1180.1.1 = {
+		holder = KOH_ITALY025
+		liege = e_hre
+		government = republic_government
 	}
 }
 
@@ -1572,6 +1644,7 @@ c_novara = {
 	}
 	1183.1.1 = {
 		government = republic_government
+		holder = KOH_ITALY034
 	#	holder = # Commune of Novara, unknown rulers (1183-1249)
 	}
 	1249.1.1 = {
@@ -1707,6 +1780,7 @@ c_saluzzo = {
 		holder = 420301 # Tommaso II
 	}
 }
+
 c_cuneo = {
 	756.1.1 = {
 		liege = k_italy
@@ -1951,9 +2025,9 @@ c_lombardia = {
 		government = republic_government
 		holder = 213007 # Ruggero Visconti, Podest√ 
 	}
-	1180.1.1 = {
-		holder = 223597 #Commune #of Milan, unknown rulers (1176-1180)	
-	}	
+	#1180.1.1 = {
+	#	holder = 223597 #Commune of Milan, unknown rulers (1176-1180)	
+	#}	
 	1184.1.1 = {
 		holder = 213020 # Ghiberto Milanese, Podest√ 
 	}
@@ -2097,7 +2171,7 @@ c_brescia = {
 	#	holder = Commune of Brescia, unknown rulers (1281-1298)
 		liege = e_hre
 	}
-	1115.7.24={
+	1115.8.24={
 		liege="e_hre"
 		holder=7901
 	}
@@ -2129,7 +2203,7 @@ c_brescia = {
 		holder=212501 #Brescia a free commune
 	}
 	1184.1.1 = {
-		holder = 223597
+		holder = KOH_ITALY033
 	}
 	1195.1.1 = {
 		government = feudal_government
@@ -2619,7 +2693,7 @@ c_pavia = {
 	}
 	1179.1.1 = {
 		holder = KOH_ITLAY03
-		}
+	}
 	1180.1.1 = {
 		holder = KOH_ITLAY01
 		government = republic_government
@@ -3560,36 +3634,6 @@ c_luni = {
 	1097.4.13 = {
 		holder = 20299 # Folco I of Lombardia
 	}
-	
-	1122.1.1 = {
-		government = feudal_government
-		holder = cisalpine0035 # Alberto II Malaspina
-	}
-	1140.1.1 = {
-		holder = cisalpine0037 # Obizzo I 'the Great'
-	}
-	1186.1.1 = {
-		holder = cisalpine0055 # Obizzo II
-	}
-	1190.1.1 = {
-		holder = cisalpine0057 # Corrado I 'the Old'
-	}
-	1254.7.1 = {
-		holder = cisalpine0059 # Federico
-	}
-	1277.4.16 = {
-		holder = cisalpine0063 # Tommaso
-	}
-	1291.1.1 = {
-		holder = cisalpine0064 # Corrado II
-	}
-	1327.1.1 = {
-		holder = cisalpine0066 # Franceschino
-	}
-	1335.1.1 = {
-		holder = cisalpine0068 # Obizzino
-	}
-	
 	1128.12.15 = {
 		holder = 223597 # Obizzo I of Lombardia
 	}
@@ -3622,8 +3666,37 @@ c_luni = {
 	1318.1.1 = {
 		holder = cisalpine0673 # Bernab√≤ Malaspina di Mulazzo, Bishop of Luni
 	}
-	
-	
+}
+
+b_luni = {
+	1122.1.1 = {
+		government = feudal_government
+		holder = cisalpine0035 # Alberto II Malaspina
+	}
+	1140.1.1 = {
+		holder = cisalpine0037 # Obizzo I 'the Great'
+	}
+	1186.1.1 = {
+		holder = cisalpine0055 # Obizzo II
+	}
+	1190.1.1 = {
+		holder = cisalpine0057 # Corrado I 'the Old'
+	}
+	1254.7.1 = {
+		holder = cisalpine0059 # Federico
+	}
+	1277.4.16 = {
+		holder = cisalpine0063 # Tommaso
+	}
+	1291.1.1 = {
+		holder = cisalpine0064 # Corrado II
+	}
+	1327.1.1 = {
+		holder = cisalpine0066 # Franceschino
+	}
+	1335.1.1 = {
+		holder = cisalpine0068 # Obizzino
+	}
 }
 
 
@@ -3768,100 +3841,148 @@ b_reggio_emilia = {
 
 
 c_mantua = {
-756.1.1={
-	liege=k_italy
-}
-756.1.1={
-	holder = 190312 #Varbert
-}
-797.1.1={
-	holder = 190315 #Grimauld
-}
-855.9.20={
-	liege="k_italy"
-}
-859.1.1={
-	holder=168334
-}
-936.1.1 = {
-	holder = 1108
-}
-961.1.1={
-	liege="d_verona"
-}
-1066.1.1={
-	holder=20307
-}
-1080.1.1={
-	holder=70623
-}
-1090.5.12={
-	liege="e_hre"
-	holder=7708
-}
-1120.2.3={
-	holder=7901 #Heinrich V 
-}
-1125.8.24 = { 
-	holder = 30219 #Lothar III von Supplingburg
-}
+	756.1.1 = {
+		liege = k_italy
+	}
+	756.1.1 = {
+		holder = 190312 #Varbert
+	}
+	797.1.1 = {
+		holder = 190315 #Grimauld
+	}
+	855.9.20 = {
+		liege = "k_italy"
+	}
+	859.1.1 = {
+		holder = 168334
+	}
+	961.1.1 = {
+		liege = "d_verona"
+	}
+	977.1.1 = {
+		holder = 260621 # Alberto Atto of Modena
+	}
+	988.2.13 = {
+		holder = 7926 # Tedaldo of Modena
+	}
+	1012.1.1 = {
+		holder = 7756 # Bonifacio IV of Tuscany
+	}
+	1027.1.1 = {
+		liege = d_toscana
+	}
+	1052.5.6 = {
+		holder = 7758 # Federigo of Tuscany
+	}
+	1090.5.12 = {
+		liege = "e_hre"
+		holder = 7708
+	}
+	1055.7.1 = {
+		holder = 7757 # Matilda of Tuscany
+	}
+	1115.7.24 = {
+		government = republic_government
+	}
+	1184.1.1 = {
+		holder = KOH_ITALY013
+		government = republic_government
+	}
+	1220.1.1 = {
+		liege = d_lombardia
+	}
+	1225.1.1 = {
+		holder = cisalpine0196 # Rizzardo di Sambonifazio of Verona
+	}
+	1237.1.1 = {
+		holder = cisalpine0196 # Rizzardo of Verona (2nd time)
+	}
+	1238.1.1 = {
+		holder = cisalpine0785 # Bernardo Rossi of Modena
+	}
+	1239.1.1 = {
+		holder = cisalpine0743 # Guido da Correggio, Podest√ 
+	}
+	1240.1.1 = {
+		holder = cisalpine0162 # Gherardo Rangoni, Podest√ 
+	}
+	1241.1.1 = {
+		holder = cisalpine0743 # Guido da Correggio (2nd time - 2 years)
+	}
+	1245.1.1 = {
+		holder = cisalpine0743 # Guido da Correggio (3rd time)
+	}
+	1240.1.1 = {
+		holder = 73517
+	}
+	1245.6.1 = {
+		holder = cisalpine0740 # Matteo da Correggio, Podest√ 
+	}
+	1246.6.1 = {
+		holder = cisalpine0196 # Rizzardo of Verona (3rd time)
+	}
+	1250.12.13 = {
+		holder = 30760 #Konrad IV von Hohenstaufen
+	}
+	1254.5.21 = {
+		holder = 94003 #Willem Gerulfing (van Holland)
+	}
+	1256.1.28 = {
+		holder = 232682 #Richard of Cornwall (Plantagenet)
+	}
+	1263.1.1 = {
+		holder = cisalpine0787 # Jacopino Rossi
+	}
+	1264.6.1 = {
+		holder = cisalpine0787 # Jacopino Rossi (2nd time)
+	}
+	1265.1.1 = {
+		holder = cisalpine0198 # Lodovico di Sambonifazio of Verona, Podest√°
+	}
+	1265.6.1 = {
+		holder = cisalpine0609 # Pagano della Torre, Podest√ 
+	}
+	1266.1.1 = {
+		holder = 70760 # Carnev√  della Torre, Podest√  (2 years)
+	}
+	1268.1.1 = {
+		holder = 70757 # Mosca della Torre, Podest√ 
+	}
+	1269.1.1 = {
+		holder = cisalpine0740 # Matteo da Correggio (2nd time)
+	}
+	1269.6.1 = {
+		holder = cisalpine0743 # Guido da Correggio (4th time)
+	}
+	1270.1.1 = {
+		holder = cisalpine0740 # Matteo da Correggio (3rd time)
+	}
+	1271.1.1 = {
+		holder = cisalpine0743 # Guido da Correggio (5th time)
+	}
+	1272.1.1 = {
+		government = feudal_government
+		holder = 462021
+	}
+	1291.7.15 = {
+		holder = 462360 #Adolf von Nassau
+	}
+	1298.6.23 = {
+		holder = 462023 #Albrecht I von Habsburg
+	}
+	1308.5.1 = {
+		holder = 462611 #Heinrich VII von Luxemburg
+	}
+	1309.1.21 = {
+		holder = 70712 # Rinaldo 'Passerino'
+	}
+	1319.1.1 = {
+		liege = 0
+	}
+	1328.8.16 = {
+		holder = 413024
+	}
 
-1137.12.4={
-	holder = 7903 #Konrad III von Hohenstaufen
-}
-1184.1.1 = {
-	holder = KOH_ITALY013
-	government = republic_government
-}
-1187.1.1={
-	holder=213022
-}
-1200.1.1={
-	holder=212506 #Philip I von Hohenstaufen
-}
-1208.6.21= {
-	holder = 212607 #Otto IV Welf
-}
-1212.7.5 = {
-	holder = 194179
-}
-1220.1.1 = {
-	liege = d_lombardia
-}
-1241.1.1 = {
-	liege = d_romagna
-	holder = 73517
-}
-1250.12.13={
-	holder = 30760 #Konrad IV von Hohenstaufen
-}
-1254.5.21={
-	holder = 94003 #Willem Gerulfing (van Holland)
-}
-1256.1.28={
-	holder = 232682 #Richard of Cornwall (Plantagenet)
-}
-1272.4.2={
-	holder = 462021 #Rudolf I von Habsburg
-}
-1291.7.15={
-	holder = 462360 #Adolf von Nassau
-}
-1298.6.23={
-	holder = 462023 #Albrecht I von Habsburg
-}
-1308.5.1 = {
-	holder = 462611 #Heinrich VII von Luxemburg
-}
-1313.8.24 = {
-	holder = 462740 #Ludwig III von Wittelsbach
-}
-1318.1.1={
-	holder=413024
-}
-1328.1.1={
-	holder=413027
-}
 }
 
 
@@ -4385,7 +4506,7 @@ c_firenze = {
 	930.1.1 = {
 		holder = 167906
 	}
-	
+ 
 	931.1.1 = {
 		holder = 7980
 	}
@@ -4418,6 +4539,7 @@ c_firenze = {
 	}
 	1135.1.1 = {
 		holder = 212996
+		government = republic_government
 	}
 	1137.1.1 = {
 		holder = 212602
@@ -4504,13 +4626,17 @@ c_volterra = {
 		holder = 167506 #House Alliata
 		liege = e_hre
 	}
-
+	1180.1.1 = {
+		holder = 167511
+		government = republic_government
+	}
 }
 
 c_prato = {
 	1150.1.1 = {
 		holder = KOH_ITALY021
 		liege = e_hre
+		government = republic_government
 	}
 }
 
@@ -4521,6 +4647,7 @@ c_montefeltro = {
 	}
 	1184.1.1 = {
 		holder = 213026
+		government = republic_government
 	}
 }
 
@@ -4530,10 +4657,10 @@ c_pistorja = {
 		liege = e_hre
 	}
 	1184.1.1 = {
-		holder = 213026 #FIX
+		holder = KOH_ITALY028
+		government = republic_government
 	}
 }
-
 
 c_lucca = {
 	713.1.1 = {
@@ -4566,7 +4693,7 @@ c_lucca = {
 		holder = 167906 # Lamberto of Tuscany
 	}
 	1032.1.1 = {
-	holder = 2022
+		holder = 2022
 	}
 	1088.1.1 = {
 		holder = 73414
@@ -4582,6 +4709,7 @@ c_lucca = {
 	}
 	1166.1.1 = {
 		holder = 73418
+		government = republic_government
 	}
 	1197.9.28 = {
 		liege = e_hre
@@ -4617,7 +4745,7 @@ c_lucca = {
 		holder = cisalpine0789 # Ugolino Rossi (2nd time)
 	}
 	1296.1.1 = {
-	holder = 73424
+		holder = 73424
 	}
 	1302.1.1 = {
 		holder = cisalpine0789 # Ugolino Rossi (3rd time)
@@ -4637,7 +4765,7 @@ c_lucca = {
 	}
 	1329.3.1 = {
 		holder = 73428
-	liege = 0
+		liege = 0
 	}
 	1329.4.1 = {
 		holder = 70784
@@ -4735,6 +4863,7 @@ c_arezzo = {
 	}
 	1120.1.1 = {
 		holder = 33466
+		government = republic_government
 	}
 	1127.1.1 = {
 		holder = 30219
@@ -4822,6 +4951,7 @@ c_siena = {
 	}
 	1120.1.1 = {
 		holder = 33466
+		government = republic_government
 	}
 	1127.1.1 = {
 		holder = 30219
@@ -4844,14 +4974,25 @@ c_siena = {
 	1167.9.12 = {
 		holder = 7595
 	}
-	1173.1.1 = {
-		holder = 212501
+	1167.9.12 = { #Death of Welf VII, the castle of Orgia of the Ardengheschi was siezed in early 1168 by the sienese republic
+		holder = 1065167 # Malatova Malatovi
+		government = republic_government
 	}
-	1180.1.1 = {
-		holder = KOH_RANDOM118
+	1170.1.1 = {
+		holder = 1065192 # Guglielmo Piccolomini, consul of Siena 1170
 	}
-	1186.1.11 = {
-		holder = 20321
+	1172.1.1 = {
+		holder = 1065167 # Malatova Malatovi
+	}
+	1175.1.1 = {
+		holder = 1061224 # Ugo Ugurgieri
+	}
+	1178.1.1 = {
+		holder = 1065193 # Ranierio Piccolomini, consul of Siena 1178
+	}
+	#1061221 # Ruggerio di Berardenghi consul of Siena in 1183(????)
+	1186.1.1 = {
+		holder = 1065168 # Filippo Malatovi, consul of Siena 1186 1191 and 1194. 1200 podesta of siena.
 	}
 	1197.9.28 = {
 		liege = e_hre

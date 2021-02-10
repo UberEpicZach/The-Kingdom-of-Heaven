@@ -3,6 +3,120 @@
 		KOH_ON_START
 		on_artifact_initialization
 		on_monthly_artifacts
+		KOH_Italian_Familes
+		delay = { months = 12 }
+		KOH_commune_maintenance
+	}
+}
+
+
+
+KOH_Italian_Familes = {
+	effect = {
+		title:c_cremona.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }  
+		title:c_mantua.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
+		title:k_genoa.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
+		title:c_bologna.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
+		title:c_modena.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
+		title:c_treviso.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
+		title:c_vercelli.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
+		title:c_lodi.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
+		title:c_parma.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
+		title:c_ferrara.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
+		title:c_verona.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
+		title:c_padua.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
+		title:c_vicenza.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
+		title:k_venice.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
+		title:c_arezzo.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
+		title:c_assisi.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
+		title:c_como.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
+		title:c_forli.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
+		title:c_grosseto.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
+		title:c_pavia.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
+		title:k_pisa.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
+		title:c_pistorja.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
+		title:c_spoleto.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
+		title:c_terni.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
+		title:c_urbino.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }	
+	
+       every_ruler = {
+			limit = {
+				dynasty = { 
+					has_dynasty_modifier = dynasty_guelph
+				}
+			}
+			add_character_flag = guelph_cb
+			add_trait = KOH_guelph
+		}
+
+		every_ruler = {
+			limit = {
+					dynasty = { 
+						has_dynasty_modifier = dynasty_ghibelline
+					}
+				}
+			add_character_flag = ghibelline_cb
+			add_trait = KOH_ghibelline
+		}
+	}
+	on_actions = {
+		delay = { months = 5 }
+		KOH_Italian_Familes_Monthly
+	}
+}
+
+KOH_Italian_Familes_Monthly = {
+	on_actions = {
+		delay = { months = 1 }
+		KOH_Italian_Familes_Monthly
+	}
+
+	effect = {
+		every_ruler = {
+			limit = {
+				AND = {
+					dynasty = { 
+						has_dynasty_modifier = dynasty_guelph
+					}
+					is_adult = yes
+					is_female = no
+				}
+			}
+			add_character_flag = guelph_cb
+			add_trait = koh_guelph
+		}
+
+		every_ruler = {
+			limit = {
+				AND = {
+					dynasty = { 
+						has_dynasty_modifier = dynasty_ghibelline
+					}
+					is_adult = yes
+					is_female = no
+				}
+			}
+			add_character_flag = ghibelline_cb
+			add_trait = koh_ghibelline
+		}
+	}
+}
+
+KOH_commune_maintenance  = {
+	on_actions = {
+		delay = { months = 1 }
+		KOH_commune_maintenance
+	}
+	effect = {
+        every_ruler = {
+			limit = {
+                has_culture_group = culture_group:latin_group 
+				primary_title.tier = tier_county 
+				NOT = { has_character_flag = RecentElection }
+				has_government = republic_government
+			}
+			trigger_event = KOH_ItalianCommunes.4
+		}
 	}
 }
 
@@ -40,20 +154,8 @@ KOH_ON_START = {
 					is_landed = yes
 				}
 				trigger_event = {
-					id = KoH_holy_orders.1
+					id = KoH_holy_orders.1 #Templar Creation
 					days = -1
-				}
-			}
-		}
-		character:223523 = {
-			if = {
-				limit = {
-					is_alive = yes
-					is_landed = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.4
-					days = 1
 				}
 			}
 		}
@@ -64,18 +166,7 @@ KOH_ON_START = {
 					is_landed = yes
 				}
 				trigger_event = {
-					id = KoH_holy_orders.2
-					days = 1
-				}
-			}
-		}
-		character:223523 = {
-			if = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.3
+					id = KoH_holy_orders.2 #Hospitaller Creation
 					days = 2
 				}
 			}
@@ -86,22 +177,23 @@ KOH_ON_START = {
 					is_alive = yes
 				}
 				trigger_event = {
-					id = KoH_holy_orders.5
-					days = 2
-				}
-			}
-		}
-		character:207510 = {
-			if = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.6
+					id = KoH_holy_orders.5 #Calvatra Creation
 					days = 3
 				}
 			}
 		}
+		character:207510 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.7 #Santigo creation
+					days = 4
+				}
+			}
+		}
+
 		character:204510 = {
 		   if = {
                 limit = {
@@ -321,16 +413,18 @@ on_birth_child = {
 KOH_HENRYHENRY = {
 	effect = {
 			if = {
-            	limit = {
-					AND = {
-						dynasty = KOH_D_023
-						is_male = yes
+				limit = {
+					ROOT = {
+						AND = {
+							dynasty = dynasty:KOH_D_023
+							is_male = yes
+						}
 					}
 				}
 			change_first_name = "Heinrich"
 			add_trait = fecund
-		} 
-	}
+		}
+	}	 
 }
 
 KOH_bloodline_birth = {
@@ -391,7 +485,7 @@ KOH_pulse_monthly = {
 			}
 		}
 	events = { 
-        KoH_SicillianConflict.1
+		KoH_SicillianConflict.1
     }
 }
 
@@ -459,18 +553,17 @@ on_artifact_inheritance = {
 	}
 }
 
-five_year_playable_pulse = {
-	on_actions = {
-		KOH_events_five_yearly_pulse
-		KOH_events_five_yearly_pulse
-	}
-}
+#five_year_everyone_pulse = {
+#	events = {
+#		KOH_ItalianCommunes.4
+#	}
+#}
 
-KOH_events_five_yearly_pulse = {
-	events = {
-		KOH_ItalianCommunes.4		# Republican Election
-	}
-}
+#KOH_events_five_yearly_pulse = {
+#	events = {
+#		KOH_ItalianCommunes.4		# Republican Election
+#	}
+#}
 
 three_year_playable_pulse = {
 	on_actions = {

@@ -341,7 +341,7 @@ KOH_ItalianCommunes.3 = {
 		set_employer = scope:county.holder
 		move_to_pool = yes
 	}
-}
+} 
 
 KOH_ItalianCommunes.4 = {
 	type = character_event
@@ -351,15 +351,6 @@ KOH_ItalianCommunes.4 = {
 	}
 	theme = dynasty
 	left_portrait = root
-
-	trigger = {
-		has_culture_group = culture_group:latin_group
-		has_dynasty = yes
-		is_landed
-		has_government = republic_government
-		tier = tier_county
-		NOT = { has_character_flag = RecentElection }
-	}
 
 	immediate = {
 		random_living_character = {
@@ -440,20 +431,21 @@ KOH_ItalianCommunes.4 = {
 		random_list = {
 			25 = { #ElectionCandidate1
 				root = {
-					get_title = c_unlanded
+					get_title = title:c_unlanded
 				}
 		
 				scope:ElectionCandidate = {
 					get_title = scope:county
+					change_government = republic_government
 					add_character_flag = {
 						flag = RecentElection
 						months = 60
 					}
 				}
-				
+
 				send_interface_toast = {
 					type = event_toast_effect_good
-					custom_tooltip = "If they win, you will continue to play as them"
+					custom_tooltip = "You will play as them"
 					title = "[ElectionCandidate.GetName] has won the election"
 					left_icon = scope:ElectionCandidate
 				}
@@ -463,11 +455,12 @@ KOH_ItalianCommunes.4 = {
 
 			25 = { #ElectionCandidate1
 				root = {
-					get_title = c_unlanded
+					get_title = title:c_unlanded
 				}
 			
 				scope:ElectionCandidate2 = {
 					get_title = scope:county
+					change_government = republic_government
 					add_character_flag = {
 						flag = RecentElection
 						months = 60
@@ -476,7 +469,7 @@ KOH_ItalianCommunes.4 = {
 
 				send_interface_toast = {
 					type = event_toast_effect_good
-					custom_tooltip = "If they win, you will continue to play as them"
+					custom_tooltip = "You will play as them"
 					title = "[ElectionCandidate2.GetName] has won the election"
 					left_icon = scope:ElectionCandidate2
 				}
@@ -486,20 +479,21 @@ KOH_ItalianCommunes.4 = {
 
 			25 = { #ElectionCandidate1
 				root = {
-					get_title = c_unlanded
+					get_title = title:c_unlanded
 				}
 			
 				scope:ElectionCandidate3 = {
 					get_title = scope:county
+					change_government = republic_government
 					add_character_flag = {
 						flag = RecentElection
 						months = 60
 					}
 				}
-			
+
 				send_interface_toast = {
 					type = event_toast_effect_good
-					custom_tooltip = "If they win, you will continue to play as them"
+					custom_tooltip = "You will play as them"
 					title = "[ElectionCandidate3.GetName] has won the election"
 					left_icon = scope:ElectionCandidate3
 				}
@@ -513,6 +507,10 @@ KOH_ItalianCommunes.4 = {
 					custom_tooltip = "You will serve another term"
 					title = "You have won the Re-Election"
 					left_icon = root
+				}
+				add_character_flag = {
+					flag = RecentElection
+					months = 60
 				}
 			}
 		}
@@ -564,6 +562,7 @@ KOH_ItalianCommunes.7 = {
 		set_player_character = scope:ElectionCandidate3
 
 		trigger_event = KOH_ItalianCommunes.8
+	}
 }	
 
 KOH_ItalianCommunes.8 = {
