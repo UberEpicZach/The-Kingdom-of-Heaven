@@ -1,11 +1,31 @@
 ﻿l_english:
  game_concept_investiture: "Investiture"
  game_concept_investiture: "Investiture"
- game_concept_investiture_desc: "Investiture determines who appoints Bishops - the Pope or the secular liege. There are two levels of Investiture $game_concept_free_investiture$ and $game_concept_papal_investiture$"
+ game_concept_investiture_desc: "Investiture determines who appoints Bishops - the Pope or the secular liege. There are two levels of Investiture $game_concept_free_investiture$ and $game_concept_papal_investiture$ - this is the underlying privilege which incited the [investiture_contests|E], between the [guelph|E] and the [ghibelline|E]."
  game_concept_free_investiture: "Free Investiture"
- game_concept_free_investiture: "Free Investiture"
- game_concept_free_investiture_desc: "'$game_concept_free_investiture$' is a higher tier of [investiture|E]. Bishops within the kingdom can be appointed by their secular lieges, including the realm preist and will be more loyal to their liege. The Pope and his followers may not be pleased, and may try to take to arms to prevent it."
+ game_concept_free_investitures: "Free Investiture"
+ game_concept_free_investiture_desc: "$game_concept_free_investiture$ is a higher tier of [investiture|E]. Bishops within the kingdom can be appointed by their secular lieges, including the realm preist and will be more loyal to their liege. The Pope and his followers may not be pleased, and may try to take to arms to prevent it."
+
  game_concept_papal_investiture: "Papal Investiture"
- game_concept_papal_investiture: "Papal Investiture"
+ game_concept_papal_investitures: "Papal Investiture"
  game_concept_papal_investiture_desc: "$game_concept_papal_investiture$ is the standard for catholic [investiture|E]. Only the Pope may appoint Bishops within the Realm. This will give the Crown a Piety cost discount when requesting special papal actions, like Divorce and Excommunication."
+
+ game_concept_investiture_contest: "Investiture Controversy"
+ game_concept_investiture_contests: "Investiture Controversy"
+ game_concept_investiture_contest_desc: "The Investiture Controversy began when a group within the church, members of the \"Gregorian Reform\", decided to rebel against the rule of simony by forcefully taking the power of [investiture|E] from the ruling secular power, i.e., the Holy Roman Emperor, and placing that power wholly within control of the church,\nThe Gregorian reformers knew this would not be possible so long as the emperor maintained the ability to appoint the pope, so their first step was to forcibly gain the papacy from the control of the emperor. in 1059 a church council in Rome declared that leaders of the nobility would have no part in the selection of popes, and created the College of Cardinals as a body of electors made up entirely of church officials.\n\nThe Investiture Controversy continued for several decades as each succeeding pope tried to diminish imperial power by stirring up revolt in Germany. These revolts were gradually successful. Henry IV was succeeded upon his death in 1106 by his son Henry V who renounced some of the rights of investiture with the Concordat of Worms\n\nAlthough offically finished with the Concordat of Worms, the conflicts with the supporters ([guelphs|E]) of the pope would reignite with the death of Henry V, whose successor Lothair II placed himself under the Pope's overlordship and ceded to the Pope all Imperial rights out of fear of the Salians' powerful in-laws the Staufers. \n\nWar broke out in Germany between those who supported the Staufers, the [ghibellines|E] and those who were aligned to the Pope, the [guelphs|E]. Upon Lothair's death the Staufer Conrad III was elected, while Lothair's heir Henry the Proud of the House of Welf continued fighting the Staufers. \n\nThe effects of these conflicts are still felt throughout Italy and Germany as Emperor Frederick Barbarossa has shown his determination to project his imperial rights of power over the Italian City states, and therefore the papacy."
  
+ game_concept_guelph: "Guelphs"
+ game_concept_guelphs: "Guelphs"
+ game_concept_guelphs_desc: "Guelphs, also known as the Papal Party, are supporters of the Welfs and his holiness the Pope in the conflicts with the Emperor of the Holy Roman Empire and [ghibelline|E], initally starting with the [investiture_contests|E]."
+ 
+ game_concept_ghibelline: "Ghibellines"
+ game_concept_ghibellines: "Ghibellines"
+ game_concept_ghibellines_desc: "Ghibellines, also known as the Imperial Party, are supporters of the Emperor of the Holy Roman Empire in the conflicts with the pope and [guelph|E], initally starting with the [investiture_contests|E]."
+
+ investiture:0 "[investiture|E]"
+ papal_investiture:0 "[papal_investiture|E]"
+ free_investiture:0 "[free_investiture|E]"
+free_investiture_effects:0 "$EFFECT_LIST_BULLET$Rulers may appoint and fire once the [realm_priest|E] in the council. \n$EFFECT_LIST_BULLET$[vassals|E], who have further [vassals|E] bishops gain #P +10#! [opinion|E]. \n$EFFECT_LIST_BULLET$[vassals|E] who are bishops and do not support the [guelph|E] cause, gain #P +10#! [opinion|E]. \n$EFFECT_LIST_BULLET$ [head_of_faith|E] loses #N -150#! [opinion|E]."
+
+ koh_papal_investiture: "Papal Investiture"
+ koh_free_investiture: "Free Investiture"

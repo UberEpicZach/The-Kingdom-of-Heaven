@@ -4,12 +4,31 @@
 		on_artifact_initialization
 		on_monthly_artifacts
 		KOH_Italian_Familes
+		#KOH_investiture
 		delay = { months = 12 }
 		KOH_commune_maintenance
 	}
 }
 
-
+#KOH_investiture = {
+#	effect = { 
+#		every_ruler = {
+#			limit = {
+#				AND = {
+#					is_independent_ruler = yes
+#					faith = faith:catholic
+#				}
+#			}
+#			add_character_flag = papal_enacted
+#		}
+#		every_ruler = {
+#			limit = {
+#				has_primary_title = title:e_hre 
+#			}
+#			add_character_flag = free_enacted
+#		}
+#	}
+#}
 
 KOH_Italian_Familes = {
 	effect = {

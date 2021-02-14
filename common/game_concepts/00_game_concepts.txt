@@ -2322,25 +2322,3 @@ hostage = {
 prisoner_of_war = {
 	alias = { prisoners_of_war }
 }
-
-investiture = {
-	texture = "gfx/interface/icons/message_feed/law.dds"
-	#texture = "gfx/interface/icons/laws/crown_authority_0.dds"
-	parent = law
-}
-
-free_investiture = {
-	parent = investiture 
-	alias = { free_investiture }
-	texture = "gfx/interface/icons/message_feed/law.dds"
-	#texture = "gfx/interface/icons/laws/crown_authority_0.dds"
-	parent = law
-}
-
-papal_investiture = {
-	parent = investiture 
-	alias = { papal_investiture }
-	texture = "gfx/interface/icons/message_feed/law.dds"
-	#texture = "gfx/interface/icons/laws/crown_authority_1.dds"
-	parent = law
-}

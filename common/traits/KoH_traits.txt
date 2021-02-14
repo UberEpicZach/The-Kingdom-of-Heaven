@@ -2,6 +2,7 @@
 	index = 281
 	opposites = {
 		fredrick_barbarossa
+		KOH_ghibelline
 	}
 	intrigue = 3
 	stewardship = 3
@@ -23,6 +24,7 @@ fredrick_barbarossa = {
 	index = 282
 	opposites = {
 		lion_of_the_empire
+		KOH_guelph
 	}
 	levy_size = 0.1
 	tolerance_advantage_mod = 12
@@ -158,15 +160,7 @@ stress_gain_remove = {
 	good = yes
 
 	desc = {
-		first_valid = {
-			triggered_desc = {
-				trigger = {
-					NOT = { exists = this }
-				}
-				desc = trait_stress_gain_remove_desc
-			}
-			desc = trait_stress_gain_remove_character_desc
-		}
+		desc = stress_gain_remove_desc
 	}
 }
 
@@ -176,7 +170,7 @@ KOH_Reynald = {
 	good = no
 
 	desc = {
-		desc = trait_righteous_of_the_faith_desc
+		desc = KOH_Reynald_desc
 	}
 
 	ai_boldness = dominant_positive_ai_value
@@ -219,7 +213,7 @@ KOH_guelph = {
 	monthly_piety_gain_mult = 0.25
 	intrigue = 1
     learning = 1
-	same_opinion = 25 
+	same_opinion = 75
 	clergy_opinion = 20
 	opposite_opinion = -75
 	ai_zeal = 50
@@ -240,7 +234,7 @@ KOH_ghibelline = {
 	diplomacy = -1
 	intrigue = 2
 	opposite_opinion = -75
-	same_opinion = 20
+	same_opinion = 75
 	clergy_opinion = -25
 	tax_mult = 0.05
 	ai_zeal = 50
@@ -250,6 +244,11 @@ KOH_ghibelline = {
 		KOH_guelph
 		lion_of_the_empire
 	}
+
+	desc = {
+		desc = KOH_ghibelline_desc
+	}
+
 	shown_in_ruler_designer = no 
 }
 
@@ -285,7 +284,7 @@ koh_dragon = {
 	prowess = 10
 
 	desc = {
-		desc = trait_richard_the_lionheart_desc
+		desc = koh_dragon_desc
 	}
 }
 

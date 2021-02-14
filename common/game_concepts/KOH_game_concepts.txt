@@ -6,16 +6,35 @@
 
 free_investiture = {
 	parent = investiture 
-	alias = { free_investiture }
+	alias = { free_investitures }
 	texture = "gfx/interface/icons/message_feed/law.dds"
 	#texture = "gfx/interface/icons/laws/crown_authority_0.dds"
 	parent = law
-}
-
+} 
+ 
 papal_investiture = {
 	parent = investiture 
-	alias = { papal_investiture }
+	alias = { papal_investitures }
 	texture = "gfx/interface/icons/message_feed/law.dds"
 	#texture = "gfx/interface/icons/laws/crown_authority_1.dds"
 	parent = law
 }
+
+investiture_contest = {
+	texture = "gfx/interface/icons/message_feed/heresy.dds"
+	parent = faith
+	alias = { investiture_contests }
+}
+
+guelphs = {
+	texture = "gfx/interface/icons/message_feed/heresy.dds"
+	parent = investiture 
+	alias = { guelph }
+}
+
+ghibellines = {
+	texture = "gfx/interface/icons/message_feed/heresy.dds"
+	parent = investiture 
+	alias = { ghibelline }
+}
+

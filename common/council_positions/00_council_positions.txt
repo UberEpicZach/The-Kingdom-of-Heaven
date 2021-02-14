@@ -166,28 +166,33 @@ councillor_court_chaplain = {
 	can_fire = {
 		custom_description = {
 			text = "court_chaplain_cant_fire_doctrines"
-				NOR = {
-						has_character_flag = papal_enacted
-						has_trait = KOH_guelph
+				AND = {
+					OR = {
+						has_realm_law_flag = free_enacted
+						top_liege = { has_realm_law_flag = free_enacted }
+						NOT = {
+							has_realm_law_flag = free_enacted
 					}
 				}
-	}
+			}
+		}
+	}	
 	
 	can_reassign = {
 		custom_description = {
 			text = "court_chaplain_cant_reassign_doctrines"
 				OR = {
-					has_character_flag = free_enacted
-					has_trait = KOH_ghibelline
+					has_realm_law_flag = free_enacted
+					top_liege = { has_realm_law_flag = free_enacted }
 			}
 		}
 	}
 	
 	can_change_once = {
-		NOR = {
-			has_character_flag = papal_enacted
-			has_trait = KOH_guelph
-		}
+		OR = {
+			has_realm_law_flag = free_enacted
+			top_liege = { has_realm_law_flag = free_enacted }
+		}	
 	}
 	
 	inherit = no
@@ -198,16 +203,14 @@ councillor_court_chaplain = {
 		value = 0
 		if = {
 			limit = {
-				faith = {
-					NOR = {
-						has_character_flag = papal_enacted
-						has_trait = KOH_guelph
+				OR = {
+					has_realm_law_flag = free_enacted
+					top_liege = { has_realm_law_flag = free_enacted }
 					}
 				}
 			}
 			add = 3650
 		}
-	}
 	
 	name = {
 		first_valid = {
