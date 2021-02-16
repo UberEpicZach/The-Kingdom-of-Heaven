@@ -1,67 +1,65 @@
-﻿duel_interaction = {
-	category = interaction_category_hostile
-	common_interaction = yes
-	interface_priority = 60
-	desc = duel_interaction_desc
-	
-	ai_targets = {
-		ai_recipients = liege
-	}
-	ai_targets = {
-		ai_recipients = neighboring_rulers
-		ai_recipients = peer_vassals
-		max = 10
-	}
-	ai_targets = {
-		ai_recipients = vassals
-		max = 10
-	}
-	ai_target_quick_trigger = {
-		is_adult = yes
-	}
-	ai_frequency = 60
-	
-	is_shown = {
-		NOT = {
-			scope:recipient = scope:actor
-		}
-	}
-	
-	can_send = {
-		NOT = {
-			scope:recipient = scope:actor
-		}
-		scope:actor = {
-			NOT = { has_character_flag = recently_invited_to_duel }
-			is_adult = yes
-			NOT = { has_trait = incapable }
-		}
-		
-		scope:recipient = {
-			is_adult = yes
-			NOT = { has_trait = incapable }
-			NOT = { has_character_flag = recently_invited_to_duel }
-		}
-	}
-	
-	
-	is_valid_showing_failures_only = {
-		scope:actor = {
-			NOT = { has_trait = incapable }
-		}
-	}
-	
-	auto_accept = yes
-	
-	on_accept = {
-		scope:actor = {
-			save_scope_as = combatant_1
-		}
-		scope:recipient = {
-			save_scope_as = combatant_2
-			trigger_event = {
-				id = KoH_duels.3
-			}
-		}
-	}
-}
+﻿#duel_interaction = {
+#	category = interaction_category_hostile
+#	common_interaction = yes
+#	interface_priority = 60
+#	desc = duel_interaction_desc
+#	
+#	ai_targets = {
+#		ai_recipients = liege
+#	}
+#	ai_targets = {
+#		ai_recipients = neighboring_rulers
+#		ai_recipients = peer_vassals
+#		max = 10
+#	}
+#	ai_targets = {
+#		ai_recipients = vassals
+#		max = 10
+#	}
+#	ai_target_quick_trigger = {
+#		is_adult = yes
+#	}
+#	ai_frequency = 60
+#	
+#	is_shown = {
+#		NOT = {
+#			scope:recipient = scope:actor
+#		}
+#	}
+#	
+#	can_send = {
+#		NOT = {
+#			scope:recipient = scope:actor
+#		}
+#		scope:actor = {
+#			NOT = { has_character_flag = recently_invited_to_duel }
+#			is_adult = yes
+#			NOT = { has_trait = incapable }
+#		}
+#		
+#		scope:recipient = {
+#			is_adult = yes
+#			NOT = { has_trait = incapable }
+#			NOT = { has_character_flag = recently_invited_to_duel }
+#		}
+#	}
+#	
+#	
+#	is_valid_showing_failures_only = {
+#		scope:actor = {
+#			NOT = { has_trait = incapable }
+#		}
+#	}
+#	
+#	on_accept = {
+#		scope:actor = {
+#			save_scope_as = combatant_1
+#		}
+#		scope:recipient = {
+#			save_scope_as = combatant_2
+#			trigger_event = {
+#				id = KoH_duels.3
+#			}
+#		}
+#	}
+#}

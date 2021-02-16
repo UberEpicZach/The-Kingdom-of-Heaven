@@ -17,7 +17,6 @@ KoH_byzantinecrisis.1 = {
 		animation = idle
 	}
 	immediate = {
-
 		every_ruler = {
             limit = {
                 any_held_title = {
@@ -102,12 +101,21 @@ KoH_byzantinecrisis.2 = {
 		start_scheme = {
 			target = character:215670
 			type = murder
+		}
+	
+
+		hidden_effect = {
+			random_scheme = {
+				limit = {
+					scheme_type = murder
+				}
+				add_scheme_modifier = {
+					type = murderer_adndronikos
+					days = 12000 
+				}
+				add_scheme_progress = 3
 			}
-		save_scope_as = scheme
-
-		scope:scheme = {
-			add_scheme_modifier = { type = murderer_adndronikos  days = 12000 }	
-
+		}
 
 		trigger_event = {
 				id = KoH_byzantinecrisis.3
@@ -123,12 +131,11 @@ KoH_byzantinecrisis.2 = {
 		add_hook = {
 			type = manipulation_hook
 			target = scope:hook
-			}
 		}
 	}
 }
 
-KoH_byzantinecrisis.3 = {
+KoH_byzantinecrisis.3 = { #Norman
 	type = character_event
 	title = KoH_byzantinecrisis.3.t
 	desc = KoH_byzantinecrisis.3.d
@@ -174,6 +181,11 @@ KoH_byzantinecrisis.3 = {
 			days = 91
 		}
 
+		trigger_event = {
+			id = KoH_byzantinecrisis.6
+			days = 182
+		}
+
 		scope:NormanKing = {
 			start_war = {
 				casus_belli = claim_cb
@@ -190,25 +202,46 @@ KoH_byzantinecrisis.3 = {
 				uses_supply = no
 				inheritable = yes
 				name = Normans
+				men_at_arms = {
+					type = armored_footmen
+					stacks = 15
+				}
 				levies = {
-					value = 3000
-					}
-					location = 3711
+					value = 100
+				}
+				location = 3711
 				}
 			spawn_army = {
 				uses_supply = no
 				inheritable = yes
 				name = Normans
 				levies = {
-					value = 3000
-					}
+					value = 100
+				}
+				men_at_arms = {
+					type = armored_footmen
+					stacks = 20
+				}
 				location = 3712
+			}
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = Normans
+				levies = {
+					value = 100
+				}
+				men_at_arms = {
+					type = armored_footmen
+					stacks = 20
+				}
+				location = 473
 			}
 		}
 	}	
 }
 
-KoH_byzantinecrisis.4 = {
+KoH_byzantinecrisis.4 = { #Bulgarian
 	type = character_event
 	title = KoH_byzantinecrisis.4.t
 	desc = KoH_byzantinecrisis.4.d
@@ -338,7 +371,8 @@ KoH_byzantinecrisis.4 = {
 		}
 	}
 }
-KoH_byzantinecrisis.50 = {
+
+KoH_byzantinecrisis.50 = { #Bulgarian
 	type = character_event
 	title = KoH_byzantinecrisis.50.t
 	desc = KoH_byzantinecrisis.50.d
@@ -389,111 +423,59 @@ KoH_byzantinecrisis.50 = {
 	}
 }
 
-#artifact_siege.0001 = {
-#	hidden = yes
-#	
-#	### Copied from vanilla
+
+#KoH_byzantinecrisis.5 = { #Bulgarian
+#	type = character_event
+#	title = KoH_byzantinecrisis.5.t
+#	desc = KoH_byzantinecrisis.5.d
+#	theme = death
+#	override_background = {
+#		event_background = farmland
+#	}
 #	
 #	trigger = {
-#		scope:county.holder = scope:previous_controller
-#		OR = {
-#			any_war_enemy = { this = scope:previous_controller }
-#			any_war_enemy = { any_vassal_or_below = { this = scope:previous_controller } }
+#		any_character_war = {
+#			attacker_war_score > 50
+#				}
+#			casus_belli = {
+#				primary_attacker = scope:Bulgarian
+#			}
 #		}
-#	}
 #
 #	immediate = {
-#		save_scope_as = occupant
-#		scope:barony.holder = { save_scope_as = artifact_holder }
-#		scope:barony = { save_scope_as = artifact_barony }
-#
-#		# Depending on if the occupier is an attacker or defender in this war, get the primary attacker/defender of the siege.
-#		scope:war = {
-#			if = {
-#				limit = {
-#					is_attacker = scope:occupant
-#				}
-#				# If occupier is an attacker, the war's primary attacker is also the primary attacker in this siege (the attackers have occupied one of the defender's provinces).
-#				primary_attacker = {
-#					save_scope_as = primary_siege_attacker
-#				}
-#				primary_defender = {
-#					save_scope_as = primary_siege_defender
+#		every_ruler = {
+#			limit = {
+#				any_held_title = {
+#					this = title:k_sicily
 #				}
 #			}
-#			else = {
-#				# Otherwise the occupier is a defender, so the primary defender in the war is the primary attacker in the siege (the defenders have occupied one of the attacker's provinces).
-#				primary_defender = {
-#					save_scope_as = primary_siege_attacker
-#				}
-#				primary_attacker = {
-#					save_scope_as = primary_siege_defender
-#				}
+#		save_scope_as = NormanKing
 #			}
-#		}
-#
-#		artifact_changing_hands_calculator = {
-#			OCCUPIED = scope:previous_controller
-#			OCCUPIER = scope:primary_siege_attacker
-#			CHANCE = @artifact_gain_chance
-#			ARTIFACT = has_artifact_1
+#	}
+#	left_portrait = {
+#		character = root
+#		animation = personality_bold
+#	}
+#	
+#	option = {
+#		name = KoH_byzantinecrisis.5.a
+#		
+#		scope:NormanKing = {
+#			spawn_army = {
+#				name = event_troop_default_name
+#				levies = 1000
+#				men_at_arms = {
+#					type = onager
+#					location = 490
+#					stacks = 10
+#				}
+#				location = 490
+#				origin = 2622
+#				inheritable = yes
+#			}
 #		}
 #	}
-#
-
-
-KoH_byzantinecrisis.5 = {
-	type = character_event
-	title = KoH_byzantinecrisis.5.t
-	desc = KoH_byzantinecrisis.5.d
-	theme = death
-	override_background = {
-		event_background = farmland
-	}
-	
-	trigger = {
-		any_character_war = {
-			attacker_war_score > 50
-				}
-			casus_belli = {
-				primary_attacker = scope:Bulgarian
-			}
-		}
-
-	immediate = {
-		every_ruler = {
-			limit = {
-				any_held_title = {
-					this = title:k_sicily
-				}
-			}
-		save_scope_as = NormanKing
-			}
-	}
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
-	
-	option = {
-		name = KoH_byzantinecrisis.5.a
-		
-		scope:NormanKing = {
-			spawn_army = {
-				name = event_troop_default_name
-				levies = 1000
-				men_at_arms = {
-					type = onager
-					location = 490
-					stacks = 10
-				}
-				location = 490
-				origin = 2622
-				inheritable = yes
-			}
-		}
-	}
-}
+#}
 
 KoH_byzantinecrisis.6 = {
 	type = character_event
@@ -508,12 +490,116 @@ KoH_byzantinecrisis.6 = {
 		character = root
 		animation = personality_bold
 	}
+
+	immediate = { 
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:k_sicily
+				}
+			}
+			save_scope_as = NormanKing
+		}
+
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:e_byzantium
+				}
+			}
+			save_scope_as = Emperor
+		}
+
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:c_thessalonika
+				}
+			}
+			save_scope_as = Thessalonkia
+		}
+
+		scope:NormanKing = {
+			add_gold = 1000
+			add_prestige = 500
+
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = Normans
+				men_at_arms = {
+					type = armored_footmen
+					stacks = 25
+				}
+				levies = {
+					value = 100
+				}
+				location = 490
+			}
+
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = Normans
+				men_at_arms = {
+					type = mangonel
+					stacks = 25
+				}
+				levies = {
+					value = 100
+				}
+				location = 490
+			}
+		}
+		scope:Emperor = {
+			trigger_event = {
+				id = KoH_byzantinecrisis.7
+				days = 30
+			
+			}
+		}
+	}
 	
 	option = {
 		name = KoH_byzantinecrisis.6.a
 		
+		scope:NormanKing = {
+			get_title = c_thessalonika
 		}
-	}	
+
+		scope:Thessalonkia = {
+			add_opinion = {
+				modifier = raided_me
+				opinion = -30
+				target = scope:Emperor
+			}
+		}
+
+	}
+
+	option = {
+		name = KoH_byzantinecrisis.6.b
+
+		scope:NormanKing = {
+			get_title = c_thessalonika
+		}
+
+		scope:Thessalonkia = {
+			add_opinion = {
+				modifier = raided_me
+				opinion = -130
+				target = scope:Emperor
+			}
+		}
+		scope:Thessalonkia = {
+			death = {
+				death_reason = death_murder
+				killer = scope:Emperor
+			}
+		}
+		add_tyranny = 5
+	}
+}	
 
 
 KoH_byzantinecrisis.7 = {
@@ -530,16 +616,102 @@ KoH_byzantinecrisis.7 = {
 		animation = personality_bold
 	}
 	
+	immediate = { 
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:e_byzantium
+				}
+			}
+			save_scope_as = Emperor
+		}
+
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:c_brysis
+				}
+			}
+			save_scope_as = Angelos
+		}
+
+		scope:Emperor = {
+			trigger_event = {
+				id = KoH_byzantinecrisis.8
+				days = 15
+			
+			}
+		}
+
+	}
+
 	option = {
 		name = KoH_byzantinecrisis.7.a
+
+		set_designated_heir = character:KOH0035
+
+		character:KOH0035 = {
+			get_title = d_thrace
+		}
+
+		character:KOH0035 = {
+			add_opinion = {
+				modifier = pleased_me
+				opinion = 100
+				target = scope:Emperor
+			}
+		}
+		
+		character:215518 = {
+			add_opinion = {
+				modifier = pretender_opinion
+				opinion = -100
+				target = scope:Emperor
+				years = 100
+			}
+
+			add_opinion = {
+				modifier = pretender_opinion
+				opinion = -100
+				target = character:KOH0035
+				years = 100
+			}
+
+			add_claim = e_byzantium
 		}
 	}
 
+	option = {
+		name = KoH_byzantinecrisis.7.b
+		
+		scope:Emperor = {
+			start_scheme = {
+				target = scope:Angelos
+				type = murder
+				save_scope_as = scheme
+			}
 
-KoH_byzantinecrisis.8 = {
+			hidden_effect = {
+				random_scheme = {
+					limit = {
+						scheme_type = murder
+					}
+					add_scheme_modifier = {
+						type = murderer_adndronikos
+						days = 12000 
+					}
+					add_scheme_progress = 3
+				}
+			}
+		}
+	}
+}
+
+
+KoH_byzantinecrisis.8 = { #Arrest Council
 	type = character_event
 	title = KoH_byzantinecrisis.8.t
-	desc = KoH_byzantinecrisis.9.d
+	desc = KoH_byzantinecrisis.8.d
 	theme = war
 	override_background = {
 		event_background = embarked
@@ -550,11 +722,448 @@ KoH_byzantinecrisis.8 = {
 		animation = personality_bold
 	}
 	
+	immediate = { 
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:e_byzantium
+				}
+			}
+			save_scope_as = Emperor
+		}
+
+		scope:Emperor = {
+			trigger_event = {
+				id = KoH_byzantinecrisis.9
+				days = 30
+			
+			}
+		}
+
+		character:223020 = { 
+			get_title = c_nicosia
+
+			create_dynamic_title = {
+				tier = empire
+				name = "Empire of Cyprus"
+			}
+			create_title_and_vassal_change = {
+				type = conquest
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			scope:new_title = {
+				set_capital_county = scope:peasant_county
+				generate_coa = yes
+				set_landless_title = yes
+				set_destroy_on_succession = yes
+				set_delete_on_destroy = yes
+				set_no_automatic_claims = yes
+				set_definitive_form = yes
+				set_can_be_named_after_dynasty = no
+				change_title_holder = {
+					holder = character:223020
+					change = scope:change
+				}
+			}
+			resolve_title_and_vassal_change = scope:change
+
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = Cypriots
+				men_at_arms = {
+					type = armored_footmen
+					stacks = 15
+				}
+				levies = {
+					value = 100
+				}
+				location = 756
+				origin = 756
+			}
+
+		}
+
+	}
+	
 	option = {
 		name = KoH_byzantinecrisis.8.a
-		
+		random_list = {
+			50 = {
+				hidden_effect = {
+					cp:councillor_chancellor = {
+						add_opinion = {
+							modifier = pretender_opinion
+							opinion = -100
+							target = scope:Emperor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_marshal
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_steward
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_spymaster
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_court_chaplain
+							years = 100
+						}
+					}
+	
+					cp:councillor_marshal = {
+						add_opinion = {
+							modifier = pretender_opinion
+							opinion = -100
+							target = scope:Emperor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_chancellor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_steward
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_spymaster
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_court_chaplain
+							years = 100
+						}
+					}
+			
+	
+					cp:councillor_steward = {
+						add_opinion = {
+							modifier = pretender_opinion
+							opinion = -100
+							target = scope:Emperor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_marshal
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_chancellor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_spymaster
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_court_chaplain
+							years = 100
+						}
+					}
+	
+					cp:councillor_spymaster = {
+						add_opinion = {
+							modifier = pretender_opinion
+							opinion = -100
+							target = scope:Emperor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_marshal
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_steward
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_chancellor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_court_chaplain
+							years = 100
+						}
+					}
+	
+					cp:councillor_court_chaplain = {
+						add_opinion = {
+							modifier = pretender_opinion
+							opinion = -100
+							target = scope:Emperor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_marshal
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_steward
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_spymaster
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_chancellor
+							years = 100
+						}
+					}
+				}
+
+				character:215529 = {
+					imprison = {
+						target = cp:councillor_marshal
+						type = dungeon
+					}
+
+					imprison = {
+						target = cp:councillor_chancellor
+						type = dungeon
+					}
+
+					imprison = {
+						target = cp:councillor_steward
+						type = dungeon
+					}
+
+					imprison = {
+						target = cp:councillor_spymaster
+						type = dungeon
+					}
+
+					imprison = {
+						target = cp:councillor_court_chaplain
+						type = dungeon
+					}
+				}
+			}
+			50 = {
+				fire_councillor = cp:councillor_chancellor
+				fire_councillor = cp:councillor_marshal
+				fire_councillor = cp:councillor_steward
+				fire_councillor = cp:councillor_spymaster
+				fire_councillor = cp:councillor_court_chaplain
+
+				hidden_effect = {
+					cp:councillor_chancellor = {
+						add_opinion = {
+							modifier = pretender_opinion
+							opinion = -100
+							target = scope:Emperor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_marshal
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_steward
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_spymaster
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_court_chaplain
+							years = 100
+						}
+					}
+
+					cp:councillor_marshal = {
+						add_opinion = {
+							modifier = pretender_opinion
+							opinion = -100
+							target = scope:Emperor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_chancellor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_steward
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_spymaster
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_court_chaplain
+							years = 100
+						}
+					}
+			
+
+					cp:councillor_steward = {
+						add_opinion = {
+							modifier = pretender_opinion
+							opinion = -100
+							target = scope:Emperor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_marshal
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_chancellor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_spymaster
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_court_chaplain
+							years = 100
+						}
+					}
+
+					cp:councillor_spymaster = {
+						add_opinion = {
+							modifier = pretender_opinion
+							opinion = -100
+							target = scope:Emperor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_marshal
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_steward
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_chancellor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_court_chaplain
+							years = 100
+						}
+					}
+
+					cp:councillor_court_chaplain = {
+						add_opinion = {
+							modifier = pretender_opinion
+							opinion = -100
+							target = scope:Emperor
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_marshal
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_steward
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_spymaster
+							years = 100
+						}
+						add_opinion = {
+							modifier = respect_opinion
+							opinion = 100
+							target = cp:councillor_chancellor
+							years = 100
+						}
+					}
+				}
+			}
 		}
 	}
+}
 
 KoH_byzantinecrisis.9 = {
 	type = character_event
@@ -568,12 +1177,71 @@ KoH_byzantinecrisis.9 = {
 		character = root
 		animation = personality_bold
 	}
-	
+	immediate = {
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:e_byzantium
+				}
+			}
+			save_scope_as = Emperor
+		}
+
+		character:215500 = {
+			add_pressed_claim = e_byzantium
+
+			start_war = {
+				casus_belli = claim_cb
+				target = scope:Emperor
+				target_title = title:e_byzantium
+				claimant = character:215500
+			}
+
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = Peasants_of_constantinople
+				men_at_arms = {
+					type = mangonel
+					stacks = 5
+				}
+				levies = {
+					value = 10000
+				}
+				location = 496
+				origin = 496
+			}
+		}
+	}
+
 	option = {
 		name = KoH_byzantinecrisis.9.a
 		
+		random_list = {
+			60 = {
+				trigger_event = {
+					id = KoH_byzantinecrisis.12
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "The Peasants Storm the Palace"
+					left_icon = root
+				}
+			}
+			30 = {
+
+			}
 		}
 	}
+
+	option = {
+		name = KoH_byzantinecrisis.9.b
+		
+		trigger_event = {
+			id = KoH_byzantinecrisis.10
+		}
+	}
+}
 
 KoH_byzantinecrisis.10 = {
 	type = character_event
@@ -592,10 +1260,14 @@ KoH_byzantinecrisis.10 = {
 	option = {
 		name = KoH_byzantinecrisis.10.a
 		
-			}
+		trigger_event = {
+			id = KoH_byzantinecrisis.11
+			days = 1
 		}
+	}
+}
 
-KoH_byzantinecrisis.11 = {
+KoH_byzantinecrisis.11 = { #ship goes wacko lmao
 	type = character_event
 	title = KoH_byzantinecrisis.11.t
 	desc = KoH_byzantinecrisis.11.d
@@ -611,12 +1283,36 @@ KoH_byzantinecrisis.11 = {
 	
 	option = {
 		name = KoH_byzantinecrisis.11.a
+		
+		trigger_event = {
+			id = KoH_byzantinecrisis.12
+			days = 5
 
+		}
+
+		random_list = {
+			10 = {
+				add_trait = wounded
+			}
+			20 = {
+				add_trait = wounded_2
+			}
+			25 = {
+				add_trait = maimed
+			}
+			5 = {
+				death = {
+					death_reason = death_lost_at_sea
+				}
+			}
+			5 = {
+				add_trait = one_handed
+			}
+			35 = {
+				add_trait = one_legged
+			}
+		}
 	}
-
-	option = {
-		name = KoH_byzantinecrisis.11.b	
-    }
 }
 
 KoH_byzantinecrisis.12 = {
@@ -635,37 +1331,44 @@ KoH_byzantinecrisis.12 = {
 	
 	option = {
 		name = KoH_byzantinecrisis.12.a
-		
+	
+		character:215529 = { 
+			set_designated_heir = character:215500
 		}
-	option = {
-		name = KoH_byzantinecrisis.12.b	
+
+		set_player_character = character:215500
+
+		character:215500 = {
+			trigger_event = {
+				id = KoH_byzantinecrisis.13
+				days = 10
+			}
+		}
+
+		character:215529 = {
+			death = {
+				death_reason = death_rabble
+			}
+		}
+
+		character:215518 = {
+			death = {
+				death_reason = death_rabble
+			}
+		}
+
+		character:KOH0035 = {
+			death = {
+				death_reason = death_rabble
+			}
 		}
 	}
+}
 
 KoH_byzantinecrisis.13 = {
 	type = character_event
 	title = KoH_byzantinecrisis.13.t
 	desc = KoH_byzantinecrisis.13.d
-	theme = war
-	override_background = {
-		event_background = market_east
-	}
-	
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
-	
-	option = {
-		name = KoH_byzantinecrisis.13.a
-		
-		}
-	}
-
-KoH_byzantinecrisis.14 = {
-	type = character_event
-	title = KoH_byzantinecrisis.14.t
-	desc = KoH_byzantinecrisis.14.d
 	theme = war
 	override_background = {
 		event_background = wilderness_desert
@@ -677,7 +1380,51 @@ KoH_byzantinecrisis.14 = {
 	}
 	
 	option = {
-		name = KoH_byzantinecrisis.14.a
-		
+		name = KoH_byzantinecrisis.13.a
+	
+		pay_short_term_gold = {
+			target = cp:councillor_marshal
+			gold = root.major_gold_value
+		}
+
+		spawn_army = {
+			uses_supply = no
+			inheritable = yes
+			name = ByzantineArmy
+			men_at_arms = {
+				type = cataphract
+				stacks = 100
+			}
+			levies = {
+				value = 100
+			}
+			location = 496
+		}
+		spawn_army = {
+			uses_supply = no
+			inheritable = yes
+			name = ByzantineArmy
+			men_at_arms = {
+				type = cataphract
+				stacks = 100
+			}
+			levies = {
+				value = 100
+			}
+			location = 496
+		}
+		spawn_army = {
+			uses_supply = no
+			inheritable = yes
+			name = ByzantineArmy
+			men_at_arms = {
+				type = cataphract
+				stacks = 100
+			}
+			levies = {
+				value = 100
+			}
+			location = 496
 		}
 	}
+}
