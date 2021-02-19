@@ -2816,6 +2816,9 @@
 	1039.1.1 = {
 		add_spouse = 763
 	}
+	1053.1.1 = {
+		add_spouse = 30213
+	}
 	1063.12.1 = {
 		death = "1063.12.1"
 	}
@@ -5663,6 +5666,7 @@
 	}
 	1038.8.15 = {
 		death = "1038.8.15"
+		give_nickname = nick_the_saint
 	}
 }
 
@@ -5793,6 +5797,7 @@
 	}
 	1031.11.2 = {
 		death = "1031.11.2"
+		give_nickname = nick_the_saint
 	}
 }
 
@@ -5884,6 +5889,9 @@
 	986.1.1 = {
 		birth = "989.1.1"
 	}
+	1004.1.1 = {
+		name = "Grimelda"
+	}
 	1026.1.1 = {
 		death = "1026.1.1"
 	}
@@ -5898,7 +5906,7 @@
 	intrigue = 5
 	stewardship = 4
 	religion = "catholic"
-	culture = "hungarian"
+	culture = cisalpine
 	trait = lustful
 	trait = greedy
 	trait = craven
@@ -5908,14 +5916,17 @@
 	1011.1.1 = {
 		birth = "1011.1.1"
 	}
-	1050.1.1 = {
+	1040.1.1 = {
 		add_spouse = 30213
 	}
-	1055.1.1 = {
-		remove_spouse = 30213
+	1044.7.1 = {
+		divorce = character:30213
 	}
-	1060.8.30 = {
-		death = "1060.8.30"
+	1055.1.1 = {
+		add_spouse = 1437
+	}
+	1059.8.30 = {
+		death = "1059.8.30"
 	}
 }
 
