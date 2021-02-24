@@ -27,7 +27,6 @@ KoH_RichardTheLionheart.1 = {
 		}
 	}
 
-
 	option = {
 		name = KoH_RichardTheLionheart.1.a
 
@@ -473,7 +472,7 @@ KoH_RichardTheLionheart.4 = {
 			}
 			trigger_event = {
 				id = KoH_RichardTheLionheart.5
-				days = 15 
+				days = 30 
 			}
 		}
 	}
@@ -523,7 +522,7 @@ KoH_RichardTheLionheart.5 = {
 		}
 		trigger_event = {
 			id = KoH_RichardTheLionheart.6
-			days = 15 
+			days = 30
 		}
 	}
 }
@@ -615,17 +614,6 @@ KoH_RichardTheLionheart.7 = {
 	title = KoH_RichardTheLionheart.7.t
 	desc = KoH_RichardTheLionheart.7.d
 	theme = war
-	
-	trigger = {
-		AND = { # Historical setup.
-			title:k_jerusalem.holder = {
-				NOT = {
-					faith.religion = root.religion
-				}
-			}
-			title:k_jerusalem.holder = character:226000 
-		}
-	}
 
 	left_portrait = {
 		character = root
@@ -637,8 +625,8 @@ KoH_RichardTheLionheart.7 = {
 
 		custom_tooltip = "We pledge to Crusade for Jerusalem, will fire in 2 year"
 		trigger_event = {
-			id = KoH_saladin.3
-			days = 730
+			id = KoH_saladin.4
+			days = { 250 350 }
 		}
 	}
 
@@ -1103,6 +1091,13 @@ KoH_RichardTheLionheart.13 = {
 			get_title = title:d_aquitaine
 			set_primary_title_to = title:k_england
 		}
+
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.14
+				days = 10
+			}
+		}
 	}
 }
 
@@ -1118,11 +1113,32 @@ KoH_RichardTheLionheart.14 = {
 		animation = personality_bold
 	}
 	
+	immediate = {
+		hidden_effect = {
+			character:211500 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "You've gained a strange illness"
+					left_icon = character:211500
+				}
+				add_trait = typhus
+				add_trait = consumption
+				add_trait = pneumonic
+			}
+		}
+	}
+
 	option = {
 		name = KoH_RichardTheLionheart.14.a
-
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.15
+				days = 25
+			}
+		}
 		add_prestige = 1000
 		}
+
 	option = {
 		name = KoH_RichardTheLionheart.14.b
 	}
@@ -1131,8 +1147,8 @@ KoH_RichardTheLionheart.14 = {
 #Build Army
 KoH_RichardTheLionheart.15 = {
 	type = character_event
-	title = KoH_RichardTheLionheart.14.t
-	desc = KoH_RichardTheLionheart.14.d
+	title = KoH_RichardTheLionheart.15.t
+	desc = KoH_RichardTheLionheart.15.d
 	theme = war
 	
 	trigger = {
@@ -1152,7 +1168,7 @@ KoH_RichardTheLionheart.15 = {
 	}
 
 	option = {
-		name = KoH_RichardTheLionheart.14.a
+		name = KoH_RichardTheLionheart.15.a
 
 		character:204510 = {
 			pay_short_term_gold = {
@@ -1181,6 +1197,13 @@ KoH_RichardTheLionheart.15 = {
 			}
 		}
 
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.16
+				days = 30
+			}
+		}
+
 		add_character_modifier = {
 			modifier = RichardHighTaxes
 		    days = 420
@@ -1188,6 +1211,245 @@ KoH_RichardTheLionheart.15 = {
 		}
 
 	option = {
-		name = KoH_RichardTheLionheart.13.b
+		name = KoH_RichardTheLionheart.15.b
+	}
+}
+
+KoH_RichardTheLionheart.16 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.16.t
+	desc = KoH_RichardTheLionheart.16.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.4
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ai = no
+					has_title = title:k_england
+				}
+			}
+			pan_camera_to_title = title:b_paris
+		}
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.17
+				days = 45
+			}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.16.a
+	}
+}
+
+KoH_RichardTheLionheart.17 = { #genoa
+	type = character_event
+	title = KoH_RichardTheLionheart.17.t
+	desc = KoH_RichardTheLionheart.17.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_RichardTheLionheart.17
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ai = no
+					has_title = title:k_england
+				}
+			}
+			pan_camera_to_title = title:b_genoa
+		}
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.18
+				days = 45
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.17.a
+	}
+}
+
+KoH_RichardTheLionheart.18 = { #rome
+	type = character_event
+	title = KoH_RichardTheLionheart.18.t
+	desc = KoH_RichardTheLionheart.18.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_RichardTheLionheart.18
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ai = no
+					has_title = title:k_england
+				}
+			}
+			pan_camera_to_title = title:b_rome
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.18.a
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.18.b
+
+		random_list = {
+			50 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "The Pope Agrees To Meet"
+					left_icon = title:k_england.holder
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.19 #
+					days = 2
+					}
+			}
+			50 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "The Pope Declines To Meet"
+					left_icon = title:k_england.holder
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.20 #
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.19 = { #rome
+	type = character_event
+	title = KoH_RichardTheLionheart.19.t
+	desc = KoH_RichardTheLionheart.19.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	right_portrait = {
+		character = title:k_papal_state.holder
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_RichardTheLionheart.19
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_papal_state
+                }
+            }
+            save_scope_as = pope
+		}
+
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_england
+                }
+            }
+            save_scope_as = richard
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.18.a
+
+		random_list = {
+			50 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "You please the pope"
+					left_icon = title:k_england.holder
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.20 #
+					days = 1
+					}
+				add_piety_level = 1
+			}
+			50 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "You anger the pope"
+					left_icon = title:k_england.holder
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.20 #
+					days = 1
+				}
+				add_piety = -100
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.20 = { #sicilly
+	type = character_event
+	title = KoH_RichardTheLionheart.20.t
+	desc = KoH_RichardTheLionheart.20.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_RichardTheLionheart.20
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ai = no
+					has_title = title:k_england
+				}
+			}
+			pan_camera_to_title = title:b_messina
+		}
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.21
+				days = 10
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.20.a
 	}
 }

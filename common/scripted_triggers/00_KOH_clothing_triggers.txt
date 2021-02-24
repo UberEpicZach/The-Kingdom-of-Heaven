@@ -89,7 +89,7 @@ portrait_templar_trigger = {
     AND = {
         exists = global_var:templar_holy_order_title
         OR = {
-            top_liege = { has_primary_title = global_var:templar_holy_order_title }
+            liege = { has_title = global_var:templar_holy_order_title }
             has_primary_title = global_var:templar_holy_order_title
       }
     }
@@ -99,7 +99,7 @@ portrait_hospitaller_trigger = {
     AND = {
         exists = global_var:hospitaller_holy_order_title
         OR = {
-            top_liege = { has_primary_title = global_var:hospitaller_holy_order_title }
+            liege = { has_title = global_var:hospitaller_holy_order_title }
             has_primary_title = global_var:hospitaller_holy_order_title
       }
     }

@@ -4045,1132 +4045,6 @@ e_germany = {
 			add = @correct_culture_primary_score
 		}
 	}
-
-	k_saxony = {
-		color = { 120 25 25 }
-
-		capital = c_dessau
-		
-		can_create = {
-			trigger_if = {
-				limit = {
-					is_ai = yes
-				}
-				OR = {
-					culture = culture:old_saxon
-					culture = culture:anglo_saxon
-				}
-			}
-		}
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture_group = culture_group:central_germanic_group
-				}
-				add = @better_than_the_alternatives_score
-			}
-		}
-
-		d_magdeburg = {
-			color = { 175 90 75 }
-			color2 = { 255 255 255 }
-
-			capital = c_magdeburg
-
-			c_magdeburg = {
-				color = { 175 90 75 }
-				color2 = { 255 255 255 }
-	
-				b_gommern = {
-					province = 3176
-	
-					color = { 175 90 75 }
-					color2 = { 255 255 255 }
-				}
-	
-				b_magdeburg = {
-					province = 2906
-	
-					color = { 175 90 75 }
-					color2 = { 255 255 255 }
-				}
-				b_mockern = {
-					province = 3171
-	
-					color = { 175 90 75 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-	
-
-
-		d_anhalt = {
-			color = { 195 105 80 }
-			color2 = { 255 255 255 }
-
-			capital = c_wittenberg
-
-			c_wittenberg = {
-				color = { 200 140 130 }
-				color2 = { 255 255 255 }
-				
-				b_wittenberg = {
-					province = 3173
-
-					color = { 200 140 130 }
-					color2 = { 255 255 255 }
-				}
-				b_belizi = {
-					province = 3174
-
-					color = { 200 140 130 }
-					color2 = { 255 255 255 }
-				}
-			}
-
-			c_juterbog = {
-				color = { 215 150 145 }
-				color2 = { 255 255 255 }
-
-				b_juterbog = {
-					province = 3180
-
-					color = { 215 150 145 }
-					color2 = { 255 255 255 }
-				}
-				b_dahme = {
-					province = 3178
-
-					color = { 215 150 145 }
-					color2 = { 255 255 255 }
-				}
-			}
-
-			c_dessau = {
-				color = { 195 105 80 }
-				color2 = { 255 255 255 }
-
-				b_dessau = {
-					province = 3023
-
-					color = { 195 105 80 }
-					color2 = { 255 255 255 }
-				}
-				b_zerbst = {
-					province = 3172
-
-					color = { 195 105 80 }
-					color2 = { 255 255 255 }
-				}
-			}
-
-			c_halberstadt = {
-				color = { 170 110 80 }
-				color2 = { 255 255 255 }
-
-				b_halberstadt = {
-					province = 2916
-
-					color = { 170 110 80 }
-					color2 = { 255 255 255 }
-				}
-				b_werningerode = {
-					province = 2917
-
-					color = { 170 110 80 }
-					color2 = { 255 255 255 }
-				}
-				b_arnstein = {
-					province = 2933
-
-					color = { 170 110 80 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_blankenburg = {
-				color = { 180 115 100 }
-				color2 = { 255 255 255 }
-
-				b_blankenburg = {
-					province = 2932
-
-					color = { 180 115 100 }
-					color2 = { 255 255 255 }
-				}
-				b_hohenstein = {
-					province = 2931
-
-					color = { 180 115 100 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_mansfeld = {
-				color = { 190 130 105 }
-				color2 = { 255 255 255 }
-
-				b_mansfeld = {
-					province = 2936
-
-					color = { 190 130 105 }
-					color2 = { 255 255 255 }
-				}
-				b_sangerhausen = {
-					province = 2934
-
-					color = { 190 130 105 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_mersenburg = {
-				color = { 195 85 65 }
-				color2 = { 255 255 255 }
-
-				b_mersenburg = {
-					province = 2935
-
-					color = { 195 85 65 }
-					color2 = { 255 255 255 }
-				}
-				b_halle = {
-					province = 3018
-
-					color = { 195 85 65 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-
-		d_bremen = {
-			color = { 220 95 95 }
-			color2 = { 255 255 255 }
-	
-			c_bremen = {
-					color = { 220 95 95 }
-					color2 = { 255 255 255 }
-					
-					b_bremen = {
-						province = 2793
-
-						color = { 220 95 95 }
-						color2 = { 255 255 255 }
-					}
-					b_verden = {
-						province = 2794
-
-						color = { 220 95 95 }
-						color2 = { 255 255 255 }
-					}
-					b_zeven = {
-						province = 2796
-
-						color = { 220 95 95 }
-						color2 = { 255 255 255 }
-					}	
-				}
-			c_stade = {
-				color = { 175 100 115 }
-				color2 = { 255 255 255 }
-				
-				b_stade = {
-					province = 2795
-					
-					color = { 175 100 115 }
-					color2 = { 255 255 255 }
-				}
-				b_bederkesa = {
-					province = 2791
-					
-					color = { 175 100 115 }
-					color2 = { 255 255 255 }
-				}
-				b_cuxhaven = {
-					province = 2792
-					
-					color = { 175 100 115 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-
-		d_angria = {
-			color = { 205 105 85 }
-			color2 = { 255 255 255 }
-
-			capital = c_minden
-
-			c_minden = {
-				color = { 205 105 85 }
-				color2 = { 255 255 255 }
-
-				b_diepholz = {
-					province = 2838
-
-					color = { 205 105 85 }
-					color2 = { 255 255 255 }
-				}
-				b_minden = {
-					province = 2840
-
-					color = { 205 105 85 }
-					color2 = { 255 255 255 }
-				}
-				b_bruchhausen = {
-					province = 2837
-
-					color = { 205 105 85 }
-					color2 = { 255 255 255 }
-				}
-				b_hoya = {
-					province = 2839
-
-					color = { 205 105 85 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_lippe = {
-				color = { 190 110 70 }
-				color2 = { 255 255 255 }
-
-				b_lippe = {
-					province = 2844
-
-					color = { 190 110 70 }
-					color2 = { 255 255 255 }
-				}
-				b_schwalenberg = {
-					province = 2909
-
-					color = { 190 110 70 }
-					color2 = { 255 255 255 }
-				}
-				b_everstein = {
-					province = 2910
-
-					color = { 190 110 70 }
-					color2 = { 255 255 255 }
-				}
-			}
-		
-			c_wolpe = {
-				color = { 220 85 80 }
-				color2 = { 255 255 255 }
-
-				b_wolpe = {
-					province = 2846
-
-					color = { 220 85 80 }
-					color2 = { 255 255 255 }
-				}
-				b_schauenburg = {
-					province = 2845
-
-					color = { 220 85 80 }
-					color2 = { 255 255 255 }
-				}
-				b_depenau = {
-					province = 2897
-
-					color = { 220 85 80 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_hannover = {
-				color = { 200 75 75 }
-				color2 = { 255 255 255 }
-
-				b_hannover = {
-					province = 2898
-
-					color = { 200 75 75 }
-					color2 = { 255 255 255 }
-				}
-				b_wunsdorf = {
-					province = 2896
-
-					color = { 200 75 75 }
-					color2 = { 255 255 255 }
-				}
-				b_woldenberg = {
-					province = 2914
-
-					color = { 200 75 75 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_hildesheim = {
-				color = { 235 95 85 }
-				color2 = { 255 255 255 }
-
-				b_hildesheim = {
-					province = 2913
-
-					color = { 235 95 85 }
-					color2 = { 255 255 255 }
-				}
-				b_homburg = {
-					province = 2912
-
-					color = { 235 95 85 }
-					color2 = { 255 255 255 }
-				}
-				b_dassel = {
-					province = 2911
-
-					color = { 235 95 85 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_oldenburg = {
-				color = { 195 95 70 }
-				color2 = { 255 255 255 }
-
-				b_oldenburg = {
-					province = 2438
-
-					color = { 195 95 70 }
-					color2 = { 255 255 255 }
-				}
-				b_leer = {
-					province = 2436
-
-					color = { 195 95 70 }
-					color2 = { 255 255 255 }
-				}
-				b_twistringen = {
-					province = 2442
-
-					color = { 195 95 70 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-
-		d_westfalen = {
-			color = { 240 160 90 }
-			color2 = { 255 255 255 }
-
-			capital = c_osnabruck #Osnabruck
-
-			c_osnabruck = {
-				color = { 240 160 90 }
-				color2 = { 255 255 255 }
-
-				b_osnabruck = {
-					province = 2440
-
-					color = { 240 160 90 }
-					color2 = { 255 255 255 }
-				}
-			
-				b_vechta = {
-					province = 2444
-
-					color = { 240 160 90 }
-					color2 = { 255 255 255 }
-				}
-				b_cloppenburg = {
-					province = 2445
-
-					color = { 240 160 90 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_ravensberg = {
-				color = { 240 160 90 }
-				color2 = { 255 255 255 }
-
-				b_ravensberg = {
-					province = 2443
-
-					color = { 240 160 90 }
-					color2 = { 255 255 255 }
-				}
-
-				b_wiedenbruck = {
-					province = 2841
-
-					color = { 230 180 75 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_tecklenburg = {
-				color = { 250 170 65 }
-				color2 = { 255 255 255 }
-
-				b_tecklenburg = {
-					province = 2446
-
-					color = { 250 170 65 }
-					color2 = { 255 255 255 }
-				}
-				b_papenburg = {
-					province = 2441
-
-					color = { 250 170 65 }
-					color2 = { 255 255 255 }
-				}
-				b_meppen = {
-					province = 2439
-
-					color = { 250 170 65 }
-					color2 = { 255 255 255 }
-				}
-			}
-
-
-			c_bentheim = {
-				color = { 250 170 65 }
-				color2 = { 255 255 255 }
-			
-				b_bentheim = {
-					province = 2430
-
-					color = { 250 170 65 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_munster = {
-				color = { 230 175 110 }
-				color2 = { 255 255 255 }
-				
-				b_munster = {
-					province = 2670
-
-					color = { 230 175 110 }
-					color2 = { 255 255 255 }
-				}
-				b_warendorf = {
-					province = 2671
-
-					color = { 230 175 110 }
-					color2 = { 255 255 255 }
-				}
-				b_ahlen = {
-					province = 2672
-
-					color = { 230 175 110 }
-					color2 = { 255 255 255 }
-				}
-				b_soest = {
-					province = 2674
-
-					color = { 230 175 110 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_waldeck = {
-				color = { 240 180 85 }
-				color2 = { 255 255 255 }
-
-				b_waldeck = {
-					province = 2850
-
-					color = { 240 180 85 }
-					color2 = { 255 255 255 }
-				}
-				b_wittenstein = {
-					province = 2849
-
-					color = { 240 180 85 }
-					color2 = { 255 255 255 }
-				}
-				b_buren = {
-					province = 2843
-
-					color = { 240 180 85 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_paderborn = {
-				color = { 230 180 75 }
-				color2 = { 255 255 255 }
-
-				b_paderborn = {
-					province = 2847
-
-					color = { 230 180 75 }
-					color2 = { 255 255 255 }
-				}
-				b_brakel = {
-					province = 2848
-
-					color = { 230 180 75 }
-					color2 = { 255 255 255 }
-				}
-				b_lippstadt = {
-					province = 2842
-
-					color = { 230 180 75 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-		
-		d_ostfalen = {
-			color = { 200 160 125 }
-			color2 = { 255 255 255 }
-		
-			capital = c_luneburg #Lüneburg
-
-			c_luneburg = {
-				color = { 200 160 125 }
-				color2 = { 255 255 255 }
-				
-				b_luneburg = {
-					province = 2893
-
-					color = { 200 160 125 }
-					color2 = { 255 255 255 }
-				}
-				b_uelzen = {
-					province = 2937
-
-					color = { 200 160 125 }
-					color2 = { 255 255 255 }
-				}
-				b_walsrode = {
-					province = 2903
-
-					color = { 200 160 125 }
-					color2 = { 255 255 255 }
-				}
-				b_celle = {
-					province = 2904
-
-					color = { 200 160 125 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_brunswick = {
-				color = { 200 160 130 }
-				color2 = { 255 255 255 }
-
-				b_brunswick = {
-					province = 2901
-
-					color = { 200 160 130 }
-					color2 = { 255 255 255 }
-				}
-				b_wolfenbuttel = {
-					province = 2902
-
-					color = { 200 160 130 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_hamburg = {
-				color = { 220 170 125 }
-				color2 = { 255 255 255 }
-				
-				b_hamburg = {
-					province = 2802
-
-					color = { 220 170 125 }
-					color2 = { 255 255 255 }
-				}
-				b_buxtehude = {
-					province = 2803
-
-					color = { 220 170 125 }
-					color2 = { 255 255 255 }
-				}
-				b_ahrensburg = {
-					province = 2805
-
-					color = { 220 170 125 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_dannenberg = {
-				color = { 185 175 130 }
-				color2 = { 255 255 255 }
-
-				b_dannenberg = {
-					province = 2894
-
-					color = { 185 175 130 }
-					color2 = { 255 255 255 }
-				}
-				b_luchow = {
-					province = 2895
-
-					color = { 185 175 130 }
-					color2 = { 255 255 255 }
-				}
-				b_gifhorn = {
-					province = 2905
-
-					color = { 185 175 130 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_stendal = {
-				color = { 200 180 115 }
-				color2 = { 255 255 255 }
-
-				b_stendal = {
-					province = 2900
-
-					color = { 200 180 115 }
-					color2 = { 255 255 255 }
-				}
-				b_gardelegen = {
-					province = 2907
-
-					color = { 200 180 115 }
-					color2 = { 255 255 255 }
-				}
-				b_werben = {
-					province = 2899
-
-					color = { 200 180 115 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-		
-		d_meissen = {
-			color = { 215 175 120 }
-			color2 = { 255 255 255 }
-			
-			capital = c_meissen #Meissen
-			
-			c_meissen = {
-				color = { 215 175 120 }
-				color2 = { 255 255 255 }
-				
-				b_meissen = {
-					province = 3027
-					
-					color = { 215 175 120 }
-					color2 = { 255 255 255 }
-				}
-				b_radebeul = {
-					province = 3035
-					
-					color = { 215 175 120 }
-					color2 = { 255 255 255 }
-				}
-				b_grossenhain = {
-					province = 3034
-					
-					color = { 215 175 120 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_dresden = {
-				color = { 210 165 130 }
-				color2 = { 255 255 255 }
-				
-				b_dresden = {
-					province = 3030
-					
-					color = { 210 165 130 }
-					color2 = { 255 255 255 }
-				}
-				b_bischofswerda = {
-					province = 3033
-					
-					color = { 210 165 130 }
-					color2 = { 255 255 255 }
-				}
-				b_freiberg = {
-					province = 3028
-					
-					color = { 210 165 130 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_wolkenstein = {
-				color = { 205 170 135 }
-				color2 = { 255 255 255 }
-				
-				b_wolkenstein = {
-					province = 3012
-					
-					color = { 205 170 135 }
-					color2 = { 255 255 255 }
-				}
-				b_waldenburg = {
-					province = 3013
-					
-					color = { 205 170 135 }
-					color2 = { 255 255 255 }
-				}
-			}
-			#c_freiberg = {
-			#	color = { 177 177 177 }
-			#	color2 = { 255 255 255 }
-			#	
-			#	b_freiberg = {
-			#		province = 3028
-			#		
-			#		color = { 177 177 177 }
-			#		color2 = { 255 255 255 }
-			#	}
-			#}
-			c_osterland = {
-				color = { 230 170 130 }
-				color2 = { 255 255 255 }
-
-				b_eilenburg = {
-					province = 3021
-
-					color = { 230 170 130 }
-					color2 = { 255 255 255 }
-				}
-				b_leipzig = {
-					province = 3019
-
-					color = { 195 85 65 }
-					color2 = { 255 255 255 }
-				}
-				b_colditz = {
-					province = 3015
-
-					color = { 230 170 130 }
-					color2 = { 255 255 255 }
-				}
-				b_devin = {
-					province = 3017
-
-					color = { 230 170 130 }
-					color2 = { 255 255 255 }
-				}
-				b_leisning = {
-					province = 3016
-
-					color = { 230 170 130 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_naumburg = {
-				color = { 225 180 105 }
-				color2 = { 255 255 255 }
-
-				b_naumburg = {
-					province = 3020
-
-					color = { 225 180 105 }
-					color2 = { 255 255 255 }
-				}
-				b_altenburg = {
-					province = 3014
-
-					color = { 225 180 105 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_vogtland = {
-				color = { 215 185 125 }
-				color2 = { 255 255 255 }
-
-				b_reichenbach = {
-					province = 3039
-
-					color = { 215 185 125 }
-					color2 = { 255 255 255 }
-				}
-				b_plauen = {
-					province = 3004
-
-					color = { 215 185 125 }
-					color2 = { 255 255 255 }
-				}
-				b_gera = {
-					province = 3038
-
-					color = { 215 185 125 }
-					color2 = { 255 255 255 }
-				}
-				b_cheb = {
-					province = 2997
-
-					color = { 215 185 125 }
-					color2 = { 255 255 255 }
-				}
-				b_rehau = {
-					province = 3001
-
-					color = { 215 185 125 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-
-		d_lausitz = {
-			color = { 215 150 145 }
-			color2 = { 255 255 255 }
-			
-			capital = c_cottbus #Jc_cottbus
-
-			c_brene = {
-				color = { 235 170 165 }
-				color2 = { 255 255 255 }
-
-				b_torgau = {
-					province = 3025
-
-					color = { 235 170 165 }
-					color2 = { 255 255 255 }
-				}
-				b_brene = {
-					province = 3175
-
-					color = { 235 170 165 }
-					color2 = { 255 255 255 }
-				}
-				b_duben = {
-					province = 3024
-
-					color = { 235 170 165 }
-					color2 = { 255 255 255 }
-				}
-			}
-
-			c_cottbus = {
-				color = { 240 205 130 }
-				color2 = { 255 255 255 }
-				
-				b_cottbus = {
-					province = 3181
-
-					color = { 240 205 130 }
-					color2 = { 255 255 255 }
-				}
-				b_kamenz = {
-					province = 3141
-
-					color = { 240 205 130 }
-					color2 = { 255 255 255 }
-				}
-				b_lubben = {
-					province = 3182
-
-					color = { 240 205 130 }
-					color2 = { 255 255 255 }
-				}
-			}
-
-			c_spreewald = {
-				color = { 230 150 160 }
-				color2 = { 255 255 255 }
-
-				b_spreewald = {
-					province = 3140
-
-					color = { 230 150 160 }
-					color2 = { 255 255 255 }
-				}
-				b_storkow = {
-					province = 3159
-
-					color = { 230 150 160 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_naumberg = {
-				color = { 255 175 180 }
-				color2 = { 255 255 255 }
-				
-				b_naumberg = {
-					province = 3143
-
-					color = { 255 175 180 }
-					color2 = { 255 255 255 }
-				}
-				
-				b_forst = {
-					province = 3138
-
-					color = { 255 175 180 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-
-		d_holstein = {
-			color = { 172 112 112 }
-			color2 = { 255 255 255 }
-			
-			capital = c_holstein
-			
-			c_lubeck = {
-				color = { 172 112 112 }
-				color2 = { 255 255 255 }
-				
-				b_lubeck = {
-					province = 2804
-					
-					color = { 172 112 112 }
-					color2 = { 255 255 255 }
-				}
-				b_femera = {
-					province = 2800
-					
-					color = { 172 112 112 }
-					color2 = { 255 255 255 }
-				}
-				b_kiel = {
-					province = 2801
-					
-					color = { 172 112 112 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_ditmarschen = {
-				color = { 165 95 100 }
-				color2 = { 255 255 255 }
-				
-				b_ditmarschen = {
-					province = 2797
-					
-					color = { 165 95 100 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_holstein = {
-				color = { 165 95 100 }
-				color2 = { 255 255 255 }
-
-				b_neumunster = {
-					province = 2799
-					
-					color = { 165 95 100 }
-					color2 = { 255 255 255 }
-				}
-				b_itzehoe = {
-					province = 2798
-					
-					color = { 165 95 100 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-
-		d_thuringia = {
-			color = { 200 160 181 }
-			color2 = { 255 255 255 }
-			
-			capital = c_schmalkalden
-			
-			c_schmalkalden = {
-				color = { 220 160 205 }
-				color2 = { 255 255 255 }
-				
-				b_schmalkalden = {
-					province = 3010
-
-					color = { 220 160 205 }
-					color2 = { 255 255 255 }
-				}
-				b_eisenach = {
-					province = 3009
-
-					color = { 220 160 205 }
-					color2 = { 255 255 255 }
-				}
-				b_gleichen = {
-					province = 3006
-
-					color = { 220 160 205 }
-					color2 = { 255 255 255 }
-				}
-				b_beichtinen = {
-					province = 3007
-
-					color = { 220 160 205 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_gottingen = {
-				color = { 200 160 181 }
-				color2 = { 255 255 255 }
-				
-				b_goslar = {
-					province = 2918
-
-					color = { 200 160 181 }
-					color2 = { 255 255 255 }
-				}
-				b_gottingen = {
-					province = 2920
-
-					color = { 200 160 181 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_gleichenstein = {
-				color = { 205 155 200 }
-				color2 = { 255 255 255 }
-				
-				b_gleichenstein = {
-					province = 2919
-
-					color = { 205 155 200 }
-					color2 = { 255 255 255 }
-				}
-				b_ebeleben = {
-					province = 2928
-
-					color = { 205 155 200 }
-					color2 = { 255 255 255 }
-				}
-				b_muhlhausen = {
-					province = 2921
-
-					color = { 205 155 200 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_orlamunde = {
-				color = { 210 160 180 }
-				color2 = { 255 255 255 }
-				
-				b_orlamunde = {
-					province = 3005
-
-					color = { 210 160 180 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_schwarzburg = {
-				color = { 210 160 180 }
-				color2 = { 255 255 255 }
-				b_schwarzburg = {
-					province = 2999
-
-					color = { 210 160 180 }
-					color2 = { 255 255 255 }
-				}
-				b_kafernburg = {
-					province = 3008
-
-					color = { 210 160 180 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_lobdaburg = {
-				color = { 200 145 155 }
-				color2 = { 255 255 255 }
-				
-				b_lobdaburg = {
-					province = 3003
-
-					color = { 200 145 155 }
-					color2 = { 255 255 255 }
-				}
-				b_hof = {
-					province = 3000
-
-					color = { 200 145 155 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-	}
 	
 	k_frisia = {
 		color = { 245 100 20 }
@@ -7642,6 +6516,1104 @@ e_germany = {
 				}
 			} 
 		}
+			d_magdeburg = {
+				color = { 175 90 75 }
+				color2 = { 255 255 255 }
+	
+				capital = c_magdeburg
+	
+				c_magdeburg = {
+					color = { 175 90 75 }
+					color2 = { 255 255 255 }
+		
+					b_gommern = {
+						province = 3176
+		
+						color = { 175 90 75 }
+						color2 = { 255 255 255 }
+					}
+		
+					b_magdeburg = {
+						province = 2906
+		
+						color = { 175 90 75 }
+						color2 = { 255 255 255 }
+					}
+					b_mockern = {
+						province = 3171
+		
+						color = { 175 90 75 }
+						color2 = { 255 255 255 }
+					}
+				}
+			}
+		
+	
+	
+			d_anhalt = {
+				color = { 195 105 80 }
+				color2 = { 255 255 255 }
+	
+				capital = c_wittenberg
+	
+				c_wittenberg = {
+					color = { 200 140 130 }
+					color2 = { 255 255 255 }
+					
+					b_wittenberg = {
+						province = 3173
+	
+						color = { 200 140 130 }
+						color2 = { 255 255 255 }
+					}
+					b_belizi = {
+						province = 3174
+	
+						color = { 200 140 130 }
+						color2 = { 255 255 255 }
+					}
+				}
+	
+				c_juterbog = {
+					color = { 215 150 145 }
+					color2 = { 255 255 255 }
+	
+					b_juterbog = {
+						province = 3180
+	
+						color = { 215 150 145 }
+						color2 = { 255 255 255 }
+					}
+					b_dahme = {
+						province = 3178
+	
+						color = { 215 150 145 }
+						color2 = { 255 255 255 }
+					}
+				}
+	
+				c_dessau = {
+					color = { 195 105 80 }
+					color2 = { 255 255 255 }
+	
+					b_dessau = {
+						province = 3023
+	
+						color = { 195 105 80 }
+						color2 = { 255 255 255 }
+					}
+					b_zerbst = {
+						province = 3172
+	
+						color = { 195 105 80 }
+						color2 = { 255 255 255 }
+					}
+				}
+	
+				c_halberstadt = {
+					color = { 170 110 80 }
+					color2 = { 255 255 255 }
+	
+					b_halberstadt = {
+						province = 2916
+	
+						color = { 170 110 80 }
+						color2 = { 255 255 255 }
+					}
+					b_werningerode = {
+						province = 2917
+	
+						color = { 170 110 80 }
+						color2 = { 255 255 255 }
+					}
+					b_arnstein = {
+						province = 2933
+	
+						color = { 170 110 80 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_blankenburg = {
+					color = { 180 115 100 }
+					color2 = { 255 255 255 }
+	
+					b_blankenburg = {
+						province = 2932
+	
+						color = { 180 115 100 }
+						color2 = { 255 255 255 }
+					}
+					b_hohenstein = {
+						province = 2931
+	
+						color = { 180 115 100 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_mansfeld = {
+					color = { 190 130 105 }
+					color2 = { 255 255 255 }
+	
+					b_mansfeld = {
+						province = 2936
+	
+						color = { 190 130 105 }
+						color2 = { 255 255 255 }
+					}
+					b_sangerhausen = {
+						province = 2934
+	
+						color = { 190 130 105 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_mersenburg = {
+					color = { 195 85 65 }
+					color2 = { 255 255 255 }
+	
+					b_mersenburg = {
+						province = 2935
+	
+						color = { 195 85 65 }
+						color2 = { 255 255 255 }
+					}
+					b_halle = {
+						province = 3018
+	
+						color = { 195 85 65 }
+						color2 = { 255 255 255 }
+					}
+				}
+			}
+	
+			d_bremen = {
+				color = { 220 95 95 }
+				color2 = { 255 255 255 }
+		
+				c_bremen = {
+						color = { 220 95 95 }
+						color2 = { 255 255 255 }
+						
+						b_bremen = {
+							province = 2793
+	
+							color = { 220 95 95 }
+							color2 = { 255 255 255 }
+						}
+						b_verden = {
+							province = 2794
+	
+							color = { 220 95 95 }
+							color2 = { 255 255 255 }
+						}
+						b_zeven = {
+							province = 2796
+	
+							color = { 220 95 95 }
+							color2 = { 255 255 255 }
+						}	
+					}
+				c_stade = {
+					color = { 175 100 115 }
+					color2 = { 255 255 255 }
+					
+					b_stade = {
+						province = 2795
+						
+						color = { 175 100 115 }
+						color2 = { 255 255 255 }
+					}
+					b_bederkesa = {
+						province = 2791
+						
+						color = { 175 100 115 }
+						color2 = { 255 255 255 }
+					}
+					b_cuxhaven = {
+						province = 2792
+						
+						color = { 175 100 115 }
+						color2 = { 255 255 255 }
+					}
+				}
+			}
+	
+			d_angria = {
+				color = { 205 105 85 }
+				color2 = { 255 255 255 }
+	
+				capital = c_minden
+	
+				c_minden = {
+					color = { 205 105 85 }
+					color2 = { 255 255 255 }
+	
+					b_diepholz = {
+						province = 2838
+	
+						color = { 205 105 85 }
+						color2 = { 255 255 255 }
+					}
+					b_minden = {
+						province = 2840
+	
+						color = { 205 105 85 }
+						color2 = { 255 255 255 }
+					}
+					b_bruchhausen = {
+						province = 2837
+	
+						color = { 205 105 85 }
+						color2 = { 255 255 255 }
+					}
+					b_hoya = {
+						province = 2839
+	
+						color = { 205 105 85 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_lippe = {
+					color = { 190 110 70 }
+					color2 = { 255 255 255 }
+	
+					b_lippe = {
+						province = 2844
+	
+						color = { 190 110 70 }
+						color2 = { 255 255 255 }
+					}
+					b_schwalenberg = {
+						province = 2909
+	
+						color = { 190 110 70 }
+						color2 = { 255 255 255 }
+					}
+					b_everstein = {
+						province = 2910
+	
+						color = { 190 110 70 }
+						color2 = { 255 255 255 }
+					}
+				}
+			
+				c_wolpe = {
+					color = { 220 85 80 }
+					color2 = { 255 255 255 }
+	
+					b_wolpe = {
+						province = 2846
+	
+						color = { 220 85 80 }
+						color2 = { 255 255 255 }
+					}
+					b_schauenburg = {
+						province = 2845
+	
+						color = { 220 85 80 }
+						color2 = { 255 255 255 }
+					}
+					b_depenau = {
+						province = 2897
+	
+						color = { 220 85 80 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_hannover = {
+					color = { 200 75 75 }
+					color2 = { 255 255 255 }
+	
+					b_hannover = {
+						province = 2898
+	
+						color = { 200 75 75 }
+						color2 = { 255 255 255 }
+					}
+					b_wunsdorf = {
+						province = 2896
+	
+						color = { 200 75 75 }
+						color2 = { 255 255 255 }
+					}
+					b_woldenberg = {
+						province = 2914
+	
+						color = { 200 75 75 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_hildesheim = {
+					color = { 235 95 85 }
+					color2 = { 255 255 255 }
+	
+					b_hildesheim = {
+						province = 2913
+	
+						color = { 235 95 85 }
+						color2 = { 255 255 255 }
+					}
+					b_homburg = {
+						province = 2912
+	
+						color = { 235 95 85 }
+						color2 = { 255 255 255 }
+					}
+					b_dassel = {
+						province = 2911
+	
+						color = { 235 95 85 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_oldenburg = {
+					color = { 195 95 70 }
+					color2 = { 255 255 255 }
+	
+					b_oldenburg = {
+						province = 2438
+	
+						color = { 195 95 70 }
+						color2 = { 255 255 255 }
+					}
+					b_leer = {
+						province = 2436
+	
+						color = { 195 95 70 }
+						color2 = { 255 255 255 }
+					}
+					b_twistringen = {
+						province = 2442
+	
+						color = { 195 95 70 }
+						color2 = { 255 255 255 }
+					}
+				}
+			}
+	
+			d_westfalen = {
+				color = { 240 160 90 }
+				color2 = { 255 255 255 }
+	
+				capital = c_osnabruck #Osnabruck
+	
+				c_osnabruck = {
+					color = { 240 160 90 }
+					color2 = { 255 255 255 }
+	
+					b_osnabruck = {
+						province = 2440
+	
+						color = { 240 160 90 }
+						color2 = { 255 255 255 }
+					}
+				
+					b_vechta = {
+						province = 2444
+	
+						color = { 240 160 90 }
+						color2 = { 255 255 255 }
+					}
+					b_cloppenburg = {
+						province = 2445
+	
+						color = { 240 160 90 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_ravensberg = {
+					color = { 240 160 90 }
+					color2 = { 255 255 255 }
+	
+					b_ravensberg = {
+						province = 2443
+	
+						color = { 240 160 90 }
+						color2 = { 255 255 255 }
+					}
+	
+					b_wiedenbruck = {
+						province = 2841
+	
+						color = { 230 180 75 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_tecklenburg = {
+					color = { 250 170 65 }
+					color2 = { 255 255 255 }
+	
+					b_tecklenburg = {
+						province = 2446
+	
+						color = { 250 170 65 }
+						color2 = { 255 255 255 }
+					}
+					b_papenburg = {
+						province = 2441
+	
+						color = { 250 170 65 }
+						color2 = { 255 255 255 }
+					}
+					b_meppen = {
+						province = 2439
+	
+						color = { 250 170 65 }
+						color2 = { 255 255 255 }
+					}
+				}
+	
+	
+				c_bentheim = {
+					color = { 250 170 65 }
+					color2 = { 255 255 255 }
+				
+					b_bentheim = {
+						province = 2430
+	
+						color = { 250 170 65 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_munster = {
+					color = { 230 175 110 }
+					color2 = { 255 255 255 }
+					
+					b_munster = {
+						province = 2670
+	
+						color = { 230 175 110 }
+						color2 = { 255 255 255 }
+					}
+					b_warendorf = {
+						province = 2671
+	
+						color = { 230 175 110 }
+						color2 = { 255 255 255 }
+					}
+					b_ahlen = {
+						province = 2672
+	
+						color = { 230 175 110 }
+						color2 = { 255 255 255 }
+					}
+					b_soest = {
+						province = 2674
+	
+						color = { 230 175 110 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_waldeck = {
+					color = { 240 180 85 }
+					color2 = { 255 255 255 }
+	
+					b_waldeck = {
+						province = 2850
+	
+						color = { 240 180 85 }
+						color2 = { 255 255 255 }
+					}
+					b_wittenstein = {
+						province = 2849
+	
+						color = { 240 180 85 }
+						color2 = { 255 255 255 }
+					}
+					b_buren = {
+						province = 2843
+	
+						color = { 240 180 85 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_paderborn = {
+					color = { 230 180 75 }
+					color2 = { 255 255 255 }
+	
+					b_paderborn = {
+						province = 2847
+	
+						color = { 230 180 75 }
+						color2 = { 255 255 255 }
+					}
+					b_brakel = {
+						province = 2848
+	
+						color = { 230 180 75 }
+						color2 = { 255 255 255 }
+					}
+					b_lippstadt = {
+						province = 2842
+	
+						color = { 230 180 75 }
+						color2 = { 255 255 255 }
+					}
+				}
+			}
+			
+			d_ostfalen = {
+				color = { 200 160 125 }
+				color2 = { 255 255 255 }
+			
+				capital = c_luneburg #Lüneburg
+	
+				c_luneburg = {
+					color = { 200 160 125 }
+					color2 = { 255 255 255 }
+					
+					b_luneburg = {
+						province = 2893
+	
+						color = { 200 160 125 }
+						color2 = { 255 255 255 }
+					}
+					b_uelzen = {
+						province = 2937
+	
+						color = { 200 160 125 }
+						color2 = { 255 255 255 }
+					}
+					b_walsrode = {
+						province = 2903
+	
+						color = { 200 160 125 }
+						color2 = { 255 255 255 }
+					}
+					b_celle = {
+						province = 2904
+	
+						color = { 200 160 125 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_brunswick = {
+					color = { 200 160 130 }
+					color2 = { 255 255 255 }
+	
+					b_brunswick = {
+						province = 2901
+	
+						color = { 200 160 130 }
+						color2 = { 255 255 255 }
+					}
+					b_wolfenbuttel = {
+						province = 2902
+	
+						color = { 200 160 130 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_hamburg = {
+					color = { 220 170 125 }
+					color2 = { 255 255 255 }
+					
+					b_hamburg = {
+						province = 2802
+	
+						color = { 220 170 125 }
+						color2 = { 255 255 255 }
+					}
+					b_buxtehude = {
+						province = 2803
+	
+						color = { 220 170 125 }
+						color2 = { 255 255 255 }
+					}
+					b_ahrensburg = {
+						province = 2805
+	
+						color = { 220 170 125 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_dannenberg = {
+					color = { 185 175 130 }
+					color2 = { 255 255 255 }
+	
+					b_dannenberg = {
+						province = 2894
+	
+						color = { 185 175 130 }
+						color2 = { 255 255 255 }
+					}
+					b_luchow = {
+						province = 2895
+	
+						color = { 185 175 130 }
+						color2 = { 255 255 255 }
+					}
+					b_gifhorn = {
+						province = 2905
+	
+						color = { 185 175 130 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_stendal = {
+					color = { 200 180 115 }
+					color2 = { 255 255 255 }
+	
+					b_stendal = {
+						province = 2900
+	
+						color = { 200 180 115 }
+						color2 = { 255 255 255 }
+					}
+					b_gardelegen = {
+						province = 2907
+	
+						color = { 200 180 115 }
+						color2 = { 255 255 255 }
+					}
+					b_werben = {
+						province = 2899
+	
+						color = { 200 180 115 }
+						color2 = { 255 255 255 }
+					}
+				}
+			}
+			
+			d_meissen = {
+				color = { 215 175 120 }
+				color2 = { 255 255 255 }
+				
+				capital = c_meissen #Meissen
+				
+				c_meissen = {
+					color = { 215 175 120 }
+					color2 = { 255 255 255 }
+					
+					b_meissen = {
+						province = 3027
+						
+						color = { 215 175 120 }
+						color2 = { 255 255 255 }
+					}
+					b_radebeul = {
+						province = 3035
+						
+						color = { 215 175 120 }
+						color2 = { 255 255 255 }
+					}
+					b_grossenhain = {
+						province = 3034
+						
+						color = { 215 175 120 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_dresden = {
+					color = { 210 165 130 }
+					color2 = { 255 255 255 }
+					
+					b_dresden = {
+						province = 3030
+						
+						color = { 210 165 130 }
+						color2 = { 255 255 255 }
+					}
+					b_bischofswerda = {
+						province = 3033
+						
+						color = { 210 165 130 }
+						color2 = { 255 255 255 }
+					}
+					b_freiberg = {
+						province = 3028
+						
+						color = { 210 165 130 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_wolkenstein = {
+					color = { 205 170 135 }
+					color2 = { 255 255 255 }
+					
+					b_wolkenstein = {
+						province = 3012
+						
+						color = { 205 170 135 }
+						color2 = { 255 255 255 }
+					}
+					b_waldenburg = {
+						province = 3013
+						
+						color = { 205 170 135 }
+						color2 = { 255 255 255 }
+					}
+				}
+				#c_freiberg = {
+				#	color = { 177 177 177 }
+				#	color2 = { 255 255 255 }
+				#	
+				#	b_freiberg = {
+				#		province = 3028
+				#		
+				#		color = { 177 177 177 }
+				#		color2 = { 255 255 255 }
+				#	}
+				#}
+				c_osterland = {
+					color = { 230 170 130 }
+					color2 = { 255 255 255 }
+	
+					b_eilenburg = {
+						province = 3021
+	
+						color = { 230 170 130 }
+						color2 = { 255 255 255 }
+					}
+					b_leipzig = {
+						province = 3019
+	
+						color = { 195 85 65 }
+						color2 = { 255 255 255 }
+					}
+					b_colditz = {
+						province = 3015
+	
+						color = { 230 170 130 }
+						color2 = { 255 255 255 }
+					}
+					b_devin = {
+						province = 3017
+	
+						color = { 230 170 130 }
+						color2 = { 255 255 255 }
+					}
+					b_leisning = {
+						province = 3016
+	
+						color = { 230 170 130 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_naumburg = {
+					color = { 225 180 105 }
+					color2 = { 255 255 255 }
+	
+					b_naumburg = {
+						province = 3020
+	
+						color = { 225 180 105 }
+						color2 = { 255 255 255 }
+					}
+					b_altenburg = {
+						province = 3014
+	
+						color = { 225 180 105 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_vogtland = {
+					color = { 215 185 125 }
+					color2 = { 255 255 255 }
+	
+					b_reichenbach = {
+						province = 3039
+	
+						color = { 215 185 125 }
+						color2 = { 255 255 255 }
+					}
+					b_plauen = {
+						province = 3004
+	
+						color = { 215 185 125 }
+						color2 = { 255 255 255 }
+					}
+					b_gera = {
+						province = 3038
+	
+						color = { 215 185 125 }
+						color2 = { 255 255 255 }
+					}
+					b_cheb = {
+						province = 2997
+	
+						color = { 215 185 125 }
+						color2 = { 255 255 255 }
+					}
+					b_rehau = {
+						province = 3001
+	
+						color = { 215 185 125 }
+						color2 = { 255 255 255 }
+					}
+				}
+			}
+	
+			d_lausitz = {
+				color = { 215 150 145 }
+				color2 = { 255 255 255 }
+				
+				capital = c_cottbus #Jc_cottbus
+	
+				c_brene = {
+					color = { 235 170 165 }
+					color2 = { 255 255 255 }
+	
+					b_torgau = {
+						province = 3025
+	
+						color = { 235 170 165 }
+						color2 = { 255 255 255 }
+					}
+					b_brene = {
+						province = 3175
+	
+						color = { 235 170 165 }
+						color2 = { 255 255 255 }
+					}
+					b_duben = {
+						province = 3024
+	
+						color = { 235 170 165 }
+						color2 = { 255 255 255 }
+					}
+				}
+	
+				c_cottbus = {
+					color = { 240 205 130 }
+					color2 = { 255 255 255 }
+					
+					b_cottbus = {
+						province = 3181
+	
+						color = { 240 205 130 }
+						color2 = { 255 255 255 }
+					}
+					b_kamenz = {
+						province = 3141
+	
+						color = { 240 205 130 }
+						color2 = { 255 255 255 }
+					}
+					b_lubben = {
+						province = 3182
+	
+						color = { 240 205 130 }
+						color2 = { 255 255 255 }
+					}
+				}
+	
+				c_spreewald = {
+					color = { 230 150 160 }
+					color2 = { 255 255 255 }
+	
+					b_spreewald = {
+						province = 3140
+	
+						color = { 230 150 160 }
+						color2 = { 255 255 255 }
+					}
+					b_storkow = {
+						province = 3159
+	
+						color = { 230 150 160 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_naumberg = {
+					color = { 255 175 180 }
+					color2 = { 255 255 255 }
+					
+					b_naumberg = {
+						province = 3143
+	
+						color = { 255 175 180 }
+						color2 = { 255 255 255 }
+					}
+					
+					b_forst = {
+						province = 3138
+	
+						color = { 255 175 180 }
+						color2 = { 255 255 255 }
+					}
+				}
+			}
+	
+			d_holstein = {
+				color = { 172 112 112 }
+				color2 = { 255 255 255 }
+				
+				capital = c_holstein
+				
+				c_lubeck = {
+					color = { 172 112 112 }
+					color2 = { 255 255 255 }
+					
+					b_lubeck = {
+						province = 2804
+						
+						color = { 172 112 112 }
+						color2 = { 255 255 255 }
+					}
+					b_femera = {
+						province = 2800
+						
+						color = { 172 112 112 }
+						color2 = { 255 255 255 }
+					}
+					b_kiel = {
+						province = 2801
+						
+						color = { 172 112 112 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_ditmarschen = {
+					color = { 165 95 100 }
+					color2 = { 255 255 255 }
+					
+					b_ditmarschen = {
+						province = 2797
+						
+						color = { 165 95 100 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_holstein = {
+					color = { 165 95 100 }
+					color2 = { 255 255 255 }
+	
+					b_neumunster = {
+						province = 2799
+						
+						color = { 165 95 100 }
+						color2 = { 255 255 255 }
+					}
+					b_itzehoe = {
+						province = 2798
+						
+						color = { 165 95 100 }
+						color2 = { 255 255 255 }
+					}
+				}
+			}
+	
+			d_thuringia = {
+				color = { 200 160 181 }
+				color2 = { 255 255 255 }
+				
+				capital = c_schmalkalden
+				
+				c_schmalkalden = {
+					color = { 220 160 205 }
+					color2 = { 255 255 255 }
+					
+					b_schmalkalden = {
+						province = 3010
+	
+						color = { 220 160 205 }
+						color2 = { 255 255 255 }
+					}
+					b_eisenach = {
+						province = 3009
+	
+						color = { 220 160 205 }
+						color2 = { 255 255 255 }
+					}
+					b_gleichen = {
+						province = 3006
+	
+						color = { 220 160 205 }
+						color2 = { 255 255 255 }
+					}
+					b_beichtinen = {
+						province = 3007
+	
+						color = { 220 160 205 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_gottingen = {
+					color = { 200 160 181 }
+					color2 = { 255 255 255 }
+					
+					b_goslar = {
+						province = 2918
+	
+						color = { 200 160 181 }
+						color2 = { 255 255 255 }
+					}
+					b_gottingen = {
+						province = 2920
+	
+						color = { 200 160 181 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_gleichenstein = {
+					color = { 205 155 200 }
+					color2 = { 255 255 255 }
+					
+					b_gleichenstein = {
+						province = 2919
+	
+						color = { 205 155 200 }
+						color2 = { 255 255 255 }
+					}
+					b_ebeleben = {
+						province = 2928
+	
+						color = { 205 155 200 }
+						color2 = { 255 255 255 }
+					}
+					b_muhlhausen = {
+						province = 2921
+	
+						color = { 205 155 200 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_orlamunde = {
+					color = { 210 160 180 }
+					color2 = { 255 255 255 }
+					
+					b_orlamunde = {
+						province = 3005
+	
+						color = { 210 160 180 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_schwarzburg = {
+					color = { 210 160 180 }
+					color2 = { 255 255 255 }
+					b_schwarzburg = {
+						province = 2999
+	
+						color = { 210 160 180 }
+						color2 = { 255 255 255 }
+					}
+					b_kafernburg = {
+						province = 3008
+	
+						color = { 210 160 180 }
+						color2 = { 255 255 255 }
+					}
+				}
+				c_lobdaburg = {
+					color = { 200 145 155 }
+					color2 = { 255 255 255 }
+					
+					b_lobdaburg = {
+						province = 3003
+	
+						color = { 200 145 155 }
+						color2 = { 255 255 255 }
+					}
+					b_hof = {
+						province = 3000
+	
+						color = { 200 145 155 }
+						color2 = { 255 255 255 }
+					}
+				}
+			}
 
 		d_west_franconia = {
 			color = { 170 170 170 }
@@ -54954,7 +54926,7 @@ e_maghreb = {
 }
 
 e_arabia = {
-	color = { 32 150 85 }
+	color = { 255 202 7 }
 	color2 = { 255 255 255 }
 	
 	capital = c_damascus # Damascus

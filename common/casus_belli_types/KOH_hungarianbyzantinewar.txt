@@ -4,31 +4,24 @@
 		always = yes
 	}
 
-	#allowed_for_character = {}
-
-	allowed_against_character = {
-		#faith.religion = scope:attacker.faith.religion
+	allowed_for_character = {
+		has_title = title:k_hungary
 	}
 
-	is_allowed_claim_title = {
-		scope:claimant =  {
-			NOT = { has_trait = incapable }
-			is_imprisoned = no
-			OR = {
-				this = scope:attacker
-				AND = {
-					religion = scope:attacker.religion
-					dynasty = scope:attacker.dynasty
-				}
+	allowed_against_character = {
+		scope:attacker = {
+			ALL_FALSE = {
+				top_liege = scope:defender.top_liege
+				liege = scope:defender
 			}
 		}
 	}
 
-	#cost = {}
-
-
+	valid_to_start = {
+		always = no
+	}
+	
 	target_titles = claim
-	#target_title_tier = all
 
 	on_declaration = {
 	}
@@ -75,87 +68,10 @@
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
 		# Loc setup.
-		character:218500 = { save_scope_as = 218500 }
 		custom_tooltip = hungarianbyzantine_cb_victory_with_serbia_desc
-		# Set land acquisition type to conquest.
-	
+		
 		hidden_effect = {
-			create_title_and_vassal_change = {
-				type = conquest
-				save_scope_as = change
-				add_claim_on_loss = yes
-			}
-			
-			# Transfer landed titles to the attacker.
-			setup_claim_cb = {
-				titles = target_titles
-				attacker = scope:attacker
-				defender = scope:defender
-				claimant = scope:claimant
-				change = scope:change
-			}
-			
-			title:c_szerem = {	
-				add_to_list = target_titles
-			}
-			title:c_macva = {
-					add_to_list = target_titles
-			}
-			title:c_beograd = {
-					add_to_list = target_titles
-				}
-			title:c_branicevo = {
-					add_to_list = target_titles
-				}			
-			resolve_title_and_vassal_change = scope:change
-		}
-	
-		scope:attacker = {
-			if = {
-				limit = {
-					AND = {
-						character:218500 = {
-							is_alive = yes
-							is_pool_character = no
-							}
-						title:k_serbia.holder = character:218500
-					}
-				}
-	
-				#Grab the appropriate titles.
-				title:c_sumadija = {	
-					add_to_list = serbia_reward_titles
-				}
-				title:c_pomoravlje = {
-						add_to_list = serbia_reward_titles
-				}
-				title:c_hvosno = {
-						add_to_list = serbia_reward_titles
-					}
-				}
-	
-				#Adjust titles.
-				hidden_effect = {
-					create_title_and_vassal_change = {
-						type = conquest
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-					every_in_list = {
-						list = serbia_reward_titles
-						change_title_holder = {
-							holder = character:218500
-							change = scope:change
-						}
-					}
-					resolve_title_and_vassal_change = scope:change
-				}
-				
-				#And some opinion.
-				reverse_add_opinion = {
-					target = character:218500
-					modifier = loyal_servant
-			}
+			KOH_HungaryHungary = {}
 		}
 	}
 
@@ -171,14 +87,7 @@
 	}
 
 	on_white_peace = {
-		scope:attacker = {
-			show_pow_release_message_effect = yes
-			trigger_event = {
-				id = KOH_flemish_war.5
-				days = 2
-			}
-		}
-
+		
 		# press claims
 		every_in_list = {
 			list = target_titles

@@ -94,6 +94,7 @@ KOH_Italian_Familes_Monthly = {
 		every_ruler = {
 			limit = {
 				AND = {
+					is_landed = yes
 					dynasty = { 
 						has_dynasty_modifier = dynasty_guelph
 					}
@@ -108,6 +109,7 @@ KOH_Italian_Familes_Monthly = {
 		every_ruler = {
 			limit = {
 				AND = {
+					is_landed = yes
 					dynasty = { 
 						has_dynasty_modifier = dynasty_ghibelline
 					}
@@ -268,7 +270,6 @@ KOH_ON_START = {
 				}
 			}
 			add_trait = stress_gain_remove
-		
 		}
 		character:223590 = {
 			if = {
@@ -278,6 +279,17 @@ KOH_ON_START = {
 				trigger_event = {
 					id = KoH_saladin.105
 					days = 100
+				}
+			}
+		}
+		character:226000 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_saladin.100
+					days = 1003
 				}
 			}
 		}
@@ -502,7 +514,47 @@ KOH_pulse_monthly = {
 					}
 				}
 			}
-		}
+			if = {
+				limit = {
+						exists = global_var:SaladinHasTakenJerusalem 
+					}
+					every_ruler = {
+						limit = {
+							faith = faith:catholic
+							is_landed = yes
+							highest_held_title_tier >= tier_county
+							NOT = { 
+								OR = {
+									has_character_flag = had_event_had_event_KoH_saladin.120
+									has_title =title:k_jerusalem
+									} 
+								}
+							}
+						trigger_event = {
+							id = KoH_saladin.120
+						}
+					}
+				}
+
+			if = {
+				limit = {
+						exists = global_var:SaladinHasTakenJerusalem 
+					}
+					every_ruler = {
+						limit = {
+							AND = {
+								has_title = title:k_jerusalem
+								NOT = {
+									has_character_flag = had_event_KoH_saladin.121
+								}
+							}
+						}
+						trigger_event = {
+							id = KoH_saladin.121
+					}
+				}
+			}
+	}
 	events = { 
 		KoH_SicillianConflict.1
     }

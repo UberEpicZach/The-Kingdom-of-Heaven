@@ -1,4 +1,30 @@
 ﻿namespace = KoH_barbarossa_crusade
+KoH_barbarossa_crusade.101 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.101.t
+	desc = KoH_barbarossa_crusade.101.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.101.a
+		trigger_event = {
+			id = KoH_saladin.4
+			days = { 150 250 }
+		}
+	}
+
+	option = {
+		name = KoH_barbarossa_crusade.101.b
+
+		piety = -1000
+		pretige = -1000 
+	}
+}
 
 KoH_barbarossa_crusade.1 = {
 	type = character_event
@@ -358,8 +384,8 @@ KoH_barbarossa_crusade.11 = {
 	immediate = {
         every_character_war = {
             limit = {
-                primary_defender = title:k_egypt.holder
-                primary_attacker = title:k_england.holder
+                primary_defender = title:e_arabia.holder
+                primary_attacker = title:k_jerusalem.holder
             }
             
             remove_participant = title:e_hre.holder 

@@ -26,6 +26,12 @@ KoH_byzantinecrisis.1 = {
             save_scope_as = cyprus_ruler
 		}
 
+		hidden_effect = {
+			character:215500 = {
+				get_title = c_brysis
+			}
+		}
+
 		character:223020 = { 
 			get_title = c_famagusta
 
@@ -97,13 +103,11 @@ KoH_byzantinecrisis.2 = {
 	option = {
 		name = KoH_byzantinecrisis.2.a
 		
-		
 		start_scheme = {
 			target = character:215670
 			type = murder
 		}
 	
-
 		hidden_effect = {
 			random_scheme = {
 				limit = {
@@ -121,9 +125,9 @@ KoH_byzantinecrisis.2 = {
 				id = KoH_byzantinecrisis.3
 				days = 30
 			
-			}
-
 		}
+
+	}
 
 	option = {
 		name = KoH_byzantinecrisis.2.b
@@ -210,7 +214,7 @@ KoH_byzantinecrisis.3 = { #Norman
 					value = 100
 				}
 				location = 3711
-				}
+			}
 			spawn_army = {
 				uses_supply = no
 				inheritable = yes
@@ -714,8 +718,8 @@ KoH_byzantinecrisis.8 = { #Arrest Council
 	desc = KoH_byzantinecrisis.8.d
 	theme = war
 	override_background = {
-		event_background = embarked
-	}
+		event_background = armory
+		}
 	
 	left_portrait = {
 		character = root
@@ -1229,7 +1233,9 @@ KoH_byzantinecrisis.9 = {
 				}
 			}
 			30 = {
-
+				trigger_event = {
+					id = KoH_byzantinecrisis.10
+				}
 			}
 		}
 	}
