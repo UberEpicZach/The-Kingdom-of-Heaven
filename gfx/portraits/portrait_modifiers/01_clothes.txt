@@ -3329,7 +3329,7 @@ clothes = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = western_crusades
+				template = koh_jerusalem
 				value = 0.0
 				#range = { 1 1 } # For the randomness to work correctly
 			}
@@ -3346,6 +3346,55 @@ clothes = {
 			}
 		}
 	}
+
+	jerusalem_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = clothes
+				template = koh_jerusalem
+				value = 0.0
+				#range = { 1 1 } # For the randomness to work correctly
+			}
+
+			morph = {
+				mode = modify_multiply
+				gene = gene_bs_bust
+				value = 1.0
+				template = bust_clothes
+			}
+			morph = {
+				mode = modify_multiply
+				gene = gene_bs_body_shape
+				value = 1.0
+				template = body_shape_average_clothed
+			}
+		}
+
+		weight = {
+			base = 0
+			modifier = {
+				add = 150
+				is_male = yes
+				age >= 18
+				portrait_wear_armor_trigger = yes
+				AND = {
+					OR = {
+						top_liege = { has_primary_title = title:k_jerusalem }
+						has_primary_title = title:k_jerusalem
+						is_knight_of = title:k_jerusalem.holder
+						OR = {
+							AND = {
+								is_councillor_of = title:k_jerusalem.holder
+								has_council_position = councillor_marshal
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 	saladin = {
 		dna_modifiers = {
 			accessory = {
@@ -3405,11 +3454,13 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 30
+				portrait_wear_armor_trigger = yes
 				portrait_richard_trigger = yes
 				is_female = no
 			}
 			modifier = {
 				add = 130
+				portrait_wear_armor_trigger = yes
 				this = character:204510
 			}
 		}
@@ -4366,11 +4417,22 @@ clothes = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 10000
+				add = 151
+				is_male = yes
+				age >= 18
 				portrait_wear_armor_trigger = yes
-				OR = {
-					liege = { has_primary_title = title:c_ibelin }
-					has_primary_title = title:c_ibelin
+				AND = {
+					OR = {
+						liege = { has_primary_title = title:c_ibelin }
+						has_primary_title = title:c_ibelin
+						is_knight_of = title:c_ibelin.holder
+						OR = {
+							AND = {
+								is_councillor_of = title:c_ibelin.holder
+								has_council_position = councillor_marshal
+							}
+						}
+					}
 				}
 			}
 		}
@@ -4399,6 +4461,10 @@ clothes = {
 		}	
 		weight = {
 			base = 0
+			modifier = {
+				add = 180
+				this = character:224590
+			}
 			modifier = {
 				add = 2000
 				OR = {
@@ -4474,13 +4540,24 @@ clothes = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 100
+				add = 102
+				is_male = yes
+				age >= 18
 				portrait_wear_armor_trigger = yes
-				OR = {
-					top_liege = { has_primary_title = title:k_england }
-					has_primary_title = title:k_england
-					has_culture = culture:english 
-				}
+				AND = {
+					OR = {
+						liege = { has_primary_title = title:k_england }
+						has_primary_title = title:k_england
+						is_knight_of = title:k_england.holder
+						has_culture = culture:english 
+						OR = {
+							AND = {
+								is_councillor_of = title:k_england.holder
+								has_council_position = councillor_marshal
+							}
+						}
+					}
+				}	
 			}
 		}
 	}
@@ -4583,16 +4660,28 @@ clothes = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 1000
+				add = 102
+				is_male = yes
+				age >= 18
 				portrait_wear_armor_trigger = yes
-				OR = {
-					top_liege = { has_primary_title = title:k_france }
-					has_primary_title = title:k_france
-					has_culture = culture:french 
-				}
+				AND = {
+					OR = {
+						liege = { has_primary_title = title:k_france }
+						has_primary_title = title:k_france
+						is_knight_of = title:k_france.holder
+						has_culture = culture:french 
+						OR = {
+							AND = {
+								is_councillor_of = title:k_france.holder
+								has_council_position = councillor_marshal
+							}
+						}
+					}
+				}	
 			}
 		}
 	}
+		
 
 	hospitaller_knight_clothes = {
 		dna_modifiers = {
@@ -4618,7 +4707,7 @@ clothes = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 200
+				add = 2000
 				OR = {
 					AND = {
 						portrait_hospitaller_trigger = yes
@@ -4692,13 +4781,24 @@ clothes = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 100
+				add = 110
+				is_male = yes
+				age >= 18
 				portrait_wear_armor_trigger = yes
-				OR = {
-					top_liege = { has_primary_title = title:e_hre }
-					has_primary_title = title:e_hre
-					has_culture_group = culture_group:central_germanic_group
-				}
+				AND = {
+					OR = {
+						liege = { has_primary_title = title:e_hre }
+						has_primary_title = title:e_hre
+						is_knight_of = title:e_hre.holder
+						has_culture_group = culture_group:central_germanic_group
+						OR = {
+							AND = {
+								is_councillor_of = title:e_hre.holder
+								has_council_position = councillor_marshal
+							}
+						}
+					}
+				}	
 			}
 		}
 	}

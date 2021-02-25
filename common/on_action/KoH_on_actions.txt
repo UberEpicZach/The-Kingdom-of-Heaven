@@ -215,6 +215,18 @@ KOH_ON_START = {
 			}
 		}
 
+		character:227012 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.102 #Assassin Buffs
+					days = 1
+				}
+			}
+		}
+
 		character:204510 = {
 		   if = {
                 limit = {

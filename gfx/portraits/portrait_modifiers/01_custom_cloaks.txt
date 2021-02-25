@@ -1,0 +1,49 @@
+﻿custom_cloaks = {
+	usage = customization
+	interface_position = 4
+	
+	add_accessory_modifiers = {
+		gene = cloaks
+		template = no_cloak
+	}
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			highest_held_title_tier >= tier_kingdom
+		}
+		template = western_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			highest_held_title_tier >= tier_kingdom
+			has_culture = culture:french 
+		}
+		template = french_kings
+	}
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			highest_held_title_tier >= tier_kingdom
+		}
+		template = western_kings
+	}
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			highest_held_title_tier >= tier_empire
+			has_culture = culture:french 
+		}
+		template = french_emperors
+	}
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			highest_held_title_tier >= tier_empire
+		}
+		template = western_emperors
+	}
+}

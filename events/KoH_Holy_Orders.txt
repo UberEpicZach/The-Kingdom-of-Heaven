@@ -523,11 +523,30 @@ KoH_holy_orders.102 = {
 		name = KoH_holy_orders.102.a
 
 		scope:asssassin = {
+
+			add_character_modifier = {
+				modifier = koh_assassins
+			}
+
 			add_gold = 100 #So that they have some money to lend out
 			add_piety_level = 2
 			add_gold = holy_order_starting_gold
+
+			every_vassal = {
+				every_courtier = {
+					add_trait = order_member
+					add_trait = trait_education_intrigue_4
+					set_character_faith = faith:ismaili
+				}
+				add_trait = order_member
+				add_trait = trait_education_intrigue_4
+				set_character_faith = faith:ismaili
+			}
+
 			every_courtier = {
 				add_trait = order_member
+				add_trait = trait_education_intrigue_4
+				set_character_faith = faith:ismaili
 			}
 			spawn_army = {
 				uses_supply = no

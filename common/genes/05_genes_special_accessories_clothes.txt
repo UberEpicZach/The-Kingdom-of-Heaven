@@ -239,25 +239,34 @@
 			girl = female
 		}
 
-		western_crusades = {
-			index = 12
+		#western_crusades = {
+		#	index = 12
+		#
+		#	female = {
+		#		1 = female_clothes_secular_crusades_western_war_nobility_01_common
+		#		1 = female_clothes_secular_crusades_western_war_nobility_02_common
+		#		1 = female_clothes_secular_crusades_western_war_nobility_03_common
+		#		1 = female_clothes_secular_crusades_western_war_nobility_04_common
+		#
+		#	}
+		#
+		#	boy = male
+		#	girl = female
+		#}
+
+		koh_jerusalem = {
+			index = 108
 
 			male = {
 				1 = male_clothes_secular_crusades_western_war_uber_02_common
-				1 = male_clothes_secular_crusades_western_war_nobility_01_common
-				1 = male_clothes_secular_crusades_western_war_nobility_02_common
 				1 = male_clothes_secular_crusades_western_war_nobility_03_common
-				1 = male_clothes_secular_crusades_western_war_nobility_04_common
 			}
 
 			female = {
-				1 = female_clothes_secular_crusades_western_war_nobility_01_common
-				1 = female_clothes_secular_crusades_western_war_nobility_02_common
 				1 = female_clothes_secular_crusades_western_war_nobility_03_common
 				1 = female_clothes_secular_crusades_western_war_nobility_04_common
 
 			}
-
 			boy = male
 			girl = female
 		}
@@ -1823,11 +1832,15 @@
 
 			male = {	
 				1 = male_clothes_templar_knight_war_nobility_01
-				1 = male_clothes_templar_grandmaster_war_nobility_01					
+				1 = male_clothes_templar_grandmaster_war_nobility_01	
+				1 = male_clothes_secular_crusades_western_war_nobility_01_common
+				1 = male_clothes_secular_crusades_western_war_nobility_04_common				
 			}
 
 			female = {
 				1 = female_clothes_secular_dde_hre_war_nobility_01_low
+				1 = female_clothes_secular_crusades_western_war_nobility_01_common
+				1 = female_clothes_secular_crusades_western_war_nobility_04_common
 				
 				}
 			boy = male
@@ -1840,12 +1853,13 @@
 
 			male = {	
 				1 = male_clothes_english_knight_war_nobility_01
-				1 = male_clothes_english_grandmaster_war_nobility_01					
+				1 = male_clothes_english_grandmaster_war_nobility_01
+				1 = male_clothes_secular_crusades_western_war_nobility_04_common						
 				}
 
 			female = {
 				1 = female_clothes_secular_dde_hre_war_nobility_01_low
-				
+				1 = female_clothes_secular_crusades_western_war_nobility_04_common	
 				}
 			boy = male
 			girl = female
@@ -1889,11 +1903,13 @@
 			male = {	
 				1 = male_clothes_hospitaller_grandmaster_war_nobility_01
 				1 = male_clothes_hospitaller_knight_black_war_nobility_01	
-				1 = male_clothes_hospitaller_knight_war_nobility_01						
+				1 = male_clothes_hospitaller_knight_war_nobility_01	
+				1 = male_clothes_secular_crusades_western_war_nobility_02_common					
 				}
 
 			female = {
 				1 = female_clothes_secular_dde_hre_war_nobility_01_low
+				1 = female_clothes_secular_crusades_western_war_nobility_02_common	
 				
 				}
 			boy = male

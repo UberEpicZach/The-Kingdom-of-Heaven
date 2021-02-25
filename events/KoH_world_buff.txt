@@ -12,6 +12,9 @@ world_buffing.1 = {
 	trigger = {
 		is_landed = yes
 		exists = capital_province
+		NOT = {
+			this = character:223570
+		}
 	}
 	
 	option = {

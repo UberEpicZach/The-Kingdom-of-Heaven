@@ -105,3 +105,53 @@ portrait_hospitaller_trigger = {
     }
 }
 
+portrait_jerusalem_trigger = {
+    AND = {
+        liege = { 
+            has_title = title:k_jerusalem
+            has_religion = religion:christianity_religion
+            }
+
+        OR = {
+            AND = {
+                is_knight_of = title:k_jerusalem.holder
+                is_male = yes
+                is_alive = yes
+                age >= 18
+            }
+
+            AND = {
+                has_council_position = councillor_marshal
+                is_councillor_of = title:k_jerusalem.holder
+                is_alive = yes
+                age >= 18
+            }
+            has_primary_title = title:k_jerusalem
+        }
+    }
+}
+
+portrait_ibelin_trigger = {
+    OR = {
+        liege = {
+            AND = {
+                has_title = title:c_ibelin
+                has_religion = religion:christianity_religion
+            }
+        }
+
+        AND = {
+            is_knight_of = title:c_ibelin.holder
+            is_male = yes
+            is_alive = yes
+            age >= 18
+        }
+
+        AND = {
+            has_council_position = councillor_marshal
+            is_councillor_of = title:c_ibelin.holder
+            is_alive = yes
+            age >= 18
+        }
+    }
+}
