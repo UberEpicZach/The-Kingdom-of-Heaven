@@ -2392,9 +2392,10 @@ KOH_georgian_wedding.6 = {
 
 	option = {
 		name = georgian.wedding.6.a
-
+		
 		character:222828 = {
-
+			add_pressed_claim = title:k_georgia
+		
 			start_war = {
 				casus_belli = KOH_georgian_cb
 				target = character:466517
@@ -2439,6 +2440,7 @@ KOH_georgian_wedding.7 = {
 		animation = disbelief
 	}
 	trigger = {
+		character:466517 = { is_alive = yes }
 		NOT = { has_character_flag = had_event_georgian_wedding.7 }
 	}
 
@@ -2482,6 +2484,9 @@ KOH_georgian_wedding.7 = {
 		scope:Failure = {
 			set_employer = scope:ByzantineEmperor
 		}
+		character:466517 = {
+			add_trait = compassionate
+		}
 	}
 
 	#End Yuri
@@ -2493,6 +2498,9 @@ KOH_georgian_wedding.7 = {
 			death = {
 				death_reason = death_execution
 			}
+		}
+		character:466517 = {
+			add_dread = major_dread_gain
 		}
 	}
 }
@@ -2586,7 +2594,9 @@ KOH_georgian_wedding.9 = {
 		name = georgian.wedding.6.a
 
 		character:222828 = {
-
+		
+			add_pressed_claim = title:k_georgia
+			
 			start_war = {
 				casus_belli = KOH_georgian_cb
 				target = character:466517
