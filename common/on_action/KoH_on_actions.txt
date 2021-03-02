@@ -58,11 +58,9 @@ KOH_Italian_Familes = {
 		title:c_terni.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
 		title:c_urbino.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }	
 	
-       every_ruler = {
+		every_ruler = {
 			limit = {
-				dynasty = { 
-					has_dynasty_modifier = dynasty_guelph
-				}
+				has_dynasty_modifier = dynasty_guelph
 			}
 			add_character_flag = guelph_cb
 			add_trait = KOH_guelph
@@ -70,10 +68,8 @@ KOH_Italian_Familes = {
 
 		every_ruler = {
 			limit = {
-					dynasty = { 
-						has_dynasty_modifier = dynasty_ghibelline
-					}
-				}
+				has_dynasty_modifier = dynasty_ghibelline
+			}
 			add_character_flag = ghibelline_cb
 			add_trait = KOH_ghibelline
 		}
@@ -95,9 +91,7 @@ KOH_Italian_Familes_Monthly = {
 			limit = {
 				AND = {
 					is_landed = yes
-					dynasty = { 
-						has_dynasty_modifier = dynasty_guelph
-					}
+					has_dynasty_modifier = dynasty_guelph
 					is_adult = yes
 					is_female = no
 				}
@@ -110,9 +104,7 @@ KOH_Italian_Familes_Monthly = {
 			limit = {
 				AND = {
 					is_landed = yes
-					dynasty = { 
-						has_dynasty_modifier = dynasty_ghibelline
-					}
+					has_dynasty_modifier = dynasty_ghibelline
 					is_adult = yes
 					is_female = no
 				}
