@@ -4002,8 +4002,8 @@ e_britannia = {
 		color2 = { 220 220 0 }
 		
 		can_create = {
-			trigger_if = 
-				NOT = { date >= 1184.1.1 }
+			trigger_if = {
+				NOT = { current_date >= 1184.1.1 }
 				has_culture_group = culture_group:brythonic_group
 			}
 		}
@@ -48243,7 +48243,7 @@ e_france = {
 		
 		can_create = {
 			trigger_if = {
-				NOT = { date >= 1184.1.1 }
+				NOT = { current_date >= 1184.1.1 }
 				NOT = { has_title = title:k_france }
 			}
 		}
@@ -49227,7 +49227,7 @@ e_france = {
 		
 		can_create = {
 			trigger_if = {
-				NOT = { date >= 1184.1.1 }
+				NOT = { current_date >= 1184.1.1 }
 				has_culture_group = culture_group:brythonic_group
 			}
 		}
