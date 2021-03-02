@@ -1,13 +1,14 @@
 ﻿GetSelectedArtifactTitle = {
 	type = character
-	first_valid = yes
-	text = {
-		localization_key = artifact_title
-		trigger = {
-			has_variable = artifact_selection
+	first_valid = {
+		text = {
+			localization_key = artifact_title
+			trigger = {
+				has_variable = artifact_selection
+			}
 		}
+		text = {localization_key = artifact_name_fallback}
 	}
-	text = {localization_key = artifact_name_fallback}
 }
 
 GetSelectedArtifactDesc = {
