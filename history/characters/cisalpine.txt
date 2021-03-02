@@ -225,7 +225,6 @@ KOH0244 = {
 2011 = {
 	name = "Giberto" # Giberto da Correggio 'Dentibus'
 	dynasty = 13064
-	father = 
 	martial = 6
 	diplomacy = 8
 	intrigue = 5
@@ -549,7 +548,7 @@ KOH0244 = {
 		add_spouse = 161113
 	}
 	1190.1.1 = {
-		divorce = character:161113
+		remove_spouse = 161113
 		trait = excommunicated
 	}
 	1093.1.1 = {
@@ -2464,7 +2463,7 @@ KOH0244 = {
 		add_spouse = 223598
 	}
 	1192.1.1 = {
-		divorce = character:223598
+		remove_spouse = 223598
 	}
 	1221.11.1 = {
 		trait = devoted
@@ -6414,7 +6413,7 @@ KOH0244 = {
 		add_spouse = cisalpine0200
 	}
 	1238.1.1 = {
-		divorce = character:cisalpine0200
+		remove_spouse = cisalpine0200
 	}
 	1238.5.23 = {
 		add_spouse = 30768
@@ -14951,7 +14950,7 @@ KOH0244 = {
 		add_spouse = 215502		
 	} 
 	1187.10.2 = {
-		divorce = character:215502		
+		remove_spouse = 215502		
 	} 
 	1190.11.24 = {
 		add_spouse = 223524
@@ -16821,6 +16820,8 @@ cisalpine0006 = {
 		death = yes
 	}
 }
+
+###HOUSE Cavalcabò ###
 
 cisalpine0007 = {
 	name = "Corrado" # Corrado Cavalcabò 
@@ -19309,7 +19310,7 @@ cisalpine0153 = {
 	trait = KOH_ghibelline
 	father = cisalpine0154
 
-	1100.1.1 = {
+	1120.1.1 = {
 		birth = yes
 	}
 	1146.1.1 = {
@@ -20124,7 +20125,7 @@ cisalpine0196 = {
 		add_spouse = cisalpine0194
 	}
 	1235.1.1 = {
-		divorce = character:cisalpine0194
+		remove_spouse = cisalpine0194
 	}
 	1253.1.1 = {
 		death = yes
@@ -29726,7 +29727,7 @@ cisalpine0748 = {
 		add_spouse = cisalpine0672
 	}
 	1287.1.1 = {
-		divorce = character:cisalpine0672
+		remove_spouse = cisalpine0672
 	}
 	1304.1.1 = {
 		add_spouse = cisalpine0801
@@ -34132,7 +34133,7 @@ cisalpine0925 = {
 		add_spouse = 184049
 	}
 	960.1.1 = {
-		divorce = character:184049
+		remove_spouse = 184049
 	}
 	960.1.1 = {
 		add_spouse = 190536
@@ -37370,4 +37371,4 @@ cisalpine0925 = {
 }
 # End of Soranza
 
-### End of Doges of Venice s
+### End of Doges of Venice
