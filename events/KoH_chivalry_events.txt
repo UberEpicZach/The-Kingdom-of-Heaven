@@ -16,7 +16,7 @@ chivalry.1 = {
 	option = {
 		name = chivalry.1.a
 		
-		add_gold = -100
+		remove_gold = 100
 		
 		change_chivalry_effect = { 
 			Chivalry = 1
@@ -159,7 +159,6 @@ chivalry.3 = {
 		duel = {
 			skill = prowess
 			target = scope:challenger
-			value = 10
 			10 = {
 				compare_modifier = {
 					value = scope:duel_value
@@ -544,7 +543,6 @@ chivalry.10 = {
 		duel = {
 			skill = prowess
 			target = scope:challenger
-			value = 10
 			10 = {
 				compare_modifier = {
 					value = scope:duel_value

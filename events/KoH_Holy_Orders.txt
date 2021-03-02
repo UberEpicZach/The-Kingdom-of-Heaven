@@ -456,7 +456,8 @@ KoH_holy_orders.101 = {
 	theme = war
 	hidden = yes
 	
-	trigger_if = { 
+	trigger = { 
+		trigger_if = {
 			limit = { 
 				title:c_jerusalem.holder = {
 				NOT = { faith.religion = religion:christianity_religion }
