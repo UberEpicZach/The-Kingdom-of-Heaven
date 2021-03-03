@@ -1,0 +1,39 @@
+﻿on_title_gain = {
+	effect = {
+		if = {
+			limit = {
+				scope:title = title:k_hungary
+				has_artifact = { ARTIFACT = artifact_33 }
+			}
+			equip_artifact = { ARTIFACT = artifact_33 }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_england
+				has_artifact = { ARTIFACT = artifact_32 }
+			}
+			equip_artifact = { ARTIFACT = artifact_32 }
+		}
+		if = {
+			limit = {
+				scope:title = title:e_hre
+				has_artifact = { ARTIFACT = artifact_1 }
+			}
+			equip_artifact = { ARTIFACT = artifact_1 }
+		}
+		if = {
+			limit = {
+				scope:title = title:e_byzantium
+				has_artifact = { ARTIFACT = artifact_2 }
+			}
+			equip_artifact = { ARTIFACT = artifact_2 }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_italy
+				has_artifact = { ARTIFACT = artifact_3 }
+			}
+			equip_artifact = { ARTIFACT = artifact_3 }
+		}
+	}
+}

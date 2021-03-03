@@ -1,4 +1,4 @@
-# You can catch those triggers in your own mod. E.g. to create artifacts, bind them to event, etc.
+﻿# You can catch those triggers in your own mod. E.g. to create artifacts, bind them to event, etc.
 # Just overwrite bellow triggers with your own conditions in your mod files (file name does not have to match, just trigger name).
 #
 # Be aware that:
@@ -28,7 +28,7 @@
 cfp_force_ck3_headgear_001_trigger = { has_variable = artifact_1_equipped }
 cfp_force_cfp_headgear_001_trigger = { has_variable = artifact_3_equipped }
 cfp_force_cfp_headgear_002_trigger = { always = no }
-cfp_force_cfp_headgear_003_trigger = { always = no }
+cfp_force_cfp_headgear_003_trigger = { has_variable = artifact_33_equipped }
 cfp_force_cfp_headgear_004_trigger = { always = no }
 cfp_force_cfp_headgear_005_trigger = { always = no }
 cfp_force_cfp_headgear_006_trigger = { always = no }

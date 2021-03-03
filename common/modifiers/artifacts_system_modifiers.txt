@@ -36,25 +36,25 @@ artifact_3_passive = {
 }
 
 artifact_4_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 1
 }
 
 artifact_5_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 2
 }
 
 artifact_6_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 3
 }
 
 artifact_7_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 4
 }
@@ -118,49 +118,49 @@ artifact_15_modifier = {
 }
 
 artifact_16_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 1
 }
 
 artifact_17_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 2
 }
 
 artifact_18_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 3
 }
 
 artifact_19_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 4
 }
 
 artifact_20_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 1
 }
 
 artifact_21_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 2
 }
 
 artifact_22_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 3
 }
 
 artifact_23_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 4
 }
@@ -193,27 +193,27 @@ artifact_27_modifier = {
 }
 
 artifact_28_modifier = {
-	icon = prestige_positive
+	icon = dread_positive
 	monthly_prestige = 1
 	prowess = 1
 }
 
 artifact_29_modifier = {
-	icon = prestige_positive
+	icon = dread_positive
 	monthly_prestige = 1
 	prowess = 1
 	martial = 1
 }
 
 artifact_30_modifier = {
-	icon = prestige_positive
+	icon = dread_positive
 	monthly_prestige = 2
 	prowess = 2
 	martial = 1
 }
 
 artifact_31_modifier = {
-	icon = prestige_positive
+	icon = dread_positive
 	monthly_prestige = 2
 	prowess = 2
 	martial = 2
@@ -221,11 +221,34 @@ artifact_31_modifier = {
 }
 
 artifact_32_modifier = {
-	icon = prestige_positive
-	prowess = 10
+	icon = prowess_positive
+	prowess = 2
 	martial = 5
-	health = 5
-	general_opinion = 20
+    general_opinion = 15
 	knight_limit = 10
-	enemy_hard_casualty_modifier = 0.2
+}
+
+artifact_33_modifier = {
+	icon = prestige_positive
+	monthly_prestige = 1
+	monthly_piety = 1
+	diplomacy = 4
+	direct_vassal_opinion = 10
+	religious_vassal_opinion = 15
+}
+
+artifact_34_modifier = {
+	icon = horse_positive
+	monthly_prestige = 2
+	martial = 1
+	courtier_and_guest_opinion = 10
+}
+
+soz_101_modifier = {
+	icon = prowess_positive
+	monthly_prestige_gain_mult = 0.1
+	levy_reinforcement_rate_same_faith = 0.15
+	levy_size = 0.3
+	religious_vassal_opinion = 10
+	prowess = 3
 }

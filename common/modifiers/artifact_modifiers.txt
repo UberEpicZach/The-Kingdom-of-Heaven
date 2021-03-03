@@ -6,15 +6,6 @@
 	religious_vassal_opinion = 10
 }
 
-soz_101_modifier = {
-	icon = goldensword
-	monthly_prestige_gain_mult = 0.1
-	levy_reinforcement_rate_same_faith = 0.15
-	levy_size = 0.3
-	religious_vassal_opinion = 10
-	prowess = 3
-}
-
 artifact_1_passive = {
 	icon = prestige_positive
 	monthly_prestige = 0.75
@@ -45,25 +36,25 @@ artifact_3_passive = {
 }
 
 artifact_4_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 1
 }
 
 artifact_5_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 2
 }
 
 artifact_6_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 3
 }
 
 artifact_7_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 4
 }
@@ -127,49 +118,49 @@ artifact_15_modifier = {
 }
 
 artifact_16_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 1
 }
 
 artifact_17_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 2
 }
 
 artifact_18_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 3
 }
 
 artifact_19_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 4
 }
 
 artifact_20_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 1
 }
 
 artifact_21_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 1
 	prowess = 2
 }
 
 artifact_22_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 3
 }
 
 artifact_23_modifier = {
-	icon = prestige_positive
+	icon = prowess_positive
 	monthly_prestige = 2
 	prowess = 4
 }
@@ -202,157 +193,62 @@ artifact_27_modifier = {
 }
 
 artifact_28_modifier = {
-	icon = prestige_positive
+	icon = dread_positive
 	monthly_prestige = 1
 	prowess = 1
 }
 
 artifact_29_modifier = {
-	icon = prestige_positive
+	icon = dread_positive
 	monthly_prestige = 1
 	prowess = 1
 	martial = 1
 }
 
 artifact_30_modifier = {
-	icon = prestige_positive
+	icon = dread_positive
 	monthly_prestige = 2
 	prowess = 2
 	martial = 1
 }
 
 artifact_31_modifier = {
-	icon = prestige_positive
+	icon = dread_positive
 	monthly_prestige = 2
 	prowess = 2
 	martial = 2
 	dread_baseline_add = 10
 }
 
-artifact_oathbringer_modifier = {
-	icon = oathbringer
-	prowess = 15
-	dread_baseline_add = 20
+artifact_32_modifier = {
+	icon = prowess_positive
+	prowess = 2
+	martial = 5
+    general_opinion = 15
+	knight_limit = 10
 }
 
-artifact_sunraiser_modifier = {
-	icon = sunraiser
-	monthly_prestige = 1
-	prowess = 15
-	dread_baseline_add = 15
-}
-
-artifact_mayalaran_modifier = {
-	icon = mayalaran
-	prowess = 20
-	dread_baseline_add = 15
-}
-
-artifact_shardplate_modifier = {
-	icon = shardplate
-	prowess = 10
-	health = 1
-#	enemy_hard_casualty_modifier = 0.2
-	hard_casualty_modifier = -0.2
-	enemy_hostile_scheme_success_chance_add = -20
-}
-
-artifact_shardblade_modifier = {
-	icon = shardblade
-	prowess = 15
-	dread_baseline_add = 15
-}
-
-extra_blade_modifier = {
-	icon = shardblade
-	monthly_prestige = 1
-	stacking = yes
-}
-
-extra_plate_modifier = {
-	icon = shardplate
-	monthly_prestige = 1
-	stacking = yes
-}
-
-artifact_soulcaster_modifier = {
-	icon = magic_positive
-	supply_duration = 2
-	supply_capacity_mult = 2
-}
-
-artifact_spanreed_modifier = {
-	icon = letter_positive
-	diplomatic_range_mult = 1
-	diplomacy = 3
-}
-
-artifact_painrial_modifier = {
-	icon = dread_positive
-	prowess = 10
-	scheme_resistance = 5
-}
-
-artifact_alerter_modifier = {
-	icon = magic_positive
-	scheme_resistance = 15
-}
-
-artifact_nightblood_modifier = {
-	icon = shardblade
-	prowess = 50
-#	scheme_resistance = 25
-	enemy_hard_casualty_modifier = 1
-	hard_casualty_modifier = 0.25
-	dread_baseline_add = 50
-	#triggered_opinion = {
-	#	opinion_modifier = nightblood_hates_evil
-	#	ai_honor < 0
-	#}
-}
-
-artifact_jezrien_honorblade_modifier = {
-	icon = shardblade
-	monthly_prestige = 5
-	prowess = 25
-	scheme_resistance = 25
-	dread_baseline_add = 25
-}
-
-nightblood_drawn_modifier = {
-	icon = shardblade
-	prowess = 100
-	scheme_resistance = 100
-#	hostile_scheme_power = 100
-#	hostile_scheme_secrecy = -100
-	enemy_hard_casualty_modifier = 2
-	hard_casualty_modifier = 0.5
-	dread_baseline_add = 100
-}
-
-artifact_type_four_biochromatic_entity_modifier = {
+artifact_33_modifier = {
 	icon = prestige_positive
-	monthly_prestige = 5
-	prowess = 70
-	scheme_resistance = 25
-	enemy_hard_casualty_modifier = 1
-	hard_casualty_modifier = 0.25
-	dread_baseline_add = 50
+	monthly_prestige = 1
+	monthly_piety = 1
+	diplomacy = 4
+	direct_vassal_opinion = 10
+	religious_vassal_opinion = 15
 }
 
-type_four_biochromatic_entity_drawn_modifier = {
-	icon = prestige_positive
-	prowess = 80
-	scheme_resistance = 90
-	hostile_scheme_power = 90
-	hostile_scheme_secrecy = -100
-	enemy_hard_casualty_modifier = 1.5
-	hard_casualty_modifier = 0.6
-	dread_baseline_add = 90
+artifact_34_modifier = {
+	icon = horse_positive
+	monthly_prestige = 2
+	martial = 1
+	courtier_and_guest_opinion = 10
 }
-artifact_ryshadium_modifier = {
-	icon = prestige_positive
-	prowess = 5
-	movement_speed = 1
-	monthly_prestige = 1
+
+soz_101_modifier = {
+	icon = prowess_positive
+	monthly_prestige_gain_mult = 0.1
+	levy_reinforcement_rate_same_faith = 0.15
+	levy_size = 0.3
+	religious_vassal_opinion = 10
+	prowess = 3
 }

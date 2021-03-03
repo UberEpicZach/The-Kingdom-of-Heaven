@@ -31,6 +31,9 @@
 	remove_variable = selected_artifact_30
 	remove_variable = selected_artifact_31
 	remove_variable = selected_artifact_32
+	remove_variable = selected_artifact_33
+	remove_variable = selected_artifact_34
+	remove_variable = selected_soz_101
 }
 
 clear_all_artifacts_death = {
@@ -66,6 +69,9 @@ clear_all_artifacts_death = {
 	remove_variable = selected_artifact_30
 	remove_variable = selected_artifact_31
 	remove_variable = selected_artifact_32
+	remove_variable = selected_artifact_33
+	remove_variable = selected_artifact_34
+	remove_variable = selected_soz_101
 	
 	remove_variable = has_artifact_1
 	remove_variable = has_artifact_2
@@ -99,6 +105,9 @@ clear_all_artifacts_death = {
 	remove_variable = has_artifact_30
 	remove_variable = has_artifact_31
 	remove_variable = has_artifact_32
+	remove_variable = has_artifact_33
+	remove_variable = has_artifact_34
+	remove_variable = has_soz_101
 	
 	remove_variable = equipped_artifact_1
 	remove_variable = equipped_artifact_2
@@ -132,6 +141,9 @@ clear_all_artifacts_death = {
 	remove_variable = equipped_artifact_30
 	remove_variable = equipped_artifact_31
 	remove_variable = equipped_artifact_32
+	remove_variable = equipped_artifact_33
+	remove_variable = equipped_artifact_34
+	remove_variable = equipped_soz_101
 }
 
 artifact_changing_hands_calculator = {
@@ -180,6 +192,9 @@ uneqiup_artifact = {
 	remove_variable = equipped_artifact_30
 	remove_variable = equipped_artifact_31
 	remove_variable = equipped_artifact_32
+	remove_variable = equipped_artifact_33
+	remove_variable = equipped_artifact_34
+	remove_variable = equipped_soz_101
 	
 	remove_character_modifier = artifact_1_modifier
 	remove_character_modifier = artifact_2_modifier
@@ -213,6 +228,9 @@ uneqiup_artifact = {
 	remove_character_modifier = artifact_30_modifier
 	remove_character_modifier = artifact_31_modifier
 	remove_character_modifier = artifact_32_modifier
+	remove_character_modifier = artifact_33_modifier
+	remove_character_modifier = artifact_34_modifier
+	remove_character_modifier = soz_101_modifier
 }
 
 uneqiup_handheld_artifacts = {
@@ -232,6 +250,8 @@ uneqiup_handheld_artifacts = {
 	remove_variable = equipped_artifact_25
 	remove_variable = equipped_artifact_26
 	remove_variable = equipped_artifact_27
+	remove_variable = equipped_artifact_32
+	remove_variable = equipped_soz_101
 	
 	remove_character_modifier = artifact_4_modifier
 	remove_character_modifier = artifact_5_modifier
@@ -249,6 +269,8 @@ uneqiup_handheld_artifacts = {
 	remove_character_modifier = artifact_25_modifier
 	remove_character_modifier = artifact_26_modifier
 	remove_character_modifier = artifact_27_modifier
+	remove_character_modifier = artifact_32_modifier
+	remove_character_modifier = soz_101_modifier
 }
 
 uneqiup_armor_artifacts = {
@@ -271,6 +293,7 @@ uneqiup_headgear_artifacts = {
 	remove_variable = equipped_artifact_9
 	remove_variable = equipped_artifact_10
 	remove_variable = equipped_artifact_11
+	remove_variable = equipped_artifact_33
 
 	remove_character_modifier = artifact_1_modifier
 	remove_character_modifier = artifact_2_modifier
@@ -279,6 +302,7 @@ uneqiup_headgear_artifacts = {
 	remove_character_modifier = artifact_9_modifier
 	remove_character_modifier = artifact_10_modifier
 	remove_character_modifier = artifact_11_modifier
+	remove_character_modifier = artifact_33_modifier
 }
 
 uneqiup_jewelry_artifacts = {
@@ -298,13 +322,11 @@ uneqiup_jewelry_artifacts = {
 #Unequips equipped artifact first
 artifact_ai_equip_effect = {
 	uneqiup_artifact = yes
+	
 	# artifact rarity 4
 	if = {
 		limit = {
 			OR = {
-				has_variable = has_artifact_1
-				has_variable = has_artifact_2
-				has_variable = has_artifact_3
 				has_variable = has_artifact_7
 				has_variable = has_artifact_11
 				has_variable = has_artifact_15
@@ -315,27 +337,6 @@ artifact_ai_equip_effect = {
 			}
 		}
 		random_list = {
-			10 = {
-				trigger = {has_variable = has_artifact_1}
-				set_variable = equipped_artifact_1
-				add_character_modifier = {
-					modifier = artifact_1_modifier
-				}
-			}
-			10 = {
-				trigger = {has_variable = has_artifact_2}
-				set_variable = equipped_artifact_2
-				add_character_modifier = {
-					modifier = artifact_2_modifier
-				}
-			}
-			10 = {
-				trigger = {has_variable = has_artifact_3}
-				set_variable = equipped_artifact_3
-				add_character_modifier = {
-					modifier = artifact_3_modifier
-				}
-			}
 			10 = {
 				trigger = {has_variable = has_artifact_7}
 				set_variable = equipped_artifact_7

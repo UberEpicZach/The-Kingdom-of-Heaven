@@ -15,7 +15,7 @@
 	desc = {
 		desc = trait_lion_of_the_empire_desc
 	}
-
+	shown_in_ruler_designer = no
 
 	ai_honor = low_negative_ai_value
 }
@@ -29,7 +29,7 @@ fredrick_barbarossa = {
 	levy_size = 0.1
 	tolerance_advantage_mod = 12
 	opposite_opinion = -100
-	
+	shown_in_ruler_designer = no
 	desc = {
 		desc = trait_fredrick_barbarossa_desc
 	}
@@ -41,7 +41,7 @@ balian_of_ibelin = {
 	prowess = 10
 	hard_casualty_modifier = -0.3
 	monthly_piety = 1
-	
+	shown_in_ruler_designer = no
 	desc = {
 		desc = trait_balian_of_ibelin_desc
 	}
@@ -72,7 +72,7 @@ leper_king = {
 			desc = trait_leper_character_desc
 		}
 	}
-
+	shown_in_ruler_designer = no
 	ai_energy = -15
 }
 
@@ -88,7 +88,7 @@ marshal_of_jerusalem = {
 	general_opinion = 20
 
 
-
+	shown_in_ruler_designer = no
 	desc = {
 		desc = trait_marshal_of_jerusalem_desc
 	}
@@ -107,7 +107,7 @@ augustus_of_the_french = {
 	desc = {
 		desc = trait_augustus_of_the_french_desc
 	}
-
+	shown_in_ruler_designer = no
 	ai_honor = high_positive_ai_value
 	ai_energy = very_high_positive_ai_value
 	ai_boldness = high_positive_ai_value
@@ -125,7 +125,7 @@ righteous_of_the_faith = {
 	desc = {
 		desc = trait_righteous_of_the_faith_desc
 	}
-
+	shown_in_ruler_designer = no
 	ai_honor = high_positive_ai_value
 	ai_energy = very_high_positive_ai_value
 	ai_boldness = high_positive_ai_value
@@ -137,17 +137,7 @@ no_levy = {
 	character_modifier = {
 		knight_limit = -10
 	}
-
-	desc = {
-		desc = trait_no_levy_desc
-	}
-}
-
-no_levy2 = {
-	index = 298
-	levy_size = -1
-
-
+	shown_in_ruler_designer = no
 	desc = {
 		desc = trait_no_levy_desc
 	}
@@ -157,7 +147,7 @@ unwed = {
 	index = 289
 	monthly_piety = 1
 	flag = can_not_marry
-	
+	shown_in_ruler_designer = no
 	desc = {
 		desc = trait_unwed_desc
 	}
@@ -170,7 +160,7 @@ stress_gain_remove = {
 	
 	genetic = no
 	good = yes
-
+	shown_in_ruler_designer = no
 	desc = {
 		desc = stress_gain_remove_desc
 	}
@@ -184,7 +174,7 @@ KOH_Reynald = {
 	desc = {
 		desc = KOH_Reynald_desc
 	}
-
+	shown_in_ruler_designer = no
 	ai_boldness = dominant_positive_ai_value
 	ai_honor = very_low_negative_ai_value
 	ai_greed = dominant_positive_ai_value
@@ -283,7 +273,7 @@ richard_the_lionheart = {
 	desc = {
 		desc = trait_richard_the_lionheart_desc
 	}
-
+	shown_in_ruler_designer = no
 	ai_honor = high_positive_ai_value
 	ai_energy = very_high_positive_ai_value
 	ai_boldness = high_positive_ai_value
@@ -298,6 +288,7 @@ koh_dragon = {
 	desc = {
 		desc = koh_dragon_desc
 	}
+	shown_in_ruler_designer = no
 }
 
 one_handed = {

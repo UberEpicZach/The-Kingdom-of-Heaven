@@ -103,7 +103,7 @@ KOH_Italian_Familes_Monthly = {
 				}
 			}
 			add_character_flag = guelph_cb
-			add_trait = koh_guelph
+			add_trait = KOH_guelph
 		}
 
 		every_ruler = {
@@ -118,7 +118,7 @@ KOH_Italian_Familes_Monthly = {
 				}
 			}
 			add_character_flag = ghibelline_cb
-			add_trait = koh_ghibelline
+			add_trait = KOH_ghibelline
 		}
 	}
 }
@@ -596,21 +596,17 @@ on_artifact_initialization = { # Can be called by the scripted effect "initializ
 	effect = { # Add any artifact-specific setup that you don't want to put in your on_game_start.
 	# For example, in vanilla:
 		listify_all_typed_artifacts_as_flags = yes
-		character:212501 = { #HRE 1066 ARTIFACTS
+		character:212501 = { 
 			add_artifact = {ARTIFACT = artifact_1 }
-			add_artifact = {ARTIFACT = artifact_3 } 
 		}
-
-		character:215529 = { #BYZANTINE 1066 ARTIFACTS
+		character:215529 = { #Imperial Diadem
 			add_artifact = {ARTIFACT = artifact_2 }
 		}
-
-		character:215529 = { #BYZANTINE 867 ARTIFACTS
-			add_artifact = {ARTIFACT = artifact_2 }
+		character:219500 = { #crown of st stephen
+			add_artifact = {ARTIFACT = artifact_33 }
 		}
-
-		character:212501 = { #LOMBARD 867 ARTIFACTS
-			add_artifact = {ARTIFACT = artifact_3 }
+		character:204500 = { #excalibur
+			add_artifact = {ARTIFACT = artifact_32 }
 		}
 	}
 }

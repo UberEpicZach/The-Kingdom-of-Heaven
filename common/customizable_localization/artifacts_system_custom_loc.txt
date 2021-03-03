@@ -193,6 +193,24 @@
 		}
 	}
 	text = {
+		localization_key = artifact_33_name
+		trigger = {
+			has_variable = selected_artifact_33
+		}
+	}
+	text = {
+		localization_key = artifact_34_name
+		trigger = {
+			has_variable = selected_artifact_34
+		}
+	}
+	text = {
+		localization_key = soz_101_name
+		trigger = {
+			has_variable = selected_soz_101
+		}
+	}
+	text = {
 		localization_key = artifact_name_fallback
 	}
 }
@@ -389,6 +407,24 @@ GetSelectedArtifactDesc = {
 		localization_key = artifact_32_desc
 		trigger = {
 			has_variable = selected_artifact_32
+		}
+	}
+	text = {
+		localization_key = artifact_33_desc
+		trigger = {
+			has_variable = selected_artifact_33
+		}
+	}
+	text = {
+		localization_key = artifact_34_desc
+		trigger = {
+			has_variable = selected_artifact_34
+		}
+	}
+	text = {
+		localization_key = soz_101_desc
+		trigger = {
+			has_variable = selected_soz_101
 		}
 	}
 	text = {
@@ -848,6 +884,27 @@ GetSelectedArtifactEquipped = {
 		trigger = {
 			has_variable = selected_artifact_32
 			NOT = { has_variable = equipped_artifact_32 }
+		}
+	}
+	text = {
+		localization_key = unequipped_artifact
+		trigger = {
+			has_variable = selected_artifact_33
+			NOT = { has_variable = equipped_artifact_33 }
+		}
+	}
+	text = {
+		localization_key = unequipped_artifact
+		trigger = {
+			has_variable = selected_artifact_34
+			NOT = { has_variable = equipped_artifact_34 }
+		}
+	}
+	text = {
+		localization_key = unequipped_artifact
+		trigger = {
+			has_variable = selected_soz_101
+			NOT = { has_variable = equipped_soz_101 }
 		}
 	}
 	text = {
