@@ -1,9 +1,50 @@
-﻿make_new_artifact = {
+﻿make_new_fabrial_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
+    desc = make_new_fabrial_decision.desc
+    selection_tooltip = make_new_fabrial_decision.tt
+    ai_check_interval = 24
+    is_shown = {
+    	has_trait = artifabrian
+    }
+    is_valid = {
+    	has_trait = artifabrian
+	    gold >= 100
+        #var:stormlight = compare_value => 100
+    }
+
+    effect = {
+        trigger_event = fabrial_create.1
+        custom_tooltip = "You will attempt to create a magical [artifact|E] from scratch."
+        custom_tooltip = "If you succeed, you will gain [prestige_i|E][prestige|E] and a brand new fabrial [artifact|E]."
+        custom_tooltip = "If you fail, you will lose [prestige_i|E][prestige|E] and the invested [gold_i|E][gold|E]."
+    }
+}
+repair_fabrial_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
+    desc = repair_fabrial_decision.desc
+    selection_tooltip = repair_fabrial_decision.tt
+    ai_check_interval = 12
+    is_shown = {
+    	has_trait = artifabrian
+        has_any_broken_artifacts = yes
+    }
+    is_valid = {
+        has_any_broken_artifacts = yes
+    	has_trait = artifabrian
+	    gold >= 100
+        var:stormlight >= 100
+    }
+
+    effect = {
+        trigger_event = fabrial_repair.1001
+    }
+}
+make_new_artifact = {
     picture = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
     desc = make_new_artifact.desc
     selection_tooltip = make_new_artifact.tt
-    ai_check_interval = 12
-    cost = {gold = 100}
+    ai_check_interval = 24
+    #cost = {gold = 100}
     is_shown = {
         NOR = {
             has_character_flag = making_artifact
@@ -13,12 +54,32 @@
 
     is_valid = {
         prestige_level >= 3
-
-
+        gold >= 100
     }
 
     effect = {
         custom_tooltip = make_new_artifact.effect.tt
         trigger_event = artifact_create.0008
     }
+
+}
+
+draw_nightblood_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
+    desc = draw_nightblood_decision.desc
+	selection_tooltip = draw_nightblood_decision.tt
+    ai_check_interval = 12
+    is_shown = {
+	has_variable = artifact_nightblood_equipped
+    }
+    cooldown = { years = 5 }
+    ai_will_do = {
+	base = -5
+    }
+
+    effect = {
+		custom_tooltip = draw_nightblood_decision.effect1
+        trigger_event = nightblood.2
+    }
+
 }

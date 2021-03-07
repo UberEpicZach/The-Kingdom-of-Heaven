@@ -1,0 +1,19 @@
+
+###################
+# Populations
+###################
+county_population = {
+	value = total_county_levies
+	multiply = county.development_level
+}
+
+county_population_lower = {
+	value = "[Holding.GetMaxLevySize|0]"
+}
+county_population_middle = {
+	value = 0
+	add = {
+		value = "HOLDING_LEVY_SIZE"
+		multiply = "[HoldingView.GetProvince.GetCounty.GetDevelopmentLevelString]"
+	}
+}

@@ -1,0 +1,164 @@
+﻿@stance_impact = 5
+dueling_stance_no_stance_modifier = {
+	value = 0
+	subtract = @stance_impact
+}
+dueling_stance_windstance_modifier = {value = 0
+#    switch = {
+#        trigger = exists = var:dueling_stance 
+#        flag:ironstance = {subtract = @stance_impact}
+#        flag:smokestance = {add = @stance_impact}
+#    }
+	if = {
+		limit = {
+			exists = var:dueling_stance 
+			var:dueling_stance = flag:ironstance
+		}
+		subtract = @stance_impact
+	}
+	else_if = {
+		limit = {
+			exists = var:dueling_stance 
+			var:dueling_stance = flag:smokestance
+		}
+		add = @stance_impact
+	}
+}
+dueling_stance_flamestance_modifier = {value = 0
+	if = {
+		limit = {
+			exists = var:dueling_stance 
+			var:dueling_stance = flag:ironstance
+		}
+		subtract = @stance_impact
+	}
+	else_if = {
+		limit = {
+			exists = var:dueling_stance 
+			var:dueling_stance = flag:smokestance
+		}
+		subtract = @stance_impact
+	}
+	else_if = {
+		limit = {
+			exists = var:dueling_stance 
+			var:dueling_stance = flag:vinestance
+		}
+		add = @stance_impact
+	}
+}
+dueling_stance_bloodstance_modifier = {value = 0
+	if = {
+		limit = {
+			exists = var:dueling_stance 
+			var:dueling_stance = flag:ironstance
+		}
+		subtract = @stance_impact
+	}
+	else = {
+		add = @stance_impact
+	}
+}
+dueling_stance_smokestance_modifier = {
+value = 0
+	if = {
+		limit = {
+			exists = var:dueling_stance 
+			var:dueling_stance = flag:ironstance
+		}
+		add = @stance_impact
+	}
+	else_if = {
+		limit = {
+			exists = var:dueling_stance 
+			var:dueling_stance = flag:flamestance
+		}
+		add = @stance_impact
+	}
+	else_if = {
+		limit = {
+			exists = var:dueling_stance 
+			var:dueling_stance = flag:windstance
+		}
+		subtract = @stance_impact
+	}
+}
+dueling_stance_stonestance_modifier = {
+value = 0
+	subtract = @stance_impact
+}
+dueling_stance_vinestance_modifier = {
+value = 0
+	if = {
+		limit = {
+			exists = var:dueling_stance 
+			var:dueling_stance = flag:flamestance
+		}
+		subtract = @stance_impact
+	}
+}
+dueling_stance_ironstance_modifier = {
+value = 0
+	if = {
+		limit = {
+			NOR = {
+				var:dueling_stance = flag:smokestance
+				var:dueling_stance = flag:vinestance
+				var:dueling_stance = flag:stonestance
+				var:dueling_stance = flag:ironstance
+			}
+		}
+		add = @stance_impact
+	}
+	else = {
+		subtract = @stance_impact
+	}
+}
+
+windstance_compatibility = {
+	value = 20
+	if = {limit = {ai_honor > 50} add = 10}
+}
+smokestance_compatibility = {
+	value = 10
+	if = {limit = {intrigue > 10} add = 10}
+	if = {limit = {ai_honor < -50} add = 10}
+}
+flamestance_compatibility = {
+	value = 10
+	if = {limit = {ai_boldness > 50} add = 10}
+	if = {limit = {ai_zeal > 50} add = 10}
+	if = {limit = {has_trait = wrathful} add = 10}
+	if = {limit = {has_trait = impatient} add = 10}
+}
+bloodstance_compatibility = {
+	value = 1
+	if = {limit = {ai_boldness >= 0 ai_rationality < 0} add = 10}
+	if = {limit = {ai_zeal > 50} add = 10}
+	if = {limit = {ai_vengefulness > 50} add = 10}
+	if = {limit = {has_trait = brave} add = 15}
+	if = {limit = {has_trait = zealous} add = 15}
+	if = {limit = {has_trait = impatient} add = 5}
+	if = {limit = {has_trait = craven} multiply = 0.1}
+}
+stonestance_compatibility = {
+	value = 5
+	if = {limit = {has_trait = craven} add = 10}
+	if = {limit = {has_trait = stubborn} add = 10}
+	if = {limit = {ai_boldness < -50} add = 10}
+	if = {limit = {ai_vengefulness < -50} add = 5}
+	if = {limit = {has_trait = brave} multiply = 0.1}
+}
+vinestance_compatibility = {
+	value = 10
+	if = {limit = {has_trait = paranoid} add = 10}
+	if = {limit = {has_trait = patient} add = 10}
+	if = {limit = {has_trait = lifestyle_herbalist} add = 10}
+	if = {limit = {ai_zeal < -50} add = 10}
+	if = {limit = {ai_rationality > 50} add = 10}
+}
+ironstance_compatibility = {
+	value = 10
+	if = {limit = {has_trait = vengeful} add = 10}
+	if = {limit = {ai_vengefulness > 0} add = 10}
+}

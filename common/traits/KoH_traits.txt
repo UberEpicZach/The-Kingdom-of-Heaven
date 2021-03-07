@@ -156,11 +156,12 @@ unwed = {
 stress_gain_remove = {
 	index = 290
 
-	stress_gain_mult = -1
-	
 	genetic = no
 	good = yes
 	shown_in_ruler_designer = no
+	hidden_effect = {
+		stress_gain_mult = -1
+	}
 	desc = {
 		desc = stress_gain_remove_desc
 	}

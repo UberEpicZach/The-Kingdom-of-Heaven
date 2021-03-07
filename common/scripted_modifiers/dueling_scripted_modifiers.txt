@@ -1,0 +1,83 @@
+﻿@stance_impact = 5
+
+dueling_stance_attacker_modifier = {# ATTACKER DEFENDER
+modifier = { add = {value = 0
+	$ATTACKER$ = {
+		if = {
+			limit = {
+				OR = {
+					NOT = {exists = var:dueling_stance}
+					var:dueling_stance = flag:none
+				}
+			}
+			add = dueling_stance_no_stance_modifier
+		}
+		else_if = {
+			limit = {
+				var:dueling_stance = flag:windstance
+			}
+			add = $DEFENDER$.dueling_stance_windstance_modifier
+		}
+		else_if = {
+			limit = {
+				var:dueling_stance = flag:flamestance
+			}
+			add = $DEFENDER$.dueling_stance_flamestance_modifier
+		}
+		else_if = {
+			limit = {
+				var:dueling_stance = flag:bloodstance
+			}
+			add = $DEFENDER$.dueling_stance_bloodstance_modifier
+		}
+		else_if = {
+			limit = {
+				var:dueling_stance = flag:smokestance
+			}
+			add = $DEFENDER$.dueling_stance_smokestance_modifier
+		}
+		else_if = {
+			limit = {
+				var:dueling_stance = flag:stonestance
+			}
+			add = $DEFENDER$.dueling_stance_stonestance_modifier
+		}
+		else_if = {
+			limit = {
+				var:dueling_stance = flag:vinestance
+			}
+			add = $DEFENDER$.dueling_stance_vinestance_modifier
+		}
+		else_if = {
+			limit = {
+				var:dueling_stance = flag:ironstance
+			}
+			add = $DEFENDER$.dueling_stance_ironstance_modifier
+		}
+	}
+}
+}
+}
+dueling_stance_defender_modifier = {# DEFENDER
+modifier = { add = {value = 0
+	$DEFENDER$ = {
+		if = {
+			limit = {
+				OR = {
+					NOT = {exists = var:dueling_stance}
+					var:dueling_stance = flag:none
+					var:dueling_stance = flag:stonestance
+				}
+			}
+			subtract = @stance_impact
+		}
+		else_if = {
+			limit = {
+				var:dueling_stance = flag:bloodstance
+			}
+			add = @stance_impact
+		}
+	}
+}
+}
+}

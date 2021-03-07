@@ -1,0 +1,74 @@
+﻿armor_value_warform = 7
+armor_value_28 = 10
+armor_value_29 = 15
+armor_value_30 = 20
+armor_value_31 = 25
+armor_value_shardplate = 50
+armor_value_radiantplate = 75
+ 
+
+armor_value = {
+    value = 0
+    if = {limit = {has_trait = warform} add = armor_value_warform}
+    if = {limit = {has_character_modifier = artifact_shardplate_modifier} add = armor_value_shardplate}
+    else_if = {limit = {has_character_modifier = summoned_radiantplate_modifier} add = armor_value_radiantplate}
+    else_if = {limit = {has_character_modifier = artifact_28_modifier} add = armor_value_28}
+    else_if = {limit = {has_character_modifier = artifact_29_modifier} add = armor_value_29}
+    else_if = {limit = {has_character_modifier = artifact_30_modifier} add = armor_value_30}
+    else_if = {limit = {has_character_modifier = artifact_31_modifier} add = armor_value_31}
+}
+
+armor_increase_mult = {value = armor_value multiply = 0.01 add = 1}
+armor_half_increase_mult = {value = armor_value multiply = 0.005 add = 1}
+armor_decrease_mult = {value = 100 subtract = armor_value multiply = 0.01}
+armor_half_decrease_mult = {value = 200 subtract = armor_value multiply = 0.005}
+
+soulcaster_repair_cost = 200
+
+num_artifacts = {
+    value = 0
+    every_in_list = {
+        variable = artifact_list
+        add = 1
+    }
+}
+num_artifact_types = {
+    value = 0
+    every_in_list = {
+        variable = artifact_types
+        add = 1
+    }
+}
+num_artifact_slots = {
+    value = 0
+    every_in_list = {
+        variable = artifact_slots
+        add = 1
+    }
+}
+
+next_artifact_index = {
+    value = num_artifacts
+}
+prev_artifact_index = {
+    value = num_artifacts
+    subtract = 1
+}
+
+
+index = {
+    value = 0
+    if = {limit = {exists = var:index} add = var:index}
+}
+shifted_index = {
+    value = 1
+    if = {limit = {exists = var:index} add = var:index}
+}
+
+reverse_artifact_index = { #Call for a flag to find its position.
+    value = 0
+    every_in_list = {
+        list = artifact_list
+        position = scope:prov
+    }
+}

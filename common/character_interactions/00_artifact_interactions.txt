@@ -1,0 +1,111 @@
+﻿gift_artifacts_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	interface_priority = 60
+	desc = gift_artifacts_interaction_desc
+	
+	ai_targets = {
+		ai_recipients = liege
+	}
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		max = 10
+	}
+	ai_targets = {
+		ai_recipients = vassals
+		max = 10
+	}
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	auto_accept = yes
+	ai_will_do = {value = 0}
+	ai_frequency = 60
+	
+	is_shown = {
+		NOT = {
+			scope:recipient = scope:actor
+		}
+	}
+	
+	can_send = {
+		NOT = {
+			scope:recipient = scope:actor
+		}
+	}
+	
+	
+	
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			NOT = { has_trait = incapable }
+		}
+	}
+	
+	on_accept = {
+		scope:actor = {
+			trigger_event = artifact_gift.1
+			set_variable = {
+				name = artifact_recipient
+				value = scope:recipient
+			}
+		}
+	}
+}
+
+request_repair_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	interface_priority = 100
+	desc = request_repair_interaction_desc
+	#cooldown_against_recipient = { years = 5 }
+	cooldown = { days = 30 }
+	auto_accept = yes
+
+	ai_frequency = 1000
+	ai_set_target = {
+		random_player = {limit = {has_trait = artifabrian} save_scope_as = target}
+	}
+	is_shown = {
+		OR = {
+			debug_only = yes
+			NOT = {
+				scope:recipient = scope:actor
+			}
+		}
+		scope:recipient = {
+			is_capable_adult = yes
+			has_trait = artifabrian
+		}
+		scope:actor = {
+			has_any_broken_artifacts = yes
+		}
+	}
+	
+	can_send = {
+		scope:recipient = {
+			has_trait = artifabrian
+		}
+		NOT = {
+			scope:actor = {has_relation_rival = scope:recipient}
+		}
+		scope:actor = {
+			NOT = { has_trait = incapable }
+			gold >= soulcaster_repair_cost
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			NOT = { has_trait = incapable }
+			gold >= soulcaster_repair_cost
+		}
+	}
+	
+	on_send = {
+		scope:recipient = {
+			trigger_event =  fabrial_repair.2001
+		}
+	}
+}

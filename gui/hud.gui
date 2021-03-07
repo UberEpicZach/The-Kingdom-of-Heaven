@@ -3,6 +3,7 @@
 ######################################################
 
 widget = {
+	artifacts_window = {}
 	size = { 100% 100% }
 	name = "meta_info"
 	visible = "[IsDefaultGUIMode]"
@@ -78,7 +79,7 @@ widget = {
 	notifications_alerts = {
 		visible = "[Not( IsPauseMenuShown )]"
 		parentanchor = top|right
-		position = { -720 0 }
+		position = { -810 0 }
 		spacing = 10
 
 		using = Animation_ShowHide_Quick
@@ -314,7 +315,7 @@ widget = {
 	widget = {
 		visible = "[Not( IsPauseMenuShown )]"
 		name = "top_bar"
-		size = { 640 38 }
+		size = { 730 38 }
 		parentanchor = top|right
 		filter_mouse = all
 		alwaystransparent = no
@@ -778,7 +779,7 @@ widget = {
 		visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]"
 		parentanchor = top|right
 		position = { 5 105 }
-		size = { 50 400 }
+		size = { 50 450 }
 
 		using = Animation_ShowHide_Quick
 
@@ -868,7 +869,6 @@ widget = {
 					translate_uv = { -0.2 -0.79 }
 					alpha = 0
 				}
-
 				# My Realm
 				state = {
 					name = "hud_tab_glow_my_realm_enter"
@@ -1247,11 +1247,6 @@ widget = {
 						texture = "gfx/artifacts/maintab_artifacts.dds"
 						onclick = "[GetVariableSystem.Toggle('artifact_window_open')]"
 					}
-					state = {
-						name = _initialize
-						trigger_on_create = yes
-						on_start = "[ExecuteConsoleCommand('gui.createwidget gui/window_artifacts.gui artifacts_view')]"
-					}
 				}
 			}
 
@@ -1271,7 +1266,7 @@ widget = {
 icon = {
 	name = "timeline_widget"
 	visible = "[And( Not( IsPauseMenuShown ), TimelineWidget.ShouldBeVisible )]"
-	size = { 629 45 }
+	size = { 739 45 }
 	parentanchor = bottom|right
 	filter_mouse = all
 	alwaystransparent = yes

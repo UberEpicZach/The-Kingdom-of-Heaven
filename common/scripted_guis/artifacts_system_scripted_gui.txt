@@ -39,7 +39,7 @@ artifacts_tooltip = { #Not currently hooked up to anything
 artifacts_equipped = { #Shows "Equipped" in green when selected artifact is equipped
 	scope = character
 	is_shown = {
-		is_artifact_equipped = {ARTIFACT = Scope:SELECTION}
+		#is_artifact_equipped = {ARTIFACT = var:SELECTION}
 	}
 }
 artifacts_destroy_artifact = { #Button which destroys selection
@@ -59,41 +59,48 @@ artifacts_equip_artifact = {# Triggers when the "Equip" button is clicked
 			is_selection_equipped = yes
 		}
 	}
-	effect = {
-		for_all_slots = {APPLY = unequip_selected_type_artifacts}
-		for_all_artifacts_no_arguments = {APPLY = equip_selected_artifact}
-
-		if = {
-			# This one gets to be special
-			limit = {
-				has_variable = artifact_1_selected
-				faith = faith:catholic
-				highest_held_title_tier >= tier_empire
+	is_valid = {
+		NOT = {
+			AND = {
+				var:artifact_selection = flag:artifact_1
+				NOT = {
+					faith = faith:stone_shamanism
+					highest_held_title_tier >= tier_empire
+				}
 			}
-			unequip_headgear_artifacts = yes
-			add_equipped_artifact = {ARTIFACT = artifact_1}
-			add_character_modifier = {
-				modifier = artifact_1_modifier
+			AND = {
+				is_target_in_global_variable_list = {
+					name = global_artifact_list_gem
+					target = var:artifact_selection 
+				}
+				var:stormlight < 500
 			}
-			remove_character_modifier = artifact_1_passive
-			#add_character_flag = artifact_1_equipped
 		}
-		else_if = {#In case the previous didn't fire and you shouldn't be allowed to wear the crown.
-			limit = {has_variable = artifact_1_selected}
-			remove_equipped_artifact = {ARTIFACT = artifact_1}
+	}
+	effect = {
+		if = {
+			limit = {
+				is_target_in_global_variable_list = {
+					name = global_artifact_list_gem
+					target = var:artifact_selection 
+				}
+			}
+			remove_investiture = {AMOUNT = 500}
 		}
 		else_if = {
 			limit = {
-				has_variable = artifact_nightblood_selected
+				var:artifact_selection = flag:artifact_nightblood
 			}
 			trigger_event = nightblood.1
 		}
 		else_if = {
 			limit = {
-				has_variable = artifact_type_four_biochromatic_entity_selected
+				var:artifact_selection = flag:artifact_type_four_biochromatic_entity
 			}
 			trigger_event = awakening.6
 		}
+		for_all_slots = {APPLY = unequip_selected_type_artifacts}
+		for_all_artifacts_no_arguments = {APPLY = equip_selected_artifact}
 	}
 }
 artifacts_unequip_artifact = {# Triggers when the Unequip button is clicked
@@ -103,6 +110,15 @@ artifacts_unequip_artifact = {# Triggers when the Unequip button is clicked
 		is_selection_equipped = yes
 	}
 	effect = {
+		if = {
+			limit = {
+				is_target_in_global_variable_list = {
+					name = global_artifact_list_gem
+					target = var:artifact_selection 
+				}
+			}
+			add_investiture = {AMOUNT = 500}
+		}
 		for_all_artifacts_no_arguments = {APPLY = unequip_selected_artifact }
 	}
 }
@@ -113,13 +129,8 @@ artifacts_gift_confirm = {
 		always = yes
 	}
 	effect = {
-		transfer_selected_gift_artifacts = { FROM = root TO = var:artifact_recipient }
-		var:artifact_recipient = {
-			add_opinion = {
-				target = root
-				modifier = gave_artifacts_opinion
-			}
-		}
+		transfer_artifact_gift_selection = {A = root B = var:artifact_recipient}
+		#transfer_selected_gift_artifacts = { FROM = root TO = var:artifact_recipient }
 	}
 }
 
@@ -142,5 +153,29 @@ artifacts_save_character = {
 		else = {
 			set_variable = artifact_person
 		}
+	}
+}
+
+artifacts_test = {
+	scope = character
+	saved_scopes = {
+		test
+	}
+	is_shown = {
+		has_variable = artifact_oathbringer_equipped
+	}
+}
+
+close_other_views = {
+	scope = character
+	effect = {
+		#close_all_views = yes
+		close_view = my_realm
+		close_view = military
+		close_view = council_window
+		close_view = court_window
+		close_view = intrigue_window
+		close_view = factions_window
+		close_view = decisions
 	}
 }

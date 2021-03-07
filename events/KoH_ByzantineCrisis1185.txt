@@ -546,11 +546,25 @@ KoH_byzantinecrisis.6 = {
 				inheritable = yes
 				name = Normans
 				men_at_arms = {
-					type = mangonel
+					type = armored_footmen
 					stacks = 25
 				}
 				levies = {
 					value = 100
+				}
+				location = 490
+			}
+
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = Normans
+				men_at_arms = {
+					type = mangonel
+					stacks = 5
+				}
+				levies = {
+					value = 10
 				}
 				location = 490
 			}

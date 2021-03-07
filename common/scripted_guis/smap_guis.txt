@@ -1,0 +1,52 @@
+###########################
+# By CASTOX
+##################
+# Get 
+##################
+
+check_shardbearers = {
+	scope = character
+
+	is_shown = {
+		has_any_shard_artifacts = yes
+	}
+	effect = {}
+}
+check_artifacts = {
+	scope = character
+
+	is_shown = {
+		has_any_artifact = yes
+	}
+	effect = {}
+}
+get_shardbearers = {
+	scope = character
+	effect = {
+		
+		every_shardbearer = {
+			#save_scope_as = temp_shardbearer
+
+			#scope:temp_shardbearer = {
+				every_in_list = {
+					variable = artifact_list
+					limit = {
+						is_target_in_global_variable_list = {
+							name = global_artifact_list_shard
+							target = this
+						}
+					}
+			
+					#scope:temp_shardbearer = {
+					prev = {	
+						add_to_variable_list = {
+							name = artifact_list_shard
+							target = prev
+						}
+					}
+				}
+			#}
+		}
+			
+	}
+}

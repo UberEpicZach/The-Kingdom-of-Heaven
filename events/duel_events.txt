@@ -1,0 +1,889 @@
+﻿namespace = WoK_duels
+
+# ACTOR
+# 1001: Actor select strategy
+# 1002: Actor select stance
+# 1011: Actor victory
+# 1012: Actor defeat
+# 2001: Recipient select strategy
+# 2002: Recipient select stance
+# 2011: Recipient victory
+# 2012: Recipient defeat
+# 0001: Actor: Recipient refuses to duel 
+
+WoK_duels.1001 = { # Actor event 1: Select strategy.
+	type = character_event
+	title = WoK_duels.1001.t
+	desc = WoK_duels.1001.desc
+	theme = war
+	left_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	option = {
+		name = WoK_duels.1001.a
+		random_list = {
+			1 = {
+				trigger = {
+					any_knight = {
+						OR = {
+							opinion = {target = scope:combatant_1 value > 50}
+							has_relation_potential_friend = scope:combatant_1
+						}
+						NOT = {has_relation_friend = scope:combatant_1}
+						is_imprisoned = no
+						is_in_army = no
+					}
+				}
+				modifier = {
+					add = martial
+				}
+				modifier = {
+					add = diplomacy
+				}
+				modifier = {
+					add = 10
+					has_trait = gregarious
+				}
+				modifier = {
+					add = 10
+					has_trait = radiant_windrunner
+				}
+				modifier = {
+					add = 10
+					has_trait = radiant_bondsmith
+				}
+				custom_tooltip = WoK_duels.1001.a_friend
+				random_knight = {
+					limit = {
+						OR = {
+							opinion = {target = scope:combatant_1 value > 50}
+							has_relation_potential_friend = scope:combatant_1
+						}
+						NOT = {has_relation_friend = scope:combatant_1}
+						is_imprisoned = no
+						is_in_army = no
+					}
+					set_relation_friend = scope:combatant_1
+				}
+				add_prowess_skill = 1
+				#add_character_modifier = {modifier = duel_practice months = 6}
+				stress_impact = {
+					duelist = medium_stress_impact_loss
+					shy = major_stress_impact_gain
+					gregarious = major_stress_impact_loss
+					windrunner_1 = miniscule_stress_impact_loss
+					windrunner_2 = minor_stress_impact_loss
+					windrunner_3 = medium_stress_impact_loss
+					windrunner_4 = major_stress_impact_loss
+					windrunner_5 = major_stress_impact_loss
+				}
+			}
+			1 = {
+				modifier = {
+					add = martial
+				}
+				modifier = {
+					add = prowess
+				}
+				custom_tooltip = WoK_duels.1001.a_success
+				add_character_modifier =  {modifier = duel_practice months = 6}
+			}
+			10 = {
+				custom_tooltip = WoK_duels.1001.a_neutral
+			}
+			5 = {
+				custom_tooltip = WoK_duels.1001.a_failure
+				add_trait = wounded_1
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = martial
+			}
+			modifier = {
+				add = prowess
+			}
+			modifier = {
+				add = 10
+				has_trait = duelist
+			}
+			modifier = {
+				add = 10
+				has_trait = lifestyle_blademaster
+			}
+		}
+		skill = martial
+		skill = prowess
+	}
+	option = {
+		name = {
+			trigger = {has_any_artifact = yes}
+			text = WoK_duels.1001.b2
+		}
+		name = {
+			trigger = {has_any_artifact = no}
+			text = WoK_duels.1001.b
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					add = learning
+				}
+				modifier = {
+					add = stewardship
+				}
+				modifier = {
+					add = learning
+					has_trait = artifabrian
+				}
+				custom_tooltip = WoK_duels.1001.b_success
+				add_character_modifier = {modifier = duel_polish months = 6}
+			}
+			10 = {
+				custom_tooltip = WoK_duels.1001.b_neutral
+			}
+			5 = {
+				custom_tooltip = WoK_duels.1001.b_failure
+				remove_short_term_gold = 50
+			}
+		}
+		skill = learning
+		skill = stewardship
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = learning
+			}
+			modifier = {
+				add = stewardship
+			}
+			modifier = {
+				add = 30
+				has_trait = artifabrian
+			}
+			modifier = {
+				add = 10
+				has_trait = arrogant
+			}
+			modifier = {
+				add = 10
+				has_trait = diligent
+			}
+			modifier = {
+				add = 10
+				has_trait = paranoid
+			}
+		}
+	}
+	option = {
+		name = WoK_duels.1001.c
+		name = {
+			trigger = {diplomacy > intrigue}
+			text = WoK_duels.1001.c2
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					add = intrigue
+				}
+				modifier = {
+					add = intrigue
+					has_trait = schemer
+				}
+				modifier = {
+					add = diplomacy
+				}
+				modifier = {
+					add = diplomacy
+					has_trait = diplomat
+				}
+				add_character_modifier = {modifier = duel_underhanded months = 6}
+			}
+			10 = {
+			}
+			5 = {
+				custom_tooltip = WoK_duels.1001.c_failure
+				add_prestige = -100
+			}
+		}
+		skill = intrigue
+		skill = diplomacy
+		stress_impact = {
+			honest = major_stress_impact_gain
+			just = medium_stress_impact_gain
+			deceitful = minor_stress_impact_loss
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 10
+				has_trait = deceitful
+			}
+			modifier = {
+				add = 10
+				has_trait = schemer
+			}
+			modifier = {
+				add = 10
+				has_trait = greedy
+			}
+			modifier = {
+				add = 10
+				has_trait = ambitious
+			}
+		}
+	}
+	option = {
+		name = WoK_duels.1001.d
+		stress_impact = {
+			base = -23
+			lazy = major_stress_impact_loss
+			diligent = medium_stress_impact_gain
+			impatient = medium_stress_impact_gain
+			patient = medium_stress_impact_loss
+			craven = major_stress_impact_gain
+			arbitrary = minor_stress_impact_loss
+			fickle = medium_stress_impact_loss
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 30
+				has_trait = lazy
+			}
+			modifier = {
+				add = 10
+				has_trait = arbitrary
+			}
+			modifier = {
+				add = stress
+				NOR = {
+					has_trait = diligent
+					has_trait = impatient
+					has_trait = craven
+				}
+			}
+		}
+	}
+	after = {
+		scope:combatant_1 = {
+			trigger_event = {
+				id = WoK_duels.1002 # Actor event 2: Select stance
+				days = 2
+			}
+		}
+		scope:combatant_2 = {
+			trigger_event = WoK_duels.2001 # Recipient event 1: Select strategy
+		}
+	}
+}
+WoK_duels.1002 = { # Actor event 2: Select stance
+	type = character_event
+	title = WoK_duels.1002.t
+	desc = WoK_duels.1002.d
+	theme = war
+	left_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	
+	option = {
+		name = WoK_duels.1002.a
+		trigger = {NOT = {has_perk = windstance_perk}}
+		hidden_effect = {set_dueling_stance = {STANCE = none}}
+	}
+	option = {
+		name = WoK_duels.1002.windstance
+		trigger = {has_perk = windstance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = windstance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = windstance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.smokestance
+		trigger = {has_perk = smokestance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = smokestance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = smokestance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.flamestance
+		trigger = {has_perk = flamestance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = flamestance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = flamestance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.bloodstance
+		trigger = {has_perk = bloodstance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = bloodstance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = bloodstance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.stonestance
+		trigger = {has_perk = stonestance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = stonestance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = stonestance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.vinestance
+		trigger = {has_perk = vinestance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = vinestance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = vinestance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.ironstance
+		trigger = {has_perk = ironstance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = ironstance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = ironstance_compatibility}
+		}
+	}
+	after = {
+		scope:combatant_2 = {
+			trigger_event = WoK_duels.2002 # Recipient event 2: Select stance
+		}
+	}
+}
+WoK_duels.1011 = { #Actor event: Victory 
+	type = character_event
+	title = WoK_duels.1011.t
+	desc = {
+		desc = WoK_duels.1011.my_stance
+		desc = WoK_duels.1011.opponent_stance
+		#desc = WoK_duels.1012.outcome
+		desc = WoK_duels.1011.outcome
+	}
+	theme = war
+	left_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	option = { # Play end effect if recipient is AI
+		name = WoK_duels.1011.a
+		if = {
+			limit = {
+				scope:combatant_2 = {
+					is_ai = yes
+				}
+			}
+			duel_end_effect = { VICTOR = scope:combatant_1 LOSER = scope:combatant_2 }
+		}
+	}
+}
+WoK_duels.1012 = { #Actor event: Defeat
+	type = character_event
+	title = WoK_duels.1012.t
+	desc = {
+		desc = WoK_duels.1012.my_stance
+		desc = WoK_duels.1012.opponent_stance
+		#desc = WoK_duels.1011.outcome
+		desc = WoK_duels.1012.outcome
+	}
+	theme = war
+	left_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	option = { # Play end effect if recipient is AI
+		name = WoK_duels.1012.a
+		name = {
+			trigger = {
+				scope:combatant_1 = {
+					has_variable = saved_by_stonestance
+				}
+			}
+			text = WoK_duels.1012.a_stonestance
+		}
+
+		if = {
+			limit = {
+				scope:combatant_2 = {
+					is_ai = yes
+				}
+			}
+			duel_end_effect = { VICTOR = scope:combatant_2 LOSER = scope:combatant_1 } 
+		}
+	}
+}
+
+WoK_duels.2001 = { # Recipient event 1: Choice of strategy
+	type = character_event
+	title = WoK_duels.1001.t
+	desc = WoK_duels.2001.desc
+	theme = war
+	left_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	option = {
+		name = WoK_duels.1001.a
+		random_list = {
+			1 = {
+				trigger = {
+					any_knight = {
+						OR = {
+							opinion = {target = scope:combatant_2 value > 50}
+							has_relation_potential_friend = scope:combatant_2
+						}
+						NOT = {has_relation_friend = scope:combatant_2}
+						is_imprisoned = no
+						is_in_army = no
+					}
+				}
+				modifier = {
+					add = martial
+				}
+				modifier = {
+					add = diplomacy
+				}
+				modifier = {
+					add = 10
+					has_trait = gregarious
+				}
+				modifier = {
+					add = 10
+					has_trait = radiant_windrunner
+				}
+				modifier = {
+					add = 10
+					has_trait = radiant_bondsmith
+				}
+				custom_tooltip = WoK_duels.1001.a_friend
+				random_knight = {
+					limit = {
+						OR = {
+							opinion = {target = scope:combatant_2 value > 50}
+							has_relation_potential_friend = scope:combatant_2
+						}
+						NOT = {has_relation_friend = scope:combatant_2}
+						is_imprisoned = no
+						is_in_army = no
+					}
+					set_relation_friend = scope:combatant_2
+				}
+				add_prowess_skill = 1
+				#add_character_modifier = {modifier = duel_practice months = 6}
+				stress_impact = {
+					duelist = medium_stress_impact_loss
+					shy = major_stress_impact_gain
+					gregarious = major_stress_impact_loss
+					windrunner_1 = miniscule_stress_impact_loss
+					windrunner_2 = minor_stress_impact_loss
+					windrunner_3 = medium_stress_impact_loss
+					windrunner_4 = major_stress_impact_loss
+					windrunner_5 = major_stress_impact_loss
+				}
+			}
+			1 = {
+				modifier = {
+					add = martial
+				}
+				modifier = {
+					add = prowess
+				}
+				custom_tooltip = WoK_duels.1001.a_success
+				add_character_modifier =  {modifier = duel_practice months = 6}
+			}
+			10 = {
+				custom_tooltip = WoK_duels.1001.a_neutral
+			}
+			5 = {
+				custom_tooltip = WoK_duels.1001.a_failure
+				add_trait = wounded_1
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = martial
+			}
+			modifier = {
+				add = prowess
+			}
+			modifier = {
+				add = 10
+				has_trait = duelist
+			}
+			modifier = {
+				add = 10
+				has_trait = lifestyle_blademaster
+			}
+		}
+		skill = martial
+		skill = prowess
+	}
+	option = {
+		name = {
+			trigger = {has_any_artifact = yes}
+			text = WoK_duels.1001.b2
+		}
+		name = {
+			trigger = {has_any_artifact = no}
+			text = WoK_duels.1001.b
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					add = learning
+				}
+				modifier = {
+					add = stewardship
+				}
+				modifier = {
+					add = learning
+					has_trait = artifabrian
+				}
+				custom_tooltip = WoK_duels.1001.b_success
+				add_character_modifier = {modifier = duel_polish months = 6}
+			}
+			10 = {
+				custom_tooltip = WoK_duels.1001.b_neutral
+			}
+			5 = {
+				custom_tooltip = WoK_duels.1001.b_failure
+				remove_short_term_gold = 50
+			}
+		}
+		skill = learning
+		skill = stewardship
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = learning
+			}
+			modifier = {
+				add = stewardship
+			}
+			modifier = {
+				add = 30
+				has_trait = artifabrian
+			}
+			modifier = {
+				add = 10
+				has_trait = arrogant
+			}
+			modifier = {
+				add = 10
+				has_trait = diligent
+			}
+			modifier = {
+				add = 10
+				has_trait = paranoid
+			}
+		}
+	}
+	option = {
+		name = WoK_duels.1001.c
+		name = {
+			trigger = {diplomacy > intrigue}
+			text = WoK_duels.1001.c2
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					add = intrigue
+				}
+				modifier = {
+					add = intrigue
+					has_trait = schemer
+				}
+				modifier = {
+					add = diplomacy
+				}
+				modifier = {
+					add = diplomacy
+					has_trait = diplomat
+				}
+				add_character_modifier = {modifier = duel_underhanded months = 6}
+			}
+			10 = {
+			}
+			5 = {
+				custom_tooltip = WoK_duels.1001.c_failure
+				add_prestige = -100
+			}
+		}
+		skill = intrigue
+		skill = diplomacy
+		stress_impact = {
+			honest = major_stress_impact_gain
+			just = medium_stress_impact_gain
+			deceitful = minor_stress_impact_loss
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 10
+				has_trait = deceitful
+			}
+			modifier = {
+				add = 10
+				has_trait = schemer
+			}
+			modifier = {
+				add = 10
+				has_trait = greedy
+			}
+			modifier = {
+				add = 10
+				has_trait = ambitious
+			}
+		}
+	}
+	option = {
+		name = WoK_duels.1001.d
+		stress_impact = {
+			base = -23
+			lazy = major_stress_impact_loss
+			diligent = medium_stress_impact_gain
+			impatient = medium_stress_impact_gain
+			patient = medium_stress_impact_loss
+			craven = major_stress_impact_gain
+			arbitrary = minor_stress_impact_loss
+			fickle = medium_stress_impact_loss
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 30
+				has_trait = lazy
+			}
+			modifier = {
+				add = 10
+				has_trait = arbitrary
+			}
+			modifier = {
+				add = stress
+				NOR = {
+					has_trait = diligent
+					has_trait = impatient
+					has_trait = craven
+				}
+			}
+		}
+	}
+}
+WoK_duels.2002 = { # Recipient event 2: Select stance
+	type = character_event
+	title = WoK_duels.2002.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					scope:duel_for_prestige = yes
+				}
+				desc = WoK_duels.2002.prestige
+			}
+			triggered_desc = {
+				trigger = {
+					scope:duel_for_artifacts = yes
+				}
+				desc = WoK_duels.2002.artifacts
+			}
+			triggered_desc = {
+				trigger = {
+					scope:duel_for_land = yes
+				}
+				desc = WoK_duels.2002.land
+			}
+		}
+	}
+	theme = war
+	left_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	
+	option = {
+		name = WoK_duels.1002.a
+		trigger = {NOT = {has_perk = windstance_perk}}
+		hidden_effect = {set_dueling_stance = {STANCE = no}}
+		
+	}
+	option = {
+		name = WoK_duels.1002.windstance
+		trigger = {has_perk = windstance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = windstance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = windstance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.smokestance
+		trigger = {has_perk = smokestance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = smokestance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = smokestance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.flamestance
+		trigger = {has_perk = flamestance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = flamestance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = flamestance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.bloodstance
+		trigger = {has_perk = bloodstance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = bloodstance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = bloodstance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.stonestance
+		trigger = {has_perk = stonestance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = stonestance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = stonestance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.vinestance
+		trigger = {has_perk = vinestance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = vinestance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = vinestance_compatibility}
+		}
+	}
+	option = {
+		name = WoK_duels.1002.ironstance
+		trigger = {has_perk = ironstance_perk}
+		hidden_effect = {set_dueling_stance = {STANCE = ironstance}}
+		ai_chance = {
+			base = 1
+			modifier = {add = ironstance_compatibility}
+		}
+	}
+	after = {
+		dueling_effect = { ATTACKER = scope:combatant_1 DEFENDER = scope:combatant_2 }
+	}
+}
+WoK_duels.2011 = { # Recipient event: Victory
+	title = WoK_duels.1011.t
+	desc = {
+		desc = WoK_duels.2011.my_stance
+		desc = WoK_duels.2011.opponent_stance
+		#desc = WoK_duels.2012.outcome
+		desc = WoK_duels.2011.outcome
+	}
+	theme = war
+	left_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	option = { # Play end effect if recipient is not AI
+		name = WoK_duels.2011.a
+		if = {
+			limit = {
+				scope:combatant_2 = {
+					is_ai = no
+				}
+			}
+			duel_end_effect = { VICTOR = scope:combatant_2 LOSER = scope:combatant_1 } 
+		}
+	}
+}
+WoK_duels.2012 = { # Recipient event: Defeat
+	type = character_event
+	title = WoK_duels.2012.t
+	
+	desc = {
+		desc = WoK_duels.2012.my_stance
+		desc = WoK_duels.2012.opponent_stance
+		#desc = WoK_duels.2011.outcome
+		desc = WoK_duels.2012.outcome
+	}
+	theme = war
+	left_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	option = { # Play end effect if recipient is not AI and not AI? 
+		name = WoK_duels.2012.a
+		name = {
+			trigger = {
+				scope:combatant_2 = {
+					has_variable = saved_by_stonestance
+				}
+			}
+			text = WoK_duels.2012.a_stonestance
+		}
+		if = {
+			limit = {
+				scope:combatant_2 = {
+					is_ai = no
+				}
+			}
+			duel_end_effect = { VICTOR = scope:combatant_1 LOSER = scope:combatant_2 }
+		}
+	}
+}
+WoK_duels.0001 = { # Actor event: Refusal
+	type = character_event
+	title = WoK_duels.0001.t
+	desc = WoK_duels.0001.desc
+	theme = war
+	left_portrait = {
+		character = scope:actor
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = personality_bold
+	}
+	option = {
+		name = WoK_duels.0001.a
+	}
+}

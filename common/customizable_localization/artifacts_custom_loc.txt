@@ -1,6 +1,5 @@
 ﻿GetSelectedArtifactTitle = {
 	type = character
-	first_valid = yes
 	text = {
 		localization_key = artifact_title
 		trigger = {
@@ -165,6 +164,16 @@ GetArtifactType = {
 		}
 	}
 	text = {
+		localization_key = artifact_type_gem
+		trigger = {
+			has_variable = artifact_selection
+			is_target_in_global_variable_list = {
+				name = global_artifact_list_gem
+				target = var:artifact_selection
+			}
+		}
+	}
+	text = {
 		localization_key = artifact_type_fallback
 		trigger = {		
 			has_variable = artifact_selection
@@ -235,5 +244,40 @@ GetArtifactTypeIcon = {
 	}
 	text = {
 		localization_key = artifact_type_fallback
+	}
+}
+GetConditionalDesc = {
+	type = character
+	text = {
+		localization_key = artifact_twok_conditional
+		trigger = {
+			ai_honor > 99
+			flag:artifact_twok = var:artifact_selection
+		}
+	}
+	text = {
+		localization_key = artifact_broken_not_artifabrian
+		trigger = {
+			has_variable = artifact_selection
+			is_target_in_global_variable_list = {
+				name = global_artifact_list_broken
+				target = var:artifact_selection
+			}
+			NOT = {has_trait = artifabrian}
+		}
+	}
+	text = {
+		localization_key = artifact_broken_artifabrian
+		trigger = {
+			has_variable = artifact_selection
+			is_target_in_global_variable_list = {
+				name = global_artifact_list_broken
+				target = var:artifact_selection
+			}
+			has_trait = artifabrian
+		}
+	}
+	text = {
+		localization_key = artifact_conditional_desc_fallback
 	}
 }
