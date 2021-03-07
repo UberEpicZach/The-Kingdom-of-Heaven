@@ -466,9 +466,9 @@ middle_europe_decisions.0010 = {
 			limit = {
 				NOT = { title:c_palermo.holder = { this = root } }
 			}
-			create_title_and_vassal_change = change
-			scope:change = {
-				set_title_and_vassal_change_type = returned
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
 			}
 			title:c_palermo = {
 				change_title_holder = {
@@ -486,9 +486,9 @@ middle_europe_decisions.0010 = {
 				NOT = { completely_controls_region = custom_sicily }
 			}
 
-			create_title_and_vassal_change = change_trinacria
-			scope:change_trinacria = {
-				set_title_and_vassal_change_type = created
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change_trinacria
 			}
 			title:k_trinacria = {
 				change_title_holder = {
@@ -547,9 +547,9 @@ middle_europe_decisions.0010 = {
 			limit = {
 				NOT = { title:c_napoli.holder = { this = root } }
 			}
-			create_title_and_vassal_change = change
-			scope:change = {
-				set_title_and_vassal_change_type = returned
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
 			}
 			title:c_napoli = {
 				change_title_holder = {
@@ -566,9 +566,9 @@ middle_europe_decisions.0010 = {
 				has_title = title:k_sicily
 				NOT = { completely_controls_region = custom_sicily }
 			}
-			create_title_and_vassal_change = change_naples
-			scope:change_naples = {
-				set_title_and_vassal_change_type = created
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change_naples
 			}
 			title:k_naples = {
 				change_title_holder = {

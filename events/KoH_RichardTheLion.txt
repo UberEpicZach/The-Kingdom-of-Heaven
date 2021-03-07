@@ -555,12 +555,14 @@ KoH_RichardTheLionheart.6 = {
 				save_scope_as = the_faction
 			}
 		}	
-		if = {
-			limit = {
-				faction_is_type = claimant_faction
-			}
-			special_title = {
-				save_scope_as = target_title
+		scope:the_faction = {
+			if = {
+				limit = {
+					faction_is_type = claimant_faction
+				}
+				special_title = {
+					save_scope_as = target_title
+				}
 			}
 		}
 	}
@@ -1244,6 +1246,7 @@ KoH_RichardTheLionheart.16 = {
 				id = KoH_RichardTheLionheart.17
 				days = 45
 			}
+		}
 	}
 
 	option = {

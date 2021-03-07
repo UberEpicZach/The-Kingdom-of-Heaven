@@ -39,7 +39,7 @@ artifacts_tooltip = { #Not currently hooked up to anything
 artifacts_equipped = { #Shows "Equipped" in green when selected artifact is equipped
 	scope = character
 	is_shown = {
-		#is_artifact_equipped = {ARTIFACT = var:SELECTION}
+		is_artifact_equipped = {ARTIFACT = scope:SELECTION}
 	}
 }
 artifacts_destroy_artifact = { #Button which destroys selection
