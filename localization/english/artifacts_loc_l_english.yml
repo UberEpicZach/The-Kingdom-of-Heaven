@@ -1,5 +1,5 @@
 ﻿l_english:
-
+ artifact_item_index: "[Scope.GetValue|0]"
  ARTIFACTS_BUTTON:0 "#T Artifacts #!"
  ARTIFACTS_VIEW_TITLE:0 "Artifacts"
  ARTIFACTS_VIEW_TITLES:0 "Our Artifacts"
@@ -7,7 +7,9 @@
  ARTIFACTS:0 "Artifacts"
  artifacts:0 "Artifacts"
  gift_artifact:0 "Gift Artifacts"
- 
+
+ show_artifacts: "#T Artifact owners#!\nShow owners of any [artifacts|E]."
+
  destroy_artifact_tt:0 "Destroy Artifact"
  equip_artifact_tt:0 "Equip Artifact"
  equipped_artifact:0 "#P Equipped#!"
@@ -29,14 +31,20 @@
  artifact_debug_decision_effect_tooltip:2 "You will gain all artifacts in the game"
  artifact_debug_decision_confirm:0 "Ultimate Power!!!!"
 
-# Mouseover tooltip emulates the modifier by default - if your mod uses Passive Modifiers for unequipped items, you can add the passive tooltip here as well.
+#Mouseover tooltip emulates the modifier by default - if your mod uses Passive Modifiers for unequipped items, you can add the passive tooltip here as well.
  artifact_tooltip:0 "#T [GetModifier(Concatenate(Scope.GetFlagName,'_modifier')).GetName]#! \n[GetModifier(Concatenate(Scope.GetFlagName,'_modifier')).GetDesc]"
 
  ADD_ARTIFACT_EFFECT:0 "Gets the artifact [ARTIFACT.GetFlagName|V].1"
- ADD_ARTIFACT_EFFECT_FIRST:1 "You get the artifact [CHARACTER.MakeScope.Var('most_recent_artifact').GetFlagName], also $MODIFIER|V0$ and the value is $VALUE|V0$.2"
+ ADD_ARTIFACT_EFFECT_FIRST:1 "You get the artifact [CHARACTER.MakeScope.Var('test').GetFlagName], also $ARTIFACT$ and the value is $VALUE$. $FLAG|V$"
  ADD_ARTIFACT_EFFECT_FIRST_PAST:1 "You got the artifact [ARTIFACT.GetFlagName|V].3"
  ADD_ARTIFACT_EFFECT_THIRD:0 "[CHARACTER.GetShortUIName|U] gets the artifact $VALUE|V0$.4"
  ADD_ARTIFACT_EFFECT_THIRD_PAST:0 "[CHARACTER.GetShortUIName|U] got the artifact [ARTIFACT.GetFlagName|V].5"
+
+ TRANSFER_ARTIFACT_EFFECT:0 "Gets the artifact [ARTIFACT.GetFlagName|V].1"
+ TRANSFER_ARTIFACT_EFFECT_FIRST:1 "You get the artifact [CHARACTER.MakeScope.Var('repairing_broken_artifact').GetFlagName], also $ARTIFACT$ and the value is $VALUE$. $FLAG$ $MODIFIER$.\n[GetModifier(Concatenate(Scope.GetFlagName,'_modifier')).GetName] [artyparty.GetFlagName]"
+ TRANSFER_ARTIFACT_EFFECT_FIRST_PAST:1 "You got the artifact [ARTIFACT.GetFlagName|V].3"
+ TRANSFER_ARTIFACT_EFFECT_THIRD:0 "[CHARACTER.GetShortUIName|U] gets the artifact $VALUE|V0$.4"
+ TRANSFER_ARTIFACT_EFFECT_THIRD_PAST:0 "[CHARACTER.GetShortUIName|U] got the artifact [ARTIFACT.GetFlagName|V].5"
 
  GET_ARTIFACT_NAME:0 "[Concatenate(Scope.GetFlagName,'_name')]"
  GET_ARTIFACT_TYPE:0 "[Concatenate(Scope.GetFlagName,'_type')]"
@@ -54,21 +62,24 @@
  selected_artifact_title:0 "[GetPlayer.Custom('GetSelectedArtifactTitle')]"
  artifact_title:0 "[Localize(Concatenate(ROOT.Var('artifact_selection').GetFlagName,'_name'))]" 
  selected_artifact_desc:0 "[GetPlayer.Custom('GetSelectedArtifactDesc')]"
- artifact_desc:0 "[Localize(Concatenate(ROOT.Var('artifact_selection').GetFlagName,'_desc'))]" 
+ artifact_desc:0 "[Localize(Concatenate(ROOT.Var('artifact_selection').GetFlagName,'_desc'))]\n[GetPlayer.Custom('GetConditionalDesc')]" 
  selected_artifact_equipped:0 "[GetPlayer.Custom('GetSelectedArtifactEquipped')]"
+ artifact_conditional_desc_fallback:0 ""
 
  artifact_name_fallback:0 ""
  artifact_desc_fallback:0 "When you select an artifact, its name and description will appear here."
  artifact_equip_fallback:0 ""
 
  selected_artifact_type:0 "[GetPlayer.Custom('GetArtifactType')]"
+ artifact_type_all:0 "@icon_all!# #Z All Artifacts#!"
  artifact_type_handheld:0 "@skill_prowess_icon!# #Z Handheld#!"
  artifact_type_armor:0 "@dread_icon!# #Z  Armor#!"
  artifact_type_headgear:0 "@knight_icon!# #Z Headgear#!"
- artifact_type_jewelry:0 "@arrange_marriage_icon!# #Z Jewelry#!"
+ artifact_type_jewelry:0 "@icon_rings!# #Z Jewelry#!"
  artifact_type_mount:0 "@icon_horse!# #Z Mount#!"
- artifact_type_fabrial:0 "[magic_i]#Z Fabrial#!"
- artifact_type_fallback:0 "#Z Untyped#!"
+ artifact_type_indestructible:0 "@icon_book! #Z Indestructible#!"
+  artifact_type_fallback:0 "#Z Untyped#!"
+ artifact_type_filter: "[Concatenate(Concatenate('@icon_', Scope.GetFlagName),'!')]"
 
  selected_artifact_indestructible:0 "[GetPlayer.Custom('GetSelectedArtifactIndestructible')]"
  indestructible_artifact:0 "#P Indestructible#!"
@@ -81,14 +92,14 @@
  artifact_rarity_3:0 "@army_quality_icon_3!#P Rarity - 3#!"
  artifact_rarity_4:0 "@army_quality_icon_4!#N Rarity - 4#!"
  artifact_rarity_fallback:0 "@army_quality_icon_5!#D Unique#!"
-
+ 
  #add_artifact_tt:0 "Gain artifact ." 
  # [GetModifier('$ARTIFACT$_modifier').GetNameWithTooltip]"
  gave_artifacts_opinion:0 "Gave Artifacts"
 
  ### Events
  artifact_gift.1.t:0 "Gift Artifact"
-  artifact_gift.1.desc:0 "Any one [GetPlayer.Custom('WomanManGirlBoy')] can only make use of so many artifacts at a time, so it's in the interest of my dynasty to ensure that our artifacts are put to good use. \n\nTo that end, I have decided to gift [recipient.GetTitledFirstName] an artifact."
+ artifact_gift.1.desc:0 "Any one [GetPlayer.Custom('WomanManGirlBoy')] can only make use of so many artifacts at a time, so it's in the interest of my dynasty to ensure that our artifacts are put to good use. \n\nTo that end, I have decided to gift [recipient.GetTitledFirstName] an artifact."
  artifact_gift.1.a:0 "I will gift them..."
  artifact_gift.1.tt:0 "(Use the GUI)"
 
@@ -253,9 +264,6 @@
  artifact_5_desc:0 "Anyone with a sharp eye who looks at this sword can tell it is of good make, and it bears the mark of a locally renowned blacksmith at the base of the blade. Although it lacks the ornamentation of some ceremonial weapons, its materials are high-quality and it is a boon to any skilled fighter who wields it."
  artifact_5_modifier:0 "Fine Longsword"
  
-
-
-
  artifact_6_name:0 "Sword of Heroes"
  artifact_6_desc:0 "This sword has a regal air about it, combining a well-sharpened and polished blade with a gilded hilt and a decorated scabbard. Whether wielded by a seasoned swordsman, a renowned knight, or a stately lord, this weapon seems suited for the hands of a truly skilled individual."
  artifact_6_modifier:0 "Sword of Heroes"
@@ -269,7 +277,7 @@
  artifact_8_modifier:0 "Silver Crown"
  
  artifact_9_name:0 "Ruby Crown"
- artifact_9_desc:0 "Inlaid with silver and rubies, this ancient artifact was crafted by talented artisans from the lands of Araby. This crown is worth a small fortune, and one can be sure that whoever's head this diadem rests on is both extremely wealthy and powerful."
+ artifact_9_desc:0 "Inlaid with silver and rubies, this ancient artifact was crafted by talented artisans from the lands of Rira. This crown is worth a small fortune, and one can be sure that whoever's head this diadem rests on is both extremely wealthy and powerful."
  artifact_9_modifier:0 "Ruby Crown"
  
  artifact_10_name:0 "Golden Crown"
@@ -347,18 +355,22 @@
  artifact_28_name:0 "Chain Mail"
  artifact_28_desc:0 "A full suit of armor requires a good deal of metal, a cost that is unaffordable for nearly everyone of low birth. To own and maintain one, even without any decorations or ornamentation, is still a display of great wealth."
  artifact_28_modifier:0 "Chain Mail"
+ artifact_28_modifier_desc:0 "[armor_value|E]: [GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('armor_value_28')|=+0]"
  
  artifact_29_name:0 "Splint Mail"
  artifact_29_desc:0 "This suit of armor shows that its wearer is a step above the average knight-errant. The metal is free of rusts, dents, and scratches, and stays brightly polished due under the care of dutiful squires. There is even some paintwork on it, in the owner's house colors."
  artifact_29_modifier:0 "Splint Mail"
+ artifact_29_modifier_desc:0 "[armor_value|E]: [GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('armor_value_29')|=+0]"
  
  artifact_30_name:0 "Masterwork Armor"
  artifact_30_desc:0 "This armor was designed to house someone of great station, as evidenced by the level of craftsmanship and detail put into it. Not only are the armor pieces themselves of fine steel, but the components connecting and accentuating them are also from fine materials. Everything, from the top of the helmet to the bottom of the boots, showcases high quality."
  artifact_30_modifier:0 "Masterwork Armor"
+ artifact_30_modifier_desc:0 "[armor_value|E]: [GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('armor_value_30')|=+0]"
  
  artifact_31_name:0 "Gilded Plate Armor"
  artifact_31_desc:0 "One can tell from a single glance at this armor that its wearer is as rich as Croesus. Nearly every piece has some kind of gold or silver inlay, accentuated by golden rivets, and clothed by a richly dyed doublet and a silk-lined cape. A suit of armor fit and fitted for a king."
  artifact_31_modifier:0 "Gilded Plate Armor"
+ artifact_31_modifier_desc:0 "[armor_value|E]: [GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('armor_value_31')|=+]"
  
  artifact_32_name:0 "Excalibur"
  artifact_32_desc:0 "The legendary sword of King Arthur. Once a symbol of his immortality and chivalry, now a relic of the past. Its wielder is said to be the most chivalrous knight."
@@ -371,82 +383,7 @@
  artifact_34_name:0 "Baucent"
  artifact_34_desc:0 "Named for the beloved mount of Guillaume d'Orange and featured in a popular chanson de geste, this stallion is the pride of Aquitanian pedigree."
  artifact_34_modifier:0 "Baucent"
- 
+
  soz_101_name:0 "Sword of Zengi"
  soz_101_desc:0 "This damascene steel once belonged to a man drunk with rage and religion. Many believed that Zengi would be the one to unite the Holy Land before his untimely death. May this blade's heir command the same faith from the people of Bilad Al-Shaam."
  soz_101_modifier:0 "Sword of Zengi"
-
- #artifact_oathbringer_name:0 "Oathbringer"
- #artifact_oathbringer_desc:0 "Oathbringer was the Shardblade of the infamous Alethi warlord Sadees the Sunmaker, passed down through generations until Dalinar Kholin killed its owner and claimed it for himself during the Alethi unification war." 
- #artifact_oathbringer_modifier:0 "Oathbringer"
- #artifact_oathbringer_modifier_desc:0 "Oathbringer"
-
- #artifact_sunraiser_name:0 "Sunraiser"
- #artifact_sunraiser_desc:0 "Sunraiser was the blade of Highprince Kalanor. After Dalinar Kholin killed him, he gifted the blade to Elhokar Kholin."
- #artifact_sunraiser_modifier:0 "Sunraiser"
- #artifact_sunraiser_modifier_desc:0 "Sunraiser"
-
- #artifact_mayalaran_name:0 "Mayalaran"
- #artifact_mayalaran_desc:0 "Mayalaran was the Shardblade of an Edgedancer who abandoned it during the Recreance. It eventually ended up in the hands of Adolin Kholin."
- #artifact_mayalaran_modifier:0 "Mayalaran"
- #artifact_mayalaran_modifier_desc:0 "Mayalaran"
-
- #artifact_shardplate_name:0 "Shardplate"
- #artifact_shardplate_desc:0 "Shardplate, the legendary armor of the Knights Radiant. Its wearer is near-invulnerable."
- #artifact_shardplate_modifier:0 "Shardplate"
- #artifact_shardplate_modifier_desc:0 "Shardplate"
-
- #artifact_shardblade_name:0 "Shardblade"
- #artifact_shardblade_desc:0 "A Shardblade, one of the legendary weapons of the Knights Radiant. More valuable than kingdoms, these blades cut through enemies with ease."
- #artifact_shardblade_modifier:0 "Shardblade"
- #artifact_shardblade_modifier_desc:0 "Shardblade"
- 
- #extra_blade_modifier:0 "Extra Shardblade"
- #extra_blade_modifier_desc:0 "This character has an extra shardblade, earned in battle or a duel"
- 
- #extra_plate_modifier:0 "Extra Shardplate"
- #extra_plate_modifier_desc:0 "This character has extra shardplate, earned in battle or a duel"
- 
- #artifact_soulcaster_name:0 "Soulcaster"
- #artifact_soulcaster_desc:0 "A soulcaster is a fabrial which accesses the Surge of Transformation, and can be used to create things such as food, metal, smoke, and other Essences."
- #artifact_soulcaster_modifier:0 "Soulcaster"
- #artifact_soulcaster_modifier_desc:0 "[investiture|E]: [investiture_i|E]#N -2.0#!/month"
- 
- #artifact_spanreed_name:0 "Spanreed"
- #artifact_spanreed_desc:0 "A spanreed is a fabrial which can be used for long distance communications."
- #artifact_spanreed_modifier:0 "Spanreed"
- #artifact_spanreed_modifier_desc:0 "Spanreed"
- 
- #artifact_painrial_name:0 "Painrial"
- #artifact_painrial_desc:0 "A painrial is a fabrial which can either reduce the pain you feel or make the enemy feel extreme pain."
- #artifact_painrial_modifier:0 "Painrial"
- #artifact_painrial_modifier_desc:0 "Painrial"
- 
- #artifact_alerter_name:0 "Alerter"
- #artifact_alerter_desc:0 "A alerter is a fabrial which can warn you when people are near, and what they are feeling."
- #artifact_alerter_modifier:0 "Alerter"
- #artifact_alerter_modifier_desc:0 "Alerter"
- 
- #artifact_nightblood_name:0 "Nightblood"
- #artifact_nightblood_desc:0 "Hello! Would you like to destroy some evil today?"
- #artifact_nightblood_modifier:0 "Nightblood"
- #artifact_alerter_modifier_desc:0 "Nightblood"
- #nightblood_drawn_modifier:0 "Nightblood Unleashed"
- #nightblood_drawn_modifier_desc:0 "[investiture|E]: [investiture_i|E]#N -50.0#!/month"
- 
- #artifact_jezrien_honorblade_name:0 "Jezrien's Honorblade"
- #artifact_jezrien_honorblade_desc:0 "The Honorblades are the magical swords carried by the Heralds to fight the Voidbringers during the Desolations. They were pieces of Honor's soul that gave their wielders access to his essence. This one belonged to Jezrien, Herald of Kings"
- #artifact_jezrien_honorblade_modifier:0 "Jezrien's Honorblade"
- #artifact_jezrien_honorblade_modifier_desc:0 "Jezrien's Honorblade"
- 
- #artifact_type_four_biochromatic_entity_name:0 "Type Four Biochromatic Entity"
- #artifact_type_four_biochromatic_entity_desc:0 "A type four biochromatic entity is a sentient awakened object that never had life. It takes 1000 breaths."
- #artifact_type_four_biochromatic_entity_modifier:0 "Type Four Biochromatic Entity"
- #artifact_type_four_biochromatic_entity_modifier_desc:0 "Type Four Biochromatic Entity"
-
- #artifact_ryshadium_name:0 "Ryshadium"
- #artifact_ryshadium_desc:0 "Ryshadium are effectively enormous horses that have adapted to life on Roshar with stone hooves and a certain level of sentience. One cannot tame a Ryshadium - it chooses a worthy rider."
- #artifact_ryshadium_modifier:0 "Ryshadium"
- #artifact_ryshadium_icon:0 "x"
- #artifact_ryshadium_modifier_desc:0 "Type Four Biochromatic Entity"
-

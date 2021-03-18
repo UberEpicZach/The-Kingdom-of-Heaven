@@ -131,7 +131,25 @@ d_conversos = {
 
 
 k_danelaw = {
-	color = { 247 93 42 }
+	color = { 255 60 15 }
+	color2 = { 220 220 0 }
+	de_jure_drift_disabled = yes
+
+	capital = c_north_riding
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture_group = culture_group:north_germanic_group
+			}
+			add = @correct_culture_primary_score
+			add = @better_than_the_alternatives_score
+		}
+	}
+}
+
+k_daneland = {
+	color = { 200 40 15 }
 	color2 = { 220 220 0 }
 
 	capital = c_north_riding
@@ -155,6 +173,7 @@ d_sunni = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
 }
 
 d_shiite = {
@@ -165,6 +184,7 @@ d_shiite = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
 }
 
 d_masmudi = {
@@ -175,6 +195,7 @@ d_masmudi = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
 }
 
 e_golden_horde = {
@@ -483,6 +504,14 @@ k_sakya_trizin = {
 	destroy_if_invalid_heir = yes
 }
 
+#Guiyi Circuit
+k_guiyi = {
+	color = { 181 135 55 }
+	color2 = { 255 255 255 }
+	
+	capital = c_shazhou # Shazhou/Dunhuang
+}
+
 k_switzerland = {
 	color = { 255 80 80 }
 	color2 = { 200 50 50 }
@@ -723,7 +752,7 @@ e_latin_empire = {
 }
 
 e_slavia = {
-	color = { 255 230 230 }
+	color = { 39 27 27 }
 	color2 = { 255 255 255 }
 	capital = c_kiev # Kiev
 }
@@ -732,6 +761,13 @@ e_armenia = {
 	color = { 198 29 29 }
 	
 	capital = c_hayk # Ani
+}
+
+e_north_sea = {
+	color = { 0 0 60 }
+	definite_form = yes
+	
+	capital = c_sjaelland	#Roskilde
 }
 
 # TITULAR KINGDOMS
@@ -1197,7 +1233,7 @@ e_britannia = {
 			c_durham = {
 				color = { 255 15 15 }
 				color2 = { 255 255 255 }
-							
+				
 				cultural_names = {
 					anglo_saxon = cn_dunholm
 					old_saxon = cn_dunholm
@@ -1217,6 +1253,8 @@ e_britannia = {
 						french = cn_duresm
 						outremer = cn_duresm
 						occitan = cn_duresm
+						norse = cn_ulfreksfjordr
+						norwegian = cn_ulfreksfjordr
 					}
 
 					color = { 255 15 15 }
@@ -1617,15 +1655,30 @@ e_britannia = {
 			
 			capital = c_norfolk # Norwich
 			
+			cultural_names = {
+				norse = cn_jarnamoda
+				norwegian = cn_jarnamoda
+			}
+
 			c_norfolk = {
 				color = { 210 100 0 }
 				color2 = { 255 255 255 }
-			
+
+				cultural_names = {
+					norse = cn_jarnamoda
+					norwegian = cn_jarnamoda
+				}
+
 				b_norwich = {
 					province = 1522
 
 					color = { 210 100 0 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_jarnamoda
+						norwegian = cn_jarnamoda
+					}
 				}
 				b_thetford = {
 					province = 1523
@@ -1703,6 +1756,11 @@ e_britannia = {
 
 					color = { 205 145 5 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_linn
+						norwegian = cn_linn
+					}
 				}
 			}
 		}
@@ -1981,7 +2039,7 @@ e_britannia = {
 				}
 			}
 			c_oxfordshire = {
-				color = { 184 21 0 }
+				color = { 255 115 15 }
 				color2 = { 255 255 255 }
 				
 				b_oxford = {
@@ -2095,6 +2153,11 @@ e_britannia = {
 			c_sussex = {
 				color = { 225 105 10 }
 				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					anglo_saxon = cn_south_seaxe
+					old_saxon = cn_south_seaxe
+				}
 				
 				b_lewes = {
 					province = 1506
@@ -2377,12 +2440,23 @@ e_britannia = {
 				color = { 110 10 0 }
 				color2 = { 255 255 255 }
 
-				b_cardigan = {
+				cultural_names = {
+					norman = cn_cardiganshire
+					english = cn_cardiganshire
+				}
+
+				b_cardigan = {	#Aberteifi
 					province = 1657
 
 					color = { 110 10 0 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norman = cn_cardigan
+						english = cn_cardigan
+					}
 				}
+
 				b_aberystwyth = {
 					province = 1658
 
@@ -2391,16 +2465,22 @@ e_britannia = {
 				}
 			}
 
-			c_merioneth = {
+			c_merioneth = {	#Merionnydd
 				color = { 105 20 20 }
 				color2 = { 255 255 255 }
 
-				b_dolgellau = {
+				cultural_names = {
+					norman = cn_merionethshire
+					english = cn_merionethshire
+				}
+
+				b_dolgellau = {	#Harlech
 					province = 1665
 
 					color = { 105 20 20 }
 					color2 = { 255 255 255 }
 				}
+
 				b_corwen = {
 					province = 1666
 
@@ -2409,12 +2489,13 @@ e_britannia = {
 				}
 			}
 
-			c_caernarfonshire = {
+			c_caernarfonshire = {	#Eryri
 				color = { 90 25 0 }
 				color2 = { 255 255 255 }
 		
 				cultural_names = {
-					pictish = 	cn_eryri
+					norman = cn_caernarvonshire
+					english = cn_caernarvonshire
 					welsh = 	cn_eryri
 					cumbrian = 	cn_eryri
 					cornish = 	cn_eryri
@@ -2440,9 +2521,14 @@ e_britannia = {
 					color2 = { 255 255 255 }	
 				}
 			}
-			c_anglesey = {
+			c_anglesey = {	#Ynys Mon
 				color = { 85 0 0 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norman = cn_anglesey
+					english = cn_anglesey
+				}
 
 				b_yns_mon = {
 					province = 1673
@@ -2450,49 +2536,62 @@ e_britannia = {
 					color = { 85 0 0 }
 					color2 = { 255 255 255 }
 				}
-				b_holyhead = {
+
+				b_holyhead = {	#Caer Gybi
 					province = 1674
 
 					color = { 85 0 0 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						welsh = cn_caer_gybi
+						norman = cn_holyhead
+						english = cn_holyhead
 					}
 				}
 			}
-			c_denbighshire = {
+
+			c_denbighshire = {	#Perfeddwlad
 				color = { 125 0 10 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norman = cn_denbighshire
+					english = cn_denbighshire
+				}
 				
-				b_denbigh = {
+				b_denbigh = {	#Dinbych
 					province = 1670
 
 					color = { 125 0 10 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						welsh = cn_dinbych
+						norman = cn_denbigh
+						english = cn_denbigh
 					}
 				}
-				b_wrexham = {
+
+				b_wrexham = {	#Tegeingl
 					province = 1671
 
 					color = { 125 0 10 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						welsh = cn_wrecsam
+						norman = cn_wrexham
+						english = cn_wrexham
 					}
 				}
-				b_ruthin = {
+
+				b_ruthin = {	#Rhuthun
 					province = 1672
 					
 					color = { 125 0 10 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						welsh = cn_rhuthun
+						norman = cn_ruthin
+						english = cn_ruthin
 					}
 				}
 			}
@@ -2504,64 +2603,105 @@ e_britannia = {
 			
 			capital = c_maldwyn # Maldwyn / Mathrafal near Welshpool
 
-			c_maldwyn = {
+			c_maldwyn = {	#Penllyn (Cantrefi, not the peninsula)
 				color = { 110 25 25 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norman = cn_montgomeryshire
+					english = cn_montgomeryshire
+				}
 				
-				b_welshpool = {
+				b_welshpool = {	#Mathrafal
 					province = 1663
 
 					color = { 110 25 25 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						welsh = cn_y_trallwng
+						#Technically a different town: Welshpool is Y Trallwng, whereas b_welshpool is currently Mathrafal, historic seat of the Princes of Powys.
+						norman = cn_welshpool
+						english = cn_welshpool
 					}
 				}
-				b_newtown = {
+
+				b_newtown = {	#Machynlleth
 					province = 1664
 
 					color = { 110 25 25 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						welsh = cn_machynlleth	#Technically a different settlement, but Newtown wouldn't be founded till the 1300s regardless.
+						#Technically a different settlement, as Newtown wouldn't be founded till the 1300s, but b_newtown is currently Machynlleth, which was a more important Welsh site previously.
+						norman = cn_newtown
+						english = cn_newtown
 					}
 				}
 			}
-			c_sir_faesyfed = {
+
+			c_sir_faesyfed = {	#Ferlix
 				color = { 95 30 30 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norman = cn_radnorshire
+					english = cn_radnorshire
+				}
 
 				b_llandrindod = {
 					province = 1661
 
+					cultural_names = {
+						norman = cn_llandrindod_wells
+						english = cn_llandrindod_wells
+					}
+
 					color = { 95 30 30 }
 					color2 = { 255 255 255 }
 				}
-				b_rhayader = {
+
+				b_rhayader = {	#Rhaeadr Gwy
 					province = 1662
+
+					 cultural_names = {
+						norman = cn_rhayader
+						english = cn_rhayader
+					}
 
 					color = { 95 30 30 }
 					color2 = { 255 255 255 }
 				}
 			}
+
 			c_hereford = {
 				color = { 110 45 35 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					#This name is actually Anglo-Saxon, but the original Welsh name, Ergyng, is long dead by 867. Arcenefelde is the archaic term for the area after the conquest, and the name used by/to refer to the Welsh-speaking portions of the county, with Herefordshire referring to the Anglo-Saxons/English.
+					welsh = cn_arcenefelde
+					cumbrian = cn_arcenefelde
+				}
 				
 				b_hereford = {
 					province = 1632
 
+					cultural_names = {
+						welsh = cn_hennffordd
+						cumbrian = cn_hennffordd
+					}
+
 					color = { 110 45 35 }
 					color2 = { 255 255 255 }
 				}
+
 				b_wigmore = {
 					province = 1633
 				
 					color = { 110 45 35 }
 					color2 = { 255 255 255 }
 				}
+
 				b_clifford = {
 					province = 1634
 
@@ -2577,121 +2717,191 @@ e_britannia = {
 			
 			capital = c_carmarthenshire # Dyfed
 			
-			c_carmarthenshire = {
+			c_carmarthenshire = {	#Sir Gaerfyrddin
 				color = { 245 170 100 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norman = cn_carmarthenshire
+					english = cn_carmarthenshire
+				}
 			
-				b_carmarthen = {
+				b_carmarthen = {	#Caerfyrddin
 					province = 1652
 
 					color = { 245 170 100 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						welsh = cn_caerfyrddin
+						norman = cn_carmarthen
+						english = cn_carmarthen
 					}
 				}
-				b_llandovery = {
+
+				b_llandovery = {	#Llanymddyfri
 					province = 1653
 
 					color = { 245 170 100 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						welsh = cn_llanymddyfri
+						norman = cn_llandovery
+						english = cn_llandovery
 					}
 				}
 			}
-			c_pembrokeshire = {
+
+			c_pembrokeshire = {	#Dyfed
 				color = { 210 140 90 }
 				color2 = { 255 255 255 }
 
-				b_pembroke = {
+				cultural_names = {
+					norman = cn_pembrokeshire
+					english = cn_pembrokeshire
+				}
+
+				b_pembroke = {	#Penfro
 					province = 1654
 
 					color = { 210 140 90 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						welsh = cn_penfro
+						norman = cn_pembroke
+						english = cn_pembroke
 					}
 				}
-				b_st_davids = {
+
+				b_st_davids = {	#Tyddewi
 					province = 1655
 
 					color = { 210 140 90 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						welsh = cn_tyddewi
+						norman = cn_st_davids
+						english = cn_st_davids
 					}
 				}
-				b_fishguard = {
+
+				b_fishguard = {	#Abergwaun
 					province = 1656
 
 					color = { 210 140 90 }
 					color2 = { 255 255 255 }
+
+					#Technically, not established till the mid-to-late 900s.
 					
 					cultural_names = {
-						welsh = cn_abergwaun
+						#Pre-Anglicisation name of Fishguard.
+						norman = cn_fiscard
+						english = cn_fiscard
 					}
 				}
 			}
-			c_glamorgan = {
+
+			c_glamorgan = {	#Morgannwg
 				color = { 220 190 145 }
 				color2 = { 255 0 0 }
-			
-				b_cardiff = {
+
+				cultural_names = {
+					norman = cn_glamorgan
+					english = cn_glamorgan
+				}
+
+				b_cardiff = {	#Caerdydd
 					province = 1649
 
 					color = { 220 190 145 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norman = cn_cardiff
+						english = cn_cardiff
+					}
 				}
-				b_swansea = {
+
+				b_swansea = {	#Abertawe
 					province = 1650
 
 					color = { 220 190 145 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						welsh = cn_abertawe
+						norman = cn_swansea
+						english = cn_swansea
 					}
 				}
-				b_caerphilly = {
+
+				b_caerphilly = {	#Caerffili
 					province = 1651
 
 					color = { 220 190 145 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norman = cn_caerphilly
+						english = cn_caerphilly
+					}
 				}
 			}
-			c_monmouthshire = {
+
+			c_monmouthshire = {	#Gwent
 				color = { 210 165 60 }
 				color2 = { 255 255 255 }
-			
-				b_casnewydd = {
+
+				cultural_names = {
+					norman = cn_monmouthshire
+					english = cn_monmouthshire
+				}
+
+				b_casnewydd = {	#Caerllion
 					province = 1630
 
 					color = { 210 165 60 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norman = cn_caerleon
+						english = cn_caerleon
+					}
 				}
-				b_monmouth = {
+
+				b_monmouth = {	#Trefynwy
 					province = 1631
 
 					color = { 210 165 60 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norman = cn_monmouth
+						english = cn_monmouth
+					}
 				}
 			}
 
-			c_brecknockshire = {
+			c_brecknockshire = {	#Brycheiniog"
 				color = { 215 150 115 }
 				color2 = { 255 255 255 }
 
-				b_brecon = {
+				cultural_names = {
+					norman = cn_brecknockshire
+					english = cn_brecknockshire
+				}
+
+				b_brecon = {	#Aberhonddu
 					province = 1659
 
 					color = { 215 150 115 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						#Brecon is the modern form.
+						norman = cn_brecknock
+						english = cn_brecknock
+					}
 				}
+				
 				b_talgarth = {
 					province = 1660
 
@@ -3016,6 +3226,8 @@ e_britannia = {
 			cultural_names = {
 				gaelic = cn_galloway
 				irish = cn_galloway
+				norse = cn_galvei
+				norwegian = cn_galvei
 			}
 			
 			ai_primary_priority = {
@@ -3090,6 +3302,8 @@ e_britannia = {
 					welsh 		= cn_galwyddel
 					breton 		= cn_galwyddel
 					cornish 	= cn_galwyddel
+					norse 		= cn_galvei
+					norwegian 	= cn_galvei
 				}
 				color = { 230 120 65 }
 				color2 = { 255 255 255 }
@@ -3176,6 +3390,161 @@ e_britannia = {
 
 					color = { 215 140 55 }
 					color2 = { 255 255 255 }
+				}
+			}
+		}
+		
+		d_western_isles = {
+			color = { 225 120 30 }
+			color2 = { 255 255 255 }
+			
+			capital = c_inner_hebrides #Islay
+
+			definite_form = yes
+
+			cultural_names = {
+				norse = cn_sudreyjar
+				norwegian = cn_sudreyjar
+			}
+			
+			c_inner_hebrides = {
+				color = { 255 200 10 }
+				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norse = cn_innri_sudreyjar
+					norwegian = cn_innri_sudreyjar
+				}
+
+				b_islay = {
+					province = 1689
+
+					color = { 255 200 10 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_il
+						norwegian = cn_il
+					}
+				}
+				b_arran = {
+					province = 1690
+
+					color = { 255 200 10 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_hereyjar
+						norwegian = cn_hereyjar
+					}
+				}
+				b_mull = {
+					province = 1691
+
+					color = { 255 200 10 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_myl
+						norwegian = cn_myl
+					}
+				}
+			}
+			c_outer_hebrides = {
+				color = { 255 225 55 }
+				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norse = cn_ytri_sudreyjar
+					norwegian = cn_ytri_sudreyjar
+				}
+
+				b_skye = {
+					province = 1692
+
+					color = { 255 225 55 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_skid
+						norwegian = cn_skid
+					}
+				}
+				b_lewis = {
+					province = 1693
+
+					color = { 255 225 55 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_ljodhus
+						norwegian = cn_ljodhus
+					}
+				}
+				b_the_uists = {
+					province = 1694
+
+					color = { 255 225 55 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_vist
+						norwegian = cn_vist
+					}
+				}
+			}
+			c_argyll = {
+				color = { 215 200 15 }
+				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norse = cn_argjall
+					norwegian = cn_argjall
+				}
+				
+				b_kilmarten = {
+					province = 1700
+
+					color = { 215 200 15 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_kjarbarey
+						norwegian = cn_kjarbarey
+					}
+				}
+				b_glencoe = {
+					province = 1701
+
+					color = { 215 200 15 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_dysjarstadr
+						norwegian = cn_dysjarstadr
+					}
+				}
+				b_lomond = {
+					province = 1702
+
+					color = { 215 200 15 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_lokolofni
+						norwegian = cn_lokolofni
+					}
+				}
+				b_ardnamurchon = {
+					province = 35
+
+					color = { 215 200 15 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_mylarsund
+						norwegian = cn_mylarsund
+					}
 				}
 			}
 		}
@@ -3315,6 +3684,11 @@ e_britannia = {
 			color2 = { 255 255 255 }
 			
 			capital = c_moray # Elgin
+
+			cultural_names = {
+				norse = cn_katanes
+				norwegian = cn_katanes
+			}
 			
 			c_moray = {
 				color = { 255 180 60 }
@@ -3342,6 +3716,11 @@ e_britannia = {
 			c_ross = {
 				color = { 250 210 85 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norse = cn_ros
+					norwegian = cn_ros
+				}
 				
 				b_dingwall = {
 					province = 1703
@@ -3351,6 +3730,18 @@ e_britannia = {
 				}
 				b_gairloch = {
 					province = 1704
+
+					color = { 250 210 85 }
+					color2 = { 255 255 255 }
+				}
+				b_tain = {
+					province = 8777
+
+					color = { 250 210 85 }
+					color2 = { 255 255 255 }
+				}
+				b_applecross = {
+					province = 8778
 
 					color = { 250 210 85 }
 					color2 = { 255 255 255 }
@@ -3383,15 +3774,36 @@ e_britannia = {
 			c_sutherland = {
 				color = { 255 205 115 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norse = cn_sudrland
+					norwegian = cn_sudrland
+				}
 				
 				b_dornoch = {
 					province = 1705
 
 					color = { 255 205 115 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_hjalmundalr
+						norwegian = cn_hjalmundalr
+					}
 				}
 				b_durness = {
 					province = 1706
+
+					color = { 255 205 115 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_dyrnes
+						norwegian = cn_dyrnes
+					}
+				}
+				b_assynt = {
+					province = 8779
 
 					color = { 255 205 115 }
 					color2 = { 255 255 255 }
@@ -3401,18 +3813,33 @@ e_britannia = {
 			c_caithness = {
 				color = { 240 220 145 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norse = cn_c_katanes
+					norwegian = cn_c_katanes
+				}
 				
 				b_thurso = {
 					province = 1707
 
 					color = { 240 220 145 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_thorsa
+						norwegian = cn_thorsa
+					}
 				}
 				b_wick = {
 					province = 1708
 
 					color = { 240 220 145 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_vik
+						norwegian = cn_vik
+					}
 				}
 			}
 
@@ -3435,6 +3862,18 @@ e_britannia = {
 				b_glenfinnan = {
 					province = 1711
 
+					color = { 240 160 45 }
+					color2 = { 255 255 255 }
+				}
+				b_urquhart = {
+					province = 8775
+                
+					color = { 240 160 45 }
+					color2 = { 255 255 255 }
+				}
+				b_glenelg = {
+					province = 8776
+                
 					color = { 240 160 45 }
 					color2 = { 255 255 255 }
 				}
@@ -3481,6 +3920,13 @@ e_britannia = {
 			c_dublin = {
 				color = { 55 250 85 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norse = cn_dyflinn
+					norwegian = cn_dyflinn
+					irish = cn_dubhlinn
+					welsh = cn_dulyn
+				}
 				
 				b_dublin = {
 					province = 28
@@ -3490,6 +3936,7 @@ e_britannia = {
 					
 					cultural_names = {
 						norse = cn_dyflinn
+						norwegian = cn_dyflinn
 						irish = cn_dubhlinn
 						welsh = cn_dulyn
 					}
@@ -3538,25 +3985,25 @@ e_britannia = {
 
 
 			c_athlone = {
-				color = { 0 80 20 }
+				color = { 40 230 65 }
 				color2 = { 255 255 255 }
 
 				b_athlone = {
 					province = 34
 
-					color = { 55 250 85 }
+					color = { 40 230 65 }
 					color2 = { 255 255 255 }
 				}
 				b_birr = { #Historical note: monastery
 					province = 33
 
-					color = { 55 250 85 }
+					color = { 40 230 65 }
 					color2 = { 255 255 255 }
 				}
 				b_uisneach = {
 					province = 36
 
-					color = { 55 250 85 }
+					color = { 40 230 65 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -3579,7 +4026,7 @@ e_britannia = {
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						norwegian = cn_strangfjord
+						norwegian = cn_strangfjordr
 						swedish = cn_strangfjord
 						danish = cn_strangfjord
 						norse = cn_strangfjordr
@@ -3601,7 +4048,13 @@ e_britannia = {
 					cultural_names = {
 						irish = cn_carraig_fhearghais
 					}
-				}	
+				}
+				b_bangor = {
+					province = 8741
+
+					color = { 25 230 35 }
+					color2 = { 255 255 255 }
+				}
 			}
 			c_oriel = {
 				color = { 30 180 45 }
@@ -3614,7 +4067,7 @@ e_britannia = {
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						norwegian = cn_kerlingfjord
+						norwegian = cn_kerlingfrjordr
 						swedish = cn_kerlingfjord
 						danish = cn_kerlingfjord
 						norse = cn_kerlingfrjordr
@@ -3641,10 +4094,27 @@ e_britannia = {
 						irish = cn_baile_atha_fhirdhia
 					}
 				}
+				b_clogher = {
+					province = 8742
+
+					color = { 30 180 45 }
+					color2 = { 255 255 255 }
+				}
+				b_dungannon = {
+					province = 8743
+
+					color = { 30 180 45 }
+					color2 = { 255 255 255 }
+				}
 			}
 			c_ailech = {
 				color = { 66 157 22 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					norse = cn_ulfkelsfjordr
+					norwegian = cn_ulfkelsfjordr
+				}
 				
 				b_donegal = {
 					province = 9
@@ -3684,6 +4154,8 @@ e_britannia = {
 					
 					cultural_names = {
 						irish = cn_daire_coluimb_chille
+						norse = cn_ulfkelsfjordr
+						norwegian = cn_ulfkelsfjordr
 					}
 				}
 			}
@@ -3693,11 +4165,15 @@ e_britannia = {
 			color = { 43 229 108 }
 			color2 = { 255 255 255 }			
 			
-			capital = c_connacht # Connacht
+			capital = c_mayo # Cruachu
 
-			c_connacht = {
+			c_connacht = {	#Hy Many
 				color = { 45 230 70 }
 				color2 = { 255 255 255 }
+				
+				cultural_names = {
+						irish = cn_ui_maine
+				}
 			
 				b_galway = {
 					province = 20
@@ -3709,34 +4185,64 @@ e_britannia = {
 						irish = cn_dun_bhun_na_gaillimhe
 					}
 				}
-				b_castlebar = {
-					province = 21
-
-					color = { 45 230 70 }
-					color2 = { 255 255 255 }
-				}
-				b_sligo = {
-					province = 22
-
-					color = { 45 230 70 }
-					color2 = { 255 255 255 }
-				}
 				b_athenry = {
 					province = 23
 
 					color = { 45 230 70 }
 					color2 = { 255 255 255 }
 				}
+				b_tuam = {
+					province = 8746
+
+					color = { 45 230 70 }
+					color2 = { 255 255 255 }
+				}
+				b_da_chainoc = {
+					province = 8747
+
+					color = { 45 230 70 }
+					color2 = { 255 255 255 }
+				}				
+			}
+			
+			c_mayo = {
+				color = { 15 190 70 }
+				color2= { 255 255 255 }
+				
+				b_cruachu = {
+					province = 8745
+
+					color = { 15 190 70 }
+					color2 = { 255 255 255 }
+				}
+				b_castlebar = {
+					province = 21
+
+					color = { 15 190 70 }
+					color2 = { 255 255 255 }
+				}
+				b_sligo = {
+					province = 22
+
+					color = { 15 190 70 }
+					color2 = { 255 255 255 }
+				}
+				b_killala = {
+					province = 8748
+
+					color = { 15 190 70 }
+					color2 = { 255 255 255 }
+				}
 			}
 			
 			c_breifne = {
-				color = { 40 230 65 }
+				color = { 95 221 121 }
 				color2 = { 255 255 255 }
 				
 				b_dromahair = {
 					province = 24
 
-					color = { 40 230 65 }
+					color = { 95 221 121 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3746,13 +4252,13 @@ e_britannia = {
 				b_belcoo = {
 					province = 25
 
-					color = { 40 230 65 }
+					color = { 95 221 121 }
 					color2 = { 255 255 255 }
 				}
 				b_longford = {
 					province = 26
 
-					color = { 40 230 65 }
+					color = { 95 221 121 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3762,12 +4268,18 @@ e_britannia = {
 				b_cavan = {
 					province = 27
 
-					color = { 40 230 65 }
+					color = { 95 221 121 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
 						irish = cn_an_cabhan
 					}
+				}
+				b_adragh = {
+					province = 8744
+
+					color = { 95 221 121 }
+					color2 = { 255 255 255 }
 				}
 			}	
 		}
@@ -3779,17 +4291,17 @@ e_britannia = {
 			capital = c_leinster # Leinster
 			
 			c_leinster = {
-				color = { 65 210 85 }
+				color = { 68 156 28 }
 				color2 = { 255 255 255 }
 				
 				b_wexford = {
 					province = 37
 					
-					color = { 65 210 85 }
+					color = { 68 156 28 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						norwegian = cn_veisafjord
+						norwegian = cn_veisafjordr
 						swedish = cn_veisafjord
 						danish = cn_veisafjord
 						norse = cn_veisafjordr
@@ -3799,7 +4311,7 @@ e_britannia = {
 				b_enniscorthy = {
 					province = 38
 					
-					color = { 65 210 85 }
+					color = { 68 156 28 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3809,7 +4321,7 @@ e_britannia = {
 				b_ferns = {
 					province = 39
 					
-					color = { 65 210 85 }
+					color = { 68 156 28 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3819,7 +4331,7 @@ e_britannia = {
 				b_carlow = {
 					province = 40
 					
-					color = { 65 210 85 }
+					color = { 68 156 28 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3828,13 +4340,13 @@ e_britannia = {
 				}
 			}
 			c_ossory = {
-				color = { 60 210 80 }
+				color = { 93 166 15 }
 				color2 = { 255 255 255 }
 				
 				b_gowran = {
 					province = 43
 					
-					color = { 60 210 80 }
+					color = { 93 166 15 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3844,7 +4356,7 @@ e_britannia = {
 				b_kilkenny = { #Historical note: major monastic centre
 					province = 41
 					
-					color = { 60 210 80 }
+					color = { 93 166 15 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3854,13 +4366,13 @@ e_britannia = {
 				b_athy = {
 					province = 42
 
-					color = { 60 210 80 }
+					color = { 93 166 15 }
 					color2 = { 255 255 255 }
 				}
 				b_carrick = {
 					province = 44
 
-					color = { 60 210 80 }
+					color = { 93 166 15 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -3873,13 +4385,13 @@ e_britannia = {
 			capital = c_thomond # Thomond
 			
 			c_thomond = {
-				color = { 90 221 111 }
+				color = { 3 128 0 }
 				color2 = { 255 255 255 }
 
 				b_limerick = {
 					province = 45
 
-					color = { 90 221 111 }
+					color = { 3 128 0 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3890,20 +4402,10 @@ e_britannia = {
 						irish = cn_luimneach
 					}
 				}
-				b_ennis = {
-					province = 46
-					
-					color = { 90 221 111 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						irish = cn_inis
-					}
-				}
 				b_nenagh = {
 					province = 47
 					
-					color = { 90 221 111 }
+					color = { 3 128 0 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3913,23 +4415,52 @@ e_britannia = {
 				b_roscrea = { #Historical note: important trading town
 					province = 48
 					
-					color = { 90 221 111 }
+					color = { 3 128 0 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
 						irish = cn_ros_cre
 					}
 				}
+				b_kilmallock = {
+					province = 8750
+
+					color = { 3 128 0 }
+					color2 = { 255 255 255 }
+				}
 			}
+			
+			c_ennis = {
+				color = { 32 115 30 }
+				color2 = { 255 255 255 }
+				
+				b_ennis = {
+					province = 46
+					
+					color = { 32 115 30 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						irish = cn_inis
+					}
+				}
+				b_kincora = {
+					province = 8749
+
+					color = { 32 115 30 }
+					color2 = { 255 255 255 }
+				}
+			}
+			
 			c_ormond = {
-				color = { 95 221 121 }
+				color = { 0 80 20 }
 				color2 = { 255 255 255 }
 				
 
 				b_waterford = {
 					province = 49
 
-					color = { 95 221 121 }
+					color = { 0 80 20 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3943,7 +4474,7 @@ e_britannia = {
 				b_emly = { #Historical note: monastery
 					province = 50
 					
-					color = { 95 221 121 }
+					color = { 0 80 20 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3953,7 +4484,7 @@ e_britannia = {
 				b_clonmel = {
 					province = 51
 					
-					color = { 95 221 121 }
+					color = { 0 80 20 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3962,19 +4493,19 @@ e_britannia = {
 				}
 			}
 			c_desmond = {
-				color = { 100 221 90 }
+				color = { 10 137 35 }
 				color2 = { 255 255 255 }
 				
 				b_tralee = {
 					province = 52
 
-					color = { 100 221 90 }
+					color = { 10 137 35 }
 					color2 = { 255 255 255 }
 				}
 				b_cork = { #Historical note: important trading town
 					province = 53
 					
-					color = { 100 221 90 }
+					color = { 10 137 35 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -3984,13 +4515,13 @@ e_britannia = {
 				b_kinsale = {
 					province = 54
 
-					color = { 100 221 90 }
+					color = { 10 137 35 }
 					color2 = { 255 255 255 }
 				}
 				b_baltimore = {
 					province = 16
 
-					color = { 100 221 90 }
+					color = { 10 137 35 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -4003,7 +4534,9 @@ e_britannia = {
 		
 		can_create = {
 			trigger_if = {
-				NOT = { current_date >= 1184.1.1 }
+				limit = {
+					is_ai = yes
+				}
 				has_culture_group = culture_group:brythonic_group
 			}
 		}
@@ -4029,6 +4562,12 @@ e_britannia = {
 
 		capital = c_cornwall
 	}
+
+	k_mann_the_isles = {
+		color = { 124 59 8 }
+
+		capital = c_isle_of_man	#Mann
+	}
 }
 
 e_germany = {
@@ -4036,7 +4575,20 @@ e_germany = {
 	color2 = { 220 220 20 }
 
 	capital = c_nassau
-		
+
+	can_create = {
+		custom_description = {
+			text = form_germania_christian_trigger
+			
+			NOT = {
+				faith = {
+					religion_tag = christianity_religion
+					has_doctrine = doctrine_spiritual_head
+				}
+			}
+		}
+	}
+	
 	ai_primary_priority = {
 		if = {
 			limit = {
@@ -4055,7 +4607,11 @@ e_germany = {
 		can_create = {
 			trigger_if = {
 				limit = {
+					is_ai = yes
+				}
+				OR = {
 					culture = culture:frisian
+					culture = culture:dutch
 				}
 			}
 		}
@@ -4065,6 +4621,7 @@ e_germany = {
 				limit = {
 					OR = {
 						culture = culture:frisian
+						culture = culture:dutch
 					}
 				}
 				add = @correct_culture_primary_score
@@ -4491,14 +5048,14 @@ e_germany = {
 				color = { 100 110 180 }
 				color2 = { 255 255 255 }
 
-				b_chiny = {
-					province = 2686
+				b_bouillon = {
+					province = 2091
 
 					color = { 100 110 180 }
 					color2 = { 255 255 255 }
 				}
-				b_bouillon = {
-					province = 2091
+				b_chiny = {
+					province = 2686
 
 					color = { 100 110 180 }
 					color2 = { 255 255 255 }
@@ -4866,8 +5423,8 @@ e_germany = {
 		d_trier = {
 			color = { 90 90 125 }
 			color2 = { 255 255 255 }
-
-			capital = c_trier
+					
+			capital = c_trier #Trier		
 
 			c_trier = {
 				color = { 90 90 125 }
@@ -10763,14 +11320,14 @@ e_byzantium = {
 			}
 		}
 		
-		d_bosna = {
+		d_bosna = {	#AKA Upper Bosnia
 			color = { 194 115 115 }
 			color2 = { 255 255 255 }
 			
 			capital = c_rama # Visoki
 			
 			c_rama = {
-				color = { 194 115 115 }
+				color = { 194 105 125 }
 				color2 = { 255 255 255 }
 				
 				#capital = 3527 # Visoki
@@ -10880,6 +11437,103 @@ e_byzantium = {
 					color2 = { 255 255 255 }
 				}
 			}
+			c_pset = {
+				color = { 135 55 65 }
+				color2 = { 255 255 255 }
+				
+				#capital = 3522 # Bihac
+				
+				b_bihac = {
+					province = 3522
+					
+					color = { 135 55 65 }
+					color2 = { 255 255 255}
+				}
+				b_krupa = {
+					province = 3521
+					
+					color = { 135 55 65 }
+					color2 = { 255 255 255}
+				}
+				b_pset = {
+					province = 3523
+					
+					color = { 135 55 65 }
+					color2 = { 255 255 255}
+				}
+			}
+		}
+		
+		d_lower_bosna = {
+			color = { 180 85 120 }
+			color2 = { 255 255 255 }
+			
+			capital = c_soli # Soli
+			
+			c_soli = {
+				color = { 170 80 125 }
+				color2 = { 255 255 255 }
+				
+				#capital = 3510 # Soli - Modern Tuzla
+
+				cultural_names = {
+					roman = cn_salines
+					greek = cn_salines
+					hungarian = cn_so
+					turkish = cn_tuzla	#A bit out of period, but you never know!
+				}
+				
+				b_soli = {
+					province = 3510
+					
+					color = { 170 80 125 }
+					color2 = { 255 255 255 }
+				}
+				b_bijeljina = {
+					province = 3509
+					
+					color = { 170 80 125 }
+					color2 = { 255 255 255 }
+				}
+				b_zvornik = {
+					province = 3511
+					
+					color = { 170 80 125 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_usora = {
+				color = { 170 70 100 }
+				color2 = { 255 255 255 }
+				
+				#capital = 3513 # Srebrenik
+				
+				b_srebrenik = {
+					province = 3513
+					
+					color = { 170 70 100 }
+					color2 = { 255 255 255 }
+				}
+				b_usora = {	#Actually Doboj: Usora is a river.
+					province = 463
+					
+					color = { 170 70 100 }
+					color2 = { 255 255 255 }
+				}
+				b_maglaj = {
+					province = 3514
+					
+					color = { 170 70 100 }
+					color2 = { 255 255 255 }
+				}
+				
+				b_tolisa = {
+					province = 3512
+					
+					color = { 170 70 100 }
+					color2 = { 255 255 255 }
+				}
+			}
 			c_vodica = {	#Actually Krajina.
 				color = { 130 10 20 }
 				color2 = { 255 255 255 }
@@ -10924,96 +11578,6 @@ e_byzantium = {
 					color2 = { 255 255 255 }
 				}
 			}
-			c_usora = {
-				color = { 170 70 100 }
-				color2 = { 255 255 255 }
-				
-				#capital = 3513 # Srebrenik
-				
-				b_srebrenik = {
-					province = 3513
-					
-					color = { 170 70 100 }
-					color2 = { 255 255 255 }
-				}
-				b_usora = {	#Actually Doboj: Usora is a river.
-					province = 463
-					
-					color = { 170 70 100 }
-					color2 = { 255 255 255 }
-				}
-				b_maglaj = {
-					province = 3514
-					
-					color = { 170 70 100 }
-					color2 = { 255 255 255 }
-				}
-				
-				b_tolisa = {
-					province = 3512
-					
-					color = { 170 70 100 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_soli = {
-				color = { 170 80 125 }
-				color2 = { 255 255 255 }
-				
-				#capital = 3510 # Soli - Modern Tuzla
-
-				cultural_names = {
-					roman = cn_salines
-					greek = cn_salines
-					hungarian = cn_so
-					turkish = cn_tuzla	#A bit out of period, but you never know!
-				}
-				
-				b_soli = {
-					province = 3510
-					
-					color = { 170 80 125 }
-					color2 = { 255 255 255 }
-				}
-				b_bijeljina = {
-					province = 3509
-					
-					color = { 170 80 125 }
-					color2 = { 255 255 255 }
-				}
-				b_zvornik = {
-					province = 3511
-					
-					color = { 170 80 125 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_pset = {
-				color = { 135 55 65 }
-				color2 = { 255 255 255 }
-				
-				#capital = 3522 # Bihac
-				
-				b_bihac = {
-					province = 3522
-					
-					color = { 135 55 65 }
-					color2 = { 255 255 255}
-				}
-				b_krupa = {
-					province = 3521
-					
-					color = { 135 55 65 }
-					color2 = { 255 255 255}
-				}
-				b_pset = {
-					province = 3523
-					
-					color = { 135 55 65 }
-					color2 = { 255 255 255}
-				}
-			}
-
 		}
 		
 		d_usora = {	#Actually Zachlumia
@@ -11070,22 +11634,27 @@ e_byzantium = {
 					color = { 210 80 90 }
 					color2 = { 255 255 255 }
 				}
-				b_drijeva = {
-					province = 3562
+			}
+			c_zelengora = {
+				color = { 195 70 125 }
+				color2= { 255 255 255 }
+				
+				b_gacko = {
+					province = 3560
 					
-					color = { 210 80 90 }
+					color = { 195 70 125 }
 					color2 = { 255 255 255 }
 				}
-				b_kljuc = {
-					province = 3563
+				b_konjic = {
+					province = 3557
 					
-					color = { 210 80 90 }
+					color = { 195 70 125 }
 					color2 = { 255 255 255 }
 				}
-				b_mostar = {
-					province = 3558
+				b_obalj = {
+					province = 3559
 					
-					color = { 210 80 90 }
+					color = { 195 70 125 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -11242,16 +11811,27 @@ e_byzantium = {
 					color = { 103 88 51 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_zlatibor = {
+				color = { 70 50 40 }
+				color2 = { 255 255 255 }
+				
+				b_sjenica = {
+					province = 3591
+					
+					color = { 70 50 40 }
+					color2 = { 255 255 255 }
+				}
 				b_arilje = {
 					province = 3589
 					
-					color = { 103 88 51 }
+					color = { 70 50 40 }
 					color2 = { 255 255 255 }
 				}
 				b_rujno = {
 					province = 3590
 					
-					color = { 103 88 51 }
+					color = { 70 50 40 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -13345,7 +13925,12 @@ e_byzantium = {
 			}
 		}
 		
-	d_cilicia = {
+		cultural_names = {
+			greek = cn_anatolikon
+			turkish = cn_anadolu
+		}
+		
+		d_cilicia = {
 			color = { 223 117 26 }
 			color2= { 255 255 255 }
 			
@@ -13521,6 +14106,7 @@ e_byzantium = {
 				
 				cultural_names = {
 					greek = cn_issus
+					armenian = cn_issus
 					turkish = cn_issos
 				}
 				
@@ -14425,7 +15011,7 @@ e_byzantium = {
 		color = { 205 130 85 }
 		color2= { 255 255 255 }
 		
-		capital = c_charsianon
+		capital = c_trebizond
 		
 		ai_primary_priority = {
 			if = {
@@ -14552,6 +15138,7 @@ e_byzantium = {
 				}
 			}
 		}
+		
 		d_armeniac = {
 			color = { 150 130 180 }
 			color2= { 255 255 255 }
@@ -14735,6 +15322,7 @@ e_byzantium = {
 				}
 			}
 		}
+		
 		d_sebasteia = {
 			color = { 197 157 76 }
 			color2= { 255 255 255 }
@@ -16151,6 +16739,12 @@ e_byzantium = {
 					color = { 189 150 55 }
 					color2 = { 255 255 255 }
 				}
+				b_ariano = {
+					province = 8757
+					
+					color = { 189 150 55 }
+					color2 = { 255 255 255 }
+				}
 			}
 			c_foggia = {
 				color = { 169 150 45 }
@@ -16164,6 +16758,12 @@ e_byzantium = {
 				}
 				b_larino = {
 					province = 2605
+					
+					color = { 169 150 45 }
+					color2 = { 255 255 255 }
+				}
+				b_vieste = {
+					province = 8758
 					
 					color = { 169 150 45 }
 					color2 = { 255 255 255 }
@@ -16218,6 +16818,12 @@ e_byzantium = {
 				}
 				b_amalfi = {
 					province = 2611
+					
+					color = { 230 225 90 }
+					color2 = { 255 255 255 }
+				}
+				b_aversa = {
+					province = 8756
 					
 					color = { 230 225 90 }
 					color2 = { 255 255 255 }
@@ -16287,6 +16893,12 @@ e_byzantium = {
 				color = { 187 172 83 }
 				color2 = { 255 255 255 }
 				
+				b_lecce = {
+					province = 8755
+					
+					color = { 187 172 83 }
+					color2 = { 255 255 255 }
+				}
 				b_brindisi = {
 					province = 2622
 					
@@ -16326,6 +16938,12 @@ e_byzantium = {
 				}
 				b_potenza = {
 					province = 2616
+					
+					color = { 245 194 199 }
+					color2 = { 255 255 255 }
+				}
+				b_policastro = {
+					province = 8754
 					
 					color = { 245 194 199 }
 					color2 = { 255 255 255 }
@@ -16372,6 +16990,12 @@ e_byzantium = {
 					color = { 165 150 95 }
 					color2 = { 255 255 255 }
 				}
+				b_tropea = {
+					province = 8751
+					
+					color = { 165 150 95 }
+					color2 = { 255 255 255 }
+				}
 			}
 			c_cosenza = {
 				color = { 170 132 80 }
@@ -16389,6 +17013,12 @@ e_byzantium = {
 					color = { 170 132 80 }
 					color2 = { 255 255 255 }
 				}
+				b_belvedere = {
+					province = 8752
+					
+					color = { 170 132 80 }
+					color2 = { 255 255 255 }
+				}
 			}
 			c_rossano = {
 				color = { 150 125 80 }
@@ -16402,6 +17032,12 @@ e_byzantium = {
 				}
 				b_cotrone = { #Crotone
 					province = 2625
+					
+					color = { 150 125 80 }
+					color2 = { 255 255 255 }
+				}
+				b_catanzaro = {
+					province = 8753
 					
 					color = { 150 125 80 }
 					color2 = { 255 255 255 }
@@ -16451,6 +17087,12 @@ e_byzantium = {
 				}
 				b_chioggia = {
 					province = 2504
+					
+					color = { 40 143 132 }
+					color2 = { 255 255 255 }
+				}
+				b_malamacco = {
+					province = 8767
 					
 					color = { 40 143 132 }
 					color2 = { 255 255 255 }
@@ -16531,7 +17173,7 @@ e_italy = {
 	}
 
 	k_naples = {
-		color = { 218 217 242 }
+		color = { 131 90 158 }
 		capital = c_napoli # Napoli
 		
 	}
@@ -16641,6 +17283,12 @@ e_italy = {
 					color = { 130 215 190 }
 					color2 = { 255 255 255 }
 				}
+				b_este = {
+					province = 8765
+
+					color = { 130 215 190 }
+					color2 = { 255 255 255 }
+				}
 			}
 			
 			c_polesine = {
@@ -16708,6 +17356,12 @@ e_italy = {
 					color = { 195 115 135 }
 					color2 = { 255 255 255 }
 				}
+				b_santhia = {
+					province = 8764
+
+					color = { 195 115 135 }
+					color2 = { 255 255 255 }
+				}
 			}
 			c_vercelli = {
 				color = { 195 115 135 }
@@ -16745,6 +17399,12 @@ e_italy = {
 				
 				b_cuneo = {
 					province = 2043
+
+					color = { 195 130 145 }
+					color2 = { 255 255 255 }
+				}
+				b_mondovi = {
+					province = 8763
 
 					color = { 195 130 145 }
 					color2 = { 255 255 255 }
@@ -16814,6 +17474,12 @@ e_italy = {
 					color = { 170 150 190 }
 					color2 = { 255 255 255 }
 				}
+				b_chiari = {
+					province = 8762
+
+					color = { 170 150 190 }
+					color2 = { 255 255 255 }
+				}
 			}
 			c_como = {
 				color = { 240 175 255 }
@@ -16854,8 +17520,14 @@ e_italy = {
 					color = { 250 150 220 }
 					color2 = { 255 255 255 }
 				}
-				b_val_camonica = {
+				b_val_camonica = {	#Riva AKA Riva del Garda
 					province = 2495
+
+					color = { 250 150 220 }
+					color2 = { 255 255 255 }
+				}
+				b_tirano = {
+					province = 8761
 
 					color = { 250 150 220 }
 					color2 = { 255 255 255 }
@@ -17220,6 +17892,13 @@ e_italy = {
 				}
 				b_cortona = {
 					province = 2564
+
+					color = { 205 175 25 }
+					color2 = { 255 255 255 }
+				}
+				
+				b_asciano = {
+					province = 8760
 
 					color = { 205 175 25 }
 					color2 = { 255 255 255 }
@@ -17751,6 +18430,12 @@ e_italy = {
 					color = { 167 102 103 }
 					color2 = { 255 255 255 }
 				}
+				b_agnone = {
+					province = 8759
+
+					color = { 167 102 103 }
+					color2 = { 255 255 255 }
+				}
 			}
 			
 			c_abruzzi = {
@@ -18199,7 +18884,7 @@ e_scandinavia = {
 				b_kungahalla = {
 					province = 318
 					
-					color = { 220 4 40 }
+					color = { 20 70 215 }
 					color2 = { 255 255 255 }
 				}
 				b_opensten = {
@@ -18682,7 +19367,7 @@ e_scandinavia = {
 			norse = cn_lappland
 		}
 		
-		capital = c_jahkamakke # Jåhkåmåhkke
+		capital = c_biton # Biton
 		
 		can_create = {
 			trigger_if = {
@@ -18705,7 +19390,7 @@ e_scandinavia = {
 		d_aarjetje  = { #Åarjetje (sami for "south")
 			color = { 15 15 180 }
 			color2 = { 255 255 255 }
-			capital = c_jahkamakke # Jåhkåmåhkke
+			capital = c_sjeltie # Åsele
 			
 			cultural_names = {
 				english = cn_lapland
@@ -18815,31 +19500,22 @@ e_scandinavia = {
 						swedish = cn_storuman
 					}
 				}
+				b_ume = {
+					province = 8781
+					color = { 20 25 195 }
+					color2 = { 255 255 255 }
+				}
+				b_lais = {
+					province = 381
+
+					color = { 20 25 195 }
+					color2 = { 255 255 255 }
+				}
 			}
-			c_biton = { #Biŧon (Piteå)
+			c_pite = {
 				color = { 10 10 205 }
 				color2 = { 255 255 255 }
 
-				b_biton = { #(Piteå)
-					province = 422
-
-					color = { 10 10 205 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						swedish = cn_pitea
-					}
-				}
-				b_arviesjavrrie = {  #Árviesjávrrie (Arvidsjaur)
-					province = 375
-
-					color = { 10 10 205 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						swedish = cn_arvidsjaur
-					}
-				}
 				b_luokta = {
 					province = 374
 
@@ -18852,32 +19528,92 @@ e_scandinavia = {
 					color = { 10 10 205 }
 					color2 = { 255 255 255 }
 				}
-			}
-			c_lais = {
-				color = { 0 0 140 }
-				color2 = { 255 255 255 }
-
-				b_lais = {
-					province = 381
-
-					color = { 0 0 140 }
-					color2 = { 255 255 255 }
-				}
 				b_semisjaur = {
 					province = 377
-
-					color = { 0 0 140 }
+					
+					color = { 10 10 205 }
 					color2 = { 255 255 255 }
+					}
+				}
+			c_jahkamakke = { #Lule
+				color = { 35 15 160 }
+				color2 = { 255 255 255 }
+
+				b_jahkamakke = { #Jåhkåmåhkke (Jokkmokk)
+					province = 373
+
+					color = { 15 15 180 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						swedish = cn_jokkmokk
+					}
+				}
+				b_tuorpon = {
+					province = 376
+
+					color = { 15 15 180 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
+		
+		d_vuovdisamieana = {
+		#Cobbled sami translation for "Forest (Vuovdi) Sámi Land (Eana)"
+		#Ideally it would mean "Land of the Forest Sami"
+			color = { 10 10 90 }
+			color2= { 255 255 255 }
+			
+			capital = c_biton
+
+			cultural_names = {
+				norwegian = cn_vasterbotten
+				swedish = cn_vasterbotten
+				norse = cn_vasterbotten
+			}
+			
+			c_biton = {
+				color = { 20 35 110 }
+				color2= { 255 255 255 }
+				
+				b_biton = { #(Piteå)
+					province = 422
+
+					color = { 20 35 110 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						swedish = cn_pitea
+				}
+			}
+				b_arviesjavrrie = {  #Árviesjávrrie (Arvidsjaur)
+					province = 375
+
+					color = { 20 35 110 }
+				color2 = { 255 255 255 }
+
+					cultural_names = {
+						swedish = cn_arvidsjaur
+					}
+				}
+				b_ubmeje = { #(Umeå)
+					province = 382
+
+					color = { 20 35 110 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						swedish = cn_umea
 				}
 			}
 			c_julevadno = { #Julevädno (Luleälven)
-				color = { 30 25 185 }
+				color = { 20 20 100 }
 				color2 = { 255 255 255 }
 
 				b_julevu = { #(Luleå)
 					province = 421
 
-					color = { 30 25 185 }
+					color = { 20 20 100 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -18887,30 +19623,92 @@ e_scandinavia = {
 				b_galaseatnu = { #Gáláseatnu (Kalix)
 					province = 423
 
-					color = { 30 25 185 }
+					color = { 20 20 100 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
 						swedish = cn_kalix
 					}
 				}
-				b_sjokksjokk = {
-					province = 378
+				b_duortnus = { #(Torneå)
+					province = 424
 
-					color = { 30 25 185 }
+					color = { 20 20 100 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						swedish = cn_tornea
+						finnish = cn_tornio
+					}
+				}
+			}
+			c_kittila = {
+				color = { 15 0 90 }
+				color2 = { 255 255 255 }
+				
+				b_kittal = {
+					province = 385
+
+					color = { 15 0 90 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						finnish = cn_kittila
+					}
+				}
+				b_suadigil = { #Suádigil (Sodankylä)
+					province = 387
+
+					color = { 15 0 90 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						finnish = cn_sodankyla
+					}
+				}
+				b_roavvenjarga = {	#Rovaniemi
+					province = 8785
+					color = { 15 0 90 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_torne = {
+				color = { 45 45 135 }
+				color2= { 255 255 255 }
+				
+				b_vettanen = {	#(=Ängesån)
+					province = 8782
+					color = { 45 45 135 }
+					color2 = { 255 255 255 }
+				}
+				b_ylikainuu = {	#(=Överkalix)
+					province = 8783
+					color = { 45 45 135 }
+					color2 = { 255 255 255 }
+				}
+				b_kangos = {
+					province = 8784
+					color = { 45 45 135 }
 					color2 = { 255 255 255 }
 				}
 			}
 		}
 
-		d_duortnoseatnu = { #(Torne älv)
+		d_duortnoseatnu = { #Davvisapmi
 			color = { 46 30 205 }
 			color2 = { 255 255 255 }
 			
 			capital = c_siggevara # Siggevara
 
+			cultural_names = {
+				norse = cn_finnmork
+				norwegian = cn_finnmork
+				swedish = cn_finnmork
+				finnish = cn_ruija
+			}
+
 			c_siggevara = {
-				color = { 46 30 205 }
+				color = { 46 37 225 }
 				color2 = { 255 255 255 }
 
 				b_siggevara = {
@@ -18919,8 +19717,8 @@ e_scandinavia = {
 					color = { 46 30 205 }
 					color2 = { 255 255 255 }
 				}
-				b_duortnus = { #(Torneå)
-					province = 424
+				b_sirkas = {
+					province = 379
 
 					color = { 46 30 205 }
 					color2 = { 255 255 255 }
@@ -18929,9 +19727,8 @@ e_scandinavia = {
 						swedish = cn_tornea
 						finnish = cn_tornio
 					}
-				}
-				b_kittal = {
-					province = 385
+				b_sjokksjokk = {
+					province = 378
 
 					color = { 46 30 205 }
 					color2 = { 255 255 255 }
@@ -18940,10 +19737,20 @@ e_scandinavia = {
 						finnish = cn_kittila
 					}
 				}
+			c_suondavara = {
+				color = { 70 55 200 }
+				color2= { 255 255 255 }
+				
 				b_suondavara = {
 					province = 384
 
-					color = { 46 30 205 }
+					color = { 70 55 200 }
+					color2 = { 255 255 255 }
+				}
+				b_peldojavri = { #Peldojävri
+					province = 392
+
+					color = { 70 55 200 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -18951,40 +19758,86 @@ e_scandinavia = {
 				color = { 80 75 235 }
 				color2 = { 255 255 255 }
 
+				cultural_names = {
+					norse = cn_trums
+					norwegian = cn_trums
+				}
+
 				b_rounala = {
 					province = 393
 
 					color = { 80 75 235 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_b_trums
+						norwegian = cn_b_trums
+					}
+				}
+				b_tingevara = {
+					province = 383
+					
+					color = { 80 75 235 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_aviovara = {
+				color = { 110 110 255 }
+				color2= { 255 255 255 }
+				
+				b_aviovara = {
+					province = 397
+
+					color = { 110 110 255 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_kollefjord
+						norwegian = cn_kollefjord
+					}
 				}
 				b_guovdageaidnu = {
 					province = 394
 
-					color = { 80 75 235 }
+					color = { 110 110 255 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_oksfjord
+						norwegian = cn_oksfjord
+					}
 				}
 				b_iesjavri = { #Iešjávri
 					province = 395
 
-					color = { 80 75 235 }
+					color = { 110 110 255 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_rafsbotn
+						norwegian = cn_rafsbotn
+					}
 				}
 			}
 			c_karasjohka = { #Kárášjohka
 				color = { 100 95 255 }
 				color2 = { 255 255 255 }
 
+				cultural_names = {
+					norse = cn_vargo
+					norwegian = cn_vardo
+				}
+
 				b_karasjohka = { #Kárášjohka
 					province = 396
 
 					color = { 100 95 255 }
 					color2 = { 255 255 255 }
-				}
-				b_aviovara = {
-					province = 397
 
-					color = { 100 95 255 }
-					color2 = { 255 255 255 }
+					cultural_names = {
+						norse = cn_porsanger
+						norwegian = cn_porsanger
+				}
 				}
 				b_laggujakka = { #Laggujåkka
 					province = 398
@@ -18997,6 +19850,11 @@ e_scandinavia = {
 
 					color = { 100 95 255 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						norse = cn_b_vargo
+						norwegian = cn_b_vardo
+					}
 				}
 			}
 		}
@@ -19005,50 +19863,31 @@ e_scandinavia = {
 			color = { 20 20 145 }
 			color2 = { 255 255 255 }
 			
-			capital = c_aanaarjavri
-
-			c_aanaarjavri = {
-				color = { 20 20 145 }
-				color2 = { 255 255 255 }
-
-				b_aanaarjavri = { #Aanaarjävri (Enare Träsk)
-					province = 391
-
-					color = { 20 20 145 }
-					color2 = { 255 255 255 }
+			capital = c_peaccam	#Kemi
 					
 					cultural_names = {
-						swedish = cn_enare_trask
-						finnish = cn_inarijarvi
-					}
+				swedish = cn_leporie
+				norwegian = cn_leporie
+				norse = cn_leporie
+				russian = cn_leporie
+				#More or less this region can be found as "Leporie" in maps from Renaissance Era
+				#Possibly just means "Laponia" in Russian or interpreted Russian
 				}
-				b_peldojavri = { #Peldojävri
-					province = 392
 
-					color = { 20 20 145 }
-					color2 = { 255 255 255 }
-				}
-				b_suadigil = { #Suáđigil (Sodankylä)
-					province = 387
-
-					color = { 20 20 145 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						finnish = cn_sodankyla
-					}
-				}
-			}
-			c_sombio = {
+			c_peaccam = {	#Kemi
 				color = { 20 10 155 }
-				color2 = { 255 255 255 }
+					color2 = { 255 255 255 }
 
-				b_sombio = {
-					province = 390
+				b_giempa = { #Kemi
+					province = 425
 
 					color = { 20 10 155 }
 					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						finnish = cn_kemi
 				}
+			}
 				b_kemijavri = { #Kemijävri (Kemijärvi)
 					province = 388
 
@@ -19059,15 +19898,16 @@ e_scandinavia = {
 						finnish = cn_kemijarvi
 					}
 				}
-				b_koulajavri = { #Koulajävri
-					province = 418
+				b_iijoki = {
+					province = 426
 
 					color = { 20 10 155 }
 					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						finnish = cn_koulajarvi
 					}
+				b_kuusama = {
+					province = 8786
+					color = { 20 10 155 }
+					color2 = { 255 255 255 }
 				}
 			}
 			c_kitka = {
@@ -19080,21 +19920,15 @@ e_scandinavia = {
 					color = { 15 10 150 }
 					color2 = { 255 255 255 }
 				}
-				b_giempa = { #(Kemi)
-					province = 425
+				b_koulajavri = { #Koulajävri
+					province = 418
 
 					color = { 15 10 150 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						finnish = cn_kemi
+						finnish = cn_koulajarvi
 					}
-				}
-				b_iijoki = {
-					province = 426
-
-					color = { 15 10 150 }
-					color2 = { 255 255 255 }
 				}
 				b_maanselka = { #Maanselkä
 					province = 420
@@ -19103,99 +19937,22 @@ e_scandinavia = {
 					color2 = { 255 255 255 }
 				}
 			}
+			c_koutajoki = {
+				color = { 20 5 150 }
+				color2 = { 255 255 255 }
+
+				b_koutajoki = {
+					province = 454
+					color = { 20 5 150 }
+					color2 = { 255 255 255 }
+				}
+				b_tiiksjarvi = {
+					province = 455
+					color = { 20 5 150 }
+					color2 = { 255 255 255 }
+			}
 		}
-
-		d_guoldat = { #Guoládat
-			color = { 44 20 169 }
-			color2 = { 255 255 255 }
-			capital = c_west_kiilt # Kiilt
-
-			c_west_kiilt = {
-				color = { 44 20 169 }
-				color2 = { 255 255 255 }
-
-				b_kiilt = {
-					province = 404
-
-					color = { 44 20 169 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						russian = cn_kildin
-					}
-				}
-				b_koardegk = {
-					province = 405
-
-					color = { 44 20 169 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						russian = cn_voronye
-					}
-				}
-				b_maselk = { # Masel'k
-					province = 406
-
-					color = { 44 20 169 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						russian = cn_pulozero
-						finnish = cn_maaselka
-					}
-				}
-			}
-			c_peaccam = { #Peäccam
-				color = { 70 55 200 }
-				color2 = { 255 255 255 }
-
-				b_peaccam = { #Peäccam
-					province = 400
-
-					color = { 70 55 200 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						russian = cn_pechengsky
-						finnish = cn_petsamo
-					}
-				}
-				b_suonnjel = { #Suõʹnnjel
-					province = 401
-
-					color = { 70 55 200 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						russian = cn_priretjnyj
-						finnish = cn_suonikyla
-					}
-				}
-				b_muetkk = { #Mue´tǩǩ
-					province = 402
-
-					color = { 70 55 200 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						russian = cn_motovsky
-						finnish = cn_muotka
-					}
-				}
-				b_nuottjaurr = { #Nuõ´ttjäu´rr
-					province = 403
-
-					color = { 70 55 200 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						russian = cn_notozero
-						finnish = cn_nourtijarvi
-					}
-				}
-			}
-			c_akkel = {
+			c_akkel = {	#Akkala
 				color = { 35 10 145 }
 				color2 = { 255 255 255 }
 
@@ -19214,16 +19971,54 @@ e_scandinavia = {
 					province = 407
 
 					color = { 35 10 145 }
+			color2 = { 255 255 255 }
+
+					cultural_names = {
+						russian = cn_ekostrovsky
+					}
+				}
+				b_kaddlhutt = {	#AKA Kandalaksha
+					province = 8787
+					color = { 35 10 145 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_sombio = {
+				color = { 30 25 185 }
+				color2 = { 255 255 255 }
+
+				b_sombio = {
+					province = 390
+
+					color = { 30 25 185 }
+					color2 = { 255 255 255 }
+				}
+				b_suonnjel = { #Suõʹnnjel
+					province = 401
+
+					color = { 30 25 185 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						russian = cn_ekostrovsky
+						russian = cn_priretjnyj
+						finnish = cn_suonikyla
+					}
+				}
+				b_nuottjaurr = { #Nuõ´ttjäu´rr
+					province = 403
+
+					color = { 30 25 185 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						russian = cn_notozero
+						finnish = cn_nourtijarvi
 					}
 				}
 				b_saarvesjaurr = { #Sââ´rvesjäu´rr
 					province = 408
 
-					color = { 35 10 145 }
+					color = { 30 25 185 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -19232,18 +20027,136 @@ e_scandinavia = {
 					}
 				}
 			}
-			c_east_kiilt = {
+			c_inari = {
+				color = { 20 20 145 }
+				color2= { 255 255 255 }
+				
+				b_aanaarjavri = { #Aanaarjävri (Enare Träsk)
+					province = 391
+
+					color = { 20 20 145 }
+				color2 = { 255 255 255 }
+
+					cultural_names = {
+						swedish = cn_enare_trask
+						finnish = cn_inarijarvi
+					}
+				}
+				b_peaccam = { #Peäccam
+					province = 400
+
+					color = { 20 20 145 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						russian = cn_pechengsky
+						finnish = cn_petsamo
+					}
+				}
+				b_suenekele = {
+					province = 8788
+					color = { 20 20 145 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_skolt = {
+				color = { 44 20 169 }
+				color2= { 255 255 255 }
+				
+				b_skolt = {
+					province = 8789
+					color = { 44 20 169 }
+					color2 = { 255 255 255 }
+				}
+				b_kiilt = {
+					province = 404
+
+					color = { 44 20 169 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						russian = cn_kildin
+					}
+				}
+				b_muetkk = { #Mue´tǩǩ
+					province = 402
+
+					color = { 44 20 169 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						russian = cn_motovsky
+						finnish = cn_muotka
+					}
+				}
+			}
+		}
+
+		d_guoldat = { #Guoládat = Kola
+			color = { 44 20 169 }
+					color2 = { 255 255 255 }
+			capital = c_ter
+					
+					cultural_names = {
+				norwegian = cn_kola
+				swedish = cn_kola
+				norse = cn_kola				
+				russian = cn_kola
+				finnish = cn_kuola
+					}
+
+			c_ter = {
+				color = { 55 35 245 }
+				color2= { 255 255 255 }
+				
+				b_sosnevke = { #Sosnevke
+					province = 417
+
+					color = { 55 35 245 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						russian = cn_sosnovka
+					}
+				}
+				b_jovvkuj = { #Jovvkuj
+					province = 415
+
+					color = { 55 35 245 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						russian = cn_yokanga
+					}
+				}
+				b_penne = { #P'enne
+					province = 416
+
+					color = { 55 35 245 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						russian = cn_ponoy
+					}
+					}
+				b_peliza = {
+					province = 8790
+					color = { 55 35 245 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_jovvkuj = {	#Kildin
 				color = { 40 15 200 }
 				color2 = { 255 255 255 }
 
-				b_lujavvr = { #Lujavv'r
-					province = 410
+				b_guoddemjavvr = { #Guoddemjavv'r
+					province = 413
 
 					color = { 40 15 200 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						russian = cn_lovozero
+						russian = cn_kuroptevsky
 					}
 				}
 				b_lejjavvr = { #Lejjavv'r
@@ -19267,73 +20180,64 @@ e_scandinavia = {
 					}
 				}
 			}
-			c_jovvkuj = {
-				color = { 55 35 245 }
+			c_east_kiilt = {	#Kordok
+				color = { 25 5 75 }
 				color2 = { 255 255 255 }
 
-				b_jovvkuj = { #Jovvkuj
-					province = 415
+				b_lujavvr = { #Lujavv'r
+					province = 410
 
-					color = { 55 35 245 }
+					color = { 25 5 75 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						russian = cn_yokanga
+						russian = cn_lovozero
 					}
 				}
-				b_guoddemjavvr = { #Guoddemjavv'r
-					province = 413
+				b_koardegk = {
+					province = 405
 
-					color = { 55 35 245 }
+					color = { 25 5 75 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						russian = cn_kuroptevsky
+						russian = cn_voronye
 					}
 				}
+				b_maselk = { # Masel'k
+					province = 406
+
+					color = { 25 5 75 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						russian = cn_pulozero
+						finnish = cn_maaselka
+					}
+					}
+				}
+			c_kintus = {
+				color = { 35 5 135 }
+				color2= { 255 255 255 }
+
 				b_kintus = { #Kintuš
 					province = 414
-
-					color = { 55 35 245 }
+					
+					color = { 35 5 135 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
 						russian = cn_kamensky
 					}
 				}
-				b_penne = { #P'enne
-					province = 416
-
-					color = { 55 35 245 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						russian = cn_ponoy
-					}
-				}
-				b_sosnevke = { #Sosnevke
-					province = 417
-
-					color = { 55 35 245 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						russian = cn_sosnovka
-					}
-				}
-			}
-			c_koutajoki = {
-				color = { 20 5 150 }
-				color2 = { 255 255 255 }
-				
-				b_koutajoki = {
-					province = 454
-					color = { 20 5 150 }
+				b_varsiga = {	#AKA Varzuga
+					province = 8791
+					color = { 35 5 135 }
 					color2 = { 255 255 255 }
 				}
-				b_tiiksjarvi = {
-					province = 455
-					color = { 20 5 150 }
+				b_cascarena = {
+					province = 8792
+					color = { 35 5 135 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -19371,14 +20275,12 @@ e_scandinavia = {
 					color = { 216 50 50 }
 					color2 = { 255 255 255 }
 				}
-				
 				b_helsingora = {
 					province = 433
 
-					color = { 137 6 20 }
+					color = { 216 50 50 }
 					color2 = { 255 255 255 }
 				}
-				
 				b_hafn = {
 					province = 85
 
@@ -19403,42 +20305,42 @@ e_scandinavia = {
 				}
 			}
 			c_fyn = {
-				color = { 216 55 55 }
+				color = { 237 71 71 }
 				color2 = { 255 255 255 }
 				
 				b_odense = {
 					province = 65
 
-					color = { 216 55 55 }
+					color = { 237 71 71 }
 					color2 = { 255 255 255 }
 				}
 				b_svendborg = {
 					province = 66
 
-					color = { 216 55 55 }
+					color = { 237 71 71 }
 					color2 = { 255 255 255 }
 				}
 				b_middelfart = {
 					province = 228
 
-					color = { 216 55 55 }
+					color = { 237 71 71 }
 					color2 = { 255 255 255 }
 				}
 			}
 			c_lolland_falster = {
-				color = { 216 55 55 }
+				color = { 207 33 33 }
 				color2 = { 255 255 255 }
 
 				b_nykobing = {
 					province = 67
 
-					color = { 216 55 55 }
+					color = { 207 33 33 }
 					color2 = { 255 255 255 }
 				}
 				b_nakskov = {
 					province = 68
 
-					color = { 216 55 55 }
+					color = { 207 33 33 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -19767,6 +20669,10 @@ e_scandinavia = {
 		
 		capital = c_trandheim
 
+		cultural_names = {
+			norse = cn_noregr
+		}
+
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -19810,11 +20716,21 @@ e_scandinavia = {
 					color = { 190 25 40 }
 					color2 = { 255 255 255 }
 				}
+				b_ski = {
+					province = 8768
+                
+					color = { 190 25 40 }
+					color2 = { 255 255 255 }
+				}
 			}
 			c_raniriki = {
 				color = { 220 4 40 }
 				color2 = { 220 220 220 }
 				
+				cultural_names = {
+					norse = cn_alfheimar
+				}
+
 				b_bagahus = {
 					province = 229
 
@@ -19824,6 +20740,12 @@ e_scandinavia = {
 				b_ranariki = {
 					province = 230
 
+					color = { 220 4 40 }
+					color2 = { 255 255 255 }
+				}
+				b_uddevalla = {
+					province = 8770
+                
 					color = { 220 4 40 }
 					color2 = { 255 255 255 }
 				}
@@ -20044,7 +20966,7 @@ e_scandinavia = {
 			capital = c_trandheim # Nidaros
 
 			c_trandheim = {
-				color = { 150 30 80 }
+				color = { 130 22 85 }
 				color2 = { 220 220 220 }
 				
 				b_nidaros = {
@@ -20133,6 +21055,12 @@ e_scandinavia = {
 				b_valdres = {
 					province = 235
 
+					color = { 80 30 30 }
+					color2 = { 220 220 220 }
+				}
+				b_stange = {
+					province = 8769
+                
 					color = { 80 30 30 }
 					color2 = { 220 220 220 }
 				}
@@ -20297,6 +21225,11 @@ e_scandinavia = {
 			
 			capital = c_vestisland # Reykjavik
 			
+			cultural_names = {
+				norse = cn_island
+				norwegian = cn_island
+			}
+			
 			c_vestisland = {
 				color = { 255 245 245 }
 				color2 = { 220 220 220 }
@@ -20307,29 +21240,23 @@ e_scandinavia = {
 					color = { 255 245 245 }
 					color2 = { 220 220 220 }
 				}
-				b_vestfirdir = {
+				b_vestfirdir = {	#=Isalfjordur
 					province = 1
 
 					color = { 255 245 245 }
 					color2 = { 220 220 220 }
 				}
-				b_stokkseyri = {
-					province = 3
+				b_olafsvik = {
+					province = 8771
 
 					color = { 255 245 245 }
 					color2 = { 220 220 220 }
 				}
 			}
-			c_austisland = {
+			c_nordrland = {
 				color = { 240 230 230 }
 				color2 = { 220 220 220 }
 				
-				b_reydarfjall = {
-					province = 4
-
-					color = { 240 230 230 }
-					color2 = { 220 220 220 }
-				}
 				b_husavik = {
 					province = 5
 
@@ -20340,6 +21267,49 @@ e_scandinavia = {
 						norse = cn_husavik
 					}
 				}
+				b_vopnafjordur = {
+					province = 8773
+
+					color = { 240 230 230 }
+					color2 = { 220 220 220 }
+					
+					cultural_names =  {
+						norse = cn_husavik
+					}
+				}
+			c_austisland = {
+				color = { 250 215 215 }
+				color2 = { 220 220 220 }
+				
+				b_reydarfjall = {	#=Seydisfjordur
+					province = 4
+
+					color = { 250 215 215 }
+					color2 = { 220 220 220 }
+				}
+				b_hofn = {
+					province = 8772
+                
+					color = { 250 215 215 }
+					color2 = { 220 220 220 }
+				}
+			}
+			c_sudurland = {
+				color = { 220 220 220 }
+				color2 = { 220 220 220 }
+				
+				b_stokkseyri = {
+					province = 3
+
+					color = { 220 220 220 }
+					color2 = { 220 220 220 }
+				}
+				b_klaustur = {
+					province = 8774
+                
+					color = { 220 220 220 }
+					color2 = { 220 220 220 }
+				}
 			}
 		}
 
@@ -20349,6 +21319,8 @@ e_scandinavia = {
 			
 			capital = c_orkney # Orkney
 			
+			definite_form = yes
+			
 			cultural_names =  {
 				norse = cn_nordreyjar
 			}
@@ -20356,6 +21328,11 @@ e_scandinavia = {
 			c_orkney = {
 				color = { 195 75 75 }
 				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					norse = cn_orkneyjar
+					norwegian = cn_orkneyjar
+				}
 				
 				b_kirkwall = {
 					province = 8
@@ -20367,7 +21344,7 @@ e_scandinavia = {
 						norwegian = cn_kirkuvag
 						danish = cn_kyrkovik
 						swedish = cn_kyrkovik
-						norse = cn_kyrkovik
+						norse = cn_kirkuvag
 						pictish = cn_icluasctreh
 						welsh = cn_eglwystref
 						irish = cn_baile_na_h_eaglais
@@ -20397,6 +21374,11 @@ e_scandinavia = {
 				color = { 205 65 65 }
 				color2 = { 255 255 255 }
 				
+				cultural_names = {
+					norse = cn_hjaltland
+					norwegian = cn_hjaltland
+				}
+
 				b_scalloway = {
 					province = 7
 
@@ -20404,10 +21386,11 @@ e_scandinavia = {
 					color2 = { 255 255 255 }
 					
 					cultural_names =  {
-						norse = cn_torshavn
-						pictish = cn_pirth_taran
-						welsh = cn_porth_taran
-						irish = cn_port_turenn
+						norse = cn_skalavagr
+						norwegian = cn_skalavagr
+						pictish = cn_bachuuon_maurt
+						welsh = cn_bachwyon_mawrty
+						irish = cn_batin_mortaigh
 					}
 				}
 			}
@@ -20418,6 +21401,10 @@ e_scandinavia = {
 			color2 = { 255 255 255 }
 			
 			capital = c_jamtfir # Frösö
+			
+			cultural_names = {
+				swedish = cn_jamtland
+			}
 			
 			c_jamtfir = {
 				color = { 75 20 70 }
@@ -23305,7 +24292,7 @@ e_wendish_empire = {
 			}
 		}
 		
-		d_nordmark = {
+		d_nordmark = { #Mecklenburg
 			color = { 162 160 110 }
 			color2 = { 255 255 255 }
 			
@@ -23702,7 +24689,7 @@ e_wendish_empire = {
 			}
 		}
 		
-		d_ostmark = {
+		d_ostmark = { #Nordmark
 			color = { 121 140 121 }
 			color2 = { 255 255 255 }
 			
@@ -23820,6 +24807,10 @@ e_wendish_empire = {
 
 					color = { 100 120 100 }
 					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						polabian = cn_brizania
+					}
 				}
 				b_klenow = {
 					province = 2815
@@ -26001,7 +26992,7 @@ e_russia = {	#Kievan Rus
 		}
 		
 		d_kiev = {
-			color = { 70 150 90 }
+			color = { 52 120 69 }
 			color2 = { 255 255 255 }
 			
 			capital = c_kiev # Kiev
@@ -26016,7 +27007,7 @@ e_russia = {	#Kievan Rus
 			}
 
 			c_kiev = {
-				color = { 70 150 90 }
+				color = { 53 105 66 }
 				color2 = { 255 255 255 }
 				
 				cultural_names = {
@@ -26238,8 +27229,9 @@ e_russia = {	#Kievan Rus
 				}
 			}
 		}
+		
 		d_turov = {
-			color = { 110 140 20 }
+			color = { 129 163 28 }
 			color2 = { 255 255 255 }
 			
 			capital = c_turov # Turov
@@ -26283,7 +27275,7 @@ e_russia = {	#Kievan Rus
 				}
 			}
 			c_korosten = {
-				color = { 135 160 100 }
+				color = { 96 125 11 }
 				color2 = { 255 255 255 }
 				
 				cultural_names = {
@@ -26294,7 +27286,7 @@ e_russia = {	#Kievan Rus
 				b_korosten = {
 					province = 5104
 					
-					color = { 135 160 100 }
+					color = { 96 125 11 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -26305,7 +27297,7 @@ e_russia = {	#Kievan Rus
 				b_ovruch = {
 					province = 5105
 
-					color = { 135 160 100 }
+					color = { 96 125 11 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -26315,24 +27307,24 @@ e_russia = {	#Kievan Rus
 				b_mazyr = {
 					province = 5106
 
-					color = { 135 160 100 }
+					color = { 96 125 11 }
 					color2 = { 255 255 255 }
 				}
 				b_naroulia = {
 					province = 5107
 
-					color = { 135 160 100 }
+					color = { 96 125 11 }
 					color2 = { 255 255 255 }
 				}
 				b_lelchytsy = {
 					province = 5108
 
-					color = { 135 160 100 }
+					color = { 96 125 11 }
 					color2 = { 255 255 255 }
 				}
 			}
 			c_dubrovytsia = {
-				color = { 85 107 52 }
+				color = { 81 99 28 }
 				color2 = { 255 255 255 }
 				
 				cultural_names = {
@@ -26343,7 +27335,7 @@ e_russia = {	#Kievan Rus
 				b_dubrovytsia = {
 					province = 5109
 
-					color = { 85 107 52 }
+					color = { 81 99 28 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -26354,66 +27346,67 @@ e_russia = {	#Kievan Rus
 				b_stepan = {
 					province = 5110
 
-					color = { 85 107 52 }
+					color = { 81 99 28 }
 					color2 = { 255 255 255 }
 				}
 				b_liubeshiv = {
 					province = 5111
 
-					color = { 85 107 52 }
+					color = { 81 99 28 }
 					color2 = { 255 255 255 }
 				}
 			}
 		}
+		
 		d_pereyaslavl = {
-			color = { 60 120 65 }
+			color = { 37 143 71 }
 			color2 = { 255 255 255 }
 			
 			capital = c_pereyaslavl # Pereyaslavl
 			
 			c_pereyaslavl = {
-				color = { 60 120 65 }
+				color = { 22 115 52 }
 				color2 = { 255 255 255 }
 				
 				b_pereyaslavl = {
 					province = 555
 		
-					color = { 60 120 65 }
+					color = { 22 115 52 }
 					color2 = { 255 255 255 }
 				}
 				b_boryspil = {
 					province = 5178
 		
-					color = { 60 120 65 }
+					color = { 22 115 52 }
 					color2 = { 255 255 255 }
 				}
 				b_priluk = {
 					province = 5179
 		
-					color = { 60 120 65 }
+					color = { 22 115 52 }
 					color2 = { 255 255 255 }
 				}
 				b_zolotonosha = {
 					province = 5180
 		
-					color = { 60 120 65 }
+					color = { 22 115 52 }
 					color2 = { 255 255 255 }
 				}
 			}
 			c_hradyzk = {
-				color = { 132 170 82 }
+				color = { 50 102 67 }
 				color2 = { 255 255 255 }
 				
 				b_hradyzk = {
 					province = 5181
 		
-					color = { 132 170 82 }
+					color = { 50 102 67 }
 					color2 = { 255 255 255 }
 				}
 				b_akhtyr = {
 					province = 5182
 		
-					color = { 132 170 82 }
+					color = { 50 102 67 }
 					color2 = { 255 255 255 }
 				}
 				b_myrhorod = {
@@ -27183,7 +28176,7 @@ e_russia = {	#Kievan Rus
 			}
 			
 			c_minsk = {
-				color = { 60 105 2 }
+				color = { 122 158 114 }
 				color2 = { 255 255 255 }
 				
 				cultural_names = {
@@ -27194,7 +28187,7 @@ e_russia = {	#Kievan Rus
 				b_minsk = {
 					province = 550
 		
-					color = { 60 105 2 }
+					color = { 122 158 114 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -27205,7 +28198,7 @@ e_russia = {	#Kievan Rus
 				b_lahoysk = {
 					province = 5123
 		
-					color = { 60 105 2 }
+					color = { 122 158 114 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -27216,7 +28209,7 @@ e_russia = {	#Kievan Rus
 				b_zaslawye = {
 					province = 5124
 		
-					color = { 60 105 2 }
+					color = { 122 158 114 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -27227,7 +28220,7 @@ e_russia = {	#Kievan Rus
 				b_maladzyechna = {
 					province = 5125
 		
-					color = { 60 105 2 }
+					color = { 122 158 114 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -27238,7 +28231,7 @@ e_russia = {	#Kievan Rus
 				b_barysaw = {
 					province = 5126
 		
-					color = { 60 105 2 }
+					color = { 122 158 114 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -27248,7 +28241,7 @@ e_russia = {	#Kievan Rus
 				}
 			}
 			c_orsha = {
-				color = { 50 110 5 }
+				color = { 100 140 91 }
 				color2 = { 255 255 255 }
 				
 				cultural_names = {
@@ -27259,7 +28252,7 @@ e_russia = {	#Kievan Rus
 				b_orsha = {
 					province = 5127
 					
-					color = { 50 110 5 }
+					color = { 100 140 91 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -27312,6 +28305,9 @@ e_russia = {	#Kievan Rus
 				b_polotsk = {
 					province = 5129
 					
+					color = { 127 184 184 }
+					color2 = { 255 255 255 }
+					
 					cultural_names = {
 						lithuanian = cn_polockas
 						polish = cn_polock
@@ -27320,14 +28316,11 @@ e_russia = {	#Kievan Rus
 						danish = cn_pallteskja
 						norwegian = cn_pallteskja
 					}
-		
-					color = { 80 110 5 }
-					color2 = { 255 255 255 }
 				}
 				b_drysa = {
 					province = 5130
 		
-					color = { 80 110 5 }
+					color = { 127 184 184 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
@@ -27637,8 +28630,9 @@ e_russia = {	#Kievan Rus
 				}
 			}
 		}
+		
 		d_ryazan = {
-			color = { 60 95 25 }
+			color = { 75 110 41 }
 			color2 = { 255 255 255 }
 			
 			capital = c_ryazan # Ryazan
@@ -27731,8 +28725,9 @@ e_russia = {	#Kievan Rus
 				}
 			}
 		}
+		
 		d_nizhny_novgorod = {
-			color = { 6 145 75 }
+			color = { 10 171 90 }
 			color2 = { 255 255 255 }
 			
 			capital = c_nizhny_novgorod # Nizhny Novgorod
@@ -45612,7 +46607,7 @@ e_carpathia = {
 					}
 				}
 			}
-			c_lipto = {
+			c_lipto = { #Liptov
 				color = { 195 35 80 }
 				color2 = { 255 255 255 }
 				
@@ -45626,12 +46621,22 @@ e_carpathia = {
 					
 					color = { 195 35 80 }
 					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						czech = cn_liptovsky_hradok
+						slovien = cn_liptovsky_hradok
+					}
 				}
 				b_nemetlipsce = {
 					province = 3855
 					
 					color = { 195 35 80 }
 					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						hungarian = cn_poprad_HUN
+						mogyer = cn_poprad_HUN
+					}
 				}
 			}
 			c_zolyom = {
@@ -45954,6 +46959,11 @@ e_carpathia = {
 					
 					color = { 115 0 0 }
 					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						mogyer = cn_kesmark
+						hungarian = cn_kesmark
+					}
 				}
 			}
 			c_abauj = {
@@ -80197,4 +81207,30 @@ e_tibet = {
 			}
 		}
 	}
+}
+
+# OBSOLETE TITLES
+k_adiukru = {
+	color = { 180 220 189 }
+	color2 = { 255 255 255 }
+	
+	capital = c_attie
+	
+	can_create = { always = no }
+}
+k_toro = {
+	color = { 110 40 57 }
+	color2 = { 255 255 255 }
+	
+	capital = c_toro
+	
+	can_create = { always = no }
+}
+k_winideheim = {
+	color = { 158 102 36 }
+	color2 = { 200 0 0 }
+
+	capital = c_praha # Praha
+	
+	can_create = { always = no }
 }

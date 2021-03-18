@@ -333,7 +333,7 @@
 }
 
 20257 = {
-	name = "Otto"
+	name = "Otto" #Otto I
 	dynasty = 217
 	martial = 6
 	diplomacy = 5
@@ -345,15 +345,35 @@
 	trait = education_martial_3
 	father = 11061
 	1032.1.1 = {
-		birth = "1032.1.1"
+		birth = yes
 	}
 	1055.1.1 = {
 		add_spouse = 4257
 	}
 	1072.12.4 = {
-		death = "1072.12.4"
+		death = yes
 	}
 }
+11060 = {
+	name = "Otto" #Otto II
+	dynasty = 217
+	martial = 5
+	diplomacy = 7
+	intrigue = 6
+	stewardship = 7
+	religion = "catholic"
+	culture = bavarian
+	trait = education_stewardship_2
+	father = 20257
+	mother = 4257
+	1056.1.1 = {
+		birth = yes
+	}
+	1120.1.1 = {
+		death = yes
+	}
+}
+
 
 212931 = {
 	name = "Hedwig"

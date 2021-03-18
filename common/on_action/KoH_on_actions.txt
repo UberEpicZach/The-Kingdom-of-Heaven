@@ -2,7 +2,7 @@
 	on_actions = {
 		KOH_ON_START
 		on_artifact_initialization
-		on_monthly_artifacts
+		#on_monthly_artifacts
 		KOH_Italian_Familes
 		#KOH_investiture
 		delay = { months = 12 }
@@ -573,10 +573,10 @@ on_death = {
 
 on_monthly_artifacts = {
 	effect = {
-		every_artifact_holder = { #Equips Artifacts
-			limit = { is_ai = yes }
-			equip_all_owned_artifacts = {} #Crudely equips all artifacts in the order defined in common/scripted_effects/artifacts_custom.txt.
+		every_ai_artifact_holder = { #Equips Artifacts
+			ai_equip_all_owned_artifacts = yes
 		}
+		every_player = {refresh_filter = yes}
 	}
 	on_actions = {
 		delay = { months = 1 }
@@ -589,17 +589,18 @@ on_artifact_initialization = { # Can be called by the scripted effect "initializ
 	# For example, in vanilla:
 		listify_all_typed_artifacts_as_flags = yes
 		character:212501 = { 
-			add_artifact = {ARTIFACT = artifact_1 }
+			add_artifact = {ARTIFACT = artifact_1}
+			add_artifact = {ARTIFACT = artifact_3}
 		}
 		character:215529 = { #Imperial Diadem
-			add_artifact = {ARTIFACT = artifact_2 }
+			add_artifact = {ARTIFACT = artifact_2}
 		}
 		character:219500 = { #crown of st stephen
 			add_artifact = {ARTIFACT = artifact_33 }
 		}
-		character:204500 = { #excalibur
-			add_artifact = {ARTIFACT = artifact_32 }
-		}
+	}
+	on_actions = {
+		on_monthly_artifacts
 	}
 }
 

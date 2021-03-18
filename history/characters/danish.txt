@@ -33,6 +33,7 @@
 	trait = wrathful
 	trait = zealous
 	trait = education_stewardship_4
+	sexuality = heterosexual
 	father = 101535 # Ulf Torgilsson
 	mother = 101509 # Estrid
 	1019.1.1 = {
@@ -40,18 +41,27 @@
 		add_pressed_claim = k_england
 		effect = {
 			add_character_flag = has_scripted_appearance
-		}	
+			random_list = {
+				50 = { set_sexuality = heterosexual }
+				50 = { set_sexuality = bisexual }
+			}
+		}
 	}
 	1046.1.1 = {
 		add_spouse = 100513 # Gyda Anundsdottor
 	}
-	1048.1.1 = {
+	1047.12.1 = {
+		remove_spouse = 100513 # Gyda Anundsdottor
+	}
+	1050.7.1 = {
 		add_spouse = 102516 # Gunhild Sveinsdatter
 	}
 	1051.1.1 = {
 		remove_spouse = 102516 # Gunhild Sveinsdatter
 	}
-
+	1069.1.1 = {
+		add_spouse = 102551 # Thora Torbergsdatter (Arnung)
+	}	
 	1076.4.28 = {
 		death = "1076.4.28"
 	}
@@ -575,13 +585,13 @@
 	father = 101541 # Ulf
 	mother = 102519 # Bodil
 	1033.1.1 = {
-		birth = "1033.1.1"
+		birth = yes
 	}
 	1049.1.1 = {
 		add_spouse = 101545 #Thorgunna Vagnsdatter
 	}
-	1090.1.2 = {
-		death = "1090.1.2"
+	1070.1.2 = {
+		death = yes
 	}
 }
 
@@ -720,6 +730,9 @@
 	mother = 167013
 	1106.1.1 = {
 		birth = yes
+	effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1120.1.1 = {
 		add_spouse = 200493 # Katarina Ingesdotter

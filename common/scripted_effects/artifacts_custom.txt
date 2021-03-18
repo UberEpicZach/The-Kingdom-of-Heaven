@@ -53,6 +53,9 @@ for_all_non_slots = {#APPLY = x
     $APPLY$ = {TYPE = shard}
     $APPLY$ = {TYPE = fabrial}
     $APPLY$ = {TYPE = indestructible}
+    $APPLY$ = {TYPE = book}
+    $APPLY$ = {TYPE = broken}
+    $APPLY$ = {TYPE = gem}
 }
 for_all_rarities = {#APPLY = x
 #NON-SLOTS:
@@ -64,6 +67,10 @@ for_all_rarities = {#APPLY = x
 for_all_subtypes = {#APPLY = x
     for_all_slots = {APPLY = $APPLY$}
     for_all_non_slots = {APPLY = $APPLY$}
+}
+for_all_subtypes_and_all = {#APPLY = x
+    $APPLY$ = {TYPE = all}
+    for_all_subtypes = {APPLY = $APPLY$}
 }
 #Make a global list for all subtypes:
 listify_all_typed_artifacts_as_flags = { #USAGE yes
@@ -85,8 +92,12 @@ for_all_artifact_slots = {
 for_all_artifact_types = { #USAGE {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = a B = b TYPE = string}
     for_all_artifact_slots = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ }
 ## Non-slot types
-#    for_all_artifacts_of_type = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ TYPE = shard }
-#    for_all_artifacts_of_type = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ TYPE = fabrial }
+    for_all_artifacts_of_type = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ TYPE = shard }
+    for_all_artifacts_of_type = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ TYPE = fabrial }
+    for_all_artifacts_of_type = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ TYPE = broken }
+    for_all_artifacts_of_type = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ TYPE = indestructible }
+    for_all_artifacts_of_type = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ TYPE = book }
+    for_all_artifacts_of_type = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ TYPE = gem }
 #    for_all_artifacts_of_type = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ TYPE = rarity_1 }
 #    for_all_artifacts_of_type = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ TYPE = rarity_2 }
 #    for_all_artifacts_of_type = {PREFIX = $PREFIX$ APPLY = $APPLY$ SUFFIX = $SUFFIX$  A = $A$ B = $B$ TYPE = rarity_3 }
@@ -114,22 +125,40 @@ for_handheld_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = a B = b}
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_25$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_26$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_27$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_oathbringer$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_sunraiser$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_mayalaran$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardblade$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_nightblood$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_jezrien_honorblade$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_type_four_biochromatic_entity$SUFFIX$ A = $A$ B = $B$ }
-    $APPLY$ = {ARTIFACT = $PREFIX$soz_101$SUFFIX$ A = $A$ B = $B$ }
-	$APPLY$ = {ARTIFACT = $PREFIX$artifact_32$SUFFIX$ A = $A$ B = $B$ }																
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_oathbringer$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_sunraiser$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_mayalaran$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_firestorm$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_loremaker$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_nightblood$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_jezrien_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_nale_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_taln_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_chana_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shalash_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_ishar_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_pailiah_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_kelek_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_vedel_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_battah_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_type_four_biochromatic_entity$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_twok$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_twock$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_diagram$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_half_shard$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_firestorm$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_loremaker$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardhammer$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardbow$SUFFIX$ A = $A$ B = $B$ }
 }
 for_armor_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = a B = b}
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_28$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_29$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_30$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_31$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardplate$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardplate$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_cvaderln$SUFFIX$ A = $A$ B = $B$ }
 }
 for_headgear_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = a B = b}
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_1$SUFFIX$ A = $A$ B = $B$ }
@@ -139,69 +168,105 @@ for_headgear_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = a B = b}
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_9$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_10$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_11$SUFFIX$ A = $A$ B = $B$ }
-	$APPLY$ = {ARTIFACT = $PREFIX$artifact_33$SUFFIX$ A = $A$ B = $B$ }																
 }
 for_jewelry_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = a B = b}
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_12$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_13$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_14$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_15$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_soulcaster$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_spanreed$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_painrial$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_alerter$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_broken_soulcaster$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_soulcaster$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_spanreed$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_painrial$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_alerter$SUFFIX$ A = $A$ B = $B$ }
 }
 for_mount_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_ryshadium$SUFFIX$ A = $A$ B = $B$ }
-	$APPLY$ = {ARTIFACT = $PREFIX$artifact_34$SUFFIX$ A = $A$ B = $B$ }																	
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_ryshadium$SUFFIX$ A = $A$ B = $B$ }
 }
 
 ## Artifact types unrelated to equipment slots.
 # Can be nested, but be warned that only a bottom-level command can be directly code injected with fancy strings.
 for_shard_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
-#Shardblades
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_oathbringer$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_sunraiser$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_mayalaran$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardblade$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_nightblood$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_jezrien_honorblade$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_type_four_biochromatic_entity$SUFFIX$ A = $A$ B = $B$ }
-#Shardplates
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardplate$SUFFIX$ A = $A$ B = $B$ }
+    #Shardblades
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_oathbringer$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_sunraiser$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_mayalaran$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_firestorm$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_loremaker$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_firestorm$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_loremaker$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_nightblood$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_jezrien_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_nale_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_taln_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_chana_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shalash_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_ishar_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_pailiah_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_kelek_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_vedel_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_battah_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_type_four_biochromatic_entity$SUFFIX$ A = $A$ B = $B$ }
+    #Shardplates
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardplate$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_cvaderln$SUFFIX$ A = $A$ B = $B$ }
 }
 #Fabrials
 for_fabrial_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_soulcaster$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_spanreed$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_painrial$SUFFIX$ A = $A$ B = $B$ }
-#    $APPLY$ = {ARTIFACT = $PREFIX$artifact_alerter$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_broken_soulcaster$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_soulcaster$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_spanreed$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_painrial$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_alerter$SUFFIX$ A = $A$ B = $B$ }
+}
+#Broken (repairable) artifacts
+for_broken_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_broken_soulcaster$SUFFIX$ A = $A$ B = $B$ }
 }
 #Indestructibles
 for_indestructible_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
 #Shardblades
-#$APPLY$ = {ARTIFACT = $PREFIX$artifact_oathbringer$SUFFIX$ A = $A$ B = $B$ }
-#$APPLY$ = {ARTIFACT = $PREFIX$artifact_sunraiser$SUFFIX$ A = $A$ B = $B$ }
-#$APPLY$ = {ARTIFACT = $PREFIX$artifact_mayalaran$SUFFIX$ A = $A$ B = $B$ }
-#$APPLY$ = {ARTIFACT = $PREFIX$artifact_shardblade$SUFFIX$ A = $A$ B = $B$ }
-#$APPLY$ = {ARTIFACT = $PREFIX$artifact_nightblood$SUFFIX$ A = $A$ B = $B$ }
-#$APPLY$ = {ARTIFACT = $PREFIX$artifact_jezrien_honorblade$SUFFIX$ A = $A$ B = $B$ }
-#$APPLY$ = {ARTIFACT = $PREFIX$artifact_type_four_biochromatic_entity$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_oathbringer$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_sunraiser$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_mayalaran$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_nightblood$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_jezrien_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_nale_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_taln_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_chana_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shalash_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_ishar_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_pailiah_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_kelek_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_vedel_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_battah_honorblade$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_type_four_biochromatic_entity$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_firestorm$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_loremaker$SUFFIX$ A = $A$ B = $B$ }
 #Shardplates
-#$APPLY$ = {ARTIFACT = $PREFIX$artifact_shardplate$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_shardplate$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_cvaderln$SUFFIX$ A = $A$ B = $B$ }
+#Gems
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_benval_diamond$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_kings_drop$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_honors_drop$SUFFIX$ A = $A$ B = $B$ }
 }
+for_book_artifacts = {
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_twok$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_twock$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_diagram$SUFFIX$ A = $A$ B = $B$ }
+}
+for_gem_artifacts = {
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_kings_drop$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_honors_drop$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_benval_diamond$SUFFIX$ A = $A$ B = $B$ }
+}
+for_rarity_4_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_1$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_2$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_3$SUFFIX$ A = $A$ B = $B$ }
-$APPLY$ = {ARTIFACT = $PREFIX$artifact_32$SUFFIX$ A = $A$ B = $B$ }
-$APPLY$ = {ARTIFACT = $PREFIX$artifact_33$SUFFIX$ A = $A$ B = $B$ }
-for_rarity_4_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
-
-																   
-																   
- 
-
-																				 
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_7$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_11$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_15$SUFFIX$ A = $A$ B = $B$ }
@@ -209,7 +274,7 @@ $APPLY$ = {ARTIFACT = $PREFIX$artifact_19$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_23$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_27$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_31$SUFFIX$ A = $A$ B = $B$ }
-$APPLY$ = {ARTIFACT = $PREFIX$soz_101$SUFFIX$ A = $A$ B = $B$ }															   
+$APPLY$ = {ARTIFACT = $PREFIX$artifact_half_shard$SUFFIX$ A = $A$ B = $B$ }
 }
 for_rarity_3_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_6$SUFFIX$ A = $A$ B = $B$ }
@@ -219,6 +284,7 @@ $APPLY$ = {ARTIFACT = $PREFIX$artifact_18$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_22$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_26$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_30$SUFFIX$ A = $A$ B = $B$ }
+$APPLY$ = {ARTIFACT = $PREFIX$artifact_shardbow$SUFFIX$ A = $A$ B = $B$ }
 }
 for_rarity_2_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_5$SUFFIX$ A = $A$ B = $B$ }
@@ -228,15 +294,16 @@ $APPLY$ = {ARTIFACT = $PREFIX$artifact_17$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_21$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_25$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_29$SUFFIX$ A = $A$ B = $B$ }
+$APPLY$ = {ARTIFACT = $PREFIX$artifact_shardhammer$SUFFIX$ A = $A$ B = $B$ }
 }
 for_rarity_1_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
-$APPLY$ = {ARTIFACT = $PREFIX$artifact_4$SUFFIX$ A = $A$ B = $B$ }
-$APPLY$ = {ARTIFACT = $PREFIX$artifact_8$SUFFIX$ A = $A$ B = $B$ }
-$APPLY$ = {ARTIFACT = $PREFIX$artifact_12$SUFFIX$ A = $A$ B = $B$ }
-$APPLY$ = {ARTIFACT = $PREFIX$artifact_16$SUFFIX$ A = $A$ B = $B$ }
-$APPLY$ = {ARTIFACT = $PREFIX$artifact_20$SUFFIX$ A = $A$ B = $B$ }
-$APPLY$ = {ARTIFACT = $PREFIX$artifact_24$SUFFIX$ A = $A$ B = $B$ }
-$APPLY$ = {ARTIFACT = $PREFIX$artifact_28$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_4$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_8$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_12$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_16$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_20$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_24$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_28$SUFFIX$ A = $A$ B = $B$ }
 }
 ## START OF MANDATORY COMMAND FOR NEW SLOTS
 # None of the arguments may be empty:
@@ -270,6 +337,13 @@ for_all_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
         B = $B$
     }
     for_mount_artifacts = {
+        APPLY = $APPLY$
+        PREFIX = $PREFIX$
+        SUFFIX = $SUFFIX$
+        A = $A$ 
+        B = $B$
+    }
+    for_gem_artifacts = {
         APPLY = $APPLY$
         PREFIX = $PREFIX$
         SUFFIX = $SUFFIX$
@@ -431,6 +505,33 @@ for_indestructible_artifacts_nofix = {
         B = $B$
     }
 }
+for_book_artifacts_nofix = {
+    for_book_artifacts = {
+        APPLY = $APPLY$
+        PREFIX = ""
+        SUFFIX = ""
+        A = $A$ 
+        B = $B$
+    }
+}
+for_broken_artifacts_nofix = {
+    for_broken_artifacts = {
+        APPLY = $APPLY$
+        PREFIX = ""
+        SUFFIX = ""
+        A = $A$ 
+        B = $B$
+    }
+}
+for_gem_artifacts_nofix = {
+    for_gem_artifacts = {
+        APPLY = $APPLY$
+        PREFIX = ""
+        SUFFIX = ""
+        A = $A$ 
+        B = $B$
+    }
+}
 for_rarity_4_artifacts_nofix = {
     for_rarity_4_artifacts = {
         APPLY = $APPLY$
@@ -493,6 +594,11 @@ for_all_artifacts_nofix = {
         A = $A$ 
         B = $B$
     }
+    for_gem_artifacts_nofix = {
+        APPLY = $APPLY$
+        A = $A$ 
+        B = $B$
+    }
 }
 # For use when you want a custom function but you don't want to pass prefixes nor extra arguments
 for_handheld_artifacts_no_arguments = {
@@ -540,12 +646,22 @@ for_mount_artifacts_no_arguments = {
         B = yes
     }
 }
+for_gem_artifacts_no_arguments = {
+    for_gem_artifacts = {
+        APPLY = $APPLY$
+        PREFIX = ""
+        SUFFIX = "}#"
+        A = yes 
+        B = yes
+    }
+}
 for_all_artifacts_no_arguments = {
     for_handheld_artifacts_no_arguments = {APPLY = $APPLY$ }
     for_armor_artifacts_no_arguments = {APPLY = $APPLY$ }
     for_headgear_artifacts_no_arguments = { APPLY = $APPLY$ }
     for_jewelry_artifacts_no_arguments = {APPLY = $APPLY$ }
     for_mount_artifacts_no_arguments = {APPLY = $APPLY$ }
+    for_gem_artifacts_no_arguments = {APPLY = $APPLY$ }
 }
 for_shard_artifacts_no_arguments = {
     for_shard_artifacts = {
@@ -567,6 +683,24 @@ for_fabrial_artifacts_no_arguments = {
 }
 for_indestructible_artifacts_no_arguments = {
     for_indestructible_artifacts = {
+        APPLY = $APPLY$
+        PREFIX = ""
+        SUFFIX = "}#"
+        A = yes 
+        B = yes
+    }
+}
+for_book_artifacts_no_arguments = {
+    for_book_artifacts = {
+        APPLY = $APPLY$
+        PREFIX = ""
+        SUFFIX = "}#"
+        A = yes 
+        B = yes
+    }
+}
+for_broken_artifacts_no_arguments = {
+    for_broken_artifacts = {
         APPLY = $APPLY$
         PREFIX = ""
         SUFFIX = "}#"

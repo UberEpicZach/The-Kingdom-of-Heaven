@@ -5363,7 +5363,7 @@
 	877.1.1 = {
 		birth = yes
 	}
-	914.1.1 = {
+	914.1.20 = {
 		add_spouse = 200075
 	}
 	930.1.1 = {
@@ -10605,6 +10605,9 @@
 	1170.1.1 = {
 		employer = 73152
 	}
+	1182.1.1 = {
+		employer = 0
+	}
 	1199.1.1 = {
 		death = "1199.1.1"
 	}
@@ -10627,6 +10630,9 @@
 	}
 	1199.1.1 = {
 		employer = 224003
+	}
+	1207.1.1 = {
+		employer = 0
 	}
 	1212.1.1 = {
 		death = "1212.1.1"
@@ -11275,6 +11281,7 @@
 	trait = wrathful
 	trait = brave
 	trait = education_martial_2
+	sexuality = heterosexual
 	father = 107510
 	mother = 107511
 	1036.1.1 = {
@@ -11438,24 +11445,50 @@
 107590 = {
 	name = "Rodrigo" #AKA: El Cid
 	dynasty = 407
-	martial = 15
-	diplomacy = 6
-	intrigue = 3
-	stewardship = 7
 	religion = "catholic"
 	culture = "castilian"
-	trait = diligent
-	trait = calm
-	trait = generous
-	trait = brave
-	trait = education_martial_4
 	father = 107600
 	mother = 107601
+
+	#Skills
+	diplomacy = 10
+	martial = 10
+	stewardship = 7
+	intrigue = 0
+	learning = 6
+	prowess = 10
+	
+	#Education
+	trait = education_martial_4
+	trait = education_martial_prowess_4	#Technologically unavailable, but it *is* El Cid.
+
+	#Personality Traits
+	trait = trusting
+	trait = diligent
+	trait = brave
+	trait = calm
+	
+	#Other Traits
+	trait = open_terrain_expert
+	trait = rough_terrain_expert
+	trait = flexible_leader
+	trait = gallant
+	trait = strategist
+	
+	sexuality = heterosexual
+	disallow_random_traits = yes
 	1043.1.1 = {
 		birth = "1043.1.1"
 	}
 	1066.1.1 = {
 		employer = 107500
+		
+		give_nickname = nick_the_campeador
+
+		effect = {
+			set_relation_potential_rival = character:106050	#Garcia Ordonez: they haven't started fighting at this point, so we just give them a little nudge.
+			set_relation_potential_rival = character:108500	#Alfonso VI: likewise, the animosity here doesn't actually materialise till Alfonso's murder of his brother Sancho II in 1071, but we give it a little nudge just the same.
+		}
 	}
 	1072.10.7 = {
 		employer = 108500
@@ -11472,7 +11505,9 @@
 	1088.1.1 = {
 		employer = 45005
 	}
-
+	1094.1.1 = {
+		employer = 0
+	}
 	1099.7.10 = {
 		death = "1099.7.10"
 	}
@@ -11676,6 +11711,9 @@
 		add_spouse = 70101
 	}
 	1043.1.1 = {
+		remove_spouse = 70101
+	}
+	1043.1.2 = {
 		add_spouse = 70099
 	}
 	1047.9.30 = {
@@ -12036,6 +12074,7 @@
 	trait = deceitful
 	trait = cynical
 	trait = education_intrigue_4
+	sexuality = heterosexual
 	father = 107510
 	mother = 107511
 	1040.1.1 = {
@@ -12111,6 +12150,7 @@
 	trait = arrogant
 	trait = deceitful
 	trait = education_intrigue_2
+	sexuality = heterosexual
 	father = 107510
 	mother = 107511
 	1033.1.1 = {
@@ -12143,6 +12183,7 @@
 	trait = wrathful
 	trait = zealous
 	trait = education_diplomacy_1
+	sexuality = heterosexual
 	father = 107510
 	mother = 107511
 	1042.1.1 = {

@@ -124,9 +124,6 @@ d_kairouan = {
 	867.1.1 = {	change_development_level = 7 }
 	1066.1.1 = { change_development_level = 10 }
 
-	867.1.1 = {
-		holder = 163147
-	}
 	1054.1.1 = {
 		government = tribal_government
 		holder = 155029
@@ -178,7 +175,6 @@ c_kairwan = {
 	}
 	1155.1.1 = {
 		holder = 155147
-		liege = 0
 	}
 	1160.1.22 = {
 		liege = "k_maghreb"
@@ -1027,7 +1023,7 @@ c_constantine = {
 	}
 
 	1152.1.1 = {
-		liege = "k_maghreb"
+		liege = "d_alger"
 		holder = 155087
 	}
 	1190.1.1 = {
@@ -1098,7 +1094,7 @@ c_annaba = {
 		holder = 155040
 	}
 	1152.1.1 = {
-		liege = "k_maghreb"
+		liege = "k_sicily"
 		holder = 32956
 	}
 	1159.7.1 = {
@@ -1260,10 +1256,19 @@ c_sfax = {
 d_gabes = {
 	867.1.1 = {	change_development_level = 7 }
 	1066.1.1 = { change_development_level = 10 }
+	
+	867.1.1 = {
+		government = clan_government
+		liege = k_africa
+		holder = 163147
+	}
+	902.1.1 = {
+		holder = 0
+	}
 }
 
 c_gabes = {
-	864.1.1 = {	
+	864.1.1 = {
 		government = clan_government
 		liege = k_africa
 		holder = 163147
@@ -2235,7 +2240,7 @@ c_syrte = {
 		holder = 273135
 	}
 
-# Debbabid branch of Suleimids
+	# Debbabid branch of Suleimids
 	1050.1.1 = {
 		government = tribal_government
 		liege = d_cyrenaica
