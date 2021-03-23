@@ -1321,6 +1321,13 @@ e_britannia = {
 					color = { 250 55 5 }
 					color2 = { 255 255 255 }
 				}
+				
+				b_wigton = {
+						province = 8780
+	
+						color = { 240 25 25 }
+						color2 = { 255 255 255 }
+				}
 			}
 		}
 		
@@ -6147,6 +6154,13 @@ e_germany = {
 				}
 				b_pordenone = {
 					province = 2513
+
+					color = { 155 255 175 }
+					color2 = { 255 255 255 }
+				}
+				
+				b_portogruaro = {
+					province = 8766
 
 					color = { 155 255 175 }
 					color2 = { 255 255 255 }
@@ -11610,6 +11624,12 @@ e_byzantium = {
 					color = { 210 80 90 }
 					color2 = { 255 255 255 }
 				}
+				b_nevesinje = {
+					province = 3561
+					
+					color = { 210 80 90 }
+					color2 = { 255 255 255 }
+				}
 				b_konjic = {
 					province = 3557
 					
@@ -11628,8 +11648,20 @@ e_byzantium = {
 					color = { 210 80 90 }
 					color2 = { 255 255 255 }
 				}
-				b_nevesinje = {
-					province = 3561
+				b_drijeva = {
+					province = 3562
+					
+					color = { 210 80 90 }
+					color2 = { 255 255 255 }
+				}
+				b_kljuc = {
+					province = 3563
+					
+					color = { 210 80 90 }
+					color2 = { 255 255 255 }
+				}
+				b_mostar = {
+					province = 3558
 					
 					color = { 210 80 90 }
 					color2 = { 255 255 255 }
@@ -19533,8 +19565,8 @@ e_scandinavia = {
 					
 					color = { 10 10 205 }
 					color2 = { 255 255 255 }
-					}
 				}
+			}
 			c_jahkamakke = { #Lule
 				color = { 35 15 160 }
 				color2 = { 255 255 255 }
@@ -19562,7 +19594,7 @@ e_scandinavia = {
 		#Cobbled sami translation for "Forest (Vuovdi) Sámi Land (Eana)"
 		#Ideally it would mean "Land of the Forest Sami"
 			color = { 10 10 90 }
-			color2= { 255 255 255 }
+			color2 = { 255 255 255 }
 			
 			capital = c_biton
 
@@ -19584,13 +19616,13 @@ e_scandinavia = {
 					
 					cultural_names = {
 						swedish = cn_pitea
+					}
 				}
-			}
 				b_arviesjavrrie = {  #Árviesjávrrie (Arvidsjaur)
 					province = 375
 
 					color = { 20 35 110 }
-				color2 = { 255 255 255 }
+					color2 = { 255 255 255 }
 
 					cultural_names = {
 						swedish = cn_arvidsjaur
@@ -19604,6 +19636,7 @@ e_scandinavia = {
 					
 					cultural_names = {
 						swedish = cn_umea
+					}
 				}
 			}
 			c_julevadno = { #Julevädno (Luleälven)
@@ -19727,6 +19760,7 @@ e_scandinavia = {
 						swedish = cn_tornea
 						finnish = cn_tornio
 					}
+				}
 				b_sjokksjokk = {
 					province = 378
 
@@ -19737,6 +19771,7 @@ e_scandinavia = {
 						finnish = cn_kittila
 					}
 				}
+			}
 			c_suondavara = {
 				color = { 70 55 200 }
 				color2= { 255 255 255 }
@@ -19865,14 +19900,14 @@ e_scandinavia = {
 			
 			capital = c_peaccam	#Kemi
 					
-					cultural_names = {
+				cultural_names = {
 				swedish = cn_leporie
 				norwegian = cn_leporie
 				norse = cn_leporie
 				russian = cn_leporie
 				#More or less this region can be found as "Leporie" in maps from Renaissance Era
 				#Possibly just means "Laponia" in Russian or interpreted Russian
-				}
+			}
 
 			c_peaccam = {	#Kemi
 				color = { 20 10 155 }
@@ -19886,8 +19921,8 @@ e_scandinavia = {
 					
 					cultural_names = {
 						finnish = cn_kemi
+					}
 				}
-			}
 				b_kemijavri = { #Kemijävri (Kemijärvi)
 					province = 388
 
@@ -19903,7 +19938,7 @@ e_scandinavia = {
 
 					color = { 20 10 155 }
 					color2 = { 255 255 255 }
-					}
+				}
 				b_kuusama = {
 					province = 8786
 					color = { 20 10 155 }
@@ -19950,8 +19985,8 @@ e_scandinavia = {
 					province = 455
 					color = { 20 5 150 }
 					color2 = { 255 255 255 }
+				}
 			}
-		}
 			c_akkel = {	#Akkala
 				color = { 35 10 145 }
 				color2 = { 255 255 255 }
@@ -19971,7 +20006,7 @@ e_scandinavia = {
 					province = 407
 
 					color = { 35 10 145 }
-			color2 = { 255 255 255 }
+				color2 = { 255 255 255 }
 
 					cultural_names = {
 						russian = cn_ekostrovsky
@@ -20094,7 +20129,7 @@ e_scandinavia = {
 
 		d_guoldat = { #Guoládat = Kola
 			color = { 44 20 169 }
-					color2 = { 255 255 255 }
+			color2 = { 255 255 255 }
 			capital = c_ter
 					
 					cultural_names = {
@@ -20214,8 +20249,8 @@ e_scandinavia = {
 						russian = cn_pulozero
 						finnish = cn_maaselka
 					}
-					}
 				}
+			}
 			c_kintus = {
 				color = { 35 5 135 }
 				color2= { 255 255 255 }
@@ -21277,6 +21312,7 @@ e_scandinavia = {
 						norse = cn_husavik
 					}
 				}
+			}
 			c_austisland = {
 				color = { 250 215 215 }
 				color2 = { 220 220 220 }
@@ -28305,9 +28341,6 @@ e_russia = {	#Kievan Rus
 				b_polotsk = {
 					province = 5129
 					
-					color = { 127 184 184 }
-					color2 = { 255 255 255 }
-					
 					cultural_names = {
 						lithuanian = cn_polockas
 						polish = cn_polock
@@ -28316,6 +28349,9 @@ e_russia = {	#Kievan Rus
 						danish = cn_pallteskja
 						norwegian = cn_pallteskja
 					}
+					
+					color = { 127 184 184 }
+					color2 = { 255 255 255 }
 				}
 				b_drysa = {
 					province = 5130
@@ -28724,8 +28760,7 @@ e_russia = {	#Kievan Rus
 					color2 = { 255 255 255 }
 				}
 			}
-		}
-		
+		}		
 		d_nizhny_novgorod = {
 			color = { 10 171 90 }
 			color2 = { 255 255 255 }
@@ -81207,30 +81242,4 @@ e_tibet = {
 			}
 		}
 	}
-}
-
-# OBSOLETE TITLES
-k_adiukru = {
-	color = { 180 220 189 }
-	color2 = { 255 255 255 }
-	
-	capital = c_attie
-	
-	can_create = { always = no }
-}
-k_toro = {
-	color = { 110 40 57 }
-	color2 = { 255 255 255 }
-	
-	capital = c_toro
-	
-	can_create = { always = no }
-}
-k_winideheim = {
-	color = { 158 102 36 }
-	color2 = { 200 0 0 }
-
-	capital = c_praha # Praha
-	
-	can_create = { always = no }
 }

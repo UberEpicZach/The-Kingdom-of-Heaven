@@ -8,9 +8,28 @@
 	769.1.1 = {
 		special_building_slot = notre_dame_01
 	}
+	867.1.1 = {
+		buildings = {
+			farm_estates_01
+			curtain_walls_01
+		}
+	}
+	1066.1.1 = {
+		buildings = {
+			castle_02
+			farm_estates_02
+			curtain_walls_01
+			regimental_grounds_01
+		}
+	}
 }
 2357 = {	#SAINT DENIS
 	holding = church_holding
+	867.1.1 = {
+		buildings = {
+			temple_02
+		}
+	}
 }
 2356 = {	#MONTREUIL
 	holding = city_holding
@@ -145,6 +164,13 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+	1066.1.1 = {
+		buildings = {
+			cereal_fields_01
+			hunting_grounds_01
+			military_camps_01
+		}
+	}
 }
 2273 = {	#TOURRAINE
 	holding = none
@@ -255,6 +281,15 @@
 	holding = castle_holding
 	960.1.1 = {	culture = norman }
 	1100.11.11 = { culture = french }
+	1066.1.1 = {
+		buildings = {
+			castle_02
+			ramparts_01
+			barracks_01
+			hunting_grounds_01
+			logging_camps_01
+		}
+	}
 }
 2180 = {	#GISORS
 	holding = church_holding
@@ -368,6 +403,12 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+	1066.1.1 = {
+		buildings = {
+			farm_estates_01
+			cereal_fields_02
+		}
+	}
 }
 2320 = {	#BEAUGENCY
 	holding = church_holding
@@ -450,6 +491,17 @@
 	culture = french
 	religion = catholic
 	holding = church_holding
+	867.1.1 = {
+		buildings = {
+			monastic_schools_01
+		}
+	}
+	1066.1.1 = {
+		buildings = {
+			monastic_schools_02
+			hunting_grounds_01
+		}
+	}
 }
 2366 = {	#EPERNAY
 	holding = city_holding
@@ -466,6 +518,12 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+	1066.1.1 = {
+		buildings = {
+			cereal_fields_02
+			curtain_walls_01
+		}
+	}
 }
 2375 = {	#CLAIRVAUX
 	holding = none
@@ -482,6 +540,14 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+	1066.1.1 = {
+		buildings = {
+			castle_02
+			cereal_fields_02
+			curtain_walls_01
+			hunting_grounds_01
+		}
+	}
 }
 2364 = {	#COULOMMIERS
 	holding = city_holding
@@ -701,9 +767,16 @@
 ##d_flanders ###################################
 ###c_brugge
 2115 = {	#BRUGES
-	culture = french
+	culture = dutch
 	religion = catholic
 	holding = castle_holding
+	1066.1.1 = {
+		buildings = {
+			common_tradeport_02
+			curtain_walls_01
+			farm_estates_01
+		}
+	}
 }
 2114 = {	#GENT
 	holding = church_holding
@@ -714,7 +787,7 @@
 
 ###c_yperen
 2125 = {	#YPRES
-	culture = french
+	culture = dutch
 	religion = catholic
 	holding = castle_holding
 }

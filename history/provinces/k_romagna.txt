@@ -28,6 +28,13 @@
 	culture = cisalpine
 	religion = catholic
 	holding = castle_holding
+	1066.1.1 = {
+		buildings = {
+			cereal_fields_01
+			hunting_grounds_01
+			military_camps_01
+		}
+	}
 }
 2529 = {	#CONA
 	holding = none
@@ -88,6 +95,12 @@
 	culture = italian
 	religion = catholic
 	holding = castle_holding
+	1066.1.1 = {
+		buildings = {
+			common_tradeport_02
+			barracks_01
+		}
+	}
 }
 2583 = {	#CAGLI
 	holding = city_holding
@@ -209,6 +222,10 @@
 	religion = catholic
 }
 
+8759 = {	#AGNONE
+	holding = city_holding
+}
+
 ###c_abruzzi
 2600 = {	#AVEZZANO
 	culture = lombard
@@ -229,9 +246,20 @@
 	religion = catholic
 	holding = castle_holding
 	#
-	buildings = { castle_02 }
+	buildings = {
+		castle_02
+		farm_estates_01
+	}
 	special_building = the_colosseum_01
 	duchy_capital_building = aurelian_walls_01
+	1066.1.1 = {
+		buildings = {
+			castle_02
+			farm_estates_02
+			curtain_walls_01
+			cereal_fields_02
+		}
+	}
 
 }
 2576 = {	#OSTIA

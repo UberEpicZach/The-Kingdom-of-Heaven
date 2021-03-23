@@ -1,7 +1,7 @@
 ﻿on_game_start = {
 	on_actions = {
 		KOH_ON_START
-		on_artifact_initialization
+		#on_artifact_initialization
 		#on_monthly_artifacts
 		KOH_Italian_Familes
 		#KOH_investiture
@@ -573,10 +573,10 @@ on_death = {
 
 on_monthly_artifacts = {
 	effect = {
-		every_ai_artifact_holder = { #Equips Artifacts
-			ai_equip_all_owned_artifacts = yes
+		every_artifact_holder = { #Equips Artifacts
+			limit = { is_ai = yes }
+			equip_all_owned_artifacts = {} #Crudely equips all artifacts in the order defined in common/scripted_effects/artifacts_custom.txt.
 		}
-		every_player = {refresh_filter = yes}
 	}
 	on_actions = {
 		delay = { months = 1 }

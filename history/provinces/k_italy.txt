@@ -16,7 +16,7 @@
 	culture = italian
 	religion = catholic
 	983.1.1 = {	#outcommented to leave some empty holdings
-		holder = castle_holding
+		holding = castle_holding
 	}
 }
 2507 = {	#GRADO
@@ -35,6 +35,14 @@
 	holding = city_holding
 	culture = italian
 	religion = catholic
+}
+
+8766 = {	#PORTOGRUARO
+	holding = none
+	#Founded in 1140
+	1140.1.1 = {
+		holding = city_holding
+	}
 }
 
 ###c_gorz
@@ -101,6 +109,10 @@
 	religion = catholic
 }
 
+8765 = {	#ESTE
+	holding = city_holding
+}
+
 ###c_polesine
 2525 = {	#ROVIGO
 	culture = cisalpine
@@ -136,7 +148,6 @@
 	culture = cisalpine
 	religion = catholic
 	holding = castle_holding
-	
 }
 2045 = {	#CHIERI
 	holding = none
@@ -158,6 +169,10 @@
 		culture = italian
 		religion = catholic
 	}
+}
+
+8764 = {	#SANTHIA
+	holding = none
 }
 
 ###c_novara
@@ -186,6 +201,13 @@
 		religion = catholic
 	}
 }
+8763 = {	#MONDOVI
+	holding = none
+	#Founded in 1198
+	1180.1.1 = {
+		holding = city_holding
+	}
+}
 
 ##d_lombardia ###################################
 ###c_lombardia
@@ -193,9 +215,21 @@
 	culture = cisalpine
 	religion = catholic
 	holding = castle_holding
-	1259.1.1 = {
-		holding = castle_holding
+	867.1.1 = {
+		buildings = {
+			military_camps_01
+		}
 	}
+	1066.1.1 = {
+		buildings = {
+			military_camps_01
+			hunting_grounds_01
+			curtain_walls_01
+		}
+	}
+	#1259.1.1 = {
+	#	holding = castle_holding
+	#}
 }
 2481 = {	#MONZA
 	holding = city_holding
@@ -228,6 +262,13 @@
 	religion = catholic
 }
 
+8762 = {	#CHIARI
+	holding = none
+	#Foundation in 1125
+	1125.1.1 = {
+		holding = city_holding
+	}
+}
 ###c_como
 2477 = {	#COMO
 	culture = cisalpine
@@ -250,6 +291,13 @@
 	culture = cisalpine
 	religion = catholic
 	holding = castle_holding
+	1066.1.1 = {
+		buildings = {
+			quarries_01
+			pastures_01
+			outposts_01
+		}
+	}
 }
 2498 = {	#BOLZANO
 	holding = church_holding
@@ -257,9 +305,13 @@
 	religion = catholic
 }
 2495 = {	#VAL CAMONICA
-	holding = none
+	holding = city_holding
 	culture = italian
 	religion = catholic
+}
+
+8761 = {	#TIRANO
+	holding = none
 }
 
 ###c_pavia
@@ -337,6 +389,18 @@
 	holding = castle_holding
 	special_building_slot = walls_of_genoa_01
 	special_building = walls_of_genoa_01
+	867.1.1 = {
+		buildings = {
+			common_tradeport_01
+		}
+	}
+	1066.1.1 = {
+		buildings = {
+			common_tradeport_02
+			curtain_walls_01
+			military_camps_01
+		}
+	}
 	1099.1.1 = {
 		holding = city_holding
 	}
@@ -416,6 +480,13 @@
 	culture = italian
 	religion = catholic
 	holding = city_holding
+	1066.1.1 = {
+		buildings = {
+			common_tradeport_02
+			barracks_01
+			guild_halls_01
+		}
+	}
 }
 2557 = {	#LIVORNO
 	holding = none
@@ -437,6 +508,12 @@
 	culture = italian
 	religion = catholic
 	holding = castle_holding
+	1066.1.1 = {
+		buildings = {
+			farm_estates_02
+			regimental_grounds_01
+		}
+	}
 }
 2559 = {	#IMPRUNETA
 	holding = none
@@ -518,6 +595,10 @@
 	culture = italian	
 	religion = catholic
 	holding = city_holding
+}
+
+8760 = {	#ASCIANO
+	holding = none
 }
 
 ###c_orbetello

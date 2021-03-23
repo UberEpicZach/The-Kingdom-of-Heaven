@@ -6,6 +6,12 @@
 	religion = orthodox
 	
 	# History
+	1066.1.1 = {
+		buildings = {
+			guild_halls_02
+			common_tradeport_02
+		}
+	}
 	1295.1.1 = { religion = ashari }
 
 }
@@ -53,8 +59,22 @@
 	# Misc
 	culture = outremer
 	religion = orthodox
-	
+	holding = castle_holding
 	# History
+	867.1.1 = {
+		buildings = {
+			common_tradeport_01
+			watchtowers_01
+		}
+	}
+	1066.1.1 = {
+		buildings = {
+			common_tradeport_01
+			watchtowers_01
+			plantations_01
+			military_camps_01
+		}
+	}
 	1295.1.1 = { religion = ashari }
 
 }
@@ -132,6 +152,16 @@
 		holding = castle_holding
 		special_building_slot = dome_of_the_rock_01
 		special_building = dome_of_the_rock_01
+		buildings = {
+			plantations_01
+		}
+	}
+	1066.1.1 = {
+		buildings = {
+			plantations_01
+			cereal_fields_01
+			military_camps_01
+		}
 	}
 
 }
