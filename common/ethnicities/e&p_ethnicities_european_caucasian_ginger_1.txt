@@ -40,9 +40,9 @@ european_caucasian_ginger_1 = {
 	@low_point_neutral = 0.0
 
     template = "ethnicity_template"
-	# skin_color = {
-	# 	10 = { 0.0 0.1 0.5 0.15 }
-	# }
+	skin_color = {
+	    10 = { 0.0 0.14 0.5 0.25 }
+	}
 	eye_color = {
 		# Brown
 		20 = { 0.05 0.5 0.33 0.8 }
@@ -89,7 +89,7 @@ european_caucasian_ginger_1 = {
     }
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.65 0.76 }    }
+        100 = { name = eye_height_pos    range = { 0.55 0.61 }    }
     }
 
     gene_eye_distance = {
@@ -154,7 +154,7 @@ european_caucasian_ginger_1 = {
     }
 
     gene_head_top_width = {
-        100 = { name = head_top_width_neg    range = { 0.3 0.75 }    }
+        100 = { name = head_top_width_neg    range = { 0.45 0.7 }    }
     }
 
     gene_jaw_angle = {
@@ -166,11 +166,11 @@ european_caucasian_ginger_1 = {
     }
 
     gene_jaw_height = {
-        100 = { name = jaw_height_pos    range = { 0.4 0.45 }    }
+        100 = { name = jaw_height_pos    range = { 0.43 0.49 }    }
     }
 
     gene_jaw_width = {
-        100 = { name = jaw_width_neg    range = { 0.4 0.52 }    }
+        100 = { name = jaw_width_neg    range = { 0.35 0.52 }    }
     }
 
     gene_mouth_corner_depth = {
@@ -186,7 +186,7 @@ european_caucasian_ginger_1 = {
     }
 
     gene_mouth_height = {
-        100 = { name = mouth_height_neg    range = { 0.66 0.75 }    }
+        100 = { name = mouth_height_neg    range = { 0.56 0.65 }    }
     }
 
     gene_mouth_width = {
@@ -224,7 +224,8 @@ european_caucasian_ginger_1 = {
     }
 
     gene_bs_cheek_width = {
-        100 = { name = cheek_width_pos    range = { 0.0 0.65 }    }
+        50 = { name = cheek_width_pos    range = { 0.0 0.3 }    }
+        50 = { name = cheek_width_neg    range = { 0.0 0.3 }    }
     }
 
     gene_bs_ear_angle = {
@@ -377,8 +378,8 @@ european_caucasian_ginger_1 = {
     }
 
     gene_bs_nose_nostril_width = {
-        70 = { name = nose_nostril_width_pos    range = { 0.0 0.45 }    }
-        30 = { name = nose_nostril_width_neg    range = { 0.0 0.15 }    }
+        60 = { name = nose_nostril_width_pos    range = { 0.0 0.35 }    }
+        40 = { name = nose_nostril_width_neg    range = { 0.0 0.35 }    }
     }
 
     gene_bs_nose_profile = {
@@ -392,12 +393,13 @@ european_caucasian_ginger_1 = {
     }
 
     gene_bs_nose_ridge_width = {
-        100 = { name = nose_ridge_width_pos    range = { 0.0 0.75 }    }
+        60 = { name = nose_ridge_width_neg    range = { 0.0 0.5 }    }
+        40 = { name = nose_ridge_width_pos    range = { 0.0 0.25 }    }
     }
 
     gene_bs_nose_size = {
         50 = { name = nose_size_neg    range = { 0.0 0.5 }    }
-        50 = { name = nose_size_pos    range = { 0.0 0.15 }    }
+        50 = { name = nose_size_pos    range = { 0.0 0.25 }    }
     }
 
     gene_bs_nose_tip_angle = {
@@ -411,12 +413,12 @@ european_caucasian_ginger_1 = {
     }
 
     gene_bs_nose_tip_width = {
-        25 = { name = nose_tip_width_neg    range = { 0.0 0.35 }    }
+        35 = { name = nose_tip_width_neg    range = { 0.0 0.35 }    }
         25 = { name = nose_tip_width_neg    range = { 0.35 0.65 }    }
         10 = { name = nose_tip_width_neg    range = { 0.65 0.85 }    }
         20 = { name = nose_tip_width_pos    range = { 0.0 0.35 }    }
-        15 = { name = nose_tip_width_pos    range = { 0.35 0.65 }    }
-        5 = { name = nose_tip_width_pos    range = { 0.65 0.85 }    }
+        9 = { name = nose_tip_width_pos    range = { 0.35 0.65 }    }
+        1 = { name = nose_tip_width_pos    range = { 0.65 0.85 }    }
     }
 
     face_detail_cheek_def = {
@@ -442,7 +444,7 @@ european_caucasian_ginger_1 = {
     }
 
     face_detail_chin_def = {
-        100 = {  name = chin_def             range = { 0.0 0.5 }     }
+        100 = {  name = chin_def             range = { 0.0 0.75 }     }
     }
 
     face_detail_eye_socket = {
@@ -467,7 +469,7 @@ european_caucasian_ginger_1 = {
     }
 
     face_detail_nose_tip_def = {
-        100 = {  name = nose_tip_def             range = { 0.0 0.95 }     }
+        100 = {  name = nose_tip_def             range = { 0.5 0.95 }     }
     }
 
     face_detail_temple_def = {
@@ -544,13 +546,13 @@ european_caucasian_ginger_1 = {
         # 5 = { name = body_shape_triangle_full     range = { 0.0 0.0 }      }
     }
 
-	hairstyles = {
-	    100 = { name = western_hairstyles          range = { 0.0 1.0 } }
-	}
-
-	beards = {
-        100 = { name = western_beards 		range = { 0.0 1.0 } }
-	}	
+    gene_hair_type = {
+        30 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        55 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        15 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }	
 
 	eyelashes_accessory = {
 		100 = { name = normal_eyelashes 			range = { 1.0 1.0 } }

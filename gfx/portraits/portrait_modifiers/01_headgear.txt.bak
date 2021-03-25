@@ -68,7 +68,26 @@ headgear = {
 	}
 
 
+## No headgear for children under 16 ## 
 
+	children_no_headgear = {
+
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 200000
+				age < 16
+			}
+		}
+	}
 
 	no_headgear = {
 
@@ -129,7 +148,6 @@ headgear = {
 ## Western ##
 
 	dde_hre_commoners = {
-
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -161,12 +179,32 @@ headgear = {
 		}
 	}
 
+	hre_mayors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dde_hre_common
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 60
+				highest_held_title_tier < tier_county
+				has_government = republic_government
+				portrait_dde_hre_clothing_trigger = yes
+			}
+		}
+	}
+
 	dde_hre_low_nobles = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = dde_hre_nobility
+				template = french_nobility
 				range = { 0 1 } # For the randomness to work correctly
 			}
 		}	
@@ -222,10 +260,10 @@ headgear = {
 						}
 					}
 				}
+
 			}
 		}
 	}
-
 	dde_hre_high_nobles = {
 		dna_modifiers = {
 			accessory = {
@@ -483,12 +521,32 @@ headgear = {
 		}
 	}
 
-	western_low_nobles = {
+	western_mayors = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
 				template = western_nobility
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 60
+				highest_held_title_tier < tier_county
+				has_government = republic_government
+				portrait_western_clothing_trigger = yes
+			}
+		}
+	}
+
+	western_low_nobles = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = western_count
 				range = { 0 1 } # For the randomness to work correctly
 			}
 		}	
@@ -544,6 +602,7 @@ headgear = {
 						}
 					}
 				}
+ 
 			}
 		}
 	}
@@ -818,6 +877,12 @@ headgear = {
 				template = western_war
 				range = { 0 1 } # For the randomness to work correctly
 			}
+			morph = {
+				mode = modify_multiply
+				gene = gene_bs_ear_outward
+				value = 1.0
+				template = ear_outward_neg
+			}			
 		}	
 		weight = {
 			base = 0
@@ -1997,8 +2062,47 @@ headgear = {
 		}
 	}
 	
-## DDE ABBASID ##
+	## DDE ABBASID Early##
 
+	high_middle_ages_sunni_caliph = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = high_abbasid_caliph
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				has_title = title:d_sunni				
+				EPE_culture_era_high_medieval_trigger = yes				
+			}
+		}
+	}
+
+
+	early_middle_ages_sunni_caliph = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = early_abbasid_caliph
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				has_title = title:d_sunni
+				EPE_culture_era_early_medieval_trigger = yes				
+			}
+		}
+	}		
+	
 	dde_abbasid_commoners = {
 		dna_modifiers = {
 			accessory = {
@@ -2024,6 +2128,78 @@ headgear = {
 				 	AND = { is_ruler = yes has_government = theocracy_government }
 				}
 				portrait_dde_abbasid_clothing_trigger = yes
+				EPE_culture_era_early_medieval_trigger = yes					
+			}
+		}
+	}
+
+	dde_abbasid_mayors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dde_abbasid_low_nobility
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 60
+				highest_held_title_tier < tier_county
+				has_government = republic_government
+				portrait_dde_abbasid_clothing_trigger = yes
+				EPE_culture_era_early_medieval_trigger = yes					
+			}
+		}
+	}
+	
+	dde_abbasid_low_nobles = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dde_abbasid_low_nobility
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_county
+						NOR = {
+							# has_dynasty = no
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							has_government = theocracy_government
+						}
+						portrait_dde_abbasid_clothing_trigger = yes
+				EPE_culture_era_early_medieval_trigger = yes							
+					}
+					AND = {
+						exists = primary_spouse
+						is_ruler = no
+						primary_spouse = {
+							highest_held_title_tier = tier_county
+							NOR = {
+								# has_dynasty = no
+								AND = {
+									has_government = republic_government
+									primary_title.tier > 1
+								}
+								has_government = theocracy_government
+							}
+							portrait_dde_abbasid_clothing_trigger = yes
+				EPE_culture_era_early_medieval_trigger = yes								
+						}
+					}
+				}
+
 			}
 		}
 	}
@@ -2169,6 +2345,7 @@ headgear = {
 				NAND = {
 					has_trait = peasant_leader
 					OR = {
+						EPE_culture_era_early_medieval_trigger = yes
 						is_ruler = no
 						is_leading_faction_type = peasant_faction
 						AND = {
@@ -2222,6 +2399,7 @@ headgear = {
 					}
 				}
 				portrait_mena_clothing_trigger = yes
+				EPE_culture_era_early_medieval_trigger = yes
 				
 				NOR = {
 				    AND = {
@@ -2628,6 +2806,8 @@ headgear = {
 					AND = { is_ruler = yes has_government = theocracy_government }
 				}
 				portrait_northern_clothing_trigger = yes
+				portrait_gaelic_clothing_trigger = yes							
+						}
 			}
 		}
 	}
@@ -2670,6 +2850,8 @@ headgear = {
 					AND = { is_ruler = yes has_government = theocracy_government }
 				}
 				portrait_northern_clothing_trigger = yes
+							portrait_gaelic_clothing_trigger = yes							
+						}
 			}
 		}
 	}
@@ -2688,8 +2870,10 @@ headgear = {
 			modifier = {
 				add = 100
 				portrait_wear_helmet_trigger = yes
-				portrait_northern_clothing_trigger = yes
-				
+				OR = {
+					portrait_northern_clothing_trigger = yes
+					portrait_gaelic_clothing_trigger = yes
+				}
 				NOR = {
 				    AND = {
 				        religion = religion:christianity_religion
@@ -2733,6 +2917,7 @@ headgear = {
 	}
 	
 ## FP1 NORSE ##
+
 	fp1_norse_commoners = {
 		dna_modifiers = {
 			accessory = {
@@ -2778,6 +2963,7 @@ headgear = {
 			}
 		}
 	}
+
 	fp1_norse_low_nobles = {
 		dna_modifiers = {
 			accessory = {
@@ -2819,6 +3005,7 @@ headgear = {
 			}
 		}
 	}
+
 	fp1_norse_high_nobles = {
 		dna_modifiers = {
 			accessory = {
@@ -2879,9 +3066,11 @@ headgear = {
 						}
 					}
 				}
+
 			}
 		}
 	}
+
 	fp1_norse_royalty = {
 		dna_modifiers = {
 			accessory = {
@@ -2937,9 +3126,11 @@ headgear = {
 						}
 					}
 				}
+
 			}
 		}
 	}
+
 	fp1_norse_imperial = {
 		dna_modifiers = {
 			accessory = {
@@ -2978,6 +3169,7 @@ headgear = {
 			}
 		}
 	}
+
 	fp1_norse_war = {
 		dna_modifiers = {
 			accessory = {
@@ -3126,6 +3318,7 @@ headgear = {
 
 
  
+
 ## Sub-Saharan Africans ##
 
 	african_commoners = {
@@ -3537,13 +3730,13 @@ headgear = {
 				range = { 0 1 }
 			}
 
-			# accessory = {
-			# 	mode = add
+			accessory = {
+				mode = add
 				
-			# 	gene = hairstyles
-			# 	template = no_hairstyles
-			# 	range = { 0 1 }
-			# }
+				gene = hairstyles
+				template = no_hairstyles
+				range = { 0 1 }
+			}
 		}	
 		weight = {
 			base = 0
@@ -3582,13 +3775,13 @@ headgear = {
 				range = { 0 1 }
 			}
 
-			# accessory = {
-			# 	mode = add
+			accessory = {
+				mode = add
 				
-			# 	gene = hairstyles
-			# 	template = no_hairstyles
-			# 	range = { 0 1 }
-			# }
+				gene = hairstyles
+				template = no_hairstyles
+				range = { 0 1 }
+			}
 		}
 		outfit_tags = { priest_outfit bishop_outfit }
 	    weight = {
@@ -3656,13 +3849,13 @@ headgear = {
 				range = { 0 1 }
 			}
 
-			# accessory = {
-			# 	mode = add
+			accessory = {
+				mode = add
 				
-			# 	gene = hairstyles
-			# 	template = no_hairstyles
-			# 	range = { 0 1 }
-			# }
+				gene = hairstyles
+				template = no_hairstyles
+				range = { 0 1 }
+			}
 		}	
 		weight = {
 			base = 0
@@ -3690,7 +3883,7 @@ headgear = {
 	            range = { 0 1 }
 	        }
 	    }
-	outfit_tags = { priest_outfit }
+		outfit_tags = { priest_outfit }
 	    weight = {
 	        base = 0
 	        modifier = {
@@ -4165,7 +4358,251 @@ headgear = {
 			}
 		}
 	}
-	######Han
+
+######Han
+
+## taoism ##
+
+	religious_taoism_high_headgear = {
+	    dna_modifiers = {
+	        accessory = {
+	            mode = add
+	            gene = headgear
+	            template = religious_taoism_high
+	            range = { 0 1 }
+	        }
+	    }
+	    weight = {
+	        base = 0
+			
+	        modifier = {
+				add = 120
+				OR = {
+					is_theocratic_lessee = yes
+					AND = { is_ruler = yes has_government = theocracy_government }
+					has_council_position = councillor_court_chaplain
+				}
+				religion = religion:taoism_religion
+			}
+	    }
+	}
+	
+## China ##
+
+	chinese_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = chinese_common
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		    weight = {
+			base = 0
+			modifier = {
+				add = 20
+				highest_held_title_tier < tier_county
+				NOR = {
+					AND = {
+						exists = primary_spouse
+						primary_spouse = {
+						highest_held_title_tier > tier_county
+						}
+					}
+					has_government = republic_government
+					AND = { is_ruler = yes has_government = theocracy_government }
+				}
+				portrait_han_clothing_trigger = yes
+			}
+		}
+	}
+
+	chinese_mayors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = chinese_nobility
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				highest_held_title_tier < tier_county
+				has_government = republic_government
+				portrait_han_clothing_trigger = yes
+			}
+		}
+	}
+
+	chinese_low_nobles = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = chinese_nobility
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				portrait_han_clothing_trigger = yes
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_county
+						NOT = {
+						AND = { is_ruler = yes has_government = theocracy_government }
+						}	
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							highest_held_title_tier = tier_county
+							NOT = {
+							AND = { is_ruler = yes has_government = theocracy_government }
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	chinese_high_nobles = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = chinese_high_nobility
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}		
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				portrait_han_clothing_trigger = yes
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_duchy
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_duchy
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	chinese_royalty = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = chinese_royalty
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}		
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				portrait_han_clothing_trigger = yes
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_kingdom
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_kingdom
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						}
+					}
+				}
+
+			}
+		}
+	}
+	
+	chinese_princes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = chinese_prince
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				any_parent = { highest_held_title_tier = tier_empire }
+				portrait_han_clothing_trigger = yes
+			}
+		}
+	}
+	
+	chinese_imperial = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = chinese_imperial
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				highest_held_title_tier = tier_empire
+				NOR = {
+					AND = { is_ruler = yes has_government = mercenary_government  }
+					has_government = republic_government
+					AND = { is_ruler = yes has_government = theocracy_government }
+				}
+				portrait_han_clothing_trigger = yes
+			}
+		}
+	}
 
 
 	han_war = {
@@ -4173,7 +4610,7 @@ headgear = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = steppe_war
+				template = chinese_war
 				range = { 0 1 } # For the randomness to work correctly
 			}
 		}	
@@ -4385,6 +4822,7 @@ headgear = {
 					has_government = theocracy_government
 				}
 				portrait_iranian_clothing_trigger = yes
+				EPE_culture_era_high_medieval_trigger = yes					
 			}
 		}
 	}
@@ -4405,6 +4843,7 @@ headgear = {
 				highest_held_title_tier < tier_county
 				has_government = republic_government
 				portrait_iranian_clothing_trigger = yes
+				EPE_culture_era_high_medieval_trigger = yes					
 			}
 		}
 	}
@@ -4434,6 +4873,7 @@ headgear = {
 							has_government = theocracy_government
 						}
 						portrait_iranian_clothing_trigger = yes
+				EPE_culture_era_high_medieval_trigger = yes							
 					}
 					AND = {
 						exists = primary_spouse
@@ -4449,6 +4889,7 @@ headgear = {
 								has_government = theocracy_government
 							}
 							portrait_iranian_clothing_trigger = yes
+							EPE_culture_era_high_medieval_trigger = yes								
 						}
 					}
 				}
@@ -4482,6 +4923,7 @@ headgear = {
 						}
 						NOT = { has_government = mercenary_government } # Blocked for mercenaries
 						portrait_iranian_clothing_trigger = yes
+						EPE_culture_era_high_medieval_trigger = yes							
 					}
 					AND = {
 						exists = primary_spouse
@@ -4496,6 +4938,7 @@ headgear = {
 								has_government = theocracy_government
 							}
 							portrait_iranian_clothing_trigger = yes
+							EPE_culture_era_high_medieval_trigger = yes								
 						}
 					}
 				}
@@ -4526,6 +4969,7 @@ headgear = {
 						NOT = { has_government = mercenary_government } # Blocked for mercenaries
 						NOT = { has_government = republic_government }
 						portrait_iranian_clothing_trigger = yes
+						EPE_culture_era_high_medieval_trigger = yes							
 					}
 					AND = {
 						exists = primary_spouse
@@ -4538,6 +4982,7 @@ headgear = {
 							NOT = { has_government = mercenary_government } # Blocked for mercenaries
 							NOT = { has_government = republic_government }
 							portrait_iranian_clothing_trigger = yes
+							EPE_culture_era_high_medieval_trigger = yes								
 						}
 					}
 				}
@@ -4566,6 +5011,7 @@ headgear = {
 					has_government = theocracy_government
 				}
 				portrait_iranian_clothing_trigger = yes
+				EPE_culture_era_high_medieval_trigger = yes					
 			}
 		}
 	}
@@ -4585,6 +5031,7 @@ headgear = {
 				add = 100
 				portrait_wear_helmet_trigger = yes
 				portrait_iranian_clothing_trigger = yes
+				EPE_culture_era_high_medieval_trigger = yes					
 			}
 		}
 	}	
@@ -4640,7 +5087,7 @@ headgear = {
 				OR = {
 					AND = {
 						OR = {
-							highest_held_title_tier = tier_duchy
+							highest_held_title_tier = tier_county
 							AND = {
 								has_government = republic_government
 								primary_title.tier > 1
@@ -4777,136 +5224,6 @@ headgear = {
 			}
 		}
 	}	
-		baldwin = {
-			dna_modifiers = {
-				accessory = {
-					mode = add
-					gene = baldwin_face_mask
-					template = face_mask
-					#value = 1.0
-					range = { 1 1 } # For the randomness to work correctly
-				}
-				accessory = {
-					mode = add
-					gene = headgear
-					template = sub_saharan_imperial
-					range = { 1 1 } # For the randomness to work correctly
-				}
-			}
-			weight = {
-				base = 0
-				modifier = {
-					add = 30
-					portrait_baldwin_trigger = yes
-					is_female = no
-				}
-				modifier = {
-					add = 130
-					this = character:223523
-				}
-			}
-		}
-		saladin = {
-			dna_modifiers = {
-				accessory = {
-					mode = add
-					gene = headgear
-					template = ayyubid_royalty_war 
-					#value = 100
-					range = { 1 1 } # For the randomness to work correctly
-				}
-			}
-			weight = {
-				base = 0
-				modifier = {
-					add = 30
-					portrait_saladin_trigger = yes
-					is_female = no
-				}
-				modifier = {
-					add = 130
-					this = character:226000
-				}
-			}
-		}
-		richard = {
-			dna_modifiers = {
-				accessory = {
-					mode = add
-					gene = headgear
-					template = royal_helmet 
-					range = { 0 1 } # For the randomness to work correctly
-				}
-			}
-			weight = {
-				base = 0
-				modifier = {
-					add = 30
-					portrait_richard_trigger = yes
-					portrait_wear_armor_trigger = yes
-					is_female = no
-				}
-				modifier = {
-					add = 130
-					portrait_wear_armor_trigger = yes
-					this = character:204510
-				}
-			}
-		}
-		altair = {
-			dna_modifiers = {
-				accessory = {
-					mode = add
-					gene = headgear
-					template = western_stealth
-					#value = 100
-					range = { 1 1 } # For the randomness to work correctly
-				}
-			}
-			weight = {
-				base = 0
-				modifier = {
-					add = 30
-					portrait_altair_trigger = yes
-					is_female = no
-				}
-				modifier = {
-					add = 130
-					this = character:KOH0030
-				}
-			}
-		}
-		sinan = {
-			dna_modifiers = {
-				accessory = {
-					mode = add
-					gene = headgear
-					template = western_stealth
-					#value = 100
-					range = { 1 1 } # For the randomness to work correctly
-				}
-			}
-			weight = {
-				base = 0
-				modifier = {
-					add = 30
-					portrait_sinan_trigger = yes
-					is_female = no
-				}
-				modifier = {
-					add = 130
-					this = character:227012
-			}
-		}
-	}
-}
-
-
-
-
-
-
-
-
+		
 
 }

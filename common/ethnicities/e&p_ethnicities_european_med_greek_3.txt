@@ -38,7 +38,7 @@ european_med_greek_3 = {
 
 	template = "ethnicity_template"
 	skin_color = {
-		10 = { 0.65 0.25 0.95 0.4 }
+		10 = { 0.45 0.2 0.75 0.35 }
 	}
 	eye_color = {
 		# Brown
@@ -57,10 +57,6 @@ european_med_greek_3 = {
 		# 5 = { 0.85 0.0 1.0 0.5 }
 		# Black
 		75 = { 0.01 0.9 0.5 0.99 }
-	}
-
-	hairstyles = {
-	    10 = { name = byzantine_hairstyles    range = { 0.0 1.0 } }
 	}
 
 	gene_chin_forward = {
@@ -82,11 +78,11 @@ european_med_greek_3 = {
 	}
 
 	gene_eye_depth = {
-	    100 = { name = eye_depth_pos    range = { 0.6 0.75 }    }
+	    100 = { name = eye_depth_pos    range = { 0.55 0.72 }    }
 	}
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.6 0.75 }    }
+        100 = { name = eye_height_pos    range = { 0.57 0.61 }    }
     }
 
     gene_eye_distance = {
@@ -105,7 +101,7 @@ european_med_greek_3 = {
     }
 
     gene_forehead_brow_height = {
-        100 = { name = forehead_brow_height_neg    range = { 0.55 0.67 }    }
+        100 = { name = forehead_brow_height_neg    range = { 0.52 0.67 }    }
     }
 	
 	 gene_forehead_roundness = {
@@ -114,7 +110,7 @@ european_med_greek_3 = {
     }
 	
 	gene_forehead_width = {
-        100 = { name = forehead_width_pos    range = { 0.35 0.65 }    }
+        100 = { name = forehead_width_pos    range = { 0.4 0.65 }    }
     }
 
     gene_forehead_height = {
@@ -127,30 +123,27 @@ european_med_greek_3 = {
     gene_head_height = {
         5 = { name = head_height_pos    range = { 0.58 0.62 }    }
         10 = { name = head_height_pos    range = { 0.54 0.58 }    }
-        15 = { name = head_height_pos    range = { 0.51 0.54 }    }
-        20 = { name = head_height_pos    range = { 0.48 0.51 }    }
-        15 = { name = head_height_pos    range = { 0.44 0.48 }    }
+        20 = { name = head_height_pos    range = { 0.51 0.54 }    }
+        25 = { name = head_height_pos    range = { 0.48 0.51 }    }
+        20 = { name = head_height_pos    range = { 0.44 0.48 }    }
         15 = { name = head_height_pos    range = { 0.38 0.44 }    }
-        15 = { name = head_height_pos    range = { 0.34 0.38 }    }
     }
 
     gene_head_width = {
-        5 = { name = head_width_pos    range = { 0.6 0.7 }    }
-        20 = { name = head_width_pos    range = { 0.5 0.6 }    }
-        35 = { name = head_width_pos    range = { 0.4 0.5 }    }
-        25 = { name = head_width_pos    range = { 0.35 0.4 }    }
-        15 = { name = head_width_pos    range = { 0.3 0.35 }    }
+        25 = { name = head_width_pos    range = { 0.55 0.6 }    }
+        35 = { name = head_width_pos    range = { 0.45 0.55 }    }
+        25 = { name = head_width_pos    range = { 0.4 0.45 }    }
+        15 = { name = head_width_pos    range = { 0.35 0.4 }    }
     }
 
     gene_head_profile = {
-	    100 = { name = head_profile_pos    range = { 0.3 0.5 }    }
+	    100 = { name = head_profile_pos    range = { 0.25 0.45 }    }
 	}
 
 	gene_head_top_width = {
-	    20 = { name = head_top_width_neg    range = { 0.37 0.4 }    }
-	    20 = { name = head_top_width_neg    range = { 0.4 0.45 }    }
+	    30 = { name = head_top_width_neg    range = { 0.4 0.45 }    }
         40 = { name = head_top_width_pos    range = { 0.45 0.75 }    }
-        20 = { name = head_top_width_neg    range = { 0.5 0.6 }    }
+        30 = { name = head_top_width_neg    range = { 0.5 0.6 }    }
 	}
 	
 	gene_head_top_height = {
@@ -159,9 +152,9 @@ european_med_greek_3 = {
 	}
 
 	 gene_jaw_angle = {
-        25 = { name = jaw_angle_neg    range = { 0.5 0.65 }    }
-        50 = { name = jaw_angle_pos    range = { 0.5 0.6 }    }
-        25 = { name = jaw_angle_pos    range = { 0.6 0.65 }    }
+        25 = { name = jaw_angle_neg    range = { 0.45 0.65 }    }
+        50 = { name = jaw_angle_pos    range = { 0.45 0.55 }    }
+        25 = { name = jaw_angle_pos    range = { 0.55 0.65 }    }
     }
 	
 	gene_jaw_forward = {
@@ -177,7 +170,7 @@ european_med_greek_3 = {
     }
 	
 	gene_jaw_height = {
-        100 = { name = jaw_height_pos    range = { 0.4 0.45 }    }
+        100 = { name = jaw_height_pos    range = { 0.44 0.51 }    }
     }
 	
 	gene_mouth_corner_depth = {
@@ -199,15 +192,15 @@ european_med_greek_3 = {
     }
 	  
     gene_mouth_height = {
-        100 = { name = mouth_height_neg    range = { 0.65 0.75 }    }
+        100 = { name = mouth_height_neg    range = { 0.56 0.65 }    }
     }
 	
     gene_mouth_upper_lip_size = {
-        100 = { name = mouth_upper_lip_size_neg    range = { 0.3 0.48 }    }
+        100 = { name = mouth_upper_lip_size_neg    range = { 0.35 0.48 }    }
     }
 
     gene_mouth_lower_lip_size = {
-        100 = { name = mouth_lower_lip_size_pos    range = { 0.3 0.48 }    }
+        100 = { name = mouth_lower_lip_size_pos    range = { 0.35 0.48 }    }
     }
 	
 	gene_mouth_open = {
@@ -269,7 +262,7 @@ european_med_greek_3 = {
 	}
 	
     gene_bs_forehead_brow_curve = {
-        100 = { name = forehead_brow_curve_neg    range = { 0.0 0.61 }    }
+        100 = { name = forehead_brow_curve_neg    range = { 0.0 0.9 }    }
     }
 
     gene_bs_forehead_brow_forward = {
@@ -429,9 +422,9 @@ european_med_greek_3 = {
         15 = { name = nose_height_pos    range = { 0.0 0.1 }    }
         25 = { name = nose_height_neg    range = { 0.0 0.05 }    }
         20 = { name = nose_height_neg    range = { 0.05 0.15 }    }
-        15 = { name = nose_height_neg    range = { 0.15 0.2 }    }
-        10 = { name = nose_height_neg    range = { 0.2 0.3 }    }
-        5 = { name = nose_height_neg    range = { 0.3 0.35 }    }
+        15 = { name = nose_height_neg    range = { 0.15 0.25 }    }
+        10 = { name = nose_height_neg    range = { 0.25 0.35 }    }
+        5 = { name = nose_height_neg    range = { 0.35 0.4 }    }
     }
 
     gene_bs_nose_length = {
@@ -480,6 +473,10 @@ european_med_greek_3 = {
 	    100 = { name = nose_tip_forward_neg    range = { 0.0 0.1  }    }
 	}
 
+    face_detail_nose_tip_def = {
+        100 = {  name = nose_tip_def             range = { 0.45 0.99 }     }
+    }
+
 	gene_bs_nose_tip_width = {
 	    15 = { name = nose_tip_width_neg    range = { 0.0 0.2 }    }
         20 = { name = nose_tip_width_neg    range = { 0.2 0.3 }    }
@@ -510,8 +507,8 @@ european_med_greek_3 = {
         10 = {  name = far_spacing_high_thickness             range = { 0.85 1.0 }     }
         5 = {  name = far_spacing_low_thickness             range = { 0.85 1.0 }    }
 
-        15 = {  name = close_spacing_avg_thickness             range = { 0.8 1.0 }     }
-        15 = {  name = close_spacing_high_thickness             range = { 0.8 1.0 }     }
+        #15 = {  name = close_spacing_avg_thickness             range = { 0.8 1.0 }     }
+        #15 = {  name = close_spacing_high_thickness             range = { 0.8 1.0 }     }
         15 = {  name = close_spacing_low_thickness             range = { 0.8 1.0 }    }
     }
 
@@ -533,9 +530,13 @@ european_med_greek_3 = {
         50 = { name = full_height      range = { 0.55 0.6 }    }
 	}
 
-	beards = {
-		10 = { name = western_beards 		range = { 0.0 1.0 } }
-	}
+    gene_hair_type = {
+        10 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        70 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        20 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }
 
     gene_body_hair = {
         10 = {  name = body_hair_sparse             range = { 0.75 1.0 }     }

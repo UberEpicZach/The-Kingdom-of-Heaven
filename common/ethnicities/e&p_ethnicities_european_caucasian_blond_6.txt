@@ -41,7 +41,7 @@ european_caucasian_blond_6 = {
 
     template = "ethnicity_template"
 	skin_color = {
-	    10 = { 0.0 0.12 0.5 0.35 }
+	    10 = { 0.0 0.14 0.5 0.3 }
 	}
 	eye_color = {
 		# Brown
@@ -75,11 +75,11 @@ european_caucasian_blond_6 = {
     }
 
     gene_chin_width = {
-        100 = { name = chin_width_neg    range = { 0.4 0.7 }    }
+        100 = { name = chin_width_neg    range = { 0.35 0.75 }    }
     }
 
     gene_eye_angle = {
-        100 = { name = eye_angle_neg    range = { 0.42 0.54 }    }
+        100 = { name = eye_angle_neg    range = { 0.4 0.58 }    }
     }
 
     gene_eye_depth = {
@@ -107,7 +107,7 @@ european_caucasian_blond_6 = {
     }
 
     gene_forehead_brow_height = {
-        100 = { name = forehead_brow_height_pos    range = { 0.5 0.7 }    }
+        100 = { name = forehead_brow_height_pos    range = { 0.4 0.7 }    }
     }
 
     gene_forehead_roundness = {
@@ -150,11 +150,11 @@ european_caucasian_blond_6 = {
     }
 
     gene_head_top_height = {
-        100 = { name = head_top_height_pos    range = { 0.45 0.6 }    }
+        100 = { name = head_top_height_pos    range = { 0.45 0.7 }    }
     }
 
     gene_head_top_width = {
-        100 = { name = head_top_width_neg    range = { 0.4 0.6 }    }
+        100 = { name = head_top_width_neg    range = { 0.4 0.7 }    }
     }
 
     gene_jaw_angle = {
@@ -379,8 +379,8 @@ european_caucasian_blond_6 = {
     }
 
     gene_bs_nose_nostril_width = {
-        70 = { name = nose_nostril_width_pos    range = { 0.0 0.1 }    }
-        30 = { name = nose_nostril_width_neg    range = { 0.0 0.15 }    }
+        50 = { name = nose_nostril_width_pos    range = { 0.0 0.25 }    }
+        50 = { name = nose_nostril_width_neg    range = { 0.0 0.25 }    }
     }
 
     gene_bs_nose_profile = {
@@ -399,12 +399,12 @@ european_caucasian_blond_6 = {
     }
 
     gene_bs_nose_size = {
-        50 = { name = nose_size_neg    range = { 0.0 0.4 }    }
-        50 = { name = nose_size_pos    range = { 0.0 0.1 }    }
+        50 = { name = nose_size_neg    range = { 0.0 0.5 }    }
+        50 = { name = nose_size_pos    range = { 0.0 0.25 }    }
     }
 
     gene_bs_nose_tip_angle = {
-		60 = { name = nose_tip_angle_neg    range = { 0.0 0.5 }    }
+		60 = { name = nose_tip_angle_neg    range = { 0.0 0.45 }    }
 		40 = { name = nose_tip_angle_pos    range = { 0.0 0.15 }    }
     }
 
@@ -414,12 +414,12 @@ european_caucasian_blond_6 = {
     }
 
     gene_bs_nose_tip_width = {
-        25 = { name = nose_tip_width_neg    range = { 0.0 0.35 }    }
-        25 = { name = nose_tip_width_neg    range = { 0.35 0.65 }    }
+        29 = { name = nose_tip_width_neg    range = { 0.0 0.35 }    }
+        30 = { name = nose_tip_width_neg    range = { 0.35 0.65 }    }
         10 = { name = nose_tip_width_neg    range = { 0.65 0.85 }    }
-        20 = { name = nose_tip_width_pos    range = { 0.0 0.35 }    }
-        15 = { name = nose_tip_width_pos    range = { 0.35 0.65 }    }
-        5 = { name = nose_tip_width_pos    range = { 0.65 0.85 }    }
+        25 = { name = nose_tip_width_pos    range = { 0.0 0.35 }    }
+        5 = { name = nose_tip_width_pos    range = { 0.35 0.65 }    }
+        1 = { name = nose_tip_width_pos    range = { 0.65 0.85 }    }
     }
 
     face_detail_cheek_def = {
@@ -547,14 +547,13 @@ european_caucasian_blond_6 = {
         # 5 = { name = body_shape_triangle_full     range = { 0.0 0.0 }      }
     }
 
-	hairstyles = {
-	    100 = { name = western_hairstyles          range = { 0.0 1.0 } }
-	}
-
-	beards = {
-        80 = { name = western_beards 		range = { 0.0 1.0 } }
-        20 = { name = no_beard          range = { 0.0 1.0 } }
-	}		
+    gene_hair_type = {
+        30 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        55 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        15 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }		
 
 	eyelashes_accessory = {
 		100 = { name = normal_eyelashes 			range = { 1.0 1.0 } }

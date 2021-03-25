@@ -448,15 +448,13 @@ indian_assamese_5 = {
         40 = { name = full_height      range = { 0.5 0.55 }    }
 	}
 
-	hairstyles = {
-	    100 = { name = assamese_hairstyles          range = { 0.0 1.0 } }
-	}
-
-	beards = {
-		10 = { name = northern_indian_beards 		range = { 0.0 1.0 } }
-		10 = { name = indian_beards 		range = { 0.0 0.4 } }	
-		5 = { name = no_beard 		range = { 0.0 0.4 } }			
-	}	
+    gene_hair_type = {
+        25 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        65 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        10 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }	
 
 	eyelashes_accessory = {
 		100 = { name = asian_eyelashes 			range = { 1.0 1.0 } }

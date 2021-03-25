@@ -14,6 +14,51 @@
 		}
 		template = western_royalty
 	}
+	
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			highest_held_title_tier >= tier_kingdom
+			has_culture = culture:french 
+		}
+		template = french_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			highest_held_title_tier >= tier_kingdom
+			has_culture = culture:greek
+		}
+		template = byzantine_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			highest_held_title_tier >= tier_kingdom
+		}
+		template = italian_royalty
+	}
+	
+	
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			highest_held_title_tier >= tier_kingdom
+		}
+		template = early_iranian_royalty
+	}	
+	
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			highest_held_title_tier >= tier_kingdom
+		}
+		template = eastern_iranian_royalty
+	}		
+	
+	
 	add_accessory_modifiers = {
 		gene = cloaks
 		is_valid_custom = {
@@ -21,36 +66,17 @@
 		}
 		template = fp1_cloak
 	}
-
+	
 	add_accessory_modifiers = {
 		gene = cloaks
 		is_valid_custom = {
-			highest_held_title_tier >= tier_kingdom
-			has_culture = culture:french 
+			has_fp1_dlc_trigger = yes
 		}
-		template = french_kings
+		template = fp1_cloak
 	}
-
-	add_accessory_modifiers = {
-		gene = cloaks
-		is_valid_custom = {
-			highest_held_title_tier >= tier_kingdom
-		}
-		template = western_kings
-	}
-	add_accessory_modifiers = {
-		gene = cloaks
-		is_valid_custom = {
-			highest_held_title_tier >= tier_empire
-			has_culture = culture:french 
-		}
-		template = french_emperors
-	}
-	add_accessory_modifiers = {
-		gene = cloaks
-		is_valid_custom = {
-			highest_held_title_tier >= tier_empire
-		}
-		template = western_emperors
-	}
+}
+	
+	
+	
+	
 }

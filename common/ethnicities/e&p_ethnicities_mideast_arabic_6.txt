@@ -34,14 +34,15 @@
 @blend3min = 0.5
 @blend3max = 0.8
 
-mid_east_arabic_2_mashriqi_3 = {
+mid_east_arabic_6 = {
 
 	@mid_point_neutral = 0.5
 	@low_point_neutral = 0.0
 
     template = "ethnicity_template"
+    using = "levantine"
 	skin_color = {
-		10 = { 0.3 0.4 0.7 0.6 }
+		10 = { 0.1 0.3 0.7 0.5 }
 	}
 	eye_color = {
 		# Brown
@@ -83,7 +84,7 @@ mid_east_arabic_2_mashriqi_3 = {
     }
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.6 0.75 }    }
+        100 = { name = eye_height_pos    range = { 0.55 0.6 }    }
     }
 
     gene_eye_distance = {
@@ -179,7 +180,7 @@ mid_east_arabic_2_mashriqi_3 = {
     }
 
     gene_mouth_height = {
-        100 = { name = mouth_height_neg    range = { 0.65 0.75 }    }
+        100 = { name = mouth_height_neg    range = { 0.58 0.65 }    }
     }
 
     gene_mouth_width = {
@@ -353,14 +354,14 @@ mid_east_arabic_2_mashriqi_3 = {
     }
 
     gene_bs_nose_height = {
-        5 = { name = nose_height_pos    range = { 0.2 0.3 }    }
-        10 = { name = nose_height_pos    range = { 0.1 0.2 }    }
-        15 = { name = nose_height_pos    range = { 0.0 0.1 }    }
+        5 = { name = nose_height_pos    range = { 0.1 0.2 }    }
+        10 = { name = nose_height_pos    range = { 0.05 0.1 }    }
+        10 = { name = nose_height_pos    range = { 0.0 0.05 }    }
         20 = { name = nose_height_neg    range = { 0.0 0.05 }    }
         20 = { name = nose_height_neg    range = { 0.05 0.15 }    }
         15 = { name = nose_height_neg    range = { 0.15 0.2 }    }
         10 = { name = nose_height_neg    range = { 0.2 0.3 }    }
-        5 = { name = nose_height_neg    range = { 0.3 0.35 }    }
+        10 = { name = nose_height_neg    range = { 0.3 0.45 }    }
     }
 
     gene_bs_nose_length = {
@@ -543,13 +544,13 @@ mid_east_arabic_2_mashriqi_3 = {
         # 5 = { name = body_shape_triangle_full     range = { 0.0 0.0 }      }
     }
 
-	hairstyles = {
-	    100 = { name = mena_hairstyles          range = { 0.0 1.0 } }
-	}
-
-	beards = {
-        100 = { name = mena_beards 		range = { 0.0 1.0 } }
-	}		
+    gene_hair_type = {
+        5 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        35 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        60 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }		
 
 	eyelashes_accessory = {
 		100 = { name = normal_eyelashes 			range = { 1.0 1.0 } }

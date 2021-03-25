@@ -38,7 +38,7 @@ east_africa_ethiopian_01 = {
 
 	template = "ethnicity_template"
     skin_color = {
-		10 = { 0.0 0.88 0.45 1.0 }
+		10 = { 0.0 0.75 0.65 1.0 }
 	}
 	eye_color = {
 		# Brown
@@ -59,10 +59,6 @@ east_africa_ethiopian_01 = {
 		98 = { 0.01 0.9 0.5 0.99 }
 		# Black black
 		99 = { 0.04 0.95 0.10 1.0 } 		
-	}
-
-	hairstyles = {
-	    10 = { name = sub_saharan_hairstyles          range = { 0.0 1.0 } }
 	}
 
 	gene_chin_forward = {
@@ -86,15 +82,15 @@ east_africa_ethiopian_01 = {
 	}
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.6 0.75 }    }
+        100 = { name = eye_height_pos    range = { 0.55 0.6 }    }
     }
 
 	gene_eye_distance = {
-	    100 = { name = eye_distance_neg    range = { 0.42 0.51 }    }
+	    100 = { name = eye_distance_neg    range = { 0.42 0.54 }    }
 	}
 	
 	gene_eye_shut = {
-	    100 = { name = eye_shut_neg    range = { 0.42 0.52 }    }
+	    100 = { name = eye_shut_neg    range = { 0.5 0.59 }    }
 	}
 	
 	gene_forehead_angle = {
@@ -107,7 +103,7 @@ east_africa_ethiopian_01 = {
 	
 	 gene_forehead_roundness = {
         45 = { name = forehead_roundness_neg    range = { 0.4 0.5 }    }
-        55 = { name = forehead_roundness_neg    range = { 0.5 0.6 }    }
+        55 = { name = forehead_roundness_neg    range = { 0.5 0.65 }    }
     }
 	
 	gene_forehead_width = {
@@ -128,10 +124,7 @@ east_africa_ethiopian_01 = {
     }
 
     gene_head_height = {
-        10 = { name = head_height_pos    range = { 0.46 0.48 }    }
-        35 = { name = head_height_pos    range = { 0.44 0.46 }    }
-        35 = { name = head_height_pos    range = { 0.38 0.44 }    }
-        20 = { name = head_height_pos    range = { 0.34 0.38 }    }
+        100 = { name = head_height_pos    range = { 0.41 0.54 }    }
     }
 
     gene_head_profile = {
@@ -147,7 +140,7 @@ east_africa_ethiopian_01 = {
 	    20 = { name = head_top_width_neg    range = { 0.37 0.4 }    }
 	    20 = { name = head_top_width_neg    range = { 0.4 0.45 }    }
         40 = { name = head_top_width_pos    range = { 0.45 0.55 }    }
-        20 = { name = head_top_width_neg    range = { 0.5 0.57 }    }
+        20 = { name = head_top_width_neg    range = { 0.5 0.65 }    }
 	}
 	
 	 gene_jaw_angle = {
@@ -191,7 +184,7 @@ east_africa_ethiopian_01 = {
     }
 	  
     gene_mouth_height = {
-        100 = { name = mouth_height_neg    range = { 0.65 0.74 }    }
+        100 = { name = mouth_height_neg    range = { 0.6 0.65 }    }
     }
 	
 	gene_mouth_upper_lip_size = {
@@ -241,12 +234,12 @@ east_africa_ethiopian_01 = {
     }
 
     gene_bs_eye_size = {
-        100 = { name = eye_size_neg    range = { 0.0 0.45 }    }
+        100 = { name = eye_size_neg    range = { 0.0 0.6 }    }
     }
 
 	gene_bs_eye_upper_lid_size = {
         50 = { name = eye_upper_lid_size_pos    range = { 0.0 0.45 }    }
-        50 = { name = eye_upper_lid_size_neg    range = { 0.0 0.25 }    }
+        50 = { name = eye_upper_lid_size_neg    range = { 0.0 0.65 }    }
 	}
 
     gene_bs_forehead_brow_curve = {
@@ -409,7 +402,7 @@ east_africa_ethiopian_01 = {
 	}
 	
 	face_detail_nose_ridge_def = {
-        75 = {  name = nose_ridge_def_neg             range = { 0.0 0.5 }     }
+        75 = {  name = nose_ridge_def_neg             range = { 0.0 0.99 }     }
         25 = {  name = nose_ridge_def_pos             range = { 0.0 0.25 }     }
     }
 	
@@ -423,13 +416,11 @@ east_africa_ethiopian_01 = {
 	}
 
     gene_bs_nose_height = {
-		10 = { name = nose_height_pos    range = { 0.05 0.15 }    }
-        10 = { name = nose_height_pos    range = { 0.0 0.05 }    }
         20 = { name = nose_height_neg    range = { 0.0 0.05 }    }
         20 = { name = nose_height_neg    range = { 0.05 0.15 }    }
         20 = { name = nose_height_neg    range = { 0.15 0.2 }    }
-        10 = { name = nose_height_neg    range = { 0.2 0.3 }    }
-        10 = { name = nose_height_neg    range = { 0.3 0.35 }    }
+        20 = { name = nose_height_neg    range = { 0.2 0.3 }    }
+        20 = { name = nose_height_neg    range = { 0.3 0.45 }    }
     }
 
     gene_bs_nose_length = {
@@ -554,10 +545,17 @@ east_africa_ethiopian_01 = {
         # 5 = { name = body_shape_triangle_full     range = { 0.0 0.0 }      }
     }
 
-	beards = {
-		10 = { name = sub_saharan_beards 		range = { 0.0 0.5 } }
-		7 = { name = no_beard 		range = { 0.0 1.0 } }		
-	}
+    gene_hair_type = {
+        0 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        0 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        0 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        75 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_no_beard             range = { 0.35 0.75 }     }        
+        0 = {  name = hair_wavy_no_beard             range = { 0.35 0.75 }     }    
+        0 = {  name = hair_curly_no_beard             range = { 0.35 0.75 }     }    
+        25 = {  name = hair_afro_no_beard             range = { 0.35 0.75 }     }            
+    }
 
     gene_body_hair = {
         10 = {  name = body_hair_sparse             range = { 0.0 0.3 }     }

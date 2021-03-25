@@ -37,8 +37,9 @@
 iranian_persian_afghan_6 = {
 
 	template = "ethnicity_template"
+    using = "persian"
 	skin_color = {
-		10 = { 0.65 0.15 0.95 0.45 }
+		10 = { 0.65 0.3 0.95 0.5 }
 	}
 	eye_color = {
 		# Brown
@@ -59,40 +60,36 @@ iranian_persian_afghan_6 = {
 		85 = { 0.01 0.9 0.5 0.99 }
 	}
 
-	hairstyles = {
-	    10 = { name = mena_hairstyles          range = { 0.0 1.0 } }
-	}
-
 	gene_chin_forward = {
 	    100 = { name = chin_forward_pos    range = { 0.45 0.47  }    }
 	}
 	
     gene_chin_height = {
-        100 = { name = chin_height_neg    range = { 0.43 0.52 }    }
+        100 = { name = chin_height_neg    range = { 0.45 0.52 }    }
     }
 	
 	gene_chin_width = {
-	    100 = { name = chin_width_neg    range = { 0.6 0.75  }    }
+	    100 = { name = chin_width_neg    range = { 0.65 0.8  }    }
 	}
 
 	gene_eye_angle = {
-	    100 = { name = eye_angle_neg    range = { 0.48 0.55  }    }
+	    100 = { name = eye_angle_neg    range = { 0.45 0.52  }    }
 	}
 
 	gene_eye_depth = {
-	    100 = { name = eye_depth_pos    range = { 0.6 0.75 }    }
+	    100 = { name = eye_depth_pos    range = { 0.55 0.7 }    }
 	}
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.6 0.75 }    }
+        100 = { name = eye_height_pos    range = { 0.55 0.6 }    }
     }
 
 	gene_eye_distance = {
-	    100 = { name = eye_distance_neg    range = { 0.48 0.51 }    }
+	    100 = { name = eye_distance_neg    range = { 0.46 0.53 }    }
 	}
 	
 	gene_eye_shut = {
-	    100 = { name = eye_shut_neg    range = { 0.45 0.6 }    }
+	    100 = { name = eye_shut_neg    range = { 0.5 0.6 }    }
 	}
 	
 	gene_forehead_angle = {
@@ -122,18 +119,15 @@ iranian_persian_afghan_6 = {
 	
 	gene_head_width = {
         60 = { name = head_width_pos    range = { 0.45 0.5 }    }
-        40 = { name = head_width_pos    range = { 0.5 0.55 }    }
+        40 = { name = head_width_pos    range = { 0.5 0.57 }    }
     }
 
     gene_head_height = {
-        10 = { name = head_height_pos    range = { 0.48 0.51 }    }
-        35 = { name = head_height_pos    range = { 0.44 0.48 }    }
-        35 = { name = head_height_pos    range = { 0.38 0.44 }    }
-        20 = { name = head_height_pos    range = { 0.34 0.38 }    }
+        100 = { name = head_height_pos    range = { 0.41 0.5 }    }
     }
 
     gene_head_profile = {
-	    100 = { name = head_profile_pos    range = { 0.4 0.5 }    }
+	    100 = { name = head_profile_pos    range = { 0.2 0.4 }    }
 	}
 
 	gene_head_top_height = {
@@ -142,10 +136,7 @@ iranian_persian_afghan_6 = {
 	}
 
 	gene_head_top_width = {
-	    20 = { name = head_top_width_neg    range = { 0.37 0.4 }    }
-	    20 = { name = head_top_width_neg    range = { 0.4 0.45 }    }
-        40 = { name = head_top_width_pos    range = { 0.45 0.55 }    }
-        20 = { name = head_top_width_neg    range = { 0.5 0.57 }    }
+        100 = { name = head_top_width_neg    range = { 0.4 0.6 }    }
 	}
 	
 	 gene_jaw_angle = {
@@ -162,14 +153,11 @@ iranian_persian_afghan_6 = {
     }
 
     gene_jaw_width = {
-        15 = { name = jaw_width_neg    range = { 0.36 0.38 }    }
-        35 = { name = jaw_width_neg    range = { 0.38 0.4 }    }
-        25 = { name = jaw_width_pos    range = { 0.4 0.45 }    }
-        25 = { name = jaw_width_pos    range = { 0.45 0.5 }    }	
+        100 = { name = jaw_width_pos    range = { 0.45 0.49 }    }	
     }
 	
 	gene_jaw_height = {
-        100 = { name = jaw_height_pos    range = { 0.4 0.45 }    }
+        100 = { name = jaw_height_pos    range = { 0.45 0.48 }    }
     }
 	
 	gene_mouth_corner_depth = {
@@ -187,11 +175,11 @@ iranian_persian_afghan_6 = {
     }
 
     gene_mouth_width = {
-        100 = { name = mouth_width_neg    range = { 0.45 0.5 }    }
+        100 = { name = mouth_width_neg    range = { 0.4 0.52 }    }
     }
 	  
     gene_mouth_height = {
-        100 = { name = mouth_height_neg    range = { 0.65 0.75 }    }
+        100 = { name = mouth_height_neg    range = { 0.58 0.65 }    }
     }
 	
 	gene_mouth_upper_lip_size = {
@@ -240,17 +228,16 @@ iranian_persian_afghan_6 = {
     }
 
     gene_bs_eye_fold_shape = {
-        45 = { name = eye_fold_shape_neg    range = { 0.0 0.35 }    }
-        55 = { name = eye_fold_shape_pos    range = { 0.0 0.45 }    }
+        65 = { name = eye_fold_shape_neg    range = { 0.0 0.65 }    }
+        45 = { name = eye_fold_shape_pos    range = { 0.0 0.25 }    }
     }
 
     gene_bs_eye_size = {
-        100 = { name = eye_size_neg    range = { 0.0 0.45 }    }
+        100 = { name = eye_size_neg    range = { 0.35 0.55 }    }
     }
 
 	gene_bs_eye_upper_lid_size = {
-        50 = { name = eye_upper_lid_size_neg    range = { 0.0 0.25 }    }
-        50 = { name = eye_upper_lid_size_pos    range = { 0.0 0.45 }    }
+        100 = { name = eye_upper_lid_size_neg    range = { 0.0 0.4 }    }
 	}
 
     gene_bs_jaw_def = {
@@ -263,7 +250,7 @@ iranian_persian_afghan_6 = {
 	}
 	
     gene_bs_forehead_brow_curve = {
-        100 = { name = forehead_brow_curve_neg    range = { 0.0 0.61 }    }
+        100 = { name = forehead_brow_curve_neg    range = { 0.0 0.9 }    }
     }
 
     gene_bs_forehead_brow_forward = {
@@ -393,13 +380,13 @@ iranian_persian_afghan_6 = {
     }
 	
 	face_detail_eye_socket = {
-        45 = {  name = eye_socket_01             range = { 0.0 0.45 }     }
-        35 = {  name = eye_socket_02             range = { 0.0 0.45 }     }
-        20 = {  name = eye_socket_03             range = { 0.0 0.45 }     }
+        45 = {  name = eye_socket_01             range = { 0.0 0.75 }     }
+        35 = {  name = eye_socket_02             range = { 0.0 0.75 }     }
+        20 = {  name = eye_socket_03             range = { 0.0 0.85 }     }
     }
 	
 	face_detail_temple_def = {
-        100 = {  name = temple_def             range = { 0.0 0.15 }     }
+        100 = {  name = temple_def             range = { 0.0 0.6 }     }
     }
 	
 	face_detail_nasolabial = {
@@ -410,8 +397,8 @@ iranian_persian_afghan_6 = {
     }
 
     face_detail_nose_ridge_def = {
-        60 = {  name = nose_ridge_def_neg             range = { 0.0 0.5 }     }
-        40 = {  name = nose_ridge_def_pos             range = { 0.0 0.8 }     }
+        60 = {  name = nose_ridge_def_neg             range = { 0.0 0.9 }     }
+        40 = {  name = nose_ridge_def_pos             range = { 0.0 0.5 }     }
     }
 
     face_detail_nose_tip_def = {
@@ -424,13 +411,11 @@ iranian_persian_afghan_6 = {
 	}
 
     gene_bs_nose_height = {
-		10 = { name = nose_height_pos    range = { 0.05 0.15 }    }
-        10 = { name = nose_height_pos    range = { 0.0 0.05 }    }
-        20 = { name = nose_height_neg    range = { 0.0 0.05 }    }
-        20 = { name = nose_height_neg    range = { 0.05 0.15 }    }
+        20 = { name = nose_height_neg    range = { 0.0 0.1 }    }
+        20 = { name = nose_height_neg    range = { 0.1 0.15 }    }
         20 = { name = nose_height_neg    range = { 0.15 0.2 }    }
-        10 = { name = nose_height_neg    range = { 0.2 0.3 }    }
-        10 = { name = nose_height_neg    range = { 0.3 0.35 }    }
+        20 = { name = nose_height_neg    range = { 0.2 0.3 }    }
+        20 = { name = nose_height_neg    range = { 0.3 0.35 }    }
     }
 
     gene_bs_nose_length = {
@@ -445,11 +430,11 @@ iranian_persian_afghan_6 = {
 	}
 
 	gene_bs_nose_nostril_width = {
-        100 = { name = nose_nostril_width_pos    range = { 0.0 0.15 }    }
+        100 = { name = nose_nostril_width_pos    range = { 0.0 0.3 }    }
 	}
 
 	gene_bs_nose_profile = {
-		100 = { name = nose_profile_hawk    range = { 0.0 0.35  }    }
+		100 = { name = nose_profile_hawk    range = { 0.1 0.35  }    }
 	}
 
 	gene_bs_nose_ridge_angle = {
@@ -465,12 +450,11 @@ iranian_persian_afghan_6 = {
 	}
 
 	gene_bs_nose_size = {
-        80 = { name = nose_size_pos    range = { 0.0 0.05  }    }
-        20 = { name = nose_size_neg    range = { 0.0 0.05  }    }
+        20 = { name = nose_size_neg    range = { 0.0 0.3  }    }
 	}
 
 	gene_bs_nose_tip_angle = {
-        100 = { name = nose_tip_angle_neg    range = { 0.35 0.55  }    }
+        100 = { name = nose_tip_angle_neg    range = { 0.0 0.35  }    }
 	}
 	
 	gene_bs_nose_tip_forward = {
@@ -486,16 +470,22 @@ iranian_persian_afghan_6 = {
 	}
 
 	complexion = {
-		10 = {	name = complexion_1				range = { 0.3 1.0 }		}
-        10 = {  name = complexion_2             range = { 0.3 1.0 }     }
-        10 = {  name = complexion_3             range = { 0.3 1.0 }     }
-        10 = {  name = complexion_4             range = { 0.3 1.0 }     }
-        10 = {  name = complexion_5             range = { 0.3 1.0 }     }
-        10 = {  name = complexion_6             range = { 0.3 1.0 }     }
-        10 = {  name = complexion_7             range = { 0.3 1.0 }     }
-		10 = {  name = complexion_8             range = { 0.3 1.0 }     }
-		10 = {  name = complexion_9             range = { 0.3 1.0 }     }
-		10 = {  name = complexion_10             range = { 0.3 1.0 }     }
+		10 = {	name = complexion_1				range = { 0.5 1.0 }		}
+        10 = {  name = complexion_2             range = { 0.5 1.0 }     }
+        10 = {  name = complexion_3             range = { 0.5 1.0 }     }
+        3 = {  name = complexion_4             range = { 0.5 1.0 }     }
+        10 = {  name = complexion_5             range = { 0.5 1.0 }     }
+        10 = {  name = complexion_6             range = { 0.0 1.0 }     }
+        10 = {  name = complexion_7             range = { 0.0 1.0 }     }
+        10 = {  name = complexion_8             range = { 0.0 1.0 }     }
+        10 = {  name = complexion_9             range = { 0.0 1.0 }     }
+        10 = {  name = complexion_10             range = { 0.0 1.0 }     }
+        10 = {  name = complexion_11             range = { 0.0 1.0 }     }
+        10 = {  name = complexion_12             range = { 0.0 1.0 }     }
+        10 = {  name = complexion_13             range = { 0.0 1.0 }     }
+        10 = {  name = complexion_14             range = { 0.0 1.0 }     }
+        10 = {  name = complexion_15             range = { 0.0 1.0 }     }
+        10 = {  name = complexion_16             range = { 0.0 1.0 }     }
 	}
 
     gene_eyebrows_shape = {
@@ -530,9 +520,13 @@ iranian_persian_afghan_6 = {
         50 = { name = full_height      range = { 0.5 0.6 }    }
 	}
 
-	beards = {
-		10 = { name = iranian_beards 		range = { 0.0 1.0 } }
-	}
+    gene_hair_type = {
+        5 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        35 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        60 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }
 
     gene_body_hair = {
         10 = {  name = body_hair_sparse             range = { 0.75 1.0 }     }

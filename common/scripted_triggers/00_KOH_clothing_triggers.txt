@@ -56,35 +56,53 @@ portrait_tamar_trigger = {
 	}
 }
 portrait_han_clothing_trigger = {
-	culture = { has_graphical_culture = han_clothing_gfx }
+	scope:culture = { has_graphical_culture = han_clothing_gfx }
 }
 
 
 portrait_sub_saharan_african_tribal_clothing_trigger = {
-	culture = { has_graphical_culture = sub_saharan_african_tribal_clothing_gfx }
+	scope:culture = { has_graphical_culture = sub_saharan_african_tribal_clothing_gfx }
 }
 
 portrait_ayyubid_clothing_trigger = {
-	culture = { has_graphical_culture = ayyubid_clothing_gfx }
+	scope:culture = { has_graphical_culture = ayyubid_clothing_gfx }
 }
 
-
 portrait_iranian_clothing_trigger = {
-	culture = { has_graphical_culture = iranian_clothing_gfx }
+	NOT = { religion = religion:zoroastrianism_religion }
+	NOT = { religion = religion:buddhism_religion }
+	NOT = { religion = religion:hinduism_religion }
+	NOT = { religion = religion:christianity_religion }
+	NOT = { religion = religion:dualism_religion }
+	NOT = { religion = religion:hellenism_religion }
+	NOT = { religion = religion:zunism_religion }
+	scope:culture = { has_graphical_culture = iranian_clothing_gfx }	
 }
 
 portrait_turkish_clothing_trigger = {
-	culture = { has_graphical_culture = turkish_clothing_gfx }
+	scope:culture = { has_graphical_culture = turkish_clothing_gfx }
 }
 
 portrait_south_indian_clothing_trigger = {
-	culture = { has_graphical_culture = south_indian_clothing_gfx }
+	scope:culture = { has_graphical_culture = south_indian_clothing_gfx }
 }
 
 portrait_french_clothing_trigger = {
-	culture = { has_graphical_culture = french_clothing_gfx }
+	scope:culture = { has_graphical_culture = french_clothing_gfx }
 }
 
+portrait_italian_clothing_trigger = {
+	scope:culture = { has_graphical_culture = italian_clothing_gfx }
+}
+
+###Irish
+portrait_gaelic_clothing_trigger = {
+	scope:culture = { has_graphical_culture = gaelic_clothing_gfx }
+}
+
+portrait_east_african_clothing_trigger = {
+	scope:culture = { has_graphical_culture = east_african_clothing_gfx }
+}
 portrait_templar_trigger = {
     AND = {
         exists = global_var:templar_holy_order_title

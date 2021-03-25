@@ -1,13 +1,13 @@
 pdxmesh = {
-	name = "_male_beard_western_09_male_beard_western_09_male_beard_western_forked"
+	name = "Forked_Beard_mesh"
 	file = "Forked_Beard.mesh"
 
 	meshsettings = {
 		index = 0
-		name = "_male_beard_western_09_male_beard_western_09_male_beard_western_forkedShape"
-		texture_diffuse = "male_beard_western_09_diffuse.dds"
-		texture_normal = "male_beard_western_09_normal.dds"
-		texture_specular = "male_beard_western_09_properties.dds"
+		name = "jorodoxShape"
+		texture_diffuse = "Forked_Beard_diffuse.dds"
+		texture_normal = "Forked_Beard_normal.dds"
+		texture_specular = "Forked_Beard_properties.dds"
 		shader = "portrait_hair"
 		shader_file = "gfx/FX/jomini/portrait.shader"
 	}
@@ -15,6 +15,6 @@ pdxmesh = {
 }
 
 entity = {
-	name = "_male_beard_western_09_male_beard_western_09_male_beard_western_forked_entity"
-	pdxmesh = "_male_beard_western_09_male_beard_western_09_male_beard_western_forked"
+	name = "Forked_Beard_entity"
+	pdxmesh = "Forked_Beard_mesh"
 }

@@ -41,7 +41,7 @@ european_med_iberian_1 = {
 
     template = "ethnicity_template"
 	skin_color = {
-		10 = { 0.5 0.25 0.7 0.45 }
+		10 = { 0.5 0.2 0.7 0.45 }
 	}
 	eye_color = {
         # Brown
@@ -83,7 +83,7 @@ european_med_iberian_1 = {
     }
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.6 0.75 }    }
+        100 = { name = eye_height_pos    range = { 0.55 0.6 }    }
     }
 
     gene_eye_distance = {
@@ -148,7 +148,7 @@ european_med_iberian_1 = {
     }
 
     gene_head_top_width = {
-        100 = { name = head_top_width_neg    range = { 0.3 0.75 }    }
+        100 = { name = head_top_width_neg    range = { 0.4 0.75 }    }
     }
 
     gene_jaw_angle = {
@@ -160,7 +160,7 @@ european_med_iberian_1 = {
     }
 
     gene_jaw_height = {
-        100 = { name = jaw_height_pos    range = { 0.4 0.45 }    }
+        100 = { name = jaw_height_pos    range = { 0.4 0.48 }    }
     }
 
     gene_jaw_width = {
@@ -180,7 +180,7 @@ european_med_iberian_1 = {
     }
 
     gene_mouth_height = {
-        100 = { name = mouth_height_neg    range = { 0.65 0.75 }    }
+        100 = { name = mouth_height_neg    range = { 0.55 0.65 }    }
     }
 
     gene_mouth_width = {
@@ -513,6 +513,12 @@ european_med_iberian_1 = {
         10 = {  name = complexion_5             range = { 0.3 1.0 }     }
         5 = {  name = complexion_6             range = { 0.3 1.0 }     }
         5 = {  name = complexion_7             range = { 0.3 1.0 }     }
+        10 = {	name = complexion_11		range = { 0.3 1.0 }		}
+        10 = {  name = complexion_12             range = { 0.3 1.0 }     }
+        10 = {  name = complexion_13             range = { 0.3 1.0 }     }
+        10 = {  name = complexion_14             range = { 0.3 1.0 }     }
+        10 = {  name = complexion_15             range = { 0.3 1.0 }     }
+        10 = {  name = complexion_16             range = { 0.3 1.0 }     }
 	}
 
     gene_height = {
@@ -542,13 +548,13 @@ european_med_iberian_1 = {
         # 5 = { name = body_shape_triangle_full     range = { 0.0 0.0 }      }
     }
 
-	hairstyles = {
-	    100 = { name = western_hairstyles          range = { 0.0 1.0 } }
-	}
-
-	beards = {
-        100 = { name = western_beards 		range = { 0.0 1.0 } }
-	}	
+    gene_hair_type = {
+        10 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        70 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        20 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }	
 
 	eyelashes_accessory = {
 		100 = { name = normal_eyelashes 			range = { 1.0 1.0 } }

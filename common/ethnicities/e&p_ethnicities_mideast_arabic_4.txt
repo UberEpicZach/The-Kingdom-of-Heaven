@@ -34,14 +34,15 @@
 @blend3min = 0.5
 @blend3max = 0.8
 
-mid_east_arabic_2_mashriqi_2  = {
+mid_east_arabic_4  = {
 
 	@mid_point_neutral = 0.5
 	@low_point_neutral = 0.0
 
     template = "ethnicity_template"
+    using = "levantine"
 	skin_color = {
-		10 = { 0.3 0.4 0.7 0.6 }
+		10 = { 0.1 0.3 0.6 0.55 }
 	}
 	eye_color = {
 		# Brown
@@ -57,10 +58,10 @@ mid_east_arabic_2_mashriqi_2  = {
 		# Brown
 		25 = { 0.65 0.8 0.65 0.9 }
 		# # Red
-		# 5 = { 0.85 0.0 1.0 0.5 }
+		10 = { 0.85 0.7 1.0 0.9 }
 		# Black
-		75 = { 0.01 0.9 0.5 0.99 }
-    }
+		65 = { 0.01 0.9 0.5 0.99 }
+	}
     
     gene_chin_forward = {
         20 = { name = chin_forward_pos    range = { 0.34 0.42 }    }
@@ -69,13 +70,12 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_chin_height = {
-        40 = { name = chin_height_neg    range = { 0.43 0.48 }    }
         40 = { name = chin_height_neg    range = { 0.48 0.53 }    }
-        20 = { name = chin_height_neg    range = { 0.53 0.58 }    }
+        60 = { name = chin_height_neg    range = { 0.53 0.58 }    }
     }
 
     gene_chin_width = {
-        100 = { name = chin_width_neg    range = { 0.4 0.7 }    }
+        100 = { name = chin_width_neg    range = { 0.5 0.7 }    }
     }
 
     gene_eye_angle = {
@@ -87,7 +87,7 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.6 0.75 }    }
+        100 = { name = eye_height_pos    range = { 0.55 0.6 }    }
     }
 
     gene_eye_distance = {
@@ -99,7 +99,7 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_eye_shut = {
-        100 = { name = eye_shut_pos    range = { 0.48 0.55 }    }
+        100 = { name = eye_shut_pos    range = { 0.48 0.59 }    }
     }
 
     gene_forehead_angle = {
@@ -107,7 +107,7 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_forehead_brow_height = {
-        100 = { name = forehead_brow_height_pos    range = { 0.46 0.7 }    }
+        100 = { name = forehead_brow_height_pos    range = { 0.46 0.65 }    }
     }
 
     gene_forehead_roundness = {
@@ -119,10 +119,9 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_forehead_height = {
-        20 = { name = forehead_height_neg    range = { 0.3 0.35 }    }
         20 = { name = forehead_height_neg    range = { 0.35 0.45 }    }
         50 = { name = forehead_height_neg    range = { 0.45 0.55 }    }
-        10 = { name = forehead_height_neg    range = { 0.55 0.6 }    }
+        30 = { name = forehead_height_neg    range = { 0.55 0.65 }    }
     }
 
     gene_head_height = {
@@ -147,7 +146,7 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_head_top_height = {
-        100 = { name = head_top_height_pos    range = { 0.45 0.6 }    }
+        100 = { name = head_top_height_pos    range = { 0.45 0.65 }    }
     }
 
     gene_head_top_width = {
@@ -163,7 +162,7 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_jaw_height = {
-        100 = { name = jaw_height_pos    range = { 0.4 0.45 }    }
+        100 = { name = jaw_height_pos    range = { 0.45 0.5 }    }
     }
 
     gene_jaw_width = {
@@ -183,7 +182,7 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_mouth_height = {
-        100 = { name = mouth_height_neg    range = { 0.65 0.75 }    }
+        100 = { name = mouth_height_neg    range = { 0.56 0.65 }    }
     }
 
     gene_mouth_width = {
@@ -251,7 +250,7 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_bs_eye_fold_shape = {
-        75 = { name = eye_fold_shape_neg    range = { 0.0 0.3 }    }
+        75 = { name = eye_fold_shape_neg    range = { 0.0 0.8 }    }
         25 = { name = eye_fold_shape_pos    range = { 0.0 0.3 }    }
     }
 
@@ -340,7 +339,7 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_bs_mouth_upper_lip_full = {
-        100 = { name = mouth_upper_lip_full_pos    range = { 0.0 0.5 }    }
+        100 = { name = mouth_upper_lip_full_pos    range = { 0.2 0.8 }    }
     }
 
     gene_bs_mouth_upper_lip_profile = {
@@ -357,14 +356,13 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_bs_nose_height = {
-        5 = { name = nose_height_pos    range = { 0.2 0.25 }    }
         10 = { name = nose_height_pos    range = { 0.1 0.2 }    }
         15 = { name = nose_height_pos    range = { 0.0 0.1 }    }
         20 = { name = nose_height_neg    range = { 0.0 0.05 }    }
         20 = { name = nose_height_neg    range = { 0.05 0.15 }    }
         15 = { name = nose_height_neg    range = { 0.15 0.2 }    }
         10 = { name = nose_height_neg    range = { 0.2 0.3 }    }
-        5 = { name = nose_height_neg    range = { 0.3 0.35 }    }
+        10 = { name = nose_height_neg    range = { 0.3 0.45 }    }
     }
 
     gene_bs_nose_length = {
@@ -377,7 +375,7 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_bs_nose_nostril_width = {
-        70 = { name = nose_nostril_width_pos    range = { 0.0 0.25 }    }
+        70 = { name = nose_nostril_width_pos    range = { 0.0 0.35 }    }
         30 = { name = nose_nostril_width_neg    range = { 0.0 0.05 }    }
     }
 
@@ -397,13 +395,12 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     gene_bs_nose_size = {
-        50 = { name = nose_size_neg    range = { 0.0 0.35 }    }
+        50 = { name = nose_size_neg    range = { 0.0 0.55 }    }
         50 = { name = nose_size_pos    range = { 0.0 0.05 }    }
     }
 
     gene_bs_nose_tip_angle = {
-		70 = { name = nose_tip_angle_neg    range = { 0.0 0.5 }    }
-		30 = { name = nose_tip_angle_pos    range = { 0.0 0.05 }    }
+		100 = { name = nose_tip_angle_neg    range = { 0.0 0.5 }    }
     }
 
     gene_bs_nose_tip_forward = {
@@ -463,7 +460,8 @@ mid_east_arabic_2_mashriqi_2  = {
     }
 
     face_detail_nose_ridge_def = {
-        100 = {  name = nose_ridge_def_pos             range = { 0.15 0.85 }     }
+        50 = {  name = nose_ridge_def_pos             range = { 0.0 0.85 }     }
+        50 = {  name = nose_ridge_def_neg             range = { 0.0 0.85 }     }
     }
 
     face_detail_nose_tip_def = {
@@ -547,13 +545,13 @@ mid_east_arabic_2_mashriqi_2  = {
         # 5 = { name = body_shape_triangle_full     range = { 0.0 0.0 }      }
     }
 
-	hairstyles = {
-	    100 = { name = mena_hairstyles          range = { 0.0 1.0 } }
-	}
-
-	beards = {
-        100 = { name = mena_beards 		range = { 0.0 1.0 } }
-	}	
+    gene_hair_type = {
+        5 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        35 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        60 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }	
 
 	eyelashes_accessory = {
 		100 = { name = normal_eyelashes 			range = { 1.0 1.0 } }

@@ -1,11 +1,4 @@
 ﻿iranian_group = {
-	graphical_cultures = {
-		iranian_group_coa_gfx
-		mena_building_gfx
-		iranian_clothing_gfx
-		mena_unit_gfx
-	}
-
 	mercenary_names = {
 		{ name = "mercenary_company_ghilman" coat_of_arms = "mc_ghilman" }
 		{ name = "mercenary_company_warriors_of_zaranj" }
@@ -13,7 +6,18 @@
 	}
 
 	persian = {
-		
+	graphical_cultures = {
+		iranian_group_coa_gfx
+		mena_building_gfx
+		iranian_clothing_gfx
+		iranian_unit_gfx
+	}
+
+	mercenary_names = {
+			{ name = "mercenary_company_band_of_medes" }
+			{ name = "mercenary_company_immortals_of_place" }
+	}		
+ 
 		color = { 0.8 0.8 0.4 }
 
 		cadet_dynasty_names = {
@@ -223,23 +227,26 @@
 		ethnicities = {
 			10 = iranian_persian_1
 			10 = iranian_persian_2
-			10 = iranian_persian_3
+			5 = iranian_persian_3
 			10 = iranian_persian_4
-			10 = iranian_persian_5
+			5 = iranian_persian_5
 			10 = iranian_persian_6
 			10 = iranian_persian_7
 			10 = iranian_persian_8
 			10 = iranian_persian_9
-			10 = iranian_persian_10
-		}
-
-		mercenary_names = {
-			{ name = "mercenary_company_band_of_medes" }
-			{ name = "mercenary_company_immortals_of_place" }
+			5 = iranian_persian_10
+			5 = iranian_persian_11
+			10 = iranian_persian_12
 		}
 	}
 
 	sogdian = {
+		graphical_cultures = {
+			iranian_group_coa_gfx
+			mena_building_gfx
+			iranian_clothing_gfx
+			iranian_unit_gfx
+		}
 		
 		color = { 0.43 0.32 0.32 }
 
@@ -306,14 +313,16 @@
 		ethnicities = {
 			5 = iranian_persian_1
 			10 = iranian_persian_2
-			10 = iranian_persian_3
+			5 = iranian_persian_3
 			10 = iranian_persian_4
 			10 = iranian_persian_5
-			15 = iranian_persian_6
+			10 = iranian_persian_6
 			15 = iranian_persian_7
 			10 = iranian_persian_8
 			10 = iranian_persian_9
 			5 = iranian_persian_10
+			5 = iranian_persian_12
+			5 = iranian_persian_11
 		}
 
 		mercenary_names = {
@@ -323,6 +332,12 @@
 	}
 	
 	tocharian = {
+		graphical_cultures = {
+			iranian_group_coa_gfx
+			mena_building_gfx
+			iranian_clothing_gfx
+			iranian_unit_gfx
+		}
 		
 		color = { 0.75 0.45 0.95  }
 
@@ -404,11 +419,21 @@
 		patronym_prefix_female = "dynnpat_pre_tkacer"
 
 		ethnicities = {
-			60 = asian_tocharian_1
-			10 = european_caucasian_dark_1
-			10 = european_caucasian_dark_1
-			10 = european_caucasian_brown_2
-			10 = european_caucasian_ginger_2
+			10 = asian_tocharian_1
+			10 = asian_tocharian_2
+			10 = asian_tocharian_3
+			10 = asian_tocharian_4 
+			10 = asian_tocharian_5
+			10 = asian_tocharian_6
+			10 = asian_tocharian_7
+			10 = asian_tocharian_8
+			10 = asian_tocharian_9 
+			10 = asian_tocharian_10
+			10 = asian_tocharian_11
+			10 = asian_tocharian_12
+			10 = asian_tocharian_13
+			10 = asian_tocharian_14 
+			10 = asian_tocharian_15
 		}
 
 		mercenary_names = {
@@ -417,6 +442,12 @@
 	}
 	
 	kurdish = {
+		graphical_cultures = {
+			iranian_group_coa_gfx
+			mena_building_gfx
+			iranian_clothing_gfx
+			iranian_unit_gfx
+		}
 
 		color = { 0.3 0.35 0.1 }
 
@@ -492,16 +523,19 @@
 		patronym_prefix_female = "dynnpat_pre_kiC_E_"
 
 		ethnicities = {
+			10 = iranian_kurdish_1
 			10 = iranian_persian_1
 			10 = iranian_persian_2
-			10 = iranian_persian_3
+			5 = iranian_persian_3
 			10 = iranian_persian_4
-			10 = iranian_persian_5
+			5 = iranian_persian_5
 			10 = iranian_persian_6
 			10 = iranian_persian_7
 			10 = iranian_persian_8
-			10 = iranian_persian_9
-			10 = iranian_persian_10
+			5 = iranian_persian_9
+			5 = iranian_persian_10
+			5 = iranian_persian_11
+			5 = iranian_persian_12
 		}
 
 		mercenary_names = {
@@ -510,6 +544,12 @@
 	}
 	
 	afghan = { # a.k.a. Pashtun
+		graphical_cultures = {
+			iranian_group_coa_gfx
+			mena_building_gfx
+			iranian_clothing_gfx
+			iranian_unit_gfx
+		}
 
 		color = { 0.6 0.6 0.1 }
 
@@ -612,6 +652,12 @@
 	}
 	
 	baloch = {
+		graphical_cultures = {
+			iranian_group_coa_gfx
+			mena_building_gfx
+			iranian_clothing_gfx
+			iranian_unit_gfx
+		}
 		
 		color = { 0.4 0.4 0.05 }
 		
@@ -695,12 +741,16 @@
 		patronym_prefix_female = "dynnpat_pre_kiC_E_"
 
 		ethnicities = {
-			20 = iranian_persian_2_baloch
-			20 = iranian_persian_2
-			20 = iranian_persian_3
-			20 = iranian_persian_5
-			10 = iranian_persian_8
-			10 = iranian_persian_9
+			10 = iranian_baloch_1
+			10 = iranian_baloch_2
+			10 = iranian_baloch_3
+			10 = iranian_baloch_4
+			10 = iranian_baloch_5
+			10 = iranian_baloch_6
+			10 = iranian_baloch_7
+			10 = iranian_baloch_8
+			10 = iranian_baloch_9
+			10 = iranian_baloch_10
 		}
 
 		mercenary_names = {
@@ -710,6 +760,13 @@
 	}
 
 	saka = {
+		graphical_cultures = {
+			iranian_group_coa_gfx
+			mena_building_gfx
+			turkish_clothing_gfx
+			iranian_unit_gfx
+		}
+		
 		secondary_event_pictures = bedouin_arabic
 		
 		color = { 0.4 0.2 0.75  }
@@ -761,20 +818,26 @@
 		patronym_prefix_female = "dynnpat_pre_duda"
 
 		ethnicities = {
-			10 = iranian_persian_1
-			10 = iranian_persian_2
-			10 = iranian_persian_3
-			10 = iranian_persian_4
-			10 = iranian_persian_5
-			10 = iranian_persian_6
-			10 = iranian_persian_7
-			10 = iranian_persian_8
-			10 = iranian_persian_9
-			10 = iranian_persian_10
+			10 = asian_tocharian_1
+			10 = asian_tocharian_2
+			10 = asian_tocharian_3
+			10 = asian_tocharian_4 
+			10 = asian_tocharian_5
+			10 = asian_tocharian_6
+			10 = asian_tocharian_7
+			10 = asian_tocharian_8
+			10 = asian_tocharian_9 
+			10 = asian_tocharian_10 
 		}
 	}
 	
 	daylamite = {
+		graphical_cultures = {
+			iranian_group_coa_gfx
+			mena_building_gfx
+			iranian_clothing_gfx
+			iranian_unit_gfx
+		}
 
 		color = { 0.75 0.85 0.35 }
 
@@ -864,14 +927,16 @@
 		ethnicities = {
 			10 = iranian_persian_1
 			10 = iranian_persian_2
-			10 = iranian_persian_3
+			5 = iranian_persian_3
 			10 = iranian_persian_4
-			10 = iranian_persian_5
+			5 = iranian_persian_5
 			10 = iranian_persian_6
 			10 = iranian_persian_7
 			10 = iranian_persian_8
 			10 = iranian_persian_9
-			10 = iranian_persian_10
+			5 = iranian_persian_10
+			5 = iranian_persian_11
+			10 = iranian_persian_12
 		}
 
 		mercenary_names = {
@@ -881,6 +946,12 @@
 	}
 	
 	khwarezmian = {
+		graphical_cultures = {
+			iranian_group_coa_gfx
+			mena_building_gfx
+			iranian_clothing_gfx
+			iranian_unit_gfx
+		}
 		
 		color = { 0.85 0.75 0.45 }
 
@@ -938,14 +1009,15 @@
 		ethnicities = {
 			10 = iranian_persian_1
 			10 = iranian_persian_2
-			10 = iranian_persian_3
+			5 = iranian_persian_3
 			10 = iranian_persian_4
-			10 = iranian_persian_5
+			5 = iranian_persian_5
 			10 = iranian_persian_6
 			10 = iranian_persian_7
 			10 = iranian_persian_8
 			10 = iranian_persian_9
 			10 = iranian_persian_10
+			10 = iranian_persian_12
 		}
 
 		mercenary_names = {
@@ -955,6 +1027,12 @@
 	}
 	
 	tajik = {
+		graphical_cultures = {
+			iranian_group_coa_gfx
+			mena_building_gfx
+			iranian_clothing_gfx
+			iranian_unit_gfx
+		}
 		
 		color = { 0.7 0.75 0.35 }
 
@@ -1039,14 +1117,16 @@
 		ethnicities = {
 			10 = iranian_persian_1
 			10 = iranian_persian_2
-			10 = iranian_persian_3
-			10 = iranian_persian_4
+			5 = iranian_persian_3
+			5 = iranian_persian_4
 			10 = iranian_persian_5
 			10 = iranian_persian_6
 			10 = iranian_persian_7
 			10 = iranian_persian_8
 			10 = iranian_persian_9
-			10 = iranian_persian_tajik_7
+			5 = iranian_persian_tajik_7
+			5 = iranian_persian_11
+			10 = iranian_persian_12
 		}
 
 		mercenary_names = {

@@ -40,9 +40,9 @@ european_caucasian_blond_1 = {
 	@low_point_neutral = 0.0
 
     template = "ethnicity_template"
-	# skin_color = {
-	# 	10 = { 0.0 0.1 0.5 0.15 }
-	# }
+	skin_color = {
+	    10 = { 0.0 0.14 0.5 0.3 }
+	}
 	eye_color = {
 		# Brown
 		20 = { 0.05 0.5 0.33 0.8 }
@@ -69,13 +69,13 @@ european_caucasian_blond_1 = {
     }
 
     gene_chin_height = {
-        40 = { name = chin_height_neg    range = { 0.43 0.48 }    }
+        30 = { name = chin_height_neg    range = { 0.43 0.48 }    }
         40 = { name = chin_height_neg    range = { 0.48 0.53 }    }
-        20 = { name = chin_height_neg    range = { 0.53 0.58 }    }
+        30 = { name = chin_height_neg    range = { 0.53 0.58 }    }
     }
 
     gene_chin_width = {
-        100 = { name = chin_width_neg    range = { 0.4 0.7 }    }
+        100 = { name = chin_width_neg    range = { 0.4 0.75 }    }
     }
 
     gene_eye_angle = {
@@ -87,7 +87,7 @@ european_caucasian_blond_1 = {
     }
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.6 0.76 }    }
+        100 = { name = eye_height_pos    range = { 0.55 0.61 }    }
     }
 
     gene_eye_distance = {
@@ -99,19 +99,19 @@ european_caucasian_blond_1 = {
     }
 
     gene_eye_shut = {
-        100 = { name = eye_shut_pos    range = { 0.5 0.55 }    }
+        100 = { name = eye_shut_pos    range = { 0.5 0.57 }    }
     }
 
     gene_forehead_angle = {
-        100 = { name = forehead_angle_neg    range = { 0.45 0.75 }    }
+        100 = { name = forehead_angle_neg    range = { 0.35 0.75 }    }
     }
 
     gene_forehead_brow_height = {
-        100 = { name = forehead_brow_height_neg    range = { 0.55 0.7 }    }
+        100 = { name = forehead_brow_height_neg    range = { 0.45 0.75 }    }
     }
 
     gene_forehead_roundness = {
-        100 = { name = forehead_roundness_neg    range = { 0.4 0.85 }    }
+        100 = { name = forehead_roundness_neg    range = { 0.35 0.85 }    }
     }
 
     gene_forehead_width = {
@@ -166,11 +166,11 @@ european_caucasian_blond_1 = {
     }
 
     gene_jaw_height = {
-        100 = { name = jaw_height_pos    range = { 0.4 0.45 }    }
+        100 = { name = jaw_height_pos    range = { 0.45 0.57 }    }
     }
 
     gene_jaw_width = {
-        100 = { name = jaw_width_neg    range = { 0.4 0.52 }    }
+        100 = { name = jaw_width_neg    range = { 0.35 0.52 }    }
     }
 
     gene_mouth_corner_depth = {
@@ -186,7 +186,7 @@ european_caucasian_blond_1 = {
     }
 
     gene_mouth_height = {
-        100 = { name = mouth_height_neg    range = { 0.66 0.75 }    }
+        100 = { name = mouth_height_neg    range = { 0.56 0.65 }    }
     }
 
     gene_mouth_width = {
@@ -322,7 +322,7 @@ european_caucasian_blond_1 = {
         30 = { name = mouth_lower_lip_width_neg    range = { 0.0 0.25 }    }
         30 = { name = mouth_lower_lip_width_pos    range = { 0.0 0.1 }    }
         10 = { name = mouth_lower_lip_width_pos    range = { 0.1 0.15 }    }
-        5 = { name = mouth_lower_lip_width_pos    range = { 0.15 0.2 }    }
+        5 = { name = mouth_lower_lip_width_pos    range = { 0.15 0.25 }    }
     }
 
     gene_bs_mouth_philtrum_def = {
@@ -359,7 +359,7 @@ european_caucasian_blond_1 = {
     }
 
     gene_bs_nose_height = {
-        10 = { name = nose_height_pos    range = { 0.2 0.4 }    }
+        10 = { name = nose_height_pos    range = { 0.2 0.35 }    }
         10 = { name = nose_height_pos    range = { 0.1 0.2 }    }
         10 = { name = nose_height_pos    range = { 0.0 0.1 }    }
         20 = { name = nose_height_neg    range = { 0.0 0.05 }    }
@@ -379,8 +379,8 @@ european_caucasian_blond_1 = {
     }
 
     gene_bs_nose_nostril_width = {
-        70 = { name = nose_nostril_width_pos    range = { 0.0 0.45 }    }
-        30 = { name = nose_nostril_width_neg    range = { 0.0 0.15 }    }
+        50 = { name = nose_nostril_width_pos    range = { 0.0 0.25 }    }
+        50 = { name = nose_nostril_width_neg    range = { 0.0 0.25 }    }
     }
 
     gene_bs_nose_profile = {
@@ -390,21 +390,22 @@ european_caucasian_blond_1 = {
     }
 
     gene_bs_nose_ridge_angle = {
-        75 = { name = nose_ridge_angle_pos    range = { 0.0 0.5 }    }
-        25 = { name = nose_ridge_angle_neg    range = { 0.0 0.25 }    }
+        55 = { name = nose_ridge_angle_pos    range = { 0.0 0.5 }    }
+        45 = { name = nose_ridge_angle_neg    range = { 0.0 0.25 }    }
     }
 
     gene_bs_nose_ridge_width = {
-        100 = { name = nose_ridge_width_pos    range = { 0.0 0.75 }    }
+        70 = { name = nose_ridge_width_neg    range = { 0.0 0.5 }    }
+        30 = { name = nose_ridge_width_pos    range = { 0.0 0.5 }    }
     }
 
     gene_bs_nose_size = {
         50 = { name = nose_size_neg    range = { 0.0 0.5 }    }
-        50 = { name = nose_size_pos    range = { 0.0 0.05 }    }
+        50 = { name = nose_size_pos    range = { 0.0 0.25 }    }
     }
 
     gene_bs_nose_tip_angle = {
-		60 = { name = nose_tip_angle_neg    range = { 0.0 0.5 }    }
+		60 = { name = nose_tip_angle_neg    range = { 0.0 0.35 }    }
 		40 = { name = nose_tip_angle_pos    range = { 0.0 0.15 }    }
     }
 
@@ -414,17 +415,17 @@ european_caucasian_blond_1 = {
     }
 
     gene_bs_nose_tip_width = {
-        25 = { name = nose_tip_width_neg    range = { 0.0 0.35 }    }
+        35 = { name = nose_tip_width_neg    range = { 0.0 0.35 }    }
         25 = { name = nose_tip_width_neg    range = { 0.35 0.65 }    }
         10 = { name = nose_tip_width_neg    range = { 0.65 0.85 }    }
         20 = { name = nose_tip_width_pos    range = { 0.0 0.35 }    }
-        15 = { name = nose_tip_width_pos    range = { 0.35 0.65 }    }
-        5 = { name = nose_tip_width_pos    range = { 0.65 0.85 }    }
+        9 = { name = nose_tip_width_pos    range = { 0.35 0.65 }    }
+        1 = { name = nose_tip_width_pos    range = { 0.65 0.85 }    }
     }
 
     face_detail_cheek_def = {
-        50 = {  name = cheek_def_01             range = { 0.0 0.7 }     }
-        50 = {  name = cheek_def_02             range = { 0.0 0.7 }     }
+        50 = {  name = cheek_def_01             range = { 0.0 0.75 }     }
+        50 = {  name = cheek_def_02             range = { 0.0 0.75 }     }
     }
 
     face_detail_cheek_fat = {
@@ -445,13 +446,13 @@ european_caucasian_blond_1 = {
     }
 
     face_detail_chin_def = {
-        100 = {  name = chin_def             range = { 0.0 0.5 }     }
+        100 = {  name = chin_def             range = { 0.0 0.9 }     }
     }
 
     face_detail_eye_socket = {
         50 = {  name = eye_socket_01             range = { 0.0 0.75 }     }
         25 = {  name = eye_socket_02             range = { 0.0 0.75 }     }
-        25 = {  name = eye_socket_03             range = { 0.0 0.75 }     }
+        25 = {  name = eye_socket_03             range = { 0.0 0.95 }     }
     }
 
     face_detail_eye_lower_lid_def = {
@@ -459,10 +460,10 @@ european_caucasian_blond_1 = {
     }
 
     face_detail_nasolabial = {
-        25 = {  name = nasolabial_01             range = { 0.0 0.5 }     }
-        25 = {  name = nasolabial_02             range = { 0.0 0.5 }     }
-        25 = {  name = nasolabial_03             range = { 0.0 0.5 }     }
-        25 = {  name = nasolabial_04             range = { 0.0 0.5 }     }
+        25 = {  name = nasolabial_01             range = { 0.0 0.75 }     }
+        25 = {  name = nasolabial_02             range = { 0.0 0.75 }     }
+        25 = {  name = nasolabial_03             range = { 0.0 0.75 }     }
+        25 = {  name = nasolabial_04             range = { 0.0 0.75 }     }
     }
 
     face_detail_nose_ridge_def = {
@@ -474,7 +475,7 @@ european_caucasian_blond_1 = {
     }
 
     face_detail_temple_def = {
-        100 = {  name = temple_def             range = { 0.2 0.7 }     }
+        100 = {  name = temple_def             range = { 0.0 0.7 }     }
     }
 
 	expression_brow_wrinkles = {
@@ -488,11 +489,11 @@ european_caucasian_blond_1 = {
     }
 	
 	expression_eye_wrinkles = {
-        35 = {  name = eye_wrinkles_01            range = { 0.0 0.7 }     }
+        35 = {  name = eye_wrinkles_01            range = { 0.0 0.75 }     }
 
-        35 = {  name = eye_wrinkles_02            range = { 0.0 0.7 }     }
+        35 = {  name = eye_wrinkles_02            range = { 0.0 0.75 }     }
 
-        30 = {  name = eye_wrinkles_03            range = { 0.0 0.7 }     }
+        30 = {  name = eye_wrinkles_03            range = { 0.0 0.75 }     }
     }
 	
 	expression_forehead_wrinkles = {
@@ -547,14 +548,13 @@ european_caucasian_blond_1 = {
         # 5 = { name = body_shape_triangle_full     range = { 0.0 0.0 }      }
     }
 
-	hairstyles = {
-	    100 = { name = western_hairstyles          range = { 0.0 1.0 } }
-	}
-
-	beards = {
-        85 = { name = western_beards 		range = { 0.0 1.0 } }
-        15 = { name = no_beard          range = { 0.0 1.0 } }
-	}	
+    gene_hair_type = {
+        30 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        55 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        15 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }	
 
 	eyelashes_accessory = {
 		100 = { name = normal_eyelashes 			range = { 1.0 1.0 } }

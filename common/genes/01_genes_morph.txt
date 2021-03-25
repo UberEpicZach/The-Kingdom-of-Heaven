@@ -337,7 +337,7 @@ age_presets = {
 
 morph_genes = {
 
-gene_chin_forward = {
+	gene_chin_forward = {
 	index = 3
 	ugliness_feature_categories = { chin mouth }
 	group = face
@@ -373,9 +373,9 @@ gene_chin_forward = {
 			setting = { attribute = "chin_forward"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_chin_height = {
+	gene_chin_height = {
 	index = 4
 	ugliness_feature_categories = { chin mouth }
 	group = face
@@ -410,9 +410,9 @@ gene_chin_height = {
 			setting = { attribute = "chin_height"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_chin_width = {
+	gene_chin_width = {
 	index = 5
 	ugliness_feature_categories = { chin }
 	group = face
@@ -447,9 +447,9 @@ gene_chin_width = {
 			setting = { attribute = "chin_width"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_eye_angle = {
+	gene_eye_angle = {
 	index = 6
 	ugliness_feature_categories = { eyes }
 	group = eyes
@@ -484,9 +484,9 @@ gene_eye_angle = {
 			setting = { attribute = "eye_angle"	value = { min = @maleMin max = @maleMax }	} 
 		}
 	}
-}
+	}
 
-gene_eye_depth = {
+	gene_eye_depth = {
 	index = 7
 	ugliness_feature_categories = { eyes }
 	group = eyes
@@ -521,9 +521,9 @@ gene_eye_depth = {
 			setting = { attribute = "eye_depth"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_eye_height = {
+	gene_eye_height = {
 	index = 8
 	ugliness_feature_categories = { eyes nose head }
 	group = eyes
@@ -558,9 +558,9 @@ gene_eye_height = {
 			setting = { attribute = "eye_height"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_eye_distance = {
+	gene_eye_distance = {
 	index = 9
 	ugliness_feature_categories = { eyes nose head }
 	group = eyes
@@ -595,9 +595,9 @@ gene_eye_distance = {
 			setting = { attribute = "eye_distance"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_eye_shut = {
+	gene_eye_shut = {
 	index = 10
 	group = eyes
 	eye_shut_neg = { 
@@ -631,9 +631,9 @@ gene_eye_shut = {
 			setting = { attribute = "eye_shut"	value = { min = @maleMin max = @maleMax }	} 
 		}
 	}
-}
+	}
 
-gene_forehead_angle = {
+	gene_forehead_angle = {
 	index = 11
 	ugliness_feature_categories = { head }
 	group = face
@@ -668,9 +668,9 @@ gene_forehead_angle = {
 			setting = { attribute = "forehead_angle"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_forehead_brow_height = {
+	gene_forehead_brow_height = {
 	index = 12
 	ugliness_feature_categories = { head eyes }
 	group = face
@@ -709,9 +709,9 @@ gene_forehead_brow_height = {
 			setting = { attribute = "nbs_forehead_brow_height_max"	value = { min = -0.6 max = @girlMax }  age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_forehead_roundness = {
+	gene_forehead_roundness = {
 	index = 13
 	ugliness_feature_categories = { head }
 	group = face
@@ -746,9 +746,9 @@ gene_forehead_roundness = {
 			setting = { attribute = "forehead_roundness"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_forehead_width = {
+	gene_forehead_width = {
 	index = 14
 	ugliness_feature_categories = { head }
 	group = face
@@ -783,9 +783,9 @@ gene_forehead_width = {
 			setting = { attribute = "forehead_width"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_forehead_height = {
+	gene_forehead_height = {
 	index = 15
 	ugliness_feature_categories = { head }
 	group = face
@@ -820,9 +820,9 @@ gene_forehead_height = {
 			setting = { attribute = "forehead_height"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_head_height = {
+	gene_head_height = {
 	index = 16
 	ugliness_feature_categories = { head }
 	group = head_neck
@@ -857,9 +857,9 @@ gene_head_height = {
 			setting = { attribute = "head_height"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_head_width = {
+	gene_head_width = {
 	index = 17
 	ugliness_feature_categories = { head }
 	group = head_neck
@@ -894,9 +894,9 @@ gene_head_width = {
 			setting = { attribute = "head_width"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_head_profile = {
+	gene_head_profile = {
 	index = 18
 	ugliness_feature_categories = { head }
 	group = head_neck
@@ -931,9 +931,9 @@ gene_head_profile = {
 			setting = { attribute = "head_profile"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_head_top_height = {
+	gene_head_top_height = {
 	index = 19
 	ugliness_feature_categories = { head }
 	group = head_neck
@@ -968,9 +968,9 @@ gene_head_top_height = {
 			setting = { attribute = "head_top_height"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_head_top_width = {
+	gene_head_top_width = {
 	index = 20
 	ugliness_feature_categories = { head }
 	group = head_neck
@@ -1005,9 +1005,9 @@ gene_head_top_width = {
 			setting = { attribute = "head_top_width"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_jaw_angle = {
+	gene_jaw_angle = {
 	index = 21
 	ugliness_feature_categories = { chin }
 	group = face
@@ -1050,9 +1050,9 @@ gene_jaw_angle = {
 			setting = { attribute = "teeth_bs_lower_up"	value = { min = -0.4 max = 0.4 }	age = age_preset_child_features }  
 		}
 	}
-}
+	}
 
-gene_jaw_forward = {
+	gene_jaw_forward = {
 	index = 22
 	ugliness_feature_categories = { chin }
 	group = face
@@ -1087,9 +1087,9 @@ gene_jaw_forward = {
 			setting = { attribute = "jaw_forward"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_jaw_height = {
+	gene_jaw_height = {
 	index = 23
 	ugliness_feature_categories = { chin }
 	group = face
@@ -1140,9 +1140,9 @@ gene_jaw_height = {
 			setting = { attribute = "teeth_bs_lower_up"	value = { min = -0.5 max = 0.5 }	age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_jaw_width = {
+	gene_jaw_width = {
 	index = 24
 	ugliness_feature_categories = { chin }
 	group = face
@@ -1177,9 +1177,9 @@ gene_jaw_width = {
 			setting = { attribute = "jaw_width"	value = { min = @maleMin max = @maleMax }	age = age_preset_child_features_late } 
 		}
 	}
-}
+	}
 
-gene_mouth_corner_depth = {
+	gene_mouth_corner_depth = {
 	index = 25
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -1214,9 +1214,9 @@ gene_mouth_corner_depth = {
 			setting = { attribute = "mouth_corner_depth"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_mouth_corner_height = {
+	gene_mouth_corner_height = {
 	index = 26
 	ugliness_feature_categories = { mouth chin nose }
 	group = mouth
@@ -1251,9 +1251,9 @@ gene_mouth_corner_height = {
 			setting = { attribute = "mouth_corner_height"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_mouth_forward = {
+	gene_mouth_forward = {
 	index = 27
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -1288,9 +1288,9 @@ gene_mouth_forward = {
 			setting = { attribute = "mouth_forward"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_mouth_height = {
+	gene_mouth_height = {
 	index = 28
     ugliness_feature_categories = { mouth chin nose }
     group = mouth
@@ -1333,9 +1333,9 @@ gene_mouth_height = {
 			setting = { attribute = "teeth_bs_lower_down"	value = { min = 0.2 max = -0.2 }	age = age_preset_child_features } # To prevent issues with the lower teeth clipping through the upper(!) lip when jaw is moved up
 		}
 	}
-}
+	}
 
-gene_mouth_width = {
+	gene_mouth_width = {
 	index = 29
 	ugliness_feature_categories = { mouth chin nose }
 	group = mouth
@@ -1370,9 +1370,9 @@ gene_mouth_width = {
 			setting = { attribute = "mouth_width"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_mouth_upper_lip_size = {
+	gene_mouth_upper_lip_size = {
 	index = 30
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -1407,9 +1407,9 @@ gene_mouth_upper_lip_size = {
 			setting = { attribute = "mouth_upper_lip_size"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_mouth_lower_lip_size = {
+	gene_mouth_lower_lip_size = {
 	index = 31
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -1444,9 +1444,9 @@ gene_mouth_lower_lip_size = {
 			setting = { attribute = "mouth_lower_lip_size"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_mouth_open = {
+	gene_mouth_open = {
 	index = 32
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -1481,9 +1481,9 @@ gene_mouth_open = {
 			setting = { attribute = "mouth_open"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_neck_length = {
+	gene_neck_length = {
 	index = 33
 	ugliness_feature_categories = { head }
 	group = head_neck
@@ -1518,9 +1518,9 @@ gene_neck_length = {
 			setting = { attribute = "neck_length"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_neck_width = {
+	gene_neck_width = {
 	index = 34
 	ugliness_feature_categories = { head }
 	group = head_neck
@@ -1555,16 +1555,16 @@ gene_neck_width = {
 			setting = { attribute = "neck_width"	value = { min = @girlMin max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
 
 
 
-#####################################################################################################################
-######################################## BLEND SHAPE BASED MORPH GENES ##############################################
-#####################################################################################################################
+	#####################################################################################################################
+	######################################## BLEND SHAPE BASED MORPH GENES ##############################################
+	#####################################################################################################################
 
-gene_bs_cheek_forward = {
+	gene_bs_cheek_forward = {
 	index = 35
 	ugliness_feature_categories = { head }
 	group = face
@@ -1600,9 +1600,9 @@ gene_bs_cheek_forward = {
 			setting = { attribute = "bs_cheek_forward_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_cheek_height = {
+	gene_bs_cheek_height = {
 	index = 36
 	ugliness_feature_categories = { head }
 	group = face
@@ -1638,9 +1638,9 @@ gene_bs_cheek_height = {
 			setting = { attribute = "bs_cheek_height_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_cheek_width = {
+	gene_bs_cheek_width = {
 	index = 37
 	ugliness_feature_categories = { head }
 	group = face
@@ -1676,9 +1676,9 @@ gene_bs_cheek_width = {
 			setting = { attribute = "bs_cheek_width_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_ear_angle = {
+	gene_bs_ear_angle = {
 	index = 38
 	ugliness_feature_categories = { head }
 	group = ears
@@ -1714,9 +1714,9 @@ gene_bs_ear_angle = {
 			setting = { attribute = "bs_ear_angle_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_bs_ear_inner_shape = {
+	gene_bs_ear_inner_shape = {
 	index = 39
 	ugliness_feature_categories = { head }
 	group = ears
@@ -1735,9 +1735,9 @@ gene_bs_ear_inner_shape = {
 			setting = { attribute = "bs_ear_inner_shape_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_bs_ear_bend = {
+	gene_bs_ear_bend = {
 	index = 40
 	ugliness_feature_categories = { head }
 	group = ears
@@ -1790,9 +1790,9 @@ gene_bs_ear_bend = {
 			setting = { attribute = "bs_ear_upper_bend_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_bs_ear_outward = {
+	gene_bs_ear_outward = {
 	index = 41
 	ugliness_feature_categories = { head }
 	group = ears
@@ -1828,9 +1828,9 @@ gene_bs_ear_outward = {
 			setting = { attribute = "bs_ear_outward_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_bs_ear_size = {
+	gene_bs_ear_size = {
 	index = 42
 	ugliness_feature_categories = { head }
 	group = ears
@@ -1866,9 +1866,9 @@ gene_bs_ear_size = {
 			setting = { attribute = "bs_ear_size_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_eye_corner_depth = {
+	gene_bs_eye_corner_depth = {
 	index = 43
 	ugliness_feature_categories = { eyes }
 	group = eyes
@@ -1904,9 +1904,9 @@ gene_bs_eye_corner_depth = {
 			setting = { attribute = "bs_eye_corner_depth_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_eye_fold_shape = {
+	gene_bs_eye_fold_shape = {
 	index = 44
 	group = eyes
 	eye_fold_shape_neg = { 
@@ -1941,9 +1941,9 @@ gene_bs_eye_fold_shape = {
 			setting = { attribute = "bs_eye_fold_shape_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_eye_size = {
+	gene_bs_eye_size = {
 	index = 45
 	ugliness_feature_categories = { eyes }
 	group = eyes
@@ -1979,9 +1979,9 @@ gene_bs_eye_size = {
 			setting = { attribute = "bs_eye_size_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_eye_upper_lid_size = {
+	gene_bs_eye_upper_lid_size = {
 	index = 46
 	group = eyes
 	eye_upper_lid_size_neg = { 
@@ -2016,9 +2016,9 @@ gene_bs_eye_upper_lid_size = {
 			setting = { attribute = "bs_eye_upper_lid_size_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_forehead_brow_curve = {
+	gene_bs_forehead_brow_curve = {
 	index = 47
 	ugliness_feature_categories = { head eyes }
 	group = face
@@ -2054,9 +2054,9 @@ gene_bs_forehead_brow_curve = {
 			setting = { attribute = "bs_forehead_brow_curve_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_forehead_brow_forward = {
+	gene_bs_forehead_brow_forward = {
 	index = 48
 	ugliness_feature_categories = { head eyes }
 	group = face
@@ -2092,9 +2092,9 @@ gene_bs_forehead_brow_forward = {
 			setting = { attribute = "bs_forehead_brow_forward_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_forehead_brow_inner_height = {
+	gene_bs_forehead_brow_inner_height = {
 	index = 49
 	ugliness_feature_categories = { head eyes }
 	group = face
@@ -2130,9 +2130,9 @@ gene_bs_forehead_brow_inner_height = {
 			setting = { attribute = "bs_forehead_brow_inner_height_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_forehead_brow_outer_height = {
+	gene_bs_forehead_brow_outer_height = {
 	index = 50
 	ugliness_feature_categories = { head eyes }
 	group = face
@@ -2168,9 +2168,9 @@ gene_bs_forehead_brow_outer_height = {
 			setting = { attribute = "bs_forehead_brow_outer_height_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_forehead_brow_width = {
+	gene_bs_forehead_brow_width = {
 	index = 51
 	ugliness_feature_categories = { head eyes }
 	group = face
@@ -2206,9 +2206,9 @@ gene_bs_forehead_brow_width = {
 			setting = { attribute = "bs_forehead_brow_width_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_jaw_def = {
+	gene_bs_jaw_def = {
 	index = 52
 	group = face
     jaw_def_neg = { 
@@ -2243,9 +2243,9 @@ gene_bs_jaw_def = {
 			setting = { attribute = "bs_jaw_def_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_late } 
 		}
 	}
-}
+	}
 
-gene_bs_mouth_lower_lip_def = {
+	gene_bs_mouth_lower_lip_def = {
 	index = 53
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -2264,9 +2264,9 @@ gene_bs_mouth_lower_lip_def = {
 			setting = { attribute = "bs_mouth_lower_lip_def_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_bs_mouth_lower_lip_full = {
+	gene_bs_mouth_lower_lip_full = {
 	index = 54
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -2302,9 +2302,9 @@ gene_bs_mouth_lower_lip_full = {
 			setting = { attribute = "bs_mouth_lower_lip_full_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_bs_mouth_lower_lip_pad = {
+	gene_bs_mouth_lower_lip_pad = {
 	index = 55
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -2340,9 +2340,9 @@ gene_bs_mouth_lower_lip_pad = {
 			setting = { attribute = "bs_mouth_lower_lip_pad_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_mouth_lower_lip_width = {
+	gene_bs_mouth_lower_lip_width = {
 	index = 56
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -2378,10 +2378,10 @@ gene_bs_mouth_lower_lip_width = {
 			setting = { attribute = "bs_mouth_lower_lip_width_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
 
-gene_bs_mouth_philtrum_def = {
+	gene_bs_mouth_philtrum_def = {
 	index = 57
 	group = mouth
 	mouth_philtrum_def_pos = { 
@@ -2399,9 +2399,9 @@ gene_bs_mouth_philtrum_def = {
 			setting = { attribute = "bs_mouth_philtrum_def_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_bs_mouth_philtrum_shape = {
+	gene_bs_mouth_philtrum_shape = {
     index = 58
     ugliness_feature_categories = { mouth }
     group = mouth
@@ -2437,9 +2437,9 @@ gene_bs_mouth_philtrum_shape = {
             setting = { attribute = "bs_mouth_philtrum_shape_max"  value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
         }
     }
-}
+	}
 
-gene_bs_mouth_philtrum_width = {
+	gene_bs_mouth_philtrum_width = {
     index = 59
     ugliness_feature_categories = { mouth }
     group = mouth
@@ -2475,9 +2475,9 @@ gene_bs_mouth_philtrum_width = {
             setting = { attribute = "bs_mouth_philtrum_width_max"  value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
         }
     }
-}
+	}
 
-gene_bs_mouth_upper_lip_def = {
+	gene_bs_mouth_upper_lip_def = {
 	index = 60
 	group = mouth
 	mouth_upper_lip_def_pos = { 
@@ -2495,9 +2495,9 @@ gene_bs_mouth_upper_lip_def = {
 			setting = { attribute = "bs_mouth_upper_lip_def_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_bs_mouth_upper_lip_full = {
+	gene_bs_mouth_upper_lip_full = {
 	index = 61
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -2533,9 +2533,9 @@ gene_bs_mouth_upper_lip_full = {
 			setting = { attribute = "bs_mouth_upper_lip_full_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_bs_mouth_upper_lip_profile = {
+	gene_bs_mouth_upper_lip_profile = {
 	index = 62
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -2571,9 +2571,9 @@ gene_bs_mouth_upper_lip_profile = {
 			setting = { attribute = "bs_mouth_upper_lip_profile_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
-gene_bs_mouth_upper_lip_width = {
+	gene_bs_mouth_upper_lip_width = {
 	index = 63
 	ugliness_feature_categories = { mouth }
 	group = mouth
@@ -2609,11 +2609,11 @@ gene_bs_mouth_upper_lip_width = {
 			setting = { attribute = "bs_mouth_upper_lip_width_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features_wide_range } 
 		}
 	}
-}
+	}
 
 
 
-gene_bs_nose_forward = {
+	gene_bs_nose_forward = {
 	index = 64
     ugliness_feature_categories = { nose }
     group = nose
@@ -2649,9 +2649,9 @@ gene_bs_nose_forward = {
 			setting = { attribute = "bs_nose_forward_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_nose_height = {
+	gene_bs_nose_height = {
 	index = 65
     ugliness_feature_categories = { nose mouth }
     group = nose
@@ -2687,9 +2687,9 @@ gene_bs_nose_height = {
 			setting = { attribute = "bs_nose_height_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_nose_length = {
+	gene_bs_nose_length = {
 	index = 66
     ugliness_feature_categories = { nose }
     group = nose
@@ -2725,10 +2725,10 @@ gene_bs_nose_length = {
 			setting = { attribute = "bs_nose_length_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
 
-gene_bs_nose_nostril_height = {
+	gene_bs_nose_nostril_height = {
 	index = 67
     ugliness_feature_categories = { nose }
     group = nose
@@ -2764,9 +2764,9 @@ gene_bs_nose_nostril_height = {
 			setting = { attribute = "bs_nose_nostril_height_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_nose_nostril_width = {
+	gene_bs_nose_nostril_width = {
 	index = 68
     ugliness_feature_categories = { nose mouth }
     group = nose
@@ -2802,9 +2802,9 @@ gene_bs_nose_nostril_width = {
 			setting = { attribute = "bs_nose_nostril_width_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_nose_profile = {
+	gene_bs_nose_profile = {
 	index = 69
     ugliness_feature_categories = { nose }
     group = nose
@@ -2876,9 +2876,9 @@ gene_bs_nose_profile = {
 			setting = { attribute = "bs_nose_hawk_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_nose_ridge_angle = {
+	gene_bs_nose_ridge_angle = {
 	index = 70
     ugliness_feature_categories = { nose }
     group = nose
@@ -2914,9 +2914,9 @@ gene_bs_nose_ridge_angle = {
 			setting = { attribute = "bs_nose_ridge_angle_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_nose_ridge_width = {
+	gene_bs_nose_ridge_width = {
 	index = 71
     ugliness_feature_categories = { nose }
     group = nose
@@ -2952,9 +2952,9 @@ gene_bs_nose_ridge_width = {
 			setting = { attribute = "bs_nose_ridge_width_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_nose_size = {
+	gene_bs_nose_size = {
 	index = 72
     ugliness_feature_categories = { nose }
     group = nose
@@ -2990,9 +2990,9 @@ gene_bs_nose_size = {
 			setting = { attribute = "bs_nose_size_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_nose_tip_angle = {
+	gene_bs_nose_tip_angle = {
 	index = 73
     ugliness_feature_categories = { nose }
     group = nose
@@ -3028,9 +3028,9 @@ gene_bs_nose_tip_angle = {
 			setting = { attribute = "bs_nose_tip_angle_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_nose_tip_forward = {
+	gene_bs_nose_tip_forward = {
 	index = 74
     ugliness_feature_categories = { nose }
     group = nose
@@ -3066,9 +3066,9 @@ gene_bs_nose_tip_forward = {
 			setting = { attribute = "bs_nose_tip_forward_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-gene_bs_nose_tip_width = {
+	gene_bs_nose_tip_width = {
 	index = 75
     ugliness_feature_categories = { nose }
     group = nose
@@ -3104,13 +3104,13 @@ gene_bs_nose_tip_width = {
 			setting = { attribute = "bs_nose_tip_width_max"	value = { min = 0.0 max = @girlMax }   age = age_preset_child_features } 
 		}
 	}
-}
+	}
 
-#####################################################################################################################
-################################################ OTHER MORPH GENES ##################################################
-#####################################################################################################################
+	#####################################################################################################################
+	################################################ OTHER MORPH GENES ##################################################
+	#####################################################################################################################
 
-face_detail_cheek_def = {
+	face_detail_cheek_def = {
 
 	index = 76
 	group = face
@@ -3217,9 +3217,9 @@ face_detail_cheek_def = {
       
 	}
 
-}
+	}
 
-face_detail_cheek_fat = {
+	face_detail_cheek_fat = {
 
 	index = 77
 	group = face
@@ -3504,9 +3504,9 @@ face_detail_cheek_fat = {
       
 	}
 
-}
+	}
 
-face_detail_chin_cleft = {
+	face_detail_chin_cleft = {
 
     index = 78
     group = face
@@ -3608,9 +3608,9 @@ face_detail_chin_cleft = {
     }
 
     
-}
+	}
 
-face_detail_chin_def = {
+	face_detail_chin_def = {
 
     index = 79
     group = face
@@ -3665,11 +3665,11 @@ face_detail_chin_def = {
         girl = female
     }
     
-}
+	}
 
 
 
-face_detail_eye_lower_lid_def = {
+	face_detail_eye_lower_lid_def = {
 
     index = 80
     group = eyes
@@ -3732,10 +3732,10 @@ face_detail_eye_lower_lid_def = {
         girl = female
     }
     
-}
+	}
 
 
-face_detail_eye_socket = {
+	face_detail_eye_socket = {
 
     index = 81
     group = eyes
@@ -3890,10 +3890,10 @@ face_detail_eye_socket = {
         girl = female
     }
     
-}
+	}
 
 
-face_detail_nasolabial = {
+	face_detail_nasolabial = {
 
 	index = 82
 	group = nose
@@ -4122,10 +4122,10 @@ face_detail_nasolabial = {
       
 	}
 
-}
+	}
 
 
-face_detail_nose_ridge_def = {
+	face_detail_nose_ridge_def = {
 
     index = 83
     ugliness_feature_categories = { nose }
@@ -4193,9 +4193,9 @@ face_detail_nose_ridge_def = {
         girl = female
     }
     
-}
+	}
 
-face_detail_nose_tip_def = {
+	face_detail_nose_tip_def = {
 
     index = 84
     ugliness_feature_categories = { nose }
@@ -4231,9 +4231,9 @@ face_detail_nose_tip_def = {
         girl = female
     }
     
-}
+	}
 
-face_detail_temple_def = {
+	face_detail_temple_def = {
 
     index = 85
     group = face
@@ -4288,10 +4288,10 @@ face_detail_temple_def = {
         girl = female
     }
 
-}
+	}
 
 
-expression_brow_wrinkles = {
+	expression_brow_wrinkles = {
 
     index = 86
 
@@ -4478,9 +4478,9 @@ expression_brow_wrinkles = {
             }
         }
     }
-}
+	}
 
-expression_eye_wrinkles = {
+	expression_eye_wrinkles = {
 
     index = 87
 
@@ -4621,9 +4621,9 @@ expression_eye_wrinkles = {
             }
         }
     }
-}
+	}
 
-expression_forehead_wrinkles = {
+	expression_forehead_wrinkles = {
 
     index = 88
 
@@ -4764,9 +4764,9 @@ expression_forehead_wrinkles = {
             }
         }
     }
-}
+	}
 
-expression_other = {
+	expression_other = {
 
     index = 89
 
@@ -4999,14 +4999,14 @@ expression_other = {
             }
         }
     }
-}
+	}
 
 
 
 
 
 
-complexion = {
+	complexion = {
 
 	index = 90
 	group = head_neck
@@ -5097,12 +5097,12 @@ complexion = {
 		}
 	}
 	
-	complexion_11_test = {
-		index = 13
+		complexion_2 = {
+			index = 1
 		male = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/male_head/male_head_diffuse.dds"
+					diffuse = "gfx/models/portraits/male_head/male_head_02_diffuse.dds"
 				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
 				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
 			}
@@ -5129,20 +5129,20 @@ complexion = {
 		female = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_11_test_diffuse.dds"
-				normal = "gfx/models/portraits/female_head/female_head_2_normal.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_02_diffuse.dds"
+					normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
             decal = { #Lip color
                                          
                     body_part = head
                     textures = {
-                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_02_diffuse.dds"
+	                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
                     }
                     alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
                         #gene strength%, decal alpha
                         { 0.0  0.0 }
-                        { 1.0  0.99 }
+	                        { 1.0  1.0 }
                     }
                     blend_modes = {              #overlay/replace/hard_light/multiply
                         diffuse = multiply 
@@ -5157,7 +5157,7 @@ complexion = {
 		girl = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_11_test_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_02_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5183,12 +5183,12 @@ complexion = {
 		}
 	}
 
-	complexion_2 = {
-		index = 1
+		complexion_3 = {
+			index = 2
 		male = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/male_head/male_head_02_diffuse.dds"
+					diffuse = "gfx/models/portraits/male_head/male_head_03_diffuse.dds"
 				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
 				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
 			}
@@ -5215,7 +5215,7 @@ complexion = {
 		female = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_02_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_03_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5243,7 +5243,7 @@ complexion = {
 		girl = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_02_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_03_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5269,12 +5269,12 @@ complexion = {
 		}
 	}
 
-	complexion_3 = {
-		index = 2
+		complexion_4 = {
+			index = 3
 		male = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/male_head/male_head_03_diffuse.dds"
+					diffuse = "gfx/models/portraits/male_head/male_head_04_diffuse.dds"
 				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
 				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
 			}
@@ -5301,7 +5301,7 @@ complexion = {
 		female = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_03_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_04_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5329,7 +5329,7 @@ complexion = {
 		girl = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_03_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_04_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5355,12 +5355,12 @@ complexion = {
 		}
 	}
 
-	complexion_4 = {
-		index = 3
+		complexion_5 = {
+			index = 4
 		male = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/male_head/male_head_04_diffuse.dds"
+					diffuse = "gfx/models/portraits/male_head/male_head_05_diffuse.dds"
 				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
 				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
 			}
@@ -5387,7 +5387,7 @@ complexion = {
 		female = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_04_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_05_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5415,7 +5415,7 @@ complexion = {
 		girl = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_04_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_05_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5441,12 +5441,12 @@ complexion = {
 		}
 	}
 
-	complexion_5 = {
-		index = 4
+		complexion_6 = {
+			index = 5
 		male = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/male_head/male_head_05_diffuse.dds"
+					diffuse = "gfx/models/portraits/male_head/male_head_06_diffuse.dds"
 				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
 				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
 			}
@@ -5473,7 +5473,7 @@ complexion = {
 		female = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_05_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_06_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5501,7 +5501,7 @@ complexion = {
 		girl = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_05_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_06_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5527,12 +5527,12 @@ complexion = {
 		}
 	}
 
-	complexion_6 = {
-		index = 5
+		complexion_7 = {
+			index = 6
 		male = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/male_head/male_head_06_diffuse.dds"
+					diffuse = "gfx/models/portraits/male_head/male_head_07_diffuse.dds"
 				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
 				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
 			}
@@ -5559,7 +5559,7 @@ complexion = {
 		female = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_06_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_07_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5587,7 +5587,7 @@ complexion = {
 		girl = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_06_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_07_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5613,12 +5613,75 @@ complexion = {
 		}
 	}
 
-	complexion_7 = {
-		index = 6
+		complexion_beauty_1 = {
+			index = 7
+	        visible = no
 		male = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/male_head/male_head_07_diffuse.dds"
+					diffuse = "gfx/models/portraits/male_head/male_head_beauty_01_diffuse.dds"
+					normal = "gfx/models/portraits/male_head/male_head_normal.dds"
+					specular = "gfx/models/portraits/male_head/male_head_properties.dds"
+				}
+	            decal = { #Lip color
+	                                         
+	                    body_part = head
+	                    textures = {
+	                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+	                    }
+	                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+	                        #gene strength%, decal alpha
+	                        { 0.0  0.2 }
+	                        { 1.0  0.8 }
+	                    }
+	                    blend_modes = {              #overlay/replace/hard_light/multiply
+	                        diffuse = multiply 
+	                        # normal = overlay
+	                        # properties = 
+	                    }
+	                    priority = 1
+	                    # age = age_preset_aging_definition_male
+	            }
+
+			}
+			female = {
+				texture_override = {
+					weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+					diffuse = "gfx/models/portraits/female_head/female_head_beauty_01_diffuse.dds"
+					normal = "gfx/models/portraits/female_head/female_head_normal.dds"
+					specular = "gfx/models/portraits/female_head/female_head_properties.dds"
+				}
+	            decal = { #Lip color
+	                                         
+	                    body_part = head
+	                    textures = {
+	                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+	                    }
+	                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+	                        #gene strength%, decal alpha
+	                        { 0.0  0.5 }
+	                        { 1.0  1.0 }
+	                    }
+	                    blend_modes = {              #overlay/replace/hard_light/multiply
+	                        diffuse = multiply 
+	                        # normal = overlay
+	                        # properties = 
+	                    }
+	                    priority = 1
+	                    # age = age_preset_aging_definition_male
+	            }
+			}
+			boy = male
+			girl = female
+		}
+
+		complexion_ugly_1 = {
+			index = 8
+	        visible = no
+			male = {
+				texture_override = {
+					weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+					diffuse = "gfx/models/portraits/male_head/male_head_ugly_01_diffuse.dds"
 				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
 				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
 			}
@@ -5631,7 +5694,7 @@ complexion = {
                     alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
                         #gene strength%, decal alpha
                         { 0.0  0.0 }
-                        { 1.0  0.7 }
+	                        { 1.0  0.5 }
                     }
                     blend_modes = {              #overlay/replace/hard_light/multiply
                         diffuse = multiply 
@@ -5645,7 +5708,7 @@ complexion = {
 		female = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_07_diffuse.dds"
+					diffuse = "gfx/models/portraits/female_head/female_head_ugly_01_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5658,108 +5721,44 @@ complexion = {
                     alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
                         #gene strength%, decal alpha
                         { 0.0  0.0 }
-                        { 1.0  1.0 }
-                    }
-                    blend_modes = {              #overlay/replace/hard_light/multiply
-                        diffuse = multiply 
-                        # normal = overlay
-                        # properties = 
-                    }
-                    priority = 1
-                    # age = age_preset_aging_definition_male
-            }
-		}
-		boy = male
-		girl = {
-			texture_override = {
-				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_07_diffuse.dds"
-				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
-				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
+	                        { 1.0  0.5 }
+	                    }
+	                    blend_modes = {              #overlay/replace/hard_light/multiply
+	                        diffuse = multiply 
+	                        # normal = overlay
+	                        # properties = 
+	                    }
+	                    priority = 1
+	                    # age = age_preset_aging_definition_male
+	            }
 			}
-            decal = { #Lip color
-                                         
-                    body_part = head
-                    textures = {
-                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
-                    }
-                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
-                        #gene strength%, decal alpha
-                        { 0.0  0.0 }
-                        { 1.0  0.7 }
-                    }
-                    blend_modes = {              #overlay/replace/hard_light/multiply
-                        diffuse = multiply 
-                        # normal = overlay
-                        # properties = 
-                    }
-                    priority = 1
-                    # age = age_preset_aging_definition_male
-            }
+			boy = male
+			girl = female
 		}
-	}
 
-	complexion_beauty_1 = {
-		index = 7
-		male = {
-			texture_override = {
-				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/male_head/male_head_beauty_01_diffuse.dds"
-				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
-				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
-			}
-            decal = { #Lip color
-                                         
-                    body_part = head
-                    textures = {
-                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
-                    }
-                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
-                        #gene strength%, decal alpha
-                        { 0.0  0.2 }
-                        { 1.0  0.8 }
-                    }
-                    blend_modes = {              #overlay/replace/hard_light/multiply
-                        diffuse = multiply 
-                        # normal = overlay
-                        # properties = 
-                    }
-                    priority = 1
-                    # age = age_preset_aging_definition_male
-            }
-
-		}
-		female = {
-			texture_override = {
-				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_beauty_01_diffuse.dds"
-				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
-				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
-			}
-            decal = { #Lip color
-                                         
-                    body_part = head
-                    textures = {
-                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
-                    }
-                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
-                        #gene strength%, decal alpha
-                        { 0.0  0.5 }
-                        { 1.0  1.0 }
-                    }
-                    blend_modes = {              #overlay/replace/hard_light/multiply
-                        diffuse = multiply 
-                        # normal = overlay
-                        # properties = 
-                    }
-                    priority = 1
-                    # age = age_preset_aging_definition_male
-            }
-		}
-		boy = male
-		girl = female
-	}
-	
+	    complexion_no_face = {
+	        index = 9
+	        visible = no
+	        male = {
+	            texture_override = {
+	                weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+	                diffuse = "gfx/models/portraits/male_head/male_head_no_face_diffuse.dds"
+	                normal = "gfx/models/portraits/male_head/male_head_no_face_normal.dds"
+	                specular = "gfx/models/portraits/male_head/male_head_no_face_properties.dds"
+	            }
+	        }
+	        female = {
+	            texture_override = {
+	                weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+	                diffuse = "gfx/models/portraits/male_head/male_head_no_face_diffuse.dds"
+	                normal = "gfx/models/portraits/male_head/male_head_no_face_normal.dds"
+	                specular = "gfx/models/portraits/male_head/male_head_no_face_properties.dds"
+	            }
+	        }
+	        boy = male
+	        girl = female
+	    }
+		
 	complexion_8 = {
 		index = 10
 		male = {
@@ -5773,7 +5772,7 @@ complexion = {
                                          
                     body_part = head
                     textures = {
-                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_03_diffuse.dds"
                     }
                     alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
                         #gene strength%, decal alpha
@@ -5881,7 +5880,7 @@ complexion = {
 		boy = male
 		girl = female
 	}
-	
+
 	complexion_10 = {
 		index = 12
 		male = {
@@ -5942,13 +5941,13 @@ complexion = {
 		boy = male
 		girl = female
 	}
-
-	complexion_ugly_1 = {
-		index = 8
+	
+	complexion_11 = {
+		index = 13
 		male = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/male_head/male_head_ugly_01_diffuse.dds"
+				diffuse = "gfx/models/portraits/male_head/male_head_02_diffuse.dds"
 				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
 				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
 			}
@@ -5960,8 +5959,8 @@ complexion = {
                     }
                     alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
                         #gene strength%, decal alpha
-                        { 0.0  0.0 }
-                        { 1.0  0.5 }
+                        { 0.0  0.2 }
+                        { 1.0  0.8 }
                     }
                     blend_modes = {              #overlay/replace/hard_light/multiply
                         diffuse = multiply 
@@ -5971,11 +5970,12 @@ complexion = {
                     priority = 1
                     # age = age_preset_aging_definition_male
             }
+
 		}
 		female = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-				diffuse = "gfx/models/portraits/female_head/female_head_ugly_01_diffuse.dds"
+				diffuse = "gfx/models/portraits/female_head/female_head_11_diffuse.dds"
 				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
 				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
 			}
@@ -5987,8 +5987,191 @@ complexion = {
                     }
                     alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
                         #gene strength%, decal alpha
-                        { 0.0  0.0 }
-                        { 1.0  0.5 }
+                        { 0.0  0.5 }
+                        { 1.0  1.0 }
+                    }
+                    blend_modes = {              #overlay/replace/hard_light/multiply
+                        diffuse = multiply 
+                        # normal = overlay
+                        # properties = 
+                    }
+                    priority = 1
+                    # age = age_preset_aging_definition_male
+            }
+		}
+		boy = male
+		girl = female
+	}
+	
+	complexion_12 = {
+		index = 14
+		male = {
+			texture_override = {
+				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+				diffuse = "gfx/models/portraits/male_head/male_head_02_diffuse.dds"
+				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
+				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
+			}
+            decal = { #Lip color
+                                         
+                    body_part = head
+                    textures = {
+                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+                    }
+                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+                        #gene strength%, decal alpha
+                        { 0.0  0.2 }
+                        { 1.0  0.8 }
+                    }
+                    blend_modes = {              #overlay/replace/hard_light/multiply
+                        diffuse = multiply 
+                        # normal = overlay
+                        # properties = 
+                    }
+                    priority = 1
+                    # age = age_preset_aging_definition_male
+            }
+
+		}
+		female = {
+			texture_override = {
+				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+				diffuse = "gfx/models/portraits/female_head/female_head_12_diffuse.dds"
+				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
+				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
+			}
+            decal = { #Lip color
+                                         
+                    body_part = head
+                    textures = {
+                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+                    }
+                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+                        #gene strength%, decal alpha
+                        { 0.0  0.5 }
+                        { 1.0  1.0 }
+                    }
+                    blend_modes = {              #overlay/replace/hard_light/multiply
+                        diffuse = multiply 
+                        # normal = overlay
+                        # properties = 
+                    }
+                    priority = 1
+                    # age = age_preset_aging_definition_male
+            }
+		}
+		boy = male
+		girl = female
+	}
+	
+	complexion_13 = {
+		index = 15
+		male = {
+			texture_override = {
+				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+				diffuse = "gfx/models/portraits/male_head/male_head_02_diffuse.dds"
+				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
+				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
+			}
+            decal = { #Lip color
+                                         
+                    body_part = head
+                    textures = {
+                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+                    }
+                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+                        #gene strength%, decal alpha
+                        { 0.0  0.2 }
+                        { 1.0  0.8 }
+                    }
+                    blend_modes = {              #overlay/replace/hard_light/multiply
+                        diffuse = multiply 
+                        # normal = overlay
+                        # properties = 
+                    }
+                    priority = 1
+                    # age = age_preset_aging_definition_male
+            }
+
+		}
+		female = {
+			texture_override = {
+				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+				diffuse = "gfx/models/portraits/female_head/female_head_13_diffuse.dds"
+				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
+				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
+			}
+            decal = { #Lip color
+                                         
+                    body_part = head
+                    textures = {
+                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+                    }
+                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+                        #gene strength%, decal alpha
+                        { 0.0  0.5 }
+                        { 1.0  1.0 }
+                    }
+                    blend_modes = {              #overlay/replace/hard_light/multiply
+                        diffuse = multiply 
+                        # normal = overlay
+                        # properties = 
+                    }
+                    priority = 1
+                    # age = age_preset_aging_definition_male
+            }
+		}
+		boy = male
+		girl = female
+	}
+	
+	complexion_14 = {
+		index = 16
+		male = {
+			texture_override = {
+				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+				diffuse = "gfx/models/portraits/male_head/male_head_03_diffuse.dds"
+				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
+				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
+			}
+            decal = { #Lip color
+                                         
+                    body_part = head
+                    textures = {
+                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+                    }
+                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+                        #gene strength%, decal alpha
+                        { 0.0  0.2 }
+                        { 1.0  0.8 }
+                    }
+                    blend_modes = {              #overlay/replace/hard_light/multiply
+                        diffuse = multiply 
+                        # normal = overlay
+                        # properties = 
+                    }
+                    priority = 1
+                    # age = age_preset_aging_definition_male
+            }
+
+		}
+		female = {
+			texture_override = {
+				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+				diffuse = "gfx/models/portraits/female_head/female_head_14_diffuse.dds"
+				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
+				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
+			}
+            decal = { #Lip color
+                                         
+                    body_part = head
+                    textures = {
+                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+                    }
+                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+                        #gene strength%, decal alpha
+                        { 0.0  0.5 }
+                        { 1.0  1.0 }
                     }
                     blend_modes = {              #overlay/replace/hard_light/multiply
                         diffuse = multiply 
@@ -6003,31 +6186,133 @@ complexion = {
 		girl = female
 	}
 
-    complexion_no_face = {
-        index = 9
+	complexion_15 = {
+		index = 17
+		male = {
+			texture_override = {
+				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+				diffuse = "gfx/models/portraits/male_head/male_head_04_diffuse.dds"
+				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
+				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
+			}
+            decal = { #Lip color
+                                         
+                    body_part = head
+                    textures = {
+                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+                    }
+                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+                        #gene strength%, decal alpha
+                        { 0.0  0.2 }
+                        { 1.0  0.8 }
+                    }
+                    blend_modes = {              #overlay/replace/hard_light/multiply
+                        diffuse = multiply 
+                        # normal = overlay
+                        # properties = 
+                    }
+                    priority = 1
+                    # age = age_preset_aging_definition_male
+            }
+
+		}
+		female = {
+			texture_override = {
+				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
+				diffuse = "gfx/models/portraits/female_head/female_head_15_diffuse.dds"
+				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
+				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
+			}
+            decal = { #Lip color
+                                         
+                    body_part = head
+                    textures = {
+                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+                    }
+                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+                        #gene strength%, decal alpha
+                        { 0.0  0.5 }
+                        { 1.0  1.0 }
+                    }
+                    blend_modes = {              #overlay/replace/hard_light/multiply
+                        diffuse = multiply 
+                        # normal = overlay
+                        # properties = 
+                    }
+                    priority = 1
+                    # age = age_preset_aging_definition_male
+            }
+		}
+		boy = male
+		girl = female
+	}
+
+	complexion_16 = {
+		index = 18
         male = {
             texture_override = {
                 weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-                diffuse = "gfx/models/portraits/male_head/male_head_no_face_diffuse.dds"
-                normal = "gfx/models/portraits/male_head/male_head_no_face_normal.dds"
-                specular = "gfx/models/portraits/male_head/male_head_no_face_properties.dds"
+				diffuse = "gfx/models/portraits/male_head/male_head_05_diffuse.dds"
+				normal = "gfx/models/portraits/male_head/male_head_normal.dds"
+				specular = "gfx/models/portraits/male_head/male_head_properties.dds"
             }
+            decal = { #Lip color
+                                         
+                    body_part = head
+                    textures = {
+                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+                    }
+                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+                        #gene strength%, decal alpha
+                        { 0.0  0.2 }
+                        { 1.0  0.8 }
+                    }
+                    blend_modes = {              #overlay/replace/hard_light/multiply
+                        diffuse = multiply 
+                        # normal = overlay
+                        # properties = 
+                    }
+                    priority = 1
+                    # age = age_preset_aging_definition_male
+            }
+
         }
         female = {
             texture_override = {
                 weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
-                diffuse = "gfx/models/portraits/male_head/male_head_no_face_diffuse.dds"
-                normal = "gfx/models/portraits/male_head/male_head_no_face_normal.dds"
-                specular = "gfx/models/portraits/male_head/male_head_no_face_properties.dds"
+				diffuse = "gfx/models/portraits/female_head/female_head_16_diffuse.dds"
+				normal = "gfx/models/portraits/female_head/female_head_normal.dds"
+				specular = "gfx/models/portraits/female_head/female_head_properties.dds"
+			}
+            decal = { #Lip color
+                                         
+                    body_part = head
+                    textures = {
+                        diffuse = "gfx/models/portraits/decals/female_head/decal_female_head_lips_01_diffuse.dds"
+                    }
+                    alpha_curve = {              #controls decal alpha relative to gene strength. Will give a linear interpolation if left unspecified
+                        #gene strength%, decal alpha
+                        { 0.0  0.5 }
+                        { 1.0  1.0 }
+                    }
+                    blend_modes = {              #overlay/replace/hard_light/multiply
+                        diffuse = multiply 
+                        # normal = overlay
+                        # properties = 
+                    }
+                    priority = 1
+                    # age = age_preset_aging_definition_male
             }
         }
         boy = male
         girl = female
     }
-}
 
 
-gene_height = {
+	}   
+
+
+	gene_height = {
 
     index = 91
     can_have_portrait_extremity_shift = no
@@ -6087,10 +6372,10 @@ gene_height = {
     }
 
 
-}
+	}
 
 
-gene_bs_body_type = {
+	gene_bs_body_type = {
 
 	index = 92
 	group = body
@@ -6751,15 +7036,14 @@ gene_bs_body_type = {
 		}
 	} 
 
-}
+	}
 
-gene_bs_body_shape = { # This gene is used for two things: Basic body shape and gradual musculature (the latter tied to gene strenght and controlled by modifiers)
+	gene_bs_body_shape = { # This gene is used for two things: Basic body shape and gradual musculature (the latter tied to gene strenght and controlled by modifiers)
 
     index = 93
-	group = body
+	    visible = no
 
     body_shape_average_clothed = { # Use this for clothes
-		visible = no
         index = 0 
         male = { 
             setting = { attribute = "bs_muscular_1" value = { min = 0.0 max = 1.0 } } 
@@ -6815,6 +7099,7 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
 
     body_shape_average = { # Use this for clothes that leave parts of the body visible! 
         index = 1
+	        visible = no
         male = { 
             setting = { attribute = "bs_muscular_1" value = { min = 0.0 max = 1.0 } } 
             setting = { attribute = "bs_body_muscular_1"    value = { min = 0.0 max = 1.0 } } 
@@ -6868,6 +7153,7 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
 
     body_shape_apple_half = { 
         index = 2 
+	        visible = no
         male = { 
 			setting = { attribute = "bs_body_shape_apple"    value = { min = 0.5 max = 0.5 } age = age_preset_puberty } 
 
@@ -6924,6 +7210,7 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
 
     body_shape_apple_full = { 
         index = 3 
+	        visible = no
         male = { 
 			setting = { attribute = "bs_body_shape_apple"    value = { min = 0.8 max = 0.8 } age = age_preset_puberty } 
 
@@ -6980,6 +7267,7 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
 
     body_shape_hourglass_half = { 
         index = 4 
+	        visible = no
         male = { 
 			setting = { attribute = "bs_body_shape_hourglass"    value = { min = 0.5 max = 0.5 } age = age_preset_puberty } 
 
@@ -7036,6 +7324,7 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
 
     body_shape_hourglass_full = { 
         index = 5 
+	        visible = no
         male = { 
 			setting = { attribute = "bs_body_shape_hourglass"    value = { min = 1.0 max = 1.0 } age = age_preset_puberty } 
 
@@ -7092,6 +7381,7 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
 
     body_shape_pear_half = { 
         index = 6 
+	        visible = no
         male = { 
 			setting = { attribute = "bs_body_shape_pear"    value = { min = 0.4 max = 0.4 } age = age_preset_puberty } 
 
@@ -7148,6 +7438,7 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
 
     body_shape_pear_full = { 
         index = 7 
+	        visible = no
         male = { 
 			setting = { attribute = "bs_body_shape_pear"    value = { min = 0.8 max = 0.8 } age = age_preset_puberty } 
 
@@ -7204,6 +7495,7 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
 
     body_shape_rectangle_half = { 
         index = 8 
+	        visible = no
         male = { 
 			setting = { attribute = "bs_body_shape_rectangle"    value = { min = 0.4 max = 0.4 } age = age_preset_puberty } 
 
@@ -7260,6 +7552,7 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
 
     body_shape_rectangle_full = { 
         index = 9 
+	        visible = no
         male = { 
 			setting = { attribute = "bs_body_shape_rectangle"    value = { min = 0.8 max = 0.8 } age = age_preset_puberty } 
 
@@ -7316,6 +7609,7 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
 
     body_shape_triangle_half = { 
         index = 10 
+	        visible = no
         male = { 
 			setting = { attribute = "bs_body_shape_triangle"    value = { min = 0.4 max = 0.4 } age = age_preset_puberty } 
 
@@ -7372,6 +7666,7 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
 
     body_shape_triangle_full = { 
         index = 11 
+	        visible = no
         male = { 
 			setting = { attribute = "bs_body_shape_triangle"    value = { min = 0.8 max = 0.8 } age = age_preset_puberty } 
 
@@ -7427,9 +7722,9 @@ gene_bs_body_shape = { # This gene is used for two things: Basic body shape and 
     }
  
 
-}
+	}
 
-gene_bs_bust = {
+	gene_bs_bust = {
 
     index = 94
     group = body
@@ -7446,6 +7741,7 @@ gene_bs_bust = {
 
     bust_default = { 
         index = 1 
+	        visible = no
         female = { 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_2_max" value = { min = -1.0 max = 1.0 }  age = age_preset_puberty } 
@@ -7496,6 +7792,7 @@ gene_bs_bust = {
 
     bust_shape_1_half = { 
         index = 2 
+	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_1" value = { min = 0.5 max = 0.5 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -7547,6 +7844,7 @@ gene_bs_bust = {
     }
 
     bust_shape_1_full = { 
+	    	visible = no
         index = 3 
         female = { 
         	setting = { attribute = "bs_body_breast_shape_1" value = { min = 0.5 max = 1.5 } age = age_preset_puberty  } 
@@ -7600,6 +7898,7 @@ gene_bs_bust = {
 
     bust_shape_2_half = { 
         index = 4 
+	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_2" value = { min = 0.5 max = 0.5 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -7652,6 +7951,7 @@ gene_bs_bust = {
 
     bust_shape_2_full = { 
         index = 5 
+	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_2" value = { min = 0.3 max = 1.3 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -7704,6 +8004,7 @@ gene_bs_bust = {
 
     bust_shape_3_half = { 
         index = 6 
+	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_3" value = { min = 0.5 max = 0.5 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -7756,6 +8057,7 @@ gene_bs_bust = {
 
     bust_shape_3_full = { 
         index = 7 
+	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_3" value = { min = 0.5 max = 0.8 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -7808,6 +8110,7 @@ gene_bs_bust = {
 
     bust_shape_4_half = { 
         index = 8 
+	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_4" value = { min = 0.5 max = 0.5 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -7860,6 +8163,7 @@ gene_bs_bust = {
 
     bust_shape_4_full = { 
         index = 9 
+	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_4" value = { min = 0.5 max = 1.5 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -7910,11 +8214,10 @@ gene_bs_bust = {
         }
     }
 
-}
+	}
 
-gene_age = {
+	gene_age = {
 	index = 95
-	group = body
 
 	old_1 = {
 		index = 0
@@ -9904,9 +10207,9 @@ gene_age = {
 	no_aging = {
 		index = 5
 	}
-}
+	}
 
-gene_eyebrows_shape = {
+	gene_eyebrows_shape = {
 	index = 96
 	group = eyes
 
@@ -10526,9 +10829,9 @@ gene_eyebrows_shape = {
 		boy = male
 		girl = female
 	} 
-}
+	}
 
-gene_eyebrows_fullness = {
+	gene_eyebrows_fullness = {
 
 	index = 97
 	group = eyes
@@ -10808,13 +11111,12 @@ gene_eyebrows_fullness = {
 		boy = male
 		girl = female
 	} 
-}
+	}
 
 
-gene_body_hair = {
+	gene_body_hair = {
 
 	index = 98
-	group = body
 	body_hair_sparse = {
 		index = 0
 		male = {
@@ -11297,7 +11599,148 @@ gene_body_hair = {
             }			
 		}
 	}
+	}
+
+	gene_hair_type = {
+
+		index = 99
+
+		hair_straight = {
+			index = 0
+			male = {}
+			female = { # We're setting blend shapes for cap and crown. They will only have an effect when characters wear head gears. 
+				setting = { attribute = "bs_cap"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_crown"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_cap_02"  value = { min = 1.0 max = 1.0 }	}
+			}					
+			boy = male
+			girl = male
+		}
+
+		hair_wavy = {
+			index = 1
+			male = {}
+			female = { # We're setting blend shapes for cap and crown. They will only have an effect when characters wear head gears. 
+				setting = { attribute = "bs_cap"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_crown"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_cap_02"  value = { min = 1.0 max = 1.0 }	}
+			}	
+			boy = male
+			girl = male
+		}
+
+		hair_curly = {
+			index = 2
+			male = {}
+			female = { # We're setting blend shapes for cap and crown. They will only have an effect when characters wear head gears. 
+				setting = { attribute = "bs_cap"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_crown"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_cap_02"  value = { min = 1.0 max = 1.0 }	}
+			}	
+			boy = male
+			girl = male
+		}
+
+		hair_afro = {
+			index = 3
+			male = {}
+			female = { # We're setting blend shapes for cap and crown. They will only have an effect when characters wear head gears. 
+				setting = { attribute = "bs_cap"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_crown"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_cap_02"  value = { min = 1.0 max = 1.0 }	}
+			}	
+			boy = male
+			girl = male
+		}
+
+		hair_straight_thin_beard = {
+			index = 4
+			male = {}
+			female = { # We're setting blend shapes for cap and crown. They will only have an effect when characters wear head gears. 
+				setting = { attribute = "bs_cap"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_crown"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_cap_02"  value = { min = 1.0 max = 1.0 }	}
+			}	
+			boy = male
+			girl = male
+		}
+
+#####No Facial hair gene		
+		hair_straight_no_beard = {
+			index = 5
+			male = {}
+			female = { # We're setting blend shapes for cap and crown. They will only have an effect when characters wear head gears. 
+				setting = { attribute = "bs_cap"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_crown"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_cap_02"  value = { min = 1.0 max = 1.0 }	}
+			}					
+			boy = male
+			girl = male
+		}
+
+		hair_wavy_no_beard = {
+			index = 6
+			male = {}
+			female = { # We're setting blend shapes for cap and crown. They will only have an effect when characters wear head gears. 
+				setting = { attribute = "bs_cap"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_crown"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_cap_02"  value = { min = 1.0 max = 1.0 }	}
+			}					
+			boy = male
+			girl = male
+		}
+
+		hair_curly_no_beard = {
+			index = 7
+			male = {}
+			female = { # We're setting blend shapes for cap and crown. They will only have an effect when characters wear head gears. 
+				setting = { attribute = "bs_cap"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_crown"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_cap_02"  value = { min = 1.0 max = 1.0 }	}
+			}					
+			boy = male
+			girl = male
+		}
+
+		hair_afro_no_beard = {
+			index = 8
+			male = {}
+			female = { # We're setting blend shapes for cap and crown. They will only have an effect when characters wear head gears. 
+				setting = { attribute = "bs_cap"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_crown"  value = { min = 1.0 max = 1.0 }	}
+				setting = { attribute = "bs_cap_02"  value = { min = 1.0 max = 1.0 }	}
+			}					
+			boy = male
+			girl = male
+		}		
+		
+
+	}
+
+	gene_baldness = {
+
+		index = 100
+
+		no_baldness = {
+			index = 0
+			male = {}
+			female = male
+			boy = male
+			girl = male
+		}
+
+		male_pattern_baldness = {
+			index = 1
+			male = {}
+			female = {}
+			boy = male
+			girl = male
+		}
+
+	}
+
 }
+
 
 
 

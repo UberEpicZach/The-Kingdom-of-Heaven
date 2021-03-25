@@ -59,10 +59,6 @@ indian_kashmiri_1 = {
 		100 = { 0.01 0.9 0.5 0.99 }
 	}
 
-	hairstyles = {
-	    10 = { name = indian_hairstyles    range = { 0.0 1.0 } }
-	}
-
 	gene_chin_forward = {
 	    100 = { name = chin_forward_pos    range = { 0.45 0.5  }    }
     }
@@ -522,9 +518,13 @@ indian_kashmiri_1 = {
         50 = { name = full_height      range = { 0.55 0.6 }    }
 	}
 
-	beards = {
-		10 = { name = northern_indian_beards 		range = { 0.0 1.0 } }
-	}
+    gene_hair_type = {
+        25 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        65 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        10 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }
 
     gene_body_hair = {
         10 = {  name = body_hair_sparse             range = { 0.75 1.0 }     }

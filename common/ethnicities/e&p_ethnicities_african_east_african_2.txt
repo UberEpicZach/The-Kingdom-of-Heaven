@@ -37,7 +37,7 @@
 african_east_african_2 = {
 	template = "ethnicity_template"
 	skin_color = {
-		10 = { 0.65 0.65 0.95 0.85 }
+		10 = { 0.65 0.65 0.95 0.9 }
 	}
 	eye_color = {
 		# Brown
@@ -54,10 +54,6 @@ african_east_african_2 = {
 		# 10 = { 0.85 0.0 1.0 0.5 }
 		# Black
 		98 = { 0.01 0.9 0.5 0.99 }
-	}
-
-	hairstyles = {
-	    10 = { name = sub_saharan_hairstyles          range = { 0.0 1.0 } }
 	}
 
 	gene_chin_forward = {
@@ -81,20 +77,15 @@ african_east_african_2 = {
 	}
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.6 0.75 }    }
+        100 = { name = eye_height_pos    range = { 0.55 0.6 }    }
     }
 
 	gene_eye_distance = {
-	    100 = { name = eye_distance_neg    range = { 0.45 0.52 }    }
+	    100 = { name = eye_distance_neg    range = { 0.45 0.56 }    }
 	}
 	
 	gene_eye_shut = {
-	    0 = { name = eye_shut_neg    range = { @neg3_min @neg3_max }    }
-	    0 = { name = eye_shut_neg    range = { @neg2_min @neg2_max }    }
-	    25 = { name = eye_shut_neg    range = { @neg1_min @neg1_max }    }
-	    40 = { name = eye_shut_pos    range = { 0.5 0.55 }    }
-	    25 = { name = eye_shut_pos    range = { 0.55 0.58 }    }
-	    0 = { name = eye_shut_pos    range = { @pos3_min @pos3_max }    }
+	    100 = { name = eye_shut_neg    range = { 0.5 0.59 }     }
 
 	    #Beauty Section
 	    0 = { name = eye_shut_neg    range = { @beauty1min @beauty1max }    traits = { beauty_1 }    }
@@ -161,10 +152,7 @@ african_east_african_2 = {
     }
 
     gene_head_height = {
-        10 = { name = head_height_pos    range = { 0.48 0.51 }    }
-        40 = { name = head_height_pos    range = { 0.44 0.48 }    }
-        40 = { name = head_height_pos    range = { 0.38 0.44 }    }
-        10 = { name = head_height_pos    range = { 0.34 0.38 }    }
+        100 = { name = head_height_pos    range = { 0.42 0.54 }    }
     }
 
     gene_head_profile = {
@@ -196,9 +184,9 @@ african_east_african_2 = {
 
     gene_jaw_width = {
         15 = { name = jaw_width_neg    range = { 0.35 0.38 }    }
-        35 = { name = jaw_width_neg    range = { 0.38 0.4 }    }
+        25 = { name = jaw_width_neg    range = { 0.38 0.4 }    }
         35 = { name = jaw_width_pos    range = { 0.35 0.38 }    }
-        15 = { name = jaw_width_pos    range = { 0.38 0.4 }    }	
+        25 = { name = jaw_width_pos    range = { 0.38 0.5 }    }	
     }
 	
 	gene_jaw_height = {
@@ -234,7 +222,7 @@ african_east_african_2 = {
 	}
 	  
     gene_mouth_height = {
-        100 = { name = mouth_height_neg    range = { 0.65 0.74 }    }
+        100 = { name = mouth_height_neg    range = { 0.6 0.65 }    }
     }
 	
 	gene_mouth_upper_lip_size = {
@@ -304,19 +292,19 @@ african_east_african_2 = {
     }
 
     gene_bs_eye_fold_shape = {
-        80 = { name = eye_fold_shape_neg    range = { 0.25 0.5 }    }
+        80 = { name = eye_fold_shape_neg    range = { 0.25 0.6 }    }
         20 = { name = eye_fold_shape_neg    range = { 0.0 0.25 }    }
     }
 
     gene_bs_eye_size = {
         25 = { name = eye_size_neg    range = { 0.0 0.25 }    }
         25 = { name = eye_size_neg    range = { 0.25 0.35 }    }
-        50 = { name = eye_size_neg    range = { 0.35 0.5 }    }
+        50 = { name = eye_size_neg    range = { 0.35 0.6 }    }
     }
 
     gene_bs_eye_upper_lid_size = {
-        50 = { name = eye_upper_lid_size_pos    range = { 0.0 0.15 }    }
-        50 = { name = eye_upper_lid_size_neg    range = { 0.0 0.45 }    }
+        40 = { name = eye_upper_lid_size_pos    range = { 0.0 0.15 }    }
+        60 = { name = eye_upper_lid_size_neg    range = { 0.0 0.55 }    }
     }
 
     gene_bs_forehead_brow_curve = {
@@ -462,7 +450,7 @@ african_east_african_2 = {
 	face_detail_eye_socket = {
         45 = {  name = eye_socket_01             range = { 0.0 0.85 }     }
         35 = {  name = eye_socket_02             range = { 0.0 0.85 }     }
-        20 = {  name = eye_socket_03             range = { 0.0 0.85 }     }
+        20 = {  name = eye_socket_03             range = { 0.0 0.95 }     }
     }
 	
 	face_detail_temple_def = {
@@ -477,7 +465,7 @@ african_east_african_2 = {
 	}
 	
 	face_detail_nose_ridge_def = {
-        75 = {  name = nose_ridge_def_neg             range = { 0.0 0.5 }     }
+        75 = {  name = nose_ridge_def_neg             range = { 0.0 0.99 }     }
         25 = {  name = nose_ridge_def_pos             range = { 0.0 0.25 }     }
     }
 	
@@ -491,13 +479,10 @@ african_east_african_2 = {
 	}
 
     gene_bs_nose_height = {
-		10 = { name = nose_height_pos    range = { 0.05 0.15 }    }
-        10 = { name = nose_height_pos    range = { 0.0 0.05 }    }
-        20 = { name = nose_height_neg    range = { 0.0 0.05 }    }
-        20 = { name = nose_height_neg    range = { 0.05 0.15 }    }
-        20 = { name = nose_height_neg    range = { 0.15 0.2 }    }
-        10 = { name = nose_height_neg    range = { 0.2 0.3 }    }
-        10 = { name = nose_height_neg    range = { 0.3 0.35 }    }
+        25 = { name = nose_height_neg    range = { 0.0 0.15 }    }
+        25 = { name = nose_height_neg    range = { 0.15 0.2 }    }
+        25 = { name = nose_height_neg    range = { 0.2 0.3 }    }
+        25 = { name = nose_height_neg    range = { 0.3 0.4 }    }
     }
 
     gene_bs_nose_length = {
@@ -542,13 +527,7 @@ african_east_african_2 = {
 	}
 
 	gene_bs_nose_size = {
-	    1 = { name = nose_size_neg    range = { @blend3min @blend3max }    }
-	    5 = { name = nose_size_neg    range = { @blend2min @blend2max }    }
-	    40 = { name = nose_size_neg    range = { @blend1min @blend1max }    }
-	    40 = { name = nose_size_pos    range = { @blend1min @blend1max }    }
-	    5 = { name = nose_size_pos    range = { 0.2 0.3 }    }
-	    1 = { name = nose_size_pos    range = { 0.3 0.4 }    }
-
+	    100 = { name = nose_size_pos    range = { 0.0 0.35 }    }
 	}
 
     gene_bs_nose_tip_angle = {
@@ -635,9 +614,13 @@ african_east_african_2 = {
         25 = { name = body_shape_triangle_full     range = { 0.0 0.0 }      }
     }
 
-	beards = {
-		10 = { name = sub_saharan_beards 		range = { 0.0 1.0 } }
-	}
+    gene_hair_type = {
+        0 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        0 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        0 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        100 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }
 
     gene_body_hair = {
         10 = {  name = body_hair_sparse             range = { 0.75 1.0 }     }

@@ -1,0 +1,89 @@
+pdxmesh = {
+	name = "female_cloaks_secular_western_royalty_02a_mesh"
+	file = "female_cloaks_secular_western_royalty_02a.mesh"
+
+	meshsettings = {
+		name = "male_capes_religious_catholic_head_01Shape"
+		index = 0
+		texture_diffuse = "male_capes_religious_catholic_head_01_diffuse.dds"
+		texture_normal = "male_capes_religious_catholic_head_01_normal.dds"
+		texture_specular = "male_capes_religious_catholic_head_01_properties.dds"
+		shader = "portrait_attachment_pattern"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "male_capes_religious_catholic_head_01Shape"
+		index = 1
+		texture_diffuse = "male_cloaks_secular_western_royalty_01_diffuse.dds"
+		texture_normal = "male_cloaks_secular_western_royalty_01_normal.dds"
+		texture_specular = "male_cloaks_secular_western_royalty_01_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}	
+}
+
+entity = {
+	name = "female_cloaks_secular_western_royalty_02a_entity"
+	pdxmesh = "female_cloaks_secular_western_royalty_02a_mesh"
+
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_cloaks/secular/western/royalty_02a/female_cloaks_secular_western_royalty_02a_masks.dds"	
+			variation = "western_cloaks_royalty_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+
+
+
+
+########French variant
+
+entity = {
+	name = "female_cloaks_secular_french_royalty_02a_entity"
+	pdxmesh = "female_cloaks_secular_western_royalty_02a_mesh"
+
+
+	
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_cloaks/secular/western/royalty_02a/female_cloaks_secular_western_royalty_02a_masks.dds"	
+			variation = "french_cloaks_royalty_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+########byzantine variant
+
+entity = {
+	name = "female_cloaks_secular_byzantine_royalty_02a_entity"
+	pdxmesh = "female_cloaks_secular_western_royalty_02a_mesh"
+
+
+	
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_cloaks/secular/western/royalty_02a/female_cloaks_secular_western_royalty_02a_masks.dds"	
+			variation = "byzantine_cloaks_royalty_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+########italian variant
+
+entity = {
+	name = "female_cloaks_secular_italian_royalty_02a_entity"
+	pdxmesh = "female_cloaks_secular_western_royalty_02a_mesh"
+
+
+	
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_cloaks/secular/western/royalty_02a/female_cloaks_secular_western_royalty_02a_masks.dds"	
+			variation = "italian_cloaks_royalty_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+

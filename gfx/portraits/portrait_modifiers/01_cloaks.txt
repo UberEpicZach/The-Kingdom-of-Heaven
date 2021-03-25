@@ -15,7 +15,7 @@ cloaks = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 100
+				add = 50
 				NAND = {
 					has_trait = peasant_leader
 					OR = {
@@ -163,6 +163,137 @@ cloaks = {
 			}
 		}
 	}	
+
+
+	no_cloak = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 60
+				portrait_fp1_norse_clothing_trigger = yes
+			}	
+			modifier = {
+				add = -30
+				portrait_fp1_norse_clothing_trigger = yes
+				highest_held_title_tier >= tier_county
+			}	
+			modifier = {
+				add = -15
+				portrait_fp1_norse_clothing_trigger = yes
+				exists = primary_spouse
+				OR = {
+					is_ruler = no
+					highest_held_title_tier = tier_barony
+				}
+				primary_spouse = {
+					highest_held_title_tier >= tier_county
+				}
+			}	
+			modifier = {
+				add = -30
+				portrait_fp1_norse_clothing_trigger = yes
+				highest_held_title_tier >= tier_duchy
+			}	
+			modifier = {
+				add = -15
+				portrait_fp1_norse_clothing_trigger = yes
+				exists = primary_spouse
+				OR = {
+					is_ruler = no
+					highest_held_title_tier = tier_barony
+				}
+				primary_spouse = {
+					highest_held_title_tier >= tier_duchy
+				}
+			}	
+			modifier = {
+				add = -60
+				portrait_fp1_norse_clothing_trigger = yes
+				OR = {
+					portrait_wear_armor_trigger = yes
+					has_trait = berserker
+				}
+			}			
+		}
+	}
+ 
+	fp1_norse = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				
+				gene = cloaks
+				template = fp1_cloak
+				range = { 0 1 }
+			}
+			morph = {
+				mode = add
+				
+				gene = gene_bs_cloak
+				template = cloak
+				value = 1.0
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 40
+				portrait_fp1_norse_clothing_trigger = yes
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					is_adult = no
+					has_government = theocracy_government
+					is_theocratic_lessee = yes
+					has_character_modifier = vow_of_poverty_modifier
+					# Deliberately not the "fully naked" one since dropping your cloak's intended even if nudity is disabled
+					should_be_naked_trigger = yes
+				}
+			}			
+		}
+	}
+
+	fp1_norse_berserker = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				
+				gene = cloaks
+				template = fp1_cloak_berserker
+				range = { 0 1 }
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_fp1_dlc_trigger = yes
+				has_trait = berserker
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					is_adult = no
+					has_government = theocracy_government
+					is_theocratic_lessee = yes
+					has_character_modifier = vow_of_poverty_modifier
+					# Deliberately not the "fully naked" one since dropping your cloak's intended even if nudity is disabled
+					should_be_naked_trigger = yes
+				}
+			}			
+		}
+	}
+ 
 #
 #	pope = {
 #	    dna_modifiers = {
@@ -244,136 +375,6 @@ cloaks = {
 	# 		}
 	# 	}
 	# }
-
-
-	no_cloak = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				
-				gene = cloaks
-				template = no_cloak
-				range = { 0 1 }
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 60
-				portrait_fp1_norse_clothing_trigger = yes
-			}	
-			modifier = {
-				add = -30
-				portrait_fp1_norse_clothing_trigger = yes
-				highest_held_title_tier >= tier_county
-			}	
-			modifier = {
-				add = -15
-				portrait_fp1_norse_clothing_trigger = yes
-				exists = primary_spouse
-				OR = {
-					is_ruler = no
-					highest_held_title_tier = tier_barony
-				}
-				primary_spouse = {
-					highest_held_title_tier >= tier_county
-				}
-			}	
-			modifier = {
-				add = -30
-				portrait_fp1_norse_clothing_trigger = yes
-				highest_held_title_tier >= tier_duchy
-			}	
-			modifier = {
-				add = -15
-				portrait_fp1_norse_clothing_trigger = yes
-				exists = primary_spouse
-				OR = {
-					is_ruler = no
-					highest_held_title_tier = tier_barony
-				}
-				primary_spouse = {
-					highest_held_title_tier >= tier_duchy
-				}
-			}	
-			modifier = {
-				add = -60
-				portrait_fp1_norse_clothing_trigger = yes
-				OR = {
-					portrait_wear_armor_trigger = yes
-					has_trait = berserker
-				}
-			}			
-		}
-	}
-
-	fp1_norse = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				
-				gene = cloaks
-				template = fp1_cloak
-				range = { 0 1 }
-			}
-			morph = {
-				mode = add
-				
-				gene = gene_bs_cloak
-				template = cloak
-				value = 1.0
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 40
-				portrait_fp1_norse_clothing_trigger = yes
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					is_adult = no
-					has_government = theocracy_government
-					is_theocratic_lessee = yes
-					has_character_modifier = vow_of_poverty_modifier
-					# Deliberately not the "fully naked" one since dropping your cloak's intended even if nudity is disabled
-					should_be_naked_trigger = yes
-				}
-			}			
-		}
-	}
-
-	fp1_norse_berserker = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				
-				gene = cloaks
-				template = fp1_cloak_berserker
-				range = { 0 1 }
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				has_fp1_dlc_trigger = yes
-				has_trait = berserker
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					is_adult = no
-					has_government = theocracy_government
-					is_theocratic_lessee = yes
-					has_character_modifier = vow_of_poverty_modifier
-					# Deliberately not the "fully naked" one since dropping your cloak's intended even if nudity is disabled
-					should_be_naked_trigger = yes
-				}
-			}			
-		}
-	}
 
 
 	french_kings = {
@@ -505,9 +506,430 @@ cloaks = {
 		}
 	}	
 
+######Byzantine
+
+	byzantine_kings = {
+		# outfit_tags = { rank_headgear } 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				
+				gene = cloaks
+				template = byzantine_royalty
+				range = { 0 1 }
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_kingdom
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						NOT = { has_government = theocracy_government }						
+				OR = {
+					portrait_byzantine_clothing_trigger = yes				
+				}
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_kingdom
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+							NOT = { has_government = republic_government }
+						    NOT = { has_government = theocracy_government }							
+				OR = {
+					portrait_byzantine_clothing_trigger = yes				
+				}
+						}
+					}
+				}
+			}
+		}
+	}
+	byzantine_emperors = {
+		# outfit_tags = { rank_headgear } 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				
+				gene = cloaks
+				template = byzantine_royalty
+				range = { 0 1 }
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_empire
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						NOT = { has_government = theocracy_government }						
+				OR = {
+					portrait_byzantine_clothing_trigger = yes				
+				}
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_empire
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+							NOT = { has_government = republic_government }
+						    NOT = { has_government = theocracy_government }							
+				OR = {
+					portrait_byzantine_clothing_trigger = yes				
+				}
+						}
+					}
+				}
+			}
+		}
+	}
 
 
+######italian
 
+	italian_kings = {
+		# outfit_tags = { rank_headgear } 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				
+				gene = cloaks
+				template = italian_royalty
+				range = { 0 1 }
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_kingdom
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						NOT = { has_government = theocracy_government }						
+				OR = {
+					portrait_italian_clothing_trigger = yes				
+				}
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_kingdom
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+							NOT = { has_government = republic_government }
+						    NOT = { has_government = theocracy_government }							
+				OR = {
+					portrait_italian_clothing_trigger = yes				
+				}
+						}
+					}
+				}
+			}
+		}
+	}
+	italian_emperors = {
+		# outfit_tags = { rank_headgear } 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				
+				gene = cloaks
+				template = italian_royalty
+				range = { 0 1 }
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_empire
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						NOT = { has_government = theocracy_government }						
+				OR = {
+					portrait_italian_clothing_trigger = yes				
+				}
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_empire
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+							NOT = { has_government = republic_government }
+						    NOT = { has_government = theocracy_government }							
+				OR = {
+					portrait_italian_clothing_trigger = yes				
+				}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	early_islamic_iranian_shah = {
+		# outfit_tags = { rank_headgear } 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				
+				gene = cloaks
+				template = early_iranian_royalty
+				range = { 0 1 }
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				portrait_early_islamic_iranian_trigger = yes
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					is_adult = no
+					highest_held_title_tier < tier_kingdom
+					has_government = theocracy_government
+					has_government = republic_government
+					# Deliberately not the "fully naked" one since dropping your cloak's intended even if nudity is disabled
+					should_be_naked_trigger = yes
+				}
+			}			
+		}
+	}
+######non islamic iranian
+
+	early_eastern_iranian_shah = {
+		# outfit_tags = { rank_headgear } 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				
+				gene = cloaks
+				template = eastern_iranian_royalty
+				range = { 0 1 }
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_kingdom
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						NOT = { has_government = theocracy_government }						
+				OR = {
+					portrait_early_eastern_iranian_trigger = yes				
+				}
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_kingdom
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+							NOT = { has_government = republic_government }
+						    NOT = { has_government = theocracy_government }							
+				OR = {
+					portrait_early_eastern_iranian_trigger = yes				
+				}
+						}
+					}
+				}
+			}
+		}
+	}
+	early_eastern_iranian_shahanshah = {
+		# outfit_tags = { rank_headgear } 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+
+				gene = cloaks
+				template = eastern_iranian_royalty
+				range = { 0 1 }
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_empire
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						NOT = { has_government = theocracy_government }						
+				OR = {
+					portrait_early_eastern_iranian_trigger = yes				
+				}
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_empire
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+							NOT = { has_government = republic_government }
+						    NOT = { has_government = theocracy_government }							
+				OR = {
+					portrait_early_eastern_iranian_trigger = yes				
+				}
+						}
+					}
+				}
+			}
+		}
+	}
 
 
 

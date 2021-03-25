@@ -59,10 +59,6 @@ west_african_2 = {
 		99 = { 0.04 0.95 0.10 1.0 } 		
 	}
 
-	hairstyles = {
-	    10 = { name = sub_saharan_hairstyles          range = { 0.1 1.0 } }
-	}
-
 	gene_chin_forward = {
 	    100 = { name = chin_forward_pos    range = { 0.5 0.55  }    }
 	}
@@ -542,10 +538,13 @@ west_african_2 = {
         # 5 = { name = body_shape_triangle_full     range = { 0.0 0.0 }      }
     }
 
-	beards = {
-		10 = { name = sub_saharan_beards 		range = { 0.0 0.5 } }
-		7 = { name = no_beard 		range = { 0.0 1.0 } }		
-	}
+    gene_hair_type = {
+        0 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        0 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        0 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        100 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }
 
     gene_body_hair = {
         10 = {  name = body_hair_sparse             range = { 0.0 0.3 }     }

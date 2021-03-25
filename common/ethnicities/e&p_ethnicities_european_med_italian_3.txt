@@ -87,7 +87,7 @@ european_med_italian_3= {
     }
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.66 0.76 }    }
+        100 = { name = eye_height_pos    range = { 0.55 0.59 }    }
     }
 
     gene_eye_distance = {
@@ -166,7 +166,7 @@ european_med_italian_3= {
     }
 
     gene_jaw_height = {
-        100 = { name = jaw_height_pos    range = { 0.43 0.53 }    }
+        100 = { name = jaw_height_pos    range = { 0.44 0.53 }    }
     }
 
     gene_jaw_width = {
@@ -186,11 +186,11 @@ european_med_italian_3= {
     }
 
     gene_mouth_height = {
-        100 = { name = mouth_height_neg    range = { 0.66 0.75 }    }
+        100 = { name = mouth_height_neg    range = { 0.56 0.65 }    }
     }
 
     gene_mouth_width = {
-        100 = { name = mouth_width_neg    range = { 0.38 0.55 }    }
+        100 = { name = mouth_width_neg    range = { 0.28 0.55 }    }
     }
 
     gene_mouth_upper_lip_size = {
@@ -547,14 +547,13 @@ european_med_italian_3= {
         # 5 = { name = body_shape_triangle_full     range = { 0.0 0.0 }      }
     }
 
-	hairstyles = {
-	    100 = { name = western_hairstyles          range = { 0.0 1.0 } }
-	}
-
-	beards = {
-        80 = { name = western_beards 		range = { 0.0 1.0 } }
-        20 = { name = no_beard          range = { 0.0 1.0 } }
-	}		
+    gene_hair_type = {
+        10 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        70 = {  name = hair_wavy             range = { 0.35 0.75 }     }
+        20 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_afro             range = { 0.35 0.75 }     }
+        0 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+    }		
 
 	eyelashes_accessory = {
 		100 = { name = normal_eyelashes 			range = { 1.0 1.0 } }

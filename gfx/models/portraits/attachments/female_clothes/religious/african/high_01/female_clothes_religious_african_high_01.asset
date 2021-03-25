@@ -150,12 +150,107 @@ entity = {
 	}
 }
 
+#####east_african
+entity = {
+	name = "female_clothes_secular_east_african_01_common_entity"
+	pdxmesh = "female_clothes_religious_african_high_01_mesh"
+
+	attribute = { name = "bs_body_infant_1"					blend_shape = "female_clothes_religious_african_high_01_bs_infant" }
+	attribute = { name = "bs_body_fat_1"					blend_shape = "female_clothes_religious_african_high_01_bs_fat" }
+	attribute = { name = "bs_body_gaunt_1"					blend_shape = "female_clothes_religious_african_high_01_bs_gaunt" }
+	attribute = { name = "bs_body_muscular_1"				blend_shape = "female_clothes_religious_african_high_01_bs_muscular" }	
+	attribute = { name = "bs_body_old_1"					blend_shape = "female_clothes_religious_african_high_01_bs_old" }
+	attribute = { name = "bs_body_dwarf_1"					blend_shape = "female_clothes_religious_african_high_01_bs_dwarf" }
+	attribute = { name = "bs_body_pregnant_1"				blend_shape = "female_clothes_religious_african_high_01_bs_pregnant" }
+	attribute = { name = "bs_body_breast_size_min"		blend_shape = "female_clothes_religious_african_high_01_bs_breast_size_min" }
+	attribute = { name = "bs_body_breast_size_max"		blend_shape = "female_clothes_religious_african_high_01_bs_breast_size_max" }
+
+
+	meshsettings = {
+		name = "|female_clothes_religious_african_high_01|female_clothes_religi"
+		index = 0
+		texture_diffuse = "female_clothes_secular_sub_saharan_tribal_02_common_diffuse.dds"
+		texture_normal = "female_clothes_religious_african_high_01_normal.dds"
+		texture_specular = "female_clothes_religious_african_high_01_properties.dds"
+		shader = "portrait_attachment_pattern_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_clothes/religious/african/high_01/female_clothes_religious_african_high_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "east_african_nobility_common_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
 
 
 
+entity = {
+	name = "female_clothes_secular_east_african_01v2_common_entity"
+	pdxmesh = "female_clothes_religious_african_high_01_mesh"
+
+	attribute = { name = "bs_body_infant_1"					blend_shape = "female_clothes_religious_african_high_01_bs_infant" }
+	attribute = { name = "bs_body_fat_1"					blend_shape = "female_clothes_religious_african_high_01_bs_fat" }
+	attribute = { name = "bs_body_gaunt_1"					blend_shape = "female_clothes_religious_african_high_01_bs_gaunt" }
+	attribute = { name = "bs_body_muscular_1"				blend_shape = "female_clothes_religious_african_high_01_bs_muscular" }	
+	attribute = { name = "bs_body_old_1"					blend_shape = "female_clothes_religious_african_high_01_bs_old" }
+	attribute = { name = "bs_body_dwarf_1"					blend_shape = "female_clothes_religious_african_high_01_bs_dwarf" }
+	attribute = { name = "bs_body_pregnant_1"				blend_shape = "female_clothes_religious_african_high_01_bs_pregnant" }
+	attribute = { name = "bs_body_breast_size_min"		blend_shape = "female_clothes_religious_african_high_01_bs_breast_size_min" }
+	attribute = { name = "bs_body_breast_size_max"		blend_shape = "female_clothes_religious_african_high_01_bs_breast_size_max" }
 
 
+	meshsettings = {
+		name = "|female_clothes_religious_african_high_01|female_clothes_religi"
+		index = 0
+		texture_diffuse = "female_clothes_secular_sub_saharan_tribal_02_low_diffuse.dds"
+		texture_normal = "female_clothes_religious_african_high_01_normal.dds"
+		texture_specular = "female_clothes_religious_african_high_01_properties.dds"
+		shader = "portrait_attachment_pattern_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_clothes/religious/african/high_01/female_clothes_religious_african_high_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "east_african_nobility_common_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
 
+entity = {
+	name = "female_clothes_secular_east_african_01v3_common_entity"
+	pdxmesh = "female_clothes_religious_african_high_01_mesh"
+
+	attribute = { name = "bs_body_infant_1"					blend_shape = "female_clothes_religious_african_high_01_bs_infant" }
+	attribute = { name = "bs_body_fat_1"					blend_shape = "female_clothes_religious_african_high_01_bs_fat" }
+	attribute = { name = "bs_body_gaunt_1"					blend_shape = "female_clothes_religious_african_high_01_bs_gaunt" }
+	attribute = { name = "bs_body_muscular_1"				blend_shape = "female_clothes_religious_african_high_01_bs_muscular" }	
+	attribute = { name = "bs_body_old_1"					blend_shape = "female_clothes_religious_african_high_01_bs_old" }
+	attribute = { name = "bs_body_dwarf_1"					blend_shape = "female_clothes_religious_african_high_01_bs_dwarf" }
+	attribute = { name = "bs_body_pregnant_1"				blend_shape = "female_clothes_religious_african_high_01_bs_pregnant" }
+	attribute = { name = "bs_body_breast_size_min"		blend_shape = "female_clothes_religious_african_high_01_bs_breast_size_min" }
+	attribute = { name = "bs_body_breast_size_max"		blend_shape = "female_clothes_religious_african_high_01_bs_breast_size_max" }
+
+
+	meshsettings = {
+		name = "|female_clothes_religious_african_high_01|female_clothes_religi"
+		index = 0
+		texture_diffuse = "female_clothes_religious_african_high_01_diffuse.dds"
+		texture_normal = "female_clothes_religious_african_high_01_normal.dds"
+		texture_specular = "female_clothes_religious_african_high_01_properties.dds"
+		shader = "portrait_attachment_pattern_alpha_to_coverage"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/female_clothes/religious/african/high_01/female_clothes_religious_african_high_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "east_african_nobility_common_01"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
 
 
 
