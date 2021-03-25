@@ -564,67 +564,6 @@ KOH_pulse_monthly = {
     }
 }
 
-#ARTIFACT SYSTEM
-on_death = {
-	on_actions = {
-		on_artifact_inheritance
-	}
-}
-
-on_monthly_artifacts = {
-	effect = {
-		every_artifact_holder = { #Equips Artifacts
-			limit = { is_ai = yes }
-			equip_all_owned_artifacts = {} #Crudely equips all artifacts in the order defined in common/scripted_effects/artifacts_custom.txt.
-		}
-	}
-	on_actions = {
-		delay = { months = 1 }
-		on_monthly_artifacts
-	}
-}
-
-on_artifact_initialization = { # Can be called by the scripted effect "initialize_artifacts" 
-	effect = { # Add any artifact-specific setup that you don't want to put in your on_game_start.
-	# For example, in vanilla:
-		listify_all_typed_artifacts_as_flags = yes
-		character:212501 = { 
-			add_artifact = {ARTIFACT = artifact_1}
-			add_artifact = {ARTIFACT = artifact_3}
-		}
-		character:215529 = { #Imperial Diadem
-			add_artifact = {ARTIFACT = artifact_2}
-		}
-		character:219500 = { #crown of st stephen
-			add_artifact = {ARTIFACT = artifact_33 }
-		}
-	}
-	on_actions = {
-		on_monthly_artifacts
-	}
-}
-
-on_artifact_inheritance = {
-	effect = {
-		save_temporary_scope_as = root_character
-		if = {
-			limit = { exists = scope:killer }
-			transfer_all_artifacts = { A = root B = scope:killer }	
-		}
-		else_if = {
-			limit = { exists = root.primary_heir }
-			transfer_all_artifacts = {A = root B = root.primary_heir}
-		}
-		else_if = {
-			limit = { exists = root.liege_or_court_owner }
-			transfer_all_artifacts = {A = root B = root.liege_or_court_owner}
-		}
-		else = {
-			transfer_all_artifacts = {A = root B = root.location.barony_controller }
-		}
-	}
-}
-
 #five_year_everyone_pulse = {
 #	events = {
 #		KOH_ItalianCommunes.4

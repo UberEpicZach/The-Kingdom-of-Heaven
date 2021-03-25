@@ -186,7 +186,9 @@ d_west_franconia = {
 	}
 	1156.1.1 = {
 		holder = 212490
-		set_capital_county = title:c_worms
+		effect = {
+			set_capital_county = title:c_worms
+		}
 	}
 	1200.10.25 = {
 		holder = 7542
@@ -4643,10 +4645,10 @@ c_furstenberg = {
 
 
 d_angria = {
-	700.1.1 = {
-		liege = k_saxony
-		
-	}
+	#700.1.1 = {
+	#	liege = k_saxony
+	#	
+	#}
 	740.1.1 = {
 		holder = 190455 #Theoderic
 	}
@@ -7264,7 +7266,7 @@ c_dannenberg = {
 		holder = KOH_SAXONY010
 	}
 	1226.1.1 = {
-		holding = KOH_SAXONYO11
+		holder = KOH_SAXONYO11
 		liege = "d_ostfalen"
 	}
 	1252.1.1 = {
@@ -7837,10 +7839,10 @@ c_lobdaburg = {
 
 
 d_westfalen = {
-	700.1.1 = {
-		liege = k_saxony
-	
-	}
+	#700.1.1 = {
+	#	liege = k_saxony
+	#
+	#}
 	740.1.1 = {
 		holder = 190455 #Theoderic
 	}

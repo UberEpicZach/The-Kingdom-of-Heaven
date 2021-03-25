@@ -397,11 +397,11 @@
 	1160.1.1 = {
 		give_nickname = nick_al_mualim
 	}
-	1175.1.1 = {
-		effect = {
-			set_relation_adoptee = character:KOH0030
-		}
-	}
+	#1175.1.1 = {
+		#effect = {
+		#	set_relation_adoptee = character:KOH0030
+		#}
+	#}
 	1170.1.1 = {
 		effect = {
 			set_relation_rival = character:226000
@@ -5269,7 +5269,7 @@ KOH0041 = {
 	trait = education_diplomacy_4
 	trait = scholar
 	trait = journaller
-	trait = hale
+#	trait = hale
 	1125.1.1 = {
 		birth = yes
 		effect = {
@@ -5278,6 +5278,7 @@ KOH0041 = {
 	}
 	1155.6.1 = {
 		add_spouse = 1000230505
+	}
 	1175.1.1 = {
 		employer = 226000
 		give_council_position = councillor_chancellor
