@@ -23,7 +23,9 @@ KoH_erfurt_affair.1 = {
 		character:7557 = {
 			save_scope_as = feuding_bishop
 		}
-		save_scope_as = bossman
+		character:212430 = {
+			save_scope_as = bossman
+		}
 	}
 
 	option = { # let's hash this out
@@ -34,7 +36,7 @@ KoH_erfurt_affair.1 = {
 
 		trigger_event = {
 			id = KoH_erfurt_affair.2
-			days = { 10 20 }
+			days = { 20 30 }
 		}
 
 		ai_chance = {
@@ -92,6 +94,12 @@ KoH_erfurt_affair.2 = {
 	desc = KoH_erfurt_affair.2.desc
 	theme = diplomacy
 
+	immediate = {
+		character:7557 = {
+			save_scope_as = feuding_bishop
+		}
+	}
+
 	option = {
 		name = KoH_erfurt_affair.2.a
 
@@ -102,7 +110,7 @@ KoH_erfurt_affair.2 = {
 
 		trigger_event = {
 			id = KoH_erfurt_affair.301
-			days = { 36 44 } # that should be long enough - if the multiplayer event timeout is lengthened, increase this
+			days = { 20 30 } # that should be long enough - if the multiplayer event timeout is lengthened, increase this
 		}
 
 		capital_province = {
@@ -121,31 +129,31 @@ KoH_erfurt_affair.2 = {
 
 		invite_count = {
 			CHAR = character:KOH_FRANCONIAN023
-			TITLE = title:c_Ziegenhain 
+			TITLE = title:c_marburg 
 			CHANCE = 90
 		}
 
 		invite_count = {
 			CHAR = character:KOH_FRANKCONIAN02
-			TITLE = title:c_Schwarzburg
+			TITLE = title:c_schwarzburg
 			CHANCE = 90
 		}
 
 		invite_count = {
 			CHAR = character:31794
-			TITLE = title:c_Orlamunde
+			TITLE = title:c_orlamunde
 			CHANCE = 50
 		}
 
 		invite_count = {
 			CHAR = character:212947
-			TITLE = title:c_henneburg
+			TITLE = title:c_henneberg
 			CHANCE = 35
 		}
 
 		invite_count = {
 			CHAR = character:33255
-			TITLE = title:c_Katzenelnbogen 
+			TITLE = title:c_katzenelnbogen 
 			CHANCE = 20
 		}
 
@@ -158,13 +166,13 @@ KoH_erfurt_affair.2 = {
 		#these last two can be in any order
 
 		scope:bossman = {
-			set_latrine_death_chance = {
+			invite_and_set_death_chance = {
 				CHANCE = 10
 			}
 		}
 
 		scope:feuding_bishop = {
-			set_latrine_death_chance = {
+			invite_and_set_death_chance = {
 				CHANCE = 10
 			}
 		}
@@ -272,6 +280,10 @@ KoH_erfurt_affair.301 = {
 	hidden = yes
 
 	immediate = {
+		activity = { # scopes to the diet, bc you're there
+			save_scope_as = diet
+		}
+
 		scope:diet = {
 			every_participant = {
 				limit = { is_ai = no } # they don't need to know
@@ -280,6 +292,11 @@ KoH_erfurt_affair.301 = {
 		}
 		trigger_event = KoH_erfurt_affair.401
 	}
+
+	#option = {
+	#	name = KoH_erfurt_affair.301.a
+	#
+	#}
 }
 
 KoH_erfurt_affair.4 = {
@@ -392,15 +409,20 @@ KoH_erfurt_affair.601 = { # kills people
 			}
 		}
 
-		every_vassal_or_below = {
-			if = {
-				limit = {
-					NOT = {
-						is_in_list = got_latrine_disaster_event
+		title:e_hre.holder = {
+			every_vassal_or_below = {
+				if = {
+					limit = {
+						NOT = {
+							is_in_list = got_latrine_disaster_event
+						}
 					}
+					trigger_event = KoH_erfurt_affair.7
 				}
-				trigger_event = KoH_erfurt_affair.7
 			}
+		}
+		title:e_hre.holder = {
+			trigger_event = KoH_erfurt_affair.7
 		}
 	}
 }
@@ -464,15 +486,22 @@ KoH_erfurt_affair.6 = {
 		show_as_tooltip = {
 			disaster_effects = yes
 		}
+		activity = { # scopes to the diet, bc you're there
+			complete_activity = yes
+		}
 	}
 }
 
 KoH_erfurt_affair.7 = {
 	title = KoH_erfurt_affair.7.t
 	desc = KoH_erfurt_affair.7.desc
-	theme = ..
+	theme = skull
 
 	option = {
 		name = KoH_erfurt_affair.7.a
+
+		show_as_tooltip = {
+			disaster_effects = yes
+		}
 	}
 }

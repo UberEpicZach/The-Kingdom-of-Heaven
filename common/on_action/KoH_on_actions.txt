@@ -353,6 +353,17 @@ KOH_ON_START = {
 				 }
 			 }
 		 }
+		character:212431 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_erfurt_affair.1
+					days = 152
+				}
+			}
+		}
 	}
 }
 
