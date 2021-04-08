@@ -75,6 +75,93 @@ KoH_holy_orders.1 = {
 		title:b_beaufort = {
 			lease_out_to = scope:templar_holy_order
 		}
+
+	
+		title:b_toron.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
+
+		title:b_beaufort.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
+
+		create_holy_order_effect = yes
 	}
 }
 
@@ -172,9 +259,91 @@ KoH_holy_orders.2 = {
 			lease_out_to = scope:hospitaller_holy_order
 		}
 
+		create_holy_order_effect = yes
 
+		title:b_bethgibelin.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
 
-
+		title:b_kerake.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
 	}
 }
 #Kerake for hospitaler WILL NOT WORK UNTIL NEW BARONY
@@ -276,6 +445,176 @@ KoH_holy_orders.5 = {
 		}
 		global_var:calatrava_holy_order_title = {
 			copy_title_history = title:d_knights_calatrava
+		}
+
+		create_holy_order_effect = yes
+
+		title:b_calatrava.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
+
+		title:b_alcaniz.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
+
+		title:b_malagon.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
+
+		title:b_alarcos.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
 		}
 	}
 }
@@ -380,11 +719,223 @@ KoH_holy_orders.7 = {
 		title:b_altotajo = {
 			lease_out_to = scope:santiago_holy_order
 		}
-		title:b_zurita= {
+		title:b_zurita = {
 			lease_out_to = scope:santiago_holy_order
 		}
 		title:b_huete = {
 			lease_out_to = scope:santiago_holy_order
+		}
+
+		create_holy_order_effect = yes
+
+		title:b_ucles.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
+
+		title:b_mentesa.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
+
+		title:b_altotajo.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
+
+		title:b_zurita.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
+
+		title:b_huete.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
 		}
 	}
 }
@@ -405,102 +956,102 @@ KoH_holy_orders.7 = {
 #}
 
 #AGE OF CRUSADES AND JIHADS
-KoH_holy_orders.100 = { 
-	type = character_event
-	title = KoH_holy_orders.100.t
-	desc = KoH_holy_orders.100.d
-	theme = war
-	hidden = yes
-	
-	immediate = {
-		faith:ashari = {
-			change_fervor = 200
-			save_scope_as = awakening_faith
-			if = {
-				limit = {
-					exists = religious_head
-				}
-				religious_head = { save_scope_as = ghw_first_sponsor }
-			}
-			else = {
-				random_theocratic_ruler = {
-					limit = { faith = root }
-					save_scope_as = ghw_first_sponsor
-				}
-			}
-			if = { # Fallback
-				limit = {
-					NOT = {
-						exists = scope:ghw_first_sponsor
-					}
-				}
-				random_ruler = {
-					limit = { faith = root }
-					save_scope_as = ghw_first_sponsor
-				}
-			}
-			religion = {
-				set_variable = {
-					name = variable_ghw_unlocked # Crusades
-					value = yes
-				}
-			}
-		}	
-	}
-}
+#KoH_holy_orders.100 = { 
+#	type = character_event
+#	title = KoH_holy_orders.100.t
+#	desc = KoH_holy_orders.100.d
+#	theme = war
+#	hidden = yes
+#	
+#	immediate = {
+#		faith:ashari = {
+#			change_fervor = 200
+#			save_scope_as = awakening_faith
+#			if = {
+#				limit = {
+#					exists = religious_head
+#				}
+#				religious_head = { save_scope_as = ghw_first_sponsor }
+#			}
+#			else = {
+#				random_theocratic_ruler = {
+#					limit = { faith = root }
+#					save_scope_as = ghw_first_sponsor
+#				}
+#			}
+#			if = { # Fallback
+#				limit = {
+#					NOT = {
+#						exists = scope:ghw_first_sponsor
+#					}
+#				}
+#				random_ruler = {
+#					limit = { faith = root }
+#					save_scope_as = ghw_first_sponsor
+#				}
+#			}
+#			religion = {
+#				set_variable = {
+#					name = variable_ghw_unlocked # Crusades
+#					value = yes
+#				}
+#			}
+#		}	
+#	}
+#}
 #AGE OF CRUSADES, WILL DELAY
-KoH_holy_orders.101 = { 
-	type = character_event
-	title = KoH_holy_orders.101.t
-	desc = KoH_holy_orders.101.d
-	theme = war
-	hidden = yes
-	
-	trigger = { 
-		trigger_if = {
-			limit = { 
-				title:c_jerusalem.holder = {
-				NOT = { faith.religion = religion:christianity_religion }
-			}
-		}
-	}
-
-	immediate = {
-		faith:catholic = {
-			change_fervor = 200
-			save_scope_as = awakening_faith
-			if = {
-				limit = {
-					exists = religious_head
-				}
-				religious_head = { save_scope_as = ghw_first_sponsor }
-			}
-			else = {
-				random_theocratic_ruler = {
-					limit = { faith = root }
-					save_scope_as = ghw_first_sponsor
-				}
-			}
-			if = { # Fallback
-				limit = {
-					NOT = {
-						exists = scope:ghw_first_sponsor
-					}
-				}
-				random_ruler = {
-					limit = { faith = root }
-					save_scope_as = ghw_first_sponsor
-				}
-			}
-			religion = {
-				set_variable = {
-					name = variable_ghw_unlocked # Crusades
-					value = yes
-				}
-			}
-		}
-	}
-}
+# KoH_holy_orders.101 = { 
+# 	type = character_event
+# 	title = KoH_holy_orders.101.t
+# 	desc = KoH_holy_orders.101.d
+# 	theme = war
+# 	hidden = yes
+#	
+# 	trigger = { 
+# 		trigger_if = {
+# 			limit = { 
+# 				title:c_jerusalem.holder = {
+# 				NOT = { faith.religion = religion:christianity_religion }
+# 			}
+# 		}
+# 	}
+#
+# 	immediate = {
+# 		faith:catholic = {
+# 			change_fervor = 200
+# 			save_scope_as = awakening_faith
+# 			if = {
+# 				limit = {
+# 					exists = religious_head
+# 				}
+# 				religious_head = { save_scope_as = ghw_first_sponsor }
+# 			}
+# 			else = {
+# 				random_theocratic_ruler = {
+# 					limit = { faith = root }
+# 					save_scope_as = ghw_first_sponsor
+# 				}
+# 			}
+# 			if = { # Fallback
+# 				limit = {
+# 					NOT = {
+# 						exists = scope:ghw_first_sponsor
+# 					}
+# 				}
+# 				random_ruler = {
+# 					limit = { faith = root }
+# 					save_scope_as = ghw_first_sponsor
+# #				}
+# #			}
+# #			religion = {
+# #				set_variable = {
+# #					name = variable_ghw_unlocked # Crusades
+# #					value = yes
+# #				}
+# #			}
+# #		}
+# #	}
+# #}
 
 KoH_holy_orders.102 = { 
 	type = character_event

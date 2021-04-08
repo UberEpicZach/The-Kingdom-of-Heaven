@@ -181,6 +181,11 @@ beards_scripted_characters = {
             }
             modifier = {
                 add = 200
+                exists = character:212501 #barb
+                this = character:212501 #barb
+            }
+            modifier = {
+                add = 200
                 exists = character:easteregg_paul_depre
                 this = character:easteregg_paul_depre
             }
@@ -633,6 +638,25 @@ beards_scripted_characters = {
         }   
         weight = {
             base = 0
+        }
+    }
+
+    male_mustache_iranian_05 = { # Mustache Iranian
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = iranian_beards_straight
+                value = 0.99 # For the randomness to work correctly
+            }
+        }   
+        weight = {
+            base = 0
+            modifier = {
+                add = 200
+                exists = character:163101 #yaqub_saffarid
+                this = character:163101 #yaqub_saffarid
+            }
         }
     }
 

@@ -5615,7 +5615,7 @@ morph_genes = {
 
 		complexion_beauty_1 = {
 			index = 7
-	        visible = no
+
 		male = {
 			texture_override = {
 				weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
@@ -5677,7 +5677,7 @@ morph_genes = {
 
 		complexion_ugly_1 = {
 			index = 8
-	        visible = no
+
 			male = {
 				texture_override = {
 					weight = 100  #if there are multiple texture_overrides in a character's dna one will be picked by weighted random
@@ -7041,10 +7041,12 @@ morph_genes = {
 	gene_bs_body_shape = { # This gene is used for two things: Basic body shape and gradual musculature (the latter tied to gene strenght and controlled by modifiers)
 
     index = 93
-	    visible = no
+		group = body
 
     body_shape_average_clothed = { # Use this for clothes
+		
         index = 0 
+	        visible = no			
         male = { 
             setting = { attribute = "bs_muscular_1" value = { min = 0.0 max = 1.0 } } 
             setting = { attribute = "bs_body_muscular_1"    value = { min = 0.0 max = 1.0 } } 
@@ -7099,7 +7101,7 @@ morph_genes = {
 
     body_shape_average = { # Use this for clothes that leave parts of the body visible! 
         index = 1
-	        visible = no
+	        
         male = { 
             setting = { attribute = "bs_muscular_1" value = { min = 0.0 max = 1.0 } } 
             setting = { attribute = "bs_body_muscular_1"    value = { min = 0.0 max = 1.0 } } 
@@ -7153,7 +7155,7 @@ morph_genes = {
 
     body_shape_apple_half = { 
         index = 2 
-	        visible = no
+	        
         male = { 
 			setting = { attribute = "bs_body_shape_apple"    value = { min = 0.5 max = 0.5 } age = age_preset_puberty } 
 
@@ -7210,7 +7212,7 @@ morph_genes = {
 
     body_shape_apple_full = { 
         index = 3 
-	        visible = no
+	        
         male = { 
 			setting = { attribute = "bs_body_shape_apple"    value = { min = 0.8 max = 0.8 } age = age_preset_puberty } 
 
@@ -7267,7 +7269,7 @@ morph_genes = {
 
     body_shape_hourglass_half = { 
         index = 4 
-	        visible = no
+	        
         male = { 
 			setting = { attribute = "bs_body_shape_hourglass"    value = { min = 0.5 max = 0.5 } age = age_preset_puberty } 
 
@@ -7324,7 +7326,7 @@ morph_genes = {
 
     body_shape_hourglass_full = { 
         index = 5 
-	        visible = no
+	        
         male = { 
 			setting = { attribute = "bs_body_shape_hourglass"    value = { min = 1.0 max = 1.0 } age = age_preset_puberty } 
 
@@ -7381,7 +7383,7 @@ morph_genes = {
 
     body_shape_pear_half = { 
         index = 6 
-	        visible = no
+	        
         male = { 
 			setting = { attribute = "bs_body_shape_pear"    value = { min = 0.4 max = 0.4 } age = age_preset_puberty } 
 
@@ -7438,7 +7440,7 @@ morph_genes = {
 
     body_shape_pear_full = { 
         index = 7 
-	        visible = no
+	        
         male = { 
 			setting = { attribute = "bs_body_shape_pear"    value = { min = 0.8 max = 0.8 } age = age_preset_puberty } 
 
@@ -7495,7 +7497,7 @@ morph_genes = {
 
     body_shape_rectangle_half = { 
         index = 8 
-	        visible = no
+	        
         male = { 
 			setting = { attribute = "bs_body_shape_rectangle"    value = { min = 0.4 max = 0.4 } age = age_preset_puberty } 
 
@@ -7552,7 +7554,7 @@ morph_genes = {
 
     body_shape_rectangle_full = { 
         index = 9 
-	        visible = no
+	        
         male = { 
 			setting = { attribute = "bs_body_shape_rectangle"    value = { min = 0.8 max = 0.8 } age = age_preset_puberty } 
 
@@ -7609,7 +7611,7 @@ morph_genes = {
 
     body_shape_triangle_half = { 
         index = 10 
-	        visible = no
+	        
         male = { 
 			setting = { attribute = "bs_body_shape_triangle"    value = { min = 0.4 max = 0.4 } age = age_preset_puberty } 
 
@@ -7666,7 +7668,7 @@ morph_genes = {
 
     body_shape_triangle_full = { 
         index = 11 
-	        visible = no
+	        
         male = { 
 			setting = { attribute = "bs_body_shape_triangle"    value = { min = 0.8 max = 0.8 } age = age_preset_puberty } 
 
@@ -7741,7 +7743,6 @@ morph_genes = {
 
     bust_default = { 
         index = 1 
-	        visible = no
         female = { 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_2_max" value = { min = -1.0 max = 1.0 }  age = age_preset_puberty } 
@@ -7792,7 +7793,6 @@ morph_genes = {
 
     bust_shape_1_half = { 
         index = 2 
-	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_1" value = { min = 0.5 max = 0.5 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -7844,7 +7844,6 @@ morph_genes = {
     }
 
     bust_shape_1_full = { 
-	    	visible = no
         index = 3 
         female = { 
         	setting = { attribute = "bs_body_breast_shape_1" value = { min = 0.5 max = 1.5 } age = age_preset_puberty  } 
@@ -7898,7 +7897,6 @@ morph_genes = {
 
     bust_shape_2_half = { 
         index = 4 
-	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_2" value = { min = 0.5 max = 0.5 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -7951,7 +7949,6 @@ morph_genes = {
 
     bust_shape_2_full = { 
         index = 5 
-	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_2" value = { min = 0.3 max = 1.3 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -8004,7 +8001,6 @@ morph_genes = {
 
     bust_shape_3_half = { 
         index = 6 
-	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_3" value = { min = 0.5 max = 0.5 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -8057,7 +8053,6 @@ morph_genes = {
 
     bust_shape_3_full = { 
         index = 7 
-	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_3" value = { min = 0.5 max = 0.8 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -8110,7 +8105,6 @@ morph_genes = {
 
     bust_shape_4_half = { 
         index = 8 
-	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_4" value = { min = 0.5 max = 0.5 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -8163,7 +8157,6 @@ morph_genes = {
 
     bust_shape_4_full = { 
         index = 9 
-	        visible = no
         female = { 
         	setting = { attribute = "bs_body_breast_shape_4" value = { min = 0.5 max = 1.5 } age = age_preset_puberty  } 
             setting = { attribute = "bs_body_breast_size_min" value = { min = 1.0 max = -1.0 } age = age_preset_puberty  } 
@@ -8218,6 +8211,7 @@ morph_genes = {
 
 	gene_age = {
 	index = 95
+		group = body		
 
 	old_1 = {
 		index = 0
@@ -11117,6 +11111,7 @@ morph_genes = {
 	gene_body_hair = {
 
 	index = 98
+		group = body		
 	body_hair_sparse = {
 		index = 0
 		male = {

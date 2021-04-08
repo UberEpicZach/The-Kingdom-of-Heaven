@@ -320,9 +320,9 @@ widget = {
 		using = Animation_ShowHide_Quick
 
 		background = {
-			texture = "gfx/interface/hud/hud_bg_top_right.dds"
-			margin_left = 0
-			margin_bottom = 8
+			texture = "gfx/interface/skinned/hud_top_right_bg.dds"
+			margin_left = 20
+			margin_bottom = 28
 		}
 
 		icon = {
@@ -625,9 +625,10 @@ widget = {
 					margin_bottom = 3
 
 					background = {
+						texture = "gfx/interface/skinned/overlay_stone.dds"
 						margin_right = 20
 						margin_top = 20
-						texture = "gfx/interface/component_overlay/overlay_stone.dds"
+						margin_bottom = 3
 						texture_density = 2
 						spritetype = corneredtiled
 						color = { 0.4 0.4 0.44 1 }
@@ -636,22 +637,29 @@ widget = {
 						using = Mask_Rough_Edges
 					}
 
+					background = {
+						texture = "gfx/interface/skinned/hud_top_right_bg_stone.dds"
+						margin_right = 10
+						margin_left = -2
+						margin_top = 4
+						texture_density = 2
+						spritetype = corneredtiled
+					}
+
+
 					button_group = {
 						onclick = "[ToggleGameViewData('military', GetPlayer.GetID)]"
 						tooltip = "[ArmyComposition.GetArmyCompositionTooltip]"
 						using = tooltip_ne
 
-						hbox = {
-							margin = { 4 4 }
+						flowcontainer = {
+							margin = { 0 0 }
+							spacing = 5
 
 							icon = {
 								name = "icon_soldier"
 								texture = "gfx/interface/icons/icon_soldier.dds"
 								size = { 25 25 }
-							}
-
-							spacer = {
-								size = { 5 0 }
 							}
 
 							flowcontainer = {
@@ -729,6 +737,16 @@ widget = {
 				}
 			}
 		}
+
+		widget = {
+			size = { 100% 100% }
+
+			background = {
+				texture = "gfx/interface/skinned/hud_top_right_frame.dds"
+				margin_left = 20
+				margin_bottom = 28
+			}
+		}
 	}
 
 	### Outliner Button
@@ -799,7 +817,7 @@ widget = {
 
 			icon = {
 				size = { 100% 100% }
-				texture = "gfx/interface/hud/hud_maintab_bg.dds"
+				texture = "gfx/interface/skinned/hud_maintab_bg.dds"
 
 				@duration_maintab_button_enter = 0.03
 				@duration_maintab_button_leave = 0.1
@@ -812,15 +830,15 @@ widget = {
 
 				modify_texture = {
 					name = "glow_my_realm"
-					texture = "gfx/interface/hud/hud_maintab_bg_glow.dds"
+					texture = "gfx/interface/skinned/hud_maintab_bg_glow.dds"
 					blend_mode = colordodge
-					translate_uv = { -0.15 -0.02 }
+					translate_uv = { -0.15 -0.04 }
 					alpha = 0
 				}
 
 				modify_texture = {
 					name = "glow_military"
-					texture = "gfx/interface/hud/hud_maintab_bg_glow.dds"
+					texture = "gfx/interface/skinned/hud_maintab_bg_glow.dds"
 					blend_mode = colordodge
 					translate_uv = { -0.15 -0.14 }
 					alpha = 0
@@ -828,7 +846,7 @@ widget = {
 
 				modify_texture = {
 					name = "glow_council"
-					texture = "gfx/interface/hud/hud_maintab_bg_glow.dds"
+					texture = "gfx/interface/skinned/hud_maintab_bg_glow.dds"
 					blend_mode = colordodge
 					translate_uv = { -0.15 -0.25 }
 					alpha = 0
@@ -836,7 +854,7 @@ widget = {
 
 				modify_texture = {
 					name = "glow_court"
-					texture = "gfx/interface/hud/hud_maintab_bg_glow.dds"
+					texture = "gfx/interface/skinned/hud_maintab_bg_glow.dds"
 					blend_mode = colordodge
 					translate_uv = { -0.15 -0.42 }
 					alpha = 0
@@ -844,7 +862,7 @@ widget = {
 
 				modify_texture = {
 					name = "glow_intrigue"
-					texture = "gfx/interface/hud/hud_maintab_bg_glow.dds"
+					texture = "gfx/interface/skinned/hud_maintab_bg_glow.dds"
 					blend_mode = colordodge
 					translate_uv = { -0.15 -0.55 }
 					alpha = 0
@@ -852,7 +870,7 @@ widget = {
 
 				modify_texture = {
 					name = "glow_factions"
-					texture = "gfx/interface/hud/hud_maintab_bg_glow.dds"
+					texture = "gfx/interface/skinned/hud_maintab_bg_glow.dds"
 					blend_mode = colordodge
 					translate_uv = { -0.15 -0.68 }
 					alpha = 0
@@ -860,11 +878,12 @@ widget = {
 
 				modify_texture = {
 					name = "glow_decisions"
-					texture = "gfx/interface/hud/hud_maintab_bg_glow.dds"
+					texture = "gfx/interface/skinned/hud_maintab_bg_glow.dds"
 					blend_mode = colordodge
 					translate_uv = { -0.2 -0.79 }
 					alpha = 0
 				}
+
 				# My Realm
 				state = {
 					name = "hud_tab_glow_my_realm_enter"
@@ -874,7 +893,7 @@ widget = {
 					modify_texture = {
 						name = "glow_my_realm"
 						alpha = 1
-						translate_uv = { -0.15 -0.02 }
+						translate_uv = { -0.15 -0.04 }
 					}
 				}
 
@@ -886,7 +905,7 @@ widget = {
 					modify_texture = {
 						name = "glow_my_realm"
 						alpha = 0
-						translate_uv = { -0.15 -0.02 }
+						translate_uv = { -0.15 -0.04 }
 					}
 				}
 
@@ -1056,7 +1075,7 @@ widget = {
 
 					blockoverride "maintab_button"
 					{
-						texture = "gfx/interface/icons/hud_maintab/maintab_my_realm.dds"
+						texture = "gfx/interface/skinned/hud_maintab/maintab_my_realm.dds"
 
 						onclick = "[ToggleGameView('my_realm')]"
 						shortcut = "my_realm_window"
@@ -1080,7 +1099,7 @@ widget = {
 
 					blockoverride "maintab_button"
 					{
-						texture = "gfx/interface/icons/hud_maintab/maintab_military.dds"
+						texture = "gfx/interface/skinned/hud_maintab/maintab_military.dds"
 
 						onclick = "[ToggleGameViewData('military', GetPlayer.GetID)]"
 						shortcut = "military_window"
@@ -1104,7 +1123,7 @@ widget = {
 
 					blockoverride "maintab_button"
 					{
-						texture = "gfx/interface/icons/hud_maintab/maintab_council.dds"
+						texture = "gfx/interface/skinned/hud_maintab/maintab_council.dds"
 
 						onclick = "[ToggleGameViewData('council_window', GetPlayer.GetID)]"
 						shortcut = "council_window"
@@ -1131,7 +1150,7 @@ widget = {
 					visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]"
 					parentanchor = right|vcenter
 					position = { -5 0 }
-					texture = "gfx/interface/hud/hud_spike_big.dds"
+				texture = "gfx/interface/skinned/hud_spike_big.dds"
 					size = { 25 15 }
 
 					using = Animation_ShowHide_Standard
@@ -1145,7 +1164,7 @@ widget = {
 
 					blockoverride "maintab_button"
 					{
-						texture = "gfx/interface/icons/hud_maintab/maintab_court.dds"
+						texture = "gfx/interface/skinned/hud_maintab/maintab_court.dds"
 
 						onclick = "[ToggleGameViewData( 'court_window', GetPlayer.GetID )]"
 						shortcut = "court_window"
@@ -1169,7 +1188,7 @@ widget = {
 
 					blockoverride "maintab_button"
 					{
-						texture = "gfx/interface/icons/hud_maintab/maintab_intrigue.dds"
+						texture = "gfx/interface/skinned/hud_maintab/maintab_intrigue.dds"
 
 						onclick = "[ToggleGameViewData('intrigue_window', GetPlayer.GetID)]"
 						shortcut = "intrigue_window"
@@ -1193,7 +1212,7 @@ widget = {
 
 					blockoverride "maintab_button"
 					{
-						texture = "gfx/interface/icons/hud_maintab/maintab_factions.dds"
+						texture = "gfx/interface/skinned/hud_maintab/maintab_factions.dds"
 
 						onclick = "[ToggleGameView('factions_window')]"
 						shortcut = "factions_window"
@@ -1217,7 +1236,7 @@ widget = {
 
 					blockoverride "maintab_button"
 					{
-						texture = "gfx/interface/icons/hud_maintab/maintab_decisions.dds"
+						texture = "gfx/interface/skinned/hud_maintab/maintab_decisions.dds"
 
 						onclick = "[ToggleGameView('decisions')]"
 						shortcut = "decision_window"
@@ -1262,58 +1281,63 @@ widget = {
 icon = {
 	name = "timeline_widget"
 	visible = "[And( Not( IsPauseMenuShown ), TimelineWidget.ShouldBeVisible )]"
-	size = { 739 45 }
+	size = { 649 65 }
 	parentanchor = bottom|right
 	filter_mouse = all
 	alwaystransparent = yes
 	layer = top
 	allow_outside = yes
-	texture = "gfx/interface/hud/hud_bg_gamespeed.dds"
+	texture = "gfx/interface/skinned/hud_bg_gamespeed.dds"
 
 	using = Animation_ShowHide_Quick
 
-	icon = {
-		parentanchor = top|right
-		position = { 7 -15}
-		texture = "gfx/interface/component_decoration/decoration_arch.dds"
-		size = { 30 30 }
-	}
+	widget = {
+		parentanchor = bottom|right
+		size = { 629 45 }
+		allow_outside = yes
 
-	icon = {
-		visible = "[IsManuallyPaused]"
-		size = { 100% 100% }
-		texture = "gfx/interface/hud/hud_pause_indicator.dds"
-		color = { 0.4 0.25 0.25 0.7 }
-
-		state = {
-			name = _show
-			using = Animation_FadeIn_Quick
+		icon = {
+			parentanchor = top|right
+			position = { 7 -15}
+			texture = "gfx/interface/skinned/component_decoration/decoration_arch.dds"
+			size = { 30 30 }
 		}
 
-		state = {
-			name = _hide
-			using = Animation_FadeOut_Standard
+		icon = {
+			visible = "[IsManuallyPaused]"
+			size = { 100% 100% }
+			texture = "gfx/interface/skinned/hud_pause_indicator.dds"
+			color = { 0.4 0.25 0.25 0.7 }
+
+			state = {
+				name = _show
+				using = Animation_FadeIn_Quick
+			}
+
+			state = {
+				name = _hide
+				using = Animation_FadeOut_Standard
+			}
 		}
-	}
 
-	icon = {
-		visible = "[IsPausedByEvent]"
-		size = { 100% 100% }
-		texture = "gfx/interface/hud/hud_pause_indicator.dds"
-		color = { 0.3 0.3 0.3 0.7 }
+		icon = {
+			visible = "[IsPausedByEvent]"
+			size = { 100% 100% }
+			texture = "gfx/interface/skinned/hud_pause_indicator.dds"
+			color = { 0.3 0.3 0.3 0.7 }
 
-		state = {
-			name = _show
-			using = Animation_FadeIn_Quick
+			state = {
+				name = _show
+				using = Animation_FadeIn_Quick
+			}
+
+			state = {
+				name = _hide
+				using = Animation_FadeOut_Standard
+			}
 		}
 
-		state = {
-			name = _hide
-			using = Animation_FadeOut_Standard
-		}
-	}
-
-	hotkeys_HUD = {}
+		hotkeys_HUD = {}
 
 	### Extra Buttons
 	flowcontainer = {
@@ -1660,20 +1684,15 @@ icon = {
 					icon = {
 						parentanchor = right|vcenter
 						position = { 10 0 }
-						size = { 18 90%}
-						using = Background_Area
-
-						color = { 0.17 0.17 0.17 1 }
+						size = { 15 90%}
+						texture = "gfx/interface/skinned/overlay_stone.dds"
+						color = { 0.32 0.32 0.32 1 }
 					}
 
 					icon = {
 						size = { 100% 100% }
-						texture = "gfx/interface/hud/speed_indicator_frame.dds"
-
-						color = { 0.17 0.17 0.17 1 }
+						texture = "gfx/interface/skinned/speed_indicator_frame.dds"
 					}
-
-
 
 					hbox = {
 						margin_left = 6
@@ -1878,32 +1897,33 @@ icon = {
 			}
 		}
 
-		# Just the hotkeys for increase/decrease speed
-		container = {
-			name = "speed_hotkeys"
+			# Just the hotkeys for increase/decrease speed
+			container = {
+				name = "speed_hotkeys"
 
-			button = {
-				name = "increase_speed"
-				size = { 0 0 }
+				button = {
+					name = "increase_speed"
+					size = { 0 0 }
 
-				shortcut = "increase_speed"
-				shortcut = "increase_speed_2"
-				onclick = "[OnIncreaseGameSpeed]"
-				oversound = "event:/SFX/UI/Generic/sfx_ui_generic_pointer_over"
+					shortcut = "increase_speed"
+					shortcut = "increase_speed_2"
+					onclick = "[OnIncreaseGameSpeed]"
+					oversound = "event:/SFX/UI/Generic/sfx_ui_generic_pointer_over"
+				}
+
+				button = {
+					name = "decrease_speed"
+					size = { 0 0 }
+
+					shortcut = "decrease_speed"
+					shortcut = "decrease_speed_2"
+					onclick = "[OnDecreaseGameSpeed]"
+					clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_decrement"
+				}
 			}
 
-			button = {
-				name = "decrease_speed"
-				size = { 0 0 }
-
-				shortcut = "decrease_speed"
-				shortcut = "decrease_speed_2"
-				onclick = "[OnDecreaseGameSpeed]"
-				clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_decrement"
-			}
+			widget_gamespeed_sounds = {}
 		}
-
-		widget_gamespeed_sounds = {}
 	}
 }
 
@@ -1921,7 +1941,7 @@ widget = {
 		visible = "[And(GetPlayer.IsValid, Not(GetVariableSystem.Exists( 'hide_bottom_left_HUD')))]"
 		parentanchor = bottom|left
 		size = { 442 44 }
-		texture = "gfx/interface/hud/hud_bg_character_bar.dds"
+		texture = "gfx/interface/skinned/hud_bg_character_bar.dds"
 		spritetype = corneredtiled
 		spriteborder_left = 70
 		spriteborder_right = 240
@@ -2166,6 +2186,7 @@ widget = {
 				}
 
 				animation_sonar = {
+					texture = "gfx/interface/component_effects/effect_sonar_ring.dds"
 					visible = "[GreaterThan_int32( GetPlayer.GetTotalPerkPoints, '(int32)0' )]"
 				}
 			}
@@ -2528,7 +2549,7 @@ widget = {
 
 					icon = {
 						size = { 100% 100% }
-						texture = "gfx/interface/hud/hud_stress_bg.dds"
+						texture = "gfx/interface/skinned/hud_stress_bg.dds"
 
 						icon = {
 							parentanchor = vcenter
@@ -3266,6 +3287,12 @@ types HUD
 		tooltip = "[WarItem.GetTooltip]"
 		using = tooltip_ne
 
+		animation_sonar = {
+			visible = "[WarItem.CanEnforceVictory]"
+			texture = "gfx/interface/component_masks/mask_glow.dds"
+			using = Color_Orange
+		}
+
 		icon = {
 			name = "enforce_victory_glow"
 			visible = "[WarItem.CanEnforceVictory]"
@@ -3274,13 +3301,64 @@ types HUD
 			scale = 1.2
 			texture = "gfx/interface/icons/war_status/war_won_glow.dds"
 
-			button = {
-				name = "enforce_victory_icon"
-				visible = "[WarItem.CanEnforceVictory]"
-				parentanchor = hcenter
-				position = { 0 -15 }
-				scale = 0.8
-				texture = "gfx/interface/icons/war_status/war_won_icon.dds"
+			state = {
+				trigger_on_create = yes
+				name = a
+				next = b
+
+				using = Animation_Curve_Default
+				duration = 1
+				alpha = 1
+			}
+
+			state = {
+				name = b
+				next = a
+
+				using = Animation_Curve_Default
+				duration = 1.6
+				alpha = 0.2
+			}
+		}
+
+		button = {
+			name = "enforce_victory_icon"
+			visible = "[WarItem.CanEnforceVictory]"
+			parentanchor = hcenter
+			position = { 0 -27 }
+			texture = "gfx/interface/icons/war_status/war_won_icon.dds"
+
+			modify_texture = {
+				name = "shimmer_war_banner"
+				texture = "gfx/interface/component_effects/effect_shimmer.dds"
+				blend_mode = colordodge
+				translate_uv = { 1 1 }
+				alpha = 0.8
+			}
+
+			state = {
+				name = shimmer
+				next = pause
+				trigger_when = "[WarItem.CanEnforceVictory]"
+				delay = 0.5
+				bezier = { 0 0.9 1 0.4 }
+
+				modify_texture = {
+					name = "shimmer_war_banner"
+					translate_uv = { 1 0.8 }
+					alpha = 0.5
+				}
+			}
+
+			state = {
+				name = pause
+				duration = 0.8
+
+				modify_texture = {
+					name = "shimmer_war_banner"
+					translate_uv = { -1 -1 }
+					alpha = 0.5
+				}
 			}
 		}
 
@@ -3290,6 +3368,38 @@ types HUD
 			parentanchor = center
 			size = { 100% 100% }
 			texture = "gfx/interface/icons/war_status/war_icon.dds"
+
+			modify_texture = {
+				name = "shimmer_war_banner"
+				texture = "gfx/interface/component_effects/effect_shimmer.dds"
+				blend_mode = colordodge
+				translate_uv = { 1 1 }
+			}
+
+			state = {
+				name = shimmer
+				next = pause
+				trigger_when = "[WarItem.CanEnforceVictory]"
+				delay = 0.5
+				bezier = { 0 0.9 1 0.4 }
+
+				modify_texture = {
+					name = "shimmer_war_banner"
+					translate_uv = { 1 0.5 }
+					alpha = 0.5
+				}
+			}
+
+			state = {
+				name = pause
+				duration = 0.8
+
+				modify_texture = {
+					name = "shimmer_war_banner"
+					translate_uv = { -1 -1 }
+					alpha = 0.5
+				}
+			}
 		}
 
 		highlight_icon = {
@@ -3410,7 +3520,7 @@ types HUD
 
 		framesize = { 102 104}
 		size = { 51 52 }
-		texture = "gfx/interface/hud/button_hud_character_bar.dds"
+		texture = "gfx/interface/skinned/button_hud_character_bar.dds"
 		using = tooltip_ne
 
 
@@ -3480,6 +3590,7 @@ types HUD
 				name = _mouse_enter
 				duration = 0.03
 				scale = 1.2
+				position_x = -3
 
 				using = Animation_Curve_Default
 
@@ -3494,6 +3605,7 @@ types HUD
 				name = _mouse_leave
 				duration = 0.1
 				scale = 1
+				position_x = 0
 
 				using = Animation_Curve_Default
 

@@ -38,7 +38,7 @@ indian_kashmiri_2 = {
 
 	template = "ethnicity_template"
 	skin_color = {
-		10 = { 0.65 0.35 0.95 0.55 }
+		10 = { 0.25 0.25 0.95 0.55 }
 	}
 	eye_color = {
 		# Brown
@@ -46,7 +46,9 @@ indian_kashmiri_2 = {
 		# Green
         15 = { 0.33 0.5 0.47 0.8 }
 		# Black
-		65 = { 0.05 0.95 0.35 1.0 }
+		60 = { 0.05 0.95 0.35 1.0 }
+        # Blue
+		5 = { 0.85 0.11 1.0 0.25 }
 	}
 	hair_color = {
 		# Blonde
@@ -80,15 +82,15 @@ indian_kashmiri_2 = {
 	}
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.65 0.75 }    }
+        100 = { name = eye_height_pos    range = { 0.55 0.59 }    }
     }
 
 	gene_eye_distance = {
-	    100 = { name = eye_distance_neg    range = { 0.45 0.5 }    }
+	    100 = { name = eye_distance_neg    range = { 0.45 0.56 }    }
 	}
 	
 	gene_eye_shut = {
-	    100 = { name = eye_shut_neg    range = { 0.42 0.6 }    }
+	    100 = { name = eye_shut_neg    range = { 0.48 0.6 }    }
 	}
 	
 	gene_forehead_angle = {
@@ -100,8 +102,8 @@ indian_kashmiri_2 = {
     }
 	
 	 gene_forehead_roundness = {
-        45 = { name = forehead_roundness_neg    range = { 0.4 0.5 }    }
-        55 = { name = forehead_roundness_neg    range = { 0.5 0.6 }    }
+        45 = { name = forehead_roundness_neg    range = { 0.45 0.5 }    }
+        55 = { name = forehead_roundness_neg    range = { 0.5 0.65 }    }
     }
 	
 	gene_forehead_width = {
@@ -117,8 +119,8 @@ indian_kashmiri_2 = {
     }
 	
 	gene_head_width = {
-        60 = { name = head_width_pos    range = { 0.4 0.45 }    }
-        40 = { name = head_width_pos    range = { 0.45 0.5 }    }
+        60 = { name = head_width_pos    range = { 0.45 0.5 }    }
+        40 = { name = head_width_pos    range = { 0.5 0.55 }    }
     }
 
     gene_head_height = {
@@ -161,7 +163,7 @@ indian_kashmiri_2 = {
         15 = { name = jaw_width_neg    range = { 0.35 0.38 }    }
         35 = { name = jaw_width_neg    range = { 0.38 0.4 }    }
         25 = { name = jaw_width_pos    range = { 0.35 0.4 }    }
-        25 = { name = jaw_width_pos    range = { 0.4 0.5 }    }	
+        25 = { name = jaw_width_pos    range = { 0.4 0.54 }    }	
     }
 	
 	gene_jaw_height = {
@@ -187,7 +189,7 @@ indian_kashmiri_2 = {
     }
 	  
     gene_mouth_height = {
-        100 = { name = mouth_height_neg    range = { 0.66 0.75 }    }
+        100 = { name = mouth_height_neg    range = { 0.6 0.65 }    }
     }
 	
 	gene_mouth_upper_lip_size = {
@@ -258,7 +260,7 @@ indian_kashmiri_2 = {
 	}
 	
     gene_bs_forehead_brow_curve = {
-        100 = { name = forehead_brow_curve_neg    range = { 0.0 0.61 }    }
+        100 = { name = forehead_brow_curve_neg    range = { 0.0 0.9 }    }
     }
 
     gene_bs_forehead_brow_forward = {
@@ -328,8 +330,8 @@ indian_kashmiri_2 = {
     }
 	
 	face_detail_cheek_def = {
-        50 = {  name = cheek_def_01             range = { 0.0 0.5 }     }
-        50 = {  name = cheek_def_02             range = { 0.0 0.5 }     }
+        50 = {  name = cheek_def_01             range = { 0.0 0.75 }     }
+        50 = {  name = cheek_def_02             range = { 0.0 0.75 }     }
     }
 	
 	face_detail_cheek_fat = {
@@ -410,9 +412,9 @@ indian_kashmiri_2 = {
         10 = { name = nose_height_pos    range = { 0.0 0.05 }    }
         20 = { name = nose_height_neg    range = { 0.0 0.05 }    }
         20 = { name = nose_height_neg    range = { 0.05 0.15 }    }
-        20 = { name = nose_height_neg    range = { 0.15 0.2 }    }
-        10 = { name = nose_height_neg    range = { 0.2 0.3 }    }
-        10 = { name = nose_height_neg    range = { 0.3 0.4 }    }
+        20 = { name = nose_height_neg    range = { 0.15 0.25 }    }
+        10 = { name = nose_height_neg    range = { 0.25 0.35 }    }
+        10 = { name = nose_height_neg    range = { 0.35 0.45 }    }
     }
 
     gene_bs_nose_length = {
@@ -468,6 +470,15 @@ indian_kashmiri_2 = {
         20 = { name = nose_tip_width_pos    range = { 0.0 0.15 }    }
 	    30 = { name = nose_tip_width_neg    range = { 0.3 0.4 }    }
 	}
+
+    face_detail_nose_ridge_def = {
+        50 = {  name = nose_ridge_def_pos             range = { 0.0 0.75 }     }
+        50 = {  name = nose_ridge_def_neg             range = { 0.0 0.95 }     }
+    }
+
+    face_detail_nose_tip_def = {
+        100 = {  name = nose_tip_def             range = { 0.0 0.99 }     }
+    }
 
 	complexion = {
 		20 = {	name = complexion_1				range = { 0.3 1.0 }		}

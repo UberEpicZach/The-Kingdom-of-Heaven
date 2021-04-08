@@ -707,6 +707,7 @@ special_genes = {
 					2 = male_hair_fp1_07 # Medium long side part thick
 					3 = male_hair_fp1_08 # Long straight with bangs as braids
 					2 = male_hair_fp1_09 # Single braid in back, shaved sides
+				    2 = male_hair_rtt_01					
 				}
 
 				female = {
@@ -732,6 +733,7 @@ special_genes = {
 					2 = male_hair_fp1_05 # Long fine
 					2 = male_hair_fp1_07 # Medium long side part thick
 					2 = male_hair_fp1_09 # Single braid in back, shaved sides
+				    2 = male_hair_rtt_01						
 				}
 
 				female = {
@@ -921,14 +923,15 @@ special_genes = {
 				#weight = <object in gfx/portrait/accessories/>
 				#2 = male_hair_chinese_01				
 				1 = male_hair_indian_01
-				1 = male_hair_indian_03
+				2 = male_hair_indian_03
 			}
 
 			female = {
-				1 = female_hair_western_03
-				1 = female_hair_western_10
-				1 = female_hair_steppe_01
-				1 = female_hair_steppe_02
+			    1 = female_hair_chinese_01
+				1 = female_hair_chinese_02
+				1 = female_hair_chinese_03
+				1 = female_hair_chinese_04
+				1 = female_hair_chinese_05
 				1 = female_hair_custom_08
 				1 = female_hair_custom_03
 				1 = female_hair_turkic_01
@@ -943,10 +946,15 @@ special_genes = {
 				#weight = <object in gfx/portrait/accessories/>
 				#2 = male_hair_chinese_01				
 				1 = male_hair_indian_01
-				1 = male_hair_indian_03
+				2 = male_hair_indian_03
 			}
 
 			female = {
+			    1 = female_hair_chinese_01
+				1 = female_hair_chinese_02
+				1 = female_hair_chinese_03
+				1 = female_hair_chinese_04
+				1 = female_hair_chinese_05			
 				1 = female_hair_western_03
 				1 = female_hair_western_10
 				1 = female_hair_steppe_01
@@ -969,7 +977,8 @@ special_genes = {
 
 				female = {
 					2 = female_hair_western_05 # Behind head wavy
-					2 = female_hair_indian_03 # Let out wavy with jewelry					
+					2 = female_hair_custom_01 # Let out wavy with jewelry		
+				    2 = female_hair_fp1_02					
 				}
 				boy = male
 				girl = female
@@ -1017,8 +1026,6 @@ special_genes = {
 				1 = female_hair_custom_03		
 				1 = female_hair_custom_07
 				1 = female_hair_custom_08	
-				2 = female_hair_fp1_03 # Pigtail braids
-				2 = female_hair_fp1_05 # Twin tails on chest, let out in back
 			}
 				boy = male
 				girl = female
@@ -1037,6 +1044,8 @@ special_genes = {
 			}
 
 			female = {
+				2 = female_hair_western_02 # Long wavy
+				2 = female_hair_western_05 # Behind head wavy
 				2 = female_hair_steppe_01
 				2 = female_hair_steppe_02
 				2 = female_hair_turkic_01
@@ -1044,9 +1053,7 @@ special_genes = {
 				2 = female_hair_sogdian_04
 				1 = female_hair_custom_03		
 				1 = female_hair_custom_07
-				1 = female_hair_custom_08
-				1 = female_hair_fp1_03 # Pigtail braids
-				1 = female_hair_fp1_05 # Twin tails on chest, let out in back		
+				1 = female_hair_custom_08	
 			}
 				boy = male
 				girl = female
@@ -1062,9 +1069,7 @@ special_genes = {
 
 				female = {
 					2 = female_hair_western_05 # Behind head wavy
-					2 = female_hair_indian_03 # Let out wavy with jewelry
-					2 = female_hair_fp1_03 # Pigtail braids
-					2 = female_hair_fp1_05 # Twin tails on chest, let out in back				
+					2 = female_hair_western_02 # Long wavy	
 				}
 				boy = male
 				girl = female
@@ -1312,7 +1317,10 @@ special_genes = {
 				2 = male_hair_western_07
 				2 = male_hair_western_08
 				2 = male_hair_western_09
-				# 2 = male_hair_western_10 # Tonsure 			
+				# 2 = male_hair_western_10 # Tonsure 
+				2 = male_hair_fp1_01				
+				2 = male_hair_fp1_06
+				2 = male_hair_fp1_07				
 			}
 
 			female = {
@@ -1338,7 +1346,10 @@ special_genes = {
 				2 = male_hair_western_07
 				2 = male_hair_western_08
 				2 = male_hair_western_09
-				# 2 = male_hair_western_10 # Tonsure 			
+				# 2 = male_hair_western_10 # Tonsure 	
+				2 = male_hair_fp1_01				
+				2 = male_hair_fp1_06
+				2 = male_hair_fp1_07				
 			}
 
 			female = {
@@ -1825,27 +1836,21 @@ special_genes = {
 
 			eastern_iranian_hairstyles_afro = {
 				index = 76
-			male = {
-				1 = male_hair_mena_01
-				1 = male_hair_mena_02
-				1 = male_hair_mena_03
-				1 = male_hair_mena_04
-				1 = male_hair_iranian_01
-			}
-			
-			female = {
-				2 = female_hair_sogdian_01	
-				2 = female_hair_sogdian_02	
-				2 = female_hair_sogdian_03
-				2 = female_hair_sogdian_04				
-				1 = female_hair_mena_01
-				1 = female_hair_mena_02
-				1 = female_hair_custom_03
-				1 = female_hair_custom_05
-				1 = female_hair_custom_04
-				1 = female_hair_turko_iranian_03
-				1 = female_hair_turko_iranian_01a
-			}
+				male = {
+					2 = male_hair_sub_saharan_01 # Short african 
+					2 = male_hair_sub_saharan_02 # Small afro
+					2 = male_hair_sub_saharan_03 # Short dreads
+					2 = male_hair_ethiopian_01 # Short dreads					
+				}
+				
+				female = {
+					2 = female_hair_ethiopian_03 
+					2 = female_hair_ethiopian_03_jewelry 
+					2 = female_hair_ethiopian_05_v2 				
+					2 = female_hair_sub_saharan_01 # Medium afro
+					2 = female_hair_sub_saharan_02 # Long Rasta braids
+					2 = female_hair_sub_saharan_03 # Short Rasta braids
+				}
 				boy = male
 				girl = female
 			} 

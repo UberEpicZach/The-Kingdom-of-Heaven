@@ -127,16 +127,62 @@ portrait_early_eastern_iranian_trigger = {
 #    EPE_culture_era_early_medieval_trigger = yes    
     NOT = { religion = religion:islam_religion }
     NOT = { culture = culture:saka }
-    scope:culture = { has_graphical_culture = iranian_clothing_gfx }    
+    culture = { has_graphical_culture = iranian_clothing_gfx }    
 }
 
 #Islamic Iranians
 portrait_early_islamic_iranian_trigger = {
 #   EPE_culture_era_early_medieval_trigger = yes
 	religion = religion:islam_religion	
-	scope:culture = { has_graphical_culture = iranian_clothing_gfx }	
+	culture = { has_graphical_culture = iranian_clothing_gfx }	
 }
 
+##chinese sogdians
+portrait_chinese_sogdians_trigger = {
+	has_culture = culture:sogdian 							
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east					
+						} 
+					}
+
+	}
+	trigger_if = {
+		limit = {
+			exists = host.capital_province
+			NOT = { exists = capital_province }
+		}
+		host.capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east			
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = liege.capital_province
+			NOT = { exists = capital_province }
+		}
+		liege.capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east			
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = location.province_owner.capital_province
+			NOT = { exists = capital_province }
+		}
+		location.province_owner.capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east			
+						} 
+					}
+	}
+}
 
 portrait_tahirid_trigger = {
 

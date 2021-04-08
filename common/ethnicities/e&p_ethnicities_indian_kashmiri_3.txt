@@ -38,7 +38,7 @@ indian_kashmiri_3= {
 
 	template = "ethnicity_template"
 	skin_color = {
-		10 = { 0.55 0.25 0.95 0.55 }
+		10 = { 0.35 0.25 0.95 0.55 }
 	}
 	eye_color = {
 		# Brown
@@ -80,11 +80,11 @@ indian_kashmiri_3= {
 	}
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.65 0.75 }    }
+        100 = { name = eye_height_pos    range = { 0.55 0.6 }    }
     }
 
 	gene_eye_distance = {
-	    100 = { name = eye_distance_neg    range = { 0.44 0.5 }    }
+	    100 = { name = eye_distance_neg    range = { 0.44 0.56 }    }
 	}
 	
 	gene_eye_shut = {
@@ -161,7 +161,7 @@ indian_kashmiri_3= {
         15 = { name = jaw_width_neg    range = { 0.35 0.38 }    }
         25 = { name = jaw_width_neg    range = { 0.35 0.4 }    }
         45 = { name = jaw_width_pos    range = { 0.4 0.45 }    }
-        15 = { name = jaw_width_pos    range = { 0.45 0.5 }    }	
+        15 = { name = jaw_width_pos    range = { 0.45 0.55 }    }	
     }
 	
 	gene_jaw_height = {
@@ -483,6 +483,15 @@ indian_kashmiri_3= {
 		10 = {  name = complexion_9             range = { 0.3 1.0 }     }
 		10 = {  name = complexion_10             range = { 0.3 1.0 }     }
 	}
+
+    face_detail_nose_ridge_def = {
+        50 = {  name = nose_ridge_def_pos             range = { 0.0 0.75 }     }
+        50 = {  name = nose_ridge_def_neg             range = { 0.0 0.95 }     }
+    }
+
+    face_detail_nose_tip_def = {
+        100 = {  name = nose_tip_def             range = { 0.0 0.99 }     }
+    }
 
     gene_eyebrows_shape = {
         10 = {  name = avg_spacing_avg_thickness             range = { 0.8 1.0 }     }

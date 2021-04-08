@@ -227,13 +227,15 @@ special_genes = {
 					#10 = male_beard_steppe_01 # low rough beard
 					#10 = male_beard_steppe_02 # long at chin with mustache
 					
-					5 = male_beard_western_01 # Standard full beard
-					5 = male_beard_western_02 # Standard goatee
-					5 = male_beard_western_03 # Short beard
-					5 = male_beard_western_04 # Short goatee
-					5 = male_beard_western_07
-					5 = male_beard_indian_02 # Indian pointy
-					
+					5 = male_beard_steppe_01
+					5 = male_beard_steppe_02
+					5 = male_beard_custom_01
+					5 = male_beard_custom_02
+					5 = male_beard_custom_03				 
+					5 = male_beard_steppe_01
+					5 = male_beard_steppe_02
+					5 = male_beard_turkic_01	
+			
 				}
 				female = {
 					1 = empty
@@ -245,9 +247,14 @@ special_genes = {
 
 				male = {
 					# 5 = empty
-					5 = male_beard_mena_01 # Very curly medium length full beard
-					15 = male_beard_mena_04 # Short stylish
-					5 = male_beard_western_04 # Short goatee
+					5 = male_beard_steppe_01
+					5 = male_beard_steppe_02
+					5 = male_beard_custom_01
+					5 = male_beard_custom_02
+					5 = male_beard_custom_03				 
+					5 = male_beard_steppe_01
+					5 = male_beard_steppe_02
+					5 = male_beard_turkic_01	
 					
 				}
 				female = {
@@ -395,8 +402,7 @@ special_genes = {
 				male = {
 					# 5 = empty
 					10 = male_beard_steppe_01 # low rough beard
-					10 = male_beard_steppe_02 # long at chin with mustache
-					
+					10 = male_beard_steppe_02 # long at chin with mustache	
 				}
 				female = {
 					1 = empty
@@ -500,12 +506,15 @@ special_genes = {
 				index = 22
 
 				male = {
-				5 = empty
-				10 = male_beard_steppe_01
-				10 = male_beard_custom_01	
-				10 = male_beard_custom_02
-				10 = male_beard_custom_03				
-				10 = male_beard_steppe_02		
+					1 = empty
+					5 = male_beard_steppe_01
+					5 = male_beard_steppe_02
+					5 = male_beard_custom_01
+					5 = male_beard_custom_02
+					5 = male_beard_custom_03				 
+					5 = male_beard_steppe_01
+					5 = male_beard_steppe_02
+					5 = male_beard_turkic_01	
 				}
 				female = {
 					1 = empty
@@ -580,7 +589,7 @@ special_genes = {
 ###### Turkish #######
 #######################
 
-			turkish_beards_straight = {
+			turkish_thin_beards_straight = {
 				index = 26
 
 				male = {
@@ -592,24 +601,42 @@ special_genes = {
 				5 = male_beard_custom_03				 
 				5 = male_beard_steppe_01
 				5 = male_beard_steppe_02
-				5 = western_5_mustache_bushier	
 				5 = male_beard_turkic_01				
-				5 = male_mustache_iranian_05		
 				}
 				female = {
 					1 = empty
 				}
 			}
 
-			turkish_beards_curly = {
+			turkish_beards_straight = {
 				index = 27
 
 				male = {
+				 1 = empty
+				 5 = male_beard_western_03 # Short beard
+				 5 = male_beard_fp1_02 # Short low beard				 
+				 5 = male_beard_western_05
+				 5 = male_beard_mena_04
+				 5 = mena_curled_mustache_chinstrap_01
+				 5 = mena_islamic_pointed_beard_03
+				 5 = male_mustache_iranian_05	
+				 5 = mena_islamic_pointed_beard				 
+				}
+				female = {
+					1 = empty
+				}
+			}
+			turkish_beards_curly = {
+				index = 28
+
+				male = {
 					# 5 = empty
-					5 = male_beard_steppe_02
+					5 = male_beard_western_01 # Short beard
+					5 = male_beard_western_02
+					5 = male_beard_northern_01 # Big wide
 					5 = male_mustache_iranian_05		
 					5 = male_beard_fp1_02 # Short low beard
-					5 = male_beard_western_04					
+					5 = male_beard_mena_04							
 				}
 				female = {
 					1 = empty
@@ -618,7 +645,7 @@ special_genes = {
 			
 		
 		custom_beards = {
-			index = 28
+			index = 29
 
 			male = {
 				1 = male_beard_custom_01
@@ -644,7 +671,7 @@ special_genes = {
 #######################
 
 			briton_beards_straight = {
-				index = 29
+				index = 30
 
 				male = {
 				# 30 = empty
@@ -665,7 +692,7 @@ special_genes = {
 			}
 
 			briton_beards_curly = {
-				index = 30
+				index = 31
 
 				male = {
 					# 30 = empty

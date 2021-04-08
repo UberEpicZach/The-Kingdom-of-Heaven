@@ -81,7 +81,7 @@ asian_turkic_1_seljuk = {
     }
 
     gene_eye_height = {
-        100 = { name = eye_height_pos    range = { 0.54 0.64 }    }
+        100 = { name = eye_height_pos    range = { 0.54 0.6 }    }
     }
 
     gene_eye_distance = {
@@ -230,7 +230,8 @@ asian_turkic_1_seljuk = {
     }
 
     gene_bs_eye_fold_shape = {
-        100 = { name = eye_fold_shape_neg    range = { 0.0 0.1 }    }
+        70 = { name = eye_fold_shape_neg    range = { 0.0 0.75 }    }
+        30 = { name = eye_fold_shape_pos    range = { 0.0 0.25 }    }
     }
 
     gene_bs_eye_size = {
@@ -331,7 +332,7 @@ asian_turkic_1_seljuk = {
     }
 
     gene_bs_nose_height = {
-        100 = { name = nose_height_neg    range = { 0.15 0.2 }    }
+        100 = { name = nose_height_neg    range = { 0.15 0.25 }    }
     }
 
     gene_bs_nose_length = {
@@ -343,7 +344,7 @@ asian_turkic_1_seljuk = {
     }
 
     gene_bs_nose_nostril_width = {
-        100 = { name = nose_nostril_width_pos    range = { 0.05 0.4 }    }
+        100 = { name = nose_nostril_width_pos    range = { 0.0 0.4 }    }
     }
 
     gene_bs_nose_profile = {
@@ -368,12 +369,12 @@ asian_turkic_1_seljuk = {
     }
 
     gene_bs_nose_tip_angle = {
-        60 = { name = nose_tip_angle_pos    range = { 0.0 0.25 }    }
-        40 = { name = nose_tip_angle_neg    range = { 0.0 0.1 }    }
+        30 = { name = nose_tip_angle_pos    range = { 0.0 0.15 }    }
+        70 = { name = nose_tip_angle_neg    range = { 0.0 0.5 }    }
     }
 
     gene_bs_nose_tip_forward = {
-        100 = { name = nose_tip_forward_neg    range = { 0.0 0.5 }    }
+        100 = { name = nose_tip_forward_neg    range = { 0.0 0.35 }    }
     }
 
     gene_bs_nose_tip_width = {
@@ -381,8 +382,8 @@ asian_turkic_1_seljuk = {
     }
 
     face_detail_cheek_def = {
-        50 = {  name = cheek_def_01             range = { 0.0 0.55 }     }
-        50 = {  name = cheek_def_02             range = { 0.0 0.55 }     }
+        50 = {  name = cheek_def_01             range = { 0.0 0.65 }     }
+        50 = {  name = cheek_def_02             range = { 0.0 0.65 }     }
     }
 
     face_detail_cheek_fat = {
@@ -407,8 +408,8 @@ asian_turkic_1_seljuk = {
 
     face_detail_eye_socket = {
         50 = {  name = eye_socket_01             range = { 0.0 0.75 }     }
-        25 = {  name = eye_socket_01             range = { 0.0 0.75 }     }
-        25 = {  name = eye_socket_01             range = { 0.0 0.75 }     }
+        25 = {  name = eye_socket_02             range = { 0.0 0.75 }     }
+        25 = {  name = eye_socket_03             range = { 0.0 0.75 }     }
     }
 
     face_detail_eye_lower_lid_def = {
@@ -417,18 +418,18 @@ asian_turkic_1_seljuk = {
 
     face_detail_nasolabial = {
         25 = {  name = nasolabial_01             range = { 0.0 0.55 }     }
-        25 = {  name = nasolabial_01             range = { 0.0 0.55 }     }
-        25 = {  name = nasolabial_01             range = { 0.0 0.55 }     }
-        25 = {  name = nasolabial_01             range = { 0.0 0.55 }     }
+        25 = {  name = nasolabial_02             range = { 0.0 0.55 }     }
+        25 = {  name = nasolabial_03             range = { 0.0 0.55 }     }
+        25 = {  name = nasolabial_04             range = { 0.0 0.55 }     }
     }
 
     face_detail_nose_ridge_def = {
-        45 = {  name = nose_ridge_def_neg             range = { 0.0 0.7 }     }
+        45 = {  name = nose_ridge_def_neg             range = { 0.0 0.99 }     }
         55 = {  name = nose_ridge_def_pos             range = { 0.0 0.75 }     }
     }
 
     face_detail_nose_tip_def = {
-        100 = {  name = nose_tip_def             range = { 0.0 0.9 }     }
+        100 = {  name = nose_tip_def             range = { 0.55 0.99 }     }
     }
 
     face_detail_temple_def = {
@@ -505,11 +506,11 @@ asian_turkic_1_seljuk = {
     }
 
     gene_hair_type = {
-        75 = {  name = hair_straight             range = { 0.35 0.75 }     }
+        40 = {  name = hair_straight             range = { 0.35 0.75 }     }
         0 = {  name = hair_wavy             range = { 0.35 0.75 }     }
-        15 = {  name = hair_curly             range = { 0.35 0.75 }     }
+        0 = {  name = hair_curly             range = { 0.35 0.75 }     }
         0 = {  name = hair_afro             range = { 0.35 0.75 }     }
-        10 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
+        60 = {  name = hair_straight_thin_beard             range = { 0.35 0.75 }     }
     }	
 
 	eyelashes_accessory = {

@@ -17,6 +17,7 @@
 		activity_owner = {
 			#Start by setting the "host spouse"
 			
+			
 		}
 	}
 	on_activate = {
@@ -30,10 +31,11 @@
 				}
 			}
 			# If there are no other guests, throw this event.
-			activity_owner = {
-				trigger_event = feast.2003
-			}
+			#activity_owner = {
+			#	trigger_event = feast.2003
+			#}
 		}
+		
 		else = {
 		# If there are guests present
 			activity_owner = { # The host gets their events
