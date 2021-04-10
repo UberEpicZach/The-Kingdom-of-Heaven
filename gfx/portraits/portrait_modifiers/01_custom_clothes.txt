@@ -34,9 +34,6 @@
 		template = western_war_nobility_clothes
 	}
 
-
-
-
 	add_accessory_modifiers = {
 		gene = clothes
 		template = fp1_commoner_clothes
@@ -69,15 +66,13 @@
 		}
 	}
 
-
-
-	# add_accessory_modifiers = {
-	# 	gene = clothes
-	# 	is_valid_custom = {
-	# 		highest_held_title_tier > tier_kingdom
-	# 	}
-	# 	template = western_imperial_clothes
-	# }
+	add_accessory_modifiers = {
+	 	gene = clothes
+	 	#is_valid_custom = {
+	 	#	highest_held_title_tier > tier_kingdom
+	 	#}
+	 	template = western_imperial_clothes
+	}
 
 	add_accessory_modifiers = {
 		gene = clothes
@@ -198,8 +193,6 @@
 		gene = clothes
 		template = indian_war_nobility_clothes
 	}
-	
-	
 
 	add_accessory_modifiers = {
 		gene = clothes
@@ -563,22 +556,9 @@
 		gene = clothes
 		template = hre_knight_clothes
 	}	
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	add_accessory_modifiers = {
+		gene = clothes
+		template = hungarian_knight_clothes
+	}	
 
 }

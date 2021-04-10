@@ -6,15 +6,12 @@
     }
 }
 
-
 portrait_shipwrecked = {
     has_character_flag = shipwrecked
 }
 
 portrait_ayyubid_clothing_trigger = {
-	culture = {
-        has_graphical_culture = ayyubid_clothing_gfx 
-    }
+	culture = { has_graphical_culture = ayyubid_clothing_gfx }
 }
 
 portrait_saladin_trigger = {
@@ -55,57 +52,6 @@ portrait_tamar_trigger = {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 portrait_han_clothing_trigger = {
 	culture = { has_graphical_culture = han_clothing_gfx }
@@ -221,6 +167,31 @@ portrait_ibelin_trigger = {
         AND = {
             has_council_position = councillor_marshal
             is_councillor_of = title:c_ibelin.holder
+            is_alive = yes
+            age >= 18
+        }
+    }
+}
+
+portrait_hungary_trigger = {
+    OR = {
+        liege = {
+            AND = {
+                has_title = title:k_hungary
+                has_religion = religion:christianity_religion
+            }
+        }
+
+        AND = {
+            is_knight_of = title:k_hungary.holder
+            is_male = yes
+            is_alive = yes
+            age >= 18
+        }
+
+        AND = {
+            has_council_position = councillor_marshal
+            is_councillor_of = title:k_hungary.holder
             is_alive = yes
             age >= 18
         }

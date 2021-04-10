@@ -2,18 +2,51 @@
 ###################
 # Populations
 ###################
-county_population = {
-	value = total_county_levies
-	multiply = county.development_level
+county_population_1 = {
+    value = total_county_levies
+    multiply = county.development_level
+    if = {
+		limit = {
+			this = title:c_ile_de_france
+			}
+		add = 100
+	}
+	else_if = {
+		limit = {
+			this = title:c_byzantion
+			}
+		add = 309492
+	}
+    else_if = {
+		limit = {
+			this = title:c_roma 
+			}
+		add = -20000
+	}
+	else_if = {
+		limit = {
+			this = title:c_fes
+			}
+		add = 10000
+	}
+	else = {
+		add = 10
+	}
+	# else_if = {
+	# 	limit = {
+	# 		this = title:c_roma
+	# 		}
+	# 	add = 10000
+	# }
+	# else_if = {
+	# 	limit = {
+	# 		this = title:c_roma
+	# 		}
+	# 	add = 10000
+	# }
 }
 
-county_population_lower = {
-	value = "[Holding.GetMaxLevySize|0]"
-}
-county_population_middle = {
-	value = 0
-	add = {
-		value = "HOLDING_LEVY_SIZE"
-		multiply = "[HoldingView.GetProvince.GetCounty.GetDevelopmentLevelString]"
-	}
+county_population = {
+    value = county_population_1
+    multiply = 1  #or whatever get us to a proper number
 }
