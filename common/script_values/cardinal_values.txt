@@ -1,0 +1,162 @@
+﻿### Balancing parameters
+## Election Score parameters
+# Sins and Virtue parameters
+cardinal_score_per_virtue 								= 15
+cardinal_score_per_sin 									= -15
+excommunicated_counts_as_this_many_sins 				= 3
+
+# General character stat parameters
+# If these are set to zero, then the corresponding contribution will never show up in the breakdown.
+cardinal_score_per_piety 								= 0.1
+cardinal_score_per_gold 								= 0 				# Disabled by default
+cardinal_score_per_prestige 							= 0 				# Disabled by default
+cardinal_score_per_learning 							= 2
+
+# The following don't get disabled by setting them to 0
+cardinal_score_per_age 									= 3
+cardinal_score_location_rome 							= 100
+cardinal_score_location_holy_site 						= 50
+cardinal_score_culture 									= 200
+cardinal_score_culture_group 							= 50
+cardinal_score_per_popinion 							= 3.5
+cardinal_score_per_campaign_contribution 				= 1
+dynasty_prestige_per_cardinal_score 					= 40
+
+# Election Campaign parameters
+cardinal_campaign_contribution_invest_cost 				= 500
+cardinal_campaign_contribution_divest_refund 			= 250
+cardinal_score_per_campaign_contribution 				= 0.1
+
+# Beneficiary rewards
+cardinal_election_beneficiary_reward_threshold_per_tier = 500 # How much gold should be contributed to qualify for a favor hook and piety?
+cardinal_election_piety_for_beneficiary 				= 50	# How much piety does the beneficiary gain when their bishop is successfully elected cardinal?
+
+# Secular power parameters
+cardinal_secular_power_multiplier 						= 1
+cardinal_county_bonus  									= 60
+cardinal_duchy_bonus   									= 110
+cardinal_kingdom_bonus 									= 120
+cardinal_empire_bonus 									= 130
+
+# Theocratic power parameters
+cardinal_theocratic_power_multiplier 					= 1
+cardinal_realm_priest_to_count 							= 15
+cardinal_realm_priest_to_duke 							= 30
+cardinal_realm_priest_to_king 							= 55
+cardinal_realm_priest_to_emperor 						= 60
+
+
+# Restated vanilla keys to fetch in loc
+cardinal_virtue_count 			= {value = num_virtuous_traits}
+cardinal_sin_count 				= {value = num_sinful_traits}
+cardinal_campaign_contribution 	= {value = 0 if = {limit = {exists = var:cardinal_campaign_contribution} add = var:cardinal_campaign_contribution}}
+
+# Summary values
+bishop_to_cardinal_base_score = {
+	value = 0
+	add = cardinal_piety_bonus
+	add = cardinal_gold_bonus
+	add = cardinal_prestige_bonus
+	add = cardinal_learning_bonus
+	add = cardinal_age_bonus
+	add = cardinal_dynasty_bonus
+	add = cardinal_location_bonus
+	add = cardinal_culture_bonus
+	add = cardinal_virtue_bonus
+	add = cardinal_sin_penalty
+	add = cardinal_popinion_bonus
+	add = cardinal_secular_power_bonus
+	add = cardinal_theocratic_power_bonus
+}
+bishop_to_cardinal_score = {
+	value = bishop_to_cardinal_base_score
+	add = cardinal_money_bonus
+}
+cardinal_to_pope_score = {
+	value = bishop_to_cardinal_base_score
+}
+# Subterms
+cardinal_piety_bonus = {
+	value = piety
+	multiply = cardinal_score_per_piety
+}
+cardinal_gold_bonus = { # Disabled by default
+	value = gold
+	multiply = cardinal_score_per_gold
+}
+cardinal_prestige_bonus = { # Disabled by default
+	value = prestige
+	multiply = cardinal_score_per_prestige
+}
+cardinal_learning_bonus = {
+	value 	 = learning
+	multiply = cardinal_score_per_learning
+}
+cardinal_age_bonus = {
+	value 	 = age
+	multiply = cardinal_score_per_age
+}
+cardinal_dynasty_bonus = {
+	value = 0
+	if = 		{limit = {exists = this exists = dynasty} 	add = {value = dynasty.dynasty_prestige divide = dynasty_prestige_per_cardinal_score}}
+}
+cardinal_location_bonus = {
+	value = 0
+	if = 		{limit = {location.county = title:c_roma} 							add = cardinal_score_location_rome}
+	else_if = 	{limit = {location.barony = {is_holy_site_of = faith:catholic}}		add = cardinal_score_location_holy_site}
+}
+cardinal_culture_bonus = {
+	value = 0
+	if = 		{limit = {culture = title:c_roma.culture} 						add = cardinal_score_culture}
+	else_if = 	{limit = {culture_group = title:c_roma.culture.culture_group} 	add = cardinal_score_culture_group}
+}
+cardinal_virtue_bonus = {
+	value = num_virtuous_traits
+	multiply = cardinal_score_per_virtue
+}
+cardinal_sin_penalty = {
+	value = num_sinful_traits
+	if = {limit = {exists = this has_trait = excommunicated} add = excommunicated_counts_as_this_many_sins}
+	multiply = cardinal_score_per_sin
+}
+cardinal_popinion_bonus = {
+	value = 0
+	if = {
+		limit = {
+			save_temporary_opinion_value_as = {
+				name = popinion
+				target = faith:catholic.religious_head_title.holder
+			}
+			exists = scope:popinion
+		}
+		add = scope:popinion multiply = cardinal_score_per_popinion
+	}
+}
+cardinal_money_bonus = {
+	value = 0
+	if = {limit = {exists = var:cardinal_campaign_contribution} add = var:cardinal_campaign_contribution}
+	multiply = cardinal_score_per_campaign_contribution
+}
+
+cardinal_secular_power_bonus = {
+	value = 0
+	if = {
+		limit = {is_landed = yes}
+		if 		= {limit = {highest_held_title_tier = tier_county} 	add = cardinal_county_bonus}
+		else_if = {limit = {highest_held_title_tier = tier_duchy} 	add = cardinal_duchy_bonus}
+		else_if = {limit = {highest_held_title_tier = tier_kingdom} add = cardinal_kingdom_bonus}
+		else_if = {limit = {highest_held_title_tier = tier_empire} 	add = cardinal_empire_bonus}
+	}
+	multiply = cardinal_secular_power_multiplier
+}
+cardinal_theocratic_power_bonus = {
+	value = 0
+	if = {
+		limit = {is_councillor = yes}
+		if 		= {limit = {court_owner.highest_held_title_tier = tier_county} 	add = cardinal_realm_priest_to_count}
+		else_if = {limit = {court_owner.highest_held_title_tier = tier_duchy} 	add = cardinal_realm_priest_to_duke}
+		else_if = {limit = {court_owner.highest_held_title_tier = tier_kingdom} add = cardinal_realm_priest_to_king}
+		else_if = {limit = {court_owner.highest_held_title_tier = tier_empire} 	add = cardinal_realm_priest_to_emperor}
+	}
+	multiply = cardinal_theocratic_power_multiplier
+}

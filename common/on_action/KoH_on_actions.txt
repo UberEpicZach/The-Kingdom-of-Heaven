@@ -10,6 +10,148 @@
 	}
 }
 
+KOH_holy_orders = {
+	effect = {
+		character:223523 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.1 #Templar Creation
+					days = -1
+				}
+			}
+		}
+	 	character:223523 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.2 #Hospitaller Creation
+					days = -1
+				}
+			}
+		}
+		character:207510 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.5 #Calvatra Creation
+					days = -1
+				}
+			}
+		}
+		character:207510 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.7 #Santigo creation
+					days = -1
+				}
+			}
+		}
+
+		character:227012 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.102 #Assassin Buffs
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+on_game_start_after_lobby = {
+	on_actions = {
+		on_cardinal_initialize
+		KOH_holy_orders
+	}
+}
+
+on_title_gain = {
+	on_actions = {
+		on_gain_papacy
+	}
+}
+
+on_cardinal_initialize = {
+	effect = {
+		initialize_nine_random_cardinals = yes
+		update_preferatus = yes
+	}
+}
+
+on_death = {
+	on_actions = {
+		on_cardinal_death
+		on_pope_death
+	}
+}
+
+on_cardinal_death = {
+	trigger = {
+		owns_story_of_type = cardinal_story
+	}
+	effect = {
+	}
+}
+on_pope_death = {
+	trigger = {
+		is_pope = yes
+	}
+	effect = {
+		update_preferatus = yes
+		#set_designated_heir = global_var:preferatus.story_owner
+		global_var:preferatus.story_owner = {depose = yes}
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = papal_inheritance
+		}
+		every_held_title = {
+			limit = {
+				tier > tier_barony
+			}
+			every_player = {
+				add_prestige = 1
+			}
+			change_title_holder = {
+				holder = global_var:preferatus.story_owner
+				change = scope:papal_inheritance
+			}
+		}
+		resolve_title_and_vassal_change = scope:papal_inheritance
+		global_var:preferatus = {
+			promote_new_cardinal = yes
+		}
+#		update_preferatus = yes
+#		predict_new_cardinal = yes
+		dummy_male = {update_cardinal_window = yes}
+		#setup_cardinal_activity = yes
+	}
+}
+
+on_gain_papacy = {
+	trigger = {
+		scope:title = title:k_papal_state
+	}
+	effect = {
+		every_player = {add_gold = 1}
+		if = {limit = {is_cardinal = yes} every_player = {add_piety = 1}}
+	}
+}
+
 #KOH_investiture = {
 #	effect = { 
 #		every_ruler = {
@@ -91,7 +233,7 @@ KOH_Italian_Familes_Monthly = {
 			limit = {
 				AND = {
 					is_landed = yes
-					has_dynasty_modifier = dynasty_guelph
+					dynasty = { has_dynasty_modifier = dynasty_guelph }
 					is_adult = yes
 					is_female = no
 				}
@@ -104,7 +246,7 @@ KOH_Italian_Familes_Monthly = {
 			limit = {
 				AND = {
 					is_landed = yes
-					has_dynasty_modifier = dynasty_ghibelline
+					dynasty = { has_dynasty_modifier = dynasty_ghibelline }
 					is_adult = yes
 					is_female = no
 				}
@@ -158,65 +300,6 @@ KOH_ON_START = {
 					days = 1 
 					}
 			} 
-		}
-
-		character:223523 = {
-			if = {
-				limit = {
-					is_alive = yes
-					is_landed = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.1 #Templar Creation
-					days = -1
-				}
-			}
-		}
-	 	character:223523 = {
-			if = {
-				limit = {
-					is_alive = yes
-					is_landed = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.2 #Hospitaller Creation
-					days = 2
-				}
-			}
-		}
-		character:207510 = {
-			if = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.5 #Calvatra Creation
-					days = 3
-				}
-			}
-		}
-		character:207510 = {
-			if = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.7 #Santigo creation
-					days = 4
-				}
-			}
-		}
-
-		character:227012 = {
-			if = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.102 #Assassin Buffs
-					days = 1
-				}
-			}
 		}
 
 		character:204510 = {

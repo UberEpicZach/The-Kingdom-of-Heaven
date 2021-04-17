@@ -1,0 +1,76 @@
+﻿refresh_cardinal_characters = {
+	scope = character
+	effect = {
+		update_cardinal_window = yes
+	}
+}
+
+cardinal = {
+	scope = character
+	is_shown = {
+		is_cardinal = yes
+	}
+}
+not_cardinal = {
+	scope = character
+	is_shown = {
+		is_cardinal = no
+	}
+}
+
+refresh_cardinal_character = {
+	scope = story
+	effect = {
+		set_variable = {name = owner value = story_owner}
+	}
+}
+invest_in_cardinal = {
+	scope = character
+	saved_scopes = {
+		player
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					exists = var:cardinal_campaign_contribution
+				}
+			}
+			set_variable = {name = cardinal_campaign_contribution value = 0}
+		}
+		change_variable = {name = cardinal_campaign_contribution add = cardinal_campaign_contribution_invest_cost}
+		scope:player = {remove_short_term_gold = cardinal_campaign_contribution_invest_cost}
+
+		update_preferatus = yes
+		predict_new_cardinal = yes
+		set_variable = {
+			name = beneficiary
+			value = scope:player
+		}
+	}
+	is_valid = {
+		scope:player.gold > cardinal_campaign_contribution_invest_cost
+		is_cardinal = no
+	}
+}
+divest_from_cardinal = {
+	scope = character
+	saved_scopes = {
+		player
+	}
+	effect = {
+		change_variable = {name = cardinal_campaign_contribution subtract = cardinal_campaign_contribution_invest_cost}
+		scope:player = {add_gold = cardinal_campaign_contribution_divest_refund}
+		update_preferatus = yes
+		predict_new_cardinal = yes
+		if = {limit = {var:cardinal_campaign_contribution <= cardinal_campaign_contribution_invest_cost} remove_variable = beneficiary}
+	}
+	is_valid = {
+		exists = var:cardinal_campaign_contribution
+		is_cardinal = no
+		var:cardinal_campaign_contribution >= cardinal_campaign_contribution_divest_refund
+	}
+}
+# Defaults from Tobbzn's original version as a reminder:
+#cardinal_campaign_contribution_invest_cost = 500
+#cardinal_campaign_contribution_divest_refund = 250

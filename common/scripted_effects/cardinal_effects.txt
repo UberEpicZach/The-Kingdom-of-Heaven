@@ -1,0 +1,193 @@
+﻿become_cardinal = {
+	random_in_global_list = {
+		variable = cardinals
+		limit = {story_owner = {is_alive = no}}
+		make_story_owner = prev
+		prev = {
+			set_variable = {
+				name = cardinal_story
+				value = prev
+			}
+		}
+	}
+	add_trait = cardinal
+}
+become_initial_cardinal = {
+	create_story = cardinal_story
+}
+setup_cardinal_activity = {
+	update_preferatus = yes
+	title:k_papal_state.holder = {set_designated_heir = global_var:preferatus.story_owner}
+	#title:b_vaticano.title_province = {spawn_activity = { owner = global_var:preferatus.story_owner type = cardinal_activity}}
+}
+update_preferatus = {
+	ordered_in_global_list = {
+		limit = {exists = this}
+		variable = cardinals
+		order_by = story_owner.cardinal_to_pope_score
+		position = 0
+		set_global_variable = {
+			name = preferatus
+			value = this
+		}
+		dummy_male = {
+			set_variable = {
+				name = preferatus
+				value = prev
+			}
+		}
+	}
+}
+select_highest_scoring_cardinal_candidate = {
+	ordered_cardinal_candidate_ruler = {
+		order_by = bishop_to_cardinal_score
+		position = 0
+		add_to_list = highest_scoring_cardinal_candidates
+	}
+	ordered_ruler_with_potential_cardinal = {
+		order_by = realm_priest.bishop_to_cardinal_score
+		position = 0
+		realm_priest = {add_to_list = highest_scoring_cardinal_candidates}
+	}
+	ordered_in_list = {
+		limit = {exists = this}
+		list = highest_scoring_cardinal_candidates
+		order_by = bishop_to_cardinal_score
+		position = 0
+		save_scope_as = highest_scoring_cardinal_candidate
+	}
+	
+}
+select_highest_scoring_player_cardinal_candidate = {
+	ordered_cardinal_candidate_vassal = {
+		order_by = bishop_to_cardinal_score
+		position = 0
+		add_to_list = highest_scoring_player_cardinal_candidates
+	}
+	if = {
+		limit = {exists = realm_priest}
+		realm_priest = {add_to_list = highest_scoring_player_cardinal_candidates}
+	}
+	ordered_in_list = {
+		limit = {exists = this}
+		list = highest_scoring_player_cardinal_candidates
+		order_by = bishop_to_cardinal_score
+		position = 0
+		save_scope_as = highest_scoring_player_cardinal_candidate
+	}
+	set_variable = {
+		name = cardinal_player_candidate
+		value = scope:highest_scoring_player_cardinal_candidate
+	}
+}
+promote_new_cardinal = {
+#Scope: The cardinal story to replace the owner of
+	#save_scope_as = cardinal_story
+	#ordered_cardinal_candidate_ruler = {
+	#	order_by = bishop_to_cardinal_score
+	#	position = 0
+	#	prev = {make_story_owner = prev}
+	#}
+	#ordered_in_list = {
+	#	list = cardinal_candidates
+	#}
+	select_highest_scoring_cardinal_candidate = yes
+	make_story_owner = scope:highest_scoring_cardinal_candidate
+	scope:highest_scoring_cardinal_candidate = {
+		if = {
+			limit = {
+				exists = var:beneficiary
+				var:cardinal_campaign_contribution.compare_value >= {
+					value = cardinal_election_beneficiary_reward_threshold_per_tier 
+					multiply = var:beneficiary.highest_held_title_tier
+				}
+			}
+			var:beneficiary = {
+				add_hook = { type = favor_hook target = prev years = 10 } 
+				add_piety = cardinal_election_piety_for_beneficiary
+			}
+		}
+	}
+}
+predict_new_cardinal = {
+	select_highest_scoring_cardinal_candidate = yes
+	dummy_male = {
+		set_variable = {
+			name = predicted_cardinal
+			value = scope:highest_scoring_cardinal_candidate
+		}
+	}
+	#ordered_in_list = {
+	#	list = cardinal_candidates
+	#}
+}
+#spawn_activity = { owner = X type = Y}
+
+#			prev = {remove_list_variable = {name = cardinals target = prev}}
+#		}
+#		add_to_variable_list = {
+#			name = cardinals
+#			target = prev
+
+initialize_random_cardinal = {
+	ordered_cardinal_candidate_ruler = {
+		order_by = bishop_to_cardinal_score
+		position = 0
+		#realm_priest = {
+		become_initial_cardinal = yes 
+		add_piety = 100
+		#}
+	}
+}
+initialize_nine_random_cardinals = {
+	initialize_random_cardinal = yes
+	initialize_random_cardinal = yes
+	initialize_random_cardinal = yes
+	initialize_random_cardinal = yes
+	initialize_random_cardinal = yes
+	initialize_random_cardinal = yes
+	initialize_random_cardinal = yes
+	initialize_random_cardinal = yes
+	initialize_random_cardinal = yes
+}
+indicate_cardinals = {
+	every_in_global_list = {
+		variable = cardinals
+		story_owner = {add_piety = 1}
+	}
+}
+cardinal_test = {
+	every_cardinal = {
+		story_owner = {
+			add_piety = 1
+		}
+	}
+	every_living_cardinal = {
+		add_prestige = 1
+	}
+}
+update_cardinal_window = {
+	update_preferatus = yes
+	predict_new_cardinal = yes
+	set_variable = {
+		name = preferatus_character
+		value = global_var:preferatus.story_owner
+	}
+	clear_variable_list = cardinal_characters
+	every_in_global_list = {
+		variable = cardinals
+		prev = {
+			add_to_variable_list = {
+				name = cardinal_characters
+				target = prev.story_owner
+			}
+		}
+	}
+	remove_list_variable = {
+		name = cardinal_characters target = global_var:preferatus.story_owner
+	}
+	every_player = {
+		limit = {ruler_has_cardinality_eligible_realm_priest = yes}
+		select_highest_scoring_player_cardinal_candidate = yes
+	}
+}

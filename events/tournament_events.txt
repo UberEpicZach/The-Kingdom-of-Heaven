@@ -1,0 +1,2639 @@
+### Deadlier Tournaments
+namespace = KOH_Tournaments
+# Invitation
+KOH_Tournaments.1000 = {
+	type = character_event
+	title = KOH_Tournaments.1000.t
+	desc = KOH_Tournaments.1000.d
+	theme = war
+
+	trigger = {
+		NOT = { has_character_flag = had_event_KOH_Tournaments.1 }
+	}
+
+	option = {
+		name = KOH_Tournaments.1000.a
+		add_add_prestige = 50
+		add_character_flag = attending_tournament
+		hidden_effect = { trigger_event = { id = KOH_Tournaments.1000 days = 300 } } # Safety catch flag clearing
+	}
+	option = {
+		name = KOH_Tournaments.1000.b
+		
+	}
+}
+
+# Start of tournament
+KOH_Tournaments.1001 = {
+	type = character_event
+	title = KOH_Tournaments.1001.t
+	desc = KOH_Tournaments.1001.d
+	theme = war
+
+	option = {
+		name = KOH_Tournaments.1001.a
+		trigger = {
+			is_at_war = no
+		}
+		hidden_effect = {
+
+			add_character_flag = tournament_begins
+			add_character_flag = tournament_60_days
+			add_character_flag = attending_tournament
+
+
+			clear_variable_list = your_realm_peeps
+			every_vassal_or_below = {
+					add_to_variable_list = {
+						name = your_realm_peeps
+						target = prev
+					}
+			}
+			every_courtier = {
+					add_to_variable_list = {
+						name = your_realm_peeps
+						target = prev
+					}
+				
+			}
+			every_close_or_extended_family_member = {
+			
+					add_to_variable_list = {
+						name = your_realm_peeps
+						target = prev
+					}
+		
+			}
+
+			
+			every_in_list = {
+				variable = your_realm_peeps
+				limit = {
+					has_character_flag = attending_tournament
+				}
+				trigger_event = {  id = KOH_Tournaments.1050 days = 1 }
+				#Set score
+				trigger_event = { id = KOH_Tournaments.1060 days = 46 }
+			}
+			
+			
+			#Injuries
+		
+			every_in_list = {
+				variable = your_realm_peeps
+				limit = {
+					has_character_flag = attending_tournament
+				}
+				trigger_event = { id = KOH_Tournaments.1050 days = 1 }
+				#Set score
+				trigger_event = { id = KOH_Tournaments.1060 days = 46 }
+			}
+			#select winner
+			trigger_event = { 	id = KOH_Tournaments.1061 days = 48 }
+			#select runner up
+			trigger_event = { 	id = KOH_Tournaments.1062 days = 49 }
+			#select third place
+			trigger_event = { 	id = KOH_Tournaments.1063 days = 50 }
+			#Notify winners
+			trigger_event = { 	id = KOH_Tournaments.1064 days = 51 }
+		}
+	}
+	option = {
+		name = KOH_Tournaments.1001.b
+		add_gold = 200
+		add_prestige = -100
+	
+		every_in_list = {
+			variable = your_realm_peeps
+			limit = {
+				has_character_flag = attending_tournament
+			}
+			trigger_event = { 	id = KOH_Tournaments.1037 }
+		}
+		remove_character_flag = epic_tournament
+		remove_character_flag = do_not_disturb
+		remove_character_flag = attending_tournament
+	}
+}
+
+# Tournament has been cancelled
+KOH_Tournaments.1037 = {
+	type = character_event
+	title = KOH_Tournaments.1037.t
+	desc = KOH_Tournaments.1037.d
+	theme = war
+	option = {
+		name = KOH_Tournaments.1037.a
+		add_prestige = -50
+		remove_character_flag = attending_tournament
+		remove_character_flag = do_not_disturb
+	}
+}
+
+# Message about death
+KOH_Tournaments.1038 = {
+	type = character_event
+	title = KOH_Tournaments.1038.t
+	desc = KOH_Tournaments.1038.d
+	theme = war
+	trigger = {
+		NOT = { has_character_flag = no_msg_death }
+		NOT = { has_character_flag = tournament_has_ended }
+	}
+
+	option = {
+		name = KOH_Tournaments.1038.a
+	}
+	option = {
+		name = KOH_Tournaments.4.b
+		add_character_flag = no_msg_death
+	}
+}
+
+# Message about maimed
+KOH_Tournaments.1039 = {
+	type = character_event
+	title = KOH_Tournaments.1039.t
+	desc = KOH_Tournaments.1039.d
+	theme = war
+	trigger = {
+		NOT = { has_character_flag = no_msg_maimed }
+		NOT = { has_character_flag = tournament_has_ended }
+	}
+
+	option = {
+		name = KOH_Tournaments.1039.b
+	}
+	option = {
+		name = KOH_Tournaments.1039.b
+		add_character_flag = no_msg_maimed
+	}
+}
+
+# Message about wounded
+KOH_Tournaments.1040 = {
+
+	title = KOH_Tournaments.1040.t
+	desc = KOH_Tournaments.1040.d
+	theme = war
+	trigger = {
+		NOT = { has_character_flag = no_msg_wounded }
+		NOT = { has_character_flag = tournament_has_ended }
+	}
+
+	option = {
+		name = KOH_Tournaments.1040.a
+	}
+	option = {
+		name = KOH_Tournaments.1040.b
+		add_character_flag = no_msg_wounded
+	}
+}
+
+# Tournament is over
+KOH_Tournaments.1002 = {
+	type = character_event
+	title = KOH_Tournaments.1002.t
+	desc = KOH_Tournaments.1002.d
+	theme = war
+	option = {
+		name = KOH_Tournaments.1002.a
+		custom_tooltip = KOH_Tournaments.1002.a.tt
+		remove_character_flag = tournament_60_days
+		remove_character_flag = tournament_begins
+		remove_character_flag = attending_tournament
+		remove_character_flag = attending_tournament_event
+		remove_character_flag = do_not_disturb
+		remove_character_flag = tournament_third_place
+		remove_character_flag = tournament_second_place
+		remove_character_flag = tournament_winner
+		add_character_flag = tournament_has_ended
+		clear_variable_list = your_realm_peeps
+		every_vassal_or_below = {
+	
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			}
+		}
+		every_courtier = {
+	
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			}
+		}
+		every_close_or_extended_family_member = {
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			}
+		}
+
+		every_in_list = {
+			variable = your_realm_peeps
+			limit = {
+				has_character_flag = attending_tournament
+			}
+			add_character_flag = tournament_has_ended
+			remove_character_flag = tournament_third_place
+			remove_character_flag = tournament_second_place
+			remove_character_flag = tournament_winner
+			hidden_effect = {
+				add_add_opinion = {
+					modifier = pleased_opinion
+					target = root
+				}
+			}
+			remove_character_flag = attending_tournament
+			remove_character_flag = attending_tournament_event
+			remove_character_flag = do_not_disturb
+		}
+		every_in_list = {
+			variable = your_realm_peeps
+			limit = {
+				has_character_flag = attending_tournament
+				NOT = {
+					character = root
+				}
+				NOT = {
+					has_character_flag = tournament_third_place
+				}
+				NOT = {
+					has_character_flag = tournament_second_place
+				}
+				NOT = {
+					has_character_flag = tournament_winner
+				}
+			}
+			hidden_effect = {
+				random_list = {
+					10 = {
+						trigger_event = { id = KOH_Tournaments.1003 }
+					}
+					10 = {
+						trigger_event = { id = KOH_Tournaments.1004 }
+					}
+					10 = {
+						trigger_event = { id = KOH_Tournaments.1005 }
+					}
+					10 = {
+						trigger_event = { id = KOH_Tournaments.1006 }
+					}
+					10 = {
+						trigger_event = { id = KOH_Tournaments.1007 }
+					}
+					10 = {
+						trigger_event = { id = KOH_Tournaments.1008 }
+					}
+				}
+				add_add_opinion = {
+					modifier = pleased_opinion
+					who = PREV
+				}
+				add_character_flag = tournament_has_ended
+				remove_character_flag = attending_tournament
+				remove_character_flag = attending_tournament_event
+				remove_character_flag = do_not_disturb
+				remove_character_flag = tourney_score_15
+				remove_character_flag = tourney_score_14
+				remove_character_flag = tourney_score_13
+				remove_character_flag = tourney_score_12
+				remove_character_flag = tourney_score_11
+				remove_character_flag = tourney_score_10
+				remove_character_flag = tourney_score_09
+				remove_character_flag = tourney_score_08
+				remove_character_flag = tourney_score_07
+				remove_character_flag = tourney_score_06
+				remove_character_flag = tourney_score_05
+				remove_character_flag = tourney_score_04
+				remove_character_flag = tourney_score_03
+				remove_character_flag = tourney_score_02
+				remove_character_flag = tourney_score_01
+				remove_character_flag = tourney_score_00
+			}
+		}
+	}
+}
+
+# End of tournament event
+KOH_Tournaments.1003 = {
+	type = character_event
+	title = KOH_Tournaments.1003.t
+	desc = KOH_Tournaments.1003.d
+	theme = war
+
+	option = {
+		name = KOH_Tournaments.1003.a
+		add_prestige = 50
+	}
+}
+
+# End of tournament event
+KOH_Tournaments.1004 = {
+	type = character_event
+	title = KOH_Tournaments.1004.t
+	desc = KOH_Tournaments.1004.d
+	theme = war
+	option = {
+		name = KOH_Tournaments.1004.a
+		add_prestige = 100
+	}
+}
+
+# End of tournament event
+KOH_Tournaments.1005 = {
+		type = character_event 
+	title = KOH_Tournaments.1005.t
+	desc = KOH_Tournaments.1005.d
+	theme = war
+	option = {
+		name = KOH_Tournaments.1005.a
+		add_prestige = -50
+	}
+}
+
+# End of tournament event
+KOH_Tournaments.1006 = {
+	type = character_event 
+	title = KOH_Tournaments.1006.t
+	desc = KOH_Tournaments.1006.d
+	theme = war
+	option = {
+		name = KOH_Tournaments.1006.a
+		add_prestige = -100
+	}
+}
+
+# End of tournament event
+KOH_Tournaments.1007 = {
+		type = character_event
+	title = KOH_Tournaments.1007
+	desc = KOH_Tournaments.1007
+	theme = war
+	option = {
+		name = KOH_Tournaments.1007.a
+		add_martial_skill = 1
+	}
+}
+
+# End of tournament event
+KOH_Tournaments.1008 = {
+		type = character_event 
+	title = KOH_Tournaments.1008.t
+	desc = KOH_Tournaments.1008.d
+	theme = war
+	option = {
+		name = KOH_Tournaments.1008.a
+		add_martial_skill = -1
+	}
+}
+
+# Character is killed
+KOH_Tournaments.1009 = {
+		type = character_event
+	title = KOH_Tournaments.1009.t
+	desc = KOH_Tournaments.1009.d 
+	theme = war
+	trigger = {
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+	immediate = {
+		remove_character_flag = attending_tournament
+	}
+
+	option = {
+		name = KOH_Tournaments.1009.a
+		death = {
+			death_reason = death_jousting_tournament
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					top_liege = {
+						NOT = {
+							character = ROOT
+						}
+					}
+				}
+				top_liege = { trigger_event = KOH_Tournaments.1038 }
+			}
+		}
+	}
+}
+
+# Character is maimed
+KOH_Tournaments.1010 = {
+		type = character_event
+	title = KOH_Tournaments.1010,t
+	desc = KOH_Tournaments.1010.d
+	theme = war
+
+	trigger = {
+		AND = {
+			has_character_flag = attending_tournament
+			NOT = {
+				has_trait = maimed
+			}
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+			top_liege = {
+				has_character_flag = tournament_begins
+				NOT = {
+					has_character_flag = tournament_has_ended
+				}
+			}
+		}
+	}	
+
+	immediate = {
+		remove_character_flag = attending_tournament
+		remove_character_flag = do_not_disturb
+	}
+
+	option = {
+		name = KOH_Tournaments.1010.a
+		add_trait = maimed
+		hidden_effect = {
+			if = {
+				limit = {
+					top_liege = {
+						NOT = {
+							character = ROOT
+						}
+					}
+				}
+				top_liege = { trigger_event = { id = KOH_Tournaments.1039 } }
+			}
+		}
+	}
+}
+
+# Character is wounded
+KOH_Tournaments.1011 = {
+	type = character_event
+	title = KOH_Tournaments.1011.t
+	desc = KOH_Tournaments.1011.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = {
+			has_trait = wounded
+		}
+		NOT = {
+			has_trait = maimed
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1011.a
+		add_trait = wounded
+		hidden_tooltip = {
+			if = {
+				limit = {
+					top_liege = {
+						NOT = {
+							character = ROOT
+						}
+					}
+				}
+				top_liege = { trigger_event = { 	id = KOH_Tournaments.1040 } }
+			}
+		}
+	}
+}
+
+# Character becomes craven
+KOH_Tournaments.1012 = {
+		type = character_event
+	title = KOH_Tournaments.1012.t
+	desc = KOH_Tournaments.1012.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = {
+			has_trait = craven
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1012
+		add_trait = craven
+	}
+}
+
+# Character becomes brave
+KOH_Tournaments.1013 = {
+		type = character_event
+	title = KOH_Tournaments.1013.t
+	desc = KOH_Tournaments.1013.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = {
+			has_trait = brave
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1013
+		add_trait = brave
+	}
+}
+
+# Character becomes tough soldier
+KOH_Tournaments.1014 = {
+		type = character_event
+	title = KOH_Tournaments.1014.t
+	desc = KOH_Tournaments.1014.d	
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		has_trait = education_martial_1
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1014
+		remove_trait = education_martial_1
+		add_trait = education_martial_2
+	}
+}
+
+# Character becomes skilled tactician
+KOH_Tournaments.1015 = {
+	type = character_event
+	title = KOH_Tournaments.1015.t
+	desc = KOH_Tournaments.1015.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		has_trait = education_martial_2
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1015.a
+		remove_trait = education_martial_2
+		add_trait = education_martial_3
+	}
+}
+
+# Character becomes brilliant strategist
+KOH_Tournaments.1016 = {
+		type = character_event 
+	title = KOH_Tournaments.1016.t
+	desc = KOH_Tournaments.1016.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		has_trait = education_martial_3
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1016.a
+		remove_trait = education_martial_3
+		add_trait = education_martial_4
+	}
+}
+
+# Character becomes skilled tactician
+KOH_Tournaments.1017 = {
+		type = character_event
+	title = KOH_Tournaments.1017
+	desc = KOH_Tournaments.1017
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		has_trait = education_martial_4
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1017.a
+		remove_trait = education_martial_4
+		add_trait = education_martial_3
+	}
+}
+
+# Character becomes tough soldier
+KOH_Tournaments.1018 = {
+		type = character_event
+	title = KOH_Tournaments.1018.t
+	desc = KOH_Tournaments.1018.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		has_trait = education_martial_3
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1018.a
+		remove_trait = education_martial_3
+		add_trait = education_martial_2
+	}
+}
+
+# Character becomes misguided warrior
+KOH_Tournaments.1019 = {
+	type = character_event
+	title = KOH_Tournaments.1019.t
+	desc = KOH_Tournaments.1019.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		has_trait = education_martial_2
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1019.a
+		remove_trait = education_martial_2
+		add_trait = education_martial_1
+	}
+}
+
+# Character gets top placement in the tournament
+KOH_Tournaments.1020 = {
+		type = character_event
+	title = KOH_Tournaments.1020.t
+	theme = war
+	desc = {
+		trigger = {
+			has_character_flag = tournament_winner
+		}
+		text = KOH_Tournaments.1020.da
+	}
+
+	desc = {
+		trigger = {
+			has_character_flag = tournament_second_place
+		}
+		text = KOH_Tournaments.1020.db
+	}
+
+	desc = {
+		trigger = {
+			has_character_flag = tournament_third_place
+		}
+		text = KOH_Tournaments.1020.dc
+	}
+
+	trigger = {
+		AND = {
+			has_character_flag = attending_tournament
+			OR = {
+				has_character_flag = tournament_winner
+				has_character_flag = tournament_second_place
+				has_character_flag = tournament_third_place
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			has_character_flag = tournament_winner
+		}
+		name = KOH_Tournaments.1020.a
+		add_gold = 100
+		add_prestige = 300
+		hidden_effect= {
+			if = {
+				limit = {
+					top_liege = {
+						NOT = {
+							character = ROOT
+						}
+					}
+				}
+				top_liege = { trigger_event = { id = KOH_Tournaments.1034 days = 3} }
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			has_character_flag = tournament_second_place
+		}
+		name = KOH_Tournaments.1020.b
+		add_gold = 75
+		add_prestige = 250
+		hidden_effect = {
+			if = {
+				limit = {
+					top_liege = {
+						NOT = {
+							character = ROOT
+						}
+					}
+				}
+				top_liege = { trigger_event = {  id = KOH_Tournaments.1035 days = 2 } }
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			has_character_flag = tournament_third_place
+		}
+		name = KOH_Tournaments.1020.c
+		add_gold = 50
+		add_prestige = 200
+		hidden_effect = {
+			if = {
+				limit = {
+					top_liege = {
+						NOT = {
+							character = ROOT
+						}
+					}
+				}
+				top_liege = { trigger_event = { id = KOH_Tournaments.1036 days = 1} }
+			}
+		}
+	}
+}
+
+# Inform about winner
+KOH_Tournaments.1034 = {
+		type = character_event
+	title = KOH_Tournaments.1034.t
+	desc = KOH_Tournaments.1034.d
+	theme = war
+	option = {
+		name = KOH_Tournaments.1034.a
+		add_opinion = {
+			modifier = pleased_opinion
+			who = FROM
+		}
+		trigger_event = { 	id = KOH_Tournaments.1002 }
+	}
+}
+
+# Inform about second place
+KOH_Tournaments.1035 = {
+		type = character_event
+	title = KOH_Tournaments.1035.t
+	desc = KOH_Tournaments.1035.d
+	theme = war
+	option = {
+		name = KOH_Tournaments.1035.a
+		add_opinion = {
+			modifier = pleased_opinion
+			who = FROM
+		}
+	}
+}
+
+# Inform about third place
+KOH_Tournaments.1036 = {
+		type = character_event
+	title = KOH_Tournaments.1036.t
+	desc = KOH_Tournaments.1036.d
+	theme = war
+	option = {
+		name = KOH_Tournaments.1036.a
+		add_opinion = {
+			modifier = pleased_opinion
+			who = FROM
+		}
+	}
+}
+
+# Character becomes homosexual
+KOH_Tournaments.1023 = {
+		type = character_event
+	title = KOH_Tournaments.1023.t
+	desc = KOH_Tournaments.1023.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_sexuality = homosexual
+			has_trait = celibate
+		}
+		NOT = { has_trait = eunuch }
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1023.a
+		set_sexuality = homosexual
+	}
+}
+
+# Character becomes syphilitic
+KOH_Tournaments.1024 = {
+		type = character_event
+	title = KOH_Tournaments.1024.t
+	desc = KOH_Tournaments.1024.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_trait = great_pox
+			has_trait = celibate
+		}
+		NOT = { has_trait = eunuch }
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1024
+		add_trait = great_pox
+	}
+}
+
+# Character becomes drunkard
+KOH_Tournaments.1025 = {
+		type = character_event
+	title = KOH_Tournaments.1025.t 
+	desc = KOH_Tournaments.1025.d 
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_trait = drunkard
+		}
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1025
+		add_trait = drunkard
+	}
+}
+
+# Character becomes duelist
+KOH_Tournaments.1026 = {
+		type = character_event
+	title = KOH_Tournaments.1026.t
+	desc = KOH_Tournaments.1026.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = { has_character_flag = attending_tournament_event }
+		martial =< 5
+		NOR = {
+			has_trait = content
+			has_trait = kind
+			has_trait = craven
+		}
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1026.a
+		add_trait = duelist
+	}
+}
+
+# Character gains intrigue
+KOH_Tournaments.1027 = {
+		type = character_event 
+	title = KOH_Tournaments.1027.t
+	desc = KOH_Tournaments.1027.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = { has_character_flag = attending_tournament_event }
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1027.a
+		add_intrigue_skill = 1
+	}
+}
+
+# Character loses intrigue
+KOH_Tournaments.1028 = {
+		type = character_event
+	title = KOH_Tournaments.1028.t
+	desc = KOH_Tournaments.1028.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = { has_character_flag = attending_tournament_event }
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1028.a
+		add_intrigue_skill = -1
+	}
+}
+
+# Character gains stewardship
+KOH_Tournaments.1029 = {
+		type = character_event
+	title = KOH_Tournaments.1029.t
+	desc = KOH_Tournaments.1029.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = { has_character_flag = attending_tournament_event }
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1029.a
+		add_stewardship_skill = 1
+	}
+}
+
+# Character loses stewardship
+KOH_Tournaments.1030 = {
+		type = character_event
+	title = KOH_Tournaments.1030.t
+	desc = KOH_Tournaments.1030.d
+	theme = war
+
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = { has_character_flag = attending_tournament_event }
+	}
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1030.a
+		change_stewardship = -1
+	}
+}
+
+# Character gains diplomacy
+KOH_Tournaments.1031 = {
+		type = character_event
+	title = KOH_Tournaments.1031.t
+	desc = KOH_Tournaments.1031.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = { has_character_flag = attending_tournament_event }
+	}
+
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1031.a
+		add_diplomacy_skill = 1
+	}
+}
+
+# Character loses diplomacy
+KOH_Tournaments.1032 = {
+		type = character_event
+	title = KOH_Tournaments.1032.t
+	desc = KOH_Tournaments.1032.d
+	theme = war
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = { has_character_flag = attending_tournament_event }
+	}
+
+
+	immediate = {
+		add_character_flag = attending_tournament_event
+	}
+
+	option = {
+		name = KOH_Tournaments.1032.a
+		change_diplomacy = -1
+	}
+}
+
+# Invitations have gone out
+KOH_Tournaments.1033 = {
+	type = character_event
+	title = KOH_Tournaments.1033.t
+	desc = KOH_Tournaments.1033.d
+	theme = war
+	option = {
+		name = KOH_Tournaments.1033
+		hidden_effect = {
+			trigger_event = { 	id = KOH_Tournaments.1001 days = 10 } # Tournament start
+			clear_variable_list = your_realm_peeps
+			every_vassal_or_below = {
+		
+					add_to_variable_list = {
+						name = your_realm_peeps
+						target = prev
+					}
+		
+			}
+			every_courtier = {
+			
+					add_to_variable_list = {
+						name = your_realm_peeps
+						target = prev
+					}
+			
+			}
+			every_close_or_extended_family_member = {
+			
+					add_to_variable_list = {
+						name = your_realm_peeps
+						target = prev
+					}
+				
+			}
+
+			every_in_list = {
+				variable = your_realm_peeps
+				limit = {
+					NOT = { has_council_position = councillor_court_chaplain }
+					age => 16
+					NOT = { age = 50 }
+					NOT = { has_trait = incapable }
+					is_imprisoned = no	
+					is_female = no
+				}
+				remove_character_flag = tournament_has_ended
+				trigger_event = { id = KOH_Tournaments.1000 }
+			}
+		}
+	}
+}
+
+# Ruler has died, the tournament is over
+KOH_Tournaments.1041 = {
+		type = character_event
+	title = KOH_Tournaments.1041.t
+	desc = KOH_Tournaments.1041.d
+	theme = war
+	trigger = {
+		has_character_flag = tournament_begins
+	}
+	
+	immediate = {		
+		remove_character_flag = tournament_begins
+		remove_character_flag = winner
+		remove_character_flag = second_place
+		remove_character_flag = third_place
+		remove_character_flag = attending_tournament
+		remove_character_flag = attending_tournament_event
+		remove_character_flag = tournament_third_place
+		remove_character_flag = tournament_second_place
+		remove_character_flag = tournament_winner
+		remove_character_flag = do_not_disturb
+		every_vassal_or_below = {
+			
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			
+		}
+		every_courtier = {
+		
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+		
+		}
+		every_close_or_extended_family_member = {
+		
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+		
+		}
+
+		every_in_list = {
+			variable = your_realm_peeps
+			limit = {
+				has_character_flag = attending_tournament
+			}
+			trigger_event = {
+				id = KOH_Tournaments.1042
+				days = 2
+			}
+			add_character_flag = tournament_has_ended
+			remove_character_flag = tournament_third_place
+			remove_character_flag = tournament_second_place
+			remove_character_flag = tournament_winner
+			remove_character_flag = attending_tournament
+			remove_character_flag = attending_tournament_event
+			remove_character_flag = do_not_disturb
+		}
+	}
+
+	option = {
+		name = KOH_Tournaments.1041.a
+	}
+}
+
+#The tournament has been cancelled due to Ruler's death
+KOH_Tournaments.1042 = {
+		type = character_event
+	title = KOH_Tournaments.1042.t
+	desc = KOH_Tournaments.1042.b
+	theme = war
+	option = {
+		name = KOH_Tournaments.1042.a
+	}
+}
+
+#Probabilities:
+#Combat Rating >= 3: 10% Wound, 10% Maim, 10% Dead, 70% Unscathed
+#CR = 2: 15% Wound, 15% Maim, 15% Dead, 55% Unscathed
+#CR = 1: 20% Wound, 20% Maim, 20% Dead, 40% Unscathed
+#CR = 0: 25% Wound, 25% Maim, 25% Dead, 25% Unscathed
+#CR = -1: 30% Wound, 30% Maim, 30% Dead, 10% Unscathed
+#CR = -2: 33% Wound, 33% Maim, 33% Dead
+#CR <= -3: 50% Maim, 50% Dead
+
+#Tournament attender event for random occurences
+KOH_Tournaments.1050 = {
+	type = character_even
+
+	immediate = {
+		random_list = {
+			25 = { #character is killed
+				modifier = {
+					factor = 0.667
+					prowess = 3 #prowess?
+				}
+				modifier = {
+					factor = 0.75
+					prowess = 2
+				}
+				modifier = {
+					factor = 0.8
+					prowess = 1
+				}
+				modifier = {
+					factor = 1.2
+					NOT = { prowess = 0 }
+				}
+				trigger_event = { 	id = KOH_Tournaments.1009 days = 1 }
+			}
+			25 = { #character maimed
+				modifier = {
+					factor = 0.667
+					prowess = 3
+				}
+				modifier = {
+					factor = 0.75
+					prowess = 2
+				}
+				modifier = {
+					factor = 0.8
+					prowess = 1
+				}
+				modifier = {
+					factor = 1.2
+					NOT = { prowess = 0 }
+				}
+				modifier = {
+					factor = 0
+					has_trait = maimed
+				}
+				trigger_event = { 	id = KOH_Tournaments.1010 days = 1 }
+			}
+			25 = { #character wounded
+				modifier = {
+					factor = 0.667
+					prowess = 3
+				}
+				modifier = {
+					factor = 0.75
+					prowess = 2
+				}
+				modifier = {
+					factor = 0.8
+					prowess = 1
+				}
+				modifier = {
+					factor = 1.2
+					NOT = { prowess = 0 }
+				}
+				modifier = {
+					factor = 0
+					NOT = { prowess = -2 }
+				}
+				trigger_event = { 	id = KOH_Tournaments.1011 days = 1 }
+			}
+			25 = { #character survives unscathed
+				modifier = {
+					factor = 1.273
+					prowess = 3
+				}
+				modifier = {
+					factor = 1.375
+					prowess = 2
+				}
+				modifier = {
+					factor = 1.6
+					prowess = 1
+				}
+				modifier = {
+					factor = 0.4
+					NOT = { prowess = 0 }
+				}
+				modifier = {
+					factor = 0
+					NOT = { prowess = -1 }
+				}
+			}
+		}
+		
+		### Non-injury events get their own list, since injuries are so common
+		random_list = {
+			40 = { #gain craven
+				modifier = {
+					factor = 0.5
+					prowess = 4
+				}
+				modifier = {
+					factor = 0.5
+					prowess = 3
+				}
+				modifier = {
+					factor = 0.5
+					prowess = 2
+				}
+				modifier = {
+					factor = 0.5
+					prowess = 1
+				}
+				modifier = {
+					factor = 0.5
+					prowess = 1
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { prowess = 1 }
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { prowess = 0 }
+				}
+				modifier = {
+					factor = 0
+					has_trait = craven
+				}
+				trigger_event = { id = KOH_Tournaments.1012 days = 1 }
+			}
+			40 = { #gain brave
+				modifier = {
+					factor = 1.5
+					prowess = 4
+				}
+				modifier = {
+					factor = 1.5
+					prowess = 3
+				}
+				modifier = {
+					factor = 1.5
+					prowess = 2
+				}
+				modifier = {
+					factor = 1.5
+					prowess = 1
+				}
+				modifier = {
+					factor = 1.5
+					prowess = 1
+				}
+				modifier = {
+					factor = 0.5
+					NOT = { prowess = 1 }
+				}
+				modifier = {
+					factor = 0.5
+					NOT = { prowess = 0 }
+				}
+				modifier = {
+					factor = 0
+					has_trait = brave
+				}
+				trigger_event = { 	id = KOH_Tournaments.1013 days = 1 }
+			}
+			40 = { #promoted to tough soldier
+				modifier = {
+					factor = 0
+					NOT = { has_trait = education_martial_2 }
+				}
+				trigger_event = { 	id = KOH_Tournaments.1014 days = 1 }
+			}
+			40 = { #promoted to skilled tactician
+				modifier = {
+					factor = 0
+					NOT = { has_trait = education_martial_3 }
+				}
+				trigger_event = { 	id = KOH_Tournaments70015 days = 1 }
+			}
+			40 = { #promoted to brilliant strategist
+				modifier = {
+					factor = 0
+					NOT = { has_trait = education_martial_4 }
+				}
+				trigger_event = { 	id = KOH_Tournaments.1016 days = 1 }
+			}
+			40 = { #demoted to skilled tactician
+				modifier = {
+					factor = 0
+					NOT = { has_trait = education_martial_3 }
+				}
+				trigger_event = { 	id = KOH_Tournaments.1017 days = 1 }
+			}
+			40 = { #demoted to tough soldier
+				modifier = {
+					factor = 0
+					NOT = { has_trait = education_martial_2 }
+				}
+				trigger_event = { 	id = KOH_Tournaments.1018 days = 1 }
+			}
+			40 = { #demoted to misguided warrior
+				modifier = {
+					factor = 0
+					NOT = { has_trait = education_martial_1 }
+				}
+				trigger_event = { 	id = KOH_Tournaments.1019 days = 1 }
+			}
+			13 = { #gain homosexual
+				modifier = {
+					factor = 1.2
+					has_trait = drunkard
+				}
+				modifier = {
+					factor = 1.5
+					has_trait = hedonist
+				}
+				modifier = {
+					factor = 1.2
+					has_trait = lustful
+				}
+				modifier = {
+					factor = 0.5
+					has_trait = temperate
+				}
+				modifier = {
+					factor = 0.3
+					has_trait = chaste
+				}
+				modifier = {
+					factor = 0.3
+					has_trait = zealous
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						has_sexuality = homosexual
+						has_trait = celibate
+						has_trait = eunuch
+					}
+				}
+				trigger_event = { id = KOH_Tournaments.1023 days = 1 }
+			}
+			13 = { #gain syphilitic
+				modifier = {
+					factor = 1.2
+					has_trait = drunkard
+				}
+				modifier = {
+					factor = 1.5
+					has_trait = hedonist
+				}
+				modifier = {
+					factor = 1.2
+					has_trait = lustful
+				}
+				modifier = {
+					factor = 0.5
+					has_trait = temperate
+				}
+				modifier = {
+					factor = 0.3
+					has_trait = chaste
+				}
+				modifier = {
+					factor = 0.3
+					has_trait = zealous
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						has_trait = great_pox
+						has_trait = celibate
+						has_trait = eunuch
+					}
+				}
+				trigger_event = { 	id = KOH_Tournaments.1024 days = 1 }
+			}
+			20 = { #gain drunkard
+				modifier = {
+					factor = 1.3
+					has_trait = gluttonous
+				}
+				modifier = {
+					factor = 1.1
+					has_trait = lustful
+				}
+				modifier = {
+					factor = 0.3
+					has_trait = temperate
+				}
+				modifier = {
+					factor = 0.5
+					has_trait = chaste
+				}
+				modifier = {
+					factor = 0
+					has_trait = drunkard
+				}
+				trigger_event = { 	id = KOH_Tournaments.1025 days = 1 }
+			}
+			20 = { #gain duelist
+				modifier = {
+					factor = 1.3
+					has_trait = diligent
+				}
+				modifier = {
+					factor = 1.3
+					has_trait = wroth
+				}
+				modifier = {
+					factor = 1.3
+					has_trait = brave
+				}
+				modifier = {
+					factor = 1.3
+					has_trait = strong
+				}
+				modifier = {
+					factor = 1.3
+					martial = 10
+				}
+				modifier = {
+					factor = 1.3
+					martial = 15
+				}
+				modifier = {
+					factor = 1.3
+					martial = 20
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						has_trait = content
+						has_trait = kind
+						has_trait = craven
+						NOT = { has_trait = strong }
+					}
+				}
+				trigger_event = { 	id = KOH_Tournaments.1026 days = 1 }
+			}
+			40 = { #increase intrigue
+				modifier = {
+					factor = 1.2
+					has_trait = education_intrigue_4
+				}
+				modifier = {
+					factor = 1.1
+					has_trait = education_intrigue_3
+				}
+				modifier = {
+					factor = 0.9
+					has_trait = education_intrigue_2
+				}
+				modifier = {
+					factor = 0.7
+					has_trait = education_intrigue_1
+				}
+				modifier = {
+					factor = 0.7
+					NOR = {
+						has_trait = education_intrigue_4
+						has_trait = education_intrigue_3
+						has_trait = education_intrigue_2
+						has_trait = education_intrigue_1
+					}
+				}
+				modifier = {
+					factor = 1.1
+					has_trait = deceitful
+				}
+				modifier = {
+					factor = 0.7
+					has_trait = honest
+				}
+				modifier = {
+					factor = 0.25
+					martial = 10
+				}
+				modifier = {
+					factor = 1.2
+					NOT = {
+						martial = 5
+					}
+				}
+				trigger_event = { 	id = KOH_Tournaments.1027 days = 1 }
+			}
+			40 = { #decrease intrigue
+				modifier = {
+					factor = 0.8
+					has_trait = education_intrigue_4
+				}
+				modifier = {
+					factor = 0.9
+					has_trait = education_intrigue_3
+				}
+				modifier = {
+					factor = 1.1
+					has_trait = education_intrigue_2
+				}
+				modifier = {
+					factor = 1.5
+					has_trait = education_intrigue_1
+				}
+				modifier = {
+					factor = 0.7
+					NOR = {
+						has_trait = education_intrigue_4
+						has_trait = education_intrigue_3
+						has_trait = education_intrigue_2
+						has_trait = education_intrigue_1
+					}
+				}
+				modifier = {
+					factor = 0.9
+					has_trait = deceitful
+				}
+				modifier = {
+					factor = 1.5
+					has_trait = honest
+				}
+				modifier = {
+					factor = 0.25
+					martial = 10
+				}
+				modifier = {
+					factor = 1.2
+					NOT = {
+						martial = 5
+					}
+				}
+				trigger_event = { 	id = KOH_Tournaments.1028 days = 1 }
+			}
+			40 = { #increase stewardship
+				modifier = {
+					factor = 1.5
+					has_trait = education_stewardship_4
+				}
+				modifier = {
+					factor = 1.1
+					has_trait = education_stewardship_2
+				}
+				modifier = {
+					factor = 0.9
+					has_trait = education_stewardship_2
+				}
+				modifier = {
+					factor = 0.8
+					has_trait = education_stewardship_1
+				}
+				modifier = {
+					factor = 0.7
+					NOR = {
+						has_trait = education_stewardship_4
+						has_trait = education_stewardship_3
+						has_trait = education_stewardship_2
+						has_trait = education_stewardship_1
+					}
+				}
+				modifier = {
+					factor = 1.5
+					has_trait = diligent
+				}
+				modifier = {
+					factor = 0.9
+					has_trait = slothful
+				}
+				trigger_event = { 	type = KOH_Tournaments.1029 days = 1 }
+			}
+			40 = { #decrease stewardship
+				modifier = {
+					factor = 0.8
+					has_trait = education_stewardship_4
+				}
+				modifier = {
+					factor = 0.9
+					has_trait = education_stewardship_3
+				}
+				modifier = {
+					factor = 1.1
+					has_trait = education_stewardship_2
+				}
+				modifier = {
+					factor = 1.5
+					has_trait = education_stewardship_1
+				}
+				modifier = {
+					factor = 0.7
+					NOR = {
+						has_trait = education_stewardship_4
+						has_trait = education_stewardship_2
+						has_trait = education_stewardship_2
+						has_trait = education_stewardship_1
+					}
+				}
+				modifier = {
+					factor = 0.9
+					has_trait = diligent
+				}
+				modifier = {
+					factor = 1.5
+					has_trait = slothful
+				}
+				modifier = {
+					factor = 0.25
+					martial = 10
+				}
+				modifier = {
+					factor = 1.2
+					NOT = {
+						martial = 5
+					}
+				}
+				trigger_event = { 	id = KOH_Tournaments.1030 days = 1 }
+			}
+			40 = { #increase diplomacy
+				modifier = {
+					factor = 1.5
+					has_trait = education_diplomacy_4
+				}
+				modifier = {
+					factor = 1.1
+					has_trait = education_diplomacy_3
+				}
+				modifier = {
+					factor = 0.9
+					has_trait = education_diplomacy_2
+				}
+				modifier = {
+					factor = 0.8
+					has_trait = education_diplomacy_1
+				}
+				modifier = {
+					factor = 0.7
+					NOR = {
+						has_trait = education_diplomacy_4
+						has_trait = education_diplomacy_3
+						has_trait = education_diplomacy_2
+						has_trait = education_diplomacy_1
+					}
+				}
+				modifier = {
+					factor = 1.5
+					has_trait = gregarious
+				}
+				modifier = {
+					factor = 0.9
+					has_trait = shy
+				}
+				trigger_event = { 	type = KOH_Tournaments.1031 days = 1 }
+			}
+			40 = { #decrease diplomacy
+				modifier = {
+					factor = 0.8
+					has_trait = education_diplomacy_4
+				}
+				modifier = {
+					factor = 0.9
+					has_trait = education_diplomacy_3
+				}
+				modifier = {
+					factor = 1.1
+					has_trait = education_diplomacy_2
+				}
+				modifier = {
+					factor = 1.5
+					has_trait = education_diplomacy_1
+				}
+				modifier = {
+					factor = 0.7
+					NOR = {
+						has_trait = education_diplomacy_4
+						has_trait = education_diplomacy_3
+						has_trait = education_diplomacy_2
+						has_trait = education_diplomacy_1
+					}
+				}
+				modifier = {
+					factor = 0.9
+					has_trait = gregarious
+				}
+				modifier = {
+					factor = 1.5
+					has_trait = shy
+				}
+				modifier = {
+					factor = 0.25
+					martial = 10
+				}
+				modifier = {
+					factor = 1.2
+					NOT = {
+						martial = 5
+					}
+				}
+				trigger_event = { 	type = KOH_Tournaments.1032 days = 1 }
+			}
+			1000 = {}
+		}
+	}
+}
+
+
+###########################################
+#SCORING, LOOK AWAY FRAGILE EYES		  #
+###########################################
+
+KOH_Tournaments.1060 = {
+		type = character_event
+		hidden = yes
+	immediate = {
+		random_list = {
+			10 = {
+				add_character_flag = tourney_score_15
+				modifier = {
+					factor = 0
+					NOT = { prowess = 13 }
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_14
+				modifier = {
+					factor = 0
+					NOT = { prowess = 12 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 17
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_13
+				modifier = {
+					factor = 0
+					NOT = { prowess = 11 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 16
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_12
+				modifier = {
+					factor = 0
+					NOT = { prowess = 10 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 15
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_11
+				modifier = {
+					factor = 0
+					NOT = { prowess = 9 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 14
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_10
+				modifier = {
+					factor = 0
+					NOT = { prowess = 8 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 13
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_09
+				modifier = {
+					factor = 0
+					NOT = { prowess = 7 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 12
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_08
+				modifier = {
+					factor = 0
+					NOT = { prowess = 6 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 11
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_07
+				modifier = {
+					factor = 0
+					NOT = { prowess = 5 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 10
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_06
+				modifier = {
+					factor = 0
+					NOT = { prowess = 4 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 9
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_05
+				modifier = {
+					factor = 0
+					NOT = { prowess = 3 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 8
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_04
+				modifier = {
+					factor = 0
+					NOT = { prowess = 2 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 7
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_03
+				modifier = {
+					factor = 0
+					NOT = { prowess = 1 }
+				}
+				modifier = {
+					factor = 0
+					prowess = 6
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_02
+				modifier = {
+					factor = 0
+					prowess = 5
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_01
+				modifier = {
+					factor = 0
+					prowess = 4
+				}
+			}
+			10 = {
+				add_character_flag = tourney_score_00
+				modifier = {
+					factor = 0
+					prowess = 3
+				}
+			}
+		}
+	}
+}
+
+###########################################
+# First place   WINNER!                   #
+###########################################
+
+
+KOH_Tournaments.1061 = {
+		type = character_event
+		hidden = yes
+	immediate = {
+		clear_variable_list = your_realm_peeps
+		every_vassal_or_below = {
+		
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+		
+		}
+		every_courtier = {
+		
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+		
+		}
+		every_close_or_extended_family_member = {
+		
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+		
+		}
+
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_15 }
+			remove_character_flag = tourney_score_15
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_14 }
+			remove_character_flag = tourney_score_14
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_13 }
+			remove_character_flag = tourney_score_13
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_12 }
+			remove_character_flag = tourney_score_12
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_11 }
+			remove_character_flag = tourney_score_11
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_10 }
+			remove_character_flag = tourney_score_10
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_09 }
+			remove_character_flag = tourney_score_09
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_08 }
+			remove_character_flag = tourney_score_08
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_07 }
+			remove_character_flag = tourney_score_07
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_06 }
+			remove_character_flag = tourney_score_06
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_05 }
+			remove_character_flag = tourney_score_05
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_04 }
+			remove_character_flag = tourney_score_04
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_03 }
+			remove_character_flag = tourney_score_03
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_02 }
+			remove_character_flag = tourney_score_02
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_01 }
+			remove_character_flag = tourney_score_01
+			add_character_flag = tournament_winner
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_00 }
+			remove_character_flag = tourney_score_00
+			add_character_flag = tournament_winner
+		}
+	}
+}
+
+###########################################
+# Second place                            #
+###########################################
+
+
+KOH_Tournaments.1062 = {
+		type = character_event
+		hidden = yes
+
+		immediate = {
+			clear_variable_list = your_realm_peeps
+			every_vassal_or_below = {
+				
+					add_to_variable_list = {
+						name = your_realm_peeps
+						target = prev
+					}
+			
+			}
+			every_courtier = {
+				
+					add_to_variable_list = {
+						name = your_realm_peeps
+						target = prev
+					}
+			
+			}
+			every_close_or_extended_family_member = {
+				
+					add_to_variable_list = {
+						name = your_realm_peeps
+						target = prev
+					}
+				
+			}
+
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_15 }
+			remove_character_flag = tourney_score_15
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_14 }
+			remove_character_flag = tourney_score_14
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_13 }
+			remove_character_flag = tourney_score_13
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_12 }
+			remove_character_flag = tourney_score_12
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_11 }
+			remove_character_flag = tourney_score_11
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_10 }
+			remove_character_flag = tourney_score_10
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_09 }
+			remove_character_flag = tourney_score_09
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_08 }
+			remove_character_flag = tourney_score_08
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_07 }
+			remove_character_flag = tourney_score_07
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_06 }
+			remove_character_flag = tourney_score_06
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_05 }
+			remove_character_flag = tourney_score_05
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_04 }
+			remove_character_flag = tourney_score_04
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_03 }
+			remove_character_flag = tourney_score_03
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_02 }
+			remove_character_flag = tourney_score_02
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_01 }
+			remove_character_flag = tourney_score_01
+			add_character_flag = tournament_second_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_00 }
+			remove_character_flag = tourney_score_00
+			add_character_flag = tournament_second_place
+		}
+	}
+}
+
+###########################################
+# Third place                           #
+###########################################
+
+
+KOH_Tournaments.1063 = {
+		type = character_event
+		hidden = yes
+	immediate = {
+		clear_variable_list = your_realm_peeps
+		every_vassal_or_below = {
+		
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+		
+		}
+		every_courtier = {
+			
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			
+		}
+		every_close_or_extended_family_member = {
+		
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_15 }
+			remove_character_flag = tourney_score_15
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_14 }
+			remove_character_flag = tourney_score_14
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_13 }
+			remove_character_flag = tourney_score_13
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_12 }
+			remove_character_flag = tourney_score_12
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_11 }
+			remove_character_flag = tourney_score_11
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_10 }
+			remove_character_flag = tourney_score_10
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_09 }
+			remove_character_flag = tourney_score_09
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_08 }
+			remove_character_flag = tourney_score_08
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_07 }
+			remove_character_flag = tourney_score_07
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_06 }
+			remove_character_flag = tourney_score_06
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_05 }
+			remove_character_flag = tourney_score_05
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_04 }
+			remove_character_flag = tourney_score_04
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_03 }
+			remove_character_flag = tourney_score_03
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_02 }
+			remove_character_flag = tourney_score_02
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_01 }
+			remove_character_flag = tourney_score_01
+			add_character_flag = tournament_third_place
+		}
+		random_in_list = {
+			variable = your_realm_peeps
+			limit = { has_character_flag = tourney_score_00 }
+			remove_character_flag = tourney_score_00
+			add_character_flag = tournament_third_place
+		}
+	}
+}
+
+###########################################
+# Notify winners						  #
+###########################################
+
+KOH_Tournaments.1064 = {
+		type = character_event
+	
+	immediate = {
+		clear_variable_list = your_realm_peeps
+		every_vassal_or_below = {
+			
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			
+		}
+		every_courtier = {
+			
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			
+		}
+		every_close_or_extended_family_member = {
+			
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			
+		}
+
+			
+		every_in_list = {
+			variable = your_realm_peeps
+			limit = {
+				OR = {
+					has_character_flag = tournament_winner
+					has_character_flag = tournament_second_place
+					has_character_flag = tournament_third_place
+				}
+			}
+			trigger_event = { id = KOH_Tournaments.1020 }
+		}
+	}
+}
+
+
+###########################################
+# Flag management                         #
+###########################################
+
+# Safety catch - clears character flags and modifiers
+KOH_Tournaments.1999 = {
+		type = character_event
+	
+	immediate = {
+		remove_character_flag = do_not_disturb
+		remove_character_flag = attending_tournament
+		remove_character_flag = no_msg_death
+		remove_character_flag = no_msg_maimed
+		remove_character_flag = no_msg_wounded
+		remove_character_flag = tournament_has_ended
+		remove_character_flag = attending_tournament_event
+		remove_character_flag = tournament_winner
+		remove_character_flag = winner
+		remove_character_flag = tournament_second_place
+		remove_character_flag = second_place
+		remove_character_flag = tournament_third_place
+		remove_character_flag = third_place
+		remove_character_flag = tournament_begins
+		every_vassal_or_below = {
+			
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			
+		}
+		every_courtier = {
+		
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			
+		}
+		every_close_or_extended_family_member = {
+			
+				add_to_variable_list = {
+					name = your_realm_peeps
+					target = prev
+				}
+			
+		}	
+		every_in_list = {
+			variable = your_realm_peeps
+			limit = {
+				has_character_flag = attending_tournament
+			}
+			remove_character_flag = tournament_winner
+			remove_character_flag = tournament_third_place
+			remove_character_flag = tournament_second_place
+			remove_character_flag = attending_tournament
+			remove_character_flag = attending_tournament_event
+			remove_character_flag = do_not_disturb
+			remove_character_flag = tournament_has_ended
+		}		
+	}
+}
+

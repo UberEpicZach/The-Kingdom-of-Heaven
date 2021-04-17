@@ -1,0 +1,33 @@
+﻿is_eligible_for_cardinality = {
+	is_alive = yes
+	#is_councillor = yes
+	is_clergy = yes
+	OR = {has_government = theocracy_government is_landed = no}
+	faith = faith:catholic
+	is_cardinal = no
+	is_pope = no
+}
+ruler_has_cardinality_eligible_realm_priest = {
+	faith = faith:catholic
+	highest_held_title_tier >= tier_county
+	exists = realm_priest
+	realm_priest = {is_eligible_for_cardinality = yes}
+}
+
+is_cardinal = {
+	OR = {
+		#has_trait = cardinal
+		any_owned_story = {
+			story_type = cardinal_story
+		}
+	}
+}
+
+is_pope = {
+	exists = primary_title
+	faith = faith:catholic
+	OR = {
+		this = faith.religious_head
+		primary_title = title:k_papal_state
+	}
+}

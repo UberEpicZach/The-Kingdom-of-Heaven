@@ -1857,6 +1857,7 @@ ransom_me_interaction = {
 	
 	is_shown = {
 		scope:actor = {
+			NOT = { has_character_flag = ImprisonedByHenry }
 			is_imprisoned_by = scope:recipient
 		}
 	}
@@ -2939,8 +2940,8 @@ release_from_prison_interaction = {
 			add = -1000
 			character:205730 = {
 				has_character_flag = ImprisonedByHenry
-				}
 			}
+		}
 		modifier = {
 			add = -5000
 			scope:recipient = {

@@ -21,9 +21,11 @@ KoH_RichardTheLionheart.1 = {
 		add_character_flag = {
 			flag = had_event_RichardTheLionheart.1
 		}
-		trigger_event = {
-			id = KoH_RichardTheLionheart.2
-			days = 730
+		character:204500 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.101
+				days = 2
+			}
 		}
 	}
 
@@ -39,6 +41,7 @@ KoH_RichardTheLionheart.1 = {
 			get_title = d_aquitaine
 			get_title = d_poitou
 			get_title = d_gascogne
+			get_title = d_bourbon
 		}
 		hidden_effect = {
 			title:c_bourbon.holder = {
@@ -225,8 +228,302 @@ KoH_RichardTheLionheart.1 = {
 	}
 } 
 
+KoH_RichardTheLionheart.101 = { #Henry Event
+	type = character_event
+	title = KoH_RichardTheLionheart.101.t
+	desc = KoH_RichardTheLionheart.101.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart..101}
+		character:204500 = { is_alive = yes }
+	}
 
-KoH_RichardTheLionheart.2 = {
+	option = {
+		name = KoH_RichardTheLionheart.101.a
+		custom_tooltip = KoH_RichardTheLionheart..101.a.tt
+		
+		hidden_effect = {
+			
+			character:204511 = {
+
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2023
+					days = 730
+				}
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.2023 = { #Geoffery goes to Joust!
+	type = character_event
+	title = KoH_RichardTheLionheart.2023.t
+	desc = KoH_RichardTheLionheart.2023.d
+	theme = mental_health
+	override_background = {
+		event_background = bedchamber
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.2023 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.2023
+		}
+		trigger_event = {
+				id = KoH_RichardTheLionheart.2024
+				days = 4
+		}
+	}
+	option = {
+		name = KoH_RichardTheLionheart.2023.a
+
+	}
+}
+
+KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
+	type = character_event
+	title = KoH_RichardTheLionheart.2024.t
+	desc = KoH_RichardTheLionheart.2024.d
+	theme = mental_health
+	override_background = {
+		event_background = bedchamber
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.2024 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.2024
+		}
+		
+		
+	}
+	option = {
+		name = KoH_RichardTheLionheart.2024.a #enter the joust
+		
+		random_list = {
+			5 = { custom_description = { text = "You will win the joust" } }
+			4 = { custom_description = { text = "You will lose the Joust but survive untouched" } }
+			1 = { custom_description = { text = "You may suffer injuries or even face death" } }
+		}
+		hidden_effect = {
+			create_character = {
+				name = "Arthur"
+				age = 0.1
+				gender = male
+				mother = character:205740
+				father = character:204511
+				dynasty = 106
+				faith = "catholic"
+				culture = "english"
+				trait = beauty_good_2
+				save_scope_as = arthur
+			}
+
+			character:205740 = {
+				 	add_trait = unwed
+			}
+
+			scope:arthur = {
+				get_title = c_west_riding
+				get_title = c_nantes
+			}
+
+			if = {
+				limit = {
+					character:204511 = {
+						is_ai = no
+					}
+				}
+				set_player_character = scope:arthur
+			}
+
+			character:204511 = {
+				death = {
+					death_reason = death_jousting_tournament
+				}
+			}
+
+			character:204510 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:204500 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:205730 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:204516 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:204509 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:204512 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:204513 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:204514 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:204517 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:204630 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:204499 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:205740 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:204502 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+			character:205506 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					days = 1
+				}
+			}
+	
+			character:204500 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.202
+					days = 4
+				}
+			}
+		}
+	}
+	option = {
+		name = KoH_RichardTheLionheart.2024.b
+		#custom_tooltip = "You will sit the Joust out, and watch" #KoH_RichardTheLionheart.2024.a.tt
+	
+		trigger = {
+			NOT = {
+				is_ai = yes
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.2 = { #Death in Joust
 	type = character_event
 	title = KoH_RichardTheLionheart.2.t
 	desc = KoH_RichardTheLionheart.2.d
@@ -247,59 +544,86 @@ KoH_RichardTheLionheart.2 = {
 			character:204511 = { is_alive = yes }
 			character:205506 = { is_alive = yes }
 			character:205506 = { is_local_player = no }
-			NOT = { has_character_flag = had_event_RichardTheLionheart.2}
+			NOT = { has_character_flag = had_event_RichardTheLionheart.2 }
 	}
 	immediate = {
 		add_character_flag = {
 			flag = had_event_RichardTheLionheart.2
 		}
-		character:204510 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.3
-				days = 30 
-			}
-		}
-		character:204511 = {
-			death = {
-				death_reason = death_jousting_tournament
-			}
-		}
 	}
 	option = {
 		name = KoH_RichardTheLionheart.2.a
-		hidden_effect = {
-			create_character = {
-				name = "Arthur"
-				age = 0.1
-				gender = male
-				mother = character:205740
-				father = character:204511
-				dynasty = 106
-				faith = "catholic"
-				culture = "english"
-				trait = beauty_good_2
-				save_scope_as = arthur
-			}
-			character:205930 = {
-				remove_trait = unwed
-			}
-			scope:arthur = {
-				get_title = c_west_riding
-				get_title = c_nantes
-			}
-			character:205740 = {
-				marry = character:205930
+		}
+	}
+}
 
+KoH_RichardTheLionheart.202 = { #Henry makes action against Brittney
+	type = character_event
+	title = KoH_RichardTheLionheart.202.t
+	desc = KoH_RichardTheLionheart.202.d
+	theme = mental_health
+	override_background = {
+		event_background = bedchamber
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = character:205506
+		animation = grief
+	}
+	trigger = {
+			character:204511 = { is_alive = yes }
+			character:205506 = { is_alive = yes }
+			character:205506 = { is_local_player = no }
+			NOT = { has_character_flag = had_event_RichardTheLionheart.202 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.202
+		}
+	}
+	option = {
+		name = KoH_RichardTheLionheart.202.a
+		custom_tooltip = KoH_RichardTheLionheart.202.a.tt
+		hidden_effect = {
+			character:205740 = {
 				create_title_and_vassal_change = {
 					type = swear_fealty #or whatever
 					save_scope_as = change
 				}
-		
+
 				change_liege = {
 					liege = character:204500
 					change = scope:change
 				}
 				resolve_title_and_vassal_change = scope:change
+
+				add_opinion = {
+					target = character:204500
+					modifier = angry_opinion
+					opinion = 50
+				}
+			}
+			character:204510 = {
+				trigger_event = {
+					id = KoH_RichardTheLionheart.3
+					days = 10
+				}
+			}
+		}
+	}
+	option = {
+		name = KoH_RichardTheLionheart.202.b
+		custom_tooltip = KoH_RichardTheLionheart.202.b.tt
+		hidden_effect = {
+			
+		add_opinion = {
+			target = character:204500
+			modifier = pleased_opinion
+			opinion = 50
 			}
 		}
 	}
@@ -1282,6 +1606,7 @@ KoH_RichardTheLionheart.17 = { #genoa
 			trigger_event = {
 				id = KoH_RichardTheLionheart.18
 				days = 45
+			}
 		}
 	}
 
@@ -1449,10 +1774,34 @@ KoH_RichardTheLionheart.20 = { #sicilly
 			trigger_event = {
 				id = KoH_RichardTheLionheart.21
 				days = 10
+			}
 		}
 	}
 
 	option = {
 		name = KoH_RichardTheLionheart.20.a
+	}
+}
+
+
+KoH_RichardTheLionheart.21 = { #sicilly
+	type = character_event
+	title = KoH_RichardTheLionheart.21.t
+	desc = KoH_RichardTheLionheart.21.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		title:e_hre.holder.capital_province = {
+				add_building = city_04
+		}
+	}	
+
+	option = {
+		name = KoH_RichardTheLionheart.21a
 	}
 }

@@ -5,33 +5,6 @@
 county_population_1 = {
     value = total_county_levies
     multiply = county.development_level
-    if = {
-		limit = {
-			this = title:c_ile_de_france
-			}
-		add = 100
-	}
-	else_if = {
-		limit = {
-			this = title:c_byzantion
-			}
-		add = 309492
-	}
-    else_if = {
-		limit = {
-			this = title:c_roma 
-			}
-		add = -20000
-	}
-	else_if = {
-		limit = {
-			this = title:c_fes
-			}
-		add = 10000
-	}
-	else = {
-		add = 10
-	}
 	# else_if = {
 	# 	limit = {
 	# 		this = title:c_roma

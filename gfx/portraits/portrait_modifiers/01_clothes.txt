@@ -9004,7 +9004,7 @@ clothes = {
 						liege = { has_primary_title = title:k_hungary }
 						has_primary_title = title:k_hungary
 						is_knight_of = title:k_hungary.holder
-						has_culture_group = culture_group:central_germanic_group
+						has_culture = culture:hungarian
 						OR = {
 							AND = {
 								is_councillor_of = title:k_hungary.holder
@@ -9050,10 +9050,56 @@ clothes = {
 						liege = { has_primary_title = title:d_antioch }
 						has_primary_title = title:d_antioch
 						is_knight_of = title:d_antioch.holder
-						has_culture_group = culture_group:central_germanic_group
+						#has_culture_group = culture_group:central_germanic_group
 						OR = {
 							AND = {
 								is_councillor_of = title:d_antioch.holder
+								has_council_position = councillor_marshal
+							}
+						}
+					}
+				}	
+			}
+		}
+	}
+
+	bavarian_knight_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = clothes
+				template = bavarian_knight_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			morph = {
+				mode = modify_multiply
+				gene = gene_bs_bust
+				value = 1.0
+				template = bust_clothes
+			}
+			morph = {
+				mode = modify_multiply
+				gene = gene_bs_body_shape
+				value = 1.0
+				template = body_shape_average_clothed
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 110
+				is_male = yes
+				age >= 18
+				portrait_wear_armor_trigger = yes
+				AND = {
+					OR = {
+						liege = { has_primary_title = title:d_bavaria }
+						has_primary_title = title:d_bavaria
+						is_knight_of = title:d_bavaria.holder
+						has_culture = culture:bavarian
+						OR = {
+							AND = {
+								is_councillor_of = title:d_bavaria.holder
 								has_council_position = councillor_marshal
 							}
 						}
@@ -9120,6 +9166,7 @@ clothes = {
 			modifier = {
 				add = 50000
 				AND = {
+					faith = faith:catholic
 					is_ruler = no
 					exists = primary_spouse
 					primary_spouse = {
@@ -9129,5 +9176,56 @@ clothes = {
 			}
 		}
 	}
+
+	bluecrown_knight_clothes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = clothes
+				template = bluecrown_knight_clothes
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			morph = {
+				mode = modify_multiply
+				gene = gene_bs_bust
+				value = 1.0
+				template = bust_clothes
+			}
+			morph = {
+				mode = modify_multiply
+				gene = gene_bs_body_shape
+				value = 1.0
+				template = body_shape_average_clothed
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 110
+				is_male = yes
+				age >= 18
+				portrait_wear_armor_trigger = yes
+				AND = {
+					OR = {
+						liege = { has_primary_title = title:d_bavaria }
+						has_primary_title = title:d_bavaria
+						is_knight_of = title:d_bavaria.holder
+						has_culture = culture:bavarian
+						OR = {
+							AND = {
+								is_councillor_of = title:d_bavaria.holder
+								has_council_position = councillor_marshal
+							}
+						}
+					}
+				}	
+			}
+		}
+	}
+
+
+
+
+
 }
 
