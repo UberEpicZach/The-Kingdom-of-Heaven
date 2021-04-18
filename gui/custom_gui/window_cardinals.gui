@@ -14,8 +14,8 @@ types CardinalsGridStuff { #Reusable templates for showing characters
                 parentanchor = hcenter|vcenter
                 default_format = "#light_background"
                 using = Font_Type_Flavor
-			    fontsize = 20
-                position = {0 -5}
+			    fontsize = 25
+                position = {0 -4}
             }
         }
         block "portrait" {portrait_head = {parentanchor = hcenter|vcenter position = {0 5} }}
@@ -50,7 +50,7 @@ types CardinalsGridStuff { #Reusable templates for showing characters
             }
         }
     }
-    type window_cardinal_bishop = widget{ # Can be used for a non-cardinal, but is unused
+    type window_cardinal_bishop = widget { # Can be used for a non-cardinal, but is unused
         size = {300 250}
         datacontext = "[Scope.GetCharacter]"
         window_cardinals_character = {}
@@ -168,12 +168,13 @@ types Cardinals  {
         alwaystransparent = no
         layoutpolicy_vertical = expanding
     }
-    
+
+
 	type window_cardinals = window {
         scale = 0.9
         allow_outside = yes
         movable = yes
-        position= {600 25}
+        position= {600 70}
         size    = { 1250 1150 }
         visible = "[GetVariableSystem.Exists('window_cardinals')]"
         alwaystransparent = no
@@ -191,19 +192,13 @@ types Cardinals  {
         }
         widget = {
             size = { 100% 100 }
-    
-            buttons_window_control = {
-                parentanchor = top|right
-            #    position= {-9 7}
-            position= {-609 1090}
-                blockoverride "button_close"{onclick = "[GetVariableSystem.Toggle('window_cardinals')]" }
-            }
+
             text_single = {
                 name = "header_text_custom"
                 parentanchor = top|hcenter
-                position = { 0 10 }
+                position = { 0 5 }
                 default_format = "#light_background"
-    
+                fontsize = 30
                 text = cardinals_college
     
                 maximumsize = { 400 -1 }
@@ -211,6 +206,52 @@ types Cardinals  {
                 using = Font_Type_Flavor
                 using = Font_Size_Big
             }                
+        }
+
+        button = { # Add x gold to the character's election fund
+            size = { 100 100 }
+            position= {544 1090}
+            visible = "[EqualTo_string(FaithWindow.GetFaith.GetNameNoTooltip,Localize('catholic'))]"
+            icon    = {texture = "gfx/interface/CollegeCardinals/CloseButton.png"}
+            tooltip = "close"
+            onclick = "[GetVariableSystem.Toggle('window_cardinals')]"
+            onclick = "[GetScriptedGui('refresh_cardinal_characters').Execute(GuiScope.SetRoot(GetDummyMale.MakeScope).End)]"
+            alwaystransparent = no
+            layoutpolicy_vertical = expanding
+        }
+
+        widget = {
+            size = { 100% 100 }
+            position= {599 1087}
+            text_single = {
+                name = "header_text_custom"
+                default_format = "#clickable"
+    
+                text = "Close"
+                fontsize = 25
+                maximumsize = { 400 -1 }
+    
+                using = Font_Type_Flavor
+                using = Font_Size_Big
+            }                
+        }
+
+        widget = { 
+            size = { 100% 100 }
+    
+            # icon = {
+            #     parentanchor = top|right
+            #     texture = "gfx/interface/CollegeCardinals/CloseButton.png"
+            #     position= {-544 1090}
+            #     blockoverride "button_close"{onclick = "[GetVariableSystem.Toggle('window_cardinals')]" }
+            # }
+
+            # buttons_window_control = {
+            #      parentanchor = top|right
+            #  #   position= {-9 7}
+            #      position= {-544 1090}
+            #      blockoverride "button_close"{onclick = "[GetVariableSystem.Toggle('window_cardinals')]" }
+            #  }
         }
         
         widget = {
@@ -225,9 +266,9 @@ types Cardinals  {
                 window_cardinals_special_character = {
                     datacontext = "[GetDummyMale.MakeScope.Var('preferatus_character').GetCharacter]"
                     blockoverride "text"    {   text = cardinals_preferatus}
-                    blockoverride "portrait" {  window_cardinals_portrait = { parentanchor = hcenter|vcenter }}
+                    blockoverride "portrait" {  window_cardinals_portrait = { parentanchor = hcenter|vcenter position = { -13 3 } } } 
                     
-                    window_cardinals_score =    {position = { 70 -40 }}
+                    window_cardinals_score =    {position = { 56 -40 }}
                 }
             }
         }
@@ -248,10 +289,10 @@ types Cardinals  {
                 text_single = {
                     name = "header_text_custom"
                     parentanchor = top|hcenter
-                    position = { 0 4 }
+                    position = { 0 -2 }
                     default_format = "#light_background"
                     text = cardinals_candidacy
-        
+                    fontsize = 28
                     maximumsize = { 400 -1}
         
                     using = Font_Type_Flavor
@@ -269,7 +310,7 @@ types Cardinals  {
                 blockoverride "portrait" {  window_cardinals_portrait = { parentanchor = hcenter|vcenter }}
                 blockoverride "score" {text = "[GuiScope.SetRoot(Character.MakeScope).ScriptValue('bishop_to_cardinal_score')|0]"}
                 window_cardinals_campaign = {position = { -25 50 }}
-                window_cardinals_score =    {position = { 70 -30 }}
+                window_cardinals_score =    {position = { 65 -40 }}
                 window_cardinals_invest_divest = {
                     parentanchor = bottom|hcenter
                     position = { -10 15 }
@@ -277,13 +318,13 @@ types Cardinals  {
             }
             window_cardinals_special_character = {
                 parentanchor = vcenter|right
-                position = {-250 0}
+                position = {-220 0}
                 datacontext = "[GetDummyMale.MakeScope.Var('predicted_cardinal').GetCharacter]"
                 blockoverride "text"    {   text = cardinals_predictus}
                 blockoverride "portrait" {  window_cardinals_portrait = { parentanchor = hcenter|vcenter }}
                 blockoverride "score" {text = "[GuiScope.SetRoot(Character.MakeScope).ScriptValue('bishop_to_cardinal_score')|0]"}
                 window_cardinals_campaign   = {position = { -25 50 }}
-                window_cardinals_score      = {position = { 70 -30 }}
+                window_cardinals_score      = {position = { 65 -40 }}
             }
         }
     }
