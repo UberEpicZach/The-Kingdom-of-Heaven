@@ -1,0 +1,1142 @@
+﻿namespace = KoH_balians_adventure
+ 
+KoH_balians_adventure.1 = {
+	type = character_event
+	title = KoH_balians_adventure.1.t
+	desc = KoH_balians_adventure.1.d
+	theme = mental_health
+	
+	left_portrait = {
+		character = root
+		animation = sadness
+	}
+	right_portrait = {
+		character = character:KOH0019
+		animation = grief
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.1}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.1
+		}
+	}
+
+	option = {
+		name = KoH_balians_adventure.1.a
+		trigger_event = {
+			id = KoH_balians_adventure.2
+			days = { 30 40 }
+		}
+	}
+}
+
+KoH_balians_adventure.2 = {
+	type = character_event
+	title = KoH_balians_adventure.2.t
+	desc = KoH_balians_adventure.2.d
+	theme = blacksmith 
+	
+	
+	left_portrait = {
+		character = character:800500
+		animation = scheme
+	}
+	
+	right_portrait = {
+		character = character:205506
+		animation = personality_bold
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.2}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.2
+		}
+	}
+
+	option = {
+		name = KoH_balians_adventure.2.a
+		trigger_event = {
+			id = KoH_balians_adventure.3
+			days = 1
+		}
+	}
+}
+
+KoH_balians_adventure.3 = {
+	type = character_event
+	title = KoH_balians_adventure.3.t
+	desc = KoH_balians_adventure.3.d
+	theme = blacksmith 
+	
+	left_portrait = {
+		character = root
+		animation = boredom 
+	}
+	
+	right_portrait = {
+		character = character:144166
+		animation = personality_rational
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.3}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.3
+		}
+	}
+
+	option = {
+		name = KoH_balians_adventure.3.a
+		
+		character:223570 = {
+			set_father = character:144166
+			set_house = father.house
+			add_trait = legitimized_bastard
+		}
+		trigger_event = {
+			id = KoH_balians_adventure.4
+			days = 6
+			}
+		
+		}
+		
+}
+
+KoH_balians_adventure.4 = {
+	type = character_event
+	title = KoH_balians_adventure.4.t
+	desc = KoH_balians_adventure.4.d
+	theme = blacksmith_fire
+	
+	
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+
+	right_portrait = {
+		character = character:800504
+		animation = disapproval
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.4}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.4
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ai = no
+				}
+			}
+			pan_camera_to_title = title:b_lepuiset
+			}
+		}
+
+	option = {
+		name = KoH_balians_adventure.4.a
+		
+		character:800504 = {
+			death = {
+				killer = root
+				death_reason = death_murder_known
+			}
+		}
+		
+		character:223570 = {
+			add_trait = kinslayer_3
+			remove_trait = depressed_1
+		}
+
+		trigger_event = {
+			id = KoH_balians_adventure.5
+			days = 6
+		}
+	}
+}
+
+KoH_balians_adventure.5 = {
+	type = character_event
+	title = KoH_balians_adventure.5.t
+	desc = KoH_balians_adventure.5.d
+	theme = death
+	override_background = {
+		event_background = tavern
+	}
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.5}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.5
+		}
+		if = {
+			limit = {
+				is_ai = no
+			}
+			pan_camera_to_title = title:b_nevers
+			}
+		}
+
+	option = {
+		name = KoH_balians_adventure.5.a
+		
+		add_gold = 10
+
+		trigger_event = {
+			id = KoH_balians_adventure.6
+			days = 10
+		}
+	}
+}
+
+KoH_balians_adventure.6 = {
+	type = character_event
+	title = KoH_balians_adventure.6.t
+	desc = KoH_balians_adventure.6.d
+
+	theme = war
+	override_background = {
+		event_background = wilderness_forest_pine
+		}
+
+	left_portrait = {
+		character = character:144166
+		animation = personality_bold
+		}
+
+	right_portrait = {
+		character = character:800501
+		animation = angry
+		}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.6}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.6
+		}
+		create_character = {
+			template = new_warrior_character
+			name = "Maximilien"
+			location = root.capital_province
+			faith = this.faith
+			culture = this.culture
+			gender_female_chance = 0
+			save_scope_as = combatant_2
+			}
+
+			if = {
+				limit = {
+					is_ai = no
+					}
+				pan_camera_to_title = title:b_ambert
+					}
+			}	
+	
+	option = {
+		name = KoH_balians_adventure.6.a
+		
+		character:223570 = {
+			add_prowess_skill = 3
+		}
+		
+		trigger_event = {
+			id = KoH_balians_adventure.7
+			days = 1
+		}
+
+	}
+}	
+
+
+KoH_balians_adventure.7 = { #A challenger approaches
+	type = character_event
+	title = KoH_balians_adventure.7.t
+	desc = KoH_balians_adventure.7.d
+
+	theme = war
+	override_background = {
+		event_background = wilderness_forest_pine
+		}
+
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = war_attacker
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.7}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.7
+		}
+	}
+	option = {
+		name = KoH_balians_adventure.7.a
+		
+		custom_tooltip = duel_can_go_either_way
+		hidden_effect = {
+			duel = {
+				skill = prowess
+				target = scope:combatant_2
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
+						min = -19
+					}
+					trigger_event = {
+						id = KoH_balians_adventure.8 #I won
+						days = 1
+					}
+				}
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -1
+						min = -19
+					}
+					trigger_event = {
+						id = KoH_balians_adventure.9 #I lost
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+KoH_balians_adventure.8 = { #A challenger approaches
+	type = character_event
+	title = KoH_balians_adventure.8.t
+	desc = KoH_balians_adventure.8.d
+	#
+	
+	theme = war
+	override_background = {
+		event_background = wilderness_forest_pine
+		}
+	
+	left_portrait = {
+		character = root
+		animation = war_over_win
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = severelywounded
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.8}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.8
+		}
+	}
+	option = {
+		name = KoH_balians_adventure.8.a
+		
+		
+		root = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+		}
+		
+		scope:combatant_2 = {
+			add_prestige = -50
+			death = { 
+				death_reason = death_battle }
+		}
+		character:800501 = {
+			death = {
+				death_reason = death_battle
+				killer = character:144166
+			}
+		}
+		character:144166 = {
+			add_trait = wounded_2
+		}
+		
+		trigger_event = {
+			id = KoH_balians_adventure.10
+			days = 1
+		}
+	}
+}
+
+KoH_balians_adventure.9 = { #A challenger approaches
+	type = character_event
+	title = KoH_balians_adventure.9.t
+	desc = KoH_balians_adventure.9.d
+	#
+	
+	theme = war
+	override_background = {
+		event_background = wilderness_forest_pine
+		}
+	
+	left_portrait = {
+		character = root
+		animation = severelywounded
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = war_over_win
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.9}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.9
+		}
+	}
+	
+	option = {
+		name = KoH_balians_adventure.9.a
+		
+		root = {
+			add_prestige = -50
+			increase_wounds_no_death_effect = { REASON = fight }
+		}
+		
+		scope:combatant_2 = { #He gets Killed Anyways, but you got hurt
+			add_prestige = -50
+			death = { 
+				death_reason = death_battle }
+		}
+		character:144166 = {
+			add_trait = wounded_2
+		}
+
+		trigger_event = {
+			id = KoH_balians_adventure.10
+			days = 13
+		}
+		scope:800501 = { #Hugh Gets Murdered
+			death = {
+				killer = 144166
+				death_reason = death_battle
+			}
+		}
+	}
+}
+
+
+KoH_balians_adventure.10 = {
+	type = character_event
+	title = KoH_balians_adventure.10.t
+	desc = KoH_balians_adventure.10.d
+
+	theme = death
+	override_background = {
+		event_background = italy
+	}
+
+	
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+	
+	right_portrait = {
+		character = character:144166
+		animation = idle
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.10}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.10
+		}
+		if = {
+			limit = {
+				is_ai = no
+				}
+			pan_camera_to_title = title:b_chiusi
+				}
+		}
+
+	option = {
+		name = KoH_balians_adventure.10.a
+		
+		hidden_effect = {
+			character:223570 = {
+				remove_trait = kinslayer_3
+				remove_trait = legitimized_bastard
+			}
+			character:144166 = {
+				add_trait = pneumonic
+				remove_trait = wounded_2
+			}
+		}
+
+		trigger_event = {
+			id = KoH_balians_adventure.11
+			days = 11
+		
+		}
+	}
+}
+
+KoH_balians_adventure.11 = {
+	type = character_event
+	title = KoH_balians_adventure.11.t
+	desc = KoH_balians_adventure.11.d
+	theme = war 
+	override_background = {
+		event_background = docks
+	}
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.11}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.11
+		}
+		if = {
+			limit = {
+				is_ai = no
+				}
+			pan_camera_to_title = title:b_messina
+			}
+		}
+
+	option = {
+		name = KoH_balians_adventure.11.a
+		trigger_event = {
+			id = KoH_balians_adventure.12
+			days = 3
+		}
+	}
+}
+
+KoH_balians_adventure.12 = {
+	type = character_event
+	title = KoH_balians_adventure.12.t
+	desc = KoH_balians_adventure.12.d
+
+	theme = war
+	override_background = {
+		event_background = temple
+	}
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+	
+	right_portrait = {
+		character = character:144166
+		animation = severelywounded
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.12}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.12
+		}
+	}
+	option = {
+		name = KoH_balians_adventure.12.a
+		
+		character:KOH0050 = {
+			get_title = c_lepuiset
+		}
+		
+		character:223570 = {
+			remove_trait = no_levy
+			add_trait = balian_of_ibelin
+		}
+
+		trigger_event = {
+			id = KoH_balians_adventure.13
+			days = 10
+		}
+
+		character:144166 = {
+			death = {
+				death_reason = death_ill
+			}
+		}
+	}
+}
+
+KoH_balians_adventure.13 = {
+	type = character_event
+	title = KoH_balians_adventure.13.t
+	desc = KoH_balians_adventure.13.d
+	theme = StormWaves 
+	
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.13}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.13
+		}
+		if = {
+			limit = {
+				is_ai = no
+				}
+				pan_camera_to_province = province:8663
+			}	
+		}	
+
+	option = {
+		name = KoH_balians_adventure.13.a
+
+		add_character_flag = {
+			flag = shipwrecked
+			months = 2
+
+		}
+		trigger_event = {
+			id = KoH_balians_adventure.14
+			days = 3
+		}
+	}
+}
+
+
+KoH_balians_adventure.14 = {
+	type = character_event
+	title = KoH_balians_adventure.14.t
+	desc = KoH_balians_adventure.14.d
+	theme = desert_plains
+	
+	left_portrait = {
+		character = root
+		animation = severelyinjured
+		triggered_outfit = {
+			trigger = { has_character_flag = shipwrecked }
+			remove_default_outfit = yes
+			outfit_tags = { beggar_rags }
+		}
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.14}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.14
+		}
+		if = {
+			limit = {
+				is_ai = no
+				}
+				pan_camera_to_province = province:6038
+			}	
+		create_character = {
+			template = new_warrior_character
+			name = "Muhammed al-Fais"
+			location = root.capital_province
+			faith = faith:ashari
+            culture = culture:egyptian
+            gender_female_chance = 0
+			save_scope_as = combatant_3
+			}	
+		}	
+
+	option = {
+		name = KoH_balians_adventure.14.a
+
+		trigger_event = {
+			id = KoH_balians_adventure.15
+			}
+    }
+}
+
+#the matter of a horse
+KoH_balians_adventure.15 = {
+	type = character_event
+	title = KoH_balians_adventure.15.t
+	desc = KoH_balians_adventure.15.d
+	theme = desert_plains
+	override_background = {
+		event_background = oasis
+	}
+	
+	left_portrait = {
+		character = character:KOH0041
+		animation = personality_greedy
+	}
+	
+	right_portrait = {
+		character = scope:combatant_3
+		animation = rage
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.15}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.15
+		}
+	}
+	
+	option = { 
+		name = KoH_balians_adventure.15.a
+		
+		hidden_effect = {
+			trigger_event = {
+				id = KoH_balians_adventure.16
+			}
+		}
+	}
+}
+
+KoH_balians_adventure.16 = {
+	type = character_event
+	title = KoH_balians_adventure.16.t
+	desc = KoH_balians_adventure.16.d
+	theme = desert_plains
+	override_background = {
+		event_background = oasis
+	}
+	
+	left_portrait = {
+		character = character:KOH0041
+		animation = personality_greedy
+	}
+	right_portrait = {
+		character = root
+		animation = disbelief
+		triggered_outfit = {
+			trigger = { has_character_flag = shipwrecked }
+			remove_default_outfit = yes
+			outfit_tags = { beggar_rags }
+		}
+	}
+	
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.16}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.16
+		}
+	}
+	option = { 
+		name = KoH_balians_adventure.16.a
+		
+		hidden_effect = {
+			trigger_event = {
+				id = KoH_balians_adventure.17
+			}
+		}
+	}
+}
+
+KoH_balians_adventure.17 = {
+	type = character_event
+	title = KoH_balians_adventure.17.t
+	desc = KoH_balians_adventure.17.d
+	theme = desert_plains
+	override_background = {
+		event_background = oasis
+	}
+	
+	left_portrait = {
+		character = scope:combatant_3
+		animation = rage
+	}
+	right_portrait = {
+		character = root
+		animation = disapproval
+		triggered_outfit = {
+			trigger = { has_character_flag = shipwrecked }
+			remove_default_outfit = yes
+			outfit_tags = { beggar_rags }
+		}
+	}
+	
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.17}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.17
+		}
+	}
+	option = { 
+		name = KoH_balians_adventure.17.a
+		custom_tooltip = KoH_balians_adventure.17.a.tt
+		hidden_effect = {
+			duel = {
+				skill = prowess
+				target = scope:combatant_3
+				value = 10
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
+						min = -19
+					}
+					trigger_event = {
+						id = KoH_balians_adventure.18 #I won
+					}
+				}
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -1
+						min = -19
+					}
+					trigger_event = {
+						id = KoH_balians_adventure.19 #I lost
+					}
+				}
+			}		
+		}
+	}
+}
+
+
+
+#Balian wins
+KoH_balians_adventure.18 = {
+	type = character_event
+	title = KoH_balians_adventure.18.t
+	desc = KoH_balians_adventure.18.d
+	theme = desert_plains
+	override_background = {
+		event_background = oasis
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+		triggered_outfit = {
+			trigger = { has_character_flag = shipwrecked }
+			remove_default_outfit = yes
+			outfit_tags = { beggar_rags }
+		}
+	}
+	
+	right_portrait = {
+		character = character:KOH0041
+		animation = personality_zealous
+	}
+
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.18}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.18
+		}
+		scope:combatant_3 = {
+			death = { 
+				killer = root
+				death_reason = death_duel
+			}
+		}
+	}
+	option = {
+		name = KoH_balians_adventure.18.a
+		custom_tooltip = KoH_balians_adventure.18.a.TT
+		
+		character:KOH0041 = {
+			death = {
+				killer = root
+				death_reason = death_murder_known
+			}
+		}	
+		root = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+		}
+		trigger_event = {
+			id = KoH_balians_adventure.21
+		}
+	}
+	option = {
+		name = KoH_balians_adventure.18.b
+		custom_tooltip = KoH_balians_adventure.18.b.TT
+		
+		root = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+		}
+		trigger_event = {
+			id = KoH_balians_adventure.20
+		}
+	}
+}
+
+#Balian loses
+KoH_balians_adventure.19 = {
+	type = character_event
+	title = KoH_balians_adventure.19.t
+	desc = KoH_balians_adventure.19.d
+	theme = desert_plains
+	override_background = {
+		event_background = oasis
+	}
+	left_portrait = {
+		character = character:KOH0041
+		animation = dismissal
+	}
+	right_portrait = {
+		character = root
+		animation = severelyinjured
+		triggered_outfit = {
+			trigger = { has_character_flag = shipwrecked }
+			remove_default_outfit = yes
+			outfit_tags = { beggar_rags }
+		}
+	}
+
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.19}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.19
+		}
+		root = {
+			add_trait = wounded_1
+		}
+	}
+	option = {
+		name = KoH_balians_adventure.19.a
+		trigger_event = {
+			id = KoH_balians_adventure.21
+		}
+	}
+}
+
+#Guided to Jerusalem
+KoH_balians_adventure.20 = {
+	type = character_event
+	title = KoH_balians_adventure.20.t
+	desc = KoH_balians_adventure.20.d
+	theme = war
+	override_background = {
+		event_background = jerusalem
+	}
+	left_portrait = {
+		character = character:KOH0041
+		animation = personality_forgiving
+	}
+	right_portrait = {
+		character = root
+		animation = personality_compassionate
+	}
+
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.20}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.20
+		}
+		if = {
+			limit = {
+				is_ai = no
+				}
+				pan_camera_to_province = province:5965
+			}
+		reverse_add_opinion = {
+			target = character:KOH0041
+			modifier = respect_opinion
+			opinion = 15
+		}
+		add_opinion = {
+			target = character:KOH0041
+			modifier = respect_opinion
+			opinion = 15
+		}
+	}
+	option = {
+		name = KoH_balians_adventure.20.a
+		
+		root= {
+			add_trait = pilgrim
+			add_piety = minor_piety_gain
+		}
+	}
+	option = {
+		name = KoH_balians_adventure.20.b
+		root= {
+			add_trait = pilgrim
+			add_piety = medium_piety_gain
+		}
+	}
+	after= {	
+		if = {
+			limit = {
+				character:223570 = { is_ai = no }
+			}
+			trigger_event = {
+				id = KOH_balian_women.1
+				days = 1
+			}
+		}
+	}
+}
+
+#Wandered to Jerusalem
+KoH_balians_adventure.21 = {
+	type = character_event
+	title = KoH_balians_adventure.21.t
+	desc = KoH_balians_adventure.21.d
+	theme = war
+	override_background = {
+		event_background = jerusalem
+	}
+	left_portrait = {
+		character = root
+		animation = personality_compassionate
+	}
+
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.21}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.21
+		}
+		add_character_modifier = {
+ 			modifier = stress_starvation_minor
+			days = 30
+		}
+		if = {
+			limit = {
+				is_ai = no
+				}
+				pan_camera_to_province = province:5965
+			}
+	}
+	option = {
+		name = KoH_balians_adventure.21.a
+		
+		root= {
+			add_trait = pilgrim
+			add_piety = minor_piety_gain
+		}
+	}
+	option = {
+		name = KoH_balians_adventure.21.b
+		root= {
+			add_trait = pilgrim
+			add_piety = medium_piety_gain
+		}
+	}
+	after= {	
+		if = {
+			limit = {
+				character:223570 = { is_ai = no }
+			}
+			trigger_event = {
+				id = KOH_balian_women.1
+				days = 1
+			}
+		}
+	}
+}
+
+
+#Meeting with Baldwin
+KoH_balians_adventure.22 = {
+	type = character_event
+	title = KoH_balians_adventure.22.t
+	desc = KoH_balians_adventure.22.d
+	theme = war
+	override_background = {
+		event_background = mena_baldwin
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = character:223523
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.22}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.22
+		}
+		if = {
+			limit = {
+				is_ai = no
+				}
+				pan_camera_to_province = province:5965
+			}
+	}	
+	option = {
+		name = KoH_balians_adventure.22.a
+		trigger_event = {
+			id = KOH_balian_women.4
+			days = 1
+		}
+	}	
+}

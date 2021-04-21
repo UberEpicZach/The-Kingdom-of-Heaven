@@ -1,0 +1,944 @@
+﻿namespace = chivalry
+
+chivalry.1 = {
+	type = character_event
+	title = chivalry.1.t
+	desc = chivalry.1.d
+	theme = default
+	left_portrait = {
+		character = root
+	}
+	
+	trigger = {
+		is_landed = yes
+	}
+
+	option = {
+		name = chivalry.1.a
+		
+		remove_gold = 100
+		
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+		
+		if = {
+			limit = {
+				has_trait = generous
+			}
+			add_stress = -10
+		}
+		else_if = {
+			limit = {
+				has_trait = greedy
+			}
+			add_stress = 10
+		}
+	}
+	
+	option = {
+		name = chivalry.1.b
+		
+		add_gold = 10
+		
+		change_chivalry_effect = { 
+			Chivalry = -1
+		}
+		custom_tooltip = remove_1_chivalry_tt
+		
+		add_tyranny = 5
+		add_dread = 10
+		
+		if = {
+			limit = {
+				has_trait = generous
+			}
+			add_stress = 10
+		}
+		else_if = {
+			limit = {
+				has_trait = greedy
+			}
+			add_stress = -10
+		}
+	}
+}
+
+chivalry.2 = {
+	type = character_event
+	title = chivalry.2.t
+	desc = chivalry.2.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	
+	right_portrait = {
+		character = scope:challenger
+	}
+
+	trigger = {
+		OR = {
+			martial = 10
+			var:Chivalry >= 3
+		}
+	}
+
+	immediate = {
+		root = { random_dummy_gender_landholder_effect = yes }
+        create_character = {
+			age = { 20 30 }
+			location = root.capital_province
+			gender = scope:dummy_gender
+			faith = this.faith
+			culture = this.culture
+			dynasty = none
+			prowess = { 5 20 }
+			save_scope_as = challenger
+        }
+	}
+	
+	option = {
+		name = chivalry.2.a
+		
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+		
+		trigger_event = {
+			id = chivalry.3
+			days = 2
+		}
+	}
+	
+	option = {
+		name = chivalry.2.b
+		
+		change_chivalry_effect = { 
+			Chivalry = -1
+		}
+		custom_tooltip = remove_1_chivalry_tt
+		
+		add_prestige = -50
+	}
+}
+
+chivalry.3 = {
+	type = character_event
+	title = chivalry.3.t
+	desc = chivalry.3.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	right_portrait = {
+		character = scope:challenger
+	}
+	
+	option = {
+		name = chivalry.3.a
+		
+		custom_tooltip = duel_can_go_either_way
+		
+		hidden_effect = {
+			random_list = {
+				50 = {
+					add_character_flag = {
+						flag = enemy_goes_on_offensive
+					}
+				}
+				50 = {
+					add_character_flag = {
+						flag = you_go_on_offensive
+					}
+				}
+			}
+		}
+		duel = {
+			skill = prowess
+			target = scope:challenger
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+					min = -19
+				}
+				trigger_event = {
+					id = chivalry.4
+					days = 2
+				}
+			}
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+					min = -19
+				}
+				trigger_event = {
+					id = chivalry.5
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+chivalry.4 = {
+	type = character_event
+	title = chivalry.4.t
+	desc = chivalry.4.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:challenger
+		animation = severelywounded
+	}
+	
+	option = {
+		name = chivalry.4.a
+		
+		
+		root = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+		}
+		
+		scope:challenger = {
+			add_prestige = -50
+			increase_wounds_no_death_effect = { REASON = fight }
+		}
+	}
+	
+	option = {
+		name = chivalry.4.b
+		
+		
+		root = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+			add_tyranny = 5
+			add_dread = 10
+			change_chivalry_effect = { 
+				Chivalry = -2
+			}
+			custom_tooltip = remove_2_chivalry_tt
+		}
+		
+		scope:challenger = {
+			death = {
+				killer = root
+				death_reason = death_duel
+			}
+		}
+	}
+}
+
+chivalry.5 = {
+	type = character_event
+	title = chivalry.5.t
+	desc = chivalry.5.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:challenger
+		animation = severelywounded
+	}
+	
+	option = {
+		name = chivalry.5.a
+		
+		
+		scope:challenger = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+		}
+		
+		root = {
+			add_prestige = -50
+			increase_wounds_no_death_effect = { REASON = fight }
+		}
+	}
+}
+
+chivalry.6 = {
+	type = character_event
+	title = chivalry.6.t
+	desc = chivalry.6.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	
+	option = {
+		name = chivalry.6.a
+		
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+		
+		add_stress = 10
+		random_list = {
+			50 = {
+				knight_increase_prowess_chance_effect = yes
+			}
+			50 = {
+			
+			}
+		}
+	}
+	option = {
+		name = chivalry.6.b
+		
+		change_chivalry_effect = { 
+			Chivalry = -1
+		}
+		custom_tooltip = remove_1_chivalry_tt
+		
+		add_dread = 10
+		
+		random_list = {
+			80 = {
+				knight_increase_prowess_chance_effect = yes
+			}
+			20 = {
+			
+			}
+		}
+	}
+}
+
+chivalry.7 = {
+	type = character_event
+	title = chivalry.7.t
+	desc = chivalry.7.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	
+	option = {
+		name = chivalry.7.a
+		
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+		
+		random_list = {
+			20 = {
+				add_trait = unyielding_defender
+				add_prestige = 100
+			}
+			80 = {
+				add_prestige = 50
+			}
+		}
+	}
+	
+	option = {
+		name = chivalry.7.b
+		
+		change_chivalry_effect = { 
+			Chivalry = -1
+		}
+		custom_tooltip = remove_1_chivalry_tt
+		
+		random_list = {
+			20 = {
+				add_trait = aggressive_attacker
+				add_dread = 30
+			}
+			80 = {
+				add_dread = 10
+			}
+		}
+	}
+}
+
+chivalry.8 = {
+	type = character_event
+	title = chivalry.8.t
+	desc = chivalry.8.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	
+	right_portrait = {
+		character = scope:enemy_commander
+	}
+	
+	immediate = {
+		random_side_commander = {
+			save_scope_as = enemy_commander
+		}
+	}
+	option = {
+		name = chivalry.8.a
+		
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+		
+		random_list = {
+			20 = {
+				add_trait = brave
+			}
+		}
+		
+		root = {
+			save_scope_as = combatant_2
+		}
+		scope:enemy_commander = {
+			save_scope_as = combatant_1
+			trigger_event = {
+				id = KoH_duels.3
+			}
+		}
+	}
+	
+	option = {
+		name = chivalry.8.b
+		
+		change_chivalry_effect = { 
+			Chivalry = -1
+		}
+		custom_tooltip = remove_1_chivalry_tt
+		
+		add_prestige = -50
+		random_list = {
+			20 = {
+				add_trait = craven
+			}
+		}
+	}
+}
+
+chivalry.9 = {
+	type = character_event
+	title = chivalry.9.t
+	desc = chivalry.9.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	trigger = {
+		is_landed = yes
+	}
+	
+	immediate = {
+		random_held_title = {
+			limit = {
+				tier <=tier_county
+			}
+			save_scope_as = town_scope
+		}
+	}
+	
+	option = {
+		name = chivalry.9.a
+		
+		scope:town_scope = {
+			add_county_modifier = {
+				modifier = koh_did_not_hunt_beast 
+				years = 5
+			}
+		}
+	}
+	
+	option = {
+		name = chivalry.9.b
+		trigger = {
+			has_trait = brave
+		}
+
+		add_martial_skill = 1
+		scope:town_scope = {
+			add_county_modifier = {
+				modifier = koh_mocked_beast
+				years = 5
+			}
+		}
+
+		add_character_modifier = {
+			modifier = BraverThenADragon
+			years = 5
+		}
+	}
+	
+	option = {
+		name = chivalry.9.c
+		
+		stress_impact = {
+			craven = medium_stress_impact_gain
+		}
+
+		add_prestige = 100
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+		custom_tooltip = start_dragon_hunting
+		trigger_event = {
+			days = 10
+			id = chivalry.10
+		}
+	}
+
+	option = {
+		name = chivalry.9.dd
+		trigger = {
+			has_trait = lunatic_1
+			has_trait = diplomat
+		}
+		trigger_event = {
+			days = 10
+			id = chivalry.17
+		}
+	}
+}
+
+chivalry.10 = {
+	type = character_event
+	title = chivalry.10.t
+	desc = chivalry.10.d
+	theme = martial_chivalry_focus
+	override_background = {
+		event_background = wilderness
+	}
+	right_portrait = {
+		character = scope:challenger
+		animation = idle
+	}
+
+	immediate = {
+		create_character = {
+			name = "Dragon"
+			age = { 20 30 }
+			location = scope:town_scope.title_province
+			gender = male
+			faith = this.faith
+			trait = koh_dragon 
+			culture = this.culture
+			dynasty = none
+			prowess = { 40 50 }
+			save_scope_as = challenger
+		}
+	}
+	
+	
+	option = {
+		name = chivalry.10.a
+		
+		duel = {
+			skill = prowess
+			target = scope:challenger
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+					min = -19
+				}
+				trigger_event = chivalry.15
+			}
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+					min = -19
+				}
+				trigger_event = chivalry.16
+			}
+		}
+	}
+	option = {
+		name = chivalry.10.b
+		
+		random_list = {
+			40 = {
+				scope:town_scope = {
+					add_county_modifier = {
+						modifier = koh_levies_occupied
+						years = 5
+					}
+				}
+				change_chivalry_effect = { 
+					Chivalry = -5
+				}
+				custom_tooltip = remove_5_chivalry_tt
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "You Escape Unharmed"
+					left_icon = root
+				}
+			}
+
+			60 = {
+				trigger_event = chivalry.16
+			}
+		}
+		add_prestige = -100
+	}
+}
+
+chivalry.11 = {
+	type = character_event
+	title = chivalry.11.t
+	desc = chivalry.11.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+
+	option = {
+		name = chivalry.11.a
+
+		change_chivalry_effect = { 
+			Chivalry = 1
+		}
+		custom_tooltip = add_1_chivalry_tt
+
+		random_list = {
+			20 = {
+				add_trait = compassionate
+			}
+		}
+
+		add_dread = -10
+		add_prestige = -100
+	}
+
+	option = {
+		name = chivalry.11.b
+
+		add_prestige = 50
+		add_piety = 50
+	}
+}
+
+chivalry.12 = {
+	type = character_event
+	title = chivalry.12.t
+	desc = chivalry.12.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+	}
+	
+	trigger = {
+		var:Chivalry >= 10
+	}
+
+	immediate = {
+		set_variable = {
+			name = bloodline_founder
+			value = root
+		}
+	}
+
+	option = {
+		name = chivalry.12.a
+
+		custom_tooltip = bloodline_1_creator_tooltip
+		set_variable = has_bloodline_1
+		hidden_effect = {
+			add_character_modifier = {
+				modifier = bloodline_1_modifier
+			}
+			every_child = {
+				limit = {
+					has_dynasty = yes
+				}
+				set_variable = has_bloodline_1
+				add_character_modifier = {
+					modifier = bloodline_1_modifier
+					days = -1
+				}
+				set_variable = {
+					name = bloodline_founder
+					value = root
+				}
+				trigger_event = {
+					id = chivalry.13
+				}
+			}
+		}
+	}
+}
+
+chivalry.13 = {
+	type = character_event
+	title = chivalry.13.t
+	desc = chivalry.13.d
+	theme = martial_chivalry_focus
+	
+	hidden = yes
+	
+	trigger = {
+		has_variable = has_bloodline_1
+	}
+	
+	immediate = {
+		every_child = {
+			limit = {
+				has_dynasty = yes
+			}
+			set_variable = has_bloodline_1
+			add_character_modifier = {
+				modifier = bloodline_1_modifier
+			}
+			trigger_event = {
+				id = chivalry.13
+			}
+		}
+	}
+	
+	option = {
+		name = chivalry.13.a
+		
+	}
+}
+
+chivalry.14 = {
+	type = character_event
+	title = chivalry.14.t
+	desc = chivalry.14.d
+	theme = martial_chivalry_focus
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+	
+	right_portrait = {
+		character = scope:recruiter
+		animation = idle
+	}
+	
+	immediate = {
+        create_character = {
+			age = { 25 40 }
+			location = root.capital_province
+			gender = male
+			dynasty = none
+			culture = this.culture
+			faith = this.faith
+			prowess = { 15 25 }
+			martial = { 14 30 }
+			save_scope_as = recruiter
+        }
+	}
+	
+	option = {
+		name = chivalry.14.a
+		recruit_courtier = scope:recruiter
+	}
+	
+	option = {
+		name = chivalry.14.b
+		
+	}
+}
+
+chivalry.15 = {
+	type = character_event
+	title = chivalry.15.t
+	desc = chivalry.15.d
+	theme = martial_chivalry_focus
+	override_background = {
+		event_background = wilderness
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:challenger
+	}
+	
+	option = {
+		name = chivalry.15.a
+		
+		root = {
+			add_prestige = 300
+			knight_increase_prowess_chance_effect = yes
+			add_dread = 10
+			change_chivalry_effect = { 
+				Chivalry = 2
+			}
+			custom_tooltip = add_2_chivalry_tt
+		}
+
+		scope:town_scope = {
+			change_county_control = 30
+		}
+		
+		scope:challenger = {
+			death = {
+				killer = root
+				death_reason = death_duel
+			}
+		}
+	}
+}
+
+
+chivalry.16 = {
+	type = character_event
+	title = chivalry.16.t
+	desc = chivalry.16.d
+	theme = martial_chivalry_focus
+	override_background = {
+		event_background = wilderness
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:challenger
+	}
+	
+	option = {
+		name = chivalry.16.a
+		
+		random_list = {
+			10 = {
+				add_trait = wounded_1
+			}
+			20 = {
+				add_trait = wounded_2
+			}
+			25 = {
+				add_trait = maimed
+			}
+			5 = {
+				add_trait = one_legged
+			}
+			5 = {
+				add_trait = one_handed
+			}
+			35 = {
+				death = {
+					killer = scope:challenger
+					death_reason = death_dragon
+				}
+			}
+		}
+		scope:challenger = {
+			death = {
+				death_reason = death_disappearance
+			}
+		}
+	}
+}
+
+chivalry.17 = {
+	type = character_event
+	title = chivalry.17.t
+	desc = chivalry.17.d
+	theme = martial_chivalry_focus
+	right_portrait = {
+		character = scope:challenger
+		animation = idle
+	}
+	
+	option = {
+		name = chivalry.17.a
+		
+		scope:town_scope = {
+			add_county_modifier = {
+				modifier = koh_ravaged_by_unknown_force 
+				years = 20
+			}
+		}
+		trigger_event = chivalry.18
+	}
+
+	option = {
+		name = chivalry.17.b
+		
+		add_character_modifier = {
+			modifier = koh_offerings_to_a_cave
+			years = 20
+		}
+		trigger_event = chivalry.18
+		
+	}
+
+	option = {
+		name = chivalry.17.c
+		
+		random_list = {
+			20 = {
+				death = {
+					killer = scope:challenger
+					death_reason = death_dragon
+				}
+			}
+
+			30 = {
+				add_trait = wounded_1
+			}
+			50 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "The Dragon lets you leave, unharmed"
+					left_icon = root
+				}
+			}
+		}
+		scope:town_scope = {
+			add_county_modifier = {
+				modifier = koh_levies_occupied 
+				years = 20
+			}
+		}
+	}
+}
+
+chivalry.18 = {
+	type = character_event
+	title = chivalry.18.t
+	desc = chivalry.18.d
+	theme = martial_chivalry_focus
+	override_background = {
+		event_background = bedchamber
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = chivalry.18.a
+
+		add_trait = strong
+		add_trait = scaly
+		add_trait = possessed
+
+		add_character_modifier = {
+			modifier = Dragonskin
+		}
+		random_list = {
+			50 = {
+				set_nickname_effect = { NICKNAME = nick_the_dragon }
+			}
+		}
+		scope:challenger = {
+			death = {
+				death_reason = death_disappearance
+			}
+		}
+	}
+}
+

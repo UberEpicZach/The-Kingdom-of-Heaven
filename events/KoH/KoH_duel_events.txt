@@ -1,0 +1,249 @@
+﻿namespace = KoH_duels
+
+KoH_duels.3 = {
+	type = character_event
+	title = KoH_duels.3.t
+	desc = KoH_duels.3.d
+	#is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_duels.3.a
+		
+		ai_chance = {
+			factor = 100
+		}
+		scope:combatant_1 = {
+			trigger_event = {
+				id = KoH_duels.4
+				days = 2
+			}
+		}
+	}
+	
+	option = {
+		name = KoH_duels.3.b
+		add_prestige = -50
+		random_list = {
+			20 = {
+				add_trait = craven
+			}
+			80 = {
+			}
+		}
+		clear_saved_scope = combatant_1
+		clear_saved_scope = combatant_2
+	}
+}
+
+KoH_duels.4 = { #A challenger approaches
+	type = character_event
+	title = KoH_duels.4.t
+	desc = KoH_duels.4.d
+	# is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = scope:combatant_1
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_duels.4.a
+		
+		custom_tooltip = duel_can_go_either_way
+		hidden_effect = {
+			duel = {
+				skill = prowess
+				target = scope:combatant_2
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
+						min = -19
+					}
+					scope:combatant_1 = {
+						save_scope_as = winner
+					}
+					scope:combatant_2 = {
+						save_scope_as = loser
+					}
+					
+					scope:winner = {
+						trigger_event = {
+							id = KoH_duels.5 #I won
+							days = 1
+						}
+					}
+				}
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -1
+						min = -19
+					}
+					scope:combatant_1 = {
+						save_scope_as = loser
+					}
+					scope:combatant_2 = {
+						save_scope_as = winner
+					}
+					
+					scope:winner = {
+						trigger_event = {
+							id = KoH_duels.5 #I lost
+							days = 1
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+KoH_duels.5 = { #A challenger approaches
+	type = character_event
+	title = KoH_duels.5.t
+	desc = KoH_duels.5.d
+	# is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = scope:winner
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:loser
+		animation = severelywounded
+	}
+	
+	option = {
+		name = KoH_duels.5.a
+		
+		
+		scope:winner = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+		}
+		
+		scope:loser = {
+			add_prestige = -50
+			increase_wounds_no_death_effect = { REASON = fight }
+			trigger_event = {
+				id = KoH_duels.6
+			}
+		}
+	}
+	
+	option = {
+		name = KoH_duels.5.b
+		
+		
+		scope:winner = {
+			add_prestige = 50
+			knight_increase_prowess_chance_effect = yes
+			add_tyranny = 10
+			change_chivalry_effect = { 
+				Chivalry = -1
+			}
+			custom_tooltip = remove_1_chivalry_tt
+		}
+		
+		scope:loser = {
+			trigger_event = {
+				id = KoH_duels.7
+			}
+			show_as_tooltip = {
+				death = {
+					death_reason = death_duel
+					killer = scope:winner
+				}
+			}
+		}
+	}
+}
+
+KoH_duels.6 = { #A challenger approaches
+	type = character_event
+	title = KoH_duels.6.t
+	desc = KoH_duels.6.d
+	# is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = scope:loser
+		animation = severelywounded
+	}
+	right_portrait = {
+		character = scope:winner
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_duels.5.a
+
+		show_as_tooltip = {
+			scope:loser = {
+				add_prestige = -50
+				increase_wounds_no_death_effect = { REASON = fight }
+			}
+			
+			scope:winner = {
+				add_prestige = 50
+				knight_increase_prowess_chance_effect = yes
+			}
+		}
+		clear_saved_scope = winner
+		clear_saved_scope = loser
+		clear_saved_scope = combatant_1
+		clear_saved_scope = combatant_2
+	}
+}
+
+KoH_duels.7 = { #A challenger approaches
+	type = character_event
+	title = KoH_duels.7.t
+	desc = KoH_duels.7.d
+	# is_triggered_only = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = scope:combatant_1
+		animation = severelywounded
+	}
+	right_portrait = {
+		character = scope:combatant_2
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_duels.6.a
+		
+		death = {
+			killer = scope:winner
+			death_reason = death_duel
+		}
+		clear_saved_scope = winner
+		clear_saved_scope = loser
+		clear_saved_scope = combatant_1
+		clear_saved_scope = combatant_2
+	}
+}

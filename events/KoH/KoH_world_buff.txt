@@ -1,0 +1,139 @@
+﻿namespace = world_buffing
+
+world_buffing.1 = {
+	type = character_event
+	title = world_buffing.t
+	desc = world_buffing.desc
+	
+	theme = diplomacy_majesty_focus
+	left_portrait = scope:root
+	hidden = yes
+	
+	trigger = {
+		is_landed = yes
+		exists = capital_province
+		NOT = {
+			this = character:223570
+		}
+	}
+	
+	option = {
+	
+		if = {
+			limit = { 
+				has_government = republic_government 
+				highest_held_title_tier = tier_kingdom
+			}
+			add_gold = 10000
+			add_prestige = 1000
+			add_piety = 1500
+			spawn_army = {
+				levies = 500
+				location = root.capital_province
+				inheritable = yes
+				uses_supply = yes
+				name = event_troop_default_name
+				}
+		}
+	
+		else_if = {
+			limit = { 
+				has_government = republic_government 
+				highest_held_title_tier = tier_duchy
+			}
+			add_gold = 8000
+			add_prestige = 800
+			add_piety = 1000
+			spawn_army = {
+				levies = 300
+				location = root.capital_province
+				inheritable = yes
+				uses_supply = yes
+				name = event_troop_default_name
+				}
+		}
+	
+		else_if = {
+			limit = { 
+				has_government = theocracy_government
+				highest_held_title_tier = tier_duchy
+			}
+			add_gold = 1000
+			add_prestige = 750
+			add_piety = 3000
+			spawn_army = {
+				levies = 300
+				location = root.capital_province
+				inheritable = yes
+				uses_supply = yes
+				name = event_troop_default_name
+				}
+		}
+		
+		else_if = {
+			limit = { 
+				has_government = theocracy_government
+				highest_held_title_tier = tier_kingdom
+			}
+			add_gold = 6000
+			add_prestige = 800
+			add_piety = 5000
+			spawn_army = {
+				levies = 1000
+				location = root.capital_province
+				inheritable = yes
+				uses_supply = yes
+				name = event_troop_default_name
+				}
+		}
+	
+		else_if = {
+			limit = { 
+				NOT = { has_government = tribal_government }
+				highest_held_title_tier = tier_duchy
+			}
+			add_gold = 1000
+			add_prestige = 750
+			add_piety = 500
+			spawn_army = {
+				levies = 200
+				location = root.capital_province
+				inheritable = yes
+				uses_supply = yes
+				name = event_troop_default_name
+				}
+		}
+		
+		else_if = {
+			limit = { 
+				has_government = tribal_government
+				highest_held_title_tier >= tier_duchy
+				}
+			add_gold = 500
+			add_prestige = 500
+			add_piety = 1500
+			spawn_army = {
+				levies = 400
+				location = root.capital_province
+				inheritable = yes
+				uses_supply = yes
+				name = event_troop_default_name
+				}
+		}
+
+		else = {
+			add_gold = 1000
+			add_prestige = 500
+			add_piety = 300
+			spawn_army = {
+				levies = 50
+				location = root.capital_province
+				inheritable = yes
+				uses_supply = yes
+				name = event_troop_default_name
+				}
+		}
+		
+		
+	}
+}

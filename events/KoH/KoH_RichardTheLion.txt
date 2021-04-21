@@ -1,0 +1,1832 @@
+﻿namespace = KoH_RichardTheLionheart
+
+KoH_RichardTheLionheart.1 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.1.t
+	desc = KoH_RichardTheLionheart.1.d
+	theme = mental_health
+	override_background = {
+		event_background = throne_room
+	}
+
+	
+	left_portrait = {
+		character = root
+		animation = sad
+	}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.1}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.1
+		}
+		character:204500 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.101
+				days = 2
+			}
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.1.a
+
+		title:b_angers.title_province = {
+			add_building = curtain_walls_01
+		}
+
+		
+		character:204510 = {
+			get_title = d_aquitaine
+			get_title = d_poitou
+			get_title = d_gascogne
+			get_title = d_bourbon
+		}
+		hidden_effect = {
+			title:c_bourbon.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_bordeaux.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_limousin.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_labourd.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_auvergne.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_angouleme.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_perigord.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_agenais.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_bigorre.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_armagnac.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_montaigu.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_lusignan.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_clermont_sur_allier.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_thiers.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+				
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+			title:c_bellac.holder = {
+				create_title_and_vassal_change = {
+					type = granted #or whatever
+					save_scope_as = change
+				}
+					
+				change_liege = {
+					liege = character:204510
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+		}
+	}
+} 
+
+KoH_RichardTheLionheart.101 = { #Henry Event
+	type = character_event
+	title = KoH_RichardTheLionheart.101.t
+	desc = KoH_RichardTheLionheart.101.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart..101}
+		character:204500 = { is_alive = yes }
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.101.a
+		custom_tooltip = KoH_RichardTheLionheart..101.a.tt
+		
+		hidden_effect = {
+			
+			character:204511 = {
+
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2023
+					days = 730
+				}
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.2023 = { #Geoffery goes to Joust!
+	type = character_event
+	title = KoH_RichardTheLionheart.2023.t
+	desc = KoH_RichardTheLionheart.2023.d
+	theme = mental_health
+	override_background = {
+		event_background = bedchamber
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.2023 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.2023
+		}
+		trigger_event = {
+				id = KoH_RichardTheLionheart.2024
+				days = 4
+		}
+	}
+	option = {
+		name = KoH_RichardTheLionheart.2023.a
+
+	}
+}
+
+KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
+	type = character_event
+	title = KoH_RichardTheLionheart.2024.t
+	desc = KoH_RichardTheLionheart.2024.d
+	theme = mental_health
+	override_background = {
+		event_background = bedchamber
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.2024 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.2024
+		}
+		
+		
+	}
+	option = {
+		name = KoH_RichardTheLionheart.2024.a #enter the joust
+		
+		random_list = {
+			5 = { custom_description = { text = "You will win the joust" } }
+			4 = { custom_description = { text = "You will lose the Joust but survive untouched" } }
+			1 = { custom_description = { text = "You may suffer injuries or even face death" } }
+		}
+		hidden_effect = {
+			create_character = {
+				name = "Arthur"
+				age = 0.1
+				gender = male
+				mother = character:205740
+				father = character:204511
+				dynasty = 106
+				faith = "catholic"
+				culture = "english"
+				trait = beauty_good_2
+				save_scope_as = arthur
+			}
+
+			character:205740 = {
+				 	add_trait = unwed
+			}
+
+			scope:arthur = {
+				get_title = c_west_riding
+				get_title = c_nantes
+			}
+
+			if = {
+				limit = {
+					character:204511 = {
+						is_ai = no
+					}
+				}
+				set_player_character = scope:arthur
+			}
+
+			character:204511 = {
+				death = {
+					death_reason = death_jousting_tournament
+				}
+			}
+
+			character:204510 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+				}
+			}
+	
+			character:204500 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.202
+					days = 5
+				}
+			}
+	
+			character:205730 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+				
+				}
+			}
+	
+			character:204516 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					
+				}
+			}
+	
+			character:204509 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					
+				}
+			}
+	
+			character:204512 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+				
+				}
+			}
+	
+			character:204513 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+				
+				}
+			}
+	
+			character:204514 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					
+				}
+			}
+	
+			character:204517 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					
+				}
+			}
+	
+			character:204630 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+				
+				}
+			}
+	
+			character:204499 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+				
+				}
+			}
+	
+			character:205740 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+				
+				}
+			}
+	
+			character:204502 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+					
+				}
+			}
+			character:205506 = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.2
+				
+				}
+			}
+		}
+	}
+	option = {
+		name = KoH_RichardTheLionheart.2024.b
+		#custom_tooltip = "You will sit the Joust out, and watch" #KoH_RichardTheLionheart.2024.a.tt
+	
+		trigger = {
+			NOT = {
+				is_ai = yes
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.2 = { #Death in Joust
+	type = character_event
+	title = KoH_RichardTheLionheart.2.t
+	desc = KoH_RichardTheLionheart.2.d
+	theme = mental_health
+	override_background = {
+		event_background = bedchamber
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = character:205506
+		animation = grief
+	}
+	trigger = {
+			#character:204511 = { is_alive = yes }
+			character:205506 = { is_alive = yes }
+			character:205506 = { is_local_player = no }
+			NOT = { has_character_flag = had_event_RichardTheLionheart.2 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.2
+		}
+	}
+	option = {
+		name = KoH_RichardTheLionheart.2.a
+		}
+}
+
+KoH_RichardTheLionheart.202 = { #Henry makes action against Brittney
+	type = character_event
+	title = KoH_RichardTheLionheart.202.t
+	desc = KoH_RichardTheLionheart.202.d
+	theme = mental_health
+	override_background = {
+		event_background = bedchamber
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = character:205506
+		animation = grief
+	}
+	trigger = {
+			character:204511 = { is_alive = yes }
+			character:205506 = { is_alive = yes }
+			character:205506 = { is_local_player = no }
+			NOT = { has_character_flag = had_event_RichardTheLionheart.202 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.202
+		}
+	}
+	option = {
+		name = KoH_RichardTheLionheart.202.a
+		custom_tooltip = KoH_RichardTheLionheart.202.a.tt
+		hidden_effect = {
+			character:205740 = {
+				create_title_and_vassal_change = {
+					type = swear_fealty #or whatever
+					save_scope_as = change
+				}
+
+				change_liege = {
+					liege = character:204500
+					change = scope:change
+				}
+				resolve_title_and_vassal_change = scope:change
+
+				add_opinion = {
+					target = character:204500
+					modifier = angry_opinion
+					opinion = 50
+				}
+			}
+			character:204510 = {
+				trigger_event = {
+					id = KoH_RichardTheLionheart.3
+					days = 10
+				}
+			}
+		}
+	}
+	option = {
+		name = KoH_RichardTheLionheart.202.b
+		custom_tooltip = KoH_RichardTheLionheart.202.b.tt
+		hidden_effect = {
+			
+		add_opinion = {
+			target = character:204500
+			modifier = pleased_opinion
+			opinion = 50
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.3 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.3.t
+	desc = KoH_RichardTheLionheart.3.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_france
+                }
+            }
+            save_scope_as = french_ruler
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_navarra
+                }
+            }
+            save_scope_as = navarra_ruler
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_castille
+                }
+            }
+            save_scope_as = castille_ruler
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_aragon
+                }
+            }
+            save_scope_as = aragon_ruler
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.3.a
+		reverse_add_opinion = {
+			target = character:204500 #Henry
+			modifier = pleased_opinion
+			opinion = 50
+		}
+
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.4
+				days = 30 
+			}
+		}
+
+		character:204500 = {
+			set_designated_heir = character:204514
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.3.b
+
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.4
+				days = 30 
+			}
+		}
+
+		character:204500 = {
+			set_designated_heir = character:204514
+		}
+
+		random_list = {
+			25 = {
+				create_alliance = scope:french_ruler
+				scope:french_ruler = {
+					add_opinion = {
+						target = character:204510
+						modifier = perk_negotiated_alliance_opinion
+						}
+					}
+				}
+			25 = {
+				create_alliance = scope:navarra_ruler
+				scope:navarra_ruler = {
+					add_opinion = {
+						target = character:204510
+						modifier = perk_negotiated_alliance_opinion
+					}
+				}
+			}
+			25 = {
+				create_alliance = scope:castille_ruler
+				scope:toulouse_ruler = {
+					add_opinion = {
+						target = character:204510
+						modifier = perk_negotiated_alliance_opinion
+					}
+				}
+			}
+			25 = {
+				create_alliance = scope:aragon_ruler
+				scope:aragon_ruler = {
+					add_opinion = {
+						target = character:204510
+						modifier = perk_negotiated_alliance_opinion
+					}
+				}
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.4 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.4.t
+	desc = KoH_RichardTheLionheart.4.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.4}
+		character:204500 = { is_alive = yes }
+		character:204514 = { is_alive = yes }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.4
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.4.a
+
+		add_pressed_claim = title:k_england
+
+		reverse_add_opinion = {
+			target = character:204500 #Henry
+			modifier = angry_opinion
+			opinion = -40
+		}
+
+		reverse_add_opinion = {
+			target = character:204514 #John
+			modifier = angry_opinion
+			opinion = -20
+		}
+
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheartWar.1
+				days = 1
+			}
+			trigger_event = {
+				id = KoH_RichardTheLionheart.5
+				days = 30 
+			}
+		}
+	}
+}
+
+#The Odds
+KoH_RichardTheLionheart.5 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.5.t
+	desc = KoH_RichardTheLionheart.5.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.5}
+		character:204500 = { is_alive = yes }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.5
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_scotland
+                }
+            }
+            save_scope_as = scotland_ruler
+		}
+	}
+	option = {
+		name = KoH_RichardTheLionheart.5.a
+		custom_tooltip = KoH_RichardTheLionheart.5.a.tt
+		
+		hidden_effect = {
+			create_alliance = scope:scotland_ruler
+			scope:scotland_ruler = {
+				add_opinion = {
+					target = character:204510
+					modifier = perk_negotiated_alliance_opinion
+				}
+			}
+		}
+		trigger_event = {
+			id = KoH_RichardTheLionheart.6
+			days = 30
+		}
+	}
+}
+	
+
+KoH_RichardTheLionheart.6 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.6.t
+	desc = KoH_RichardTheLionheart.6.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.6}
+		character:204500 = { is_alive = yes }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.6
+		}
+		character:204500 = {
+			random_targeting_faction = {
+				limit = {
+					faction_is_type = claimant_faction
+				}
+				save_scope_as = the_faction
+			}
+		}	
+		scope:the_faction = {
+			if = {
+				limit = {
+					faction_is_type = claimant_faction
+				}
+				special_title = {
+					save_scope_as = target_title
+				}
+			}
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.6.a
+		custom_tooltip = KoH_RichardTheLionheart.6.a.tt
+		
+		hidden_effect = {
+			scope:the_faction = {
+				faction_start_war = {
+					title = title:k_england
+				}
+			}
+		}
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.8
+				days = 50
+			}
+		}
+	}		
+	
+	option = {
+		name = KoH_RichardTheLionheart.6.b
+		custom_tooltip = KoH_RichardTheLionheart.6.b.tt
+
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.8
+				days = 50
+			}
+		}
+	}
+	after = {
+			every_character_war = {
+			limit = {
+				primary_defender = title:k_england.holder
+				primary_attacker = title:c_anjou.holder
+			}
+			add_attacker = title:k_france.holder
+			add_attacker = title:k_scotland.holder
+			add_defender = title:d_brittany.holder
+			}
+	}
+}
+
+#jerusalem
+KoH_RichardTheLionheart.7 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.7.t
+	desc = KoH_RichardTheLionheart.7.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.7.a
+
+		custom_tooltip = "We pledge to Crusade for Jerusalem, will fire in 2 year"
+		trigger_event = {
+			id = KoH_saladin.4
+			days = { 250 350 }
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.7.b
+
+		custom_tooltip = "We can pledge another time!"
+	}
+}
+#Mother Released
+KoH_RichardTheLionheart.8 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.8.t
+	desc = KoH_RichardTheLionheart.8.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.8}
+		character:204500 = { is_alive = yes }
+		character:205730 = { is_alive = yes }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.8
+		}
+		character:205730 = {
+			if = {
+				limit = {
+					is_imprisoned_by = character:204500
+				}
+				release_from_prison = yes
+			}
+			add_pressed_claim = title:d_aquitaine
+		}
+		hidden_effect = {
+			character:205730 = {
+				set_designated_heir = character:204510
+			}	
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.8.a
+
+		character:205730 = {
+			trigger_event = KoH_RichardTheLionheartWar.2
+		}
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.8.b
+
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.9
+				days = 50
+			}
+		}
+
+		character:205730 = {
+			get_title = d_aquitaine
+			get_title = d_poitou
+			get_title = d_gascogne
+			
+			hidden_effect = {
+				title:c_bourbon.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_bordeaux.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_limousin.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_labourd.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_auvergne.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_angouleme.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_perigord.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_agenais.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_bigorre.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_armagnac.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_montaigu.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_lusignan.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_clermont_sur_allier.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_thiers.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				title:c_bellac.holder = {
+					create_title_and_vassal_change = {
+						type = granted #or whatever
+						save_scope_as = change
+					}
+					
+					change_liege = {
+						liege = character:204510
+						change = scope:change
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+			add_opinion = {
+				target = character:204510 #Richard
+				modifier = pleased_opinion
+				opinion = 50
+			}
+			create_alliance = character:204510
+		}
+		
+		character:204510 = {
+			add_opinion = {
+				target = character:205730
+				modifier = perk_negotiated_alliance_opinion
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.9 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.9.t
+	desc = KoH_RichardTheLionheart.9.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.9}
+		character:204500 = { is_alive = yes }
+		character:205730 = { is_alive = yes }
+		character:205506 = { is_alive = yes }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.9
+		}
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.9.a
+
+		character:205506 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.10
+				days = 20
+			}
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.9.b
+		
+		character:204500 = {
+			set_designated_heir = character:204510
+		}
+		add_prestige = -500
+	}
+}
+
+#Philip Reads Letter
+KoH_RichardTheLionheart.10 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.10.t
+	desc = KoH_RichardTheLionheart.10.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.10}
+		character:204500 = { is_alive = yes }
+		character:205506 = { is_alive = yes }
+		character:204510 = { is_alive = yes }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.10
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:c_anjou
+                }
+            }
+            save_scope_as = anjou_ruler
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.10.a
+
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.11
+				days = 20
+			}
+		}
+
+		create_alliance = scope:anjou_ruler
+		scope:anjou_ruler = {
+			add_opinion = {
+				target = character:205506
+				modifier = perk_negotiated_alliance_opinion
+			}
+		}
+		reverse_add_opinion = {
+			target = character:204510 #Richard
+			modifier = pleased_opinion
+			opinion = 75
+		}			
+	}
+}
+
+#Richard gets response - Philip Allies
+KoH_RichardTheLionheart.11 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.11.t
+	desc = KoH_RichardTheLionheart.11.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	trigger = {
+		NOT = { has_character_flag = had_event_RichardTheLionheart.11}
+		character:204500 = { is_alive = yes }
+		character:205506 = { is_alive = yes }
+		character:204510 = { is_alive = yes }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_RichardTheLionheart.11
+		}
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.11.a
+
+		hidden_effect = {
+			character:204510 = {
+				start_war = {
+					casus_belli = richards_independence_cb
+					target = character:204500
+				}
+			}
+			trigger_event = {
+				id = KoH_RichardTheLionheart.12
+				days = 1
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.12 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.12.t
+	desc = KoH_RichardTheLionheart.12.d
+	theme = war
+	hidden = yes
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.12.a
+
+		every_character_war = {
+			limit = {
+				primary_defender = title:k_england.holder
+				primary_attacker = title:c_anjou.holder
+			}
+			add_attacker = title:k_france.holder
+			add_attacker = title:k_scotland.holder
+			}
+	}
+}
+
+#Peace At Last
+KoH_RichardTheLionheart.13 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.13.t
+	desc = KoH_RichardTheLionheart.13.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_RichardTheLionheart.13.a
+
+		character:204500 = {
+			set_designated_heir = character:204510
+			death = {
+				death_reason = death_ill
+			}
+		}
+
+		character:204510 = {
+			pay_short_term_gold = {
+				target = title:k_france.holder
+				gold = root.major_gold_value
+			}
+			get_title = title:d_aquitaine
+			set_primary_title_to = title:k_england
+		}
+
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.14
+				days = 10
+			}
+		}
+	}
+}
+
+#CORONATION EVENT = MAYBE IMPLEMENT THE CORONATION MODULE? 
+KoH_RichardTheLionheart.14 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.14.t
+	desc = KoH_RichardTheLionheart.14.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		hidden_effect = {
+			character:211500 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "You've gained a strange illness"
+					left_icon = character:211500
+				}
+				add_trait = typhus
+				add_trait = consumption
+				add_trait = pneumonic
+			}
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.14.a
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.15
+				days = 25
+			}
+		}
+		add_prestige = 1000
+		}
+
+	option = {
+		name = KoH_RichardTheLionheart.14.b
+	}
+}
+
+#Build Army
+KoH_RichardTheLionheart.15 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.15.t
+	desc = KoH_RichardTheLionheart.15.d
+	theme = war
+	
+	trigger = {
+		is_ai = no
+		exists = cp:councillor_marshal
+		scope:councillor = cp:councillor_marshal
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	right_portrait = {
+		character = cp:councillor_marshal
+		animation = personality_rational
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.15.a
+
+		character:204510 = {
+			pay_short_term_gold = {
+				target = cp:councillor_marshal
+				gold = root.major_gold_value
+			}
+			spawn_army = {
+				uses_supply = yes
+				inheritable = yes
+				name = Richards_Professional
+				men_at_arms = {
+				type = teutonic_knights
+				stacks = 15
+				}
+				location = 2267
+			}
+			spawn_army = {
+				uses_supply = yes
+				inheritable = yes
+				name = Richards_Professional
+				men_at_arms = {
+				type = armored_horsemen
+				stacks = 20
+				}
+				location = 2267
+			}
+		}
+
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.16
+				days = 30
+			}
+		}
+
+		add_character_modifier = {
+			modifier = RichardHighTaxes
+		    days = 420
+	   		}
+		}
+
+	option = {
+		name = KoH_RichardTheLionheart.15.b
+	}
+}
+
+KoH_RichardTheLionheart.16 = {
+	type = character_event
+	title = KoH_RichardTheLionheart.16.t
+	desc = KoH_RichardTheLionheart.16.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.4
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ai = no
+					has_title = title:k_england
+				}
+			}
+			pan_camera_to_title = title:b_paris
+		}
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.17
+				days = 45
+			}
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.16.a
+	}
+}
+
+KoH_RichardTheLionheart.17 = { #genoa
+	type = character_event
+	title = KoH_RichardTheLionheart.17.t
+	desc = KoH_RichardTheLionheart.17.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_RichardTheLionheart.17
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ai = no
+					has_title = title:k_england
+				}
+			}
+			pan_camera_to_title = title:b_genoa
+		}
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.18
+				days = 45
+			}
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.17.a
+	}
+}
+
+KoH_RichardTheLionheart.18 = { #rome
+	type = character_event
+	title = KoH_RichardTheLionheart.18.t
+	desc = KoH_RichardTheLionheart.18.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_RichardTheLionheart.18
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ai = no
+					has_title = title:k_england
+				}
+			}
+			pan_camera_to_title = title:b_rome
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.18.a
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.18.b
+
+		random_list = {
+			50 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "The Pope Agrees To Meet"
+					left_icon = title:k_england.holder
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.19 #
+					days = 2
+					}
+			}
+			50 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "The Pope Declines To Meet"
+					left_icon = title:k_england.holder
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.20 #
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.19 = { #rome
+	type = character_event
+	title = KoH_RichardTheLionheart.19.t
+	desc = KoH_RichardTheLionheart.19.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	right_portrait = {
+		character = title:k_papal_state.holder
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_RichardTheLionheart.19
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_papal_state
+                }
+            }
+            save_scope_as = pope
+		}
+
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_england
+                }
+            }
+            save_scope_as = richard
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.18.a
+
+		random_list = {
+			50 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "You please the pope"
+					left_icon = title:k_england.holder
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.20 #
+					days = 1
+					}
+				add_piety_level = 1
+			}
+			50 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "You anger the pope"
+					left_icon = title:k_england.holder
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.20 #
+					days = 1
+				}
+				add_piety = -100
+			}
+		}
+	}
+}
+
+KoH_RichardTheLionheart.190 = { #rome
+	type = character_event
+	title = KoH_RichardTheLionheart.190.t
+	desc = KoH_RichardTheLionheart.190.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	right_portrait = {
+		character = title:k_papal_state.holder
+		animation = personality_bold
+	}
+
+	immediate = {
+		title:e_byzantium.capital_province = {
+			if = {
+				limit = {
+					is_county_capital = yes
+					NOT = { has_building = city_04 }
+				}
+				add_building = city_04
+			}
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.190.a
+
+	}
+}
+
+KoH_RichardTheLionheart.20 = { #sicilly
+	type = character_event
+	title = KoH_RichardTheLionheart.20.t
+	desc = KoH_RichardTheLionheart.20.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_RichardTheLionheart.20
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ai = no
+					has_title = title:k_england
+				}
+			}
+			pan_camera_to_title = title:b_messina
+		}
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.21
+				days = 10
+			}
+		}
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.20.a
+	}
+}
+
+
+KoH_RichardTheLionheart.21 = { #sicilly
+	type = character_event
+	title = KoH_RichardTheLionheart.21.t
+	desc = KoH_RichardTheLionheart.21.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		title:e_hre.holder.capital_province = {
+				add_building = city_04
+		}
+	}	
+
+	option = {
+		name = KoH_RichardTheLionheart.21a
+	}
+}

@@ -10,7 +10,7 @@
 			}
 		}
 	}
-	add_trait = cardinal
+	add_trait = koh_cardinal
 }
 become_initial_cardinal = {
 	create_story = cardinal_story
@@ -136,19 +136,20 @@ initialize_random_cardinal = {
 		#realm_priest = {
 		become_initial_cardinal = yes 
 		add_piety = 100
+		add_trait = koh_cardinal
 		#}
 	}
 }
 initialize_nine_random_cardinals = {
-	initialize_random_cardinal = yes
-	initialize_random_cardinal = yes
-	initialize_random_cardinal = yes
-	initialize_random_cardinal = yes
-	initialize_random_cardinal = yes
-	initialize_random_cardinal = yes
-	initialize_random_cardinal = yes
-	initialize_random_cardinal = yes
-	initialize_random_cardinal = yes
+    initialize_random_cardinal = yes
+    initialize_random_cardinal = yes
+    initialize_random_cardinal = yes
+    initialize_random_cardinal = yes
+    initialize_random_cardinal = yes
+    initialize_random_cardinal = yes
+    initialize_random_cardinal = yes
+    initialize_random_cardinal = yes
+    initialize_random_cardinal = yes
 }
 indicate_cardinals = {
 	every_in_global_list = {
@@ -160,6 +161,7 @@ cardinal_test = {
 	every_cardinal = {
 		story_owner = {
 			add_piety = 1
+			add_trait = koh_cardinal
 		}
 	}
 	every_living_cardinal = {

@@ -1,0 +1,47 @@
+﻿namespace = KoH_religiousflavour
+
+
+KoH_religiousflavour.1 = { #A Pope and His Estates
+	title = KoH_religiousflavour.1.t
+	desc = KoH_religiousflavour.1.desc
+	theme = unfriendly
+	left_portrait = {
+		character = this
+	}
+
+	trigger = {		
+		exists = title:k_papal_state.holder 
+		title:k_papal_state.holder.faith = root.faith
+		title:k_papal_state.holder.dynasty = root.dynasty  
+		title:k_papal_state.holder {
+			NOT = {
+				OR = {
+					has_trait = greedy
+					has_trait = zealous
+				}
+			}
+		}
+	}
+		
+	
+
+	immediate = {
+		title:k_papal_state.holder = { save_scope_as = scoped_pope }
+	}
+
+	option = { 
+		name = KoH_religiousflavour.1.a
+
+
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = KoH_religiousflavour.1.b
+
+		
+	}
+}
+

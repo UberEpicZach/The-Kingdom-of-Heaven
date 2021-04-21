@@ -1,0 +1,476 @@
+﻿namespace = KoH_barbarossa_crusade
+KoH_barbarossa_crusade.101 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.101.t
+	desc = KoH_barbarossa_crusade.101.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.101.a
+		trigger_event = {
+			id = KoH_saladin.4
+			days = { 150 250 }
+		}
+	}
+
+	option = {
+		name = KoH_barbarossa_crusade.101.b
+
+		add_piety = -1000
+		add_pretige = -1000
+	}
+}
+
+KoH_barbarossa_crusade.1 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.1.t
+	desc = KoH_barbarossa_crusade.1.d
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.1.a
+		custom_tooltip = crusading_army_assembled
+		trigger_event = {
+			id = KoH_barbarossa_crusade.2
+			days = 10
+		}
+		set_variable = {
+			name = num_of_levies
+			value = 5000
+		}
+		set_variable = {
+			name = num_of_heavy_swords
+			value = 4
+		}
+		set_variable = {
+			name = num_of_crossbows
+			value = 3
+		}
+		set_variable = {
+			name = num_of_knights
+			value = 4
+		}
+	}
+}
+
+KoH_barbarossa_crusade.2 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.2.t
+	desc = KoH_barbarossa_crusade.2.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.2.a
+		trigger_event = {
+			id = KoH_barbarossa_crusade.3
+			days = 40
+		}
+	}
+}
+
+KoH_barbarossa_crusade.3 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.3.t
+	desc = KoH_barbarossa_crusade.3.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.3.a
+		trigger_event = {
+			id = KoH_barbarossa_crusade.4
+			days = 80
+		}
+		change_variable = {
+			name = num_of_knights
+			add = 2
+		}
+		custom_tooltip = slower_but_more_men
+	}
+	option = {
+		name = KoH_barbarossa_crusade.3.b
+		trigger_event = {
+			id = KoH_barbarossa_crusade.4
+			days = 40
+		}
+		custom_tooltip = faster_but_no_men
+	}
+}
+
+KoH_barbarossa_crusade.4 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.4.t
+	desc = KoH_barbarossa_crusade.4.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:e_byzantium
+                }
+            }
+            save_scope_as = byzantium_ruler
+        }
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.4.a
+		scope:byzantium_ruler = {
+			trigger_event = {
+				id = KoH_barbarossa_crusade.3
+				days = 1
+			}
+		}
+		custom_tooltip = byzantine_emperor_is_informed
+	}
+}
+
+KoH_barbarossa_crusade.5 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.5.t
+	desc = KoH_barbarossa_crusade.5.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:e_hre
+                }
+            }
+            save_scope_as = barbarossa
+        }
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.5.a
+		scope:barbarossa = {
+			add_character_flag = { 
+				flag = denied_passage
+			}
+			trigger_event = {
+				id = KoH_barbarossa_crusade.6
+				days = 1
+			}
+		}
+		custom_tooltip = deny_passage
+	}
+	option = {
+		name = KoH_barbarossa_crusade.5.b
+		scope:barbarossa = {
+			add_character_flag = { 
+				flag = allowed_passage
+			}
+			trigger_event = {
+				id = KoH_barbarossa_crusade.6
+				days = 1
+			}
+		}
+		custom_tooltip = allow_passage
+	}
+}
+
+KoH_barbarossa_crusade.6 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.6.t
+	desc = KoH_barbarossa_crusade.6.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.6.a
+		trigger = {
+			has_character_flag = denied_passage
+		}
+		trigger_event = {
+			id = KoH_barbarossa_crusade.8
+			days = 10
+		}
+	}
+	option = {
+		name = KoH_barbarossa_crusade.6.b
+		scope:barbarossa = {
+			trigger_event = {
+				id = KoH_barbarossa_crusade.7
+				days = 10
+			}
+		}
+	}
+}
+
+KoH_barbarossa_crusade.7 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.7.t
+	desc = KoH_barbarossa_crusade.7.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.7.a
+		if = {
+			limit = {
+				has_character_flag = denied_passage
+			}
+			change_variable = {
+				name = num_of_crossbows
+				subtract = 1
+			}
+			change_variable = {
+				name = num_of_levies
+				subtract = 500
+			}
+			custom_tooltip = fighting_broke_out
+		}
+		trigger_event = {
+			id = KoH_barbarossa_crusade.9
+			days = 30
+		}
+	}
+}
+
+KoH_barbarossa_crusade.8 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.8.t
+	desc = KoH_barbarossa_crusade.9.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.8.a
+		change_variable = {
+			name = num_of_knights
+			divide = 2
+		}
+		custom_tooltip = we_were_ambushed
+		trigger_event = {
+			id = KoH_barbarossa_crusade.9
+			days = 40
+		}
+	}
+}
+
+KoH_barbarossa_crusade.9 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.9.t
+	desc = KoH_barbarossa_crusade.9.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.9.a
+		hidden_effect = {
+			random_list = {
+				50 = {
+					change_variable = {
+						name = num_of_heavy_swords
+						subtract = 1
+					}
+					change_variable = {
+						name = num_of_levies
+						subtract = 500
+					}
+				}
+			}
+		}
+		custom_tooltip = skirmish_happens
+		trigger_event = {
+			id = KoH_barbarossa_crusade.10
+			days = 40
+		}
+	}
+}
+
+KoH_barbarossa_crusade.10 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.10.t
+	desc = KoH_barbarossa_crusade.10.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.10.a
+		hidden_effect = {
+			random_list = {
+				60 = {
+					trigger_event = {
+						id = KoH_barbarossa_crusade.11
+						days = 5
+					}
+				}
+				40 = {
+					trigger_event = {
+						id = KoH_barbarossa_crusade.12
+						days = 5
+					}
+				}
+			}
+		}
+		custom_tooltip = chance_of_drowning
+	}
+}
+
+KoH_barbarossa_crusade.11 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.11.t
+	desc = KoH_barbarossa_crusade.11.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+        every_character_war = {
+            limit = {
+                primary_defender = title:e_arabia.holder
+                primary_attacker = title:k_jerusalem.holder
+            }
+            
+            remove_participant = title:e_hre.holder 
+        }
+    }
+
+	option = {
+		name = KoH_barbarossa_crusade.11.a
+		set_variable = {
+			name = num_of_levies
+			value = 1000
+		}
+		set_variable = {
+			name = num_of_heavy_swords
+			value = 0
+		}
+		set_variable = {
+			name = num_of_crossbows
+			value = 1
+		}
+		set_variable = {
+			name = num_of_knights
+			value = 1
+		}
+		spawn_army = {
+			uses_supply = no
+			inheritable = yes
+			name = barbarossa_crusaders
+			men_at_arms = {
+				type = jerusalem_knights
+				stacks = var:num_of_knights
+			}
+			men_at_arms = {
+				type = crossbowmen
+				stacks = var:num_of_crossbows
+			}
+			men_at_arms = {
+				type = armored_footmen
+				stacks = var:num_of_heavy_swords
+			}
+			levies = {
+				value = var:num_of_levies
+			}
+			location = 5910
+		}
+		death = natural
+	}
+}
+
+KoH_barbarossa_crusade.12 = {
+	type = character_event
+	title = KoH_barbarossa_crusade.12.t
+	desc = KoH_barbarossa_crusade.12.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KoH_barbarossa_crusade.12.a
+		spawn_army = {
+			uses_supply = no
+			inheritable = yes
+			name = barbarossa_crusaders
+			men_at_arms = {
+				type = jerusalem_knights
+				stacks = var:num_of_knights
+			}
+			men_at_arms = {
+				type = crossbowmen
+				stacks = var:num_of_crossbows
+			}
+			men_at_arms = {
+				type = armored_footmen
+				stacks = var:num_of_heavy_swords
+			}
+			levies = {
+				value = var:num_of_levies
+			}
+			location = 5910
+		}
+		change_chivalry_effect = { 
+			Chivalry = 2
+		}
+	}
+}

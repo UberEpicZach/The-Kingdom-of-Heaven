@@ -1,0 +1,507 @@
+﻿namespace = KoH_erfurt_affair
+
+KoH_erfurt_affair.1 = {
+	title = KoH_erfurt_affair.1.t
+	desc = KoH_erfurt_affair.1.desc
+	theme = unfriendly
+	left_portrait = {
+		character = this
+		animation = stress
+	}
+	right_portrait = {
+		character = scope:feuding_bishop
+		animation = schadenfreude
+	}
+
+	trigger = {
+		character:7557 = {
+			is_alive = yes
+		}
+	}
+
+	immediate = {
+		character:7557 = {
+			save_scope_as = feuding_bishop
+		}
+		character:212430 = {
+			save_scope_as = bossman
+		}
+	}
+
+	option = { # let's hash this out
+		name = KoH_erfurt_affair.1.a
+
+		add_piety = minor_piety_loss
+		add_prestige = minor_prestige_gain
+
+		trigger_event = {
+			id = KoH_erfurt_affair.2
+			days = { 10 } #change to a range
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = { # he can do what he likes
+		name = KoH_erfurt_affair.1.b
+
+		add_piety = minor_piety_gain
+		add_prestige = major_prestige_loss
+
+		scope:feuding_bishop = {
+			add_prestige = major_prestige_gain
+		}
+
+		if = { # contingency
+			limit = { has_relation_nemesis = scope:feuding_bishop }
+			add_opinion = {
+				modifier = KoH_erfurt_affair.irritated
+				target = scope:feuding_bishop
+			}
+			scope:feuding_bishop = {
+				add_opinion = {
+					modifier = KoH_erfurt_affair.irritated
+					target = prev
+				}
+			}
+		}
+		else_if = {
+			limit = { has_relation_rival = scope:feuding_bishop }
+			set_relation_nemesis = scope:feuding_bishop
+		}
+		else = {
+			progress_towards_rival_effect = {
+				CHARACTER = scope:feuding_bishop
+				OPINION = yes
+			}
+		}
+
+		ai_chance = { # the ai will never take it
+			base = 0
+		}
+
+		stress_impact = {
+			lazy = minor_stress_impact_loss
+			stubborn = medium_stress_impact_gain
+		}
+	}
+}
+
+KoH_erfurt_affair.2 = {
+	title = KoH_erfurt_affair.2.t
+	desc = KoH_erfurt_affair.2.desc
+	theme = diplomacy
+
+	immediate = {
+		character:7557 = {
+			save_scope_as = feuding_bishop
+		}
+	}
+
+	option = {
+		name = KoH_erfurt_affair.2.a
+
+		add_prestige = minor_prestige_gain
+		scope:feuding_bishop = {
+			add_prestige = minor_prestige_gain
+		}
+
+		trigger_event = {
+			id = KoH_erfurt_affair.301
+			days = { 20 30 } # that should be long enough - if the multiplayer event timeout is lengthened, increase this
+		}
+
+		capital_province = {
+			spawn_activity = {
+				type = activity_diet
+				owner = root
+			}
+		}
+
+		activity = { # scopes to the diet, bc you're there
+			save_scope_as = diet
+		}
+
+		# sending invites - this is done in reverse order of priority, so the biggest priority is set last
+		# the order only matters if someone controls 2 or more of these counties
+
+		invite_count = {
+			CHAR = character:KOH_FRANCONIAN023
+			TITLE = title:c_marburg 
+			CHANCE = 90
+		}
+
+		invite_count = {
+			CHAR = character:KOH_FRANKCONIAN02
+			TITLE = title:c_schwarzburg
+			CHANCE = 90
+		}
+
+		invite_count = {
+			CHAR = character:31794
+			TITLE = title:c_orlamunde
+			CHANCE = 50
+		}
+
+		invite_count = {
+			CHAR = character:212947
+			TITLE = title:c_henneberg
+			CHANCE = 35
+		}
+
+		invite_count = {
+			CHAR = character:33255
+			TITLE = title:c_katzenelnbogen 
+			CHANCE = 20
+		}
+
+		invite_count = {
+			CHAR = character:212370
+			TITLE = title:c_nassau
+			CHANCE = 15
+		}
+
+		#these last two can be in any order
+
+		scope:bossman = {
+			invite_and_set_death_chance = {
+				CHANCE = 10
+			}
+		}
+
+		scope:feuding_bishop = {
+			invite_and_set_death_chance = {
+				CHANCE = 10
+			}
+		}
+
+		if = {
+			limit = { character:212507 = { is_alive = yes }}
+			character:212507 = {
+				invite_and_set_death_chance = {
+					CHANCE = 3
+				}
+			}
+		}
+		else_if = {
+			limit = { character:212500 = { is_alive = yes }}
+			character:212500 = {
+				invite_and_set_death_chance = {
+					CHANCE = 3
+				}
+			}
+		}
+
+		every_in_list = {
+			list = potential_participants
+			trigger_event = KoH_erfurt_affair.3
+		}
+	}
+}
+
+scripted_effect invite_count = {
+	if = {
+		limit = { $CHAR$ = { is_alive = yes }}
+		$CHAR$ = {
+			invite_and_set_death_chance = {
+				CHANCE = $CHANCE$
+			}
+		}
+	}
+	else_if = {
+		limit = { $TITLE$ = { is_title_created = yes } }
+		$TITLE$.holder = {
+			invite_and_set_death_chance = {
+				CHANCE = $CHANCE$
+			}
+		}
+	}
+}
+
+scripted_effect invite_and_set_death_chance = {
+	set_latrine_death_chance = {
+		CHANCE = $CHANCE$
+	}
+	if = {
+		limit = { # don't trigger the event twice
+			NOT = {
+				is_in_list = potential_participants
+			}
+		}
+		add_to_list = potential_participants
+	}
+}
+
+scripted_effect set_latrine_death_chance = {
+	set_variable = {
+		name = KoH_erfurt_affair_deathChanceVar
+		value = $CHANCE$
+	}
+}
+
+KoH_erfurt_affair.3 = {
+	title = KoH_erfurt_affair.3.t
+	desc = KoH_erfurt_affair.3.desc
+	theme = realm
+
+	option = { # yes, I'll go
+		name = KoH_erfurt_affair.3.a
+
+		trigger = {
+			is_available_for_activity_trigger = yes
+		}
+
+		show_as_unavailable = {
+			always = yes
+		}
+
+		scope:diet = {
+			accept_invitation_for_character = prev
+		}
+	}
+
+	option = { # nah
+		name = KoH_erfurt_affair.3.b
+
+		scope:diet = {
+			decline_invitation_for_character = prev
+		}
+		remove_variable = KoH_erfurt_affair_deathChanceVar # won't be needing this
+
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+KoH_erfurt_affair.301 = {
+	hidden = yes
+
+	immediate = {
+		activity = { # scopes to the diet, bc you're there
+			save_scope_as = diet
+		}
+
+		scope:diet = {
+			every_participant = {
+				limit = { is_ai = no } # they don't need to know
+				trigger_event = KoH_erfurt_affair.4
+			}
+		}
+		trigger_event = KoH_erfurt_affair.401
+	}
+
+	#option = {
+	#	name = KoH_erfurt_affair.301.a
+	#
+	#}
+}
+
+KoH_erfurt_affair.4 = {
+	title = KoH_erfurt_affair.4.t
+	desc = KoH_erfurt_affair.4.desc
+	theme = feast_activity
+	
+	option = {
+		name = KoH_erfurt_affair.4.a
+	}
+}
+
+KoH_erfurt_affair.401 = {
+	hidden = yes
+
+	immediate = {
+
+		random_list = {
+			5 = {
+				trigger_event = KoH_erfurt_affair.50
+				scope:diet = {
+					every_participant = {
+						# only the counts and such get the prestige
+						limit = { has_variable = KoH_erfurt_affair_deathChanceVar }
+						trigger_event = KoH_erfurt_affair.51
+					}
+				}
+			}
+
+			95 = {
+				trigger_event = KoH_erfurt_affair.601
+			}
+		}
+
+	}
+}
+
+scripted_effect successful_diet_leader_effects = {
+	scope:bossman = {
+		add_prestige = {
+			value = medium_prestige_loss
+			add = major_prestige_loss
+		}
+		add_dynasty_prestige = major_dynasty_prestige_value
+		add_relation_friend = scope:feuding_bishop
+		add_diplomacy_skill = 3
+	}
+	scope:feuding_bishop = {
+		add_prestige = {
+			value = medium_prestige_loss
+			add = major_prestige_loss
+		}
+		add_dynasty_prestige = major_dynasty_prestige_value
+	}
+}
+
+KoH_erfurt_affair.50 = {
+	title = KoH_erfurt_affair.50.t
+	desc = KoH_erfurt_affair.50.desc
+	theme = feast_activity
+
+	immediate = {
+		show_as_tooltip = {
+			successful_diet_leader_effects = yes
+		}
+	}
+
+	option = {
+		name = KoH_erfurt_affair.50.a
+	}
+}
+
+KoH_erfurt_affair.51 = {
+	title = KoH_erfurt_affair.51.t
+	desc = KoH_erfurt_affair.51.desc
+	theme = feast_activity
+
+	immediate = {
+		show_as_tooltip = {
+			successful_diet_leader_effects = yes
+		}
+	}
+
+	option = {
+		name = KoH_erfurt_affair.51.a
+
+		add_prestige = minor_prestige_gain
+	}
+}
+
+KoH_erfurt_affair.601 = { # kills people
+	hidden = yes
+
+	immediate = {
+		scope:diet = {
+			every_participant = {
+				limit = { has_variable = KoH_erfurt_affair_deathChanceVar }
+				random = {
+					chance = var:KoH_erfurt_affair_deathChanceVar
+					add_to_list = died_from_latrine_disaster
+				}
+				# cleanup, sometimes the script doesn't get here (e.g. they die halfway through), but it's not a big deal
+				remove_variable = KoH_erfurt_affair_deathChanceVar
+			}
+			disaster_effects = yes # this is the only place it's called for real
+
+			every_participant = {
+				trigger_event = KoH_erfurt_affair.6
+				add_to_list = got_latrine_disaster_event
+			}
+		}
+
+		title:e_hre.holder = {
+			every_vassal_or_below = {
+				if = {
+					limit = {
+						NOT = {
+							is_in_list = got_latrine_disaster_event
+						}
+					}
+					trigger_event = KoH_erfurt_affair.7
+				}
+			}
+		}
+		title:e_hre.holder = {
+			trigger_event = KoH_erfurt_affair.7
+		}
+	}
+}
+
+scripted_effect disaster_effects = {
+	every_in_list = {
+		list = died_from_latrine_disaster
+		death = {
+			death_reason = death_latrine_disaster
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				scope:bossman = {
+					is_in_list = died_from_latrine_disaster
+				}
+			}
+		}
+		add_prestige = {
+			value = medium_prestige_loss
+			add = major_prestige_loss
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					scope:fueding_bishop = { is_in_list = died_from_latrine_disaster }
+				}
+			}
+			add_prestige = {
+				value = medium_prestige_loss
+				add = major_prestige_loss
+			}
+			add_relation_rival = scope:bossman
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				scope:fueding_bishop = { is_in_list = died_from_latrine_disaster }
+			}
+		}
+		add_prestige = {
+			value = medium_prestige_loss
+			add = major_prestige_loss
+		}
+	}
+}
+
+KoH_erfurt_affair.6 = {
+	title = KoH_erfurt_affair.6.t
+	desc = KoH_erfurt_affair.6.desc
+	theme = skull
+
+	option = {
+		name = KoH_erfurt_affair.6.a
+	}
+
+	immediate = {
+		show_as_tooltip = {
+			disaster_effects = yes
+		}
+		activity = { # scopes to the diet, bc you're there
+			complete_activity = yes
+		}
+	}
+}
+
+KoH_erfurt_affair.7 = {
+	title = KoH_erfurt_affair.7.t
+	desc = KoH_erfurt_affair.7.desc
+	theme = skull
+
+	option = {
+		name = KoH_erfurt_affair.7.a
+
+		show_as_tooltip = {
+			disaster_effects = yes
+		}
+	}
+}

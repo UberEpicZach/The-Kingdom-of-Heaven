@@ -1,0 +1,100 @@
+﻿namespace = KoH_SicillianConflict
+
+KoH_SicillianConflict.1 = {
+	type = character_event
+	title = KoH_SicillianConflict.1.t
+	desc =  KoH_SicillianConflict.1.d
+	theme = war
+	hidden = yes
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	trigger = {
+		AND = {
+			character:211509 = {
+				is_alive = yes
+				NOT = { has_character_flag = SicillianConflictHasOccuredFlag }
+				NOT = { title:k_sicily.holder = character:211509 }
+				}
+			character:211500 = {
+				is_alive = no
+				}
+		}
+	}
+
+	immediate = {
+		character:211509 = {
+			add_character_flag = {
+				flag = SicillianConflictHasOccuredFlag
+				months = 100 # Players in MP can keep the event window open...
+			}
+		}
+	}
+
+	option = {
+		name = KoH_SicillianConflict.1.a
+
+		character:211509 = {
+		start_war = {
+			casus_belli = claim_cb
+			target = title:k_sicily.holder
+			target_title = title:k_sicily
+			claimant = character:211509
+			}
+			spawn_army = {
+				uses_supply = yes
+				inheritable = yes
+				name = Tancreds_coup
+				men_at_arms = {
+					type = armored_footmen
+					stacks = 15
+				}
+				location = 2635
+			}
+			spawn_army = {
+				uses_supply = yes
+				inheritable = yes
+				name = Tancreds_coup
+				men_at_arms = {
+					type = mangonel
+					stacks = 60
+				}
+				location = 2635
+			}
+		}
+	}
+}
+
+KoH_SicillianConflict.2 = {
+	type = character_event
+	title = KoH_SicillianConflict.2.t
+	desc =  KoH_SicillianConflict.2.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	trigger = {
+		character:211509 = {
+			has_character_flag = SicillianConflictHasOccuredFlag }
+			title:k_sicily.holder = character:211509 
+		}
+
+	option = {
+		name = KoH_SicillianConflict.2.a
+
+		character:127092 = {
+			death = {
+				killer = character:211509
+				death_reason = death_murder_known
+			}
+		}
+	}
+}
+
+

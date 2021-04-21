@@ -1,8 +1,15 @@
 ﻿refresh_cardinal_characters = {
+    scope = character
+    effect = {
+        update_cardinal_window = yes
+    }
+} 
+
+cardinal_music = {
 	scope = character
-	effect = {
-		update_cardinal_window = yes
-	}
+    effect = {
+        play_music_cue = Cardinals
+    }
 }
 
 cardinal = {

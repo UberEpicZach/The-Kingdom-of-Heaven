@@ -1,0 +1,579 @@
+﻿namespace = KOH_ItalianCommunes
+
+scripted_trigger ItalianCommune_county_trigger = {
+	tier = tier_county
+	this = root.capital_county
+}
+
+#Random Generated Characters
+KOH_ItalianCommunes.1 = {
+	type = character_event
+	title = KOH_ItalianCommunes.1.t
+	desc = {
+		desc = KOH_ItalianCommunes.1.desc
+	}
+	theme = dynasty
+	left_portrait = root
+
+	trigger = {
+			is_adult = yes
+			is_ai = no
+		}
+
+	immediate = {
+
+		root = {
+			add_character_flag = original_root
+		}
+
+		random_held_title = {
+			limit = {
+				ItalianCommune_county_trigger = yes
+			}
+			save_scope_as = county
+		}
+	}
+
+	#Option 1
+	option = {
+		name = KOH_ItalianCommunes.1.a
+		custom_tooltip = "A Bureaucrat Candidate"
+
+		root = { random_dummy_gender_landholder_effect = yes }
+		create_character = {
+			age = { 20 30 }
+			location = root.capital_province
+			gender = scope:dummy_gender
+			faith = this.faith
+			culture = this.culture
+			dynasty = none
+			random_traits = yes
+			stewardship = { 10 12 }
+			save_scope_as = elective1
+		}
+
+		root = {
+			get_title = c_unlanded
+		}
+	
+		trigger_event = KOH_ItalianCommunes.2
+	}
+	#Option 2
+	option = {
+		name = KOH_ItalianCommunes.1.b
+		custom_tooltip = "A Diplomat Candidate"
+		root = { random_dummy_gender_landholder_effect = yes }
+		create_character = {
+			age = { 40 50 }
+			location = root.capital_province
+			gender = scope:dummy_gender
+			faith = this.faith
+			culture = this.culture
+			dynasty = inherit
+			random_traits = yes
+			diplomacy = { 10 12 }
+			save_scope_as = elective1
+		}
+
+		scope:elective1 = {
+			if = {
+				limit = {
+					is_married = no
+				}
+				create_character = {
+					location = scope:elective1.location
+					culture = scope:elective1.culture
+					faith = scope:elective1.faith
+					gender_female_chance = {
+						if = {
+							limit = { scope:elective1 = { is_male = yes } }
+							value = 100
+						}
+						else = {
+							value = 0
+						}
+					}
+					age = scope:elective1.age
+					save_scope_as = spouse
+				}
+	
+				if = {
+					limit = { is_male = yes }
+					marry = scope:spouse
+				}
+				else = {
+					marry_matrilineal = scope:spouse
+				}
+			}
+			else = {
+				primary_spouse = { save_scope_as = spouse }
+			}
+	
+			if = {
+				limit = { is_male = yes }
+				save_scope_as = father
+				scope:spouse = { save_scope_as = mother }
+			}
+			else = {
+				save_scope_as = mother
+				scope:spouse = { save_scope_as = father }
+			}
+	
+			#Create child 1 (mother age 17+)
+			if = {
+				limit = { scope:mother.age >= 17 }
+				create_character = {
+					location = scope:elective1.location
+					culture = scope:elective1.culture
+					faith = scope:elective1.faith
+					gender_female_chance = {
+						if = {
+							limit = {
+								is_ruler = yes
+								scope:elective1 = { has_realm_law = male_only_law }
+							}
+							value = 0
+						}
+						else = {
+							limit = {
+								is_ruler = yes
+								scope:elective1 = { has_realm_law = female_only_law }
+							}
+							value = 100
+						}
+						else = {
+							value = 50
+						}
+					}
+					age = {
+						value = scope:mother.age
+						subtract = 17
+					}
+					father = scope:father
+					mother = scope:mother
+					dynasty = inherit
+					save_scope_as = child_1
+				}
+			}
+		}
+
+		root = {
+			get_title = c_unlanded
+		}
+		trigger_event = KOH_ItalianCommunes.2
+	}
+	#Option 3
+	option = {
+		name = KOH_ItalianCommunes.1.c
+		custom_tooltip = "A Military Candidate"
+		root = { random_dummy_gender_landholder_effect = yes }
+		create_character = {
+			age = { 20 30 }
+			location = root.capital_province
+			gender = scope:dummy_gender
+			faith = this.faith
+			random_traits = yes
+			culture = this.culture
+			dynasty = none
+			martial = { 10 12 }
+			save_scope_as = elective1
+		}
+
+		root = {
+			get_title = c_unlanded
+		}
+
+		trigger_event = KOH_ItalianCommunes.2
+	}
+	#Option 4
+	option = {
+		trigger = { 
+			root = {
+				any_child = {
+					count >= 1
+				}
+			}
+		}
+
+		name = KOH_ItalianCommunes.1.d
+		custom_tooltip = "Reelect from family"
+		
+		root = {
+			get_title = c_unlanded
+		}
+		
+		root.primary_heir = {
+			save_scope_as = elective1
+		}
+
+		root.primary_heir = {
+			get_title = scope:county
+		}
+
+		trigger_event = KOH_ItalianCommunes.2
+	}
+	#Option 5
+	option = {
+		name = KOH_ItalianCommunes.1.e
+		custom_tooltip = "Run for Releection"
+		random_list = {
+			25 = { #
+				root = { random_dummy_gender_landholder_effect = yes }
+				create_character = {
+					age = { 20 30 }
+					location = root.capital_province
+					gender = scope:dummy_gender
+					faith = this.faith
+					culture = this.culture
+					dynasty = none
+					random_traits = yes
+					stewardship = { 10 12 }
+					save_scope_as = elective1
+				}
+
+				root = {
+					get_title = c_unlanded
+				}
+		
+				scope:elective1 = {
+					get_title = scope:county
+				}
+
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "[elective1.GetName] has won the election"
+					left_icon = scope:elective1
+				}
+				trigger_event = KOH_ItalianCommunes.2
+
+			}
+			25 = {
+				root = { random_dummy_gender_landholder_effect = yes }
+				create_character = {
+					age = { 40 50 }
+					location = root.capital_province
+					gender = scope:dummy_gender
+					faith = this.faith
+					culture = this.culture
+					dynasty = inherit
+					random_traits = yes
+					diplomacy = { 10 12 }
+					save_scope_as = elective1
+				}
+
+				root = {
+					get_title = c_unlanded
+				}
+		
+				scope:elective1 = {
+					get_title = scope:county
+				}
+
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "[elective1.GetName] has won the election"
+					left_icon = scope:elective1
+				}
+				trigger_event = KOH_ItalianCommunes.2
+			}
+			25 = {
+				root = { random_dummy_gender_landholder_effect = yes }
+				create_character = {
+					age = { 20 30 }
+					location = root.capital_province
+					gender = scope:dummy_gender
+					faith = this.faith
+					random_traits = yes
+					culture = this.culture
+					dynasty = none
+					martial = { 10 12 }
+					save_scope_as = elective1
+				}
+
+				root = {
+					get_title = c_unlanded
+				}
+				
+				scope:elective1 = {
+					get_title = scope:county
+				}
+
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "[elective1.GetName] has won the election"
+					left_icon = scope:elective1
+				}
+				trigger_event = KOH_ItalianCommunes.2
+			}
+			25 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "You have won the Re-Election"
+					left_icon = root
+				}
+			}
+		}
+			
+	}
+}
+
+KOH_ItalianCommunes.2 = {
+	type = character_event
+	hidden = yes 
+
+	immediate = {
+		scope:elective1 = {
+			get_title = scope:county
+		}
+
+		set_player_character = scope:elective1
+
+		trigger_event = KOH_ItalianCommunes.3
+	}
+}
+
+KOH_ItalianCommunes.3 = {
+	type = character_event
+	hidden = yes 
+
+	immediate = {
+		character:KOHHOLDEROFUNLANDED = { get_title = c_unlanded }
+		set_employer = scope:county.holder
+		move_to_pool = yes
+	}
+} 
+
+KOH_ItalianCommunes.4 = {
+	type = character_event
+	title = KOH_ItalianCommunes.4.t
+	desc = {
+		desc = KOH_ItalianCommunes.4.desc
+	}
+	theme = dynasty
+	left_portrait = root
+
+	immediate = {
+		random_living_character = {
+			limit = {
+				has_culture_group = culture_group:latin_group
+				has_dynasty = yes   
+				is_landed = no        
+				age = 19
+				is_male = yes
+			}
+		
+			if = {
+				limit = { 
+					dynasty = { 
+						any_dynasty_member = { 
+							count >= 3 
+						} 
+					}
+				}
+				save_scope_as = ElectionCandidate
+			}
+		}	
+
+		random_living_character = {
+			limit = {
+				has_culture_group = culture_group:latin_group
+				has_dynasty = yes   
+				is_landed = no        
+				age = 19
+				is_male = yes
+			}
+		
+			if = {
+				limit = { 
+					dynasty = { 
+						any_dynasty_member = { 
+							count >= 3 
+						} 
+					}
+				}
+				save_scope_as = ElectionCandidate2
+			}
+		}
+		
+		random_living_character = {
+			limit = {
+				has_culture_group = culture_group:latin_group
+				has_dynasty = yes   
+				is_landed = no        
+				age = 19
+				is_male = yes
+			}
+		
+			if = {
+				limit = { 
+					dynasty = { 
+						any_dynasty_member = { 
+							count >= 3 
+						} 
+					}
+				}
+				save_scope_as = ElectionCandidate3
+			}
+		}	
+
+		random_held_title = {
+			limit = {
+				ItalianCommune_county_trigger = yes
+			}
+			save_scope_as = county
+		}
+	}
+
+	#Option 1
+	option = {
+		name = KOH_ItalianCommunes.4.a
+		custom_tooltip = "Run for Releection"
+		random_list = {
+			25 = { #ElectionCandidate1
+				root = {
+					get_title = title:c_unlanded
+				}
+		
+				scope:ElectionCandidate = {
+					get_title = scope:county
+					change_government = republic_government
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
+
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate.GetName] has won the election"
+					left_icon = scope:ElectionCandidate
+				}
+				trigger_event = KOH_ItalianCommunes.5
+
+			}
+
+			25 = { #ElectionCandidate1
+				root = {
+					get_title = title:c_unlanded
+				}
+			
+				scope:ElectionCandidate2 = {
+					get_title = scope:county
+					change_government = republic_government
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
+
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate2.GetName] has won the election"
+					left_icon = scope:ElectionCandidate2
+				}
+				trigger_event = KOH_ItalianCommunes.6
+					
+			}
+
+			25 = { #ElectionCandidate1
+				root = {
+					get_title = title:c_unlanded
+				}
+			
+				scope:ElectionCandidate3 = {
+					get_title = scope:county
+					change_government = republic_government
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
+
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate3.GetName] has won the election"
+					left_icon = scope:ElectionCandidate3
+				}
+				trigger_event = KOH_ItalianCommunes.7
+
+			}
+
+			25 = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will serve another term"
+					title = "You have won the Re-Election"
+					left_icon = root
+				}
+				add_character_flag = {
+					flag = RecentElection
+					months = 60
+				}
+			}
+		}
+	}
+}
+
+			
+
+#ElectionCandidate1
+KOH_ItalianCommunes.5 = {
+	type = character_event
+	hidden = yes 
+
+	immediate = {
+		scope:ElectionCandidate = {
+			get_title = scope:county
+		}
+
+		set_player_character = scope:ElectionCandidate
+
+		trigger_event = KOH_ItalianCommunes.8
+	}
+}	
+#ElectionCandidate2
+KOH_ItalianCommunes.6 = {
+	type = character_event
+	hidden = yes 
+
+	immediate = {
+		scope:ElectionCandidate2 = {
+			get_title = scope:county
+		}
+
+		set_player_character = scope:ElectionCandidate2
+
+		trigger_event = KOH_ItalianCommunes.8
+	}
+}	
+#ElectionCandidate3
+KOH_ItalianCommunes.7 = {
+	type = character_event
+	hidden = yes 
+
+	immediate = {
+		scope:ElectionCandidate3 = {
+			get_title = scope:county
+		}
+
+		set_player_character = scope:ElectionCandidate3
+
+		trigger_event = KOH_ItalianCommunes.8
+	}
+}	
+
+KOH_ItalianCommunes.8 = {
+	type = character_event
+	hidden = yes 
+
+	immediate = {
+		character:KOHHOLDEROFUNLANDED = {
+			get_title = c_unlanded
+		}
+		set_employer = scope:county.holder
+		move_to_pool = yes
+	}
+}
