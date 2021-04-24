@@ -75,6 +75,302 @@ character_view_bg = {
 
 	##########################################
 
+	# 'Feudal'/High-tier Norse, or non-Tribals in Scandinavia
+	texture = { # FP1 Norse
+		reference = "character_view/fp1_throneroom_nontribal.dds"
+
+		trigger = {
+			has_fp1_dlc_trigger = yes
+			OR = {
+				AND = {
+					is_ruler = no
+					OR = {
+						AND = {
+							exists = liege
+							liege = {
+								OR = {
+									NOT = {
+										has_government = tribal_government
+									}
+									primary_title.tier >= tier_kingdom
+								}
+								OR = {
+									culture = culture:norse
+									religion = religion:germanic_religion
+									has_graphical_scandinavia_region_trigger = yes
+								}
+							}
+						}
+						AND = {
+							exists = host
+							host = {
+								OR = {
+									NOT = {
+										has_government = tribal_government
+									}
+									primary_title.tier >= tier_kingdom
+								}
+								OR = {
+									culture = culture:norse
+									religion = religion:germanic_religion
+									has_graphical_scandinavia_region_trigger = yes
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					is_ruler = yes
+					OR = {
+						NOT = {
+							has_government = tribal_government
+						}
+						primary_title.tier >= tier_kingdom
+					}
+					OR = {
+						culture = culture:norse
+						religion = religion:germanic_religion
+						has_graphical_scandinavia_region_trigger = yes
+					}
+				}
+			}
+		}
+	}
+
+	environment = {
+		reference = "environment_fp1_cw_nontribal_main"
+
+		trigger = {
+			has_fp1_dlc_trigger = yes
+			OR = {
+				AND = {
+					is_ruler = no
+					OR = {
+						AND = {
+							exists = liege
+							liege = {
+								OR = {
+									NOT = {
+										has_government = tribal_government
+									}
+									primary_title.tier >= tier_kingdom
+								}
+								OR = {
+									culture = culture:norse
+									religion = religion:germanic_religion
+									has_graphical_scandinavia_region_trigger = yes
+								}
+							}
+						}
+						AND = {
+							exists = host
+							host = {
+								OR = {
+									NOT = {
+										has_government = tribal_government
+									}
+									primary_title.tier >= tier_kingdom
+								}
+								OR = {
+									culture = culture:norse
+									religion = religion:germanic_religion
+									has_graphical_scandinavia_region_trigger = yes
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					is_ruler = yes
+					OR = {
+						NOT = {
+							has_government = tribal_government
+						}
+						primary_title.tier >= tier_kingdom
+					}
+					OR = {
+						culture = culture:norse
+						religion = religion:germanic_religion
+						has_graphical_scandinavia_region_trigger = yes
+					}
+				}
+			}
+			is_character_window_main_character = yes
+		}
+	}
+
+	environment = {
+		reference = "environment_fp1_cw_nontribal_spouse"
+
+		trigger = {
+			OR = {
+				AND = {
+					exists = primary_spouse
+					primary_spouse = {
+						has_fp1_dlc_trigger = yes
+						OR = {
+							NOT = {
+								has_government = tribal_government
+							}
+							primary_title.tier >= tier_kingdom
+						}
+						OR = {
+							culture = culture:norse
+							religion = religion:germanic_religion
+							has_graphical_scandinavia_region_trigger = yes
+						}
+					}
+				}
+				AND = {
+					exists = betrothed
+					betrothed = {
+						has_fp1_dlc_trigger = yes
+						OR = {
+							NOT = {
+								has_government = tribal_government
+							}
+							primary_title.tier >= tier_kingdom
+						}
+						OR = {
+							culture = culture:norse
+							religion = religion:germanic_religion
+							has_graphical_scandinavia_region_trigger = yes
+						}
+					}
+				}
+			}
+			is_character_window_main_character = no
+		}
+	}
+	
+	##########################################
+	
+	# Tribal Norse
+	texture = { # FP1 Norse
+		reference = "character_view/fp1_throneroom_tribal.dds"
+
+		trigger = {
+			has_fp1_dlc_trigger = yes
+			OR = {
+				AND = {
+					is_ruler = no
+					OR = {
+						AND = {
+							exists = liege
+							liege = {
+								has_government = tribal_government
+								OR = {
+									culture = culture:norse
+									religion = religion:germanic_religion
+									has_graphical_scandinavia_region_trigger = yes
+								}
+							}
+						}
+						AND = {
+							exists = host
+							host = {
+								has_government = tribal_government
+								OR = {
+									culture = culture:norse
+									religion = religion:germanic_religion
+									has_graphical_scandinavia_region_trigger = yes
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					is_ruler = yes
+					has_government = tribal_government
+					OR = {
+						culture = culture:norse
+						religion = religion:germanic_religion
+					}
+				}
+			}
+		}
+	}
+
+	environment = {
+		reference = "environment_fp1_cw_tribal_main"
+
+		trigger = {
+			has_fp1_dlc_trigger = yes
+			OR = {
+				AND = {
+					is_ruler = no
+					OR = {
+						AND = {
+							exists = liege
+							liege = {
+								has_government = tribal_government
+								OR = {
+									culture = culture:norse
+									religion = religion:germanic_religion
+									has_graphical_scandinavia_region_trigger = yes
+								}
+							}
+						}
+						AND = {
+							exists = host
+							host = {
+								has_government = tribal_government
+								OR = {
+									culture = culture:norse
+									religion = religion:germanic_religion
+									has_graphical_scandinavia_region_trigger = yes
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					is_ruler = yes
+					has_government = tribal_government
+					OR = {
+						culture = culture:norse
+						religion = religion:germanic_religion
+					}
+				}
+			}
+			is_character_window_main_character = yes
+		}
+	}
+
+	environment = {
+		reference = "environment_fp1_cw_tribal_spouse"
+
+		trigger = {
+			OR = {
+				AND = {
+					exists = primary_spouse
+					primary_spouse = {
+						has_government = tribal_government
+						has_fp1_dlc_trigger = yes
+						OR = {
+							culture = culture:norse
+							religion = religion:germanic_religion
+						}
+					}
+				}
+				AND = {
+					exists = betrothed
+					betrothed = {
+						has_government = tribal_government
+						has_fp1_dlc_trigger = yes
+						OR = {
+							culture = culture:norse
+							religion = religion:germanic_religion
+						}
+					}
+				}
+			}
+			is_character_window_main_character = no
+		}
+	}
+
+	##########################################
+
 	# Tribal
 	texture = {
 		reference = "character_view/throneroom_tribal.dds"
@@ -783,19 +1079,24 @@ character_location_exterior = {
 ### Religious interior
 religion_interior = {
 
-	texture = {
-		trigger = {
-			religion = religion:christianity_religion
+	texture = { # FP1
+		trigger = { religion = religion:germanic_religion }
+		reference = "event_scenes/fp1_tribal_temple.dds"
+	}
+
+	environment = { # FP1
+		trigger = { religion = religion:germanic_religion }
+		reference = "environment_event_fp1_tribal_temple"
 		}
+
+	texture = {
+		trigger = { religion = religion:christianity_religion }
 		reference = "event_scenes/church.dds"
 	}
 
 	environment = {
+		trigger = { religion = religion:christianity_religion }
 		reference = "environment_event_church"
-
-		trigger = {
-			religion = religion:christianity_religion
-		}
 	}
 
 	texture = {
@@ -828,6 +1129,16 @@ religion_interior = {
 		reference = "blank.dds"
 	}
 
+	# texture = {
+	# 	reference = "gfx/interface/skins/norse/illustrations/council/bg_council_chaplain.dds"
+		
+	# 	trigger = {
+	# 		AND = {
+	# 			religion = religion:pagan
+	# 			has_dlc_feature = the_northern_lords
+	# 		}
+	# 	}
+	# }
 
 	environment = {
 		reference = "character_view_main"
@@ -869,6 +1180,18 @@ religion_holding = {
 
 ### Holding image based on title
 title_holding = {
+	###
+	texture = {
+		trigger = {
+			title_illustration_save_province_temporary = yes
+			scope:province = {
+				has_holding_type = monastery_holding
+				#has_government = monastic_government
+			}
+		}
+		reference = "holding_types/monastery_christian.dds"
+	}
+	###
 	texture = {
 		trigger = {
 			OR = {

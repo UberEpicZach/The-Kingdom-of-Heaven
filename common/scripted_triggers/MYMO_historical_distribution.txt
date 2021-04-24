@@ -1,0 +1,175 @@
+﻿mymo_historic_bishopric = {
+	OR = {
+		AND = {
+			NOT = { has_global_variable = arkomod_active }
+			mymo_historic_bishopric_vanilla = yes
+		}
+		AND = {
+			has_global_variable = arkomod_active
+			mymo_historic_bishopric_arkomod = yes
+		}
+	}
+}
+
+mymo_historic_abbey = {
+	OR = {
+		AND = {
+			NOT = { has_global_variable = arkomod_active }
+			mymo_historic_abbey_vanilla = yes
+		}
+		AND = {
+			has_global_variable = arkomod_active
+			mymo_historic_abbey_arkomod = yes
+		}
+	}
+}
+
+mymo_historic_abbey_county_level = {
+	OR = {
+		AND = {
+			NOT = { has_global_variable = arkomod_active }
+			mymo_historic_abbey_county_level_vanilla = yes
+		}
+		AND = {
+			has_global_variable = arkomod_active
+			mymo_historic_abbey_county_level_arkomod = yes
+		}
+	}
+}
+
+mymo_historic_bishopric_vanilla	= {	
+	OR = {
+		#nowadays France
+		barony = title:b_beauvais
+		barony = title:b_noyon
+		barony = title:b_coutances
+		barony = title:b_toul
+		barony = title:b_lausanne
+		barony = title:b_belley
+		barony = title:b_laon
+		barony = title:b_embrun
+		barony = title:b_avignon
+		barony = title:b_digne
+		barony = title:b_narbonne	
+		barony = title:b_bazadais
+		barony = title:b_dax
+		barony = title:b_pamiers
+		barony = title:b_velay #*
+		barony = title:b_cahors
+		#nowadays Portugal
+		barony = title:b_lagos
+		#not on map as temple : Braga, Lisboa, Porto
+		#nowadays Swiss
+		barony = title:b_basel	
+		#nowadays England
+		barony = title:b_canterbury	
+		#spains
+		barony = title:b_andorra #Seu d'Urgell
+	}
+}
+
+mymo_historic_bishopric_arkomod = {
+	OR = {
+		#nowadays France
+		barony = title:b_beauvais
+		barony = title:b_noyon
+		barony = title:b_coutances
+		barony = title:b_toul
+		barony = title:b_lausanne
+		barony = title:b_belley
+		barony = title:b_laon
+		barony = title:b_embrun
+		barony = title:b_avignon
+		barony = title:b_digne
+		barony = title:b_narbonne		
+		barony = title:b_bazadais
+		barony = title:b_dax
+		barony = title:b_tursan #* Aire sur l'Adour
+		barony = title:b_astarac #* Auch
+		barony = title:b_pamiers
+		barony = title:b_le_puy #*
+		barony = title:b_clermont_auvergne #*
+		barony = title:b_aurillac #*
+		barony = title:b_mende #*
+		barony = title:b_langres #*
+		barony = title:b_verdun #*
+		barony = title:b_cahors
+		#nowadays HRE
+		barony = title:b_strassburg #*
+		#nowadays Portugal
+		barony = title:b_lagos
+		#not on map as temple : Braga, Lisboa, Porto
+		#nowadays Swiss
+		barony = title:b_basel	
+		#nowadays England
+		barony = title:b_canterbury
+		#spains
+		barony = title:b_andorra #Seu d'Urgell		
+	}
+}		
+
+mymo_historic_abbey_vanilla = {
+	OR = {
+		#nowadays France
+		barony = title:b_fecamp
+		barony = title:b_lure
+		barony = title:b_cluny
+		barony = title:b_citeaux
+		barony = title:b_vezelay
+		barony = title:b_limoux
+		barony = title:b_saint_denis
+		barony = title:b_mimizan
+		barony = title:b_figeac
+		barony = title:b_beaumont_sur_leze #Blagnac #*
+		barony = title:b_limoux #under abbey of st-hialire under Narbonne archbishops
+		#HRE
+		#barony = title:b_sankt_gallen
+		
+		#nowadays Portugal
+		#not on map as temple : province of Porto:Tibães and Leça-do-Bailio. province of Coimbra: Monastery of Santa Cruz and Monastry of Lorvão. In Lisboa you have the Monastery of Batalha	
+		#Also in Lisboa you have a very important monastery that is Monastery of Alcobaça.
+		#nowadays HRE
+		barony = title:b_prum
+	}
+}
+
+
+mymo_historic_abbey_arkomod = {
+	OR = {
+		#nowadays France
+		barony = title:b_fecamp
+		barony = title:b_lure
+		barony = title:b_cluny
+		barony = title:b_citeaux
+		barony = title:b_vezelay
+		barony = title:b_limoux
+		barony = title:b_saint_denis
+		barony = title:b_brioude #*
+		barony = title:b_moyenmoutier #*
+		barony = title:b_gorze #*
+		barony = title:b_mimizan
+		barony = title:b_figeac
+		barony = title:b_castelnaudary
+		barony = title:b_blagnac #*
+		#HRE
+		barony = title:b_sankt_gallen
+		
+		#nowadays Portugal
+		#not on map as temple : province of Porto:Tibães and Leça-do-Bailio. province of Coimbra: Monastery of Santa Cruz and Monastry of Lorvão. In Lisboa you have the Monastery of Batalha	
+		#Also in Lisboa you have a very important monastery that is Monastery of Alcobaça.
+		#nowadays HRE
+		barony = title:b_prum
+	}
+}
+
+mymo_historic_abbey_county_level_vanilla = {
+	OR = {
+		#HRE
+		barony = title:b_sankt_gallen
+	}
+}
+
+mymo_historic_abbey_county_level_arkomod = {
+	always = no
+}
+
