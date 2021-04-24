@@ -7,7 +7,6 @@
 		#KOH_investiture
 		delay = { months = 12 }
 		KOH_commune_maintenance
-		MyMo_ongamestart
 	}
 }
 
@@ -131,6 +130,7 @@ on_game_start_after_lobby = {
 	on_actions = {
 		on_cardinal_initialize
 		KOH_holy_orders
+		MyMo_ongamestart
 	}
 }
 

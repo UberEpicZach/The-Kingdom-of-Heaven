@@ -5,7 +5,7 @@
 
 types KohButtons
 {
-    type button_frontendOpen = button_normal
+    type button_frontend2 = button_normal
     {
         texture = "gfx/interface/buttons/button_frontend2.png"
         size = { 310 55 }
@@ -29,6 +29,35 @@ types KohButtons
         }
 
     }
+
+    type button_frontendLoad = button_normal
+    {
+        texture = "gfx/interface/buttons/button_frontend2.png"
+        size = { 310 55 }
+        gfxtype = framedbuttongfx
+        effectname = "NoHighlight"
+        upframe = 1
+        overframe = 2
+        downframe = 3
+        framesize = { 391 69 }
+
+
+        buttonText = {
+            text_single = {
+                size = { 100% 100% }
+                autoresize = no
+                margin = { 10 0 }
+                align = center|nobaseline
+                default_format = "#clickable"
+                using = Font_Size_Medium
+            }
+        }
+
+    }
+
+
+
+
     type button_frontend_koh_active = button_frontend2 {
 		font = KoHFontType
 		default_format = "#high"

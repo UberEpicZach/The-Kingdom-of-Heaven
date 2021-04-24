@@ -1,0 +1,83 @@
+﻿pool_monastic_succession = {
+	valid_character = {
+		is_capable_adult = yes
+		scope:base.faith = { has_allowed_gender_for_clergy = root }
+		#is_claimant = no
+		is_imprisoned = no
+		is_married = no
+	}
+	
+	character_score = {
+		base = 1
+
+		modifier = {
+			add = 2000
+			is_courtier_of = scope:base
+		}
+		
+		compare_modifier = {
+			value = learning
+		}
+		modifier = {
+		piety_level >= 2
+			add = {
+				value = piety_level
+				multiply = 5
+			}
+		}
+		modifier = {
+			add = 200
+			has_same_culture_as = scope:base
+		}
+		modifier = {
+			add = 100
+			has_same_culture_group_as = scope:base
+		}
+		modifier = {
+			factor = 1.3
+			age > 40
+		}
+		modifier = {
+			factor = 1.6
+			age > 60
+		}
+		modifier = {
+			factor = 2
+			is_lowborn = no
+		}
+		##dealt by gender general filter
+		#modifier = {
+		#	factor = 300
+		#	scope:base.faith = { has_preferred_gender_for_clergy = root }
+		#}
+		modifier = {
+			add = 100
+			has_education_learning_trigger = yes
+		}
+		modifier = {
+			add = 50
+			has_education_stewardship_trigger = yes
+		}
+		modifier = {
+			add = 500
+			has_monastic_trigger = yes #>> has_trait = devoted
+		}
+		##dealt by gender general filter
+		#modifier = {
+		#	add = 1000		
+		#	is_female = no
+		#}
+	}
+	
+	
+	config = {
+		#background = clergy #>> trait = education_learning
+		age = { 20 75 }
+	}
+	
+	selection_count = 1
+	
+	pool = faith
+	gender = clergy
+	court = yes
+}

@@ -1,0 +1,534 @@
+﻿@holding_illustration_western = "gfx/interface/illustrations/holding_types/monastery_christian.dds"
+
+monastery_01 = {
+	construction_time = slow_construction_time
+	
+	asset = {
+		type = pdxmesh
+		name = "building_western_monastery_01_mesh"
+		illustration = @holding_illustration_western
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/Temples/generic_temple" soundparameter = { "Tier" = 0 } }
+		#graphical_regions = { "graphical_india" }
+	}
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		barony_cannot_construct_holding = no
+		faith = { has_doctrine = tenet_monasticism }
+	}
+	
+	can_construct = {
+		culture = {
+			has_innovation = innovation_city_planning
+		}
+		faith = { has_doctrine = tenet_monasticism }
+	}
+	
+	can_construct_showing_failures_only = {
+		building_requirement_tribal_holding_in_county = no
+	}
+	cost_gold = main_building_tier_1_cost
+
+	character_modifier = {
+		monthly_piety = 0.10
+		learning_per_prestige_level = 1
+		monthly_lifestyle_xp_gain_mult = 0.1
+		clergy_opinion = 5
+	}
+	county_modifier = {
+		tax_mult = 0.1
+		development_growth_factor = 0.2
+		development_growth = 0.1
+	}
+	
+	next_building = monastery_02
+	
+	levy = poor_building_levy_tier_1
+	garrison = normal_building_garrison_tier_1
+	province_modifier = {
+		monthly_income = normal_building_tax_tier_2
+	}
+
+	flag = monastery
+
+	type_icon = "icon_building_monastic_schools.dds"
+
+	on_complete = {
+		county.holder = { add_piety = massive_piety_gain }
+		county.holder = { add_character_flag = MYMO_monastery_founder }
+		county.holder.faith = { change_fervor = 1 }
+	}
+
+	ai_value = {
+		base = 100
+		modifier = {
+			factor = 0
+			scope:holder = {
+				NOT = { has_government = theocracy_government }
+			}
+		}
+	}
+}
+
+monastery_02 = {
+	construction_time = slow_construction_time
+	
+	asset = {
+		type = pdxmesh
+		name = "building_western_monastery_01_mesh"
+		illustration = @holding_illustration_western
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/Temples/generic_temple" soundparameter = { "Tier" = 0 } }
+		#graphical_regions = { "graphical_india" }
+	}
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	can_construct = {
+		culture = {
+			has_innovation = innovation_manorialism
+		}
+	}
+	cost_gold = main_building_tier_2_cost
+
+	character_modifier = {
+		monthly_piety = 0.25
+		learning_per_prestige_level = 1
+		monthly_lifestyle_xp_gain_mult = 0.1
+		clergy_opinion = 5
+	}
+	county_modifier = {
+		tax_mult = 0.1
+		development_growth_factor = 0.2
+		development_growth = 0.1
+	}
+	
+	next_building = monastery_03
+	
+	levy = poor_building_levy_tier_2
+	garrison = normal_building_garrison_tier_2
+	province_modifier = {
+		monthly_income = normal_building_tax_tier_4
+	}
+
+	flag = monastery
+	
+	ai_value = {
+		base = 6		
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+monastery_03 = {
+	construction_time = slow_construction_time
+	
+	asset = {
+		type = pdxmesh
+		name = "building_western_monastery_01_mesh"
+		illustration = @holding_illustration_western
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/Temples/generic_temple" soundparameter = { "Tier" = 0 } }
+		#graphical_regions = { "graphical_india" }
+	}
+	
+	
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	can_construct = {
+		culture = {
+			has_innovation = innovation_windmills
+		}
+	}
+	cost_gold = main_building_tier_3_cost
+
+	character_modifier = {
+		monthly_piety = 0.30
+		learning_per_prestige_level = 1
+		monthly_lifestyle_xp_gain_mult = 0.1
+		clergy_opinion = 5
+	}
+	county_modifier = {
+		tax_mult = 0.1
+		development_growth_factor = 0.2
+		development_growth = 0.1
+	}
+	
+	next_building = monastery_04
+	
+	levy = poor_building_levy_tier_3
+	garrison = normal_building_garrison_tier_3
+	province_modifier = {
+		monthly_income = normal_building_tax_tier_6
+	}
+
+	flag = monastery
+	
+	ai_value = {
+		base = 5		
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+monastery_04 = {
+	construction_time = slow_construction_time
+	
+	asset = {
+		type = pdxmesh
+		name = "building_western_monastery_01_mesh"
+		illustration = @holding_illustration_western
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/Temples/generic_temple" soundparameter = { "Tier" = 0 } }
+		#graphical_regions = { "graphical_india" }
+	}
+	
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	can_construct = {
+		culture = {
+			has_innovation = innovation_cranes
+		}
+	}
+	cost_gold = main_building_tier_4_cost
+
+	character_modifier = {
+		monthly_piety = 0.35
+		learning_per_prestige_level = 1
+		monthly_lifestyle_xp_gain_mult = 0.1
+		clergy_opinion = 5
+	}
+	county_modifier = {
+		tax_mult = 0.1
+		development_growth_factor = 0.2
+		development_growth = 0.1
+	}
+	
+	levy = poor_building_levy_tier_4
+	garrison = normal_building_garrison_tier_4
+	province_modifier = {
+		monthly_income = normal_building_tax_tier_8
+	}
+
+	flag = monastery
+	
+	ai_value = {
+		base = 4		
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+
+####
+#
+# Temple Buildings
+#
+####
+
+### Monastic School
+
+monastic_schools_01 = {
+	construction_time = standard_construction_time
+
+	can_construct_potential = {
+		OR = {
+			has_building_or_higher = monastery_01
+			has_building_or_higher = temple_01
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = normal_building_tier_1_cost
+	
+	character_modifier = {
+		monthly_piety = 0.1
+		learning_per_prestige_level = 1 # Mymo addition
+	}
+	county_modifier = {
+		development_growth_factor = 0.1 # Mymo replacement (previous monthly_county_control_change_add = 0.1)
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_1
+	}
+	
+	next_building = monastic_schools_02
+
+	type_icon = "icon_building_monastic_schools.dds"
+	
+	ai_value = {
+		base = 500
+		modifier = {
+			add = 500
+			scope:holder = {
+				has_government = monastic_government
+			}
+		}
+		modifier = {
+			factor = 2
+			free_building_slots <= 1
+		}
+	}
+}
+
+monastic_schools_02 = {
+	construction_time = standard_construction_time
+
+	can_construct_potential = {
+		OR = {
+			has_building_or_higher = monastery_01
+			has_building_or_higher = temple_01
+		}
+		culture = {
+			has_innovation = innovation_city_planning
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = normal_building_tier_2_cost
+	
+	character_modifier = {
+		monthly_piety = 0.2
+		learning_per_prestige_level = 1 # Mymo addition
+	}
+	county_modifier = {
+		development_growth_factor = 0.12 # Mymo replacement (previous monthly_county_control_change_add = 0.2)
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_2
+	}
+	
+	next_building = monastic_schools_03
+	ai_value = {
+		base = 9
+	}
+}
+
+monastic_schools_03 = {
+	construction_time = standard_construction_time
+
+	can_construct = {
+		OR = {
+			has_building_or_higher = monastery_02
+			has_building_or_higher = temple_02
+		}
+		culture = {
+			has_innovation = innovation_manorialism
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = normal_building_tier_3_cost
+	
+	character_modifier = {
+		monthly_piety = 0.3
+		learning_per_prestige_level = 2 # Mymo addition
+	}
+	county_modifier = {
+		development_growth_factor = 0.15 # Mymo replacement (previous monthly_county_control_change_add = 0.3)
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_3
+	}
+	
+	next_building = monastic_schools_04
+	ai_value = {
+		base = 8
+	}
+}
+
+monastic_schools_04 = {
+	construction_time = standard_construction_time
+
+	can_construct = {
+		OR = {
+			has_building_or_higher = monastery_02
+			has_building_or_higher = temple_02
+		}
+		culture = {
+			has_innovation = innovation_manorialism
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = normal_building_tier_4_cost
+	
+	character_modifier = {
+		monthly_piety = 0.4
+		learning_per_prestige_level = 2 # Mymo addition
+	}
+	county_modifier = {
+		development_growth_factor = 0.17 # Mymo replacement (previous monthly_county_control_change_add = 0.4)
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_4
+	}
+	
+	next_building = monastic_schools_05
+	ai_value = {
+		base = 7
+	}
+}
+
+monastic_schools_05 = {
+	construction_time = standard_construction_time
+
+	can_construct = {
+		OR = {
+			has_building_or_higher = monastery_03
+			has_building_or_higher = temple_03
+		}
+		culture = {
+			has_innovation = innovation_windmills
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = normal_building_tier_5_cost
+	
+	character_modifier = {
+		monthly_piety = 0.5
+		learning_per_prestige_level = 2 # Mymo addition
+	}
+	county_modifier = {
+		development_growth_factor = 0.2 # Mymo replacement (previous monthly_county_control_change_add = 0.5)
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_5
+	}
+	
+	next_building = monastic_schools_06
+	ai_value = {
+		base = 6
+	}
+}
+
+monastic_schools_06 = {
+	construction_time = standard_construction_time
+
+	can_construct = {
+		OR = {
+			has_building_or_higher = monastery_03
+			has_building_or_higher = temple_03
+		}
+		culture = {
+			has_innovation = innovation_windmills
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = normal_building_tier_6_cost
+	
+	character_modifier = {
+		monthly_piety = 0.6
+		learning_per_prestige_level = 2 # Mymo addition
+	}
+	county_modifier = {
+		development_growth_factor = 0.25 # Mymo replacement (previous monthly_county_control_change_add = 0.6)
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_6
+	}
+	
+	next_building = monastic_schools_07
+	ai_value = {
+		base = 5
+	}
+}
+
+monastic_schools_07 = {
+	construction_time = standard_construction_time
+
+	can_construct = {
+		OR = {
+			has_building_or_higher = monastery_04
+			has_building_or_higher = temple_04
+		}
+		culture = {
+			has_innovation = innovation_cranes
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+
+	cost_gold = normal_building_tier_7_cost
+	
+	character_modifier = {
+		monthly_piety = 0.7
+		learning_per_prestige_level = 3 # Mymo addition
+	}
+	county_modifier = {
+		development_growth_factor = 0.3 # Mymo replacement (previous monthly_county_control_change_add = 0.7)
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_7
+	}
+	
+	next_building = monastic_schools_08
+	ai_value = {
+		base = 4
+	}
+}
+
+monastic_schools_08 = {
+	construction_time = standard_construction_time
+
+	can_construct = {
+		OR = {
+			has_building_or_higher = monastery_04
+			has_building_or_higher = temple_04
+		}
+		culture = {
+			has_innovation = innovation_cranes
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = normal_building_tier_8_cost
+	
+	character_modifier = {
+		monthly_piety = 0.8
+		learning_per_prestige_level = 3 # Mymo addition
+	}
+	county_modifier = {
+		development_growth_factor = 0.35
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_8 # Mymo replacement (previous monthly_county_control_change_add = 0.8)
+	}
+	
+	ai_value = {
+		base = 3
+	}
+}

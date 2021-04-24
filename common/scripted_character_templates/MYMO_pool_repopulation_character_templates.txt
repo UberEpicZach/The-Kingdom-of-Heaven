@@ -1,0 +1,89 @@
+﻿#################################### THE DUKE AND THE BODENSEE ######################################
+#																									#
+# The Duke of Swabia sat by the shores of the Bodensee with his fishing rod for many months without #
+# reward. He had even put a lovely slice of dove pie on the hook, but his bucket remained empty.	#
+# "Are there no characters in the lake?" he thought to himself and sighed. "At this rate, my court 	#
+# will become desolate within a generation! My heir will have no diligent councillors, no brave 	#
+# knights, and no wise crones to help him rule the lands!" 											#		
+#																									#
+# The Duke cried for a long, long while, and then stood up to gathering his things.					#
+# "Thank God!" he suddenly exclaimed. "I have an idea!"												#
+# If the lake was empty, could he not create some new characters and release them into the waters?  #
+# If some of them married, the Bodensee would surely be repopulated in just a few years!			#
+#																									#
+# The clever Duke quickly got to work. He made maidens and adventurers, matrons and fools. Young	#
+# and old he made them, weak and strong, wicked and pious. The sun rose in the sky and set again.	#
+# Under the light of moon and stars, the Duke put the final touch on his creation. 					#
+#																									#
+# The next morning, he gently released the little characters into the waters. He watched them swim 	#
+# away with tears of happiness trailing down his whiskered cheeks. This was farewell, but he was 	#
+# certain - they would not be gone for long.														#
+#																									#
+# And this is the story behind why pools spawn new characters for the royal courts all over the 	#
+# world. Whenever we throw our hook into the depths, we send a thought of gratitude to the noble 	#
+# Duke of Swabia, and his marvelous creation.														#
+#																									#
+#####################################################################################################
+
+
+
+
+
+#Notes
+#Random Traits List contains relevant lifestyle traits and all personality traits exist in 1 template
+#Template-specific skill min/max regulated through scripted values
+#Template-specific education trait is weighted
+
+
+pool_repopulate_learning = {
+	age = { 25 60 }
+	gender_female_chance = 50 #No gender blocks for physicians
+	random_traits = yes
+	culture = root.culture
+	faith = root.faith
+	learning = {
+		min_guest_template_skill max_guest_template_skill
+	}
+	random_traits_list = {
+		education_learning_1 = { weight = { base = 35 } }
+		education_learning_2 = { weight = { base = 35 } }
+		education_learning_3 = { weight = { base = 20 } }
+		education_learning_4 = { weight = { base = 10 } }
+	}
+	random_traits_list = {
+		count = { 0 1 }
+		scholar = {}
+		theologian = {}
+		whole_of_body = {}
+		physician_1 = {}
+		physician_2 = {}
+		physician_3 = {}
+		mystic_1 = {}
+		mystic_2 = {}
+		lifestyle_herbalist = {}
+		chaste = {}
+		diligent = {}
+		patient = {}
+		humble = {}
+		shy = {}
+		content = {}
+		cynical = {}
+		lazy = {}
+	}
+	dynasty = none
+	after_creation = {
+		if = {
+			limit = {
+				faith = {
+					has_doctrine = tenet_monasticism
+				}
+			}
+			random_list = { #Mymo, inverted 75 vs 25 into 25 vs 75 chances
+				25 = {}
+				75 = {
+					add_trait = devoted
+				}
+			}
+		}
+	}
+}
