@@ -1,0 +1,63 @@
+
+######################################################
+################## BUTTON TEMPLATES ##################
+######################################################
+
+types WoKButtons
+{
+    type button_frontend2 = button_normal
+    {
+        texture = "gfx/interface/buttons/button_frontend2.dds"
+        size = { 310 55 }
+        gfxtype = framedbuttongfx
+        effectname = "NoHighlight"
+        upframe = 1
+        overframe = 2
+        downframe = 3
+        framesize = { 391 69 }
+
+
+        buttonText = {
+            text_single = {
+                size = { 100% 100% }
+                autoresize = no
+                margin = { 10 0 }
+                align = center|nobaseline
+                default_format = "#clickable"
+                using = Font_Size_Medium
+            }
+        }
+
+    }
+    type button_frontend_wok_active = button_frontend2 {
+		font = WokFontType
+		default_format = "#high"
+		fontsize = 20
+		state = {
+			name = _mouse_hierarchy_enter
+			on_start = "[PdxGuiInterruptThenTriggerAllAnimations('main_menu_glow_new_leave','main_menu_glow_new_enter')]"
+		}
+		state = {
+			name = _mouse_hierarchy_leave
+			on_start = "[PdxGuiInterruptThenTriggerAllAnimations('main_menu_glow_new_enter','main_menu_glow_new_leave')]"
+		}
+    }
+    type button_frontend_wok_inactive = button_frontend2 {
+		font = WokFontType
+		default_format = "#weak"
+		fontsize = 20
+		state = {
+			name = _mouse_hierarchy_enter
+			on_start = "[PdxGuiInterruptThenTriggerAllAnimations('main_menu_glow_new_leave','main_menu_glow_new_enter')]"
+		}
+		state = {
+			name = _mouse_hierarchy_leave
+			on_start = "[PdxGuiInterruptThenTriggerAllAnimations('main_menu_glow_new_enter','main_menu_glow_new_leave')]"
+		}
+        icon_online_offline = {
+            parentanchor = right|vcenter
+            position = { -15 0 }
+            frame = 2
+        }
+	}
+}

@@ -1,47 +1,599 @@
 ﻿namespace = KoH_religiousflavour
 
 
-KoH_religiousflavour.1 = { #A Pope and His Estates
-	title = KoH_religiousflavour.1.t
-	desc = KoH_religiousflavour.1.desc
-	theme = unfriendly
+# KoH_religiousflavour.1 = { #A Pope and His Estates
+# 	title = KoH_religiousflavour.1.t
+# 	desc = KoH_religiousflavour.1.desc
+# 	theme = unfriendly
+# 	left_portrait = {
+# 		character = this
+# 	}
+
+# 	trigger = {		
+# 		exists = title:k_papal_state.holder 
+# 		title:k_papal_state.holder.faith = root.faith
+# 		title:k_papal_state.holder.dynasty = root.dynasty  
+# 		title:k_papal_state.holder {
+# 			NOT = {
+# 				OR = {
+# 					has_trait = greedy
+# 					has_trait = zealous
+# 				}
+# 			}
+
+# 		}
+
+# 		any_sibling = {
+# 			is_unlanded = yes
+# 				NOT = {
+# 					is_primary_heir_of = scope:actor
+# 				}
+# 			}
+# 			scope:actor.primary_title = {
+# 				place_in_line_of_succession = {
+# 					target = prev
+# 					value >= 4
+# 				}
+# 			}
+# 		}		
+# 		random_sibling = {
+# 			limit = {
+# 				reverse_opinion = {
+# 					target = root
+# 					value > 20
+# 				}
+# 			}
+# 			save_scope_as = trophy_recipient
+# 		}
+		
+# 		any_close_family_member = {
+# 			limit = {
+# 				OR = {
+# 					AND = {
+# 						is_child_of = root
+# 						is_landed = no
+# 						is_male = yes
+# 						count = 2
+# 					}
+# 					AND = {
+# 						is_sibling_of = root
+# 						is_landed = no
+# 						is_male = yes
+# 						count = 2
+# 					}
+# 				}
+# 			}
+
+# 		}
+		
+	
+
+# 	immediate = {
+# 		title:k_papal_state.holder = { save_scope_as = scoped_pope }
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.1.a
+
+
+# 		ai_chance = {
+# 			base = 100
+# 		}
+# 	}
+
+# 	option = {
+# 		name = KoH_religiousflavour.1.b
+
+		
+# 	}
+# }
+
+# KoH_religiousflavour.2 = { #Monks Make Good Beer
+# 	title = KoH_religiousflavour.2.t
+# 	desc = KoH_religiousflavour.2.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 		# OR = {
+# 		# 	location = {
+# 		# 		region = world_europe_west
+# 		# 	}
+# 		# 	location = {
+# 		# 		region = world_europe_south
+# 		# 	}
+# 		# }
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.2.a
+
+# 		random = {
+# 			chance = 50
+# 			add_learning_skill = 1
+# 		}
+# 		if = {
+# 			limit = { NOT = { has_trait = drunkard } }
+# 			random = {
+# 				chance = 20
+# 				add_trait = drunkard
+# 				send_interface_toast = {
+# 					type = event_toast_effect_bad
+# 					title = "You have become a Drunkard"
+# 					left_icon = root
+# 				}
+# 			}
+# 		}
+
+# 		ai_chance = {
+# 			base = 100
+# 		}
+# 	}
+# }
+
+KoH_religiousflavour.2 = { #Monks Make Good Beer
+	title = KoH_religiousflavour.2.t
+	desc = KoH_religiousflavour.2.desc
+	theme = learning_scholarship_focus
 	left_portrait = {
 		character = this
 	}
 
 	trigger = {		
-		exists = title:k_papal_state.holder 
-		title:k_papal_state.holder.faith = root.faith
-		title:k_papal_state.holder.dynasty = root.dynasty  
-		title:k_papal_state.holder {
-			NOT = {
-				OR = {
-					has_trait = greedy
-					has_trait = zealous
-				}
-			}
-		}
-	}
-		
-	
-
-	immediate = {
-		title:k_papal_state.holder = { save_scope_as = scoped_pope }
+		is_commanding_army = no
+		is_adult = yes
+		is_imprisoned = no
+		has_religion = religion:christianity_religion
+		# OR = {
+		# 	location = {
+		# 		region = world_europe_west
+		# 	}
+		# 	location = {
+		# 		region = world_europe_south
+		# 	}
+		# }
 	}
 
 	option = { 
-		name = KoH_religiousflavour.1.a
+		name = KoH_religiousflavour.2.a
 
+		random = {
+			chance = 50
+			add_learning_skill = 1
+		}
+		if = {
+			limit = { NOT = { has_trait = drunkard } }
+			random = {
+				chance = 20
+				add_trait = drunkard
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = "You have become a Drunkard"
+					left_icon = root
+				}
+			}
+		}
 
 		ai_chance = {
-			base = 100
+			base = 50
 		}
 	}
 
-	option = {
-		name = KoH_religiousflavour.1.b
+	option = { 
+		name = KoH_religiousflavour.2.b
 
-		
+		if = {
+			limit = { NOT = { has_trait = temperate } }
+			random = {
+				chance = 20
+				add_trait = temperate
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "You have become Temperate"
+					left_icon = root
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 50
+		}
 	}
 }
 
+KoH_religiousflavour.3 = { #Monks Make Good Wine
+	title = KoH_religiousflavour.3.t
+	desc = KoH_religiousflavour.3.desc
+	theme = learning_scholarship_focus
+	left_portrait = {
+		character = this
+	}
+
+	trigger = {		
+		is_commanding_army = no
+		is_adult = yes
+		is_imprisoned = no
+		has_religion = religion:christianity_religion
+		# OR = {
+		# 	location = {
+		# 		region = world_europe_west
+		# 	}
+		# 	location = {
+		# 		region = world_europe_south
+		# 	}
+		# }
+	}
+
+	option = { 
+		name = KoH_religiousflavour.3.a
+
+		random = {
+			chance = 50
+			add_learning_skill = 1
+		}
+		if = {
+			limit = { NOT = { has_trait = drunkard } }
+			random = {
+				chance = 20
+				add_trait = drunkard
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = "You have become a Drunkard"
+					left_icon = root
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = { 
+		name = KoH_religiousflavour.3.b
+
+		if = {
+			limit = { NOT = { has_trait = temperate } }
+			random = {
+				chance = 20
+				add_trait = temperate
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = "You have become Temperate"
+					left_icon = root
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+KoH_religiousflavour.4 = { #Monks have healing herbs
+	title = KoH_religiousflavour.4.t
+	desc = KoH_religiousflavour.4.desc
+	theme = learning_scholarship_focus
+	left_portrait = {
+		character = this
+	}
+
+	trigger = {		
+		is_commanding_army = no
+		is_adult = yes
+		is_imprisoned = no
+		piety_level >= 1
+		OR = {
+			has_trait = ill
+		}
+		has_religion = religion:christianity_religion
+		# OR = {
+		# 	location = {
+		# 		region = world_europe_west
+		# 	}
+		# 	location = {
+		# 		region = world_europe_south
+		# 	}
+		# }
+	}
+
+	option = { 
+		name = KoH_religiousflavour.4.a
+
+		random = {
+			chance = 30
+			remove_trait = ill
+		}
+
+		ai_chance = {
+			base = 80
+		}
+	}
+
+	option = { 
+		name = KoH_religiousflavour.4.b
+
+		if = {
+			limit = { NOT = { has_trait = paranoid } }
+			add_trait = paranoid
+		}
+	}
+}
+
+KoH_religiousflavour.5 = { #Monks is fantastic painter
+	title = KoH_religiousflavour.5.t
+	desc = KoH_religiousflavour.5.desc
+	theme = learning_scholarship_focus
+	left_portrait = {
+		character = this
+	}
+
+	trigger = {		
+		is_commanding_army = no
+		is_adult = yes
+		is_imprisoned = no
+		has_religion = religion:christianity_religion
+		NOT = { has_trait = blind }
+		# OR = {
+		# 	location = {
+		# 		region = world_europe_west
+		# 	}
+		# 	location = {
+		# 		region = world_europe_south
+		# 	}
+		# }
+	}
+
+	option = { 
+		name = KoH_religiousflavour.5.a
+
+		remove_short_term_gold = -10
+		add_prestige = 30
+	}
+
+	option = { 
+		name = KoH_religiousflavour.5.b
+
+	}
+}
+
+# KoH_religiousflavour.6 = { #Monks is fantastic painter
+# 	title = KoH_religiousflavour.6.t
+# 	desc = KoH_religiousflavour.6.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 		NOT = { has_trait = blind }
+# 		# OR = {
+# 		# 	location = {
+# 		# 		region = world_europe_west
+# 		# 	}
+# 		# 	location = {
+# 		# 		region = world_europe_south
+# 		# 	}
+# 		# }
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.6.a
+
+# 		remove_short_term_gold = -10
+# 		add_prestige = 30
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.6.b
+
+# 	}
+# }
+
+KoH_religiousflavour.7 = { #Monks is fantastic painter
+	title = KoH_religiousflavour.7.t
+	desc = KoH_religiousflavour.7.desc
+	theme = learning_scholarship_focus
+	left_portrait = {
+		character = this
+	}
+
+	trigger = {		
+		is_commanding_army = no
+		is_adult = yes
+		is_imprisoned = no
+		has_religion = religion:christianity_religion
+		# OR = {
+		# 	location = {
+		# 		region = world_europe_west
+		# 	}
+		# 	location = {
+		# 		region = world_europe_south
+		# 	}
+		# }
+	}
+
+	option = { 
+		name = KoH_religiousflavour.7.a
+
+		remove_short_term_gold = -30
+		add_prestige = 30
+		random = {
+			chance = 20
+			add_learning_skill = 1
+		}
+	}
+	option = { 
+		name = KoH_religiousflavour.7.b
+
+	}
+}
+
+KoH_religiousflavour.8 = { #Monks is fantastic painter
+	title = KoH_religiousflavour.8.t
+	desc = KoH_religiousflavour.8.desc
+	theme = learning_scholarship_focus
+	left_portrait = {
+		character = this
+	}
+
+	trigger = {		
+		is_commanding_army = no
+		is_adult = yes
+		is_imprisoned = no
+		has_religion = religion:christianity_religion
+		# OR = {
+		# 	location = {
+		# 		region = world_europe_west
+		# 	}
+		# 	location = {
+		# 		region = world_europe_south
+		# 	}
+		# }
+	}
+
+	option = { 
+		name = KoH_religiousflavour.8.a
+
+		add_piety = 20
+
+		random = {
+			chance = 30
+			add_learning_skill = 1
+		}
+	}
+	option = { 
+		name = KoH_religiousflavour.8.b
+		if = {
+			limit = { NOT = { has_trait = cynical } }
+			add_trait = cynical
+		}
+	}
+}
+
+KoH_religiousflavour.9 = { #Child wants to be monk/nun - select child
+	title = KoH_religiousflavour.9.t
+	desc = KoH_religiousflavour.9.desc
+	theme = learning_scholarship_focus
+	left_portrait = {
+		character = this
+	}
+	hidden = yes
+
+	trigger = {		
+		is_commanding_army = no
+		is_adult = yes
+		is_imprisoned = no
+		has_religion = religion:christianity_religion
+		any_child = {
+			is_ruler = no
+			age = 13
+			NOT = { age = 16 }
+			NOT = { has_trait = cynical }
+			NOT = { is_clergy = yes }
+		}
+	}
+
+	immediate = {
+		random_child = {
+			limit = {
+				is_ruler = no
+				age = 13
+				NOT = { age = 16 }
+				NOT = { has_trait = cynical }
+				NOT = { is_clergy = yes }
+			}
+			trigger_event = KoH_religiousflavour.10
+		}
+	}
+}
+
+KoH_religiousflavour.10 = { #MChild Event
+	#title = KoH_religiousflavour.10.t
+	#desc = KoH_religiousflavour.10.desc
+	theme = learning_scholarship_focus
+	left_portrait = {
+		character = this
+	}
+	hidden = yes
+
+	immediate = {
+		FROM = {
+			trigger_event = KoH_religiousflavour.11  }
+	}
+}
+
+KoH_religiousflavour.11 = { #Child wants to be monk/nun - parent response
+	title = KoH_religiousflavour.11.t
+	desc = KoH_religiousflavour.11.desc
+	theme = learning_scholarship_focus
+	left_portrait = {
+		character = this
+	}
+	right_portrait = {
+		character = FROM
+	}
+
+	option = { 
+		name = KoH_religiousflavour.11.a
+
+		FROM = {
+			add_trait = devoted
+			add_opinion = {
+				target = ROOT
+				opinion = 50
+				modifier = grateful_opinion
+			}
+		}
+		custom_tooltip = { text = KoH_religiousflavour.11.a.tt}
+	}
+
+	option = { 
+		name = KoH_religiousflavour.11.b
+		FROM = {
+			add_stress = major_stress_loss
+			add_opinion = {
+				target = ROOT
+				opinion = 50
+				modifier = angry_opinion
+			}
+		}
+	}
+}
+
+KoH_religiousflavour.12 = { #Donate to local monastery
+	title = KoH_religiousflavour.12.t
+	desc = KoH_religiousflavour.12.desc
+	theme = learning_scholarship_focus
+	left_portrait = {
+		character = this
+	}
+	
+	trigger = {		
+		is_commanding_army = no
+		is_adult = yes
+		is_imprisoned = no
+		has_religion = religion:christianity_religion
+	}
+
+	option = { 
+		name = KoH_religiousflavour.12.a
+		remove_short_term_gold = -30
+		add_piety = 30
+	}
+	
+	option = { 
+		name = KoH_religiousflavour.12.b
+		add_piety = -30
+	}
+}
