@@ -3,11 +3,11 @@
 ################## BUTTON TEMPLATES ##################
 ######################################################
 
-types WoKButtons
+types KohButtons
 {
-    type button_frontend2 = button_normal
+    type button_frontendOpen = button_normal
     {
-        texture = "gfx/interface/buttons/button_frontend2.dds"
+        texture = "gfx/interface/buttons/button_frontend2.png"
         size = { 310 55 }
         gfxtype = framedbuttongfx
         effectname = "NoHighlight"
@@ -29,8 +29,8 @@ types WoKButtons
         }
 
     }
-    type button_frontend_wok_active = button_frontend2 {
-		font = WokFontType
+    type button_frontend_koh_active = button_frontend2 {
+		font = KoHFontType
 		default_format = "#high"
 		fontsize = 20
 		state = {
@@ -42,8 +42,8 @@ types WoKButtons
 			on_start = "[PdxGuiInterruptThenTriggerAllAnimations('main_menu_glow_new_enter','main_menu_glow_new_leave')]"
 		}
     }
-    type button_frontend_wok_inactive = button_frontend2 {
-		font = WokFontType
+    type button_frontend_koh_inactive = button_frontend2 {
+		font = KoHFontType
 		default_format = "#weak"
 		fontsize = 20
 		state = {

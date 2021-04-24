@@ -3,5 +3,5 @@ tags = {
 	"Historical"
 	"Bookmarks"
 }
-name = "KingdomOfHeaven"
+name = "KingdomOfHeavenLocal"
 supported_version = "1.3.*"
