@@ -1,141 +1,232 @@
 ﻿namespace = KoH_religiousflavour
 
 
-# KoH_religiousflavour.1 = { #A Pope and His Estates
-# 	title = KoH_religiousflavour.1.t
-# 	desc = KoH_religiousflavour.1.desc
-# 	theme = unfriendly
-# 	left_portrait = {
-# 		character = this
-# 	}
+KoH_religiousflavour.1 = { #A Pope and His Estates
+	title = KoH_religiousflavour.1.t
+	desc = KoH_religiousflavour.1.desc
+	theme = unfriendly
+	left_portrait = {
+		character = this
+	}
 
-# 	trigger = {		
-# 		exists = title:k_papal_state.holder 
-# 		title:k_papal_state.holder.faith = root.faith
-# 		title:k_papal_state.holder.dynasty = root.dynasty  
-# 		title:k_papal_state.holder {
-# 			NOT = {
-# 				OR = {
-# 					has_trait = greedy
-# 					has_trait = zealous
-# 				}
-# 			}
+	trigger = {		
+		exists = title:k_papal_state.holder 
+		title:k_papal_state.holder.faith = root.faith
+		title:k_papal_state.holder.dynasty = root.dynasty  
+		title:k_papal_state.holder {
+			NOT = {
+				OR = {
+					has_trait = greedy
+					has_trait = zealous
+				}
+			}
 
-# 		}
+		}
 
-# 		any_sibling = {
-# 			is_unlanded = yes
-# 				NOT = {
-# 					is_primary_heir_of = scope:actor
-# 				}
-# 			}
-# 			scope:actor.primary_title = {
-# 				place_in_line_of_succession = {
-# 					target = prev
-# 					value >= 4
-# 				}
-# 			}
-# 		}		
-# 		random_sibling = {
-# 			limit = {
-# 				reverse_opinion = {
-# 					target = root
-# 					value > 20
-# 				}
-# 			}
-# 			save_scope_as = trophy_recipient
-# 		}
+		# OR = {
+		# 	any_sibling = {
+		# 		limit = {
+		# 		is_male = yes
+		# 		is_ruler = no
+		# 		place_in_line_of_succession = {
+		# 			target = root.primary_title
+		# 			value > 2
+		# 			}
+		# 		}
+		# 	}
+		# 	any_child = {
+		# 		limit = {
+		# 		is_male = yes
+		# 		is_ruler = no
+		# 		place_in_line_of_succession = {
+		# 			target = root.primary_title
+		# 			value > 2
+		# 			}
+		# 		}
+		# 	}
+		# }
+	}
+
+	immediate = {
+		title:k_papal_state.holder = { save_scope_as = scoped_pope }
+
+		every_sibling = {
+			limit = {
+			 	is_male = yes
+			 	is_ruler = no
+			 	place_in_line_of_succession = {
+			  		target = root.primary_title
+			  		value > 2
+			 		}
+				}
+			add_to_list = custom_list_name
+		}
+
+		every_sibling = {
+			limit = {
+			 	is_male = yes
+			 	is_ruler = no
+			 	place_in_line_of_succession = {
+			  		target = root.primary_title
+			  		value > 2
+			 		}
+				}
+			add_to_list = custom_list_name
+		}
+
+	    random_in_list = {
+		   name = custom_list_name
+		   save_as_scope = player_one
+	    }
+
+	    random_in_list = {
+		   name = custom_list_name
+		   limit = {
+			   NOT = { 
+				   THIS = scope:player_one 
+			   }
+		   }
+		   save_as_scope = player_two
+	    }
+	}
+
+	option = { 
+		name = KoH_religiousflavour.1.a
+
 		
-# 		any_close_family_member = {
-# 			limit = {
-# 				OR = {
-# 					AND = {
-# 						is_child_of = root
-# 						is_landed = no
-# 						is_male = yes
-# 						count = 2
-# 					}
-# 					AND = {
-# 						is_sibling_of = root
-# 						is_landed = no
-# 						is_male = yes
-# 						count = 2
-# 					}
-# 				}
-# 			}
+			scope:player_one = {
+				add_opinion = {
+					target = title:k_papal_state.holder 
+					opinion = 100
+					modifier = grateful_opinion
+				} 
+				add_opinion = {
+					target = ROOT
+					opinion = 100
+					modifier = grateful_opinion
+				} 
+				set_employer = title:k_papal_state.holder 
+			}
+			scope:player_two = { 
+				add_opinion = {
+					target = title:k_papal_state.holder 
+					opinion = 100
+					modifier = grateful_opinion
+				} 
 
-# 		}
+				add_reverse_opinion = {
+					target = ROOT
+					opinion = 100
+					modifier = grateful_opinion
+				} 
+				set_employer = title:k_papal_state.holder 
+			}
+			title:k_papal_state.holder = {
+				add_opinion = {
+					target = scope:player_one
+					opinion = 20
+					modifier = grateful_opinion
+				} 
+
+				add_opinion = {
+					target = scope:player_two
+					opinion = 20
+					modifier = grateful_opinion
+				} 
+
+				add_opinion = {
+					target = ROOT
+					opinion = 15
+					modifier = grateful_opinion
+				}
+			}
 		
-	
+		ai_chance = {
+			base = 100
+		}
+	}
 
-# 	immediate = {
-# 		title:k_papal_state.holder = { save_scope_as = scoped_pope }
-# 	}
+	option = {
+		name = KoH_religiousflavour.1.b
 
-# 	option = { 
-# 		name = KoH_religiousflavour.1.a
+		add_piety = 50
 
+		title:k_papal_state.holder = {
+			add_opinion = {
+				target = ROOT
+				opinion = -15
+				modifier = disappointed_opinion
+			}
+		}
+	}
 
-# 		ai_chance = {
-# 			base = 100
-# 		}
-# 	}
+	option = {
+		name = KoH_religiousflavour.1.c
+		trigger = {
+			OR = {
+				has_trait = zealous
+				learning <= 10
+			}
+		add_piety = 50
 
-# 	option = {
-# 		name = KoH_religiousflavour.1.b
+		title:k_papal_state.holder = {
+			add_opinion = {
+				target = ROOT
+				opinion = -15
+				modifier = disappointed_opinion
+			}
+			add_piety = -100
+		}
+		add_piety = 200
+		add_learning_skill = 1
+		}
+	}
+}
 
-		
-# 	}
-# }
+KoH_religiousflavour.202 = { #Monks Make Good Beer
+	title = KoH_religiousflavour.202.t
+	desc = KoH_religiousflavour.202.desc
+	theme = learning_scholarship_focus
+	left_portrait = {
+		character = this
+	}
 
-# KoH_religiousflavour.2 = { #Monks Make Good Beer
-# 	title = KoH_religiousflavour.2.t
-# 	desc = KoH_religiousflavour.2.desc
-# 	theme = learning_scholarship_focus
-# 	left_portrait = {
-# 		character = this
-# 	}
+	trigger = {		
+		is_commanding_army = no
+		is_adult = yes
+		is_imprisoned = no
+		has_religion = religion:christianity_religion
+		# OR = {
+		# 	location = {
+		# 		region = world_europe_west
+		# 	}
+		# 	location = {
+		# 		region = world_europe_south
+		# 	}
+		# }
+	}
 
-# 	trigger = {		
-# 		is_commanding_army = no
-# 		is_adult = yes
-# 		is_imprisoned = no
-# 		has_religion = religion:christianity_religion
-# 		# OR = {
-# 		# 	location = {
-# 		# 		region = world_europe_west
-# 		# 	}
-# 		# 	location = {
-# 		# 		region = world_europe_south
-# 		# 	}
-# 		# }
-# 	}
+	option = { 
+		name = KoH_religiousflavour.202.a
 
-# 	option = { 
-# 		name = KoH_religiousflavour.2.a
+		hidden_effect = {
+			create_character = {
+				name = "Arthur"
+				age = 20
+				dynasty = 217
+				gender = male
+				mother = character:212854
+				father = character:212950
+				faith = "catholic"
+				culture = root.culture
+				trait = beauty_good_2
+			}
 
-# 		random = {
-# 			chance = 50
-# 			add_learning_skill = 1
-# 		}
-# 		if = {
-# 			limit = { NOT = { has_trait = drunkard } }
-# 			random = {
-# 				chance = 20
-# 				add_trait = drunkard
-# 				send_interface_toast = {
-# 					type = event_toast_effect_bad
-# 					title = "You have become a Drunkard"
-# 					left_icon = root
-# 				}
-# 			}
-# 		}
-
-# 		ai_chance = {
-# 			base = 100
-# 		}
-# 	}
-# }
+		ai_chance = {
+			base = 100
+		}
+	}
+}
 
 KoH_religiousflavour.2 = { #Monks Make Good Beer
 	title = KoH_religiousflavour.2.t
