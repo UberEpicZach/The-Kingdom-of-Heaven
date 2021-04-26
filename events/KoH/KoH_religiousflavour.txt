@@ -13,38 +13,30 @@ KoH_religiousflavour.1 = { #A Pope and His Estates
 		exists = title:k_papal_state.holder 
 		title:k_papal_state.holder.faith = root.faith
 		title:k_papal_state.holder.dynasty = root.dynasty  
-		title:k_papal_state.holder {
-			NOT = {
-				OR = {
-					has_trait = greedy
-					has_trait = zealous
+		#title:k_papal_state.holder { NOT = { OR = { has_trait = greedy has_trait = zealous } } }
+
+		OR = {
+			any_sibling = {
+				limit = {
+				is_male = yes
+				is_ruler = no
+				place_in_line_of_succession = {
+					target = root.primary_title
+					value > 2
+					}
 				}
 			}
-
+			any_child = {
+				limit = {
+				is_male = yes
+				is_ruler = no
+				place_in_line_of_succession = {
+					target = root.primary_title
+					value > 2
+					}
+				}
+			}
 		}
-
-		# OR = {
-		# 	any_sibling = {
-		# 		limit = {
-		# 		is_male = yes
-		# 		is_ruler = no
-		# 		place_in_line_of_succession = {
-		# 			target = root.primary_title
-		# 			value > 2
-		# 			}
-		# 		}
-		# 	}
-		# 	any_child = {
-		# 		limit = {
-		# 		is_male = yes
-		# 		is_ruler = no
-		# 		place_in_line_of_succession = {
-		# 			target = root.primary_title
-		# 			value > 2
-		# 			}
-		# 		}
-		# 	}
-		# }
 	}
 
 	immediate = {
@@ -146,41 +138,41 @@ KoH_religiousflavour.1 = { #A Pope and His Estates
 		}
 	}
 
-	option = {
-		name = KoH_religiousflavour.1.b
+	# option = {
+	# 	name = KoH_religiousflavour.1.b
 
-		add_piety = 50
+	# 	add_piety = 50
 
-		title:k_papal_state.holder = {
-			add_opinion = {
-				target = ROOT
-				opinion = -15
-				modifier = disappointed_opinion
-			}
-		}
-	}
+	# 	title:k_papal_state.holder = {
+	# 		add_opinion = {
+	# 			target = ROOT
+	# 			opinion = -15
+	# 			modifier = disappointed_opinion
+	# 		}
+	# 	}
+	# }
 
-	option = {
-		name = KoH_religiousflavour.1.c
-		trigger = {
-			OR = {
-				has_trait = zealous
-				learning <= 10
-			}
-		add_piety = 50
+	# option = {
+	# 	name = KoH_religiousflavour.1.c
+	# 	trigger = {
+	# 		OR = {
+	# 			has_trait = zealous
+	# 			learning <= 10
+	# 		}
+	# 	add_piety = 50
 
-		title:k_papal_state.holder = {
-			add_opinion = {
-				target = ROOT
-				opinion = -15
-				modifier = disappointed_opinion
-			}
-			add_piety = -100
-		}
-		add_piety = 200
-		add_learning_skill = 1
-		}
-	}
+	# 	title:k_papal_state.holder = {
+	# 		add_opinion = {
+	# 			target = ROOT
+	# 			opinion = -15
+	# 			modifier = disappointed_opinion
+	# 		}
+	# 		add_piety = -100
+	# 	}
+	# 	add_piety = 200
+	# 	add_learning_skill = 1
+	# 	}
+	# }
 }
 
 KoH_religiousflavour.202 = { #Monks Make Good Beer
