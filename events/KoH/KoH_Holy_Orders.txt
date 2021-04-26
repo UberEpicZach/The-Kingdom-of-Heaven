@@ -1088,17 +1088,17 @@ KoH_holy_orders.102 = {
 				every_courtier = {
 					add_trait = order_member
 					add_trait = education_intrigue_4
-					set_character_faith = faith:ismaili
+					set_character_faith = faith:nizari
 				}
 				add_trait = order_member
 				add_trait = trait_education_intrigue_4
-				set_character_faith = faith:ismaili
+				set_character_faith = faith:nizari
 			}
 
 			every_courtier = {
 				add_trait = order_member
 				add_trait = education_intrigue_4
-				set_character_faith = faith:ismaili
+				set_character_faith = faith:nizari
 			}
 			spawn_army = {
 				uses_supply = no
@@ -1109,6 +1109,69 @@ KoH_holy_orders.102 = {
 					stacks = 20
 				}
 				location = capital_province
+			}
+		}
+	}
+}
+
+KoH_holy_orders.103 = {
+	type = character_event
+	title = KoH_holy_orders.103.t
+	desc = KoH_holy_orders.103.d
+	theme = war
+	hidden = yes
+	
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+			every_living_character = {
+				limit = {
+					any_held_title = {
+						this = title:d_hashshashin.holder
+					}
+				}
+				save_scope_as = leader
+			}
+
+		create_dynamic_title = {
+			tier = kingdom
+			name = "Hashshashin Order"
+		}
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		scope:new_title = {
+			set_capital_county = scope:peasant_county
+			set_landless_title = yes
+			generate_coa = yes
+			set_delete_on_destroy = yes
+			set_no_automatic_claims = yes
+			set_definitive_form = yes
+			set_can_be_named_after_dynasty = no
+			change_title_holder = {
+				holder = title:d_hashshashin.holder
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+	}
+	
+	option = {
+		name = KoH_holy_orders.103.a
+
+		hidden_effect = {
+			if = {
+				limit = { NOT = { title:b_ar-rikha.holder = scope:leader } }
+				get_title = b_ar-rikha
+				add_piety_level = 3
+				add_piety_level = 1000
+				add_prestige = 1000
 			}
 		}
 	}

@@ -1,267 +1,30 @@
-﻿change_chivalry_effect = {
-	hidden_effect = {
-		if = {
-			limit = {
-			NOT = { exists = var:Chivalry }
-			}
-			set_variable = {
-				name = Chivalry
-				value = 0
-			}
-		}
-		change_variable = { name = Chivalry add = $Chivalry$ }
-		if = {
-			limit = {
-				var:Chivalry > 10
-			}
-			set_variable = {
-				name = Chivalry
-				value = 10
-			}
-		}
-		else_if = {
-			limit = {
-				var:Chivalry < 0
-			}
-			set_variable = {
-				name = Chivalry
-				value = 0
-			}
-		}
-		set_variable = {
-			name = total_opinion
-			value = var:Chivalry
-		}
-		change_variable = {
-			name = total_opinion
-			multiply = 2
-		}
-		set_variable = {
-			name = total_prestige
-			value = var:Chivalry
-		}
-		change_variable = {
-			name = total_prestige
-			divide = 5
-		}
-		set_variable = {
-			name = total_dread_loss
-			value = var:Chivalry
-		}
-		change_variable = {
-			name = total_dread_loss
-			multiply = 10
-		}
-		if = {
-			limit = {
-				var:Chivalry = 0
-			}
-			add_character_modifier = {
-				modifier = chivalry
-				days = -1
-			}
-			remove_character_modifier = chivalry_1
-			remove_character_modifier = chivalry_2
-			remove_character_modifier = chivalry_3
-			remove_character_modifier = chivalry_4
-			remove_character_modifier = chivalry_5
-			remove_character_modifier = chivalry_6
-			remove_character_modifier = chivalry_7
-			remove_character_modifier = chivalry_8
-			remove_character_modifier = chivalry_9
-			remove_character_modifier = chivalry_10
-		}
-		else_if = {
-			limit = {
-				var:Chivalry = 1
-			}
-			add_character_modifier = {
-				modifier = chivalry_1
-				days = -1
-			}
-			remove_character_modifier = chivalry
-			remove_character_modifier = chivalry_2
-			remove_character_modifier = chivalry_3
-			remove_character_modifier = chivalry_4
-			remove_character_modifier = chivalry_5
-			remove_character_modifier = chivalry_6
-			remove_character_modifier = chivalry_7
-			remove_character_modifier = chivalry_8
-			remove_character_modifier = chivalry_9
-			remove_character_modifier = chivalry_10
-		}
-		else_if = {
-			limit = {
-				var:Chivalry = 2
-			}
-			add_character_modifier = {
-				modifier = chivalry_2
-				days = -1
-			}
-			remove_character_modifier = chivalry
-			remove_character_modifier = chivalry_1
-			remove_character_modifier = chivalry_3
-			remove_character_modifier = chivalry_4
-			remove_character_modifier = chivalry_5
-			remove_character_modifier = chivalry_6
-			remove_character_modifier = chivalry_7
-			remove_character_modifier = chivalry_8
-			remove_character_modifier = chivalry_9
-			remove_character_modifier = chivalry_10
-		}
-		else_if = {
-			limit = {
-				var:Chivalry = 3
-			}
-			add_character_modifier = {
-				modifier = chivalry_3
-				days = -1
-			}
-			remove_character_modifier = chivalry
-			remove_character_modifier = chivalry_2
-			remove_character_modifier = chivalry_1
-			remove_character_modifier = chivalry_4
-			remove_character_modifier = chivalry_5
-			remove_character_modifier = chivalry_6
-			remove_character_modifier = chivalry_7
-			remove_character_modifier = chivalry_8
-			remove_character_modifier = chivalry_9
-			remove_character_modifier = chivalry_10
-		}
-		else_if = {
-			limit = {
-				var:Chivalry = 4
-			}
-			add_character_modifier = {
-				modifier = chivalry_4
-				days = -1
-			}
-			remove_character_modifier = chivalry
-			remove_character_modifier = chivalry_2
-			remove_character_modifier = chivalry_3
-			remove_character_modifier = chivalry_1
-			remove_character_modifier = chivalry_5
-			remove_character_modifier = chivalry_6
-			remove_character_modifier = chivalry_7
-			remove_character_modifier = chivalry_8
-			remove_character_modifier = chivalry_9
-			remove_character_modifier = chivalry_10
-		}
-		else_if = {
-			limit = {
-				var:Chivalry = 5
-			}
-			add_character_modifier = {
-				modifier = chivalry_5
-				days = -1
-			}
-			remove_character_modifier = chivalry
-			remove_character_modifier = chivalry_2
-			remove_character_modifier = chivalry_3
-			remove_character_modifier = chivalry_4
-			remove_character_modifier = chivalry_1
-			remove_character_modifier = chivalry_6
-			remove_character_modifier = chivalry_7
-			remove_character_modifier = chivalry_8
-			remove_character_modifier = chivalry_9
-			remove_character_modifier = chivalry_10
-		}
-		else_if = {
-			limit = {
-				var:Chivalry = 6
-			}
-			add_character_modifier = {
-				modifier = chivalry_6
-				days = -1
-			}
-			remove_character_modifier = chivalry
-			remove_character_modifier = chivalry_2
-			remove_character_modifier = chivalry_3
-			remove_character_modifier = chivalry_4
-			remove_character_modifier = chivalry_5
-			remove_character_modifier = chivalry_1
-			remove_character_modifier = chivalry_7
-			remove_character_modifier = chivalry_8
-			remove_character_modifier = chivalry_9
-			remove_character_modifier = chivalry_10
-		}
-		else_if = {
-			limit = {
-				var:Chivalry = 7
-			}
-			add_character_modifier = {
-				modifier = chivalry_7
-				days = -1
-			}
-			remove_character_modifier = chivalry
-			remove_character_modifier = chivalry_2
-			remove_character_modifier = chivalry_3
-			remove_character_modifier = chivalry_4
-			remove_character_modifier = chivalry_5
-			remove_character_modifier = chivalry_6
-			remove_character_modifier = chivalry_1
-			remove_character_modifier = chivalry_8
-			remove_character_modifier = chivalry_9
-			remove_character_modifier = chivalry_10
-		}
-		else_if = {
-			limit = {
-				var:Chivalry = 8
-			}
-			add_character_modifier = {
-				modifier = chivalry_8
-				days = -1
-			}
-			remove_character_modifier = chivalry
-			remove_character_modifier = chivalry_2
-			remove_character_modifier = chivalry_3
-			remove_character_modifier = chivalry_4
-			remove_character_modifier = chivalry_5
-			remove_character_modifier = chivalry_6
-			remove_character_modifier = chivalry_7
-			remove_character_modifier = chivalry_1
-			remove_character_modifier = chivalry_9
-			remove_character_modifier = chivalry_10
-		}
-		else_if = {
-			limit = {
-				var:Chivalry = 9
-			}
-			add_character_modifier = {
-				modifier = chivalry_9
-				days = -1
-			}
-			remove_character_modifier = chivalry
-			remove_character_modifier = chivalry_2
-			remove_character_modifier = chivalry_3
-			remove_character_modifier = chivalry_4
-			remove_character_modifier = chivalry_5
-			remove_character_modifier = chivalry_6
-			remove_character_modifier = chivalry_7
-			remove_character_modifier = chivalry_8
-			remove_character_modifier = chivalry_1
-			remove_character_modifier = chivalry_10
-		}
-		else_if = {
-			limit = {
-				var:Chivalry = 10
-			}
-			add_character_modifier = {
-				modifier = chivalry_10
-				days = -1
-			}
-			remove_character_modifier = chivalry
-			remove_character_modifier = chivalry_2
-			remove_character_modifier = chivalry_3
-			remove_character_modifier = chivalry_4
-			remove_character_modifier = chivalry_5
-			remove_character_modifier = chivalry_6
-			remove_character_modifier = chivalry_7
-			remove_character_modifier = chivalry_8
-			remove_character_modifier = chivalry_9
-			remove_character_modifier = chivalry_1
-		}
-	}
+﻿hidden_effect = {
+    remove_character_modifier = chivalry
+    remove_character_modifier = chivalry_1
+    remove_character_modifier = chivalry_2
+    remove_character_modifier = chivalry_3
+    remove_character_modifier = chivalry_4
+    remove_character_modifier = chivalry_5
+    remove_character_modifier = chivalry_6
+    remove_character_modifier = chivalry_7
+    remove_character_modifier = chivalry_8
+    remove_character_modifier = chivalry_9
+    remove_character_modifier = chivalry_10
+}
+switch = {
+    trigger = var:Chivalry # Why is this capitalized? T_T
+    1 = { add_character_modifier = chivalry_1 }
+    2 = { add_character_modifier = chivalry_2 }
+    3 = { add_character_modifier = chivalry_3 }
+    4 = { add_character_modifier = chivalry_4 }
+    5 = { add_character_modifier = chivalry_5 }
+    6 = { add_character_modifier = chivalry_6 }
+    7 = { add_character_modifier = chivalry_7 }
+    8 = { add_character_modifier = chivalry_8 }
+    9 = { add_character_modifier = chivalry_9 }
+    10 = { add_character_modifier = chivalry_10 }
+
+    fallback = { add_character_modifier = chivalry }
 }
 
 add_my_faction ={
