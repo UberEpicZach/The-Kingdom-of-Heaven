@@ -10444,6 +10444,7 @@ KOH_FRANKCONIAN02 = { #COUNTS OF SCHWARZBURG Schwarzburg
 
 212590 = {
 	name = "Dietrich"
+	dna = 212590_dietrich_of_flanders
 	# AKA: Thierry
 	dynasty = 667
 	martial = 8
@@ -10457,6 +10458,9 @@ KOH_FRANKCONIAN02 = { #COUNTS OF SCHWARZBURG Schwarzburg
 	mother = 31129
 	1100.1.1 = {
 		birth = "1100.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1128.1.1 = {
 		add_spouse = 205955

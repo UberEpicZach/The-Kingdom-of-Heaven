@@ -14928,6 +14928,7 @@ KOH0244 = {
 
 213521 = {
 	name = "Corrado" # Corrado Aleramicci, King of Jerusalem (1190-1192) and Count of Montferrato (1191-1192)
+	dna = 213521_conrad_of_montferrat
 	dynasty = 206
 	martial = 5
 	diplomacy = 7
@@ -14945,6 +14946,9 @@ KOH0244 = {
 
 	1145.1.1 = {
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1187.1.1 = {
 		add_spouse = 215502		

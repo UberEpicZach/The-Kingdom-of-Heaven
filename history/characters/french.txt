@@ -1514,7 +1514,6 @@
 
 144167 = {
 	name = "Baudouin"
-	dna = 144167_baudouin_of_ibelin
 	dynasty = 23102 #d'Ibelin
 	religion = "catholic"
 	culture = french
@@ -1522,9 +1521,6 @@
 	mother = 223581 #Helvis of Ramla
 	1138.1.1 = {
 		birth = "1138.1.1"
-		effect = {
-		add_character_flag = has_scripted_appearance
-		}
 	}
 	1157.1.1 = {
 		add_spouse = KOH0001 #Richilde de Bethsan
@@ -2652,6 +2648,7 @@
 
 204506 = {
 	name = "Geoffroy"
+	dna = 204506_geoffrey_le_bel
 	# AKA: Geoffrey the Handsome
 	dynasty = 106
 	martial = 5
@@ -2670,6 +2667,9 @@
 	mother = 232009
 	1113.8.24 = {
 		birth = "1113.8.24"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1130.1.2 = {
 		give_nickname = nick_the_handsome
@@ -5316,6 +5316,7 @@
 
 205955 = {
 	name = "Sybille"
+	dna = 205955_sybille_anjou
 	female = yes
 	dynasty = 723
 	martial = 8
@@ -5329,6 +5330,9 @@
 	mother = 232009
 	1112.1.2 = {
 		birth = "1112.1.2"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1165.1.5 = {
 		death = "1165.1.5"
@@ -8552,7 +8556,6 @@
 
 223753 = {
 	name = "Sibylle"
-	dna = 223753_sibylle_of_toron
 	female = yes
 	dynasty = 166
 	father = 93008
@@ -8567,9 +8570,6 @@
 	trait = education_learning_2
 	1160.1.1 = {
 		birth = "1160.1.1"
-		effect = {
-			add_character_flag = has_scripted_appearance
-		}
 	}
 	1170.1.1 = {
 		effect = {
@@ -9331,7 +9331,7 @@
 }
 
 232019 = {
-	name = "Matilda-Isabella"
+	name = "Mathilde"
 	# AKA: Matilda
 	female = yes
 	dynasty = 723
@@ -9346,6 +9346,9 @@
 	mother = 232009
 	1107.1.2 = {
 		birth = "1107.1.2"
+	}
+	1129.1.1 = {
+		add_trait = devoted
 	}
 	1154.1.2 = {
 		death = "1154.1.2"
@@ -23402,6 +23405,9 @@ KOH0060 = {
 	mother = 205955
 	1143.1.1 = {
 		birth = "1143.1.1"
+	}
+	1175.1.1 = {
+			add_trait = devoted
 	}
 	1186.3.3 = {
 		death = "1186.3.3"
