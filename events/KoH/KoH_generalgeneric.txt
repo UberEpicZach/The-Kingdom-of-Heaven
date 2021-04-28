@@ -1,0 +1,84 @@
+﻿namespace = KoH_generalgeneric
+
+
+KoH_generalgeneric.1 = { #Lost At Sea!
+	title = KoH_generalgeneric.1.t
+	desc = KoH_generalgeneric.1.desc
+	theme = StormWaves
+	left_portrait = {
+		character = this
+	}
+	right_portrait = {
+		character = scope:KnightDisaster
+	}
+
+	trigger = {		
+		is_commanding_army = yes
+		is_sea = yes
+		any_knight = {
+			is_at_same_location = root
+		}
+	}
+
+	immediate = {
+		commanding_army.location = { save_scope_as = current_location }
+
+		every_knight = {
+			limit = {
+				is_at_same_location = root
+			}
+		save_scope_as = KnightDisaster
+		}
+	}
+
+	option = { 
+		name = KoH_generalgeneric.1.a
+		
+		random = {
+			chance = 50
+			scope:KnightDisaster = {
+				death = {
+					death_reason = death_lost_at_sea
+				}
+			}
+		}
+	}
+
+	option = {
+		name = KoH_generalgeneric.1.b
+
+		scope:KnightDisaster = {
+			death = {
+				death_reason = death_lost_at_sea
+			}
+		}
+	}
+
+	# option = {
+	# 	name = KoH_generalgeneric.1.c
+
+
+	# }
+
+	# option = {
+	# 	name = KoH_generalgeneric.1.c
+	# 	trigger = {
+	# 		OR = {
+	# 			has_trait = zealous
+	# 			learning <= 10
+	# 		}
+	# 	add_piety = 50
+
+	# 	title:k_papal_state.holder = {
+	# 		add_opinion = {
+	# 			target = ROOT
+	# 			opinion = -15
+	# 			modifier = disappointed_opinion
+	# 		}
+	# 		add_piety = -100
+	# 	}
+	# 	add_piety = 200
+	# 	add_learning_skill = 1
+	# 	}
+	# }
+}

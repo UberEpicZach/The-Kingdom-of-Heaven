@@ -17,22 +17,22 @@ KoH_religiousflavour.1 = { #A Pope and His Estates
 
 		OR = {
 			any_sibling = {
-				limit = {
 				is_male = yes
 				is_ruler = no
-				place_in_line_of_succession = {
-					target = root.primary_title
-					value > 2
+				root.primary_title = {
+					place_in_line_of_succession = {
+					  target = PREV
+					  value > 2
 					}
 				}
 			}
 			any_child = {
-				limit = {
 				is_male = yes
 				is_ruler = no
-				place_in_line_of_succession = {
-					target = root.primary_title
-					value > 2
+				root.primary_title = {
+					place_in_line_of_succession = {
+					  target = PREV
+					  value > 2
 					}
 				}
 			}
@@ -40,46 +40,7 @@ KoH_religiousflavour.1 = { #A Pope and His Estates
 	}
 
 	immediate = {
-		title:k_papal_state.holder = { save_scope_as = scoped_pope }
-
-		every_sibling = {
-			limit = {
-			 	is_male = yes
-			 	is_ruler = no
-			 	place_in_line_of_succession = {
-			  		target = root.primary_title
-			  		value > 2
-			 		}
-				}
-			add_to_list = custom_list_name
-		}
-
-		every_sibling = {
-			limit = {
-			 	is_male = yes
-			 	is_ruler = no
-			 	place_in_line_of_succession = {
-			  		target = root.primary_title
-			  		value > 2
-			 		}
-				}
-			add_to_list = custom_list_name
-		}
-
-	    random_in_list = {
-		   name = custom_list_name
-		   save_as_scope = player_one
-	    }
-
-	    random_in_list = {
-		   name = custom_list_name
-		   limit = {
-			   NOT = { 
-				   THIS = scope:player_one 
-			   }
-		   }
-		   save_as_scope = player_two
-	    }
+		scripted_effect_popethingevent = {}
 	}
 
 	option = { 
@@ -97,8 +58,14 @@ KoH_religiousflavour.1 = { #A Pope and His Estates
 					opinion = 100
 					modifier = grateful_opinion
 				} 
+
 				set_employer = title:k_papal_state.holder 
+				add_character_modifier = {
+					modifier = koh_governs_vast_estates
+					years = 5
+				}
 			}
+
 			scope:player_two = { 
 				add_opinion = {
 					target = title:k_papal_state.holder 
@@ -112,6 +79,10 @@ KoH_religiousflavour.1 = { #A Pope and His Estates
 					modifier = grateful_opinion
 				} 
 				set_employer = title:k_papal_state.holder 
+				add_character_modifier = {
+					modifier = koh_governs_vast_estates
+					years = 5
+				}
 			}
 			title:k_papal_state.holder = {
 				add_opinion = {
@@ -175,50 +146,50 @@ KoH_religiousflavour.1 = { #A Pope and His Estates
 	# }
 }
 
-KoH_religiousflavour.202 = { #Monks Make Good Beer
-	title = KoH_religiousflavour.202.t
-	desc = KoH_religiousflavour.202.desc
-	theme = learning_scholarship_focus
-	left_portrait = {
-		character = this
-	}
+# KoH_religiousflavour.202 = { #Monks Make Good Beer
+# 	title = KoH_religiousflavour.202.t
+# 	desc = KoH_religiousflavour.202.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
 
-	trigger = {		
-		is_commanding_army = no
-		is_adult = yes
-		is_imprisoned = no
-		has_religion = religion:christianity_religion
-		# OR = {
-		# 	location = {
-		# 		region = world_europe_west
-		# 	}
-		# 	location = {
-		# 		region = world_europe_south
-		# 	}
-		# }
-	}
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 		# OR = {
+# 		# 	location = {
+# 		# 		region = world_europe_west
+# 		# 	}
+# 		# 	location = {
+# 		# 		region = world_europe_south
+# 		# 	}
+# 		# }
+# 	}
 
-	option = { 
-		name = KoH_religiousflavour.202.a
+# 	option = { 
+# 		name = KoH_religiousflavour.202.a
 
-		hidden_effect = {
-			create_character = {
-				name = "Arthur"
-				age = 20
-				dynasty = 217
-				gender = male
-				mother = character:212854
-				father = character:212950
-				faith = "catholic"
-				culture = root.culture
-				trait = beauty_good_2
-			}
+# 		hidden_effect = {
+# 			create_character = {
+# 				name = "Arthur"
+# 				age = 20
+# 				dynasty = 217
+# 				gender = male
+# 				mother = character:212854
+# 				father = character:212950
+# 				faith = "catholic"
+# 				culture = root.culture
+# 				trait = beauty_good_2
+# 			}
 
-		ai_chance = {
-			base = 100
-		}
-	}
-}
+# 		ai_chance = {
+# 			base = 100
+# 		}
+# 	}
+# }
 
 KoH_religiousflavour.2 = { #Monks Make Good Beer
 	title = KoH_religiousflavour.2.t
@@ -564,95 +535,95 @@ KoH_religiousflavour.8 = { #Monks is fantastic painter
 	}
 }
 
-KoH_religiousflavour.9 = { #Child wants to be monk/nun - select child
-	title = KoH_religiousflavour.9.t
-	desc = KoH_religiousflavour.9.desc
-	theme = learning_scholarship_focus
-	left_portrait = {
-		character = this
-	}
-	hidden = yes
+# KoH_religiousflavour.9 = { #Child wants to be monk/nun - select child
+# 	title = KoH_religiousflavour.9.t
+# 	desc = KoH_religiousflavour.9.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+# 	hidden = yes
 
-	trigger = {		
-		is_commanding_army = no
-		is_adult = yes
-		is_imprisoned = no
-		has_religion = religion:christianity_religion
-		any_child = {
-			is_ruler = no
-			age = 13
-			NOT = { age = 16 }
-			NOT = { has_trait = cynical }
-			NOT = { is_clergy = yes }
-		}
-	}
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 		any_child = {
+# 			is_ruler = no
+# 			age = 13
+# 			NOT = { age = 16 }
+# 			NOT = { has_trait = cynical }
+# 			NOT = { is_clergy = yes }
+# 		}
+# 	}
 
-	immediate = {
-		random_child = {
-			limit = {
-				is_ruler = no
-				age = 13
-				NOT = { age = 16 }
-				NOT = { has_trait = cynical }
-				NOT = { is_clergy = yes }
-			}
-			trigger_event = KoH_religiousflavour.10
-		}
-	}
-}
+# 	immediate = {
+# 		random_child = {
+# 			limit = {
+# 				is_ruler = no
+# 				age = 13
+# 				NOT = { age = 16 }
+# 				NOT = { has_trait = cynical }
+# 				NOT = { is_clergy = yes }
+# 			}
+# 			trigger_event = KoH_religiousflavour.10
+# 		}
+# 	}
+# }
 
-KoH_religiousflavour.10 = { #MChild Event
-	#title = KoH_religiousflavour.10.t
-	#desc = KoH_religiousflavour.10.desc
-	theme = learning_scholarship_focus
-	left_portrait = {
-		character = this
-	}
-	hidden = yes
+# KoH_religiousflavour.10 = { #MChild Event
+# 	#title = KoH_religiousflavour.10.t
+# 	#desc = KoH_religiousflavour.10.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+# 	hidden = yes
 
-	immediate = {
-		FROM = {
-			trigger_event = KoH_religiousflavour.11  }
-	}
-}
+# 	immediate = {
+# 		FROM = {
+# 			trigger_event = KoH_religiousflavour.11  }
+# 	}
+# }
 
-KoH_religiousflavour.11 = { #Child wants to be monk/nun - parent response
-	title = KoH_religiousflavour.11.t
-	desc = KoH_religiousflavour.11.desc
-	theme = learning_scholarship_focus
-	left_portrait = {
-		character = this
-	}
-	right_portrait = {
-		character = FROM
-	}
+# KoH_religiousflavour.11 = { #Child wants to be monk/nun - parent response
+# 	title = KoH_religiousflavour.11.t
+# 	desc = KoH_religiousflavour.11.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+# 	right_portrait = {
+# 		character = FROM
+# 	}
 
-	option = { 
-		name = KoH_religiousflavour.11.a
+# 	option = { 
+# 		name = KoH_religiousflavour.11.a
 
-		FROM = {
-			add_trait = devoted
-			add_opinion = {
-				target = ROOT
-				opinion = 50
-				modifier = grateful_opinion
-			}
-		}
-		custom_tooltip = { text = KoH_religiousflavour.11.a.tt}
-	}
+# 		FROM = {
+# 			add_trait = devoted
+# 			add_opinion = {
+# 				target = ROOT
+# 				opinion = 50
+# 				modifier = grateful_opinion
+# 			}
+# 		}
+# 		custom_tooltip = { text = KoH_religiousflavour.11.a.tt}
+# 	}
 
-	option = { 
-		name = KoH_religiousflavour.11.b
-		FROM = {
-			add_stress = major_stress_loss
-			add_opinion = {
-				target = ROOT
-				opinion = 50
-				modifier = angry_opinion
-			}
-		}
-	}
-}
+# 	option = { 
+# 		name = KoH_religiousflavour.11.b
+# 		FROM = {
+# 			add_stress = major_stress_loss
+# 			add_opinion = {
+# 				target = ROOT
+# 				opinion = 50
+# 				modifier = angry_opinion
+# 			}
+# 		}
+# 	}
+# }
 
 KoH_religiousflavour.12 = { #Donate to local monastery
 	title = KoH_religiousflavour.12.t
@@ -678,5 +649,164 @@ KoH_religiousflavour.12 = { #Donate to local monastery
 	option = { 
 		name = KoH_religiousflavour.12.b
 		add_piety = -30
+	}
+}
+
+KoH_religiousflavour.13 = { #Duty-Bound
+	title = KoH_religiousflavour.13.t
+	desc = KoH_religiousflavour.13.desc
+	theme = learning_scholarship_focus
+	right_portrait = {
+		character = scope:Priest
+	}
+	lower_right_portrait = {
+		character = scope:lover
+	}
+
+	trigger = {		
+		has_religion = religion:christianity_religion
+		any_vassal_or_below = {
+			AND = {
+				has_government = theocracy_government
+				OR = {
+					has_trait = reveler_1
+					has_trait = reveler_2
+					has_trait = reveler_3
+					has_trait = drunkard
+					has_trait = lustful 
+				}
+			} 
+		}
+	}
+
+	immediate = {
+		random_vassal_or_below = {
+			limit = {
+				AND = {
+					has_government = theocracy_government
+					OR = {
+						has_trait = reveler_1
+						has_trait = reveler_2
+						has_trait = reveler_3
+						has_trait = drunkard
+						has_trait = lustful 
+					}
+				}
+			}
+			save_scope_as = Priest 
+		}
+
+		create_character = {
+			template = beautiful_peasant_character
+			age = { 17 22 }
+			gender_female_chance = root_attraction_based_female_chance
+			employer = scope:Priest.host
+			faith = scope:Priest.host.faith
+			culture = scope:Priest.host.culture
+			save_scope_as = lover
+		}
+
+		scope:Priest = {
+			set_relation_lover = scope:lover
+		}
+	}
+
+	option = { 
+		name = KoH_religiousflavour.13.a
+		
+		scope:Priest = {
+			add_trait = Deviant
+
+			if = {
+				limit = { exists = dynasty }
+				dynasty = {
+					add_dynasty_prestige = medium_dynasty_prestige_loss
+				}
+			}
+			add_piety = -1
+			add_piety_level = -1
+		}
+	}
+}
+
+KoH_religiousflavour.14 = { #Duty-Bound
+	title = KoH_religiousflavour.14.t
+	desc = KoH_religiousflavour.14.desc
+	theme = learning_scholarship_focus
+	right_portrait = {
+		character = scope:Priest
+	}
+	lower_right_portrait = {
+		character = scope:lover
+	}
+
+	trigger = {		
+		has_religion = religion:christianity_religion
+
+		any_dynasty_member = {
+			AND = {
+				is_alive = yes
+				dynasty = root.dynasty
+				has_government = theocracy_government
+				OR = {
+					has_trait = reveler_1
+					has_trait = reveler_2
+					has_trait = reveler_3
+					has_trait = drunkard
+					has_trait = lustful 
+				}
+			} 
+		}
+	}
+
+	immediate = {
+		any_dynasty_member = {
+			AND = {
+				is_alive = yes
+				AND = {
+					dynasty = root.dynasty
+					has_government = theocracy_government
+					OR = {
+						has_trait = reveler_1
+						has_trait = reveler_2
+						has_trait = reveler_3
+						has_trait = drunkard
+						has_trait = lustful 
+					}
+				}
+			}
+			save_scope_as = Priest 
+		}
+
+		create_character = {
+			template = beautiful_peasant_character
+			age = { 17 22 }
+			gender_female_chance = root_attraction_based_female_chance
+			employer = scope:Priest.host
+			faith = scope:Priest.host.faith
+			culture = scope:Priest.host.culture
+			save_scope_as = lover
+		}
+
+		scope:lover = {
+			set_relation_lover = scope:Priest
+		}
+	}
+
+	option = { 
+		name = KoH_religiousflavour.14.a
+		
+		scope:Priest = {
+			add_trait = Deviant
+
+			if = {
+				limit = { exists = dynasty }
+				dynasty = {
+					add_dynasty_prestige = medium_dynasty_prestige_loss
+				}
+			}
+			add_piety = -1
+			add_piety_level = -1
+		}
 	}
 }

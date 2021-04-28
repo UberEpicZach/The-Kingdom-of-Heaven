@@ -1,32 +1,67 @@
 ﻿
 
-###REQUIRED YEAR TRIGGER
-required_year_trigger = {
-	custom_description = {
-		text = required_year
-		value = $YEAR$
-		current_year = $YEAR$
-	}
-}
-required_year_greater_or_equal_trigger = {
-	custom_description = {
-		text = required_year_greater_or_equal
-		value = $YEAR$
-		current_year >= $YEAR$
+# ###REQUIRED YEAR TRIGGER
+# required_year_trigger = {
+# 	custom_description = {
+# 		text = required_year
+# 		value = $YEAR$
+# 		current_year = $YEAR$
+# 	}
+# }
+# required_year_greater_or_equal_trigger = {
+# 	custom_description = {
+# 		text = required_year_greater_or_equal
+# 		value = $YEAR$
+# 		current_year >= $YEAR$
+# 	}
+# }
+
+# required_year_lesser_or_equal_trigger = {
+# 	custom_description = {
+# 		text = required_year_lesser_or_equal
+# 		value = $YEAR$
+# 		current_year <= $YEAR$
+# 	}
+# }
+
+
+# is_ranchy_woman_in_my_dungeon = {
+# 	 character:205730 = {
+# 		is_imprisoned_by = character:204500
+# 	 }
+# }
+
+
+my_trigger = {
+	is_male = yes
+	is_ruler = no
+	root.primary_title = {
+		place_in_line_of_succession = {
+		  target = PREV
+		  value > 2
+		}
 	}
 }
 
-required_year_lesser_or_equal_trigger = {
-	custom_description = {
-		text = required_year_lesser_or_equal
-		value = $YEAR$
-		current_year <= $YEAR$
+
+is_sea = {
+    exists = commanding_army.location
+	commanding_army.location = {
+		NOR = {
+			terrain = plains
+			terrain = farmlands
+			terrain = hills
+			terrain = mountains
+			terrain = desert
+			terrain = desert_mountains
+			terrain = oasis
+			terrain = jungle
+			terrain = forest
+			terrain = taiga
+			terrain = wetlands
+			terrain = steppe
+			terrain = floodplains
+			terrain = drylands 
+		}
 	}
-}
-
-
-is_ranchy_woman_in_my_dungeon = {
-	 character:205730 = {
-		is_imprisoned_by = character:204500
-	 }
 }

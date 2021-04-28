@@ -394,3 +394,23 @@ KOH_Crusade_lose = {
 	resolve_title_and_vassal_change = scope:change
 }
 
+scripted_effect_popethingevent = {
+	title:k_papal_state.holder = { save_scope_as = scoped_pope }
+	every_sibling = {
+		limit = {my_trigger = yes}
+		add_to_list = custom_list_name
+	}
+	every_child = {
+		limit = {my_trigger = yes}
+		add_to_list = custom_list_name
+	}
+	random_in_list = {
+	   list = custom_list_name
+	   save_scope_as = player_one
+	   remove_from_list = custom_list_name
+	}
+	random_in_list = {
+	   list = custom_list_name
+	   save_scope_as = player_two
+	}
+}
