@@ -94,7 +94,7 @@ widget = {
 	widget = {
 		visible = "[Not( IsPauseMenuShown )]"
 		name = "top_bar"
-		size = { 730 38 }
+		size = { 640 38 }
 		parentanchor = top|right
 		filter_mouse = all
 		alwaystransparent = no
@@ -429,7 +429,6 @@ widget = {
 						spritetype = corneredtiled
 					}
 
-
 					button_group = {
 						onclick = "[ToggleGameViewData('military', GetPlayer.GetID)]"
 						tooltip = "[ArmyComposition.GetArmyCompositionTooltip]"
@@ -576,7 +575,7 @@ widget = {
 		visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]"
 		parentanchor = top|right
 		position = { 5 105 }
-		size = { 50 450 }
+		size = { 50 375 }
 
 		using = Animation_ShowHide_Quick
 
