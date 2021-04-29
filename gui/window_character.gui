@@ -1,5 +1,5 @@
 ######################################################
-################# CHARACTER WINDOW ###################
+################# CHARACTER WINDOW KOH ###################
 ######################################################
 
 window = {
@@ -28,26 +28,6 @@ window = {
 		position_x = -60
 
 		on_start = "[GetVariableSystem.Clear( 'hide_bottom_left_HUD' )]"
-	}
-
-	state = {
-		name = hide
-		next = _hide
-
-		trigger_when = "[GetVariableSystem.Exists( 'county_view_open' )]"
-		position_x = 0
-	}
-
-	state = {
-		name = translate_hide
-		position_x = -60
-		trigger_when = "[Not(GetVariableSystem.Exists( 'left_sidebar_open'))]"
-	}
-
-	state = {
-		name = translate_open
-		position_x = 0
-		trigger_when = "[GetVariableSystem.Exists( 'left_sidebar_open')]"
 	}
 
 	vbox = {
@@ -192,14 +172,7 @@ window = {
 						ignoreinvisible = yes
 
 						text_label_center = {
-							visible = "[Not(CharacterWindow.GetCharacter.IsBetrothed)]"
 							text = "[CharacterWindow.GetSpouseText]"
-							align = nobaseline
-						}
-
-						text_label_center = {
-							visible = "[CharacterWindow.GetCharacter.IsBetrothed]"
-							text = "BETROTHED"
 							align = nobaseline
 						}
 
@@ -743,13 +716,13 @@ window = {
 
 							text_single = {
 								name = "character_name"
-								margin_left = 2
 								text = "[Character.GetUINameNotMeNoTooltip], "
-								default_format = "#medium"
+								margin_left = 2
+								max_width = 400
 								fontsize = 20
-								max_width = 388
-								align = nobaseline
 								fontsize_min = 14
+								align = nobaseline
+								default_format = "#medium"
 								tooltip = "[Character.GetUINameNotMeNoTooltip]"
 							}
 
@@ -1145,19 +1118,6 @@ window = {
 									}
 								}
 							}
-						button_hud_main_tab = {
-							name = "tab_bloodlines_open"
-							tooltip = "BLOODLINES_BUTTON"
-							
-							blockoverride "maintab_button"
-							{
-								texture = "gfx/bloodlines/bloodlines_button.dds"
-
-								datacontext = "[GetScriptedGui('bloodlines_toggle')]"
-								onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-								down = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							}
-						}
 
 							spacer = {
 								size = { 10 0 }
@@ -1501,12 +1461,15 @@ window = {
 							vbox = {
 								visible = "[Character.HasLandedTitles]"
 								datacontext = "[Character.GetPrimaryTitle]"
+								layoutpolicy_horizontal = expanding
+
 								text_single = {
 									name = "character_title"
 									layoutpolicy_horizontal = expanding
 									text = "[Title.GetNameNoTooltip|U]"
+									autoresize = no
 									max_width = 280
-									#default_format = "#low"
+									default_format = "#low"
 									using = Font_Size_Medium
 									align = nobaseline
 									fontsize_min = 14
@@ -1516,18 +1479,22 @@ window = {
 									name = "faction"
 									visible = "[Title.HasFaction]"
 									layoutpolicy_horizontal = expanding
+									autoresize = no
 									text = "CV_CIVIL_WAR_FACTION"
 									default_format = "#low"
 									align = nobaseline
+									fontsize_min = 14
 								}
 
 								text_single = {
 									name = "government_type"
 									visible = "[Not( Title.HasFaction )]"
 									layoutpolicy_horizontal = expanding
+									autoresize = no
 									text = "CV_REALM_TYPE"
 									default_format = "#low"
 									align = nobaseline
+									fontsize_min = 14
 								}
 							}
 
@@ -1596,6 +1563,8 @@ window = {
 										text = "[Character.GetGold|0]"
 										default_format = "#high"
 										align = center|nobaseline
+										fontsize_min = 12
+										max_width = 50
 									}
 								}
 
@@ -1615,6 +1584,8 @@ window = {
 										text = "[Character.GetPrestige|0]"
 										default_format = "#high"
 										align = center|nobaseline
+										fontsize_min = 12
+										max_width = 50		
 									}
 								}
 
@@ -1634,6 +1605,8 @@ window = {
 										text = "[Character.GetPiety|0]"
 										default_format = "#high"
 										align = center|nobaseline
+										fontsize_min = 12
+										max_width = 50
 									}
 								}
 
@@ -1665,8 +1638,10 @@ window = {
 										text = "[CharacterWindow.GetCachedMilitaryStrengthText]"
 										default_format = "#high"
 										align = center|nobaseline
+										fontsize_min = 12
+										max_width = 80
 
-										progressbar_standard = {
+ 										progressbar_standard = {
 											name = "soldiers_max"
 											parentanchor = bottom|hcenter
 											position = { 0 5 }
@@ -2276,6 +2251,7 @@ window = {
 														blockoverride "portrait_button_template_onclick"
 														{
 															onclick = "[CharacterWindow.GetCharacter.OpenPlayerInteraction('find_concubine')]"
+															enabled = "[CharacterWindow.GetCharacter.IsPlayerInteractionValid('find_concubine')]"
 
 															button_plus = {
 																parentanchor = center
@@ -2526,41 +2502,6 @@ window = {
 									blockoverride "expand_button" {}
 								}
 
-
-							expand = {}
-
-							vbox_character_row_item = {
-								name = "adoptee"
-								layoutpolicy_vertical = expanding
-
-								blockoverride "portrait_datamodel" {
-									datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'adoptee' ) )]"
-								}
-
-								blockoverride "header_text"
-								{
-									text = "ADOPTEE_LABEL"
-								}
-
-								blockoverride "expand_button" {}
-							}
-
-							vbox_character_row_item = {
-								name = "adoptor"
-								layoutpolicy_vertical = expanding
-
-								blockoverride "portrait_datamodel" {
-									datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'adoptor' ) )]"
-								}
-
-								blockoverride "header_text"
-								{
-									text = "ADOPTOR_LABEL"
-								}
-
-								blockoverride "expand_button" {}
-							}
-
 								expand = {}
 							}
 						}
@@ -2782,6 +2723,12 @@ window = {
 									# blockoverride "description_relation_text" {
 									# 	text = "[Character.GetSpecialGuestRelationDescription]"
 									# }
+
+									blockoverride "gridbox_items"
+									{
+										datamodel_wrap = 7
+										maxverticalslots = 2
+									}
 
 									blockoverride "action_buttons" {}
 								}
@@ -3555,6 +3502,7 @@ window = {
 					text_label_left = {
 						layoutpolicy_horizontal = expanding
 						text = "CV_DIPLOMACY"
+						autoresize = no
 						margin_right = 0
 					}
 				}
@@ -3642,36 +3590,6 @@ window = {
 
 		expand = {}
 	}
-
-	type hbox_character_subheading = hbox {
-		name = "AI_personality"
-		layoutpolicy_horizontal = expanding
-		margin = { 3 0 }
-		spacing = 2
-
-		text_single = {
-			name = "character_relation_to_you"
-			max_width = 432
-			text = "[Character.GetCharacterRelationCombine( GetPlayer )]"
-			fontsize_min = 13
-			align = nobaseline
-		}
-		icon = {
-			visible = "[Not(Character.IsFemale)]"
-			size = { 20 20 }
-			framesize = { 40 40 }
-			frame = "[Character.GetSexualityFrame]"
-			texture = "gfx/interface/icons/character_status/sexuality_icons_male.dds"
-			tooltip = "SEXUALITY_TT"
-		}
-
-		icon = {
-			visible = "[Character.IsFemale]"
-			size = { 20 20 }
-			framesize = { 40 40 }
-			frame = "[Character.GetSexualityFrame]"
-			texture = "gfx/interface/icons/character_status/sexuality_icons_female.dds"
-			tooltip = "SEXUALITY_TT"
 	}
 
 	template Animation_Character_Window_Refresh

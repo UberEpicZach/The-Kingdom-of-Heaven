@@ -53,32 +53,64 @@ KoH_generalgeneric.1 = { #Lost At Sea!
 			}
 		}
 	}
+}
 
-	# option = {
-	# 	name = KoH_generalgeneric.1.c
+KoH_generalgeneric.2 = { #Lost At Sea!
+	title = KoH_generalgeneric.2.t
+	desc = KoH_generalgeneric.2.desc
+	theme = feast_activity
+	left_portrait = {
+		character = scope:wife
+	}
+	right_portrait = {
+		character = scope:lover
+	}
 
+	lower_left_portrait = {
+		character = root
+	}
 
-	# }
+	trigger = {	
+		any_relation = {
+			type = lover 
+			is_adult = yes
+			is_imprisoned = no
+			has_religion = religion:christianity_religion
+		}
 
-	# option = {
-	# 	name = KoH_generalgeneric.1.c
-	# 	trigger = {
-	# 		OR = {
-	# 			has_trait = zealous
-	# 			learning <= 10
-	# 		}
-	# 	add_piety = 50
+		any_spouse = {
+			is_adult = yes
+			is_imprisoned = no
+			has_religion = religion:christianity_religion
+		}
 
-	# 	title:k_papal_state.holder = {
-	# 		add_opinion = {
-	# 			target = ROOT
-	# 			opinion = -15
-	# 			modifier = disappointed_opinion
-	# 		}
-	# 		add_piety = -100
-	# 	}
-	# 	add_piety = 200
-	# 	add_learning_skill = 1
-	# 	}
-	# }
+		wifelover = yes
+	}
+
+	immediate = {
+		every_spouse = {
+			limit = {
+				is_alive = yes
+				is_adult = yes
+				is_imprisoned = no
+				has_religion = religion:christianity_religion
+			}
+			save_scope_as = wife
+		}
+
+		every_relation = {
+			type = lover
+			limit = {
+				is_alive = yes
+				is_adult = yes
+				is_imprisoned = no
+				has_religion = religion:christianity_religion
+			}
+			save_scope_as = lover 
+		}
+	}
+
+	option = { 
+		name = KoH_generalgeneric.2.a
+	}
 }
