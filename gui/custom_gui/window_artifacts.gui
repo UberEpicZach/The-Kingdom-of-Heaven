@@ -1,0 +1,310 @@
+artifacts_window = {
+	name = "window_artifacts"
+}
+
+types ArtifactsWindow  {
+	type artifacts_window = window {
+		#name = "window_artifacts"
+		parentanchor = top|right
+		layer = windows_layer
+		movable = no
+		using = Window_Size_MainTab
+		visible = "[And(GetVariableSystem.HasValue('sidebar_window','window_artifacts'),IsInGame)]"
+		#visible = "[And(GetVariableSystem.Exists('artifact_window_open'),IsInGame)]"
+		position = {500 0}
+		state = {
+			name = initialize
+			#position = {500 0}
+			trigger_on_create = yes
+			on_start = "[GetVariableSystem.Set( 'window_artifacts', 'yes' )]"
+		}
+		state = {
+			name = _hide
+			using = Animation_FadeOut_Quick
+			using = Sound_WindowHide_Standard
+			using = Window_Position_MainTab_Hide
+			trigger_when = "[IsRightWindowOpen]"
+			#on_start = "[GetVariableSystem.Clear('artifact_window_open')]"
+		}
+		state = {
+			name = _show
+			using = Animation_FadeIn_Quick
+			using = Sound_WindowShow_Standard
+			using = Window_Position_MainTab
+			# Clears any GameViews if they are open:
+			# This one closes only sidebar tabs:
+			on_start = "[GetScriptedGui('close_other_views').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			#on_start = "[ToggleGameView( Select_CString( IsGameViewOpen('my_realm'), 'my_realm', '' ) )]"
+			#on_start = "[ToggleGameView( Select_CString( IsGameViewOpen('military'), 'military', '' ) )]"
+			#on_start = "[ToggleGameView( Select_CString( IsGameViewOpen('council_window'), 'council_window', '' ) )]"
+			#on_start = "[ToggleGameView( Select_CString( IsGameViewOpen('court_window'), 'court_window', '' ) )]"
+			#on_start = "[ToggleGameView( Select_CString( IsGameViewOpen('intrigue_window'), 'intrigue_window', '' ) )]"
+			#on_start = "[ToggleGameView( Select_CString( IsGameViewOpen('factions_window'), 'factions_window', '' ) )]"
+			#on_start = "[ToggleGameView( Select_CString( IsGameViewOpen('decisions'), 'decisions', '' ) )]"
+
+			# Any mod-specific windows can be cleared here:
+			#on_start = "[GetVariableSystem.Clear('radiant_window_open')]"
+		}
+
+		background = {
+			texture = "gfx/interface/component_tiles/solid_black_label.dds"
+			margin_left = -40
+			fittype = centercrop
+		}
+
+		margin_widget = {
+			size = { 100% 100% }
+			margin = { 0 26 }
+			margin_right = 20
+			widget = {
+				size = { 100% 100% }
+				using = Window_Background
+				using = Window_Decoration_Warfare
+				icon_button_mapmode = {
+					name = "map_mode_artifact_button"
+					size = { 32 32 }
+					position = {50 80}
+
+					blockoverride "mm_button"
+					{
+						onclick = "[GetVariableSystem.Toggle('show_artifacts')]"
+						#onclick = "[GetVariableSystem.Clear('show_artifacts')]"
+						down = "[GetVariableSystem.Exists('show_artifacts')]"
+						tooltip = show_artifacts
+						#"Show Artifacts"
+					}
+					blockoverride "mm_icon"
+					{
+						down = "[GetVariableSystem.Exists('show_artifacts')]"
+						texture = "gfx/interface/icons/flat_icons/mapmode_artifacts.dds"
+					}
+
+					blockoverride "mm_glow"
+					{
+						visible = "[GetVariableSystem.Exists('show_artifacts')]"
+					}
+				}
+				vbox = {
+					using = Window_Margins
+
+					header_pattern = {
+						layoutpolicy_horizontal = expanding
+
+						blockoverride "header_text"
+						{
+							text = "ARTIFACTS_VIEW_TITLE"
+						}
+
+						blockoverride "button_close"
+						{
+							onclick = "[GetVariableSystem.Set('sidebar_window','none')]"
+						}
+					}
+					artifact_spacer_vertical_large = {}
+					text_label_center = {
+						text = "ARTIFACTS_VIEW_TITLES"
+					}
+					artifact_spacer_vertical_large = {}
+					artifact_spacer_vertical_large = {}
+					vbox = {
+						background = {
+							margin_left = 40
+							margin_right = 40
+							margin_top = 20
+							margin_bottom = 20
+
+							texture = "gfx/interface/component_tiles/solid_black_label.dds"
+							spriteType = Corneredtiled
+							spriteborder = { 20 20 }
+
+							modify_texture = {
+								name = "mask"
+								texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+								spriteType = Corneredstretched
+								spriteborder = { 0 0 }
+								blend_mode = alphamultiply
+							}
+						}
+						hbox = {
+							parentanchor = left
+							vbox = {
+								button = {
+									datacontext = "[GetScriptedGui('artifacts_destroy_artifact')]"
+									visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									name = "artifact_destroy"
+									#position = { -25 5 }
+									texture = "gfx/interface/buttons/artifact_destroy.dds"
+									framesize = { 100 100 }
+									size = { 50 50 }
+									tooltip = destroy_artifact_tt
+									enabled = yes
+									onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_quit_game"
+
+								}
+								button = {
+									datacontext = "[GetScriptedGui('artifacts_cant_artifact')]"
+									visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									name = "artifact_indestructible"
+									#position = { -25 5 }
+									framesize = { 100 100 }
+									size = { 50 50 }
+									enabled = yes
+									onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+								vbox = {
+									text_single = {
+										text = selected_artifact_indestructible
+										align = right
+										fontsize = 16
+									}
+									text_single = {
+										text = selected_artifact_rarity
+										align = right
+										fontsize = 16
+									}
+								}
+							}
+							artifact_spacer_horizontal = {}
+
+							vbox = {
+
+								text_single = {
+								text = selected_artifact_title
+									align = center
+									fontsize = 20
+								}
+								text_single = {
+									text = "[Localize(Concatenate(Concatenate('@icon_',GetPlayer.MakeScope.Var('artifact_selection').GetFlagName), '!'))]"
+								}
+							}
+							artifact_spacer_horizontal = {}
+							
+							vbox = {
+							button = {
+								visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								name = "artifact_equip"
+								#position = { 25 5 }
+								texture = "gfx/interface/buttons/artifact_equip.dds"
+								framesize = { 100 100 }
+								size = { 50 50 }
+								tooltip = equip_artifact_tt
+
+								datacontext = "[GetScriptedGui('artifacts_equip_artifact')]"
+								enabled = "[ScriptedGui.IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							}
+							button = {
+								visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								name = "artifact_unequip"
+								#position = { 25 5 }
+								texture = "gfx/interface/buttons/artifact_unequip.dds"
+								framesize = { 100 100 }
+								size = { 50 50 }
+								tooltip = unequip_artifact_tt
+
+								datacontext = "[GetScriptedGui('artifacts_unequip_artifact')]"
+								enabled = yes
+								onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							}
+								text_single = {
+									text = selected_artifact_equipped
+									align = center
+									fontsize = 16
+								}
+								text_single = {
+									text = selected_artifact_type
+									align = right
+									fontsize = 16
+								}
+							}
+						}
+						text_multi = {
+							text = selected_artifact_desc
+							size = { 450 150 }
+							maximumsize = { 450 450 }
+							align = center
+							fontsize = 16
+							autoresize = yes
+						}
+					}
+					artifact_spacer_vertical_large = {}
+					text_single = {
+						datacontext = "[GetScriptedGui('artifacts_has_no_artifacts')]"
+						visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						text = "ARTIFACTS_VIEW_NONE"
+						default_format = "#low;italic"
+						artifact_spacer_vertical_large = {}
+					}
+					artifact_spacer_vertical_large = {}
+					vbox = {
+						artifact_filter_options = {
+							datacontext = "[GetPlayer]"
+							blockoverride "datamodel" {
+								datamodel = "[Character.MakeScope.GetList('artifact_slots')]"
+							}
+							blockoverride "itemcontext" {
+								datacontext = "[GetScriptedGui('select_artifact_filter_slot_by_province')]"
+							}
+							blockoverride "down" {
+								onclick = "[GetVariableSystem.Clear('ArtifactTypeFilterIndex')]"
+								onclick = "[GetVariableSystem.Set('ArtifactSlotFilterIndex', Scope.GetProvince.GetName)]"
+								down = "[GetVariableSystem.HasValue('ArtifactSlotFilterIndex', Scope.GetProvince.GetName)]"
+							}
+						}
+						artifact_filter_options = {
+							datacontext = "[GetPlayer]"
+						}
+
+					}
+					artifact_spacer_vertical_large = {}
+					scrollbox = {
+						name = "artifacts_scrollarea"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						#size = {100% 100%}
+
+						background = {
+							texture = "gfx/interface/illustrations/event_scenes/armory.dds"
+							margin = { -5 0 }
+							fittype = end
+							alpha = 0.8
+							framesize = { 1200 848 }
+
+							modify_texture = {
+								texture = "gfx/interface/component_masks/mask_fade_vertical_up.dds"
+								blend_mode = alphamultiply
+							}
+						}
+
+						blockoverride "scrollbox_content"
+						{
+							name = "artifacts_main_container"
+							#spacing = 1000
+
+							artifact_list = {
+								datacontext = "[GetPlayer]"
+								blockoverride "datamodel" {
+									datamodel = "[Character.MakeScope.GetList('artifact_list_filtered')]"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+types Artifacts
+{
+	type artifact_spacer_horizontal = widget {
+		size = { 8 0 }
+	}
+	type artifact_spacer_vertical = widget {
+		size = { 0 3 }
+	}
+	type artifact_spacer_vertical_large = widget {
+		size = { 0 15 }
+	}
+}

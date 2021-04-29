@@ -1,0 +1,160 @@
+﻿artifacts_gui_toggle = {
+	scope = character
+	is_shown = {
+		has_variable = artifacts_gui_toggle
+	}
+	effect = {
+		if = {
+			limit = {has_variable = artifacts_gui_toggle}
+			remove_variable = artifacts_gui_toggle
+		}
+		else = {
+			set_variable = artifacts_gui_toggle
+		}
+	}
+}
+artifacts_gui_close = {
+	scope = character
+	is_shown = {always = yes}
+	effect = {remove_variable = artifacts_gui_toggle}
+}
+artifacts_save_scope = {
+	scope = character
+	is_shown = {always = yes}
+	effect = {save_scope_as = artifact_person}
+}
+artifacts_has_no_artifacts = {# Shows text
+	scope = character
+	is_shown = {NOT = {has_any_artifact = yes}}
+}
+artifacts_clicked = {# Fires when any artifact is clicked in the window
+	scope = character
+	is_shown = {}
+	effect = {}
+}
+artifacts_tooltip = { #Not currently hooked up to anything
+	is_shown = {always = no}
+	effect = {}
+}
+artifacts_equipped = { #Shows "Equipped" in green when selected artifact is equipped
+	scope = character
+	is_shown = {
+		#is_artifact_equipped = {ARTIFACT = var:SELECTION}
+	}
+}
+artifacts_destroy_artifact = { #Button which destroys selection
+	scope = character
+	is_shown = {
+		has_variable = artifact_selection
+		NOT = {is_selection_indestructible = yes}}
+	effect = {
+		for_all_artifacts_no_arguments = {APPLY = destroy_artifact_if_selected}
+	}
+}
+artifacts_equip_artifact = {# Triggers when the "Equip" button is clicked
+	scope = character
+	is_shown = {
+		has_variable = artifact_selection
+		NOT = {
+			is_selection_equipped = yes
+		}
+	}
+	is_valid = {
+		NOT = {
+			AND = {
+				var:artifact_selection = flag:artifact_1
+				NOT = {
+					faith = faith:stone_shamanism
+					highest_held_title_tier >= tier_empire
+				}
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				is_target_in_global_variable_list = {
+					name = global_artifact_list_gem
+					target = var:artifact_selection 
+				}
+			}
+		}
+		for_all_slots = {APPLY = unequip_selected_type_artifacts}
+		for_all_artifacts_no_arguments = {APPLY = equip_selected_artifact}
+	}
+}
+artifacts_unequip_artifact = {# Triggers when the Unequip button is clicked
+	scope = character
+	is_shown = {
+		has_variable = artifact_selection
+		is_selection_equipped = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				is_target_in_global_variable_list = {
+					name = global_artifact_list_gem
+					target = var:artifact_selection 
+				}
+			}
+		}
+		for_all_artifacts_no_arguments = {APPLY = unequip_selected_artifact }
+	}
+}
+
+artifacts_gift_confirm = {
+	scope = character
+	is_shown = {
+		always = yes
+	}
+	effect = {
+		transfer_artifact_gift_selection = {A = root B = var:artifact_recipient}
+		#transfer_selected_gift_artifacts = { FROM = root TO = var:artifact_recipient }
+	}
+}
+
+artifacts_cant_artifact = {
+	scope = character
+	is_shown = {
+		has_variable = artifact_selection
+		is_selection_indestructible = yes
+	}
+}
+
+artifacts_save_character = {
+	scope = character
+	effect = {
+		if = {
+			limit = { has_variable = artifact_person }
+			remove_variable = artifact_person
+			save_scope_as = artifact_person
+		}
+		else = {
+			set_variable = artifact_person
+		}
+	}
+}
+
+artifacts_test = {
+	scope = character
+	saved_scopes = {
+		test
+	}
+	is_shown = {
+		has_variable = artifact_oathbringer_equipped
+	}
+}
+
+close_other_views = {
+	scope = character
+	effect = {
+		#close_all_views = yes
+		close_view = my_realm
+		close_view = military
+		close_view = council_window
+		close_view = court_window
+		close_view = intrigue_window
+		close_view = factions_window
+		close_view = decisions
+	}
+}

@@ -1,0 +1,193 @@
+﻿# These do not need to be changed if you've just added an artifact, but might be needed if you've added a type or slot.
+# Rarities should be dynamic, so long as you've applied customizable_localization.
+
+#Artifact triggers sorted by slot
+has_any_handheld_artifacts = {
+	any_in_list = {
+		variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_handheld
+			target = this
+		}
+	}
+}
+has_any_armor_artifacts = {
+	any_in_list = {
+	variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_armor
+			target = this
+		}
+	}
+}
+has_any_headgear_artifacts = {
+	any_in_list = {
+		variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_headgear
+			target = this
+		}
+	}			
+}
+has_any_jewelry_artifacts = { 
+	any_in_list = {
+		variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_jewelry
+			target = this
+		}
+	}
+}
+has_any_mount_artifacts = { 
+	any_in_list = {
+		variable = artifact_list
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_mount
+			target = this
+		}
+	}			
+}
+# Equipped Artifact slot triggers
+has_any_handheld_artifacts_equipped = {
+	any_in_list = {
+		variable = artifact_list_equipped
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_handheld
+			target = this
+		}
+	}
+}
+has_any_armor_artifacts_equipped = {
+	any_in_list = {
+	variable = artifact_list_equipped
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_armor
+			target = this
+		}
+	}
+}
+has_any_headgear_artifacts_equipped = {
+	any_in_list = {
+		variable = artifact_list_equipped
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_headgear
+			target = this
+		}
+	}			
+}
+has_any_jewelry_artifacts_equipped = { 
+	any_in_list = {
+		variable = artifact_list_equipped
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_jewelry
+			target = this
+		}
+	}
+}
+has_any_mount_artifacts_equipped = { 
+	any_in_list = {
+		variable = artifact_list_equipped
+		is_target_in_global_variable_list = {
+			name = global_artifact_list_mount
+			target = this
+		}
+	}			
+}
+
+has_any_artifact = {
+	custom_description = {
+		subject = this
+		text = HAS_ANY_ARTIFACTS_TRIGGER
+		has_variable_list = artifact_list
+	}
+}		
+
+has_any_all_artifacts = {
+	OR = {
+	    has_any_handheld_artifacts = yes
+	    has_any_armor_artifacts = yes
+	    has_any_headgear_artifacts = yes
+	    has_any_jewelry_artifacts = yes
+	    has_any_mount_artifacts = yes
+	}
+}
+
+is_artifact_of_type = {# ARTIFACT = X TYPE = Y 
+	is_target_in_global_variable_list = {
+		name = global_artifact_list_$TYPE$
+		target = $ARTIFACT$
+	}
+}
+is_unflagged_artifact_of_type = {# ARTIFACT = X TYPE = Y 
+	is_target_in_global_variable_list = {
+		name = global_artifact_list_$TYPE$
+		target = flag:$ARTIFACT$
+	}
+}
+
+has_artifact = {has_variable = $ARTIFACT$} # ARTIFACT = x
+
+#compare_artifacts = {$ARTIFACT_1$ = $ARTIFACT_2$}
+
+is_artifact_selected = { # ARTIFACT = x 
+	has_variable = $ARTIFACT$_selected
+}
+is_artifact_equipped = { # ARTIFACT = x 
+	has_variable = $ARTIFACT$_equipped
+}
+
+is_artifact_equipped_and_selected = {# ARTIFACT = x 
+	is_artifact_selected = {ARTIFACT = $ARTIFACT$ }
+	is_artifact_equipped = {ARTIFACT = $ARTIFACT$ }
+}
+
+is_selection_equipped = {
+	#exists = var:artifact_selection
+	is_target_in_variable_list = {
+		name = artifact_list_equipped
+		target = var:artifact_selection
+	}
+}
+
+is_selection_of_rarity = {# RARITY = N
+#exists = var:artifact_selection
+	is_target_in_global_variable_list = {
+		name = global_artifact_list_rarity_$RARITY$
+		target = var:artifact_selection
+	}
+}
+
+
+is_selection_indestructible = {
+	#exists = var:artifact_selection
+	is_target_in_global_variable_list = {
+		name = global_artifact_list_indestructible
+		target = var:artifact_selection
+	}
+}
+
+is_artifact_of_same_slot = {# ARTIFACT A B
+	OR = {
+		AND = {
+			is_artifact_of_type = {ARTIFACT = $A$ TYPE = handheld}
+			is_artifact_of_type = {ARTIFACT = $B$ TYPE = handheld}
+		}
+		AND = {
+			is_artifact_of_type = {ARTIFACT = $A$ TYPE = armor}
+			is_artifact_of_type = {ARTIFACT = $B$ TYPE = armor}
+		}
+		AND = {
+			is_artifact_of_type = {ARTIFACT = $A$ TYPE = headgear}
+			is_artifact_of_type = {ARTIFACT = $B$ TYPE = headgear}
+		}
+		AND = {
+			is_artifact_of_type = {ARTIFACT = $A$ TYPE = jewelry}
+			is_artifact_of_type = {ARTIFACT = $B$ TYPE = jewelry}
+		}
+		AND = {
+			is_artifact_of_type = {ARTIFACT = $A$ TYPE = mount}
+			is_artifact_of_type = {ARTIFACT = $B$ TYPE = mount}
+		}
+	}
+}
+

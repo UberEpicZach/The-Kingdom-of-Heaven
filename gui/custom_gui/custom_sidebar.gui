@@ -1,0 +1,98 @@
+CustomSidebar = {
+    name = "custom_sidebar"
+}
+
+types CustomSidebarTypes {
+	type CustomSidebar = widget {
+		visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]"
+		layer = middle
+		allow_outside = yes
+		parentanchor = top|right
+		position = {-45 0}
+		state = {# While this state is active, the CustomGUI events shouldn't fire.
+			name = load
+			trigger_on_create = yes
+			on_start = "[GetVariableSystem.Set('custom_sidebar','yes')]"
+		}
+		container = {
+			visible = "[GreaterThan_int32(GetDataModelSize(GetDummyMale.MakeScope.GetList('sidebar_buttons')), '(int32)0')]"
+			container = {
+				position = {1 450}
+				parentanchor = top|right
+				vbox = {
+					set_parent_size_to_minimum = yes
+					filter_mouse = all
+					margin_top = 15
+					margin_bottom = 20
+					margin_left = 2
+					spacing = 5
+
+					widget = {
+						layoutpolicy_horizontal = expanding
+						size = { 0 15 }
+					
+						icon = {
+							visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]"
+							parentanchor = right|vcenter
+							texture = "gfx/interface/skinned/hud_spike_big.dds"
+							size = { 25 15 }
+						
+							using = Animation_ShowHide_Standard
+						}
+					}
+					CustomSidebarButtonList = {}
+				}
+			}
+		}
+	}
+	#Included in case someone wishes to bastardize the code into a hardcoded GUI.
+	type CustomSidebarButtonList = vbox {
+		layer = top
+		spacing = 5
+		state = {
+			name = "darmok"
+			trigger_when = "[IsRightWindowOpen]"
+			on_start = "[GetVariableSystem.Set('sidebar_window','none')]"
+			next = "temba"
+		}
+		state = {
+			name = "temba"
+		}
+		datamodel = "[GetDummyMale.MakeScope.GetList('sidebar_buttons')]"
+		item = {
+			vbox = {
+				button_hud_main_tab = {
+					visible = "[Not(GetVariableSystem.Exists(Scope.GetFlagName))]"
+					tooltip = "Create [Localize(Concatenate('sidebar_button_tooltip_',Scope.GetFlagName))]"
+					blockoverride "maintab_button"
+					{
+						onclick = "[GetVariableSystem.Set('sidebar_window',Select_CString(GetVariableSystem.HasValue('sidebar_window',Scope.GetFlagName),'none',Scope.GetFlagName))]"
+						onclick = "[ExecuteConsoleCommand(Concatenate(Concatenate('gui.createwidget gui/custom_gui/',Scope.GetFlagName),Concatenate('.gui ', Scope.GetFlagName)))]"
+						onclick = "[GetScriptedGui('close_other_views').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						down = "[GetVariableSystem.HasValue('sidebar_window',Scope.GetFlagName)]"
+						text_single = {
+							text = "[Concatenate(Concatenate('@icon_',Scope.GetFlagName), '!')]"
+							scale = 1
+							parentanchor = center
+						}
+					}
+				}
+				button_hud_main_tab = {
+					visible = "[GetVariableSystem.Exists(Scope.GetFlagName)]"
+					tooltip = "Toggle [Localize(Concatenate('sidebar_button_tooltip_',Scope.GetFlagName))]"
+					blockoverride "maintab_button"
+					{
+						onclick = "[GetVariableSystem.Set('sidebar_window',Select_CString(GetVariableSystem.HasValue('sidebar_window',Scope.GetFlagName),'none',Scope.GetFlagName))]"
+						onclick = "[GetScriptedGui('close_other_views').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						down = "[GetVariableSystem.HasValue('sidebar_window',Scope.GetFlagName)]"
+						text_single = {
+							text = "[Concatenate(Concatenate('@icon_',Scope.GetFlagName), '!')]"
+							scale = 1
+							parentanchor = center
+						}
+					}
+				}
+			}
+		}
+	}
+}

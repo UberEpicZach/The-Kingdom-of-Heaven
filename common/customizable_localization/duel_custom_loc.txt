@@ -1,0 +1,230 @@
+﻿GetStakes = {
+	type = character
+	text = {
+		trigger = {
+			exists = var:challenger_for_prestige
+		}
+		localization_key = duel_interaction_duel_for_prestige
+	}
+	text = {
+		trigger = {
+			exists = var:challenger_for_artifacts
+		}
+		localization_key = duel_interaction_duel_for_artifacts
+	}
+	text = {
+		trigger = {
+			exists = var:challenger_for_land
+		}
+		localization_key = duel_interaction_duel_for_land
+	}
+	text = {
+		fallback = yes
+		localization_key = duel_interaction_duel_for_skill
+	}
+}
+
+GetStance = {
+	type = character
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:windstance
+		}
+		localization_key = WoK_duels.1011.my_windstance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:flamestance
+		}
+		localization_key = WoK_duels.1011.my_flamestance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:bloodstance
+		}
+		localization_key = WoK_duels.1011.my_bloodstance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:smokestance
+		}
+		localization_key = WoK_duels.1011.my_smokestance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:stonestance
+		}
+		localization_key = WoK_duels.1011.my_stonestance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:vinestance
+		}
+		localization_key = WoK_duels.1011.my_vinestance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:ironstance
+		}
+		localization_key = WoK_duels.1011.my_ironstance
+	}
+	text = {
+		fallback = yes
+		localization_key = WoK_duels.1011.my_no_stance
+	}
+}
+
+GetOpponentStance = {
+	type = character
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:windstance
+		}
+		localization_key = WoK_duels.1011.opponent_windstance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:flamestance
+		}
+		localization_key = WoK_duels.1011.opponent_flamestance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:bloodstance
+		}
+		localization_key = WoK_duels.1011.opponent_bloodstance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:smokestance
+		}
+		localization_key = WoK_duels.1011.opponent_smokestance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:stonestance
+		}
+		localization_key = WoK_duels.1011.opponent_stonestance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:vinestance
+		}
+		localization_key = WoK_duels.1011.opponent_vinestance
+	}
+	text = {
+		trigger = {
+			exists = var:dueling_stance var:dueling_stance = flag:ironstance
+		}
+		localization_key = WoK_duels.1011.opponent_ironstance
+	}
+	text = {
+		fallback = yes
+		localization_key = WoK_duels.1011.opponent_no_stance
+	}
+}
+GetDuelOpponentOutcome = {
+	type = character
+	text = {
+		trigger = {
+				has_variable = saved_by_stonestance
+		}
+		localization_key = WoK_duels.1011.opponent_stonestanced
+	}
+	text = {
+		trigger = {
+				exists = var:duel_damage var:duel_damage = flag:duel_wound 
+		}
+		localization_key = WoK_duels.1011.opponent_wounded
+	}
+	text = {
+		trigger = {
+				exists = var:duel_damage var:duel_damage = flag:duel_serious_wound
+		}
+		localization_key = WoK_duels.1011.opponent_serious_wounded
+	}
+	text = {
+		trigger = {
+				exists = var:duel_damage var:duel_damage = flag:duel_one_legged 
+		}
+		localization_key = WoK_duels.1011.opponent_one_leg
+	}
+	text = {
+		trigger = {
+				exists = var:duel_damage var:duel_damage = flag:duel_one_eyed 
+		}
+		localization_key = WoK_duels.1011.opponent_one_eye
+	}
+	text = {
+		trigger = {
+				exists = var:duel_damage var:duel_damage = flag:duel_disfigured 
+		}
+		localization_key = WoK_duels.1011.opponent_disfigured
+	}
+	text = {
+		trigger = {
+				exists = var:duel_damage var:duel_damage = flag:duel_death
+		}
+		localization_key = WoK_duels.1011.opponent_death
+	}
+}
+GetDuelOutcome = {
+	type = character
+	text = {
+		trigger = {
+			scope:second = {has_variable = saved_by_stonestance}
+		}
+		localization_key = WoK_duels.1012.my_stonestanced
+	}
+	text = {
+		trigger = {
+			scope:second = {exists = var:duel_damage var:duel_damage = flag:duel_wound}
+		}
+		localization_key = WoK_duels.1012.my_wounded
+	}
+	text = {
+		trigger = {
+			scope:second = {exists = var:duel_damage var:duel_damage = flag:duel_serious_wound}
+		}
+		localization_key = WoK_duels.1012.my_serious_wounded
+	}
+	text = {
+		trigger = {
+			scope:second = {exists = var:duel_damage var:duel_damage = flag:duel_one_legged }
+		}
+		localization_key = WoK_duels.1012.my_one_leg
+	}
+	text = {
+		trigger = {
+			scope:second = {exists = var:duel_damage var:duel_damage = flag:duel_one_eyed }
+		}
+		localization_key = WoK_duels.1012.my_one_eye
+	}
+	text = {
+		trigger = {
+			scope:second = {exists = var:duel_damage var:duel_damage = flag:duel_disfigured}
+		}
+		localization_key = WoK_duels.1012.my_disfigured
+	}
+	text = {
+		trigger = {
+			scope:second = {exists = var:duel_damage var:duel_damage = flag:duel_death}
+		}
+		localization_key = WoK_duels.1012.my_death
+	}
+}
+
+
+GetWeaponType = {
+	type = character
+	text = {
+		trigger = {
+			has_any_shard_artifacts_equipped = yes
+		}
+		localization_key = wok_duels_shardblade
+	}
+	text = {
+		fallback = yes
+		localization_key = wok_duels_blade
+	}
+}

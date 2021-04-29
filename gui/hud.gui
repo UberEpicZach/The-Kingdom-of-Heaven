@@ -1253,16 +1253,6 @@ widget = {
 						on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_decisions_enter','hud_tab_glow_decisions_leave')]"
 					}
 				}
-				
-				button_hud_main_tab = {
-					name = "tab_artifacts_open"
-					tooltip = "ARTIFACTS_BUTTON"
-					blockoverride "maintab_button"
-					{
-						texture = "gfx/artifacts/maintab_artifacts.dds"
-						onclick = "[GetVariableSystem.Toggle('artifact_window_open')]"
-					}
-				}
 			}
 
 			# Invisible button to ensure that these shortcuts don't get hidden

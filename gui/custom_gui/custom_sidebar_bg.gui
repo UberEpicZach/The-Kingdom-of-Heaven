@@ -1,0 +1,52 @@
+
+widget = {
+    name = "custom_sidebar_bg"
+	visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]"
+	layer = bottom
+	allow_outside = yes
+	parentanchor = top|right
+	position = {-45 105}
+	container = {
+		visible = "[GreaterThan_int32(GetDataModelSize(GetDummyMale.MakeScope.GetList('sidebar_buttons')), '(int32)0')]"
+		background = {
+			texture = "gfx/interface/skinned/hud_maintab_bg.dds"
+			visible = "[And(Not(IsRightWindowOpen),Or(GetVariableSystem.HasValue('sidebar_window','none'),Not(GetVariableSystem.Exists('sidebar_window'))))]"
+		}
+		container = {
+			position = {0 345}
+			parentanchor = top|right
+			vbox = {
+				set_parent_size_to_minimum = yes
+				alwaystransparent = no
+				filter_mouse = all
+				margin_top = 15
+				margin_bottom = 20
+				margin_left = 2
+				spacing = 5
+				
+				widget = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 15 }
+	
+					widget = {
+						visible = "[And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode))]"
+						parentanchor = right|vcenter
+						position = { -5 0 }
+						size = { 25 15 }
+						using = Animation_ShowHide_Standard
+					}
+				}
+				vbox = {
+					spacing = 5
+					datamodel = "[GetDummyMale.MakeScope.GetList('sidebar_buttons')]"
+					item = {
+						widget = {
+							size = {45 50}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}

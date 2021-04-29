@@ -1,0 +1,79 @@
+vbox = {
+    name = "custom_gui_start_widget"
+    layoutpolicy_horizontal = expanding
+    margin = { 5 0 }
+    spacing = 10
+    text_single = {
+        text = "Initializing sidebar button [GetVariableSystem.Get('SidebarToggler')]" 
+    }
+    vbox = {
+        name = "sidebar_execution_grid"
+        datamodel = "[GetDummyMale.MakeScope.GetList('sidebar_buttons')]"
+        item = {
+            button_event_standard = {
+                text = "[Scope.GetFlagName]"
+            }
+            #SidebarExecutor = {} # Can only execute console commands in one datamodel at a time.
+        }
+    }
+    text_single = {
+        text = "Initializing custom gui [GetVariableSystem.Get('CustomGUIToggler')]" 
+    }
+    vbox = {
+        name = "other_gui_grid"
+        datamodel = "[GetDummyMale.MakeScope.GetList('custom_gui')]"
+        item = {
+            CustomGUIExecutor = {}
+        }
+    }
+    HideEventWidget = {}
+}
+types ExecutionTypes {
+    # If your mod modifies a vanilla GUI for reasons unrelated to generating custom GUIs, then it might as well include this.
+    type CustomGUICreator = vbox {
+        name = "other_gui_grid"
+        block "datamodel" {
+            datamodel = "[GetDummyMale.MakeScope.GetList('custom_gui')]"
+        }
+        item = {
+            CustomGUIExecutor = {size = {0 0}}
+        }
+    }
+    # Only one executor should be used per event widget. SidebarExecutor should not be used in this widget due to synchronization issues with ExecuteConsoleCommand when iterating multiple datamodels at once.
+    type CustomGUIExecutor = button_event_standard {
+        #text = "[Scope.GetFlagName]"
+        onclick = "[ExecuteConsoleCommand(Concatenate(Concatenate('gui.createwidget gui/custom_gui/',Scope.GetFlagName),Concatenate('.gui ', Scope.GetFlagName)))]"
+        state = {
+            name = "[Scope.GetFlagName]Other"
+            trigger_when = "[GetVariableSystem.HasValue('CustomGUIToggler',Scope.GetFlagName)]"
+            duration = 0.001
+            on_start = "[ExecuteConsoleCommand(Select_CString(GetVariableSystem.Exists(Scope.GetFlagName),'',Concatenate(Concatenate('gui.createwidget gui/custom_gui/',Scope.GetFlagName),Concatenate('.gui ', Scope.GetFlagName))))]"
+            on_finish = "[GetVariableSystem.Set('CustomGUIToggler',GetDummyMale.MakeScope.Var(Concatenate('custom_gui_',Scope.GetFlagName)).GetFlagName)]"
+        }
+        state = {
+            name = CustomGUIInit
+            trigger_on_create = yes
+            on_start = "[GetVariableSystem.Set('CustomGUIToggler',Scope.GetFlagName)]"
+        }
+    }
+    # You can use this in a different file, but not in this one.
+    type SidebarExecutor = button_event_standard {
+        text = "[Scope.GetFlagName]"
+        onclick = "[ExecuteConsoleCommand(Concatenate(Concatenate('gui.createwidget gui/custom_gui/',Scope.GetFlagName),Concatenate('.gui ', Scope.GetFlagName)))]"
+        state = {
+            name = "[Scope.GetFlagName]Sidebar"
+            trigger_when = "[GetVariableSystem.HasValue('SidebarToggler',Scope.GetFlagName)]"
+            duration = 0.01
+            on_start = "[ExecuteConsoleCommand(Concatenate(Concatenate('gui.createwidget gui/custom_gui/',Scope.GetFlagName),Concatenate('.gui ', Scope.GetFlagName)))]"
+            on_finish = "[GetVariableSystem.Set('SidebarToggler',GetDummyMale.MakeScope.Var(Concatenate('sidebar_button_',Scope.GetFlagName)).GetFlagName)]"
+        }
+        state = {
+            name = SidebarInit
+            trigger_on_create = yes
+            on_start = "[GetVariableSystem.Set('SidebarToggler',Scope.GetFlagName)]"
+        }
+    }
+}
+
+
+

@@ -1,0 +1,483 @@
+﻿duel_interaction = {
+	category = interaction_category_hostile
+	common_interaction = yes
+	interface_priority = 60
+	ai_maybe = yes
+	options_heading = duel_interaction_options_heading
+	desc = duel_interaction_desc
+	notification_text = duel_interaction_notification_text
+	prompt = duel_interaction_prompt
+	reply_item_key = duel_interaction_reply_key
+	ai_frequency = 100
+	ai_will_do = {
+		base = -60
+		modifier = {add = scope:actor.prowess}
+		modifier = {add = 100 scope:actor = {has_trait = duelist}}
+		modifier = {add = 50 scope:actor = {has_trait = brave}}
+		modifier = {add = 20 scope:actor = {has_trait = blademaster_1}}
+		modifier = {add = 30 scope:actor = {has_trait = blademaster_2}}
+		modifier = {add = 40 scope:actor = {has_trait = blademaster_3}}
+		modifier = {add = 50 scope:actor = {has_trait = arrogant}}
+		modifier = {factor = 0 scope:actor.highest_held_title_tier < tier_duchy}
+	}
+
+	send_option = {
+		is_shown = {always = yes}
+		is_valid = {always = yes}
+		localization = duel_for_prestige_stake
+		current_description = "Stake [prestige|E]"
+		starts_enabled = {always = yes}
+		can_be_changed = {always = yes}
+		flag = duel_for_prestige
+	}
+	send_option = {
+		is_shown = {always = yes}
+		is_valid = {scope:actor = {has_variable_list = artifact_list}scope:recipient = {has_variable_list = artifact_list}}
+		localization = duel_for_artifacts_stake
+		current_description = "Stake an [artifact|E]"
+		starts_enabled = {always = no}
+		can_be_changed = {scope:actor = {has_variable_list = artifact_list}scope:recipient = {has_variable_list = artifact_list}}
+		flag = duel_for_artifacts
+	}
+	send_option = {
+		is_shown = {always = yes}
+		is_valid = {scope:actor = {sub_realm_size >= 2} scope:recipient = {sub_realm_size > 1}}
+		localization = duel_for_land_stake
+		current_description = "Stake a [county|E]"
+		starts_enabled = {always = no}
+		can_be_changed = {scope:actor = {sub_realm_size >= 2}scope:recipient = {sub_realm_size > 1}}
+		flag = duel_for_land
+	}
+	
+
+#	ai_targets = {
+#		ai_recipients = liege
+#	}
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = peer_vassals
+		ai_recipients = hooked_characters
+
+		max = 1
+	}
+#	ai_targets = {
+#		ai_recipients = vassals
+#		max = 10
+#	}
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	
+	cooldown_against_recipient = { years = 2 }
+	cooldown = { days = 50 }
+
+	is_shown = {
+		OR = {
+			debug_only = yes
+			NOT = {
+				scope:recipient = scope:actor
+			}
+		}
+		scope:recipient = { age > 15 is_capable_adult = yes}
+	}
+	
+	#Use hook
+	send_option = {
+		is_valid = {
+			exists = scope:recipient
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = hook
+		localization = SCHEME_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+
+	send_options_exclusive = no
+
+	can_send = {
+		OR = {
+			debug_only = yes
+			NOT = {scope:recipient = scope:actor}
+		}
+		scope:recipient = { age > 15 }
+		scope:actor = { age > 15 }
+		scope:actor = {NOT = { has_trait = incapable }}
+	}
+	
+	
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			NOT = { has_trait = incapable }
+		}
+	}
+	auto_accept = no
+
+	ai_accept = {
+		base = 50
+		modifier = {
+			#add = -20
+			add = {value = scope:actor.highest_held_title_tier subtract = scope:recipient.highest_held_title_tier multiply = 10}
+			#scope:recipient.highest_title_tier < scope:actor.highest_title_tier
+			custom_description = {
+				text = is_higher_tier_loc 
+				object = scope:actor
+				subject = scope:recipient
+				#value = 3 #number_realm_holy_sites_held_by_faithful # highest_held_title_tier #tier_difference
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value < 0
+					}
+				}
+			}
+		}
+		#base = 0
+		modifier = {
+			add = {value = scope:actor.highest_held_title_tier subtract = scope:recipient.highest_held_title_tier multiply = 10}
+			#scope:recipient.highest_title_tier < scope:actor.highest_title_tier
+			custom_description = {
+				text = is_higher_tier_loc 
+				subject = scope:actor
+				object = scope:recipient
+				#value = 3 #number_realm_holy_sites_held_by_faithful # highest_held_title_tier #tier_difference
+				scope:actor = {
+					tier_difference = {
+						target = scope:recipient
+						value > 0
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 10
+			scope:recipient = { has_trait = strong }
+		}
+		modifier = {
+			add = 10
+			scope:recipient = { has_trait = greedy }
+		}
+		modifier = {
+			add = 35
+			scope:recipient = { has_trait = brave }
+		}
+		modifier = {
+			add = 20
+			scope:recipient = { has_trait = stubborn }
+		}
+		modifier = {
+			add = 20
+			scope:recipient = { has_trait = ambitious }
+		}
+		modifier = {
+			add = 20
+			scope:recipient = { has_trait = arrogant }
+		}
+		modifier = {
+			add = 50
+			scope:recipient = { has_trait = duelist }
+		}
+		modifier = {
+			add = 10
+			scope:recipient = { has_trait = blademaster_1 }
+		}
+		modifier = {
+			add = 20
+			scope:recipient = { has_trait = blademaster_2 }
+		}
+		modifier = {
+			add = 30
+			scope:recipient = { has_trait = blademaster_3 }
+		}
+		modifier = {
+			add = -20
+			scope:recipient = { has_trait = wounded_1 }
+		}
+		modifier = {
+			add = -30
+			scope:recipient = { has_trait = wounded_2 }
+		}
+		modifier = {
+			add = -60
+			scope:recipient = { has_trait = wounded_3 }
+		}
+		modifier = {
+			add = -40
+			scope:recipient = { has_trait = maimed }
+		}
+		modifier = {
+			add = -40
+			scope:recipient = { has_trait = one_eyed }
+		}
+		modifier = {
+			add = -40
+			scope:recipient = { has_trait = one_legged }
+		}
+		modifier = {
+			add = -20
+			scope:recipient = { has_trait = disfigured }
+		}
+		modifier = {
+			add = -30
+			scope:recipient = { has_trait = craven }
+		}
+		modifier = {
+			add = -15
+			scope:recipient = { has_trait = paranoid }
+		}
+		modifier = {
+			add = -5
+			scope:recipient = { has_trait = content }
+		}
+		modifier = {
+			add = -15
+			scope:recipient = { has_trait = deceitful }
+		}
+		modifier = {
+			add = 50
+			scope:hook = yes
+			scope:actor = { NOT = {has_strong_hook = scope:recipient }}
+			desc = SCHEME_HOOK_USED
+		}
+		modifier = {
+			scope:hook = yes
+			add = 100
+			scope:actor = { has_strong_hook = scope:recipient }
+			desc = SCHEME_STRONG_HOOK_USED
+		}
+		modifier = {
+			scope:duel_for_prestige = yes
+			add = -10
+			desc = duel_for_prestige_penalty
+		}
+		modifier = {
+			scope:duel_for_artifacts = yes
+			add = -30
+			desc = duel_for_artifacts_penalty
+		}
+		modifier = {
+			scope:duel_for_land = yes
+			add = -50
+			desc = duel_for_land_penalty
+		}
+		modifier = {
+			scope:recipient = {has_execute_reason = scope:actor}
+			add = 25
+			desc = dueling_wants_you_dead_acceptance
+		}
+		compare_modifier = { #Your prowess is scary
+			target = scope:actor
+			value = prowess
+			multiplier = -0.25
+			min = -25
+			desc = your_dueling_prowess_acceptance
+		}
+		compare_modifier = { #Your target's prowess provides confidence
+			target = scope:recipient
+			value = prowess
+			multiplier = 0.25
+			min = -25
+			desc = target_dueling_prowess_acceptance
+		}
+		compare_modifier = { #Your dread is scary
+			#scope:recipient = {
+			trigger = {
+				has_dread_level_towards = {
+					target = scope:actor 
+					level > 0 
+				}
+			}
+			target = scope:actor
+			value = dread
+			multiplier = -0.5
+			min = -25
+			desc = your_dueling_dread_acceptance
+		}
+	}
+	on_send = {
+		scope:actor = {
+			if = {
+				limit = {is_ai = yes}
+				random_list = {
+					10 = {
+						save_scope_value_as = {name = duel_for_prestige value = yes}
+					}
+					1 = {
+						trigger = {
+							has_any_artifact = yes 
+							scope:recipient = {has_any_artifact = yes}
+						}
+						save_scope_value_as = {name = duel_for_artifacts value = yes}
+						modifier = {add = 5 has_trait = duelist}
+						modifier = {add = 5 has_trait = lifestyle_blademaster}
+						modifier = {add = 5 has_trait = greedy}
+						modifier = {add = 5 has_trait = ambitious}
+					}
+					1 = {trigger = {domain_size > 1 scope:recipient.domain_size > 1}
+						save_scope_value_as = {name = duel_for_land value = yes}
+						modifier = {add = 1 has_trait = duelist}
+						modifier = {add = 1 has_trait = greedy}
+						modifier = {add = 1 has_trait = ambitious}
+						modifier = {
+							factor = {value = -1 add = domain_size min = 0 max = 10}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {scope:duel_for_prestige = yes}
+			scope:actor = {set_variable = {name = challenger_for_prestige months = 1}}
+		}
+		if = {
+			limit = {scope:duel_for_artifacts = yes}
+			scope:actor = {set_variable = {name = challenger_for_artifacts months = 1}}
+		}
+		if = {
+			limit = {scope:duel_for_land = yes}
+			scope:actor = {set_variable = {name = challenger_for_land months = 1}}
+		}
+	}
+	on_accept = {
+		scope:recipient = {
+			save_scope_as = combatant_2
+		}
+		scope:actor = {
+			save_scope_as = combatant_1
+			trigger_event = WoK_duels.1001		
+		}
+		if = {
+			limit = { scope:hook = yes }
+			scope:actor = { use_hook = scope:recipient }
+		}
+		# Explain that duels may end in ouch and who has the Prowess advantage
+		if = {
+			limit = {scope:actor.prowess > scope:recipient.prowess}
+			custom_tooltip = duel_interaction_accept_effect_better
+		}
+		else_if = {
+			limit = {scope:actor.prowess < scope:recipient.prowess}
+			custom_tooltip = duel_interaction_accept_effect_worse
+		}
+		else = {
+			custom_tooltip = duel_interaction_accept_effect_equal
+		}
+		# Explain how much prestige is being staked by each combatant
+		if = {
+			limit = {scope:duel_for_prestige = yes}
+			#custom_tooltip = duel_interaction_accept_effect_prestige
+			scope:actor = {custom_tooltip = actor_personal_prestige_stake}
+			scope:recipient = {custom_tooltip = recipient_personal_prestige_stake}
+			#scope:actor = {set_variable = {name = duel_for_prestige months = 1}}
+			#scope:recipient = {set_variable = {name = duel_for_prestige months = 1}}
+		}
+		# Explain that each combatant stakes an artifact
+		if = {
+			limit = {scope:duel_for_artifacts = yes}
+			#custom_tooltip = duel_interaction_accept_effect_artifact
+			scope:actor = {custom_tooltip = personal_artifact_stake}
+			scope:recipient = {custom_tooltip = personal_artifact_stake}
+			#scope:actor = {set_variable = {name = duel_for_artifacts months = 1}}
+			#scope:recipient = {set_variable = {name = duel_for_artifacts months = 1}}
+		}
+		# Explain that each combatant stakes a county, and mention that the county will be near the winner's realm if possible.
+		if = {
+			limit = {scope:duel_for_land = yes}
+			scope:actor = {
+				if = {
+					limit = {
+						any_held_title = {
+							tier = tier_county
+							any_neighboring_county = { holder = scope:recipient }
+						}
+					}
+					custom_tooltip = duel_interaction_accept_effect_land
+				}
+				else = {
+					custom_tooltip = personal_land_stake
+				}
+			}
+			scope:recipient = {
+				if = {
+					limit = {
+						any_held_title = {
+							tier = tier_county
+							any_neighboring_county = { holder = scope:actor }
+						}
+					}
+					custom_tooltip = duel_interaction_accept_effect_land
+				}
+				else = {
+					custom_tooltip = personal_land_stake
+				}
+			}
+			#scope:actor = {custom_tooltip = personal_land_stake}
+			#scope:actor = {set_variable = {name = duel_for_land months = 1}}
+			#scope:recipient = {set_variable = {name = duel_for_land months = 1}}
+		}
+		scope:recipient = {
+			if = {
+				limit = {
+					OR = {
+						has_relation_potential_rival = scope:actor
+						has_opinion_modifier = {
+							target = scope:actor
+							modifier = revoked_title
+						}
+						AND = {
+							exists = var:requested_my_excommunication
+							var:requested_my_excommunication = scope:actor
+						}
+					}
+					NOT = {
+						has_relation_rival = scope:actor
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							has_relation_potential_rival = scope:actor
+						}
+						remove_relation_potential_rival = scope:actor
+					}
+				}
+				set_relation_rival = scope:actor
+			}
+			else = {
+				hidden_effect = {
+					progress_towards_rival_effect = {
+						CHARACTER = scope:actor
+						OPINION = no
+					}
+				}
+			}
+		}
+	}
+		
+	on_decline = {
+	# Warmongers lose piety based on rank; Others lose prestige based on rank.
+		scope:recipient = {
+			if = {
+				limit = {
+					NOT = {dueling_decline_cost = 0}
+				}
+				if = {
+					limit = {
+						faith = {
+							has_doctrine_parameter = warmonger
+						}
+					}
+					add_piety = dueling_decline_cost
+				}
+				else = {add_prestige = dueling_decline_cost}
+			}
+		}
+		scope:actor = { trigger_event = WoK_duels.0001 }
+	}
+
+	
+}
