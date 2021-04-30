@@ -115,8 +115,8 @@ for_handheld_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = a B = b}
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_25$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_26$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_27$SUFFIX$ A = $A$ B = $B$ }
-    $APPLY$ = {ARTIFACT = $PREFIX$soz_101$SUFFIX$ A = $A$ B = $B$ }
-	$APPLY$ = {ARTIFACT = $PREFIX$artifact_32$SUFFIX$ A = $A$ B = $B$ }	
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_soz101$SUFFIX$ A = $A$ B = $B$ }
+	$APPLY$ = {ARTIFACT = $PREFIX$artifact_32$SUFFIX$ A = $A$ B = $B$ }
 }
 for_armor_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = a B = b}
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_28$SUFFIX$ A = $A$ B = $B$ }
@@ -132,7 +132,7 @@ for_headgear_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = a B = b}
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_9$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_10$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_11$SUFFIX$ A = $A$ B = $B$ }
-	$APPLY$ = {ARTIFACT = $PREFIX$artifact_33$SUFFIX$ A = $A$ B = $B$ }																
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_33$SUFFIX$ A = $A$ B = $B$ }
 }
 for_jewelry_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = a B = b}
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_12$SUFFIX$ A = $A$ B = $B$ }
@@ -141,8 +141,30 @@ for_jewelry_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = a B = b}
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_15$SUFFIX$ A = $A$ B = $B$ }
 }
 for_mount_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
-    $APPLY$ = {ARTIFACT = $PREFIX$artifact_ryshadium$SUFFIX$ A = $A$ B = $B$ }
-$APPLY$ = {ARTIFACT = $PREFIX$artifact_34$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_34$SUFFIX$ A = $A$ B = $B$ } 
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_35$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_36$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_37$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_38$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_39$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_40$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_41$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_42$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_43$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_44$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_45$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_46$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_47$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_48$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_49$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_50$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_51$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_52$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_53$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_54$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_55$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_56$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_57$SUFFIX$ A = $A$ B = $B$ }
 }
 
 ## Artifact types unrelated to equipment slots.
@@ -150,7 +172,7 @@ $APPLY$ = {ARTIFACT = $PREFIX$artifact_34$SUFFIX$ A = $A$ B = $B$ }
 
 #Indestructibles
 for_indestructible_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
-  
+    #$APPLY$ = {ARTIFACT = $PREFIX$artifact_benval_diamond$SUFFIX$ A = $A$ B = $B$ }
 }
 for_rarity_4_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_1$SUFFIX$ A = $A$ B = $B$ }
@@ -165,7 +187,6 @@ $APPLY$ = {ARTIFACT = $PREFIX$artifact_19$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_23$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_27$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_31$SUFFIX$ A = $A$ B = $B$ }
-$APPLY$ = {ARTIFACT = $PREFIX$soz_101$SUFFIX$ A = $A$ B = $B$ }															   
 }
 for_rarity_3_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_6$SUFFIX$ A = $A$ B = $B$ }
@@ -186,7 +207,7 @@ $APPLY$ = {ARTIFACT = $PREFIX$artifact_25$SUFFIX$ A = $A$ B = $B$ }
 $APPLY$ = {ARTIFACT = $PREFIX$artifact_29$SUFFIX$ A = $A$ B = $B$ }
 }
 for_rarity_1_artifacts = { #USAGE {PREFIX = X APPLY = Y SUFFIX = Z A = A TO = B }
-	$APPLY$ = {ARTIFACT = $PREFIX$artifact_4$SUFFIX$ A = $A$ B = $B$ }
+    $APPLY$ = {ARTIFACT = $PREFIX$artifact_4$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_8$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_12$SUFFIX$ A = $A$ B = $B$ }
     $APPLY$ = {ARTIFACT = $PREFIX$artifact_16$SUFFIX$ A = $A$ B = $B$ }
@@ -485,7 +506,6 @@ for_all_artifacts_no_arguments = {
     for_headgear_artifacts_no_arguments = { APPLY = $APPLY$ }
     for_jewelry_artifacts_no_arguments = {APPLY = $APPLY$ }
     for_mount_artifacts_no_arguments = {APPLY = $APPLY$ }
-
 }
 for_indestructible_artifacts_no_arguments = {
     for_indestructible_artifacts = {
