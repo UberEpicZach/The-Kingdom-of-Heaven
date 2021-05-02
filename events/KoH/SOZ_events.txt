@@ -33,13 +33,14 @@ soz_actone_branchone.1 = {
 
 	option = {                                        # How are you?
 		name = soz_actone_branchone.1.a
+		custom_tooltip = soztip.1.tt
 		trigger_event = soz_actone_branchone.2
 	}
 
 
 	option = {                                        # INTIMIDATE FAIL OPTION, TRIGGERS NORMALFAIL
 		name = soz_actone_branchone.1.b
-		custom_tooltip = soz_actone_branchone.1.tt
+		custom_tooltip = soztip.2.tt
 		trigger_event = soz.normalfail.1
 	}
 }
@@ -92,15 +93,19 @@ soz_actone_branchone.3 = {
 
 	option = {                                        # Regret over schism with Nur and wants to know the man
 		name = soz_actone_branchone.3.a
-		custom_tooltip = soz_actone_branchone.3.tt
 		trigger_event = soz_actone_branchone.4
+	}
+
+	option = {                                        # Tell me about her father, Unur of Damascus. (begins branch2)
+		name = soz_actone_branchone.3.b
+		trigger_event = soz_actone_branchtwo.1
 	}
 
 }
 
 soz_actone_branchone.4 = {
 	title = soz.maintitle1.t													
-	desc = soz_actone_branchone.4.desc					# Ismat is happy to highlight Nur's zealous nature and need to complete the vision of his father
+	desc = soz_actone_branchone.4.desc					# Ismat is happy to highlight Nur's zealous nature but is unhappy with saladin's behavior
 	theme = dynasty
 	override_background = {
 		event_background = corridor_night
@@ -114,7 +119,7 @@ soz_actone_branchone.4 = {
 		animation = content
 	}
 
-	option = {                                        # Saladin shares something funny about Nur
+	option = {                                        # saladin tries to defend himself
 		name = soz_actone_branchone.4.a
 		custom_tooltip = soz_actone_branchone.4.tt
 		trigger_event = soz_actone_branchone.5
@@ -124,7 +129,7 @@ soz_actone_branchone.4 = {
 
 soz_actone_branchone.5 = {
 	title = soz.maintitle1.t													
-	desc = soz_actone_branchone.5.desc					# Ismat laughs and connects with saladin and says something about him as well
+	desc = soz_actone_branchone.5.desc					# Ismat cuts him off and wants to leave the conversation
 	theme = dynasty
 	override_background = {
 		event_background = corridor_night
@@ -138,40 +143,22 @@ soz_actone_branchone.5 = {
 		animation = content
 	}
 
-	option = {                                        # Saladin says something flirty
+	option = {                                        # Saladin leaves
 		name = soz_actone_branchone.5.a
 		custom_tooltip = soz_actone_branchone.5.tt
-		trigger_event = soz_actone_branchone.6
-	}
-
-}
-
-soz_actone_branchone.6 = {
-	title = soz.maintitle1.t													
-	desc = soz_actone_branchone.6.desc					# Ismat invites him to dine with her. Narration suggests waiting until bringing up the sword.
-	theme = dynasty
-	override_background = {
-		event_background = corridor_night
-	}
-	left_portrait = {
-		character = scope:recipient
-		animation = content
-	}
-	right_portrait = {
-		character = scope:actor
-		animation = content
-	}
-
-	option = {                                        # Saladin agrees
-		name = soz_actone_branchone.6.a
-		custom_tooltip = soz_actone_branchone.6.tt
 		trigger_event = {
 			id = soz_acttwo_branchone.1
-			days = 20
+			days = 60
+		}
+		reverse_add_opinion = {
+			target = scope:recipient
+			modifier = angry_opinion
+			opinion = -50
 		}
 	}
 
 }
+
 
 soz_actone_branchtwo.1 = {
 	title = soz.maintitle1.t													
@@ -242,7 +229,7 @@ soz_actone_branchtwo.3 = {
 		custom_tooltip = soz_actone_branchtwo.3.tt
 		trigger_event = {
 			id = soz_acttwo_branchone.1
-			days = 20
+			days = 15
 		}
 		
 	}
@@ -449,7 +436,7 @@ soz_actthree_branchone.3 = {
 	option = {                                        # Saladin is honored (SALADIN GAINS THE SWORD OF ZENGI ARTIFACT FROM ISMAT)
 		name = soz_actthree_branchone.3.a
 		custom_tooltip = soz_actthree_branchone.3.tt
-		add_artifact = {ARTIFACT = artifact_soz101}
+		add_artifact = {ARTIFACT = soz_101}
 	}
 
 }
