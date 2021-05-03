@@ -148,11 +148,20 @@ KOH_guelphs_ghibellines.1 = { #forming a league
 		}
 		
 		ai_chance = {
-			base = 100
-		}
+			base = 10
+			ai_value_modifier = {
+				ai_energy = 1.0
+			}
+
+			modifier = {
+				add = 100
+				stewardship >= 12
+			}
+		}		
 	}
 	option = { 
 		name = KOH_guelphs_ghibellines.1.b
+		
 	}
 }
 
@@ -167,6 +176,10 @@ KOH_guelphs_ghibellines.2 = { #HRE Reacts
 	option = { 
 		name = KOH_guelphs_ghibellines.2.a
 		
+		start_war = {
+
+		}
+
 		ai_chance = {
 			base = 100
 		}
@@ -201,16 +214,337 @@ KOH_guelphs_ghibellines.3 = { #Join?
 
 		vassal_contract_set_obligation_level = { type = feudal_government_taxes level = 3 }
 
-		ai_chance = {
-			base = 100
+
+		scope:ruler = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = "[ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] joins the League"
+				left_icon = root
+			}
 		}
+
+		ai_chance = {
+			base = 0.15
+			ai_value_modifier = {
+				ai_energy = 1.0
+			}
+			modifier = {
+				add = 0.75
+				has_trait = cynical
+			}
+			modifier = {
+				add = 2
+				has_trait = ambitious
+			}
+			modifier = {
+				add = 0.25
+				has_trait = craven
+			}
+			modifier = {
+				add = 0.25
+				piety >= 275
+			}
+			modifier = {
+				add = 5
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 100 } }
+				}
+			}
+			modifier = {
+				add = 4
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 75 } }
+				}
+			}
+			modifier = {
+				add = 3
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 50 } }
+				}
+			}
+			modifier = {
+				add = 1.5
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 25 } }
+				}
+			}
+			modifier = {
+				add = 1.5
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 0 } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -25 } } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -50 } } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -75 } } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -99 } } }
+				}
+			}
+			modifier = {
+				add = 2
+				has_trait = trait_education_learning_4
+			}
+			modifier = {
+			    add = 0.25
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 75
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 0.25
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 99
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = -25
+				    }
+			    }
+		    }
+
+			modifier = {
+			    add = 5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = -50
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = -75
+				    }
+			    }	
+			}
+			modifier = {
+			    add = 5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = -99
+				    }
+			    }
+		    }
+		}	
 	}
 	option = { 
 		name = KOH_guelphs_ghibellines.3.b
+		add_piety = -25
+		add_prestige = -50
+
+		ai_chance = {
+			base = 0.25
+			modifier = {
+				add = 2.35
+				has_trait = cynical
+			}
+			modifier = {
+				add = 0.5
+				has_trait = ambitious
+			}
+			modifier = {
+				add = 3.25
+				has_trait = craven
+			}
+			modifier = {
+				add = -3.25
+				has_trait = zealous
+			}
+			modifier = {
+				add = 0.5
+				piety >= 275
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 100 } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 75 } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 50 } }
+				}
+			}
+			modifier = {
+				add = 0.5
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 25 } }
+				}
+			}
+			modifier = {
+				add = 0.5
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 0 } }
+				}
+			}
+			modifier = {
+				add = 2.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -25 } } }
+				}
+			}
+			modifier = {
+				add = 2.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -50 } } }
+				}
+			}
+			modifier = {
+				add = 2.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -75 } } }
+				}
+			}
+			modifier = {
+				add = 2.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -99 } } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				has_trait = trait_education_learning_4
+			}
+			modifier = {
+			    add = 0.25
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 75
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 0
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 10
+				    }
+			    }
+		    }
+
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 20
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 30
+				    }
+			    }
+		    }
+
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 40
+				    }
+			    }
+		    }
+
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 50
+				    }
+			    }
+		    }
+
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 60
+				    }
+			    }
+		    }
+
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 70
+				    }
+			    }
+		    }
+
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 80
+				    }
+			    }
+		    }
+		}
 	}
 }
 
-KOH_guelphs_ghibellines.4 = { #Join?
+KOH_guelphs_ghibellines.4 = { #war?
 	title = KOH_guelphs_ghibellines.4.t
 	desc = KOH_guelphs_ghibellines.4.desc
 	theme = unfriendly
