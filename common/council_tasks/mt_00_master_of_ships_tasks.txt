@@ -1,0 +1,64 @@
+﻿
+task_master_of_the_ships_raid_planning = 
+{
+	position = councillor_master_of_the_ships
+	default_task = no
+	
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+	
+	effect_desc = task_master_of_the_ships_raid_planning_effect_desc
+
+	council_owner_modifier = {
+		name = task_master_of_the_ships_raid_planning_modifier
+		raid_speed = 0.005
+		hostile_county_attrition = -0.005
+		supply_capacity_mult = 0.008
+		men_at_arms_maintenance = 0.01
+		scale = {
+			value = mt_master_of_the_ships_scale 			
+		}
+	}
+}
+
+
+
+task_master_of_the_ships_trade_contracts = 
+{
+	position = councillor_master_of_the_ships
+	default_task = yes
+	
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+	
+	effect_desc = task_master_of_the_ships_trade_contracts_effect_desc
+
+	council_owner_modifier = {
+		name = task_master_of_the_ships_trade_contracts_modifier
+		development_growth_factor = 0.005
+		scale = {
+			value = mt_master_of_the_ships_scale 			
+		}
+	}
+}
+
+task_master_of_the_ships_fleet_maintenance = 
+{
+	position = councillor_master_of_the_ships
+	default_task = no
+	
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+	
+	effect_desc = task_master_of_the_ships_fleet_maintenance_effect_desc
+
+	council_owner_modifier = {
+		name = task_master_of_the_ships_fleet_maintenance_modifier
+		naval_movement_speed_mult = 0.005
+		embarkation_cost_mult = -0.005	
+		domain_tax_mult	= -0.005
+		scale = {
+			value = mt_master_of_the_ships_scale 			
+		}
+	}
+}

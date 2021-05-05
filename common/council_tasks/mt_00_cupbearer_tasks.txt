@@ -1,0 +1,48 @@
+﻿
+task_cupbearer_food_tasting = {
+
+	position = councillor_cupbearer
+	default_task = yes
+	
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+	
+	effect_desc = task_cupbearer_food_tasting_effect_desc
+
+	council_owner_modifier = {
+		name = task_cupbearer_food_tasting_modifier
+
+		monthly_prestige = 0.05
+		negate_health_penalty_add = 0.005
+		hostile_scheme_resistance_add = 0.1
+
+		scale = {
+			value = mt_cupbearer_scale_assist_liege 
+		}
+	}
+}
+
+task_cupbearer_advise_liege = {
+
+	position = councillor_cupbearer
+	default_task = no
+	
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+	
+	effect_desc = task_cupbearer_advise_liege_effect_desc
+
+	council_owner_modifier = {
+		name = task_cupbearer_advise_liege_modifier
+
+		monthly_prestige = -0.05
+		hostile_scheme_resistance_add = -1
+		learning = 0.2
+		stewardship = 0.2
+		martial = 0.2
+
+		scale = {
+			value = mt_cupbearer_scale_assist_liege 
+		}
+	}
+}

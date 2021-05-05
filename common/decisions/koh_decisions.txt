@@ -43,3 +43,79 @@
 	ai_will_do = {
 	}
 }
+
+mount_market = {
+	picture = "gfx/interface/illustrations/decisions/decision_misc.dds" #get a horse icon
+	ai_check_interval = 60
+
+	cost = { gold = standard_activity_cost }
+
+	#cooldown = { days = standard_feast_cooldown_time }
+
+	desc = host_feast_decision_opening_desc
+	selection_tooltip = host_feast_decision_tooltip
+
+	is_shown = {
+		has_global_variable = crusadermounts_initialized
+	}
+
+	is_valid_showing_failures_only = {
+		NOT = { 
+			crusadermounts_is_inaccessible_or_incapable_trigger = yes 
+			has_character_flag = visiting_mount_market
+		}
+	}
+
+	is_valid = {
+		NOT = { 
+			crusadermounts_is_inaccessible_or_incapable_trigger = yes 
+			has_character_flag = visiting_mount_market
+		}
+
+	}
+
+	effect = {
+		hidden_effect = {
+			set_character_flag = visiting_mount_market
+			trigger_event = csm.010 
+		}
+	}
+}
+
+mount_market = {
+	picture = "gfx/interface/illustrations/decisions/decision_misc.dds" #get a horse icon
+	ai_check_interval = 60
+
+	cost = { gold = standard_activity_cost }
+
+	#cooldown = { days = standard_feast_cooldown_time }
+
+	desc = host_feast_decision_opening_desc
+	selection_tooltip = host_feast_decision_tooltip
+
+	is_shown = {
+		has_global_variable = crusadermounts_initialized
+	}
+
+	is_valid_showing_failures_only = {
+		NOT = { 
+			crusadermounts_is_inaccessible_or_incapable_trigger = yes 
+			has_character_flag = visiting_mount_market
+		}
+	}
+
+	is_valid = {
+		NOT = { 
+			crusadermounts_is_inaccessible_or_incapable_trigger = yes 
+			has_character_flag = visiting_mount_market
+		}
+
+	}
+
+	effect = {
+		hidden_effect = {
+			set_character_flag = visiting_mount_market
+			trigger_event = csm.010 
+		}
+	}
+}

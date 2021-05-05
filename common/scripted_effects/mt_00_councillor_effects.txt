@@ -1,0 +1,56 @@
+﻿gave_minor_title_effect =
+{
+	if = {
+		limit = { is_powerful_vassal = no }
+		add_opinion = 
+			{
+			modifier = gave_minor_title_normal_vassal_opinion
+			target = liege
+			}
+		}
+	else_if = {
+			add_opinion = 
+			{
+			modifier = gave_minor_title_powerful_vassal_opinion
+			target = liege
+			}
+		}
+}
+gave_minor_title_court_dwarf_effect =
+{
+		gave_minor_title_effect = yes
+		add_opinion = 
+			{
+			modifier = gave_minor_title_court_dwarf_opinion
+			target = liege
+			}
+}
+gave_minor_title_cupbearer_effect =
+{
+		gave_minor_title_effect = yes
+		add_opinion = 
+			{
+			modifier = gave_minor_title_cupbearer_opinion
+			target = liege
+			}
+}
+gave_minor_title_court_champion_effect =
+{
+		add_opinion = 
+			{
+			modifier = gave_minor_title_court_champion_opinion
+			target = liege
+			}
+}
+gave_minor_title_tax_collector_effect =
+{
+	gave_minor_title_effect = yes
+}
+gave_minor_title_high_almoner_effect =
+{
+	gave_minor_title_effect = yes
+}
+gave_minor_title_seer_effect =
+{
+	gave_minor_title_effect = yes
+}

@@ -1,0 +1,224 @@
+﻿can_be_master_of_the_horses_trigger = {
+	can_be_councillor_basics_trigger = yes
+	NOR = { has_council_position = councillor_marshal
+		has_council_position = councillor_spouse
+		has_council_position = councillor_steward
+		has_council_position = councillor_chancellor
+		has_council_position = councillor_spymaster
+		has_council_position = councillor_court_chaplain
+		has_council_position = councillor_court_dwarf
+		has_council_position = councillor_cupbearer
+		has_council_position = councillor_court_champion
+		has_council_position = councillor_tax_collector
+		has_council_position = councillor_high_almoner
+	 }
+    	OR = {
+        	AND = {
+            	is_female = yes
+            	$COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = male_dominated_council } }
+        }
+        	AND = {
+            	is_male = yes
+            	$COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = female_dominated_council } }
+        }
+    }
+}
+
+can_be_court_dwarf_trigger = {
+	can_be_councillor_basics_trigger = yes
+	NOT = { has_council_position = councillor_marshal
+		has_council_position = councillor_spouse
+		has_council_position = councillor_steward
+		has_council_position = councillor_chancellor
+		has_council_position = councillor_spymaster
+		has_council_position = councillor_court_chaplain
+		has_council_position = councillor_master_of_the_horses
+		has_council_position = councillor_cupbearer
+		has_council_position = councillor_court_champion
+		has_council_position = councillor_tax_collector
+		has_council_position = councillor_high_almoner
+ 	}
+}
+
+can_be_cupbearer_trigger = {
+	can_be_councillor_basics_trigger = yes
+	NOT = { has_council_position = councillor_marshal
+		has_council_position = councillor_spouse
+		has_council_position = councillor_steward
+		has_council_position = councillor_chancellor
+		has_council_position = councillor_spymaster
+		has_council_position = councillor_court_chaplain
+		has_council_position = councillor_master_of_the_horses
+		has_council_position = councillor_court_dwarf
+		has_council_position = councillor_court_champion
+		has_council_position = councillor_tax_collector
+		has_council_position = councillor_high_almoner
+		has_council_position = councillor_seer
+		has_council_position = councillor_master_of_the_ships
+		has_council_position = councillor_skald
+ 	}	
+}
+can_be_court_champion_trigger = {
+    can_be_councillor_basics_trigger = yes
+    NOR = { # <- HERE
+        has_council_position = councillor_marshal
+        has_council_position = councillor_spouse
+        has_council_position = councillor_steward
+        has_council_position = councillor_chancellor
+        has_council_position = councillor_spymaster
+        has_council_position = councillor_court_chaplain
+        has_council_position = councillor_master_of_the_horses
+        has_council_position = councillor_court_dwarf
+        has_council_position = councillor_cupbearer
+        has_council_position = councillor_tax_collector
+        has_council_position = councillor_high_almoner
+	has_council_position = councillor_seer
+	has_council_position = councillor_master_of_the_ships
+	has_council_position = councillor_skald
+        is_ruler = yes
+        is_landed = yes        
+    }
+    OR = {
+        AND = {
+            is_female = yes
+            $COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = male_dominated_council } }
+        }
+        AND = {
+            is_male = yes
+            $COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = female_dominated_council } }
+        }
+    }
+}
+
+can_be_tax_collector_trigger = {
+	can_be_councillor_basics_trigger = yes
+	NOT = { has_council_position = councillor_marshal
+		has_council_position = councillor_spouse
+		has_council_position = councillor_steward
+		has_council_position = councillor_chancellor
+		has_council_position = councillor_spymaster
+		has_council_position = councillor_court_chaplain
+		has_council_position = councillor_master_of_the_horses
+		has_council_position = councillor_court_dwarf
+		has_council_position = councillor_court_champion
+		has_council_position = councillor_cupbearer
+		has_council_position = councillor_high_almoner
+		has_council_position = councillor_seer
+		has_council_position = councillor_master_of_the_ships
+		has_council_position = councillor_skald
+	 }
+}
+
+can_be_high_almoner_trigger = {
+	can_be_councillor_basics_trigger = yes
+	NOT = { has_council_position = councillor_marshal
+		has_council_position = councillor_spouse
+		has_council_position = councillor_steward
+		has_council_position = councillor_chancellor
+		has_council_position = councillor_spymaster
+		has_council_position = councillor_court_chaplain
+		has_council_position = councillor_master_of_the_horses
+		has_council_position = councillor_court_dwarf
+		has_council_position = councillor_court_champion
+		has_council_position = councillor_cupbearer
+		has_council_position = councillor_tax_collector
+		has_trait = excommunicated
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+	}	
+	OR = {
+		is_clergy = yes
+		has_trait = saint
+		has_trait = devoted
+		has_trait = sayyid
+		has_trait = saoshyant
+		has_trait = saoshyant_descendant
+		has_trait = savior
+		has_trait = divine_blood
+		has_trait = blood_of_prophet
+		has_trait = faith_warrior
+		has_trait = theologian
+		has_trait = reincarnation
+		has_trait = zealous
+		num_virtuous_traits >=2
+		learning >= 30
+	}	
+}
+
+can_be_seer_trigger = {
+	can_be_councillor_basics_trigger = yes
+	learning >= 15
+	NOT = { has_council_position = councillor_marshal
+		has_council_position = councillor_spouse
+		has_council_position = councillor_steward
+		has_council_position = councillor_chancellor
+		has_council_position = councillor_spymaster
+		has_council_position = councillor_court_chaplain
+		has_council_position = councillor_skald
+		has_council_position = councillor_court_champion
+		has_council_position = councillor_cupbearer
+		has_council_position = councillor_tax_collector
+		has_council_position = councillor_master_of_the_ships
+	}	
+	OR = {
+		has_trait = divine_blood
+		has_trait = reincarnation
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+		has_trait = blind
+		has_trait = albino
+		has_trait = one_eyed
+		has_trait = scaly
+		has_trait = leper
+		has_trait = beauty_bad_3
+		has_trait = mystic_3
+		has_trait = lunatic
+		has_trait = hunchbacked
+		has_trait = disfigured
+		has_trait = witch
+		has_trait = cannibal
+
+	}	
+}
+
+can_be_master_of_the_ships_trigger = {
+	can_be_councillor_basics_trigger = yes
+	NOR = { has_council_position = councillor_marshal
+		has_council_position = councillor_spouse
+		has_council_position = councillor_steward
+		has_council_position = councillor_chancellor
+		has_council_position = councillor_spymaster
+		has_council_position = councillor_court_chaplain
+		has_council_position = councillor_cupbearer
+		has_council_position = councillor_court_champion
+		has_council_position = councillor_tax_collector
+		has_council_position = councillor_seer
+		has_council_position = councillor_skald
+	 }
+    	OR = {
+        	AND = {
+            	is_female = yes
+            	$COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = male_dominated_council } }
+        }
+        	AND = {
+            	is_male = yes
+            	$COURT_OWNER$.faith = { NOT = { has_doctrine_parameter = female_dominated_council } }
+        }
+    }
+}
+
+can_be_skald_trigger = {
+	can_be_councillor_basics_trigger = yes
+	NOT = { has_council_position = councillor_marshal
+		has_council_position = councillor_spouse
+		has_council_position = councillor_steward
+		has_council_position = councillor_chancellor
+		has_council_position = councillor_spymaster
+		has_council_position = councillor_court_chaplain
+		has_council_position = councillor_court_champion
+		has_council_position = councillor_tax_collector
+		has_council_position = councillor_cupbearer
+		has_council_position = councillor_seer
+		has_council_position = councillor_master_of_the_ships
+	 }
+}
