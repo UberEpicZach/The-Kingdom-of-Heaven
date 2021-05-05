@@ -153,6 +153,35 @@
 		}
 	}
 	
+	outremer_elective_succession_law = {
+		can_have = {
+			OR = {
+				has_government = feudal_government
+				has_government = theocracy_government
+			}
+			highest_held_title_tier >= tier_kingdom
+		}
+		can_pass = {
+			can_change_title_law_trigger = yes
+			culture = culture:outremer
+		}
+		can_title_have = {
+			can_title_have_law_general_trigger = yes
+		}
+		succession = {
+			order_of_succession = election
+			election_type = outremer_elective
+		}
+		flag = elective_succession_law
+		title_allegiance_opinion = 5
+		revoke_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+		pass_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+	}
+	
 	#Player Heir
 	temporal_head_of_faith_succession_law = {
 		can_title_have = {

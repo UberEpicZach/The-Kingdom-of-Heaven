@@ -217,8 +217,12 @@ embrace_outremer_culture_decision = {
 			capital_county = { set_county_culture = culture:outremer }
 			if = {
 				limit = {
+					is_independent_ruler = yes
 					root.primary_title = {
 						tier >= tier_kingdom
+						NOT = {
+							has_title_law_flag = elective_succession_law
+						}
 					}
 				}
 				root.primary_title = {
