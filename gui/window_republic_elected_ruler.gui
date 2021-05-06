@@ -1,0 +1,249 @@
+######################################################
+############### CHANGE SUCCESSION LAW ################
+######################################################
+
+window = {
+	name = "republic_term_limits_window"
+	size = { 450 850 }
+	position = { 900 100 }
+	layer = middle
+
+	using = Window_Background
+	using = Window_Decoration
+	using = Animation_ShowHide_Standard
+	
+	vbox = {
+		using = Window_Margins
+		restrictparent_min = yes
+
+		header_pattern = {
+			layoutpolicy_horizontal = expanding
+
+			blockoverride "header_text"
+			{
+				text = "CHANGE_TERM_LIMITS"
+			}
+
+			blockoverride "button_close"
+			{
+				onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets republic_term_limits_window')]"
+			}
+		}
+
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			scrollbox = {
+				name = "republic_families_scrollarea"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				#size = {100% 100%}
+				size = { 440 800 }
+				blockoverride "scrollbox_content"
+				{
+					text_single = {
+						text = "Current Law:"
+						fontsize = 20
+						align = center
+						default_format = "#bold"
+					}
+					spacer = {
+						size = { 0 15 }
+					}
+					dynamicgridbox = {
+						layoutpolicy_vertical = expanding
+						allow_outside = yes
+						ignoreinvisible = yes
+						maxhorizontalslots = 1
+						maxverticalslots = 100
+						block "datamodel" {
+							datamodel = "[GetDummyMale.MakeScope.GetList('elected_ruler_laws_list')]"
+						}
+						item = {
+							widget = {
+								visible = "[GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName,)).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								background = {
+									margin_left = 10
+									margin_right = 10
+									margin_top = 10
+									margin_bottom = 10
+									texture = "gfx/interface/component_tiles/solid_black_label.dds"
+									spriteType = Corneredtiled
+									spriteborder = { 20 20 }
+									modify_texture = {
+										name = "mask"
+										texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+										spriteType = Corneredstretched
+										spriteborder = { 0 0 }
+										blend_mode = alphamultiply
+									}
+								}
+								block "size" {
+									size = { 260 71 }
+								}
+								hbox = {
+									vbox = {
+										margin_bottom = 20
+										text_single = {
+											align = center
+											minimumsize = { 150 -1 }
+											text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+											fontsize = 16
+											default_format = "#high"
+										}
+										text_single = {
+											align = center
+											minimumsize = { 150 -1 }
+											text = "[Localize(Concatenate(Scope.GetFlagName,'_desc'))]"
+											fontsize = 16
+										}
+									}
+									expand = {}
+								}
+							}
+						}
+					}
+					spacer = {
+						size = { 0 15 }
+					}
+					text_single = {
+						text = "PROPOSED_LAWS"
+						fontsize = 20
+						align = center
+						default_format = "#bold"
+					}
+					spacer = {
+						size = { 0 15 }
+					}
+					dynamicgridbox = {
+						layoutpolicy_vertical = expanding
+						allow_outside = yes
+						ignoreinvisible = yes
+						maxhorizontalslots = 1
+						maxverticalslots = 100
+						block "datamodel" {
+							datamodel = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.GetList('proposed_laws_list')]"
+						}
+						item = {
+							widget = {
+								background = {
+									margin_left = 10
+									margin_right = 10
+									margin_top = 10
+									margin_bottom = 10
+									texture = "gfx/interface/component_tiles/solid_black_label.dds"
+									spriteType = Corneredtiled
+									spriteborder = { 20 20 }
+									modify_texture = {
+										name = "mask"
+										texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+										spriteType = Corneredstretched
+										spriteborder = { 0 0 }
+										blend_mode = alphamultiply
+									}
+								}
+								block "size" {
+									size = { 260 71 }
+								}
+								hbox = {
+									vbox = {
+										margin_bottom = 20
+										text_single = {
+											align = center
+											minimumsize = { 150 -1 }
+											text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+											fontsize = 16
+											default_format = "#high"
+										}
+										text_single = {
+											align = center
+											minimumsize = { 150 -1 }
+											text = "[Localize(Concatenate(Scope.GetFlagName,'_desc'))]"
+											fontsize = 16
+										}
+									}
+									expand = {}
+								}
+							}
+						}
+					}
+					spacer = {
+						size = { 0 15 }
+					}
+					text_single = {
+						text = "POSSIBLE_LAWS"
+						fontsize = 20
+						align = center
+						default_format = "#bold"
+					}
+					spacer = {
+						size = { 0 15 }
+					}
+					dynamicgridbox = {
+						layoutpolicy_vertical = expanding
+						allow_outside = yes
+						ignoreinvisible = yes
+						maxhorizontalslots = 1
+						maxverticalslots = 100
+						block "datamodel" {
+							datamodel = "[GetDummyMale.MakeScope.GetList('elected_ruler_laws_list')]"
+						}
+						item = {
+							widget = {
+								visible = "[Not(GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName,)).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+								background = {
+									margin_left = 20
+									margin_right = 20
+									margin_top = 10
+									margin_bottom = 10
+									texture = "gfx/interface/component_tiles/solid_black_label.dds"
+									spriteType = Corneredtiled
+									spriteborder = { 20 20 }
+									modify_texture = {
+										name = "mask"
+										texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+										spriteType = Corneredstretched
+										spriteborder = { 0 0 }
+										blend_mode = alphamultiply
+									}
+								}
+								block "size" {
+									size = { 260 131 }
+								}
+								vbox = {
+									hbox = {
+										vbox = {
+											text_single = {
+												align = center
+												minimumsize = { 150 -1 }
+												text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+												fontsize = 16
+												default_format = "#high"
+											}
+											text_single = {
+												align = center
+												minimumsize = { 150 -1 }
+												text = "[Localize(Concatenate(Scope.GetFlagName,'_desc'))]"
+												fontsize = 16
+											}
+										}
+										expand = {}
+									}
+									button = {
+										texture = "gfx/interface/icons/message_feed/chancellor_job.dds"
+										size = { 50 50 }
+										tooltip = PROPOSE_TT
+										clicksound = "event:/SFX/UI/Notifications/TopBar/sfx_ui_notifications_topbar_diplomacy"
+										onclick = "[GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										onclick = "[GetScriptedGui('trigger_elected_rule_election').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+									expand = {}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

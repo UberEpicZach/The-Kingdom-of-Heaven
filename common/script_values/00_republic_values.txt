@@ -1,0 +1,271 @@
+﻿family_respect = {
+	value = 0
+	add = house_head.age
+	multiply = house_head.age
+	if = { limit = { exists = var:family_prestige } add = var:family_prestige }
+	if = { limit = { exists = var:temporary_change_prestige } add = var:temporary_change_prestige }
+	if = { limit = { exists = var:convert_to_republic_prestige } add = var:convert_to_republic_prestige }
+	add = house_head.prestige
+	add = house_head.prestige
+	add = house_head.dynasty.dynasty_prestige_level
+	add = house_head.dynasty.dynasty_prestige_level
+	add = house_head.dynasty.dynasty_prestige_level
+	add = house_head.dynasty.dynasty_prestige_level
+	add = house_head.dynasty.dynasty_prestige_level
+}
+
+title_all_family_respect = {
+	value = 0
+	every_in_list = {
+		variable = republic_families_list
+		add = family_respect
+	}
+}
+
+title_all_family_respect_divided_by_100 = {
+	value = title_all_family_respect
+	divide = 100
+}
+
+family_votes = {
+	value = family_respect
+	divide = var:titular_republic.title_all_family_respect_divided_by_100
+}
+
+modulo_votes_family = {
+	value = family_votes
+	modulo = 1
+}
+
+clean_modulo_votes = {
+	value = 0
+	if = { limit = { modulo_votes_family > 0.5 } add = 1 subtract = modulo_votes_family }
+	if = { limit = { modulo_votes_family <= 0.5 } subtract = modulo_votes_family }
+}
+
+clean_family_votes = {
+	value = family_votes
+	add = clean_modulo_votes
+}
+
+all_votes_yea = {
+	value = 0
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_yea }
+		add = clean_family_votes
+	}
+}
+
+all_votes_yea_plus_yours = {
+	value = 0
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_yea }
+		add = clean_family_votes
+	}
+	every_in_list = {
+		variable = republic_families_list
+		limit = { NOT = { has_variable = house_votes_yea has_variable = house_votes_nay } }
+		add = clean_family_votes
+	}
+}
+
+all_votes_nay = {
+	value = 0
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_nay }
+		add = clean_family_votes
+	}
+}
+
+all_votes_nay_plus_yours = {
+	value = 0
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_nay }
+		add = clean_family_votes
+	}
+	every_in_list = {
+		variable = republic_families_list
+		limit = { NOT = { has_variable = house_votes_yea has_variable = house_votes_nay } }
+		add = clean_family_votes
+	}
+}
+
+double_military_strength = {
+	add = max_military_strength
+	multiply = 2
+}
+
+councillors_voting_aye = {
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_yea }
+		add = 1
+	}
+}
+
+councillors_voting_aye_plus_yours = {
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_yea }
+		add = 1
+	}
+	add = 1
+}
+
+councillors_voting_nay = {
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_nay }
+		add = 1
+	}
+}
+
+councillors_voting_nay_plus_yours = {
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_nay }
+		add = 1
+	}
+	add = 1
+}
+
+nobility_appeasement_yearly_change = {
+	value = 0
+	if = { limit = { var:nobility_appeasement >= 75 } subtract = 3 }
+	if = { limit = { var:nobility_appeasement >= 50 } subtract = 2 }
+	if = { limit = { var:nobility_appeasement <= 50 } add = 2 }
+	if = { limit = { var:nobility_appeasement <= 75 } add = 3 }
+}
+
+popular_appeasement_yearly_change = {
+	value = 0
+	if = { limit = { var:popular_appeasement >= 75 } subtract = 3 }
+	if = { limit = { var:popular_appeasement >= 50 } subtract = 2 }
+	if = { limit = { var:popular_appeasement <= 50 } add = 2 }
+	if = { limit = { var:popular_appeasement <= 75 } add = 3 }
+}
+
+clergy_appeasement_yearly_change = {
+	value = 0
+	if = { limit = { var:clergy_appeasement >= 75 } subtract = 3 }
+	if = { limit = { var:clergy_appeasement >= 50 } subtract = 2 }
+	if = { limit = { var:clergy_appeasement <= 50 } add = 2 }
+	if = { limit = { var:clergy_appeasement <= 75 } add = 3 }
+}
+
+amount_over_or_under_nobility_appeasement = {
+	value = 0
+	if = { limit = { var:nobility_appeasement > 100 } subtract = var:nobility_appeasement add = 100 }
+	if = { limit = { var:nobility_appeasement < 100 } add = var:nobility_appeasement multiply = -1 }
+}
+
+amount_over_or_under_clergy_appeasement = {
+	value = 0
+	if = { limit = { var:clergy_appeasement > 100 } subtract = var:clergy_appeasement add = 100 }
+	if = { limit = { var:clergy_appeasement < 100 } add = var:clergy_appeasement multiply = -1 }
+}
+
+amount_over_or_under_popular_appeasement = {
+	value = 0
+	if = { limit = { var:popular_appeasement > 100 } subtract = var:popular_appeasement add = 100 }
+	if = { limit = { var:popular_appeasement < 100 } add = var:popular_appeasement multiply = -1 }
+}
+
+houses_voting_aye = {
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_yea }
+		add = 1
+	}
+}
+
+houses_voting_aye_plus_yours = {
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_yea }
+		add = 1
+	}
+	add = 1
+}
+
+houses_voting_nay = {
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_nay }
+		add = 1
+	}
+}
+
+houses_voting_nay_plus_yours = {
+	every_in_list = {
+		variable = republic_families_list
+		limit = { has_variable = house_votes_nay }
+		add = 1
+	}
+	add = 1
+}
+
+all_votes_yea_dragging_over = {
+	value = 0
+	every_in_list = {
+		variable = blackmailing_house_heads
+		limit = { NOT = { has_variable = house_votes_yea } }
+		add = clean_family_votes
+	}
+}
+
+all_votes_nay_dragging_over = {
+	value = 0
+	every_in_list = {
+		variable = blackmailing_house_heads
+		limit = { NOT = { has_variable = house_votes_nay } }
+		add = clean_family_votes
+	}
+}
+
+councillors_yea_dragging_over = {
+	value = 0
+	every_in_list = {
+		variable = blackmailing_house_heads
+		limit = { NOT = { has_variable = house_votes_yea } exists = var:councillor_republic }
+		add = 1
+	}
+}
+
+councillors_nay_dragging_over = {
+	value = 0
+	every_in_list = {
+		variable = blackmailing_house_heads
+		limit = { NOT = { has_variable = house_votes_nay } exists = var:councillor_republic }
+		add = 1
+	}
+}
+
+houses_yea_dragging_over = {
+	value = 0
+	every_in_list = {
+		variable = blackmailing_house_heads
+		limit = { NOT = { has_variable = house_votes_yea } }
+		add = 1
+	}
+}
+
+houses_nay_dragging_over = {
+	value = 0
+	every_in_list = {
+		variable = blackmailing_house_heads
+		limit = { NOT = { has_variable = house_votes_nay } }
+		add = 1
+	}
+}
+
+republic_families_size_need = {
+	value = 0
+	if = { limit = { has_variable_list = republic_families_list list_size = { name = republic_families_list value < 5 } } every_in_list = { variable = republic_families_list add = 1 } }
+	subtract = 5
+	multiply = -1
+}

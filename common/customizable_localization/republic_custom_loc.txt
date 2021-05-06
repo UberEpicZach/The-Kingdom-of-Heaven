@@ -1,0 +1,11 @@
+﻿GetRepublicOwner = {
+	type = character
+	text = {
+		trigger = { holds_valid_merchant_republic = yes }
+		localization_key = YOU_HOLD_REPUBLIC
+	}
+	text = {
+		trigger = { liege = { holds_valid_merchant_republic = yes } }
+		localization_key = LIEGE_HOLDS_REPUBLIC
+	}
+}

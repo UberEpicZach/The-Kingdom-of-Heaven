@@ -1,0 +1,2278 @@
+﻿on_death = {
+	on_actions = {
+		on_death_republic
+	}
+}
+
+on_death_republic = {
+	effect = {
+		save_scope_as = dying_person
+		if = {
+			limit = {
+				exists = house
+				house = {
+					exists = var:titular_republic
+					any_in_list = {
+						variable = election_candidates
+						this = scope:dying_person
+					}
+				}
+			}
+			clear_variable_list = election_candidates
+			random_house_member = {
+				limit = { NOT = { this = scope:dying_person } }
+				weight = {
+					base = 0
+					modifier = {
+						add = age
+					}
+					modifier = {
+						add = diplomacy
+					}
+					modifier = {
+						is_female = yes
+						liege_or_court_owner = {
+							primary_title = {
+								has_title_law = male_only_law
+							}
+						}
+						add = -1000
+					}
+					modifier = {
+						is_female = no
+						liege_or_court_owner = {
+							primary_title = {
+								has_title_law = male_preference_law
+							}
+						}
+						add = 50
+					}
+					modifier = {
+						is_female = yes
+						liege_or_court_owner = {
+							primary_title = {
+								has_title_law = female_preference_law
+							}
+						}
+						add = 50
+					}
+					modifier = {
+						is_female = no
+						liege_or_court_owner = {
+							primary_title = {
+								has_title_law = female_only_law
+							}
+						}
+						add = -1000
+					}
+					modifier = {
+						is_close_family_of = scope:dying_person
+						add = 50
+					}
+				}
+				save_scope_as = new_candidate
+			}
+			if = {
+				limit = { exists = scope:new_candidate }
+				add_to_variable_list = {
+					name = election_candidates
+					target = scope:new_candidate
+				}
+			}
+		}
+		if = {
+			limit = { holds_valid_merchant_republic = yes }
+			primary_title = {
+				set_variable = current_death
+				republic_succession = yes
+				remove_variable = current_death
+				scope:election_winner = {
+					trigger_event = {
+						id = merchant_republic_events.1002
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = house
+				house = {
+					exists = var:titular_republic
+					var:titular_republic = {
+						holder = {
+							republic_has_council_form = yes
+						}
+					}
+					exists = var:republic_councillor
+				}
+			}
+			var:titular_republic = {
+				republic_council_succesion = yes
+			}
+		}
+		if = {
+			limit = { holds_valid_merchant_republic = yes republic_has_council_form = yes }
+			primary_title = {
+				change_variable = {
+					name = nobility_appeasement
+					add = -20
+				}
+				change_variable = {
+					name = clergy_appeasement
+					add = -20
+				}
+				change_variable = {
+					name = popular_appeasement
+					add = -20
+				}
+				post_appeasement_change = yes
+			}
+		}
+	}
+}
+
+yearly_global_pulse = {
+	on_actions = {
+		yearly_republic_check
+	}
+}
+
+yearly_republic_check = {
+	effect = {
+		every_valid_republic_holder = {
+			limit = { primary_title.republic_families_size_need < 5 }
+			primary_title = {
+				create_characters_for_republic = yes
+			}
+		}
+		every_living_character = {
+			limit = {
+				holds_valid_merchant_republic = yes
+				NOT = {
+					republic_has_senate_form = yes
+					republic_has_council_form = yes
+					republic_has_elected_ruler_form = yes
+				}
+				set_up_elected_ruler_republic = yes
+			}
+		}
+		every_living_character = {
+			limit = {
+				exists = house
+				is_house_head = yes
+				house = {
+					has_variable_list = election_candidates
+				}
+				is_landed = yes
+				primary_title = {
+					has_variable_list = republic_families_list
+				}
+				is_ai = yes
+			}
+			save_scope_as = house_head_in_need
+			house = {
+				random_house_member = {
+					limit = {
+						is_child_of = scope:house_head_in_need
+						OR = {
+							AND = {
+								faith = { has_doctrine_parameter = male_dominated_law }
+								is_female = no
+							}
+							AND = {
+								faith = { has_doctrine_parameter = gender_equal_law }
+							}
+							AND = {
+								faith = { has_doctrine_parameter = female_dominated_law }
+								is_female = yes
+							}
+						}
+					}
+					save_scope_as = new_elector
+					house = {
+						clear_variable_list = election_candidates
+						add_to_variable_list = {
+							name = election_candidates
+							target = prev
+						}
+					}
+				}
+			}
+			if = {
+				limit = { exists = scope:new_elector }
+				house = {
+					random_house_member = {
+						limit = {
+							OR = {
+								AND = {
+									faith = { has_doctrine_parameter = male_dominated_law }
+									is_female = no
+								}
+								AND = {
+									faith = { has_doctrine_parameter = gender_equal_law }
+								}
+								AND = {
+									faith = { has_doctrine_parameter = female_dominated_law }
+									is_female = yes
+								}
+							}
+						}
+						house = {
+							clear_variable_list = election_candidates
+							add_to_variable_list = {
+								name = election_candidates
+								target = prev
+							}
+						}
+					}
+				}
+			}
+		}
+		every_living_character = {
+			limit = {
+				exists = house
+				is_house_head = yes
+				NOT = {
+					house = {
+						has_variable_list = election_candidates
+					}
+				}
+				exists = liege
+			}
+			if = {
+				limit = {
+					liege = {
+						holds_valid_merchant_republic = yes
+					}
+				}
+				add_family_to_republic_families = yes
+				trigger_event = {
+					id = merchant_republic_events.1001
+					days = { 0 50 }
+				}
+			}
+		}
+		every_living_character = {
+			limit = {
+				exists = house
+				is_house_head = yes
+				NOT = {
+					house = {
+						has_variable_list = election_candidates
+					}
+				}
+				exists = employer
+			}
+			if = {
+				limit = {
+					employer = {
+						holds_valid_merchant_republic = yes
+					}
+				}
+				add_family_to_republic_families = yes
+				trigger_event = {
+					id = merchant_republic_events.1001
+					days = { 0 50 }
+				}
+			}
+		}
+		every_duchy = {
+			limit = {
+				exists = holder
+				holder = {
+					holds_valid_merchant_republic = yes
+					primary_title = prev
+				}
+			}
+			every_in_list = {
+				variable = republic_families_list
+				limit = {
+					any_house_member = {
+						NOT = {
+							exists = this
+						}
+					}
+				}
+				save_scope_as = to_remove
+				prev = {
+					remove_list_variable = {
+						name = republic_families_list
+						target = scope:to_remove
+					}
+				}
+				remove_variable = family_prestige
+				clear_variable_list = election_candidates
+			}
+			if = {
+				limit = {
+					any_in_list = {
+						variable = proposed_laws_list
+						exists = this
+					}
+					holder = {
+						republic_has_senate_form = yes
+					}
+				}
+				trigger_election_cycle = yes
+			}
+			if = {
+				limit = {
+					any_in_list = {
+						variable = proposed_laws_list
+						exists = this
+					}
+					holder = {
+						republic_has_council_form = yes
+					}
+				}
+				trigger_council_election_cycle = yes
+			}
+		}
+		every_kingdom = {
+			limit = {
+				exists = holder
+				holder = {
+					holds_valid_merchant_republic = yes
+					primary_title = prev
+				}
+			}
+			every_in_list = {
+				variable = republic_families_list
+				limit = {
+					any_house_member = {
+						NOT = {
+							exists = this
+						}
+					}
+				}
+				save_scope_as = to_remove
+				prev = {
+					remove_list_variable = {
+						name = republic_families_list
+						target = scope:to_remove
+					}
+				}
+				remove_variable = family_prestige
+				clear_variable_list = election_candidates
+			}
+			if = {
+				limit = {
+					any_in_list = {
+						variable = proposed_laws_list
+						exists = this
+					}
+					holder = {
+						republic_has_senate_form = yes
+					}
+				}
+				trigger_election_cycle = yes
+			}
+			if = {
+				limit = {
+					any_in_list = {
+						variable = proposed_laws_list
+						exists = this
+					}
+					holder = {
+						republic_has_council_form = yes
+					}
+				}
+				trigger_council_election_cycle = yes
+			}
+		}
+		every_empire = {
+			limit = {
+				exists = holder
+				holder = {
+					holds_valid_merchant_republic = yes
+					primary_title = prev
+				}
+			}
+			every_in_list = {
+				variable = republic_families_list
+				limit = {
+					any_house_member = {
+						NOT = {
+							exists = this
+						}
+					}
+				}
+				save_scope_as = to_remove
+				prev = {
+					remove_list_variable = {
+						name = republic_families_list
+						target = scope:to_remove
+					}
+				}
+				remove_variable = family_prestige
+				clear_variable_list = election_candidates
+			}
+			if = {
+				limit = {
+					any_in_list = {
+						variable = proposed_laws_list
+						exists = this
+					}
+					holder = {
+						republic_has_senate_form = yes
+					}
+				}
+				trigger_election_cycle = yes
+			}
+			if = {
+				limit = {
+					any_in_list = {
+						variable = proposed_laws_list
+						exists = this
+					}
+					holder = {
+						republic_has_council_form = yes
+					}
+				}
+				trigger_council_election_cycle = yes
+			}
+		}
+		every_living_character = {
+			limit = {
+				is_house_head = yes
+				house = {
+					has_variable_list = election_candidates
+					any_in_list = {
+						variable = election_candidates
+						is_alive = no
+					}
+				}
+				is_ai = yes
+			}
+			house = {
+				clear_variable_list = election_candidates
+				add_to_variable_list = {
+					name = election_candidates
+					target = prev
+				}
+			}
+		}
+		
+		every_independent_ruler = {
+			limit = { holds_valid_merchant_republic = yes republic_has_council_form = yes }
+			primary_title = {
+				change_variable = {
+					name = nobility_appeasement
+					add = nobility_appeasement_yearly_change
+				}
+				change_variable = {
+					name = popular_appeasement
+					add = popular_appeasement_yearly_change
+				}
+				change_variable = {
+					name = clergy_appeasement
+					add = clergy_appeasement_yearly_change
+				}
+				post_appeasement_change = yes
+			}
+		}
+		global_var:dummy_male = {
+			initialize_global_election_terms = yes
+		}
+		every_valid_republic_holder = {
+			limit = { primary_title = { list_size = { name = republic_families_list value < 5 } } }
+		}
+
+	}
+	on_actions = {
+		delay = { days = { 20 345 } }
+		all_houses_maybe_propose_laws
+	}
+}
+
+on_game_start = {
+	on_actions = {
+		prepare_republic_laws
+		question_player
+		set_up_council_republics
+	}
+}
+
+set_up_council_republics = {
+	effect = {
+		if = {
+			limit = { current_date = 1066.9.15 }
+			title:k_pisa = {
+				holder = {
+					set_up_council_republic = yes
+				}
+			}
+			title:d_iceland = {
+				holder = {
+					set_up_senate_republic = yes
+				}
+			}
+		}
+	}
+}
+
+question_player = {
+	effect = {
+		random_player = {
+			limit = { holds_valid_merchant_republic = yes }
+			trigger_event = republic_question_events.1001
+		}
+	}
+	on_actions = {
+		delay = { days = 1 }
+		question_player_if_needed
+	}
+}
+
+question_player_if_needed = {
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					exists = global_var:play_house_heads
+					exists = global_var:play_republic_leaders
+				}
+			}
+			random_player = {
+				trigger_event = republic_question_events.1001
+			}
+		}
+	}
+}
+
+prepare_republic_laws = {
+	effect = {
+		dummy_male = {
+			set_global_variable = {
+				name = dummy_male
+				value = this
+			}
+		}
+		global_var:dummy_male = {
+			all_council_laws = yes
+			all_senate_laws = yes
+			all_elected_ruler_laws = yes
+		}
+		every_valid_council_republic_holder = {
+			primary_title = {
+				post_appeasement_change = yes
+			}
+		}
+	}
+}
+
+all_houses_maybe_propose_laws = {
+	effect = {
+		every_living_character = {
+			limit = {
+				is_house_head = yes
+				house = {
+					exists = var:titular_republic
+					var:titular_republic = { save_temporary_scope_as = titular_republic }
+				}
+				scope:titular_republic = {
+					holder = {
+						republic_has_senate_form = yes
+					}
+				}
+				is_ai = yes
+			}
+			random_list = {
+				0 = {
+					senate_vote_war_declaration_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:senate_vote_war_declaration
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:senate_vote_war_declaration
+									}
+								}
+							}
+						}
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:senate_vote_war_declaration } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:senate_vote_war_declaration } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					leaders_discretion_war_declaration_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:leaders_discretion_war_declaration
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:leaders_discretion_war_declaration
+									}
+								}
+							}
+						}
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_war_declaration } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_war_declaration } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					senate_vote_council_appointment_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:senate_vote_council_appointment
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:senate_vote_council_appointment
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:senate_vote_council_appointment } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:senate_vote_council_appointment } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					leaders_discretion_council_appointment_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:leaders_discretion_council_appointment
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:leaders_discretion_council_appointment
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_council_appointment } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_council_appointment } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					senate_vote_imprisonment_rights_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:senate_vote_imprisonment_rights
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:senate_vote_imprisonment_rights
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:senate_vote_imprisonment_rights } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:senate_vote_imprisonment_rights } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					leaders_discretion_imprisonment_rights_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:leaders_discretion_imprisonment_rights
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:leaders_discretion_imprisonment_rights
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_imprisonment_rights } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_imprisonment_rights } } }
+					}
+				}
+				10000 = {
+				}
+			}
+
+			random_list = {
+				0 = {
+					senate_vote_title_revocation_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:senate_vote_title_revocation
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:senate_vote_title_revocation
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:senate_vote_title_revocation } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:senate_vote_title_revocation } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					leaders_discretion_title_revocation_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:leaders_discretion_title_revocation
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:leaders_discretion_title_revocation
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_title_revocation } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_title_revocation } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					senate_vote_title_granting_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:senate_vote_title_granting
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:senate_vote_title_granting
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:senate_vote_title_granting } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:senate_vote_title_granting } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					leaders_discretion_title_granting_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:leaders_discretion_title_granting
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:leaders_discretion_title_granting
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_title_granting } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_title_granting } } }
+					}
+				}
+				10000 = {
+				}
+			}
+
+			random_list = {
+				0 = {
+					life_title_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:life_title_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:life_title_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:life_title_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:life_title_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					twenty_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:twenty_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:twenty_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:twenty_year_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:twenty_year_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					ten_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:ten_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:ten_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:ten_year_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:ten_year_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					four_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:four_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:four_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:four_year_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:four_year_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					two_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:two_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:two_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:two_year_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:two_year_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					one_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:one_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:one_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:one_year_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:one_year_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+		}
+
+		every_living_character = {
+			limit = {
+				is_house_head = yes
+				house = {
+					exists = var:titular_republic
+					var:titular_republic = { save_temporary_scope_as = titular_republic }
+				}
+				scope:titular_republic = {
+					holder = {
+						republic_has_council_form = yes
+					}
+				}
+				is_ai = yes
+			}
+			random_list = {
+				0 = {
+					senate_vote_war_declaration_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:council_approval_war_declaration
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:council_approval_war_declaration
+									}
+								}
+							}
+						}
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:council_approval_war_declaration } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:council_approval_war_declaration } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					leaders_discretion_war_declaration_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:leaders_discretion_war_declaration
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:leaders_discretion_war_declaration
+									}
+								}
+							}
+						}
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_war_declaration } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_war_declaration } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					senate_vote_council_appointment_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:council_approval_council_appointment
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:council_approval_council_appointment
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:council_approval_council_appointment } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:council_approval_council_appointment } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					leaders_discretion_council_appointment_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:leaders_discretion_council_appointment
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:leaders_discretion_council_appointment
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_council_appointment } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_council_appointment } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					senate_vote_imprisonment_rights_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:council_approval_imprisonment_rights
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:council_approval_imprisonment_rights
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:council_approval_imprisonment_rights } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:council_approval_imprisonment_rights } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					leaders_discretion_imprisonment_rights_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:leaders_discretion_imprisonment_rights
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:leaders_discretion_imprisonment_rights
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_imprisonment_rights } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_imprisonment_rights } } }
+					}
+				}
+				10000 = {
+				}
+			}
+
+			random_list = {
+				0 = {
+					senate_vote_title_revocation_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:council_approval_title_revocation
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:council_approval_title_revocation
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:council_approval_title_revocation } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:council_approval_title_revocation } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					leaders_discretion_title_revocation_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:leaders_discretion_title_revocation
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:leaders_discretion_title_revocation
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_title_revocation } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_title_revocation } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					senate_vote_title_granting_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:council_approval_title_granting
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:council_approval_title_granting
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:council_approval_title_granting } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:council_approval_title_granting } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					leaders_discretion_title_granting_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:leaders_discretion_title_granting
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:leaders_discretion_title_granting
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_title_granting } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:leaders_discretion_title_granting } } }
+					}
+				}
+				10000 = {
+				}
+			}
+
+			random_list = {
+				0 = {
+					life_title_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:life_title_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:life_title_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:life_title_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:life_title_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					twenty_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:twenty_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:twenty_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:twenty_year_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:twenty_year_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					ten_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:ten_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:ten_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:ten_year_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:ten_year_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					four_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:four_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:four_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:four_year_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:four_year_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					two_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:two_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:two_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:two_year_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:two_year_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					one_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:one_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:one_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:one_year_term } }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:one_year_term } } }
+					}
+				}
+				10000 = {
+				}
+			}
+		}
+
+		every_living_character = {
+			limit = {
+				is_house_head = yes
+				house = {
+					exists = var:titular_republic
+					var:titular_republic = { save_temporary_scope_as = titular_republic }
+				}
+				scope:titular_republic = {
+					holder = {
+						republic_has_elected_ruler_form = yes
+					}
+				}
+				is_ai = yes
+			}
+			random_list = {
+				0 = {
+					life_title_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:life_title_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:life_title_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:life_title_term } trigger_elected_ruler_quick_election = yes }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:life_title_term } trigger_elected_ruler_quick_election = yes } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					twenty_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:twenty_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:twenty_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:twenty_year_term } trigger_elected_ruler_quick_election = yes }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:twenty_year_term } trigger_elected_ruler_quick_election = yes } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					ten_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:ten_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:ten_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:ten_year_term } trigger_elected_ruler_quick_election = yes }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:ten_year_term } trigger_elected_ruler_quick_election = yes } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					four_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:four_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:four_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:four_year_term } trigger_elected_ruler_quick_election = yes }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:four_year_term } trigger_elected_ruler_quick_election = yes } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					two_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:two_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:two_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:two_year_term } trigger_elected_ruler_quick_election = yes }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:two_year_term } trigger_elected_ruler_quick_election = yes } }
+					}
+				}
+				10000 = {
+				}
+			}
+			random_list = {
+				0 = {
+					one_year_term_propose_modifier = yes
+
+					modifier = {
+						OR = {
+							AND = {
+								is_independent_ruler = yes
+								primary_title = {
+									exists = var:one_year_term
+								}
+							}
+							AND = {
+								is_independent_ruler = no
+								liege_or_court_owner = {
+									primary_title = {
+										exists = var:one_year_term
+									}
+								}
+							}
+						}
+
+						add = -10000
+					}
+					if = {
+						limit = { is_independent_ruler = yes }
+						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:one_year_term } trigger_elected_ruler_quick_election = yes }
+					}
+					if = {
+						limit = { is_independent_ruler = no }
+						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:one_year_term } trigger_elected_ruler_quick_election = yes } }
+					}
+				}
+				10000 = {
+				}
+			}
+		}
+	}
+}
+
+one_year_elections = {
+	effect = {
+		every_living_character = {
+			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:one_year_term } }
+			primary_title = {
+				republic_succession = yes
+				republic_council_succesion = yes
+			}
+		}
+	}
+	on_actions = {
+		delay = { years = 1 }
+		one_year_elections
+	}
+}
+
+two_year_elections = {
+	effect = {
+		every_independent_ruler = {
+			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:two_year_term } }
+			primary_title = {
+				republic_succession = yes
+				republic_council_succesion = yes
+			}
+		}
+	}
+	on_actions = {
+		delay = { years = 2 }
+		two_year_elections
+	}
+}
+
+four_year_elections = {
+	effect = {
+		every_independent_ruler = {
+			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:four_year_term } }
+			primary_title = {
+				republic_succession = yes
+				republic_council_succesion = yes
+			}
+		}
+		every_living_character = {
+			limit = { is_house_head = yes house = { exists = var:titular_republic } }
+			house = {
+				if = {
+					limit = { var:family_prestige >= 50 }
+					change_variable = {
+						name = family_prestige
+						add = -50
+					}
+				}
+			}
+		}
+	}
+	on_actions = {
+		delay = { years = 4 }
+		four_year_elections
+	}
+}
+
+ten_year_elections = {
+	effect = {
+		every_independent_ruler = {
+			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:ten_year_term } }
+			primary_title = {
+				republic_succession = yes
+				republic_council_succesion = yes
+			}
+		}
+	}
+	on_actions = {
+		delay = { years = 10 }
+		ten_year_elections
+	}
+}
+
+twenty_year_elections = {
+	effect = {
+		every_independent_ruler = {
+			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:twenty_year_term } }
+			primary_title = {
+				republic_succession = yes
+				republic_council_succesion = yes
+			}
+		}
+	}
+	on_actions = {
+		delay = { years = 20 }
+		twenty_year_elections
+	}
+}
+
+on_rank_up = {
+	on_actions = {
+		transfer_your_old_republic_variables
+	}
+}
+
+on_rank_down = {
+	on_actions = {
+		transfer_your_old_republic_variables
+	}
+}
+
+transfer_your_old_republic_variables = {
+	trigger = {
+		exists = scope:title
+		holds_valid_merchant_republic = yes
+	}
+	effect = {
+		if = {
+			limit = { scope:title = { exists = var:senate_government_republic } }
+			primary_title = { set_variable = senate_government_republic }
+		}
+		if = {
+			limit = { scope:title = { exists = var:council_government_republic } }
+			primary_title = { set_variable = council_government_republic }
+		}
+		if = {
+			limit = { scope:title = { exists = var:elected_ruler_republic } }
+			primary_title = { set_variable = elected_ruler_republic }
+		}
+		if = {
+			limit = { scope:title = { exists = var:councillor_1 } }
+			primary_title = {
+				set_variable = {
+					name = councillor_1
+					value = scope:title.var:councillor_1
+				}
+			}
+		}
+		if = {
+			limit = { scope:title = { exists = var:councillor_2 } }
+			primary_title = {
+				set_variable = {
+					name = councillor_2
+					value = scope:title.var:councillor_2
+				}
+			}
+		}
+		if = {
+			limit = { scope:title = { exists = var:councillor_3 } }
+			primary_title = {
+				set_variable = {
+					name = councillor_3
+					value = scope:title.var:councillor_3
+				}
+			}
+		}
+		if = {
+			limit = { scope:title = { exists = var:councillor_4 } }
+			primary_title = {
+				set_variable = {
+					name = councillor_4
+					value = scope:title.var:councillor_4
+				}
+			}
+		}
+		if = {
+			limit = { scope:title = { exists = var:councillor_5 } }
+			primary_title = {
+				set_variable = {
+					name = councillor_5
+					value = scope:title.var:councillor_5
+				}
+			}
+		}
+		if = {
+			limit = { scope:title = { exists = var:nobility_appeasement } }
+			primary_title = {
+				set_variable = {
+					name = nobility_appeasement
+					value = scope:title.var:nobility_appeasement
+				}
+			}
+		}
+		if = {
+			limit = { scope:title = { exists = var:clergy_appeasement } }
+			primary_title = {
+				set_variable = {
+					name = clergy_appeasement
+					value = scope:title.var:clergy_appeasement
+				}
+			}
+		}
+		if = {
+			limit = { scope:title = { exists = var:popular_appeasement } }
+			primary_title = {
+				set_variable = {
+					name = popular_appeasement
+					value = scope:title.var:popular_appeasement
+				}
+			}
+		}
+		if = {
+			limit = { scope:title = { exists = var:senate_vote_war_declaration } }
+			primary_title = { set_variable = senate_vote_war_declaration }
+		}
+		if = {
+			limit = { scope:title = { exists = var:senate_vote_council_appointment } }
+			primary_title = { set_variable = senate_vote_council_appointment }
+		}
+		if = {
+			limit = { scope:title = { exists = var:senate_vote_imprisonment_rights } }
+			primary_title = { set_variable = senate_vote_imprisonment_rights }
+		}
+		if = {
+			limit = { scope:title = { exists = var:senate_vote_title_revocation } }
+			primary_title = { set_variable = senate_vote_title_revocation }
+		}
+		if = {
+			limit = { scope:title = { exists = var:senate_vote_title_granting } }
+			primary_title = { set_variable = senate_vote_title_granting }
+		}
+		if = {
+			limit = { scope:title = { exists = var:council_approval_war_declaration } }
+			primary_title = { set_variable = council_approval_war_declaration }
+		}
+		if = {
+			limit = { scope:title = { exists = var:council_approval_council_appointment } }
+			primary_title = { set_variable = council_approval_council_appointment }
+		}
+		if = {
+			limit = { scope:title = { exists = var:council_approval_imprisonment_rights } }
+			primary_title = { set_variable = council_approval_imprisonment_rights }
+		}
+		if = {
+			limit = { scope:title = { exists = var:council_approval_title_revocation } }
+			primary_title = { set_variable = council_approval_title_revocation }
+		}
+		if = {
+			limit = { scope:title = { exists = var:council_approval_title_granting } }
+			primary_title = { set_variable = council_approval_title_granting }
+		}
+		if = {
+			limit = { scope:title = { exists = var:leaders_discretion_war_declaration } }
+			primary_title = { set_variable = leaders_discretion_war_declaration }
+		}
+		if = {
+			limit = { scope:title = { exists = var:leaders_discretion_council_appointment } }
+			primary_title = { set_variable = leaders_discretion_council_appointment }
+		}
+		if = {
+			limit = { scope:title = { exists = var:leaders_discretion_imprisonment_rights } }
+			primary_title = { set_variable = leaders_discretion_imprisonment_rights }
+		}
+		if = {
+			limit = { scope:title = { exists = var:leaders_discretion_title_revocation } }
+			primary_title = { set_variable = leaders_discretion_title_revocation }
+		}
+		if = {
+			limit = { scope:title = { exists = var:leaders_discretion_title_granting } }
+			primary_title = { set_variable = leaders_discretion_title_granting }
+		}
+		if = {
+			limit = { scope:title = { exists = var:life_title_term } }
+			primary_title = { set_variable = life_title_term }
+		}
+		if = {
+			limit = { scope:title = { exists = var:twenty_year_term } }
+			primary_title = { set_variable = twenty_year_term }
+		}
+		if = {
+			limit = { scope:title = { exists = var:ten_year_term } }
+			primary_title = { set_variable = ten_year_term }
+		}
+		if = {
+			limit = { scope:title = { exists = var:four_year_term } }
+			primary_title = { set_variable = four_year_term }
+		}
+		if = {
+			limit = { scope:title = { exists = var:two_year_term } }
+			primary_title = { set_variable = two_year_term }
+		}
+		if = {
+			limit = { scope:title = { exists = var:one_year_term } }
+			primary_title = { set_variable = one_year_term }
+		}
+		primary_title = {
+			scope:title = {
+				every_in_list = {
+					variable = republic_families_list
+					save_scope_as = add_to_list_house
+					prev.prev = {
+						add_to_variable_list = {
+							name = republic_families_list
+							target = scope:add_to_list_house
+						}
+					}
+				}
+			}
+		}
+	}
+}

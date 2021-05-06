@@ -1,0 +1,21 @@
+﻿succession_order_laws = {
+	flag = succession_order_laws
+
+	city_succession_law = {
+		can_keep = {
+			can_have_city_succession_law_trigger = yes
+		}
+		can_have = {
+			can_have_city_succession_law_trigger = yes
+		}
+		should_start_with = {
+			has_government = republic_government
+		}
+		succession = {
+			order_of_succession = inheritance
+			traversal_order = children
+			rank = oldest
+			title_division = single_heir
+		}
+	}
+}

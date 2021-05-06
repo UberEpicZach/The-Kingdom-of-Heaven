@@ -1,0 +1,285 @@
+######################################################
+############### CHANGE SUCCESSION LAW ################
+######################################################
+
+window = {
+	name = "republic_council_view"
+	size = { 950 850 }
+	position = { 610 100 }
+	layer = middle
+
+	using = Window_Background
+	using = Window_Decoration
+	using = Animation_ShowHide_Standard
+	
+	vbox = {
+		using = Window_Margins
+		restrictparent_min = yes
+
+		header_pattern = {
+			layoutpolicy_horizontal = expanding
+
+			blockoverride "header_text"
+			{
+				text = "COUNCIL_VIEW"
+			}
+
+			blockoverride "button_close"
+			{
+				onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets republic_council_view')]"
+			}
+		}
+
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+
+			hbox = {
+				name = "main"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+
+				## Left Side
+				vbox = {
+					name = "left"
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					background = {
+						texture = "gfx/interface/illustrations/council/bg_council_chancellor.dds"
+						modify_texture = {
+							name = "mask"
+							texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+							spriteType = Corneredstretched
+							spriteborder = { 0 0 }
+							blend_mode = alphamultiply
+						}
+					}
+					container = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						progressbar = {
+							position = { 5% 5% }
+							min = 0
+							max = 100
+							value = "[FixedPointToFloat(GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.Var('nobility_appeasement').GetValue)]"
+							size = { 100 20 }
+							tooltip = "NOBLE_APPEASEMENT"
+							progresstexture = "gfx/interface/progressbars/progress_purple.dds"
+							noprogresstexture = "gfx/interface/progressbars/progress_standard.dds"
+							spriteType = Corneredtiled
+							spriteborder = { 6 6 }
+						}
+						progressbar = {
+							position = { 5% 15% }
+							min = 0
+							max = 100
+							value = "[FixedPointToFloat(GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.Var('clergy_appeasement').GetValue)]"
+							size = { 100 20 }
+							tooltip = "CLERGY_APPEASEMENT"
+							progresstexture = "gfx/republic/progressbars/progress_white.dds"
+							noprogresstexture = "gfx/interface/progressbars/progress_standard.dds"
+							spriteType = Corneredtiled
+							spriteborder = { 6 6 }
+						}
+						progressbar = {
+							position = { 5% 25% }
+							min = 0
+							max = 100
+							value = "[FixedPointToFloat(GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.Var('popular_appeasement').GetValue)]"
+							size = { 100 20 }
+							tooltip = "POPULAR_APPEASEMENT"
+							progresstexture = "gfx/republic/progressbars/progress_brown.dds"
+							noprogresstexture = "gfx/interface/progressbars/progress_standard.dds"
+							spriteType = Corneredtiled
+							spriteborder = { 6 6 }
+						}
+						vbox = {
+							datacontext = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.Var('councillor_4').House.GetHeadOfHouse]"
+							position = { 25% 100% }
+							portrait_head = {}
+						}
+						vbox = {
+							datacontext = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.Var('councillor_3').House.GetHeadOfHouse]"
+							position = { 100% 40% }
+							portrait_head = {}
+						}
+						vbox = {
+							datacontext = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.Var('councillor_2').House.GetHeadOfHouse]"
+							position = { 0% 40% }
+							portrait_head = {}
+						}
+						vbox = {
+							datacontext = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.Var('councillor_1').House.GetHeadOfHouse]"
+							position = { 50% 0% }
+							portrait_head = {}
+						}
+						vbox = {
+							datacontext = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.Var('councillor_5').House.GetHeadOfHouse]"
+							position = { 75% 100% }
+							portrait_head = {}
+						}
+						text_single = {
+							text = ""
+							position = { 280 325 }
+						}
+						expand = {}
+					}
+
+				}
+
+				## Right Side
+				vbox = {
+					name = "right"
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					max_width = 350
+					min_width = 350
+					background = {
+						using = Background_Area
+					}
+					scrollbox = {
+						name = "proposable_laws_scrollarea"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 350 500 }
+						blockoverride "scrollbox_content"
+						{
+							vbox = {
+								text_label_center = {
+									text = "POSSIBLE_LAWS"
+									fontsize = 20
+								}
+								dynamicgridbox = {
+									layoutpolicy_vertical = expanding
+									layoutpolicy_horizontal = expanding
+									allow_outside = yes
+									ignoreinvisible = yes
+									maxhorizontalslots = 1
+									maxverticalslots = 100
+									block "datamodel" { 
+										datamodel = "[GetDummyMale.MakeScope.GetList('council_laws_list')]"
+									}
+									item = {
+										widget = {
+											visible = "[Not(GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName,)).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+											block "size" {
+												size = { 280 130 }
+											}
+											hbox = {
+												button = {
+													texture = "gfx/interface/icons/message_feed/a_catch_all_councillor_icon.dds"
+													size = { 80 80 }
+													tooltip = PROPOSE_TT
+													clicksound = "event:/SFX/UI/Notifications/TopBar/sfx_ui_notifications_topbar_diplomacy"
+													datacontext = "[GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName))]"
+													onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												}
+												vbox = {
+													text_single = {
+														text = "[Localize(Concatenate(Scope.GetFlagName,'_council_name'))]"
+														fontsize = 16
+														align = center
+														minimumsize = { 80 -1 }
+													}
+													text_single = {
+														text = "[Localize(Concatenate(Scope.GetFlagName,'_council_desc'))]"
+														align = center
+														fontsize = 16
+													}
+													expand = {}
+												}
+												expand = {}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			vbox = {
+				name = "footer"
+				layoutpolicy_horizontal = expanding
+				spacing = 10
+				margin = { 0 5 }
+				text_label_center = {
+					text = "PROPOSED_LAWS"
+					fontsize = 16
+				}
+				hbox = {
+					scrollarea = {
+						name = "proposed_laws_scrollarea"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 900 120 }
+						scrollbarpolicy_vertical = always_off
+
+						scrollbar_horizontal = {
+							using = Scrollbar_Horizontal
+						}
+						scrollwidget = {
+							dynamicgridbox = {
+								layoutpolicy_vertical = expanding
+								layoutpolicy_horizontal = expanding
+								allow_outside = yes
+								ignoreinvisible = yes
+								maxverticalslots = 1
+								maxhorizontalslots = 100
+								flipdirection = yes
+								block "datamodel" {
+									datamodel = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.GetList('proposed_laws_list')]"
+								}
+								item = {
+									widget = {
+										block "size" {
+											size = { 280 100 }
+										}
+										hbox = {
+											background = {
+												margin_left = 5
+												margin_right = 5
+												margin_top = 10
+												margin_bottom = 10
+												texture = "gfx/republic/solid_black_label.dds"
+												spriteType = Corneredtiled
+												spriteborder = { 20 20 }
+												modify_texture = {
+													name = "mask"
+													texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+													spriteType = Corneredstretched
+													spriteborder = { 10 5 }
+													blend_mode = alphamultiply
+												}
+											}
+											icon = {
+												texture = "gfx/interface/icons/message_feed/chancellor_job.dds"
+												size = { 80 80 }
+											}
+											vbox = {
+												text_single = {
+													text = "[Localize(Concatenate(Scope.GetFlagName,'_council_name'))]"
+													fontsize = 16
+													align = center
+													minimumsize = { 80 -1 }
+												}
+												text_single = {
+													text = "[Localize(Concatenate(Scope.GetFlagName,'_council_desc'))]"
+													align = center
+													fontsize = 16
+												}
+												expand = {}
+											}
+											expand = {}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,580 @@
+######################################################
+############### CHANGE SUCCESSION LAW ################
+######################################################
+
+window = {
+	name = "republic_senate_view"
+	size = { 950 850 }
+	position = { 610 25 }
+	layer = middle
+
+	using = Window_Background
+	using = Window_Decoration
+	using = Animation_ShowHide_Standard
+	
+	vbox = {
+		using = Window_Margins
+		restrictparent_min = yes
+
+		header_pattern = {
+			layoutpolicy_horizontal = expanding
+
+			blockoverride "header_text"
+			{
+				text = "SENATE_VIEW"
+			}
+
+			blockoverride "button_close"
+			{
+				onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets republic_senate_view')]"
+			}
+		}
+
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+
+			hbox = {
+				name = "main"
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+
+				## Left Side
+				vbox = {
+					name = "left"
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					
+					spacer = {
+						size = { 0 10 }
+					}
+					icon = {
+						texture = "gfx/republic/senate_background.dds"
+						alpha = 1
+						size = { 460 200 }
+						modify_texture = {
+							name = "mask"
+							texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+							spriteType = Corneredstretched
+							spriteborder = { 0 0 }
+							blend_mode = alphamultiply
+						}
+					}
+					spacer = { size = { 0 20 } }
+					scrollbox = {
+						name = "republic_laws_scrollarea"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						#size = {100% 100%}
+						size = { 400 500 }
+						background = {
+							texture = "gfx/interface/illustrations/council/bg_council_steward.dds"
+							alpha = 0.2
+							modify_texture = {
+								name = "mask"
+								texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+								spriteType = Corneredstretched
+								spriteborder = { 0 0 }
+								blend_mode = alphamultiply
+							}
+						}
+						blockoverride "scrollbox_content"
+						{
+							flowcontainer = {
+								direction = vertical
+								ignoreinvisible = yes
+								spacing = 3
+
+								button_panel_down = {
+									name = "passed laws"
+									parentanchor = right
+									onclick = "[GetVariableSystem.Toggle( 'view_passed_laws')]"
+
+									tooltip = "PASSED_LAWS"
+
+									blockoverride "button_text"
+									{
+										text = "PASSED_LAWS"
+									}
+								}
+							}
+							dynamicgridbox = {
+								layoutpolicy_vertical = expanding
+								allow_outside = yes
+								ignoreinvisible = yes
+								maxhorizontalslots = 1
+								maxverticalslots = 100
+								visible = "[GetVariableSystem.Exists('view_passed_laws')]"
+								block "datamodel" {
+									datamodel = "[GetDummyMale.MakeScope.GetList('senate_laws_list')]"
+								}
+								item = {
+									visible = "[GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName,)).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									widget = {
+										visible = "[GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName,)).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										block "size" {
+											size = { 398 80 }
+										}
+										tooltip = PROPOSE_TT
+										vbox = {
+											background = {
+												texture = "gfx/republic/tile_selected_gold.dds"
+												spriteType = Corneredtiled
+												spriteborder = { 6 6 }
+												shaderfile = "gfx/FX/pdxgui_default.shader"
+											}
+											hbox = {
+												icon = {
+													texture = "gfx/interface/icons/message_feed/a_catch_all_councillor_icon.dds"
+													size = { 20 20 }
+												}
+												spacer = {
+													size = { 5 0 }
+												}
+												text_single = {
+													text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+													fontsize = 20
+												}
+												expand = {}
+											}
+											text_single = {
+												text = "[Localize(Concatenate(Scope.GetFlagName,'_desc'))]"
+												fontsize = 16
+											}
+											expand = {}
+										}
+									}
+								}
+							}
+							spacer = { size = { 0 10 } }
+							flowcontainer = {
+								direction = vertical
+								ignoreinvisible = yes
+								spacing = 3
+
+								button_panel_down = {
+									name = "proposed laws"
+									parentanchor = right
+									onclick = "[GetVariableSystem.Toggle( 'view_proposed_laws')]"
+
+									tooltip = "PROPOSED_LAWS"
+
+									blockoverride "button_text"
+									{
+										text = "PROPOSED_LAWS"
+									}
+								}
+							}
+							dynamicgridbox = {
+								layoutpolicy_vertical = expanding
+								allow_outside = yes
+								ignoreinvisible = yes
+								maxhorizontalslots = 1
+								maxverticalslots = 100
+								visible = "[GetVariableSystem.Exists('view_proposed_laws')]"
+								block "datamodel" {
+									datamodel = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.GetList('proposed_laws_list')]"
+								}
+								item = {
+									widget = {
+										block "size" {
+											size = { 398 80 }
+										}
+										tooltip = PROPOSED_LAWS_TT
+										vbox = {
+											background = {
+												texture = "gfx/republic/tile_selected_gold.dds"
+												spriteType = Corneredtiled
+												spriteborder = { 6 6 }
+												shaderfile = "gfx/FX/pdxgui_default.shader"
+											}
+											hbox = {
+												icon = {
+													texture = "gfx/interface/icons/message_feed/chancellor_job.dds"
+													size = { 20 20 }
+												}
+												spacer = {
+													size = { 5 0 }
+												}
+												text_single = {
+													text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+													fontsize = 20
+												}
+												expand = {}
+											}
+											text_single = {
+												text = "[Localize(Concatenate(Scope.GetFlagName,'_desc'))]"
+												fontsize = 16
+											}
+											expand = {}
+										}
+									}
+								}
+							}
+							spacer = { size = { 0 10 } }
+							flowcontainer = {
+								direction = vertical
+								ignoreinvisible = yes
+								spacing = 3
+
+								button_panel_down = {
+									name = "possible laws"
+									parentanchor = right
+									onclick = "[GetVariableSystem.Toggle( 'view_possible_laws')]"
+
+									tooltip = "POSSIBLE_LAWS"
+
+									blockoverride "button_text"
+									{
+										text = "POSSIBLE_LAWS"
+									}
+								}
+							}
+							dynamicgridbox = {
+								layoutpolicy_vertical = expanding
+								allow_outside = yes
+								ignoreinvisible = yes
+								maxhorizontalslots = 1
+								maxverticalslots = 100
+								visible = "[GetVariableSystem.Exists('view_possible_laws')]"
+								block "datamodel" { 
+									datamodel = "[GetDummyMale.MakeScope.GetList('senate_laws_list')]"
+								}
+								item = {
+									widget = {
+										visible = "[Not(GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName,)).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+										block "size" {
+											size = { 398 130 }
+										}
+										vbox = {
+											background = {
+												texture = "gfx/republic/tile_selected_gold.dds"
+												spriteType = Corneredtiled
+												spriteborder = { 6 6 }
+												shaderfile = "gfx/FX/pdxgui_default.shader"
+											}
+											hbox = {
+												icon = {
+													texture = "gfx/interface/icons/message_feed/generic_neutral_effect.dds"
+													size = { 20 20 }
+												}
+												spacer = {
+													size = { 5 0 }
+												}
+												text_single = {
+													text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+													fontsize = 20
+												}
+												expand = {}
+											}
+											text_single = {
+												text = "[Localize(Concatenate(Scope.GetFlagName,'_desc'))]"
+												fontsize = 16
+											}
+											spacer = {
+												size = { 0 10 }
+											}
+											button = {
+												tooltip = PROPOSE_TT
+												datacontext = "[GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName))]"
+												onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												texture = "gfx/interface/icons/message_feed/nickname.dds"
+												size = { 50 50 }
+												clicksound = "event:/SFX/UI/Notifications/TopBar/sfx_ui_notifications_topbar_diplomacy"
+											}
+											expand = {}
+										}
+									}
+								}
+							}
+						}
+					}
+					expand = {}
+				}
+
+				## Right Side
+				vbox = {
+					name = "senate_houses"
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					max_width = 350
+					min_width = 350
+					margin = { 15 15 }
+					spacing = 10
+
+					background = {
+						texture = "gfx/interface/illustrations/lifestyles_background/diplomacy_lifestyle.dds"
+						alpha = 0.8
+						modify_texture = {
+							name = "mask"
+							texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+							spriteType = Corneredstretched
+							spriteborder = { 0 0 }
+							blend_mode = alphamultiply
+						}
+					}
+
+					scrollbox = {
+						name = "republic_families_scrollarea"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						#size = {100% 100%}
+						size = { 350 800 }
+						blockoverride "scrollbox_content"
+						{
+							dynamicgridbox = {
+								datacontext = "[GetPlayer]"
+								layoutpolicy_vertical = expanding
+								allow_outside = yes
+								ignoreinvisible = yes
+								maxhorizontalslots = 1
+								maxverticalslots = 100
+								block "datamodel" {
+									datamodel = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.GetList('republic_families_list')]"
+								}
+								item = {
+									widget = {
+										datacontext = "[Scope.House]"
+										visible = "[DynastyHouse.GetHeadOfHouse.IsValid]"
+										block "size" {
+											size = { 299 200 }
+										}
+										vbox = {
+											background = {
+												texture = "gfx/republic/tile_selected_gold.dds"
+												spriteType = Corneredtiled
+												spriteborder = { 6 6 }
+												shaderfile = "gfx/FX/pdxgui_default.shader"
+											}
+											hbox = {
+												vbox = {
+													text_single = {
+														minimumsize = { 120 -1 }
+														text = "HOUSE_VIEW_NAME_WITH_HOUSE"
+														fontsize = 16
+														default_format = "#high"
+													}
+													coa_house_medium = {}
+												}
+												vbox = {
+													layoutpolicy_vertical = expanding
+													datacontext = "[DynastyHouse.GetHeadOfHouse]"
+													text_single = {
+														text = "HOUSE_PATRICIAN"
+														fontsize = 16
+													}
+													portrait_head_small = {}
+												}
+											}
+											spacer = {
+												size = { 10 0 }
+											}
+											vbox = {
+												layoutpolicy_vertical = expanding
+												hbox = {
+													text_single = {
+														text = "HOUSE_RESPECT"
+														fontsize = 16
+													}
+													spacer = { size = { 2 0 } }
+													text_single = {
+														text = "[GuiScope.SetRoot(DynastyHouse.MakeScope).ScriptValue('family_respect')|0]"
+														minimumsize = { 40 -1 }
+														fontsize = 16
+													}
+												}
+												hbox = {
+													text_single = {
+														text = "HOUSE_VOTES"
+														fontsize = 16
+													}
+													spacer = { size = { 2 0 } }
+													text_single = {
+														text = "[GuiScope.SetRoot(DynastyHouse.MakeScope).ScriptValue('clean_family_votes')|0]"
+														minimumsize = { 40 -1 }
+														fontsize = 16
+													}
+												}
+												hbox = {
+													text_single = {
+														text = "HOUSE_ELECTEE"
+														fontsize = 16
+													}
+													spacer = { size = { 5 0 } }
+													dynamicgridbox = {
+														datacontext = "[Scope.House]"
+														layoutpolicy_vertical = expanding
+														ignoreinvisible = yes
+														allow_outside = yes
+														maxhorizontalslots = 1
+														maxverticalslots = 100
+														block "datamodel" {
+															datamodel = "[DynastyHouse.MakeScope.GetList('election_candidates')]"
+														}
+														item = {
+															text_single = {
+																text = "[Scope.GetCharacter.GetTitledFirstName]"
+																fontsize = 16
+															}
+														}
+													}
+												}
+												expand = {}
+											}
+											expand = {}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			vbox = {
+				name = "footer"
+				layoutpolicy_horizontal = expanding
+				spacing = 10
+				margin = { 0 15 }
+
+				hbox = {
+					background = {
+						texture = "gfx/interface/component_tiles/solid_black_label.dds"
+						margin = { 20 10 }
+						modify_texture = {
+							name = "mask"
+							texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+							spriteType = Corneredstretched
+							spriteborder = { 0 0 }
+							blend_mode = alphamultiply
+						}
+					}
+					vbox = {
+						datacontext = "[GetPlayer.GetLiege]"
+						text_single = {
+							text = "Consul:"
+							fontsize = 20
+						}
+						portrait_head_small = {}
+					}
+					spacer = {
+						size = { 50 0 }
+					}
+					vbox = {
+						datacontext = "[GetPlayer]"
+						text_single = {
+							text = "You:"
+							fontsize = 20
+						}
+						portrait_head_small = {}
+					}
+					spacer = {
+						size = { 20 0 }
+					}
+					vbox = {
+						hbox = {
+							text_single = {
+								text = "HOUSE_RESPECT"
+								fontsize = 16
+							}
+							spacer = { size = { 2 0 } }
+							text_single = {
+								text = "[GuiScope.SetRoot(GetPlayer.GetHouse.MakeScope).ScriptValue('family_respect')|0]"
+								minimumsize = { 40 -1 }
+								fontsize = 16
+							}
+						}
+						hbox = {
+							text_single = {
+								text = "HOUSE_VOTES"
+								fontsize = 16
+							}
+							spacer = { size = { 2 0 } }
+							text_single = {
+								text = "[GuiScope.SetRoot(GetPlayer.GetHouse.MakeScope).ScriptValue('clean_family_votes')|0]"
+								minimumsize = { 40 -1 }
+								fontsize = 16
+							}
+						}
+						expand = {}
+					}
+				}
+			}
+		}
+	}
+}
+
+types SenateButtons
+{
+	type button_select_arrow_down = button_icon_custom
+	{
+		size = { 20 20 }
+		texture = "gfx/interface/icons/flat_icons/icon_down.dds"
+	}
+	type button_icon_list_1 = button_icon_custom
+	{
+		texture = "gfx/interface/icons/message_feed/generic_neutral_effect.dds"
+		size = { 25 25 }
+	}
+
+	type button_panel_down = button_standard {
+        size = { 400 33 }
+
+        hbox = {
+            layoutpolicy_horizontal = expanding
+            margin = { 5 0 }
+
+            spacer = {
+                size = { 20 20 }
+            }
+
+            expand = {}
+
+            text_single = {
+                layoutpolicy_horizontal = expanding
+                align = center|nobaseline
+                default_format = "#clickable"
+                autoresize = no
+				fontsize = 24
+
+                block "button_text"{}
+            }
+
+            expand = {}
+
+            button_select_arrow_down = {
+                size = { 20 20 }
+                alwaystransparent = yes
+            }
+        }
+    }
+	type button_panel_down_list_1 = button_standard {
+        size = { 400 30 }
+
+        hbox = {
+            layoutpolicy_horizontal = expanding
+            margin = { 5 0 }
+
+			button_icon_list_1 = {}
+
+            expand = {}
+
+            text_single = {
+                layoutpolicy_horizontal = expanding
+                align = center|nobaseline
+                default_format = "#clickable"
+                autoresize = no
+				fontsize = 20
+
+                block "button_text"{}
+            }
+
+            expand = {}
+
+            button_select_arrow_down = {
+                size = { 20 20 }
+                alwaystransparent = yes
+            }
+        }
+    }
+}
