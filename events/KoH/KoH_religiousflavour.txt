@@ -810,3 +810,312 @@ KoH_religiousflavour.14 = { #Duty-Bound
 		}
 	}
 }
+
+#Waldensians in Lyon
+KoH_religiousflavour.15 = {
+	title = KoH_religiousflavour.15.t
+	desc = KoH_religiousflavour.15.desc
+	theme = faith 
+	override_background = {
+		event_background = market
+	}
+	left_portrait = {
+		character = title:c_lyon.holder
+	}
+	right_portrait = {
+		character = scope:peter
+	}
+
+	immediate = {
+		create_character = {
+			name = "Pèire de Vaudès"
+			female = no
+			dynasty = no
+			trait = heresiarch
+			age = { 40 50 }
+			learning = 18
+			faith = faith:waldensian
+			culture = culture:french
+			save_scope_as = peter
+		}
+
+		title:c_lyon.holder = {
+			save_scope_as = archbishop
+		}
+	}
+
+	option = { 
+		name = KoH_religiousflavour.15.a
+		title:c_provence.holder = {
+			trigger_event = {
+				id = KoH_religiousflavour.16
+				days = { 5 10 }
+			}
+		}
+
+		title:c_savoie.holder = {
+			trigger_event = {
+				id = KoH_religiousflavour.16
+				days = { 5 10 }
+			}
+		}
+	}
+	option = { 
+		name = KoH_religiousflavour.15.b
+		trigger_event = {
+			id = KoH_religiousflavour.17
+			days = { 5 10 }
+		}
+	}
+
+KoH_religiousflavour.16 = {
+	title = KoH_religiousflavour.16.t
+	desc = KoH_religiousflavour.16.desc
+	theme = faith 
+	override_background = {
+		event_background = market
+	}
+
+	immediate = {
+		random_held_title = {
+			limit = { tier = tier_county }
+			save_scope_as = Waldensians_county
+		}
+		
+		scope:Waldensians_county = {
+			set_county_faith = faith:waldensian
+
+			add_county_modifier = {
+				modifier = bastion_of_waldensianism_revolt_risk_modifier
+				years = 20
+			}
+		}
+	}
+
+	option = { 
+		name = KoH_religiousflavour.16.a
+
+		
+	}
+}
+
+KoH_religiousflavour.17 = {
+	title = KoH_religiousflavour.17.t
+	desc = KoH_religiousflavour.17.desc
+	theme = faith 
+	override_background = {
+		event_background = market
+	}
+	left_portrait = {
+		character = scope:archbishop
+	}
+	right_portrait = {
+		character = root
+	}
+
+	immediate = {
+		title:c_lyon.holder = {
+			save_scope_as = archbishop
+		}
+
+	}
+
+	option = { 
+		name = KoH_religiousflavour.17.a
+
+		scope:archbishop = {
+			add_opinion = {
+			target = root
+			modifier = pious_opinion
+			opinion = 10
+			}
+		}
+
+		add_piety = 50 
+
+		trigger_event = {
+			id = KoH_religiousflavour.18
+			days = 3 
+		}
+	}
+
+	option = { 
+		name = KoH_religiousflavour.17.b
+		custom_tooltip = KoH_religiousflavour.17.b.tt
+
+		scope:archbishop = {
+			add_opinion = {
+			target = root
+			modifier = temporal_condemnation_opinion
+			opinion = -30
+			}
+		}
+
+		trigger_event = {
+			id = KoH_religiousflavour.19
+			days = {10 20}
+		}
+	}
+
+	option = { 
+		name = KoH_religiousflavour.17.c
+		custom_tooltip = KoH_religiousflavour.17.c.tt
+
+		scope:archbishop = {
+			set_relation_rival = root
+		}
+
+		set_relation_rival = scope:archbishop
+
+		set_character_faith_with_conversion = faith:waldensian
+		add_piety = major_piety_loss
+		
+		add_internal_flag = dangerous
+
+
+		trigger_event = {
+			id = KoH_religiousflavour.20
+			days = 3 
+		}
+	}
+}
+
+KoH_religiousflavour.18 = {
+	title = KoH_religiousflavour.18.t
+	desc = KoH_religiousflavour.18.desc
+	theme = faith 
+	override_background = {
+		event_background = market
+	}
+
+	immediate = {
+		title:c_forez = {
+			change_development_level = -2
+
+			add_county_modifier = {
+				modifier = Massacre_of_Feurs
+				years = 10
+			}
+		}
+	}
+
+	option = { 
+		name = KoH_religiousflavour.18.a	
+	}
+}
+
+KoH_religiousflavour.19 = {
+	title = KoH_religiousflavour.19.t
+	desc = KoH_religiousflavour.19.desc
+	theme = faith 
+	override_background = {
+		event_background = market
+	}
+
+	immediate = {
+		add_excommunication_actual_effect = yes
+	}
+
+	option = { 
+		name = KoH_religiousflavour.19.a	
+
+		title:c_forez = {
+			set_county_faith = faith:waldensian
+
+			add_county_modifier = {
+				modifier = KOH_Religious_Tolerance
+				years = 20
+			}
+		}
+		set_nickname_effect = { NICKNAME = nick_the_tolerant }
+	}
+}
+
+KoH_religiousflavour.20 = {
+	title = KoH_religiousflavour.20.t
+	desc = KoH_religiousflavour.20.desc
+	theme = faith 
+	override_background = {
+		event_background = market
+	}
+
+	immediate = {
+		add_excommunication_actual_effect = yes
+	}
+
+	option = { 
+		name = KoH_religiousflavour.20.a	
+
+		add_trait = heresiarch
+		add_trait = paragon
+
+		set_nickname_effect = { NICKNAME = nick_the_waldensian }
+
+		add_piety = 1000
+
+		title:c_forez = {
+			set_county_faith = faith:waldensian
+
+			set_county_faith = faith:waldensian
+
+
+			add_county_modifier = {
+				modifier = Birthplace_of_Waldensianism
+				years = 100
+			}
+		}
+
+		title:c_lyon = {
+			set_county_faith = faith:waldensian
+
+
+			add_county_modifier = {
+				modifier = Birthplace_of_Waldensianism
+				years = 100
+			}
+		}
+
+		faith:waldensian = {
+			change_fervor = major_fervor_gain
+		}
+
+		title:c_roma.holder = {
+			add_opinion = {
+				target = root
+				modifier = temporal_condemnation_opinion
+				opinion = -30
+			}
+		}
+		
+		every_ruler = {
+			limit = {
+				AND = {
+					NOT = { this = title:c_forez.holder }
+					has_religion = religion:christianity_religion
+				}
+			}
+			trigger_event = {
+				id = KoH_religiousflavour.21
+				days = { 20 50 }
+			}
+		}
+	}
+}
+
+KoH_religiousflavour.21 = {
+	title = KoH_religiousflavour.21.t
+	desc = KoH_religiousflavour.21.desc
+	theme = faith 
+	override_background = {
+		event_background = market
+	}
+
+	right_portrait = {
+		character = title:c_forez.holder
+	}
+
+	option = { 
+		name = KoH_religiousflavour.21.a	
+	}
+}
+
