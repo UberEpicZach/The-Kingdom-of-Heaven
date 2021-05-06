@@ -86,7 +86,7 @@ KOH_guelphs_ghibellines.1 = { #forming a league
 				add_claim_on_loss = no
 			}
 			scope:new_title = {
-				set_capital_county = root.location
+				set_capital_county = scope:peasant_county
 				generate_coa = yes
 				set_landless_title = yes
 				set_destroy_on_succession = yes
@@ -119,10 +119,6 @@ KOH_guelphs_ghibellines.1 = { #forming a league
 					has_culture_group = culture_group:latin_group
 					NOT = {
 						has_trait = KOH_ghibelline
-						this = root
-						liege = {
-							highest_held_title_tier <= tier_duchy
-						}
 					}
 					OR = {
 						has_trait = KOH_guelph
@@ -216,23 +212,14 @@ KOH_guelphs_ghibellines.3 = { #Join?
 		}
 		resolve_title_and_vassal_change = scope:change
 
-		scope:ruler = {
-			send_interface_message = {
-				type = event_steward_task_good
-				title = "New League Member"
-				desc = "[ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] joins the League"
-				left_icon = root.primary_title
-				right_icon = root
-			}
-		}
+		vassal_contract_set_obligation_level = { type = feudal_government_taxes level = 3 }
 
-		title:e_hre.holder = {
-			send_interface_message = {
-				type = event_generic_bad_text
-				title = "New Lombard League Member"
-				desc = "[ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] joins the Lombard League"
+
+		scope:ruler = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = "[ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] joins the League"
 				left_icon = root
-				right_icon = root.primary_title
 			}
 		}
 
@@ -245,16 +232,6 @@ KOH_guelphs_ghibellines.3 = { #Join?
 				add = 0.75
 				has_trait = cynical
 			}
-			modifier = {
-				add = 10
-				has_trait = KOH_guelph
-			}
-
-			modifier = {
-				add = -20
-				has_trait = KOH_ghibelline
-			}
-
 			modifier = {
 				add = 2
 				has_trait = ambitious
@@ -392,15 +369,6 @@ KOH_guelphs_ghibellines.3 = { #Join?
 			modifier = {
 				add = 2.35
 				has_trait = cynical
-			}
-			modifier = {
-				add = -20
-				has_trait = KOH_guelph
-			}
-
-			modifier = {
-				add = 15
-				has_trait = KOH_ghibelline
 			}
 			modifier = {
 				add = 0.5
