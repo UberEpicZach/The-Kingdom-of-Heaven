@@ -6,6 +6,7 @@ window = {
 
 	allow_outside = yes
 	window_cardinals = {}
+	window_sainthood = {}
 	name = "faith_window"
 	datacontext = "[FaithWindow.GetFaith]"
 	datacontext = "[GetVariableSystem]"
@@ -231,6 +232,18 @@ window = {
 								blockoverride "button_text"
 								{
 									text = "TOGGLE_RELIGION_VIEW"
+								}
+
+							}
+							button_sidepanel_right = {
+								name = "saints_information"
+								tooltip = "View Saints"
+								onclick = "[GetVariableSystem.Toggle('window_sainthood')]"
+								using = tooltip_nw
+
+								blockoverride "button_text"
+								{
+									text = "View Saints"
 								}
 
 							}

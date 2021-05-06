@@ -1,0 +1,26 @@
+﻿become_saint = {
+    save_scope_as = new_saint
+	faith = {
+		add_to_variable_list = {
+			name = faith_saints
+			target = scope:new_saint
+		}
+	}
+	dynasty = {
+		every_dynasty_member = {
+			limit = { is_alive = yes }
+			add_piety = 300
+		}
+	}
+	add_dynasty_prestige_level = 1
+}
+
+remove_saint = {
+	save_scope_as = remove_saint
+	faith = {
+		remove_list_variable = {
+			name = faith_saints
+			target = scope:remove_saint
+		}
+	}
+}
