@@ -832,6 +832,7 @@ KoH_religiousflavour.15 = {
 			female = no
 			dynasty = no
 			trait = heresiarch
+			location = title:c_forez
 			age = { 40 50 }
 			learning = 18
 			faith = faith:waldensian
@@ -867,6 +868,7 @@ KoH_religiousflavour.15 = {
 			days = { 5 10 }
 		}
 	}
+}
 
 KoH_religiousflavour.16 = {
 	title = KoH_religiousflavour.16.t
@@ -976,6 +978,10 @@ KoH_religiousflavour.17 = {
 		trigger_event = {
 			id = KoH_religiousflavour.20
 			days = 3 
+		}
+
+		ai_chance = {
+			base = 80
 		}
 	}
 }
@@ -1096,7 +1102,7 @@ KoH_religiousflavour.20 = {
 			}
 			trigger_event = {
 				id = KoH_religiousflavour.21
-				days = { 20 50 }
+				days = 10
 			}
 		}
 	}
@@ -1112,6 +1118,16 @@ KoH_religiousflavour.21 = {
 
 	right_portrait = {
 		character = title:c_forez.holder
+	}
+
+	immediate = {
+		title:c_forez.holder = {
+			save_scope_as = forez
+		}
+
+		title:c_roma.holder = {
+			save_scope_as = pope
+		}
 	}
 
 	option = { 

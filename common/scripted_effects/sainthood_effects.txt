@@ -7,6 +7,10 @@
 		}
 	}
 	dynasty = {
+		add_dynasty_modifier = {
+			modifier = saintly_bloodline
+			years = 10000
+		}
 		every_dynasty_member = {
 			limit = { is_alive = yes }
 			add_piety = 300
@@ -24,3 +28,383 @@ remove_saint = {
 		}
 	}
 }
+
+#DECIDING SAINT
+
+deciding_upon_saint_effect = {
+	random = {
+		chance = 1
+
+		#Cynical people are less likely to be Canonized
+		modifier = {
+            factor = 0.8
+            has_trait = cynical
+        }
+
+		# Reduced chance for Popes / Antipopes to become Saints
+		modifier = {
+            factor = 0.4
+            OR = {
+				has_title = title:k_papal_state
+				any_claim = { title = title:k_papal_state }
+			}
+		}
+
+		#Have to be a Christian denomination with a potential Religious head, and have been singled out for Beatification
+		modifier = {
+            factor = 0
+            NOR = {
+				NAND = {
+					scope:saint_person = {
+						has_faith = 
+					}
+					scope:saint_person = {
+                        has_faith = faith:catholic
+                    }
+                    scope:saint_person = {
+                        has_faith = faith:fraticelli
+                    }
+                    scope:saint_person = {
+                        has_faith = faith:orthodox
+                    }
+                    scope:saint_person = {
+                        has_faith = faith:iconoclast
+                    }
+                    scope:saint_person = {
+                        has_faith = faith:nestorian
+                    }
+                    scope:saint_person = {
+                        has_faith = faith:miaphysite
+                    }
+                    scope:saint_person = {
+                        has_faith = faith:monophysite
+                    }
+                    scope:saint_person = {
+                        has_faith = faith:monothelite
+                    }
+                    scope:saint_person = {
+                        has_faith = faith:paulician
+                    }
+				}
+				NOT = {
+					scope:saint_person = {
+						has_character_flag = beatified
+					}
+				}
+			}
+		}
+
+		#Religions without a Religious Head cannot Canonize
+		
+		modifier = {
+            factor = 0 
+			scope:saint_person = {
+				faith = {
+					NOT = {
+						exists = faith.religious_head
+					}
+                }
+            }
+        }
+ 		#Eastern Christians have a lower chance of becoming Saints
+		modifier = {
+            factor = 0.8
+            OR = {
+                scope:saint_person = {
+                    has_faith = faith:iconoclast
+                }
+                scope:saint_person = {
+                    has_faith = faith:nestorian
+                }
+                scope:saint_person = {
+                    has_faith = faith:miaphysite
+                }
+                scope:saint_person = {
+                    has_faith = faith:monophysite
+                }
+                scope:saint_person = {
+                    has_faith = faith:monothelite
+                }
+                scope:saint_person = {
+                    has_faith = faith:paulician
+                }
+                scope:saint_person = {
+                    has_faith = faith:orthodox
+                }
+            }
+        }
+		#Players who don't have a saintly bloodline have a higher chance of becoming a Saint
+		modifier = {
+            factor = 2
+			scope:saint_person = {
+				ai = no
+			}
+			NOT = {
+				scope:saint_person = {
+					exists = dynasty
+					dynasty = {
+						has_dynasty_modifier = saintly_bloodline
+					}
+				}
+			}
+		}
+
+		#Positive traits increase your chances of becoming a Saint
+        modifier = {
+            factor = 1.5
+            scope:saint_person = {
+                has_trait = patient
+            }
+        }
+        modifier = {
+            factor = 1.5
+            scope:saint_person = {
+                has_trait = diligent
+            }
+        }
+        modifier = {
+            factor = 1.5
+            scope:saint_person = {
+                has_trait = compassionate
+            }
+        }
+        modifier = {
+            factor = 1.5
+            scope:saint_person = {
+                has_trait = chaste
+            }
+        }
+        modifier = {
+            factor = 1.5
+            scope:saint_person = {
+                has_trait = generous
+            }
+        }
+        modifier = {
+            factor = 1.5
+            scope:saint_person = {
+                has_trait = temperate
+            }
+        }
+        modifier = {
+            factor = 1.5
+            scope:saint_person = {
+                has_trait = humble 
+            }
+        }
+        modifier = {
+            factor = 1.2
+            scope:saint_person = {
+                has_trait = just
+            }
+        }
+		modifier = {
+            factor = 1.2
+            scope:saint_person = {
+                has_trait = crusader
+            }
+        }
+		#Having the bloodline of a Saint severely decrease your chance of becoming a Saint
+		modifier = {
+            factor = 0.2
+			scope:saint_person = {
+				exists = dynasty
+				dynasty = {
+					has_dynasty_modifier = saintly_bloodline
+				}
+			}
+		}
+		#Extra high piety increases your chance of becoming a Saint
+
+		modifier = {
+            factor = 1.2
+            piety = 1000
+        }
+        modifier = {
+            factor = 1.2 
+            piety = 1500
+        }
+        modifier = {
+            factor = 1.2
+            piety = 2000
+        }
+        modifier = {
+            factor = 1.2
+            piety = 2500
+        }
+        modifier = {
+            factor = 1.2
+            piety = 3000
+        }
+        modifier = {
+            factor = 1.2
+            piety = 3500
+        }
+        modifier = {
+            factor = 1.2
+            piety = 4000
+        }
+        modifier = {
+            factor = 1.2
+            piety = 4500
+        }
+        modifier = {
+            factor = 1.2
+            piety = 5000
+        }
+        modifier = {
+            factor = 1.2
+            piety = 5500
+        }
+        modifier = {
+            factor = 1.2
+            piety = 6000
+        }
+        modifier = {
+            factor = 1.2
+            piety = 6500
+        }
+        modifier = {
+            factor = 1.2 
+            piety = 7000
+        }
+        modifier = {
+            factor = 1.2
+            piety = 7500
+        }
+        modifier = {
+            factor = 1.2
+            piety = 8000
+        }
+        modifier = {
+            factor = 1.2
+            piety = 8500
+        }
+        modifier = {
+            factor = 1.2
+            piety = 9000
+        }
+        modifier = {
+            factor = 1.2
+            piety = 9500
+        }
+        modifier = {
+            factor = 1.2
+            piety = 10000
+        }
+
+		#First Saint of a Religion is easier
+		modifier = {
+            factor = 3
+
+			scope:saint_person = {
+				has_faith = faith:iconoclast
+				NOT = {
+					has_global_variable = iconoclast_saint
+				}
+			}
+			scope:saint_person = {
+				has_faith = faith:nestorian
+				NOT = {
+					has_global_variable = nestorian_saint
+				}
+			}
+			scope:saint_person = {
+				has_faith = faith:miaphysite
+				NOT = {
+					has_global_variable = miaphysite_saint
+				}
+			}
+			scope:saint_person = {
+				has_faith = faith:monophysite
+				NOT = {
+					has_global_variable = monophysite_saint
+				}
+			}
+			scope:saint_person = {
+				has_faith = faith:monothelite
+				NOT = {
+					has_global_variable = monothelite_saint
+				}
+			}
+			scope:saint_person = {
+				has_faith = faith:paulician
+				NOT = {
+					has_global_variable = paulician_saint
+				}
+			}
+			scope:saint_person = {
+				has_faith = faith:orthodox
+				NOT = {
+					has_global_variable = orthodox_saint
+				}
+			}
+
+			scope:saint_person = {
+				has_faith = faith:catholic
+				NOT = {
+					has_global_variable = catholic_saint
+				}
+			}
+		}
+
+		random_realm_province.holder.top_liege = {
+			trigger_event = KoH_sainthood.3
+		}
+		change_variable = { name = global_saint_number add = 1 }
+		if = {
+			scope:saint_person = {
+				has_faith = faith:catholic
+			}
+			set_global_variable = catholic_saint
+		}
+		if = {
+			scope:saint_person = {
+				has_faith = faith:orthodox
+			}
+			set_global_variable = orthodox_saint
+		}
+		if = {
+			scope:saint_person = {
+				has_faith = faith:iconoclast
+			}
+			set_global_variable = iconoclast_saint
+		}
+		if = {
+			scope:saint_person = {
+				has_faith = faith:paulician
+			}
+			set_global_variable = paulician_saint
+		}
+		if = {
+			scope:saint_person = {
+				has_faith = faith:monothelite
+			}
+			set_global_variable = monothelite_saint
+		}
+		if = {
+			scope:saint_person = {
+				has_faith = faith:nestorian
+			}
+			set_global_variable = nestorian_saint
+		}
+		if = {
+			scope:saint_person = {
+				has_faith = faith:miaphysite
+			}
+			set_global_variable = miaphysite_saint
+		}
+		if = {
+			scope:saint_person = {
+				has_faith = faith:monophysite
+			}
+			set_global_variable = monophysite_saint
+		}
+	}
+}
+
+add_traits_effect = {
+	set_global_variable = qa_testing
+
+}
+

@@ -1,0 +1,283 @@
+﻿namespace = KoH_sainthood
+
+
+KoH_sainthood.1 = { #sainthood.1
+	title = KoH_sainthood.1.t
+	desc = KoH_sainthood.1.desc
+	hidden = yes
+
+	trigger = {		
+		NOR = {
+			has_trait = excommunicated
+			has_trait = drunkard
+			has_trait = lifestyle_reveler
+			has_trait = cannibal
+			#controls_religion = yes
+            has_faith = faith:waldensian
+            has_trait = kinslayer
+            any_claim = { limit = { title = title:k_papal_state } } # Antipopes
+		}
+		OR = {
+			AND = {
+				highest_held_title_tier = tier_empire
+				piety >= 1250
+			}
+
+			AND = {
+				highest_held_title_tier = tier_kingdom
+				piety >= 1000
+			}
+			AND = {
+				highest_held_title_tier = tier_duchy
+				piety >= 750
+			}
+			AND = {
+				highest_held_title_tier = tier_county
+				piety >= 500
+			}
+		}
+		has_vice_trigger = no
+		has_benevolent_trait_trigger = yes
+		has_virtue_trigger = yes
+		is_adult = yes
+	}
+
+	immediate = {
+		root = {
+			save_scope_as = saint_person
+		}
+		scope:saint_person.capital_province = {
+			save_scope_as = saint_capital
+		}
+
+		random_held_title = {
+			limit = { 
+				tier = tier_county
+				title_province = {
+					NOR = {
+						has_province_modifier = pillaged_tomb_of_a_saint
+						has_province_modifier = tomb_of_a_saint
+					}
+				}
+			}
+			save_scope_as = random_saint_demesne_province
+		}
+		if = {
+			limit = {
+				has_religion = religion:christianity_religion
+			}
+			random_vassal_or_below = {
+				limit = {
+					is_landed = yes
+					is_clergy = yes
+					religion = scope:saint_person
+				}
+				random = {
+                    chance = 100
+					modifier = {
+                        factor = 0.25
+						scope:saint_person = {
+							exists = dynasty
+							dynasty = {
+								has_dynasty_modifier = saintly_bloodline
+							}
+						}
+					}
+					modifier = {
+                        factor = 0.8
+						scope:saint_person = {
+							has_trait = cynical
+						}
+					}
+
+					scoppe:saint_person = {
+                        set_character_flag = beatified
+					}
+					random_realm_province.holder.top_liege = {
+                       trigger_event = KoH_sainthood.2 
+					}
+                }
+			}
+		}
+		#Potential for sainthood
+		deciding_upon_saint_effect = yes
+	}
+}
+
+
+KoH_sainthood.2 = { #Decision if to be Beatified
+	hidden = yes
+	immediate = {
+		if = {
+            limit = {
+                has_global_variable = qa_testing
+            }
+            trigger_event = { id = KoH_sainthood.4 days = 3 }
+        }
+
+		else = {
+			trigger_event = { id = KoH_sainthood.4 days = 180 }
+		}
+	}
+}
+
+KoH_sainthood.3 = { #triggered from the S_effect / Checking time left to Canonization
+	hidden = yes
+
+	immediate = {
+        if = {
+            limit = {
+				has_global_variable = qa_testing
+			}
+			trigger_event = { id = KoH_sainthood.7 days = 5 }
+		}
+		else = {
+			trigger_event = { id = KoH_sainthood.7 days = 1000 }
+		}
+	}			
+}
+
+
+KoH_sainthood.4 = { # HF.40002 Decision has been made to be Beatified / 
+	hidden = yes
+
+	immediate = {
+		limit = {
+			faith = {
+				religious_head = {
+					has_religion = religion:christianity_religion
+				}
+			}
+		}
+		faith = {
+			religious_head = {
+				trigger_event = KoH_sainthood.5
+			}
+		}
+	}
+}
+
+KoH_sainthood.5 = {
+	hidden = yes
+
+	immediate = {
+		scope:saint_person = {
+			add_trait = beatified
+			if = {
+				limit ={
+					is_female = yes
+				}
+				add_charater_flag = BLESSED_Female
+			}
+			else = {
+				add_character_flag = BLESSED_Male
+			}
+		}
+		scope:saint_person = {
+			primary_title.holder = {
+				every_vassal = {
+					trigger_event = KoH_sainthood.6
+				}
+			}
+			exists = dynasty 
+			dynasty = {
+				every_dynasty_member = {
+					trigger_event = KoH_sainthood.6
+				}
+			}
+		}
+		scope:saint_person = {
+			limit = {
+				exists = top_liege
+				top_liege = {
+					trigger_event = KoH_sainthood.6
+				}
+			}
+		}
+	}
+} 
+
+KoH_sainthood.6 = {
+	title = KoH_sainthood.6.t
+	desc = KoH_sainthood.6.desc
+	theme = market
+
+	left_portrait = {
+		character = scope:saint_person
+	}
+
+	option = {
+		name = KoH_sainthood.6.a
+
+		piety = 10
+	}
+}
+
+
+KoH_sainthood.7 = { ##Preparing Canonization
+	hidden = yes
+
+	trigger = {
+        scope:saint_person = {
+			has_trait = beatified
+		}
+	}
+
+	immediate = { 
+		if = {
+            limit = {
+				scope:saint_capital.holder = {
+					has_religion = religion:christianity_religion
+				}
+			}
+			scope:saint_capital.holder.faith.religious_head = {
+				trigger_event = KoH_sainthood.8
+			}
+		}
+		else = {
+			scope:saint_person.faith.religious_head = {
+				trigger_event = KoH_sainthood.8
+			}
+		}
+	}
+
+}
+
+KoH_sainthood.8 = {
+	title = KoH_sainthood.8.t
+	desc = KoH_sainthood.8.desc
+
+	immediate = {
+        save_scope_as = canonizer_person
+    }
+
+	option = {
+		name = KoH_sainthood.8.a
+
+		#Add Miracle Stuff
+
+		every_ruler = {
+			limit = {
+				religion:christianity_religion  
+			}
+			trigger_event = KoH_sainthood.9
+		}
+
+		scope:saint_person = {
+			remove_trait = beatified
+			add_trait = saint	
+			become_saint = yes
+		}
+
+		#Add Pilgrim Stuff
+
+	}
+}
+
+KoH_sainthood.9 = {
+	title = KoH_sainthood.9.t
+	desc = KoH_sainthood.9.desc
+	option = {
+		name = KoH_sainthood.9.a
+	}
+}

@@ -1,0 +1,37 @@
+﻿CardinalCheck = {
+	type = character
+	text = {
+		trigger = {
+			has_trait = trait_koh_cardinal
+		}
+		localization_key = CardinalHolder
+	} 
+	text = {
+		trigger = {
+			highest_held_title_tier = tier_empire
+		}
+		localization_key = emperorbishop
+	}
+	text = {
+		trigger = {
+			highest_held_title_tier = tier_kingdom
+		}
+		localization_key = kingbishop
+	}
+	text = {
+		trigger = {
+			highest_held_title_tier = tier_duchy
+		}
+		localization_key = dukebishop
+	}
+	text = {
+		trigger = {
+			highest_held_title_tier = tier_county
+		}
+		localization_key = countbishop
+	}
+	text = {
+		fallback = yes
+		localization_key = bishop
+	}
+}
