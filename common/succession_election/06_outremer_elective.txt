@@ -1,11 +1,25 @@
 ﻿outremer_elective = {
 	candidates = {
-		add = holder
 		add = {
 			type = holder_close_or_extended_family
 			limit = {
 				this.faith = faith:catholic
 				outremer_elective_potential_candidate_trigger = yes
+				highest_held_title_tier < tier_kingdom
+				NAND = {
+					exists = father.primary_title
+					father = {
+						highest_held_title_tier >= tier_kingdom
+					}
+					father.primary_title.current_heir = this
+				}
+				NAND = {
+					exists = mother.primary_title
+					mother = {
+						highest_held_title_tier >= tier_kingdom
+					}
+					mother.primary_title.current_heir = this
+				}
 			}
 		}
 		add = {
