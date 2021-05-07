@@ -272,6 +272,21 @@
 	holding = none
 }
 
+###c_pset
+3522 = {	#Bihac
+	culture = bosnian
+	religion = bosnian_church
+	holding = castle_holding
+}
+3521 = {	#Krupa
+	holding = none
+	#Fortress built in XIIIth
+}
+3523 = {	#Pset
+	holding = none
+}
+
+##d_lower_bosna ###################################
 ###c_vodica / krajina
 3519 = {	#Vodicevo
 	culture = croatian
@@ -362,20 +377,6 @@
 	#Zvornik fortress built in the XIIth century
 }
 
-###c_pset
-3522 = {	#Bihac
-	culture = bosnian
-	religion = bosnian_church
-	holding = castle_holding
-}
-3521 = {	#Krupa
-	holding = none
-	#Fortress built in XIIIth
-}
-3523 = {	#Pset
-	holding = none
-}
-
 ##d_usora ###################################
 ###c_zachlumia
 466 = {		#Zachlumia
@@ -388,17 +389,6 @@
 		religion = orthodox
 		#Serbs convert in 870
 	}
-}
-3557 = {	#Konjic
-	holding = none
-	#1st mention in 1382
-}
-3559 = {	#Obalj
-	holding = none
-}
-3560 = {	#Gacko
-	holding = none
-	#First mention in 1150
 }
 3561 = {	#Nevesinje
 	holding = none
@@ -414,6 +404,25 @@
 3558 = {	#Mostar
 	holding = city_holding
 	#Used since roman times
+}
+
+###c_zelengora
+3560 = {	#Gacko
+	culture = serbian
+	religion = slavic_pagan
+	holding = castle_holding
+	870.1.1 = {
+		religion = orthodox
+		#Serbs convert in 870
+	}
+	#First mention in 1150
+}
+3557 = {	#Konjic
+	holding = none
+	#1st mention in 1382
+}
+3559 = {	#Obalj
+	holding = none
 }
 
 ###c_zavrsje
@@ -482,5 +491,6 @@
 3569 = {	#Ston
 	holding = city_holding
 	culture = serbian
-	religion = catholic
+	religion = slavic_pagan	
+		870.1.1 = { religion = orthodox }
 }

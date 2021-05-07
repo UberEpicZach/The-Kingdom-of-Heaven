@@ -937,6 +937,7 @@
 
 205740 = {
 	name = "Konstanza" #Constance, duchess of Brittany
+	dna = 205740_constance
 	female = yes
 	dynasty = 317 #House of Penthièvre
 	religion = "catholic"
@@ -946,11 +947,13 @@
 	trait = stubborn
 	trait = administrator
 	trait = education_stewardship_4
-	trait = education_learning_3
 	father = 205741 #Konan IV le Petit
 	mother = 203510 #Marguerite de Huntinton
 	1161.6.12 = {
 		birth = "1161.6.12"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}	
 	}
 	1201.9.5 = {
 		death = "1201.9.5"

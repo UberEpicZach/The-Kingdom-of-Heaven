@@ -132,8 +132,13 @@
 
 209510 = {
 	name = "Teresa" # Mathilde de Portugal
+	dna = 209510_teresa_mathilde
 	female = yes
 	dynasty = 741 # de Bourgogne
+	trait = diligent
+	trait = greedy
+	trait = patient
+	trait = avaricious
 	trait = education_stewardship_4
 	religion = "catholic"
 	culture = "portuguese"
@@ -142,6 +147,9 @@
 	mother = 212672 # Mathilde de Savoie
 	1156.1.1 = {
 		birth = "1156.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1183.8.1 = {
 		name = "Teresa Mathilde"

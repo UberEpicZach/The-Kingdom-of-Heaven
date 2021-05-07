@@ -332,7 +332,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 				father = character:204511
 				dynasty = 106
 				faith = "catholic"
-				culture = "english"
+				culture = "breton"
 				trait = beauty_good_2
 				save_scope_as = arthur
 			}
@@ -359,6 +359,19 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 				death = {
 					death_reason = death_jousting_tournament
 				}
+			}
+			character:205930 = {
+				remove_trait = unwed
+			}
+			character:205740 = {
+				remove_trait = unwed
+				marry = character:205930
+			}
+			
+			create_alliance = {
+				target = character:138035
+				allied_through_owner = character:205740
+				allied_through_target = character:205930
 			}
 
 			character:204510 = {

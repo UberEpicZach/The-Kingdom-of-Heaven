@@ -7595,17 +7595,17 @@
 
 72133 = {
 	name = "SanC_a"
-	dynasty = 395
+	dynasty_house = house_urgell
 	female = yes
 	religion = "catholic"
-	culture = "occitan"
+	culture = "catalan"
 	father = 110550
 	mother = 407
 	1082.1.1 = {
 		birth = "1082.1.1"
 	}
-	1130.1.1 = {
-		death = "1130.1.1"
+	1090.1.1 = {
+		death = "1090.1.1"
 	}
 }
 
@@ -7712,6 +7712,11 @@
 	1158.1.1 = {
 		add_spouse = 205995
 	}
+	1181.1.1 = {
+		effect = {
+			set_designated_heir = character:205988
+		}
+	}
 	1209.10.7 = {
 		death = "1209.10.7"
 	}
@@ -7759,8 +7764,8 @@
 	1160.1.2 = {
 		birth = "1160.1.2"
 	}
-	1193.1.1 = {
-		death = "1193.1.1"
+	1180.1.1 = {
+		death = "1180.1.1"
 	}
 }
 
@@ -7780,6 +7785,9 @@
 	mother = 205990
 	1130.1.1 = {
 		birth = "1130.1.1"
+	}
+	1150.1.1 = {
+		set_designated_heir = character:205980
 	}
 	1207.5.13 = {
 		death = "1207.5.13"
@@ -7809,14 +7817,14 @@
 }
 
 205985 = {
-	name = "GuilhE_m"
-	dynasty = 395
+	name = "Guillem"
+	dynasty_house = house_urgell
 	martial = 8
 	diplomacy = 6
 	intrigue = 6
 	stewardship = 6
 	religion = "catholic"
-	culture = "occitan"
+	culture = "catalan"
 	trait = honest
 	trait = gluttonous
 	trait = education_intrigue_2
@@ -7827,6 +7835,7 @@
 	}
 	1106.1.1 = {
 		add_spouse = 72134
+		dynasty = 395
 	}
 	1129.1.1 = {
 		death = "1129.1.1"
@@ -8776,6 +8785,11 @@
 	mother = 215505 #Eudoxie Comnène
 	1181.1.1 = {
 		birth = "1181.1.1"
+	}
+	1182.1.1 = {
+		effect = {
+			create_betrothal = character:210501
+		}
 	}
 	#1197.12.7 married Bernard IV of Comminges 205560 divorced 1201
 	#1204.6.15 married Pierre II of Aragon 210501
