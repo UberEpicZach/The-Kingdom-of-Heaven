@@ -90,7 +90,7 @@ KoH_sainthood.1 = { #sainthood.1
 						}
 					}
 
-					scoppe:saint_person = {
+					scope:saint_person = {
                         set_character_flag = beatified
 					}
 					random_realm_province.holder.top_liege = {
@@ -107,16 +107,17 @@ KoH_sainthood.1 = { #sainthood.1
 
 KoH_sainthood.2 = { #Decision if to be Beatified
 	hidden = yes
+
 	immediate = {
 		if = {
             limit = {
                 has_global_variable = qa_testing
             }
-            trigger_event = { id = KoH_sainthood.4 days = 3 }
+            trigger_event = { id = KoH_sainthood.4 days = 1 }
         }
 
 		else = {
-			trigger_event = { id = KoH_sainthood.4 days = 180 }
+			trigger_event = { id = KoH_sainthood.4 days = 1 }
 		}
 	}
 }
@@ -132,7 +133,7 @@ KoH_sainthood.3 = { #triggered from the S_effect / Checking time left to Canoniz
 			trigger_event = { id = KoH_sainthood.7 days = 5 }
 		}
 		else = {
-			trigger_event = { id = KoH_sainthood.7 days = 1000 }
+			trigger_event = { id = KoH_sainthood.7 days = 10 }
 		}
 	}			
 }
@@ -258,7 +259,7 @@ KoH_sainthood.8 = {
 
 		every_ruler = {
 			limit = {
-				religion:christianity_religion  
+				religion = religion:christianity_religion  
 			}
 			trigger_event = KoH_sainthood.9
 		}

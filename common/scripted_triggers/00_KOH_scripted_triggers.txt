@@ -127,11 +127,13 @@ has_impious_trait_trigger = {
 }
 
 has_virtue_trigger = {
-	has_trait = chaste
-	has_trait = temperate
-	has_trait = generous
-	has_trait = diligent
-	has_trait = patient
-	has_trait = compassionate
-	has_trait = humble
+	OR = {
+		has_trait = chaste
+		has_trait = temperate
+		has_trait = generous
+		has_trait = diligent
+		has_trait = patient
+		has_trait = compassionate
+		has_trait = humble
+	}
 }

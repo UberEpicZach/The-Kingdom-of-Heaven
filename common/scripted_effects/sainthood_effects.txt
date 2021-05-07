@@ -27,13 +27,14 @@ remove_saint = {
 			target = scope:remove_saint
 		}
 	}
+	
 }
 
 #DECIDING SAINT
 
 deciding_upon_saint_effect = {
 	random = {
-		chance = 1
+		chance = 100
 
 		#Cynical people are less likely to be Canonized
 		modifier = {
@@ -52,45 +53,20 @@ deciding_upon_saint_effect = {
 
 		#Have to be a Christian denomination with a potential Religious head, and have been singled out for Beatification
 		modifier = {
-            factor = 0
-            NOR = {
-				NAND = {
-					scope:saint_person = {
-						has_faith = 
-					}
-					scope:saint_person = {
-                        has_faith = faith:catholic
-                    }
-                    scope:saint_person = {
-                        has_faith = faith:fraticelli
-                    }
-                    scope:saint_person = {
-                        has_faith = faith:orthodox
-                    }
-                    scope:saint_person = {
-                        has_faith = faith:iconoclast
-                    }
-                    scope:saint_person = {
-                        has_faith = faith:nestorian
-                    }
-                    scope:saint_person = {
-                        has_faith = faith:miaphysite
-                    }
-                    scope:saint_person = {
-                        has_faith = faith:monophysite
-                    }
-                    scope:saint_person = {
-                        has_faith = faith:monothelite
-                    }
-                    scope:saint_person = {
-                        has_faith = faith:paulician
-                    }
-				}
-				NOT = {
-					scope:saint_person = {
-						has_character_flag = beatified
-					}
-				}
+			factor = 0
+			scope:saint_person = {
+				has_character_flag = beatified
+			}
+			NOR = {
+					scope:saint_person.faith = faith:catholic
+					scope:saint_person.faith = faith:fraticelli
+					scope:saint_person.faith = faith:orthodox
+					scope:saint_person.faith = faith:iconoclast
+					scope:saint_person.faith = faith:nestorian
+					scope:saint_person.faith = faith:miaphysite
+					scope:saint_person.faith = faith:monophysite
+					scope:saint_person.faith = faith:monothelite
+					scope:saint_person.faith = faith:paulician
 			}
 		}
 
@@ -218,19 +194,19 @@ deciding_upon_saint_effect = {
 
 		modifier = {
             factor = 1.2
-            piety = 1000
+            piety >= 1000
         }
         modifier = {
             factor = 1.2 
-            piety = 1500
+            piety >= 1500
         }
         modifier = {
             factor = 1.2
-            piety = 2000
+            piety >= 2000
         }
         modifier = {
             factor = 1.2
-            piety = 2500
+            piety >= 2500
         }
         modifier = {
             factor = 1.2
@@ -292,6 +268,17 @@ deciding_upon_saint_effect = {
             factor = 1.2
             piety = 10000
         }
+
+		#Level of Piety
+		modifier = {
+			factor = {
+				value = 1
+				add = {
+					add = piety_level
+					multiply = 0.2
+				}
+			}
+		}
 
 		#First Saint of a Religion is easier
 		modifier = {
