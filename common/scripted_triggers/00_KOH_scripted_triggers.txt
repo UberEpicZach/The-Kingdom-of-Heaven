@@ -137,3 +137,13 @@ has_virtue_trigger = {
 		has_trait = humble
 	}
 }
+
+mongol_trigger_koh = {
+	exists = title:e_mongol_empire
+	any_county_in_region = {
+		region = world_daylam
+		holder = {
+			top_liege = title:e_mongol_empire.holder
+		}
+	}
+}
