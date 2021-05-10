@@ -6,9 +6,13 @@
 	religion = armenian_apostolic
 	
 	# History
-	1177.1.1 = {
-		culture = kurdish
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
+	1150.1.1 = { 
 		religion = ashari
+		culture = kurdish
 	}
 	1320.1.1 = { culture = levantine }
 
@@ -22,9 +26,13 @@
 	religion = armenian_apostolic
 	
 	# History
-	1177.1.1 = {
-		culture = kurdish
+		1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
+	1150.1.1 = { 
 		religion = ashari
+		culture = kurdish
 	}
 	1320.1.1 = { culture = levantine }
 
@@ -38,9 +46,13 @@
 	religion = armenian_apostolic
 	
 	# History
-	1177.1.1 = {
-		culture = kurdish
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
+	1150.1.1 = { 
 		religion = ashari
+		culture = kurdish
 	}
 	1320.1.1 = { culture = levantine }
 
@@ -54,9 +66,13 @@
 	religion = armenian_apostolic
 	
 	# History
-	1177.1.1 = {
-		culture = kurdish
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
+	1150.1.1 = { 
 		religion = ashari
+		culture = kurdish
 	}
 	1320.1.1 = { culture = levantine }
 
@@ -70,9 +86,13 @@
 	religion = armenian_apostolic
 	
 	# History
-	1177.1.1 = {
-		culture = kurdish
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
+	1150.1.1 = { 
 		religion = ashari
+		culture = kurdish
 	}
 	1320.1.1 = { culture = levantine }
 
@@ -86,9 +106,13 @@
 	religion = armenian_apostolic
 	
 	# History
-	1177.1.1 = {
-		culture = kurdish
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
+	1150.1.1 = { 
 		religion = ashari
+		culture = kurdish
 	}
 	1320.1.1 = { culture = levantine }
 
@@ -102,9 +126,33 @@
 	religion = armenian_apostolic
 	
 	# History
-	1177.1.1 = {
-		culture = kurdish
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
+	1150.1.1 = { 
 		religion = ashari
+		culture = kurdish
+	}
+	1320.1.1 = { culture = levantine }
+
+}
+
+# 5901 - TALL BASHIR
+5901 = {	# 5901 - Tall Bashir
+	
+	# Misc
+	culture = armenian
+	religion = armenian_apostolic
+	
+	# History
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
+	1150.1.1 = { 
+		religion = ashari
+		culture = kurdish
 	}
 	1320.1.1 = { culture = levantine }
 
@@ -134,6 +182,10 @@
 	religion = orthodox
 	
 	# History
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
 	1268.1.1 = { culture = levantine }
 	1268.1.1 = { religion = ashari }
 
@@ -147,6 +199,10 @@
 	religion = orthodox
 	
 	# History
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
 	1268.1.1 = { culture = levantine }
 	1268.1.1 = { religion = ashari }
 
@@ -158,8 +214,13 @@
 	# Misc
 	culture = greek
 	religion = orthodox
+	holding = city_holding
 	
 	# History
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
 	1268.1.1 = { culture = levantine }
 	1268.1.1 = { religion = ashari }
 
@@ -206,6 +267,10 @@
 	religion = orthodox
 	
 	# History
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
 	1268.1.1 = { culture = levantine }
 	1268.1.1 = { religion = ashari }
 
@@ -231,6 +296,10 @@
 			hunting_grounds_01
 		}
 	}
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
 	1268.1.1 = { culture = levantine }
 	1268.1.1 = { religion = christian }
 
@@ -244,6 +313,10 @@
 	religion = orthodox
 	
 	# History
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
 	1268.1.1 = { culture = levantine }
 	1268.1.1 = { religion = ashari }
 
@@ -257,6 +330,10 @@
 	religion = orthodox
 	
 	# History
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
 	1268.1.1 = { culture = levantine }
 	1268.1.1 = { religion = ashari }
 
@@ -268,8 +345,10 @@
 	# Misc
 	culture = levantine
 	religion = orthodox
+	holding = castle_holding
 	
 	# History
+	1140.1.1 = { religion = nizari }
 	1271.1.1 = { religion = ashari }
 
 }
@@ -282,8 +361,7 @@
 	religion = orthodox
 	
 	# History
-	1271.1.1 = { religion = ashari }
-
+	1081.1.1 = { religion = ashari }
 }
 
 # 5916 - ANTARTUS
@@ -316,10 +394,12 @@
 	
 	# Misc
 	culture = levantine
-	religion = orthodox
+	religion = hellenic_pagan
+	holding = castle_holding
 	
 	# History
-	867.1.1 = {
+	636.1.1 = {
+		religion = ashari
 		buildings = {
 			common_tradeport_01
 			military_camps_01
@@ -332,8 +412,15 @@
 			watchtowers_01
 		}
 	}
-	1295.1.1 = { religion = ashari }
-
+	1099.7.22 = { 
+		religion = catholic 
+		culture = outremer
+		buildings = { castle_03 }
+	}
+	1289.1.1 = { 
+		religion = ashari 
+		culture = levantine
+	}
 }
 
 # 5919 - BEIRUT
@@ -342,22 +429,38 @@
 	# Misc
 	culture = levantine
 	religion = orthodox
+	holding = castle_holding
 	
 	# History
-	holding = castle_holding
+	636.1.1 = { religion = ashari }
+	1099.7.22 = { 
+		religion = catholic 
+		culture = outremer
+	}
+	1289.1.1 = { 
+		religion = ashari 
+		culture = levantine
+	}
 
 }
 
 # 5920 - SAIDA
-5920 = {	# 5920 - Saida
+5920 = {	# 5920 - Saida #Sidon
 	
 	# Misc
 	culture = levantine
-	religion = orthodox
+	religion = ashari
+	holding = city_holding
 	
 	# History
-	holding = city_holding
-
+	1100.1.1 = {
+		religion = catholic 
+		culture = outremer
+	}
+	1260.1.1 = {
+		culture = levantine
+		religion = ashari
+	}
 }
 
 # 5923 - NAWA
@@ -493,6 +596,14 @@
 	religion = orthodox
 	
 	# History
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
+	1140.1.1 = { 
+		religion = nizari
+		culture = levantine
+	}
 	1271.1.1 = { religion = ashari }
 
 }
@@ -526,6 +637,15 @@
 	religion = orthodox
 	
 	# History
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
+	1140.1.1 = { 
+		religion = nizari
+		culture = levantine
+	}
+	1140.1.1 = { religion = nizari }
 	1271.1.1 = { religion = ashari }
 
 }
@@ -538,6 +658,15 @@
 	religion = orthodox
 	
 	# History
+	1098.1.1 = {
+		culture = outremer
+		religion = catholic
+	}
+	1140.1.1 = { 
+		religion = nizari
+		culture = levantine
+	}
+	1140.1.1 = { religion = nizari }
 	1271.1.1 = { religion = ashari }
 
 }
@@ -776,5 +905,13 @@
 	religion = orthodox
 	
 	# History
-
+	636.1.1 = { religion = ashari }
+	1099.7.22 = { 
+		religion = catholic 
+		culture = outremer
+	}
+	1289.1.1 = { 
+		religion = christian
+		culture = levantine
+	}
 }
