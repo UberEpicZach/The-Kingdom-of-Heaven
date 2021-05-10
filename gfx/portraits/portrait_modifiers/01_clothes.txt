@@ -8585,8 +8585,9 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 151
-				is_male = yes
+				is_male = yes 
 				age >= 18
+				has_religion = religion:christianity_religion
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
@@ -8711,6 +8712,7 @@ clothes = {
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
+				     has_religion = religion:christianity_religion
 				AND = {
 					OR = {
 						liege = { has_primary_title = title:k_england }
@@ -9045,6 +9047,7 @@ clothes = {
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
+				has_religion = religion:christianity_religion
 				AND = {
 					OR = {
 						liege = { has_primary_title = title:d_antioch }
