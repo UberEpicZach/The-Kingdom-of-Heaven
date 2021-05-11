@@ -138,12 +138,38 @@ has_virtue_trigger = {
 	}
 }
 
-mongol_trigger_koh = {
-	exists = title:e_mongol_empire
-	any_county_in_region = {
-		region = world_daylam
-		holder = {
-			top_liege = title:e_mongol_empire.holder
+assassins_mongol_trigger_koh = {
+    NOT = { exists = global_var:mongols_provoke_assassins }
+    exists = title:d_hashshashin.holder
+    title:d_hashshashin.holder = {
+        has_government = holy_order_county_government
+    }
+	OR = {
+		AND = {
+			exists = title:e_mongol_empire
+			character_is_realm_neighbor = title:e_mongol_empire.holder
+		}
+		AND = {
+			exists = title:e_ilkhanate
+			character_is_realm_neighbor = title:e_ilkhanate.holder
+		}
+	}
+}
+
+assassins_ayyubid_trigger_koh = {
+    NOT = { exists = global_var:ayyubids_provoke_assassins }
+    exists = title:d_hashshashin.holder
+    title:d_hashshashin.holder = {
+        has_government = holy_order_county_government
+    }
+	OR = {
+		AND = {
+			exists = title:e_arabia
+			character_is_realm_neighbor = title:e_arabia.holder
+		}
+		AND = {
+			exists = title:k_syria
+			character_is_realm_neighbor = title:k_syria.holder
 		}
 	}
 }
