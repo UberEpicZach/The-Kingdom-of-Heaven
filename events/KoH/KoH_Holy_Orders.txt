@@ -1114,65 +1114,97 @@ KoH_holy_orders.102 = {
 	}
 }
 
+# create_dynamic_title = {
+# 	tier = kingdom
+# 	name = "Hashshashin Order"
+# }
+# create_title_and_vassal_change = {
+# 	type = created
+# 	save_scope_as = change
+# 	add_claim_on_loss = no
+# }
+# scope:new_title = {
+# 	set_capital_county = scope:peasant_county
+# 	set_landless_title = yes
+# 	set_delete_on_destroy = yes
+# 	set_no_automatic_claims = yes
+# 	set_definitive_form = yes
+# 	set_can_be_named_after_dynasty = no
+# 	change_title_holder = {
+# 		holder = title:d_hashshashin.holder
+# 		change = scope:change
+# 	}
+# }
+# resolve_title_and_vassal_change = scope:change
+# scope:new_title = { generate_coa = religious_title }
+
 KoH_holy_orders.103 = {
 	type = character_event
 	title = KoH_holy_orders.103.t
 	desc = KoH_holy_orders.103.d
 	theme = war
-	hidden = yes
 	
-
 	left_portrait = {
 		character = root
 		animation = personality_bold
 	}
 	
 	immediate = {
-			every_living_character = {
-				limit = {
-					any_held_title = {
-						this = title:d_hashshashin.holder
+
+		# every_living_character = {
+		# 	limit = {
+		# 		any_held_title = {
+		# 			this = title:d_hashshashin
+		# 		}
+		# 	}
+		# 	save_scope_as = leader
+		# }
+
+		create_character = {
+			template = holy_order_leader_character
+			location = title:b_artah.title_province
+			save_scope_as = leader
+		}
+
+		create_holy_order = {
+			leader = scope:leader
+			capital = title:b_artah
+			save_scope_as = assassin_holy_order
+		}
+
+		hidden_effect = {
+			if = {
+				limit = { NOT = { title:b_artah.holder = scope:leader } }
+				create_title_and_vassal_change = {
+					type = leased_out
+					save_scope_as = change
+					add_claim_on_loss = no
+				}
+				title:b_artah = {
+					change_title_holder_include_vassals = {
+						holder = scope:leader
+						change = scope:change
 					}
 				}
-				save_scope_as = leader
+				resolve_title_and_vassal_change = scope:change
 			}
+		}
 
-		create_dynamic_title = {
-			tier = kingdom
-			name = "Hashshashin Order"
-		}
-		create_title_and_vassal_change = {
-			type = created
-			save_scope_as = change
-			add_claim_on_loss = no
-		}
-		scope:new_title = {
-			set_capital_county = scope:peasant_county
-			set_landless_title = yes
-			generate_coa = yes
-			set_delete_on_destroy = yes
-			set_no_automatic_claims = yes
-			set_definitive_form = yes
-			set_can_be_named_after_dynasty = no
-			change_title_holder = {
-				holder = title:d_hashshashin.holder
-				change = scope:change
+		hidden_effect = {
+			scope:leader = {
+				add_gold = 100 #So that they have some money to lend out
+				add_piety_level = 2
+				add_gold = holy_order_starting_gold
+				every_courtier = {
+					add_trait = order_member
+				}
 			}
 		}
-		resolve_title_and_vassal_change = scope:change
 	}
 	
 	option = {
 		name = KoH_holy_orders.103.a
 
-		hidden_effect = {
-			if = {
-				limit = { NOT = { title:b_ar-rikha.holder = scope:leader } }
-				get_title = b_ar-rikha
-				add_piety_level = 3
-				add_piety_level = 1000
-				add_prestige = 1000
-			}
-		}
+
 	}
 }
