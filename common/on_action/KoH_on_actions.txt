@@ -122,6 +122,17 @@ KOH_holy_orders = {
 				}
 			}
 		}
+		character:227012 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.103 #Assassin Buffs
+					days = -1
+				}
+			}
+		}
 	}
 }
 

@@ -338,46 +338,20 @@ KoH_hashshashin.11 = { #num_sinful_traits
 
 	immediate = {
 		save_scope_as = assassintarget
+
+		title:d_hashshashin.holder = {
+			random_courtier = {
+				limit = {
+					has_trait = order_member
+				}
+				save_scope_as = assassin
+			} 
+		}
 	}
 
 	option = {
 		name = KoH_hashshashin.10.a
 
-		duel = {
-			target = scope:sneaky_person
-			skill = intrigue
-			12 = {		
-				desc = intrigue_scheming.2102.a.tt
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = 0.5
-				}
-				custom_tooltip = intrigue_scheming.2102.a.tt
-				send_interface_toast = {
-					left_icon = scope:sneaky_person
-					title = intrigue_scheming.2102.a.tt
-				}
-				add_character_flag = {
-					flag = not_noticed
-					days = 80
-				}
-			}
-			12 = {		
-				desc = intrigue_scheming.2102.b.tt
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = -0.5
-				}
-				custom_tooltip = intrigue_scheming.2102.b.tt
-				send_interface_toast = {
-					left_icon = scope:sneaky_person
-					title = intrigue_scheming.2102.b.tt
-				}
-				add_character_flag = {
-					flag = noticed
-					days = 80
-				}
-			}
 		}
 
 		scope:assassintarget = {
