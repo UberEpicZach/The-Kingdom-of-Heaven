@@ -66,9 +66,11 @@ KoH_byzantinecrisis.1 = {
 		name = KoH_byzantinecrisis.1.a
 
 		hidden_effect = {
-			trigger_event = {
-				id = KoH_byzantinecrisis.2
-				days = 40
+			title:e_byzantium.holder = {
+				trigger_event = {
+					id = KoH_byzantinecrisis.2
+					days = 40
+				}
 			}		
 		}
 	}
@@ -121,11 +123,12 @@ KoH_byzantinecrisis.2 = {
 			}
 		}
 
-		trigger_event = {
+		title:e_byzantium.holder = {
+			trigger_event = {
 				id = KoH_byzantinecrisis.3
 				days = 30
+			}
 		}
-
 	}
 
 	option = {
@@ -160,7 +163,7 @@ KoH_byzantinecrisis.3 = { #Norman
 					}
 				}
 			save_scope_as = ByzantineEmperor
-				}
+			}
 
 			scope:ByzantineEmperor = {
 				get_title = k_epirus
@@ -173,20 +176,22 @@ KoH_byzantinecrisis.3 = { #Norman
 					}
 				}
 			save_scope_as = NormanKing
-				}
+			}
 		}
 
 	option = {
 		name = KoH_byzantinecrisis.3.a
 
-		trigger_event = {
-			id = KoH_byzantinecrisis.4
-			days = 91
-		}
+		title:e_byzantium.holder = {
+			trigger_event = {
+				id = KoH_byzantinecrisis.4
+				days = 91
+			}
 
-		trigger_event = {
-			id = KoH_byzantinecrisis.6
-			days = 182
+			trigger_event = {
+				id = KoH_byzantinecrisis.6
+				days = 182
+			}
 		}
 
 		scope:NormanKing = {
@@ -266,7 +271,7 @@ KoH_byzantinecrisis.4 = { #Bulgarian
 	option = {
 		name = KoH_byzantinecrisis.4.a
 
-		trigger_event = KoH_byzantinecrisis.50
+		title:e_byzantium.holder = { trigger_event = KoH_byzantinecrisis.50 }
 
 		character:217501 = {
 			get_title = c_turnovo

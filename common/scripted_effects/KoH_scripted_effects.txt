@@ -1,30 +1,32 @@
-﻿hidden_effect = {
-    remove_character_modifier = chivalry
-    remove_character_modifier = chivalry_1
-    remove_character_modifier = chivalry_2
-    remove_character_modifier = chivalry_3
-    remove_character_modifier = chivalry_4
-    remove_character_modifier = chivalry_5
-    remove_character_modifier = chivalry_6
-    remove_character_modifier = chivalry_7
-    remove_character_modifier = chivalry_8
-    remove_character_modifier = chivalry_9
-    remove_character_modifier = chivalry_10
-}
-switch = {
-    trigger = var:Chivalry # Why is this capitalized? T_T
-    1 = { add_character_modifier = chivalry_1 }
-    2 = { add_character_modifier = chivalry_2 }
-    3 = { add_character_modifier = chivalry_3 }
-    4 = { add_character_modifier = chivalry_4 }
-    5 = { add_character_modifier = chivalry_5 }
-    6 = { add_character_modifier = chivalry_6 }
-    7 = { add_character_modifier = chivalry_7 }
-    8 = { add_character_modifier = chivalry_8 }
-    9 = { add_character_modifier = chivalry_9 }
-    10 = { add_character_modifier = chivalry_10 }
+﻿change_chivalry_effect = {
+	hidden_effect = {
+		remove_character_modifier = chivalry
+		remove_character_modifier = chivalry_1
+		remove_character_modifier = chivalry_2
+		remove_character_modifier = chivalry_3
+		remove_character_modifier = chivalry_4
+		remove_character_modifier = chivalry_5
+		remove_character_modifier = chivalry_6
+		remove_character_modifier = chivalry_7
+		remove_character_modifier = chivalry_8
+		remove_character_modifier = chivalry_9
+		remove_character_modifier = chivalry_10
+	}
+	switch = {
+		trigger = var:Chivalry # Why is this capitalized? T_T
+		1 = { add_character_modifier = chivalry_1 }
+		2 = { add_character_modifier = chivalry_2 }
+		3 = { add_character_modifier = chivalry_3 }
+		4 = { add_character_modifier = chivalry_4 }
+		5 = { add_character_modifier = chivalry_5 }
+		6 = { add_character_modifier = chivalry_6 }
+		7 = { add_character_modifier = chivalry_7 }
+		8 = { add_character_modifier = chivalry_8 }
+		9 = { add_character_modifier = chivalry_9 }
+		10 = { add_character_modifier = chivalry_10 }
 
-    fallback = { add_character_modifier = chivalry }
+		fallback = { add_character_modifier = chivalry }
+	}
 }
 
 add_my_faction ={
@@ -191,8 +193,6 @@ KOH_HungaryHungary = {
 		resolve_title_and_vassal_change = scope:change
 	}
 }
-	
-
 
 KOH_Saladin_Jihad = {
 	
@@ -412,5 +412,61 @@ scripted_effect_popethingevent = {
 	random_in_list = {
 	   list = custom_list_name
 	   save_scope_as = player_two
+	}
+}
+
+give_assassins_castle = {
+	title:b_alamut.province = { 
+		if = {
+			limit = {
+				NOT = { has_building_or_higher = building_temple_03 }
+			}
+			# If it doesn't have a free building slot, give it one.
+			if = {
+				limit = { free_building_slots = 0 }
+				add_building_slot = 1
+			}
+			# Add the building.
+			add_building = building_temple_03
+		}
+		# Barracks.
+		if = {
+			limit = {
+				NOT = { has_building_or_higher = building_pastures_01 }
+			}
+			# If it doesn't have a free building slot, give it one.
+			if = {
+				limit = { free_building_slots = 0 }
+				add_building_slot = 1
+			}
+			# Add the building.
+			add_building = building_pastures_01
+		}
+		# Military Camps.
+		if = {
+			limit = {
+				NOT = { has_building_or_higher = building_curtain_walls_08 }
+			}
+			# If it doesn't have a free building slot, give it one.
+			if = {
+				limit = { free_building_slots = 0 }
+				add_building_slot = 1
+			}
+			# Add the building.
+			add_building = building_curtain_walls_08
+		}
+
+		if = {
+			limit = {
+				NOT = { has_building_or_higher = building_military_camps_07 }
+			}
+			# If it doesn't have a free building slot, give it one.
+			if = {
+				limit = { free_building_slots = 0 }
+				add_building_slot = 1
+			}
+			# Add the building.
+			add_building = building_military_camps_07
+		}
 	}
 }
