@@ -311,35 +311,6 @@
 		}
 	}
 
-	stadholder_succession_law = {
-		can_keep = {
-			#has_flag = forced_into_stadholder
-		}
-		can_pass = {
-			#has_flag = forced_into_stadholder
-		}
-		can_have = {
-			#has_flag = forced_into_stadholder
-		}
-		should_start_with = {
-			has_government = CKU_governor_government
-		}
-		succession = {
-			order_of_succession = election
-			election_type = governor_elective
-		}
-		flag = forced_into_stadholder
-		modifier = {
-			direct_vassal_opinion = 10
-		}
-		pass_cost = {
-			prestige = change_succession_law_prestige_cost
-		}
-		ai_will_do = {
-			value = 0
-		}
-	}
-
 	bishop_theocratic_succession_law = {
 		can_keep = {
 			can_have_bishop_theocratic_succession_law_trigger = yes # same as can_have
@@ -418,8 +389,10 @@
 			has_government = republic_government
 		}
 		succession = {
-			order_of_succession = generate
-			pool_character_config = pool_city_succession
+			order_of_succession = inheritance
+			traversal_order = children
+			rank = oldest
+			title_division = single_heir
 		}
 	}
 

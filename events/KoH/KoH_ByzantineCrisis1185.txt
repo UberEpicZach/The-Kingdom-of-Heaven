@@ -271,8 +271,6 @@ KoH_byzantinecrisis.4 = { #Bulgarian
 	option = {
 		name = KoH_byzantinecrisis.4.a
 
-		title:e_byzantium.holder = { trigger_event = KoH_byzantinecrisis.50 }
-
 		character:217501 = {
 			get_title = c_turnovo
 			get_title = c_kran
@@ -374,6 +372,8 @@ KoH_byzantinecrisis.4 = { #Bulgarian
 			get_title = c_constanta
 	
 		}
+
+		title:k_bulgaria.holder = { trigger_event = KoH_byzantinecrisis.50 }
 	}
 }
 
@@ -1291,9 +1291,9 @@ KoH_byzantinecrisis.12 = {
 	option = {
 		name = KoH_byzantinecrisis.12.a
 	
-		character:215529 = { 
-			set_designated_heir = character:215500
-		}
+		add_realm_law_skip_effects = single_heir_succession_law
+
+		title:e_byzantium.holder = { set_designated_heir = character:215500 }
 
 		set_player_character = character:215500
 
