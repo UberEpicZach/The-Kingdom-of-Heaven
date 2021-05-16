@@ -124,7 +124,6 @@ KoH_byzantinecrisis.2 = {
 		trigger_event = {
 				id = KoH_byzantinecrisis.3
 				days = 30
-			
 		}
 
 	}
@@ -196,7 +195,7 @@ KoH_byzantinecrisis.3 = { #Norman
 				target = scope:ByzantineEmperor
 				target_title = title:k_epirus
 				claimant = scope:NormanKing
-				}
+			}
 			
 			add_gold = 1000
 
@@ -267,10 +266,7 @@ KoH_byzantinecrisis.4 = { #Bulgarian
 	option = {
 		name = KoH_byzantinecrisis.4.a
 
-		trigger_event = {
-			id = KoH_byzantinecrisis.50
-			days = 1
-		}
+		trigger_event = KoH_byzantinecrisis.50
 
 		character:217501 = {
 			get_title = c_turnovo
@@ -400,8 +396,8 @@ KoH_byzantinecrisis.50 = { #Bulgarian
 					this = title:d_philippopolis
 				}
 			}
-		save_scope_as = ByzantineEmperor
-			}
+			save_scope_as = ByzantineEmperor
+		}
 
 		every_ruler = {
 			limit = {
@@ -418,11 +414,10 @@ KoH_byzantinecrisis.50 = { #Bulgarian
 
 		character:217501 = {
 			start_war = {
-				casus_belli = claim_cb
-				target = scope:ByzantineEmperor
-				target_title = title:d_philippopolis
-				claimant = scope:Bulgarian
-			}
+                cb = individual_duchy_de_jure_cb
+                target = title:e_byzantium.holder
+                target_title = title:d_philippopolis
+            }
 		}
 	}
 }
@@ -604,7 +599,7 @@ KoH_byzantinecrisis.6 = {
 
 		scope:Thessalonkia = {
 			add_opinion = {
-				modifier = raided_me
+				modifier = raided_me_opinion
 				opinion = -130
 				target = scope:Emperor
 			}
@@ -706,7 +701,6 @@ KoH_byzantinecrisis.7 = {
 			start_scheme = {
 				target = scope:Angelos
 				type = murder
-				save_scope_as = scheme
 			}
 
 			hidden_effect = {
@@ -770,8 +764,8 @@ KoH_byzantinecrisis.8 = { #Arrest Council
 				save_scope_as = change
 				add_claim_on_loss = no
 			}
+
 			scope:new_title = {
-				set_capital_county = scope:peasant_county
 				generate_coa = yes
 				set_landless_title = yes
 				set_destroy_on_succession = yes
