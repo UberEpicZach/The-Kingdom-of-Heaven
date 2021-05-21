@@ -81,7 +81,11 @@ chivalry.2 = {
 	trigger = {
 		OR = {
 			martial = 10
-			var:Chivalry >= 3
+			AND = {
+				exists = var:Chivalry
+				var:Chivalry >= 3
+			}
+			
 		}
 	}
 
@@ -448,7 +452,7 @@ chivalry.9 = {
 	option = {
 		name = chivalry.9.a
 		
-		scope:town_scope = {
+		scope:town_scope.title_province = {
 			add_county_modifier = {
 				modifier = koh_did_not_hunt_beast 
 				years = 5

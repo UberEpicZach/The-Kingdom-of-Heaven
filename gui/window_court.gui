@@ -5,7 +5,6 @@ window = {
 	movable = no
 	allow_outside = yes
 
-	datacontext = "[GetScriptedGui('artifacts_gui_toggle')]"
 	visible = "[And(IsGameViewOpen('court_window'), Not(ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 	
 	using = Window_Size_MainTab

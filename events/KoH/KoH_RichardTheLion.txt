@@ -240,15 +240,17 @@ KoH_RichardTheLionheart.101 = { #Henry Event
 	}
 	
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart..101}
+		NOT = { has_character_flag = had_event_RichardTheLionheart.101}
 		character:204500 = { is_alive = yes }
 	}
 
 	option = {
 		name = KoH_RichardTheLionheart.101.a
-		custom_tooltip = KoH_RichardTheLionheart..101.a.tt
+		custom_tooltip = KoH_RichardTheLionheart.101.a.tt
 		
 		hidden_effect = {
+
+			add_character_flag = had_event_RichardTheLionheart
 			
 			character:204511 = {
 
@@ -323,6 +325,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 			4 = { custom_description = { text = "You will lose the Joust but survive untouched" } }
 			1 = { custom_description = { text = "You may suffer injuries or even face death" } }
 		}
+		
 		hidden_effect = {
 			create_character = {
 				name = "Arthur"
@@ -338,7 +341,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 			}
 
 			character:205740 = {
-				 	add_trait = unwed
+				add_trait = unwed
 			}
 
 			scope:arthur = {
@@ -375,143 +378,156 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 			}
 
 			character:204510 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = {
+						id = KoH_RichardTheLionheart.2
+					}
 				}
 			}
 	
 			character:204500 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.202
-					days = 5
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event =  KoH_RichardTheLionheart.2
+					
+					trigger_event = {
+						id = KoH_RichardTheLionheart.202
+						days = 5
+					}
 				}
 			}
 	
 			character:205730 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-				
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+					
+					}
 				}
 			}
 	
 			character:204516 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-					
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+						
+					}
 				}
 			}
 	
 			character:204509 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-					
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+					}
 				}
 			}
 	
 			character:204512 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-				
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+					
+					}
 				}
 			}
 	
 			character:204513 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-				
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+					
+					}
 				}
 			}
 	
 			character:204514 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-					
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+						
+					}
 				}
 			}
 	
 			character:204517 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-					
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+						
+					}
 				}
 			}
 	
 			character:204630 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-				
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+					
+					}
 				}
 			}
 	
 			character:204499 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-				
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+					
+					}
 				}
 			}
 	
 			character:205740 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-				
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+					
+					}
 				}
 			}
 	
 			character:204502 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-					
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+						
+					}
 				}
 			}
 			character:205506 = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_RichardTheLionheart.2
-				
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					trigger_event = KoH_RichardTheLionheart.2
+					}
 				}
 			}
 		}
@@ -566,6 +582,7 @@ KoH_RichardTheLionheart.202 = { #Henry makes action against Brittney
 	title = KoH_RichardTheLionheart.202.t
 	desc = KoH_RichardTheLionheart.202.d
 	theme = mental_health
+
 	override_background = {
 		event_background = bedchamber
 	}
@@ -578,17 +595,20 @@ KoH_RichardTheLionheart.202 = { #Henry makes action against Brittney
 		character = character:205506
 		animation = grief
 	}
+
 	trigger = {
-			character:204511 = { is_alive = yes }
-			character:205506 = { is_alive = yes }
-			character:205506 = { is_local_player = no }
-			NOT = { has_character_flag = had_event_RichardTheLionheart.202 }
+			# character:204511 = { is_alive = yes }
+			# character:205506 = { is_alive = yes }
+			# character:205506 = { is_local_player = no }
+			# NOT = { has_character_flag = had_event_RichardTheLionheart.202 }
 	}
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_RichardTheLionheart.202
 		}
 	}
+
 	option = {
 		name = KoH_RichardTheLionheart.202.a
 		custom_tooltip = KoH_RichardTheLionheart.202.a.tt
@@ -619,6 +639,7 @@ KoH_RichardTheLionheart.202 = { #Henry makes action against Brittney
 			}
 		}
 	}
+
 	option = {
 		name = KoH_RichardTheLionheart.202.b
 		custom_tooltip = KoH_RichardTheLionheart.202.b.tt
@@ -735,7 +756,7 @@ KoH_RichardTheLionheart.3 = {
 			}
 			25 = {
 				create_alliance = scope:castille_ruler
-				scope:toulouse_ruler = {
+				scope:castille_ruler = {
 					add_opinion = {
 						target = character:204510
 						modifier = perk_negotiated_alliance_opinion

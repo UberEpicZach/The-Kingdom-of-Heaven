@@ -173,3 +173,41 @@ assassins_ayyubid_trigger_koh = {
 		}
 	}
 }
+
+sainthood_event1trigger = {
+	NOR = {
+		has_trait = excommunicated
+		has_trait = drunkard
+		has_trait = lifestyle_reveler
+		has_trait = cannibal
+		#controls_religion = yes
+		has_faith = faith:waldensian
+		has_trait = kinslayer
+	}
+
+	NOT =  { has_claim_on  =  title:k_papal_state } # Antipopes
+
+	OR = {
+		AND = {
+			highest_held_title_tier = tier_empire
+			piety >= 1250
+		}
+
+		AND = {
+			highest_held_title_tier = tier_kingdom
+			piety >= 1000
+		}
+		AND = {
+			highest_held_title_tier = tier_duchy
+			piety >= 750
+		}
+		AND = {
+			highest_held_title_tier = tier_county
+			piety >= 500
+		}
+	}
+	has_vice_trigger = no
+	has_benevolent_trait_trigger = yes
+	has_virtue_trigger = yes
+	is_adult = yes
+}

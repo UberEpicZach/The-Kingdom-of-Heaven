@@ -10,7 +10,6 @@ window = {
 	layer = windows_layer
 	movable = no
 	
-	datacontext = "[GetScriptedGui('artifacts_gui_toggle')]"
 	visible = "[And(IsGameViewOpen('council_window'), Not(ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 
 	using = Window_Size_MainTab
