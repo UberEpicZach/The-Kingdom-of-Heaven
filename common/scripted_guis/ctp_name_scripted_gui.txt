@@ -13,3 +13,17 @@
 		}
 	}
 }
+
+faith_has_male_saints = {
+	scope = character
+	is_shown = {
+		faith = {
+			has_variable_list = faith_saints
+			any_in_list = {
+				variable = faith_saints
+				limit = { is_male = yes }
+				exists = this
+			}
+		}
+	}
+}
