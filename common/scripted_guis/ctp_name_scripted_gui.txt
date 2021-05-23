@@ -1,0 +1,15 @@
+﻿random_saint_name = {
+	scope = character
+	effect = {
+		hidden_effect = {
+			faith = {
+				random_in_list = {
+					variable = faith_saints
+					limit = { is_male = yes }
+					save_temporary_scope_as = named_saint
+				}
+			}
+			change_first_name = scope:named_saint
+		}
+	}
+}
