@@ -1,16 +1,14 @@
 ﻿random_saint_name = {
 	scope = character
 	effect = {
-		hidden_effect = {
-			faith = {
-				random_in_list = {
-					variable = faith_saints
-					limit = { is_male = yes }
-					save_temporary_scope_as = named_saint
-				}
+		faith = {
+			random_in_list = {
+				variable = faith_saints
+				limit = { is_male = yes }
+				save_temporary_scope_as = named_saint
 			}
-			change_first_name = scope:named_saint
 		}
+		change_first_name = { template_character = scope:named_saint }
 	}
 }
 
@@ -21,7 +19,7 @@ faith_has_male_saints = {
 			has_variable_list = faith_saints
 			any_in_list = {
 				variable = faith_saints
-				limit = { is_male = yes }
+				is_male = yes
 				exists = this
 			}
 		}
