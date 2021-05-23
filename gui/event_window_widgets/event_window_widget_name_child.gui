@@ -109,10 +109,10 @@ vbox = {
 	
 		event_button_round = {
 			visible = "[And( Not( Character.IsFemale ), GetScriptedGui('faith_has_male_saints').IsShown(GuiScope.SetRoot(EventWindowWidgetNameCharacter.GetCharacter.MakeScope).End))]" #
-			onclick = "[GetScriptedGui('random_saint_male_name').Execute(GuiScope.SetRoot(EventWindowWidgetNameCharacter.GetCharacter.MakeScope).End)]" #
+			onclick = "[GetScriptedGui('random_saint_male_name').Execute(GuiScope.SetRoot(EventWindowWidgetNameCharacter.GetCharacter.MakeScope).End)]"
 			onclick = "[EventWindowWidgetNameCharacter.SetCurrentName( EventWindowWidgetNameCharacter.GetCharacter.GetFirstNameNoTooltip )]"
 			onclick = "[PdxGuiTriggerAllAnimations('name_refresh')]"
-			tooltip =  "event_window_widget_name_child_random_saint_name" #
+			tooltip =  "event_window_widget_name_child_random_saint_name"
 			using = tooltip_se
 	
 			highlight_icon = {
@@ -123,11 +123,11 @@ vbox = {
 		}
 	
 		event_button_round = {
-			visible = "[And( Character.IsFemale, GetScriptedGui('faith_has_female_saints').IsShown(GuiScope.SetRoot(EventWindowWidgetNameCharacter.GetCharacter.MakeScope).End))]" #
-			onclick = "[GetScriptedGui('random_saint_female_name').Execute(GuiScope.SetRoot(EventWindowWidgetNameCharacter.GetCharacter.MakeScope).End)]" #
+			visible = "[And( Character.IsFemale, GetScriptedGui('faith_has_female_saints').IsShown(GuiScope.SetRoot(EventWindowWidgetNameCharacter.GetCharacter.MakeScope).End))]"
+			onclick = "[GetScriptedGui('random_saint_female_name').Execute(GuiScope.SetRoot(EventWindowWidgetNameCharacter.GetCharacter.MakeScope).End)]"
 			onclick = "[EventWindowWidgetNameCharacter.SetCurrentName( EventWindowWidgetNameCharacter.GetCharacter.GetFirstNameNoTooltip )]"
 			onclick = "[PdxGuiTriggerAllAnimations('name_refresh')]"
-			tooltip =  "event_window_widget_name_child_random_saint_name" #
+			tooltip =  "event_window_widget_name_child_random_saint_name"
 			using = tooltip_se
 	
 			highlight_icon = {
