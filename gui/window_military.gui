@@ -9,7 +9,6 @@ window = {
 	datacontext = "[GetPlayer]"
 	parentanchor = top|right
 	
-	datacontext = "[GetScriptedGui('artifacts_gui_toggle')]"
 	visible = "[And(IsGameViewOpen('military'), Not(ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 
 	layer = windows_layer

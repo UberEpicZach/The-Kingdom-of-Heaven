@@ -160,14 +160,18 @@ on_cardinal_initialize = {
 }
 
 on_death = {
-	on_actions = {
-		on_cardinal_death
-		on_pope_death
-		on_artifact_inheritance
-	}
-	events = {
-		KoH_sainthood.1
-	}
+    on_actions = {
+        on_cardinal_death
+        on_pope_death
+        on_artifact_inheritance
+        on_person_death_saint
+    }
+}
+
+on_person_death_saint = {
+    events = {
+        KoH_sainthood.1
+    }
 }
 
 on_cardinal_death = {
@@ -300,7 +304,7 @@ KOH_Italian_Familes = {
 
 KOH_Italian_Familes_Monthly = {
 	on_actions = {
-		delay = { months = 1 }
+		delay = { months = 6 }
 		KOH_Italian_Familes_Monthly
 	}
 
@@ -308,8 +312,11 @@ KOH_Italian_Familes_Monthly = {
 		every_ruler = {
 			limit = {
 				AND = {
+					exists = dynasty
+					dynasty = {
+						has_dynasty_modifier = dynasty_guelph
+					}
 					is_landed = yes
-					dynasty = { has_dynasty_modifier = dynasty_guelph }
 					is_adult = yes
 					is_female = no
 				}
@@ -321,8 +328,11 @@ KOH_Italian_Familes_Monthly = {
 		every_ruler = {
 			limit = {
 				AND = {
+					exists = dynasty
+					dynasty = {
+						has_dynasty_modifier = dynasty_ghibelline
+					}
 					is_landed = yes
-					dynasty = { has_dynasty_modifier = dynasty_ghibelline }
 					is_adult = yes
 					is_female = no
 				}
@@ -333,23 +343,23 @@ KOH_Italian_Familes_Monthly = {
 	}
 }
 
-KOH_commune_maintenance  = {
-	on_actions = {
-		delay = { months = 1 }
-		KOH_commune_maintenance
-	}
-	effect = {
-        every_ruler = {
-			limit = {
-                has_culture_group = culture_group:latin_group 
-				primary_title.tier = tier_county 
-				NOT = { has_character_flag = RecentElection }
-				has_government = republic_government
-			}
-			trigger_event = KOH_ItalianCommunes.4
-		}
-	}
-}
+# KOH_commune_maintenance  = {
+# 	on_actions = {
+# 		delay = { months = 1 }
+# 		KOH_commune_maintenance
+# 	}
+# 	effect = {
+#         every_ruler = {
+# 			limit = {
+#                 has_culture_group = culture_group:latin_group 
+# 				primary_title.tier = tier_county 
+# 				NOT = { has_character_flag = RecentElection }
+# 				has_government = republic_government
+# 			}
+# 			trigger_event = KOH_ItalianCommunes.4
+# 		}
+# 	}
+# }
 
 KOH_ON_START = {
 	effect = {
@@ -528,32 +538,8 @@ KOH_ON_START = {
 
 yearly_global_pulse = {
 	on_actions = {
-		# Monthly pulses
         KOH_pulse_monthly
         delay = { months = 1 }
-        KOH_pulse_monthly
-        delay = { months = 2 }
-        KOH_pulse_monthly
-        delay = { months = 3 }
-        KOH_pulse_monthly
-        delay = { months = 4 }
-        KOH_pulse_monthly
-        delay = { months = 5 }
-        KOH_pulse_monthly
-        delay = { months = 6 }
-        KOH_pulse_monthly
-        delay = { months = 7 }
-        KOH_pulse_monthly
-        delay = { months = 8 }
-        KOH_pulse_monthly
-        delay = { months = 9 }
-        KOH_pulse_monthly
-        delay = { months = 10 }
-        KOH_pulse_monthly
-        delay = { months = 11 }
-        KOH_pulse_monthly
-	
-		
 	}
 }
 
@@ -569,14 +555,15 @@ KOH_REYNALD_ACTION = {
 				limit = {
 					AND = {
 						any_ruler = { 
-							top_liege = { has_primary_title = title:e_arabia } 
+							top_liege = { 
+								has_primary_title = title:e_arabia 
+							}
+							
+							has_opinion_modifier = {
+								target = character:223590
+								modifier = raided_me_opinion
+							}
 						}
-			
-						has_opinion_modifier = {
-							target = character:223590
-							modifier = raided_me_opinion
-						}
-						
 					}
 				}
 				character:223523 = {
@@ -648,66 +635,67 @@ KOH_HOLY_ORDER_GOVERNMENT = {
 }
 
 KOH_pulse_monthly = { 
-    effect = {
-			if = {
+    on_actions = {
+        delay = { months = 1 }
+		KOH_pulse_monthly
+	}
+
+	effect = {
+		if = {
+			limit = {
+				any_ruler = { 
+					top_liege = { 
+						has_primary_title = title:e_arabia 
+					}
+					has_opinion_modifier = {
+						target = character:223590
+						modifier = raided_me_opinion
+					} 
+				}
+			}
+			character:223523 = {
+				trigger_event = {
+					id = KoH_saladin.100
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = global_var:SaladinHasTakenJerusalem 
+			}
+			every_ruler = {
+				limit = {
+					faith = faith:catholic
+					is_landed = yes
+					highest_held_title_tier >= tier_county
+					NOT = { 
+						OR = {
+							has_character_flag = had_event_had_event_KoH_saladin.120
+							has_title =title:k_jerusalem
+							} 
+						}
+					}
+				trigger_event = {
+					id = KoH_saladin.120
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = global_var:SaladinHasTakenJerusalem 
+			}
+			every_ruler = {
 				limit = {
 					AND = {
-						any_ruler = { 
-							top_liege = { has_primary_title = title:e_arabia } 
-						}
-			
-						has_opinion_modifier = {
-							target = character:223590
-							modifier = raided_me_opinion
+						has_title = title:k_jerusalem
+						NOT = {
+							has_character_flag = had_event_KoH_saladin.121
 						}
 					}
 				}
-				character:223523 = {
-					trigger_event = {
-						id = KoH_saladin.100
-					}
-				}
+				trigger_event = KoH_saladin.121
 			}
-			if = {
-				limit = {
-						exists = global_var:SaladinHasTakenJerusalem 
-					}
-					every_ruler = {
-						limit = {
-							faith = faith:catholic
-							is_landed = yes
-							highest_held_title_tier >= tier_county
-							NOT = { 
-								OR = {
-									has_character_flag = had_event_had_event_KoH_saladin.120
-									has_title =title:k_jerusalem
-									} 
-								}
-							}
-						trigger_event = {
-							id = KoH_saladin.120
-						}
-					}
-				}
-
-			if = {
-				limit = {
-						exists = global_var:SaladinHasTakenJerusalem 
-					}
-					every_ruler = {
-						limit = {
-							AND = {
-								has_title = title:k_jerusalem
-								NOT = {
-									has_character_flag = had_event_KoH_saladin.121
-								}
-							}
-						}
-						trigger_event = {
-							id = KoH_saladin.121
-					}
-				}
-			}
+		}
 	}
 	events = { 
 		KoH_SicillianConflict.1
@@ -749,9 +737,6 @@ KOH_events_tri_yearly_pulse = {
 		}
 		23000 = 0 # 20000?
 		
-		#######################################
-		# OLDEST VIET
-		#######################################
 		# Dirt
 		100 = chivalry.1	# Serfdom
 		100 = chivalry.2		# A Duel

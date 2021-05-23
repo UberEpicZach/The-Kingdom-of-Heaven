@@ -17025,10 +17025,12 @@ KOH_SAXONY048 = {
 
 KOH_SAXONY049 = {
 	name = "Elisabeth"
-	dynasty = KOH_D_028 #Bregenz
+	dynasty = 9558 #Bregenz
 	religion = "catholic"
 	culture = saxon
 	female = yes
+	mother = KOH_BAVARIAN076
+	father = KOH_BAVARIAN077
 	1152.1.1 = {
 		birth = yes
 	}
@@ -17158,3 +17160,121 @@ KOH_SAXONY058 = {
 		death = yes
 	}
 }
+KOH_SAXONY059 = {
+	name = "Wendilgart"
+	female = yes
+	dynasty = 669
+	religion = "catholic"
+	culture = saxon
+	father = 33457 
+
+	895.1.1 = {
+		birth = yes
+	}
+
+	930.1.1 = {
+		death = yes
+	}
+}
+
+KOH_SAXONY060 = {
+	name = "Udalrich"	
+	dynasty = 9558
+	religion = "catholic"	
+	culture = swabian
+	father = 167833		
+	870.1.1 = {		
+		birth = yes
+	}	
+
+	905.1.1 = {
+		add_spouse = KOH_SAXONY059
+	}
+
+	925.1.1 = {		
+		death = yes	
+	}
+}
+ 
+KOH_SAXONY061 = {
+	name = "Udalrich" #6
+	dynasty = 9558
+	religion = "catholic"	
+	culture = swabian
+	father = KOH_SAXONY060
+	mother = KOH_SAXONY059	
+	913.1.1 = {		
+		birth = yes
+	}	
+
+	955.1.1 = {		
+		death = yes	
+	}
+}
+
+KOH_SAXONY062 = {
+	name = "Udalrich" #7
+	dynasty = 9558
+	religion = "catholic"	
+	culture = swabian
+	father = KOH_SAXONY061
+	940.1.1 = {		
+		birth = yes
+	}	
+
+	1027.1.1 = {		
+		death = yes	
+	}
+}
+
+KOH_SAXONY063 = {
+	name = "Udalrich" #8
+	dynasty = 9558
+	religion = "catholic"	
+	culture = swabian
+	father = KOH_SAXONY062
+	1000.1.1 = {		
+		birth = yes
+	}	
+
+	1043.1.1 = {		
+		death = yes	
+	}
+}
+
+KOH_SAXONY064 = {
+	name = "Udalrich" #9
+	dynasty = 9558
+	religion = "catholic"	
+	culture = swabian
+	father = KOH_SAXONY063
+	1030.1.1 = {		
+		birth = yes
+	}	
+
+	1079.1.1 = {		
+		death = yes	
+	}
+}
+
+KOH_SAXONY065 = {
+	name = "Udalrich" #10
+	dynasty = 9558
+	religion = "catholic"	
+	culture = swabian
+	father = KOH_SAXONY064
+	1060.1.1 = {		
+		birth = yes
+	}	
+
+	1080.1.1 = {
+		add_spouse = 33734
+	}
+
+	1097.1.1 = {		
+		death = yes	
+	}
+}
+
+
+
