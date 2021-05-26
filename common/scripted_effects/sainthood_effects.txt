@@ -1,4 +1,4 @@
-﻿deciding_upon_saint_effect = { ##DECIDING SAINT
+deciding_upon_saint_effect = { ##DECIDING SAINT
 	random = {
 		chance = 100
 
@@ -271,6 +271,7 @@
 
 become_saint = {
 	save_scope_as = new_saint
+	
 	faith = {
 		add_to_variable_list = {
 			name = faith_saints
@@ -280,7 +281,7 @@ become_saint = {
 	dynasty = {
 		add_dynasty_modifier = {
 			modifier = saintly_bloodline
-			years = 10000 # Why even bother at this point?
+			# Why even bother at this point?
 		}
 		every_dynasty_member = {
 			limit = { is_alive = yes }
@@ -288,7 +289,21 @@ become_saint = {
 		}
 		add_dynasty_prestige_level = 1 # Why was this placed outside the dynasty scope??
 	}
+}
 
+become_saint_capital = {
+	save_scope_as = new_saint_capital
+	
+	faith = {
+		add_to_variable_list = {
+			name = faith_capital
+			target = scope:saint_capital
+		}
+	}
+
+	new_saint_capital.title_province = {
+		add_province_modifier = saintly_tomb
+	}
 }
 
 remove_saint = {

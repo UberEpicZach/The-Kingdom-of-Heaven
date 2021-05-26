@@ -1,4 +1,4 @@
-namespace = KoH_sainthood
+﻿namespace = KoH_sainthood
 
 
 KoH_sainthood.1 = { #sainthood.1
@@ -139,7 +139,7 @@ KoH_sainthood.1 = { #sainthood.1
 				}
 			}
 	
-			#Positive has_has_traits increase your chances of becoming a Saint
+			#Positive traits increase your chances of becoming a Saint
 			modifier = {
 				factor = 1.5
 				scope:saint_person = {
@@ -414,9 +414,7 @@ KoH_sainthood.5 = {
 		add_character_flag = popemansainttesting
 
 		scope:saint_person = {
-			add_has_trait = beatified
-
-			give_nickname = nick_the_blessed
+			add_trait = beatified
 		}
 		scope:saint_person = {
 			every_vassal = {
@@ -504,82 +502,8 @@ KoH_sainthood.8 = {
 	option = {
 		name = KoH_sainthood.8.a
 
-		random_list = {
-			if = {
-                limit = {
-                    scope:saint_person = {
-                        OR = {
-                            has_any_nickname = no
-                            has_nickname = nick_the_blessed
-                        }
-                    }
-                }
-                scope:saint_person = {
-                    random_list = {
-                        1 = {
-                            give_nickname = nick_the_pious
-                        }
-                        1 = {
-                            give_nickname = nick_the_holy
-                        }
-                        3 = {
-                            trigger = {
-                                has_trait = theologian
-                            }
-                            give_nickname = nick_the_theologian
-                        }
-                        3 = {
-                            trigger = {
-                                has_trait = scholar
-                            }
-                            give_nickname = nick_the_enlightened
-                        }
-                        1 = {
-                            give_nickname = nick_the_confessor
-                        }
-                        3 = {
-                            trigger = {
-                                has_trait = chaste
-                            }
-                            give_nickname = nick_the_chaste
-                        }
-                        3 = {
-                            trigger = {
-                                OR = {
-                                    has_trait = genius
-                                    has_trait = shrewd
-                                    has_trait = quick
-									learning >= 15
-                                }
-                            }
-                            give_nickname = nick_the_wise
-                        }
-                        3 = {
-                            trigger = {
-                                has_trait = pilgrim
-                            }
-                            give_nickname = nick_the_pilgrim
-                        }
-                        1 = {
-                            give_nickname = nick_the_divine
-                        }
-                        3 = {
-                            trigger = {
-                                martyrs_death_trigger = yes
-                            }
-                            give_nickname = nick_the_martyr
-                        }
-                        15 = {
-                            trigger = {
-								has_perk = architect_perk
-                            }
-                            give_nickname = nick_the_architect
-                        }
-                    }
-                }
-            }
-		}
-		
+		#Add Miracle Stuff
+
 		every_ruler = {
 			limit = {
 				religion = religion:christianity_religion  
@@ -593,9 +517,8 @@ KoH_sainthood.8 = {
 			become_saint = yes
 		}
 
-		scope:saint_capital = {
-			become_saint_capital = yes
-		}
+		#Add Pilgrim Stuff
+
 	}
 }
 
