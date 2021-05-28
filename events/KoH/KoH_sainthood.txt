@@ -14,7 +14,7 @@ KoH_sainthood.1 = { #sainthood.1
 		root = {
 			save_scope_as = saint_person
 		}
-		scope:saint_person.capital_province = {
+		scope:saint_person.capital_county = { #capital_county.title_province
 			save_scope_as = saint_capital
 		}
 
@@ -355,16 +355,15 @@ KoH_sainthood.2 = { #Decision if to be Beatified
 	hidden = yes
 
 	immediate = {
-		#if = {
-         #   limit = {
-		#		exists = global_var:qa_testing
-         #   }
+		if = {
+           limit = {
+				exists = global_var:qa_testing
+           	}
             top_liege = { trigger_event = { id = KoH_sainthood.4 days = 3 } }
-		#}
-
-		#else = {
-	#		top_liege = { trigger_event = { id = KoH_sainthood.4 days = { 180 200 } } }
-	#	}
+		}
+		else = {
+			top_liege = { trigger_event = { id = KoH_sainthood.4 days = { 180 200 } } }
+		}
 	}
 }
 
@@ -372,16 +371,17 @@ KoH_sainthood.3 = { #triggered from the S_effect / Checking time left to Canoniz
 	hidden = yes
 
 	immediate = {
-       # if = {
-       #     limit = {
-		#		exists = global_var:qa_testing
-		#	}
-	top_liege = { trigger_event = { id = KoH_sainthood.7 days = 10 } }
-		#}
-		#else = {
-		#	top_liege = { trigger_event = { id = KoH_sainthood.7 days = 3 } }
-		#}
-	}			
+        if = {
+       		limit = {
+				exists = global_var:qa_testing
+			}
+			top_liege = { trigger_event = { id = KoH_sainthood.7 days = 5 } }
+		}
+		else = {
+			top_liege = { trigger_event = { id = KoH_sainthood.7 days = { 1000 1500 } }
+			}
+		}			
+	}
 }
 
 
@@ -414,7 +414,7 @@ KoH_sainthood.5 = {
 		add_character_flag = popemansainttesting
 
 		scope:saint_person = {
-			add_has_trait = beatified
+			add_trait = beatified
 
 			give_nickname = nick_the_blessed
 		}
@@ -475,7 +475,7 @@ KoH_sainthood.7 = { ##Preparing Canonization
 	immediate = { 
 		if = {
             limit = {
-				scope:saint_capital.holder = {
+				scope:saint_capital.title_province.holder = {
 					has_religion = religion:christianity_religion
 				}
 			}
@@ -504,80 +504,68 @@ KoH_sainthood.8 = {
 	option = {
 		name = KoH_sainthood.8.a
 
-		random_list = {
-			if = {
-                limit = {
-                    scope:saint_person = {
-                        OR = {
-                            has_any_nickname = no
-                            has_nickname = nick_the_blessed
-                        }
-                    }
-                }
-                scope:saint_person = {
-                    random_list = {
-                        1 = {
-                            give_nickname = nick_the_pious
-                        }
-                        1 = {
-                            give_nickname = nick_the_holy
-                        }
-                        3 = {
-                            trigger = {
-                                has_trait = theologian
-                            }
-                            give_nickname = nick_the_theologian
-                        }
-                        3 = {
-                            trigger = {
-                                has_trait = scholar
-                            }
-                            give_nickname = nick_the_enlightened
-                        }
-                        1 = {
-                            give_nickname = nick_the_confessor
-                        }
-                        3 = {
-                            trigger = {
-                                has_trait = chaste
-                            }
-                            give_nickname = nick_the_chaste
-                        }
-                        3 = {
-                            trigger = {
-                                OR = {
-                                    has_trait = genius
-                                    has_trait = shrewd
-                                    has_trait = quick
-									learning >= 15
-                                }
-                            }
-                            give_nickname = nick_the_wise
-                        }
-                        3 = {
-                            trigger = {
-                                has_trait = pilgrim
-                            }
-                            give_nickname = nick_the_pilgrim
-                        }
-                        1 = {
-                            give_nickname = nick_the_divine
-                        }
-                        3 = {
-                            trigger = {
-                                martyrs_death_trigger = yes
-                            }
-                            give_nickname = nick_the_martyr
-                        }
-                        15 = {
-                            trigger = {
-								has_perk = architect_perk
-                            }
-                            give_nickname = nick_the_architect
-                        }
-                    }
-                }
-            }
+		scope:saint_person = {
+			random_list = {
+				1 = {
+					give_nickname = nick_the_pious
+				}
+				1 = {
+					give_nickname = nick_the_holy
+				}
+				3 = {
+					trigger = {
+						has_trait = theologian
+					}
+					give_nickname = nick_the_theologian
+				}
+				3 = {
+					trigger = {
+						has_trait = scholar
+					}
+					give_nickname = nick_the_enlightened
+				}
+				1 = {
+					give_nickname = nick_the_confessor
+				}
+				3 = {
+					trigger = {
+						has_trait = chaste
+					}
+					give_nickname = nick_the_chaste
+				}
+				3 = {
+					trigger = {
+						OR = {
+							has_trait = genius
+							has_trait = shrewd
+							has_trait = quick
+							learning >= 15
+						}
+					}
+					give_nickname = nick_the_wise
+				}
+				3 = {
+					trigger = {
+						has_trait = pilgrim
+					}
+					give_nickname = nick_the_pilgrim
+				}
+				1 = {
+					give_nickname = nick_the_divine
+				}
+				3 = {
+					trigger = {
+						martyrs_death_trigger = yes
+					}
+					give_nickname = nick_the_martyr
+				}
+				15 = {
+					trigger = {
+						has_perk = architect_perk
+					}
+					give_nickname = nick_the_architect
+				}
+			}
 		}
 		
 		every_ruler = {
@@ -593,8 +581,15 @@ KoH_sainthood.8 = {
 			become_saint = yes
 		}
 
-		scope:saint_capital = {
-			become_saint_capital = yes
+		scope:saint_capital.title_province = {
+			add_province_modifier = saintly_tomb	
+		}
+
+		faith = {
+			add_to_variable_list = {
+				name = faith_capital
+				target = scope:saint_capital
+			}
 		}
 	}
 }

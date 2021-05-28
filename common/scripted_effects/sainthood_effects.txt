@@ -1,6 +1,6 @@
 deciding_upon_saint_effect = { ##DECIDING SAINT
 	random = {
-		chance = 100
+		chance = 1
 
 
 		#Cynical people are less likely to be Canonized
@@ -293,17 +293,7 @@ become_saint = {
 
 become_saint_capital = {
 	save_scope_as = new_saint_capital
-	
-	faith = {
-		add_to_variable_list = {
-			name = faith_capital
-			target = scope:saint_capital
-		}
-	}
 
-	new_saint_capital.title_province = {
-		add_province_modifier = saintly_tomb
-	}
 }
 
 remove_saint = {
@@ -319,4 +309,165 @@ remove_saint = {
 add_qa_effect = {
 	set_global_variable = qa_testing
 
+}
+
+#set_up_saint_sites_for_selection_effect = {
+	if = {
+		limit = { NOT = { exists = scope:has_set_up_saint_sites } }
+		save_temporary_scope_as = pilgrim
+		
+		random_in_list = {
+			variable = faith_capital
+
+			if = {
+				limit = {
+					NOT = { exists = scope:saint_site_1 }
+				}
+				save_scope_as = saint_site_1
+			}
+
+			else_if = {
+				limit = {
+					NOT = { exists = scope:saint_site_2 }
+				}
+				save_scope_as = saint_site_2
+			}
+
+			else_if = {
+				limit = {
+					NOT = { exists = scope:saint_site_7 }
+				}
+				save_scope_as = saint_site_3
+			}
+
+			else_if = {
+				limit = {
+					NOT = { exists = scope:saint_site_7 }
+				}
+				save_scope_as = saint_site_4
+			}
+
+			else_if = {
+				limit = {
+					NOT = { exists = scope:saint_site_7 }
+				}
+				save_scope_as = saint_site_5
+			}
+
+			else_if = {
+				limit = {
+					NOT = { exists = scope:saint_site_7 }
+				}
+				save_scope_as = saint_site_6
+			}
+
+			else_if = {
+				limit = {
+					NOT = { exists = scope:saint_site_7 }
+				}
+				save_scope_as = saint_site_7
+			}
+
+			else_if = {
+				limit = {
+					NOT = { exists = scope:saint_site_8 }
+				}
+				save_scope_as = saint_site_8
+			}
+
+			else_if = {
+				limit = {
+					NOT = { exists = scope:saint_site_9 }
+				}
+				save_scope_as = saint_site_9
+			}
+			else = {
+				debug_log = "Holy Site failed to get an assigned scope slot!"
+				debug_log_scopes = yes
+			}
+		}	
+		save_temporary_scope_value_as = {
+			name = has_set_up_pilgrimage_sites
+			value = yes
+		}
+	}
+	# Debug checks:
+	if = {
+		limit = { NOT = { exists = scope:holy_site_1 } }
+		debug_log = "No holy sites found in faith! (Except possibly mecca)"
+		root.faith = {
+			save_scope_as = current_faith
+		}
+		debug_log_scopes = yes
+	}
+#}
+
+set_up_saint_sites_for_selection_effect = {	
+	random_province = {
+		limit = {
+			has_province_modifier = saintly_tomb
+			NOT = { exists = scope:saint_site_1 }
+		}
+		save_scope_as = saint_site_1
+	}
+}
+
+saint_site_selection_event_option_effect = {
+	# HOLY_SITE = holy_site
+	hidden_effect = {
+		set_variable = {
+			name = pilgrimage_cooldown_timer
+			years = pilgrimage_cooldown_year_amount
+		}
+	}
+
+	scope:saint_site_1 = {
+		spawn_activity = {
+			owner = root
+			type = activity_pilgrimage
+		}
+	}
+	if = {
+		limit = { is_ai = no }
+		calculate_pilgrimage_distance_effect = {
+			PILGRIM = root
+			HOLY_SITE = scope:saint_site_1
+		}
+	}
+}
+
+saint_traits = {
+	remove_trait = lifestyle_reveler
+	remove_trait = lustful
+	remove_trait = cannibal 
+	remove_perk = schemer_perk
+	remove_perk = seducer_perk
+	remove_perk = torturer_perk
+	remove_trait = lustful
+	remove_trait = gluttonous
+	remove_trait = greedy
+	remove_trait = lazy
+	remove_trait = wrathful
+	remove_trait = callous 
+	remove_trait = arrogant 
+	add_trait = chaste
+	add_trait = temperate
+	add_trait = generous
+	add_trait = diligent
+	add_trait = patient
+	add_trait = compassionate
+	add_trait = humble
+	add_trait = theologian
+	add_trait = celibate
+	add_trait = chaste
+	add_trait = humble
+	add_trait = content
+	add_trait = pilgrim
+	add_trait = monk
+	#add_trait = shieldmaiden
+	add_trait = zealous
+	add_trait = just
+	add_trait = compassionate 
+	add_trait = generous
+	add_trait = patient
 }
