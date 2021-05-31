@@ -8,15 +8,15 @@ KoH_RichardTheLionheart.1 = {
 	override_background = {
 		event_background = throne_room
 	}
-
-	
 	left_portrait = {
 		character = root
 		animation = sad
 	}
+
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.1}
+		NOT = { has_character_flag = had_event_RichardTheLionheart.1 }
 	}
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_RichardTheLionheart.1
@@ -307,15 +307,15 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 		character = root
 		animation = personality_rational
 	}
+
 	trigger = {
 		NOT = { has_character_flag = had_event_RichardTheLionheart.2024 }
 	}
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_RichardTheLionheart.2024
 		}
-		
-		
 	}
 	option = {
 		name = KoH_RichardTheLionheart.2024.a #enter the joust
@@ -382,9 +382,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 					limit = {
 						is_alive = yes
 					}
-					trigger_event = {
-						id = KoH_RichardTheLionheart.2
-					}
+					trigger_event = KoH_RichardTheLionheart.2
 				}
 			}
 	
@@ -394,22 +392,26 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 						is_alive = yes
 					}
 					trigger_event =  KoH_RichardTheLionheart.2
-					
+				}
+			}
+
+			character:204500 = {
+				if = {
+					limit = {
+						is_alive = yes
+					}
 					trigger_event = {
 						id = KoH_RichardTheLionheart.202
 						days = 5
 					}
 				}
 			}
-	
 			character:205730 = {
 				if = {
 					limit = {
 						is_alive = yes
 					}
 					trigger_event = KoH_RichardTheLionheart.2
-					
-					}
 				}
 			}
 	
@@ -420,7 +422,6 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 					}
 					trigger_event = KoH_RichardTheLionheart.2
 						
-					}
 				}
 			}
 	
@@ -430,7 +431,6 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 						is_alive = yes
 					}
 					trigger_event = KoH_RichardTheLionheart.2
-					}
 				}
 			}
 	
@@ -440,19 +440,16 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 						is_alive = yes
 					}
 					trigger_event = KoH_RichardTheLionheart.2
-					
-					}
 				}
 			}
+		
 	
 			character:204513 = {
 				if = {
 					limit = {
 						is_alive = yes
 					}
-					trigger_event = KoH_RichardTheLionheart.2
-					
-					}
+				trigger_event = KoH_RichardTheLionheart.2
 				}
 			}
 	
@@ -461,9 +458,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 					limit = {
 						is_alive = yes
 					}
-					trigger_event = KoH_RichardTheLionheart.2
-						
-					}
+				trigger_event = KoH_RichardTheLionheart.2
 				}
 			}
 	
@@ -474,7 +469,6 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 					}
 					trigger_event = KoH_RichardTheLionheart.2
 						
-					}
 				}
 			}
 	
@@ -484,8 +478,6 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 						is_alive = yes
 					}
 					trigger_event = KoH_RichardTheLionheart.2
-					
-					}
 				}
 			}
 	
@@ -495,8 +487,6 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 						is_alive = yes
 					}
 					trigger_event = KoH_RichardTheLionheart.2
-					
-					}
 				}
 			}
 	
@@ -505,9 +495,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 					limit = {
 						is_alive = yes
 					}
-					trigger_event = KoH_RichardTheLionheart.2
-					
-					}
+					trigger_event = KoH_RichardTheLionheart.2		
 				}
 			}
 	
@@ -516,9 +504,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 					limit = {
 						is_alive = yes
 					}
-					trigger_event = KoH_RichardTheLionheart.2
-						
-					}
+					trigger_event = KoH_RichardTheLionheart.2	
 				}
 			}
 			character:205506 = {
@@ -527,7 +513,6 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 						is_alive = yes
 					}
 					trigger_event = KoH_RichardTheLionheart.2
-					}
 				}
 			}
 		}
