@@ -34,14 +34,6 @@ barony_lepuiset = {
     top_liege = no 
 }
 
-barony_chartres = {
-    type = title
-    tier = county
-    titles = { c_chartres } 
-    priority = 19
-    top_liege = no
-}
-
 baron_female_lepuiset = {
     type = character
     gender = female
@@ -59,16 +51,6 @@ baron_male_lepuiset = {
     tier = county
     priority = 18
     titles = { c_lepuiset }
-    top_liege = no
-}
-
-baron_male_chartres = {
-    type = character
-    gender = male
-    special = holder
-    tier = county
-    priority = 19
-    titles = { c_chartres }
     top_liege = no
 }
 
@@ -323,7 +305,7 @@ count_male_viscount = {
     special = holder
     tier = county
     priority = 18
-    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau }
+    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau c_avranches c_chartres }
     top_liege = no
 }
 
@@ -333,13 +315,13 @@ count_female_viscount = {
     special = holder
     tier = count
     priority = 18
-    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau }
+    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau c_avranches c_chartres }
     top_liege = no
 }
 county_viscounty = {
     type = title
     tier = county
-    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau } 
+    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau c_avranches c_chartres } 
     priority = 18
     top_liege = no
 }

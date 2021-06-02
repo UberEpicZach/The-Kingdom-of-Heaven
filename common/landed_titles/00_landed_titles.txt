@@ -47921,8 +47921,24 @@ e_france = {
 			color = { 24 52 226 }
 			color2 = { 255 255 255 }
 			
-			capital = c_ile_de_france # Ile de France
+			capital = b_crepy 
 			
+			c_valois = {
+				color = { 15 40 210 }
+				color2 = { 255 255 255 }
+				b_crepy = {
+					province = 2360
+
+					color = { 15 40 210 }
+					color2 = { 255 255 255 }
+				}
+				b_senlis = {
+					province = 2358
+
+					color = { 15 40 210 }
+					color2 = { 255 255 255 }
+				}
+			}
 			c_ile_de_france = {
 				color = { 24 52 226 }
 				color2 = { 255 255 255 }
@@ -48016,30 +48032,12 @@ e_france = {
 					color2 = { 255 255 255 }
 				}
 			}
-			c_valois = {
-				color = { 15 40 210 }
-				color2 = { 255 255 255 }
-				
-				b_senlis = {
-					province = 2358
-
-					color = { 15 40 210 }
-					color2 = { 255 255 255 }
-				}
-			}
 			c_coucy = {
 				color = { 15 40 210 }
 				color2 = { 255 255 255 }
 				
 				b_coucy = {
 					province = 2398
-
-					color = { 15 40 210 }
-					color2 = { 255 255 255 }
-				}
-
-				b_crepy = {
-					province = 2360
 
 					color = { 15 40 210 }
 					color2 = { 255 255 255 }
@@ -48056,18 +48054,33 @@ e_france = {
 					color = { 35 65 230 }
 					color2 = { 255 255 255 }
 				}
-				b_mantes = {
-					province = 2181
+			}
 
-					color = { 35 65 230 }
-					color2 = { 255 255 255 }
-				}
+			c_beauvais = {
+				color = { 35 65 230 }
+				color2 = { 255 255 255 }
 				b_beauvais = {
 					province = 2183
 
 					color = { 35 65 230 }
 					color2 = { 255 255 255 }
 				}
+			}
+
+			c_vexin = {
+				color = { 35 65 230 }
+				color2 = { 255 255 255 }
+				b_mantes = {
+					province = 2181
+
+					color = { 35 65 230 }
+					color2 = { 255 255 255 }
+				}
+			}
+			
+			c_montfort = {
+				color = { 35 65 230 }
+				color2 = { 255 255 255 }
 				b_montfort = {
 					province = 2332
 
@@ -48101,10 +48114,11 @@ e_france = {
 		}
 		
 		d_artois = {
+			color = { 18 76 240 }
+			color2 = { 255 255 255 }
 			c_amiens = {
 				color = { 18 76 240 }
 				color2 = { 255 255 255 }
-				
 				b_amiens = {
 					province = 2184
 
@@ -48113,6 +48127,8 @@ e_france = {
 				}
 			}
 			c_artois = {
+				color = { 18 76 240 }
+				color2 = { 255 255 255 }
 				b_corbie = {
 					province = 2185
 
@@ -48127,35 +48143,39 @@ e_france = {
 				}
 			}
 			c_boulogne = {
-				color = { 78 103 165 }
+				color = { 18 76 240 }
 				color2 = { 255 255 255 }
 				
 				b_boulogne = {
 					province = 2132
 					
-					color = { 78 103 165 }
+					color = { 18 76 240 }
 					color2 = { 255 255 255 }
 				}
 			}
 			c_saint_pol = {
+				color = { 18 76 240 }
+				color2 = { 255 255 255 }
 				b_hesdin = {
 					province = 2135
 					
-					color = { 78 103 165 }
+					color = { 18 76 240 }
 					color2 = { 255 255 255 }
 				}
 			}
 			c_ponthieu = {
+				color = { 18 76 240 }
+				color2 = { 255 255 255 }
 				b_abbeville = {
 					province = 2137
 					
-					color = { 78 103 165 }
+					color = { 18 76 240 }
 					color2 = { 255 255 255 }
 				}
 				b_montreuil_sur_mer = {
 					province = 2136
 					
-					color = { 78 103 165 }
+					color = { 18 76 240 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -48341,6 +48361,18 @@ e_france = {
 					province = 2271
 
 					color = { 15 80 205 }
+					color2 = { 255 255 255 }
+				}
+				b_perche = {	#Displayed as Mortagne
+					province = 2324
+
+					color = { 23 38 255 }
+					color2 = { 255 255 255 }
+				}
+				b_nogent_le_rotrou = {
+					province = 2323
+
+					color = { 23 38 255 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -48621,27 +48653,18 @@ e_france = {
 			c_chartres = {
 				color = { 23 38 255 }
 				color2 = { 255 255 255 }
-				
-				b_dreux = {
-					province = 2331
-
-					color = { 23 38 255 }
-					color2 = { 255 255 255 }
-				}
 				b_chartres = {
 					province = 2322
 
 					color = { 23 38 255 }
 					color2 = { 255 255 255 }
 				}
-				b_perche = {	#Displayed as Mortagne
-					province = 2324
-
-					color = { 23 38 255 }
-					color2 = { 255 255 255 }
-				}
-				b_nogent_le_rotrou = {
-					province = 2323
+			}
+			c_dreux = {
+				color = { 23 38 255 }
+				color2 = { 255 255 255 }
+				b_dreux = {
+					province = 2331
 
 					color = { 23 38 255 }
 					color2 = { 255 255 255 }
@@ -49222,7 +49245,8 @@ e_france = {
 			}
 
 			c_bethune = {
-
+				color = { 75 115 205 }
+				color2 = { 255 255 255 }
 				b_aire = {
 					province = 2134
 					
