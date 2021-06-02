@@ -685,6 +685,27 @@ c_beaumont = {
 	}
 }
 
+c_vexin = {
+	1165.1.1 = {
+		holder = 205506
+	}
+}
+c_montfort = {
+	1101.1.1 = {
+		holder = 41222 #Amaury III de Montfort
+	}
+	1137.1.1 = {
+		holder = 205822 #Simon de Évreux
+		liege = k_england
+	}
+	1180.1.1 = {
+		liege = k_france
+	}
+	1181.1.1 = {
+		holder = 205824 #Simon de Montfort
+	}
+}
+
 c_clermont = {
 	#No data, placeholder
 	840.1.1 = {
@@ -1817,74 +1838,15 @@ c_avranches = {
 }
 
 c_alencon = {
-	750.1.1 = {
-		liege = "k_france"
-		holder = 91476 #Australdis, historical placeholder
-	}
-	853.1.1 = {
-		liege = "d_anjou"
-		holder = 6440 #Robert le fort
-	}
-	866.7.2 = {
-		holder = 168041
-		liege = "d_normandy"	#as March of Neustria against the Normands/Vikings
-	}
-	989.1.1 = {
+	1060.1.1 = {
 		liege = "d_normandy"
-		holder = 260 #Robert le Danois
+		holder = 152 #Roger the great
 	}
-	1037.1.1 = {
-		holder = 140 #Guillaume II le Conqu�rant
+	1094.1.1 = {
+		holder = 168182 #William de Montgomery
 	}
-	1067.1.1 = {
-		holder = 10016 #Guillaume d'�vreux
-	}
-	1118.1.1 = {
-		holder = 41222 #Amaury III de Montfort
-	}
-	1137.1.1 = {
-		holder = 91201 #Amaury IV
-	}
-	1140.1.1 = {
-		holder = 205822 #Simon III de Montfort
-	}
-	1181.1.1 = {
-		holder = 205821 #Amaury V de Montfort
-	}
-	1182.1.1 = {
-		holder = 205820 #Amaury VI de Montfort
-	}
-	1195.1.1 = {
-		holder = 204514 #Jean I Sans Terre
-	}
-	1200.1.1 = {
-		liege = "k_france"
-		holder = 205506 # Philippe II Auguste
-	}
-	1204.1.1 = {
-		liege = "d_normandy"
-	}
-	1212.1.1 = {
-		holder = 91030 #Philippe Hurepel
-	}
-	1223.7.14 = {
-		holder = 455402 #Louis VIII le Lion
-	}
-	1226.11.8 = {
-		holder = 455404 #Louis IX (saint Louis)
-	}
-	1270.8.25 = {
-		holder = 455528 # Philippe III le Hardi
-	}
-	1285.10.5 = {
-		holder = 455526 # Philippe IV le Bel
-	}
-	1298.1.1 = {
-		holder = 455811 #Louis de France
-	}
-	1319.5.19 = {
-		liege = "k_navarra"
-		holder = 455810 #Philippe d'�vreux
+	1171.1.1 = {
+		holder = KOH0202  #Jean de Alencon
 	}
 }
 
@@ -2731,6 +2693,100 @@ d_flanders = {
 	}
 }
 
+c_bethune = {
+	1100.1.1 = {
+		liege = d_flanders
+	}
+	970.1.1 = {
+		holder = 161747
+	}
+	1037.1.2 = {
+		holder = 161748
+	}
+	1071.1.2 = {
+		holder = 93502
+	}
+	1101.10.7 = {
+		holder = 93503
+	}
+	1128.1.2 = {
+		holder = 93504
+	}
+	1138.1.1 = {
+		holder = 93505 #Robert V le Roux
+	}
+}
+
+c_artois = {
+	1180.1.1 = {
+	liege = k_france
+	holder = 205522
+	}
+}
+
+c_saint_pol = {
+	975.1.1 = {
+		holder = 161345
+		liege = k_france
+	}
+	1031.1.1 = {
+		holder = 161346
+	}
+	1067.1.1 = {
+		holder = 161348
+	}
+	1070.1.1 = {
+		holder = 161349
+	}
+	1083.1.1 = {
+		holder = 161350
+	}
+	1118.1.1 = {
+		holder = 161352
+	}
+	1130.1.1 = {
+		holder = 161354
+	}
+	1150.1.1 = {
+		holder = 161355
+	}
+	1175.1.1 = {
+		holder = 161358
+	}
+}
+c_ponthieu = {
+	945.1.1 = {
+		holder = 168176
+	}
+	1000.1.1 = {
+		holder = 168177
+	}
+	1014.1.1 = {
+		holder = 432
+	}
+	1052.1.1 = {
+		holder = 434
+	}
+	1053.1.1 = {
+		holder = 168180
+	}
+	1100.1.1 = {
+		holder = 168181
+	}
+	1105.1.1 = {
+		holder = 168182
+	}
+	1105.1.1 = {
+		liege = k_france
+	}
+	1126.1.1 = {
+		holder = KOH0042
+	}
+	1147.1.1 = {
+		holder = KOH0043
+	}
+}
+
 
 c_brugge = {
 	867.1.1 = { change_development_level = 8 }
@@ -2950,20 +3006,8 @@ c_lille = {
 	1035.5.30 = {
 		holder = 364 #Boudewijn V
 	}
-	1066.1.1 = {
-		holder = 93502
-	}
-	1100.1.1 = {
-		holder = 93503
-	}
-	1105.1.1 = {
-		holder = 93504
-	}
-	1138.1.1 = {
-		holder = 93505
-	}
 	1180.4.28 = {
-		liege = "k_france"
+		liege = "d_flanders"
 	}
 	1180.4.28 = {
 		holder = 205522
@@ -4116,6 +4160,15 @@ c_coulommiers = {
 	}
 }
 
+c_dreux = {
+	1137.1.1 = {
+		holder = 205508
+		liege = k_france
+	}
+	1184.1.1 = {
+		holder = 204987
+	}
+}
 
 c_meaux = {
 	#Should be Louis II, but he is currently holding an independant k_aquitaine in 867 (Aquitaine should be a part of West Francia at this time)
@@ -4308,6 +4361,12 @@ c_coucy = {
 	}
 }
 
+b_crepy = {
+	1183.3.28 = {
+		holder = 212591
+	}
+}
+
 b_le_mans = {
 	1125.1.14 = {
 		holder = 202989
@@ -4347,15 +4406,6 @@ b_donzy = {
 	}
 	1187.1.1 = {
 		holder = KOH0198
-	}
-}
-
-b_dreux = {
-	1137.1.1 = {
-		holder = 205508
-	}
-	1184.1.1 = {
-		holder = 204987
 	}
 }
 
