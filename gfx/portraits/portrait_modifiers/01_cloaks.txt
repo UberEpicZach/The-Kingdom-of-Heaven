@@ -1,6 +1,95 @@
 ﻿
 cloaks = {
 	usage = game
+	
+	
+	no_cloaks = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloak
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }   
+        outfit_tags = { no_cloak }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                should_be_fully_naked_portrait_trigger = yes
+            }
+            modifier = {
+            	add = -1000
+            	should_show_nudity = no
+            }
+        }
+    }
+
+#no cloaks for monks & priests	
+	no_cloaks_religious_catholic = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloak
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }   
+	outfit_tags = { monk_outfit }
+	weight = {
+		base = 0
+		modifier = {
+			add = 101
+			OR = {
+				has_trait = devoted
+				AND = {
+					faith = {
+						has_doctrine_parameter = vows_of_poverty_active
+					}
+					OR = {
+						AND = {
+							has_council_position = councillor_court_chaplain
+							faith = {
+								has_doctrine = doctrine_theocracy_lay_clergy
+							}
+						}
+						is_theocratic_lessee = yes
+						AND = { is_ruler = yes has_government = theocracy_government }
+					}
+				}
+			}
+			religion = religion:christianity_religion
+		}
+	}
+	outfit_tags = { priest_outfit bishop_outfit }
+	weight = {
+		base = 0
+		modifier = {
+			add = 110
+			OR = {
+				is_theocratic_lessee = yes
+				AND = { is_ruler = yes has_government = theocracy_government }
+			}
+			religion = religion:christianity_religion
+			NAND = {
+				faith = faith:catholic
+				faith.religious_head = this
+			}
+			NOT = {
+				faith = faith:orthodox
+			}
+			NOT = {
+				faith = {
+					has_doctrine_parameter = vows_of_poverty_active
+				}
+			}
+		}
+	}	
+	
+    }
+	
+
 	western_kings = {
 		# outfit_tags = { rank_headgear } 
 		dna_modifiers = {
@@ -41,9 +130,12 @@ cloaks = {
 						NOT = { has_government = theocracy_government }						
 				OR = {
 					portrait_western_clothing_trigger = yes
-					portrait_northern_clothing_trigger = yes
-					portrait_byzantine_clothing_trigger = yes
 				    portrait_dde_hre_clothing_trigger = yes
+					portrait_iberia_clothing_trigger = yes	
+					portrait_hungarian_clothing_trigger = yes
+					portrait_anglo_saxon_clothing_trigger = yes	
+					portrait_polish_clothing_trigger = yes	
+					portrait_west_slav_clothing_trigger = yes
 				    AND = {
 				    	portrait_northern_clothing_trigger = yes
 						OR = {
@@ -71,9 +163,13 @@ cloaks = {
 					}							
 				OR = {
 					portrait_western_clothing_trigger = yes
-					portrait_northern_clothing_trigger = yes
-					portrait_byzantine_clothing_trigger = yes
 				    portrait_dde_hre_clothing_trigger = yes						
+					portrait_iberia_clothing_trigger = yes	
+					portrait_hungarian_clothing_trigger = yes	
+					portrait_anglo_saxon_clothing_trigger = yes	
+					portrait_polish_clothing_trigger = yes	
+					portrait_west_slav_clothing_trigger = yes						
+
 				}
 						}
 					}
@@ -133,9 +229,12 @@ cloaks = {
 						NOT = { has_government = theocracy_government }						
 				OR = {
 					portrait_western_clothing_trigger = yes
-					portrait_northern_clothing_trigger = yes
-					portrait_byzantine_clothing_trigger = yes
 				    portrait_dde_hre_clothing_trigger = yes					
+					portrait_iberia_clothing_trigger = yes	
+					portrait_hungarian_clothing_trigger = yes
+					portrait_anglo_saxon_clothing_trigger = yes	
+					portrait_polish_clothing_trigger = yes	
+					portrait_west_slav_clothing_trigger = yes						
 				}
 					}
 					AND = {
@@ -153,9 +252,13 @@ cloaks = {
 						    NOT = { has_government = theocracy_government }							
 				OR = {
 					portrait_western_clothing_trigger = yes
-					portrait_northern_clothing_trigger = yes
-					portrait_byzantine_clothing_trigger = yes
 				    portrait_dde_hre_clothing_trigger = yes						
+					portrait_northern_clothing_trigger = yes
+					portrait_iberia_clothing_trigger = yes	
+					portrait_hungarian_clothing_trigger = yes	
+					portrait_anglo_saxon_clothing_trigger = yes	
+					portrait_polish_clothing_trigger = yes	
+					portrait_west_slav_clothing_trigger = yes						
 				}
 						}
 					}
@@ -548,6 +651,10 @@ cloaks = {
 						NOT = { has_government = theocracy_government }						
 				OR = {
 					portrait_byzantine_clothing_trigger = yes				
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+                NOT = { portrait_norse_flavor_dlc_trigger = yes } 						
+								}					
 				}
 					}
 					AND = {
@@ -565,6 +672,10 @@ cloaks = {
 						    NOT = { has_government = theocracy_government }							
 				OR = {
 					portrait_byzantine_clothing_trigger = yes				
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+                NOT = { portrait_norse_flavor_dlc_trigger = yes } 						
+								}					
 				}
 						}
 					}
@@ -612,6 +723,10 @@ cloaks = {
 						NOT = { has_government = theocracy_government }						
 				OR = {
 					portrait_byzantine_clothing_trigger = yes				
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+                NOT = { portrait_norse_flavor_dlc_trigger = yes } 						
+								}					
 				}
 					}
 					AND = {
@@ -629,6 +744,10 @@ cloaks = {
 						    NOT = { has_government = theocracy_government }							
 				OR = {
 					portrait_byzantine_clothing_trigger = yes				
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+                NOT = { portrait_norse_flavor_dlc_trigger = yes } 						
+								}					
 				}
 						}
 					}
@@ -930,6 +1049,1475 @@ cloaks = {
 			}
 		}
 	}
+
+####northerners
+
+
+	northern_noble = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = northern_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_county
+						NOR = {
+							# has_dynasty = no
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+					portrait_northern_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							highest_held_title_tier = tier_county
+							NOR = {
+								# has_dynasty = no
+								AND = {
+									has_government = republic_government
+									primary_title.tier > 1
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_northern_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+						}
+					}
+				}
+
+			}
+		}
+	}
+	
+	
+	northern_high_noble = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = northern_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 51 # Slightly higher
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_duchy
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 2
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+					portrait_northern_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_duchy
+								AND = {
+									has_government = republic_government
+									primary_title.tier > 2
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_northern_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+						}
+					}
+				}
+
+			}
+		}
+	}	
+	
+	
+
+	northern_king = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = northern_cloak_ruler
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_kingdom
+						NOR = {
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+					portrait_northern_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							highest_held_title_tier = tier_kingdom
+							NOR = {
+								AND = {
+								has_government = republic_government
+									primary_title.tier > 1
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_northern_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+							
+						}
+					}
+				}
+				
+
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	northern_emperor = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = northern_cloak_ruler
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_empire
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						NOT = { has_government = theocracy_government }						
+				OR = {
+								AND = {
+					portrait_northern_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}					
+				}
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_empire
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+							NOT = { has_government = republic_government }
+						    NOT = { has_government = theocracy_government }							
+				OR = {
+								AND = {
+					portrait_northern_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}						
+				}
+						}
+					}
+				}
+			}
+		}
+	}	
+	
+	
+####Norse	
+	fp1_norse_commoner = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = fp1_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 20
+				highest_held_title_tier < tier_county
+				NOR = {
+					AND = {
+						exists = primary_spouse
+						primary_spouse = {
+							highest_held_title_tier > tier_county
+						}
+					}
+					AND = {
+						has_government = republic_government
+						primary_title.tier > 1
+					}
+					AND = { is_ruler = yes has_government = theocracy_government }
+				}
+				portrait_fp1_norse_clothing_trigger = yes
+			}
+		}
+	}
+	fp1_norse_noble = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = fp1_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_county
+						NOR = {
+							# has_dynasty = no
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+						portrait_fp1_norse_clothing_trigger = yes
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							highest_held_title_tier = tier_county
+							NOR = {
+								# has_dynasty = no
+								AND = {
+									has_government = republic_government
+									primary_title.tier > 1
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+							portrait_fp1_norse_clothing_trigger = yes
+						}
+					}
+				}
+
+			}
+		}
+	}
+	
+	
+	fp1_norse_high_noble = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = fp1_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 51 # Slightly higher
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_duchy
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 2
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						portrait_fp1_norse_clothing_trigger = yes
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_duchy
+								AND = {
+									has_government = republic_government
+									primary_title.tier > 2
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+							portrait_fp1_norse_clothing_trigger = yes
+						}
+					}
+				}
+
+			}
+		}
+	}	
+	
+	
+
+	fp1_norse_king = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = fp1_cloak_ruler
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_kingdom
+						NOR = {
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+						portrait_fp1_norse_clothing_trigger = yes
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							highest_held_title_tier = tier_kingdom
+							NOR = {
+								AND = {
+								has_government = republic_government
+									primary_title.tier > 1
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+							portrait_fp1_norse_clothing_trigger = yes
+							
+						}
+					}
+				}
+				
+
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	fp1_norse_emperor = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = fp1_cloak_ruler
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_empire
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						NOT = { has_government = theocracy_government }						
+				OR = {
+					portrait_fp1_norse_clothing_trigger = yes				
+				}
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_empire
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+							NOT = { has_government = republic_government }
+						    NOT = { has_government = theocracy_government }							
+				OR = {
+					portrait_fp1_norse_clothing_trigger = yes				
+				}
+						}
+					}
+				}
+			}
+		}
+	}	
+	
+	
+#########################################################################	
+## Northern Slav ##	
+#########################################################################	
+
+	northern_slav_commoner = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = northern_slav_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 20
+				highest_held_title_tier < tier_county
+				NOR = {
+					AND = {
+						exists = primary_spouse
+						primary_spouse = {
+							highest_held_title_tier > tier_county
+						}
+					}
+					AND = {
+						has_government = republic_government
+						primary_title.tier > 1
+					}
+					AND = { is_ruler = yes has_government = theocracy_government }
+				}
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes	
+			}
+		}
+	}
+	northern_slav_noble = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = northern_slav_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_county
+						NOR = {
+							# has_dynasty = no
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes	
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							highest_held_title_tier = tier_county
+							NOR = {
+								# has_dynasty = no
+								AND = {
+									has_government = republic_government
+									primary_title.tier > 1
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes	
+						}
+					}
+				}
+
+			}
+		}
+	}
+	
+	
+	northern_slav_high_noble = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = northern_slav_cloak_high_nobility
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 51 # Slightly higher
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_duchy
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 2
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes	
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_duchy
+								AND = {
+									has_government = republic_government
+									primary_title.tier > 2
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes	
+						}
+					}
+				}
+
+			}
+		}
+	}	
+	
+	
+
+	northern_slav_king = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = northern_slav_cloak_royalty
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_kingdom
+						NOR = {
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes	
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							highest_held_title_tier = tier_kingdom
+							NOR = {
+								AND = {
+								has_government = republic_government
+									primary_title.tier > 1
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes	
+							
+						}
+					}
+				}
+				
+
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	northern_slav_emperor = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = northern_slav_cloak_royalty
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_empire
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						NOT = { has_government = theocracy_government }						
+				OR = {
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}		
+				}
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_empire
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+							NOT = { has_government = republic_government }
+						    NOT = { has_government = theocracy_government }							
+				OR = {
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}				
+				}
+						}
+					}
+				}
+			}
+		}
+	}	
+	
+	
+	
+	
+##########################################################################
+####Gaelic / Irish
+##########################################################################
+
+	gaelic_commoner = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = gaelic_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 20
+				highest_held_title_tier < tier_county
+				NOR = {
+					AND = {
+						exists = primary_spouse
+						primary_spouse = {
+							highest_held_title_tier > tier_county
+						}
+					}
+					AND = {
+						has_government = republic_government
+						primary_title.tier > 1
+					}
+					AND = { is_ruler = yes has_government = theocracy_government }
+				}
+					portrait_gaelic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes	
+			}
+		}
+	}
+
+
+	gaelic_noble = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = gaelic_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_county
+						NOR = {
+							# has_dynasty = no
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+					portrait_gaelic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							highest_held_title_tier = tier_county
+							NOR = {
+								# has_dynasty = no
+								AND = {
+									has_government = republic_government
+									primary_title.tier > 1
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_gaelic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+						}
+					}
+				}
+
+			}
+		}
+	}
+	
+	
+	gaelic_high_noble = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = gaelic_cloak
+				range = { 0.5 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 51 # Slightly higher
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_duchy
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 2
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+					portrait_gaelic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_duchy
+								AND = {
+									has_government = republic_government
+									primary_title.tier > 2
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_gaelic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+						}
+					}
+				}
+
+			}
+		}
+	}	
+	
+	
+
+	gaelic_king = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = gaelic_cloak_high_nobility
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_kingdom
+						NOR = {
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+					portrait_gaelic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							highest_held_title_tier = tier_kingdom
+							NOR = {
+								AND = {
+								has_government = republic_government
+									primary_title.tier > 1
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_gaelic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+							
+						}
+					}
+				}
+				
+
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	gaelic_emperor = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = gaelic_cloak_high_nobility
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_empire
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						NOT = { has_government = theocracy_government }						
+				OR = {
+								AND = {
+					portrait_gaelic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}					
+				}
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_empire
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+							NOT = { has_government = republic_government }
+						    NOT = { has_government = theocracy_government }							
+				OR = {
+								AND = {
+					portrait_gaelic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}						
+				}
+						}
+					}
+				}
+			}
+		}
+	}	
+	
+	
+	gaelic_war = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = gaelic_cloak
+				range = { 0.5 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+				portrait_wear_armor_trigger = yes
+				OR = {
+								AND = {
+					portrait_gaelic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}						
+				}
+			}
+		}
+	}	
+	
+	
+##########################################################################
+####Balto-Finnic
+##########################################################################
+	
+	balto_finnic_commoner = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = balto_finnic_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 20
+				highest_held_title_tier < tier_county
+				NOR = {
+					AND = {
+						exists = primary_spouse
+						primary_spouse = {
+							highest_held_title_tier > tier_county
+						}
+					}
+					AND = {
+						has_government = republic_government
+						primary_title.tier > 1
+					}
+					AND = { is_ruler = yes has_government = theocracy_government }
+				}
+					portrait_balto_finnic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes	
+			}
+		}
+	}	
+	
+	balto_finnic_noble = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = balto_finnic_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_county
+						NOR = {
+							# has_dynasty = no
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+					portrait_balto_finnic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							highest_held_title_tier = tier_county
+							NOR = {
+								# has_dynasty = no
+								AND = {
+									has_government = republic_government
+									primary_title.tier > 1
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_balto_finnic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+						}
+					}
+				}
+
+			}
+		}
+	}
+	
+	
+	balto_finnic_high_noble = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = balto_finnic_cloak
+				range = { 0.5 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 51 # Slightly higher
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_duchy
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 2
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+					portrait_balto_finnic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_duchy
+								AND = {
+									has_government = republic_government
+									primary_title.tier > 2
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_balto_finnic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+						}
+					}
+				}
+
+			}
+		}
+	}	
+	
+	
+
+	balto_finnic_king = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = balto_finnic_cloak_high_nobility
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				OR = {
+					AND = {
+						highest_held_title_tier = tier_kingdom
+						NOR = {
+							AND = {
+								has_government = republic_government
+								primary_title.tier > 1
+							}
+							AND = { is_ruler = yes has_government = theocracy_government }
+						}
+					portrait_balto_finnic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							highest_held_title_tier = tier_kingdom
+							NOR = {
+								AND = {
+								has_government = republic_government
+									primary_title.tier > 1
+								}
+								AND = { is_ruler = yes has_government = theocracy_government }
+							}
+					portrait_balto_finnic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+							
+						}
+					}
+				}
+				
+
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	balto_finnic_emperor = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = balto_finnic_cloak_high_nobility
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 50
+				NAND = {
+					has_trait = peasant_leader
+					OR = {
+						is_ruler = no
+						is_leading_faction_type = peasant_faction
+						AND = {
+							is_ruler = yes
+							is_landed = no
+							OR = {
+								has_government = feudal_government
+								has_government = clan_government
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							highest_held_title_tier = tier_empire
+						}
+						NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+						NOT = { has_government = republic_government }
+						NOT = { has_government = theocracy_government }						
+				OR = {
+								AND = {
+					portrait_balto_finnic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}					
+				}
+					}
+					AND = {
+						exists = primary_spouse
+						OR = {
+							is_ruler = no
+							highest_held_title_tier = tier_barony
+						}
+						primary_spouse = {
+							OR = {
+								highest_held_title_tier = tier_empire
+							}
+							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
+							NOT = { has_government = republic_government }
+						    NOT = { has_government = theocracy_government }							
+				OR = {
+								AND = {
+					portrait_balto_finnic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}						
+				}
+						}
+					}
+				}
+			}
+		}
+	}	
+	
+	
+	balto_finnic_war = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = balto_finnic_cloak
+				range = { 0.5 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+				portrait_wear_armor_trigger = yes
+				OR = {
+								AND = {
+					portrait_balto_finnic_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}						
+				}
+			}
+		}
+	}		
+	
+
+
+##########################################################################
+####Italian Merchant republics
+##########################################################################
+	
+	italian_republic_royal_nobles = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				
+				gene = cloaks
+				template = italian_royalty
+				range = { 0 1 }
+			}
+		}		
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+
+				highest_held_title_tier > tier_duchy
+				has_government = republic_government
+				portrait_italian_clothing_trigger = yes
+
+			}
+		}
+	}			
+	
+
+
+
+
 
 
 

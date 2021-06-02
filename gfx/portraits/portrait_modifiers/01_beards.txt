@@ -73,6 +73,11 @@ beards = {
                     portrait_western_clothing_trigger = yes
                     portrait_byzantine_clothing_trigger = yes
                     portrait_italian_clothing_trigger = yes						
+					portrait_iberia_clothing_trigger = yes	
+					portrait_hungarian_clothing_trigger = yes	
+					portrait_anglo_saxon_clothing_trigger = yes	
+					portrait_polish_clothing_trigger = yes	
+					portrait_west_slav_clothing_trigger = yes						
                 }
             }
             modifier = { # Muslims should always have a beard
@@ -118,6 +123,11 @@ beards = {
                     portrait_western_clothing_trigger = yes
                     portrait_byzantine_clothing_trigger = yes
                     portrait_italian_clothing_trigger = yes					
+					portrait_iberia_clothing_trigger = yes	
+					portrait_hungarian_clothing_trigger = yes	
+					portrait_anglo_saxon_clothing_trigger = yes	
+					portrait_polish_clothing_trigger = yes	
+					portrait_west_slav_clothing_trigger = yes						
                 }
             }
             modifier = { # Muslims should always have a beard
@@ -165,6 +175,8 @@ beards = {
 					portrait_dde_abbasid_clothing_trigger = yes	
 					portrait_sub_saharan_african_tribal_clothing_trigger = yes		
 					portrait_east_african_clothing_trigger = yes						
+					portrait_iberia_muslim_clothing_trigger = yes	
+				    portrait_maghreb_clothing_trigger = yes					
 				}
             }
             modifier = { # Muslims should always have a beard
@@ -176,6 +188,8 @@ beards = {
 					portrait_dde_abbasid_clothing_trigger = yes	
 					portrait_sub_saharan_african_tribal_clothing_trigger = yes		
 					portrait_east_african_clothing_trigger = yes						
+					portrait_iberia_muslim_clothing_trigger = yes
+				    portrait_maghreb_clothing_trigger = yes					
 				}
             }
             modifier = {
@@ -218,6 +232,8 @@ beards = {
 					portrait_dde_abbasid_clothing_trigger = yes		
 					portrait_sub_saharan_african_tribal_clothing_trigger = yes		
 					portrait_east_african_clothing_trigger = yes						
+					portrait_iberia_muslim_clothing_trigger = yes	
+				    portrait_maghreb_clothing_trigger = yes					
 				}
             }
             modifier = { # Muslims should always have a beard
@@ -229,6 +245,8 @@ beards = {
 					portrait_dde_abbasid_clothing_trigger = yes		
 					portrait_sub_saharan_african_tribal_clothing_trigger = yes		
 					portrait_east_african_clothing_trigger = yes							
+					portrait_iberia_muslim_clothing_trigger = yes	
+				    portrait_maghreb_clothing_trigger = yes					
 				}
             }
             modifier = {
@@ -466,12 +484,32 @@ beards = {
                         template = hair_wavy
                     }            
                 }
+				OR = {
                 portrait_northern_clothing_trigger = yes
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+                NOT = { portrait_norse_flavor_dlc_trigger = yes } 					
+								}
+								AND = {
+					portrait_balto_finnic_clothing_trigger = yes	
+                NOT = { portrait_norse_flavor_dlc_trigger = yes } 					
+								}									
+				}
             }
             modifier = { # Muslims should always have a beard
                 add = 200
                 religion = religion:islam_religion
+				OR = {
                 portrait_northern_clothing_trigger = yes
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+                NOT = { portrait_norse_flavor_dlc_trigger = yes } 					
+								}
+								AND = {
+					portrait_balto_finnic_clothing_trigger = yes	
+                NOT = { portrait_norse_flavor_dlc_trigger = yes } 					
+								}									
+				}
             }
             modifier = {
                 add = -100
@@ -507,12 +545,26 @@ beards = {
                         template = hair_curly
                     }            
                 }
+				OR = {
                 portrait_northern_clothing_trigger = yes
+				portrait_balto_finnic_clothing_trigger = yes						
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+                NOT = { portrait_norse_flavor_dlc_trigger = yes } 					
+								}					
+				}
             }
             modifier = { # Muslims should always have a beard
                 add = 200
                 religion = religion:islam_religion
+				OR = {
                 portrait_northern_clothing_trigger = yes
+				portrait_balto_finnic_clothing_trigger = yes						
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+                NOT = { portrait_norse_flavor_dlc_trigger = yes } 					
+								}					
+				}
             }
             modifier = {
                 add = -100
@@ -828,12 +880,55 @@ beards = {
 ###### Han Chinese #######
 #######################
 
-    han_straight = {
+    han_thin_beards = {
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = beards
                 template = han_beards_straight
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }   
+        # outfit_tags = { no_clothes }
+        weight = {
+            base = 0
+            modifier = {
+                add = 70
+                OR = {
+                    has_gene = {
+                        category = gene_hair_type
+                        template = hair_straight_thin_beard
+                    }                  
+                }
+                OR = {
+                    portrait_han_clothing_trigger = yes		
+					portrait_uyghur_clothing_trigger = yes	
+				    portrait_balto_finnic_clothing_trigger = yes						
+											
+                }
+            }
+            modifier = { # Muslims should always have a beard
+                add = 200
+                religion = religion:islam_religion
+                portrait_han_clothing_trigger = yes
+            }
+            modifier = {
+                add = -100
+                OR = {
+                    is_from_ruler_designer = yes
+                    has_character_flag = has_scripted_appearance
+                }
+            }
+        }	
+    }
+	
+
+    han_straight = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = turkish_beards_straight
                 range = { 0 1 } # For the randomness to work correctly
             }
         }   
@@ -854,6 +949,8 @@ beards = {
                 }
                 OR = {
                     portrait_han_clothing_trigger = yes
+					portrait_uyghur_clothing_trigger = yes	
+											
                 }
             }
             modifier = { # Muslims should always have a beard
@@ -897,6 +994,8 @@ beards = {
                 }
                 OR = {
                     portrait_han_clothing_trigger = yes
+					portrait_uyghur_clothing_trigger = yes	
+											
                 }
             }
             modifier = { # Muslims should always have a beard
@@ -943,6 +1042,10 @@ beards = {
                 }
                 OR = {
                     portrait_turkish_clothing_trigger = yes			
+					portrait_seljuk_clothing_trigger = yes	
+					portrait_cuman_clothing_trigger = yes	
+					portrait_Khazar_clothing_trigger = yes	
+					portrait_kirghiz_clothing_trigger = yes						
                 }
             }
             modifier = { # Muslims should always have a beard
@@ -987,6 +1090,10 @@ beards = {
                 }
                 OR = {
                     portrait_turkish_clothing_trigger = yes
+					portrait_seljuk_clothing_trigger = yes	
+					portrait_cuman_clothing_trigger = yes
+					portrait_Khazar_clothing_trigger = yes	
+					portrait_kirghiz_clothing_trigger = yes						
                 }
             }
             modifier = { # Muslims should always have a beard
@@ -1030,6 +1137,10 @@ beards = {
                 }
                 OR = {
                     portrait_turkish_clothing_trigger = yes
+					portrait_seljuk_clothing_trigger = yes	
+					portrait_cuman_clothing_trigger = yes
+					portrait_Khazar_clothing_trigger = yes	
+					portrait_kirghiz_clothing_trigger = yes						
                 }
             }
             modifier = { # Muslims should always have a beard
@@ -1404,8 +1515,113 @@ beards = {
 	
 	
 	
+#######################
+###### Northern Slav/Early Slavs #######
+#######################
+
+    northern_slav_straight = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = northern_slav_beards_straight
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }   
+        # outfit_tags = { no_clothes }
+        weight = {
+            base = 0
+            modifier = {
+                add = 70
+                OR = {
+                     has_gene = {
+                        category = gene_hair_type
+                        template = hair_straight
+                    }       
+                    has_gene = {
+                        category = gene_hair_type
+                        template = hair_wavy
+                    }            
+                }
+				OR = {
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}	
+								AND = {
+				portrait_balto_finnic_clothing_trigger = yes				
+				portrait_norse_flavor_dlc_trigger = yes					
+								}								
+				}
+            }
+            modifier = { # Muslims should always have a beard
+                add = 200
+                religion = religion:islam_religion
+                OR = {
+								AND = {
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes						
+								}
+								AND = {
+				portrait_balto_finnic_clothing_trigger = yes				
+				portrait_norse_flavor_dlc_trigger = yes					
+								}								
+				}
+            }
+            modifier = {
+                add = -100
+                OR = {
+                    is_from_ruler_designer = yes
+                    has_character_flag = has_scripted_appearance
+                }
+            }
+        }
+    }
+
 	
 	
+    northern_slav_curly = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = northern_slav_beards_curly
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }   
+        # outfit_tags = { no_clothes }
+        weight = {
+            base = 0
+            modifier = {
+                add = 90
+                OR = {
+                    has_gene = {
+                        category = gene_hair_type
+                        template = hair_wavy
+                    }       
+                    has_gene = {
+                        category = gene_hair_type
+                        template = hair_curly
+                    }            
+                }
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+            }
+            modifier = { # Muslims should always have a beard
+                add = 200
+                religion = religion:islam_religion
+					portrait_northern_slav_clothing_trigger = yes	
+				portrait_norse_flavor_dlc_trigger = yes		
+            }
+            modifier = {
+                add = -100
+                OR = {
+                    is_from_ruler_designer = yes
+                    has_character_flag = has_scripted_appearance
+                }
+            }
+        }
+    }
 	
 	
 	

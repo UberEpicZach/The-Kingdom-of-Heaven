@@ -9,6 +9,11 @@
 
 	add_accessory_modifiers = {
 		gene = cloaks
+		template = all_cloak
+	}
+
+	add_accessory_modifiers = {
+		gene = cloaks
 		#is_valid_custom = {
 		#	highest_held_title_tier >= tier_kingdom
 		#}
@@ -17,44 +22,42 @@
 	
 	add_accessory_modifiers = {
 		gene = cloaks
-	#	is_valid_custom = {
+		#is_valid_custom = {
 	#		highest_held_title_tier >= tier_kingdom
-	#		has_culture = culture:french 
-	#	}
+		#}
 		template = french_royalty
 	}
 
 	add_accessory_modifiers = {
 		gene = cloaks
-#		is_valid_custom = {
-#			highest_held_title_tier >= tier_kingdom
-#			has_culture = culture:greek
-#		}
+		#is_valid_custom = {
+		#	highest_held_title_tier >= tier_kingdom
+		#}
 		template = byzantine_royalty
 	}
 
 	add_accessory_modifiers = {
 		gene = cloaks
-#		is_valid_custom = {
-#			highest_held_title_tier >= tier_kingdom
-#		}
+		#is_valid_custom = {
+		#	highest_held_title_tier >= tier_kingdom
+		#}
 		template = italian_royalty
 	}
 	
 	
 	add_accessory_modifiers = {
 		gene = cloaks
-	#	is_valid_custom = {
+		#is_valid_custom = {
 	#		highest_held_title_tier >= tier_kingdom
-	#	}
+		#}
 		template = early_iranian_royalty
 	}	
 	
 	add_accessory_modifiers = {
 		gene = cloaks
-	#	is_valid_custom = {
+		#is_valid_custom = {
 	#		highest_held_title_tier >= tier_kingdom
-	#	}
+		#}
 		template = eastern_iranian_royalty
 	}		
 	
@@ -72,7 +75,89 @@
 		is_valid_custom = {
 			has_fp1_dlc_trigger = yes
 		}
-		template = fp1_cloak_berserker
+		template = fp1_cloak_ruler
 	}
 
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			has_fp1_dlc_trigger = yes
+		}
+		template = northern_cloak
+	}
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		is_valid_custom = {
+			has_fp1_dlc_trigger = yes
+		}
+		template = northern_cloak_ruler
+	}
+
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		template = northern_slav_cloak
+	}
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		template = northern_slav_cloak_high_nobility
+	}
+
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		#is_valid_custom = {
+		#	highest_held_title_tier >= tier_kingdom
+		#}
+		template = northern_slav_cloak_royalty
+	}
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		template = gaelic_cloak
+	}
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		template = gaelic_cloak_high_nobility
+	}
+
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		template = balto_finnic_cloak
+	}
+
+	add_accessory_modifiers = {
+		gene = cloaks
+		template = balto_finnic_cloak_high_nobility
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
 }
+	
+	
+	
+

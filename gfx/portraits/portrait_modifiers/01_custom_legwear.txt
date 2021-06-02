@@ -9,9 +9,17 @@
 	
 	add_accessory_modifiers = {
 		gene = legwear
-		template = western_common_legwear
+		# is_valid_custom = {
+		# 	highest_held_title_tier >= tier_duchy
+		# }
+		template = all_legwear
 	}
 
+	add_accessory_modifiers = {
+		gene = legwear
+		template = western_common_legwear
+	}
+	
 	add_accessory_modifiers = {
 		gene = legwear
 		# is_valid_custom = {
@@ -27,14 +35,6 @@
 		# }
 		template = mena_common_legwear
 	}
-	
-	add_accessory_modifiers = {
-		gene = legwear
-		# is_valid_custom = {
-		# 	highest_held_title_tier >= tier_duchy
-		# }
-		template = generic_legwear
-	}
 
 	add_accessory_modifiers = {
 		gene = legwear
@@ -44,4 +44,5 @@
 		template = fp1_common_legwear
 	}
 	
+
 }

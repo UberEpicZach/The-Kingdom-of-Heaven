@@ -1,0 +1,252 @@
+portrait_ghaznavid_clothing_trigger = {
+	has_culture = culture:turkish # Oghuz
+	religion = religion:islam_religion	
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = { 
+		                   OR = {
+							geographical_region = world_kabulistan
+							geographical_region = world_india_rajastan
+							geographical_region = world_makran
+						} 
+					}
+
+	}
+	trigger_if = {
+		limit = {
+			exists = host.capital_province
+			NOT = { exists = capital_province }
+		}
+		host.capital_province = { 
+		                   OR = {
+							geographical_region = world_kabulistan
+							geographical_region = world_india_rajastan
+							geographical_region = world_makran
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = liege.capital_province
+			NOT = { exists = capital_province }
+		}
+		liege.capital_province = { 
+		                   OR = {
+							geographical_region = world_kabulistan
+							geographical_region = world_india_rajastan
+							geographical_region = world_makran
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = location.province_owner.capital_province
+			NOT = { exists = capital_province }
+		}
+		location.province_owner.capital_province = { 
+		                   OR = {
+							geographical_region = world_kabulistan
+							geographical_region = world_india_rajastan
+							geographical_region = world_makran
+						} 
+					}
+	}
+}
+
+
+
+portrait_seljuk_clothing_trigger = {
+	has_culture = culture:turkish # Oghuz
+	religion = religion:islam_religion							
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = { 
+		                   OR = {
+							geographical_region = world_persia
+							geographical_region = world_khorasan
+							geographical_region = world_daylam							
+						} 
+					}
+
+	}
+	trigger_if = {
+		limit = {
+			exists = host.capital_province
+			NOT = { exists = capital_province }
+		}
+		host.capital_province = { 
+		                   OR = {
+							geographical_region = world_persia
+							geographical_region = world_khorasan
+							geographical_region = world_daylam	
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = liege.capital_province
+			NOT = { exists = capital_province }
+		}
+		liege.capital_province = { 
+		                   OR = {
+							geographical_region = world_persia
+							geographical_region = world_khorasan
+							geographical_region = world_daylam	
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = location.province_owner.capital_province
+			NOT = { exists = capital_province }
+		}
+		location.province_owner.capital_province = { 
+		                   OR = {
+							geographical_region = world_persia
+							geographical_region = world_khorasan
+							geographical_region = world_daylam	
+						} 
+					}
+	}
+}
+
+
+
+portrait_caliph_high_middle_ages_trigger = {
+    required_year_greater_or_equal_trigger = { YEAR = 1066 } 
+}
+
+
+portrait_caliph_early_middle_ages_trigger = {
+    required_year_lesser_or_equal_trigger = { YEAR = 1065 }
+}
+
+##non muslim iranians
+portrait_early_eastern_iranian_trigger = {
+    #religion = religion:zoroastrianism_religion
+#    EPE_culture_era_early_medieval_trigger = yes    
+    NOT = { religion = religion:islam_religion }
+    NOT = { culture = culture:saka }
+    culture = { has_graphical_culture = iranian_clothing_gfx }    
+}
+
+#Islamic Iranians
+portrait_early_islamic_iranian_trigger = {
+#   EPE_culture_era_early_medieval_trigger = yes
+	religion = religion:islam_religion	
+	culture = { has_graphical_culture = iranian_clothing_gfx }	
+}
+
+##chinese sogdians
+portrait_chinese_sogdians_trigger = {
+	has_culture = culture:sogdian 							
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east					
+						} 
+					}
+
+	}
+	trigger_if = {
+		limit = {
+			exists = host.capital_province
+			NOT = { exists = capital_province }
+		}
+		host.capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east			
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = liege.capital_province
+			NOT = { exists = capital_province }
+		}
+		liege.capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east			
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = location.province_owner.capital_province
+			NOT = { exists = capital_province }
+		}
+		location.province_owner.capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east			
+						} 
+					}
+	}
+}
+
+portrait_tahirid_trigger = {
+
+    dynasty = dynasty:811
+
+} 
+
+portrait_shahi_trigger = {
+
+    dynasty = dynasty:1043006
+
+} 
+
+##EPE_culture_era_tribal_trigger = {
+#	culture = { 
+#		AND = {
+#			has_cultural_era_or_later = culture_era_tribal 
+#			#NOT = { 
+#			#	has_cultural_era_or_later = culture_era_early_medieval
+#			#}	
+#		}
+#	}
+#}
+ 
+EPE_culture_era_early_medieval_trigger = {
+	culture = { 
+		AND = {
+			OR = {
+				has_cultural_era_or_later = culture_era_tribal 
+				has_cultural_era_or_later = culture_era_early_medieval
+			}
+			NOT = { 
+				has_cultural_era_or_later = culture_era_high_medieval 
+			}	
+		}
+	}
+}
+
+EPE_culture_era_high_medieval_trigger = {
+	culture = { 
+		AND = {
+			has_cultural_era_or_later = culture_era_high_medieval 
+			NOT = { 
+				has_cultural_era_or_later = culture_era_late_medieval
+			}	
+		}
+	}
+}
+
+EPE_culture_era_late_medieval_trigger = {
+	culture = {	
+		has_cultural_era_or_later = culture_era_late_medieval 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

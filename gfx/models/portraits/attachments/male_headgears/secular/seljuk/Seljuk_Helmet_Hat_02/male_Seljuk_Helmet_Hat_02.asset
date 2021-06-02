@@ -1,0 +1,20 @@
+pdxmesh = {
+	name = "male_Seljuk_Helmet_Hat_02_mesh"
+	file = "male_Seljuk_Helmet_Hat_02.mesh"
+
+	meshsettings = {
+		name = "seljuk_helmet_hat_02"
+		index = 0
+		texture_diffuse = "Seljuk_Helmet_Hat_02_diffuse.dds"
+		texture_normal = "Seljuk_Helmet_Hat_02_normal.dds"
+		texture_specular = "Seljuk_Helmet_Hat_02_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "male_Seljuk_Helmet_Hat_02_entity"
+	pdxmesh = "male_Seljuk_Helmet_Hat_02_mesh"
+
+}

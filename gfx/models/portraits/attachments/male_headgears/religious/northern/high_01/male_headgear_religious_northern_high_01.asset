@@ -25,7 +25,7 @@ entity = {
 	}
 }
 
-
+######Non islamic iranian
 
 entity = {
 	name = "male_headgear_secular_sogdian_headband_01_common_entity"
@@ -52,9 +52,44 @@ entity = {
 	}
 }
 
+######Northern slav
+
+entity = {
+	name = "male_headgear_northern_slav_headband_01_common_entity"
+	pdxmesh = "male_headgear_religious_northern_high_01_mesh"
+
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/male_headgears/religious/northern/high_01/male_headgear_religious_northern_high_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "northern_slav_headband_01_common"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
+
+entity = {
+	name = "male_headgear_northern_slav_headband_01_low_entity"
+	pdxmesh = "male_headgear_religious_northern_high_01_mesh"
+
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/male_headgears/religious/northern/high_01/male_headgear_religious_northern_high_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "northern_slav_headband_01_low"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
 
 
+entity = {
+	name = "male_headgear_northern_slav_headband_01_high_entity"
+	pdxmesh = "male_headgear_religious_northern_high_01_mesh"
 
+	game_data = {
+		portrait_accessory = {
+			pattern_mask = "gfx/models/portraits/attachments/male_headgears/religious/northern/high_01/male_headgear_religious_northern_high_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
+			variation = "northern_slav_headband_01_high"	#A "variation" object in gfx/portraits/accessory_variations/
+		}
+	}
+}
 
 
 
