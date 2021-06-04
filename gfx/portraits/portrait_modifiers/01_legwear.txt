@@ -26,24 +26,6 @@
 		}
 	}
 
-	portrait_dragon = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = legwear
-				template = no_legwear
-				value = 0
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 2000
-				has_trait = koh_dragon
-			}
-		}
-	}
-
 ## No Leg wear for children under 4 ## 
 
 	children_no_headgear = {
@@ -136,13 +118,6 @@
 				OR = {
 					portrait_western_clothing_trigger = yes
 					portrait_byzantine_clothing_trigger = yes
-					portrait_french_clothing_trigger = yes
-					portrait_italian_clothing_trigger = yes							
-					portrait_iberia_clothing_trigger = yes	
-					portrait_hungarian_clothing_trigger = yes	
-					portrait_anglo_saxon_clothing_trigger = yes	
-					portrait_polish_clothing_trigger = yes	
-					portrait_west_slav_clothing_trigger = yes						
 				}
 				
 			}
@@ -175,20 +150,11 @@
 					portrait_indian_clothing_trigger = yes
 					portrait_african_clothing_trigger = yes
 					portrait_steppe_clothing_trigger = yes
-					portrait_iranian_clothing_trigger = yes			
-					portrait_turkish_clothing_trigger = yes	
-				    portrait_south_indian_clothing_trigger = yes
-				    #portrait_ghaznavid_clothing_trigger = yes
-				    portrait_seljuk_clothing_trigger = yes
-				    portrait_dde_abbasid_clothing_trigger = yes							
-				    portrait_iberia_muslim_clothing_trigger = yes	
-				    portrait_maghreb_clothing_trigger = yes						
 				}
 			}
 		}
-	}	
-	
-	
+	}
+
 	fighting_trousers = {
 
 		dna_modifiers = {
@@ -213,40 +179,5 @@
 			}
 		}
 	}
-	
-	
-	fp1_common_legwear = {
-
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = legwear
-				template = fp1_common_legwear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			# morph = {
-			# 	mode = modify
-			# 	gene = gene_bs_body_shape
-			# 	# value = 0.5
-			# 	template = body_shape_average
-			# }
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 20
-				OR = {
-					portrait_northern_clothing_trigger = yes
-					portrait_fp1_norse_clothing_trigger = yes
-					portrait_northern_slav_clothing_trigger = yes					
-					portrait_gaelic_clothing_trigger = yes		
-					portrait_balto_finnic_clothing_trigger = yes	
-					
-				}
-			}
-		}
-	}
-	
-	
 
 }
