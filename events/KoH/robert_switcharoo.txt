@@ -1,0 +1,65 @@
+namespace = realm
+robbie.0001 = {
+	title = robbie.0001.t
+	desc = robbie.0001.desc
+	theme = realm
+	left_portrait = {
+		character = scope:comrade_robert
+		animation = idle
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_robbie_wobbie
+			days = 1825
+		}
+		#Save the capital for loc. 
+		capital_barony = { save_scope_as = capital_barony }
+		#Create robbie wobbie
+		create_character = {
+			location = root.capital_province
+			template = robert_of_st_albans_character
+			save_scope_as = comrade_robert
+			name = Robert
+			faith = catholic
+			culture = culture:english
+			dynasty = lowborn
+			trait = brave
+			trait = zealous
+			trait = faith_warrior
+		}
+	}
+
+	#let robbie in
+	option = {
+		name = robbie.0001.a
+
+		add_courtier = scope:comrade_robert
+
+		scope:comrade_robert = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 30
+			}
+			set_character_faith = root.faith
+		}
+	}
+
+	#kick robbie out
+	option = {
+		name = robbie.0001.b
+
+		scope:comrade_robert = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -30
+			}
+			set_character_faith = root.faith
+			hidden_effect = {
+				death = { death_reason = death_vanished }
+			}
+		}
+	}
+}
