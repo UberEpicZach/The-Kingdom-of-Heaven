@@ -72,7 +72,7 @@ types CardinalsGridStuff { #Reusable templates for showing characters
     }
     type window_cardinal_fixedgrid = fixedgridbox{ # Not currently used. Can be used in place of the Dynamicgridbox
         name = "cardinal_grid"
-        datamodel = "[GetDummyMale.MakeScope.GetList('cardinal_characters')]"
+        datamodel = "[GetGlobalList('cardinal_characters')]"
         datamodel_wrap = 4
 		addcolumn = 300
 		addrow = 245
@@ -84,12 +84,12 @@ types CardinalsGridStuff { #Reusable templates for showing characters
     type window_cardinal_dynamicgrid = dynamicgridbox{ #Used
         name = "cardinal_grid"
         ignoreinvisible = yes
-        datamodel = "[GetDummyMale.MakeScope.GetList('cardinal_characters')]"
+        datamodel = "[GetGlobalList('cardinal_characters')]"
         datamodel_wrap = 4
 		flipdirection = yes
         item = {
             window_cardinal_griditem = {
-                visible = "[Not(ObjectsEqual(Scope.GetCharacter,GetDummyMale.MakeScope.Var('preferatus_character').Char))]"
+                visible = "[Not(ObjectsEqual(Scope.GetCharacter,GetGlobalVariable('preferatus_character').Char))]"
             }
         }
     }
@@ -265,7 +265,7 @@ types Cardinals  {
                     blockoverride "text" {text = cardinals_pope}
                 }
                 window_cardinals_special_character = {
-                    datacontext = "[GetDummyMale.MakeScope.Var('preferatus_character').GetCharacter]"
+                    datacontext = "[GetGlobalVariable('preferatus_character').GetCharacter]"
                     blockoverride "text"    {   text = cardinals_preferatus}
                     blockoverride "portrait" {  window_cardinals_portrait = { parentanchor = hcenter|vcenter position = { -13 3 } } } 
                     
@@ -320,7 +320,7 @@ types Cardinals  {
             window_cardinals_special_character = {
                 parentanchor = vcenter|right
                 position = {-220 0}
-                datacontext = "[GetDummyMale.MakeScope.Var('predicted_cardinal').GetCharacter]"
+                datacontext = "[GetGlobalVariable('predicted_cardinal').GetCharacter]"
                 blockoverride "text"    {   text = cardinals_predictus}
                 blockoverride "portrait" {  window_cardinals_portrait = { parentanchor = hcenter|vcenter }}
                 blockoverride "score" {text = "[GuiScope.SetRoot(Character.MakeScope).ScriptValue('bishop_to_cardinal_score')|0]"}

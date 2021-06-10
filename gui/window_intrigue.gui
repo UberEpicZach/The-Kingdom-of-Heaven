@@ -7,8 +7,6 @@ window = {
 	parentanchor = top|right
 	layer = windows_layer
 	movable = no
-	
-	visible = "[And(IsGameViewOpen('intrigue_window'), Not(ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 
 	using = Window_Size_MainTab
 
@@ -19,7 +17,6 @@ window = {
 		using = Window_Position_MainTab
 
 		on_start = "[IntrigueWindow.SetTab( 'schemes' )]"
-		on_start = "[GetVariableSystem.Set( 'right_window_open', 'true' )]"
 		on_start = "[GetVariableSystem.Set( 'secrets_show_all', 'true' )]"
 	}
 
@@ -28,8 +25,6 @@ window = {
 		using = Animation_FadeOut_Quick
 		using = Sound_WindowHide_Standard
 		using = Window_Position_MainTab_Hide
-
-		on_start = "[GetVariableSystem.Clear( 'right_window_open')]"
 	}
 
 	margin_widget = {
@@ -37,12 +32,8 @@ window = {
 		margin = { 0 26 }
 		margin_right = 20
 
-		using = Window_Background
-
 		widget = {
 			size = { 100% 100% }
-
-			# using = Window_Decoration_Thin
 
 			vbox = {
 				using = Window_Margins
@@ -117,7 +108,7 @@ window = {
 						}
 
 						background = {
-							texture = "gfx/interface/illustrations/council/bg_council_spymaster.dds"
+							texture = "gfx/interface/skinned/illustrations/council/bg_council_spymaster.dds"
 							margin = { -5 0 }
 							fittype = end
 							alpha = 0.3
@@ -362,12 +353,9 @@ window = {
 										
 										hbox = {
 
-											button_normal = {
+											button_expand = {
 												name = "show"
 												visible = "[GreaterThan_int32(GetDataModelSize(IntrigueWindow.GetMyHooks), '(int32)4')]"
-												texture = "gfx/interface/buttons/button_tree_expand.dds"
-												framesize = { 36 36 }
-												size = { 20 20 }
 												frame = "[Select_int32( GetVariableSystem.Exists( 'hooks_expand' ), '(int32)2', '(int32)1' )]"
 												onclick = "[GetVariableSystem.Toggle( 'hooks_expand' )]"
 
@@ -954,20 +942,17 @@ types IntrigueWindow
 				align = nobaseline
 			}
 
-			button_toggle = {
+			button_expand = {
 				size = { 25 25 }
-				texture = "gfx/interface/buttons/button_tree_expand.dds"
-				framesize = { 36 36 }
 				frame = 2
 
 				visible = "[GetVariableSystem.Exists( 'own_scheme_expand')]"
 				onclick = "[GetVariableSystem.Clear( 'own_scheme_expand')]"
 			}
 
-			button_toggle = {
+			button_expand = {
 				size = { 25 25 }
-				texture = "gfx/interface/buttons/button_tree_expand.dds"
-				framesize = { 36 36 }
+				frame = 1
 
 				visible = "[Not(GetVariableSystem.Exists( 'own_scheme_expand'))]"
 				onclick = "[GetVariableSystem.Set( 'own_scheme_expand', 'true' )]"
@@ -1340,23 +1325,28 @@ types IntrigueWindowTypes
 						expand = {}
 
 						button_standard_small = {
-							name = "expose_button"
-							datacontext = "[IntrigueWindowSecretGroup.GetFirstSecret.GetSecret]"
-							size = { 85 25 }
-							onclick = "[IntrigueWindow.ExposeSecret( Character.Self, 'blackmail_interaction', Secret.Self )]"
-							text = "INTRIGUE_WINDOW_SECRET_EXPOSE"
-							tooltip = "INTRIGUE_WINDOW_SECRET_EXPOSE_TT"
-						}
-
-						button_standard_small = {
 							name = "blackmail_button"
 							datacontext = "[IntrigueWindowSecretGroup.GetFirstSecret.GetSecret]"
-							size = { 155 25 }
+							size = { 120 25 }
 							enabled = "[IntrigueWindowSecretGroup.CanBlackmail]"
 							onclick = "[Character.OpenPlayerInteraction( 'blackmail_interaction' )]"
 							text = "INTRIGUE_WINDOW_SECRET_KNOWN_TO_ME_BLACKMAIL"
 							tooltip = "INTRIGUE_WINDOW_SECRET_BLACKMAIL_TT"
+							using = tooltip_se
 						}
+
+						button_tertiary = {
+							name = "expose_button"
+							datacontext = "[IntrigueWindowSecretGroup.GetFirstSecret.GetSecret]"
+							size = { 120 25 }
+							onclick = "[Character.OpenPlayerInteraction( 'expose_secret_interaction' )]"
+							#"[IntrigueWindow.ExposeSecret( Character.Self, 'blackmail_interaction', Secret.Self )]"
+							text = "INTRIGUE_WINDOW_SECRET_EXPOSE"
+							tooltip = "INTRIGUE_WINDOW_SECRET_EXPOSE_TT"
+							using = tooltip_se
+						}
+
+						
 					}
 				}
 

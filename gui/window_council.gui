@@ -9,8 +9,6 @@ window = {
 	parentanchor = top|right
 	layer = windows_layer
 	movable = no
-	
-	visible = "[And(IsGameViewOpen('council_window'), Not(ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 
 	using = Window_Size_MainTab
 
@@ -20,7 +18,6 @@ window = {
 		using = Sound_WindowShow_Standard
 		using = Window_Position_MainTab
 
-		on_start = "[GetVariableSystem.Set( 'right_window_open', 'true' )]"
 		on_start = "[GetVariableSystem.Set( 'council_tabs', 'my_council' )]"
 	}
 
@@ -29,8 +26,6 @@ window = {
 		using = Animation_FadeOut_Quick
 		using = Sound_WindowHide_Standard
 		using = Window_Position_MainTab_Hide
-
-		on_start = "[GetVariableSystem.Clear( 'right_window_open' )]"
 	}
 
 	margin_widget = {
@@ -38,12 +33,8 @@ window = {
 		margin = { 0 26 }
 		margin_right = 20
 
-		using = Window_Background
-
 		widget = {
 			size = { 100% 100% }
-
-			# using = Window_Decoration_Thin
 
 			vbox = {
 				using = Window_Margins
@@ -64,21 +55,6 @@ window = {
 
 				hbox = {
 					layoutpolicy_horizontal = expanding
-
-					text_single = {
-						visible = "[GetPlayer.IsIndependentRuler]"
-						text = "COUNCIL_WINDOW_PLAYER_COUNCIL"
-						align = nobaseline
-						default_format = "#low"
-
-						# onclick = "[PdxGuiTriggerAllAnimations('council_refresh')]"
-
-						# state = {
-						# 	name = _mouse_click
-						# 	delay = 0.2
-						# 	on_finish = "[CouncilWindow.SetPlayerCouncil]"
-						# }
-					}
 
 					button_tab = {
 						visible = "[Not(GetPlayer.IsIndependentRuler)]"
@@ -210,6 +186,7 @@ widget = {
 					spriteborder = { 40 8 }
 					margin = { 10 0 }
 					margin_right = 25
+					texture_density = 2
 
 					modify_texture = {
 						name = "mask"
@@ -268,23 +245,10 @@ widget = {
 
 
 	icon = {
-		# using = Text_Label_Background
-		# using = Background_Area_Dark
 		using = Background_Label_Center
 		parentanchor = bottom|hcenter
 		size = { 400 85 }
-		# size = { 400 100 }
 		position = { 0 10 }
-		# texture = "gfx/interface/window_event/event_bottom_char_bg.dds"
-
-		# modify_texture = {
-		# 	name = "mask"
-		# 	texture = "gfx/interface/component_masks/mask_fade_horizontal_middle_thick.dds"
-		# 	# spriteType = Corneredtiled
-		# 	# spriteborder_left = 140
-		# 	# spriteborder_right = 140
-		# 	blend_mode = alphamultiply
-		# }
 
 		button_primary_big = {
 			name = "close_assignment_window"
@@ -1042,7 +1006,8 @@ types CouncilTaskTypes
 					datacontext = "[ActiveCouncilTask.GetCouncillor]"
 
 					background =  {
-						texture = "gfx/interface/illustrations/council/bg_council_spouse.dds"
+						texture = "gfx/interface/skinned/illustrations/council/bg_council_spouse.dds"
+						fittype = centercrop
 						using = Mask_Rough_Edges
 						alpha = 0.8
 					}
@@ -1159,7 +1124,8 @@ types CouncilTaskTypes
 					datacontext = "[ActiveCouncilTask.GetCouncillor]"
 
 					background =  {
-						texture = "gfx/interface/illustrations/council/bg_council_chancellor.dds"
+						texture = "gfx/interface/skinned/illustrations/council/bg_council_chancellor.dds"
+						fittype = centercrop
 						alpha = 0.6
 						using = Mask_Rough_Edges
 					}
@@ -1180,7 +1146,8 @@ types CouncilTaskTypes
 					datacontext = "[ActiveCouncilTask.GetCouncillor]"
 
 					background =  {
-						texture = "gfx/interface/illustrations/council/bg_council_steward.dds"
+						texture = "gfx/interface/skinned/illustrations/council/bg_council_steward.dds"
+						fittype = centercrop
 						using = Mask_Rough_Edges
 						alpha = 0.7
 					}
@@ -1209,7 +1176,8 @@ types CouncilTaskTypes
 					datacontext = "[ActiveCouncilTask.GetCouncillor]"
 
 					background =  {
-						texture = "gfx/interface/illustrations/council/bg_council_marshal.dds"
+						texture = "gfx/interface/skinned/illustrations/council/bg_council_marshal.dds"
+						fittype = centercrop
 						using = Mask_Rough_Edges
 						alpha = 0.7
 					}
@@ -1230,7 +1198,8 @@ types CouncilTaskTypes
 					datacontext = "[ActiveCouncilTask.GetCouncillor]"
 
 					background =  {
-						texture = "gfx/interface/illustrations/council/bg_council_spymaster.dds"
+						texture = "gfx/interface/skinned/illustrations/council/bg_council_spymaster.dds"
+						fittype = centercrop
 						using = Mask_Rough_Edges
 						alpha = 0.7
 					}

@@ -169,7 +169,7 @@ types ArtifactTypes {
         #small_indices = List of indices < 100
         #very_small_indices = List of indices < 10
         block "indexdatamodel" {
-            datamodel = "[GetDummyMale.MakeScope.GetList('small_indices')]"
+            datamodel = "[GetGlobalList('small_indices')]"
         }
         item = {
             button_standard = { 
@@ -242,7 +242,7 @@ types ArtifactTypes {
         maxhorizontalslots = 12
         maxverticalslots = 2
         name = "artifact_types"
-        datamodel = "[GetDummyMale.MakeScope.GetList('very_small_indices')]"
+        datamodel = "[GetGlobalList('very_small_indices')]"
         item = {
             button_round = { 
                 block "size"{

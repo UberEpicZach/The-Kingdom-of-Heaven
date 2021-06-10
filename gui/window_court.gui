@@ -5,8 +5,6 @@ window = {
 	movable = no
 	allow_outside = yes
 
-	visible = "[And(IsGameViewOpen('court_window'), Not(ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
-	
 	using = Window_Size_MainTab
 
 	state = {
@@ -15,7 +13,6 @@ window = {
 		using = Sound_WindowShow_Standard
 		using = Window_Position_MainTab
 
-		on_start = "[GetVariableSystem.Set( 'right_window_open', 'true' )]"
 		on_start = "[GetVariableSystem.Set( 'council_tabs', 'my_council' )]"
 	}
 
@@ -24,8 +21,6 @@ window = {
 		using = Animation_FadeOut_Quick
 		using = Sound_WindowHide_Standard
 		using = Window_Position_MainTab_Hide
-
-		on_start = "[GetVariableSystem.Clear( 'right_window_open' )]"
 	}
 
 	margin_widget = {
@@ -33,12 +28,8 @@ window = {
 		margin = { 0 26 }
 		margin_right = 20
 
-		using = Window_Background
-
 		widget = {
 			size = { 100% 100% }
-
-			# using = Window_Decoration_Thin
 
 			vbox = {
 				using = Window_Margins
@@ -174,7 +165,7 @@ window = {
 												layoutpolicy_horizontal = expanding
 												margin = { 0 10 }
 
-												button_decision_entry = {
+												button_court = {
 													name = "hire_physician_decision"
 													datacontext = "[GetDecisionWithKey( 'hire_physician_decision' )]"
 													visible = "[And( Not( Character.IsValid ), Decision.IsShownForPlayer )]"
@@ -237,7 +228,7 @@ window = {
 									hbox = {
 										spacing = 10
 
-										button_decision_entry = {
+										button_court = {
 											name = "invite_knights_decision"
 											datacontext = "[GetDecisionWithKey('invite_knights_decision')]"
 											visible = "[Decision.IsShownForPlayer]"
@@ -256,7 +247,7 @@ window = {
 											}
 										}
 
-										button_decision_entry = {
+										button_court = {
 											name = "invite_claimants_decision"
 											datacontext = "[GetDecisionWithKey('invite_claimants_decision')]"
 											visible = "[Decision.IsShownForPlayer]"
@@ -381,7 +372,7 @@ window = {
 
 					background = {
 						visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
-						texture = "gfx/interface/illustrations/event_scenes/dungeon.dds"
+						texture = "gfx/interface/skinned/illustrations/dungeon.dds"
 						margin = { -5 0 }
 						fittype = centercrop
 						framesize = { 700 800 }
@@ -395,10 +386,10 @@ window = {
 
 					background = {
 						visible = "[GreaterThan_int32( CharacterSelectionList.GetTotalNumber, '(int32)4' )]"
-						texture = "gfx/interface/illustrations/event_scenes/dungeon.dds"
+						texture = "gfx/interface/skinned/illustrations/dungeon.dds"
 						margin = { -5 0 }
 						fittype = end
-						alpha = 0.7
+						alpha = 0.4
 
 						modify_texture = {
 							texture = "gfx/interface/component_masks/mask_fade_vertical_up.dds"
@@ -556,8 +547,7 @@ window = {
 									button_prison_ransom = {
 										parentanchor = center
 										onclick = "[CourtWindow.MassPrisonerAction('ransom')]"
-										enabled = "[CourtWindow.CanDoMassPrisonerAction('ransom')]"
-										tooltip = MASS_PRISONER_ACTION_RANSOM
+										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('ransom')]"
 										using = tooltip_se
 									}
 								}
@@ -569,8 +559,7 @@ window = {
 									button_prison_release = {
 										parentanchor = center
 										onclick = "[CourtWindow.MassPrisonerAction('release')]"
-										enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
-										tooltip = MASS_PRISONER_ACTION_RELEASE
+										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('release')]"
 										using = tooltip_se
 									}
 								}
@@ -582,8 +571,7 @@ window = {
 									button_prison_execute = {
 										parentanchor = center
 										onclick = "[CourtWindow.MassPrisonerAction('execute')]"
-										enabled = "[CourtWindow.CanDoMassPrisonerAction('execute')]"
-										tooltip = MASS_PRISONER_ACTION_EXECUTE
+										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('execute')]"
 										using = tooltip_se
 									}
 								}
@@ -614,7 +602,7 @@ window = {
 									datacontext = "[CharacterListItem.GetCharacter]"
 
 									background = {
-										texture = "gfx/interface/illustrations/event_scenes/dungeon.dds"
+										texture = "gfx/interface/skinned/illustrations/dungeon.dds"
 										margin = { -5 0 }
 										fittype = centercrop
 										alpha = 0.3
