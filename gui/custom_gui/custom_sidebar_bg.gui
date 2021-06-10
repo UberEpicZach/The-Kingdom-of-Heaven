@@ -7,7 +7,7 @@ widget = {
 	parentanchor = top|right
 	position = {-45 105}
 	container = {
-		visible = "[GreaterThan_int32(GetDataModelSize(GetDummyMale.MakeScope.GetList('sidebar_buttons')), '(int32)0')]"
+		visible = "[GreaterThan_int32(GetDataModelSize(GetGlobalList('sidebar_buttons')), '(int32)0')]"
 		background = {
 			texture = "gfx/interface/skinned/hud_maintab_bg.dds"
 			visible = "[And(Not(IsRightWindowOpen),Or(GetVariableSystem.HasValue('sidebar_window','none'),Not(GetVariableSystem.Exists('sidebar_window'))))]"
@@ -38,7 +38,7 @@ widget = {
 				}
 				vbox = {
 					spacing = 5
-					datamodel = "[GetDummyMale.MakeScope.GetList('sidebar_buttons')]"
+					datamodel = "[GetGlobalList('sidebar_buttons')]"
 					item = {
 						widget = {
 							size = {45 50}

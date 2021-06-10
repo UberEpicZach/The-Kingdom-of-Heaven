@@ -7,8 +7,6 @@ window = {
 	parentanchor = top|right
 	layer = windows_layer
 	movable = no
-	
-	visible = "[And(IsGameViewOpen('factions_window'), Not(ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 
 	using = Window_Size_MainTab
 
@@ -18,7 +16,6 @@ window = {
 		using = Sound_WindowShow_Standard
 		using = Window_Position_MainTab
 
-		on_start = "[GetVariableSystem.Set( 'right_window_open', 'true' )]"
 		on_start = "[GetVariableSystem.Set( 'factions_view_tabs', 'against_you' )]"
 	}
 
@@ -28,7 +25,6 @@ window = {
 		using = Sound_WindowHide_Standard
 		using = Window_Position_MainTab_Hide
 
-		on_start = "[GetVariableSystem.Clear( 'right_window_open')]"
 		on_finish = "[GetVariableSystem.Set( 'factions_view_tabs', 'against_you' )]"
 	}
 
@@ -37,12 +33,8 @@ window = {
 		margin = { 0 26 }
 		margin_right = 20
 
-		using = Window_Background
-
 		widget = {
 			size = { 100% 100% }
-
-			# using = Window_Decoration_Thin
 
 			vbox = {
 				using = Window_Margins
@@ -94,10 +86,10 @@ window = {
 					layoutpolicy_vertical = expanding
 
 					background = {
-						texture = "gfx/interface/illustrations/event_scenes/armory.dds"
+						texture = "gfx/interface/skinned/illustrations/faction_bg.dds"
 						margin = { -5 0 }
 						fittype = end
-						alpha = 0.8
+						alpha = 0.7
 						framesize = { 1200 848 }
 
 						modify_texture = {
@@ -500,13 +492,6 @@ types  FactionWindow
 									texture = "gfx/interface/window_factions/faction_progress_threshold.dds"
 								}
 							}
-
-							icon = {
-								texture = "gfx/interface/icons/symbols/icon_warning.dds"
-								name = "warning_icon"
-								size = { 25 25 }
-								visible = "[Or( Not( FactionItem.IsPowerThresholdVisible), FactionItem.HasEnoughPower )]"
-							}
 						}
 					}
 
@@ -590,7 +575,8 @@ types  FactionWindow
 
 		hbox = {
 			layoutpolicy_horizontal = expanding
-			margin = { 15 0 }
+			margin = { 15 5 }
+			margin_top = 10
 
 			expand = {}
 
@@ -602,9 +588,9 @@ types  FactionWindow
 				tooltip = "[FactionItem.BuildPressDemandsTooltip]"
 				onclick = "[FactionItem.PressDemmands]"
 
-				animation_aggressive = {
-					visible = "[FactionItem.CanPressDemands]"
-				}
+				# animation_aggressive = {
+				# 	visible = "[FactionItem.CanPressDemands]"
+				# }
 			}
 		}
 
@@ -615,19 +601,15 @@ types  FactionWindow
 		hbox = {
 			name = "faction_buttons"
 			layoutpolicy_horizontal = expanding
-			margin = { 15 10 }
+			margin = { 15 0 }
+			margin_bottom = 15
 			spacing = 3
 
-			button_group  = {
+			button_group = {
 				onclick = "[FactionItem.ShowHideMembersFrame]"
 
-				button_normal = {
+				button_expand = {
 					name = "show_members"
-					size = { 20 20 }
-					alwaystransparent = no
-
-					texture = "gfx/interface/buttons/button_tree_expand.dds"
-					framesize = { 36 36 }
 					frame = "[FactionItem.GetShowMembersFrame]"
 
 					using = tooltip_ws
@@ -693,10 +675,10 @@ types  FactionWindow
 			fixedgridbox = {
 				name = "character_member_grid"
 				visible = "[FactionItem.HasCharacterMembers]"
-				addcolumn = 70
+				addcolumn = 80
 				addrow = 90
 				datamodel = "[FactionItem.GetCharacterMembers]"
-				datamodel_wrap = 7
+				datamodel_wrap = 6
 				flipdirection = yes
 
 				item = {

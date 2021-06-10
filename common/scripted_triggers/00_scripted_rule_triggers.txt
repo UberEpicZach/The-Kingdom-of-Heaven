@@ -1,8 +1,12 @@
 ﻿#Controls the can_raid rule.
 can_raid_trigger = {
 	OR = {
-		government_has_flag = government_can_raid_rule 
+		government_has_flag = government_can_raid_rule
 		faith = { has_doctrine = unreformed_faith_doctrine }
+		AND = {
+			exists = dynasty
+			dynasty = { has_dynasty_modifier = fp1_legacy_of_piracy_modifier }
+		}
 	}
 	NOT = {
 		faith = {
