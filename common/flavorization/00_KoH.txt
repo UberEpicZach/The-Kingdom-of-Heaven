@@ -305,7 +305,7 @@ count_male_viscount = {
     special = holder
     tier = county
     priority = 18
-    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau c_avranches c_chartres }
+    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau c_avranches c_chartres c_brie_francaise c_narbonne c_agde c_nimes c_rohan c_dax }
     top_liege = no
 }
 
@@ -313,18 +313,18 @@ count_female_viscount = {
  type = character
     gender = female
     special = holder
-    tier = count
-    priority = 18
-    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau c_avranches c_chartres }
-    top_liege = no
-}
-county_viscounty = {
-    type = title
     tier = county
-    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau c_avranches c_chartres } 
     priority = 18
+    titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau c_avranches c_chartres c_brie_francaise c_narbonne c_agde c_nimes c_rohan c_dax }
     top_liege = no
-}
+        }
+        county_viscounty = {
+            type = title
+            tier = county
+            titles = { c_thouars c_montaigu c_thiers c_limousin c_french_leon c_carcassonne c_albi c_beziers c_montpellier c_gevaudan c_millau c_avranches c_chartres c_brie_francaise c_narbonne c_agde c_nimes c_rohan c_dax } 
+            priority = 18
+            top_liege = no
+        }
 
 
 count_male_sire = {
