@@ -1,0 +1,90 @@
+﻿
+namespace = soz_actthree_branchone
+
+# The Sword of Zengi by Seljuk Shah
+
+## SOZ EVENT CHAIN PART 3
+
+soz_actthree_branchone.1 = {
+	title = soz.maintitle1.t													
+	desc = soz_actthree_branchone.1.desc				# The couple are walking through the garden and Ismat brings up Nur Al Din again and if Saladin was planning on fighting with Nur
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin says that he was in a better position to win back Jerusalem
+		name = soz_actthree_branchone.1.a
+		custom_tooltip = soz_actthree_branchone.1.tta
+		trigger_event = soz_actthree_branchone.2
+	}
+
+	option = {                                        # Saladin says that he would never do anything to hurt Isamt's family.
+		name = soz_actthree_branchone.1.b
+		custom_tooltip = soz_actthree_branchone.1.ttb
+		trigger_event = soz_actthree_branchtwo.1
+	}
+
+	option = {                                        # Saladin says that he would never betray the great Nur Al Din
+		name = soz_actthree_branchone.1.c
+		custom_tooltip = soz_actthree_branchone.1.ttc
+		trigger_event = soz_actthree_branchthree.1
+	}
+
+}
+		
+soz_actthree_branchone.2 = {
+	title = soz.maintitle1.t													
+	desc = soz_actthree_branchone.2.desc			 # Ismat is saddened by his answer but understand what is best for the realm, and asks him to follow.
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin is intrigued, where are we going?
+		name = soz_actthree_branchone.2.a
+		custom_tooltip = soz_actthree_branchone.2.tt
+		trigger_event = soz_actthree_branchone.3
+	}
+
+}
+
+soz_actthree_branchone.3 = {
+	title = soz.maintitle1.t													
+	desc = soz_actthree_branchone.3.desc			 # Ismat reveals the sword, it was being used to hold up flower-vines in Ismat's garden. Ismat says that she had a duty to give the sword to a true Ghazi and faithful servant of God. She hands the sword to Saladin.
+	theme = dynasty
+	override_background = {
+		event_background = corridor_night
+	}
+	left_portrait = {
+		character = scope:recipient
+		animation = content
+	}
+	right_portrait = {
+		character = scope:actor
+		animation = content
+	}
+
+	option = {                                        # Saladin is honored (SALADIN GAINS THE SWORD OF ZENGI ARTIFACT FROM ISMAT)
+		name = soz_actthree_branchone.3.a
+		custom_tooltip = soz_actthree_branchone.3.tt
+		add_artifact = {ARTIFACT = soz_101}
+	}
+
+}

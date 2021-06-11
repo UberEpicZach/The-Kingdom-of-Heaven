@@ -13,7 +13,7 @@ KoH_religiousflavour.1 = { #A Pope and His Estates
 		exists = title:k_papal_state.holder 
 		title:k_papal_state.holder.faith = root.faith
 		title:k_papal_state.holder.dynasty = root.dynasty  
-		#title:k_papal_state.holder { NOT = { OR = { has_trait = greedy has_trait = zealous } } }
+		title:k_papal_state.holder = { NOT = { OR = { has_trait = greedy has_trait = zealous } } }
 
 		OR = {
 			any_sibling = {
@@ -84,6 +84,7 @@ KoH_religiousflavour.1 = { #A Pope and His Estates
 					years = 5
 				}
 			}
+			
 			title:k_papal_state.holder = {
 				add_opinion = {
 					target = scope:player_one
@@ -729,7 +730,7 @@ KoH_religiousflavour.13 = { #Duty-Bound
 	}
 }
 
-KoH_religiousflavour.14 = { #Duty-Bound
+KoH_religiousflavour.14 = { #Duty-Bound - Varaint
 	title = KoH_religiousflavour.14.t
 	desc = KoH_religiousflavour.14.desc
 	theme = learning_scholarship_focus
@@ -1134,4 +1135,5 @@ KoH_religiousflavour.21 = {
 		name = KoH_religiousflavour.21.a	
 	}
 }
+#Waldensians in Lyon
 
