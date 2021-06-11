@@ -102,7 +102,7 @@ KoH_hashshashin.3 = {
 	immediate = {
 		death = { death_reason = death_hashshashin }
 		every_player = {
-			trigger_event = mongol_invasion.5 # Assassins Victory
+			trigger_event = KoH_hashshashin.5 # Assassins Victory
 		}
 		random_knight = {
 			save_scope_as = commander
@@ -138,7 +138,7 @@ KoH_hashshashin.4 = {
 			death = { death_reason = death_hashshashin_failed }
 		}
 		every_player = {
-			trigger_event = mongol_invasion.6 # Assassins Victory
+			trigger_event = KoH_hashshashin.6 # Assassins Victory
 		}
 		title:d_hashshashin.holder = {
 			send_interface_toast = {
