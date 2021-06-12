@@ -1,7 +1,7 @@
 ﻿on_game_start = {
 	on_actions = {
 		KOH_ON_START
-		on_artifact_initialization
+		#on_artifact_initialization
 		KOH_Italian_Familes
 		#KOH_investiture
 		delay = { months = 12 }
@@ -162,7 +162,7 @@ on_death = {
     on_actions = {
         on_cardinal_death
         on_pope_death
-        on_artifact_inheritance
+        #on_artifact_inheritance
         on_person_death_saint
     }
 }
@@ -772,151 +772,151 @@ KOH_battle_on_action = {
 
 #WAY OF KINGS ARTIFACTS
 
-on_artifact_inheritance = {
-	effect = {
-		if = {
-			limit = { exists = scope:killer }
-			transfer_all_artifacts = { A = root B = scope:killer }	
-		}
-		else_if = {
-			limit = { exists = root.primary_heir }
-			transfer_all_artifacts = {A = root B = root.primary_heir}
-		}
-		else_if = {
-			limit = { exists = root.liege_or_court_owner }
-			transfer_all_artifacts = {A = root B = root.liege_or_court_owner}
-		}
-		else = {
-			transfer_all_artifacts = {A = root B = root.location.barony_controller }
-		}
-	}
-}
+# on_artifact_inheritance = {
+# 	effect = {
+# 		if = {
+# 			limit = { exists = scope:killer }
+# 			transfer_all_artifacts = { A = root B = scope:killer }	
+# 		}
+# 		else_if = {
+# 			limit = { exists = root.primary_heir }
+# 			transfer_all_artifacts = {A = root B = root.primary_heir}
+# 		}
+# 		else_if = {
+# 			limit = { exists = root.liege_or_court_owner }
+# 			transfer_all_artifacts = {A = root B = root.liege_or_court_owner}
+# 		}
+# 		else = {
+# 			transfer_all_artifacts = {A = root B = root.location.barony_controller }
+# 		}
+# 	}
+# }
 
 
-on_monthly_artifacts = {
-	effect = {
-		if = { # Attempt to reinitialize on old broken savegames
-			limit = {
-				NOT = {
-					any_province = {
-						exists = var:index
-					}
-				}
-			}
-			listify_all_typed_artifacts_as_flags = yes #Necessary for triggers.
-			random_living_character = {initialize_province_indices = yes} #Necessary for the new selection system.
-			every_artifact_holder = {
-				every_in_list = {
-					variable = artifact_list
-					prev = {add_type_of_flag_artifact = {ARTIFACT = prev}}
-				}
-				refresh_filter = yes
-			}
-		}
-		every_ai_artifact_holder = { #Equips Artifacts
-			ai_equip_all_owned_artifacts = yes
-		}
-		every_player = {refresh_filter = yes}
-	}
-	on_actions = {
-		delay = { months = 1 }
-		on_monthly_artifacts
-	}
-}
+# on_monthly_artifacts = {
+# 	effect = {
+# 		if = { # Attempt to reinitialize on old broken savegames
+# 			limit = {
+# 				NOT = {
+# 					any_province = {
+# 						exists = var:index
+# 					}
+# 				}
+# 			}
+# 			listify_all_typed_artifacts_as_flags = yes #Necessary for triggers.
+# 			random_living_character = {initialize_province_indices = yes} #Necessary for the new selection system.
+# 			every_artifact_holder = {
+# 				every_in_list = {
+# 					variable = artifact_list
+# 					prev = {add_type_of_flag_artifact = {ARTIFACT = prev}}
+# 				}
+# 				refresh_filter = yes
+# 			}
+# 		}
+# 		every_ai_artifact_holder = { #Equips Artifacts
+# 			ai_equip_all_owned_artifacts = yes
+# 		}
+# 		every_player = {refresh_filter = yes}
+# 	}
+# 	on_actions = {
+# 		delay = { months = 1 }
+# 		on_monthly_artifacts
+# 	}
+# }
 
-on_artifact_initialization = { # Can be called by the scripted effect "initialize_artifacts" 
-	effect = { # Add any artifact-specific setup that you don't want to put in your on_game_start or historical files.
-		# If you want to assign artifacts in the history files instead of here, then it's recommended to put the initialization on a dummy character born at 1.1.1 by immediately calling an effect block.
-		listify_all_typed_artifacts_as_flags = yes #Necessary for triggers.
-		every_artifact_holder = {
-			every_in_list = {
-				variable = artifact_list
-				prev = {add_type_of_flag_artifact = {ARTIFACT = prev}}
-			}
-			refresh_filter = yes
-		}
-		character:212501 = { 
-			add_artifact = {ARTIFACT = artifact_1 }
-		}
-		character:215529 = { #Imperial Diadem
-			add_artifact = {ARTIFACT = artifact_2 }
-		}
-		character:219500 = { #crown of st stephen
-			add_artifact = {ARTIFACT = artifact_33 }
-		}
+# on_artifact_initialization = { # Can be called by the scripted effect "initialize_artifacts" 
+# 	effect = { # Add any artifact-specific setup that you don't want to put in your on_game_start or historical files.
+# 		# If you want to assign artifacts in the history files instead of here, then it's recommended to put the initialization on a dummy character born at 1.1.1 by immediately calling an effect block.
+# 		listify_all_typed_artifacts_as_flags = yes #Necessary for triggers.
+# 		every_artifact_holder = {
+# 			every_in_list = {
+# 				variable = artifact_list
+# 				prev = {add_type_of_flag_artifact = {ARTIFACT = prev}}
+# 			}
+# 			refresh_filter = yes
+# 		}
+# 		character:212501 = { 
+# 			add_artifact = {ARTIFACT = artifact_1 }
+# 		}
+# 		character:215529 = { #Imperial Diadem
+# 			add_artifact = {ARTIFACT = artifact_2 }
+# 		}
+# 		character:219500 = { #crown of st stephen
+# 			add_artifact = {ARTIFACT = artifact_33 }
+# 		}
 
-	}
-	on_actions = {
-		on_monthly_artifacts
-	}
-}
+# 	}
+# 	on_actions = {
+# 		on_monthly_artifacts
+# 	}
+# }
 
-on_after_gui_dummy_male = {
-	on_actions = {
-		on_after_gui_dummy_male_artifacts
-	}
-}
-# ROOT IS DUMMY_FEMALE
-on_after_gui_dummy_female = {
-	on_actions = {
-		on_after_gui_dummy_female_artifacts
-	}
-}
-# ROOT IS DUMMY_MALE
-on_after_gui_dummy_male_artifacts = {
-	effect  = {
-		add_sidebar_button = {NAME = window_artifacts}
-		add_custom_gui = {NAME = window_artifacts}
-	}
-}
-# ROOT IS DUMMY_FEMALE
-on_after_gui_dummy_female_artifacts = {
-	on_actions = {
-	}
-}
-# Ensure the artifact GUI exists even for people who are using outdated files.
-on_monthly_artifacts = {
-	on_actions = {
-		ensure_GUI_exists
-	}
-}
+# on_after_gui_dummy_male = {
+# 	on_actions = {
+# 		on_after_gui_dummy_male_artifacts
+# 	}
+# }
+# # ROOT IS DUMMY_FEMALE
+# on_after_gui_dummy_female = {
+# 	on_actions = {
+# 		on_after_gui_dummy_female_artifacts
+# 	}
+# }
+# # ROOT IS DUMMY_MALE
+# on_after_gui_dummy_male_artifacts = {
+# 	effect  = {
+# 		add_sidebar_button = {NAME = window_artifacts}
+# 		add_custom_gui = {NAME = window_artifacts}
+# 	}
+# }
+# # ROOT IS DUMMY_FEMALE
+# on_after_gui_dummy_female_artifacts = {
+# 	on_actions = {
+# 	}
+# }
+# # Ensure the artifact GUI exists even for people who are using outdated files.
+# on_monthly_artifacts = {
+# 	on_actions = {
+# 		ensure_GUI_exists
+# 	}
+# }
 
-Artifacts_KOH = {
-	effect = {
-		if = {
-			limit = {
-				scope:title = title:k_hungary
-				has_artifact = { ARTIFACT = artifact_33 }
-			}
-			equip_artifact = { ARTIFACT = artifact_33 }
-		}
-		if = {
-			limit = {
-				scope:title = title:k_england
-				has_artifact = { ARTIFACT = artifact_32 }
-			}
-			equip_artifact = { ARTIFACT = artifact_32 }
-		}
-		if = {
-			limit = {
-				scope:title = title:e_hre
-				has_artifact = { ARTIFACT = artifact_1 }
-			}
-			equip_artifact = { ARTIFACT = artifact_1 }
-		}
-		if = {
-			limit = {
-				scope:title = title:e_byzantium
-				has_artifact = { ARTIFACT = artifact_2 }
-			}
-			equip_artifact = { ARTIFACT = artifact_2 }
-		}
-		if = {
-			limit = {
-				scope:title = title:k_italy
-				has_artifact = { ARTIFACT = artifact_3 }
-			}
-			equip_artifact = { ARTIFACT = artifact_3 }
-		}
-	}
-}
+# Artifacts_KOH = {
+# 	effect = {
+# 		if = {
+# 			limit = {
+# 				scope:title = title:k_hungary
+# 				has_artifact = { ARTIFACT = artifact_33 }
+# 			}
+# 			equip_artifact = { ARTIFACT = artifact_33 }
+# 		}
+# 		if = {
+# 			limit = {
+# 				scope:title = title:k_england
+# 				has_artifact = { ARTIFACT = artifact_32 }
+# 			}
+# 			equip_artifact = { ARTIFACT = artifact_32 }
+# 		}
+# 		if = {
+# 			limit = {
+# 				scope:title = title:e_hre
+# 				has_artifact = { ARTIFACT = artifact_1 }
+# 			}
+# 			equip_artifact = { ARTIFACT = artifact_1 }
+# 		}
+# 		if = {
+# 			limit = {
+# 				scope:title = title:e_byzantium
+# 				has_artifact = { ARTIFACT = artifact_2 }
+# 			}
+# 			equip_artifact = { ARTIFACT = artifact_2 }
+# 		}
+# 		if = {
+# 			limit = {
+# 				scope:title = title:k_italy
+# 				has_artifact = { ARTIFACT = artifact_3 }
+# 			}
+# 			equip_artifact = { ARTIFACT = artifact_3 }
+# 		}
+# 	}
+# }
