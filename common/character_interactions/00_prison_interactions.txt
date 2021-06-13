@@ -629,31 +629,31 @@
 			add = 50
 		}
 		modifier = { # Your young children can't really stop you
-			desc = AI_REFUSAL_YOUNG_CHILD
-			scope:recipient = {
-				is_child_of = scope:actor
-				is_courtier_of = scope:actor
-				is_adult = no
-			}
-			add = 200
+		desc = AI_REFUSAL_YOUNG_CHILD
+		scope:recipient = {
+			is_child_of = scope:actor
+			is_courtier_of = scope:actor
+			is_adult = no
 		}
-		modifier = { #They're a claimant against you
-			desc = AI_CLAIMANT_PENALTY
-			scope:actor = {
-				OR = {
-					any_targeting_faction = {
-						faction_is_type = claimant_faction
-						faction_is_at_war = yes
-						exists = special_character
-						special_character = scope:recipient
-					}
-					AND = {
-						exists = var:claimant_faction_sent_demand
-						var:claimant_faction_sent_demand = scope:recipient
-					}
+		add = 200
+	}
+	modifier = { #They're a claimant against you
+		desc = AI_CLAIMANT_PENALTY
+		scope:actor = {
+			OR = {
+				any_targeting_faction = {
+					faction_is_type = claimant_faction
+					faction_is_at_war = yes
+					exists = special_character
+					special_character = scope:recipient
+				}
+				AND = {
+					exists = var:claimant_faction_sent_demand
+					var:claimant_faction_sent_demand = scope:recipient
 				}
 			}
-			add = -70
+		}
+		add = -70
 		}
 		modifier = { #Rank difference.
 			desc = AI_REFUSAL_RANK_DIFFERENCE
@@ -1599,15 +1599,6 @@ ransom_interaction = {
 				scope:secondary_recipient = { has_character_flag = character_ransom_refused_by_player }
 			}
 		}		
-	}
-
-	# Needs to be after all other send options so we only default to it if everything else is blocked
-	send_option = {
-		is_shown = { # When doing the mass ransom, its possible for no option to be valid for the gold costs, so instead of defaulting wrong we explitly fail it
-			exists = scope:mass_action
-			scope:mass_action = yes
-		}
-		flag = invalid
 	}
 }
 
@@ -3150,23 +3141,16 @@ release_from_prison_interaction = {
 					}
 				}
 			}
-			scope:recipient = {			
+			scope:recipient = {
 				is_ruler = no
 				NOT = { is_courtier_of = scope:actor }
 				OR = {
 					is_adult = yes
 					AND = {
-						is_adult = no
-						OR = {
-							AND = {
-								exists = liege
-								NOT = { is_heir_of = liege }
-							}
-							NOT = { exists = liege } 
-						}
-						
+						exists = liege
+						NOT = { is_heir_of = liege }
 					}				
-				}					
+				}
 			}
 		}
 	}

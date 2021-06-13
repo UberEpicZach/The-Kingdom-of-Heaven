@@ -57,7 +57,7 @@ window = {
 						maxhorizontalslots = 1
 						maxverticalslots = 100
 						block "datamodel" {
-							datamodel = "[GetGlobalList('elected_ruler_laws_list')]"
+							datamodel = "[GetDummyMale.MakeScope.GetList('elected_ruler_laws_list')]"
 						}
 						item = {
 							widget = {
@@ -186,7 +186,7 @@ window = {
 						maxhorizontalslots = 1
 						maxverticalslots = 100
 						block "datamodel" {
-							datamodel = "[GetGlobalList('elected_ruler_laws_list')]"
+							datamodel = "[GetDummyMale.MakeScope.GetList('elected_ruler_laws_list')]"
 						}
 						item = {
 							widget = {

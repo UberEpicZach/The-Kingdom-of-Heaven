@@ -20,7 +20,7 @@ yearly_persian.1001 = {
 
 	trigger = {
 		is_available_adult = yes
-		culture_group = culture_group:iranian_group
+		culture = culture:persian
 		NOT = { has_character_flag = had_event_yearly_persian_1002 }
 	}
 
@@ -42,7 +42,7 @@ yearly_persian.1002 = {
 
 	trigger = {
 		is_available_adult = yes
-		culture_group = culture_group:iranian_group
+		culture = culture:persian
 	}
 
 	weight_multiplier = {
@@ -63,22 +63,22 @@ yearly_persian.1002 = {
 			flag = had_event_yearly_persian_1002
 			years = 5
 		}
-		culture_group:iranian_group = {
-			save_scope_as = iranian # For loc
+		culture:persian = {
+			save_scope_as = persian # For loc
 		}
 
 		# Compile list of affected characters for Option A.
 		every_vassal = {
 			limit = {
-				culture_group = culture_group:iranian_group
+				culture = culture:persian
 			}
-			add_to_list = iranian_characters
+			add_to_list = persian_characters
 		}
 		every_courtier = {
 			limit = {
-				culture_group = culture_group:iranian_group
+				culture = culture:persian
 			}
-			add_to_list = iranian_characters
+			add_to_list = persian_characters
 		}
 
 		# Compile list of affected characters for Option B.
@@ -130,8 +130,8 @@ yearly_persian.1002 = {
 
 		add_prestige = major_prestige_value
 		every_in_list = {
-			list = iranian_characters
-			custom = yearly_persian.1002.every_iranian_character
+			list = persian_characters
+			custom = yearly_persian.1002.every_persian_character
 
 			add_opinion = {
 				modifier = respect_opinion
@@ -238,7 +238,7 @@ yearly_persian.1002 = {
 yearly_persian.1101 = {
 	type = character_event
 	title = yearly_persian.1101.t
-	desc = { 
+	desc = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {

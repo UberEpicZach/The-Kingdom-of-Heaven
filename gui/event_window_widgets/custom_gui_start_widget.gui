@@ -8,7 +8,7 @@ vbox = {
     }
     vbox = {
         name = "sidebar_execution_grid"
-        datamodel = "[GetGlobalList('sidebar_buttons')]"
+        datamodel = "[GetDummyMale.MakeScope.GetList('sidebar_buttons')]"
         item = {
             button_event_standard = {
                 text = "[Scope.GetFlagName]"
@@ -21,7 +21,7 @@ vbox = {
     }
     vbox = {
         name = "other_gui_grid"
-        datamodel = "[GetGlobalList('custom_gui')]"
+        datamodel = "[GetDummyMale.MakeScope.GetList('custom_gui')]"
         item = {
             CustomGUIExecutor = {}
         }
@@ -33,7 +33,7 @@ types ExecutionTypes {
     type CustomGUICreator = vbox {
         name = "other_gui_grid"
         block "datamodel" {
-            datamodel = "[GetGlobalList('custom_gui')]"
+            datamodel = "[GetDummyMale.MakeScope.GetList('custom_gui')]"
         }
         item = {
             CustomGUIExecutor = {size = {0 0}}
@@ -48,7 +48,7 @@ types ExecutionTypes {
             trigger_when = "[GetVariableSystem.HasValue('CustomGUIToggler',Scope.GetFlagName)]"
             duration = 0.001
             on_start = "[ExecuteConsoleCommand(Select_CString(GetVariableSystem.Exists(Scope.GetFlagName),'',Concatenate(Concatenate('gui.createwidget gui/custom_gui/',Scope.GetFlagName),Concatenate('.gui ', Scope.GetFlagName))))]"
-            on_finish = "[GetVariableSystem.Set('CustomGUIToggler',GetGlobalVariable(Concatenate('custom_gui_',Scope.GetFlagName)).GetFlagName)]"
+            on_finish = "[GetVariableSystem.Set('CustomGUIToggler',GetDummyMale.MakeScope.Var(Concatenate('custom_gui_',Scope.GetFlagName)).GetFlagName)]"
         }
         state = {
             name = CustomGUIInit
@@ -65,7 +65,7 @@ types ExecutionTypes {
             trigger_when = "[GetVariableSystem.HasValue('SidebarToggler',Scope.GetFlagName)]"
             duration = 0.01
             on_start = "[ExecuteConsoleCommand(Concatenate(Concatenate('gui.createwidget gui/custom_gui/',Scope.GetFlagName),Concatenate('.gui ', Scope.GetFlagName)))]"
-            on_finish = "[GetVariableSystem.Set('SidebarToggler',GetGlobalVariable(Concatenate('sidebar_button_',Scope.GetFlagName)).GetFlagName)]"
+            on_finish = "[GetVariableSystem.Set('SidebarToggler',GetDummyMale.MakeScope.Var(Concatenate('sidebar_button_',Scope.GetFlagName)).GetFlagName)]"
         }
         state = {
             name = SidebarInit

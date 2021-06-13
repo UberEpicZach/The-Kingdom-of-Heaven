@@ -106,7 +106,7 @@ window = {
 								maxverticalslots = 100
 								visible = "[GetVariableSystem.Exists('view_passed_laws')]"
 								block "datamodel" {
-									datamodel = "[GetGlobalList('senate_laws_list')]"
+									datamodel = "[GetDummyMale.MakeScope.GetList('senate_laws_list')]"
 								}
 								item = {
 									visible = "[GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName,)).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
@@ -238,7 +238,7 @@ window = {
 								maxverticalslots = 100
 								visible = "[GetVariableSystem.Exists('view_possible_laws')]"
 								block "datamodel" { 
-									datamodel = "[GetGlobalList('senate_laws_list')]"
+									datamodel = "[GetDummyMale.MakeScope.GetList('senate_laws_list')]"
 								}
 								item = {
 									widget = {

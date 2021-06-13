@@ -163,12 +163,12 @@ window = {
 
 				widget = {
 					parentanchor = bottom|hcenter
-					size = { 250 40 }
+					size = { 145 40 }
 
 					flowcontainer = {
 						parentanchor = bottom|hcenter
 						widgetanchor = bottom|left
-						position = { -25 -3 }
+						position = { -20 -3 }
 						ignoreinvisible = yes
 
 						text_label_center = {
@@ -203,7 +203,7 @@ window = {
 					icon = {
 						name = "marriage_type_icon"
 						visible = "[CharacterWindow.ShowMarriageIcon]"
-						position = { 68 7 }
+						position = { 20 7 }
 
 						size = { 30 30 }
 						framesize = { 60 60 }
@@ -1462,7 +1462,7 @@ window = {
 								visible = "[Character.HasLandedTitles]"
 								datacontext = "[Character.GetPrimaryTitle]"
 								layoutpolicy_horizontal = expanding
-								
+
 								text_single = {
 									name = "character_title"
 									layoutpolicy_horizontal = expanding
@@ -1520,12 +1520,10 @@ window = {
 									}
 
 									text_single = {
-										name = "total_dread"
+										name = "total_gold"
 										text = "[Character.GetDread|0]"
 										default_format = "#high"
 										align = center|nobaseline
-										fontsize_min = 12
-										max_width = 50
 									}
 								}
 
@@ -1587,7 +1585,7 @@ window = {
 										default_format = "#high"
 										align = center|nobaseline
 										fontsize_min = 12
-										max_width = 50
+										max_width = 50		
 									}
 								}
 
@@ -1643,7 +1641,7 @@ window = {
 										fontsize_min = 12
 										max_width = 80
 
-										progressbar_standard = {
+ 										progressbar_standard = {
 											name = "soldiers_max"
 											parentanchor = bottom|hcenter
 											position = { 0 5 }
@@ -3590,8 +3588,8 @@ window = {
 				}
 			}
 
-			expand = {}
-		}
+		expand = {}
+	}
 	}
 
 	template Animation_Character_Window_Refresh

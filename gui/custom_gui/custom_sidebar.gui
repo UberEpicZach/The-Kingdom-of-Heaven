@@ -15,7 +15,7 @@ types CustomSidebarTypes {
 			on_start = "[GetVariableSystem.Set('custom_sidebar','yes')]"
 		}
 		container = {
-			visible = "[GreaterThan_int32(GetDataModelSize(GetGlobalList('sidebar_buttons')), '(int32)0')]"
+			visible = "[GreaterThan_int32(GetDataModelSize(GetDummyMale.MakeScope.GetList('sidebar_buttons')), '(int32)0')]"
 			container = {
 				position = {1 450}
 				parentanchor = top|right
@@ -58,7 +58,7 @@ types CustomSidebarTypes {
 		state = {
 			name = "temba"
 		}
-		datamodel = "[GetGlobalList('sidebar_buttons')]"
+		datamodel = "[GetDummyMale.MakeScope.GetList('sidebar_buttons')]"
 		item = {
 			vbox = {
 				button_hud_main_tab = {

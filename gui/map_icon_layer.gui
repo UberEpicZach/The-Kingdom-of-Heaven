@@ -360,12 +360,8 @@ widget = {
 
 	icon = {
 		name = "strait_icon"
-		visible = "[StraitMapIcon.ShouldBeShown]"
-
-		using = Animation_ShowHide_Quick
-
-		size = { 40 40 }
 		texture = "gfx/interface/icons/map_icons/strait.dds"
+		visible = "[StraitMapIcon.ShouldBeShown]"
 	}
 }
 
@@ -1178,7 +1174,7 @@ types MapIcons
 						name = "garrison_text"
 						snap_to_pixels = no
 
-						text = "[Holding.GetCurrentGarrisonSize]"
+						text = "[Holding.GetGarrisonSize]"
 						default_format = "#high"
 						align = nobaseline
 						fontsize = 17
@@ -1469,7 +1465,7 @@ types MapIcons
 							visible = "[ActivityMapItem.GetActivity.GetType.HasIcon]"
 							parentanchor = center
 							alwaystransparent = yes
-							texture = "[ActivityMapItem.GetActivity.GetType.GetIcon]"
+							texture = "gfx/interface/icons/activities/activity_feast.dds"
 							size = { 35 35 }
 						}
 					}

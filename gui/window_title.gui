@@ -889,7 +889,7 @@ window = {
 							button_tertiary = {
 								name = "make_primary_title"
 								text = "TITLE_VIEW_MAKE_PRIMARY"
-								visible = "[And( Character.IsLocalPlayer, TitleViewWindow.CanMakePrimary )]"
+								visible = "[And(And( Character.IsLocalPlayer, TitleViewWindow.CanMakePrimary ),Not(GetScriptedGui('personally_has_republic_government').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)))]"
 								onclick = "[TitleViewWindow.MakePrimary]"
 								tooltip = "TITLE_MAKE_PRIMARY_TOOLTIP"
 							}

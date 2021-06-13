@@ -1129,16 +1129,6 @@ religion_interior = {
 		reference = "blank.dds"
 	}
 
-	# texture = {
-	# 	reference = "gfx/interface/skins/norse/illustrations/council/bg_council_chaplain.dds"
-		
-	# 	trigger = {
-	# 		AND = {
-	# 			religion = religion:pagan
-	# 			has_dlc_feature = the_northern_lords
-	# 		}
-	# 	}
-	# }
 
 	environment = {
 		reference = "character_view_main"
@@ -1180,18 +1170,6 @@ religion_holding = {
 
 ### Holding image based on title
 title_holding = {
-	###
-	texture = {
-		trigger = {
-			title_illustration_save_province_temporary = yes
-			scope:province = {
-				has_holding_type = monastery_holding
-				#has_government = monastic_government
-			}
-		}
-		reference = "holding_types/monastery_christian.dds"
-	}
-	###
 	texture = {
 		trigger = {
 			OR = {
