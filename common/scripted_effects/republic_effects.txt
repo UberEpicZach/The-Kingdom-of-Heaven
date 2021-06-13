@@ -7,113 +7,124 @@
 		
 		save_scope_as = highest
 	}
-	
 	scope:highest = {
 		random_in_list = {
 			variable = election_candidates
 			save_scope_as = election_winner
 		}
 	}
+	holder = { save_scope_as = old_holder }
+	if = {
+		limit = { NOT = { scope:election_winner = scope:old_holder } }
 
-	holder = {
-		save_scope_as = old_holder
-		capital_county = {
-			save_scope_as = old_capital
-		}
-		if = {
-			limit = {
-				is_ai = no
+		holder = {
+			capital_county = {
+				save_scope_as = old_capital
 			}
-			set_variable = play_on
-		}
-		create_title_and_vassal_change = {
-			type = granted
-			save_scope_as = title_change
-			add_claim_on_loss = no
-		}
-		capital_county = {
-			change_title_holder = {
-				holder = scope:election_winner
-				change = scope:title_change
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_variable = play_on
 			}
-		}
-		resolve_title_and_vassal_change = scope:title_change
-		if = {
-			limit = {
+			create_title_and_vassal_change = {
+				type = granted
+				save_scope_as = title_change
+				add_claim_on_loss = no
+			}
+			capital_county = {
+				change_title_holder = {
+					holder = scope:election_winner
+					change = scope:title_change
+				}
+			}
+			primary_title = {
+				change_title_holder = {
+					holder = scope:election_winner
+					change = scope:title_change
+				}
+				save_scope_as = primary_title_carrying_over
+			}
+			resolve_title_and_vassal_change = scope:title_change
+			if = {
+				limit = {
+					scope:old_holder = {
+						exists = var:play_on
+						exists = global_var:play_republic_leaders
+					}
+				}
+				set_player_character = scope:election_winner
+			}
+			create_title_and_vassal_change = {
+				type = granted
+				save_scope_as = title_change
+				add_claim_on_loss = no
+			}
+			remove_variable = play_on
+			if = {
+				limit = { highest_held_title_tier = tier_duchy }
+				every_held_title = {
+					limit = { tier = tier_duchy NOT = { scope:primary_title_carrying_over = this } }
+					change_title_holder = {
+						holder = scope:election_winner
+						change = scope:title_change
+					}
+				}
+			}
+			if = {
+				limit = { highest_held_title_tier = tier_kingdom NOT = { scope:primary_title_carrying_over = this } }
+				every_held_title = {
+					limit = { tier = tier_kingdom }
+					change_title_holder = {
+						holder = scope:election_winner
+						change = scope:title_change
+					}
+				}
+			}
+			if = {
+				limit = { highest_held_title_tier = tier_empire NOT = { scope:primary_title_carrying_over = this } }
+				every_held_title = {
+					limit = { tier = tier_empire }
+					change_title_holder = {
+						holder = scope:election_winner
+						change = scope:title_change
+					}
+				}
+			}
+			resolve_title_and_vassal_change = scope:title_change
+			if = {
+				limit = { is_landed = no }
+				set_employer = scope:election_winner
+			}
+			if = {
+				limit = { is_landed = yes }
+				create_title_and_vassal_change = {
+					type = swear_fealty
+					save_scope_as = change
+				}
 				scope:old_holder = {
-					exists = var:play_on
-					exists = global_var:play_republic_leaders
+					change_liege = {
+						liege = scope:election_winner
+						change = scope:change
+					}
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+		}
+		scope:election_winner = {
+			change_government = republic_government
+			add_realm_law = city_succession_law
+			house = {
+				set_variable = {
+					name = temporary_change_prestige
+					value = -500
+					years = 10
 				}
 			}
-			set_player_character = scope:election_winner
-		}
-		create_title_and_vassal_change = {
-			type = granted
-			save_scope_as = title_change
-			add_claim_on_loss = no
-		}
-		primary_title = {
-			change_title_holder = {
-				holder = scope:election_winner
-				change = scope:title_change
+			primary_title = {
+				set_capital_county = scope:old_capital
 			}
 		}
-		remove_variable = play_on
-		if = {
-			limit = { highest_held_title_tier = tier_duchy }
-			every_held_title = {
-				limit = { tier = tier_duchy }
-				change_title_holder = {
-					holder = scope:election_winner
-					change = scope:title_change
-				}
-			}
-		}
-		if = {
-			limit = { highest_held_title_tier = tier_kingdom }
-			every_held_title = {
-				limit = { tier = tier_kingdom }
-				change_title_holder = {
-					holder = scope:election_winner
-					change = scope:title_change
-				}
-			}
-		}
-		if = {
-			limit = { highest_held_title_tier = tier_empire }
-			every_held_title = {
-				limit = { tier = tier_empire }
-				change_title_holder = {
-					holder = scope:election_winner
-					change = scope:title_change
-				}
-			}
-		}
-		resolve_title_and_vassal_change = scope:title_change
-		set_employer = scope:election_winner
-		create_title_and_vassal_change = {
-			type = swear_fealty
-			save_scope_as = change
-		}
-		scope:old_holder = {
-			change_liege = {
-				liege = scope:election_winner
-				change = scope:change
-			}
-		}
-		resolve_title_and_vassal_change = scope:change
-	}
-	scope:election_winner = {
-		change_government = republic_government
-		add_realm_law = city_succession_law
-		house = {
-			set_variable = {
-				name = temporary_change_prestige
-				value = -500
-				years = 10
-			}
-		}
-		set_capital_county = scope:old_capital
 	}
 	if = {
 		limit = { NOT = { exists = var:current_death } }
@@ -180,8 +191,20 @@ add_family_to_republic_families = {
 			name = election_candidates
 			target = scope:electee
 		}
+		set_variable = {
+			name = heavy_ships
+			value = 0
+		}
+		set_variable = {
+			name = medium_ships
+			value = 0
+		}
+		set_variable = {
+			name = light_ships
+			value = 5
+		}
 	}
-	top_liege.primary_title = {
+	liege_or_court_owner.primary_title = {
 		add_to_variable_list = {
 			name = republic_families_list
 			target = scope:house_to_add
@@ -264,8 +287,19 @@ set_up_council_republic = {
 			name = popular_appeasement
 			value = 50
 		}
-		post_appeasement_change = yes
 		republic_council_succesion = yes
+		post_appeasement_change = yes
+	}
+	every_councillor = {
+		save_scope_as = council_new
+		liege_or_court_owner = {
+			primary_title = {
+				add_to_variable_list = {
+					name = valid_council_targets_list
+					target = scope:council_new
+				}
+			}
+		}
 	}
 }
 
@@ -279,51 +313,81 @@ set_up_elected_ruler_republic = {
 	}
 }
 
+reform_into_elected_ruler_republic = {
+	set_up_elected_ruler_republic = yes
+	primary_title = {
+		set_variable = {
+			name = reformed_recently
+			years = 100
+		}
+	}
+}
+
+reform_into_senate_republic = {
+	set_up_senate_republic = yes
+	primary_title = {
+		set_variable = {
+			name = reformed_recently
+			years = 100
+		}
+	}
+}
+
+reform_into_council_republic = {
+	set_up_council_republic = yes
+	primary_title = {
+		set_variable = {
+			name = reformed_recently
+			years = 100
+		}
+	}
+}
+
 all_senate_laws = {
-	add_to_variable_list = { name = senate_laws_list target = flag:senate_vote_war_declaration }
-	add_to_variable_list = { name = senate_laws_list target = flag:leaders_discretion_war_declaration }
-	add_to_variable_list = { name = senate_laws_list target = flag:senate_vote_council_appointment }
-	add_to_variable_list = { name = senate_laws_list target = flag:leaders_discretion_council_appointment }
-	add_to_variable_list = { name = senate_laws_list target = flag:senate_vote_imprisonment_rights }
-	add_to_variable_list = { name = senate_laws_list target = flag:leaders_discretion_imprisonment_rights }
-	add_to_variable_list = { name = senate_laws_list target = flag:senate_vote_title_revocation }
-	add_to_variable_list = { name = senate_laws_list target = flag:leaders_discretion_title_revocation }
-	add_to_variable_list = { name = senate_laws_list target = flag:senate_vote_title_granting }
-	add_to_variable_list = { name = senate_laws_list target = flag:leaders_discretion_title_granting }
-	add_to_variable_list = { name = senate_laws_list target = flag:life_title_term }
-	add_to_variable_list = { name = senate_laws_list target = flag:twenty_year_term }
-	add_to_variable_list = { name = senate_laws_list target = flag:ten_year_term }
-	add_to_variable_list = { name = senate_laws_list target = flag:four_year_term }
-	add_to_variable_list = { name = senate_laws_list target = flag:two_year_term }
-	add_to_variable_list = { name = senate_laws_list target = flag:one_year_term }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:senate_vote_war_declaration }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:leaders_discretion_war_declaration }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:senate_vote_council_appointment }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:leaders_discretion_council_appointment }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:senate_vote_imprisonment_rights }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:leaders_discretion_imprisonment_rights }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:senate_vote_title_revocation }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:leaders_discretion_title_revocation }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:senate_vote_title_granting }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:leaders_discretion_title_granting }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:life_title_term }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:twenty_year_term }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:ten_year_term }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:four_year_term }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:two_year_term }
+	add_to_global_variable_list = { name = senate_laws_list target = flag:one_year_term }
 }
 
 all_elected_ruler_laws = {
-	add_to_variable_list = { name = elected_ruler_laws_list target = flag:life_title_term }
-	add_to_variable_list = { name = elected_ruler_laws_list target = flag:twenty_year_term }
-	add_to_variable_list = { name = elected_ruler_laws_list target = flag:ten_year_term }
-	add_to_variable_list = { name = elected_ruler_laws_list target = flag:four_year_term }
-	add_to_variable_list = { name = elected_ruler_laws_list target = flag:two_year_term }
-	add_to_variable_list = { name = elected_ruler_laws_list target = flag:one_year_term }
+	add_to_global_variable_list = { name = elected_ruler_laws_list target = flag:life_title_term }
+	add_to_global_variable_list = { name = elected_ruler_laws_list target = flag:twenty_year_term }
+	add_to_global_variable_list = { name = elected_ruler_laws_list target = flag:ten_year_term }
+	add_to_global_variable_list = { name = elected_ruler_laws_list target = flag:four_year_term }
+	add_to_global_variable_list = { name = elected_ruler_laws_list target = flag:two_year_term }
+	add_to_global_variable_list = { name = elected_ruler_laws_list target = flag:one_year_term }
 }
 
 all_council_laws = {
-	add_to_variable_list = { name = council_laws_list target = flag:council_approval_war_declaration }
-	add_to_variable_list = { name = council_laws_list target = flag:leaders_discretion_war_declaration }
-	add_to_variable_list = { name = council_laws_list target = flag:council_approval_council_appointment }
-	add_to_variable_list = { name = council_laws_list target = flag:leaders_discretion_council_appointment }
-	add_to_variable_list = { name = council_laws_list target = flag:council_approval_imprisonment_rights }
-	add_to_variable_list = { name = council_laws_list target = flag:leaders_discretion_imprisonment_rights }
-	add_to_variable_list = { name = council_laws_list target = flag:council_approval_title_revocation }
-	add_to_variable_list = { name = council_laws_list target = flag:leaders_discretion_title_revocation }
-	add_to_variable_list = { name = council_laws_list target = flag:council_approval_title_granting }
-	add_to_variable_list = { name = council_laws_list target = flag:leaders_discretion_title_granting }
-	add_to_variable_list = { name = council_laws_list target = flag:life_title_term }
-	add_to_variable_list = { name = council_laws_list target = flag:twenty_year_term }
-	add_to_variable_list = { name = council_laws_list target = flag:ten_year_term }
-	add_to_variable_list = { name = council_laws_list target = flag:four_year_term }
-	add_to_variable_list = { name = council_laws_list target = flag:two_year_term }
-	add_to_variable_list = { name = council_laws_list target = flag:one_year_term }
+	add_to_global_variable_list = { name = council_laws_list target = flag:council_approval_war_declaration }
+	add_to_global_variable_list = { name = council_laws_list target = flag:leaders_discretion_war_declaration }
+	add_to_global_variable_list = { name = council_laws_list target = flag:council_approval_council_appointment }
+	add_to_global_variable_list = { name = council_laws_list target = flag:leaders_discretion_council_appointment }
+	add_to_global_variable_list = { name = council_laws_list target = flag:council_approval_imprisonment_rights }
+	add_to_global_variable_list = { name = council_laws_list target = flag:leaders_discretion_imprisonment_rights }
+	add_to_global_variable_list = { name = council_laws_list target = flag:council_approval_title_revocation }
+	add_to_global_variable_list = { name = council_laws_list target = flag:leaders_discretion_title_revocation }
+	add_to_global_variable_list = { name = council_laws_list target = flag:council_approval_title_granting }
+	add_to_global_variable_list = { name = council_laws_list target = flag:leaders_discretion_title_granting }
+	add_to_global_variable_list = { name = council_laws_list target = flag:life_title_term }
+	add_to_global_variable_list = { name = council_laws_list target = flag:twenty_year_term }
+	add_to_global_variable_list = { name = council_laws_list target = flag:ten_year_term }
+	add_to_global_variable_list = { name = council_laws_list target = flag:four_year_term }
+	add_to_global_variable_list = { name = council_laws_list target = flag:two_year_term }
+	add_to_global_variable_list = { name = council_laws_list target = flag:one_year_term }
 }
 
 add_law = { # LAW = law passed
@@ -1216,6 +1280,9 @@ remove_family_from_republic = {
 		remove_variable = titular_republic
 		clear_variable_list = election_candidates
 		remove_variable = family_prestige
+		remove_variable = heavy_ships
+		remove_variable = medium_ships
+		remove_variable = light_ships
 	}
 }
 
@@ -1292,22 +1359,65 @@ launch_coup_effect = { # Not used but shown
 			target = scope:couper
 		}
 	}
-	liege = {
-		random_character_war = {
-			limit = { using_cb = independence_war }
-			save_scope_as = war
-		}
-		every_vassal = {
-			limit = {
-				age > 15
-				NOT = {
-					has_trait = incapable
-					any_character_war = {
-						using_cb = independence_war
-					}
+	random_character_war = {
+		limit = { using_cb = independence_war }
+		save_scope_as = war
+	}
+	every_vassal = {
+		limit = {
+			age > 15
+			NOT = {
+				has_trait = incapable
+				any_character_war = {
+					using_cb = independence_war
 				}
 			}
-			scope:war = { add_attacker = PREV }
 		}
+		scope:war = { add_attacker = PREV }
+	}
+}
+
+reform_into_feudal_effect = { # Not used but shown
+	change_government = feudal_government
+	add_realm_law = confederate_partition_succession_law
+	spawn_army = {
+		uses_supply = no
+		inheritable = no
+		name = republic_event_troops
+		levies = {
+			value = 1000
+		}
+		men_at_arms = {
+			type = pikemen_unit
+			stacks = 2
+		}
+		men_at_arms = {
+			type = bowmen
+			stacks = 2
+		}
+		location = capital_province
+	}
+}
+
+effect_create_personal_army = {
+	spawn_army = {
+		uses_supply = no
+		inheritable = yes
+		name = republic_event_troops
+		levies = {
+			value = 1000
+		}
+		location = capital_province
+	}
+}
+
+change_into_republic_on_start = {
+	trigger_event = republic_decision_events.1003
+	change_government = republic_government
+	add_realm_law = city_succession_law
+	add_family_to_republic_families = yes
+	every_vassal = {
+		limit = { is_house_head = yes }
+		add_family_to_republic_families = yes
 	}
 }

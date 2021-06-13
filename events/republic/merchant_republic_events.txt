@@ -10,15 +10,18 @@ merchant_republic_events.1001 = { # Becoming a Family
 		character = root
 		animation = bold
 	}
-	right_portrait = {
-		character = scope:your_liege
-		animation = bold
-	}
 	theme = realm
 
 	immediate = {
-		liege = {
-			save_scope_as = your_liege
+		if = {
+			limit = { is_independent_ruler = no }
+			liege_or_court_owner = {
+				primary_title = {
+					save_scope_as = republic_title
+				}
+			}
+		}
+		else = {
 			primary_title = {
 				save_scope_as = republic_title
 			}
@@ -225,6 +228,61 @@ merchant_republic_events.1008 = { # Elected councillor
 	# Excellent
 	option = {
 		name = merchant_republic_events.1008.a
+	}
+}
+
+merchant_republic_events.1009 = { # Becoming a Family
+	type = character_event
+	title = merchant_republic_events.1009.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					republic_has_senate_form = yes
+				}
+				desc = merchant_republic_events.1009.senate_desc
+			}
+			triggered_desc = {
+				trigger = {
+					republic_has_council_form = yes
+				}
+				desc = merchant_republic_events.1009.council_desc
+			}
+			triggered_desc = {
+				trigger = {
+					republic_has_elected_ruler_form = yes
+				}
+				desc = merchant_republic_events.1009.elected_ruler_desc
+			}
+			triggered_desc = {
+				trigger = {
+					house = {
+						var:titular_republic = {
+							holder = { has_government = feudal_government }
+						}
+					}
+				}
+				desc = merchant_republic_events.1009.feudal_desc
+			}
+		}
+	}
+	left_portrait = {
+		character = root
+		animation = bold
+	}
+	theme = realm
+
+	immediate = {
+		house = {
+			var:titular_republic = {
+				save_scope_as = titular_republic
+			}
+		}
+	}
+
+	# Excellent
+	option = {
+		name = merchant_republic_events.1009.a
 	}
 }
 

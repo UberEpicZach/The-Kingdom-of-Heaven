@@ -1,4 +1,104 @@
-﻿appease_estates_decision = {
+﻿convert_whole_realm_to_republic_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	major = yes
+	desc = convert_whole_realm_to_republic_decision_desc
+
+	ai_check_interval = 36
+
+	is_shown = {
+		has_government = tribal_government
+		is_independent_ruler = yes
+	}
+
+	is_valid = {
+		has_realm_law = tribal_authority_3
+		custom_description = {
+			text = faith_is_reformed
+			subject = root
+			faith = { NOT = { has_doctrine_parameter = unreformed } }
+		}
+		prestige_level >= 2
+		capital_province.county = {
+			development_level >= convert_to_feudalism_development_requirement
+		}
+
+		custom_description = { #You need to have 70% of all (non-regional/unique) tribal innovations!
+			text = has_all_tribal_innovations
+			subject = root.culture
+			culture = {
+				calc_true_if = {
+					amount >= 9
+					has_innovation = innovation_motte
+					has_innovation = innovation_catapult
+					has_innovation = innovation_barracks
+					has_innovation = innovation_mustering_grounds
+					has_innovation = innovation_bannus
+					has_innovation = innovation_quilted_armor
+					has_innovation = innovation_gavelkind
+					has_innovation = innovation_crop_rotation
+					has_innovation = innovation_city_planning
+					has_innovation = innovation_casus_belli
+					has_innovation = innovation_plenary_assemblies
+					has_innovation = innovation_ledger
+					has_innovation = innovation_development_01
+					has_innovation = innovation_currency_01
+				}
+			}
+		}
+	}
+
+	cost = {
+		prestige = 200
+	}
+
+	effect = {
+		trigger_event = republic_decision_events.1003
+		change_government = republic_government
+		add_realm_law = city_succession_law
+		house = {
+			custom_description = {
+				text = effect_change_family_influence_positive
+				value = 1000
+				set_variable = {
+					name = convert_to_republic_prestige
+					value = 1000
+					years = 100
+				}
+			}
+		}
+		add_family_to_republic_families = yes
+		hidden_effect = {
+			every_vassal_or_below = {
+				limit = { highest_held_title_tier > tier_barony has_government = tribal_government }
+				change_government = republic_government
+				add_realm_law = city_succession_law
+			}
+		}
+		every_vassal = {
+			limit = { is_house_head = yes }
+			add_family_to_republic_families = yes
+		}
+		custom_description = {
+			text = effect_every_county_gain_county_control
+			primary_title = {
+				every_in_de_facto_hierarchy = {
+					limit = { tier = tier_county }
+					change_county_control = 20
+				}
+			}
+		}
+	}
+
+	ai_potential = {
+		NOT = { has_title = title:e_mongol_empire } #Stop the Mongols from slowing their conquest.
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+appease_estates_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
 
 	desc = appease_estates_decision_desc
@@ -25,7 +125,7 @@
 	}
 
 	cost = {
-		gold > 50
+		gold = 50
 	}
 
 	cooldown = { days = 365 }
@@ -91,7 +191,10 @@ convert_to_republic_decision = {
 		is_landed = yes
 		is_independent_ruler = yes
 		highest_held_title_tier > tier_county
-		has_government = feudal_government
+		OR = {
+			has_government = feudal_government
+			has_government = clan_government
+		}
 	}
 	
 	is_valid = {
@@ -121,7 +224,15 @@ convert_to_republic_decision = {
 			}
 		}
 		add_family_to_republic_families = yes
+		hidden_effect = {
+			every_vassal_or_below = {
+				limit = { highest_held_title_tier > tier_barony OR = { has_government = feudal_government has_government = clan_government } }
+				change_government = republic_government
+				add_realm_law = city_succession_law
+			}
+		}
 		every_vassal = {
+			limit = { is_house_head = yes }
 			add_family_to_republic_families = yes
 		}
 		custom_description = {
@@ -174,7 +285,7 @@ give_speech_decision = {
 			}
 		}
 
-		else_if = {
+		if = {
 			limit = {
 				OR = {
 					has_trait = shy
@@ -227,6 +338,91 @@ give_speech_decision = {
 		modifier = {
 			add = 47.5
 			has_trait = ambitious
+		}
+	}
+}
+
+call_emergency_vote_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+
+	desc = call_emergency_vote_decision_desc
+	selection_tooltip = call_emergency_vote_decision_tooltip
+
+	ai_check_interval = 0
+
+	is_shown = {
+		is_house_head = yes
+		OR = {
+			AND = {
+				is_independent_ruler = yes
+				holds_valid_merchant_republic = yes
+				OR = {
+					republic_has_council_form = yes
+					republic_has_senate_form = yes
+				}
+			}
+			AND = {
+				is_independent_ruler = no
+				liege_or_court_owner = {
+					holds_valid_merchant_republic = yes
+					OR = {
+						republic_has_council_form = yes
+						republic_has_senate_form = yes
+					}
+				}
+			}
+		}
+		house.var:titular_republic = {
+			variable_list_size = { name = proposed_laws_list value > 0 }
+		}
+	}
+
+	cost = {
+		gold = 25
+	}
+
+	cooldown = { years = 3 }
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+	}
+
+	effect = {
+		house = {
+			custom_description = {
+				text = effect_change_family_influence_negative
+				value = 200
+				change_variable = {
+					name = family_prestige
+					add = -200
+				}
+			}
+		}
+		custom_description = {
+			text = effect_trigger_election_cycle
+			house.var:titular_republic = {
+				if = {
+					limit = { exists = var:senate_government_republic }
+					trigger_election_cycle = yes
+				}
+				if = {
+					limit = { exists = var:council_government_republic }
+					trigger_council_election_cycle = yes
+				}
+				trigger_council_election_cycle
+			}
+		}
+		house.var:titular_republic = {
+			every_in_list = {
+				variable = republic_families_list
+				limit = { NOT = { root.house = this } }
+				house_head = {
+					add_opinion = {
+						target = root
+						modifier = called_emergency_meeting
+					}
+				}
+			}
 		}
 	}
 }

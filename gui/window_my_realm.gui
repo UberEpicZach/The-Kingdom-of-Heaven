@@ -9,6 +9,10 @@ window = {
 	parentanchor = top|right
 	allow_outside = yes
 	movable = no
+	republic_senate_view = {}
+	republic_council_view = {}
+	republic_term_limits_window = {}
+	republic_families_window = {}
 	layer = windows_layer
 
 	using = Window_Size_MainTab
@@ -66,6 +70,11 @@ window = {
 					blockoverride "button_close"
 					{
 						onclick = "[MyRealmWindow.Close]"
+						onclick = "[GetVariableSystem.Clear( 'window_republic_family' )]"
+						onclick = "[GetVariableSystem.Clear( 'window_republic_council_form' )]"
+						onclick = "[GetVariableSystem.Clear( 'window_republic_families' )]"
+						onclick = "[GetVariableSystem.Clear( 'window_republic_senate_form' )]"
+						onclick = "[GetVariableSystem.Clear( 'window_republic_elected_ruler_form' )]"
 					}
 
 					vbox = {
@@ -298,7 +307,7 @@ window = {
 						onclick = "[MyRealmWindow.ShowSuccession]"
 						down = "[MyRealmWindow.IsShowingSuccession]"
 
-						text = "MY_REALM_WINDOW_SUCCESSION_TAB"
+						text = "MY_REALM_WINDOW_SUCCESSION_TAB_REPUBLIC"
 					}
 				}
 
@@ -1095,7 +1104,8 @@ window = {
 								text = "VIEW_REPUBLIC_HOUSES"
 								size = { 150 32 }
 								tooltip = "VIEW_REPUBLIC_HOUSES_TT"
-								onclick = "[ExecuteConsoleCommand('gui.createwidget gui/window_republic_families.gui republic_families_window')]"
+								onclick = "[GetVariableSystem.Toggle('window_republic_families')]"
+								onclick = "[GetScriptedGui('most_likely_to_succeed').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							}
 						}
 
@@ -1125,7 +1135,7 @@ window = {
 								text = "CHANGE_REPUBLIC_TERM_LIMIT"
 								size = { 150 32 }
 								tooltip = "CHANGE_REPUBLIC_TERM_LIMIT"
-								onclick = "[ExecuteConsoleCommand('gui.createwidget gui/window_republic_elected_ruler.gui republic_term_limits_window')]"
+								onclick = "[GetVariableSystem.Toggle('window_republic_elected_ruler_form')]"
 							}
 						}
 
@@ -1154,7 +1164,7 @@ window = {
 								text = "OPEN_SENATE_VIEW"
 								size = { 150 32 }
 								tooltip = "VIEW_SENATE"
-								onclick = "[ExecuteConsoleCommand('gui.createwidget gui/window_republic_senate.gui republic_senate_view')]"
+								onclick = "[GetVariableSystem.Toggle('window_republic_senate_form')]"
 							}
 						}
 
@@ -1179,7 +1189,7 @@ window = {
 								text = "OPEN_COUNCIL_VIEw"
 								size = { 150 32 }
 								tooltip = "VIEW_COUNCIL"
-								onclick = "[ExecuteConsoleCommand('gui.createwidget gui/window_republic_council.gui republic_council_view')]"
+								onclick = "[GetVariableSystem.Toggle('window_republic_council_form')]"
 							}
 						}
 					}

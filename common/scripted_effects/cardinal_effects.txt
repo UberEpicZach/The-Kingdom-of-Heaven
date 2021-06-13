@@ -30,11 +30,9 @@ update_preferatus = {
 			name = preferatus
 			value = this
 		}
-		dummy_male = {
-			set_variable = {
+		set_global_variable = {
 				name = preferatus
 				value = prev
-			}
 		}
 	}
 }
@@ -111,12 +109,11 @@ promote_new_cardinal = {
 }
 predict_new_cardinal = {
 	select_highest_scoring_cardinal_candidate = yes
-	dummy_male = {
-		set_variable = {
-			name = predicted_cardinal
-			value = scope:highest_scoring_cardinal_candidate
+		set_global_variable = {
+				name = predicted_cardinal
+				value = scope:highest_scoring_cardinal_candidate
+			}
 		}
-	}
 	#ordered_in_list = {
 	#	list = cardinal_candidates
 	#}
