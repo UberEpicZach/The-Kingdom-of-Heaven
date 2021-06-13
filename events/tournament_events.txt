@@ -71,7 +71,7 @@ KOH_Tournaments.1001 = {
 				limit = {
 					has_character_flag = attending_tournament
 				}
-				trigger_event = {  id = KOH_Tournaments.1050 days = 1 }
+				trigger_event = { id = KOH_Tournaments.1050 days = 1 }
 				#Set score
 				trigger_event = { id = KOH_Tournaments.1060 days = 46 }
 			}
@@ -203,33 +203,27 @@ KOH_Tournaments.1002 = {
 		remove_character_flag = tournament_begins
 		remove_character_flag = attending_tournament
 		remove_character_flag = attending_tournament_event
-		remove_character_flag = do_not_disturb
 		remove_character_flag = tournament_third_place
 		remove_character_flag = tournament_second_place
 		remove_character_flag = tournament_winner
 		add_character_flag = tournament_has_ended
 		clear_variable_list = your_realm_peeps
 		every_vassal_or_below = {
-	
 				add_to_variable_list = {
 					name = your_realm_peeps
 					target = prev
 				}
 			}
-		}
 		every_courtier = {
-	
 				add_to_variable_list = {
 					name = your_realm_peeps
 					target = prev
 				}
 			}
-		}
 		every_close_or_extended_family_member = {
 				add_to_variable_list = {
 					name = your_realm_peeps
 					target = prev
-				}
 			}
 		}
 
@@ -386,6 +380,7 @@ KOH_Tournaments.1008 = {
 	title = KOH_Tournaments.1008.t
 	desc = KOH_Tournaments.1008.d
 	theme = war
+
 	option = {
 		name = KOH_Tournaments.1008.a
 		add_martial_skill = -1
@@ -906,7 +901,7 @@ KOH_Tournaments.1034 = {
 			modifier = pleased_opinion
 			who = FROM
 		}
-		trigger_event = { 	id = KOH_Tournaments.1002 }
+		trigger_event = KOH_Tournaments.1002 
 	}
 }
 
@@ -1179,7 +1174,7 @@ KOH_Tournaments.1031 = {
 
 # Character loses diplomacy
 KOH_Tournaments.1032 = {
-		type = character_event
+	type = character_event
 	title = KOH_Tournaments.1032.t
 	desc = KOH_Tournaments.1032.d
 	theme = war
@@ -1813,7 +1808,7 @@ KOH_Tournaments.1050 = {
 					factor = 0.9
 					has_trait = slothful
 				}
-				trigger_event = { 	type = KOH_Tournaments.1029 days = 1 }
+				trigger_event = { id = KOH_Tournaments.1029 days = 1 }
 			}
 			40 = { #decrease stewardship
 				modifier = {
@@ -1859,7 +1854,7 @@ KOH_Tournaments.1050 = {
 						martial = 5
 					}
 				}
-				trigger_event = { 	id = KOH_Tournaments.1030 days = 1 }
+				trigger_event = { id = KOH_Tournaments.1030 days = 1 }
 			}
 			40 = { #increase diplomacy
 				modifier = {
@@ -1895,7 +1890,7 @@ KOH_Tournaments.1050 = {
 					factor = 0.9
 					has_trait = shy
 				}
-				trigger_event = { 	type = KOH_Tournaments.1031 days = 1 }
+				trigger_event = { id = KOH_Tournaments.1031 days = 1 }
 			}
 			40 = { #decrease diplomacy
 				modifier = {
@@ -1941,7 +1936,7 @@ KOH_Tournaments.1050 = {
 						martial = 5
 					}
 				}
-				trigger_event = { 	type = KOH_Tournaments.1032 days = 1 }
+				trigger_event = { id = KOH_Tournaments.1032 days = 1 }
 			}
 			1000 = {}
 		}
@@ -2530,6 +2525,7 @@ KOH_Tournaments.1063 = {
 
 KOH_Tournaments.1064 = {
 		type = character_event
+		hidden = yes
 	
 	immediate = {
 		clear_variable_list = your_realm_peeps
@@ -2581,6 +2577,7 @@ KOH_Tournaments.1064 = {
 # Safety catch - clears character flags and modifiers
 KOH_Tournaments.1999 = {
 		type = character_event
+		hidden = yes
 	
 	immediate = {
 		remove_character_flag = do_not_disturb
