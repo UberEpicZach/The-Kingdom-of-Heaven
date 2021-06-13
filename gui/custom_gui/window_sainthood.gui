@@ -1,17 +1,4 @@
 ﻿types Saints  {
-	type window_sainthood_open_button = button {
-        size = { 100 100 }
-        visible = "[EqualTo_string(FaithWindow.GetFaith.GetNameNoTooltip,Localize('catholic'))]"
-        icon    = {texture = "gfx/interface/CollegeCardinals/HouseofCardinalsButton.png"}
-#        tooltip = "#T The [collegeofcardinals|E]#!.                                                                           There exists a college which comprises 9 cardinals.                Cardinals are appointed by the Pope from among the clergy of Catholic Europe.                                                                                                                                                                   Candidates with greater piety, greater age, greater learning, virtuous traits, secular power, favourable relations with the Pope, and the current culture of Rome/The Pope are preferred.                                                                                                                                                                                     Candidates are immediately appointed upon the death of a cardinal or upon the accession of one of the nine to the Papacy. Secular rulers can assign money to the campaign fund of the most promising cardinal candidate in their realm, thus making this vassal bishop more likely to be made into a cardinal."
-        tooltip = "#T The [collegeofcardinals|E]#!.                                                           There exists a college which comprises 9 cardinals.                Cardinals are appointed by the Pope from among the clergy of Catholic Europe.                                                                                                                                                                                                       Candidates with greater piety, greater age, greater learning, virtuous traits, secular power, favourable relations with the Pope, and the current culture of Rome/The Pope are preferred.                                                                                                                                         Candidates are immediately appointed upon the death of a cardinal or upon the accession of one of the nine to the Papacy. Secular rulers can assign money to the campaign fund of the most promising cardinal candidate in their realm, thus making this vassal bishop more likely to be made into a cardinal."
-        onclick = "[GetVariableSystem.Toggle('window_cardinals')]"
-        onclick = "[GetScriptedGui('refresh_cardinal_characters').Execute(GuiScope.SetRoot(GetDummyMale.MakeScope).End)]"
-        onclick = "[GetScriptedGui('cardinal_music').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-        alwaystransparent = no
-        layoutpolicy_vertical = expanding
-    }
-
 	type window_sainthood = window {
         scale = 0.9
         allow_outside = yes
@@ -55,141 +42,150 @@
                     blend_mode = alphamultiply
                 }
             }
-            dynamicgridbox = {
+            scrollbox = {
+                name = "saints_scrollbox"
+                layoutpolicy_horizontal = expanding
                 layoutpolicy_vertical = expanding
-                allow_outside = yes
-                datacontext = "[FaithWindow.GetFaith]"
-                ignoreinvisible = yes
-                maxhorizontalslots = 1
-                maxverticalslots = 100
-                block "datamodel" {
-                    datamodel = "[FaithWindow.GetFaith.MakeScope.GetList('faith_saints')]"
-                }
-                item = {
-                    widget = {
-                        datacontext = "[Scope.GetCharacter]"
-                        block "size" {
-                            size = { 500 175 }
+                blockoverride "scrollbox_content"
+                {
+                    dynamicgridbox = {
+                        layoutpolicy_vertical = expanding
+                        allow_outside = yes
+                        datacontext = "[FaithWindow.GetFaith]"
+                        ignoreinvisible = yes
+                        maxhorizontalslots = 1
+                        maxverticalslots = 100
+                        block "datamodel" {
+                            datamodel = "[FaithWindow.GetFaith.MakeScope.GetList('faith_saints')]"
                         }
-                        hbox = {
-                            portrait_shoulders_bright = {}
-                            vbox = {
-                                hbox = {
-                                    text_single = {
-                                        text = "Saint"
-                                        fontsize = 21
-                                        default_format = "#bold"
-                                    }
-                                    spacer = { size = { 5 0 } }
-                                    text_single = {
-                                        text = "[Character.GetFirstName]"
-                                        fontsize = 21
-                                        default_format = "#bold"
-                                    }
-                                    expand = {}
+                        item = {
+                            widget = {
+                                datacontext = "[Scope.GetCharacter]"
+                                block "size" {
+                                    size = { 500 200 }
                                 }
                                 hbox = {
+                                    portrait_shoulders_bright = {}
                                     vbox = {
                                         hbox = {
                                             text_single = {
-                                                text = "[culture|E]: "
-                                                fontsize = 16
-                                                default_format = "#italic"
+                                                text = "Saint"
+                                                fontsize = 21
+                                                default_format = "#bold"
                                             }
                                             spacer = { size = { 5 0 } }
                                             text_single = {
-                                                text = "[Character.GetCulture.GetName]"
-                                                fontsize = 16
-                                                default_format = "#italic"
-                                            }
-                                            expand = {}
-                                        }
-                                        text_single = {
-                                            text = "[Character.GetDeathOrBirthDateInfo]"
-                                            fontsize = 16
-                                            default_format = "#italic"
-                                        }
-                                        hbox = {
-                                            text_single = {
-                                                text = "[dynasty|E]: "
-                                                fontsize = 16
-                                                default_format = "#italic"
-                                            }
-                                            spacer = { size = { 5 0 } }
-                                            text_single = {
-                                                text = "[Character.GetDynasty.GetName]"
-                                                fontsize = 16
-                                                default_format = "#italic"
-                                            }
-                                            expand = {}
-                                        }
-                                        expand = {}
-                                    }
-                                    spacer = { size = { 10 0 } }
-                                    vbox = {
-                                        hbox = {
-                                            text_single = {
-                                                text = "[piety|E]:"
-                                                fontsize = 16
-                                                default_format = "#italic"
-                                            }
-                                            spacer = { size = { 5 0 } }
-                                            text_single = {
-                                                text = "[Character.GetPiety]"
-                                                fontsize = 16
-                                                default_format = "#italic"
+                                                text = "[Character.GetFirstName]"
+                                                fontsize = 21
+                                                default_format = "#bold"
                                             }
                                             expand = {}
                                         }
                                         hbox = {
-                                            text_single = {
-                                                text = "[prestige|E]:"
-                                                fontsize = 16
-                                                default_format = "#italic"
+                                            vbox = {
+                                                hbox = {
+                                                    text_single = {
+                                                        text = "[culture|E]: "
+                                                        fontsize = 16
+                                                        default_format = "#italic"
+                                                    }
+                                                    spacer = { size = { 5 0 } }
+                                                    text_single = {
+                                                        text = "[Character.GetCulture.GetName]"
+                                                        fontsize = 16
+                                                        default_format = "#italic"
+                                                    }
+                                                    expand = {}
+                                                }
+                                                text_single = {
+                                                    text = "[Character.GetDeathOrBirthDateInfo]"
+                                                    fontsize = 16
+                                                    default_format = "#italic"
+                                                }
+                                                hbox = {
+                                                    text_single = {
+                                                        text = "[dynasty|E]: "
+                                                        fontsize = 16
+                                                        default_format = "#italic"
+                                                    }
+                                                    spacer = { size = { 5 0 } }
+                                                    text_single = {
+                                                        text = "[Character.GetDynasty.GetName]"
+                                                        fontsize = 16
+                                                        default_format = "#italic"
+                                                    }
+                                                    expand = {}
+                                                }
+                                                expand = {}
                                             }
-                                            spacer = { size = { 5 0 } }
-                                            text_single = {
-                                                text = "[Character.GetPrestige]"
-                                                fontsize = 16
-                                                default_format = "#italic"
+                                            spacer = { size = { 10 0 } }
+                                            vbox = {
+                                                hbox = {
+                                                    text_single = {
+                                                        text = "[piety|E]:"
+                                                        fontsize = 16
+                                                        default_format = "#italic"
+                                                    }
+                                                    spacer = { size = { 5 0 } }
+                                                    text_single = {
+                                                        text = "[Character.GetPiety]"
+                                                        fontsize = 16
+                                                        default_format = "#italic"
+                                                    }
+                                                    expand = {}
+                                                }
+                                                hbox = {
+                                                    text_single = {
+                                                        text = "[prestige|E]:"
+                                                        fontsize = 16
+                                                        default_format = "#italic"
+                                                    }
+                                                    spacer = { size = { 5 0 } }
+                                                    text_single = {
+                                                        text = "[Character.GetPrestige]"
+                                                        fontsize = 16
+                                                        default_format = "#italic"
+                                                    }
+                                                    expand = {}
+                                                }
+                                                hbox = {
+                                                    text_single = {
+                                                        text = "[house|E]:"
+                                                        fontsize = 16
+                                                        default_format = "#italic"
+                                                    }
+                                                    spacer = { size = { 5 0 } }
+                                                    text_single = {
+                                                        text = "[Character.GetHouse.GetName]"
+                                                        fontsize = 16
+                                                        default_format = "#italic"
+                                                    }
+                                                    expand = {}
+                                                }
                                             }
-                                            expand = {}
                                         }
+                                        
                                         hbox = {
                                             text_single = {
-                                                text = "[house|E]:"
+                                                text = "Bio:"
                                                 fontsize = 16
                                                 default_format = "#italic"
                                             }
                                             spacer = { size = { 5 0 } }
                                             text_single = {
-                                                text = "[Character.GetHouse.GetName]"
+                                                text = GET_SAINT_DESC
                                                 fontsize = 16
                                                 default_format = "#italic"
                                             }
                                             expand = {}
                                         }
                                     }
-                                }
-                                
-                                hbox = {
-                                    text_single = {
-                                        text = "Bio:"
-                                        fontsize = 16
-                                        default_format = "#italic"
-                                    }
-                                    spacer = { size = { 5 0 } }
-                                    text_single = {
-                                        text = GET_SAINT_DESC
-                                        fontsize = 16
-                                        default_format = "#italic"
-                                    }
-                                    expand = {}
                                 }
                             }
                         }
                     }
                 }
+                expand = {}
             }
             expand = {}
         }

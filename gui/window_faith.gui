@@ -7,6 +7,7 @@ window = {
 	allow_outside = yes
 	window_cardinals = {}
 	window_sainthood = {}
+	window_appoint_successor_theocracy = {}
 	name = "faith_window"
 	datacontext = "[FaithWindow.GetFaith]"
 	datacontext = "[GetVariableSystem]"
@@ -30,7 +31,7 @@ window = {
 		name = _hide
 		position = { -60 0 }
 		on_start = "[GetVariableSystem.Clear( 'hide_bottom_left_HUD' )]"
-
+		on_start = "[GetVariableSystem.Clear( 'window_appoint_successor_theocracy' )]"
 
 		using = Animation_FadeOut_Quick
 		using = Sound_WindowHide_Standard
@@ -73,6 +74,7 @@ window = {
 			blockoverride "button_close"
 			{
 				onclick = "[FaithWindow.Close]"
+				onclick = "[GetVariableSystem.Clear( 'window_appoint_successor_theocracy' )]"
 			}
 
 			blockoverride "button_back"
@@ -128,13 +130,6 @@ window = {
 						}
 					}
 				}
-				vbox = {
-					margin_left = -20
-					margin_top = 20
-					margin_right = 60
-					layoutpolicy_vertical = expanding
-					window_cardinals_open_button = {}
-				}
 
 				vbox = {
 					layoutpolicy_horizontal = expanding
@@ -169,6 +164,7 @@ window = {
 
 						vbox = {
 							layoutpolicy_vertical = expanding
+							layoutpolicy_horizontal = expanding
 							margin_bottom = 3
 
 							text_single = {
@@ -245,7 +241,6 @@ window = {
 								{
 									text = "View Saints"
 								}
-
 							}
 						}
 					}
@@ -304,7 +299,21 @@ window = {
 
 				using = tooltip_below
 			}
+
+			button_tab = {
+				layoutpolicy_horizontal = expanding
+				visible = "[GetScriptedGui('can_see_investiture').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				onclick = "[GetVariableSystem.Set( 'faith_view_tabs', 'investiture' )]"
+				onclick = "[GetScriptedGui('get_all_realm_theocracies').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				down = "[GetVariableSystem.HasValue( 'faith_view_tabs', 'investiture' )]"
+				text = "Investiture" # Should typically call a loc key but you can put the text right in if you are lazy
+				default_format = "#low"
+
+				using = tooltip_below
+			}
 		}
+
+		investiture_vbox = {}
 
 		vbox = {
 			name = "tab_beliefs"
@@ -877,6 +886,19 @@ window = {
 					onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'faith', Faith.MakeScope ).End ) ]"
 					tooltip = "[ScriptedGui.BuildTooltip( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'faith', Faith.MakeScope ).End ) ]"
 					text = "RECREATE_TEMPORAL_HEAD_OF_FAITH_TITLE"
+				}
+
+				button_standard = {
+					name = "college_of_cardinals"
+					minimumsize = { 240 0 }
+					visible = "[EqualTo_string(FaithWindow.GetFaith.GetNameNoTooltip,Localize('catholic'))]"
+					text = "College of Cardinals"
+					tooltip = "#T The [collegeofcardinals|E]#!.                                                           There exists a college which comprises 9 cardinals.                Cardinals are appointed by the Pope from among the clergy of Catholic Europe.                                                                                                                                                                                                       Candidates with greater piety, greater age, greater learning, virtuous traits, secular power, favourable relations with the Pope, and the current culture of Rome/The Pope are preferred.                                                                                                                                         Candidates are immediately appointed upon the death of a cardinal or upon the accession of one of the nine to the Papacy. Secular rulers can assign money to the campaign fund of the most promising cardinal candidate in their realm, thus making this vassal bishop more likely to be made into a cardinal."
+					onclick = "[GetVariableSystem.Toggle('window_cardinals')]"
+					onclick = "[GetScriptedGui('refresh_cardinal_characters').Execute(GuiScope.SetRoot(GetDummyMale.MakeScope).End)]"
+					onclick = "[GetScriptedGui('cardinal_music').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+
+					using = tooltip_nw
 				}
 
 				expand = {}
