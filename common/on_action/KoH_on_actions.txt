@@ -171,6 +171,7 @@ on_death = {
 
 on_theocrat_investiture_death = {
 	trigger = {
+		exists = primary_title
 		primary_title = {
 			has_variable = theocratic_successor
 		}

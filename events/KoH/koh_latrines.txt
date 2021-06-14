@@ -453,7 +453,7 @@ scripted_effect disaster_effects = {
 		if = {
 			limit = {
 				NOT = {
-					scope:fueding_bishop = { is_in_list = died_from_latrine_disaster }
+					scope:feuding_bishop = { is_in_list = died_from_latrine_disaster }
 				}
 			}
 			add_prestige = {
@@ -466,7 +466,7 @@ scripted_effect disaster_effects = {
 	else_if = {
 		limit = {
 			NOT = {
-				scope:fueding_bishop = { is_in_list = died_from_latrine_disaster }
+				scope:feuding_bishop = { is_in_list = died_from_latrine_disaster }
 			}
 		}
 		add_prestige = {
