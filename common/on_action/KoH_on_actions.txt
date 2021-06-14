@@ -162,9 +162,8 @@ on_death = {
     on_actions = {
         on_cardinal_death
         on_pope_death
-        #on_artifact_inheritance
+        on_artifact_inheritance
         on_person_death_saint
-		on_theocrat_investiture_death
     }
 }
 
@@ -172,43 +171,6 @@ on_person_death_saint = {
     events = {
         KoH_sainthood.1
     }
-}
-
-on_theocrat_investiture_death = {
-	trigger = {
-		primary_title = {
-			has_variable = theocratic_successor
-		}
-	}
-	effect = {
-		liege = { save_scope_as = important_liege }
-		primary_title = { var:theocratic_successor = { save_scope_as = theocratic_inheritor } remove_variable = theocratic_successor }
-		create_title_and_vassal_change = {
-			type = granted
-			save_scope_as = title_change
-			add_claim_on_loss = no
-		}
-		every_held_title = {
-			change_title_holder = {
-				holder = scope:theocratic_inheritor
-				change = scope:title_change
-			}
-		}
-		resolve_title_and_vassal_change = scope:title_change
-		scope:theocratic_inheritor = {
-			remove_variable = theocratic_successor
-			change_government = theocracy_government
-			create_title_and_vassal_change = {
-				type = swear_fealty
-				save_scope_as = change
-			}
-			change_liege = {
-				liege = scope:important_liege
-				change = scope:change
-			}
-			resolve_title_and_vassal_change = scope:change
-		}
-	}
 }
 
 on_cardinal_death = {

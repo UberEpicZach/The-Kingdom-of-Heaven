@@ -1,4 +1,4 @@
-﻿become_cardinal = {
+﻿﻿become_cardinal = {
 	random_in_global_list = {
 		variable = cardinals
 		limit = {story_owner = {is_alive = no}}
@@ -30,9 +30,11 @@ update_preferatus = {
 			name = preferatus
 			value = this
 		}
-		set_global_variable = {
+		dummy_male = {
+			set_variable = {
 				name = preferatus
 				value = prev
+			}
 		}
 	}
 }
@@ -109,11 +111,12 @@ promote_new_cardinal = {
 }
 predict_new_cardinal = {
 	select_highest_scoring_cardinal_candidate = yes
-		set_global_variable = {
-				name = predicted_cardinal
-				value = scope:highest_scoring_cardinal_candidate
-			}
+	dummy_male = {
+		set_variable = {
+			name = predicted_cardinal
+			value = scope:highest_scoring_cardinal_candidate
 		}
+	}
 	#ordered_in_list = {
 	#	list = cardinal_candidates
 	#}
