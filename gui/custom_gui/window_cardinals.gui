@@ -102,10 +102,10 @@ types CardinalsElection  {
         position = { 50 -50}
         icon = {
             texture = "gfx/interface/CollegeCardinals/CardinalReasonings.png"
-            position = {25 0}
+            position = {26 4}
         }
         text_single = {
-            position = {50 90}
+            position = {53 90}
             block "score" {text = "[GuiScope.SetRoot(Character.MakeScope).ScriptValue('cardinal_to_pope_score')|0]"}
             fontsize = 25
         }
@@ -311,7 +311,7 @@ types Cardinals  {
                 blockoverride "portrait" {  window_cardinals_portrait = { parentanchor = hcenter|vcenter }}
                 blockoverride "score" {text = "[GuiScope.SetRoot(Character.MakeScope).ScriptValue('bishop_to_cardinal_score')|0]"}
                 window_cardinals_campaign = {position = { -25 50 }}
-                window_cardinals_score =    {position = { 65 -40 }}
+                window_cardinals_score =    {position = { 65 -30 }}
                 window_cardinals_invest_divest = {
                     parentanchor = bottom|hcenter
                     position = { -10 15 }
