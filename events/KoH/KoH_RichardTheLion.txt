@@ -1390,7 +1390,7 @@ KoH_RichardTheLionheart.11 = {
 	option = {
 		name = KoH_RichardTheLionheart.11.a
 
-		hidden_effect = {
+		#hidden_effect = {
 			character:204510 = {
 				start_war = {
 					casus_belli = richards_independence_cb
@@ -1401,7 +1401,6 @@ KoH_RichardTheLionheart.11 = {
 				id = KoH_RichardTheLionheart.12
 				days = 1
 			}
-		}
 	}
 }
 
@@ -1445,6 +1444,10 @@ KoH_RichardTheLionheart.13 = {
 	
 	option = {
 		name = KoH_RichardTheLionheart.13.a
+
+		character:204510 = {
+			get_title = title:k_brittany
+		}
 
 		character:204500 = {
 			set_designated_heir = character:204510
@@ -1500,6 +1503,11 @@ KoH_RichardTheLionheart.14 = {
 
 	option = {
 		name = KoH_RichardTheLionheart.14.a
+		trigger = {
+			character:205730 = {
+				is_alive = yes
+			}
+		}
 		character:204510 = {
 			trigger_event = {
 				id = KoH_RichardTheLionheart.15
@@ -1507,10 +1515,27 @@ KoH_RichardTheLionheart.14 = {
 			}
 		}
 		add_prestige = 1000
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.14.c
+		trigger = {
+			character:204514 = {
+				is_alive = yes
+			}
 		}
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.15
+				days = 25
+			}
+		}
+		add_prestige = 500
+	}
 
 	option = {
 		name = KoH_RichardTheLionheart.14.b
+		custom_tooltip = KoH_RichardTheLionheart.14.b.tt
 	}
 }
 
