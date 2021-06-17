@@ -316,6 +316,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 		add_character_flag = {
 			flag = had_event_RichardTheLionheart.2024
 		}
+		save_scope_as = geoffery
 	}
 	option = {
 		name = KoH_RichardTheLionheart.2024.a #enter the joust
@@ -532,7 +533,17 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 KoH_RichardTheLionheart.2 = { #Death in Joust
 	type = character_event
 	title = KoH_RichardTheLionheart.2.t
-	desc = KoH_RichardTheLionheart.2.d
+	desc = {
+		first_valid = {
+			#Catholic flavour
+			triggered_desc = {
+				desc = KoH_RichardTheLionheart.2.d
+				trigger = { this = character:204510 }
+			}
+			#Everyone else
+			desc = KoH_RichardTheLionheart.2.d2
+		}
+	}
 	theme = mental_health
 	override_background = {
 		event_background = bedchamber
@@ -556,6 +567,18 @@ KoH_RichardTheLionheart.2 = { #Death in Joust
 		add_character_flag = {
 			flag = had_event_RichardTheLionheart.2
 		}
+
+		character:204511 = {
+			save_scope_as = geoffery
+		}
+
+		title:d_brittany.holder = {
+			save_scope_as = brittanyholder
+		}
+
+		title:d_brittany = {
+			save_scope_as = brittany 
+		}
 	}
 	option = {
 		name = KoH_RichardTheLionheart.2.a
@@ -574,11 +597,11 @@ KoH_RichardTheLionheart.202 = { #Henry makes action against Brittney
 
 	left_portrait = {
 		character = root
-		animation = personality_rational
+		animation = stress
 	}
 	right_portrait = {
-		character = character:205506
-		animation = grief
+		character = scope:geoffery
+		animation = dead
 	}
 
 	trigger = {
@@ -592,48 +615,64 @@ KoH_RichardTheLionheart.202 = { #Henry makes action against Brittney
 		add_character_flag = {
 			flag = had_event_RichardTheLionheart.202
 		}
+
+		character:204511 = {
+			save_scope_as = geoffery
+		}
+
+		title:d_brittany.holder = {
+			save_scope_as = brittanyholder
+		}
+
+		title:d_brittany = {
+			save_scope_as = brittany 
+		}
 	}
 
 	option = {
 		name = KoH_RichardTheLionheart.202.a
 		custom_tooltip = KoH_RichardTheLionheart.202.a.tt
-		hidden_effect = {
-			character:205740 = {
-				create_title_and_vassal_change = {
-					type = swear_fealty #or whatever
-					save_scope_as = change
-				}
-
-				change_liege = {
-					liege = character:204500
-					change = scope:change
-				}
-				resolve_title_and_vassal_change = scope:change
-
-				add_opinion = {
-					target = character:204500
-					modifier = angry_opinion
-					opinion = 50
-				}
+	
+		character:205740 = {
+			create_title_and_vassal_change = {
+				type = swear_fealty #or whatever
+				save_scope_as = change
 			}
-			character:204510 = {
-				trigger_event = {
-					id = KoH_RichardTheLionheart.3
-					days = 10
-				}
+
+			change_liege = {
+				liege = character:204500
+				change = scope:change
 			}
+			resolve_title_and_vassal_change = scope:change
+
+			add_opinion = {
+				target = character:204500
+				modifier = angry_opinion
+				opinion = -50
+			}
+		}
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.3
+				days = 10
+			}
+		}
+
+		ai_chance = {
+			base = 70
 		}
 	}
 
 	option = {
 		name = KoH_RichardTheLionheart.202.b
 		custom_tooltip = KoH_RichardTheLionheart.202.b.tt
-		hidden_effect = {
 			
-		add_opinion = {
-			target = character:204500
-			modifier = pleased_opinion
-			opinion = 50
+		character:205740 = {
+
+			add_opinion = {
+				target = character:204500
+				modifier = angry_opinion
+				opinion = -50
 			}
 		}
 	}
@@ -906,16 +945,11 @@ KoH_RichardTheLionheart.6 = {
 		custom_tooltip = KoH_RichardTheLionheart.6.a.tt
 		
 		hidden_effect = {
-			scope:the_faction = {
-				faction_start_war = {
-					title = title:k_england
+			character:204510 = {
+				start_war = {
+					casus_belli = richards_independence_cb
+					target = character:204500
 				}
-			}
-		}
-		character:204510 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.8
-				days = 50
 			}
 		}
 	}		
@@ -1753,40 +1787,6 @@ KoH_RichardTheLionheart.19 = { #rome
 				add_piety = -100
 			}
 		}
-	}
-}
-
-KoH_RichardTheLionheart.190 = { #rome
-	type = character_event
-	title = KoH_RichardTheLionheart.190.t
-	desc = KoH_RichardTheLionheart.190.d
-	theme = war
-
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
-
-	right_portrait = {
-		character = title:k_papal_state.holder
-		animation = personality_bold
-	}
-
-	immediate = {
-		title:e_byzantium.capital_province = {
-			if = {
-				limit = {
-					is_county_capital = yes
-					NOT = { has_building = city_04 }
-				}
-				add_building = city_04
-			}
-		}
-	}
-
-	option = {
-		name = KoH_RichardTheLionheart.190.a
-
 	}
 }
 
