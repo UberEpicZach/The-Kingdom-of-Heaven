@@ -68,7 +68,7 @@ republic_speech_event.1001 = { # Speaking about your military might
 							value = 100
 							change_variable = {
 								name = family_prestige
-								add = 100
+								value = 100
 							}
 						}
 					}
@@ -86,7 +86,7 @@ republic_speech_event.1001 = { # Speaking about your military might
 							value = 100
 							change_variable = {
 								name = family_prestige
-								add = -100
+								value = -100
 							}
 						}
 					}
@@ -117,7 +117,7 @@ republic_speech_event.1001 = { # Speaking about your military might
 							value = 100
 							change_variable = {
 								name = family_prestige
-								add = 100
+								value = 100
 							}
 						}
 					}
@@ -135,10 +135,128 @@ republic_speech_event.1001 = { # Speaking about your military might
 							value = 100
 							change_variable = {
 								name = family_prestige
-								add = -100
+								value = -100
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+republic_speech_event.1001 = { # Speaking about your military might
+	type = character_event
+	title = republic_speech_event.1001.t
+	desc = republic_speech_event.1001.desc
+	left_portrait = {
+		character = root
+		animation = bold
+	}
+	theme = diplomacy
+	override_background = {
+		event_background = docks
+	}
+	immediate = {
+		if = {
+			limit = { house = { exists = var:titular_republic } }
+			house = { var:titular_republic = { save_scope_as = titular_republic } }
+		}
+	}
+
+	# Martial
+	option = {
+		name = republic_speech_event.1001.a
+		duel = {
+			skill = martial
+			value = 10
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+				}
+				desc = republic_speech_event.1001.rousing_speech
+				send_interface_toast = {
+					title = republic_speech_event.1001.rousing_speech
+					left_icon = scope:vassal
+
+					house = {
+						custom_description = {
+							text = effect_change_family_influence_positive
+							value = 100
+							change_variable = {
+								name = family_prestige
+								value = 100
+							}
+						}
+					}
+					add_prestige = 50
+				}
+			}
+			10 = {
+				desc = republic_speech_event.1001.terrible_speech
+				send_interface_toast = {
+					title = republic_speech_event.1001.terrible_speech
+					left_icon = scope:vassal
+				
+					house = {
+						custom_description = {
+							text = effect_change_family_influence_negative
+							value = 100
+							change_variable = {
+								name = family_prestige
+								value = -100
+							}
+						}
+					}
+					add_prestige = -50
+				}
+			}
+		}
+	}
+
+	# Diplomacy
+	option = {
+		name = republic_speech_event.1001.b
+		duel = {
+			skill = diplomacy
+			value = 10
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+				}
+				desc = republic_speech_event.1001.rousing_speech
+				send_interface_toast = {
+					title = republic_speech_event.1001.rousing_speech
+					house = {
+						custom_description = {
+							text = effect_change_family_influence_positive
+							value = 100
+							change_variable = {
+								name = family_prestige
+								value = 100
+							}
+						}
+					}
+					add_prestige = 50
+				}
+			}
+			10 = {
+				desc = republic_speech_event.1001.terrible_speech
+				send_interface_toast = {
+					title = republic_speech_event.1001.terrible_speech
+					house = {
+						custom_description = {
+							text = effect_change_family_influence_negative
+							value = 100
+							change_variable = {
+								name = family_prestige
+								value = -100
+							}
+						}
+					}
+					add_prestige = -50
 				}
 			}
 		}
@@ -184,11 +302,9 @@ republic_speech_event.1002 = { # Speaking about your family
 							value = 150
 							change_variable = {
 								name = family_prestige
-								add = 150
+								value = 150
 							}
 						}
-					}
-					dynasty = {
 						add_dynasty_prestige = 50
 					}
 				}
@@ -203,7 +319,7 @@ republic_speech_event.1002 = { # Speaking about your family
 							value = 150
 							change_variable = {
 								name = family_prestige
-								add = -150
+								value = -150
 							}
 						}
 					}
@@ -222,7 +338,7 @@ republic_speech_event.1002 = { # Speaking about your family
 				value = 50
 				change_variable = {
 					name = family_prestige
-					add = 50
+					value = 50
 				}
 			}
 		}
@@ -340,7 +456,7 @@ republic_speech_event.1004 = { # Speaking about your family
 				value = 30
 				change_variable = {
 					name = family_prestige
-					add = 30
+					value = 30
 				}
 			}
 		}
@@ -418,9 +534,9 @@ republic_speech_event.1005 = { # A Rival's Insult
 				}
 			}
 			custom_description = {
-				text = effect_change_noble_appeasement_positive
+				text = effect_change_nobility_appeasement_positive
 				value = 10
-				change_noble_appeasement_positive = { AMOUNT = 10 }
+				change_nobility_appeasement_positive = { AMOUNT = 10 }
 			}
 			specific_post_appeasement= { CLASS = nobility }
 		}
@@ -587,176 +703,6 @@ republic_speech_event.1007 = { # Speaking of the City
 		add_character_modifier = {
 			modifier = promised_improvement_modifier
 			years = 5
-		}
-	}
-}
-
-republic_speech_event.1008 = { # Good news ship
-	type = character_event
-	title = republic_speech_event.1008.t
-	desc = republic_speech_event.1008.desc
-	left_portrait = {
-		character = root
-		animation = bold
-	}
-	theme = stewardship
-	override_background = {
-		event_background = docks
-	}
-	immediate = {
-		if = {
-			limit = { house = { exists = var:titular_republic } }
-			house = { var:titular_republic = { save_scope_as = titular_republic } }
-		}
-	}
-
-	# Excellent!
-	option = {
-		name = republic_speech_event.1008.a
-		add_gold = 60
-	}
-
-	# Some for the people!
-	option = {
-		name = republic_speech_event.1008.b
-		if = {
-			limit = {
-				OR = {
-					AND = {
-						is_independent_ruler = yes
-						republic_has_council_form = yes
-					}
-					AND = {
-						is_independent_ruler = no
-						liege_or_court_owner = {
-							republic_has_council_form = yes
-						}
-					}
-				}
-			}
-			custom_description = {
-				text = effect_change_popular_appeasement_positive
-				value = 20
-				primary_title = {
-					change_popular_appeasement_positive = { AMOUNT = 20 }
-					specific_post_appeasement= { CLASS = popular }
-				}
-			}
-			custom_description = {
-				text = effect_change_noble_appeasement_negative
-				value = 10
-				primary_title = {
-					change_noble_appeasement_negative = { AMOUNT = 10 }
-					specific_post_appeasement= { CLASS = nobility }
-				}
-			}
-			custom_description = {
-				text = effect_change_clergy_appeasement_negative
-				value = 10
-				primary_title = {
-					change_clergy_appeasement_negative = { AMOUNT = 10 }
-					specific_post_appeasement= { CLASS = clergy }
-				}
-			}
-		}
-		else = {
-			add_prestige = 150
-		}
-	}
-
-	# The clergy need gold
-	option = {
-		name = republic_speech_event.1008.c
-		if = {
-			limit = {
-				OR = {
-					AND = {
-						is_independent_ruler = yes
-						republic_has_council_form = yes
-					}
-					AND = {
-						is_independent_ruler = no
-						liege_or_court_owner = {
-							republic_has_council_form = yes
-						}
-					}
-				}
-			}
-			custom_description = {
-				text = effect_change_clergy_appeasement_positive
-				value = 20
-				primary_title = {
-					change_clergy_appeasement_positive = { AMOUNT = 20 }
-					specific_post_appeasement= { CLASS = clergy }
-				}
-			}
-			custom_description = {
-				text = effect_change_noble_appeasement_negative
-				value = 10
-				primary_title = {
-					change_noble_appeasement_negative = { AMOUNT = 10 }
-					specific_post_appeasement= { CLASS = nobility }
-				}
-			}
-			custom_description = {
-				text = effect_change_popular_appeasement_negative
-				value = 10
-				primary_title = {
-					change_popular_appeasement_negative = { AMOUNT = 10 }
-					specific_post_appeasement= { CLASS = popular }
-				}
-			}
-		}
-		else = {
-			add_piety = 150
-		}
-	}
-
-	# Lend some to the nobility
-	option = {
-		name = republic_speech_event.1008.d
-		if = {
-			limit = {
-				OR = {
-					AND = {
-						is_independent_ruler = yes
-						republic_has_council_form = yes
-					}
-					AND = {
-						is_independent_ruler = no
-						liege_or_court_owner = {
-							republic_has_council_form = yes
-						}
-					}
-				}
-			}
-			custom_description = {
-				text = effect_change_noble_appeasement_positive
-				value = 20
-				primary_title = {
-					change_noble_appeasement_positive = { AMOUNT = 20 }
-					specific_post_appeasement= { CLASS = nobility }
-				}
-			}
-			custom_description = {
-				text = effect_change_clergy_appeasement_negative
-				value = 10
-				primary_title = {
-					change_clergy_appeasement_negative = { AMOUNT = 10 }
-					specific_post_appeasement= { CLASS = clergy }
-				}
-			}
-			custom_description = {
-				text = effect_change_popular_appeasement_negative
-				value = 10
-				primary_title = {
-					change_popular_appeasement_negative = { AMOUNT = 10 }
-					specific_post_appeasement= { CLASS = popular }
-				}
-			}
-		}
-		else = {
-			dynasty = { add_dynasty_prestige = 150 }
 		}
 	}
 }
