@@ -21,6 +21,80 @@
 	}
 }
 
+<<<<<<< Updated upstream
+=======
+010_KOH_CKIII = {
+    name = "Gestin"
+    dynasty = KOH_retz
+    religion = "catholic"
+    culture = breton
+    1040.1.1 = {
+        birth = "1040.1.1" 
+    }
+    1083.1.1 = {
+        death = "1083.1.1" 
+    }
+}
+
+006_KOH_CKIII = {
+    name = "Garsire"
+    dynasty = KOH_retz
+    religion = "catholic"
+    culture = breton
+	father = 010_KOH_CKIII
+    1070.1.1 = {
+        birth = "1070.1.1" 
+    }
+    1137.1.1 = {
+        death = "1137.1.1" 
+    }
+}
+
+007_KOH_CKIII = {
+    name = "Garsire"
+    dynasty = KOH_retz
+    religion = "catholic"
+    culture = breton
+	father = 006_KOH_CKIII
+    1105.1.1 = {
+        birth = "1105.1.1" 
+    }
+    1160.1.1 = {
+        death = "1160.1.1"
+    }
+}
+
+008_KOH_CKIII = {
+    name = "Hascoët"
+    dynasty = KOH_retz
+    religion = "catholic"
+    culture = breton
+	father = 007_KOH_CKIII
+    1135.1.1 = {
+        birth = "1135.1.1" 
+    }
+	1180.1.1 = {
+      add_spouse = 009_KOH_CKIII
+   }
+    1207.1.1 = {
+        death = "1207.1.1"
+    }
+}
+
+009_KOH_CKIII = {
+    name = "Stéphanie"
+	female = yes
+    religion = "catholic"
+    culture = breton
+    1140.1.1 = {
+        birth = "1140.1.1" 
+    }
+    1210.1.1 = {
+        death = "1210.1.1"
+    }
+}
+	
+>>>>>>> Stashed changes
 10042 = {
 	name = "Alan"
 	# AKA: Alan 'Caignart'

@@ -33,7 +33,7 @@
 
 10011 = {
 	name = "Robert"
-	dynasty = 320
+	dynasty_house = house_craon
 	martial = 8
 	diplomacy = 6
 	intrigue = 4
@@ -1921,18 +1921,6 @@
 	}
 	1136.1.1 = {
 		death = "1136.1.1"
-	}
-}
-
-144607 = {
-	name = "Robert"
-	religion = "catholic"
-	culture = french
-	1089.1.1 = {
-		birth = "1089.1.1"
-	}
-	1147.1.13 = {
-		death = "1147.1.13"
 	}
 }
 
@@ -6868,46 +6856,6 @@
 	}
 }
 
-212650 = {
-	name = "Gertrude"
-	female = yes
-	dynasty = 23110
-	martial = 6
-	diplomacy = 6
-	intrigue = 7
-	stewardship = 5
-	religion = "catholic"
-	culture = french
-	trait = cynical
-	trait = stuttering
-	trait = education_intrigue_2
-	father = 212651
-	1141.1.1 = {
-		birth = "1141.1.1"
-	}
-	1189.12.26 = {
-		death = "1189.12.26"
-	}
-}
-
-212651 = {
-	name = "Godefroi"
-	dynasty = 23110
-	martial = 6
-	diplomacy = 5
-	intrigue = 6
-	stewardship = 6
-	religion = "catholic"
-	culture = french
-	trait = education_martial_2
-	1102.1.2 = {
-		birth = "1102.1.2"
-	}
-	1157.1.2 = {
-		death = "1157.1.2"
-	}
-}
-
 212662 = {
 	name = "Angeline" #Angeline de Bourgogne
 	female = yes
@@ -7315,8 +7263,7 @@
 	dynasty = 233
 	religion = "catholic"
 	culture = french
-	father = 212781
-	mother = 212790
+	father = 057_KOH_CKIII
 	1145.1.1 = {
 		birth = "1145.1.1"
 	}
@@ -8723,8 +8670,8 @@
 	1059.1.1 = {
 		birth = "1059.1.1"
 	}
-	1111.1.1 = {
-		death = "1111.1.1"
+	1110.1.1 = {
+		death = "1110.1.1"
 	}
 }
 
@@ -12295,47 +12242,6 @@
 	}
 }
 
-40060 = {
-	name = "Simon"
-	dynasty = 40010
-	martial = 2
-	diplomacy = 10
-	intrigue = 5
-	stewardship = 5
-	religion = "catholic"
-	culture = french
-	trait = gluttonous
-	trait = education_intrigue_4
-	1045.1.1 = {
-		birth = "1045.1.1"
-	}
-	1061.1.2 = {
-		add_spouse = 40055
-	}
-	1095.1.1 = {
-		death = "1095.1.1"
-	}
-}
-
-40062 = {
-	name = "Simon"
-	dynasty = 40010
-	martial = 8
-	diplomacy = 5
-	intrigue = 2
-	stewardship = 7
-	religion = "catholic"
-	culture = french
-	father = 40060
-	mother = 40055
-	1065.1.1 = {
-		birth = "1065.1.1"
-	}
-	1115.1.1 = {
-		death = "1115.1.1"
-	}
-}
-
 40080 = {
 	name = "Wulgrin" #Wulgrim I Taillefer
 	dynasty = 541
@@ -13220,8 +13126,8 @@
 	979.1.2 = {
 		add_spouse = 40335
 	}
-	990.1.2 = {
-		death = "990.1.2"
+	1015.1.1 = {
+		death = "1015.1.1"
 	}
 }
 
@@ -13297,8 +13203,8 @@
 	1045.1.2 = {
 		add_spouse = 40381
 	}
-	1075.1.2 = {
-		death = "1075.1.2"
+	1090.1.1 = {
+		death = "1090.1.1"
 	}
 }
 
@@ -13705,7 +13611,7 @@ KOH0060 = {
 40383 = {
 	name = "Bourgogne"
 	female = yes
-	dynasty = 320
+	dynasty_house = house_craon
 	martial = 5
 	diplomacy = 8
 	intrigue = 3
@@ -13724,7 +13630,7 @@ KOH0060 = {
 
 40384 = {
 	name = "Renaud"
-	dynasty = 320
+	dynasty_house = house_craon
 	martial = 7
 	diplomacy = 5
 	intrigue = 5
@@ -13736,14 +13642,14 @@ KOH0060 = {
 	1060.1.2 = {
 		birth = "1060.1.2"
 	}
-	1110.1.2 = {
+	1110.1.1 = {
 		death = "1110.1.2"
 	}
 }
 
 40386 = {
 	name = "Robert"
-	dynasty = 320
+	dynasty_house = house_craon
 	martial = 4
 	diplomacy = 6
 	intrigue = 6
@@ -13763,7 +13669,7 @@ KOH0060 = {
 	name = "BE_atrix"
 	# AKA: Beatrix
 	female = yes
-	dynasty = 320
+	dynasty_house = house_craon
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -15074,8 +14980,8 @@ KOH0060 = {
 	966.1.2 = {
 		birth = "966.1.2"
 	}
-	1030.1.2 = {
-		death = "1030.1.2"
+	1030.1.1 = {
+		death = "1030.1.1"
 	}
 }
 
@@ -15094,8 +15000,8 @@ KOH0060 = {
 	1002.1.2 = {
 		birth = "1002.1.2"
 	}
-	1055.1.2 = {
-		death = "1055.1.2"
+	1055.1.1 = {
+		death = "1055.1.1"
 	}
 }
 
@@ -26565,76 +26471,6 @@ KOH0060 = {
 	}
 }
 
-90051 = {
-	name = "Geoffroy"
-	dynasty = 23110
-	martial = 7
-	diplomacy = 5
-	intrigue = 5
-	stewardship = 6
-	religion = "catholic"
-	culture = french
-	trait = zealous
-	trait = education_martial_1
-	father = 90050
-	mother = 40447
-	1027.1.2 = {
-		birth = "1027.1.2"
-	}
-	1048.1.2 = {
-		add_spouse = 90052
-	}
-	1077.1.2 = {
-		death = "1077.1.2"
-	}
-}
-
-90052 = {
-	name = "Blanche"
-	female = yes
-	martial = 3
-	diplomacy = 7
-	intrigue = 5
-	stewardship = 6
-	religion = "catholic"
-	culture = french
-	trait = chaste
-	trait = education_learning_3
-	1024.1.2 = {
-		birth = "1024.1.2"
-	}
-	1074.1.2 = {
-		death = "1074.1.2"
-	}
-}
-
-90053 = {
-	name = "Geoffroy"
-	dynasty = 23110
-	martial = 5
-	diplomacy = 5
-	intrigue = 5
-	stewardship = 5
-	religion = "catholic"
-	culture = french
-	trait = arbitrary
-	trait = education_stewardship_2
-	father = 90051
-	mother = 90052
-	1051.1.2 = {
-		birth = "1051.1.2"
-	}
-	1066.1.2 = {
-		effect = {
-			create_betrothal = character:90069
-		}
-	}
-	1101.1.2 = {
-		death = "1101.1.2"
-	}
-}
-
-
 90054 = {
 	name = "Hilduin"
 	dynasty = 561
@@ -29370,8 +29206,8 @@ KOH0060 = {
 		birth = "1121.1.1"
 	}
 	#Robert IV d'Auvergne
-	1180.1.1 = {
-		death = "1180.1.1"
+	1179.1.1 = {
+		death = "1179.1.1"
 	}
 }
 
@@ -40364,6 +40200,7 @@ KOH0060 = {
 
 93505 = {
 	name = "Robert"
+	dna = 93505_robert
 	dynasty = 102030
 	religion = "catholic"
 	culture = french
@@ -50637,4 +50474,1416 @@ KOH0240 = {
 	1240.1.2 = {
 		death = "1240.1.2"
 	}
+<<<<<<< Updated upstream
+=======
+}
+
+011_KOH_CKIII = {
+    name = "Bouchard"
+	dynasty = dynn_montmorency
+    religion = "catholic"
+    culture = french
+    930.1.1 = {
+        birth = "930.1.1" 
+    }
+    978.1.1 = {
+        death = "978.1.1"
+    }
+}
+
+012_KOH_CKIII = {
+    name = "Bouchard"
+	dynasty = dynn_montmorency
+    religion = "catholic"
+    culture = french
+    father = 011_KOH_CKIII
+    975.1.1 = {
+        birth = "975.1.1" 
+    }
+    1020.1.1 = {
+        death = "1020.1.1"
+    }
+}
+
+013_KOH_CKIII = {
+    name = "Bouchard"
+	dynasty = dynn_montmorency
+    religion = "catholic"
+    culture = french
+    father = 012_KOH_CKIII
+    1000.1.1 = {
+        birth = "1000.1.1" 
+    }
+    1042.1.1 = {
+        death = "1042.1.1"
+    }
+}
+
+014_KOH_CKIII = {
+    name = "Hervé"
+	dynasty = dynn_montmorency
+    religion = "catholic"
+    culture = french
+    father = 013_KOH_CKIII
+    1030.1.1 = {
+        birth = "1030.1.1" 
+    }
+    1110.1.1 = {
+        death = "1110.1.1"
+    }
+}
+
+015_KOH_CKIII = {
+    name = "Bouchard"
+	dynasty = dynn_montmorency
+    religion = "catholic"
+    culture = french
+    father = 014_KOH_CKIII
+    1077.1.1 = {
+        birth = "1077.1.1" 
+    }
+    1131.1.1 = {
+        death = "1131.1.1"
+    }
+}
+
+016_KOH_CKIII = {
+    name = "Mathieu"
+	dynasty = dynn_montmorency
+    religion = "catholic"
+    culture = french
+    father = 015_KOH_CKIII
+    1095.1.1 = {
+        birth = "1095.1.1" 
+    }
+    1126.1.1 = {
+        add_spouse = 183126
+    }
+    1141.1.1 = {
+        add_spouse = 213118
+    }
+    1160.1.1 = {
+        death = "1160.1.1"
+    }
+}
+
+017_KOH_CKIII = {
+    name = "Bouchard"
+	dynasty = dynn_montmorency
+    religion = "catholic"
+    culture = french
+    father = 016_KOH_CKIII
+    mother = 183126
+    1129.1.1 = {
+        birth = "1129.1.1" 
+    }
+    1173.1.1 = {
+        add_spouse = 31147
+   }
+    1189.1.1 = {
+        death = "1189.1.1"
+    }
+}
+
+018_KOH_CKIII = {
+    name = "Mathieu"
+	dynasty = dynn_montmorency
+    religion = "catholic"
+    culture = french
+    father = 017_KOH_CKIII
+    mother = 31147
+    1174.1.1 = {
+        birth = "1174.1.1" 
+    }
+    1230.11.24 = {
+        death = "1230.11.24"
+    }
+}
+
+019_KOH_CKIII = {
+    name = "Alix"
+	dynasty = dynn_montmorency
+    female = yes
+    religion = "catholic"
+    culture = french
+    father = 017_KOH_CKIII
+    mother = 31147
+    1175.1.1 = {
+        birth = "1175.1.1" 
+    }
+    1221.2.24 = {
+        death = "1221.2.24"
+    }
+}
+
+031_KOH_CKIII = {
+	name = "Maurice"
+	dynasty_house = house_craon
+	religion = "catholic"
+	culture = french
+	father = 40384
+	1070.1.1 = {
+		birth = "1070.1.1"
+	}
+	1116.1.1 = {
+		death = "1116.1.1"
+	}
+}
+
+032_KOH_CKIII = {
+	name = "Robert"
+	dynasty_house = house_craon
+	religion = "catholic"
+	culture = french
+	father = 40384
+	1100.1.1 = {
+		birth = "1100.1.1"
+	}
+	1147.1.13 = {
+		death = "1147.1.13"
+	}
+}
+
+033_KOH_CKIII = {
+	name = "Hugues"
+	dynasty_house = house_craon
+	religion = "catholic"
+	culture = french
+	father = 031_KOH_CKIII
+	1100.1.1 = {
+		birth = "1100.1.1"
+	}
+	1138.1.1 = {
+		death = "1138.1.1"
+	}
+}
+
+034_KOH_CKIII = {
+	name = "Maurice"
+	dynasty_house = house_craon
+	religion = "catholic"
+	culture = french
+	father = 033_KOH_CKIII
+	1136.1.1 = {
+		birth = "1136.1.1"
+	}
+	1196.1.1 = {
+		death = "1196.1.1"
+	}
+}
+
+035_KOH_CKIII = {
+	name = "Maurice"
+	dynasty_house = house_craon
+	religion = "catholic"
+	culture = french
+	father = 034_KOH_CKIII
+	1180.1.1 = {
+		birth = "1180.1.1"
+	}
+	1207.7.25 = {
+		death = "1207.7.25"
+	}
+}
+
+036_KOH_CKIII = {
+	name = "Amaury"
+	dynasty_house = house_craon
+	religion = "catholic"
+	culture = french
+	father = 034_KOH_CKIII
+	1182.1.1 = {
+		birth = "1182.1.1"
+	}
+	1226.5.12 = {
+		death = "1226.5.12"
+	}
+}
+
+039_KOH_CKIII = {
+	name = "Aénor"
+	female = yes
+	dynasty_house = house_ponthieu
+	religion = "catholic"
+	culture = french
+	father = KOH0202
+	mother = KOH0203
+	1151.1.1 = {
+		birth = "1151.1.1"
+	}
+	1223.1.1 = {
+		death = "1223.1.1"
+	}
+}
+
+058_KOH_CKIII = {
+	name = "Baudouin"
+	religion = "catholic"
+	culture = french
+	1100.1.1 = {
+		birth = "1100.1.1"
+	}
+	1155.1.1 = {
+		death = "1155.1.1"
+	}
+}
+
+059_KOH_CKIII = {
+	name = "Albéric" 
+	religion = "catholic"
+	culture = french
+	1080.1.1 = {
+		birth = "1080.1.1"
+	}
+	1138.1.1 = {
+		death = "1138.1.1"
+	}
+}
+
+060_KOH_CKIII = {
+	name = "Ponce" #Montboissier
+	religion = "catholic"
+	culture = french
+	1110.1.1 = {
+		birth = "1110.1.1"
+	}
+	1161.1.1 = {
+		death = "1161.1.1"
+	}
+}
+
+061_KOH_CKIII = {
+	name = "Guillaume"
+	religion = "catholic"
+	culture = french
+	father = 161711
+	1135.1.1 = {
+		birth = "1135.1.1"
+	}
+	1171.1.1 = {
+		death = "1171.1.1"
+	}
+}
+
+062_KOH_CKIII = {
+	name = "Girart" #d'Arcy
+	religion = "catholic"
+	culture = french
+	1145.1.1 = {
+		birth = "1145.1.1"
+	}
+	1198.1.1 = {
+		death = "1198.1.1"
+	}
+}
+
+063_KOH_CKIII = {
+	name = "Brunon"
+	religion = "catholic"
+	culture = french
+	956.1.1 = {
+		birth = "956.1.1"
+	}
+	1016.1.1 = {
+		death = "1016.1.1"
+	}
+}
+
+064_KOH_CKIII = {
+	name = "Lambert"
+	religion = "catholic"
+	culture = french
+	971.1.1 = {
+		birth = "971.1.1"
+	}
+	1031.1.1 = {
+		death = "1031.1.1"
+	}
+}
+
+065_KOH_CKIII = {
+	name = "Richard"
+	religion = "catholic"
+	culture = french
+	1001.1.1 = {
+		birth = "1001.1.1"
+	}
+	1031.1.1 = {
+		death = "1031.1.1"
+	}
+}
+
+066_KOH_CKIII = {
+	name = "Hugues"
+	religion = "catholic"
+	culture = french
+	1003.1.1 = {
+		birth = "1003.1.1"
+	}
+	1049.1.1 = {
+		death = "1049.1.1"
+	}
+}
+
+067_KOH_CKIII = {
+	name = "Harduin"
+	religion = "catholic"
+	culture = french
+	1009.1.1 = {
+		birth = "1009.1.1"
+	}
+	1065.1.1 = {
+		death = "1065.1.1"
+	}
+}
+
+068_KOH_CKIII = {
+	name = "Hugues-Renaud"
+	religion = "catholic"
+	culture = french
+	1035.1.1 = {
+		birth = "1035.1.1"
+	}
+	1085.1.1 = {
+		death = "1085.1.1"
+	}
+}
+
+069_KOH_CKIII = {
+	name = "Joceran"
+	religion = "catholic"
+	culture = french
+	1075.1.1 = {
+		birth = "1075.1.1"
+	}
+	1125.1.1 = {
+		death = "1125.1.1"
+	}
+}
+
+070_KOH_CKIII = {
+	name = "Vilain"
+	religion = "catholic"
+	culture = french
+	1070.1.1 = {
+		birth = "1070.1.1"
+	}
+	1136.1.1 = {
+		death = "1136.1.1"
+	}
+}
+
+071_KOH_CKIII = {
+	name = "Guillaume" #de Sabran
+	religion = "catholic"
+	culture = french
+	1088.1.1 = {
+		birth = "1088.1.1"
+	}
+	1138.1.1 = {
+		death = "1138.1.1"
+	}
+}
+
+072_KOH_CKIII = {
+	name = "Geoffroy"
+	religion = "catholic"
+	culture = french
+	1103.1.1 = {
+		birth = "1103.1.1"
+	}
+	1163.1.1 = {
+		death = "1163.1.1"
+	}
+}
+
+073_KOH_CKIII = {
+	name = "Manassès"
+	religion = "catholic"
+	culture = french
+	1143.1.1 = {
+		birth = "1143.1.1"
+	}
+	1193.1.1 = {
+		death = "1193.1.1"
+	}
+}
+
+#MANY OF THE FOLLOWING BIRTH DATES ARE Unknown
+
+084_KOH_CKIII = { #Champeaux
+	name = "Guillaume"
+	religion = "catholic"
+	culture = french
+	trait = theologian
+	trait = scholar
+	1070.1.1 = {
+		birth = "1070.1.1"
+	}
+	1121.1.1 = {
+		death = "1121.1.1"
+	}
+}
+
+085_KOH_CKIII = {
+	name = "Ebles" #Roucy, Ramerupt
+	religion = "catholic"
+	culture = french
+	1071.1.1 = {
+		birth = "1071.1.1"
+	}
+	1126.1.1 = {
+		death = "1126.1.1"
+	}
+}
+
+086_KOH_CKIII = {
+	name = "Albéric" #de Reims
+	religion = "catholic"
+	culture = french
+	trait = theologian
+	trait = scholar
+	1085.1.1 = {
+		birth = "1085.1.1"
+	}
+	1141.1.1 = {
+		death = "1141.1.1"
+	}
+}
+
+087_KOH_CKIII = {
+	name = "Geoffroy"
+	religion = "catholic"
+	culture = french
+	1090.1.1 = {
+		birth = "1090.1.1"
+	}
+	1142.1.1 = {
+		death = "1142.1.1"
+	}
+}
+
+088_KOH_CKIII = {
+	name = "Guy"
+	religion = "catholic"
+	culture = french
+	1097.1.1 = {
+		birth = "1097.1.1"
+	}
+	1147.1.1 = {
+		death = "1147.1.1"
+	}
+}
+
+089_KOH_CKIII = {
+	name = "Barthélémy" #de Senlis
+	religion = "catholic"
+	culture = french
+	1112.1.1 = {
+		birth = "1112.1.1"
+	}
+	1152.1.1 = {
+		death = "1152.1.1"
+	}
+}
+
+090_KOH_CKIII = {
+	name = "Aymon" #de Bazoches
+	religion = "catholic"
+	culture = french
+	1108.1.1 = {
+		birth = "1108.1.1"
+	}
+	1153.1.1 = {
+		death = "1153.1.1"
+	}
+}
+
+091_KOH_CKIII = {
+	name = "Boson"
+	religion = "catholic"
+	culture = french
+	1112.1.1 = {
+		birth = "1112.1.1"
+	}
+	1162.1.1 = {
+		death = "1162.1.1"
+	}
+}
+
+092_KOH_CKIII = {
+	name = "Guy"
+	dynasty = 92
+	religion = "catholic"
+	culture = french
+	father = KOH0074
+	mother = KOH0073
+	1130.1.1 = {
+		birth = "1130.1.1"
+	}
+	1163.1.1 = {
+		death = "1163.1.1"
+	}
+}
+
+093_KOH_CKIII = {
+	name = "Guy"
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	father = 101_KOH_CKIII
+	mother = 102_KOH_CKIII
+	1124.1.1 = {
+		birth = "1124.1.1"
+	}
+	1190.1.18 = {
+		death = "1190.1.18"
+	}
+}
+
+#Unknown birth dates [END]
+
+094_KOH_CKIII = {
+	name = "Étienne"
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	trait = education_martial_4
+	trait = brave
+	977.1.1 = {
+		birth = "977.1.1" #unknown
+	}
+	1027.1.1 = {
+		death = "1027.1.1"
+	}
+}
+
+095_KOH_CKIII = {
+	name = "Geoffroy"
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	father = 094_KOH_CKIII
+	1020.1.1 = {
+		birth = "1020.1.1" #unknown
+	}
+	1051.1.1 = {
+		add_spouse = 096_KOH_CKIII
+	}
+	1080.1.1 = {
+		death = "1080.1.1"
+	}
+}
+
+096_KOH_CKIII = {
+	name = "Blanche"
+	female = yes
+	religion = "catholic"
+	culture = french
+	1035.1.1 = {
+		birth = "1035.1.1"
+	}
+	1119.1.1 = {
+		death = "1119.1.1"
+	}
+}
+
+097_KOH_CKIII = {
+	name = "Geoffroy"
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	father = 095_KOH_CKIII
+	1053.1.1 = {
+		birth = "1053.1.1" #unknown
+	}
+	1080.1.1 = {
+		add_spouse = 100_KOH_CKIII
+	}
+	1096.1.1 = {
+		death = "1096.1.1"
+	}
+}
+
+098_KOH_CKIII = {
+	name = "Étienne"
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	father = 095_KOH_CKIII
+	1074.1.1 = {
+		birth = "1074.1.1" #unknown
+	}
+	1124.1.1 = {
+		death = "1124.1.1"
+	}
+}
+
+099_KOH_CKIII = {
+	name = "Hilduin"
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	father = 095_KOH_CKIII
+	1055.1.1 = {
+		birth = "1055.1.1" #unknown
+	}
+	1075.1.1 = {
+		death = "1075.1.1" #unknown
+	}
+}
+
+100_KOH_CKIII = {
+	name = "Hodierne"
+	female = yes
+	religion = "catholic"
+	culture = french
+	1062.1.1 = {
+		birth = "1062.1.1"
+	}
+	1110.1.1 = {
+		death = "1110.1.1"
+	}
+}
+
+101_KOH_CKIII = {
+	name = "Roger"
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	father = 097_KOH_CKIII
+	1096.1.1 = {
+		birth = "1096.1.1"
+	}
+	1113.1.1 = {
+		add_spouse = 102_KOH_CKIII
+	}
+	1137.1.1 = {
+		death = "1137.1.1"
+	}
+}
+
+102_KOH_CKIII = {
+	name = "Aldéarde"
+	female = yes
+	religion = "catholic"
+	culture = french
+	1095.1.1 = {
+		birth = "1095.1.1"
+	}
+	1140.1.1 = {
+		death = "1140.1.1"
+	}
+}
+
+103_KOH_CKIII = {
+	name = "Geoffroy"
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	father = 101_KOH_CKIII
+	mother = 102_KOH_CKIII
+	1115.1.1 = {
+		birth = "1115.1.1"
+	}
+	1152.1.1 = {
+		add_spouse = 104_KOH_CKIII
+	}
+	1188.1.1 = {
+		death = "1188.1.1"
+	}
+}
+
+104_KOH_CKIII = {
+	name = "Félicité"
+	female = yes
+	religion = "catholic"
+	culture = french
+	1102.1.1 = {
+		birth = "1102.1.1"
+	}
+	1178.1.1 = {
+		death = "1178.1.1"
+	}
+}
+
+105_KOH_CKIII = {
+	name = "Geoffroy"
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	father = 103_KOH_CKIII
+	mother = 104_KOH_CKIII
+	1141.1.1 = {
+		birth = "1141.1.1"
+	}
+	1190.1.1 = {
+		death = "1190.1.1"
+	}
+}
+
+106_KOH_CKIII = {
+	name = "Helvis" #de Dampierre
+	female = yes
+	religion = "catholic"
+	culture = french
+	1145.1.1 = {
+		birth = "1145.1.1"
+	}
+	1195.1.1 = {
+		death = "1195.1.1"
+	}
+}
+
+107_KOH_CKIII = {
+	name = "Simon"
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	father = 105_KOH_CKIII
+	mother = 106_KOH_CKIII
+	1175.1.1 = {
+		birth = "1175.1.1"
+	}
+	1233.1.1 = {
+		death = "1233.1.1"
+	}
+}
+
+108_KOH_CKIII = {
+	name = "Geoffroy"
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	father = 105_KOH_CKIII
+	mother = 106_KOH_CKIII
+	1170.1.1 = {
+		birth = "1170.1.1"
+	}
+	1204.1.1 = {
+		death = "1204.1.1"
+	}
+}
+
+109_KOH_CKIII = {
+	name = "Guillaume" #archbishop of lyon, bishop of langres
+	dynasty = KOH_joinville
+	religion = "catholic"
+	culture = french
+	father = 105_KOH_CKIII
+	mother = 106_KOH_CKIII
+	1178.1.1 = {
+		birth = "1178.1.1"
+	}
+	1226.11.6 = {
+		death = "1226.11.6"
+	}
+}
+
+110_KOH_CKIII = {
+	name = "Josselin"
+	dynasty = KOH_melun
+	religion = "catholic"
+	culture = french
+	1110.1.1 = {
+		birth = "1110.1.1"
+	}
+	1153.1.1 = {
+		add_spouse = 113_KOH_CKIII
+	}
+	1157.1.1 = {
+		death = "1157.1.1"
+	}
+}
+
+111_KOH_CKIII = {
+	name = "Isabelle"
+	female = yes
+	dynasty = KOHD0005
+	religion = "catholic"
+	culture = french
+	father = 91011
+	1117.1.1 = {
+		birth = "1117.1.1"
+	}
+	1152.1.1 = {
+		death = "1152.1.1"
+	}
+}
+
+112_KOH_CKIII = {
+	name = "Guy"
+	dynasty = KOH_marolles
+	religion = "catholic"
+	culture = french
+	1110.1.1 = {
+		birth = "1110.1.1"
+	}
+	1135.1.1 = {
+		add_spouse = 111_KOH_CKIII
+	}
+	1150.1.1 = {
+		death = "1150.1.1"
+	}
+}
+
+113_KOH_CKIII = {
+	name = "Alpaïs"
+	female = yes
+	dynasty = KOH_marolles
+	religion = "catholic"
+	culture = french
+	father = 112_KOH_CKIII
+	mother = 111_KOH_CKIII
+	1135.1.1 = {
+		birth = "1135.1.1"
+	}
+	1160.1.1 = {
+		death = "1160.1.1"
+	}
+}
+
+114_KOH_CKIII = {
+	name = "Adeline"
+	female = yes
+	dynasty = KOH_melun
+	religion = "catholic"
+	culture = french
+	father = 110_KOH_CKIII
+	mother = 113_KOH_CKIII
+	1160.1.1 = {
+		birth = "1160.1.1"
+	}
+	1191.1.1 = {
+		death = "1191.1.1"
+	}
+}
+
+115_KOH_CKIII = {
+	name = "Louis"
+	dynasty = KOH_melun
+	religion = "catholic"
+	culture = french
+	father = 110_KOH_CKIII
+	mother = 113_KOH_CKIII
+	1153.1.1 = {
+		birth = "1153.1.1"
+	}
+	1171.1.1 = {
+		add_spouse = 116_KOH_CKIII
+	}
+	1183.1.1 = {
+		death = "1183.1.1"
+	}
+}
+
+116_KOH_CKIII = {
+	name = "Gisèle"
+	female = yes
+	religion = "catholic"
+	culture = french
+	1155.1.1 = {
+		birth = "1155.1.1"
+	}
+	1190.1.1 = {
+		death = "1190.1.1"
+	}
+}
+
+117_KOH_CKIII = {
+	name = "Jean"
+	dynasty = KOH_melun
+	religion = "catholic"
+	culture = french
+	father = 110_KOH_CKIII
+	mother = 113_KOH_CKIII
+	1140.1.1 = {
+		birth = "1140.1.1" #unknown
+	}
+	1158.1.1 = {
+		add_spouse = 118_KOH_KIII
+	}
+	1180.1.1 = {
+		death = "1180.1.1"
+	}
+}
+
+118_KOH_KIII = {
+	name = "Pétronille"
+	female = yes
+	religion = "catholic"
+	culture = french
+	1142.1.1 = {
+		birth = "1042.1.1"
+	}
+	1180.1.1 = {
+		death = "1180.1.1"
+	}
+}
+
+119_KOH_CKIII = {
+	name = "Adam"
+	dynasty = KOH_melun
+	religion = "catholic"
+	culture = french
+	father = 115_KOH_CKIII
+	mother = 116_KOH_CKIII
+	1172.1.1 = {
+		birth = "1172.1.1"
+	}
+	1220.1.1 {
+		death = "1220.1.1"
+	}
+}
+
+120_KOH_CKIII = {
+	name = "Joscelin"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 138028
+	962.1.1 = {
+		birth = "962.1.1"
+	}
+	980.1.1 = {
+		add_spouse = 121_KOH_CKIII
+	}
+	1012.1.1 = {
+		death = "1012.1.1"
+	}
+}
+
+121_KOH_CKIII = {
+	name = "Rosca"
+	female = yes
+	religion = "catholic"
+	culture = french
+	965.1.1 = {
+		birth = "965.1.1"
+	}
+	1015.1.1 = {
+		death = "1015.1.1"
+	}
+}
+
+122_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 120_KOH_CKIII
+	mother = 121_KOH_CKIII
+	1005.1.1 = {
+		birth = "1005.1.1"
+	}
+	1026.1.1 = {
+		add_spouse = 124_KOH_CKIII
+	}
+	1058.1.1 = {
+		death = "1058.1.1"
+	}
+}
+
+123_KOH_CKIII = {
+	name = "Agnes"
+	female = yes
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 120_KOH_CKIII
+	mother = 121_KOH_CKIII
+	1010.1.1 = {
+		birth = "1010.1.1"
+	}
+	1060.1.1 = {
+		death = "1060.1.1"
+	}
+}
+
+124_KOH_CKIII = {
+	name = "Arengarde"
+	female = yes
+	religion = "catholic"
+	culture = french
+	1010.1.1 = {
+		birth = "1010.1.1"
+	}
+	1047.1.1 = {
+		death = "1047.1.1"
+	}
+}
+
+125_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 122_KOH_CKIII
+	mother = 124_KOH_CKIII
+	1050.1.1 = {
+		birth = "1050.1.1" #unknown
+	}
+	1057.1.1 = {
+		death = "1058.1.1"
+	}
+}
+
+126_KOH_CKIII = {
+	name = "Josselin"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 122_KOH_CKIII
+	mother = 124_KOH_CKIII
+	1052.1.1 = {
+		birth = "1052.1.1" #unknown
+	}
+	1102.1.1 = {
+		death = "1102.1.1" #unknown
+	}
+}
+
+127_KOH_CKIII = {
+	name = "Ebles"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 122_KOH_CKIII
+	mother = 124_KOH_CKIII
+	1049.1.1 = {
+		birth = "1049.1.1" #estimated between 1015-1073
+	}
+	1109.1.1 = {
+		death = "1109.1.1"
+	}
+}
+
+128_KOH_CKIII = {
+	name = "Beatrix"
+	female = yes
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 122_KOH_CKIII
+	mother = 124_KOH_CKIII
+	1045.1.1 = {
+		birth = "1045.1.1" #unknown
+	}
+	1095.1.1 = {
+		death = "1095.1.1"
+	}
+}
+
+129_KOH_CKIII = {
+	name = "Simon"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 122_KOH_CKIII
+	mother = 124_KOH_CKIII
+	1047.1.1 = {
+		birth = "1047.1.1"
+	}
+	1063.1.1 = {
+		add_spouse = 40055
+	}
+	1075.1.1 = {
+		death = "1075.1.1"
+	}
+}
+
+130_KOH_CKIII = {
+	name = "Geldouin"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 122_KOH_CKIII
+	mother = 124_KOH_CKIII
+	1048.1.1 = {
+		birth = "1048.1.1"
+	}
+	1093.1.1 = {
+		death = "1093.1.1"
+	}
+}
+
+131_KOH_CKIII = {
+	name = "Simon"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 129_KOH_CKIII
+	mother = 40055
+	1070.1.1 = {
+		birth = "1070.1.1"
+	}
+	1121.1.1 = {
+		death = "1121.1.1"
+	}
+}
+
+132_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 129_KOH_CKIII
+	mother = 40055
+	1075.1.1 = {
+		birth = "1075.1.1"
+	}
+	1120.1.1 = {
+		death = "1120.1.1"
+	}
+}
+
+133_KOH_CKIII = {
+	name = "Empéria"
+	female = yes
+	religion = "catholic"
+	culture = french
+	1075.1.1 = {
+		birth = "1075.1.1"
+	}
+	1122.1.1 = {
+		death = "1122.1.1"
+	}
+}
+
+134_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 131_KOH_CKIII
+	mother = 133_KOH_CKIII
+	1100.1.1 = {
+		birth = "1100.1.1"
+	}
+	1140.1.1 = {
+		death = "1140.1.1"
+	}
+}
+
+135_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 131_KOH_CKIII
+	mother = 133_KOH_CKIII
+	1098.1.1 = {
+		birth = "1098.1.1"
+	}
+	1140.1.1 = {
+		death = "1140.1.1"
+	}
+}
+
+136_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 135_KOH_CKIII
+	1130.1.1 = {
+		birth = "1130.1.1"
+	}
+	1148.1.1 = {
+		add_spouse = 137_KOH_CKIII
+	}
+	1182.1.1 = {
+		death = "1182.1.1"
+	}
+}
+
+137_KOH_CKIII = {
+	name = "Rosana"
+	female = yes
+	religion = "catholic"
+	culture = french
+	1130.1.1 = {
+		birth = "1130.1.1"
+	}
+	1180.1.1 = {
+		death = "1180.1.1"
+	}
+}
+
+138_KOH_CKIII = {
+	name = "Damète"
+	female = yes
+	religion = "catholic"
+	culture = french
+	1165.1.1 = {
+		birth = "1165.1.1"
+	}
+	1222.1.1 = {
+		death = "1222.1.1"
+	}
+}
+
+139_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 136_KOH_CKIII
+	mother = 137_KOH_CKIII
+	1160.1.1 = {
+		birth = "1160.1.1"
+	}
+	1183.1.1 = {
+		add_spouse = 138_KOH_CKIII
+	}
+	1218.1.1 = {
+		death = "1218.1.1"
+	}
+}
+
+140_KOH_CKIII = {
+	name = "Hugues"
+	dynasty = KOH_parthenay
+	religion = "catholic"
+	culture = french
+	father = 136_KOH_CKIII
+	mother = 137_KOH_CKIII
+	1158.1.1 = {
+		birth = "1158.1.1"
+	}
+	1180.1.1 = {
+		add_spouse = 140_KOH_CKIII
+	}
+	1215.1.1 = {
+		death = "1215.1.1"
+	}
+}
+
+141_KOH_CKIII = {
+	name = "Damète"
+	female = yes
+	religion = "catholic"
+	culture = french
+	1150.1.1 = {
+		birth = "1150.1.1"
+	}
+	1222.1.1 = {
+		death = "1222.1.1"
+	}
+}
+
+142_KOH_CKIII = {
+	name = "Geoffroy"
+	dynasty = 40022
+	religion = "catholic"
+	culture = french
+	father = 40348
+	mother = 40345
+	1075.1.1 = {
+		birth = "1075.1.1"
+	}
+	1094.1.1 = {
+		add_spouse = 32150
+	}
+	1128.1.1 = {
+		death = "1128.1.1"
+	}
+}
+
+143_KOH_CKIII = {
+	name = "Geoffroy"
+	dynasty = 40022
+	religion = "catholic"
+	culture = french
+	father = 142_KOH_CKIII
+	mother = 32150
+	1100.1.1 = {
+		birth = "1100.1.1"
+	}
+	1150.1.1 = {
+		death = "1150.1.1"
+	}
+}
+
+144_KOH_CKIII = {
+	name = "Dalmas"
+	dynasty = 40022
+	religion = "catholic"
+	culture = french
+	father = 142_KOH_CKIII
+	mother = 32150
+	1102.1.1 = {
+		birth = "1102.1.1"
+	}
+	1151.1.1 = {
+		add_spouse = 145_KOH_CKIII
+	}
+	1162.1.1 = {
+		death = "1162.1.1"
+	}
+}
+
+145_KOH_CKIII = {
+	name = "Radegonde"
+	female = yes
+	relgion = "catholic"
+	culture = french
+	1135.1.1 = {
+		birth = "1135.1.1"
+	}
+	1182.1.1 = {
+		death = "1182.1.1"
+	}
+}
+
+146_KOH_CKIII = {
+	name = "Simon"
+	dynasty = 40022
+	religion = "catholic"
+	culture = french
+	father = 144_KOH_CKIII
+	mother = 145_KOH_CKIII
+	1152.1.1 = {
+		birth = "1152.1.1"
+	}
+	1219.1.1 = {
+		death = "1219.1.1"
+	}
+}
+
+147_KOH_CKIII = {
+	name = "Bartholomew"
+	religion = "catholic"
+	culture = french
+	1132.1.1 = {
+		birth = "1132.1.1"
+	}
+	1175.1.1 = {
+		death = "1175.1.1"
+	}
+}
+
+148_KOH_CKIII = {
+	name = "Odo"
+	religion = "catholic"
+	culture = french
+	1104.1.1 = {
+		birth = "1104.1.1"
+	}
+	1148.1.1 = {
+		death = "1148.1.1"
+	}
+}
+
+149_KOH_CKIII = {
+	name = "Odo"
+	religion = "catholic"
+	culture = french
+	1103.1.1 = {
+		birth = "1103.1.1"
+	}
+	1144.1.1 = {
+		death = "1144.1.1"
+	}
+>>>>>>> Stashed changes
 }

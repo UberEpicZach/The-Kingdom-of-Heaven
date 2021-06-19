@@ -48501,6 +48501,69 @@ e_france = {
 					color2 = { 255 255 255 }
 				}
 			}
+<<<<<<< Updated upstream
+=======
+			c_lisieux = {
+				color = { 10 10 160 }
+				color2 = { 255 255 255 }
+				
+				b_lisieux = {
+					province = 2174
+
+					color = { 10 10 160 }
+					color2 = { 255 255 255 }
+				}
+
+				b_sees = {
+					province = 2327
+
+					color = { 10 10 160 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_eu = {
+				color = { 20 20 130 }
+				color2 = { 255 255 255 }
+				
+				b_eu = {
+					province = 2178
+
+					color = { 20 20 130 }
+					color2 = { 255 255 255 }
+				}
+				b_fecamp = {
+					province = 2176
+
+					color = { 20 20 130 }
+					color2 = { 255 255 255 }
+				}
+				b_dieppe = {
+					province = 2177
+
+					color = { 20 20 130 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_aumale = {
+				color = { 20 20 130 }
+				color2 = { 255 255 255 }
+				b_aumale = {
+					province = 2182
+
+					color = { 20 20 130 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
+
+
+		d_alencon = {
+			color = { 7 60 160 }
+			color2 = { 255 255 255 }
+
+			capital = c_alencon #Alencon
+
+>>>>>>> Stashed changes
 			c_alencon = {
 				color = { 12 12 105 }
 				color2 = { 255 255 255 }
@@ -48710,37 +48773,8 @@ e_france = {
 			color = { 7 60 160 }
 			color2 = { 255 255 255 }
 			
-			capital = c_reims # Reims
+			capital = c_troyes # Reims
 			
-			c_reims = {
-				color = { 7 60 160 }
-				color2 = { 255 255 255 }
-				
-				b_reims = {
-					province = 2390
-
-					color = { 7 60 160 }
-					color2 = { 255 255 255 }
-				}
-				b_epernay = {
-					province = 2366
-
-					color = { 7 60 160 }
-					color2 = { 255 255 255 }
-				}
-				b_chatillon = {
-					province = 2362
-
-					color = { 7 60 160 }
-					color2 = { 255 255 255 }
-				}
-				b_chateau_thierry = {
-					province = 2361
-
-					color = { 7 60 160 }
-					color2 = { 255 255 255 }
-				}
-			}
 			c_troyes = {
 				color = { 15 55 145 }
 				color2 = { 255 255 255 }
@@ -48757,14 +48791,19 @@ e_france = {
 					color = { 15 55 145 }
 					color2 = { 255 255 255 }
 				}
-				b_joinville = {
-					province = 2373
+				b_bar_sur_aube = {
+					province = 2372
 
 					color = { 15 55 145 }
 					color2 = { 255 255 255 }
 				}
-				b_bar_sur_aube = {
-					province = 2372
+			}
+			c_joinville = {
+				color = { 15 55 145 }
+				color2 = { 255 255 255 }
+
+				b_joinville = {
+					province = 2373
 
 					color = { 15 55 145 }
 					color2 = { 255 255 255 }
@@ -48833,6 +48872,7 @@ e_france = {
 					color2 = { 255 255 255 }
 				}
 			}
+<<<<<<< Updated upstream
 			c_rethel = {
 				color = { 4 70 170 }
 				color2 = { 255 255 255 }
@@ -48862,6 +48902,8 @@ e_france = {
 					color2 = { 255 255 255 }
 				}
 			}
+=======
+>>>>>>> Stashed changes
 			c_sens = {
 				color = { 20 80 145 }
 				color2 = { 255 255 255 }
@@ -48893,6 +48935,79 @@ e_france = {
 			}
 		}
 		
+		d_reims = {
+			color = { 30 40 220 }
+			color2 = { 255 255 255 }
+
+			capital = c_reims
+			
+		can_create = {
+            trigger_if = {
+                limit = {
+                    has_government = theocracy_government
+                }
+                faith = { religion_tag = christianity_religion }
+            }
+        }
+
+			c_reims = {
+				color = { 7 60 160 }
+				color2 = { 255 255 255 }
+				
+				b_reims = {
+					province = 2390
+
+					color = { 7 60 160 }
+					color2 = { 255 255 255 }
+				}
+				b_epernay = {
+					province = 2366
+
+					color = { 7 60 160 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_chatillon = {
+				color = { 7 60 160 }
+				color2 = { 255 255 255 }
+
+				b_chatillon = {
+					province = 2362
+
+					color = { 7 60 160 }
+					color2 = { 255 255 255 }
+				}
+				b_chateau_thierry = {
+					province = 2361
+
+					color = { 7 60 160 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_rethel = {
+				color = { 4 70 170 }
+				color2 = { 255 255 255 }
+				
+				b_rethel = {
+					province = 2391
+
+					color = { 4 70 170 }
+					color2 = { 255 255 255 }
+				}
+				b_mezieres = {
+					province = 2394
+
+					color = { 4 70 170 }
+					color2 = { 255 255 255 }
+				}
+				b_romigny = {
+					province = 2396
+
+					color = { 4 70 170 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
 		d_burgundy = {
 			# French, or Lower Burgundy
 			color = { 40 85 145 }
@@ -49025,6 +49140,11 @@ e_france = {
 					color = { 70 120 190 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_semur = {
+				color = { 70 120 190 }
+				color2 = { 255 255 255 }
+
 				b_semur_en_brionnais = {
 					province = 2303
 
@@ -49490,14 +49610,24 @@ e_france = {
 					color = { 35 10 255 }
 					color2 = { 255 255 255 }
 				}
-				b_ventadour = {
-					province = 2247
+			}
+			c_turenne = {
+				color = { 35 10 255 }
+				color2 = { 255 255 255 }
+
+				b_turenne = {
+					province = 2240
 
 					color = { 35 10 255 }
 					color2 = { 255 255 255 }
 				}
-				b_turenne = {
-					province = 2240
+			}
+			c_ventadour = {
+				color = { 35 10 255 }
+				color2 = { 255 255 255 }
+
+				b_ventadour = {
+					province = 2247
 
 					color = { 35 10 255 }
 					color2 = { 255 255 255 }
@@ -49650,8 +49780,8 @@ e_france = {
 				color = { 115 5 210 }
 				color2 = { 255 255 255 }
 				
-				b_rodez = {
-					province = 2226
+				b_la_peyrade = {
+					province = 2229
 
 					color = { 115 5 210 }
 					color2 = { 255 255 255 }
@@ -49661,22 +49791,26 @@ e_france = {
 
 					color = { 115 5 210 }
 					color2 = { 255 255 255 }
+				}			
+			}
+
+			c_rodez = {
+				color = { 115 5 210 }
+				color2 = { 255 255 255 }
+
+				b_rodez = {
+					province = 2226
+
+					color = { 115 5 210 }
+					color2 = { 255 255 255 }
 				}
 				b_marvejols = {
 					province = 2227
 
 					color = { 115 5 210 }
 					color2 = { 255 255 255 }
-				}
-				b_la_peyrade = {
-					province = 2229
-
-					color = { 115 5 210 }
-					color2 = { 255 255 255 }
-				}
-				
+				}	
 			}
-
 			c_millau = {
 				color = { 130 20 195 }
 				color2 = { 255 255 255 }
@@ -49847,26 +49981,46 @@ e_france = {
 					color = { 145 30 175 }
 					color2 = { 255 255 255 }
 				}
-				b_lectoure = {
-					province = 2204
+				b_gabardan = {
+					province = 2200
 
-					color = { 145 30 175 }
+					color = { 100 35 225 }
 					color2 = { 255 255 255 }
 				}
+			}
+
+			c_lomagne = {
+				color = { 145 30 175 }
+				color2 = { 255 255 255 }
+
 				b_lomagne = {
 					province = 2205
 
 					color = { 145 30 175 }
 					color2 = { 255 255 255 }
 				}
+			}
+
+			c_fezensac = {
+				color = { 145 30 175 }
+				color2 = { 255 255 255 }
+
 				b_fesensac = {
 					province = 2203
 
 					color = { 145 30 175 }
 					color2 = { 255 255 255 }
 				}
-			}
+<<<<<<< Updated upstream
+=======
+				b_lectoure = {
+					province = 2204
 
+					color = { 145 30 175 }
+					color2 = { 255 255 255 }
+				}
+>>>>>>> Stashed changes
+			}
 			c_bigorre = {
 				color = { 165 35 170 }
 				color2 = { 255 255 255 }
@@ -49962,12 +50116,6 @@ e_france = {
 					color = { 50 50 130 }
 					color2 = { 255 255 255 }
 				}
-				b_chatellerault = {
-					province = 2253
-
-					color = { 50 50 130 }
-					color2 = { 255 255 255 }
-				}
 				b_loudun = {
 					province = 2256
 
@@ -49976,6 +50124,18 @@ e_france = {
 				}
 			}
 
+			c_chatellerault = {
+				color = { 50 50 130 }
+				color2 = { 255 255 255 }
+
+				b_chatellerault = {
+					province = 2253
+
+					color = { 50 50 130 }
+					color2 = { 255 255 255 }
+				}
+			}
+			
 			c_lusignan = {
 				color = { 30 30 105 }
 				color2 = { 255 255 255 }
@@ -50033,14 +50193,20 @@ e_france = {
 					color = { 35 35 130 }
 					color2 = { 255 255 255 }
 				}
-				b_parthenay = {
-					province = 2255
+				b_bressuire = {
+					province = 2258
 
 					color = { 35 35 130 }
 					color2 = { 255 255 255 }
 				}
-				b_bressuire = {
-					province = 2258
+			}
+			
+			c_parthenay = {
+				color = { 35 35 130 }
+				color2 = { 255 255 255 }
+
+				b_parthenay = {
+					province = 2255
 
 					color = { 35 35 130 }
 					color2 = { 255 255 255 }
@@ -50052,6 +50218,33 @@ e_france = {
 					color2 = { 255 255 255 }
 				}
 			}
+<<<<<<< Updated upstream
+=======
+
+			c_montaigu = {
+				color = { 55 60 150 }
+				color2 = { 255 255 255 }
+				
+				b_montaigu = {
+					province = 2150
+
+					color = { 55 60 150 }
+					color2 = { 255 255 255 }
+				}
+				b_talmont = {
+					province = 2149
+
+					color = { 55 60 150 }
+					color2 = { 255 255 255 }
+				}
+				b_maulevrier = {
+					province = 2259
+
+					color = { 55 60 150 }
+					color2 = { 255 255 255 }
+				}
+			}
+>>>>>>> Stashed changes
 		}
 		d_auvergne = {
 			color = { 54 10 243 }
@@ -50092,20 +50285,24 @@ e_france = {
 					color = { 65 7 225 }
 					color2 = { 255 255 255 }
 				}
-				b_la_tour = {
-					province = 2295
+				b_montpensier = {
+					province = 2288
 
 					color = { 65 7 225 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_mercoeur = {
+				color = { 65 7 225 }
+				color2 = { 255 255 255 }
 				b_mercaeur = {
 					province = 2290
 
 					color = { 65 7 225 }
 					color2 = { 255 255 255 }
 				}
-				b_montpensier = {
-					province = 2288
+				b_la_tour = {
+					province = 2295
 
 					color = { 65 7 225 }
 					color2 = { 255 255 255 }
@@ -50438,7 +50635,7 @@ e_france = {
 		color = { 134 0 37 }
 		color2 = { 220 220 0 }
 		
-		capital	= c_venaissin # Arles
+		capital	= c_arles # Arles
 		
 		ai_primary_priority = {
 			if = {
@@ -50457,18 +50654,12 @@ e_france = {
 			color = { 145 37 67 }
 			color2 = { 255 255 255 }
 			
-			capital = c_venaissin # Arles
+			capital = c_provence # Aix-en-Provence
 			
 			c_venaissin = {
 				color = { 180 30 70 }
 				color2 = { 255 255 255 }
 				
-				b_arles = {
-					province = 2017
-					
-					color = { 180 30 70 }
-					color2 = { 255 255 255 }
-				}
 				b_orange = {
 					province = 2062
 					
@@ -50481,8 +50672,13 @@ e_france = {
 					color = { 180 30 70 }
 					color2 = { 255 255 255 }
 				}
-				b_vaison = {
-					province = 2067
+			}
+			c_arles = {
+				color = { 180 30 70 }
+				color2 = { 255 255 255 }
+
+				b_arles = {
+					province = 2017
 					
 					color = { 180 30 70 }
 					color2 = { 255 255 255 }
@@ -50510,6 +50706,11 @@ e_france = {
 					color = { 165 50 105 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_marseille = {
+				color = { 165 50 105 }
+				color2 = { 255 255 255 }
+
 				b_marseille = {
 					province = 2018
 					
@@ -50568,6 +50769,12 @@ e_france = {
 					color = { 165 20 65 }
 					color2 = { 255 255 255 }
 				}
+				b_vaison = {
+					province = 2067
+					
+					color = { 180 30 70 }
+					color2 = { 255 255 255 }
+				}
 				b_apt = {
 					province = 2060
 					
@@ -50582,12 +50789,6 @@ e_france = {
 				}
 				b_gap = {
 					province = 2028
-					
-					color = { 165 20 65 }
-					color2 = { 255 255 255 }
-				}
-				b_briancon = {
-					province = 8718
 					
 					color = { 165 20 65 }
 					color2 = { 255 255 255 }
@@ -50770,16 +50971,27 @@ e_france = {
 					color2 = { 255 255 255 }
 				}
 			}
-			c_viennois = {
+			c_grenoble = {
 				color = { 120 10 80 }
 				color2 = { 255 255 255 }
-				
+
 				b_grenoble = {
 					province = 2030
 					
 					color = { 120 10 80 }
 					color2 = { 255 255 255 }
 				}
+				b_briancon = {
+					province = 8718
+					
+					color = { 165 20 65 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_viennois = {
+				color = { 120 10 80 }
+				color2 = { 255 255 255 }
+				
 				b_vienne = {
 					province = 2033
 					
