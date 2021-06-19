@@ -1633,194 +1633,34 @@ c_rouergue = {
 	}
 }
 
-c_lomagne = {
-	1000.1.1 = {
-		holder = 40901
-		liege = d_aquitaine
-	}
-	1059.1.1 = {
-		holder = 40902
-	}
-	1084.1.1 = {
-		holder = 40903
-	}
-	1113.1.1 = {
-		holder = 138117
-	}
-	1137.1.1 = {
-		holder = 138119
-	}
-	1178.1.1 = {
-		holder = 138126
-	}
-}
-
-c_turenne = {
-	950.1.1 = {
-		holder = 40276
-		liege = d_aquitaine
-	}
-	987.1.1 = {
-		holder = 40278
-	}
-	1030.1.1 = {
-		holder = 40280
-	}
-	1037.1.1 = {
-		holder = 40282
-	}
-	1103.1.1 = {
-		holder = 138096
-	}
-	1123.1.1 = {
-		holder = 029_KOH_CKIII
-	}
-	1143.1.1 = {
-		holder = 030_KOH_CKIII
-	}
-}
-
-c_chatellerault = {
-	1075.1.1 = {
-		holder = 038_KOH_CKIII
-		liege = d_aquitaine
-	}
-	1092.1.1 = {
-		holder = 127030
-	}
-	1151.1.1 = {
-		holder = 037_KOH_CKIII
-	}
-	1176.1.1 = {
-		holder = 040_KOH_CKIII
-	}
-}
-
-c_ventadour = {
-	950.1.1 = {
-		holder = 40276
-		liege = d_aquitaine
-	}
-	987.1.1 = {
-		holder = 40278 ####
-	}
-	1007.1.1 = {
-		holder = 40284
-	}
-	1053.1.1 = {
-		holder = 40286
-	}
-	1090.1.1 = {
-		holder = 40288
-	}
-	1155.1.1 = {
-		holder = 138076
-	}
-	1170.1.1 = {
-		holder = 138077
-	}
-}
-
-c_fezensac = {
-	960.1.1 = {
-		holder = 138140
-		liege = d_aquitaine
-	}
-	985.1.1 = {
-		holder = 138142
-	}
-	1020.1.1 = {
-		holder = 138144
-	}
-	1032.1.1 = {
-		holder = 138146
-	}
-	1064.1.1 = {
-		holder = 138148
-	}
-	1103.1.1 = {
-		holder = 138150
-	}
-	1140.1.1 = {
-		holder = 205671
-	}
-	1160.1.1 = {
-		holder = 205670
-	}
-}
-
-c_rodez = {
-	1112.1.1 = {
-		holder = 138236
+c_millau = {
+	#840 - Foucaud
+	850.1.1 = {
+		holder = 127006 #Fredelo de Toulouse
 		liege = d_toulouse
 	}
-	1119.1.1 = {
-		holder = 138300
+	852.1.1 = {
+		holder = 40230 #Raymond Ier de Toulouse
 	}
-	1154.1.1 = {
-		holder = 138302
+	865.4.16 = {
+		holder = 127007 #Bernard de Toulouse
 	}
-}
-
-c_millau = {
-	1013.1.1 = {
-		holder = 138234 #Richard I of Millau
+	874.8.1 = {
+		holder = 40232 #Eudes de Toulouse
 	}
-	1023.7.28 = {
-		holder = 10032 #Richard II de Millau
+	#918 - Ermengaud
+	#940 - Raimon II
+	#961 - Raimond III
+	#1010 - Hughues I
+	#1054 - Berthe
+	1065.1.1 = {
+		holder = 338 #Raymond IV de Toulouse
 	}
-	1051.1.1 = {
-		holder = 10034 #B�renger II de MIllau
+	1105.10.1 = {
+		holder = 223671 #Bertrand de Toulouse
 	}
-	
-	#Counts of Gevaudan
-	1060.1.1 = {
-		holder = 10040 #Gilbert I de G�vaudan
-		liege = k_france
-	}
-	1111.1.1 = {
-		holder = 40806 #Douce I de g�vaudan
-	}
-	1127.1.1 = {
-		holder = 40807 #Berenger Raymond de Provence
-	}
-	1144.3.1 = {
-		holder = 40808 #Raymond B�renger II de Provence
-	}
-	1166.1.1 = {
-		holder = 71638 #Dolca II de Provence
-	}
-	1167.1.1 = {
-		holder = 210500 #Alfons II d'Aragon
-		liege = "k_aragon"
-	}
-	1195.4.25 = {
-		holder = 210501 #Pierre II d'Aragon
-	}
-	1213.9.14 = {
-		holder = 460600 #Jacques I d'Aragon
-	}
-	1258.1.1 = {
-		liege = "k_france"
-	}
-	1258.1.1 = {
-		holder = 455404 #Louis IX (saint Louis)
-	}
-	1270.8.25 = {
-		holder = 455528 # Philippe III le Hardi
-	}
-	1285.10.5 = {
-		holder = 455526 # Philippe IV le Bel
-	}
-	#bishopric of G�vaudan
-	1307.1.1 = {
-		holder = 138401 #Bishop Guillaume VI Durand
-	}
-	1330.8.10 = {
-		holder = 138400 #Bishop Jean II d'Arcy
-	}
-	1331.1.1 = {
-		holder = 138402 #Bishop Albert Lordet
+	1109 = {
+		holder = 223673 #Alphonse Jourdain de Toulouse
 	}
 }
 
@@ -1872,82 +1712,54 @@ c_albi = {
 }
 
 c_uses = {
-		1080.1.1 = {
-			holder = 051_KOH_CKIII
-			liege = d_toulouse
-		}
-		1125.1.1 = {
-			holder = 052_KOH_CKIII
-		}
-		1138.1.1 = {
-			holder = 053_KOH_CKIII
-		}
-		1181.1.1 = {
-			holder = 055_KOH_CKIII
-		}
-}
+		745.1.1 = {
+		liege = "k_lotharingia"
+		holder = 91494 #Wegelenzo, historical as placeholder
+	}
+	867.1.1 = {
+		holder = 163067 #Bernard de Gothie
+		#no data, so default to lord of Melgueil (nearby county, not on map for us)
+		liege = d_toulouse
+	}
 
-c_mercoeur = {
-	1067.1.1 = {
-		holder = 074_KOH_CKIII
-		liege = d_aquitaine
+	
+	#House of Montpellier
+	985.1.1 = {
+		holder = 138285	#Guilhem I de Montpellier
 	}
-	1083.1.1 = {
-		holder = 076_KOH_CKIII
+	1025.1.1 = {
+		holder = 138286	#Guilhem II
 	}
-	1169.1.1 = {
-		holder = 077_KOH_CKII
+	1059.1.1 = {
+		holder = 138288	#Guilhem III
 	}
-	1183.1.1 = {
-		holder = 080_KOH_CKIII
+	1068.1.1 = {
+		holder = 138290	#Bernard Guilhem IV
 	}
-}
-
-c_parthenay = {
-	962.1.1 = {
-		holder = 120_KOH_CKIII
-		liege = d_aquitaine
+	1085.1.1 = {
+		holder = 138292	#Guilhem V
 	}
-	1012.1.1 = {
-		holder = 122_KOH_CKIII
+	1122.1.1 = {
+		holder = 138294	#Guilhem VI
 	}
-	1058.1.1 = { 
-		holder = 126_KOH_CKIII
+	1162.1.1 = {
+		holder = 205581	#Guilhem VII
 	}
-	1102.1.1 = {
-		holder = 127_KOH_CKIII
+	1173.1.1 = {
+		holder = 205580	#Guilhem VIII
 	}
-	1109.1.1 = {
-		holder = 132_KOH_CKIII
+	1202.1.1 = {
+		holder = 138298	#Guilhem IX
 	}
-	1120.1.1 = {
-		holder = 134_KOH_CKIII
+	1204.1.1 = {
+		holder = 205582	#Marie de Montpellier
+	}	
+	1204.6.15 = {
+		liege = k_aragon
 	}
-	1140.1.1 = {
-		holder = 136_KOH_CKIII
-	}
-	1182.1.1 = {
-		holder = 139_KOH_CKIII
-	}
-}
-
-b_craon = {
-    1035.1.1 = {
-        holder = 10011
-        liege = d_aquitaine
-	}
-    1085.1.1 = {
-        holder = 40384
-    }
-    1110.1.1 = {
-        holder = 031_KOH_CKIII
-    }
-    1116.1.1 = {
-        holder = 033_KOH_CKIII
-    }
-    1138.1.1 = {
-        holder = 034_KOH_CKIII
-    }
+	
+	#House of Aragon
+	#1213 forward
 }
 
 c_montpellier = {
@@ -2712,8 +2524,41 @@ c_clermont_sur_allier = {
 	1152.5.18 = {
 		liege = "d_aquitaine"
 	}
-	1169.1.1 = {
-		holder = 206042 #Robert (Dauphin / Daufin)
+	1155.1.1 = {
+		holder = 206033 #Guillaume "the old" VIII d'Auvergne
+	}
+	1182.1.1 = {
+		holder = 206030 #Robert IV d'Auvergne
+	}
+	1187.1.1 = {
+		liege = "d_gascogne"
+	}
+	1194.1.1 = {
+		holder = 206031 #Guillaume IX d'Auvergne
+	}
+	1197.1.1 = {
+		holder = 206036 #Guy II d'Auvergne
+	}
+	1222.1.1 = {
+		holder = 7467 #Guillaume X d'Auvergne
+	}
+	1246.1.1 = {
+		holder = 7468 #Robert V d'Auvergne
+	}
+	1261.1.1 = {
+		liege = "k_france"
+	}
+	1277.1.11 = {
+		holder = 7470 #Robert VI d'Auvergne
+	}
+	1317.1.1 = {
+		holder = 7471 #Robert VII d'Auvergne
+	}
+	1325.10.13 = {
+		holder = 455821  #Guillaume XII d'Auvergne
+	}
+	1332.8.6 = {
+		holder = 455820 #Jeanne d'Auvergne
 	}
 }
 
