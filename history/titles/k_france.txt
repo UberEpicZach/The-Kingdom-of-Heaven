@@ -183,6 +183,37 @@ d_valois = {
 	1066.1.1 = { change_development_level = 11 }
 }
 
+c_aumale = {
+	966.1.2 = {
+		holder = 430
+		liege = d_normandy
+	}
+	1048.1.1 = {
+		holder = 431
+	}
+	1048.1.2 = {
+		holder = 432
+	}
+	1052.1.1 = {
+		holder = 434
+	}
+	1053.1.1 = {
+		holder = 255
+	}
+	1087.1.1 = {
+		holder = 391
+	}
+	1115.1.1 = {
+		holder = 40390
+	}
+	1127.1.1 = {
+		holder = 150_KOH_CKIII
+	}
+	1179.1.1 = {
+		holder = 204741
+	}
+}
+
 c_ile_de_france = {
 	867.1.1 = { change_development_level = 15 }	
 	1066.1.1 = { change_development_level = 22 }
@@ -287,92 +318,15 @@ c_ile_de_france = {
 
 
 c_brie_francaise = {
-	#Karling
-	687.1.1 = {
-		holder = 131720
+	1110.1.1 = {
+		holder = 110_KOH_CKIII
+		liege = k_france
 	}
-	714.1.17 = {
-		holder = 131721
+	1157.1.1 = {
+		holder = 115_KOH_CKIII
 	}
-	741.1.23 = {
-		holder = 144989
-	}
-	#Chantenois
-	752.1.1 = {
-		holder = 31700
-	}
-	779.1.2 = {
-		holder = 31701
-	}
-	
-	#Elder house of Welf
-	859.1.1 = {
-		holder = 7988
-	}
-	862.1.1 = {
-		holder = 90104
-	}
-	#Robertian ( = Capetians)
-	882.1.1 = {
-		holder = 6448 #Eudes I
-	}
-	888.1.1 = {
-		holder = 6442 #Robert I
-	}
-	923.1.1 = {
-		holder = 6444 #Hugues I le Grand
-	}
-	
-	#Direct Capetians
-	956.6.16 = {
-		holder = 200 #Hugues Capet
-	}
-	996.10.24 = {
-		holder = 206 #Robert II le Pieux
-	}
-	1031.7.20 = {
-		holder = 208 #Henri Ier
-	}
-	1060.8.4 = {
-		holder = 214 #Philippe I
-	}
-	1108.7.29 = {
-		holder = 205502 #Louis VI le Gros
-	}
-	1137.8.1 = {
-		holder = 205500 #Louis VII le Jeune
-	}
-	1180.9.18 = {
-		holder = 205506 # Philippe II Auguste
-	}
-	1223.7.14 = {
-		holder = 455402 #Louis VIII le Lion
-	}
-	1226.11.8 = {
-		holder = 455404 #Louis IX (saint Louis)
-	}
-	1270.8.25 = {
-		holder = 455528 # Philippe III le Hardi
-	}
-	1285.10.5 = {
-		holder = 455526 # Philippe IV le Bel
-	}
-	1314.11.29 = {
-		holder = 455836 # Louis V le Hutin
-	}
-	1316.6.5 = { #in fact 1316.11.5 as a posthumus heir, but ck2 can't handle interregnum
-		holder = 70137 # Jean Ier le Posthume
-	}
-	1316.11.19 = { #corrected from 1316.6.5
-		holder = 455509 # Philippe V le Long, son of 455526.
-	}
-	1322.1.3 = {
-		holder = 455414 # Charles IV le Bel
-	}
-	
-	#House of Valois
-	1328.2.1 = {
-		holder = 455500 # Philippe VI
+	1183.1.1 = {
+		holder = 119_KOH_CKIII
 	}
 }
 
@@ -776,7 +730,7 @@ c_berry = {
 	}
 	1160.1.1 = {
 		holder = 303432	#Raoul VI of Deols
-		liege = k_england
+		liege = d_aquitaine
 	}
 	1175.12.31 = {
 		holder = 204659 #Denise de Deols
@@ -1750,93 +1704,66 @@ c_bayeux = {
 }
 
 c_avranches = {
-	#county of Mortain
-	740.1.1 = {
-		liege = "k_france"
-		holder = 91474 #Wildo, historical placeholder
-	}
-	853.1.1 = {
-		liege = "d_anjou"
-		holder = 6440 #Robert le fort
-	}
-	866.7.2 = {
-		holder = 168041
-		liege = "d_normandy"	#as March of Neustria against the Normands/Vikings
-	}
-	867.8.1 = {	#Treaty of Compi�gne
-		liege = "d_brittany"
-		holder = 163105 # Solomon of Brittany takes it
-	}
-	
-	1056.1.1 = {
-		liege = "d_normandy"
-		holder = 150 #Robert de Conteville
-	}
-	
-	1090.12.9 = {
-		holder = 158 #Guillaume de Mortain
-	}
-	1106.1.1 = {
-		holder = 91197 #Robert II le Vieux
-	}
-	
-	1112.1.1 = {
-		holder = 205851 #�tienne de Blois
-	}
-	
-	1142.1.1 = {
-		holder = 204506 #Geoffroy Plantagen�t
-	}
-	
-	1151.9.7 = {
-		 holder = 7474 #Guillaume de Boulogne
-	}
-	1159.11.1 = {
-		holder = 205920 #Henri II
-	}
-	1189.1.1 = {
-		holder = 204514 #Jean I Sans Terre
-	}
-	
-	1204.1.1 = {
-		holder = 205506 # Philippe I Auguste
-	}
-	
-	1209.1.1 = {
-		holder = 91194 #Renaud de Dammartin
-	}
-	
-	1212.1.1 = {
+	1119.1.1 = {
+		holder = 82062
 		liege = d_normandy
-		holder = 91030 #Philippe Hurepel
 	}
-	
-	1234.1.18 = {
-		holder = 91196 #Aubry de Dammartin
+	1129.1.1 = {
+		holder = 204687
 	}
-	
-	1240.1.1 = {
-		holder = 91195 #Jeanne de Dammartin
+	1153.1.1 = {
+		holder = 204685
 	}
-	
-	1252.1.14 = {
-		holder = 455404 #Louis IX (saint Louis)
-	}
-	1270.8.25 = {
-		holder = 455528 # Philippe II le Hardi
-	}
-	1285.10.5 = {
-		holder = 455526 # Philippe III le Bel
-	}
-	1298.1.1 = {
-		holder = 455811 #Louis de France
-	}
-	1319.5.19 = {
-		liege = "k_navarra"
-		holder = 455810 #Philippe d'�vreux
+	1181.1.1 = {
+		holder = 204680
 	}
 }
 
+c_semur = {
+	955.1.1 = {
+		holder = 40340
+		liege = d_burgundy
+	}
+	1015.1.1 = {
+		holder = 40342
+	}
+	1048.1.1 = {
+		holder = 40346
+	}
+	1090.1.1 = {
+		holder = 40348
+	}
+	1123.1.1 = {
+		holder = 142_KOH_CKIII
+	}
+	1128.1.1 = {
+		holder = 143_KOH_CKIII
+	}
+	1150.1.1 = {
+		holder = 144_KOH_CKIII
+	}
+	1162.1.1 = {
+		holder = 146_KOH_CKIII
+	}
+}
+c_beauvais = {
+	1133.1.1 = {
+		holder = 149_KOH_CKIII
+		liege = k_france
+	}
+	1144.1.1 = {
+		holder = 148_KOH_CKIII
+	}
+	1149.1.1 = {
+		holder = 91033
+	}
+	1162.1.1 = {
+		holder = 147_KOH_CKIII
+	}
+	1175.1.1 = {
+		holder = 91050
+	}
+}
 c_alencon = {
 	1060.1.1 = {
 		liege = "d_normandy"
@@ -2462,38 +2389,45 @@ c_briey = {
 }
 
 c_langres = {
-745.1.1={
-	holder = 190511 #Theoderic
-}
-745.1.1={
-	liege=k_lotharingia
-}
-798.1.1={
-	holder = 190512 #Teudoin
-}
-827.1.1={
-	holder = 190513 #Theoderic
-}
-	#830 - Balactier
-	#? - Am�d�e d'Oscheret
-	#? - Richard ?
-	853.1.1 = {
-		holder = 303414	#Milon I Milonid
-		liege = k_france
+	980.1.1 = {
+		holder = 063_KOH_CKIII
+		liege = d_burgundy
 	}
-	887.1.1 = {
-		holder = 303415	#Milon II Milonid
+	1016.1.1 = {
+		holder = 064_KOH_CKIII
 	}
-	#894 - Manasses I de Chalon
-	
-	1040.1.1 = {	#No data, random guess
-		holder = 303416	#Guy I de Saulx
+	1031.1.1 = {
+		holder = 065_KOH_CKIII
 	}
-	1060.1.1 = {
-		holder = 303417	#Guy II de Saulx
+	1049.1.1 = {
+		holder = 066_KOH_CKIII
 	}
-	1184.1.1 = {
-		holder = 205710
+	1065.1.1 = {
+		holder = 067_KOH_CKIII
+	}
+	1085.1.1 = {
+		holder = 068_KOH_CKIII
+	}
+	1110.1.1 = {
+		holder = 226
+	}
+	1113.1.1 = {
+		holder = 069_KOH_CKIII
+	}
+	1125.1.1 = {
+		holder = 070_KOH_CKIII
+	}
+	1136.1.1 = {
+		holder = 071_KOH_CKIII
+	}
+	1138.1.1 = {
+		holder = 072_KOH_CKIII
+	}
+	1163.1.1 = {
+		holder = 91084
+	}
+	1179.1.1 = {
+		holder = 073_KOH_CKIII
 	}
 }
 
@@ -3405,74 +3339,50 @@ c_auxerre = {
 
 
 c_tonnerrois = {
-745.1.1={
-	holder = 190511 #Theoderic
-}
-745.1.1={
-	liege=k_lotharingia
-}
-798.1.1={
-	holder = 190512 #Teudoin
-}
-827.1.1={
-	holder = 190513 #Theoderic
-}
-	#814-954 : bishops of Langres
-	867.1.1 = {	#Placeholder-ish to the king of France
-		holder = 90104	#king Charles the Bald
+	1045.1.1 = {
+		holder = 20176
 		liege = k_france
 	}
-	
-	#Milonid
-	#954 - Milon I, nephew of Achard the bishop of Langres
-	#987 - Guy I, son of Milon I
-	#992 - Milon II, son of Guy I
-	#998 - Herbet III of Vermandois
-	#1002 - Rainard/Renaud, son of Milon II
-	#1039 - Guy II, son of Milon II, no heirs
-	#1040 - Milon III, brother of Guy II
-	#1046 - Hugues-Renaud, son of Milon II
-	
-	#House of Nevers
-	1045.1.1 = {
-		holder = 20176 #Guillaume I de Nevers
-	}
-	1100.1.1 = {
-		holder = 40378 #Guillaume II de Nevers
+	1098.1.1 = {
+		holder = 40378
 	}
 	1147.1.1 = {
-		holder = 205715 #Guillaume III de Nevers
+		holder = 205715
 	}
 	1161.1.1 = {
-		holder = 205711 #Guillaume IV de Nevers
+		holder = 205711
+	}
+	1168.1.1 = {
+		holder = 205713
+	}
+	1176.1.1 = {
+		holder = 91151
+	}
+	1181.10.17 = {
+		holder = 205710
 	}
 }
 
 c_avalois = {
-765.1.1={
-	holder = 190559 #Erenold
-}
-765.1.1={
-	liege=d_burgundy
-}
-	867.1.1 = {
-		holder = 303419	#Jean, placeholder as there's no data
-		liege = k_france
-		government = theocracy_government
-	}
-	886.5.12 = {
+	1106.1.1 = {
+		holder = 138419
 		liege = d_burgundy
 	}
-	#1008 - Evrard
-	#1011 - Hermann
-	#1037 - Geoffrey
-	1052.1.1 = {
-		holder = 303418	#Boniface
+	1128.1.1 = {
+		holder = 058_KOH_CKIII
 	}
-	#1074 - Bernon
-	#1083 - Etienne
-	#1087 - Josseran
-	#1096 - Artaud
+	1131.1.1 = {
+		holder = 059_KOH_CKIII
+	}
+	1138.1.1 = {
+		holder = 060_KOH_CKIII
+	}
+	1161.1.1 = {
+		holder = 061_KOH_CKIII
+	}
+	1171.1.1 = {
+		holder = 062_KOH_CKIII
+	}
 }
 
 c_macon = {
@@ -3727,6 +3637,128 @@ d_champagne = {
 }
 
 
+d_reims = {
+
+	867.1.1 = { change_development_level = 10 }
+	1066.1.1 = { change_development_level = 14 }
+	
+753.1.1 = {
+	liege="k_lotharingia"
+	holder = 91506 #Jean Turpin, archbishop of Reims
+}
+835.1.1={
+	liege="k_france"
+	holder = 163049
+}
+	845.1.1 = {
+		government = theocracy_government
+		liege = "k_france"
+		holder = 163049		#Hincmar of Reims
+	}
+	882.1.1 = {
+		holder = 167927		#Foulques le v�n�rable
+	}
+	#900.1.1 = {
+	#	holder = Herv� (or Heriv�) de Reims
+	#}
+	#922.1.1 = {
+	#	holder = Seulfe de Reims
+	#}
+	925.1.1 = {
+		holder = 144977		#Hugues de Vermandois
+	}
+	931.1.1 = {
+		holder = 144976		#Artaud
+	}
+	940.1.1 = {
+		holder = 144977		#Hugues de Vermandois
+	}
+	946.1.1 = {
+		holder = 144976		#Artaud
+	}
+	#962 - Olderic
+	#969 - Adalb�ron
+	988.1.1 = {
+		holder = 144978		#Arnoul de France
+	}
+	991.1.1 = {
+		holder = 7824	#Gilbert d'Aurillac = Pope Sylvester II
+	}
+	995.2.18 = {
+		holder = 144978		#Arnoul de France
+	}
+	#1021 - Ebles Ie de Roucy
+	#1033 - Guy Ie de Soissons
+	1055.1.1 = {
+		holder = 91173 #Gervais de Bell�me
+	}
+	#1067-1070 - vacant ?
+	1070.7.4 = {
+		holder = 20132 #Manass�s I de Gournay
+	}
+	1081.12.27 = {
+		holder = 91174 #Renauld I du Bellay
+	}
+	1096.1.1 = {
+		holder = 91175 #Manass�s II de Ch�tillon
+	}
+	1102.1.1 = {
+		liege = "d_champagne"
+	}
+	1106.9.17 = {
+		holder = 232013 #Gervais de Rethel
+	}
+	1107.5.23 = {
+		holder = 91176 #Raoul le Verd
+	}
+	1124.1.1 = {
+		holder = 91177 #Raymond de Martingn�
+	}
+	1138.1.1 = {
+		holder = 91178 #Samson de Mauvoisin
+	}
+	1161.1.1 = {
+		holder = 91033 #Henri I de France
+		liege = k_france	
+	}
+	1176.1.1 = {
+		holder = 91160 #Guillaume aux Blanches Mains
+	}
+	1202.1.1 = {
+		holder = 91179 #Guy Par�
+	}
+	1207.1.1 = {
+		holder = 91180 #Alb�ric de Humbert
+	}
+	1219.1.1 = {
+		holder = 91181 #Guillaume de Joinville
+	}
+	1227.1.1 = {
+		holder = 91044 #Henri II de Dreux
+	}
+	1240.1.1 = {
+		holder = 91182 #Yves de Saint-Martain
+	}
+	1250.1.1 = {
+		holder = 91183 #Thomas de Beaumetz
+	}
+	1263.1.1 = {
+		holder = 91170 #Jean I de Courtenay-Champignelles
+	}
+	1270.8.20 = {
+		holder = 91184 #Pierre Barbet
+	}
+	1298.1.1 = {
+		holder = 91172 #Robert de Courtenay-Champignelles
+	}
+	1324.1.1 = {
+		holder = 91185 #Guillaume de Trie
+	}
+	1331.1.1 = {
+		holder = 91186 #Jean II de Vienne
+	}
+}
+
 c_reims = {
 
 	867.1.1 = { change_development_level = 10 }
@@ -3848,7 +3880,42 @@ c_reims = {
 	}
 }
 
-
+c_joinville = {
+	1020.1.1 = {
+		holder = 094_KOH_CKIII
+		liege = d_champagne
+	}
+	1060.1.1 = {
+		holder = 095_KOH_CKIII
+	}
+	1080.1.1 = {
+		holder = 097_KOH_CKIII
+	}
+	1096.1.1 = {
+		holder = 101_KOH_CKIII
+	}
+	1137.1.1 = {
+		holder = 103_KOH_CKIII
+	}
+}
+c_roucy = {
+	1033.1.1 = {
+		liege = k_france
+		holder = 32294
+	}
+	1063.1.1 = {
+		holder = 32290
+	}
+	1103.1.1 = {
+		holder = 32291
+	}
+	1160.1.1 = {
+		holder = 32295
+	}
+	1180.1.1 = {
+		holder = 32296
+	}
+}
 b_chatillon = {
 	980.1.1 = {
 		holder = 91190
@@ -3891,6 +3958,48 @@ b_chatillon = {
 	}
 }
 
+c_chatillon = {
+	980.1.1 = {
+		holder = 91190
+		liege = k_france
+	}
+	1020.1.1 = {
+		holder = 91189
+	}
+	1050.1.1 = {
+		holder = 91188
+	}
+	1080.1.1 = {
+		holder = 91187
+	}
+	1100.1.1 = {
+		holder = 223600
+	}
+	1135.1.6 = {
+		holder = 6702
+	}
+	1148.6.19 = {
+		holder = 6700
+	}
+	1170.1.1 = {
+		holder = 7482
+	}
+	1219.1.1 = {
+		holder = 455774
+	}
+	1248.4.9 = {
+		holder = 455775
+	}
+	1261.1.4 = {
+		holder = 455786
+	}
+	1289.3.12 = {
+		holder = 455787
+	}
+	1317.4.6 = {
+		holder = 455790
+	}
+}
 
 c_troyes = {
 769.1.1 = {
@@ -4211,22 +4320,37 @@ c_meaux = {
 
 
 c_chalons = {
-	728.1.1 = {
-		holder = 91395 #Madelgaud Bivinid
+	1113.1.1 = {
+		holder = 084_KOH_CKIII
+		liege = d_champagne
 	}
-	728.1.1 = {
-		liege = k_lotharingia
+	1121.1.1 = {
+		holder = 085_KOH_CKIII
 	}
-	857.1.1 = {
-		holder = 303406	#Erchenrad bishop of Chalons in 857-868
-		liege = k_france
+	1126.1.1 = {
+		holder = 086_KOH_CKIII
 	}
-	1066.1.1 = {
-		holder = 161295	#Roger/Rogier III de Hainaut
+	1130.1.1 = {
+		holder = 087_KOH_CKIII
 	}
-	1093.1.1 = {
-		holder = 398	#Philippe Ie de Champagne
+	1142.1.1 = {
+		holder = 088_KOH_CKIII
 	}
+	1147.1.1 = {
+		holder = 089_KOH_CKIII
+	}
+	1152.1.1 = {
+		holder = 090_KOH_CKIII
+	}
+	1153.1.1 = {
+		holder = 091_KOH_CKIII
+	}
+	1162.1.1 = {
+		holder = 092_KOH_CKIII
+	}
+	1163.1.1 = {
+		holder = 093_KOH_CKIII
+	} 
 }
 
 
@@ -4320,6 +4444,58 @@ c_sens = {
 	}
 	1168.4.5 = {
 		holder = 91206 #Guerin II de Sens
+	}
+	1175.1.24 = {
+		holder = 205500
+	}
+	1180.9.18 = {
+		holder = 205506
+	}
+}
+
+
+c_montmorency = {
+	930.1.1 = {
+		holder = 011_KOH_CKIII
+		liege = k_france
+	}
+	978.1.1 = {
+		holder = 012_KOH_CKIII
+	}
+	1020.1.1 = {
+		holder = 013_KOH_CKIII
+	}
+	1042.1.1 = {
+		holder = 014_KOH_CKIII
+	}
+	1110.1.1 = {
+		holder = 015_KOH_CKIII
+	}
+	1131.1.1 = {
+		holder = 016_KOH_CKIII
+	}
+	1160.1.1 = {
+		holder = 017_KOH_CKIII
+	}
+}
+
+
+c_grandpre = {
+	970.1.1 = {
+		holder = 161960
+		liege = k_france
+	}
+	1023.1.1 = {
+		holder = 161962
+	}
+	1064.1.1 = {
+		holder = 161963
+	}
+	1097.1.1 = {
+		holder = 161965
+	}
+	1151.1.1 = {
+		holder = 161958
 	}
 }
 

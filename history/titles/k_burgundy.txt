@@ -13,7 +13,7 @@ k_burgundy = {
 	}
 	
 	#Treaty of Verdun 843 - Burgundy part of Lotharingia
-	#Treaty of Prüm 855 - Burgundy independant, as kingdom of Provence
+	#Treaty of Prï¿½m 855 - Burgundy independant, as kingdom of Provence
 	855.8.23 = {
 		holder = 90103 #Charles of Provence
 		liege = 0
@@ -533,6 +533,113 @@ c_venaissin = {
 }
 
 
+c_arles = {
+	#Karling
+	763.1.1 = {
+		liege = k_lotharingia
+	}
+	763.1.1 = {
+		holder = 194040 #Thomas
+	}
+	#Bosonids
+	801.1.1 = {
+		holder = 7976
+	}
+	855.1.1 = {
+		liege = "d_provence"
+	}
+	855.1.1 = {
+		holder = 7561 #Boson
+		liege = k_italy
+	}
+	874.1.1 = {
+		holder = 7981
+	}
+	879.1.1 = {
+		holder = 7921
+	}
+	895.1.1 = {
+		holder = 7923
+	}
+	923.1.1 = {
+		holder = 7980
+	}
+	934.1.1 = {
+		holder = 400
+	}
+	961.1.1 = {
+		holder = 402
+	}
+	993.1.1 = {
+		holder = 40801
+	}
+	1008.1.2 = {
+		holder = 40803
+	}
+	1014.1.2 = {
+		holder = 404
+	}
+	1020.1.1 = {
+		holder = 40804
+	}
+	1025.1.1 = {
+		holder = 40805
+	}
+	1030.1.1 = {
+		holder = 406
+	}
+	1040.1.1 = {
+		holder = 410
+	}
+	1050.1.1 = {
+		holder = 40802
+	}
+	1063.1.1 = {
+		holder = 420
+	}
+	1097.1.2 = {
+		holder = 409
+	}
+	1112.1.1 = {
+		holder = 210508
+	}
+	1131.1.19 = {
+		holder = 40807
+	}
+	1144.3.1 = {
+		holder = 40808
+	}
+	1166.1.1 = {
+		holder = 71638
+	}
+	1167.1.1 = {
+		holder = 210500
+	}
+	1173.1.1 = {
+		holder = 71640
+	}
+	1181.4.5 = {
+		holder = 210514
+	}
+	1185.1.1 = {
+		holder = 210502
+	}
+	1209.12.1 = {
+		holder = 210517
+	}
+	1245.8.19 = {
+		holder = 455407
+	}
+	1246.1.1 = {
+		holder = 455406
+	}
+	1285.1.7 = {
+		holder = 461710
+	}
+	1309.5.5 = {
+		holder = 461700
+	}
+}
 c_viviers = {
 	745.1.1 = {
 		liege = "k_lotharingia"
@@ -552,7 +659,7 @@ c_viviers = {
 		liege = "d_provence"
 	}
 	1066.1.1 = {
-		holder = 20291 #Bishop Gérard
+		holder = 20291 #Bishop Gï¿½rard
 	}
 	1070.1.1 = {
 		holder = 138359 #Bishop Jean II
@@ -573,7 +680,7 @@ c_viviers = {
 		holder = 138379 #Bishop Guillaume I
 	}
 	1157.1.1 = {
-		holder = 138365 #Bishop Raymond d'Uzès
+		holder = 138365 #Bishop Raymond d'Uzï¿½s
 	}
 	1171.1.1 = {
 		holder = 138366 #Bishop Robert de La Tour du Pin
@@ -597,17 +704,17 @@ c_viviers = {
 		liege = "d_provence"
 	}
 	1242.1.1 = {
-		holder = 138393 #Arnaud de Vogué
+		holder = 138393 #Arnaud de Voguï¿½
 	}
 	1255.1.1 = {
-		holder = 32742 #Aimon de Genève
+		holder = 32742 #Aimon de Genï¿½ve
 	}
 	1263.1.1 = {
 		holder = 138394  #Hugues de La Tour du Pin
 	}
 	#1279 part of vivarais to france
 	1292.1.1 = {
-		holder = 138395 #Guillaume III de Falguières
+		holder = 138395 #Guillaume III de Falguiï¿½res
 	}
 	1297.1.1 = {
 		holder = 138396 #Aldebert de Peyre
@@ -925,36 +1032,12 @@ c_canavese = {
 }
 
 d_dauphine = {
-	#Used as Lower Burgundy after Charles of Provence's death in 863
-	#Holders set bit by default to rulers of Lotharingia
-	863.1.25 = {
-		holder = 144998 #Lothair II
-		liege = k_lotharingia
+	1142.6.28 = {
+		liege = e_hre
+		holder = 212801
 	}
-	869.8.8 = {
-		holder = 90104 #Charles I the Bald
-	}
-	877.6.10 = {
-		holder = 42019 #Louis I the Younger
-	}
-	882.1.20 = {
-		holder = 90105 #Charles II the Fat
-	}
-	888.1.1 = {
-		holder = 7945 #Arnulf of Carinthia
-	}
-	895.1.1 = {
-		holder = 144997 #Zwentibold
-	}
-	900.8.13 = {
-		holder = 7949 #Louis III the Child
-	}
-	911.9.20 = {
-		holder = 90111 #Charles III the Simple
-	}	
-	933.1.1 = {
-		holder = 0
-		#The two burgundies are reunited under Rudolf II
+	1162.7.29 = {
+		holder = 212800
 	}
 }
 
@@ -1056,7 +1139,7 @@ c_lyon = {
 		holder = 138453 #ArchBishop Raoul II de la Tourette
 	}
 	1288.1.1 = {
-		holder = 138404 #ArchBishop Bérard de Got brother of Pope Clement V
+		holder = 138404 #ArchBishop Bï¿½rard de Got brother of Pope Clement V
 	}
 	1294.1.1 = {
 		holder = 138440 #ArchBishop Henri I de Villars
@@ -1075,7 +1158,6 @@ c_lyon = {
 	}
 
 }
-
 
 c_viennois = {
 	750.1.1 = {
@@ -1146,11 +1228,9 @@ c_viennois = {
 	1333.7.28 = {
 		holder = 7492 #Humbert de la Tour du Pin
 	}
-
 }
 
-
-c_valentinois = {
+c_grenoble = {
 	750.1.1 = {
 		liege = "k_lotharingia"
 		holder = 91490 #VULFARD, historical placeholder
@@ -1219,7 +1299,17 @@ c_valentinois = {
 	1333.7.28 = {
 		holder = 7492 #Humbert de la Tour du Pin
 	}
+}
 
+
+c_valentinois = {
+	1128.1.1 = {
+		holder = 057_KOH_CKIII
+		liege = d_dauphine
+	}
+	1152.1.1 = {
+		holder = 212780
+	}
 }
 
 
@@ -1312,7 +1402,7 @@ d_upper_burgundy = {
 		holder = 190563 #Hugh II
 	}
 	
-	#Traty of Prüm in 855, splitting Lotharingia in two
+	#Traty of Prï¿½m in 855, splitting Lotharingia in two
 	855.1.1 = { #duchy of Transjura/kingdom of Upper-Burgundy
 		liege = "k_burgundy"
 		holder = 7977
@@ -1418,7 +1508,7 @@ c_besancon = {
 	937.12.1 = {
 		holder = 1146
 	}
-	#House of Ivrée
+	#House of Ivrï¿½e
 	986.1.1 = {
 		liege = "d_burgundy"
 		holder = 272 #Otte-Guillaume
@@ -1434,13 +1524,13 @@ c_besancon = {
 		holder = 290 #Renaud II de Bourgogne
 	}
 	1097.1.1 = {
-		holder = 205706 #Étienne I de Bourgogne
+		holder = 205706 #ï¿½tienne I de Bourgogne
 	}
 	1102.1.1 = {
 		holder = 232556 #Renaud III de Bourgogne
 	}
 	1148.1.1 = {
-		holder = 205599 #Béatrice I de Bourgogne
+		holder = 205599 #Bï¿½atrice I de Bourgogne
 	}
 	
 	#House of Hohenstaufen
@@ -1449,7 +1539,7 @@ c_besancon = {
 		government = theocracy_government
 	}
 	1182.1.1 = {
-		holder = 212501 #Frédéric I Barberousse
+		holder = 212501 #Frï¿½dï¿½ric I Barberousse
 		government = feudal_government
 	}
 	1182.1.2 = {
@@ -1464,7 +1554,7 @@ c_besancon = {
 		holder = 30772 #Jeanne I de Bourgogne
 	}
 	1205.1.1 = {
-		holder = 7652 #Béatrice II de Bourgogne
+		holder = 7652 #Bï¿½atrice II de Bourgogne
 	}
 	1220.1.1 = {
 		liege = d_upper_burgundy
@@ -1475,11 +1565,11 @@ c_besancon = {
 		holder = 7684 #Othon III de Bourgogne
 	}
 	1248.1.1 = {
-		holder = 7653 #Adélaïde I de Bourgogne
+		holder = 7653 #Adï¿½laï¿½de I de Bourgogne
 		liege = e_hre
 	}
 	
-	#House of Ivrée
+	#House of Ivrï¿½e
 	1279.1.1 = {
 		holder = 455739 #Othon IV de Bourgogne
 	}
@@ -1983,6 +2073,43 @@ c_neuchatel = {
 	}
 	1309.8.29 = {
 		holder = 32771
+	}
+}
+
+c_beaujeu = {
+	1042.1.2 = {
+		holder = KOH0093
+		liege = k_france
+	}
+	1102.1.1 = {
+		holder = KOH0095
+	}
+	1137.9.23 = {
+		holder = KOH0097
+	}
+}	
+c_marseille = {
+	965.1.1 = {
+		holder = 041_KOH_CKIII
+		liege = d_provence
+	}
+	1004.1.1 = {
+		holder = 042_KOH_CKIII
+	}
+	1035.1.1 = {
+		holder = 043_KOH_CKIII
+	}
+	1085.1.1 = {
+		holder = 044_KOH_CKIII
+	}
+	1091.1.1 = {
+		holder = 045_KOH_CKIII
+	}
+	1128.1.1 = {
+		holder = 046_KOH_CKIII
+	} 
+	1166.1.1 = {
+		holder = 048_KOH_CKIII
 	}
 }
 

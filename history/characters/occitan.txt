@@ -614,6 +614,8 @@
 	stewardship = 4
 	religion = "catholic"
 	culture = "occitan"
+	father = 038_KOH_CKIII
+	mother = 40027
 	1074.1.1 = {
 		birth = "1074.1.1"
 	}
@@ -623,8 +625,8 @@
 	1114.1.1 = {
 		remove_spouse = 127031
 	}
-	1143.1.1 = {
-		death = "1143.1.1"
+	1151.1.1 = {
+		death = "1151.1.1"
 	}
 }
 
@@ -2273,7 +2275,7 @@
 40280 = {
 	name = "GuilhE_m" #Guillaume I de Turenne
 	# AKA: Guilhem
-	dynasty = 13100 #was 5098 de Turenne
+	dynasty_house = house_turenne
 	religion = "catholic"
 	culture = "occitan"
 	father = 40278 #Ebles I de Turenne
@@ -2281,8 +2283,8 @@
 	995.1.1 = {
 		birth = "995.1.1"
 	}
-	1030.1.1 = {
-		death = "1030.1.1"
+	1037.1.1 = {
+		death = "1037.1.1"
 	}
 }
 
@@ -4246,21 +4248,21 @@
 
 40282 = {
 	name = "Boson" #Boson I de Turenne
-	dynasty = 13100 #was 5098 de Turenne
+	dynasty_house = house_turenne #was 5098 de Turenne
 	religion = "catholic"
 	culture = "occitan"
 	father = 40280 #Guillaume I de Turenne
 	1015.1.1 = {
 		birth = "1015.1.1"
 	}
-	1091.1.1 = {
-		death = "1091.1.1"
+	1103.1.1 = {
+		death = "1103.1.1"
 	}
 }
 
 138096 = {
 	name = "Raimond" #Raymond I de Turenne
-	dynasty = 13100 #was 5098 de Turenne
+	dynasty_house = house_turenne #was 5098 de Turenne
 	religion = "catholic"
 	culture = "occitan"
 	father = 40282 #Boson I de Turenne
@@ -4323,7 +4325,7 @@
 
 40286 = {
 	name = "Ebles" #Ebles I de Ventadour
-	dynasty = 13101 # was 727 de Toulouse
+	dynasty_house = house_ventadour # was 727 de Toulouse
 	martial = 7
 	diplomacy = 6
 	intrigue = 4
@@ -4347,7 +4349,7 @@
 
 40288 = {
 	name = "Ebles" #Ebles II de Ventadour
-	dynasty = 13101 # was 727 de Toulouse
+	dynasty_house = house_ventadour # was 727 de Toulouse
 	religion = "catholic"
 	culture = "occitan"
 	father = 40286 #Ebles I de Ventadour
@@ -4366,7 +4368,7 @@
 
 138076 = {
 	name = "Ebles" #Ebles III le Trobador de Ventadour
-	dynasty = 13101 # was 727 de Toulouse
+	dynasty_house = house_ventadour # was 727 de Toulouse
 	religion = "catholic"
 	culture = "occitan"
 	father = 40288 #Ebles II de Ventadour
@@ -4394,7 +4396,7 @@
 
 138077 = {
 	name = "Ebles" #Ebles IV de Ventadour
-	dynasty = 13101 # was 727 de Toulouse
+	dynasty_house = house_ventadour # was 727 de Toulouse
 	religion = "catholic"
 	culture = "occitan"
 	father = 138076 #Ebles III de Ventadour
@@ -4410,7 +4412,7 @@
 205617 = {
 	name = "Margarida" #de Turenne
 	female = yes
-	dynasty = 13100 #was 5098 de Turenne
+	dynasty_house = house_turenne #was 5098 de Turenne
 	religion = "catholic"
 	culture = "occitan"
 	father = 138096 #Raymond I de Turenne
@@ -5106,8 +5108,8 @@
 	1011.7.29 = {
 		add_spouse = 40011 #Adélaïda de Gascogne
 	}
-	1065.1.2 = {
-		death = "1065.1.2"
+	1059.1.1 = {
+		death = "1059.1.1"
 	}
 }
 
@@ -5598,8 +5600,8 @@
 	1040.1.1 = {
 		birth = yes
 	}
-	1064.1.1 = {
-		death = "1064.1.1"
+	1103.1.1 = {
+		death = "1103.1.1"
 	}
 }
 
@@ -5612,8 +5614,8 @@
 	1060.1.1 = {
 		 birth = yes
 	}
-	1098.1.1 = {
-		death = "1098.1.1"
+	1140.1.1 = {
+		death = "1140.1.1"
 	}
 }
 
@@ -6072,8 +6074,8 @@
 		birth = "1050.1.1"
 	}
 	#1062.1.3 married Raymond Bernard Trencavel
-	1101.1.1 = {
-		death = "1101.1.1"
+	1099.1.1 = {
+		death = "1099.1.1"
 	}
 }
 
@@ -7245,8 +7247,8 @@
 		birth = "895.1.1"
 	}	
 	#married Riquilda de barcelona
-	936.1.1 = {	
-		death = "936.1.1"
+	952.1.1 = {	
+		death = "952.1.1"
 	}
 }
 
@@ -7531,8 +7533,8 @@
 	1125.1.1 = {
 		add_spouse = 138239 #Béatrix II de Bigorre
 	}
-	1163.8.31 = {
-		death = "1163.8.31"
+	1156.8.31 = {
+		death = "1156.8.31"
 	}
 }
 
@@ -7847,6 +7849,7 @@
 	dynasty = 13104 #was 100210 de Gévaudan
 	religion = "catholic"
 	culture = "occitan"
+	father = 042_KOH_CKIII
 	1030.1.1 = {
 		birth = "1030.1.1"
 	}
@@ -8061,8 +8064,8 @@
 	1056.1.1 = {
 		birth = "1056.1.1"
 	}
-	1135.1.1 = {
-		death = "1135.1.1"
+	1119.1.1 = {
+		death = "1119.1.1"
 	}
 }
 
@@ -11895,7 +11898,7 @@ KOH0071 = {
 }
 
 206042 = {
-	name = "Daufin" #(Robert IV) Dauphin d'Auvergne count of Clermont
+	name = "Robèrt" #(Robert IV) Dauphin d'Auvergne count of Clermont
 	# AKA: Guillaume
 	dynasty = 733
 	religion = "catholic"
@@ -11913,22 +11916,6 @@ KOH0071 = {
 	}
 	1235.3.22 = {
 		death = "1235.3.22"
-	}
-}
-
-206043 = {
-	name = "Daufine" #d'Auvergne
-	female = yes
-	dynasty = 733
-	religion = "catholic"
-	culture = "occitan"
-	father = 206042 #Dauphin d'Auvergne
-	mother = 205607 #Guillemette de Comborn
-	1168.1.1 = {
-		birth = "1168.1.1" #unknown
-	}
-	1199.1.1 = {
-		death = "1199.1.1"
 	}
 }
 
@@ -14761,10 +14748,628 @@ KOH0241 = {
 	religion = "catholic"
 	culture = occitan
 	trait = chaste
-	1162.1.2 = {
+	1135.1.2 = {
 		birth = "yes"
 	}
 	1189.1.5 = {
 		death = "1189.1.5"
+	}
+}
+
+028_KOH_CKIII = {
+	name = Loup
+	dynasty = KOH_labourd
+	religion = "catholic"
+	culture = occitan
+	1000.1.1 = {
+		birth = yes
+	}
+	1030.1.1 = {
+		death = yes
+	}
+}
+020_KOH_CKIII = {
+    name = "Loup Sanche"
+    dynasty = KOH_labourd
+	father = 028_KOH_CKIII
+    religion = "catholic"
+    culture = occitan
+    1023.1.1 = {
+        birth = "1023.1.1" 
+    }
+    1058.1.1 = {
+        death = "1058.1.1"
+    }
+}
+
+021_KOH_CKIII = {
+    name = "Fortun"
+    dynasty = KOH_labourd
+	father = 028_KOH_CKIII
+    religion = "catholic"
+    culture = occitan
+    1025.1.1 = {
+        birth = "1025.1.1" 
+    }
+    1063.1.1 = {
+        death = "1063.1.1"
+    }
+}
+
+022_KOH_CKIII = {
+    name = "Fortun"
+    dynasty = KOH_labourd
+    religion = "catholic"
+    culture = occitan
+    father = 021_KOH_CKIII
+    1055.1.1 = {
+        birth = "1025.1.1" 
+    }
+    1095.1.1 = {
+        death = "1095.1.1"
+    }
+}
+
+023_KOH_CKIII = {
+    name = "Reina Toda"
+    female = yes
+    dynasty = KOH_labourd
+    religion = "catholic"
+    culture = occitan
+    father = 022_KOH_CKIII
+    1100.1.1 = {
+        birth = "1100.1.1" 
+    }
+	1122.1.1 = {
+        add_spouse = 024_KOH_CKIII
+    }
+    1150.1.1 = {
+        death = "1150.1.1"
+    }
+}
+
+024_KOH_CKIII = {
+    name = "Garcia"
+    religion = "catholic"
+    culture = occitan
+    1080.1.1 = {
+        birth = "1080.1.1" 
+    }
+    1150.1.1 = {
+        death = "1150.1.1"
+    }
+}
+
+025_KOH_CKIII = {
+    name = "Bertrand"
+    dynasty = KOH_labourd
+    religion = "catholic"
+    culture = occitan
+    father = 024_KOH_CKIII
+    mother = 023_KOH_CKIII
+    1130.1.1 = {
+        birth = "1130.1.1" 
+    }
+    1169.1.1 = {
+        death = "1169.1.1"
+    }
+}
+
+026_KOH_CKIII = {
+    name = "Pierre Bertrand"
+    father = 025_KOH_CKIII
+    dynasty = KOH_labourd
+    religion = "catholic"
+    culture = occitan
+    1150.1.1 = {
+        birth = "1150.1.1" 
+    }
+    1170.1.1 = {
+        death = "1170.1.1"
+    }
+}
+
+027_KOH_CKIII = {
+    name = "Arnaud Bertrand"
+    dynasty = KOH_labourd
+    religion = "catholic"
+    culture = occitan
+    father = 025_KOH_CKIII
+    1160.1 = {
+        birth = "1160.1.1" 
+    }
+    1192.1.1 = {
+        death = "1192.1.1"
+    }
+}
+
+029_KOH_CKIII = {
+	name = "Boson"
+	dynasty_house = house_turenne 
+	religion = "catholic"
+	culture = french
+	father = 138096
+	1110.1.1 = {
+		birth = "1110.1.1"
+	}
+	1143.1.1 = {
+		death = "1143.1.1"
+	}
+}
+
+030_KOH_CKIII = {
+	name = "Raimond"
+	dynasty_house = house_turenne 
+	religion = "catholic"
+	culture = french
+	father = 029_KOH_CKIII
+	1143.1.1 = {
+		birth = "1143.1.1"
+	}
+	1191.1.1 = {
+		death = "1191.1.1"
+	}
+}
+
+037_KOH_CKIII = {
+	name = "Hugues"
+	dynasty = 318
+	religion = "catholic"
+	culture = occitan
+	father = 127030
+	mother = 127031
+	1110.1.1 = {
+		birth = "1110.1.1"
+	}
+	1150.1.1 = {
+		add_spouse = 039_KOH_CKIII
+	}
+	1176.1.1 = {
+		death = "1176.1.1"
+	}
+}
+
+038_KOH_CKIII = {
+	name = "Boson"
+	dynasty = 318
+	religion - "catholic"
+	culture = occitan
+	1036.1.1 = {
+		birth = "1036.1.1"
+	}
+	1075.1.1 = {
+		add_spouse = 40027
+	}
+	1092.1.1 = {
+		death = "1092.1.1"
+	}
+}
+
+040_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = 318
+	religion = "catholic"
+	culture = occitan
+	father = 037_KOH_CKIII
+	mother = 039_KOH_CKIII
+	1168.1.1 = {
+		birth = "1168.1.1"
+	}
+	1191.7.13 = {
+		death = "1191.7.13"
+	}
+}
+
+041_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = 13104
+	religion = "catholic"
+	culture = occitan
+	945.1.1 = {
+		birth = "935.1.1"
+	}
+	1004.1.1 = {
+		death = "1004.1.1"
+	}
+}
+
+042_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = 13104
+	religion = "catholic"
+	culture = occitan
+	father = 041_KOH_CKIII
+	978.1.1 = {
+		birth = "987.1.1"
+	}
+	1035.1.1 = {
+		death = "1035.1.1"
+	}
+}
+
+043_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = 13104
+	religion = "catholic"
+	culture = occitan
+	father = 042_KOH_CKIII
+	998.1.1 = {
+		birth = "998.1.1"
+	}
+	1085.1.1 = {
+		death = "1085.1.1"
+	}
+}
+
+044_KOH_CKIII = {
+	name = "Geoffroy"
+	dynasty = 13104
+	religion = "catholic"
+	culture = occitan
+	father = 042_KOH_CKIII
+	1019.1.1 = {
+		birth = "1019.11"
+	}
+	1091.1.1 = {
+		death = "1091.1.1"
+	}
+}
+
+045_KOH_CKIII = {
+	name = "Hugh Geoffroy"
+	dynasty = 13104
+	religion = "catholic"
+	culture = occitan
+	father = 044_KOH_CKIII
+	1050.1.1 = {
+		birth = "1050.1.1"
+	}
+	1128.1.1 = {
+		death = "1128.1.1"
+	}
+}
+
+046_KOH_CKIII = {
+	name = "Hugo Geoffroy"
+	dynasty = 13104
+	religion = "catholic"
+	culture = occitan 
+	father = 047_KOH_CKIII
+	1105.1.1 = {
+		birth = "1105.1.1"
+	}
+	1166.1.1 = {
+		death = "1166.1.1"
+	}
+}
+
+047_KOH_CKIII = {
+	name = "Pons"
+	dynasty = 13104
+	religion = "catholic"
+	culture = occitan
+	father = 044_KOH_CKIII
+	1075.1.1 = {
+		birth = "1075.1.1"
+	}
+	1131.1.1 = {
+		death = "1131.1.1"
+	}
+}
+
+048_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = 13104
+	religion = "catholic"
+	culture = occitan
+	father = 046_KOH_CKIII
+	1145.1.1 = {
+		birth = "1145.1.1"
+	}
+	1188.1.1 = {
+		death = "1188.1.1"
+	}
+}
+
+049_KOH_CKIII = {
+	name = "Raymond-Geoffroy"
+	dynasty = 13104
+	religion = "catholic"
+	culture = occitan
+	father = 046_KOH_CKIII
+	1150.1.1 = {
+		birth = "1150.1.1"
+	}
+	1196.1.1 = {
+		death = "1196.1.1"
+	}
+}
+
+050_KOH_CKIII = {
+	name = "Roscille"
+	dynasty = 13104
+	religion = "catholic"
+	culture = occitan
+	father = 046_KOH_CKIII
+	1155.1.1 = {
+		birth = "1155.1.1"
+	}
+	1215.1.1 = {
+		death = "1215.1.1"
+	}
+}
+
+051_KOH_CKIII = {
+	name = "Elzéart"
+	dynasty = KOH_uses
+	religion = "catholic"
+	culture = occitan
+	1045.1.1 = {
+		birth = "1045.1.1"	
+	}
+	1125.1.1 = {
+		death = "1125.1.1"
+	}
+}
+
+052_KOH_CKIII = {
+	name = "Decan"
+	dynasty = KOH_uses
+	religion = "catholic"
+	culture = occitan
+	father = 051_KOH_CKIII
+	1110.1.1 = {
+		birth = "1110.1.1"
+	}
+	1138.1.1 = {
+		death = "1138.1.1"
+	}
+}
+
+053_KOH_CKIII = {
+	name = "Bermond"
+	dynasty = KOH_uses
+	religion = "catholic"
+	culture = occitan
+	father = 052_KOH_CKIII
+	1105.1.1 = {
+		birth = "1105.1.1"
+	}
+	1110.1.1 = {
+		add_spouse = 054_KOH_CKIII
+	}
+	1181.1.1 = {
+		death = "1181.1.1"
+	}
+}
+
+054_KOH_CKIII = {
+	name = "Douce"
+	female = yes
+	religion = "catholic"
+	culture = occitan
+	1110.1.1 = {
+		birth = "1110.1.1"
+	}
+	1170.1.1 = {
+		death = "1170.1.1"
+	}
+}
+
+055_KOH_CKIII = {
+	name = "Raymond Rascas"
+	dynasty = KOH_uses
+	religion = "catholic"
+	culture = occitan
+	father = 053_KOH_CKIII
+	mother = 054_KOH_CKIII
+	1140.1.1 = {
+		birth = "1140.1.1"
+	}
+	1209.1.1 = {
+		death = "1209.1.1"
+	}
+}
+
+056_KOH_CKIII = {
+	name = "Guillaume"
+	dynasty = KOH_uses
+	religion = "catholic"
+	culture = occitan
+	father = 053_KOH_CKIII
+	mother = 054_KOH_CKIII
+	1145.1.1 = {
+		birth = "1145.1.1"
+	}
+	1207.1.1 = {
+		death = "1207.1.1"
+	}
+}
+
+057_KOH_CKIII = {
+	name = "Eustace"
+	dynasty = 233
+	religion = "catholic"
+	culture = occitan
+	father = 212806
+	1090.1.1 = {
+		birth = "1090.1.1"
+	}
+	1152.1.1 = {
+		death = "1152.1.1"
+	}
+}
+
+074_KOH_CKIII = {
+	name = "Béraud"
+	dynasty = KOH_mercoeur 
+	religion = "catholic"
+	culture = occitan
+	1050.1.1 = {
+		birth = "1050.1.1"
+	}
+	1083.1.1 = {
+		death = "1083.1.1"	
+	}
+}
+
+075_KOH_CKIII = {
+	name = "Albéarde"
+	female = yes
+	dynasty = KOH_mercoeur
+	religion = "catholic"
+	culture = occitan
+	father = 074_KOH_CKIII
+	1070.1.1 = {
+		birth = "1070.1.1"
+	}
+	1122.1.1 = {
+		death = "1122.1.1"
+	}
+}
+
+076_KOH_CKIII = {
+	name = "Béraud"
+	dynasty = KOH_mercoeur
+	religion = "catholic"
+	culture = occitan
+	father = 074_KOH_CKIII
+	1095.1.1 = {
+		birth = "1095.1.1"
+	}
+	1135.1.1 = {
+		add_spouse = 078_KOH_CKIII
+	}
+	1169.1.1 = {
+		death = "1169.1.1"
+	}
+}
+
+077_KOH_CKII = {
+	name = "Béraud"
+	dynasty = KOH_mercoeur
+	religion = "catholic"
+	culture = occitan
+	father =076_KOH_CKIII
+	mother = 078_KOH_CKIII
+	1145.1.1 = {
+		birth = "1145.1.1"
+	}
+	1158.1.1 = {
+		add_spouse = 079_KOH_CKIII
+	}
+	1183.1.1 = {
+		death = "1183.1.1"
+	}
+}
+
+078_KOH_CKIII = {
+	name = "Judith"
+	female = yes
+	dynasty = 733
+	religion = "catholic"
+	culture = occitan
+	father = 206033
+	mother = 205716
+	1125.1.1 = {
+		birth = "1125.1.1"
+	}
+	1175.1.1 = {
+		death = "1175.1.1"
+	}
+}
+
+079_KOH_CKIII = {
+	name = "Assalide"
+	female = yes
+	dynasty = 733
+	religion = "catholic"
+	culture = occitan
+	father = 206040
+	mother = 206039
+	1135.1.1 = {
+		birth = "1135.1.1"
+	}
+	1199.1.1 = {
+		death = "1199.1.1"
+	}
+}
+
+080_KOH_CKIII = {
+	name = "Béraud"
+	dynasty = KOH_mercoeur
+	religion = "catholic"
+	culture = occitan
+	father = 077_KOH_CKII
+	mother = 079_KOH_CKIII
+	1151.1.1 = {
+		birth = "1151.1.1"
+	}
+	1180.1.1 = {
+		add_spouse = 206014
+	}
+	1208.1.1 = {
+		death = "1208.1.1"
+	}
+}
+
+153_KOH_CKIII = {
+	name = "Bernard Aton"
+	dynasty_house = house_nimes
+	religion = "catholic"
+	culture = occitan
+	father = 7663
+	mother = 422
+	1119.1.1 = {
+		birth = "1119.1.1"
+	}
+	1146.1.1 = {
+		add_spouse = 154_KOH_CKIII
+	}
+	1159.1.1 = {
+		death = "1159.1.1"
+	}
+}
+
+154_KOH_CKIII = {
+	name = "Guillemette" #de Montpellier
+	female = yes
+	religion = "catholic"
+	culture = occitan
+	1130.1.1 = {
+		birth = "1130.1.1"
+	}
+	1200.1.1 = {
+		death = "1200.1.1"
+	}
+}
+
+155_KOH_CKIII = {
+	name = "Bernard Aton"
+	dynasty_house = house_nimes
+	religion = "catholic"
+	culture = occitan
+	father = 153_KOH_CKIII
+	mother = 154_KOH_CKIII
+	1159.1.1 = {
+		birth = "1159.1.1"
+	}
+	1183.1.1 = {
+		add_spouse = 156_KOH_CKIII
+	}
+	1214.1.1 = {
+		death = "1214.1.1"
+	}
+}
+
+156_KOH_CKIII = {
+	name = "Guillelme"
+	religion = "catholic"
+	culture = occitan
+	1165.1.1 = {
+		birth = "1165.1.1"
+	}
+	1220.1.1 = {
+		death = "1220.1.1"
 	}
 }
