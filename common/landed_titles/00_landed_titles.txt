@@ -48906,14 +48906,14 @@ e_france = {
 
 			capital = c_reims
 			
-		can_create = {
-            trigger_if = {
-                limit = {
-                    has_government = theocracy_government
-                }
-                faith = { religion_tag = christianity_religion }
-            }
-        }
+			can_create = {
+				trigger_if = {
+					limit = {
+						has_government = theocracy_government
+					}
+					faith = { religion_tag = christianity_religion }
+				}
+			}
 
 			c_reims = {
 				color = { 7 60 160 }

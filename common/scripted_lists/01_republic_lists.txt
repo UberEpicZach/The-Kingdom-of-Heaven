@@ -17,3 +17,5 @@ valid_republic_coup_enemy_holder = {
 		}
 	}
 }
+
+patrician = { base = living_character conditions = { exists = house is_house_head = yes house = { exists = var:titular_republic } } }
