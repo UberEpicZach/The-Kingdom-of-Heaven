@@ -1,23 +1,67 @@
 ﻿holds_valid_merchant_republic = {
 	exists = primary_title
 	has_government = republic_government
+	primary_title.tier >= tier_duchy
+	OR = {
+		is_independent_ruler = yes
+		liege = { has_government = feudal_government }
+	}
 }
 
 republic_has_senate_form = {
-	primary_title = {
-		exists = var:senate_government_republic
+	OR = {
+		AND = {
+			is_independent_ruler = yes
+			primary_title = {
+				exists = var:senate_government_republic
+			}
+		}
+		AND = {
+			is_independent_ruler = no
+			liege_or_court_owner = {
+				primary_title = {
+					exists = var:senate_government_republic
+				}
+			}
+		}
 	}
 }
 
 republic_has_council_form = {
-	primary_title = {
-		exists = var:council_government_republic
+	OR = {
+		AND = {
+			is_independent_ruler = yes
+			primary_title = {
+				exists = var:council_government_republic
+			}
+		}
+		AND = {
+			is_independent_ruler = no
+			liege_or_court_owner = {
+				primary_title = {
+					exists = var:council_government_republic
+				}
+			}
+		}
 	}
 }
 
 republic_has_elected_ruler_form = {
-	primary_title = {
-		exists = var:elected_ruler_republic
+	OR = {
+		AND = {
+			is_independent_ruler = yes
+			primary_title = {
+				exists = var:elected_ruler_republic
+			}
+		}
+		AND = {
+			is_independent_ruler = no
+			liege_or_court_owner = {
+				primary_title = {
+					exists = var:elected_ruler_republic
+				}
+			}
+		}
 	}
 }
 

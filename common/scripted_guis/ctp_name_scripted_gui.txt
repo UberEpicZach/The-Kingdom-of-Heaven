@@ -1,0 +1,55 @@
+﻿random_saint_male_name = {
+	scope = character
+	effect = {
+		faith = {
+			random_in_list = {
+				variable = faith_saints
+				limit = { is_male = yes }
+				save_temporary_scope_as = named_saint
+			}
+		}
+		change_first_name = { template_character = scope:named_saint }
+	}
+}
+
+random_saint_female_name = {
+	scope = character
+	effect = {
+		faith = {
+			random_in_list = {
+				variable = faith_saints
+				limit = { is_male = no }
+				save_temporary_scope_as = named_saint
+			}
+		}
+		change_first_name = { template_character = scope:named_saint }
+	}
+}
+
+faith_has_male_saints = {
+	scope = character
+	is_shown = {
+		faith = {
+			has_variable_list = faith_saints
+			any_in_list = {
+				variable = faith_saints
+				is_male = yes
+				exists = this
+			}
+		}
+	}
+}
+
+faith_has_female_saints = {
+	scope = character
+	is_shown = {
+		faith = {
+			has_variable_list = faith_saints
+			any_in_list = {
+				variable = faith_saints
+				is_male = no
+				exists = this
+			}
+		}
+	}
+}

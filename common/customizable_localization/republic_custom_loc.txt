@@ -9,3 +9,38 @@
 		localization_key = LIEGE_HOLDS_REPUBLIC
 	}
 }
+
+GetRepublicOrFeudal = {
+	type = character
+	text = {
+		trigger = { liege = { holds_valid_merchant_republic = yes } house = { exists = var:titular_republic } has_government = feudal_government }
+		localization_key = REPUBLIC_AND_FEUDAL
+	}
+	text = {
+		trigger = { OR = { liege = { holds_valid_merchant_republic = yes } holds_valid_merchant_republic = yes } house = { exists = var:titular_republic } NOT = { has_government = feudal_government } }
+		localization_key = REPUBLIC_ONLY
+	}
+	text = {
+		trigger = { NOT = { liege = { holds_valid_merchant_republic = yes } house = { exists = var:titular_republic } } has_government = feudal_government }
+		localization_key = FEUDAL_ONLY
+	}
+	text = {
+		localization_key = REPUBLIC_AND_FEUDAL
+	}
+}
+
+GetDogeConsulCouncilHead = {
+	type = character
+	text = {
+		trigger = { republic_has_senate_form = yes }
+		localization_key = CONSUL
+	}
+	text = {
+		trigger = { republic_has_council_form = yes }
+		localization_key = COUNCIL_HEAD
+	}
+	text = {
+		trigger = { republic_has_elected_ruler_form = yes }
+		localization_key = DOGE
+	}
+}

@@ -12,6 +12,10 @@
 	add = house_head.dynasty.dynasty_prestige_level
 	add = house_head.dynasty.dynasty_prestige_level
 	add = house_head.dynasty.dynasty_prestige_level
+	add = {
+		value = house_head.gold
+		divide = 2
+	}
 }
 
 title_all_family_respect = {
@@ -138,7 +142,7 @@ nobility_appeasement_yearly_change = {
 	if = { limit = { var:nobility_appeasement >= 75 } subtract = 3 }
 	if = { limit = { var:nobility_appeasement >= 50 } subtract = 2 }
 	if = { limit = { var:nobility_appeasement <= 50 } add = 2 }
-	if = { limit = { var:nobility_appeasement <= 75 } add = 3 }
+	if = { limit = { var:nobility_appeasement <= 25 } add = 3 }
 }
 
 popular_appeasement_yearly_change = {
@@ -146,7 +150,7 @@ popular_appeasement_yearly_change = {
 	if = { limit = { var:popular_appeasement >= 75 } subtract = 3 }
 	if = { limit = { var:popular_appeasement >= 50 } subtract = 2 }
 	if = { limit = { var:popular_appeasement <= 50 } add = 2 }
-	if = { limit = { var:popular_appeasement <= 75 } add = 3 }
+	if = { limit = { var:popular_appeasement <= 25 } add = 3 }
 }
 
 clergy_appeasement_yearly_change = {
@@ -154,7 +158,7 @@ clergy_appeasement_yearly_change = {
 	if = { limit = { var:clergy_appeasement >= 75 } subtract = 3 }
 	if = { limit = { var:clergy_appeasement >= 50 } subtract = 2 }
 	if = { limit = { var:clergy_appeasement <= 50 } add = 2 }
-	if = { limit = { var:clergy_appeasement <= 75 } add = 3 }
+	if = { limit = { var:clergy_appeasement <= 25 } add = 3 }
 }
 
 amount_over_or_under_nobility_appeasement = {
@@ -268,4 +272,49 @@ republic_families_size_need = {
 	if = { limit = { has_variable_list = republic_families_list list_size = { name = republic_families_list value < 5 } } every_in_list = { variable = republic_families_list add = 1 } }
 	subtract = 5
 	multiply = -1
+}
+
+light_ships_unclaimed = {
+	value = 0
+	if = { limit = { exists = var:light_ships } add = var:light_ships }
+	if = { limit = { exists = var:fleet_1_light_ships } subtract = var:fleet_1_light_ships }
+	if = { limit = { exists = var:fleet_2_light_ships } subtract = var:fleet_2_light_ships }
+	if = { limit = { exists = var:fleet_3_light_ships } subtract = var:fleet_3_light_ships }
+	if = { limit = { exists = var:fleet_4_light_ships } subtract = var:fleet_4_light_ships }
+	if = { limit = { exists = var:fleet_5_light_ships } subtract = var:fleet_5_light_ships }
+	if = { limit = { exists = var:fleet_6_light_ships } subtract = var:fleet_6_light_ships }
+	if = { limit = { exists = var:fleet_7_light_ships } subtract = var:fleet_7_light_ships }
+	if = { limit = { exists = var:fleet_8_light_ships } subtract = var:fleet_8_light_ships }
+	if = { limit = { exists = var:fleet_9_light_ships } subtract = var:fleet_9_light_ships }
+	if = { limit = { exists = var:fleet_10_light_ships } subtract = var:fleet_10_light_ships }
+}
+
+medium_ships_unclaimed = {
+	value = 0
+	if = { limit = { exists = var:medium_ships } add = var:medium_ships }
+	if = { limit = { exists = var:fleet_1_medium_ships } subtract = var:fleet_1_medium_ships }
+	if = { limit = { exists = var:fleet_2_medium_ships } subtract = var:fleet_2_medium_ships }
+	if = { limit = { exists = var:fleet_3_medium_ships } subtract = var:fleet_3_medium_ships }
+	if = { limit = { exists = var:fleet_4_medium_ships } subtract = var:fleet_4_medium_ships }
+	if = { limit = { exists = var:fleet_5_medium_ships } subtract = var:fleet_5_medium_ships }
+	if = { limit = { exists = var:fleet_6_medium_ships } subtract = var:fleet_6_medium_ships }
+	if = { limit = { exists = var:fleet_7_medium_ships } subtract = var:fleet_7_medium_ships }
+	if = { limit = { exists = var:fleet_8_medium_ships } subtract = var:fleet_8_medium_ships }
+	if = { limit = { exists = var:fleet_9_medium_ships } subtract = var:fleet_9_medium_ships }
+	if = { limit = { exists = var:fleet_10_medium_ships } subtract = var:fleet_10_medium_ships }
+}
+
+heavy_ships_unclaimed = {
+	value = 0
+	if = { limit = { exists = var:heavy_ships } add = var:heavy_ships }
+	if = { limit = { exists = var:fleet_1_heavy_ships } subtract = var:fleet_1_heavy_ships }
+	if = { limit = { exists = var:fleet_2_heavy_ships } subtract = var:fleet_2_heavy_ships }
+	if = { limit = { exists = var:fleet_3_heavy_ships } subtract = var:fleet_3_heavy_ships }
+	if = { limit = { exists = var:fleet_4_heavy_ships } subtract = var:fleet_4_heavy_ships }
+	if = { limit = { exists = var:fleet_5_heavy_ships } subtract = var:fleet_5_heavy_ships }
+	if = { limit = { exists = var:fleet_6_heavy_ships } subtract = var:fleet_6_heavy_ships }
+	if = { limit = { exists = var:fleet_7_heavy_ships } subtract = var:fleet_7_heavy_ships }
+	if = { limit = { exists = var:fleet_8_heavy_ships } subtract = var:fleet_8_heavy_ships }
+	if = { limit = { exists = var:fleet_9_heavy_ships } subtract = var:fleet_9_heavy_ships }
+	if = { limit = { exists = var:fleet_10_heavy_ships } subtract = var:fleet_10_heavy_ships }
 }
