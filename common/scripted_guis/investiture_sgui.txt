@@ -40,6 +40,39 @@ get_all_investiture_candidates = {
 			name = selected_title_for_investiture
 			value = scope:selected_title_inv
 		}
+		every_sibling = {
+			limit = {
+				#has_education_learning_trigger = yes
+				is_landed = no
+				is_female = no
+				is_adult = yes
+				NOT = { any_heir_to_title = { exists = this } }
+			}
+			save_scope_as = person_thing
+			scope:title_thing = {
+				add_to_variable_list = {
+					name = theocrat_candidates
+					target = scope:person_thing
+				}
+			}
+		}
+		every_child = {
+			limit = {
+				#has_education_learning_trigger = yes
+				is_landed = no
+				is_adult = yes
+				is_female = no
+				NOT = { any_heir_to_title = { exists = this } }
+			}
+			save_scope_as = person_thing
+			scope:title_thing = {
+				add_to_variable_list = {
+					name = theocrat_candidates
+					target = scope:person_thing
+				}
+			}
+		}
+		
 		every_courtier_or_guest = {
 			limit = {
 				NOT = {
