@@ -6,8 +6,22 @@
 		#KOH_investiture
 		delay = { months = 12 }
 		KOH_commune_maintenance
+		CardinalsTraits
 	}
 }
+
+CardinalsTraits = {
+	effect = {
+		title:k_papal_state.holder = {
+			trigger_event = KoH_religiousflavour.22
+		}
+	}
+	on_actions = {
+		delay = { months = 1 }
+		CardinalsTraits
+	}
+}
+
 
 MyMo_ongamestart = {
 	effect = {
@@ -141,6 +155,7 @@ on_game_start_after_lobby = {
 		on_cardinal_initialize
 		KOH_holy_orders
 		MyMo_ongamestart
+		CardinalsTraits
 	}
 }
 

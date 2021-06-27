@@ -10,7 +10,6 @@
 			}
 		}
 	}
-	add_trait = koh_cardinal
 }
 become_initial_cardinal = {
 	create_story = cardinal_story
@@ -103,6 +102,13 @@ promote_new_cardinal = {
 				}
 			}
 			var:beneficiary = {
+				send_interface_toast = {
+					title = "Cardinal Election Won"
+					left_icon = root
+					right_icon = prev
+
+					custom_tooltip = "You have gained a hook on the Cardinal"
+				}
 				add_hook = { type = favor_hook target = prev years = 10 } 
 				add_piety = cardinal_election_piety_for_beneficiary
 			}
@@ -157,15 +163,10 @@ indicate_cardinals = {
 		story_owner = {add_piety = 1}
 	}
 }
-cardinal_test = {
-	every_cardinal = {
-		story_owner = {
-			add_piety = 1
-			add_trait = koh_cardinal
-		}
-	}
+CardinalsAreCardinals = {
 	every_living_cardinal = {
 		add_prestige = 1
+		add_trait = koh_cardinal
 	}
 }
 update_cardinal_window = {

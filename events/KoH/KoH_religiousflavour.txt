@@ -1137,3 +1137,14 @@ KoH_religiousflavour.21 = {
 }
 #Waldensians in Lyon
 
+#cardinal names
+KoH_religiousflavour.22 = {
+	hidden = yes
+
+	immediate = {
+		every_living_cardinal = {
+			add_prestige = 1
+			add_trait = koh_cardinal
+		}
+	}
+}
