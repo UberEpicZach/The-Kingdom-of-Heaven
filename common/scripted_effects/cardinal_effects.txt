@@ -102,13 +102,6 @@ promote_new_cardinal = {
 				}
 			}
 			var:beneficiary = {
-				send_interface_toast = {
-					title = "Cardinal Election Won"
-					left_icon = root
-					right_icon = prev
-
-					custom_tooltip = "You have gained a hook on the Cardinal"
-				}
 				add_hook = { type = favor_hook target = prev years = 10 } 
 				add_piety = cardinal_election_piety_for_beneficiary
 			}

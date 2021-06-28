@@ -1148,3 +1148,17 @@ KoH_religiousflavour.22 = {
 		}
 	}
 }
+
+#cardinal election won
+KoH_religiousflavour.23 = {
+	hidden = yes
+
+	immediate = {
+		send_interface_toast = {
+			title = "Cardinal Election"				
+			right_icon = prev
+			
+			custom_tooltip = "You have gained a hook"
+		}
+	}
+}
