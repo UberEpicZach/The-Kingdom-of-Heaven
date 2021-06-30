@@ -43,3 +43,38 @@
 	ai_will_do = {
 	}
 }
+
+GvG_Investiture_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	ai_check_interval = 60
+
+	desc = GvG_Investiture_decision_opening_desc
+	selection_tooltip = GvG_Investiture_decision_tooltip
+
+	is_shown = {
+		is_landed = yes
+		highest_held_title_tier > tier_barony
+		has_culture_group = culture_group:latin_group
+		top_liege = {
+			has_primary_title = title:e_hre
+		}
+		NOT = {
+			has_trait = KOH_guelph
+			has_trait = KOH_ghibelline
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+	effect = {
+		
+	}
+	
+	ai_potential = {
+	}
+
+	ai_will_do = {
+	}
+}

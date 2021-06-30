@@ -1,0 +1,183 @@
+﻿portrait_baldwin_trigger = {
+    AND = {
+        OR = {
+            this = character:223523
+        }
+    }
+}
+
+portrait_shipwrecked = {
+    has_character_flag = shipwrecked
+}
+
+portrait_ayyubid_clothing_trigger = {
+	culture = { has_graphical_culture = ayyubid_clothing_gfx }
+}
+
+portrait_saladin_trigger = {
+    AND = {
+        OR = {
+            this = character:226000
+        }
+    }
+}
+
+portrait_richard_trigger = {
+    AND = {
+        OR = {
+            this = character:204510
+        }
+    }
+}
+
+portrait_altair_trigger = {
+    AND = {
+        OR = {
+            this = character:KOH0030
+        }
+    }
+}
+
+portrait_sinan_trigger = {
+    AND = {
+        OR = {
+            this = character:227012
+        }
+    }
+}
+portrait_tamar_trigger = {
+	AND = {
+		OR = {
+			this = character:466517
+		}
+	}
+}
+
+portrait_ayyubid_clothing_trigger = {
+	culture = { has_graphical_culture = ayyubid_clothing_gfx }
+}
+
+portrait_templar_trigger = {
+    AND = {
+        exists = global_var:templar_holy_order_title
+        OR = {
+            AND = {
+                exists = liege
+                liege = { has_title = global_var:templar_holy_order_title }
+            }
+            has_primary_title = global_var:templar_holy_order_title
+      }
+    }
+}
+
+portrait_hospitaller_trigger = {
+    AND = {
+        exists = global_var:hospitaller_holy_order_title
+        OR = {
+            AND = {
+                exists = liege
+                liege = { has_title = global_var:hospitaller_holy_order_title }
+            }
+            has_primary_title = global_var:hospitaller_holy_order_title
+      }
+    }
+}
+
+portrait_jerusalem_trigger = {
+    AND = {
+        liege = { 
+            has_title = title:k_jerusalem
+            has_religion = religion:christianity_religion
+            }
+
+        OR = {
+            AND = {
+            	title:k_jerusalem = {
+            		exists = yes
+            		holder = {
+            			has_religion = religion:christianity_religion
+            		}
+            	}
+                is_knight_of = title:k_jerusalem.holder
+                is_male = yes
+                is_alive = yes
+                age >= 18
+            }
+
+            AND = {
+	            title:k_jerusalem = {
+	            		exists = yes
+	            		holder = {
+	            			has_religion = religion:christianity_religion
+	            		}
+	            	}
+                has_council_position = councillor_marshal
+                is_councillor_of = title:k_jerusalem.holder
+                is_alive = yes
+                age >= 18
+            }
+            title:k_jerusalem = {
+            		exists = yes
+            		holder = {
+            			has_religion = religion:christianity_religion
+            		}
+            	}
+        }
+    }
+}
+
+portrait_ibelin_trigger = {
+    OR = {
+        AND = {
+            exists = liege
+            liege = {
+                AND = {
+                    has_title = title:c_ibelin
+                    has_religion = religion:christianity_religion
+                }
+            }
+        }
+
+        AND = {
+            is_knight_of = title:c_ibelin.holder
+            is_male = yes
+            is_alive = yes
+            age >= 18
+        }
+
+        AND = {
+            has_council_position = councillor_marshal
+            is_councillor_of = title:c_ibelin.holder
+            is_alive = yes
+            age >= 18
+        }
+    }
+}
+
+portrait_hungary_trigger = {
+    OR = {
+         AND = {
+                exists = liege
+                liege = {
+                AND = {
+                    has_title = title:k_hungary
+                    has_religion = religion:christianity_religion
+                }
+            }
+        }
+
+        AND = {
+            is_knight_of = title:k_hungary.holder
+            is_male = yes
+            is_alive = yes
+            age >= 18
+        }
+
+        AND = {
+            has_council_position = councillor_marshal
+            is_councillor_of = title:k_hungary.holder
+            is_alive = yes
+            age >= 18
+        }
+    }
+}

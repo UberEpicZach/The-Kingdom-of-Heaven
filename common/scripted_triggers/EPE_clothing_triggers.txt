@@ -1,0 +1,340 @@
+#portrait_ghaznavid_clothing_trigger = {
+#	has_culture = culture:turkish # Oghuz
+#	religion = religion:islam_religion	
+#	trigger_if = {
+#		limit = { exists = capital_province }
+#		capital_province = { 
+#		                   OR = {
+#							geographical_region = world_kabulistan
+#							geographical_region = world_india_rajastan
+#							geographical_region = world_makran
+#						} 
+#					}
+#
+#	}
+#	trigger_if = {
+#		limit = {
+#			exists = host.capital_province
+#			NOT = { exists = capital_province }
+#		}
+#		host.capital_province = { 
+#		                   OR = {
+#							geographical_region = world_kabulistan
+#							geographical_region = world_india_rajastan
+#							geographical_region = world_makran
+#						} 
+#					}
+#	}
+#	trigger_if = {
+#		limit = {
+#			exists = liege.capital_province
+#			NOT = { exists = capital_province }
+#		}
+#		liege.capital_province = { 
+#		                   OR = {
+#							geographical_region = world_kabulistan
+#							geographical_region = world_india_rajastan
+#							geographical_region = world_makran
+#						} 
+#					}
+#	}
+#	trigger_if = {
+#		limit = {
+#			exists = location.province_owner.capital_province
+#			NOT = { exists = capital_province }
+#		}
+#		location.province_owner.capital_province = { 
+#		                   OR = {
+#							geographical_region = world_kabulistan
+#							geographical_region = world_india_rajastan
+#							geographical_region = world_makran
+#						} 
+#					}
+#	}
+#}
+
+
+
+portrait_seljuk_clothing_trigger = {
+	culture = { has_graphical_culture = seljuk_clothing_gfx }
+}
+
+
+
+portrait_caliph_high_middle_ages_trigger = {
+    required_year_greater_or_equal_trigger = { YEAR = 1066 } 
+}
+
+
+portrait_caliph_early_middle_ages_trigger = {
+    required_year_lesser_or_equal_trigger = { YEAR = 1065 }
+}
+
+##non muslim iranians
+portrait_early_eastern_iranian_trigger = {
+    #religion = religion:zoroastrianism_religion
+#    EPE_culture_era_early_medieval_trigger = yes    
+    NOT = { religion = religion:islam_religion }
+    NOT = { culture = culture:saka }
+    culture = { has_graphical_culture = iranian_clothing_gfx }    
+}
+
+#Islamic Iranians
+portrait_early_islamic_iranian_trigger = {
+#   EPE_culture_era_early_medieval_trigger = yes
+	religion = religion:islam_religion	
+	culture = { has_graphical_culture = iranian_clothing_gfx }	
+}
+
+##chinese sogdians
+portrait_chinese_sogdians_trigger = {
+	has_culture = culture:sogdian 							
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east	
+							geographical_region = world_steppe_tarim		
+						} 
+					}
+
+	}
+	trigger_if = {
+		limit = {
+			exists = host.capital_province
+			NOT = { exists = capital_province }
+		}
+		host.capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east	
+							geographical_region = world_steppe_tarim		
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = liege.capital_province
+			NOT = { exists = capital_province }
+		}
+		liege.capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east	
+							geographical_region = world_steppe_tarim		
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = location.province_owner.capital_province
+			NOT = { exists = capital_province }
+		}
+		location.province_owner.capital_province = { 
+		                   OR = {
+							geographical_region = world_steppe_east	
+							geographical_region = world_steppe_tarim			
+						} 
+					}
+	}
+}
+
+portrait_tahirid_trigger = {
+
+    dynasty = dynasty:811
+
+} 
+
+portrait_shahi_trigger = {
+
+    dynasty = dynasty:1043006
+
+} 
+
+##EPE_culture_era_tribal_trigger = {
+#	culture = { 
+#		AND = {
+#			has_cultural_era_or_later = culture_era_tribal 
+#			#NOT = { 
+#			#	has_cultural_era_or_later = culture_era_early_medieval
+#			#}	
+#		}
+#	}
+#}
+ 
+EPE_culture_era_early_medieval_trigger = {
+	culture = { 
+		AND = {
+			OR = {
+				has_cultural_era_or_later = culture_era_tribal 
+				has_cultural_era_or_later = culture_era_early_medieval
+			}
+			NOT = { 
+				has_cultural_era_or_later = culture_era_high_medieval 
+			}	
+		}
+	}
+}
+
+EPE_culture_era_high_medieval_trigger = {
+	culture = { 
+		AND = {
+			OR = {
+				has_cultural_era_or_later = culture_era_high_medieval 
+				has_cultural_era_or_later = culture_era_late_medieval #removed after 
+			}
+			#NOT = { 
+			#	has_cultural_era_or_later = culture_era_late_medieval
+			#}	
+		}
+	}
+}
+
+EPE_culture_era_late_medieval_trigger = {
+	culture = {	
+		has_cultural_era_or_later = culture_era_late_medieval 
+	}
+}
+
+
+##Early Eastern slavic
+portrait_northern_slav_clothing_trigger = {
+	culture = { has_graphical_culture = northern_slav_clothing_gfx }
+}
+
+
+##Cuman
+portrait_cuman_clothing_trigger = {
+	culture = { has_graphical_culture = cuman_clothing_gfx }
+}
+
+
+##Uyghurs
+portrait_uyghur_clothing_trigger = {
+	culture = { has_graphical_culture = uyghur_clothing_gfx }
+}
+
+
+
+##Norse flavor dlc trigger
+portrait_norse_flavor_dlc_trigger = {
+	has_fp1_dlc_trigger = yes
+}
+
+
+##Abbasid clothing dlc trigger
+portrait_dde_abbasid_flavor_dlc_trigger = {
+	has_dlc = "Fashion of the Abbasid Court"
+}
+
+
+##Balto-Finnic
+portrait_balto_finnic_clothing_trigger = {
+	culture = { has_graphical_culture = balto_finnic_clothing_gfx }
+}
+
+##Iberian
+portrait_iberia_clothing_trigger = {
+    NOT = { religion = religion:islam_religion }
+	culture = { has_graphical_culture = iberia_clothing_gfx }
+}
+
+
+##Iberian Muslim
+portrait_iberia_muslim_clothing_trigger = {
+	religion = religion:islam_religion	
+	culture = { has_graphical_culture = iberia_clothing_gfx }
+}
+
+##North africa
+portrait_maghreb_clothing_trigger = {
+	culture = { has_graphical_culture = maghreb_clothing_gfx }
+}
+
+##Hungarian
+portrait_hungarian_clothing_trigger = {
+	culture = { has_graphical_culture = hungarian_clothing_gfx }
+}
+
+
+
+
+
+
+##Anglo-saxon
+portrait_anglo_saxon_clothing_trigger = {
+	culture = { has_graphical_culture = anglo_saxon_clothing_gfx }
+}
+
+##Polish
+portrait_polish_clothing_trigger = {
+	culture = { has_graphical_culture = polish_clothing_gfx }
+}
+
+##West Slav
+portrait_west_slav_clothing_trigger = {
+	culture = { has_graphical_culture = west_slav_clothing_gfx }
+}
+
+##Khazar
+portrait_Khazar_clothing_trigger = {
+	culture = { has_graphical_culture = Khazar_clothing_gfx }
+}
+
+##Kirghiz
+portrait_kirghiz_clothing_trigger = {
+	culture = { has_graphical_culture = kirghiz_clothing_gfx }
+}
+
+####Norman Sicily knights
+portrait_norman_sicily_knights_clothing_trigger = {
+	has_culture = culture:norman
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = { 
+		                   OR = {
+							geographical_region = world_europe_south_italy
+						} 
+					}
+
+	}
+	trigger_if = {
+		limit = {
+			exists = host.capital_province
+			NOT = { exists = capital_province }
+		}
+		host.capital_province = { 
+		                   OR = {
+							geographical_region = world_europe_south_italy
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = liege.capital_province
+			NOT = { exists = capital_province }
+		}
+		liege.capital_province = { 
+		                   OR = {
+							geographical_region = world_europe_south_italy
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = location.province_owner.capital_province
+			NOT = { exists = capital_province }
+		}
+		location.province_owner.capital_province = { 
+		                   OR = {
+							geographical_region = world_europe_south_italy
+						} 
+					}
+	}
+}
+
+
+
+
+
+
+
+
