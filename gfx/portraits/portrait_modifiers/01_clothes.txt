@@ -3723,6 +3723,29 @@ clothes = {
 		}
 	}
 
+	no_clothesKOH = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothesKOH
+                template = no_clothesKOH
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }   
+        outfit_tags = { no_clothes }
+        weight = {
+            base = 0
+            modifier = {
+                add = 1000
+                should_be_fully_naked_portrait_trigger = yes
+            }
+            modifier = {
+            	add = -1000
+            	should_show_nudity = no
+            }
+        }
+    }
+
 	baldwin = {
 		dna_modifiers = {
 			accessory = {
