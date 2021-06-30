@@ -470,3 +470,19 @@ give_assassins_castle = {
 		}
 	}
 }
+
+KOH_jihad_vassals = {
+	title:k_jerusalem.holder = {
+		every_character_war = {
+			limit = {
+				using_cb = KOH_jihad
+				primary_defender = title:k_jerusalem.holder
+				primary_attacker = title:e_arabia.holder
+			}
+			save_scope_as = war
+		}
+		every_vassal = {
+			scope:war = { add_defender = PREV }
+		}
+	}
+}
