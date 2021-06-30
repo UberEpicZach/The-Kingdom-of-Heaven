@@ -4204,7 +4204,7 @@ french_war = {
 				AND = {
 					religion = religion:christianity_religion
 					has_government = holy_order_government
-			}
+				}
 				AND = {
 					religion = religion:christianity_religion
 					is_landed = no
@@ -4212,8 +4212,8 @@ french_war = {
 					exists = liege
 					liege = {
 						has_government = holy_order_government
-		}
-	}
+						}
+					}
 				AND = {
 					religion = religion:christianity_religion
 					portrait_wear_armor_trigger = yes
@@ -4222,118 +4222,125 @@ french_war = {
 							OR = {
 								using_cb = undirected_great_holy_war
 								using_cb = directed_great_holy_war
-}
+							}
 							is_attacker = prev
-		}
+						}
 						any_liege_or_above = {
 							faith = prev.faith
 							any_character_war = {
 								OR = {
 									using_cb = undirected_great_holy_war
 									using_cb = directed_great_holy_war
-	}	
+								}	
 								is_attacker = prev
-		}
-	}
-}
-		}
-	}	
+								}
+							}
 						}
 					}
-				}
-###French war helmet closed face	
-french_war_closed = {
-	dna_modifiers = {
-	
-		morph = {
-			mode = add
-			
-			gene = gene_bs_ear_outward
-			template = ear_outward_neg
-			value = 1.0
+				}	
 			}
-		morph = {
-			mode = modify
-			gene = gene_chin_forward
-			template = chin_forward_neg
-			value = -1.0
+		}
+	}
 
-		}
-		morph = {
-			mode = modify
-			gene = gene_jaw_forward
-			template = jaw_forward_pos
-			value = -1.0
-	}
-		morph = {
-			mode = modify_multiply				
-			gene = gene_bs_nose_forward
-			template = nose_forward_neg				
-			value = 1.0
-}
-		accessory = {
-			mode = add
-			gene = headgear
-			template = french_war_closed
-			range = { 0 1 } # For the randomness to work correctly
-		}
-	}		
-	weight = {
-		base = 0
-		modifier = {
-			add = 101
-			NOT = { is_female = yes }				
-			portrait_wear_helmet_trigger = yes
-			EPE_culture_era_high_medieval_trigger = yes
-			NOT = { has_game_rule = never_epe_fullplate_helmets }						
-					OR = {
-				portrait_western_clothing_trigger = yes
-				portrait_french_clothing_trigger = yes
-				portrait_iberia_clothing_trigger = yes	
-				portrait_dde_hre_clothing_trigger = yes					
+###French war helmet closed face	
+	french_war_closed = {
+		dna_modifiers = {
+		
+			morph = {
+				mode = add
+				
+				gene = gene_bs_ear_outward
+				template = ear_outward_neg
+				value = 1.0
 			}
-			
-			NOR = {
-						AND = {
-					religion = religion:christianity_religion
-					has_government = holy_order_government
-						}
-				AND = {
-					religion = religion:christianity_religion
-					is_landed = no
-					portrait_wear_armor_trigger = yes
-					exists = liege
-					liege = {
-						has_government = holy_order_government
-					}
-				}
-				AND = {
-					religion = religion:christianity_religion
-					portrait_wear_armor_trigger = yes
-						OR = {
-						any_character_war = {
-							OR = {
-								using_cb = undirected_great_holy_war
-								using_cb = directed_great_holy_war
-		}
-							is_attacker = prev
-	}		
-						any_liege_or_above = {
-							faith = prev.faith
-							any_character_war = {
-					OR = {
-									using_cb = undirected_great_holy_war
-									using_cb = directed_great_holy_war
-					}
-								is_attacker = prev
-				}
-						}
-					}
+			morph = {
+				mode = modify
+				gene = gene_chin_forward
+				template = chin_forward_neg
+				value = -1.0
+		
+			}
+			morph = {
+				mode = modify
+				gene = gene_jaw_forward
+				template = jaw_forward_pos
+				value = -1.0
+			}			
+			morph = {
+				mode = modify_multiply				
+				gene = gene_bs_nose_forward
+				template = nose_forward_neg				
+				value = 1.0
+			}		
+			accessory = {
+				mode = add
+				gene = headgear
+				template = french_war_closed
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+				NOT = { is_female = yes }				
+				portrait_wear_helmet_trigger = yes
+				EPE_innovation_knighthood_trigger = yes	
+				#NOT = { has_game_rule = never_epe_fullplate_helmets }	
+				NOT = { has_game_rule = never_epe_fullface_helmets }					
+                OR = {
+                    portrait_western_clothing_trigger = yes
+                    portrait_french_clothing_trigger = yes
+								AND = {
+				    portrait_iberia_clothing_trigger = yes	
+						portrait_iberia_trigger = yes				
+								}	
+                    portrait_dde_hre_clothing_trigger = yes	
+				    portrait_anglo_saxon_clothing_trigger = yes		
+                    portrait_italian_clothing_trigger = yes					
+                }
+				
+				NOR = {
+				    AND = {
+				        religion = religion:christianity_religion
+				        has_government = holy_order_government
+				    }
+				    AND = {
+				        religion = religion:christianity_religion
+				        is_landed = no
+				        portrait_wear_armor_trigger = yes
+				        exists = liege
+				        liege = {
+				            has_government = holy_order_government
+				        }
+				    }
+				    AND = {
+				        religion = religion:christianity_religion
+				        portrait_wear_armor_trigger = yes
+				        OR = {
+				            any_character_war = {
+				                OR = {
+				                    using_cb = undirected_great_holy_war
+				                    using_cb = directed_great_holy_war
+				                }
+				                is_attacker = prev
+				            }
+				            any_liege_or_above = {
+				                faith = prev.faith
+				                any_character_war = {
+				                    OR = {
+				                        using_cb = undirected_great_holy_war
+				                        using_cb = directed_great_holy_war
+				                    }
+				                    is_attacker = prev
+				                }
+				            }
+				        }
+				    }
 				}
 			}
 		}
-	}
-}
+	}	
 
 italian_war = {
 	dna_modifiers = {
