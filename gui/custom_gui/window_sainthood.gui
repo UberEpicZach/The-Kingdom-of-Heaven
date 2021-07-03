@@ -27,7 +27,7 @@
     
                 blockoverride "button_close"
                 {
-                    onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets republic_families_window')]"
+                    onclick = "[GetVariableSystem.Clear('window_sainthood')]"
                 }
             }
             background = {
