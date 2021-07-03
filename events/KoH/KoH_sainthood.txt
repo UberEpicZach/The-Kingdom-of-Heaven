@@ -71,7 +71,7 @@ KoH_sainthood.1 = { #sainthood.1
 		}
 		#Potential for sainthood
 		random = {
-			chance = 1 #make 1
+			chance = 100 #make 1
 	
 			#Cynical people are less likely to be Canonized
 			modifier = {
@@ -340,13 +340,13 @@ KoH_sainthood.1 = { #sainthood.1
 				}
 			}
 		}
-		# scope:saint_person = {
-		# 	send_interface_toast = {
-		# 		title = "Saintest Event 1"
+		scope:saint_person = {
+			send_interface_toast = {
+				title = "Saintest Event 1"
 	
-		# 		left_icon = root
-		# 	}
-		# }
+				left_icon = root
+			}
+		}
 	}
 }
 

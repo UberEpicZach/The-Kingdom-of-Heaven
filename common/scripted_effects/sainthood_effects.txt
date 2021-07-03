@@ -1,6 +1,6 @@
 deciding_upon_saint_effect = { ##DECIDING SAINT
 	random = {
-		chance = 1
+		chance = 100
 
 
 		#Cynical people are less likely to be Canonized
@@ -307,99 +307,98 @@ remove_saint = {
 
 add_qa_effect = {
 	set_global_variable = qa_testing
-
 }
 
-#set_up_saint_sites_for_selection_effect = {
-	if = {
-		limit = { NOT = { exists = scope:has_set_up_saint_sites } }
-		save_temporary_scope_as = pilgrim
+# #set_up_saint_sites_for_selection_effect = {
+# 	if = {
+# 		limit = { NOT = { exists = scope:has_set_up_saint_sites } }
+# 		save_temporary_scope_as = pilgrim
 		
-		random_in_list = {
-			variable = faith_capital
+# 		random_in_list = {
+# 			variable = faith_capital
 
-			if = {
-				limit = {
-					NOT = { exists = scope:saint_site_1 }
-				}
-				save_scope_as = saint_site_1
-			}
+# 			if = {
+# 				limit = {
+# 					NOT = { exists = scope:saint_site_1 }
+# 				}
+# 				save_scope_as = saint_site_1
+# 			}
 
-			else_if = {
-				limit = {
-					NOT = { exists = scope:saint_site_2 }
-				}
-				save_scope_as = saint_site_2
-			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:saint_site_2 }
+# 				}
+# 				save_scope_as = saint_site_2
+# 			}
 
-			else_if = {
-				limit = {
-					NOT = { exists = scope:saint_site_7 }
-				}
-				save_scope_as = saint_site_3
-			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:saint_site_7 }
+# 				}
+# 				save_scope_as = saint_site_3
+# 			}
 
-			else_if = {
-				limit = {
-					NOT = { exists = scope:saint_site_7 }
-				}
-				save_scope_as = saint_site_4
-			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:saint_site_7 }
+# 				}
+# 				save_scope_as = saint_site_4
+# 			}
 
-			else_if = {
-				limit = {
-					NOT = { exists = scope:saint_site_7 }
-				}
-				save_scope_as = saint_site_5
-			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:saint_site_7 }
+# 				}
+# 				save_scope_as = saint_site_5
+# 			}
 
-			else_if = {
-				limit = {
-					NOT = { exists = scope:saint_site_7 }
-				}
-				save_scope_as = saint_site_6
-			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:saint_site_7 }
+# 				}
+# 				save_scope_as = saint_site_6
+# 			}
 
-			else_if = {
-				limit = {
-					NOT = { exists = scope:saint_site_7 }
-				}
-				save_scope_as = saint_site_7
-			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:saint_site_7 }
+# 				}
+# 				save_scope_as = saint_site_7
+# 			}
 
-			else_if = {
-				limit = {
-					NOT = { exists = scope:saint_site_8 }
-				}
-				save_scope_as = saint_site_8
-			}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:saint_site_8 }
+# 				}
+# 				save_scope_as = saint_site_8
+# 			}
 
-			else_if = {
-				limit = {
-					NOT = { exists = scope:saint_site_9 }
-				}
-				save_scope_as = saint_site_9
-			}
-			else = {
-				debug_log = "Holy Site failed to get an assigned scope slot!"
-				debug_log_scopes = yes
-			}
-		}	
-		save_temporary_scope_value_as = {
-			name = has_set_up_pilgrimage_sites
-			value = yes
-		}
-	}
-	# Debug checks:
-	if = {
-		limit = { NOT = { exists = scope:holy_site_1 } }
-		debug_log = "No holy sites found in faith! (Except possibly mecca)"
-		root.faith = {
-			save_scope_as = current_faith
-		}
-		debug_log_scopes = yes
-	}
-#}
+# 			else_if = {
+# 				limit = {
+# 					NOT = { exists = scope:saint_site_9 }
+# 				}
+# 				save_scope_as = saint_site_9
+# 			}
+# 			else = {
+# 				debug_log = "Holy Site failed to get an assigned scope slot!"
+# 				debug_log_scopes = yes
+# 			}
+# 		}	
+# 		save_temporary_scope_value_as = {
+# 			name = has_set_up_pilgrimage_sites
+# 			value = yes
+# 		}
+# 	}
+# 	# Debug checks:
+# 	if = {
+# 		limit = { NOT = { exists = scope:holy_site_1 } }
+# 		debug_log = "No holy sites found in faith! (Except possibly mecca)"
+# 		root.faith = {
+# 			save_scope_as = current_faith
+# 		}
+# 		debug_log_scopes = yes
+# 	}
+# #}
 
 set_up_saint_sites_for_selection_effect = {	
 	random_province = {
