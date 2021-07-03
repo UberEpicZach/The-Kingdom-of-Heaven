@@ -202,6 +202,12 @@ KoH_saladin.2 = {
 	
 	theme = war
 	
+	trigger = {
+		NOT = {
+			exists = global_var:SaladinEventTrigger
+		}
+	}
+
 	left_portrait = {
 		character = ROOT
 		animation = personality_bold
@@ -225,6 +231,8 @@ KoH_saladin.2 = {
 			}
 			location = capital_province
 		}
+
+		set_global_variable = SaladinEventTrigger
 	}
 }
 

@@ -5,9 +5,9 @@
 
 types KohButtons
 {
-    type button_frontend2 = button_normal
+    type button_frontendcontinue = button_normal
     {
-        texture = "gfx/interface/buttons/button_frontend2.png"
+        #texture = "gfx/interface/buttons/button_frontendcontinue.png"
         size = { 310 55 }
         gfxtype = framedbuttongfx
         effectname = "NoHighlight"
@@ -15,15 +15,15 @@ types KohButtons
         overframe = 2
         downframe = 3
         framesize = { 391 69 }
-
+ 
 
         buttonText = {
             text_single = {
                 size = { 100% 100% }
                 autoresize = no
                 margin = { 10 0 }
-                align = center|nobaseline
-                default_format = "#clickable"
+                align = left|nobaseline
+                default_format = "#light_background"
                 using = Font_Size_Medium
             }
         }
@@ -32,7 +32,7 @@ types KohButtons
 
     type button_frontendLoad = button_normal
     {
-        texture = "gfx/interface/buttons/button_frontend2.png"
+        #texture = "gfx/interface/buttons/button_frontendLoad.png"
         size = { 310 55 }
         gfxtype = framedbuttongfx
         effectname = "NoHighlight"
@@ -47,8 +47,133 @@ types KohButtons
                 size = { 100% 100% }
                 autoresize = no
                 margin = { 10 0 }
-                align = center|nobaseline
-                default_format = "#clickable"
+                align = left|nobaseline
+                default_format = "#light_background"
+                using = Font_Size_Medium
+            }
+        }
+
+    }
+
+    type button_frontendNewGame = button_normal
+    {
+        #texture = "gfx/interface/buttons/button_frontendNewGame.png"
+        size = { 315 55 }
+        gfxtype = framedbuttongfx
+        effectname = "NoHighlight"
+        upframe = 1
+        overframe = 2
+        downframe = 3
+        framesize = { 391 69 }
+
+
+        buttonText = {
+            text_single = {
+                size = { 100% 100% }
+                autoresize = no
+                margin = { 10 0 }
+                align = left|nobaseline
+                default_format = "#light_background"
+                using = Font_Size_Medium
+            }
+        }
+
+    }
+
+    type button_frontendLoad = button_normal
+    {
+        size = { 310 55 }
+        gfxtype = framedbuttongfx
+        effectname = "NoHighlight"
+        upframe = 1
+        overframe = 2
+        downframe = 3
+        framesize = { 391 69 }
+
+
+        buttonText = {
+            text_single = {
+                size = { 100% 100% }
+                autoresize = no
+                margin = { 10 0 }
+                align = left|nobaseline
+                default_format = "#light_background"
+                using = Font_Size_Medium
+            }
+        }
+
+    }
+
+    type button_frontendHost = button_normal
+    {
+       # texture = "gfx/interface/buttons/button_frontendhost.png"
+        size = { 310 55 }
+        gfxtype = framedbuttongfx
+        effectname = "NoHighlight"
+        upframe = 1
+        overframe = 2
+        downframe = 3
+        framesize = { 391 69 }
+
+
+
+        buttonText = {
+            text_single = {
+                size = { 100% 100% }
+                autoresize = no
+                margin = { 10 0 }
+                align = left|nobaseline
+                default_format = "#light_background"
+                using = Font_Size_Medium
+            }
+        }
+
+    }
+
+    type button_frontendJoin = button_normal
+    { 
+        #texture = "gfx/interface/buttons/button_frontendJoin.png"
+        size = { 310 56 }
+        gfxtype = framedbuttongfx
+        effectname = "NoHighlight"
+        upframe = 1
+        overframe = 3
+        downframe = 3
+        framesize = { 391 69 }
+
+
+        buttonText = {
+            text_single = {
+                size = { 100% 100% }
+                autoresize = no
+                margin = { 10 0 }
+                align = left|nobaseline
+                default_format = "#light_background"
+                using = Font_Size_Medium
+            }
+        }
+
+    }
+
+    type button_frontendExit = button_normal
+    {
+        #texture = "gfx/interface/buttons/button_frontendExit.png"
+        size = { 310 55 }
+        gfxtype = framedbuttongfx
+        effectname = "NoHighlight"
+        upframe = 1
+        overframe = 2
+        downframe = 3
+        framesize = { 391 69 }
+
+
+        buttonText = {
+            text_single = {
+                size = { 100% 100% }
+                autoresize = no
+                margin = { 10 0 }
+                align = left|nobaseline
+                default_format = "#light_background"
                 using = Font_Size_Medium
             }
         }
@@ -58,10 +183,10 @@ types KohButtons
 
 
 
-    type button_frontend_koh_active = button_frontend2 {
+    type button_frontend_koh_active = button_frontendcontinue {
 		font = KoHFontType
 		default_format = "#high"
-		fontsize = 20
+		fontsize = 70
 		state = {
 			name = _mouse_hierarchy_enter
 			on_start = "[PdxGuiInterruptThenTriggerAllAnimations('main_menu_glow_new_leave','main_menu_glow_new_enter')]"
@@ -71,10 +196,10 @@ types KohButtons
 			on_start = "[PdxGuiInterruptThenTriggerAllAnimations('main_menu_glow_new_enter','main_menu_glow_new_leave')]"
 		}
     }
-    type button_frontend_koh_inactive = button_frontend2 {
+    type button_frontend_koh_inactive = button_frontendcontinue {
 		font = KoHFontType
 		default_format = "#weak"
-		fontsize = 20
+		fontsize = 70
 		state = {
 			name = _mouse_hierarchy_enter
 			on_start = "[PdxGuiInterruptThenTriggerAllAnimations('main_menu_glow_new_leave','main_menu_glow_new_enter')]"
