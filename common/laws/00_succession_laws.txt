@@ -178,6 +178,12 @@
 		}
 		should_start_with = {
 			historical_succession_access_single_heir_succession_law_trigger = yes
+			culture = {
+				has_innovation = innovation_primogeniture
+			}
+		}
+		can_title_have = {
+			can_title_have_law_general_trigger = yes
 		}
 		succession = {
 			order_of_succession = inheritance
@@ -338,6 +344,23 @@
 			pool_character_config = pool_holy_order_succession
 		}
 	}
+
+	holy_order_county_succession_law = {
+		can_keep = {
+			can_have_holy_order_county_succession_law_trigger = yes
+		}
+		can_have = {
+			can_have_holy_order_county_succession_law_trigger = yes
+		}
+		should_start_with = {
+			has_government = holy_order_county_government
+		}
+		succession = {
+			order_of_succession = theocratic
+			faith = same_faith
+			pool_character_config = pool_holy_order_succession
+		}
+	}
 	
 	mercenary_company_succession_law = {
 		can_keep = {
@@ -366,11 +389,29 @@
 			has_government = republic_government
 		}
 		succession = {
+			order_of_succession = inheritance
+			traversal_order = children
+			rank = oldest
+			title_division = single_heir
+		}
+	}
+
+	imperial_city_succession_law = {
+		can_keep = {
+			can_have_imperial_city_succession_law_trigger = yes
+		}
+		can_have = {
+			can_have_imperial_city_succession_law_trigger = yes
+		}
+		should_start_with = {
+			has_government = free_imperial_city_government
+		}
+		succession = {
 			order_of_succession = generate
 			pool_character_config = pool_city_succession
 		}
 	}
-	##MYMO
+
 	monastic_succession_law = {
 		can_keep = {
 			can_have_monastic_succession_law_trigger = yes # same as can_have
@@ -388,7 +429,6 @@
 			pool_character_config = pool_monastic_succession
 		}
 	}
-	##MYMO
 }
 
 succession_gender_laws = {

@@ -74,7 +74,314 @@ character_view_bg = {
 	}
 	
 	##########################################
+
+	texture = {
+		reference = "terrain_types/forest.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = forest
+			}
+		}
+	}
 	
+	texture = {
+		reference = "terrain_types/plains.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = plains
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/steppe.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = steppe
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/taiga.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = taiga
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/wetlands.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = wetlands
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/oasis.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = oasis
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/mountains.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = mountains
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/jungle.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = jungle
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/hills.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = hills
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/floodplains.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = floodplains
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/farmlands.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = farmlands
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/drylands.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = drylands
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/desert.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = desert
+			}
+		}
+	}
+	
+	texture = {
+		reference = "terrain_types/desert_mountains.dds"
+
+		trigger = {
+			is_in_army = yes
+			exists = location
+			location = {
+				terrain = desert_mountains
+			}
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/feast.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			OR = {
+				has_trait = reveler_1
+				has_trait = reveler_2
+				has_trait = reveler_3
+			}
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/bedchamber.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			OR = {
+				has_trait = lustful
+				has_trait = seducer
+				has_trait = ill
+				has_trait = gout_ridden
+				has_trait = infirm
+				has_trait = pregnant
+				has_trait = rakish
+			}
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/forest.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			OR = {
+				has_trait = hunter_1
+				has_trait = hunter_2
+				has_trait = hunter_3
+			}
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/alley.dds"
+
+		trigger = {
+			has_trait = schemer
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/tavern.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			has_trait = drunkard
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/dungeon.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			has_trait = torturer
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/study_physician.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			OR = {
+				has_trait = physician_1
+				has_trait = physician_2
+				has_trait = physician_3
+			}
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/study.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			OR = {
+				learning >= high_skill_rating
+				has_trait = scholar
+			}
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/sittingroom.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			stewardship >= high_skill_rating
+		}
+	}
+
+	texture = {
+		reference = "event_scenes/corridor.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			intrigue >= high_skill_rating
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/councilchamber.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			diplomacy >= high_skill_rating
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/courtyard.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			martial >= high_skill_rating
+		}
+	}
+	
+	texture = {
+		reference = "event_scenes/church.dds"
+
+		trigger = {
+			religion = religion:christianity_religion
+			has_trait = theologian
+		}
+	}
+
 	# 'Feudal'/High-tier Norse, or non-Tribals in Scandinavia
 	texture = { # FP1 Norse
 		reference = "character_view/fp1_throneroom_nontribal.dds"
@@ -461,16 +768,9 @@ character_view_bg = {
 		}
 	}
 
-	##########################################
+		##########################################
 	# Mediterranean, regular
-	texture = {
-		reference = "character_view/mediterranean.dds"
-
-		trigger = {
-			has_graphical_mediterranean_region_trigger = yes
-		}
-	}
-
+	
 	environment = {
 		reference = "environment_cw_mediterranean_main"
 

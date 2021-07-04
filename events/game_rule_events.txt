@@ -1,7 +1,5 @@
 ﻿namespace = game_rule
 
-##MYMO avoids family generation for monastic courts
-
 # Generated families 	- 1001
 # Gender equality 		- 1010
 
@@ -65,106 +63,7 @@ game_rule.1 = { # De Jure Requirement
 ######################
 # GENERATED FAMILIES #
 ######################
-
-scripted_trigger only_ai_if_ai_only_trigger = {
-	trigger_if = {
-		limit = { has_game_rule = on_generate_families_ai_only }
-		is_ai = yes
-	}
-	trigger_else = {
-		always = yes
-	}
-}
-
-
-game_rule.1000 = {
-	type = empty
-	hidden = yes
-
-	trigger = {
-		OR = {
-			has_game_rule = on_generate_families
-			has_game_rule = on_generate_families_ai_only
-		}
-	}
-
-	immediate = {
-		every_independent_ruler = {
-			if = {
-				limit = { only_ai_if_ai_only_trigger = yes }
-				trigger_event = game_rule.1001
-			}
-			every_vassal_or_below = {
-				limit = { only_ai_if_ai_only_trigger = yes }
-				trigger_event = game_rule.1001
-			}
-		}
-	}
-}
-
-game_rule.1001 = { #by Mathilda Bjarnehed
-	type = character_event
-	hidden = yes
-	
-	trigger = {
-		is_from_ruler_designer = no # Do not modify the family of somoene from the ruler designer
-		#Is in need of family
-		NOT = {
-			exists = player_heir
-		}
-		#Allowed to get family
-		NOT = { # Otherwise historical characters sometimes generate inappropriate children
-			any_child = {
-				always = yes
-			}
-		}
-		NOR = {
-			has_trait = celibate
-			has_trait = eunuch
-		}
-		age >= 17 #Because you need ~1 year of pregnancy
-		is_landed = yes
-		primary_title = {
-			is_mercenary_company = no
-			is_holy_order = no
-		}
-		NOR = {
-			has_government = republic_government
-			has_government = theocracy_government
-			has_government = monastic_government ##MYMO
-			AND = {
-				exists = character:7757
-				this = character:7757 #Matilda Canossa, her bookmark start is about overcoming the issue of no heir
-			}
-		}
-	}
-
-	
-
-	immediate = {
-		if = {
-			limit = { faith = { has_doctrine_parameter = marriage_event } }
-			add_character_flag = ignore_marriage_event
-		}
-		game_rule_create_spouse_and_children = { CHARACTER = root }
-
-		#In case your created player heir is an older woman (past childbearing age or with a very short window)
-		if = {
-			limit = {
-				exists = player_heir
-				player_heir = {
-					is_female = yes
-					age >= 40
-				}
-				#Nothing else should need to be checked, they shouldn't be celibate or something like that
-			}
-			player_heir = {
-				save_scope_as = childless_heir
-			 	game_rule_create_spouse_and_children = { CHARACTER = scope:childless_heir }
-			}
-		}
-	}
-}
+#Gone Reduced to Atoms
 
 ########################
 # EXCLAVE INDEPENDENCE #
