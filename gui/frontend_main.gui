@@ -812,30 +812,6 @@ widget = {
 									expand = {
 										alwaystransparent = yes
 									}
-
-									coat_of_arms_icon = {
-										name = "realm_flag"
-										alwaystransparent = yes
-
-										size = { 62 62 }
-										coat_of_arms_slot = "[SaveGameItem.GetCoatOfArms.GetSlot('(int32)124','(int32)124')]"
-										coat_of_arms = "[SaveGameItem.GetCoatOfArms.GetTexture('(int32)124','(int32)124')]"
-										coat_of_arms_mask = "[SaveGameItem.GetPlayerGovernment.GetRealmMask]"
-
-										coa_realm_overlay  = {
-											texture = "[SaveGameItem.GetPlayerGovernment.GetRealmFrame('(int32)62')]"
-											frame = "[SaveGameItem.GetPlayerTier]"
-											framesize = { 62 71 }
-											size = { 62 71 }
-										}
-
-										coa_realm_topframe  = {
-											texture = "gfx/interface/coat_of_arms/topframe_62.dds"
-											frame = "[SaveGameItem.GetPlayerTier]"
-											framesize = { 62 71 }
-											size = { 62 71 }
-										}
-									}
 								}
 							}
 						}
@@ -846,6 +822,7 @@ widget = {
 							fontsize = 70
 							default_format = "#light_background"
 							onclick = "[FrontEndMainView.OnNewGame]"
+							tooltip = "Start a New Game"
 
 							state = {
 								name = _mouse_hierarchy_enter
@@ -878,6 +855,7 @@ widget = {
 								text = "LOAD"
 								 fontsize = 70
 								onclick = "[FrontEndMainView.OnLoad]"
+								tooltip = "Load a Game Save"
 
 								state = {
 									name = _mouse_hierarchy_enter
@@ -1012,6 +990,7 @@ widget = {
 						text = "EXIT_TO_DESKTOP"
 						fontsize = 70
 						onclick = "[FrontEndMainView.OnQuit]"
+						tooltip = "Edit to Desktop"
 
 						state = {
 							name = _mouse_hierarchy_enter
