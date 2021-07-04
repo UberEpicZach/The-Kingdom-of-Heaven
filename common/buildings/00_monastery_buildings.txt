@@ -44,7 +44,8 @@ monastery_01 = {
 	next_building = monastery_02
 	
 	levy = poor_building_levy_tier_1
-	garrison = normal_building_garrison_tier_1
+	max_garrison = normal_building_max_garrison_tier_1
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_1
 	province_modifier = {
 		monthly_income = normal_building_tax_tier_2
 	}
@@ -106,7 +107,8 @@ monastery_02 = {
 	next_building = monastery_03
 	
 	levy = poor_building_levy_tier_2
-	garrison = normal_building_garrison_tier_2
+	max_garrison = normal_building_max_garrison_tier_2
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_2
 	province_modifier = {
 		monthly_income = normal_building_tax_tier_4
 	}
@@ -160,7 +162,8 @@ monastery_03 = {
 	next_building = monastery_04
 	
 	levy = poor_building_levy_tier_3
-	garrison = normal_building_garrison_tier_3
+	max_garrison = normal_building_max_garrison_tier_3
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_2 # In Vanilla garrison_reinforcement_factor is lower than max_garrison
 	province_modifier = {
 		monthly_income = normal_building_tax_tier_6
 	}
@@ -211,7 +214,8 @@ monastery_04 = {
 	}
 	
 	levy = poor_building_levy_tier_4
-	garrison = normal_building_garrison_tier_4
+	max_garrison = normal_building_max_garrison_tier_4
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_3 # In Vanilla garrison_reinforcement_factor is lower than max_garrison
 	province_modifier = {
 		monthly_income = normal_building_tax_tier_8
 	}
