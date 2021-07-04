@@ -22,35 +22,6 @@
 				is_pool_guest_of = scope:actor
 			}
 		}
-		scope:actor = {
-			OR = {
-				NOT = {
-					republic_has_senate_form = yes
-					republic_has_council_form = yes
-				}
-				AND = {
-					OR = {
-						republic_has_senate_form = yes
-						republic_has_council_form = yes
-					}
-					primary_title = {
-						any_in_list = {
-							variable = valid_grant_targets_list
-							this = scope:recipient
-						}
-					}
-				}
-				AND = {
-					OR = {
-						republic_has_senate_form = yes
-						republic_has_council_form = yes
-					}
-					primary_title = {
-						exists = var:leaders_discretion_title_granting
-					}
-				}
-			}
-		}
 	}
 	
 	is_valid_showing_failures_only = {
@@ -158,17 +129,6 @@
 	}
 	
 	on_accept = {
-		scope:actor = {
-			if = {
-				limit = { holds_valid_merchant_republic = yes }
-				primary_title = {
-					remove_list_variable = {
-						name = valid_grant_targets_list
-						target = scope:recipient
-					}
-				}
-			}
-		}
 		every_in_list = {
 			list = target_titles
 			save_temporary_scope_as = this_title
