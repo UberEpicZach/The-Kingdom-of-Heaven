@@ -4342,58 +4342,49 @@ french_war = {
 		}
 	}	
 
-italian_war = {
-	dna_modifiers = {
+	italian_war = {
+		dna_modifiers = {
 
-		morph = {
-			mode = add
-			
-			gene = gene_bs_ear_outward
-			template = ear_outward_neg
-			value = 1.0
-		}		
-	
-		accessory = {
-			mode = add
-			gene = headgear
-			template = italian_war
-			range = { 0 1 } # For the randomness to work correctly
-		}
-	}	
-	weight = {
-		base = 0
-		modifier = {
-			add = 101 # larger than the western war headgear
-			portrait_wear_helmet_trigger = yes
-			portrait_italian_clothing_trigger = yes
-			
-			NOR = {
-				AND = {
-					religion = religion:christianity_religion
-					has_government = holy_order_government
-				}
-				AND = {
-					religion = religion:christianity_religion
-					is_landed = no
-					portrait_wear_armor_trigger = yes
-					exists = liege
-					liege = {
+			morph = {
+				mode = add
+				
+				gene = gene_bs_ear_outward
+				template = ear_outward_neg
+				value = 1.0
+			}		
+		
+			accessory = {
+				mode = add
+				gene = headgear
+				template = italian_war
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101 # larger than the western war headgear
+				portrait_wear_helmet_trigger = yes
+				portrait_italian_clothing_trigger = yes
+				
+				NOR = {
+					AND = {
+						religion = religion:christianity_religion
 						has_government = holy_order_government
 					}
-				}
-				AND = {
-					religion = religion:christianity_religion
-					portrait_wear_armor_trigger = yes
-					OR = {
-						any_character_war = {
-							OR = {
-								using_cb = undirected_great_holy_war
-								using_cb = directed_great_holy_war
-							}
-							is_attacker = prev
+					AND = {
+						religion = religion:christianity_religion
+						is_landed = no
+						portrait_wear_armor_trigger = yes
+						exists = liege
+						liege = {
+							has_government = holy_order_government
 						}
-						any_liege_or_above = {
-							faith = prev.faith
+					}
+					AND = {
+						religion = religion:christianity_religion
+						portrait_wear_armor_trigger = yes
+						OR = {
 							any_character_war = {
 								OR = {
 									using_cb = undirected_great_holy_war
@@ -4401,90 +4392,90 @@ italian_war = {
 								}
 								is_attacker = prev
 							}
+							any_liege_or_above = {
+								faith = prev.faith
+								any_character_war = {
+									OR = {
+										using_cb = undirected_great_holy_war
+										using_cb = directed_great_holy_war
+									}
+									is_attacker = prev
+								}
+							}
 						}
 					}
 				}
 			}
 		}
 	}
-}
-###Italian war helmet closed face	
-italian_war_closed = {
-	dna_modifiers = {
-	
-		morph = {
-			mode = add
-			
-			gene = gene_bs_ear_outward
-			template = ear_outward_neg
-			value = 1.0
-		}
-		morph = {
-			mode = modify
-			gene = gene_chin_forward
-			template = chin_forward_neg
-			value = -1.0
-	
-		}
-		morph = {
-			mode = modify
-			gene = gene_jaw_forward
-			template = jaw_forward_pos
-			value = -1.0
-		}			
-		morph = {
-			mode = modify_multiply				
-			gene = gene_bs_nose_forward
-			template = nose_forward_neg				
-			value = 1.0
-		}		
-		accessory = {
-			mode = add
-			gene = headgear
-			template = italian_war_closed
-			range = { 0 1 } # For the randomness to work correctly
-		}			
-	}	
-	weight = {
-		base = 0
-		modifier = {
-			add = 101
-			NOT = { is_female = yes }				
-			portrait_wear_helmet_trigger = yes
-			EPE_culture_era_late_medieval_trigger = yes
-			NOT = { has_game_rule = never_epe_fullplate_helmets }						
-			OR = {
-			portrait_italian_clothing_trigger = yes
-				portrait_norman_sicily_knights_clothing_trigger = yes							
+	###Italian war helmet closed face	
+	italian_war_closed = {
+		dna_modifiers = {
+		
+			morph = {
+				mode = add
+				
+				gene = gene_bs_ear_outward
+				template = ear_outward_neg
+				value = 1.0
 			}
-			
-			NOR = {
-				AND = {
-					religion = religion:christianity_religion
-					has_government = holy_order_government
+			morph = {
+				mode = modify
+				gene = gene_chin_forward
+				template = chin_forward_neg
+				value = -1.0
+		
+			}
+			morph = {
+				mode = modify
+				gene = gene_jaw_forward
+				template = jaw_forward_pos
+				value = -1.0
+			}			
+			morph = {
+				mode = modify_multiply				
+				gene = gene_bs_nose_forward
+				template = nose_forward_neg				
+				value = 1.0
+			}		
+			accessory = {
+				mode = add
+				gene = headgear
+				template = italian_war_closed
+				range = { 0 1 } # For the randomness to work correctly
+			}			
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+				NOT = { is_female = yes }				
+				portrait_wear_helmet_trigger = yes
+				EPE_culture_era_late_medieval_trigger = yes
+				NOT = { has_game_rule = never_epe_fullplate_helmets }						
+				OR = {
+				portrait_italian_clothing_trigger = yes
+					portrait_norman_sicily_knights_clothing_trigger = yes							
 				}
-				AND = {
-					religion = religion:christianity_religion
-					is_landed = no
-					portrait_wear_armor_trigger = yes
-					exists = liege
-					liege = {
+				
+				NOR = {
+					AND = {
+						religion = religion:christianity_religion
 						has_government = holy_order_government
 					}
-				}
-				AND = {
-					religion = religion:christianity_religion
-					portrait_wear_armor_trigger = yes
-					OR = {
-						any_character_war = {
-							OR = {
-								using_cb = undirected_great_holy_war
-								using_cb = directed_great_holy_war
-							}
-							is_attacker = prev
+					AND = {
+						religion = religion:christianity_religion
+						is_landed = no
+						portrait_wear_armor_trigger = yes
+						exists = liege
+						liege = {
+							has_government = holy_order_government
 						}
-						any_liege_or_above = {
-							faith = prev.faith
+					}
+					AND = {
+						religion = religion:christianity_religion
+						portrait_wear_armor_trigger = yes
+						OR = {
 							any_character_war = {
 								OR = {
 									using_cb = undirected_great_holy_war
@@ -4492,136 +4483,145 @@ italian_war_closed = {
 								}
 								is_attacker = prev
 							}
+							any_liege_or_above = {
+								faith = prev.faith
+								any_character_war = {
+									OR = {
+										using_cb = undirected_great_holy_war
+										using_cb = directed_great_holy_war
+									}
+									is_attacker = prev
+								}
+							}
 						}
 					}
 				}
 			}
 		}
-	}
-}		
+	}		
 
-baldwin = {
-	dna_modifiers = {
-		accessory = {
-			mode = add
-			gene = baldwin_face_mask
-			template = face_mask
-			#value = 1.0
-			range = { 1 1 } # For the randomness to work correctly
+	baldwin = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = baldwin_face_mask
+				template = face_mask
+				#value = 1.0
+				range = { 1 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = sub_saharan_imperial
+				range = { 1 1 } # For the randomness to work correctly
+			}
 		}
-		accessory = {
-			mode = add
-			gene = headgear
-			template = sub_saharan_imperial
-			range = { 1 1 } # For the randomness to work correctly
-		}
-	}
-	weight = {
-		base = 0
-		modifier = {
-			add = 30
-			portrait_baldwin_trigger = yes
-			is_female = no
-		}
-		modifier = {
-			add = 130
-			this = character:223523
-		}
-	}
-}
-saladin = {
-	dna_modifiers = {
-		accessory = {
-			mode = add
-			gene = headgear
-			template = ayyubid_royalty_war 
-			#value = 100
-			range = { 1 1 } # For the randomness to work correctly
+		weight = {
+			base = 0
+			modifier = {
+				add = 30
+				portrait_baldwin_trigger = yes
+				is_female = no
+			}
+			modifier = {
+				add = 130
+				this = character:223523
+			}
 		}
 	}
-	weight = {
-		base = 0
-		modifier = {
-			add = 30
-			portrait_saladin_trigger = yes
-			is_female = no
+	saladin = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgearKOH
+				template = ayyubid_royalty_war 
+				#value = 100
+				range = { 1 1 } # For the randomness to work correctly
+			}
 		}
-		modifier = {
-			add = 130
-			this = character:226000
-		}
-	}
-}
-richard = {
-	dna_modifiers = {
-		accessory = {
-			mode = add
-			gene = headgear
-			template = royal_helmet 
-			range = { 0 1 } # For the randomness to work correctly
-		}
-	}
-	weight = {
-		base = 0
-		modifier = {
-			add = 30
-			portrait_richard_trigger = yes
-			portrait_wear_armor_trigger = yes
-			is_female = no
-		}
-		modifier = {
-			add = 130
-			portrait_wear_armor_trigger = yes
-			this = character:204510
+		weight = {
+			base = 0
+			modifier = {
+				add = 30
+				portrait_saladin_trigger = yes
+				is_female = no
+			}
+			modifier = {
+				add = 130
+				this = character:226000
+			}
 		}
 	}
-}
-altair = {
-	dna_modifiers = {
-		accessory = {
-			mode = add
-			gene = headgear
-			template = western_stealth
-			#value = 100
-			range = { 1 1 } # For the randomness to work correctly
+	richard = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgearKOH
+				template = royal_helmet 
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 30
+				portrait_richard_trigger = yes
+				portrait_wear_armor_trigger = yes
+				is_female = no
+			}
+			modifier = {
+				add = 130
+				portrait_wear_armor_trigger = yes
+				this = character:204510
+			}
 		}
 	}
-	weight = {
-		base = 0
-		modifier = {
-			add = 30
-			portrait_altair_trigger = yes
-			is_female = no
+	altair = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = western_stealth
+				#value = 100
+				range = { 1 1 } # For the randomness to work correctly
+			}
 		}
-		modifier = {
-			add = 130
-			this = character:KOH0030
-		}
-	}
-}
-sinan = {
-	dna_modifiers = {
-		accessory = {
-			mode = add
-			gene = headgear
-			template = western_stealth
-			#value = 100
-			range = { 1 1 } # For the randomness to work correctly
-		}
-	}
-	weight = {
-		base = 0
-		modifier = {
-			add = 30
-			portrait_sinan_trigger = yes
-			is_female = no
-		}
-		modifier = {
-			add = 130
-			this = character:227012
+		weight = {
+			base = 0
+			modifier = {
+				add = 30
+				portrait_altair_trigger = yes
+				is_female = no
+			}
+			modifier = {
+				add = 130
+				this = character:KOH0030
+			}
 		}
 	}
-}
+	sinan = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = western_stealth
+				#value = 100
+				range = { 1 1 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 30
+				portrait_sinan_trigger = yes
+				is_female = no
+			}
+			modifier = {
+				add = 130
+				this = character:227012
+			}
+		}
+	}
 }
 
 
