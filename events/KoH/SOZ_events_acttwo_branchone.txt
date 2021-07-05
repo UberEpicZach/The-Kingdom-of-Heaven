@@ -24,7 +24,6 @@ soz_acttwo_branchone.1 = {
 
 	option = {                                        # Saladin offers a 100 gold
 		name = soz_acttwo_branchone.1.a
-		custom_tooltip = soz_acttwo_branchone.1.tt
 		trigger_event = soz_acttwo_branchone.2
 	}
 
@@ -48,7 +47,6 @@ soz_acttwo_branchone.2 = {
 
 	option = {                                        # Saladin says it is what Nur Al Din would have wanted (normal response)
 		name = soz_acttwo_branchone.2.a
-		custom_tooltip = soz_acttwo_branchone.2.tt
 		pay_short_term_gold = {
 			target = scope:recipient
 			gold = scope:actor.minor_gold_value
@@ -60,7 +58,7 @@ soz_acttwo_branchone.2 = {
 	}
 
 	option = {                                        # Saladin says the ummah needs a lot more! (fanatic response)
-		name = soz_acttwo_branchone.2.a
+		name = soz_acttwo_branchone.2.b
 		custom_tooltip = soz_acttwo_branchone.2.tt
 		pay_short_term_gold = {
 			target = scope:recipient
