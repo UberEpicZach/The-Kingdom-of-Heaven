@@ -138,6 +138,7 @@ KoH_balians_adventure.4 = {
 		if = {
 			limit = {
 				AND = {
+					this = character:223570
 					is_ai = no
 				}
 			}
@@ -190,7 +191,10 @@ KoH_balians_adventure.5 = {
 		}
 		if = {
 			limit = {
-				is_ai = no
+				AND = {
+					this = character:223570
+					is_ai = no
+				}
 			}
 			pan_camera_to_title = title:b_nevers
 			}
@@ -248,8 +252,11 @@ KoH_balians_adventure.6 = {
 
 			if = {
 				limit = {
-					is_ai = no
-					}
+					AND = {
+						this = character:223570
+						is_ai = no
+					}	
+				}
 				pan_camera_to_title = title:b_ambert
 					}
 			}	
@@ -481,11 +488,14 @@ KoH_balians_adventure.10 = {
 		}
 		if = {
 			limit = {
-				is_ai = no
-				}
+				AND = {
+					this = character:223570
+					is_ai = no
+				}	
+			}
 			pan_camera_to_title = title:b_chiusi
-				}
 		}
+	}
 
 	option = {
 		name = KoH_balians_adventure.10.a
@@ -533,8 +543,11 @@ KoH_balians_adventure.11 = {
 		}
 		if = {
 			limit = {
-				is_ai = no
-				}
+				AND = {
+					this = character:223570
+					is_ai = no
+				}	
+			}
 			pan_camera_to_title = title:b_messina
 			}
 		}
@@ -633,9 +646,12 @@ KoH_balians_adventure.13 = {
 		}
 		if = {
 			limit = {
-				is_ai = no
-				}
-				pan_camera_to_province = province:8663
+				AND = {
+					this = character:223570
+					is_ai = no
+				}	
+			}
+			pan_camera_to_province = province:8663
 			}	
 		}	
 
@@ -681,8 +697,11 @@ KoH_balians_adventure.14 = {
 		}
 		if = {
 			limit = {
-				is_ai = no
-				}
+				AND = {
+					this = character:223570
+					is_ai = no
+				}	
+			}
 				pan_camera_to_province = province:6038
 			}	
 		create_character = {
@@ -1004,8 +1023,11 @@ KoH_balians_adventure.20 = {
 		}
 		if = {
 			limit = {
-				is_ai = no
-				}
+				AND = {
+					this = character:223570
+					is_ai = no
+				}	
+			}
 				pan_camera_to_province = province:5965
 			}
 		reverse_add_opinion = {
@@ -1076,9 +1098,12 @@ KoH_balians_adventure.21 = {
 		}
 		if = {
 			limit = {
-				is_ai = no
-				}
-				pan_camera_to_province = province:5965
+				AND = {
+					this = character:223570
+					is_ai = no
+				}	
+			}
+			pan_camera_to_province = province:5965
 			}
 	}
 	option = {
@@ -1138,10 +1163,13 @@ KoH_balians_adventure.22 = {
 		}
 		if = {
 			limit = {
-				is_ai = no
-				}
-				pan_camera_to_province = province:5965
+				AND = {
+					this = character:223570
+					is_ai = no
+				}	
 			}
+			pan_camera_to_province = province:5965
+		}
 	}	
 	option = {
 		name = KoH_balians_adventure.22.a

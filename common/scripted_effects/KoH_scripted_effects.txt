@@ -485,4 +485,60 @@ KOH_jihad_vassals = {
 			scope:war = { add_defender = PREV }
 		}
 	}
+	title:e_arabia.holder = {
+		every_character_war = {
+			limit = {
+				using_cb = KOH_jihad
+				primary_defender = title:k_jerusalem.holder
+				primary_attacker = title:e_arabia.holder
+			}
+			save_scope_as = war
+		}
+		every_vassal = {
+			scope:war = { add_attacker = PREV }
+		}
+	}
+}
+
+KOH_flanders_vassals = {
+	title:k_france.holder = {
+		every_character_war = {
+			limit = {
+				using_cb = KOH_flemish_cb
+				primary_defender = title:d_flanders.holder
+				primary_attacker = title:k_france.holder
+			}
+			save_scope_as = war
+		}
+		every_vassal = {
+			limit = {
+				NOT = {
+					every_character_war = {
+						limit = {
+							using_cb = KOH_French_Revolt
+						}
+					}
+				}
+			}
+			scope:war = { add_attacker = PREV }
+		}
+	}
+}
+
+FrenchStuff = {
+	title:e_france = {
+		every_in_de_jure_hierarchy = {
+			limit = {
+				AND = {
+					tier = tier_duchy
+					holder = {
+						top_liege = title:k_england.holder
+					}
+				}
+			}
+			title:k_france.holder = {
+				add_pressed_claim = PREV
+			}
+		}
+	}
 }

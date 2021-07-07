@@ -166,6 +166,11 @@ KOH_flemish_war.4 = {
 		add_character_flag = {
 			flag = had_event_flemish_war.4
 		}
+
+		add_character_flag = {
+			flag = philip_beat_revolt_2
+		}
+
         character:91081 = {
             save_scope_as = Vermandois
         }
@@ -275,6 +280,7 @@ KOH_flemish_war.5 = {
             }
             save_scope_as = Flanders
 		}
+		set_global_variable = end_philip_on_action
 	}
 
 	#Reclaim control of Flanders, Flanders keeps all d_flanders
@@ -345,6 +351,7 @@ KOH_flemish_war.6 = {
             }
             save_scope_as = Flanders
 		}
+		set_global_variable = end_philip_on_action
 	}
 
 	#Flanders stays independent, Vermandois to family
@@ -371,5 +378,65 @@ KOH_flemish_war.6 = {
 			add_pressed_claim = c_valois
 			add_pressed_claim = c_amiens
 		}
+	}
+}
+
+KOH_flemish_war.7 = {
+	type = character_event
+	title = flemish.war.7.t
+	desc = flemish.war.7.desc
+	theme = crown
+
+	left_portrait = {
+		character = Root
+		animation = worry
+	}
+
+	trigger = {
+		character:205506 = {is_alive = yes }
+		NOT = { has_character_flag = had_event_flemish_war.7}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_flemish_war.7
+		}
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_france
+                }
+            }
+            save_scope_as = France
+		}
+	}
+
+	#Gain Nickname Augustus
+	option = {
+		name = flemish.war.7.a
+		custom_tooltip = flemish.war.7.a.tt
+		
+		title:e_france = {
+			every_in_de_jure_hierarchy = {
+				limit = {
+					AND = {
+						tier = tier_kingdom
+						   holder = {
+							top_liege = title:k_england.holder
+						}
+					}
+				}
+				title:k_france.holder = {
+					add_pressed_claim = PREV
+				}
+			}
+		}
+
+		title:k_france = {
+			set_title_name = FRANCE 
+		}
+		add_trait = augustus_of_the_french
+
+		set_nickname_effect = { NICKNAME = nick_augustus }
 	}
 }
