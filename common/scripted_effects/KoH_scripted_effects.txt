@@ -502,25 +502,21 @@ KOH_jihad_vassals = {
 
 KOH_flanders_vassals = {
 	title:k_france.holder = {
-		every_character_war = {
-			limit = {
-				using_cb = KOH_flemish_cb
-				primary_defender = title:d_flanders.holder
-				primary_attacker = title:k_france.holder
+	
+		spawn_army = {
+			name = "Army of Paris"
+			levies = 3000
+			men_at_arms = {
+				type = teutonic_knights
+				stacks = 10
 			}
-			save_scope_as = war
-		}
-		every_vassal = {
-			limit = {
-				NOT = {
-					every_character_war = {
-						limit = {
-							using_cb = KOH_French_Revolt
-						}
-					}
-				}
+			men_at_arms = {
+				type = armored_horsemen
+				stacks = 10
 			}
-			scope:war = { add_attacker = PREV }
+			location = title:k_france.holder.capital_province
+			uses_supply = no
+			inheritable = no
 		}
 	}
 }

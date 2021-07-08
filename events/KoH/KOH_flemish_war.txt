@@ -32,6 +32,37 @@ KOH_flemish_war.1 = {
 		add_character_flag = {
 			flag = had_event_flemish_war.1
 		}
+
+		if = {
+			limit = {
+				title:k_france.holder = {
+					is_ai = yes
+					is_at_war = yes
+					any_character_war = {
+						using_cb = KOH_flemish_cb
+					}	
+				}
+				title:d_flanders.holder = {
+					is_ai = yes
+					is_at_war = yes
+					any_character_war = {
+						using_cb = KOH_flemish_cb
+					}
+					
+				}
+				title:d_lower_lorraine.holder = {
+					is_ai = yes
+					is_at_war = yes
+					any_character_war = {
+						using_cb = KOH_flemish_cb
+					}
+				}
+			}
+			trigger_event = {
+				id = KOH_flemish_war.31
+				days = 360
+			}
+		}
 	}
 
 	#Grudgingly admit you've been outplayed
@@ -139,6 +170,30 @@ KOH_flemish_war.3 = {
 
 		root = {
 			add_diplomacy_skill = 2
+		}
+	}
+}
+
+
+KOH_flemish_war.31 = {
+	hidden = yes
+
+	trigger = {
+		NOT = { has_character_flag = had_event_flemish_war.31 }
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_flemish_war.31
+		}
+
+		title:k_france.holder = {
+			every_character_war = {
+				limit = {
+					using_cb = KOH_flemish_cb
+				}
+				remove_participant = title:d_lower_lorraine.holder
+			}	
 		}
 	}
 }
@@ -416,21 +471,7 @@ KOH_flemish_war.7 = {
 		name = flemish.war.7.a
 		custom_tooltip = flemish.war.7.a.tt
 		
-		title:e_france = {
-			every_in_de_jure_hierarchy = {
-				limit = {
-					AND = {
-						tier = tier_kingdom
-						   holder = {
-							top_liege = title:k_england.holder
-						}
-					}
-				}
-				title:k_france.holder = {
-					add_pressed_claim = PREV
-				}
-			}
-		}
+		FrenchStuff = yes
 
 		title:k_france = {
 			set_title_name = FRANCE 
