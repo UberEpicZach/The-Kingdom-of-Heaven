@@ -818,7 +818,8 @@ headgear = {
 				template = western_war
 				range = { 0 1 } # For the randomness to work correctly
 			}
-		}	
+		}
+		outfit_tags = { war_outfit }	
 		weight = {
 			base = 0
 			modifier = {
@@ -4502,6 +4503,24 @@ french_war = {
 
 	baldwin = {
 		dna_modifiers = {
+			morph = {
+				mode = modify
+				gene = gene_bs_forehead_brow_forward
+				template = forehead_brow_forward_neg
+				value = -1.0
+			}
+			morph = {
+				mode = modify
+				gene = gene_bs_eye_upper_lid_size
+				template = eye_upper_lid_size_neg
+				value = -1.0
+			}
+			morph = {
+				mode = modify
+				gene = gene_bs_eye_fold_shape
+				template = eye_fold_shape_pos
+				value = -1.0
+			}		
 			accessory = {
 				mode = add
 				gene = baldwin_face_mask

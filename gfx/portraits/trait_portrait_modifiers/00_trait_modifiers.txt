@@ -317,6 +317,10 @@ leprosy = {
 	leprosy = {
 		trigger = {
 			should_show_disturbing_portrait_modifiers = yes
+
+			NOT = {
+				has_trait = leper_king
+			}
 		}
 		traits = {
 			leper

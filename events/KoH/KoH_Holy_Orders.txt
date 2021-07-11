@@ -1,4 +1,4 @@
-﻿namespace = KoH_holy_orders
+namespace = KoH_holy_orders
 
 #Title Cleanup
 #Templar Holdings
@@ -1166,8 +1166,6 @@ KoH_holy_orders.103 = {
 			add_claim_on_loss = no
 		}
 		scope:new_title = {
-			set_landless_title = yes
-			set_delete_on_destroy = yes
 			set_no_automatic_claims = yes
 			set_definitive_form = yes
 			set_can_be_named_after_dynasty = no
@@ -1175,7 +1173,10 @@ KoH_holy_orders.103 = {
 				holder = title:d_hashshashin.holder
 				change = scope:change
 			}
+
+			add_title_law = holy_order_succession_law
 		}
+
 		resolve_title_and_vassal_change = scope:change
 		scope:new_title = { 
 			set_coa = d_hashshashin
@@ -1229,5 +1230,3 @@ KoH_holy_orders.103 = {
 		give_assassins_castle = yes
 	}
 }
-
-Hello 
