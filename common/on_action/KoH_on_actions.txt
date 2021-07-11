@@ -5,7 +5,6 @@
 		KOH_Italian_Familes
 		#KOH_investiture
 		CardinalsTraits
-		KOH_Philip_Augustus
 	}
 }
 
@@ -155,7 +154,6 @@ on_game_start_after_lobby = {
 		KOH_holy_orders
 		MyMo_ongamestart
 		CardinalsTraits
-		KOH_Philip_Augustus
 	}
 }
 
@@ -278,6 +276,7 @@ on_pope_death = {
 		is_pope = yes
 	}
 	effect = {
+		give_nickname = nick_pope
 		update_preferatus = yes
 		#set_designated_heir = global_var:preferatus.story_owner
 		global_var:preferatus.story_owner = {depose = yes}

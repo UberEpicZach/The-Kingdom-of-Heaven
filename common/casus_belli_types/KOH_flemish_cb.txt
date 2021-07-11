@@ -197,6 +197,16 @@
 				id = KOH_flemish_war.5
 				days = 2
 			}
+
+			if = {
+				limit = { has_character_flag = starting_war_won }
+				trigger_event = { 
+					id = KOH_flemish_war.7
+					days = 10
+				}
+			 }
+			 else = { add_character_flag = starting_war_won }
+			}	
 		}
 
 		# press claims

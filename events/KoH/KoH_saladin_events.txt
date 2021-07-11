@@ -250,8 +250,24 @@ KoH_saladin.1 = {
 		}
 	}
 	
-	desc = { 
+	desc = {
+		desc = KoH_saladin.1.d2 
 		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						OR = {
+							title:k_jerusalem.holder = {
+								has_character_flag = GameToSaladin
+							}
+							title:k_jerusalem.holder = {
+								has_character_flag = PersonalPunish
+							}
+						}
+					}
+				}
+				desc = KoH_saladin.1.d2 
+			}
 			triggered_desc = {
 				trigger = {
 					title:k_jerusalem.holder = {
@@ -269,7 +285,6 @@ KoH_saladin.1 = {
 				desc = KoH_saladin.1.d3
 			}
 		}
-		desc = KoH_saladin.1.d2
 	}
 	
 	theme = faith
@@ -360,9 +375,9 @@ KoH_saladin.1 = {
 					primary_defender = title:k_jerusalem.holder
 					primary_attacker = title:e_arabia.holder
 				}
-			add_defender = global_var:templar_holy_order_title.holder
-			
-			add_defender = global_var:hospitaller_holy_order_title.holder
+				add_defender = global_var:templar_holy_order_title.holder
+				
+				add_defender = global_var:hospitaller_holy_order_title.holder
 			}
 		}
 	}

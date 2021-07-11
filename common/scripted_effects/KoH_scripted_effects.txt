@@ -443,6 +443,8 @@ KOH_Crusade_lose = {
 		}
 	}
 	resolve_title_and_vassal_change = scope:change
+
+	destroy_title = title:k_jerusalem
 }
 
 scripted_effect_popethingevent = {
@@ -523,30 +525,62 @@ give_assassins_castle = {
 }
 
 KOH_jihad_vassals = {
-	title:k_jerusalem.holder = {
-		every_character_war = {
-			limit = {
-				using_cb = KOH_jihad
-				primary_defender = title:k_jerusalem.holder
-				primary_attacker = title:e_arabia.holder
+	if = {
+		limit = {
+			title:k_jerusalem.holder = {
+				any_character_war = {
+					using_cb = KOH_jihad
+					primary_defender = title:k_jerusalem.holder
+					primary_attacker = title:e_arabia.holder
+				}
 			}
-			save_scope_as = war
 		}
-		every_vassal = {
-			scope:war = { add_defender = PREV }
+		title:k_jerusalem.holder = {
+			every_character_war = {
+				limit = {
+					using_cb = KOH_jihad
+					primary_defender = title:k_jerusalem.holder
+					primary_attacker = title:e_arabia.holder
+				}
+				save_scope_as = war1
+			}
+			if = {
+				limit = {
+					exists = scope:war1
+				}
+				every_vassal = {
+					scope:war1 = { add_defender = PREV }
+				}
+			}
 		}
 	}
-	title:e_arabia.holder = {
-		every_character_war = {
-			limit = {
-				using_cb = KOH_jihad
-				primary_defender = title:k_jerusalem.holder
-				primary_attacker = title:e_arabia.holder
+	if = {
+		limit = {
+			title:e_arabia.holder = {
+				any_character_war = {
+					using_cb = KOH_jihad
+					primary_defender = title:k_jerusalem.holder
+					primary_attacker = title:e_arabia.holder
+				}
 			}
-			save_scope_as = war
 		}
-		every_vassal = {
-			scope:war = { add_attacker = PREV }
+		title:e_arabia.holder = {
+			every_character_war = {
+				limit = {
+					using_cb = KOH_jihad
+					primary_defender = title:k_jerusalem.holder
+					primary_attacker = title:e_arabia.holder
+				}
+				save_scope_as = war2
+			}
+			if = {
+				limit = {
+					exists = scope:war2
+				}
+				every_vassal = {
+					scope:war2 = { add_attacker = PREV }
+				}
+			}
 		}
 	}
 }
