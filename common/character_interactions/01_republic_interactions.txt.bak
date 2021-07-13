@@ -52,6 +52,9 @@
 		scope:actor = {
 			is_ai = no
 		}
+		NOT = {
+			scope:recipient = scope:actor
+		}
 	}
 	
 	
@@ -93,27 +96,14 @@ request_war_interaction = {
 			NOT = {
 				is_at_war_with = scope:recipient
 			}
-			is_independent_ruler = yes
-			holds_valid_merchant_republic = yes
 			OR = {
 				republic_has_senate_form = yes
 				republic_has_council_form = yes
-				republic_has_bicameral_form = yes
 			}
 			primary_title = {
 				OR = {
 					exists = var:senate_vote_war_declaration
 					exists = var:council_approval_war_declaration
-					exists = var:both_houses_vote_war_declaration
-					exists = var:upper_house_vote_war_declaration
-					exists = var:lower_house_vote_war_declaration
-				}
-				OR = {
-					has_variable = senate_vote_war_declaration
-					has_variable = council_approval_war_declaration
-					has_variable = both_houses_vote_war_declaration
-					has_variable = upper_house_vote_war_declaration
-					has_variable = lower_house_vote_war_declaration
 				}
 				NOT = {
 					any_in_list = {
@@ -166,27 +156,14 @@ request_title_grants_interaction = {
 			NOT = {
 				is_at_war_with = scope:recipient
 			}
-			is_independent_ruler = yes
 			OR = {
 				republic_has_senate_form = yes
-				republic_has_bicameral_form = yes
 				republic_has_council_form = yes
 			}
 			primary_title = {
 				OR = {
 					exists = var:senate_vote_title_granting
 					exists = var:council_approval_title_granting
-					exists = var:both_houses_vote_title_powers
-					exists = var:upper_house_vote_title_powers
-					exists = var:lower_house_vote_title_powers
-				}
-
-				OR = {
-					has_variable = senate_vote_title_granting
-					has_variable = council_approval_title_granting
-					has_variable = both_houses_vote_title_powers
-					has_variable = upper_house_vote_title_powers
-					has_variable = lower_house_vote_title_powers
 				}
 				NOT = {
 					any_in_list = {
@@ -249,23 +226,11 @@ request_title_revocation_interaction = {
 			OR = {
 				republic_has_senate_form = yes
 				republic_has_council_form = yes
-				republic_has_bicameral_form = yes
 			}
-			is_independent_ruler = yes
 			primary_title = {
 				OR = {
 					exists = var:senate_vote_title_revocation
 					exists = var:council_approval_title_revocation
-					exists = var:both_houses_vote_title_powers
-					exists = var:upper_house_vote_title_powers
-					exists = var:lower_house_vote_title_powers
-				}
-				OR = {
-					has_variable = senate_vote_title_revocation
-					has_variable = council_approval_title_revocation
-					has_variable = both_houses_vote_title_powers
-					has_variable = upper_house_vote_title_powers
-					has_variable = lower_house_vote_title_powers
 				}
 				NOT = {
 					any_in_list = {
@@ -366,7 +331,6 @@ request_imprisonment_interaction = {
 			scope:actor = {
 				has_imprisonment_reason = scope:recipient
 			}
-			is_independent_ruler = yes
 			OR = {
 				republic_has_senate_form = yes
 				republic_has_council_form = yes
@@ -456,7 +420,6 @@ request_council_appointment_interaction = {
 				republic_has_senate_form = yes
 				republic_has_council_form = yes
 			}
-			is_independent_ruler = yes
 			primary_title = {
 				OR = {
 					exists = var:senate_vote_council_appointment
@@ -514,10 +477,6 @@ hook_house_to_vote_with_you = {
 	common_interaction = yes
 	interface_priority = 60
 	desc = appoint_republic_electee_interaction_desc
-	should_use_extra_icon = {
-		scope:actor = { has_usable_hook = scope:recipient }
-	}
-	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
 	
 	auto_accept = yes
 	ai_will_do = {

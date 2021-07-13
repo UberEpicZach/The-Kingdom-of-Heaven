@@ -511,6 +511,35 @@ hairstyles_scripted_characters = {
         }
     }
 
+    male_no_hair = { # Curled bowl
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = no_hairstyles
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }   
+        weight = {
+            base = 0
+            modifier = {
+                add = 2000
+				exists = character:KOH_FREECITY01 #charles_the_bald
+				this = character:KOH_FREECITY01 #charles_the_bald
+            }
+            modifier = {
+                add = 2000
+                exists = character:KOH_FREECITY02 #emperor_heinrich
+                this = character:KOH_FREECITY02 #emperor_heinrich
+            }
+            modifier = {
+                add = 2000
+                exists = character:KOH_FREECITY03 #henry ii
+                this = character:KOH_FREECITY03 #henry ii
+            }
+        }
+    }
+
     male_hair_byzantine_02 = { # Roman style
         dna_modifiers = {
             accessory = {

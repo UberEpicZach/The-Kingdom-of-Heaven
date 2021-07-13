@@ -14,81 +14,41 @@ on_death_republic = {
 					exists = var:titular_republic
 					any_in_list = {
 						variable = election_candidates
-						this = scope:dying_person
+						scope:dying_person = this
 					}
 				}
 			}
-			clear_variable_list = election_candidates
 			house = {
-				random_house_member = {
-					limit = { NOT = { this = scope:dying_person } is_alive = yes }
-					weight = {
-						base = 0
-						modifier = {
-							add = age
-						}
-						modifier = {
-							add = diplomacy
-						}
-						modifier = {
-							is_female = yes
-							exists = liege_or_court_owner
-							liege_or_court_owner = {
-								primary_title = {
-									has_title_law = male_only_law
-								}
-							}
-							add = -1000
-						}
-						modifier = {
-							is_female = no
-							exists = liege_or_court_owner
-							liege_or_court_owner = {
-								primary_title = {
-									has_title_law = male_preference_law
-								}
-							}
-							add = 50
-						}
-						modifier = {
-							is_female = yes
-							liege_or_court_owner = {
-								primary_title = {
-									has_title_law = female_preference_law
-								}
-							}
-							add = 50
-						}
-						modifier = {
-							is_female = no
-							liege_or_court_owner = {
-								primary_title = {
-									has_title_law = female_only_law
-								}
-							}
-							add = -1000
-						}
-						modifier = {
-							is_close_family_of = scope:dying_person
-							add = 50
-						}
-					}
+				clear_variable_list = election_candidates
+				ordered_house_member = {
+					limit = { NOT = { scope:dying_person = this } }
+					order_by = picked_for_election_candidate
 					save_scope_as = new_candidate
 				}
-			}
-			if = {
-				limit = { exists = scope:new_candidate }
-				add_to_variable_list = {
-					name = election_candidates
-					target = scope:new_candidate
+				if = {
+					limit = { exists = scope:new_candidate }
+					add_to_variable_list = {
+						name = election_candidates
+						target = scope:new_candidate
+					}
 				}
+			}
+		}
+		if = {
+			limit = {
+				exists = house
+				is_house_head = yes
+			}
+			house = {
+				clear_variable_list = propoganda_campaigns_list
+				clear_variable_list = smear_campaigns_list
 			}
 		}
 		if = {
 			limit = { holds_valid_merchant_republic = yes }
 			primary_title = {
 				set_variable = current_death
-				republic_succession = yes
+				death_republic_succession = yes
 				remove_variable = current_death
 				scope:election_winner = {
 					trigger_event = {
@@ -146,6 +106,13 @@ yearly_global_pulse = {
 
 yearly_republic_check = {
 	effect = {
+		every_living_character = {
+			limit = { is_independent_ruler = yes holds_valid_merchant_republic = yes republic_has_bicameral_form = yes }
+			primary_title = {
+				clear_variable_list = lower_house_counties
+				generate_counties_for_lower_house = yes
+			}
+		}
 		every_patrician = {
 			limit = { is_courtier = yes NOT = { employer = house.var:titular_republic.holder } }
 			set_employer = house.var:titular_republic.holder
@@ -155,6 +122,7 @@ yearly_republic_check = {
 			all_council_laws = yes
 			all_senate_laws = yes
 			all_elected_ruler_laws = yes
+			all_bicameral_laws = yes
 		}
 		every_valid_republic_holder = {
 			limit = { primary_title.republic_families_size_need < 5 }
@@ -164,11 +132,339 @@ yearly_republic_check = {
 		}
 		every_living_character = {
 			limit = {
+				any_held_title = {
+					NOT = { this = holder.primary_title }
+					has_variable_list = republic_families_list
+				}
+				NOT = {
+					primary_title = { has_variable_list = republic_families_list }
+				}
+			}
+			random_held_title = {
+				limit = { NOT = { this = holder.primary_title } has_variable_list = republic_families_list }
+				effect = {
+					if = {
+						limit = { this = { exists = var:senate_government_republic } }
+						holder.primary_title = { set_variable = senate_government_republic }
+						remove_variable = senate_government_republic
+					}
+					if = {
+						limit = { this = { exists = var:council_government_republic } }
+						holder.primary_title = { set_variable = council_government_republic }
+						remove_variable = council_government_republic
+					}
+					if = {
+						limit = { this = { exists = var:elected_ruler_republic } }
+						holder.primary_title = { set_variable = elected_ruler_republic }
+						remove_variable = elected_ruler_republic
+					}
+					if = {
+						limit = { this = { exists = var:councillor_1 } }
+						holder.primary_title = {
+							set_variable = {
+								name = councillor_1
+								value = this.var:councillor_1
+							}
+						}
+						remove_variable = councillor_1
+					}
+					if = {
+						limit = { this = { exists = var:councillor_2 } }
+						holder.primary_title = {
+							set_variable = {
+								name = councillor_2
+								value = this.var:councillor_2
+							}
+						}
+						remove_variable = councillor_2
+					}
+					if = {
+						limit = { this = { exists = var:councillor_3 } }
+						holder.primary_title = {
+							set_variable = {
+								name = councillor_3
+								value = this.var:councillor_3
+							}
+						}
+						remove_variable = councillor_3
+					}
+					if = {
+						limit = { this = { exists = var:councillor_4 } }
+						holder.primary_title = {
+							set_variable = {
+								name = councillor_4
+								value = this.var:councillor_4
+							}
+						}
+						remove_variable = councillor_4
+					}
+					if = {
+						limit = { this = { exists = var:councillor_5 } }
+						holder.primary_title = {
+							set_variable = {
+								name = councillor_5
+								value = this.var:councillor_5
+							}
+						}
+						remove_variable = councillor_5
+					}
+					if = {
+						limit = { this = { exists = var:nobility_appeasement } }
+						holder.primary_title = {
+							set_variable = {
+								name = nobility_appeasement
+								value = this.var:nobility_appeasement
+							}
+						}
+						remove_variable = nobility_appeasement
+					}
+					if = {
+						limit = { this = { exists = var:clergy_appeasement } }
+						holder.primary_title = {
+							set_variable = {
+								name = clergy_appeasement
+								value = this.var:clergy_appeasement
+							}
+						}
+						remove_variable = clergy_appeasement
+					}
+					if = {
+						limit = { this = { exists = var:popular_appeasement } }
+						holder.primary_title = {
+							set_variable = {
+								name = popular_appeasement
+								value = this.var:popular_appeasement
+							}
+						}
+						remove_variable = popular_appeasement
+					}
+					if = {
+						limit = { this = { exists = var:senate_vote_war_declaration } }
+						holder.primary_title = { set_variable = senate_vote_war_declaration }
+						remove_variable = senate_vote_war_declaration
+					}
+					if = {
+						limit = { this = { exists = var:senate_vote_council_appointment } }
+						holder.primary_title = { set_variable = senate_vote_council_appointment }
+						remove_variable = senate_vote_council_appointment
+					}
+					if = {
+						limit = { this = { exists = var:senate_vote_imprisonment_rights } }
+						holder.primary_title = { set_variable = senate_vote_imprisonment_rights }
+						remove_variable = senate_vote_imprisonment_rights
+					}
+					if = {
+						limit = { this = { exists = var:senate_vote_title_revocation } }
+						holder.primary_title = { set_variable = senate_vote_title_revocation }
+						remove_variable = senate_vote_title_revocation
+					}
+					if = {
+						limit = { this = { exists = var:senate_vote_title_granting } }
+						holder.primary_title = { set_variable = senate_vote_title_granting }
+						remove_variable = senate_vote_title_granting
+					}
+					if = {
+						limit = { this = { exists = var:council_approval_war_declaration } }
+						holder.primary_title = { set_variable = council_approval_war_declaration }
+						remove_variable = council_approval_war_declaration
+					}
+					if = {
+						limit = { this = { exists = var:council_approval_council_appointment } }
+						holder.primary_title = { set_variable = council_approval_council_appointment }
+						remove_variable = council_approval_council_appointment
+					}
+					if = {
+						limit = { this = { exists = var:council_approval_imprisonment_rights } }
+						holder.primary_title = { set_variable = council_approval_imprisonment_rights }
+						remove_variable = council_approval_imprisonment_rights
+					}
+					if = {
+						limit = { this = { exists = var:council_approval_title_revocation } }
+						holder.primary_title = { set_variable = council_approval_title_revocation }
+						remove_variable = council_approval_title_revocation
+					}
+					if = {
+						limit = { this = { exists = var:council_approval_title_granting } }
+						holder.primary_title = { set_variable = council_approval_title_granting }
+						remove_variable = council_approval_title_granting
+					}
+					if = {
+						limit = { this = { exists = var:leaders_discretion_war_declaration } }
+						holder.primary_title = { set_variable = leaders_discretion_war_declaration }
+						remove_variable = leaders_discretion_war_declaration
+					}
+					if = {
+						limit = { this = { exists = var:leaders_discretion_council_appointment } }
+						holder.primary_title = { set_variable = leaders_discretion_council_appointment }
+						remove_variable = leaders_discretion_council_appointment
+					}
+					if = {
+						limit = { this = { exists = var:leaders_discretion_imprisonment_rights } }
+						holder.primary_title = { set_variable = leaders_discretion_imprisonment_rights }
+						remove_variable = leaders_discretion_imprisonment_rights
+					}
+					if = {
+						limit = { this = { exists = var:leaders_discretion_title_revocation } }
+						holder.primary_title = { set_variable = leaders_discretion_title_revocation }
+						remove_variable = leaders_discretion_title_revocation
+					}
+					if = {
+						limit = { this = { exists = var:leaders_discretion_title_granting } }
+						holder.primary_title = { set_variable = leaders_discretion_title_granting }
+						remove_variable = leaders_discretion_title_granting
+					}
+					if = {
+						limit = { this = { exists = var:both_houses_vote_war_declaration } }
+						holder.primary_title = { set_variable = both_houses_vote_war_declaration }
+						remove_variable = both_houses_vote_war_declaration
+					}
+					if = {
+						limit = { this = { exists = var:upper_house_vote_war_declaration } }
+						holder.primary_title = { set_variable = upper_house_vote_war_declaration }
+						remove_variable = upper_house_vote_war_declaration
+					}
+					if = {
+						limit = { this = { exists = var:lower_house_vote_war_declaration } }
+						holder.primary_title = { set_variable = lower_house_vote_war_declaration }
+						remove_variable = lower_house_vote_war_declaration
+					}
+					if = {
+						limit = { this = { exists = var:both_houses_vote_title_powers } }
+						holder.primary_title = { set_variable = both_houses_vote_title_powers }
+						remove_variable = both_houses_vote_title_powers
+					}
+					if = {
+						limit = { this = { exists = var:upper_house_vote_title_powers } }
+						holder.primary_title = { set_variable = upper_house_vote_title_powers }
+						remove_variable = upper_house_vote_title_powers
+					}
+					if = {
+						limit = { this = { exists = var:lower_house_vote_title_powers } }
+						holder.primary_title = { set_variable = lower_house_vote_title_powers }
+						remove_variable = lower_house_vote_title_powers
+					}
+					if = {
+						limit = { this = { exists = var:leaders_discretion_title_powers } }
+						holder.primary_title = { set_variable = leaders_discretion_title_powers }
+						remove_variable = leaders_discretion_title_powers
+					}
+					if = {
+						limit = { this = { exists = var:both_houses_vote_citizenship } }
+						holder.primary_title = { set_variable = both_houses_vote_citizenship }
+						remove_variable = both_houses_vote_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:upper_house_vote_citizenship } }
+						holder.primary_title = { set_variable = upper_house_vote_citizenship }
+						remove_variable = upper_house_vote_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:lower_house_vote_citizenship } }
+						holder.primary_title = { set_variable = lower_house_vote_citizenship }
+						remove_variable = lower_house_vote_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:leaders_discretion_citizenship } }
+						holder.primary_title = { set_variable = leaders_discretion_citizenship }
+						remove_variable = leaders_discretion_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:same_culture_citizenship } }
+						holder.primary_title = { set_variable = same_culture_citizenship }
+						remove_variable = same_culture_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:same_culture_group_citizenship } }
+						holder.primary_title = { set_variable = same_culture_group_citizenship }
+						remove_variable = same_culture_group_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:all_cultures_citizenship } }
+						holder.primary_title = { set_variable = all_cultures_citizenship }
+						remove_variable = all_cultures_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:same_faith_citizenship } }
+						holder.primary_title = { set_variable = same_faith_citizenship }
+						remove_variable = same_faith_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:same_religion_group_citizenship } }
+						holder.primary_title = { set_variable = same_religion_group_citizenship }
+						remove_variable = same_religion_group_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:all_religions_citizenship } }
+						holder.primary_title = { set_variable = all_religions_citizenship }
+						remove_variable = all_religions_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:de_jure_citizenship } }
+						holder.primary_title = { set_variable = de_jure_citizenship }
+						remove_variable = de_jure_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:de_facto_citizenship } }
+						holder.primary_title = { set_variable = de_facto_citizenship }
+						remove_variable = de_facto_citizenship
+					}
+					if = {
+						limit = { this = { exists = var:life_title_term } }
+						holder.primary_title = { set_variable = life_title_term }
+						remove_variable = life_title_term
+					}
+					if = {
+						limit = { this = { exists = var:twenty_year_term } }
+						holder.primary_title = { set_variable = twenty_year_term }
+						remove_variable = twenty_year_term
+					}
+					if = {
+						limit = { this = { exists = var:ten_year_term } }
+						holder.primary_title = { set_variable = ten_year_term }
+						remove_variable = ten_year_term
+					}
+					if = {
+						limit = { this = { exists = var:four_year_term } }
+						holder.primary_title = { set_variable = four_year_term }
+						remove_variable = four_year_term
+					}
+					if = {
+						limit = { this = { exists = var:two_year_term } }
+						holder.primary_title = { set_variable = two_year_term }
+						remove_variable = two_year_term
+					}
+					if = {
+						limit = { this = { exists = var:one_year_term } }
+						holder.primary_title = { set_variable = one_year_term }
+						remove_variable = one_year_term
+					}
+					holder.primary_title = {
+						save_scope_as = holder.primary_title_in_question
+					}
+					this = {
+						every_in_list = {
+							variable = republic_families_list
+							save_scope_as = add_to_list_house
+							scope:holder.primary_title_in_question = {
+								add_to_variable_list = {
+									name = republic_families_list
+									target = scope:add_to_list_house
+								}
+							}
+						}
+						clear_variable_list = republic_families_list
+					}
+				}
+			}
+		}
+		every_living_character = {
+			limit = {
 				holds_valid_merchant_republic = yes
 				NOT = {
 					republic_has_senate_form = yes
 					republic_has_council_form = yes
 					republic_has_elected_ruler_form = yes
+					republic_has_bicameral_form = yes
 				}
 			}
 			set_up_elected_ruler_republic = yes
@@ -179,67 +475,25 @@ yearly_republic_check = {
 				is_house_head = yes
 				house = {
 					has_variable_list = election_candidates
-				}
-				is_landed = yes
-				primary_title = {
-					has_variable_list = republic_families_list
+					NOT = {
+						any_in_list = {
+							variable = election_candidates
+							is_alive = yes
+						}
+					}
 				}
 				is_ai = yes
 			}
 			save_scope_as = house_head_in_need
 			house = {
-				random_house_member = {
-					limit = {
-						is_child_of = scope:house_head_in_need
-						OR = {
-							AND = {
-								faith = { has_doctrine_parameter = male_dominated_law }
-								is_female = no
-							}
-							AND = {
-								faith = { has_doctrine_parameter = gender_equal_law }
-							}
-							AND = {
-								faith = { has_doctrine_parameter = female_dominated_law }
-								is_female = yes
-							}
-						}
-					}
+				ordered_house_member = {
+					order_by = picked_for_election_candidate
 					save_scope_as = new_elector
 					house = {
 						clear_variable_list = election_candidates
 						add_to_variable_list = {
 							name = election_candidates
-							target = prev
-						}
-					}
-				}
-			}
-			if = {
-				limit = { exists = scope:new_elector }
-				house = {
-					random_house_member = {
-						limit = {
-							OR = {
-								AND = {
-									faith = { has_doctrine_parameter = male_dominated_law }
-									is_female = no
-								}
-								AND = {
-									faith = { has_doctrine_parameter = gender_equal_law }
-								}
-								AND = {
-									faith = { has_doctrine_parameter = female_dominated_law }
-									is_female = yes
-								}
-							}
-						}
-						house = {
-							clear_variable_list = election_candidates
-							add_to_variable_list = {
-								name = election_candidates
-								target = prev
-							}
+							target = scope:new_elector
 						}
 					}
 				}
@@ -249,14 +503,149 @@ yearly_republic_check = {
 			limit = {
 				exists = house
 				is_house_head = yes
+				house = {
+					OR = {
+						has_variable_list = smear_campaigns_list
+						has_variable_list = propoganda_campaigns_list
+					}
+				}
+				NAND = {
+					holds_valid_merchant_republic = yes
+					liege_or_court_owner = { holds_valid_merchant_republic = yes }
+				}
+			}
+			house = {
+				clear_variable_list = smear_campaigns_list
+				clear_variable_list = propoganda_campaigns_list
+			}
+		}
+		every_living_character = {
+			limit = {
+				exists = house
+				is_house_head = yes
+				NOT = {
+					has_trait = devoted
+				}
 				NOT = {
 					house = {
-						has_variable_list = election_candidates
+						exists = var:titular_republic
+						has_variable = titular_republic
 					}
 				}
 				OR = {
 					holds_valid_merchant_republic = yes
-					exists = liege_or_court_owner
+					AND = {
+						exists = liege_or_court_owner
+						liege_or_court_owner = { holds_valid_merchant_republic = yes }
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							holds_valid_merchant_republic = yes
+							culture_group = liege_or_court_owner.culture_group
+						}
+						NOT = { republic_has_bicameral_form = yes }
+					}
+					AND = {
+						OR = {
+							holds_valid_merchant_republic = yes
+							culture = liege_or_court_owner.culture
+						}
+						republic_has_bicameral_form = yes
+						OR = {
+							AND = {
+								holds_valid_merchant_republic = yes
+								primary_title = { has_variable = same_culture_citizenship }
+							}
+							AND = {
+								liege_or_court_owner = { holds_valid_merchant_republic = yes }
+								liege_or_court_owner.primary_title = { has_variable = same_culture_citizenship }
+							}
+						}
+					}
+					AND = {
+						OR = {
+							holds_valid_merchant_republic = yes
+							culture_group = liege_or_court_owner.culture_group
+						}
+						republic_has_bicameral_form = yes
+						OR = {
+							AND = {
+								holds_valid_merchant_republic = yes
+								primary_title = { has_variable = same_culture_group_citizenship }
+							}
+							AND = {
+								liege_or_court_owner = { holds_valid_merchant_republic = yes }
+								liege_or_court_owner.primary_title = { has_variable = same_culture_group_citizenship }
+							}
+						}
+					}
+					AND = {
+						republic_has_bicameral_form = yes
+						OR = {
+							AND = {
+								holds_valid_merchant_republic = yes
+								primary_title = { has_variable = all_cultures_citizenship }
+							}
+							AND = {
+								liege_or_court_owner = { holds_valid_merchant_republic = yes }
+								liege_or_court_owner.primary_title = { has_variable = all_cultures_citizenship }
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						NOT = { republic_has_bicameral_form = yes }
+					}
+					AND = {
+						OR = {
+							holds_valid_merchant_republic = yes
+							faith = liege_or_court_owner.faith
+						}
+						republic_has_bicameral_form = yes
+						OR = {
+							AND = {
+								holds_valid_merchant_republic = yes
+								primary_title = { has_variable = same_faith_citizenship }
+							}
+							AND = {
+								liege_or_court_owner = { holds_valid_merchant_republic = yes }
+								liege_or_court_owner.primary_title = { has_variable = same_faith_citizenship }
+							}
+						}
+					}
+					AND = {
+						OR = {
+							holds_valid_merchant_republic = yes
+							religion = liege_or_court_owner.religion
+						}
+						republic_has_bicameral_form = yes
+						OR = {
+							AND = {
+								holds_valid_merchant_republic = yes
+								primary_title = { has_variable = same_religion_group_citizenship }
+							}
+							AND = {
+								liege_or_court_owner = { holds_valid_merchant_republic = yes }
+								liege_or_court_owner.primary_title = { has_variable = same_religion_group_citizenship }
+							}
+						}
+					}
+					AND = {
+						republic_has_bicameral_form = yes
+						OR = {
+							AND = {
+								holds_valid_merchant_republic = yes
+								primary_title = { has_variable = all_religions_citizenship }
+							}
+							AND = {
+								liege_or_court_owner = { holds_valid_merchant_republic = yes }
+								liege_or_court_owner.primary_title = { has_variable = all_religions_citizenship }
+							}
+						}
+					}
 				}
 			}
 			add_family_to_republic_families = yes
@@ -267,23 +656,28 @@ yearly_republic_check = {
 		}
 		every_duchy = {
 			limit = {
+				save_temporary_scope_as = important_duchy
 				exists = holder
 				holder = {
 					holds_valid_merchant_republic = yes
-					primary_title = prev
+					primary_title = scope:important_duchy
 				}
 			}
+			save_scope_as = important_duchy
 			every_in_list = {
 				variable = republic_families_list
 				limit = {
-					any_house_member = {
-						NOT = {
-							exists = this
+					OR = {
+						AND = { house_head = { is_landed = no NOT = { location = house.var:titular_republic.holder.location } } }
+						AND = { house_head = { is_landed = yes holds_valid_merchant_republic = no NOT = { liege_or_court_owner = house.var:titular_republic.holder } } }
+						AND = { house_head = { holds_valid_merchant_republic = yes NOT = { primary_title = house.var:titular_republic } } }
+						any_house_member = {
+							is_alive = no
 						}
 					}
 				}
 				save_scope_as = to_remove
-				prev = {
+				scope:important_duchy = {
 					remove_list_variable = {
 						name = republic_families_list
 						target = scope:to_remove
@@ -315,27 +709,44 @@ yearly_republic_check = {
 					}
 				}
 				trigger_council_election_cycle = yes
+			}
+			if = {
+				limit = {
+					any_in_list = {
+						variable = proposed_laws_list
+						exists = this
+					}
+					holder = {
+						republic_has_bicameral_form = yes
+					}
+				}
+				bicameral_laws_voting = yes
 			}
 		}
 		every_kingdom = {
 			limit = {
+				save_temporary_scope_as = important_kingdom
 				exists = holder
 				holder = {
 					holds_valid_merchant_republic = yes
-					primary_title = prev
+					primary_title = scope:important_kingdom
 				}
 			}
+			save_scope_as = important_kingdom
 			every_in_list = {
 				variable = republic_families_list
 				limit = {
-					any_house_member = {
-						NOT = {
-							exists = this
+					OR = {
+						AND = { house_head = { is_landed = no NOT = { location = house.var:titular_republic.holder.location } } }
+						AND = { house_head = { is_landed = yes holds_valid_merchant_republic = no NOT = { liege_or_court_owner = house.var:titular_republic.holder } } }
+						AND = { house_head = { holds_valid_merchant_republic = yes NOT = { primary_title = house.var:titular_republic } } }
+						any_house_member = {
+							is_alive = no
 						}
 					}
 				}
 				save_scope_as = to_remove
-				prev = {
+				scope:important_kingdom = {
 					remove_list_variable = {
 						name = republic_families_list
 						target = scope:to_remove
@@ -367,27 +778,44 @@ yearly_republic_check = {
 					}
 				}
 				trigger_council_election_cycle = yes
+			}
+			if = {
+				limit = {
+					any_in_list = {
+						variable = proposed_laws_list
+						exists = this
+					}
+					holder = {
+						republic_has_bicameral_form = yes
+					}
+				}
+				bicameral_laws_voting = yes
 			}
 		}
 		every_empire = {
 			limit = {
+				save_temporary_scope_as = important_empire
 				exists = holder
 				holder = {
 					holds_valid_merchant_republic = yes
-					primary_title = prev
+					primary_title = scope:important_empire
 				}
 			}
+			save_scope_as = important_empire
 			every_in_list = {
 				variable = republic_families_list
 				limit = {
-					any_house_member = {
-						NOT = {
-							exists = this
+					OR = {
+						AND = { house_head = { is_landed = no NOT = { location = house.var:titular_republic.holder.location } } }
+						AND = { house_head = { is_landed = yes holds_valid_merchant_republic = no NOT = { liege_or_court_owner = house.var:titular_republic.holder } } }
+						AND = { house_head = { holds_valid_merchant_republic = yes NOT = { primary_title = house.var:titular_republic } } }
+						any_house_member = {
+							is_alive = no
 						}
 					}
 				}
 				save_scope_as = to_remove
-				prev = {
+				scope:important_empire = {
 					remove_list_variable = {
 						name = republic_families_list
 						target = scope:to_remove
@@ -419,6 +847,18 @@ yearly_republic_check = {
 					}
 				}
 				trigger_council_election_cycle = yes
+			}
+			if = {
+				limit = {
+					any_in_list = {
+						variable = proposed_laws_list
+						exists = this
+					}
+					holder = {
+						republic_has_bicameral_form = yes
+					}
+				}
+				bicameral_laws_voting = yes
 			}
 		}
 		every_living_character = {
@@ -466,11 +906,41 @@ yearly_republic_check = {
 		every_valid_republic_holder = {
 			limit = { primary_title = { list_size = { name = republic_families_list value < 5 } } }
 		}
-
+		if = {
+			limit = { NOT = { has_global_variable = started_campaigns_running } }
+			trigger_event = {
+				on_action = campaigns_running
+			}
+		}
 	}
 	on_actions = {
+		start_the_terms
 		delay = { days = { 20 345 } }
 		all_houses_maybe_propose_laws
+	}
+}
+
+start_the_terms = {
+	trigger = {
+		NOT = { exists = global_var:set_up_global_election_terms }
+	}
+	effect = {
+		set_global_variable = {
+			name = set_up_global_election_terms
+			value = yes
+		}
+	}
+	on_actions = {
+		delay = { years = 1 }
+		one_year_elections
+		delay = { years = 1 }
+		two_year_elections
+		delay = { years = 2 }
+		four_year_elections
+		delay = { years = 6 }
+		ten_year_elections
+		delay = { years = 10 }
+		twenty_year_elections
 	}
 }
 
@@ -559,9 +1029,7 @@ prepare_republic_laws = {
 		all_council_laws = yes
 		all_senate_laws = yes
 		all_elected_ruler_laws = yes
-		random_player = {
-
-		}
+		all_bicameral_laws = yes
 		every_valid_council_republic_holder = {
 			primary_title = {
 				post_appeasement_change = yes
@@ -1815,6 +2283,7 @@ all_houses_maybe_propose_laws = {
 							}
 							AND = {
 								is_independent_ruler = no
+								exists = liege_or_court_owner
 								liege_or_court_owner = {
 									primary_title = {
 										exists = var:life_title_term
@@ -1830,7 +2299,7 @@ all_houses_maybe_propose_laws = {
 						primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:life_title_term } trigger_elected_ruler_quick_election = yes }
 					}
 					if = {
-						limit = { is_independent_ruler = no }
+						limit = { is_independent_ruler = no exists = liege_or_court_owner }
 						liege_or_court_owner = { primary_title = { add_to_variable_list = { name = proposed_laws_list target = flag:life_title_term } trigger_elected_ruler_quick_election = yes } }
 					}
 				}
@@ -1887,6 +2356,7 @@ all_houses_maybe_propose_laws = {
 							}
 							AND = {
 								is_independent_ruler = no
+								exists = liege_or_court_owner
 								liege_or_court_owner = {
 									primary_title = {
 										exists = var:ten_year_term
@@ -1923,6 +2393,7 @@ all_houses_maybe_propose_laws = {
 							}
 							AND = {
 								is_independent_ruler = no
+								exists = liege_or_court_owner
 								liege_or_court_owner = {
 									primary_title = {
 										exists = var:four_year_term
@@ -1959,6 +2430,7 @@ all_houses_maybe_propose_laws = {
 							}
 							AND = {
 								is_independent_ruler = no
+								exists = liege_or_court_owner
 								liege_or_court_owner = {
 									primary_title = {
 										exists = var:two_year_term
@@ -1995,6 +2467,7 @@ all_houses_maybe_propose_laws = {
 							}
 							AND = {
 								is_independent_ruler = no
+								exists = liege_or_court_owner
 								liege_or_court_owner = {
 									primary_title = {
 										exists = var:one_year_term
@@ -2024,7 +2497,7 @@ all_houses_maybe_propose_laws = {
 one_year_elections = {
 	effect = {
 		every_living_character = {
-			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:one_year_term } }
+			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:one_year_term has_variable = one_year_term } }
 			primary_title = {
 				republic_succession = yes
 				republic_council_succesion = yes
@@ -2040,7 +2513,7 @@ one_year_elections = {
 two_year_elections = {
 	effect = {
 		every_independent_ruler = {
-			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:two_year_term } }
+			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:two_year_term has_variable = two_year_term } }
 			primary_title = {
 				republic_succession = yes
 				republic_council_succesion = yes
@@ -2056,7 +2529,7 @@ two_year_elections = {
 four_year_elections = {
 	effect = {
 		every_independent_ruler = {
-			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:four_year_term } }
+			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:four_year_term has_variable = four_year_term } }
 			primary_title = {
 				republic_succession = yes
 				republic_council_succesion = yes
@@ -2072,6 +2545,13 @@ four_year_elections = {
 						add = -50
 					}
 				}
+				if = {
+					limit = { var:family_prestige <= -50 }
+					change_variable = {
+						name = family_prestige
+						add = 50
+					}
+				}
 			}
 		}
 	}
@@ -2084,7 +2564,7 @@ four_year_elections = {
 ten_year_elections = {
 	effect = {
 		every_independent_ruler = {
-			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:ten_year_term } }
+			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:ten_year_term has_variable = ten_year_term } }
 			primary_title = {
 				republic_succession = yes
 				republic_council_succesion = yes
@@ -2100,7 +2580,7 @@ ten_year_elections = {
 twenty_year_elections = {
 	effect = {
 		every_independent_ruler = {
-			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:twenty_year_term } }
+			limit = { holds_valid_merchant_republic = yes primary_title = { exists = var:twenty_year_term has_variable = twenty_year_term } }
 			primary_title = {
 				republic_succession = yes
 				republic_council_succesion = yes
@@ -2467,6 +2947,82 @@ transfer_your_old_republic_variables_different = {
 			limit = { scope:landed_title = { exists = var:one_year_term } }
 			set_variable = one_year_term
 		}
+		if = {
+			limit = { scope:landed_title = { exists = var:both_houses_vote_war_declaration } }
+			set_variable = both_houses_vote_war_declaration
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:upper_house_vote_war_declaration } }
+			set_variable = upper_house_vote_war_declaration
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:lower_house_vote_war_declaration } }
+			set_variable = lower_house_vote_war_declaration
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:both_houses_vote_title_powers } }
+			set_variable = both_houses_vote_title_powers
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:upper_house_vote_title_powers } }
+			set_variable = upper_house_vote_title_powers
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:lower_house_vote_title_powers } }
+			set_variable = lower_house_vote_title_powers
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:leaders_discretion_title_powers } }
+			set_variable = leaders_discretion_title_powers
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:both_houses_vote_citizenship } }
+			set_variable = both_houses_vote_citizenship
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:upper_house_vote_citizenship } }
+			set_variable = upper_house_vote_citizenship
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:lower_house_vote_citizenship } }
+			set_variable = lower_house_vote_citizenship
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:leaders_discretion_citizenship } }
+			set_variable = leaders_discretion_citizenship
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:same_culture_citizenship } }
+			set_variable = same_culture_citizenship
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:same_culture_group_citizenship } }
+			set_variable = same_culture_group_citizenship
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:all_cultures_citizenship } }
+			set_variable = all_cultures_citizenship
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:same_faith_citizenship } }
+			set_variable = same_faith_citizenship
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:same_religion_group_citizenship } }
+			set_variable = same_religion_group_citizenship
+		}
+		if = {
+			limit = { scope:landed_title = { exists = var:all_religions_citizenship } }
+			set_variable = all_religions_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:de_jure_citizenship }
+			set_variable = de_jure_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:de_facto_citizenship } }
+			set_variable = de_facto_citizenship
+		}
 		save_scope_as = self
 		scope:landed_title = {
 			every_in_list = {
@@ -2693,6 +3249,101 @@ transfer_your_old_republic_variables_to_title = {
 			primary_title = { set_variable = one_year_term }
 			remove_variable = one_year_term
 		}
+		if = {
+			limit = { this = { exists = var:both_houses_vote_war_declaration } }
+			primary_title = { set_variable = both_houses_vote_war_declaration }
+			remove_variable = both_houses_vote_war_declaration
+		}
+		if = {
+			limit = { this = { exists = var:upper_house_vote_war_declaration } }
+			primary_title = { set_variable = upper_house_vote_war_declaration }
+			remove_variable = upper_house_vote_war_declaration
+		}
+		if = {
+			limit = { this = { exists = var:lower_house_vote_war_declaration } }
+			primary_title = { set_variable = lower_house_vote_war_declaration }
+			remove_variable = lower_house_vote_war_declaration
+		}
+		if = {
+			limit = { this = { exists = var:both_houses_vote_title_powers } }
+			primary_title = { set_variable = both_houses_vote_title_powers }
+			remove_variable = both_houses_vote_title_powers
+		}
+		if = {
+			limit = { this = { exists = var:upper_house_vote_title_powers } }
+			primary_title = { set_variable = upper_house_vote_title_powers }
+			remove_variable = upper_house_vote_title_powers
+		}
+		if = {
+			limit = { this = { exists = var:lower_house_vote_title_powers } }
+			primary_title = { set_variable = lower_house_vote_title_powers }
+			remove_variable = lower_house_vote_title_powers
+		}
+		if = {
+			limit = { this = { exists = var:leaders_discretion_title_powers } }
+			primary_title = { set_variable = leaders_discretion_title_powers }
+			remove_variable = leaders_discretion_title_powers
+		}
+		if = {
+			limit = { this = { exists = var:both_houses_vote_citizenship } }
+			primary_title = { set_variable = both_houses_vote_citizenship }
+			remove_variable = both_houses_vote_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:upper_house_vote_citizenship } }
+			primary_title = { set_variable = upper_house_vote_citizenship }
+			remove_variable = upper_house_vote_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:lower_house_vote_citizenship } }
+			primary_title = { set_variable = lower_house_vote_citizenship }
+			remove_variable = lower_house_vote_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:leaders_discretion_citizenship } }
+			primary_title = { set_variable = leaders_discretion_citizenship }
+			remove_variable = leaders_discretion_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:same_culture_citizenship } }
+			primary_title = { set_variable = same_culture_citizenship }
+			remove_variable = same_culture_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:same_culture_group_citizenship } }
+			primary_title = { set_variable = same_culture_group_citizenship }
+			remove_variable = same_culture_group_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:all_cultures_citizenship } }
+			primary_title = { set_variable = all_cultures_citizenship }
+			remove_variable = all_cultures_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:same_faith_citizenship } }
+			primary_title = { set_variable = same_faith_citizenship }
+			remove_variable = same_faith_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:same_religion_group_citizenship } }
+			primary_title = { set_variable = same_religion_group_citizenship }
+			remove_variable = same_religion_group_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:all_religions_citizenship } }
+			primary_title = { set_variable = all_religions_citizenship }
+			remove_variable = all_religions_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:de_jure_citizenship } }
+			primary_title = { set_variable = de_jure_citizenship }
+			remove_variable = de_jure_citizenship
+		}
+		if = {
+			limit = { this = { exists = var:de_facto_citizenship } }
+			primary_title = { set_variable = de_facto_citizenship }
+			remove_variable = de_facto_citizenship
+		}
 		primary_title = {
 			save_scope_as = primary_title_in_question
 		}
@@ -2709,5 +3360,80 @@ transfer_your_old_republic_variables_to_title = {
 			}
 			clear_variable_list = republic_families_list
 		}
+	}
+}
+
+campaigns_running = {
+	effect = {
+		if = {
+			limit = { NOT = { has_global_variable = started_campaigns_running } }
+			set_global_variable = started_campaigns_running
+		}
+		every_valid_propogandist = {
+			house = {
+				save_scope_as = your_house
+				every_in_list = {
+					variable = propoganda_campaigns_list
+					limit = { save_temporary_scope_as = house_testing NOT = { scope:your_house.var:titular_republic = { is_target_in_variable_list = { name = republic_families_list target = scope:house_testing } } } }
+					save_scope_as = house_remove_propo_campaigns
+					scope:your_house = {
+						remove_list_variable = { name = propoganda_campaigns_list target = scope:house_remove_propo_campaigns }
+					}
+				}
+				every_in_list = {
+					variable = propoganda_campaigns_list
+					house_head = {
+						save_scope_as = this_guy
+						send_interface_message = {
+							left_icon = scope:this_guy
+							title = propoganda_campaign_gains
+							custom_description = {
+								text = effect_change_family_influence_positive
+								value = 6
+								change_variable = {
+									name = family_prestige
+									add = 6
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		every_valid_smearer = {
+			house = {
+				save_scope_as = your_house
+				every_in_list = {
+					variable = smear_campaigns_list
+					limit = { save_temporary_scope_as = house_testing NOT = { scope:your_house.var:titular_republic = { is_target_in_variable_list = { name = republic_families_list target = scope:house_testing } } } }
+					save_scope_as = house_remove_smear_campaigns
+					scope:your_house = {
+						remove_list_variable = { name = smear_campaigns_list target = scope:house_remove_smear_campaigns }
+					}
+				}
+				every_in_list = {
+					variable = smear_campaigns_list
+					house_head = {
+						save_scope_as = this_guy
+						send_interface_message = {
+							left_icon = scope:this_guy
+							title = smear_campaign_gains
+							custom_description = {
+								text = effect_change_family_influence_negative
+								value = 6
+								change_variable = {
+									name = family_prestige
+									subtract = 6
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	on_actions = {
+		delay = { months = 1 }
+		campaigns_running
 	}
 }

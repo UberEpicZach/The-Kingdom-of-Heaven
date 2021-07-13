@@ -7254,7 +7254,7 @@ title_revocation_proposal_modifier = {
 	}
 	modifier = {
 		AND = {
-			scope:titular_republic = { exists = var:grants_proposal }
+			scope:titular_republic = { exists = var:revocation_proposal }
 			scope:revoke_target = this
 		}
 		add = -150
@@ -7346,5 +7346,180 @@ council_appointment_proposal_modifier = {
 			add = scope:proposed_councilor.intrigue
 			multiply = 2
 		}
+	}
+}
+
+electee_one_modifier = {
+	opinion_modifier = {
+		who = this
+		opinion_target = scope:electee_one
+		multiplier = 2
+	}
+	modifier = {
+		scope:electee_one.house = this.house
+		add = 100
+	}
+	modifier = {
+		scope:electee_one = this
+		add = 3000
+	}
+	modifier = {
+		scope:electee_one = { has_trait = diplomat }
+		add = 20
+	}
+	modifier = {
+		scope:electee_one = { has_trait = august }
+		add = 20
+	}
+	modifier = {
+		always = yes
+		add = {
+			value = scope:electee_one.diplomacy
+			multiply = 2
+		}
+	}
+	modifier = {
+		always = yes
+		add = scope:electee_one.stewardship
+	}
+}
+
+electee_two_modifier = {
+	opinion_modifier = {
+		who = this
+		opinion_target = scope:electee_two
+		multiplier = 2
+	}
+	modifier = {
+		scope:electee_two.house = this.house
+		add = 100
+	}
+	modifier = {
+		scope:electee_two = this
+		add = 3000
+	}
+	modifier = {
+		scope:electee_two = { has_trait = diplomat }
+		add = 20
+	}
+	modifier = {
+		scope:electee_two = { has_trait = august }
+		add = 20
+	}
+	modifier = {
+		always = yes
+		add = {
+			value = scope:electee_two.diplomacy
+			multiply = 2
+		}
+	}
+	modifier = {
+		always = yes
+		add = scope:electee_two.stewardship
+	}
+}
+
+electee_three_modifier = {
+	opinion_modifier = {
+		who = this
+		opinion_target = scope:electee_three
+		multiplier = 2
+	}
+	modifier = {
+		scope:electee_three.house = this.house
+		add = 100
+	}
+	modifier = {
+		scope:electee_three = this
+		add = 3000
+	}
+	modifier = {
+		scope:electee_three = { has_trait = diplomat }
+		add = 20
+	}
+	modifier = {
+		scope:electee_three = { has_trait = august }
+		add = 20
+	}
+	modifier = {
+		always = yes
+		add = {
+			value = scope:electee_three.diplomacy
+			multiply = 2
+		}
+	}
+	modifier = {
+		always = yes
+		add = scope:electee_three.stewardship
+	}
+}
+
+electee_four_modifier = {
+	opinion_modifier = {
+		who = this
+		opinion_target = scope:electee_four
+		multiplier = 2
+	}
+	modifier = {
+		scope:electee_four.house = this.house
+		add = 100
+	}
+	modifier = {
+		scope:electee_four = this
+		add = 3000
+	}
+	modifier = {
+		scope:electee_four = { has_trait = diplomat }
+		add = 20
+	}
+	modifier = {
+		scope:electee_four = { has_trait = august }
+		add = 20
+	}
+	modifier = {
+		always = yes
+		add = {
+			value = scope:electee_four.diplomacy
+			multiply = 2
+		}
+	}
+	modifier = {
+		always = yes
+		add = scope:electee_four.stewardship
+	}
+}
+
+electee_five_modifier = {
+	opinion_modifier = {
+		who = this
+		opinion_target = scope:electee_five
+		multiplier = 2
+	}
+	modifier = {
+		scope:electee_five.house = this.house
+		add = 100
+	}
+	modifier = {
+		scope:electee_five = this
+		add = 3000
+	}
+	modifier = {
+		scope:electee_five = { has_trait = diplomat }
+		add = 20
+	}
+	modifier = {
+		scope:electee_five = { has_trait = august }
+		add = 20
+	}
+	modifier = {
+		always = yes
+		add = {
+			value = scope:electee_five.diplomacy
+			multiply = 2
+		}
+	}
+	modifier = {
+		always = yes
+		add = scope:electee_five.stewardship
 	}
 }

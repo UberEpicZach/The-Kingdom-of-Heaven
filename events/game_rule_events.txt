@@ -74,6 +74,12 @@ game_rule.2 = { # Exclave Independence, on death
 	
 	trigger = {
 		exclave_independence_trigger = yes
+		NOT = {
+			has_title = title:d_hashshashin
+			top_liege = {
+				has_title = title:d_hashshashin
+			}
+		}
 	}
 
 	immediate = {

@@ -256,6 +256,12 @@ merchant_republic_events.1009 = { # Becoming a Family
 			}
 			triggered_desc = {
 				trigger = {
+					republic_has_bicameral_form = yes
+				}
+				desc = merchant_republic_events.1009.bicameral_desc
+			}
+			triggered_desc = {
+				trigger = {
 					house = {
 						var:titular_republic = {
 							holder = { has_government = feudal_government }

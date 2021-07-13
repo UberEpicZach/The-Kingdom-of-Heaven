@@ -67,6 +67,13 @@
 			}
 		}
 		add_family_to_republic_families = yes
+		hidden_effect = {
+			every_vassal_or_below = {
+				limit = { highest_held_title_tier > tier_barony has_government = tribal_government }
+				change_government = republic_government
+				add_realm_law = city_succession_law
+			}
+		}
 		every_vassal = {
 			limit = { is_house_head = yes }
 			add_family_to_republic_families = yes
@@ -77,27 +84,6 @@
 				every_in_de_facto_hierarchy = {
 					limit = { tier = tier_county }
 					change_county_control = 20
-				}
-			}
-		}
-		every_held_title = {
-			limit = { tier = tier_barony }
-			title_province = {
-				set_variable = {
-					name = tribal_to_republic_building_level
-					value = combined_building_level
-					days = 1
-				}
-				set_holding_type = city_holding
-				while = {
-					limit = {
-						var:tribal_to_republic_building_level > 1
-					}
-					generate_building = yes
-					change_variable = {
-						name = tribal_to_republic_building_level
-						subtract = 1
-					}
 				}
 			}
 		}
@@ -238,6 +224,13 @@ convert_to_republic_decision = {
 			}
 		}
 		add_family_to_republic_families = yes
+		hidden_effect = {
+			every_vassal_or_below = {
+				limit = { highest_held_title_tier > tier_barony OR = { has_government = feudal_government has_government = clan_government } }
+				change_government = republic_government
+				add_realm_law = city_succession_law
+			}
+		}
 		every_vassal = {
 			limit = { is_house_head = yes }
 			add_family_to_republic_families = yes
@@ -248,24 +241,6 @@ convert_to_republic_decision = {
 				every_in_de_facto_hierarchy = {
 					limit = { tier = tier_county }
 					change_county_control = 20
-				}
-			}
-		}
-		capital_barony.title_province = {
-			set_variable = {
-				name = feudal_to_republic_building_level
-				value = combined_building_level
-				days = 1
-			}
-			set_holding_type = city_holding
-			while = {
-				limit = {
-					var:feudal_to_republic_building_level > 1
-				}
-				generate_building = yes
-				change_variable = {
-					name = feudal_to_republic_building_level
-					subtract = 1
 				}
 			}
 		}
@@ -384,7 +359,6 @@ call_emergency_vote_decision = {
 				OR = {
 					republic_has_council_form = yes
 					republic_has_senate_form = yes
-					republic_has_bicameral_form = yes
 				}
 			}
 			AND = {
@@ -394,7 +368,6 @@ call_emergency_vote_decision = {
 					OR = {
 						republic_has_council_form = yes
 						republic_has_senate_form = yes
-						republic_has_bicameral_form = yes
 					}
 				}
 			}
@@ -436,10 +409,7 @@ call_emergency_vote_decision = {
 					limit = { exists = var:council_government_republic }
 					trigger_council_election_cycle = yes
 				}
-				if = {
-					limit = { exists = var:bicameral_government_republic }
-					bicameral_laws_voting = yes
-				}
+				trigger_council_election_cycle
 			}
 		}
 		house.var:titular_republic = {
@@ -454,45 +424,5 @@ call_emergency_vote_decision = {
 				}
 			}
 		}
-	}
-}
-
-raise_personal_army_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
-	major = yes
-
-	desc = raise_personal_army_decision_desc
-	selection_tooltip = raise_personal_army_decision_tooltip
-
-	ai_check_interval = 0
-
-	is_shown = {
-		exists = house
-		is_house_head = yes
-		exists = house.var:titular_republic
-	}
-
-	cooldown = {
-		years = 50
-	}
-	cost = {
-		prestige = 500
-		gold = 100
-	}
-
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-	}
-
-	effect = {
-		effect_create_house_army = yes
-	}
-	
-	ai_potential = {
-		always = no
-	}
-
-	ai_will_do = {
-		base = 0
 	}
 }

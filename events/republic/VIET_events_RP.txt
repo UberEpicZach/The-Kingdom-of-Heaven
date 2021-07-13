@@ -32,7 +32,14 @@ VIETrepublic.0001 = {
 	right_portrait = {
 		character = root
 		animation = personality_bold
-	}	
+	}
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	weight_multiplier = {
 		base = 1
@@ -144,6 +151,13 @@ VIETrepublic.0002 = {
 	title = VIETrepublic.0002.t
 	desc = VIETrepublic.0002.desc
 	theme = learning
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	right_portrait = {
 		character = root
@@ -220,6 +234,13 @@ VIETrepublic.0003 = {
 	desc = VIETrepublic.0003.desc
 	theme = stewardship_wealth_focus
 	override_background = { event_background = burning_building }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -283,6 +304,13 @@ VIETrepublic.0004 = {
 	title = VIETrepublic.0004.t
 	desc = VIETrepublic.0004.desc
 	theme = death
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -341,6 +369,13 @@ VIETrepublic.0005 = {
 	desc = VIETrepublic.0005.desc
 	theme = unfriendly
 	override_background = { event_background = council_chamber }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -391,6 +426,13 @@ VIETrepublic.0006 = {
 	desc = VIETrepublic.0006.desc
 	theme = intrigue
 	override_background = { event_background = throne_room }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -510,6 +552,10 @@ VIETrepublic.0007 = {
 			is_lowborn = no
 			NOT = { is_close_family_of = root }
 		}
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
 	}
 	
 	weight_multiplier = {
@@ -602,6 +648,13 @@ VIETrepublic.0008 = {
 	desc = VIETrepublic.0008.desc
 	theme = intrigue_skulduggery_focus
 	override_background = { event_background = throne_room }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = root
 	
@@ -695,6 +748,13 @@ VIETrepublic.0009 = {
 	title = VIETrepublic.0009.t
 	desc = VIETrepublic.0009.desc
 	theme = stewardship_domain_focus
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -768,6 +828,13 @@ VIETrepublic.0010 = {
 	title = VIETrepublic.0010.t
 	desc = VIETrepublic.0010.desc
 	theme = party
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -818,6 +885,13 @@ VIETrepublic.0011 = {
 	desc = VIETrepublic.0011.desc
 	theme = party
 	override_icon = { reference = "gfx/interface/icons/event_types/type_stewardship.dds" }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -945,6 +1019,13 @@ VIETrepublic.0012 = {
 	desc = VIETrepublic.0012.desc
 	theme = corruption
 	override_background = { event_background = docks }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1142,6 +1223,13 @@ VIETrepublic.0013 = {
 	title = VIETrepublic.0013.t
 	desc = VIETrepublic.0013.desc
 	theme = corruption
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1204,6 +1292,13 @@ VIETrepublic.0014 = {
 	title = VIETrepublic.0014.t
 	desc = VIETrepublic.0014.desc
 	theme = stewardship
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1255,6 +1350,13 @@ VIETrepublic.0015 = {
 	desc = VIETrepublic.0015.desc
 	theme = stewardship
 	override_background = { event_background = market }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1303,6 +1405,13 @@ VIETrepublic.0016 = {
 	desc = VIETrepublic.0016.desc
 	theme = stewardship
 	override_background = { event_background = docks }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1351,6 +1460,13 @@ VIETrepublic.0017 = {
 	desc = VIETrepublic.0017.desc
 	theme = learning
 	override_background = { event_background = docks }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1405,6 +1521,13 @@ VIETrepublic.0018 = {
 	desc = VIETrepublic.0018.desc
 	theme = learning
 	override_background = { event_background = council_chamber }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1454,6 +1577,13 @@ VIETrepublic.0019 = {
 	title = VIETrepublic.0019.t
 	desc = VIETrepublic.0019.desc
 	theme = realm
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	right_portrait = root
 	
@@ -1541,6 +1671,10 @@ VIETrepublic.0020 = {
 			}
 			is_lowborn = no
 			NOT = { is_close_family_of = root }
+		}
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
 		}
 	}
 	
@@ -1639,6 +1773,13 @@ VIETrepublic.0021 = {
 	title = VIETrepublic.0021.t
 	desc = VIETrepublic.0021.desc
 	theme = party
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1693,6 +1834,13 @@ VIETrepublic.0022 = {
 	desc = VIETrepublic.0022.desc
 	theme = unfriendly
 	override_background = { event_background = docks }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1764,6 +1912,13 @@ VIETrepublic.0023 = {
 	desc = VIETrepublic.0023.desc
 	theme = unfriendly
 	override_background = { event_background = council_chamber }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1827,6 +1982,13 @@ VIETrepublic.0024 = {
 	desc = VIETrepublic.0024.desc
 	theme = stewardship_wealth_focus
 	override_background = { event_background = docks }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1896,6 +2058,13 @@ VIETrepublic.0025 = {
 	desc = VIETrepublic.0025.desc
 	theme = stewardship_wealth_focus
 	override_background = { event_background = docks }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1980,6 +2149,10 @@ VIETrepublic.0026 = {
 				probably_unintelligent_trigger = yes
 			}
 			NOT = { is_close_family_of = root }
+		}
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
 		}
 	}
 	
@@ -2091,6 +2264,10 @@ VIETrepublic.0027 = {
 			}
 			NOT = { is_close_family_of = root }
 		}
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
 	}
 	
 	weight_multiplier = {
@@ -2156,6 +2333,13 @@ VIETrepublic.0028 = {
 	desc = VIETrepublic.0028.desc
 	theme = stewardship_wealth_focus
 	override_background = { event_background = docks }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -2260,6 +2444,13 @@ VIETrepublic.0029 = {
 	desc = VIETrepublic.0029.desc
 	theme = stewardship_wealth_focus
 	override_background = { event_background = docks }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = root
 	
@@ -2308,6 +2499,13 @@ VIETrepublic.0030 = {
 	desc = VIETrepublic.0030.desc
 	theme = friendly
 	override_background = { event_background = garden }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = root
 	
@@ -2363,6 +2561,13 @@ VIETrepublic.0031 = {
 	desc = VIETrepublic.0031.desc
 	theme = realm
 	override_background = { event_background = council_chamber }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = root
 	
@@ -2412,6 +2617,13 @@ VIETrepublic.0032 = {
 	desc = VIETrepublic.0032.desc
 	theme = stewardship
 	override_background = { event_background = council_chamber }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -2466,6 +2678,13 @@ VIETrepublic.0033 = {
 	desc = VIETrepublic.0033.desc
 	theme = corruption
 	override_background = { event_background = garden }
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -2536,6 +2755,13 @@ VIETrepublic.0034 = {
 	title = VIETrepublic.0034.t
 	desc = VIETrepublic.0034.desc
 	theme = party
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	right_portrait = root
 	
@@ -2603,6 +2829,13 @@ VIETrepublic.0035 = {
 	title = VIETrepublic.0035.t
 	desc = VIETrepublic.0035.desc
 	theme = learning
+
+	trigger = {
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
+		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -2669,6 +2902,10 @@ VIETrepublic.0036 = {
 		any_courtier = {
 			is_available_ai_adult = yes
 			NOT = { is_close_family_of = root }
+		}
+		house = {
+			exists = var:titular_republic
+			has_variable = titular_republic
 		}
 	}
 	

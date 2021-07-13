@@ -2,10 +2,7 @@
 	exists = primary_title
 	has_government = republic_government
 	primary_title.tier >= tier_duchy
-	OR = {
-		is_independent_ruler = yes
-		liege = { has_government = feudal_government }
-	}
+	is_independent_ruler = yes
 }
 
 republic_has_senate_form = {
@@ -59,6 +56,25 @@ republic_has_elected_ruler_form = {
 			liege_or_court_owner = {
 				primary_title = {
 					exists = var:elected_ruler_republic
+				}
+			}
+		}
+	}
+}
+
+republic_has_bicameral_form = {
+	OR = {
+		AND = {
+			is_independent_ruler = yes
+			primary_title = {
+				exists = var:bicameral_government_republic
+			}
+		}
+		AND = {
+			is_independent_ruler = no
+			liege_or_court_owner = {
+				primary_title = {
+					exists = var:bicameral_government_republic
 				}
 			}
 		}

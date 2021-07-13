@@ -24,27 +24,12 @@
 				NOT = {
 					republic_has_senate_form = yes
 					republic_has_council_form = yes
-					republic_has_bicameral_form = yes
-				}
-				AND = {
-					is_independent_ruler = no
-					republic_has_senate_form = yes
-				}
-				AND = {
-					is_independent_ruler = no
-					republic_has_council_form = yes
-				}
-				AND = {
-					is_independent_ruler = no
-					republic_has_bicameral_form = yes
 				}
 				AND = {
 					OR = {
 						republic_has_senate_form = yes
 						republic_has_council_form = yes
-						republic_has_bicameral_form = yes
 					}
-					is_independent_ruler = yes
 					primary_title = {
 						any_in_list = {
 							variable = valid_war_targets_list
@@ -56,7 +41,6 @@
 					OR = {
 						republic_has_senate_form = yes
 						republic_has_council_form = yes
-						republic_has_bicameral_form = yes
 					}
 					primary_title = {
 						exists = var:leaders_discretion_war_declaration

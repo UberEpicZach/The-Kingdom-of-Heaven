@@ -72,6 +72,7 @@
                     text_single = {
                         text = "SENATE_FORM_DESC"
                         fontsize = 16
+                        align = center
                         default_format = "#italic"
                     }
                     spacer = {
@@ -99,6 +100,7 @@
                     text_single = {
                         text = "COUNCIL_FORM_DESC"
                         fontsize = 16
+                        align = center
                         default_format = "#italic"
                     }
                     spacer = {
@@ -126,6 +128,35 @@
                     text_single = {
                         text = "ELECTED_RULER_FORM_DESC"
                         fontsize = 16
+                        align = center
+                        default_format = "#italic"
+                    }
+                    spacer = {
+                        size = { 0 50 }
+                    }
+                    button = {
+                        texture = "gfx/republic/bicameral_background.dds"
+                        size = { 550 240 }
+                        modify_texture = {
+                            name = "mask"
+                            texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                            spriteType = Corneredstretched
+                            spriteborder = { 0 0 }
+                            blend_mode = alphamultiply
+                        }
+                        enabled = "[GetScriptedGui('has_republic_bicameral_government').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                        onclick = "[GetScriptedGui('has_republic_bicameral_government').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                        tooltip = "reform_into_bicameral_republic"
+                    }
+                    text_single = {
+                        text = "CONSTITUTIONAL_VIEW"
+                        fontsize = 24
+                        default_format = "#bold"
+                    }
+                    text_single = {
+                        text = "BICAMERAL_FORM_DESC"
+                        fontsize = 16
+                        align = center
                         default_format = "#italic"
                     }
                     spacer = {
@@ -162,6 +193,7 @@
                     text_single = {
                         text = "FEUDAL_GOVERNMENT_DESC"
                         fontsize = 16
+                        align = center
                         default_format = "#italic"
                     }
                 }
@@ -243,6 +275,7 @@
                     text_single = {
                         text = "SENATE_FORM_DESC"
                         fontsize = 16
+                        align = center
                         default_format = "#italic"
                     }
                     spacer = {
@@ -270,6 +303,7 @@
                     text_single = {
                         text = "COUNCIL_FORM_DESC"
                         fontsize = 16
+                        align = center
                         default_format = "#italic"
                     }
                     spacer = {
@@ -297,6 +331,35 @@
                     text_single = {
                         text = "ELECTED_RULER_FORM_DESC"
                         fontsize = 16
+                        align = center
+                        default_format = "#italic"
+                    }
+                    spacer = {
+                        size = { 0 50 }
+                    }
+                    button = {
+                        texture = "gfx/republic/bicameral_background.dds"
+                        size = { 550 240 }
+                        modify_texture = {
+                            name = "mask"
+                            texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                            spriteType = Corneredstretched
+                            spriteborder = { 0 0 }
+                            blend_mode = alphamultiply
+                        }
+                        enabled = "[GetScriptedGui('has_republic_bicameral_government').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                        onclick = "[GetScriptedGui('has_republic_bicameral_government').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                        tooltip = "reform_into_bicameral_republic"
+                    }
+                    text_single = {
+                        text = "CONSTITUTIONAL_VIEW"
+                        fontsize = 24
+                        default_format = "#bold"
+                    }
+                    text_single = {
+                        text = "BICAMERAL_FORM_DESC"
+                        fontsize = 16
+                        align = center
                         default_format = "#italic"
                     }
                     spacer = {
@@ -333,6 +396,7 @@
                     text_single = {
                         text = "FEUDAL_GOVERNMENT_DESC"
                         fontsize = 16
+                        align = center
                         default_format = "#italic"
                     }
                 }
@@ -1459,23 +1523,282 @@
                                     datacontext = "[Scope.House]"
                                     visible = "[DynastyHouse.GetHeadOfHouse.IsValid]"
                                     block "size" {
-                                        size = { 500 121 }
+                                        size = { 500 180 }
                                     }
-                                    hbox = {
-                                        coa_house_medium = {}
+                                    vbox = {
+                                        hbox = {
+                                            coa_house_medium = {}
+                                            spacer = {
+                                                size = { 10 0 }
+                                            }
+                                            vbox = {
+                                                margin_bottom = 20
+                                                text_single = {
+                                                    minimumsize = { 150 -1 }
+                                                    text = "HOUSE_VIEW_NAME_WITH_HOUSE"
+                                                    fontsize = 16
+                                                    default_format = "#high"
+                                                }
+                                                hbox = {
+                                                    margin_right = 45
+                                                    text_single = {
+                                                        text = "HOUSE_RESPECT"
+                                                        fontsize = 16
+                                                    }
+                                                    spacer = { size = { 2 0 } }
+                                                    text_single = {
+                                                        text = "[DynastyHouse.MakeScope.ScriptValue('family_respect')|0]"
+                                                        minimumsize = { 40 -1 }
+                                                        fontsize = 16
+                                                    }
+                                                }
+                                                hbox = {
+                                                    margin_right = 65
+                                                    text_single = {
+                                                        text = "HOUSE_ELECTEE"
+                                                        fontsize = 16
+                                                    }
+                                                    spacer = { size = { 5 0 } }
+                                                    dynamicgridbox = {
+                                                        datacontext = "[Scope.House]"
+                                                        layoutpolicy_vertical = expanding
+                                                        ignoreinvisible = yes
+                                                        allow_outside = yes
+                                                        maxhorizontalslots = 1
+                                                        maxverticalslots = 100
+                                                        block "datamodel" {
+                                                            datamodel = "[DynastyHouse.MakeScope.GetList('election_candidates')]"
+                                                        }
+                                                        item = {
+                                                            widget = {
+                                                                allow_outside = yes
+                                                                block "size" {
+                                                                    size = { 25 10 }
+                                                                }
+                                                                text_single = {
+                                                                    text = "[Scope.GetCharacter.GetTitledFirstName]"
+                                                                    fontsize = 16
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            spacer = {
+                                                size = { 150 0 }
+                                            }
+                                            vbox = {
+                                                datacontext = "[DynastyHouse.GetHeadOfHouse]"
+                                                text_single = {
+                                                    text = "HOUSE_PATRICIAN"
+                                                    fontsize = 16
+                                                }
+                                                portrait_head_small = {}
+                                            }
+                                            expand = {}
+                                        }
+                                        hbox = {
+                                            background = {
+                                                margin_left = 10
+                                                margin_right = 10
+                                                margin_top = 10
+                                                margin_bottom = 10
+                                                texture = "gfx/interface/component_tiles/tile_dark_area_02.dds"
+                                                spriteType = Corneredtiled
+                                                spriteborder = { 20 20 }
+                                                modify_texture = {
+                                                    name = "mask"
+                                                    texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                                                    spriteType = Corneredstretched
+                                                    spriteborder = { 10 5 }
+                                                    blend_mode = alphamultiply
+                                                }
+                                            }
+                                            button = {
+                                                texture = "gfx/interface/icons/message_feed/tier_up.dds"
+                                                size = { 50 50 }
+                                                tooltip = PROPOGANDA_CAMPAIGN
+                                                onclick = "[GetScriptedGui('start_propoganda_campaign').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('house_adding',Scope.House.MakeScope).End)]"
+                                            }
+                                            spacer = { size = { 15 0 } }
+                                            button = {
+                                                enabled = "[GetScriptedGui('can_use_non_propoganda_abilities').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('scoped_house',Scope.House.MakeScope).End)]"
+                                                texture = "gfx/interface/icons/message_feed/county_corruption.dds"
+                                                size = { 50 50 }
+                                                tooltip = SMEAR_CAMPAIGN
+                                                onclick = "[GetScriptedGui('start_smear_campaign').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('house_adding',Scope.House.MakeScope).End)]"
+                                            }
+                                            spacer = { size = { 15 0 } }
+                                            button = {
+                                                enabled = "[GetScriptedGui('can_use_non_propoganda_abilities').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('scoped_house',Scope.House.MakeScope).End)]"
+                                                texture = "gfx/interface/icons/message_feed/council.dds"
+                                                size = { 50 50 }
+                                                tooltip = BUY_FAVOR
+                                                onclick = "[GetScriptedGui('buy_favor').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target_recipient',Scope.House.GetHeadOfHouse.MakeScope).End)]"
+                                            }
+                                        }
+                                        expand = {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    type republic_bicameral_view = window {
+        size = { 980 950 }
+        position = { -900 75 }
+        layer = middle
+        allow_outside = yes
+        visible = "[GetVariableSystem.Exists('window_republic_bicameral_form')]"
+        window_republic_form_senate = {}
+    
+        using = Window_Background
+        using = Window_Decoration
+        using = Animation_ShowHide_Standard
+        vbox = {
+            using = Window_Margins
+    
+            header_pattern = {
+                layoutpolicy_horizontal = expanding
+    
+                blockoverride "header_text"
+                {
+                    text = "CONSTITUTIONAL_VIEW"
+                }
+    
+                blockoverride "button_close"
+                {
+                    onclick = "[GetVariableSystem.Clear( 'window_republic_form' )]"
+                    onclick = "[GetVariableSystem.Clear( 'window_republic_bicameral_form' )]"
+                }
+            }
+            hbox = {
+                using = Window_Margins
+                layoutpolicy_horizontal = expanding
+                margin_bottom = 5
+
+                button_tab = {
+                    layoutpolicy_horizontal = expanding
+                    onclick = "[GetVariableSystem.Set( 'bicameral_view_tabs', 'maintab' )]"
+                    down = "[GetVariableSystem.HasValue( 'bicameral_view_tabs', 'maintab' )]"
+                        
+                    text_single = {
+                        text = "Houses"
+                        parentanchor = center
+                            
+                        maximumsize = { 300 -1 }
+                        default_format = "#low"
+                    }
+                }
+                button_tab = {
+                    layoutpolicy_horizontal = expanding
+                    onclick = "[GetVariableSystem.Set( 'bicameral_view_tabs', 'laws' )]"
+                    down = "[GetVariableSystem.HasValue( 'bicameral_view_tabs', 'laws' )]"
+                    text_single = {
+                        text = "Laws"
+                        parentanchor = center
+                            
+                        maximumsize = { 300 -1 }
+                        default_format = "#low"
+                    }
+                }
+                button_tab = {
+                    layoutpolicy_horizontal = expanding
+                    onclick = "[GetVariableSystem.Set( 'bicameral_view_tabs', 'citizenship' )]"
+                    down = "[GetVariableSystem.HasValue( 'bicameral_view_tabs', 'citizenship' )]"
+                    text_single = {
+                        text = "Citizenship Laws"
+                        parentanchor = center
+                            
+                        maximumsize = { 300 -1 }
+                        default_format = "#low"
+                    }
+                }
+                expand = {}
+            }
+            vbox = {
+                name = "houses"
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+
+                visible = "[GetVariableSystem.HasValue( 'bicameral_view_tabs', 'maintab' )]"
+
+                button = {
+                    texture = "gfx/interface/icons/banners/banner_blue_center.dds"
+                    text = "HIGH_HOUSE"
+                    fontsize = 20
+                    size = { 200 60 }
+                }
+
+                scrollarea = {
+                    name = "upper_house_scrollarea"
+                    size = { 880 250 }
+                    scrollbarpolicy_vertical = always_off
+
+                    scrollbar_horizontal = {
+                        using = Scrollbar_Horizontal
+                    }
+                    scrollwidget = {
+                        dynamicgridbox = {
+                            layoutpolicy_vertical = expanding
+                            layoutpolicy_horizontal = expanding
+                            allow_outside = yes
+                            ignoreinvisible = yes
+                            maxverticalslots = 1
+                            maxhorizontalslots = 100
+                            flipdirection = yes
+                            block "datamodel" {
+                                datamodel = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.GetList('republic_families_list')]"
+                            }
+                            item = {
+                                widget = {
+                                    datacontext = "[Scope.House]"
+                                    visible = "[DynastyHouse.GetHeadOfHouse.IsValid]"
+                                    block "size" {
+                                        size = { 249 250 }
+                                    }
+                                    vbox = {
+                                        background = {
+                                            texture = "gfx/interface/illustrations/council/bg_council_chancellor.dds"
+                                            alpha = 0.3
+                                            modify_texture = {
+                                                name = "mask"
+                                                texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                                                spriteType = Corneredstretched
+                                                spriteborder = { 0 0 }
+                                                blend_mode = alphamultiply
+                                            }
+                                        }
+                                        hbox = {
+                                            vbox = {
+                                                text_single = {
+                                                    minimumsize = { 120 -1 }
+                                                    text = "HOUSE_VIEW_NAME_WITH_HOUSE"
+                                                    fontsize = 16
+                                                    default_format = "#high"
+                                                }
+                                                coa_house_medium = {}
+                                            }
+                                            vbox = {
+                                                layoutpolicy_vertical = expanding
+                                                datacontext = "[DynastyHouse.GetHeadOfHouse]"
+                                                text_single = {
+                                                    text = "HOUSE_PATRICIAN"
+                                                    fontsize = 16
+                                                }
+                                                portrait_head_small = {}
+                                            }
+                                        }
                                         spacer = {
                                             size = { 10 0 }
                                         }
                                         vbox = {
-                                            margin_bottom = 20
-                                            text_single = {
-                                                minimumsize = { 150 -1 }
-                                                text = "HOUSE_VIEW_NAME_WITH_HOUSE"
-                                                fontsize = 16
-                                                default_format = "#high"
-                                            }
+                                            layoutpolicy_vertical = expanding
                                             hbox = {
-                                                margin_right = 45
                                                 text_single = {
                                                     text = "HOUSE_RESPECT"
                                                     fontsize = 16
@@ -1483,12 +1806,10 @@
                                                 spacer = { size = { 2 0 } }
                                                 text_single = {
                                                     text = "[DynastyHouse.MakeScope.ScriptValue('family_respect')|0]"
-                                                    minimumsize = { 40 -1 }
                                                     fontsize = 16
                                                 }
                                             }
                                             hbox = {
-                                                margin_right = 65
                                                 text_single = {
                                                     text = "HOUSE_ELECTEE"
                                                     fontsize = 16
@@ -1505,30 +1826,345 @@
                                                         datamodel = "[DynastyHouse.MakeScope.GetList('election_candidates')]"
                                                     }
                                                     item = {
-                                                        widget = {
-                                                            allow_outside = yes
-                                                            block "size" {
-                                                                size = { 25 10 }
-                                                            }
-                                                            text_single = {
-                                                                text = "[Scope.GetCharacter.GetTitledFirstName]"
-                                                                fontsize = 16
-                                                            }
+                                                        text_single = {
+                                                            text = "[Scope.GetCharacter.GetTitledFirstName]"
+                                                            fontsize = 16
                                                         }
                                                     }
                                                 }
                                             }
+                                            expand = {}
                                         }
-                                        spacer = {
-                                            size = { 150 0 }
-                                        }
-                                        vbox = {
-                                            datacontext = "[DynastyHouse.GetHeadOfHouse]"
-                                            text_single = {
-                                                text = "HOUSE_PATRICIAN"
-                                                fontsize = 16
+                                        expand = {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                spacer = { size = { 0 20 } }
+
+                button = {
+                    texture = "gfx/interface/icons/banners/banner_blue_center.dds"
+                    text = "HOUSE_OF_COMMONS"
+                    fontsize = 20
+                    size = { 300 60 }
+                }
+
+                scrollarea = {
+                    name = "lower_house_scrollarea"
+                    size = { 880 300 }
+                    scrollbarpolicy_vertical = always_off
+
+                    scrollbar_horizontal = {
+                        using = Scrollbar_Horizontal
+                    }
+                    scrollwidget = {
+                        dynamicgridbox = {
+                            layoutpolicy_vertical = expanding
+                            layoutpolicy_horizontal = expanding
+                            allow_outside = yes
+                            ignoreinvisible = yes
+                            maxverticalslots = 1
+                            maxhorizontalslots = 100
+                            flipdirection = yes
+                            block "datamodel" {
+                                datamodel = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.GetList('lower_house_counties')]"
+                            }
+                            item = {
+                                widget = {
+                                    datacontext = "[Scope.Title]"
+                                    block "size" {
+                                        size = { 249 300 }
+                                    }
+                                    vbox = {
+                                        background = {
+                                            texture = "gfx/interface/illustrations/council/bg_council_spouse.dds"
+                                            alpha = 0.3
+                                            modify_texture = {
+                                                name = "mask"
+                                                texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                                                spriteType = Corneredstretched
+                                                spriteborder = { 0 0 }
+                                                blend_mode = alphamultiply
                                             }
-                                            portrait_head_small = {}
+                                        }
+                                        coa_title_medium = {}
+                                        text_single = {
+                                            text = "[Scope.Title.GetName]"
+                                            default_format = "#high"
+                                            fontsize = 18
+                                        }
+                                        hbox = {
+                                            text_single = {
+                                                text = "Development:"
+                                            }
+                                            spacer = { size = { 2 0 } }
+                                            text_single = {
+                                                text = "[Scope.Title.GetCountyData.GetDevelopmentLevel|0]"
+                                            }
+                                        }
+                                        hbox = {
+                                            text_single = {
+                                                text = "Control:"
+                                            }
+                                            spacer = { size = { 2 0 } }
+                                            text_single = {
+                                                text = "[Scope.Title.GetCountyData.GetControl|0]"
+                                            }
+                                        }
+                                        hbox = {
+                                            text_single = {
+                                                text = "Culture:"
+                                            }
+                                            spacer = { size = { 2 0 } }
+                                            text_single = {
+                                                text = "[Scope.Title.GetCountyData.GetCulture.GetName]"
+                                            }
+                                        }
+                                        hbox = {
+                                            text_single = {
+                                                text = "Faith:"
+                                            }
+                                            spacer = { size = { 2 0 } }
+                                            text_single = {
+                                                text = "[Scope.Title.GetCountyData.GetFaith.GetName]"
+                                            }
+                                        }
+                                        hbox = {
+                                            text_single = {
+                                                text = "Votes:"
+                                            }
+                                            spacer = { size = { 2 0 } }
+                                            text_single = {
+                                                text = "[Scope.Title.MakeScope.ScriptValue('votes_of_county')|0]"
+                                            }
+                                        }
+                                        expand = {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                spacer = { size = { 0 10 } }
+
+                hbox = {
+                    text_single = {
+                        text = "WAR_ATTITUDE"
+                        tooltip = WAR_ATTITUDE_TT
+                        fontsize = 18
+                        align = center
+                        minimumsize = { 200 -1 }
+                    }
+                    text_single = {
+                        text = "RELIGIOUS_ATTITUDE"
+                        tooltip = RELIGIOUS_ATTITUDE_TT
+                        fontsize = 18
+                        align = center
+                        minimumsize = { 200 -1 }
+                    }
+                    text_single = {
+                        text = "CULTURE_ATTITUDE"
+                        tooltip = CULTURE_ATTITUDE_TT
+                        fontsize = 18
+                        align = center
+                        minimumsize = { 200 -1 }
+                    }
+                    text_single = {
+                        text = "WELCOMING_ATTITUDE"
+                        tooltip = WELCOMING_ATTITUDE_TT
+                        fontsize = 18
+                        align = center
+                        minimumsize = { 200 -1 }
+                    }
+                }
+                spacer = { size = { 0 10 } }
+                button_tertiary = {
+                    text = "REFORM_GOVERNMENT"
+                    onclick = "[GetVariableSystem.Toggle('window_republic_form')]"
+                }
+                expand = {}
+            }
+            vbox = {
+                name = "laws"
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                visible = "[GetVariableSystem.HasValue( 'bicameral_view_tabs', 'laws' )]"
+                hbox = {
+                    layoutpolicy_horizontal = expanding
+                    layoutpolicy_vertical = expanding
+                    vbox = {
+                        text_single = {
+                            text = "PASSED_LAWS"
+                            fontsize = 24
+                        }
+                        spacer = { size = { 0 5 } }
+                        scrollbox = {
+                            name = "republic_laws_scrollarea"
+                            layoutpolicy_horizontal = expanding
+                            layoutpolicy_vertical = expanding
+                            #size = {100% 100%}
+                            size = { 440 550 }
+                            background = {
+                                texture = "gfx/interface/illustrations/lifestyles_background/stewardship_lifestyle.dds"
+                                alpha = 0.3
+                                modify_texture = {
+                                    name = "mask"
+                                    texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                                    spriteType = Corneredstretched
+                                    spriteborder = { 0 0 }
+                                    blend_mode = alphamultiply
+                                }
+                            }
+                            blockoverride "scrollbox_content"
+                            {
+                                dynamicgridbox = {
+                                    layoutpolicy_vertical = expanding
+                                    allow_outside = yes
+                                    ignoreinvisible = yes
+                                    maxhorizontalslots = 1
+                                    maxverticalslots = 100
+                                    block "datamodel" {
+                                        datamodel = "[GetGlobalList('bicameral_laws_list')]"
+                                    }
+                                    item = {
+                                        visible = "[GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName,)).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                        widget = {
+                                            visible = "[GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName,)).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                            block "size" {
+                                                size = { 380 80 }
+                                            }
+                                            vbox = {
+                                                hbox = {
+                                                    text_single = {
+                                                        text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+                                                        fontsize = 20
+                                                        align = center
+                                                    }
+                                                    expand = {}
+                                                }
+                                                expand = {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    vbox = {
+                        text_single = {
+                            text = "POSSIBLE_LAWS"
+                            fontsize = 24
+                        }
+                        spacer = { size = { 0 5 } }
+                        scrollbox = {
+                            name = "republic_proposables_scrollarea"
+                            layoutpolicy_horizontal = expanding
+                            layoutpolicy_vertical = expanding
+                            #size = {100% 100%}
+                            size = { 440 550 }
+                            background = {
+                                texture = "gfx/interface/illustrations/lifestyles_background/diplomacy_lifestyle.dds"
+                                alpha = 0.3
+                                modify_texture = {
+                                    name = "mask"
+                                    texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                                    spriteType = Corneredstretched
+                                    spriteborder = { 0 0 }
+                                    blend_mode = alphamultiply
+                                }
+                            }
+                            blockoverride "scrollbox_content"
+                            {
+                                dynamicgridbox = {
+                                    layoutpolicy_vertical = expanding
+                                    allow_outside = yes
+                                    ignoreinvisible = yes
+                                    maxhorizontalslots = 1
+                                    maxverticalslots = 100
+                                    block "datamodel" { 
+                                        datamodel = "[GetGlobalList('bicameral_laws_list')]"
+                                    }
+                                    item = {
+                                        widget = {
+                                            visible = "[Not(GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName,)).IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+                                            block "size" {
+                                                size = { 380 120 }
+                                            }
+                                            vbox = {
+                                                hbox = {
+                                                    text_single = {
+                                                        text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+                                                        fontsize = 20
+                                                        align = center
+                                                    }
+                                                    expand = {}
+                                                }
+                                                spacer = {
+                                                    size = { 0 10 }
+                                                }
+                                                button_tertiary = {
+                                                    tooltip = PROPOSE_TT
+                                                    datacontext = "[GetScriptedGui(Concatenate('government_has_',Scope.GetFlagName))]"
+                                                    onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                                    text = "Propose"
+                                                    clicksound = "event:/SFX/UI/Notifications/TopBar/sfx_ui_notifications_topbar_diplomacy"
+                                                }
+                                                expand = {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                text_single = {
+                    text = "PROPOSED_LAWS"
+                    fontsize = 20
+                }
+                spacer = { size = { 0 10 } }
+                scrollarea = {
+                    name = "proposed_laws_scrollarea"
+                    layoutpolicy_horizontal = expanding
+                    layoutpolicy_vertical = expanding
+                    size = { 900 130 }
+                    scrollbarpolicy_vertical = always_off
+
+                    scrollbar_horizontal = {
+                        using = Scrollbar_Horizontal
+                    }
+
+                    scrollwidget = {
+                        dynamicgridbox = {
+                            layoutpolicy_vertical = expanding
+                            layoutpolicy_horizontal = expanding
+                            allow_outside = yes
+                            ignoreinvisible = yes
+                            maxverticalslots = 1
+                            maxhorizontalslots = 100
+                            flipdirection = yes
+                            block "datamodel" {
+                                datamodel = "[GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.GetList('proposed_laws_list')]"
+                            }
+                            item = {
+                                widget = {
+                                    block "size" {
+                                        size = { 250 130 }
+                                    }
+                                    vbox = {
+                                        icon = {
+                                            texture = "gfx/interface/icons/message_feed/generic_good_effect.dds"
+                                            size = { 80 80 }
+                                        }
+                                        text_single = {
+                                            text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+                                            fontsize = 18
+                                            align = center
                                         }
                                         expand = {}
                                     }
@@ -1538,11 +2174,216 @@
                     }
                 }
             }
+            vbox = {
+                name = "citizenship"
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                background = {
+                    texture = "gfx/interface/illustrations/council/bg_council_chancellor.dds"
+                    alpha = 0.6
+                    modify_texture = {
+                        name = "mask"
+                        texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                        spriteType = Corneredstretched
+                        spriteborder = { 0 0 }
+                        blend_mode = alphamultiply
+                    }
+                }
+                visible = "[GetVariableSystem.HasValue( 'bicameral_view_tabs', 'citizenship' )]"
+                spacer = { size = { 0 20 } }
+                text_single = {
+                    text = "Cultural Citizenship"
+                    fontsize = 20
+                    default_format = "#bold"
+                }
+                spacer = { size = { 0 10 } }
+                hbox = {
+                    background = {
+                        margin_left = 5
+                        margin_right = 15
+                        margin_top = 10
+                        margin_bottom = 10
+                        texture = "gfx/republic/solid_black_label.dds"
+                        spriteType = Corneredtiled
+                        spriteborder = { 20 20 }
+                        modify_texture = {
+                            name = "mask"
+                            texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                            spriteType = Corneredstretched
+                            spriteborder = { 10 5 }
+                            blend_mode = alphamultiply
+                        }
+                    }
+                    icon = {
+                        texture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+                        size = { 366 146 }
+                        modify_texture = {
+                            name = "mask"
+                            texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                            spriteType = Corneredstretched
+                            spriteborder = { 0 0 }
+                            blend_mode = alphamultiply
+                        }
+                    }
+                    dynamicgridbox = {
+                        layoutpolicy_vertical = expanding
+                        allow_outside = yes
+                        ignoreinvisible = yes
+                        maxhorizontalslots = 1
+                        maxverticalslots = 100
+                        block "datamodel" { 
+                            datamodel = "[GetGlobalList('bicameral_culture_citizenship_list')]"
+                        }
+                        item = {
+                            widget = {
+                                block "size" {
+                                    size = { 150 48 }
+                                }
+                                vbox = {
+                                    button_standard = {
+                                        tooltip = PROPOSE_TT
+                                        text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+                                        size = { 150 48 }
+                                        enabled = "[And(GetScriptedGui(Concatenate(Scope.GetFlagName,'_propose')).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End),Not(GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.Var(Scope.GetFlagName).IsSet))]"
+                                        onclick = "[GetScriptedGui(Concatenate(Scope.GetFlagName,'_propose')).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                    }
+                                    expand = {}
+                                }
+                            }
+                        }
+                    }
+                }
+                spacer = { size = { 0 20 } }
+                text_single = {
+                    text = "Religious Citizenship"
+                    fontsize = 20
+                    default_format = "#bold"
+                }
+                spacer = { size = { 0 10 } }
+                hbox = {
+                    background = {
+                        margin_left = 5
+                        margin_right = 15
+                        margin_top = 10
+                        margin_bottom = 10
+                        texture = "gfx/republic/solid_black_label.dds"
+                        spriteType = Corneredtiled
+                        spriteborder = { 20 20 }
+                        modify_texture = {
+                            name = "mask"
+                            texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                            spriteType = Corneredstretched
+                            spriteborder = { 10 5 }
+                            blend_mode = alphamultiply
+                        }
+                    }
+                    icon = {
+                        texture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+                        size = { 366 146 }
+                        modify_texture = {
+                            name = "mask"
+                            texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                            spriteType = Corneredstretched
+                            spriteborder = { 0 0 }
+                            blend_mode = alphamultiply
+                        }
+                    }
+                    dynamicgridbox = {
+                        layoutpolicy_vertical = expanding
+                        allow_outside = yes
+                        ignoreinvisible = yes
+                        maxhorizontalslots = 1
+                        maxverticalslots = 100
+                        block "datamodel" { 
+                            datamodel = "[GetGlobalList('bicameral_faith_citizenship_list')]"
+                        }
+                        item = {
+                            widget = {
+                                block "size" {
+                                    size = { 150 48 }
+                                }
+                                vbox = {
+                                    button_standard = {
+                                        tooltip = PROPOSE_TT
+                                        text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+                                        size = { 150 48 }
+                                        enabled = "[And(GetScriptedGui(Concatenate(Scope.GetFlagName,'_propose')).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End),Not(GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.Var(Scope.GetFlagName).IsSet))]"
+                                        onclick = "[GetScriptedGui(Concatenate(Scope.GetFlagName,'_propose')).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                    }
+                                    expand = {}
+                                }
+                            }
+                        }
+                    }
+                }
+                spacer = { size = { 0 20 } }
+                text_single = {
+                    text = "National Hierarchy Citizenship"
+                    fontsize = 20
+                    default_format = "#bold"
+                }
+                spacer = { size = { 0 10 } }
+                hbox = {
+                    background = {
+                        margin_left = 5
+                        margin_right = 15
+                        margin_top = 10
+                        margin_bottom = 10
+                        texture = "gfx/republic/solid_black_label.dds"
+                        spriteType = Corneredtiled
+                        spriteborder = { 20 20 }
+                        modify_texture = {
+                            name = "mask"
+                            texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                            spriteType = Corneredstretched
+                            spriteborder = { 10 5 }
+                            blend_mode = alphamultiply
+                        }
+                    }
+                    icon = {
+                        texture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+                        size = { 366 146 }
+                        modify_texture = {
+                            name = "mask"
+                            texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                            spriteType = Corneredstretched
+                            spriteborder = { 0 0 }
+                            blend_mode = alphamultiply
+                        }
+                    }
+                    dynamicgridbox = {
+                        layoutpolicy_vertical = expanding
+                        allow_outside = yes
+                        ignoreinvisible = yes
+                        maxhorizontalslots = 1
+                        maxverticalslots = 100
+                        block "datamodel" { 
+                            datamodel = "[GetGlobalList('bicameral_hierarchy_citizenship_list')]"
+                        }
+                        item = {
+                            widget = {
+                                block "size" {
+                                    size = { 150 48 }
+                                }
+                                vbox = {
+                                    button_standard = {
+                                        tooltip = PROPOSE_TT
+                                        enabled = "[And(GetScriptedGui(Concatenate(Scope.GetFlagName,'_propose')).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End),Not(GetPlayer.GetLiege.GetPrimaryTitle.MakeScope.Var(Scope.GetFlagName).IsSet))]"
+                                        text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+                                        size = { 150 48 }
+                                        onclick = "[GetScriptedGui(Concatenate(Scope.GetFlagName,'_propose')).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                    }
+                                    expand = {}
+                                }
+                            }
+                        }
+                    }
+                }
+                expand = {}
+            }
         }
     }
 }
-
-
 
 types SenateButtons
 {

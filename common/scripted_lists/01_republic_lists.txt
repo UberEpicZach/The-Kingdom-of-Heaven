@@ -19,3 +19,6 @@ valid_republic_coup_enemy_holder = {
 }
 
 patrician = { base = living_character conditions = { exists = house is_house_head = yes house = { exists = var:titular_republic } } }
+
+valid_propogandist = { base = living_character conditions = { exists = house is_house_head = yes house = { has_variable_list = propoganda_campaigns_list } } }
+valid_smearer = { base = living_character conditions = { exists = house is_house_head = yes house = { has_variable_list = smear_campaigns_list } } }
