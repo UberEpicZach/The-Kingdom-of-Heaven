@@ -220,17 +220,18 @@ KoH_balians_adventure.6 = {
 	theme = war
 	override_background = {
 		event_background = wilderness_forest_pine
-		}
+	}
 
 	left_portrait = {
 		character = character:144166
 		animation = personality_bold
-		}
+	}
 
 	right_portrait = {
 		character = character:800501
 		animation = angry
-		}
+		outfit_tags = { war_outfit1 }	
+	}
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_balians_adventure.6}
@@ -248,18 +249,18 @@ KoH_balians_adventure.6 = {
 			culture = this.culture
 			gender_female_chance = 0
 			save_scope_as = combatant_2
-			}
+		}
 
-			if = {
-				limit = {
-					AND = {
-						this = character:223570
-						is_ai = no
-					}	
-				}
-				pan_camera_to_title = title:b_ambert
-					}
-			}	
+		if = {
+			limit = {
+				AND = {
+					this = character:223570
+					is_ai = no
+				}	
+			}
+			pan_camera_to_title = title:b_ambert
+		}
+	}	
 	
 	option = {
 		name = KoH_balians_adventure.6.a
@@ -290,10 +291,12 @@ KoH_balians_adventure.7 = { #A challenger approaches
 	left_portrait = {
 		character = root
 		animation = war_defender
+		outfit_tags = { war_outfit1 }	
 	}
 	right_portrait = {
 		character = scope:combatant_2
 		animation = war_attacker
+		outfit_tags = { war_outfit1 }	
 	}
 	trigger = {
 		is_adult = yes
@@ -353,10 +356,12 @@ KoH_balians_adventure.8 = { #A challenger approaches
 	left_portrait = {
 		character = root
 		animation = war_over_win
+		outfit_tags = { war_outfit1 }	
 	}
 	right_portrait = {
 		character = scope:combatant_2
 		animation = severelywounded
+		outfit_tags = { war_outfit1 }	
 	}
 	trigger = {
 		is_adult = yes
@@ -412,10 +417,12 @@ KoH_balians_adventure.9 = { #A challenger approaches
 	left_portrait = {
 		character = root
 		animation = severelywounded
+		outfit_tags = { war_outfit1 }	
 	}
 	right_portrait = {
 		character = scope:combatant_2
 		animation = war_over_win
+		outfit_tags = { war_outfit1 }	
 	}
 	trigger = {
 		is_adult = yes
@@ -679,12 +686,8 @@ KoH_balians_adventure.14 = {
 	
 	left_portrait = {
 		character = root
-		animation = severelyinjured
-		triggered_outfit = {
-			trigger = { has_character_flag = shipwrecked }
-			remove_default_outfit = yes
-			outfit_tags = { beggar_rags }
-		}
+		animation = wounded
+		outfit_tags = { beggar_rags }
 	}
 	trigger = {
 		is_adult = yes
@@ -737,11 +740,13 @@ KoH_balians_adventure.15 = {
 	left_portrait = {
 		character = character:KOH0041
 		animation = personality_greedy
+		outfit_tags = { common_mena }
 	}
 	
 	right_portrait = {
 		character = scope:combatant_3
 		animation = rage
+		outfit_tags = { war_outfitmena }
 	}
 	trigger = {
 		is_adult = yes
@@ -777,15 +782,12 @@ KoH_balians_adventure.16 = {
 	left_portrait = {
 		character = character:KOH0041
 		animation = personality_greedy
+		outfit_tags = { common_mena }
 	}
 	right_portrait = {
 		character = root
 		animation = disbelief
-		triggered_outfit = {
-			trigger = { has_character_flag = shipwrecked }
-			remove_default_outfit = yes
-			outfit_tags = { beggar_rags }
-		}
+		outfit_tags = { beggar_rags }
 	}
 	
 	trigger = {
@@ -821,15 +823,12 @@ KoH_balians_adventure.17 = {
 	left_portrait = {
 		character = scope:combatant_3
 		animation = rage
+		outfit_tags = { war_outfitmena }
 	}
 	right_portrait = {
 		character = root
 		animation = disapproval
-		triggered_outfit = {
-			trigger = { has_character_flag = shipwrecked }
-			remove_default_outfit = yes
-			outfit_tags = { beggar_rags }
-		}
+		outfit_tags = { beggar_rags }
 	}
 	
 	trigger = {
@@ -890,16 +889,13 @@ KoH_balians_adventure.18 = {
 	left_portrait = {
 		character = root
 		animation = personality_honorable
-		triggered_outfit = {
-			trigger = { has_character_flag = shipwrecked }
-			remove_default_outfit = yes
-			outfit_tags = { beggar_rags }
-		}
+		outfit_tags = { beggar_rags }
 	}
 	
 	right_portrait = {
 		character = character:KOH0041
 		animation = personality_zealous
+		outfit_tags = { common_mena }
 	}
 
 	trigger = {
@@ -962,15 +958,12 @@ KoH_balians_adventure.19 = {
 	left_portrait = {
 		character = character:KOH0041
 		animation = dismissal
+		outfit_tags = { common_mena }
 	}
 	right_portrait = {
 		character = root
 		animation = severelyinjured
-		triggered_outfit = {
-			trigger = { has_character_flag = shipwrecked }
-			remove_default_outfit = yes
-			outfit_tags = { beggar_rags }
-		}
+		outfit_tags = { beggar_rags }
 	}
 
 	trigger = {
@@ -1006,6 +999,7 @@ KoH_balians_adventure.20 = {
 	left_portrait = {
 		character = character:KOH0041
 		animation = personality_forgiving
+		outfit_tags = { common_mena }
 	}
 	right_portrait = {
 		character = root

@@ -817,7 +817,8 @@ clothes = {
 				value = 1.0
 				template = body_shape_average_clothed
 			}
-		}	
+		}
+		outfit_tags = { war_outfit1 }	
 		weight = {
 			base = 0
 			modifier = {
@@ -1394,6 +1395,7 @@ clothes = {
 				template = body_shape_average_clothed
 			}
 		}	
+		outfit_tags = { common_mena }
 		weight = {
 			base = 0
 			modifier = {
@@ -1560,6 +1562,7 @@ clothes = {
 				template = body_shape_average_clothed
 			}
 		}	
+		outfit_tags = { war_outfitmena }
 		weight = {
 			base = 0
 			modifier = {
@@ -1821,7 +1824,7 @@ clothes = {
 				value = 1.0
 				template = body_shape_average_clothed
 			}
-		}	
+		}		
 		weight = {
 			base = 0
 			modifier = {
@@ -2735,7 +2738,7 @@ clothes = {
 				value = 1.0
 				template = body_shape_average_clothed
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -3699,7 +3702,7 @@ clothes = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 200
+				add = 2000
 				has_character_flag = Free_City
 			}
 		}
@@ -3709,8 +3712,8 @@ clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add				
-				gene = headgear
-				template = no_headgear
+				gene = clothes
+				template = no_clothes
 				value = 0.5
 			}
 		}

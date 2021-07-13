@@ -443,7 +443,7 @@ chivalry.9 = {
 	immediate = {
 		random_held_title = {
 			limit = {
-				tier <=tier_county
+				tier = tier_county
 			}
 			save_scope_as = town_scope
 		}
@@ -452,7 +452,7 @@ chivalry.9 = {
 	option = {
 		name = chivalry.9.a
 		
-		scope:town_scope.title_province = {
+		scope:town_scope = {
 			add_county_modifier = {
 				modifier = koh_did_not_hunt_beast 
 				years = 5
@@ -537,6 +537,9 @@ chivalry.10 = {
 			dynasty = none
 			prowess = { 40 50 }
 			save_scope_as = challenger
+			}
+			scope:challenger = {
+				add_character_flag = has_scripted_appearance
 		}
 	}
 	
