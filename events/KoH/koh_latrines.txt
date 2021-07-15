@@ -57,12 +57,12 @@ KoH_erfurt_affair.1 = {
 		if = { # contingency
 			limit = { has_relation_nemesis = scope:feuding_bishop }
 			add_opinion = {
-				modifier = KoH_erfurt_affair.irritated
+				modifier = KoH_erfurt_affair_irritated
 				target = scope:feuding_bishop
 			}
 			scope:feuding_bishop = {
 				add_opinion = {
-					modifier = KoH_erfurt_affair.irritated
+					modifier = KoH_erfurt_affair_irritated
 					target = prev
 				}
 			}

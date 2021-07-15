@@ -889,3 +889,33 @@ KOH_battle_on_action = {
 		#100 = chivalry.8
 	}
 }
+
+on_war_started = {
+	on_actions = {
+		KOH_on_war_started
+	}
+}
+
+KOH_on_war_started = {
+	effect = {
+		if = {
+			limit = {
+				exists = title:e_hre.holder
+
+				scope:defender = {
+					has_trait = KOH_Free_City
+					liege = title:e_hre.holder
+				}
+			}
+			scope:defender = {
+				save_scope_as = FreeCityDefender
+			}
+			title:e_hre.holder = {
+				trigger_event = {
+					id = KoH_FreeCity.1
+					days = 3
+				}
+			}
+		}
+	}
+}
