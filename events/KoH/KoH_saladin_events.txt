@@ -246,7 +246,7 @@ KoH_saladin.1 = {
 			save_scope_as = Baldwin
 		}
 		title:e_arabia.holder = {
-			save_scope_as = saladin
+			save_scope_as = Saladin
 		}
 	}
 	
@@ -546,6 +546,19 @@ KoH_saladin.2 = {
 		animation = personality_bold
 	}
 	
+	immediate = {
+		title:c_kerak.holder = {
+			save_scope_as = Reynald
+		}
+		title:c_jerusalem.holder = {
+			save_scope_as = Baldwin
+		}
+		title:e_arabia.holder = {
+			save_scope_as = Saladin
+		}
+	}
+
+
 	option = {
 		name = KoH_saladin.2.a
 		
@@ -744,6 +757,8 @@ KoH_saladin.121 = { #Send to Jerusalem Ruler
 		add_character_flag = {
 			flag = had_event_KoH_saladin.121
 		}
+
+		title:c_jerusalem.holder  = { save_scope_as = Saladin}
 
 		trigger_event = {
 			id = KoH_saladin.3

@@ -68,6 +68,13 @@ is_sea = {
 
 
 wifelover = {
+	exists = {
+		any_relation = {
+			type = lover 
+		}
+	}
+	exists = primary_spouse.location
+	
 	any_relation = {
 		type = lover 
 		location = primary_spouse.location

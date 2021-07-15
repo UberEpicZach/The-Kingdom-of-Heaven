@@ -699,7 +699,9 @@ KoH_religiousflavour.14 = { #Duty-Bound - Varaint
 	trigger = {		
 		has_religion = religion:christianity_religion
 
-		any_dynasty_member = {
+		exists = dynasty
+		dynasty = { 
+			any_dynasty_member = { 
 			AND = {
 				is_alive = yes
 				dynasty = root.dynasty
@@ -716,23 +718,24 @@ KoH_religiousflavour.14 = { #Duty-Bound - Varaint
 	}
 
 	immediate = {
-		any_dynasty_member = {
-			AND = {
-				is_alive = yes
+		dynasty = { 
+			every_dynasty_member = { 
 				AND = {
-					dynasty = root.dynasty
-					has_government = theocracy_government
-					OR = {
-						has_trait = reveler_1
-						has_trait = reveler_2
-						has_trait = reveler_3
-						has_trait = drunkard
-						has_trait = lustful 
+					is_alive = yes
+					AND = {
+						dynasty = root.dynasty
+						has_government = theocracy_government
+						OR = {
+							has_trait = reveler_1
+							has_trait = reveler_2
+							has_trait = reveler_3
+							has_trait = drunkard
+							has_trait = lustful 
+						}
 					}
 				}
+				save_scope_as = Priest 
 			}
-			save_scope_as = Priest 
-		}
 
 		create_character = {
 			template = beautiful_peasant_character
@@ -788,7 +791,7 @@ KoH_religiousflavour.15 = {
 			female = no
 			dynasty = no
 			trait = heresiarch
-			location = title:c_forez
+			location = root
 			age = { 40 50 }
 			learning = 18
 			faith = faith:waldensian
