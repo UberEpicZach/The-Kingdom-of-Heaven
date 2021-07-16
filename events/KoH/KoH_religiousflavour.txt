@@ -701,19 +701,20 @@ KoH_religiousflavour.14 = { #Duty-Bound - Varaint
 
 		exists = dynasty
 		dynasty = { 
-			any_dynasty_member = { 
-			AND = {
-				is_alive = yes
-				dynasty = root.dynasty
-				has_government = theocracy_government
-				OR = {
-					has_trait = reveler_1
-					has_trait = reveler_2
-					has_trait = reveler_3
-					has_trait = drunkard
-					has_trait = lustful 
-				}
-			} 
+				any_dynasty_member = { 
+				AND = {
+					is_alive = yes
+					dynasty = root.dynasty
+					has_government = theocracy_government
+					OR = {
+						has_trait = reveler_1
+						has_trait = reveler_2
+						has_trait = reveler_3
+						has_trait = drunkard
+						has_trait = lustful 
+					}
+				} 
+			}
 		}
 	}
 
@@ -736,6 +737,7 @@ KoH_religiousflavour.14 = { #Duty-Bound - Varaint
 				}
 				save_scope_as = Priest 
 			}
+		}
 
 		create_character = {
 			template = beautiful_peasant_character

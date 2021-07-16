@@ -18,10 +18,10 @@ KoH_SicillianConflict.1 = {
 				is_alive = yes
 				NOT = { has_character_flag = SicillianConflictHasOccuredFlag }
 				NOT = { title:k_sicily.holder = character:211509 }
-				}
+			}
 			character:211500 = {
 				is_alive = no
-				}
+			}
 		}
 	}
 
@@ -31,13 +31,6 @@ KoH_SicillianConflict.1 = {
 				flag = SicillianConflictHasOccuredFlag
 				months = 100 # Players in MP can keep the event window open...
 			}
-		}
-	}
-
-	option = {
-		name = KoH_SicillianConflict.1.a
-
-		character:211509 = {
 			start_war = {
 				casus_belli = claim_cb
 				target = title:k_sicily.holder

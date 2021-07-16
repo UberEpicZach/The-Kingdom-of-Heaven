@@ -154,6 +154,7 @@ on_game_start_after_lobby = {
 		KOH_holy_orders
 		MyMo_ongamestart
 		CardinalsTraits
+		khwarezmid_invasion
 	}
 }
 
@@ -161,10 +162,92 @@ on_title_gain = {
 	on_actions = {
 		on_gain_papacy
 		on_gain_HRE
+		on_gain_holy_order
 	}
 }
 
+khwarezmid_invasion = {
+	effect = {
+		title:k_khwarezmia.holder = {
+			add_pressed_claim = k_persia
+			add_pressed_claim = k_daylam
+			add_pressed_claim = k_khorasan
+		
+			spawn_army = {
+				uses_supply = no
+				inheritable = no
+				name = "Khwarezmid Army"
+				men_at_arms = {
+					type = horse_archers
+					stacks = 14
+				}
+				men_at_arms = {
+					type = light_horsemen
+					stacks = 10
+				}
+				men_at_arms = {
+					type = light_horsemen
+					stacks = 10
+				}
+				men_at_arms = {
+					type = armored_horsemen
+					stacks = 5
+				}
+				men_at_arms = {
+					type = mangonel
+					stacks = 5
+				}
+				men_at_arms = {
+					type = mangonel
+					stacks = 5
+				}
+				location = capital_province
+			}
+			spawn_army = {
+				uses_supply = no
+				inheritable = no
+				name = "Khwarezmid Army"
+				levies = {
+					value = 5000
+				}
+				men_at_arms = {
+					type = horse_archers
+					stacks = 10
+				}
+				men_at_arms = {
+					type = horse_archers
+					stacks = 10
+				}
+				men_at_arms = {
+					type = light_horsemen
+					stacks = 10
+				}
+				men_at_arms = {
+					type = light_horsemen
+					stacks = 10
+				}
+				men_at_arms = {
+					type = armored_horsemen
+					stacks = 3
+				}
+				men_at_arms = {
+					type = mangonel
+					stacks = 5
+				}
+				location = capital_province
+			}
+		}
+	}
+}
 
+on_gain_holy_order = {
+	effect = {
+		if = {
+			limit = { NOT = { has_trait = order_member } has_government = holy_order_county_government }
+			add_trait = order_member
+		}
+	}
+}
 
 on_cardinal_initialize = {
 	effect = {
@@ -301,8 +384,8 @@ on_pope_death = {
 		global_var:preferatus = {
 			promote_new_cardinal = yes
 		}
-#		update_preferatus = yes
-#		predict_new_cardinal = yes
+		#update_preferatus = yes
+		#predict_new_cardinal = yes
 		dummy_male = {update_cardinal_window = yes}
 		#setup_cardinal_activity = yes
 	}
@@ -566,14 +649,14 @@ KOH_ON_START = {
 				}
 			}
 		}
-		character:226000 = {
+		title:e_arabia.holder = {
 			if = {
 				limit = {
 					is_alive = yes
 				}
 				trigger_event = {
 					id = KoH_saladin.100
-					days = 1003
+					days = 900
 				}
 			}
 		}
@@ -676,6 +759,9 @@ KOH_REYNALD_ACTION = {
 							}
 						}
 					}
+					character:226000 = {
+						NOT = {	has_character_flag = Jihad_incoming }
+					}
 				}
 				character:223523 = {
 					trigger_event = {
@@ -762,6 +848,9 @@ KOH_pulse_monthly = {
 						target = character:223590
 						modifier = raided_me_opinion
 					} 
+				}
+				character:226000 = {
+					NOT = {	has_character_flag = Jihad_incoming }
 				}
 			}
 			character:223523 = {

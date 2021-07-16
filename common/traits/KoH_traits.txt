@@ -1,44 +1,9 @@
-﻿lion_of_the_empire = {
-	index = 281
-	opposites = {
-		fredrick_barbarossa
-		KOH_ghibelline
-	}
-	intrigue = 3
-	stewardship = 3
-	martial = 2
-	
-	opinion_of_liege = -40
-	opposite_opinion = -100
-	general_opinion = 10
-	
-	desc = {
-		desc = trait_lion_of_the_empire_desc
-	}
-	shown_in_ruler_designer = no
-
-	ai_honor = low_negative_ai_value
-}
-
-fredrick_barbarossa = {
-	index = 282
-	opposites = {
-		lion_of_the_empire
-		KOH_guelph
-	}
-	levy_size = 0.1
-	tolerance_advantage_mod = 12
-	opposite_opinion = -100
-	shown_in_ruler_designer = no
-	desc = {
-		desc = trait_fredrick_barbarossa_desc
-	}
-	ai_zeal = dominant_positive_ai_value
-}
-
+﻿
 balian_of_ibelin = {
 	index = 283
 	prowess = 10
+	birth = 0
+	random_creation = 0
 	hard_casualty_modifier = -0.3
 	monthly_piety = 1
 	shown_in_ruler_designer = no
@@ -54,6 +19,8 @@ leper_king = {
 	prowess = -8
 	fertility = -0.95
 
+	birth = 0
+	random_creation = 0
 	dread_baseline_add = -20
 	dread_loss_mult = 1
 
@@ -83,6 +50,8 @@ marshal_of_jerusalem = {
 	prowess = -5
 	levy_size = 0.1
 	opinion_of_liege = 40
+	birth = 0
+	random_creation = 0
 
 	opposite_opinion = 50
 	general_opinion = 20
@@ -103,6 +72,8 @@ augustus_of_the_french = {
 	monthly_prestige = 1
 	knight_effectiveness_mult = 0.25
 	knight_limit = 2
+	birth = 0
+	random_creation = 0
 	
 	desc = {
 		desc = trait_augustus_of_the_french_desc
@@ -121,6 +92,8 @@ righteous_of_the_faith = {
 	vassal_opinion = 10
 	same_faith_opinion = 20
 	learning = 2
+	birth = 0
+	random_creation = 0
 	
 	desc = {
 		desc = trait_righteous_of_the_faith_desc
@@ -135,6 +108,8 @@ no_levy = {
 	index = 288
 	levy_size = -2
 	knight_limit = -10
+	birth = 0
+	random_creation = 0
 
 	desc = {
 		desc = trait_no_levy_desc
@@ -144,6 +119,8 @@ no_levy = {
 unwed = {
 	index = 289
 	monthly_piety = 1
+	birth = 0
+	random_creation = 0
 	flag = can_not_marry
 	shown_in_ruler_designer = no
 	desc = {
@@ -155,6 +132,8 @@ stress_gain_remove = {
 	index = 290
 
 	genetic = no
+	birth = 0
+	random_creation = 0
 	good = yes
 	shown_in_ruler_designer = no
 	hidden_effect = {
@@ -169,6 +148,8 @@ KOH_Reynald = {
 	index = 291
 
 	good = no
+		birth = 0
+	random_creation = 0
 
 	desc = {
 		desc = KOH_Reynald_desc
@@ -184,7 +165,8 @@ KOH_Reynald = {
 
 KOH_Free_City = {
 	index = 292
-
+	birth = 0
+	random_creation = 0
 	good = yes
 	flag = can_not_marry
 	can_have_children = no
@@ -257,6 +239,8 @@ richard_the_lionheart = {
 	martial = 2
 	diplomacy = 1
 	prowess = 5
+	birth = 0
+	random_creation = 0
 	
 	monthly_piety_gain_mult = 0.2
 	monthly_prestige = 1
@@ -282,7 +266,8 @@ koh_dragon = {
 	index = 296
 	martial = 10
 	prowess = 10
-
+	birth = 0
+	random_creation = 0
 	desc = {
 		desc = koh_dragon_desc
 	}
@@ -319,7 +304,8 @@ one_handed = {
 koh_cardinal = {
 	index = 298
 	health_trait = yes
-
+	birth = 0
+	random_creation = 0
 	monthly_piety_gain_mult = 0.2
 
 	desc = {
@@ -329,6 +315,8 @@ koh_cardinal = {
 
 beatified = {
 	index = 299
+	birth = 0
+	random_creation = 0
 
 	monthly_piety_gain_mult = 0.2
 }
@@ -338,10 +326,54 @@ KOH_Emperor = {
 	opposites = {
 		KOH_guelph
 	}
+	birth = 0
+	random_creation = 0
 	levy_size = 0.1
 	opposite_opinion = -100
 	shown_in_ruler_designer = no
 	desc = {
 		desc = KOH_Emperor_desc
 	}
+}
+
+fredrick_barbarossa = {
+	index = 301
+	opposites = {
+		lion_of_the_empire
+		KOH_guelph
+	}
+	levy_size = 0.1
+	birth = 0
+	random_creation = 0
+	fame = yes
+	tolerance_advantage_mod = 12
+	opposite_opinion = -100
+	shown_in_ruler_designer = no
+	desc = {
+		desc = trait_fredrick_barbarossa_desc
+	}
+	ai_zeal = dominant_positive_ai_value
+}
+
+lion_of_the_empire = {
+	index = 302
+	opposites = {
+		fredrick_barbarossa
+		KOH_ghibelline
+	}
+	intrigue = 3
+	stewardship = 3
+	martial = 2
+	birth = 0
+	random_creation = 0
+	opinion_of_liege = -40
+	opposite_opinion = -100
+	general_opinion = 10
+	
+	desc = {
+		desc = trait_lion_of_the_empire_desc
+	}
+	shown_in_ruler_designer = no
+
+	ai_honor = low_negative_ai_value
 }

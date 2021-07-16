@@ -76,6 +76,53 @@ KoH_holy_orders.1 = {
 			lease_out_to = scope:templar_holy_order
 		}
 
+		title:d_lebanon.holder = {
+			get_title = title:b_antartus
+		}
+
+		title:b_antartus = { lease_out_to = scope:templar_holy_order }
+
+		title:b_antartus.title_province = {
+			# Walls & Towers.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = curtain_walls_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = curtain_walls_01
+			}
+			# Barracks.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = barracks_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = barracks_01
+			}
+			# Military Camps.
+			if = {
+				limit = {
+					NOT = { has_building_or_higher = military_camps_01 }
+				}
+				# If it doesn't have a free building slot, give it one.
+				if = {
+					limit = { free_building_slots = 0 }
+					add_building_slot = 1
+				}
+				# Add the building.
+				add_building = military_camps_01
+			}
+		}
 	
 		title:b_toron.title_province = {
 			# Walls & Towers.
