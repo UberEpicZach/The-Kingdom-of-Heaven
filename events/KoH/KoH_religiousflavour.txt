@@ -787,6 +787,10 @@ KoH_religiousflavour.15 = {
 		character = scope:peter
 	}
 
+	trigger = {
+		this = title:c_forez.holder
+	}
+
 	immediate = {
 		create_character = {
 			name = "Pèire de Vaudès"
@@ -1022,9 +1026,6 @@ KoH_religiousflavour.20 = {
 
 		title:c_forez = {
 			set_county_faith = faith:waldensian
-
-			set_county_faith = faith:waldensian
-
 
 			add_county_modifier = {
 				modifier = Birthplace_of_Waldensianism
