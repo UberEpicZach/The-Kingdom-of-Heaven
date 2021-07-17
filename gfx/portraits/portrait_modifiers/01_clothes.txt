@@ -3920,66 +3920,6 @@ clothes = {
 			}
 		}
 	}
-	french_war = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothesKOH
-				template = french_war_nobility_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1.0
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1.0
-				template = body_shape_average_clothed
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				portrait_wear_armor_trigger = yes
-				portrait_french_clothing_trigger = yes
-			}
-		}
-	}
-	italian_war = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothesKOH
-				template = italian_war_nobility_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1.0
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1.0
-				template = body_shape_average_clothed
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 102
-				portrait_wear_armor_trigger = yes
-				portrait_italian_clothing_trigger = yes
-			}
-		}
-	}
 
 	ibelin_knight_clothes = {
 		dna_modifiers = {

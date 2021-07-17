@@ -434,31 +434,31 @@ on_gain_HRE = {
 
 KOH_Italian_Familes = {
 	effect = {
-		title:c_cremona.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }  
-		title:c_mantua.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
-		title:k_genoa.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
-		title:c_bologna.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
-		title:c_modena.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
-		title:c_treviso.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
-		title:c_vercelli.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
-		title:c_lodi.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } } 
-		title:c_parma.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
-		title:c_ferrara.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
-		title:c_verona.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
-		title:c_padua.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
-		title:c_vicenza.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
-		title:k_venice.holder = { dynasty = { add_dynasty_modifier = dynasty_guelph } }
-		title:c_arezzo.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
-		title:c_assisi.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
-		title:c_como.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
-		title:c_forli.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
-		title:c_grosseto.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
-		title:c_pavia.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
-		title:k_pisa.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
-		title:c_pistorja.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
-		title:c_spoleto.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
-		title:c_terni.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }
-		title:c_urbino.holder = { dynasty = { add_dynasty_modifier = dynasty_ghibelline } }	
+		title:c_cremona.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}}  
+		title:c_mantua.holder = {if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:k_genoa.holder = {if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:c_bologna.holder = {if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:c_modena.holder = {if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:c_treviso.holder = {if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:c_vercelli.holder = {if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:c_lodi.holder = {if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:c_parma.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:c_ferrara.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:c_verona.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:c_padua.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:c_vicenza.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:k_venice.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_guelph }}} 
+		title:c_arezzo.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}}   
+		title:c_assisi.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}} 
+		title:c_como.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}} 
+		title:c_forli.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}} 
+		title:c_grosseto.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}}  
+		title:c_pavia.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}} 
+		title:k_pisa.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}} 
+		title:c_pistorja.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}} 
+		title:c_spoleto.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}} 
+		title:c_terni.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}} 
+		title:c_urbino.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}} 	
 	
 		every_ruler = {
 				limit = {
