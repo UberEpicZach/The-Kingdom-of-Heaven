@@ -407,22 +407,33 @@ KOH_Crusade_WhitePeace_Winning = {
 		}
 	}
 	resolve_title_and_vassal_change = scope:change
-}
 
-KOH_Crusade_lose = {
-	
 	create_title_and_vassal_change = {
 		type = conquest
 		save_scope_as = change
 		add_claim_on_loss = yes
 	}
-	setup_claim_cb = {
-		titles = target_titles
-		attacker = scope:attacker
-		defender = scope:defender
-		claimant = scope:claimant
-		change = scope:change
+
+	title:e_arabia.holder = {
+		get_title = title:c_jerusalem
 	}
+}
+
+KOH_Crusade_lose = {
+	destroy_title = title:k_jerusalem
+	create_title_and_vassal_change = {
+		type = conquest
+		save_scope_as = change
+		add_claim_on_loss = yes
+	}
+	# setup_claim_cb = {
+	# 	titles = target_titles
+	# 	attacker = scope:attacker
+	# 	defender = scope:defender
+	# 	claimant = scope:claimant
+	# 	change = scope:change
+	# }
+
 	title:c_acre = {
 			add_to_list = target_titles
 	}
@@ -435,6 +446,9 @@ KOH_Crusade_lose = {
 	title:c_montforte = {
 		add_to_list = target_titles
 	}	
+	title:c_jerusalem = {
+		add_to_list = target_titles
+	}
 	every_in_list = {
 		list = target_titles
 		change_title_holder = {
@@ -444,7 +458,6 @@ KOH_Crusade_lose = {
 	}
 	resolve_title_and_vassal_change = scope:change
 
-	destroy_title = title:k_jerusalem
 }
 
 scripted_effect_popethingevent = {
