@@ -59,7 +59,6 @@ soz_actthree_branchone.2 = {
 
 	option = {                                        # Saladin is intrigued, where are we going?
 		name = soz_actthree_branchone.2.a
-		custom_tooltip = soz_actthree_branchone.2.tt
 		trigger_event = soz_actthree_branchone.3
 	}
 
@@ -83,7 +82,8 @@ soz_actthree_branchone.3 = {
 
 	option = {                                        # Saladin is honored (SALADIN GAINS THE SWORD OF ZENGI ARTIFACT FROM ISMAT)
 		name = soz_actthree_branchone.3.a
-		custom_tooltip = soz_actthree_branchone.3.tt
+		custom_tooltip = soz_actthree_branchone.3.tta
+		add_piety = major_piety_gain
 		add_artifact = {ARTIFACT = soz_101}
 	}
 

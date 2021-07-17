@@ -20,11 +20,11 @@ soz_actone_branchone.1 = {
 		character = scope:actor
 		animation = content
 	}
-	#immediate = {
-		#scope:recipient = {
-			#add_character_flag = had_event_soz.1
-		#}
-	#}
+	immediate = {
+		scope:recipient = {
+			add_character_flag = had_event_soz.1
+		}
+	}
 
 	option = {                                        # How are you?
 		name = soz_actone_branchone.1.a
@@ -58,14 +58,12 @@ soz_actone_branchone.2 = {
 
 	option = {                                        # Tell me about Nur Al Din
 		name = soz_actone_branchone.2.a
-		custom_tooltip = soz_actone_branchone.2.tt
 		trigger_event = soz_actone_branchone.3
 	}
 
 
 	option = {                                        # Tell me about her father, Unur of Damascus. (begins branch2)
 		name = soz_actone_branchone.2.b
-		custom_tooltip = soz.1.tt
 		trigger_event = soz_actone_branchtwo.1
 	}
 }
@@ -116,7 +114,6 @@ soz_actone_branchone.4 = {
 
 	option = {                                        # saladin tries to defend himself
 		name = soz_actone_branchone.4.a
-		custom_tooltip = soz_actone_branchone.4.tt
 		trigger_event = soz_actone_branchone.5
 	}
 
@@ -131,16 +128,15 @@ soz_actone_branchone.5 = {
 	}
 	left_portrait = {
 		character = scope:recipient
-		animation = content
+		animation = angry
 	}
 	right_portrait = {
 		character = scope:actor
-		animation = content
+		animation = angry
 	}
 
 	option = {                                        # Saladin leaves
 		name = soz_actone_branchone.5.a
-		custom_tooltip = soz_actone_branchone.5.tt
 		trigger_event = {
 			id = soz_acttwo_branchone.1
 			days = 60
@@ -164,7 +160,6 @@ soz_actone_branchone.6 = {
 
 	option = {
 		name = soz_actone_branchone.6.a
-		custom_tooltip = soz_actone_branchone.6.a
 
 	}
 }
