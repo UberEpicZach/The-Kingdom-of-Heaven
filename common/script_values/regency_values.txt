@@ -1,0 +1,330 @@
+﻿court_chaplain_regent_learn = {
+    value = 0
+    if = {
+        limit = {
+			has_perk = learn_on_the_job_perk
+            OR = {
+				liege = {
+					has_government = feudal_government
+					OR = {
+						is_capable_adult = no
+						is_imprisoned = yes
+						age < 16
+						AND = {
+							is_male = no
+							OR = {
+								has_realm_law = male_only_law #shouldn't happen
+								has_realm_law = male_preference_law
+							}
+						}
+						AND = {
+							is_male = yes
+							OR = {
+								has_realm_law = female_only_law #shouldn't happen
+								has_realm_law = female_preference_law
+							}
+						}
+					}
+				}
+				primary_spouse = {
+					has_government = feudal_government
+					OR = {
+						is_capable_adult = no
+						is_imprisoned = yes
+						age < 16
+						AND = {
+							is_male = no
+							OR = {
+								has_realm_law = male_only_law #shouldn't happen
+								has_realm_law = male_preference_law
+							}
+						}
+						AND = {
+							is_male = yes
+							OR = {
+								has_realm_law = female_only_law #shouldn't happen
+								has_realm_law = female_preference_law
+							}
+						}
+					}
+				}
+			}
+        }
+		liege = {
+			every_learning_councillor = {
+				limit = {has_council_position = councillor_court_chaplain}
+				add = learning
+				multiply = {
+					add = learn_on_the_job_percentage
+					divide = 100
+				}
+				floor = yes
+				min = 1
+			}
+		}
+    }
+}
+spymaster_regent_learn = {
+    value = 0
+    if = {
+        limit = {
+			has_perk = learn_on_the_job_perk
+            OR = {
+				liege = {
+					has_government = feudal_government
+					OR = {
+						is_capable_adult = no
+						is_imprisoned = yes
+						age < 16
+						AND = {
+							is_male = no
+							OR = {
+								has_realm_law = male_only_law #shouldn't happen
+								has_realm_law = male_preference_law
+							}
+						}
+						AND = {
+							is_male = yes
+							OR = {
+								has_realm_law = female_only_law #shouldn't happen
+								has_realm_law = female_preference_law
+							}
+						}
+					}
+				}
+				primary_spouse = {
+					has_government = feudal_government
+					OR = {
+						is_capable_adult = no
+						is_imprisoned = yes
+						age < 16
+						AND = {
+							is_male = no
+							OR = {
+								has_realm_law = male_only_law #shouldn't happen
+								has_realm_law = male_preference_law
+							}
+						}
+						AND = {
+							is_male = yes
+							OR = {
+								has_realm_law = female_only_law #shouldn't happen
+								has_realm_law = female_preference_law
+							}
+						}
+					}
+				}
+			}
+        }
+		liege = {
+			every_intrigue_councillor = {
+				limit = {has_council_position = councillor_spymaster}
+				add = intrigue
+				multiply = {
+					add = learn_on_the_job_percentage
+					divide = 100
+				}
+				floor = yes
+				min = 1
+			}
+		}
+    }
+}
+marshal_regent_learn = {
+    value = 0
+    if = {
+        limit = {
+			has_perk = learn_on_the_job_perk
+            OR = {
+				liege = {
+					has_government = feudal_government
+					OR = {
+						is_capable_adult = no
+						is_imprisoned = yes
+						age < 16
+						AND = {
+							is_male = no
+							OR = {
+								has_realm_law = male_only_law #shouldn't happen
+								has_realm_law = male_preference_law
+							}
+						}
+						AND = {
+							is_male = yes
+							OR = {
+								has_realm_law = female_only_law #shouldn't happen
+								has_realm_law = female_preference_law
+							}
+						}
+					}
+				}
+				primary_spouse = {
+					has_government = feudal_government
+					OR = {
+						is_capable_adult = no
+						is_imprisoned = yes
+						age < 16
+						AND = {
+							is_male = no
+							OR = {
+								has_realm_law = male_only_law #shouldn't happen
+								has_realm_law = male_preference_law
+							}
+						}
+						AND = {
+							is_male = yes
+							OR = {
+								has_realm_law = female_only_law #shouldn't happen
+								has_realm_law = female_preference_law
+							}
+						}
+					}
+				}
+			}
+        }
+		liege = {
+			every_martial_councillor = {
+				limit = {has_council_position = councillor_marshal}
+				add = martial
+				multiply = {
+					add = learn_on_the_job_percentage
+					divide = 100
+				}
+				floor = yes
+				min = 1
+			}
+		}
+    }
+}
+steward_regent_learn = {
+    value = 0
+    if = {
+        limit = {
+			has_perk = learn_on_the_job_perk
+            OR = {
+				liege = {
+					has_government = feudal_government
+					OR = {
+						is_capable_adult = no
+						is_imprisoned = yes
+						age < 16
+						AND = {
+							is_male = no
+							OR = {
+								has_realm_law = male_only_law #shouldn't happen
+								has_realm_law = male_preference_law
+							}
+						}
+						AND = {
+							is_male = yes
+							OR = {
+								has_realm_law = female_only_law #shouldn't happen
+								has_realm_law = female_preference_law
+							}
+						}
+					}
+				}
+				primary_spouse = {
+					has_government = feudal_government
+					OR = {
+						is_capable_adult = no
+						is_imprisoned = yes
+						age < 16
+						AND = {
+							is_male = no
+							OR = {
+								has_realm_law = male_only_law #shouldn't happen
+								has_realm_law = male_preference_law
+							}
+						}
+						AND = {
+							is_male = yes
+							OR = {
+								has_realm_law = female_only_law #shouldn't happen
+								has_realm_law = female_preference_law
+							}
+						}
+					}
+				}
+			}
+        }
+		liege = {
+			every_stewardship_councillor = {
+				limit = {has_council_position = councillor_steward}
+				add = stewardship
+				multiply = {
+					add = learn_on_the_job_percentage
+					divide = 100
+				}
+				floor = yes
+				min = 1
+			}
+		}
+    }
+}
+chancellor_regent_learn = {
+    value = 0
+    if = {
+        limit = {
+			has_perk = learn_on_the_job_perk
+            OR = {
+				liege = {
+					has_government = feudal_government
+					OR = {
+						is_capable_adult = no
+						is_imprisoned = yes
+						age < 16
+						AND = {
+							is_male = no
+							OR = {
+								has_realm_law = male_only_law #shouldn't happen
+								has_realm_law = male_preference_law
+							}
+						}
+						AND = {
+							is_male = yes
+							OR = {
+								has_realm_law = female_only_law #shouldn't happen
+								has_realm_law = female_preference_law
+							}
+						}
+					}
+				}
+				primary_spouse = {
+					has_government = feudal_government
+					OR = {
+						is_capable_adult = no
+						is_imprisoned = yes
+						age < 16
+						AND = {
+							is_male = no
+							OR = {
+								has_realm_law = male_only_law #shouldn't happen
+								has_realm_law = male_preference_law
+							}
+						}
+						AND = {
+							is_male = yes
+							OR = {
+								has_realm_law = female_only_law #shouldn't happen
+								has_realm_law = female_preference_law
+							}
+						}
+					}
+				}
+			}
+        }
+		liege = {
+			every_diplomacy_councillor = {
+				limit = {has_council_position = councillor_chancellor}
+				add = diplomacy
+				multiply = {
+					add = learn_on_the_job_percentage
+					divide = 100
+				}
+				floor = yes
+				min = 1
+			}
+		}
+    }
+}
