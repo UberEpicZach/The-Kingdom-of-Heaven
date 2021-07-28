@@ -1,0 +1,28 @@
+﻿on_title_gain_inheritance = {
+	on_actions = {
+		on_regency_assign
+	}
+}
+on_regency_assign = {
+	trigger = {
+		NOT = {
+			has_character_flag = regent_assigned
+		}
+	}
+	events = {
+		regency.001
+	}
+}
+on_death = {
+	on_actions = {
+		on_regent_death
+	}
+}
+on_regent_death = {
+	trigger = {
+		has_character_flag = is_assigned_regent
+	}
+	events = {
+		regency.002
+	}
+}

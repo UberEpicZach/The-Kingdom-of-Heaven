@@ -336,6 +336,44 @@ councillor_spouse = {
 	name = {
 		first_valid = {
 			triggered_desc = {
+				trigger = {
+					scope:councillor_liege = {
+						has_government = feudal_government
+						OR = {
+							age < 16
+							#add incapable here
+							AND = {
+								is_male = no
+								OR = {
+									has_realm_law = male_only_law #shouldn't happen
+									has_realm_law = male_preference_law
+								}
+							}
+						}
+					}
+				}
+				desc = councillor_regent
+			}
+			triggered_desc = {
+				trigger = {
+					scope:councillor_liege = {
+						has_government = feudal_government
+						OR = {
+							age < 16
+							#add incapable here
+							AND = {
+								is_male = yes
+								OR = {
+									has_realm_law = female_only_law #shouldn't happen
+									has_realm_law = female_preference_law
+								}
+							}
+						}
+					}
+				}
+				desc = councillor_regent
+			}
+			triggered_desc = {
 				trigger = { is_male = yes }
 				desc = {
 					first_valid = {
@@ -2260,24 +2298,78 @@ councillor_spouse = {
 		}
 	}
 
-	tooltip = game_concept_spouse_desc
+	tooltip = game_concept_spouse_desc #needs to be changes
+
+	#modifier = {                               #use these if desired for regents
+		#name = learn_on_the_job_modifier
+		#learning = 1
+		#scale = court_chaplain_regent_learn
+	#}
+
+	#modifier = {
+		#name = learn_on_the_job_modifier
+		#diplomacy = 1
+		#scale = chancellor_regent_learn
+	#}
+
+	#modifier = {
+		#name = learn_on_the_job_modifier
+		#stewardship = 1
+		#scale = steward_regent_learn
+	#}
+
+	#modifier = {
+		#name = learn_on_the_job_modifier
+		#martial = 1
+		#scale = marshal_regent_learn
+	#}
+
+	#modifier = {
+		#name = learn_on_the_job_modifier
+		#intrigue = 1
+		#scale = spymaster_regent_learn
+	#}
 
 	valid_position = {
-		any_spouse = {
-			OR = {
-				court_owner = root
-				AND = {
-					is_ruler = yes
-					exists = liege
-					liege = root
+		OR = {
+			any_spouse = {
+				OR = {
+					court_owner = root
+					AND = {
+						is_ruler = yes
+						exists = liege
+						liege = root
+					}
+				}
+			}
+			AND = {
+				has_government = feudal_government
+				OR = {
+					is_capable_adult = no
+					is_imprisoned = yes
+					age < 16
+					AND = {
+						is_male = no
+						OR = {
+							has_realm_law = male_only_law #shouldn't happen
+							has_realm_law = male_preference_law
+						}
+					}
+					AND = {
+						is_male = yes
+						OR = {
+							has_realm_law = female_only_law #shouldn't happen
+							has_realm_law = female_preference_law
+						}
+					}
 				}
 			}
 		}
 	}
 
 	valid_character = {
-		exists = liege
-		can_be_spouse_councillor_trigger = { COUNCIL_OWNER = liege }
+		exists = root.liege_or_court_owner
+		can_be_spouse_or_regent_trigger = { COUNCIL_OWNER = root.liege_or_court_owner }
 	}
 
 	on_get_position = {
