@@ -37,7 +37,7 @@ scripted_effect tournament_outcome_effect = {
 		value = $WIN_VALUE_MODIFIER$
 
 		set_variable = {
-			name = $KEY$_win_modifier
+			name = $TYPE$_win_modifier
 			value = $WIN_VALUE_MODIFIER$
 		}
 	}
@@ -51,38 +51,56 @@ scripted_effect tournament_effect = {
 	#the toasts are here for the tooltips
 	random_list = {
 		#hopefully script values wil work here, not sure
-		$KEY$_A_chance = {
+		0 = {
+			modifier = {
+				add = $KEY$_A_chance
+			}
 			tournament_outcome_effect = {
-				KEY = $KEY$.A
+				TYPE = $KEY$
+				KEY = $KEY$_A
 				PRESTIGE = major_prestige_gain
 				WIN_VALUE_MODIFIER = 0.3
 			}
 		}
 
-		$KEY$_B_chance = {
+		0 = {
+			modifier = {
+				add = $KEY$_B_chance
+			}
 			tournament_outcome_effect = {
-				KEY = $KEY$.B
+				TYPE = $KEY$
+				KEY = $KEY$_B
 				PRESTIGE = minor_prestige_gain
 				WIN_VALUE_MODIFIER = 0.1
 			}
 		}
 
-		$KEY$_C_chance = {
+		0 = {
+			modifier = {
+				add = $KEY$_C_chance
+			}
 			tournament_outcome_effect = {
-				KEY = $KEY$.C
+				TYPE = $KEY$
+				KEY = $KEY$_C
 				PRESTIGE = 0
 				WIN_VALUE_MODIFIER = -0.1
 			}
 		}
 
-		$KEY$_D_chance = {
+		0 = {
+			modifier = {
+				add = $KEY$_D_chance
+			}
 			tournament_outcome_effect = {
-				KEY = $KEY$.D
+				TYPE = $KEY$
+				KEY = $KEY$_D
 				PRESTIGE = medium_prestige_loss
 				WIN_VALUE_MODIFIER = -0.3
 			}
 
-			increase_wounds_no_death_effect = yes
+			increase_wounds_no_death_effect = {
+				REASON = duel
+			}
 		}
 	}
 }
@@ -105,7 +123,10 @@ scripted_effect rank_the_players = {
 		}
 		save_temporary_scope_value_as = {
 			name = counter
-			value = scope:counter + 1
+			value = {
+				value = scope:counter
+				add = 1
+			}
 		}
 	}
 }
@@ -189,6 +210,16 @@ scripted_effect process_results = {
 }
 
 
+scripted_effect retrigger_KOH_1 = {
+	debug_log = "retriggered KOH_Pentecost.1"
+	if = {
+		limit = { is_alive = yes }
+		trigger_event = {
+			id = KOH_Pentecost.1
+			weeks = 2
+		}
+	}
+}
 KOH_Pentecost.1 = {
 	title = KOH_Pentecost.1.t
 	desc = KOH_Pentecost.1.desc
@@ -205,11 +236,20 @@ KOH_Pentecost.1 = {
 	}
 
 	on_trigger_fail = {
+		retrigger_KOH_1 = yes
+	}
+
+	immediate = {
+		# we redo this in the next event, this is only here so the description works
 		if = {
-			limit = { is_alive = yes }
-			trigger_event = {
-				id = KOH_Pentecost.1
-				weeks = 2
+			limit = { title:d_mainz.title_capital_county.holder = title:d_mainz.holder }
+			title:d_mainz.title_capital_county = {
+				save_scope_as = mainz_county
+			}
+		}
+		else = {
+			title:d_mainz.holder.capital_county = {
+				save_scope_as = mainz_county
 			}
 		}
 	}
@@ -233,6 +273,8 @@ KOH_Pentecost.1 = {
 		}
 
 		add_prestige = major_prestige_loss
+
+		retrigger_KOH_1 = yes
 
 		stress_impact = {
 			arrogant = medium_stress_impact_gain
@@ -345,8 +387,18 @@ KOH_Pentecost.3 = {
 	type = character_event
 	theme = martial
 
+	immediate = {
+		# this shouldn't be necessary
+		save_scope_value_as = {
+			name = spending
+			value = 0
+		}
+	}
+
 	option = {
 		name = KOH_Pentecost.3.a
+
+		add_prestige = minor_prestige_loss
 
 		save_scope_value_as = {
 			name = spending
@@ -362,7 +414,7 @@ KOH_Pentecost.3 = {
 			name = spending
 			value = {
 				value = scope:invite_width
-				add = 1
+				add = 2
 			}
 		}
 
@@ -374,7 +426,7 @@ KOH_Pentecost.3 = {
 
 	after = {
 		if = {
-			limit = { scope:spending >= 2 }
+			limit = { scope:spending > 2 }
 			trigger_event = {
 				id = KOH_Pentecost.4
 				weeks = 1
@@ -392,7 +444,7 @@ KOH_Pentecost.3 = {
 
 scripted_effect no_funding = {
 	add_character_modifier = {
-		modifier = pentecost_no_funding_modfier
+		modifier = pentecost_no_funding_modifier
 		years = 3
 	}
 
@@ -561,6 +613,10 @@ KOH_Pentecost.6 = {
 		}
 		title:e_hre = {
 			random_in_de_facto_hierarchy = {
+				continue = {
+					#not sure if this is necessary
+					tier >= tier_county
+				}
 				limit = {
 					trigger_if = {
 						limit = { tier = tier_county }
@@ -570,9 +626,14 @@ KOH_Pentecost.6 = {
 						always = no
 					}
 				}
-				save_temporary_scope_value_as = {
-					name = jew_faith
-					value = faith
+				faith = {
+					save_temporary_scope_as = jew_faith
+				}
+				culture = {
+					save_temporary_scope_as = jew_culture
+				}
+				title_province = {
+					save_temporary_scope_as = pool_place
 				}
 				save_temporary_scope_value_as = {
 					name = jews_in_HRE
@@ -580,24 +641,44 @@ KOH_Pentecost.6 = {
 				}
 			}
 		}
+
+		# default
 		if = {
 			limit = { scope:jews_in_HRE = no }
-			save_temporary_scope_value_as = {
-				name = jew_faith
-				value = faith:rabbinism
+			faith:rabbinism = {
+				save_temporary_scope_as = jew_faith
+			}
+
+			#where do we spawn him?
+			title:e_hre = {
+				random_in_de_facto_hierarchy = {
+					continue = {
+						#not sure if this is necessary
+						tier >= tier_county
+					}
+					limit = {
+						tier = tier_county
+						title_province = {
+							geographical_region = world_europe_west_germania
+						}
+					}
+					alternative_limit = {
+						tier = tier_county
+					}
+					culture = {
+						save_temporary_scope_as = jew_culture
+					}
+					title_province = {
+						save_temporary_scope_as = pool_place
+					}
+				}
 			}
 		}
 
-		#where do we spawn him?
-		random_county = {
-			region = world_europe_west_germania
-			capital_province = {
-				save_temporary_scope_as = pool_place
-			}
-		}
 		create_character = {
 			gender = male
 			faith = scope:jew_faith
+			culture = scope:jew_culture
 			trait = zealous
 			location = scope:pool_place
 			#save_event_target_as = court_jew # this doesn't work for some reason, so we do it below
@@ -637,6 +718,10 @@ KOH_Pentecost.6 = {
 			modifier = pentecost_overtaxed_jews_modifier
 			years = 10
 		}
+	}
+
+	after = {
+		trigger_event = KOH_Pentecost.7
 	}
 }
 
@@ -858,13 +943,18 @@ KOH_Pentecost.9 = {
 scripted_effect add_to_invited = {
 	# passed LISTNAME
 	title:e_hre = {
-		every_$LISTNAME$ = {
+		# should be:
+		#every_$LISTNAME$ = {
+		every_in_de_facto_hierarchy = {
 			continue = { tier > tier_barony }
 			limit = {
+
+				# workaround bc scripted_lists isn't working for some reason
 				trigger_if = {
 					limit = {
-						exists = scope:invited
+						is_title_created = yes
 					}
+					$LISTNAME$_trigger = yes
 					NOT = {
 						holder = {
 							is_in_list = invited
@@ -872,15 +962,50 @@ scripted_effect add_to_invited = {
 					}
 				}
 				trigger_else = {
-					always = yes
+					NOT = {
+						always = yes
+					}
 				}
-				highest_held_title_tier < tier_empire # don't invite frederick
 			}
 			holder = {
 				add_to_list = invited
 			}
 		}
 	}
+}
+
+#workarounds
+scripted_trigger KOH_Pentecost_base_vassal_title_trigger = {
+	OR = {
+		tier = tier_county
+		tier = tier_duchy
+		tier = tier_kingdom
+	}
+	holder = {
+		is_available_for_activity_trigger = yes
+	}
+}
+scripted_trigger KOH_Pentecost_southern_circle_vassal_title_trigger = {
+	holder = {
+		OR = {
+			culture = culture:swabian
+			culture = culture:franconian
+			culture = culture:bavarian
+		}
+	}
+	KOH_Pentecost_base_vassal_title_trigger = yes
+}
+scripted_trigger KOH_Pentecost_german_vassal_title_trigger = {
+	holder = {
+		OR = {
+			culture = culture:swabian
+			culture = culture:franconian
+			culture = culture:bavarian
+			culture = culture:saxon
+			culture = culture:dutch
+		}
+	}
+	KOH_Pentecost_base_vassal_title_trigger = yes
 }
 
 
@@ -896,14 +1021,14 @@ scripted_trigger can_buy_upgrade = {
 		PRICE = scope:price
 	}
 }
-KOH_Pentecost.10_1 = {
-	title = KOH_Pentecost.10_1.t
-	desc = KOH_Pentecost.10_1.desc
+KOH_Pentecost.10 = {
+	title = KOH_Pentecost.10.t
+	desc = KOH_Pentecost.10.desc
 	type = character_event
 	theme = stewardship
 
 	option = {
-		name = KOH_Pentecost.10_1.a
+		name = KOH_Pentecost.10.a
 
 		scope:mainz_county = {
 			add_county_modifier = {
@@ -919,7 +1044,7 @@ KOH_Pentecost.10_1 = {
 	}
 
 	option = {
-		name = KOH_Pentecost.10_1.b
+		name = KOH_Pentecost.10.b
 
 		add_gold = {
 			value = Pentecost_base_cost
@@ -946,7 +1071,7 @@ KOH_Pentecost.10_1 = {
 	}
 
 	option = {
-		name = KOH_Pentecost.5.c
+		name = KOH_Pentecost.10.c
 
 		add_gold = {
 			value = Pentecost_base_cost
@@ -989,6 +1114,9 @@ KOH_Pentecost.10_1 = {
 	after = {
 		custom_description_no_bullet = {
 			text = send_invitations_to_pentecost
+
+			add_to_list = invited # add frederick
+
 			if = {
 				limit = { scope:invite_width = 0 }
 				add_to_invited = {
@@ -1011,22 +1139,22 @@ KOH_Pentecost.10_1 = {
 				scope:diet = {
 					invite_character_to_activity = prev
 				}
-				trigger_event = KOH_Pentecost.10_2
+				trigger_event = KOH_Pentecost.1001
 			}
 		}
 	}
 }
 
 
-KOH_Pentecost.10_2 = {
-	opening = KOH_Pentecost.10_2.opening
-	desc = KOH_Pentecost.10_2.desc
+KOH_Pentecost.1001 = {
+	opening = KOH_Pentecost.1001.opening
+	desc = KOH_Pentecost.1001.desc
 	type = letter_event
 
 	sender = scope:frederick
 
 	option = {
-		name = KOH_Pentecost.10_2.a
+		name = KOH_Pentecost.1001.a
 
 		scope:diet = {
 			accept_invitation_for_character = prev
@@ -1047,7 +1175,7 @@ KOH_Pentecost.10_2 = {
 	}
 
 	option = {
-		name = KOH_Pentecost.10_2.b
+		name = KOH_Pentecost.1001.b
 
 		scope:diet = {
 			decline_invitation_for_character = prev
@@ -1127,12 +1255,12 @@ KOH_Pentecost.12 = {
 	theme = stewardship
 
 	right_portrait = {
-		character = cp:councillor_steward
+		character = scope:count_hainaut
 		animation = idle
 	}
 
 	left_portrait = {
-		character = scope:konrad
+		character = scope:duke_lorraine
 		animation = idle
 	}
 
@@ -1414,10 +1542,52 @@ KOH_Pentecost.15 = {
 		name = KOH_Pentecost.15.a
 		custom_tooltip = KOH_Pentecost.15.a.tt
 
-		#TODO
+		create_title_and_vassal_change = {
+			type = returned
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+
+		character:212600 = { # heinrich welf
+			every_held_title = {
+				change_title_holder_include_vassals = {
+					holder = scope:lion
+					change = scope:change
+					take_baronies = yes
+				}
+			}
+		}
+
+		title:d_ostfalen = {
+			if = {
+				limit = {
+					trigger_if = {
+						limit = {
+							is_title_created = yes
+						}
+						NOT = {
+							holder = character:212600
+						}
+					}
+					trigger_else = {
+						NOT = {
+							always = yes
+						}
+					}
+				}
+				change_title_holder_include_vassals = {
+					holder = scope:lion
+					change = scope:change
+					take_baronies = yes
+				}
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
 
 		remove_relation_rival = scope:lion
-		remove_relation_potential_rival = scope:ion # in case
+		remove_relation_potential_rival = scope:lion # in case
 		create_alliance = scope:lion
 
 		reverse_add_opinion = {
@@ -1430,6 +1600,10 @@ KOH_Pentecost.15 = {
 				target = scope:lion
 			}
 		}
+
+		ai_chance = {
+			base = 15
+		}
 	}
 
 	option = {
@@ -1437,6 +1611,10 @@ KOH_Pentecost.15 = {
 		custom_tooltip = KOH_Pentecost.15.b.tt
 
 		add_prestige = medium_prestige_gain
+
+		ai_chance = {
+			base 85
+		}
 	}
 
 	after = {
@@ -1540,7 +1718,7 @@ KOH_Pentecost.16 = {
 			years = 3
 		}
 		add_character_modifier = {
-			modifier = feast_life_reaffirmed_modifier_desc
+			modifier = feast_life_reaffirmed_modifier
 			years = 2
 		}
 
@@ -1555,6 +1733,10 @@ KOH_Pentecost.16 = {
 	}
 
 	after = {
+		save_scope_value_as = {
+			name = had_bishop_squabble
+			value = yes
+		}
 		if = { 
 			limit = { scope:disappointed_phillip = yes }
 			trigger_event = KOH_Pentecost.17
@@ -1598,7 +1780,20 @@ KOH_Pentecost.17 = {
 	option = {
 		name = KOH_Pentecost.17.b
 
-		#TODO
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = change
+		}
+		title:d_fulda = {
+			change_title_holder = {
+				holder = scope:other_konrad
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+		scope:other_konrad = {
+			add_prestige = massive_prestige_gain
+		}
 	}
 
 	after = {
@@ -1609,7 +1804,7 @@ KOH_Pentecost.17 = {
 }
 
 
-KOH_Pentecost.18_0 = {
+KOH_Pentecost.1801 = {
 	hidden = yes
 
 	immediate = {
@@ -1659,7 +1854,7 @@ KOH_Pentecost.18 = {
 	after = {
 		remove_from_list = participants_not_responded
 		scope:frederick = {
-			trigger_event = KOH_Pentecost.19_0
+			trigger_event = KOH_Pentecost.1901
 		}
 	}
 }
@@ -1668,7 +1863,7 @@ scripted_effect gyrum_prize = {
 	add_prestige = massive_prestige_gain
 	add_gold = medium_gold_value
 }
-KOH_Pentecost.19_0 = {
+KOH_Pentecost.1901 = {
 	hidden = yes
 	trigger = {
 		everyone_has_responded = yes
@@ -1755,7 +1950,7 @@ KOH_Pentecost.20 = {
 	}
 
 	trigger = {
-		everyone_responded = yes
+		everyone_has_responded = yes
 	}
 
 	option = {
@@ -1805,14 +2000,10 @@ KOH_Pentecost.21 = {
 
 	option = {
 		name = {
-			first_valid = {
-				triggered_desc = {
-					trigger = { this = scope:frederick }
-					desc = KOH_Pentecost.21.a.Fred
-				}
-				desc = KOH_Pentecost.21.a
-			}
+			trigger = { this = scope:frederick }
+			text = KOH_Pentecost.21.a.Fred
 		}
+		name = KOH_Pentecost.21.a
 
 		tournament_effect = {
 			KEY = grand_melee
@@ -1823,14 +2014,10 @@ KOH_Pentecost.21 = {
 
 	option = {
 		name = {
-			first_valid = {
-				triggered_desc = {
-					trigger = { this = scope:frederick }
-					desc = KOH_Pentecost.21.b.Fred
-				}
-				desc = KOH_Pentecost.21.b
-			}
+			trigger = { this = scope:frederick }
+			text = KOH_Pentecost.21.b.Fred
 		}
+		name = KOH_Pentecost.21.b
 
 		add_to_list = participants_declined # to tell them who won
 	}
@@ -1838,7 +2025,7 @@ KOH_Pentecost.21 = {
 	after = {
 		remove_from_list = participants_not_responded
 		scope:frederick = {
-			trigger_event = KOH_Pentecost.23_0
+			trigger_event = KOH_Pentecost.2301
 		}
 	}
 }
@@ -1866,7 +2053,7 @@ KOH_Pentecost.22 = {
 	after = {
 		remove_from_list = participants_not_responded
 		scope:frederick = {
-			trigger_event = KOH_Pentecost.23_1
+			trigger_event = KOH_Pentecost.2302
 		}
 	}
 }
@@ -1875,7 +2062,7 @@ scripted_effect grand_melee_prize = {
 	add_prestige = massive_prestige_gain
 	add_gold = medium_gold_value
 }
-KOH_Pentecost.23_0 = {
+KOH_Pentecost.2301 = {
 	hidden = yes
 
 	trigger = {
@@ -1891,7 +2078,7 @@ KOH_Pentecost.23_0 = {
 	}
 }
 
-KOH_Pentecost.23_1 = {
+KOH_Pentecost.2302 = {
 	hidden = yes
 
 	trigger = {
