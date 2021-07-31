@@ -148,7 +148,7 @@ scripted_effect handle_winner = {
 			$KEY$_prize = yes
 		}
 
-		save_temporary_scope_as = $KEY$_winner
+		save_scope_as = $KEY$_winner
 
 		remove_from_list = participants_accepted
 	}
@@ -1315,6 +1315,44 @@ KOH_Pentecost.12 = {
 	}
 }
 
+scripted_effect transfer_to_pope = {
+	every_in_de_jure_hierarchy = {
+		continue = {
+			tier > tier_county
+		}
+
+		if = {
+			limit = {
+				OR = {
+					holder = scope:frederick
+					NOT = {
+						is_title_created = yes
+					}
+				}
+			}
+			change_title_holder_include_vassals = { # if it's mine the pope gets it
+				holder = scope:pope
+				change = scope:change
+			}
+		}
+		else_if = {
+			limit = { # all their stuff is being turned over
+				holder = {
+					highest_held_title_tier <= tier_duchy
+					any_held_title = {
+						count = all
+						OR = {
+							duchy = scope:tuscany
+							duchy = title:d_pisa
+							duchy = title:d_latium
+							duchy = tile:d_spoleto
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 KOH_Pentecost.13 = {
 	title = KOH_Pentecost.13.t
@@ -1343,14 +1381,12 @@ KOH_Pentecost.13 = {
 			value = -1 # so we can work out if the pope says no
 		}
 
-		title:d_tuscany = {
+		title:d_toscana = {
 			save_scope_as = tuscany
 		}
 
-		#do this here for the tt
-		create_title_and_vassal_change = {
-			type = granted
-			save_scope_as = change
+		title:k_romagna = {
+			save_scope_as = romagna
 		}
 	}
 
@@ -1369,13 +1405,44 @@ KOH_Pentecost.13 = {
 			target = scope:pope
 		}
 
+		#do this here for the tt
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = change
+		}
+
 		scope:tuscany = {
 			change_title_holder_include_vassals = {
 				holder = scope:pope
 				change = scope:change
 			}
+			hidden_effect = {
+				set_de_jure_liege_title = scope:romagna
+			}
 		}
+
+		title:d_spoleto = {
+			hidden_effect = {
+				transfer_to_pope = yes
+			}
+		}
+
+		hidden_effect = {
+			title:d_pisa = {
+				if = {
+					limit = {
+						kingdom = title:k_italy # let's not ruin someone's custom kingdom
+					}
+					set_de_jure_liege_title = scope:romagna
+				}
+			}
+
+			# yield vassals and land in spoleto and latium
+
+		}
+
 		resolve_title_and_vassal_change = scope:change
+
 		add_character_modifier = pentecost_papal_auth_over_empire_modifier
 	}
 
@@ -1538,9 +1605,23 @@ KOH_Pentecost.15 = {
 		scope:met_with_lion = no
 	}
 
+	immediate = {
+		title:d_ostfalen = {
+			save_scope_as = welf_land
+		}
+	}
+
 	option = {
 		name = KOH_Pentecost.15.a
 		custom_tooltip = KOH_Pentecost.15.a.tt
+
+		trigger = {
+			scope:welf_land = {
+				any_de_jure_top_liege = {
+					scope:frederick = this
+				}
+			}
+		}
 
 		create_title_and_vassal_change = {
 			type = returned
@@ -1548,12 +1629,50 @@ KOH_Pentecost.15 = {
 			add_claim_on_loss = yes
 		}
 
-		character:212600 = { # heinrich welf
-			every_held_title = {
-				change_title_holder_include_vassals = {
-					holder = scope:lion
-					change = scope:change
-					take_baronies = yes
+		character:212605 = { # heinrich welf
+			if = {
+				limit = {
+					NOT = {
+						always = yes
+
+						trigger_if = {
+							limit = {
+								is_alive = yes
+							}
+							trigger_if = {
+								limit = {
+									is_landed = yes
+								}
+								NOT = {
+									is_vassal_or_below_of = scope:frederick
+								}
+							}
+						}
+					}
+				}
+				every_held_title = {
+					change_title_holder_include_vassals = {
+						holder = scope:lion
+						change = scope:change
+						take_baronies = yes
+					}
+				}
+			}
+			else = {
+				scope:welf_land = {
+					random_in_de_jure_hierarchy = {
+						continue = {
+							tier > tier_county
+						}
+						limit = {
+							tier = tier_county
+							holder = {
+								OR = {
+									top_liege = scope:frederick
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -1569,11 +1688,6 @@ KOH_Pentecost.15 = {
 							holder = character:212600
 						}
 					}
-					trigger_else = {
-						NOT = {
-							always = yes
-						}
-					}
 				}
 				change_title_holder_include_vassals = {
 					holder = scope:lion
@@ -1583,7 +1697,16 @@ KOH_Pentecost.15 = {
 			}
 		}
 
+		scope:lion = {
+			change_liege = {
+				liege = scope:frederick # it's you!
+				change = scope:change
+			}
+		}
+
 		resolve_title_and_vassal_change = scope:change
+
+
 
 
 		remove_relation_rival = scope:lion

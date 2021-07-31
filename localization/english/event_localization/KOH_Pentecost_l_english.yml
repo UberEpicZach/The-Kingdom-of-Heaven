@@ -51,7 +51,7 @@
   KOH_Pentecost.7.b:0 "It is simple; I am the rightful liege of Italia."
 
   KOH_Pentecost.8.t:0 "Der Löwe"
-  KOH_Pentecost.8.desc:0 "What Konrad didn’t tell me about was his open invitation of Heinrich Welf! The Lion has been invited from England, promised protection by the Archbishop. That fiend! He claims it is in the name of diplomacy against France. I can only tolerate so many adversaries at a single feast."
+  KOH_Pentecost.8.desc:0 "What Konrad didn’t tell me about was his open invitation of Heinrich Welf! The Lion has been invited from England, promised protection by the Archbishop. That fiend! He claims it is in the Name of diplomacy against France. I can only tolerate so many adversaries at a single feast."
   KOH_Pentecost.8.a:0 "I trust your judgement, Konrad…"
   KOH_Pentecost.8.a.tt:0 "While the Archbishop has overstepped his boundaries, a meeting with Henry the Lion could prove beneficial, if not disastrous!"
   KOH_Pentecost.8.b:0 "You have overstepped your boundaries!"
@@ -154,100 +154,118 @@
   KOH_Pentecost.23.a.tt:0 "With this, the Diet of the Pentecost comes to a close."
 
   grand_melee_A:0 ""
-  grand_melee_A.t:0 ""
+  grand_melee_A.t:0 "Outstanding Performance"
   grand_melee_A.desc:0 ""
   grand_melee_A.tt:0 ""
 
   grand_melee_B:0 ""
-  grand_melee_B.t:0 ""
+  grand_melee_B.t:0 "Good Performance"
   grand_melee_B.desc:0 ""
   grand_melee_B.tt:0 ""
 
   grand_melee_C:0 ""
-  grand_melee_C.t:0 ""
+  grand_melee_C.t:0 "Mediocre Performance"
   grand_melee_C.desc:0 ""
   grand_melee_C.tt:0 ""
 
   grand_melee_D:0 ""
-  grand_melee_D.t:0 ""
+  grand_melee_D.t:0 "Poor Performance"
   grand_melee_D.desc:0 ""
   grand_melee_D.tt:0 ""
 
-  grand_melee.win.t:0 ""
-  grand_melee.win.desc:0 ""
+  grand_melee.win.t:0 "Victory"
+  grand_melee.win.desc:0 "you won the tournament! congrats"
   grand_melee.win.tt:0 ""
 
   grand_melee.lose.t:0 ""
-  grand_melee.lose.desc:0 ""
+  grand_melee.lose.desc:0 "[SCOPE.sC('grand_melee_winner').Name] has won the tournament. You came [THIS.Custom('PentecostPositionGrandMelee')]."
   grand_melee.lose.tt:0 ""
 
   grand_melee.watch.t:0 "The Melee Ends"
-  grand_melee.watch.desc:0 "[SCOPE.sC('melee_winner').name] has won the tournament"
+  grand_melee.watch.desc:0 "[SCOPE.sC('grand_melee_winner').Name] has won the tournament"
   grand_melee.watch.tt:0 ""
 
+  grand_melee_first:0 "[FixedPointToInt(THIS.Var('grand_melee_position').GetValue)]st"
+  grand_melee_second:0 "[FixedPointToInt(THIS.Var('grand_melee_position').GetValue)]nd"
+  grand_melee_second:0 "[FixedPointToInt(THIS.Var('grand_melee_position').GetValue)]rd"
+  grand_melee_nth:0 "[FixedPointToInt(THIS.Var('grand_melee_position').GetValue)]th"
+
+
   gyrum_A:0 ""
-  gyrum_A.t:0 ""
+  gyrum_A.t:0 "Outstanding Performance"
   gyrum_A.desc:0 ""
   gyrum_A.tt:0 ""
 
   gyrum_B:0 ""
-  gyrum_B.t:0 ""
+  gyrum_B.t:0 "Good Performance"
   gyrum_B.desc:0 ""
   gyrum_B.tt:0 ""
 
   gyrum_C:0 ""
-  gyrum_C.t:0 ""
+  gyrum_C.t:0 "Mediocre Performance"
   gyrum_C.desc:0 ""
   gyrum_C.tt:0 ""
 
   gyrum_D:0 ""
-  gyrum_D.t:0 ""
+  gyrum_D.t:0 "Poor Performance"
   gyrum_D.desc:0 ""
   gyrum_D.tt:0 ""
 
-  gyrum.win.t:0 ""
-  gyrum.win.desc:0 ""
+  gyrum.win.t:0 "Victory"
+  gyrum.win.desc:0 "you won the tournament! congrats"
   gyrum.win.tt:0 ""
 
   gyrum.lose.t:0 ""
-  gyrum.lose.desc:0 ""
+  gyrum.lose.desc:0 "[SCOPE.sC('gyrum_winner').Name] has won the tournament. You came [THIS.Custom('PentecostPositionGyrum')]."
   gyrum.lose.tt:0 ""
 
   gyrum.watch.t:0 "The Gyrum Ends"
-  gyrum.watch.desc:0 "[SCOPE.sC('melee_winner').name] has won the tournament"
+  gyrum.watch.desc:0 "[SCOPE.sC('gyrum_winner').Name] has won the tournament"
   gyrum.watch.tt:0 ""
 
+  gyrum_first:0 "[FixedPointToInt(THIS.Var('gyrum_position').GetValue)]st"
+  gyrum_second:0 "[FixedPointToInt(THIS.Var('gyrum_position').GetValue)]nd"
+  gyrum_second:0 "[FixedPointToInt(THIS.Var('gyrum_position').GetValue)]rd"
+  gyrum_nth:0 "[FixedPointToInt(THIS.Var('gyrum_position').GetValue)]th"
+
+
   joust_A:0 ""
-  joust_A.t:0 ""
+  joust_A.t:0 "Outstanding Performance"
   joust_A.desc:0 ""
   joust_A.tt:0 ""
 
   joust_B:0 ""
-  joust_B.t:0 ""
+  joust_B.t:0 "Good Performance"
   joust_B.desc:0 ""
   joust_B.tt:0 ""
 
   joust_C:0 ""
-  joust_C.t:0 ""
+  joust_C.t:0 "Mediocre Performance"
   joust_C.desc:0 ""
   joust_C.tt:0 ""
 
   joust_D:0 ""
-  joust_D.t:0 ""
+  joust_D.t:0 "Poor Performance"
   joust_D.desc:0 ""
   joust_D.tt:0 ""
 
-  joust.win.t:0 ""
-  joust.win.desc:0 ""
+  joust.win.t:0 "Victory"
+  joust.win.desc:0 "you won the tournament! congrats"
   joust.win.tt:0 ""
 
   joust.lose.t:0 ""
-  joust.lose.desc:0 ""
+  joust.lose.desc:0 "[SCOPE.sC('joust_winner').Name] has won the tournament. You came [THIS.Custom('PentecostPositionJoust')]."
   joust.lose.tt:0 ""
 
   joust.watch.t:0 "The Joust Ends"
-  joust.watch.desc:0 "[SCOPE.sC('melee_winner').name] has won the tournament"
+  joust.watch.desc:0 "[SCOPE.sC('gyrum_winner').Name] has won the tournament"
   joust.watch.tt:0 ""
+
+  joust_first:0 "[FixedPointToInt(THIS.Var('joust_position').GetValue)]st"
+  joust_second:0 "[FixedPointToInt(THIS.Var('joust_position').GetValue)]nd"
+  joust_second:0 "[FixedPointToInt(THIS.Var('joust_position').GetValue)]rd"
+  joust_nth:0 "[FixedPointToInt(THIS.Var('joust_position').GetValue)]th"
+
 
 
 
