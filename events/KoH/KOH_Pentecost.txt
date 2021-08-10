@@ -1339,16 +1339,27 @@ scripted_effect transfer_to_pope = {
 			limit = { # all their stuff is being turned over
 				holder = {
 					highest_held_title_tier <= tier_duchy
-					any_held_title = {
+					any_held_title = { # are they wholly within the turnover area?
 						count = all
 						OR = {
 							duchy = scope:tuscany
 							duchy = title:d_pisa
 							duchy = title:d_latium
-							duchy = tile:d_spoleto
+							duchy = title:d_spoleto
 						}
 					}
 				}
+			}
+			holder = {
+				change_liege = {
+					liege = scope:pope
+					change = scope:change
+				}
+			}
+		}
+		else = { # he wants it, but we can't give it to him
+			scope:pope = {
+				add_pressed_claim = prev
 			}
 		}
 	}
@@ -1632,33 +1643,22 @@ KOH_Pentecost.15 = {
 		character:212605 = { # heinrich welf
 			if = {
 				limit = {
-					NOT = {
-						always = yes
-
+					trigger_if = {
+						limit = {
+							is_alive = yes
+						}
 						trigger_if = {
 							limit = {
-								is_alive = yes
+								is_landed = yes
 							}
-							trigger_if = {
-								limit = {
-									is_landed = yes
-								}
-								NOT = {
-									is_vassal_or_below_of = scope:frederick
-								}
+							NOT = {
+								is_vassal_or_below_of = scope:frederick
 							}
 						}
 					}
+					always = yes # not sure of the behaviour of limit = {}
 				}
-				every_held_title = {
-					change_title_holder_include_vassals = {
-						holder = scope:lion
-						change = scope:change
-						take_baronies = yes
-					}
-				}
-			}
-			else = {
+				debug_log = "Pentecost random land given to welf"
 				scope:welf_land = {
 					random_in_de_jure_hierarchy = {
 						continue = {
@@ -1667,12 +1667,28 @@ KOH_Pentecost.15 = {
 						limit = {
 							tier = tier_county
 							holder = {
-								OR = {
-									top_liege = scope:frederick
-								}
+								top_liege = scope:frederick
 							}
 						}
+						change_title_holder_include_vassals = {
+							holder = scope:lion
+							change = scope:change
+							take_baronies = yes
+						}
+
+						debug_log_scopes = no
 					}
+				}
+			}
+			else = {
+				every_held_title = {
+					change_title_holder_include_vassals = {
+						holder = scope:lion
+						change = scope:change
+						take_baronies = yes
+					}
+
+					debug_log_scopes = no
 				}
 			}
 		}
