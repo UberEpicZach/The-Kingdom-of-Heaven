@@ -8,6 +8,9 @@
 				highest_held_title_tier < tier_kingdom
 				NAND = {
 					exists = father.primary_title
+					NOT = {
+						father.primary_title = scope:title
+					}
 					father = {
 						highest_held_title_tier >= tier_kingdom
 					}
@@ -15,6 +18,9 @@
 				}
 				NAND = {
 					exists = mother.primary_title
+					NOT = {
+						mother.primary_title = scope:title
+					}
 					mother = {
 						highest_held_title_tier >= tier_kingdom
 					}
