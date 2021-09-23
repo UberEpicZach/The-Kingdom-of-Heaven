@@ -1,4 +1,35 @@
-﻿on_game_start = {
+﻿on_siege_completion = {
+	on_actions = {
+		KOH_SIEGE1
+	}
+}
+
+KOH_SIEGE1 = {
+	effect = {
+		if = { 
+			limit = {
+				scope:war = {
+					using_cb = undirected_great_holy_war
+				}
+			}
+			send_interface_toast = {
+				type = event_toast_effect_bad
+				title = "[County.GetName] Sieged"
+				left_icon = root
+			}
+			scope:county = { 
+				set_variable = { 
+					name = occupant 
+					value = PREV
+				}
+			}
+			debug_log = "KOH_SIEGE1"
+			debug_log_scopes = no
+		}
+	}
+}
+
+on_game_start = {
 	on_actions = {
 		KOH_ON_START
 		#on_artifact_initialization
@@ -353,6 +384,7 @@ on_cardinal_death = {
 		owns_story_of_type = cardinal_story
 	}
 	effect = {
+		give_nickname = nick_cardinal
 	}
 }
 
@@ -397,7 +429,8 @@ on_gain_papacy = {
 		scope:title = title:k_papal_state
 	}
 	effect = {
-		if = { limit = { has_trait = KOH_cardinal } remove_trait = KOH_cardinal }
+		add_trait = pope_trait
+		if = { limit = { has_trait = koh_cardinal } remove_trait = koh_cardinal }
 		every_player = {add_gold = 1}
 		if = {limit = {is_cardinal = yes} every_player = {add_piety = 1}}
 	}
