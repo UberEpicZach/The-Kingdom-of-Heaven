@@ -1,6 +1,14 @@
 ﻿can_see_investiture = {
     scope = character
 	is_shown = {
+		# has_realm_law = free_investiture
+		has_faith = faith:catholic
+	}
+}
+
+can_see_investiture_law = {
+    scope = character
+	is_shown = {
 		has_realm_law = free_investiture
 	}
 }
@@ -42,7 +50,7 @@ get_all_investiture_candidates = {
 		}
 		every_sibling = {
 			limit = {
-				#has_education_learning_trigger = yes
+				has_education_learning_trigger = yes
 				is_landed = no
 				is_female = no
 				is_adult = yes
@@ -58,7 +66,7 @@ get_all_investiture_candidates = {
 		}
 		every_child = {
 			limit = {
-				#has_education_learning_trigger = yes
+				has_education_learning_trigger = yes
 				is_landed = no
 				is_adult = yes
 				is_female = no
@@ -75,31 +83,36 @@ get_all_investiture_candidates = {
 		
 		every_courtier_or_guest = {
 			limit = {
-				NOT = {
-					AND = {
-						court_owner = { has_realm_law = male_only_law }
-						is_female = yes
-					}
-					AND = {
-						court_owner = { has_realm_law = male_preference_law }
-						is_female = yes
-					}
-					AND = {
-						court_owner = { has_realm_law = female_only_law }
-						is_female = no
-					}
-					AND = {
-						court_owner = { has_realm_law = female_preference_law }
-						is_female = no
-					}
+				OR = {
 					AND = {
 						is_councillor_of = scope:employer_liege_guy
 						has_council_position = councillor_court_chaplain
 					}
-					has_variable = theocratic_successor
-					father = liege_or_court_owner
-					mother = liege_or_court_owner
-					primary_spouse = liege_or_court_owner
+					AND = {
+						NOT = {
+							AND = {
+								court_owner = { has_realm_law = male_only_law }
+								is_female = yes
+							}
+							AND = {
+								court_owner = { has_realm_law = male_preference_law }
+								is_female = yes
+							}
+							AND = {
+								court_owner = { has_realm_law = female_only_law }
+								is_female = no
+							}
+							AND = {
+								court_owner = { has_realm_law = female_preference_law }
+								is_female = no
+							}
+							has_variable = theocratic_successor
+							father = liege_or_court_owner
+							mother = liege_or_court_owner
+							primary_spouse = liege_or_court_owner
+						}
+						learning >= 7
+					}
 				}
 			}
 			save_scope_as = person_thing

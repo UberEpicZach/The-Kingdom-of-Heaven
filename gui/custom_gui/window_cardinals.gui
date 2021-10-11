@@ -46,7 +46,7 @@ type window_cardinals_character = widget { # Lists character's name and portrait
         }
         window_cardinals_portrait = {}
         text_single = {
-            text = "[Character.GetUIName]"
+            text = "cardinals_cardinal2"
         }
     }
 }
@@ -96,21 +96,23 @@ type window_cardinal_dynamicgrid = dynamicgridbox{ #Used
 }
 
 types CardinalsElection  {
+
 type window_cardinals_score = widget { # Show score for the upcoming election (Bishop-to-cardinal or cardinal-to-pope)
-    size = {100 60}
+    size = {100 100}
     parentanchor = hcenter|vcenter
-    position = { 50 -50}
+    position = { 50 0 }
     icon = {
         texture = "gfx/interface/CollegeCardinals/CardinalReasonings.png"
-        position = {26 4}
+        position = {26 -25}
     }
     text_single = {
-        position = {53 90}
-        block "score" {text = "[GuiScope.SetRoot(Character.MakeScope).ScriptValue('cardinal_to_pope_score')|0]"}
+        position = { 56 54 }
+        block "score" { text = "[GuiScope.SetRoot(Character.MakeScope).ScriptValue('cardinal_to_pope_score')|0]"}
         fontsize = 25
     }
     tooltipwidget = {cardinal_score_breakdown_tooltip = {}}
 }
+    
 type window_cardinals_campaign = widget { # Show much money has been invested in this character's election campaign
     size            = {50 30}
     position        = {-10 -10}
@@ -172,7 +174,7 @@ type window_cardinals_open_button = button {
 }
 
 type window_cardinals = window {
-    scale = 0.9
+    scale = 0.8
     allow_outside = yes
     movable = yes
     position= {600 70}
@@ -191,6 +193,7 @@ type window_cardinals = window {
     # You can make several background widgets with distinct visibility conditions if you want the background to change with the cultural Era for example 
     #   visible = "[blabla]"                                                     
     }
+    
     widget = {
         size = { 100% 100 }
 
@@ -269,7 +272,7 @@ type window_cardinals = window {
                 blockoverride "text"    {   text = cardinals_preferatus}
                 blockoverride "portrait" {  window_cardinals_portrait = { parentanchor = hcenter|vcenter position = { -13 3 } } } 
                 
-                window_cardinals_score =    {position = { 56 -40 }}
+                window_cardinals_score =    {position = { 56 10 }}
             }
         }
     }
@@ -311,7 +314,7 @@ type window_cardinals = window {
             blockoverride "portrait" {  window_cardinals_portrait = { parentanchor = hcenter|vcenter }}
             blockoverride "score" {text = "[GuiScope.SetRoot(Character.MakeScope).ScriptValue('bishop_to_cardinal_score')|0]"}
             window_cardinals_campaign = {position = { -25 50 }}
-            window_cardinals_score =    {position = { 65 -30 }}
+            window_cardinals_score =    {position = { 65 10 }}
             window_cardinals_invest_divest = {
                 parentanchor = bottom|hcenter
                 position = { -10 15 }
@@ -325,7 +328,7 @@ type window_cardinals = window {
             blockoverride "portrait" {  window_cardinals_portrait = { parentanchor = hcenter|vcenter }}
             blockoverride "score" {text = "[GuiScope.SetRoot(Character.MakeScope).ScriptValue('bishop_to_cardinal_score')|0]"}
             window_cardinals_campaign   = {position = { -25 50 }}
-            window_cardinals_score      = {position = { 65 -40 }}
+            window_cardinals_score      = {position = { 65 10 }}
         }
     }
 }

@@ -1,0 +1,217 @@
+﻿on_game_start_after_lobby = {
+	on_actions = {
+		on_cardinal_initialize
+		CardinalsTraits
+	}
+}
+
+CardinalsTraits = {
+	effect = {
+		title:k_papal_state.holder = {
+			trigger_event = KoH_religiousflavour.22
+			update_cardinal_window = yes
+		}
+	}
+	on_actions = {
+		delay = { months = 1 }
+		CardinalsTraits
+		
+	}
+}
+
+on_title_gain = {
+	on_actions = {
+		on_gain_papacy
+	}
+}
+
+on_cardinal_initialize = {
+	effect = {
+		debug_log = "blahblah"
+		initialize_nine_random_cardinals = yes
+		update_preferatus = yes
+	}
+}
+
+on_death = {
+    on_actions = {
+        on_cardinal_death
+        on_pope_death
+        on_person_death_saint
+		on_theocrat_investiture_death
+    }
+}
+
+on_theocrat_investiture_death = {
+	trigger = {
+		exists = primary_title
+		primary_title = {
+			has_variable = theocratic_successor
+		}
+	}
+	effect = {
+		liege = { save_scope_as = important_liege }
+		primary_title = { var:theocratic_successor = { save_scope_as = theocratic_inheritor } remove_variable = theocratic_successor }
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		every_held_title = {
+			change_title_holder = {
+				holder = scope:theocratic_inheritor
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		scope:theocratic_inheritor = {
+			remove_variable = theocratic_successor
+			change_government = theocracy_government
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+			}
+			change_liege = {
+				liege = scope:important_liege
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+	}
+}
+
+on_person_death_saint = {
+    events = {
+        KoH_sainthood.1
+    }
+}
+
+on_theocrat_investiture_death = {
+	trigger = {
+		primary_title = {
+			has_variable = theocratic_successor
+		}
+	}
+	effect = {
+		liege = { save_scope_as = important_liege }
+		primary_title = { var:theocratic_successor = { save_scope_as = theocratic_inheritor } remove_variable = theocratic_successor }
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		every_held_title = {
+			change_title_holder = {
+				holder = scope:theocratic_inheritor
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		scope:theocratic_inheritor = {
+			remove_variable = theocratic_successor
+			change_government = theocracy_government
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+			}
+			change_liege = {
+				liege = scope:important_liege
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+	}
+}
+
+on_cardinal_death = {
+	trigger = {
+		owns_story_of_type = cardinal_story
+	}
+	effect = {
+		give_nickname = nick_cardinal
+	}
+}
+
+on_pope_death = {
+	trigger = {
+		is_pope = yes
+	}
+	effect = {
+		add_trait = pope_trait
+		give_nickname = nick_pope
+		update_preferatus = yes
+		#set_designated_heir = global_var:preferatus.story_owner
+		global_var:preferatus.story_owner = {depose = yes}
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = papal_inheritance
+		}
+		every_held_title = {
+			limit = {
+				tier > tier_barony
+			}
+			every_player = {
+				add_prestige = 1
+			}
+			change_title_holder = {
+				holder = global_var:preferatus.story_owner
+				change = scope:papal_inheritance
+			}
+		}
+		resolve_title_and_vassal_change = scope:papal_inheritance
+		global_var:preferatus = {
+			promote_new_cardinal = yes
+			remove_trait = koh_cardinal
+		}
+		#update_preferatus = yes
+		#predict_new_cardinal = yes
+		dummy_male = {update_cardinal_window = yes}
+		#setup_cardinal_activity = yes
+	}
+}
+
+on_gain_papacy = {
+	trigger = {
+		scope:title = title:k_papal_state
+	}
+	effect = {
+		if = { limit = { has_trait = koh_cardinal } remove_trait = koh_cardinal }
+		every_player = {add_gold = 1}
+		if = {limit = {is_cardinal = yes} every_player = {add_piety = 1}}
+	}
+}
+
+three_year_playable_pulse = {
+	on_actions = {
+		delay = { days = 18 }
+		trinity_events_tri_yearly_pulse
+	}
+}
+
+trinity_events_tri_yearly_pulse = {
+	random_events = {
+		chance_of_no_event = {
+			value = 30
+			if = {
+				limit = {
+					is_at_war = yes # Won't get spammed while at war
+				}
+				add = 10
+			}
+		}
+		23000 = 0 # 20000?
+		
+		#religious events
+		100 = KoH_religiousflavour.1
+		100 = KoH_religiousflavour.2
+		100 = KoH_religiousflavour.3
+		100 = KoH_religiousflavour.4
+		100 = KoH_religiousflavour.5
+		100 = KoH_religiousflavour.7
+		100 = KoH_religiousflavour.8
+		100 = KoH_religiousflavour.12
+		100 = KoH_religiousflavour.13 
+		100 = KoH_religiousflavour.14
+	}
+}
+		

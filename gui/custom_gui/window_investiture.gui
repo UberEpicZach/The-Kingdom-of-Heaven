@@ -13,7 +13,6 @@
             name = _hide # This triggers when it becomes invisible, similar to the above.
             alpha = 0 # 0 is transparent, 1 opaque.
         }
-
         scrollbox = { # A vertical scrollbox
             name = "investiture_scrollbox" # You don't actually need this but I recommend you add them
             layoutpolicy_horizontal = expanding
@@ -31,6 +30,15 @@
             }
             blockoverride "scrollbox_content" # You need this for scrollboxes since they are a type of their own.
             {
+
+                text_multi = {
+                    autoresize = yes
+                    maximumsize = { 550 200 }
+                    text = "INVESTITURE_DESC"
+                    default_format = "#weak"
+                    align = center
+                }
+        
                 dynamicgridbox = { # Gets items for everything in a list
                     layoutpolicy_vertical = expanding
                     allow_outside = yes # This allows things to move outside of it without changing the size of the item itself.
@@ -77,7 +85,7 @@
                                     {
                                         text = "Appoint Successor"
                                     }
-                                    visible = "[Not(GetScriptedGui('set_up_new_successor').IsShown(GuiScope.SetRoot(Scope.GetCharacter.GetPrimaryTitle.MakeScope).End))]" # Not(), And(), Nor() and the like are the GUI versions of NOT, AND, NOR, etc. Items can be seperated with a comma. Capitalization here is important
+                                    visible = "[And(Not(GetScriptedGui('set_up_new_successor').IsShown(GuiScope.SetRoot(Scope.GetCharacter.GetPrimaryTitle.MakeScope).End)),GetScriptedGui('can_see_investiture_law').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" # Not(), And(), Nor() and the like are the GUI versions of NOT, AND, NOR, etc. Items can be seperated with a comma. Capitalization here is important
                                     onclick = "[GetScriptedGui('get_all_investiture_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_title_inv',Scope.GetCharacter.GetPrimaryTitle.MakeScope).End)]" # AddScope is the GUI version of save_scope_as for script values. It follows the format ('scope name',who is the scope data functions)
                                     onclick = "[GetVariableSystem.Toggle('window_appoint_successor_theocracy')]"
                                 }
@@ -93,14 +101,14 @@
 
     type window_appoint_successor_theocracy = window {
         size = { 600 850 }
-        position = { 600 100 }
+        position = { 600 55 }
         layer = middle
         visible = "[GetVariableSystem.Exists('window_appoint_successor_theocracy')]" # This is shown if that variable system exists, regardless of the variable.
     
         using = Window_Background # Using is useful for preset backgrounds and the like. All windows should at least have this and the decoration block
         using = Window_Decoration
         using = Animation_ShowHide_Standard
-        
+
         vbox = {
             using = Window_Margins
             restrictparent_min = yes
@@ -124,6 +132,20 @@
                 layoutpolicy_vertical = expanding
                 vbox = {
                     datacontext = "[GetPlayer.GetPrimaryTitle.MakeScope.Var('selected_title_for_investiture').Title]" # Get your primary title's variable selected_title_for_investiture and the title stored on it
+                    text_multi = {
+                        autoresize = yes
+                        maximumsize = { 520 250 }
+                        text = "INVESTITURE_APPOINT"
+                        default_format = "#weak"
+                        align = center
+                    }
+                    text_multi = {
+                        autoresize = yes
+                        maximumsize = { 200 100 }
+                        text = "INVESTITURE_TITLE"
+                        default_format = "#bold"
+                        align = center
+                    }
                     coa_title_medium = {}
                 }
                 scrollbox = {
@@ -143,9 +165,14 @@
                             blend_mode = alphamultiply
                         }
                     }
+
+                    
                     blockoverride "scrollbox_content"
                     {
                         dynamicgridbox = {
+
+
+                            
                             datacontext = "[GetPlayer]"
                             layoutpolicy_vertical = expanding
                             allow_outside = yes

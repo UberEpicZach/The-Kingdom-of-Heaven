@@ -165,13 +165,13 @@ councillor_court_chaplain = {
 	auto_fill = yes
 	can_fire = {
 		custom_description = {
-			text = "court_chaplain_cant_fire_doctrines"
-				AND = {
-					OR = {
-						has_realm_law_flag = free_enacted
-						top_liege = { has_realm_law_flag = free_enacted }
-						NOT = {
-							has_realm_law_flag = free_enacted
+			text = "court_chaplain_cant_fire_doctrines_TCT"
+			AND = {
+				OR = {
+					has_realm_law_flag = free_enacted
+					top_liege = { has_realm_law_flag = free_enacted }
+					NOT = {
+						has_realm_law_flag = papal_enacted
 					}
 				}
 			}
@@ -181,9 +181,9 @@ councillor_court_chaplain = {
 	can_reassign = {
 		custom_description = {
 			text = "court_chaplain_cant_reassign_doctrines"
-				OR = {
-					has_realm_law_flag = free_enacted
-					top_liege = { has_realm_law_flag = free_enacted }
+			OR = {
+				has_realm_law_flag = free_enacted
+				top_liege = { has_realm_law_flag = free_enacted }
 			}
 		}
 	}

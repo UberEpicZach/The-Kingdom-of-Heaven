@@ -1,0 +1,114 @@
+﻿has_vice_trigger = {
+	OR = {
+		has_trait = lustful
+		has_trait = gluttonous
+		has_trait = greedy
+		has_trait = lazy
+		has_trait = wrathful
+		has_trait = callous 
+		has_trait = arrogant 
+	}
+}
+
+has_benevolent_trait_trigger = {
+	OR = {
+		has_trait = just
+		has_trait = compassionate 
+		has_trait = generous
+		has_trait = patient
+	}
+}
+
+is_pious_trigger = {
+	has_pious_trait_trigger = yes
+	has_impious_trait_trigger = no
+}
+
+has_pious_trait_trigger = {
+	OR = {
+		has_trait = theologian
+		has_trait = celibate
+		has_trait = chaste
+		has_trait = humble
+		has_trait = content
+		has_trait = pilgrim
+		has_trait = monk
+		has_trait = shieldmaiden
+		has_trait = zealous
+	}
+}
+
+has_impious_trait_trigger = {
+	OR = {
+		has_trait = lifestyle_reveler
+		has_trait = lustful
+		has_trait = cannibal
+		has_perk = schemer_perk
+		has_perk = seducer_perk
+		has_perk = torturer_perk
+		
+	}
+}
+
+has_virtue_trigger = {
+	OR = {
+		has_trait = chaste
+		has_trait = temperate
+		has_trait = generous
+		has_trait = diligent
+		has_trait = patient
+		has_trait = compassionate
+		has_trait = humble
+	}
+}
+
+sainthood_event1trigger = {
+	NOR = {
+		has_trait = excommunicated
+		has_trait = drunkard
+		has_trait = lifestyle_reveler
+		has_trait = cannibal
+		#controls_religion = yes
+		has_faith = faith:waldensian
+		has_trait = kinslayer
+	}
+
+	NOT =  { has_claim_on  =  title:k_papal_state } # Antipopes
+
+	OR = {
+		AND = {
+			highest_held_title_tier = tier_empire
+			piety >= 1250
+		}
+
+		AND = {
+			highest_held_title_tier = tier_kingdom
+			piety >= 1000
+		}
+		AND = {
+			highest_held_title_tier = tier_duchy
+			piety >= 750
+		}
+		AND = {
+			highest_held_title_tier = tier_county
+			piety >= 500
+		}
+	}
+	has_vice_trigger = no
+	has_benevolent_trait_trigger = yes
+	has_virtue_trigger = yes
+	is_adult = yes
+}
+
+CatholicTrinityModule_is_loaded = { always = yes }
+
+can_realm_theocracies_trigger = {
+	has_government = theocracy_government
+	exists = theocracy_vassals_for_investiture
+	is_in_global_list = theocracy_vassals_for_investiture
+	NOT = {
+		primary_title = {
+			has_variable = theocratic_successor
+		}		
+	}
+}

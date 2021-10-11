@@ -1,12 +1,27 @@
 ﻿l_english:
  CardinalHolder: "Cardinal"
  emperorbishop: "Primas"
+ popebishop: "Pope"
  kingbishop: "King-Bishop"
  dukebishop: "Archbishop"
  countbishop: "Prince-Bishop"
  bishop: "Bishop"
  CathTheoHolder: "[CHARACTER.Custom('CardinalCheck')]"
-  
+
+ councilCardinalHolder: "Cardinal"
+ councilbishop: "[ROOT.Char.Custom('GetActualBishopTitle')]"
+ councilCathTheoHolder: "[CHARACTER.Custom('CathTheoHolderCounciller')]"
+
+ cardinal_councillor_court_chaplain_christian_county:1 "Suffragan Bishop"
+ cardinal_councillor_court_chaplain_christian_county_possessive:1 "Suffragan Bishop's"
+ cardinal_councillor_court_chaplain_christian_duchy:1 "Bishop"
+ cardinal_councillor_court_chaplain_christian_duchy_possessive:1 "Bishop's"
+ cardinal_councillor_court_chaplain_christian_kingdom:1 "Archbishop"
+ cardinal_councillor_court_chaplain_christian_kingdom_possessive:1 "Archbishop's"
+ cardinal_councillor_court_chaplain_christian_empire:0 "Patriarch"
+ cardinal_councillor_court_chaplain_christian_empire_female:0 "Matriarch"
+ cardinal_councillor_court_chaplain_christian_empire_possessive:0 "Patriarch's"
+ cardinal_councillor_court_chaplain_christian_empire_female_possessive:0 "Matriarch's"
 
  # Christianity
  baron_theocracy_male_christianity_religion:0 "Bishop"

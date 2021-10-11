@@ -5,6 +5,12 @@
 			has_trait = koh_cardinal
 		}
 		localization_key = CardinalHolder
+	}
+	text = {
+		trigger = {
+			has_title = title:k_papal_state
+		}
+		localization_key = popebishop
 	} 
 	text = {
 		trigger = {
@@ -33,5 +39,24 @@
 	text = {
 		fallback = yes
 		localization_key = bishop
+	}
+}
+
+councilCathTheoHolder = {
+	type = character
+	text = {
+		trigger = {
+			has_trait = koh_cardinal
+			is_cardinal = yes
+			OR = {
+				has_council_position = councillor_court_chaplain
+				is_theocratic_lessee = yes
+			}
+		}
+		localization_key = councilCardinalHolder
+	}
+	text = {
+		fallback = yes
+		localization_key = councilbishop
 	}
 }
