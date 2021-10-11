@@ -1,0 +1,34 @@
+﻿on_siege_completion = {
+	on_actions = {
+		KOH_SIEGE1
+	}
+}
+
+KOH_SIEGE1 = {
+	effect = {
+		if = { 
+			limit = {
+				scope:war = {
+					using_cb = undirected_great_holy_war
+				}
+			}
+			save_scope_as = war_attacker
+			# send_interface_toast = {
+			# 	type = event_toast_effect_bad
+			# 	title = "[County.GetName] Sieged"
+			# 	left_icon = root
+			# }
+			scope:county = { 
+				set_variable = { 
+					name = occupant 
+					value = PREV
+				}
+			}
+			debug_log = "KOH_SIEGE1"
+			debug_log_scopes = no
+			scope:war_attacker = {
+				WarDuchyEffect_trigger = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,1252 @@
+namespace = CrusaderStateEvents
+
+
+CrusaderStateEvents.1 = { #
+	title = CrusaderStateEvents.1.t
+	desc = CrusaderStateEvents.1.desc
+	theme = faith
+	override_background = {
+		event_background = army_camp
+	}
+	left_portrait = {
+		character = this
+		animation = marshal
+	}
+
+	immediate = {
+		save_scope_as = war_attacker
+		scope:war_attacker.primary_title = {
+			save_scope_as = primary_title
+		}
+		faith = {
+			great_holy_war = {
+				ghw_target_title = { #Loc keys for localization fluff.
+					save_scope_as = target_kingdom
+				}
+				random_pledged_attacker = {
+					limit = {
+						exists = ghw_beneficiary
+						this = scope:war_attacker
+					}
+					ghw_beneficiary = {
+						save_scope_as = beneficiary
+					}
+				}
+				ghw_war = {
+					primary_defender = {
+						save_scope_as = defender
+						random_sub_realm_county = {
+							limit = {
+								duchy = {
+									any_in_de_jure_hierarchy = {
+										count = all
+										trigger_if = {
+											limit = { tier = tier_county }
+											holder.top_liege = scope:defender
+											NOT  = { county_controller = holder }
+											exists = var:occupant
+											var:occupant = scope:war_attacker
+										}
+									}
+								}
+							}
+							duchy = {
+								save_scope_as = duchyforloc
+							}
+							save_scope_as = countyforloc
+						}
+					}
+		
+				}
+			}
+		}
+	}
+
+	option = {  #beneficiary 
+		name = CrusaderStateEvents.1.a
+		custom_tooltip = benefiticary_cruasder_state	
+		WarDuchyEffect = yes
+		scope:beneficiary = {
+			add_character_modifier = {
+				modifier = settledcrusadersgood
+			   	years = 3
+		   }
+		}
+		scope:war_attacker = {
+			add_character_modifier = {
+				modifier = settledcrusaders
+			   	years = 3
+		   }
+		   add_character_flag = has_taken_crusader_state
+		}
+
+		if = {
+			limit = {
+				scope:duchyforloc.holder = {
+					any_sub_realm_title = {
+						title_province = {
+							geographical_region = ghw_region_anatolia
+							geographical_region = ghw_region_near_east
+							geographical_region = ghw_region_mediterranean
+							geographical_region = ghw_region_balkans
+							geographical_region = ghw_region_holy_land
+							geographical_region = ghw_region_iberia
+							geographical_region = ghw_region_egypt
+						}
+					}
+				}
+			}
+			scope:beneficiary = {
+				change_government = CrusaderState
+			}
+		}
+		# else = {
+		# 	change_government = feudal_government 
+		# }
+			
+		hidden_effect = {
+			scope:war_attacker = {
+				if = {
+					limit = {
+						exists = var:CrusaderState_variable
+					}
+					remove_variable = CrusaderState_variable
+				}
+			}
+		}
+
+		scope:war_attacker.faith.great_holy_war = {
+			#Toast for attackers
+			every_pledged_attacker = {
+				limit = {
+					NOT = { THIS = root }
+				}
+				trigger_event = {
+					id = CrusaderStateEvents.2
+					days = 2
+				}
+			}
+		}
+
+		scope:war_attacker = {
+			trigger_event = {
+				id = CrusaderStateEvents.4
+				days = 2
+			}
+		}
+
+		scope:war_attacker = {
+			add_character_flag = {
+				flag = ghw_beneficiary_serving
+				days = 550
+			}
+		}
+
+		scope:war_attacker = {
+			trigger_event = {
+				id = CrusaderStateEvents.5
+				days = 10
+			}
+		}
+
+		ai_chance = {
+			base = 80
+			modifier = {
+				add = 100
+				has_trait = honest
+			}
+			ai_value_modifier = { #make the average dude take this ai_rationality = 0.5 ai_zeal = 1
+				ai_rationality = 0.5
+				ai_zeal = 1
+			}
+		}
+	}
+
+	option = { #self
+		name = CrusaderStateEvents.1.b
+		custom_tooltip = self_serving_cruasder_state
+
+		scope:war_attacker = {
+			add_character_modifier = {
+				modifier = settledcrusaders
+			   	years = 3
+		   }
+		   add_character_flag = has_taken_crusader_state
+		}
+		faith = {
+			great_holy_war = {
+				every_pledged_attacker = {
+					limit = {
+						NOT = { 
+							has_relation_lover = root 
+							has_relation_best_friend = root
+						}
+					}
+					add_opinion = {
+						modifier = opinion_selfish_crusader
+						target = root
+					} 
+				}
+			}
+		}
+
+		scope:war_attacker.faith.great_holy_war = {
+			#Toast for attackers
+			every_pledged_attacker = {
+				limit = {
+					NOT = { THIS = root }
+				}
+				trigger_event = {
+					id = CrusaderStateEvents.2
+					days = 2
+				}
+			}
+		}
+
+		hidden_effect = {
+			scope:war_attacker = {
+				if = {
+					limit = {
+						exists = var:CrusaderState_variable
+					}
+					remove_variable = CrusaderState_variable
+				}
+			}
+		}
+
+		WarDuchyEffect_forSelf = yes
+		
+		scope:war_attacker = {
+			add_character_flag = {
+				flag = ghw_self_serving
+				days = 550
+			}
+		}
+		ai_chance = {
+			base = 80
+			modifier = {
+				add = 100
+				has_trait = greedy
+			}
+			modifier = {
+				add = 100
+				has_trait = deceitful
+			}
+			ai_value_modifier = { #make the average dude take this ai_rationality = 0.5 ai_zeal = 1
+				ai_rationality = 0.5
+				ai_zeal = 1
+			}
+		} #make Greedy, dishonest characters, take this
+	}
+
+	option = { #I'll personally go, abdicate
+		name = CrusaderStateEvents.1.c 
+
+		custom_tooltip = adbicate_cruasder_state			
+		
+		hidden_effect = {
+			WarDuchyEffect_forSelfButDepose = yes
+
+			trigger_event = {
+				days = 1 
+				id = CrusaderStateEvents.3 
+			}
+		}
+
+		scope:war_attacker.faith.great_holy_war = {
+			#Toast for attackers
+			every_pledged_attacker = {
+				limit = {
+					NOT = { THIS = root }
+				}
+				trigger_event = {
+					id = CrusaderStateEvents.2
+					days = 2
+				}
+			}
+		}
+
+		scope:war_attacker = {
+			trigger_event = {
+				id = CrusaderStateEvents.4
+				days = 2
+			}
+			add_character_flag = has_taken_crusader_state
+		}
+
+		scope:war_attacker = {
+			add_character_flag = {
+				flag = ghw_personal_abdicate_serving
+				days = 550
+			}
+		}
+
+		hidden_effect = {
+			scope:war_attacker = {
+				if = {
+					limit = {
+						exists = var:CrusaderState_variable
+					}
+					remove_variable = CrusaderState_variable
+				}
+			}
+		}
+		add_trait = crusader_state_trait
+
+		ai_chance = {
+			base = 80
+			modifier = {
+				add = 100
+				has_trait = humble
+			}
+			modifier = {
+				add = 100
+				has_trait = honest
+			}
+			modifier = {
+				add = 100
+				has_trait = temperate
+			}
+			modifier = {
+				add = 100
+				has_trait = just
+			}
+			ai_value_modifier = { #make the average dude take this ai_rationality = 0.5 ai_zeal = 1
+				ai_zeal = 10
+			}
+		}
+	}
+
+	option = { #don't care
+		name = CrusaderStateEvents.1.d
+		custom_tooltip = leaving_cruasder_state
+	}
+}
+
+CrusaderStateEvents.2 = { #CRUSADER STATE IS FORMED
+	title = CrusaderStateEvents.2.t
+	
+	desc = {
+		desc = CrusaderStateEvents.2.desc.intro
+		first_valid = {
+			triggered_desc = {
+				trigger = { 
+					scope:war_attacker = { 
+						has_character_flag = ghw_beneficiary_serving 
+					} 
+				}
+				desc = CrusaderStateEvents.2.desc.1
+			}
+			triggered_desc = {
+				trigger = { 
+					scope:war_attacker = { 
+						has_character_flag = ghw_self_serving 
+					} 
+				}
+				desc = CrusaderStateEvents.2.desc.2
+			}
+			triggered_desc = {
+				trigger = { 
+					scope:war_attacker = { 
+						has_character_flag = ghw_personal_abdicate_serving 
+					} 
+				}
+				desc = CrusaderStateEvents.2.desc.3
+			}
+		}
+	}
+	theme = faith
+	override_background = {
+		event_background = army_camp
+	}
+	left_portrait = {
+		character = scope:war_attacker
+		animation = marshal
+	}
+	right_portrait = {
+		character =  scope:beneficiary
+		animation = war_over_win
+	}
+
+	option = { 
+		name = CrusaderStateEvents.2.a
+
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+CrusaderStateEvents.3 = { #Change Heir
+	hidden = yes
+
+	immediate = {
+		ChangeHeirEffect = yes
+		add_trait = crusader_state_trait
+	}
+
+	option = { 
+		name = CrusaderStateEvents.3.a
+
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+CrusaderStateEvents.4 = { #Spawn Army?
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				scope:war_attacker = { 
+					has_character_flag = ghw_beneficiary_serving 
+				}
+			}
+
+			scope:beneficiary = {
+				spawn_army = {
+					levies = {
+						value = 100
+						scope:war_attacker.faith.great_holy_war = {
+							every_pledged_attacker = {
+								add = 100
+							}
+						}
+					}
+					men_at_arms = {
+						type = teutonic_knights
+						stacks = {
+							value = 1
+							scope:war_attacker.faith.great_holy_war = {
+								every_pledged_attacker = {
+									add = 0.2
+								}
+							}
+						}
+					}
+					inheritable = no
+					uses_supply = no
+					location = scope:beneficiary.capital_province
+					name = CrusaderKnights
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:war_attacker = { 
+					has_character_flag = ghw_personal_abdicate_serving 
+				}
+			}
+			scope:war_attacker = {
+				spawn_army = {
+					levies = {
+						value = 100
+						scope:war_attacker.faith.great_holy_war = {
+							every_pledged_attacker = {
+								add = 100
+							}
+						}
+					}
+					men_at_arms = {
+						type = teutonic_knights
+						stacks = {
+							value = 1
+							scope:war_attacker.faith.great_holy_war = {
+								every_pledged_attacker = {
+									add = 0.2
+								}
+							}
+						}
+					}
+					inheritable = no
+					uses_supply = no
+					location = scope:beneficiary.capital_province
+					name = CrusaderKnights	
+				}
+			}
+		}	
+	}
+}
+
+CrusaderStateEvents.5 = { #In another life....
+	title = CrusaderStateEvents.5.t
+	desc = CrusaderStateEvents.5.desc
+	theme = learning_scholarship_focus
+	
+	left_portrait = {
+		character = this
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:beneficiary
+		animation = animation_bold
+	}
+	
+	trigger = {
+		is_ai = no
+	}
+
+	option = { 
+		name = CrusaderStateEvents.5.a
+
+		set_player_character = scope:beneficiary
+	}
+
+	option = { 
+		name = CrusaderStateEvents.5.b
+
+	}
+}
+
+# # CrusaderStateEvents.6 = { #Monks is fantastic painter
+# # 	title = CrusaderStateEvents.6.t
+# # 	desc = CrusaderStateEvents.6.desc
+# # 	theme = learning_scholarship_focus
+# # 	left_portrait = {
+# # 		character = this
+# # 	}
+
+# # 	trigger = {		
+# # 		is_commanding_army = no
+# # 		is_adult = yes
+# # 		is_imprisoned = no
+# # 		has_religion = religion:christianity_religion
+# # 		NOT = { has_trait = blind }
+# # 		# OR = {
+# # 		# 	location = {
+# # 		# 		region = world_europe_west
+# # 		# 	}
+# # 		# 	location = {
+# # 		# 		region = world_europe_south
+# # 		# 	}
+# # 		# }
+# # 	}
+
+# # 	option = { 
+# # 		name = CrusaderStateEvents.6.a
+
+# # 		remove_short_term_gold = -10
+# # 		add_prestige = 30
+# # 	}
+
+# # 	option = { 
+# # 		name = CrusaderStateEvents.6.b
+
+# # 	}
+# # }
+
+# CrusaderStateEvents.7 = { #Monks is fantastic painter
+# 	title = CrusaderStateEvents.7.t
+# 	desc = CrusaderStateEvents.7.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 		# OR = {
+# 		# 	location = {
+# 		# 		region = world_europe_west
+# 		# 	}
+# 		# 	location = {
+# 		# 		region = world_europe_south
+# 		# 	}
+# 		# }
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.7.a
+
+# 		remove_short_term_gold = -30
+# 		add_prestige = 30
+# 		random = {
+# 			chance = 20
+# 			add_learning_skill = 1
+# 		}
+# 	}
+# 	option = { 
+# 		name = CrusaderStateEvents.7.b
+
+# 	}
+# }
+
+# CrusaderStateEvents.8 = { #Monks is fantastic painter
+# 	title = CrusaderStateEvents.8.t
+# 	desc = CrusaderStateEvents.8.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 		# OR = {
+# 		# 	location = {
+# 		# 		region = world_europe_west
+# 		# 	}
+# 		# 	location = {
+# 		# 		region = world_europe_south
+# 		# 	}
+# 		# }
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.8.a
+
+# 		add_piety = 20
+
+# 		random = {
+# 			chance = 30
+# 			add_learning_skill = 1
+# 		}
+# 	}
+# 	option = { 
+# 		name = CrusaderStateEvents.8.b
+# 		if = {
+# 			limit = { NOT = { has_trait = cynical } }
+# 			add_trait = cynical
+# 		}
+# 	}
+# }
+
+# # CrusaderStateEvents.9 = { #Child wants to be monk/nun - select child
+# # 	title = CrusaderStateEvents.9.t
+# # 	desc = CrusaderStateEvents.9.desc
+# # 	theme = learning_scholarship_focus
+# # 	left_portrait = {
+# # 		character = this
+# # 	}
+# # 	hidden = yes
+
+# # 	trigger = {		
+# # 		is_commanding_army = no
+# # 		is_adult = yes
+# # 		is_imprisoned = no
+# # 		has_religion = religion:christianity_religion
+# # 		any_child = {
+# # 			is_ruler = no
+# # 			age = 13
+# # 			NOT = { age = 16 }
+# # 			NOT = { has_trait = cynical }
+# # 			NOT = { is_clergy = yes }
+# # 		}
+# # 	}
+
+# # 	immediate = {
+# # 		random_child = {
+# # 			limit = {
+# # 				is_ruler = no
+# # 				age = 13
+# # 				NOT = { age = 16 }
+# # 				NOT = { has_trait = cynical }
+# # 				NOT = { is_clergy = yes }
+# # 			}
+# # 			trigger_event = CrusaderStateEvents.10
+# # 		}
+# # 	}
+# # }
+
+# # CrusaderStateEvents.10 = { #MChild Event
+# # 	#title = CrusaderStateEvents.10.t
+# # 	#desc = CrusaderStateEvents.10.desc
+# # 	theme = learning_scholarship_focus
+# # 	left_portrait = {
+# # 		character = this
+# # 	}
+# # 	hidden = yes
+
+# # 	immediate = {
+# # 		FROM = {
+# # 			trigger_event = CrusaderStateEvents.11  }
+# # 	}
+# # }
+
+# # CrusaderStateEvents.11 = { #Child wants to be monk/nun - parent response
+# # 	title = CrusaderStateEvents.11.t
+# # 	desc = CrusaderStateEvents.11.desc
+# # 	theme = learning_scholarship_focus
+# # 	left_portrait = {
+# # 		character = this
+# # 	}
+# # 	right_portrait = {
+# # 		character = FROM
+# # 	}
+
+# # 	option = { 
+# # 		name = CrusaderStateEvents.11.a
+
+# # 		FROM = {
+# # 			add_trait = devoted
+# # 			add_opinion = {
+# # 				target = ROOT
+# # 				opinion = 50
+# # 				modifier = grateful_opinion
+# # 			}
+# # 		}
+# # 		custom_tooltip = { text = CrusaderStateEvents.11.a.tt}
+# # 	}
+
+# # 	option = { 
+# # 		name = CrusaderStateEvents.11.b
+# # 		FROM = {
+# # 			add_stress = major_stress_loss
+# # 			add_opinion = {
+# # 				target = ROOT
+# # 				opinion = 50
+# # 				modifier = angry_opinion
+# # 			}
+# # 		}
+# # 	}
+# # }
+
+# CrusaderStateEvents.12 = { #Donate to local monastery
+# 	title = CrusaderStateEvents.12.t
+# 	desc = CrusaderStateEvents.12.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+	
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.12.a
+# 		remove_short_term_gold = -30
+# 		add_piety = 30
+# 	}
+	
+# 	option = { 
+# 		name = CrusaderStateEvents.12.b
+# 		add_piety = -30
+# 	}
+# }
+
+# CrusaderStateEvents.13 = { #Duty-Bound
+# 	title = CrusaderStateEvents.13.t
+# 	desc = CrusaderStateEvents.13.desc
+# 	theme = learning_scholarship_focus
+# 	right_portrait = {
+# 		character = scope:Priest
+# 	}
+# 	lower_right_portrait = {
+# 		character = scope:lover
+# 	}
+
+# 	trigger = {		
+# 		has_religion = religion:christianity_religion
+# 		any_vassal_or_below = {
+# 			AND = {
+# 				has_government = theocracy_government
+# 				OR = {
+# 					has_trait = reveler_1
+# 					has_trait = reveler_2
+# 					has_trait = reveler_3
+# 					has_trait = drunkard
+# 					has_trait = lustful 
+# 				}
+# 			} 
+# 		}
+# 	}
+
+# 	immediate = {
+# 		random_vassal_or_below = {
+# 			limit = {
+# 				AND = {
+# 					has_government = theocracy_government
+# 					OR = {
+# 						has_trait = reveler_1
+# 						has_trait = reveler_2
+# 						has_trait = reveler_3
+# 						has_trait = drunkard
+# 						has_trait = lustful 
+# 					}
+# 				}
+# 			}
+# 			save_scope_as = Priest 
+# 		}
+
+# 		create_character = {
+# 			template = beautiful_peasant_character
+# 			age = { 17 22 }
+# 			gender_female_chance = root_attraction_based_female_chance
+# 			employer = scope:Priest.host
+# 			faith = scope:Priest.host.faith
+# 			culture = scope:Priest.host.culture
+# 			save_scope_as = lover
+# 		}
+
+# 		scope:Priest = {
+# 			set_relation_lover = scope:lover
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.13.a
+		
+# 		scope:Priest = {
+# 			add_trait = Deviant
+
+# 			if = {
+# 				limit = { exists = dynasty }
+# 				dynasty = {
+# 					add_dynasty_prestige = medium_dynasty_prestige_loss
+# 				}
+# 			}
+# 			add_piety = -1
+# 			add_piety_level = -1
+# 		}
+# 	}
+# }
+
+# CrusaderStateEvents.14 = { #Duty-Bound - Varaint
+# 	title = CrusaderStateEvents.14.t
+# 	desc = CrusaderStateEvents.14.desc
+# 	theme = learning_scholarship_focus
+# 	right_portrait = {
+# 		character = scope:Priest
+# 	}
+# 	lower_right_portrait = {
+# 		character = scope:lover
+# 	}
+
+# 	trigger = {		
+# 		has_religion = religion:christianity_religion
+
+# 		exists = dynasty
+# 		dynasty = { 
+# 				any_dynasty_member = { 
+# 				AND = {
+# 					is_alive = yes
+# 					dynasty = root.dynasty
+# 					has_government = theocracy_government
+# 					OR = {
+# 						has_trait = reveler_1
+# 						has_trait = reveler_2
+# 						has_trait = reveler_3
+# 						has_trait = drunkard
+# 						has_trait = lustful 
+# 					}
+# 				} 
+# 			}
+# 		}
+# 	}
+
+# 	immediate = {
+# 		dynasty = { 
+# 			every_dynasty_member = { 
+# 				AND = {
+# 					is_alive = yes
+# 					AND = {
+# 						dynasty = root.dynasty
+# 						has_government = theocracy_government
+# 						OR = {
+# 							has_trait = reveler_1
+# 							has_trait = reveler_2
+# 							has_trait = reveler_3
+# 							has_trait = drunkard
+# 							has_trait = lustful 
+# 						}
+# 					}
+# 				}
+# 				save_scope_as = Priest 
+# 			}
+# 		}
+
+# 		create_character = {
+# 			template = beautiful_peasant_character
+# 			age = { 17 22 }
+# 			gender_female_chance = root_attraction_based_female_chance
+# 			employer = scope:Priest.host
+# 			faith = scope:Priest.host.faith
+# 			culture = scope:Priest.host.culture
+# 			save_scope_as = lover
+# 		}
+
+# 		scope:lover = {
+# 			set_relation_lover = scope:Priest
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.14.a
+		
+# 		scope:Priest = {
+# 			add_trait = Deviant
+
+# 			if = {
+# 				limit = { exists = dynasty }
+# 				dynasty = {
+# 					add_dynasty_prestige = medium_dynasty_prestige_loss
+# 				}
+# 			}
+# 			add_piety = -1
+# 			add_piety_level = -1
+# 		}
+# 	}
+# }
+
+# #Waldensians in Lyon
+# CrusaderStateEvents.15 = {
+# 	title = CrusaderStateEvents.15.t
+# 	desc = CrusaderStateEvents.15.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+# 	left_portrait = {
+# 		character = title:c_lyon.holder
+# 	}
+# 	right_portrait = {
+# 		character = scope:peter
+# 	}
+
+# 	trigger = {
+# 		this = title:c_forez.holder
+# 	}
+
+# 	immediate = {
+# 		create_character = {
+# 			name = "Pèire de Vaudès"
+# 			female = no
+# 			dynasty = no
+# 			trait = heresiarch
+# 			location = root
+# 			age = { 40 50 }
+# 			learning = 18
+# 			faith = faith:waldensian
+# 			culture = culture:french
+# 			save_scope_as = peter
+# 		}
+
+# 		title:c_lyon.holder = {
+# 			save_scope_as = archbishop
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.15.a
+# 		title:c_provence.holder = {
+# 			trigger_event = {
+# 				id = CrusaderStateEvents.16
+# 				days = { 5 10 }
+# 			}
+# 		}
+
+# 		title:c_savoie.holder = {
+# 			trigger_event = {
+# 				id = CrusaderStateEvents.16
+# 				days = { 5 10 }
+# 			}
+# 		}
+# 	}
+# 	option = { 
+# 		name = CrusaderStateEvents.15.b
+# 		trigger_event = {
+# 			id = CrusaderStateEvents.17
+# 			days = { 5 10 }
+# 		}
+# 	}
+# }
+
+# CrusaderStateEvents.16 = {
+# 	title = CrusaderStateEvents.16.t
+# 	desc = CrusaderStateEvents.16.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+
+# 	immediate = {
+# 		random_held_title = {
+# 			limit = { tier = tier_county }
+# 			save_scope_as = Waldensians_county
+# 		}
+		
+# 		scope:Waldensians_county = {
+# 			set_county_faith = faith:waldensian
+
+# 			add_county_modifier = {
+# 				modifier = bastion_of_waldensianism_revolt_risk_modifier
+# 				years = 20
+# 			}
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.16.a
+
+		
+# 	}
+# }
+
+# CrusaderStateEvents.17 = {
+# 	title = CrusaderStateEvents.17.t
+# 	desc = CrusaderStateEvents.17.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+# 	left_portrait = {
+# 		character = scope:archbishop
+# 	}
+# 	right_portrait = {
+# 		character = root
+# 	}
+
+# 	immediate = {
+# 		title:c_lyon.holder = {
+# 			save_scope_as = archbishop
+# 		}
+
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.17.a
+
+# 		scope:archbishop = {
+# 			add_opinion = {
+# 			target = root
+# 			modifier = pious_opinion
+# 			opinion = 10
+# 			}
+# 		}
+
+# 		add_piety = 50 
+
+# 		trigger_event = {
+# 			id = CrusaderStateEvents.18
+# 			days = 3 
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.17.b
+# 		custom_tooltip = CrusaderStateEvents.17.b.tt
+
+# 		scope:archbishop = {
+# 			add_opinion = {
+# 			target = root
+# 			modifier = temporal_condemnation_opinion
+# 			opinion = -30
+# 			}
+# 		}
+
+# 		trigger_event = {
+# 			id = CrusaderStateEvents.19
+# 			days = {10 20}
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.17.c
+# 		custom_tooltip = CrusaderStateEvents.17.c.tt
+
+# 		scope:archbishop = {
+# 			set_relation_rival = root
+# 		}
+
+# 		set_relation_rival = scope:archbishop
+
+# 		set_character_faith_with_conversion = faith:waldensian
+# 		add_piety = major_piety_loss
+		
+# 		add_internal_flag = dangerous
+
+
+# 		trigger_event = {
+# 			id = CrusaderStateEvents.20
+# 			days = 3 
+# 		}
+
+# 		ai_chance = {
+# 			base = 80
+# 		}
+# 	}
+# }
+
+# CrusaderStateEvents.18 = {
+# 	title = CrusaderStateEvents.18.t
+# 	desc = CrusaderStateEvents.18.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+
+# 	immediate = {
+# 		title:c_forez = {
+# 			change_development_level = -2
+
+# 			add_county_modifier = {
+# 				modifier = Massacre_of_Feurs
+# 				years = 10
+# 			}
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.18.a	
+# 	}
+# }
+
+# CrusaderStateEvents.19 = {
+# 	title = CrusaderStateEvents.19.t
+# 	desc = CrusaderStateEvents.19.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+
+# 	immediate = {
+# 		add_excommunication_actual_effect = yes
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.19.a	
+
+# 		title:c_forez = {
+# 			set_county_faith = faith:waldensian
+
+# 			add_county_modifier = {
+# 				modifier = KOH_Religious_Tolerance
+# 				years = 20
+# 			}
+# 		}
+# 		set_nickname_effect = { NICKNAME = nick_the_tolerant }
+# 	}
+# }
+
+# CrusaderStateEvents.20 = {
+# 	title = CrusaderStateEvents.20.t
+# 	desc = CrusaderStateEvents.20.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+
+# 	immediate = {
+# 		add_excommunication_actual_effect = yes
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.20.a	
+
+# 		add_trait = heresiarch
+# 		add_trait = paragon
+
+# 		set_nickname_effect = { NICKNAME = nick_the_waldensian }
+
+# 		add_piety = 1000
+
+# 		title:c_forez = {
+# 			set_county_faith = faith:waldensian
+
+# 			add_county_modifier = {
+# 				modifier = Birthplace_of_Waldensianism
+# 				years = 100
+# 			}
+# 		}
+
+# 		title:c_lyon = {
+# 			set_county_faith = faith:waldensian
+
+
+# 			add_county_modifier = {
+# 				modifier = Birthplace_of_Waldensianism
+# 				years = 100
+# 			}
+# 		}
+
+# 		faith:waldensian = {
+# 			change_fervor = major_fervor_gain
+# 		}
+
+# 		title:c_roma.holder = {
+# 			add_opinion = {
+# 				target = root
+# 				modifier = temporal_condemnation_opinion
+# 				opinion = -30
+# 			}
+# 		}
+		
+# 		every_ruler = {
+# 			limit = {
+# 				AND = {
+# 					NOT = { this = title:c_forez.holder }
+# 					has_religion = religion:christianity_religion
+# 				}
+# 			}
+# 			trigger_event = {
+# 				id = CrusaderStateEvents.21
+# 				days = 10
+# 			}
+# 		}
+# 	}
+# }
+
+# CrusaderStateEvents.21 = {
+# 	title = CrusaderStateEvents.21.t
+# 	desc = CrusaderStateEvents.21.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+
+# 	right_portrait = {
+# 		character = title:c_forez.holder
+# 	}
+
+# 	immediate = {
+# 		title:c_forez.holder = {
+# 			save_scope_as = forez
+# 		}
+
+# 		title:c_roma.holder = {
+# 			save_scope_as = pope
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = CrusaderStateEvents.21.a	
+# 	}
+# }
+# #Waldensians in Lyon
+
+# #cardinal names
+# CrusaderStateEvents.22 = {
+# 	hidden = yes
+
+# 	immediate = {
+# 		every_living_cardinal = {
+# 			add_prestige = 1
+# 			add_trait = koh_cardinal
+# 		}
+# 	}
+# }
+
+# #cardinal election won
+# CrusaderStateEvents.23 = {
+# 	hidden = yes
+
+# 	immediate = {
+# 		send_interface_toast = {
+# 			title = "Cardinal Election"				
+# 			right_icon = prev
+			
+# 			custom_tooltip = "You have gained a hook"
+# 		}
+# 	}
+# }

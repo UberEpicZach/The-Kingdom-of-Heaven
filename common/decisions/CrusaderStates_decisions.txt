@@ -1,0 +1,235 @@
+﻿#Create's a Crusader State from a held duchy'
+create_crusader_state_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+
+	confirm_text = {
+		desc = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						faith = {
+							great_holy_war = {
+								ghw_target_title = {
+										title_capital_county.title_province = { 
+											geographical_region = ghw_region_holy_land 
+										}
+									}
+								}
+							}
+						}
+					desc = create_dynamic_crusader_state_decision_holy_land_confirm
+				}
+				triggered_desc = {
+					trigger = {
+						faith = {
+							great_holy_war = {
+								ghw_target_title = {
+										title_capital_county.title_province = { 
+											geographical_region = ghw_region_iberia 
+										}
+									}
+								}
+							}
+					}
+					desc = create_dynamic_crusader_state_decision_iberia_confirm
+				}
+				triggered_desc = {
+					trigger = {
+						faith = {
+							great_holy_war = {
+								ghw_target_title = {
+										title_capital_county.title_province = { 
+											geographical_region = ghw_region_near_east 
+										}
+									}
+								}
+							}
+						}	
+					desc = create_dynamic_crusader_state_decision_near_east_confirm
+				}
+				triggered_desc = {
+					trigger = {
+						faith = {
+							great_holy_war = {
+								ghw_target_title = {
+										title_capital_county.title_province = { 
+											geographical_region = ghw_region_mediterranean 
+										}
+									}
+								}
+							}
+						}	
+					desc = create_dynamic_crusader_state_decision_mediterranean_confirm
+				}
+				triggered_desc = {
+					trigger = {
+						faith = {
+							great_holy_war = {
+								ghw_target_title = {
+										title_capital_county.title_province = { 
+											geographical_region = ghw_region_ghw_region_egypt
+										}
+									}
+								}
+							}
+						}	
+					desc = create_dynamic_crusader_state_decision_egypt_confirmc
+				}
+				desc = create_dynamic_crusader_state_decision_confirm
+			}
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					faith = {
+						great_holy_war = {
+							ghw_target_title = {
+									title_capital_county.title_province = { 
+										geographical_region = ghw_region_holy_land 
+									}
+								}
+							}
+						}
+					}
+				desc = create_dynamic_crusader_state_decision_holy_land_desc
+			}
+			triggered_desc = {
+				trigger = {
+					faith = {
+						great_holy_war = {
+							ghw_target_title = {
+									title_capital_county.title_province = { 
+										geographical_region = ghw_region_iberia 
+									}
+								}
+							}
+						}
+				}
+				desc = create_dynamic_crusader_state_decision_iberia_desc
+			}
+			triggered_desc = {
+				trigger = {
+					faith = {
+						great_holy_war = {
+							ghw_target_title = {
+									title_capital_county.title_province = { 
+										geographical_region = ghw_region_near_east 
+									}
+								}
+							}
+						}
+					}	
+				desc = create_dynamic_crusader_state_decision_near_east_desc
+			}
+			triggered_desc = {
+				trigger = {
+					faith = {
+						great_holy_war = {
+							ghw_target_title = {
+									title_capital_county.title_province = { 
+										geographical_region = ghw_region_mediterranean 
+									}
+								}
+							}
+						}
+					}	
+				desc = create_dynamic_crusader_state_decision_mediterranean_desc
+			}
+			triggered_desc = {
+				trigger = {
+					faith = {
+						great_holy_war = {
+							ghw_target_title = {
+									title_capital_county.title_province = { 
+										geographical_region = ghw_region_ghw_region_egypt
+									}
+								}
+							}
+						}
+					}	
+				desc = create_dynamic_crusader_state_decision_egypt_desc
+			}
+			desc = create_dynamic_crusader_state_decision_desc
+		}
+	}	
+	selection_tooltip = create_dynamic_crusader_state_decision_tooltip
+	cooldown = { days = 400 }
+	major = yes
+
+	ai_check_interval = 2
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		#Visible to dukes and kings.
+		highest_held_title_tier >= tier_duchy
+		highest_held_title_tier <= tier_empire
+		is_at_war = yes
+		#Must have the correct religion, and support from the rest of Catholicism.
+		religion = { exists = var:variable_ghw_unlocked } #The era of the Crusades must have started.
+		faith = faith:catholic
+		AND = {
+			exists = faith.great_holy_war
+			faith.great_holy_war = { has_pledged_attacker = root }
+			NOT = { root = root.faith.great_holy_war.ghw_war_declarer } #Not for the Caliph himself.
+		}
+		custom_description = {
+			text = "You must have an entire duchy occupied, in the lands of the primary defender of a great holy war, that is not within the target kingdom realm."
+			CrusaderStates_trigger = yes
+		}
+	}
+
+	is_valid = {
+		prestige_level >= medium_prestige_level
+		is_ruler = yes
+		is_landed = yes
+		NOT = {
+			has_character_flag = has_taken_crusader_state
+		}
+		#Visible to dukes and kings.
+		highest_held_title_tier >= tier_duchy
+		highest_held_title_tier <= tier_empire
+		is_at_war = yes
+		#Must have the correct religion, and support from the rest of Catholicism.
+		religion = { exists = var:variable_ghw_unlocked } #The era of the Crusades must have started.
+		faith = faith:catholic
+		AND = {
+			exists = faith.great_holy_war
+			faith.great_holy_war = { has_pledged_attacker = root }
+			NOT = { root = root.faith.great_holy_war.ghw_war_declarer } #Not for the Caliph himself.
+			exists = ghw_beneficiary
+		}
+		custom_description = {
+			text = create_dynamic_crusader_state			
+			CrusaderStates_trigger = yes
+		}
+	}
+		
+
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+	}
+
+	effect = {
+		custom_tooltip = create_dynamic_crusader_state_decision_effect_tooltip
+		hidden_effect = {
+			trigger_event = {
+				id = CrusaderStateEvents.1
+				days = 1
+			}
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+

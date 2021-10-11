@@ -1,0 +1,535 @@
+﻿WarDuchyEffect = {
+    save_scope_as = war_attacker
+	faith = {
+		great_holy_war = {
+			random_pledged_attacker = {
+				limit = {
+					exists = ghw_beneficiary
+					this = scope:war_attacker
+				}
+				ghw_beneficiary = {
+					save_scope_as = beneficiary
+				}
+			}
+			ghw_war = {
+				primary_defender = {
+					save_scope_as = defender
+					random_sub_realm_county = {
+						limit = {
+							duchy = {
+								any_in_de_jure_hierarchy = {
+									count = all
+									trigger_if = {
+										limit = { tier = tier_county }
+										holder.top_liege = scope:defender
+										NOT  = { county_controller = holder }
+										exists = var:occupant
+										var:occupant = scope:war_attacker
+									}
+								}
+							}
+						}
+						duchy = {
+							every_in_de_jure_hierarchy = {
+								limit = { tier = tier_county }
+								scope:beneficiary = {
+									add_to_variable_list = {
+										name = counties_transferred
+										target = prev
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	scope:beneficiary = { 
+		add_trait = crusader_state_trait
+		save_scope_as = founder
+		random_in_list = {
+			variable = counties_transferred
+			save_scope_as = old_title
+		}
+
+		create_dynamic_title = {
+			tier = duchy
+			name = NEW_CREATED_TITLE_NAME
+		}
+		
+		create_title_and_vassal_change = {
+			type = conquest_holy_war
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+
+		every_in_list = {
+			variable = counties_transferred
+			change_title_holder = {
+				holder = PREV
+				change = scope:change
+			}
+		}
+		
+		every_in_list = {
+			variable = duchies_transferred
+			change_title_holder = {
+				holder = PREV
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+
+		scope:new_title = {
+			set_coa = scope:old_title
+			set_color_from_title = scope:war_attacker.primary_title
+			change_title_holder = {
+				holder = PREV
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+		
+		if = {
+			limit = { is_independent_ruler = no }
+			create_title_and_vassal_change = {
+				type = created
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+	
+			becomes_independent = {
+				change = scope:change
+			}
+			
+			resolve_title_and_vassal_change = scope:change
+		}
+
+		add_trait = crusader 
+
+		every_vassal = { # Vassals should not want to revolt too soon after inaguration
+			add_opinion = {
+				modifier = respect_opinion
+				target = PREV
+				opinion = 50
+			}
+		}
+		add_gold = 500 # Some extra plunder
+		add_prestige = 500
+		add_piety = 500
+		hidden_effect = {
+			faith.great_holy_war = {
+				pledge_attacker = scope:beneficiary
+			}
+		}
+	}
+	every_character_war = {
+		limit = {
+			using_cb = undirected_great_holy_war
+		}
+		add_attacker = scope:beneficiary
+	}
+}
+
+WarDuchyEffect_forSelf = {
+    save_scope_as = war_attacker
+	faith = {
+		great_holy_war = {
+			random_pledged_attacker = {
+				limit = {
+					exists = ghw_beneficiary
+					this = scope:war_attacker
+				}
+				ghw_beneficiary = {
+					save_scope_as = beneficiary
+				}
+			}
+			ghw_war = {
+				primary_defender = {
+					save_scope_as = defender
+					random_sub_realm_county = {
+						limit = {
+							duchy = {
+								any_in_de_jure_hierarchy = {
+									count = all
+									trigger_if = {
+										limit = { tier = tier_county }
+										holder.top_liege = scope:defender
+										NOT  = { county_controller = holder }
+										exists = var:occupant
+										var:occupant = scope:war_attacker
+									}
+								}
+							}
+						}
+						duchy = {
+							every_in_de_jure_hierarchy = {
+								limit = { tier = tier_county }
+								scope:war_attacker = {
+									add_to_variable_list = {
+										name = counties_transferred
+										target = prev
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	scope:war_attacker = { 
+		save_scope_as = founder
+		random_in_list = {
+			variable = counties_transferred
+			save_scope_as = old_title
+		}
+
+		create_dynamic_title = {
+			tier = duchy
+			name = NEW_CREATED_TITLE_NAME
+		}
+		
+		create_title_and_vassal_change = {
+			type = conquest_holy_war
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+
+		every_in_list = {
+			variable = counties_transferred
+			change_title_holder = {
+				holder = PREV
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+
+		scope:new_title = {
+			set_coa = scope:old_title
+			set_color_from_title = scope:war_attacker.primary_title
+			change_title_holder = {
+				holder = PREV
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+	}
+}
+
+WarDuchyEffect_forSelfButDepose = { #stay and leave home propertise
+    save_scope_as = war_attacker
+	
+
+	scope:war_attacker = {
+		if = {
+			limit = {
+				exists = primary_heir
+			}
+			every_held_title = {
+				limit = {
+					tier < tier_empire
+				}
+				PREV = {
+					add_to_variable_list = {
+						name = origin_kingdom_transfered
+						target = prev
+					}
+				}
+			}
+			primary_heir = {
+				save_scope_as = primary_heir_crusade
+			}
+		}
+	}
+
+	
+	faith = {
+		great_holy_war = {
+			random_pledged_attacker = {
+				limit = {
+					exists = ghw_beneficiary
+					this = scope:war_attacker
+				}
+				ghw_beneficiary = {
+					save_scope_as = beneficiary
+				}
+			}
+			ghw_war = {
+				primary_defender = {
+					save_scope_as = defender
+					random_sub_realm_county = {
+						limit = {
+							duchy = {
+								any_in_de_jure_hierarchy = {
+									count = all
+									trigger_if = {
+										limit = { tier = tier_county }
+										holder.top_liege = scope:defender
+										NOT  = { county_controller = holder }
+										exists = var:occupant
+										var:occupant = scope:war_attacker
+									}
+								}
+							}
+						}
+						duchy = {
+							every_in_de_jure_hierarchy = {
+								limit = { tier = tier_county }
+								scope:war_attacker = {
+									add_to_variable_list = {
+										name = counties_transferred
+										target = prev
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	scope:war_attacker = { 
+		add_trait = crusader_state_trait
+		save_scope_as = founder
+		random_in_list = {
+			variable = counties_transferred
+			save_scope_as = old_title
+		}
+
+		create_dynamic_title = {
+			tier = duchy
+			name = NEW_CREATED_TITLE_NAME
+		}
+		
+		create_title_and_vassal_change = {
+			type = conquest_holy_war
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+
+		every_in_list = {
+			variable = counties_transferred
+			change_title_holder = {
+				holder = PREV
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+
+		scope:new_title = {
+			set_coa = scope:old_title
+			set_color_from_title = scope:war_attacker.primary_title
+			change_title_holder = {
+				holder = PREV
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		#Giving all titles to Heir
+
+		scope:war_attacker = {
+			create_title_and_vassal_change = {
+				type = granted
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+		
+			every_in_list = {
+				variable = origin_kingdom_transfered
+				change_title_holder = {
+					holder = scope:primary_heir_crusade
+					change = scope:change
+				}
+			}
+			resolve_title_and_vassal_change = scope:change
+		}	
+
+		add_trait = crusader 
+
+		every_vassal = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = scope:primary_heir_crusade
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+
+		if = {
+			limit = { is_independent_ruler = no }
+			create_title_and_vassal_change = {
+				type = created
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+	
+			becomes_independent = {
+				change = scope:change
+			}
+			
+			resolve_title_and_vassal_change = scope:change
+		}
+
+	}
+}
+
+WarDuchyEffect_trigger = {
+    save_scope_as = war_attacker
+	faith = {
+		great_holy_war = {
+			random_pledged_attacker = {
+				limit = {
+					exists = ghw_beneficiary
+					this = scope:war_attacker
+				}
+				ghw_beneficiary = {
+					save_scope_as = beneficiary
+				}
+			}
+			ghw_war = {
+				primary_defender = {
+					save_scope_as = defender
+					random_sub_realm_county = {
+						limit = {
+							duchy = {
+								any_in_de_jure_hierarchy = {
+									count = all
+									trigger_if = {
+										limit = { tier = tier_county }
+										holder.top_liege = scope:defender
+										NOT  = { county_controller = holder }
+										exists = var:occupant
+										var:occupant = scope:war_attacker
+									}
+								}
+							}
+						}
+						duchy = {
+							scope:beneficiary = {
+								add_to_variable_list = {
+									name = duchies_transferred
+									target = prev
+								}
+							}
+							every_in_de_jure_hierarchy = {
+								limit = { tier = tier_county }
+								scope:war_attacker = {
+									set_variable = {
+										name = CrusaderState_variable
+										value = yes
+									}
+									# send_interface_toast = {
+									# 	type = event_toast_effect_bad
+									# 	title = "VAR IS SET"
+									# 	left_icon = root
+									# }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+WarDuchyEffect_localization = {
+    save_scope_as = war_attacker
+	faith = {
+		great_holy_war = {
+			random_pledged_attacker = {
+				limit = {
+					exists = ghw_beneficiary
+					this = scope:war_attacker
+				}
+				ghw_beneficiary = {
+					save_scope_as = beneficiary
+				}
+			}
+			ghw_war = {
+				primary_defender = {
+					save_scope_as = defender
+					random_sub_realm_county = {
+						limit = {
+							duchy = {
+								any_in_de_jure_hierarchy = {
+									count = all
+									trigger_if = {
+										limit = { tier = tier_county }
+										holder.top_liege = scope:defender
+										NOT  = { county_controller = holder }
+										exists = var:occupant
+										var:occupant = scope:war_attacker
+									}
+								}
+							}
+						}
+						duchy = {
+							save_scope_as = duchyforloc
+						}
+						save_scope_as = countyforloc
+					}
+				}
+			}
+		}
+	}
+}
+
+ChangeHeirEffect = {
+	save_scope_as = war_attacker
+	scope:war_attacker = {
+		limit = {
+			has_character_flag = ghw_personal_abdicate_serving 
+		}
+		random_child = { 
+			limit = { 
+				is_male = yes 
+				NOT = { 
+					is_primary_heir_of = root  
+					this = scope:primary_heir_crusade 
+				} 
+			} 
+		save_scope_as = childforheir 
+		add_character_flag = childforheir
+		}
+	}
+	scope:war_attacker = {
+		limit = {
+			has_character_flag = ghw_personal_abdicate_serving 
+		}
+		set_designated_heir = scope:childforheir
+	}
+}

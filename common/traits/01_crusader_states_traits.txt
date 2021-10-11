@@ -1,0 +1,73 @@
+﻿# Standard Values
+@pos_compat_high = 30
+@pos_compat_medium = 15
+@pos_compat_low = 5
+
+@neg_compat_high = -30
+@neg_compat_medium = -15
+@neg_compat_low = -5
+
+crusader_state_trait = {
+	index = 300
+	fame = yes
+
+
+	#Diplomatic Range to reach and marry europe 
+	diplomatic_range_mult = 1
+	#Monthly Piety Gain
+	monthly_piety_gain_mult = 0.2
+ 	#-20% holy order founding cost, Handeled Elsewhere
+
+
+	martial = 3
+	prowess = 2
+	
+	same_opinion_if_same_faith = 5
+	same_faith_opinion = 10
+	ignore_negative_culture_opinion = yes
+	monthly_county_control_change_factor = 0.3
+	
+	tolerance_advantage_mod = 3.5
+	hard_casualty_modifier = -0.10
+	retreat_losses = -0.1
+	
+	county_opinion_add = 25
+	
+	ruler_designer_cost = 120
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_crusader_state_fallback_desc
+			}
+			triggered_desc = {
+				trigger = { is_female = yes }
+				desc = trait_crusader_state_female_desc
+			}
+			desc = trait_crusader_state_male_desc
+		}
+	}
+
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_crusader_state_fallback_dead
+			}
+			triggered_desc = {
+				trigger = {
+					faith = { religion_tag = christianity_religion }
+					is_female = yes
+				}
+				desc = trait_crusader_state_female
+			}
+			triggered_desc = {
+				trigger = { faith = { religion_tag = christianity_religion } }
+				desc = trait_crusader_state
+			}
+		}
+	}
+
+	ai_zeal = 25
+}
