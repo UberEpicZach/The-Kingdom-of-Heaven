@@ -102,8 +102,8 @@ cardinal_dynasty_bonus = {
 }
 cardinal_location_bonus = {
 	value = 0
-	if = 		{limit = {location.county = title:c_roma} 							add = cardinal_score_location_rome}
-	else_if = 	{limit = {location.barony = {is_holy_site_of = faith:catholic}}		add = cardinal_score_location_holy_site}
+	if = 		{limit = {exists = location location.county = title:c_roma} 							add = cardinal_score_location_rome}
+	else_if = 	{limit = {exists = location location.barony = {is_holy_site_of = faith:catholic}}		add = cardinal_score_location_holy_site}
 }
 cardinal_culture_bonus = {
 	value = 0

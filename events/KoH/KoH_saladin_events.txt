@@ -71,7 +71,7 @@ KoH_saladin.100 = {
 			}
 		}
 
-		character:223523 = {
+		title:k_jerusalem.holder = {
 			trigger_event = {
 			id = KoH_saladin.101
 			days = 30
@@ -380,6 +380,10 @@ KoH_saladin.1 = {
 				add_defender = global_var:hospitaller_holy_order_title.holder
 			}
 		}
+		ai_chance = {
+			base = 60
+		}
+
 	}
 
 	option = {
@@ -402,6 +406,10 @@ KoH_saladin.1 = {
 				death_reason = death_execution
 				killer = root
 			}
+		}
+
+		ai_chance = {
+			base = 60
 		}
 	}
 
@@ -493,6 +501,10 @@ KoH_saladin.1 = {
 			add_defender = global_var:hospitaller_holy_order_title.holder
 			}
 		}
+		ai_chance = {
+			base = 60
+		}
+
 	}
 
 	option = {
