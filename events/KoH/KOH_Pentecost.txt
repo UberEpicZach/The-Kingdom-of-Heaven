@@ -191,21 +191,29 @@ scripted_effect inform_watchers = {
 }
 
 scripted_effect process_results = {
-	rank_the_players = {
-		KEY = $KEY$
-	}
+	if = {
+		limit = {
+			list_size = {
+				name = participants_accepted
+				value > 0
+			}
+		}
+		rank_the_players = {
+			KEY = $KEY$
+		}
 
-	# just get rid of this guy tbh
-	handle_winner = {
-		KEY = $KEY$
-	}
+		# just get rid of this guy tbh
+		handle_winner = {
+			KEY = $KEY$
+		}
 
-	inform_losers = {
-		KEY = $KEY$
-	}
+		inform_losers = {
+			KEY = $KEY$
+		}
 
-	inform_watchers = {
-		KEY = $KEY$
+		inform_watchers = {
+			KEY = $KEY$
+		}
 	}
 }
 
@@ -494,6 +502,24 @@ KOH_Pentecost.4 = {
 scripted_effect konrad_pays = {
 	add_piety = minor_piety_loss
 	add_gold = medium_gold_value
+}
+scripted_effect success_msg = {
+	send_interface_message = {
+		type = send_interface_message_good
+		title = KOH_Pentecost.5.succeed.t
+		desc = KOH_Pentecost.5.succeed.desc
+		tooltip = KOH_Pentecost.5.succeed.tt
+		left_icon = scope:konrad
+	}
+}
+scripted_effect fail_msg = {
+	send_interface_message = {
+		type = send_interface_message_bad
+		title = KOH_Pentecost.5.fail.t
+		desc = KOH_Pentecost.5.fail.desc
+		tooltip = KOH_Pentecost.5.fail.tt
+		left_icon = scope:konrad
+	}
 }
 KOH_Pentecost.5 = {
 	title = KOH_Pentecost.5.t
@@ -1627,7 +1653,7 @@ KOH_Pentecost.15 = {
 		custom_tooltip = KOH_Pentecost.15.a.tt
 
 		trigger = {
-			scope:welf_land = {
+			title:d_ostfalen = {
 				any_de_jure_top_liege = {
 					scope:frederick = this
 				}
@@ -1658,18 +1684,36 @@ KOH_Pentecost.15 = {
 					}
 					always = yes # not sure of the behaviour of limit = {}
 				}
-				debug_log = "Pentecost random land given to welf"
-				scope:welf_land = {
-					random_in_de_jure_hierarchy = {
-						continue = {
-							tier > tier_county
-						}
-						limit = {
-							tier = tier_county
-							holder = {
-								top_liege = scope:frederick
+
+				custom_description = {
+					text = Pentecost_land_lion_random_county
+					debug_log = "Pentecost random land given to welf"
+					scope:welf_land = {
+						random_in_de_jure_hierarchy = {
+							continue = {
+								tier > tier_county
 							}
+							limit = {
+								tier = tier_county
+								holder = {
+									top_liege = scope:frederick
+								}
+							}
+							change_title_holder_include_vassals = {
+								holder = scope:lion
+								change = scope:change
+								take_baronies = yes
+							}
+
+							debug_log_scopes = no
 						}
+					}
+				}
+			}
+			else = { # this is what usually happens
+				custom_description = {
+					text = Pentecost_land_lion_heidrich
+					every_held_title = {
 						change_title_holder_include_vassals = {
 							holder = scope:lion
 							change = scope:change
@@ -1680,20 +1724,9 @@ KOH_Pentecost.15 = {
 					}
 				}
 			}
-			else = {
-				every_held_title = {
-					change_title_holder_include_vassals = {
-						holder = scope:lion
-						change = scope:change
-						take_baronies = yes
-					}
-
-					debug_log_scopes = no
-				}
-			}
 		}
 
-		title:d_ostfalen = {
+		scope:welf_land = {
 			if = {
 				limit = {
 					trigger_if = {
@@ -1724,8 +1757,9 @@ KOH_Pentecost.15 = {
 
 
 
-
-		remove_relation_rival = scope:lion
+		hidden_effect = {
+			remove_relation_rival = scope:lion
+		}
 		remove_relation_potential_rival = scope:lion # in case
 		create_alliance = scope:lion
 
