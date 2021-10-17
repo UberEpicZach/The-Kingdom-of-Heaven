@@ -112,34 +112,3 @@ can_realm_theocracies_trigger = {
 		}		
 	}
 }
-
-can_be_court_chaplain_trigger = {
-	save_temporary_scope_as = court_chaplain_check
-	can_be_councillor_basics_trigger = yes
-	NOT = { has_council_position = councillor_spouse }
-	$COURT_OWNER$.faith = { has_allowed_gender_for_clergy = scope:court_chaplain_check }
-	faith = $COURT_OWNER$.faith
-	trigger_if = {
-		limit = {
-			faith = { has_doctrine = doctrine_theocracy_temporal }
-		}
-		OR = {
-			is_ruler = no
-			has_government = theocracy_government
-		}
-	}
-	trigger_if = {
-		limit = {
-			OR = {
-				COURT_OWNER = { has_realm_law = free_investiture }
-				COURT_OWNER = { top_liege = { has_realm_law = free_investiture } }
-			}
-		}
-	}
-	trigger_if = {
-		limit = {
-			exists = var:escaped_imprisonment_from
-		}
-		NOT = { var:escaped_imprisonment_from = $COURT_OWNER$ }
-	}
-}

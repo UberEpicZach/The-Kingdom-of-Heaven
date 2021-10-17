@@ -239,16 +239,16 @@ vassal_trigger = {
 				holder.liege = prev.liege
 				save_temporary_scope_as = tmp_county
 			}
-			}
-			save_temporary_scope_as = vassal_1
-			random_claim = {
-				explicit = yes # Whichever
-				pressed = no # Whichever
-				tier = tier_county
-				is_neighbor_to_realm = scope:vassal_1
-				holder.liege = scope:vassal_1.liege
-				save_scope_as = county
-				holder = {save_temporary_scope_as = vassal_2}
-			}
+		}
+		save_temporary_scope_as = vassal_1
+		random_claim = {
+			explicit = yes # Whichever
+			pressed = no # Whichever
+			tier = tier_county
+			is_neighbor_to_realm = scope:vassal_1
+			holder.liege = scope:vassal_1.liege
+			save_scope_as = county
+			holder = {save_temporary_scope_as = vassal_2}
+		}
 	}
 }
