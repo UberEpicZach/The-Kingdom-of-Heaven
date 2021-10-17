@@ -593,6 +593,78 @@ yearly_global_pulse = {
         KOH_pulse_monthly
         delay = { months = 1 }
 	}
+	effect = {
+		if = {
+			limit = {
+				has_game_rule = never_mongol_invasion
+				title:c_ulaanbaatar.holder = {
+					is_ai = no
+				}
+				random = {
+					chance = temujin_appearance_base_chance
+					modifier = {
+						factor = 0.25
+						current_date < 1180.1.1
+					}
+					modifier = {
+						add = 7
+						current_date > 1200.1.1
+					}
+					modifier = {
+						add = 5
+						current_date > 1220.1.1
+					}
+					modifier = {
+						add = 5
+						current_date > 1235.1.1
+					}
+					set_global_variable = {
+						name = mongols_have_appeared
+						value = yes
+					}
+					debug_log = "Attempting to spawn mongol invasion within 240 days"
+					trigger_event = {
+						id = mongol_invasion.0001
+						days = { 2 240 }
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = random_mongol_invasion
+				NOT = { has_global_variable = mongols_have_appeared}
+			}
+			random = {
+				chance = temujin_appearance_base_chance
+				modifier = {
+					factor = 0.25
+					current_date < 1180.1.1
+				}
+				modifier = {
+					add = 3
+					current_date > 1200.1.1
+				}
+				modifier = {
+					add = 5
+					current_date > 1220.1.1
+				}
+				modifier = {
+					add = 5
+					current_date > 1235.1.1
+				}
+				set_global_variable = {
+					name = mongols_have_appeared
+					value = yes
+				}
+				debug_log = "Attempting to spawn mongol invasion within 240 days"
+				trigger_event = {
+					id = mongol_invasion.0001
+					days = { 2 240 }
+				}
+			}
+		}
+	}
 }
 
 on_raid_action_completion = {
