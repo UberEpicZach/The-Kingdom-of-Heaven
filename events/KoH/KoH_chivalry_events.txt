@@ -537,9 +537,9 @@ chivalry.10 = {
 			dynasty = none
 			prowess = { 40 50 }
 			save_scope_as = challenger
-			}
-			scope:challenger = {
-				add_character_flag = has_scripted_appearance
+		}
+		scope:challenger = {
+			add_character_flag = has_scripted_appearance
 		}
 	}
 	
@@ -587,6 +587,9 @@ chivalry.10 = {
 					type = event_toast_effect_good
 					title = "You Escape Unharmed"
 					left_icon = root
+				}
+				scope:challenger = {
+
 				}
 			}
 
@@ -892,16 +895,31 @@ chivalry.17 = {
 					killer = scope:challenger
 					death_reason = death_dragon
 				}
+				scope:challenger = {
+					death = {
+						death_reason = death_disappearance
+					}
+				}
 			}
 
 			30 = {
 				add_trait = wounded_1
+				scope:challenger = {
+					death = {
+						death_reason = death_disappearance
+					}
+				}
 			}
 			50 = {
 				send_interface_toast = {
 					type = event_toast_effect_good
 					title = "The Dragon lets you leave, unharmed"
 					left_icon = root
+				}
+				scope:challenger = {
+					death = {
+						death_reason = death_disappearance
+					}
 				}
 			}
 		}

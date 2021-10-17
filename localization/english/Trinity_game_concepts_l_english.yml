@@ -13,7 +13,7 @@
  free_investiture: "[free_investiture|E]"
  free_investiture_effects:0 "$EFFECT_LIST_BULLET$Rulers may appoint and, once per lifetime, dismiss the current [realm_priest|E] on the Council \n$EFFECT_LIST_BULLET$ [vassals|E], who have further [vassals|E] bishops gain #P +10#! [opinion|E]. \n$EFFECT_LIST_BULLET$ [head_of_faith|E] loses #N -150#! [opinion|E]."
 
- COURT_CHAPLAIN_CANT_FIRE_DOCTRINES_TCT: "$EFFECT_LIST_BULLET$[CHARACTER.GetFaith.GetName] does #bold not#! have #V Revocable Clerical Appointment#! [doctrine|E].\n$EFFECT_LIST_BULLET$[CHARACTER.GetName] does not have [papal_investiture|E].\nWithout such a $game_concept_doctrine$, or [law|E], there is always a [court_chaplain|E] or [realm_priest|E]."
+  COURT_CHAPLAIN_CANT_FIRE_DOCTRINES_TCT: "$EFFECT_LIST_BULLET$[CHARACTER.GetFaith.GetName] does #bold not#! have #V Revocable Clerical Appointment#! [doctrine|E].\n\n$EFFECT_LIST_BULLET$[CHARACTER.GetName] does not have [free_investiture|E].\n\nWithout such a $game_concept_doctrine$, or [law|E], there is always a [court_chaplain|E] or [realm_priest|E]."
 
  collegeofcardinals: "College of Cardinals"
  game_concept_praedictus_desc: "The Praedictus is a term used to describe the next predicted appointed Cardinal from the larger body of holy bishops."
