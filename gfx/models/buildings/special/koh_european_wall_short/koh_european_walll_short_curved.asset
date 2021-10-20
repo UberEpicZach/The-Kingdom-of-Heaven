@@ -1,0 +1,19 @@
+pdxmesh = {
+	name = "koh_european_walll_short_curved_mesh"
+	file = "koh_european_walll_short_curved.mesh"
+
+	meshsettings = {
+		name = "Castle Wall_Short_Curved"
+		index = 0
+		texture_diffuse = "koh_european_walll_short_diffuse.dds"
+		texture_normal = "koh_european_walll_short_normal.dds"
+		texture_specular = "koh_european_walll_short_properties.dds"	
+		shader = "snap_to_terrain_atlas"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "koh_european_walll_short_curved_entity"
+	pdxmesh = "koh_european_walll_short_curved_mesh"
+}
