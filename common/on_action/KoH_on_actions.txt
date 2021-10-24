@@ -591,15 +591,21 @@ KOH_ON_START = {
 yearly_global_pulse = {
 	on_actions = {
         KOH_pulse_monthly
+		KOH_yearly
         delay = { months = 1 }
 	}
+}
+
+KOH_yearly = {
 	effect = {
 		if = {
 			limit = {
 				has_game_rule = never_mongol_invasion
+				NOT = { has_global_variable = mongols_have_appeared}
 				title:c_ulaanbaatar.holder = {
 					is_ai = no
 				}
+<<<<<<< Updated upstream
 				random = {
 					chance = temujin_appearance_base_chance
 					modifier = {
@@ -627,6 +633,35 @@ yearly_global_pulse = {
 						id = mongol_invasion.0001
 						days = { 2 240 }
 					}
+=======
+			}
+			random = {
+				chance = temujin_appearance_base_chance
+				modifier = {
+					factor = 0.25
+					current_date < 1180.1.1
+				}
+				modifier = {
+					add = 18
+					current_date > 1200.1.1
+				}
+				modifier = {
+					add = 18
+					current_date > 1220.1.1
+				}
+				modifier = {
+					add = 5
+					current_date > 1235.1.1
+				}
+				set_global_variable = {
+					name = mongols_have_appeared
+					value = yes
+				}
+				debug_log = "Attempting to spawn mongol invasion within 240 days"
+				trigger_event = {
+					id = mongol_invasion.0001
+					days = { 2 240 }
+>>>>>>> Stashed changes
 				}
 			}
 		}
