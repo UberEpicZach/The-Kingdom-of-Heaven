@@ -17341,13 +17341,17 @@ e_italy = {
 					color = { 130 215 190 }
 					color2 = { 255 255 255 }
 				}
+			c_este = {
+				color = { 130 215 190 }
+				color2 = { 255 255 255 }
+				
 				b_este = {
 					province = 8765
 
 					color = { 130 215 190 }
 					color2 = { 255 255 255 }
 				}
-			}
+			}	
 			
 			c_polesine = {
 				color = { 145 230 225 }
@@ -17427,24 +17431,6 @@ e_italy = {
 				}
 			}
 
-			c_cuneo = {
-				color = { 195 130 145 }
-				color2 = { 255 255 255 }
-				
-				b_cuneo = {
-					province = 2043
-
-					color = { 195 130 145 }
-					color2 = { 255 255 255 }
-				}
-				b_mondovi = {
-					province = 8763
-
-					color = { 195 130 145 }
-					color2 = { 255 255 255 }
-				}
-			}
-
 		}
 
 		d_monferrato = {
@@ -17503,8 +17489,24 @@ e_italy = {
 					color2 = { 255 255 255 }
 				}
 			}
+			c_cuneo = {
+				color = { 195 130 145 }
+				color2 = { 255 255 255 }
+				
+				b_cuneo = {
+					province = 2043
+
+					color = { 195 130 145 }
+					color2 = { 255 255 255 }
+				}
+				b_mondovi = {
+					province = 8763
+
+					color = { 195 130 145 }
+					color2 = { 255 255 255 }
+				}
+			}
 		}
-		
 		
 		d_lombardia = {
 			color = { 180 115 200 }
@@ -17584,35 +17586,6 @@ e_italy = {
 					province = 2478
 
 					color = { 240 175 255 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_trent = {
-				color = { 250 150 220 }
-				color2 = { 255 255 255 }
-	
-				b_trento = {
-					province = 2499
-
-					color = { 250 150 220 }
-					color2 = { 255 255 255 }
-				}
-				b_bolzano = {
-					province = 2498
-
-					color = { 250 150 220 }
-					color2 = { 255 255 255 }
-				}
-				b_val_camonica = {	#Riva AKA Riva del Garda
-					province = 2495
-
-					color = { 250 150 220 }
-					color2 = { 255 255 255 }
-				}
-				b_tirano = {
-					province = 8761
-
-					color = { 250 150 220 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -17716,6 +17689,47 @@ e_italy = {
 			}
 		}
 
+		d_trent = {
+			color = { 250 150 220 }
+			color2 = { 255 255 255 }
+			capital = c_trent
+
+			c_trent = {
+				color = { 250 150 220 }
+				color2 = { 255 255 255 }
+	
+				b_trento = {
+					province = 2499
+
+					color = { 250 150 220 }
+					color2 = { 255 255 255 }
+				}
+				b_val_camonica = {	#Riva AKA Riva del Garda
+					province = 2495
+
+					color = { 250 150 220 }
+					color2 = { 255 255 255 }
+				}
+				b_tirano = {
+					province = 8761
+
+					color = { 250 150 220 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_bolzano = {
+				color = { 250 150 220 }
+				color2 = { 255 255 255 }
+
+				b_bolzano = {
+					province = 2498
+
+					color = { 250 150 220 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
+
 		d_genoa = {
 			color = { 244 141 120 }
 			color2 = { 255 255 255 }
@@ -17781,14 +17795,20 @@ e_italy = {
 					color = { 230 185 185 }
 					color2 = { 255 255 255 }
 				}
-				b_canossa = {
-					province = 2535
+
+				b_cento = {
+					province = 2541
 
 					color = { 230 185 185 }
 					color2 = { 255 255 255 }
 				}
-				b_cento = {
-					province = 2541
+			}
+			c_canossa = {
+				color = { 230 185 185 }
+				color2 = { 255 255 255 }
+
+				b_canossa = {
+					province = 2535
 
 					color = { 230 185 185 }
 					color2 = { 255 255 255 }
@@ -17815,6 +17835,12 @@ e_italy = {
 					color = { 215 175 205 }
 					color2 = { 255 255 255 }
 				}
+			}
+
+			c_guastalla = {
+				color = { 215 175 205 }
+				color2 = { 255 255 255 }
+			
 				b_guastalla = {
 					province = 2530
 
@@ -18224,12 +18250,12 @@ e_italy = {
 			greek = cn_ravenna
 		}
 
-		d_romagna = {
-			color = { 244 180 130 }
+		d_ravenna = {
+			color = { 229 165 115 }
 			color2 = { 255 255 255 }
-			
-			capital = c_ravenna # Ravenna
-			
+		
+			capital = c_ravenna
+
 			c_ravenna = {
 				color = { 229 165 115 }
 				color2 = { 255 255 255 }
@@ -18246,6 +18272,11 @@ e_italy = {
 					color = { 229 165 115 }
 					color2 = { 255 255 255 }
 				}
+			}
+			c_rimini = {
+				color = { 229 165 115 }
+				color2 = { 255 255 255 }
+
 				b_rimini = {
 					province = 2547
 
@@ -18253,6 +18284,7 @@ e_italy = {
 					color2 = { 255 255 255 }
 				}
 			}
+
 			c_forli = {
 				color = { 229 165 115 }
 				color2 = { 255 255 255 }
@@ -18261,52 +18293,6 @@ e_italy = {
 					province = 2548
 
 					color = { 229 165 115 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_bologna = {
-				color = { 209 145 95 }
-				color2 = { 255 255 255 }
-				
-				b_bologna = {
-					province = 2542
-
-					color = { 209 145 95 }
-					color2 = { 255 255 255 }
-				}
-				b_cona = {
-					province = 2529
-
-					color = { 209 145 95 }
-					color2 = { 255 255 255 }
-				}
-				b_monte_sole = {
-					province = 2550
-
-					color = { 209 145 95 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_ferrara = {
-				color = { 219 125 85 }
-				color2 = { 255 255 255 }
-				
-				b_ferrara = {
-					province = 2527
-
-					color = { 219 125 85 }
-					color2 = { 255 255 255 }
-				}
-				b_pomposa = {
-					province = 2526
-
-					color = { 219 125 85 }
-					color2 = { 255 255 255 }
-				}
-				b_comacchio = {
-					province = 2528
-
-					color = { 219 125 85 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -18327,7 +18313,108 @@ e_italy = {
 					color2 = { 255 255 255 }
 				}
 			}
+		}
 
+		d_romagna = { #Ferrara
+			color = { 244 180 130 }
+			color2 = { 255 255 255 }
+			
+			capital = c_ferrara # Ravenna
+			
+			c_ferrara = {
+				color = { 219 125 85 }
+				color2 = { 255 255 255 }
+				
+				b_ferrara = {
+					province = 2527
+
+					color = { 219 125 85 }
+					color2 = { 255 255 255 }
+				}
+
+				b_cona = {
+					province = 2529
+
+					color = { 209 145 95 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_bologna = {
+				color = { 209 145 95 }
+				color2 = { 255 255 255 }
+				
+				b_bologna = {
+					province = 2542
+
+					color = { 209 145 95 }
+					color2 = { 255 255 255 }
+				}
+				b_monte_sole = {
+					province = 2550
+
+					color = { 209 145 95 }
+					color2 = { 255 255 255 }
+				}
+			}
+			
+			c_comacchio =  {
+				color = { 219 125 85 }
+				color2 = { 255 255 255 }
+				
+				b_comacchio = {
+					province = 2528
+
+					color = { 219 125 85 }
+					color2 = { 255 255 255 }
+				}
+			}
+
+			c_pomposa = {
+				color = { 219 125 85 }
+				color2 = { 255 255 255 }
+
+				b_pomposa = {
+					province = 2526
+
+					color = { 219 125 85 }
+					color2 = { 255 255 255 }
+				}
+			}
+		} 
+		d_urbino = {
+			color = { 240 225 150 }
+			color2 = { 255 255 255 }
+
+			capital = c_urbino
+
+			c_urbino = {
+				color = { 240 225 150 }
+				color2 = { 255 255 255 }
+				
+				b_urbino = {
+					province = 2555
+
+					color = { 240 225 150 }
+					color2 = { 255 255 255 }
+				}
+				b_civitas_castelli = {
+					province = 2584
+
+					color = { 240 225 150 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_pesaro = {
+				color = { 240 225 150 }
+				color2 = { 255 255 255 }
+				
+				b_pesaro = {
+					province = 2556
+
+					color = { 240 225 150 }
+					color2 = { 255 255 255 }
+				}
+			}
 			c_montefeltro = {
 				color = { 209 125 105 }
 				color2 = { 255 255 255 }
@@ -18340,7 +18427,7 @@ e_italy = {
 				}
 			}
 		}
-		
+
 		d_ancona = {
 			color = { 240 240 190 }
 			color2 = { 255 255 255 }
@@ -18373,29 +18460,6 @@ e_italy = {
 					province = 2587
 
 					color = { 245 245 195 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_urbino = {
-				color = { 240 225 150 }
-				color2 = { 255 255 255 }
-				
-				b_urbino = {
-					province = 2555
-
-					color = { 240 225 150 }
-					color2 = { 255 255 255 }
-				}
-				b_civitas_castelli = {
-					province = 2584
-
-					color = { 240 225 150 }
-					color2 = { 255 255 255 }
-				}
-				b_pesaro = {
-					province = 2556
-
-					color = { 240 225 150 }
 					color2 = { 255 255 255 }
 				}
 			}

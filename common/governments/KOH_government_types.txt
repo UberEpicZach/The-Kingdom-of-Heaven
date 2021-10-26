@@ -89,7 +89,7 @@ free_imperial_city_government = {
 # Head of faith will always get this if possible
 theocracy_government = {
 	primary_holding = church_holding
-	valid_holdings = { castle_holding }
+	valid_holdings = { castle_holding city_holding }
 	religious = yes
 	required_county_holdings = { church_holding castle_holding city_holding }
 
