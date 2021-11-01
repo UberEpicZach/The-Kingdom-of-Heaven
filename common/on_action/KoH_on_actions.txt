@@ -389,6 +389,15 @@ KOH_Parition = {
 
 KOH_ON_START = {
 	effect = {
+
+		#make papacy not usurpable
+		title:k_papal_state.holder = {
+			set_global_variable = {
+				name = papal_states
+				value = title:k_papal_state
+			}
+		}
+		
 		every_living_character = {
 			set_variable = {
 				name = Chivalry
