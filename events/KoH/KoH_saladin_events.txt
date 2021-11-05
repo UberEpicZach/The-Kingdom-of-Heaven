@@ -318,7 +318,7 @@ KoH_saladin.1 = {
 			casus_belli = KOH_jihad
 			target = scope:Baldwin
 			target_title = title:c_jerusalem
-			claimant = scope:saladin
+			claimant = scope:Saladin
 		}
 		
 		spawn_army = {
@@ -641,6 +641,16 @@ KoH_saladin.3 = { #King's Crusade
 				target_title = c_jerusalem
 				claimant = title:k_jerusalem.holder
 			}
+
+			every_character_war = {
+				limit = {
+					primary_attacker = title:k_jerusalem.holder
+					primary_defender = title:e_arabia.holder
+				}
+				add_attacker = global_var:templar_holy_order_title.holder
+				
+				add_attacker  = global_var:hospitaller_holy_order_title.holder
+			}
 		}
 
 		character:204510 = {
@@ -653,8 +663,8 @@ KoH_saladin.3 = { #King's Crusade
 				}
 				add_character_flag = {
 					flag = has_had_RichardTheLionheart.7
-					}
 				}
+			}
 		}
 		character:212501 = {
 			if = {

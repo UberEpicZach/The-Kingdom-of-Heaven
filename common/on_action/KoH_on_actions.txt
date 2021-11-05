@@ -614,35 +614,6 @@ KOH_yearly = {
 				title:c_ulaanbaatar.holder = {
 					is_ai = no
 				}
-<<<<<<< Updated upstream
-				random = {
-					chance = temujin_appearance_base_chance
-					modifier = {
-						factor = 0.25
-						current_date < 1180.1.1
-					}
-					modifier = {
-						add = 7
-						current_date > 1200.1.1
-					}
-					modifier = {
-						add = 5
-						current_date > 1220.1.1
-					}
-					modifier = {
-						add = 5
-						current_date > 1235.1.1
-					}
-					set_global_variable = {
-						name = mongols_have_appeared
-						value = yes
-					}
-					debug_log = "Attempting to spawn mongol invasion within 240 days"
-					trigger_event = {
-						id = mongol_invasion.0001
-						days = { 2 240 }
-					}
-=======
 			}
 			random = {
 				chance = temujin_appearance_base_chance
@@ -670,7 +641,6 @@ KOH_yearly = {
 				trigger_event = {
 					id = mongol_invasion.0001
 					days = { 2 240 }
->>>>>>> Stashed changes
 				}
 			}
 		}
@@ -845,13 +815,11 @@ KOH_pulse_monthly = {
 					NOT = { 
 						OR = {
 							has_character_flag = had_event_had_event_KoH_saladin.120
-							has_title =title:k_jerusalem
-							} 
-						}
+							has_title = title:k_jerusalem
+						} 
 					}
-				trigger_event = {
-					id = KoH_saladin.120
 				}
+			trigger_event = KoH_saladin.120
 			}
 		}
 		if = {
