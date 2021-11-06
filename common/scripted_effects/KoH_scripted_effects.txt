@@ -872,3 +872,24 @@ parition = {
 		}
 	}
 }
+
+investitureopinioneffect = {
+	every_independent_ruler = {
+		if = {
+			limit = {
+				AND = {
+					has_realm_law = free_investiture
+					NOT = { title:k_papal_state.holder = { has_opinion_modifier = { target = root modifier = koh_free_investiture } } } 
+				} 
+			}
+
+			title:k_papal_state.holder = {
+				add_opinion = {
+					target = PREV
+					modifier = koh_free_investiture	
+					opinion = -150
+				}
+			}
+		}
+	}
+}
