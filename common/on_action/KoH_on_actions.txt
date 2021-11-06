@@ -606,7 +606,6 @@ KOH_yearly = {
 					is_ai = no
 					}
 				}
-<<<<<<< Updated upstream
 				random = {
 					chance = temujin_appearance_base_chance
 					modifier = {
@@ -634,35 +633,6 @@ KOH_yearly = {
 						id = mongol_invasion.0001
 						days = { 2 240 }
 					}
-=======
-			}
-			random = {
-				chance = temujin_appearance_base_chance
-				modifier = {
-					factor = 0.25
-					current_date < 1180.1.1
-				}
-				modifier = {
-					add = 18
-					current_date > 1200.1.1
-				}
-				modifier = {
-					add = 18
-					current_date > 1220.1.1
-				}
-				modifier = {
-					add = 5
-					current_date > 1235.1.1
-				}
-				set_global_variable = {
-					name = mongols_have_appeared
-					value = yes
-				}
-				debug_log = "Attempting to spawn mongol invasion within 240 days"
-				trigger_event = {
-					id = mongol_invasion.0001
-					days = { 2 240 }
->>>>>>> Stashed changes
 				}
 			}
 		}
@@ -694,10 +664,9 @@ KOH_yearly = {
 					value = yes
 				}
 				debug_log = "Attempting to spawn mongol invasion within 240 days"
-				trigger_event = {
-					id = mongol_invasion.0001
-					days = { 2 240 }
-				}
+			trigger_event = {
+				id = mongol_invasion.0001
+				days = { 2 240 }
 			}
 		}
 	}
@@ -815,11 +784,11 @@ KOH_pulse_monthly = {
 						modifier = raided_me_opinion
 					} 
 				}
-				character:226000 = {
+				title:e_arabia.holder = {
 					NOT = {	has_character_flag = Jihad_incoming }
 				}
 			}
-			character:223523 = {
+			title:k_jerusalem.holder = {
 				trigger_event = {
 					id = KoH_saladin.100
 				}
@@ -904,14 +873,14 @@ KOH_events_tri_yearly_pulse = {
 		100 = chivalry.1	# Serfdom
 		100 = chivalry.2		# A Duel
 		100 = chivalry.6		# Change Fighting Stance
-		100 = chivalry.9 		# Dragon? # THREE EVENTS NEED LOC
+		#100 = chivalry.9 		# Dragon? # THREE EVENTS NEED LOC
 		100 = chivalry.11		# Adulter Knight #NEEDS LOC
 		100 = chivalry.14		# Recruit a Knight #NEEDS LOC
 		
 		#100 = KoH_religiousflavour.15 #Chain, Waldensians in Lyon
 		#Hashshashin's
-		100 = KoH_hashshashin.101
-		100 = KoH_hashshashin.7
+		900 = KoH_hashshashin.101
+		900 = KoH_hashshashin.7
 		#generalgeneric
 		100 = KoH_generalgeneric.1
 		100 = KoH_generalgeneric.2
