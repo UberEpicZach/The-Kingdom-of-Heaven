@@ -191,11 +191,10 @@ KoH_hashshashin.7 = {
 		is_ruler = yes
 		OR = {
 			has_religion = religion:islam_religion
-			top_liege = { has_landed_title = e_byzantium }
-			top_liege = { has_landed_title = k_jerusalem }
-			top_liege = { has_landed_title = d_antioch }
+			top_liege = { has_title  = title:e_byzantium }
+			top_liege = { has_title  = title:k_jerusalem }
+			top_liege = { has_title  = title:d_antioch }
 		}
-
 	}
 
 	immediate = {
@@ -203,9 +202,9 @@ KoH_hashshashin.7 = {
 			limit = {
 				OR = {
 					has_religion = religion:islam_religion
-					top_liege = { has_landed_title = e_byzantium }
-					top_liege = { has_landed_title = k_jerusalem }
-					top_liege = { has_landed_title = d_antioch }
+					top_liege = { has_title  = title:e_byzantium }
+					top_liege = { has_title  = title:k_jerusalem }
+					top_liege = { has_title  = title:d_antioch }
 				}
 			}
 			save_scope_as = assassintarget

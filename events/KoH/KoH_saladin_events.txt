@@ -656,6 +656,7 @@ KoH_saladin.3 = { #King's Crusade
 				}
 				trigger_event = {
 					id = KoH_RichardTheLionheart.7
+					days = 20 
 				}
 				add_character_flag = {
 					flag = has_had_RichardTheLionheart.7
@@ -669,9 +670,10 @@ KoH_saladin.3 = { #King's Crusade
 				}
 				trigger_event = {
 					id = KoH_barbarossa_crusade.101
+					days = 20 
 				}
-			add_character_flag = {
-				flag = has_had_Barbarossa_crusade
+				add_character_flag = {
+					flag = has_had_Barbarossa_crusade
 				}
 			}
 		}
@@ -682,6 +684,7 @@ KoH_saladin.4 = { #King's Crusade
 	type = character_event
 	title = KoH_saladin.4.t
 	desc = KoH_saladin.4.d
+	hidden = yes
 	
 	theme = war
 	
@@ -716,14 +719,16 @@ KoH_saladin.4 = { #King's Crusade
             save_scope_as = hre_ruler
         }
 
-        every_character_war = {
-            limit = {
-                primary_defender = title:e_arabia.holder
-                primary_attacker = title:k_jerusalem.holder
-            }
-            add_attacker = title:k_england.holder
-            add_attacker = title:k_france.holder
-            add_attacker = title:e_hre.holder 
+		title:k_jerusalem.holder = {
+			every_character_war = {
+				limit = {
+					primary_defender = title:e_arabia.holder
+					primary_attacker = title:k_jerusalem.holder
+				}
+				add_attacker = title:k_england.holder
+				add_attacker = title:k_france.holder
+				add_attacker = title:e_hre.holder 
+			}
 		}
 		title:e_hre.holder = {
 			trigger_event = {

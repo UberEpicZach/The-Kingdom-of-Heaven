@@ -3804,12 +3804,18 @@ clothes = {
 				age >= 18
 				portrait_wear_armor_trigger = yes
 				AND = {
+					religion = religion:christianity_religion
+					exists = title:k_jerusalem
 					OR = {
-						top_liege = { has_primary_title = title:k_jerusalem }
 						has_primary_title = title:k_jerusalem
-						is_knight_of = title:k_jerusalem.holder
+						AND = {
+							top_liege = { religion = religion:christianity_religion has_primary_title = title:k_jerusalem }
+							is_knight_of = title:k_jerusalem.holder
+						}
 						OR = {
 							AND = {
+								exists = title:k_jerusalem
+								title:k_jerusalem.holder = { has_religion = religion:christianity_religion }
 								is_councillor_of = title:k_jerusalem.holder
 								has_council_position = councillor_marshal
 							}
@@ -3952,9 +3958,12 @@ clothes = {
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:c_ibelin }
+						liege = { has_primary_title = title:c_ibelin religion = religion:christianity_religion }
 						has_primary_title = title:c_ibelin
-						is_knight_of = title:c_ibelin.holder
+						AND = {
+							exists = title:c_ibelin.holder
+							is_knight_of = title:c_ibelin.holder
+						}
 						OR = {
 							AND = {
 								is_councillor_of = title:c_ibelin.holder
@@ -4074,15 +4083,20 @@ clothes = {
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
-					has_religion = religion:christianity_religion
+				has_religion = religion:christianity_religion
+				
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:k_england }
+						liege = { has_primary_title = title:k_england religion = religion:christianity_religion }
 						has_primary_title = title:k_england
-						is_knight_of = title:k_england.holder
+						AND = {
+							exists = title:k_england.holder 
+							is_knight_of = title:k_england.holder
+						}
 						has_culture = culture:english 
 						OR = {
 							AND = {
+								exists = title:k_england.holder 
 								is_councillor_of = title:k_england.holder
 								has_council_position = councillor_marshal
 							}
@@ -4197,12 +4211,16 @@ clothes = {
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:k_france }
+						liege = { has_primary_title = title:k_france religion = religion:christianity_religion }
 						has_primary_title = title:k_france
-						is_knight_of = title:k_france.holder
+						AND = {
+							exists = title:k_france.holder
+							is_knight_of = title:k_france.holder
+						}
 						has_culture = culture:french 
 						OR = {
 							AND = {
+								exists = title:k_france.holder
 								is_councillor_of = title:k_france.holder
 								has_council_position = councillor_marshal
 							}
@@ -4312,18 +4330,22 @@ clothes = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 110
+				add = 102
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:e_hre }
+						liege = { has_primary_title = title:e_hre religion = religion:christianity_religion }
 						has_primary_title = title:e_hre
-						is_knight_of = title:e_hre.holder
+						AND = {
+							exists = title:e_hre.holder
+							is_knight_of = title:e_hre.holder
+						}
 						has_culture_group = culture_group:central_germanic_group
 						OR = {
 							AND = {
+								exists = title:e_hre.holder
 								is_councillor_of = title:e_hre.holder
 								has_council_position = councillor_marshal
 							}
@@ -4359,18 +4381,22 @@ clothes = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 110
+				add = 102
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:k_hungary }
+						liege = { has_primary_title = title:k_hungary religion = religion:christianity_religion }
 						has_primary_title = title:k_hungary
-						is_knight_of = title:k_hungary.holder
+						AND = {
+							exists = title:k_hungary
+							is_knight_of = title:k_hungary.holder
+						}
 						has_culture = culture:hungarian
 						OR = {
 							AND = {
+								exists = title:k_hungary
 								is_councillor_of = title:k_hungary.holder
 								has_council_position = councillor_marshal
 							}
@@ -4405,19 +4431,23 @@ clothes = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 110
+				add = 102
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
 				has_religion = religion:christianity_religion
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:d_antioch }
+						liege = { has_primary_title = title:d_antioch religion = religion:christianity_religion }
 						has_primary_title = title:d_antioch
-						is_knight_of = title:d_antioch.holder
+						AND = {
+							exists = title:d_antioch.holder
+							is_knight_of = title:d_antioch.holder
+						}
 						#has_culture_group = culture_group:central_germanic_group
 						OR = {
 							AND = {
+								exists = title:d_antioch.holder
 								is_councillor_of = title:d_antioch.holder
 								has_council_position = councillor_marshal
 							}
@@ -4452,71 +4482,75 @@ clothes = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 110
+				add = 102
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:d_bavaria }
+						liege = { has_primary_title = title:d_bavaria religion = religion:christianity_religion }
 						has_primary_title = title:d_bavaria
-						is_knight_of = title:d_bavaria.holder
+						AND = {
+							exists = title:d_bavaria.holder
+							is_knight_of = title:d_bavaria.holder
+						}
 						has_culture = culture:bavarian
 						OR = {
 							AND = {
+								exists = title:d_bavaria.holder
 								is_councillor_of = title:d_bavaria.holder
 								has_council_position = councillor_marshal
 							}
 						}
 					}
-				}	
+				}		
 			}
 		}
 	}
 
-	bluecrown_knight_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothesKOH
-				template = bluecrown_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1.0
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1.0
-				template = body_shape_average_clothed
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				is_male = yes
-				age >= 18
-				portrait_wear_armor_trigger = yes
-				AND = {
-					OR = {
-						liege = { has_primary_title = title:d_bavaria }
-						has_primary_title = title:d_bavaria
-						is_knight_of = title:d_bavaria.holder
-						has_culture = culture:bavarian
-						OR = {
-							AND = {
-								is_councillor_of = title:d_bavaria.holder
-								has_council_position = councillor_marshal
-							}
-						}
-					}
-				}	
-			}
-		}
-	}
+	# bluecrown_knight_clothes = {
+	# 	dna_modifiers = {
+	# 		accessory = {
+	# 			mode = add
+	# 			gene = clothesKOH
+	# 			template = bluecrown_knight_clothes
+	# 			range = { 0 1 } # For the randomness to work correctly
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_bust
+	# 			value = 1.0
+	# 			template = bust_clothes
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_body_shape
+	# 			value = 1.0
+	# 			template = body_shape_average_clothed
+	# 		}
+	# 	}	
+	# 	weight = {
+	# 		base = 0
+	# 		modifier = {
+	# 			add = 100
+	# 			is_male = yes
+	# 			age >= 18
+	# 			portrait_wear_armor_trigger = yes
+	# 			AND = {
+	# 				OR = {
+	# 					liege = { has_primary_title = title:d_bavaria }
+	# 					has_primary_title = title:d_bavaria
+	# 					is_knight_of = title:d_bavaria.holder
+	# 					has_culture = culture:bavarian
+	# 					OR = {
+	# 						AND = {
+	# 							is_councillor_of = title:d_bavaria.holder
+	# 							has_council_position = councillor_marshal
+	# 						}
+	# 					}
+	# 				}
+	# 			}	
+	# 		}
+	# 	}
+	# }
 }

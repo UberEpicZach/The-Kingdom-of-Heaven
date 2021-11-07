@@ -7,6 +7,85 @@
 	}
 }
 
+yearly_playable_pulse = {
+	delay = { months = 1 }
+    KOH_pulse_monthly
+	KOH_yearly
+}
+
+KOH_pulse_monthly = { 
+	effect = {
+		if = {
+			limit = {
+				any_ruler = { 
+					top_liege = { 
+						has_primary_title = title:e_arabia 
+					}
+					has_opinion_modifier = {
+						target = character:223590
+						modifier = raided_me_opinion
+					} 
+				}
+				title:e_arabia.holder = {
+					NOT = {	has_character_flag = Jihad_incoming }
+				}
+			}
+			title:k_jerusalem.holder = {
+				trigger_event = {
+					id = KoH_saladin.100
+					days = 1 
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = global_var:SaladinHasTakenJerusalem 
+			}
+			every_ruler = {
+				limit = {
+					faith = faith:catholic
+					is_landed = yes
+					highest_held_title_tier >= tier_county
+					NOT = { 
+						OR = {
+							has_character_flag = had_event_had_event_KoH_saladin.120
+							has_title = title:k_jerusalem
+							} 
+						}
+					}
+				trigger_event = {
+					id = KoH_saladin.120
+					days = 1 
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = global_var:SaladinHasTakenJerusalem 
+			}
+			every_ruler = {
+				limit = {
+					AND = {
+						has_title = title:k_jerusalem
+						NOT = {
+							has_character_flag = had_event_KoH_saladin.121
+						}
+					}
+				}
+				trigger_event = KoH_saladin.121
+			}
+		}
+		investitureopinioneffect = yes
+	}
+	events = { 
+		KoH_SicillianConflict.1
+    }
+	on_actions = {
+        delay = { months = 1 }
+		KOH_pulse_monthly
+	}
+}
+
 MyMo_ongamestart = {
 	effect = {
 		### MyMo : 50% of non county temple become monasteries ###
@@ -58,7 +137,6 @@ MyMo_ongamestart = {
 		}
 	}
 }
-
 
 KOH_holy_orders = {
 	effect = {
@@ -134,12 +212,6 @@ KOH_holy_orders = {
 	}
 }
 
-on_death = { 
-	on_actions = {
-		investiture 
-	}
-}
-
 on_natural_death_second_chance = {
 	trigger = {
 		has_perk = know_thyself_perk
@@ -155,12 +227,6 @@ on_natural_death_second_chance = {
 			id = death_management.9999
 			days = { 340 380 }
 		}
-	}
-}
-
-investiture = {
-	effect = {
-		investitureopinioneffect = yes
 	}
 }
 
@@ -263,8 +329,6 @@ on_gain_holy_order = {
 	}
 }
 
-
-
 on_gain_HRE = {
 	trigger = {
 		scope:title = title:e_hre
@@ -276,26 +340,6 @@ on_gain_HRE = {
 		}
 	}
 }
-
-#KOH_investiture = {
-#	effect = { 
-#		every_ruler = {
-#			limit = {
-#				AND = {
-#					is_independent_ruler = yes
-#					faith = faith:catholic
-#				}
-#			}
-#			add_character_flag = papal_enacted
-#		}
-#		every_ruler = {
-#			limit = {
-#				has_primary_title = title:e_hre 
-#			}
-#			add_character_flag = free_enacted
-#		}
-#	}
-#}
 
 KOH_Italian_Familes = {
 	effect = {
@@ -326,12 +370,12 @@ KOH_Italian_Familes = {
 		title:c_urbino.holder = { if = { limit = { exists = dynasty } dynasty = { add_dynasty_modifier = dynasty_ghibelline }}} 	
 	
 		every_ruler = {
-				limit = {
-					exists = dynasty
-					dynasty = {
-						has_dynasty_modifier = dynasty_guelph
-					}
+			limit = {
+				exists = dynasty
+				dynasty = {
+					has_dynasty_modifier = dynasty_guelph
 				}
+			}
 			add_character_flag = guelph_cb
 			add_trait = KOH_guelph
 		}
@@ -393,24 +437,6 @@ KOH_Italian_Familes_Monthly = {
 		}
 	}
 }
-
-# KOH_commune_maintenance  = {
-# 	on_actions = {
-# 		delay = { months = 1 }
-# 		KOH_commune_maintenance
-# 	}
-# 	effect = {
-#         every_ruler = {
-# 			limit = {
-#                 has_culture_group = culture_group:latin_group 
-# 				primary_title.tier = tier_county 
-# 				NOT = { has_character_flag = RecentElection }
-# 				has_government = republic_government
-# 			}
-# 			trigger_event = KOH_ItalianCommunes.4
-# 		}
-# 	}
-# }
 
 KOH_Parition = {
 	effect = {
@@ -619,20 +645,6 @@ KOH_ON_START = {
 	}
 }
 
-yearly_global_pulse = {
-	on_actions = {
-		delay = { months = 1 }
-        KOH_pulse_monthly
-		delay = { months = 1 }
-		KOH_yearly
-	}
-}
-
-yearly_playable_pulse = {
-	delay = { months = 1 }
-    KOH_pulse_monthly
-}
-
 KOH_yearly = {
 	effect = {
 		if = {
@@ -672,38 +684,38 @@ KOH_yearly = {
 					}
 				}
 			}
-		}
-		else_if = {
-			limit = {
-				has_game_rule = random_mongol_invasion
-				NOT = { has_global_variable = mongols_have_appeared}
-			}
-			random = {
-				chance = temujin_appearance_base_chance
-				modifier = {
-					factor = 0.25
-					current_date < 1180.1.1
+			else_if = {
+				limit = {
+					has_game_rule = random_mongol_invasion
+					NOT = { has_global_variable = mongols_have_appeared}
 				}
-				modifier = {
-					add = 3
-					current_date > 1200.1.1
-				}
-				modifier = {
-					add = 5
-					current_date > 1220.1.1
-				}
-				modifier = {
-					add = 5
-					current_date > 1235.1.1
-				}
-				set_global_variable = {
-					name = mongols_have_appeared
-					value = yes
-				}
+				random = {
+					chance = temujin_appearance_base_chance
+					modifier = {
+						factor = 0.25
+						current_date < 1180.1.1
+					}
+					modifier = {
+						add = 3
+						current_date > 1200.1.1
+					}
+					modifier = {
+						add = 5
+						current_date > 1220.1.1
+					}
+					modifier = {
+						add = 5
+						current_date > 1235.1.1
+					}
+					set_global_variable = {
+						name = mongols_have_appeared
+						value = yes
+					}
 				debug_log = "Attempting to spawn mongol invasion within 240 days"
-			trigger_event = {
-				id = mongol_invasion.0001
-				days = { 2 240 }
+				trigger_event = {
+					id = mongol_invasion.0001
+					days = { 2 240 }
+				}
 			}
 		}
 	}
@@ -806,90 +818,6 @@ KOH_HOLY_ORDER_GOVERNMENT = {
 	}
 }
 
-KOH_pulse_monthly = { 
-    on_actions = {
-        delay = { months = 1 }
-		KOH_pulse_monthly
-	}
-
-	effect = {
-		investitureopinioneffect = yes
-		if = {
-			limit = {
-				any_ruler = { 
-					top_liege = { 
-						has_primary_title = title:e_arabia 
-					}
-					has_opinion_modifier = {
-						target = character:223590
-						modifier = raided_me_opinion
-					} 
-				}
-				title:e_arabia.holder = {
-					NOT = {	has_character_flag = Jihad_incoming }
-				}
-			}
-			title:k_jerusalem.holder = {
-				trigger_event = {
-					id = KoH_saladin.100
-				}
-			}
-		}
-		if = {
-			limit = {
-				exists = global_var:SaladinHasTakenJerusalem 
-			}
-			every_ruler = {
-				limit = {
-					faith = faith:catholic
-					is_landed = yes
-					highest_held_title_tier >= tier_county
-					NOT = { 
-						OR = {
-							has_character_flag = had_event_had_event_KoH_saladin.120
-							has_title =title:k_jerusalem
-							} 
-						}
-					}
-				trigger_event = {
-					id = KoH_saladin.120
-				}
-			}
-		}
-		if = {
-			limit = {
-				exists = global_var:SaladinHasTakenJerusalem 
-			}
-			every_ruler = {
-				limit = {
-					AND = {
-						has_title = title:k_jerusalem
-						NOT = {
-							has_character_flag = had_event_KoH_saladin.121
-						}
-					}
-				}
-				trigger_event = KoH_saladin.121
-			}
-		}
-	}
-	events = { 
-		KoH_SicillianConflict.1
-    }
-}
-
-#five_year_everyone_pulse = {
-#	events = {
-#		KOH_ItalianCommunes.4
-#	}
-#}
-
-#KOH_events_five_yearly_pulse = {
-#	events = {
-#		KOH_ItalianCommunes.4		# Republican Election
-#	}
-#}
-
 three_year_playable_pulse = {
 	on_actions = {
 		delay = { days = 18 }
@@ -964,7 +892,6 @@ on_war_started = {
 
 KOH_on_war_started = {
 	effect = {
-		investitureopinioneffect = yes
 		if = {
 			limit = {
 				exists = title:e_hre.holder
@@ -984,5 +911,10 @@ KOH_on_war_started = {
 				}
 			}
 		}
+	}
+}
+on_death = {
+	on_actions = {
+		investiture 
 	}
 }

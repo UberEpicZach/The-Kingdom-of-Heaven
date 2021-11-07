@@ -349,6 +349,15 @@ KOH_HungaryHungary = {
 
 KOH_Saladin_Jihad = {
 	
+	title:k_jerusalem.holder.faith = {
+			set_variable = {
+				name = variable_ghw_cooldown
+				value = yes
+				years = 10
+			}
+		}
+	}
+
 	set_global_variable = {
 		name = SaladinHasTakenJerusalem
 		value = yes
@@ -464,6 +473,48 @@ KOH_Saladin_Jihad = {
 		list = target_titles_holders
 		title:k_jerusalem.holder = {
 			add_courtier = PREV
+		}
+	}
+
+	if = {
+		limit = {
+			exists = global_var:SaladinHasTakenJerusalem 
+		}
+		every_ruler = {
+			limit = {
+				faith = faith:catholic
+				is_landed = yes
+				highest_held_title_tier >= tier_county
+				NOT = { 
+					OR = {
+						has_character_flag = had_event_had_event_KoH_saladin.120
+						has_title = title:k_jerusalem
+						} 
+					}
+				}
+			trigger_event = {
+				id = KoH_saladin.120
+				days = 20 
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = global_var:SaladinHasTakenJerusalem 
+		}
+		every_ruler = {
+			limit = {
+				AND = {
+					has_title = title:k_jerusalem
+					NOT = {
+						has_character_flag = had_event_KoH_saladin.121
+					}
+				}
+			}
+			trigger_event = {
+				id = KoH_saladin.121
+				days = 10
+			}
 		}
 	}
 }

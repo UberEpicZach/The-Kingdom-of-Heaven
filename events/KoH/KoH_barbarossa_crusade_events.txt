@@ -37,6 +37,12 @@ KoH_barbarossa_crusade.1 = {
 		animation = personality_bold
 	}
 	
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.1
+		}
+	}
+
 	option = {
 		name = KoH_barbarossa_crusade.1.a
 		custom_tooltip = crusading_army_assembled
@@ -60,6 +66,7 @@ KoH_barbarossa_crusade.1 = {
 			name = num_of_knights
 			value = 4
 		}
+		add_character_flag = has_had_KoH_barbarossa_crusade.1
 	}
 }
 
@@ -70,6 +77,12 @@ KoH_barbarossa_crusade.2 = {
 	
 	theme = war
 	
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.2
+		}
+	}
+
 	left_portrait = {
 		character = root
 		animation = personality_bold
@@ -81,6 +94,7 @@ KoH_barbarossa_crusade.2 = {
 			id = KoH_barbarossa_crusade.3
 			days = 40
 		}
+		add_character_flag = has_had_KoH_barbarossa_crusade.2
 	}
 }
 
@@ -95,7 +109,17 @@ KoH_barbarossa_crusade.3 = {
 		character = root
 		animation = personality_bold
 	}
+
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.3
+		}
+	}
 	
+	immediate = {
+		add_character_flag = has_had_KoH_barbarossa_crusade.3
+	}
+
 	option = {
 		name = KoH_barbarossa_crusade.3.a
 		trigger_event = {
@@ -107,7 +131,26 @@ KoH_barbarossa_crusade.3 = {
 			add = 2
 		}
 		custom_tooltip = slower_but_more_men
+
+		if = {
+			limit = {
+				character:219517 = {
+					AND = {
+						is_alive = yes
+						is_landed = yes
+					}
+				}
+			}
+			every_character_war = {
+				limit = {
+					primary_attacker = title:k_jerusalem.holder
+					primary_defender = title:e_arabia.holder
+				}
+				add_attacker = character:219517
+			}
+		}
 	}
+	
 	option = {
 		name = KoH_barbarossa_crusade.3.b
 		trigger_event = {
@@ -129,8 +172,15 @@ KoH_barbarossa_crusade.4 = {
 		character = root
 		animation = personality_bold
 	}
+
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.4
+		}
+	}
 	
 	immediate = {
+		add_character_flag = has_had_KoH_barbarossa_crusade.4
 		every_ruler = {
             limit = {
                 any_held_title = {
@@ -165,7 +215,14 @@ KoH_barbarossa_crusade.5 = {
 		animation = personality_bold
 	}
 	
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.5
+		}
+	}
+
 	immediate = {
+		add_character_flag = has_had_KoH_barbarossa_crusade.5
 		every_ruler = {
             limit = {
                 any_held_title = {
@@ -215,7 +272,17 @@ KoH_barbarossa_crusade.6 = {
 		character = root
 		animation = personality_bold
 	}
+
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.6
+		}
+	}
 	
+	immediate = {
+		add_character_flag = has_had_KoH_barbarossa_crusade.6
+	}
+
 	option = {
 		name = KoH_barbarossa_crusade.6.a
 		trigger = {
@@ -249,6 +316,16 @@ KoH_barbarossa_crusade.7 = {
 		animation = personality_bold
 	}
 	
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.7
+		}
+	}
+
+	immediate = {
+		add_character_flag = has_had_KoH_barbarossa_crusade.7
+	}
+
 	option = {
 		name = KoH_barbarossa_crusade.7.a
 		if = {
@@ -283,7 +360,16 @@ KoH_barbarossa_crusade.8 = {
 		character = root
 		animation = personality_bold
 	}
-	
+
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.8
+		}
+	}
+	immediate = {
+		add_character_flag = has_had_KoH_barbarossa_crusade.8
+	}
+
 	option = {
 		name = KoH_barbarossa_crusade.8.a
 		change_variable = {
@@ -309,7 +395,15 @@ KoH_barbarossa_crusade.9 = {
 		character = root
 		animation = personality_bold
 	}
-	
+
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.9
+		}
+	}
+	immediate = {
+		add_character_flag = has_had_KoH_barbarossa_crusade.1
+	}
 	option = {
 		name = KoH_barbarossa_crusade.9.a
 		hidden_effect = {
@@ -344,6 +438,16 @@ KoH_barbarossa_crusade.10 = {
 	left_portrait = {
 		character = root
 		animation = personality_bold
+	}
+
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.10
+		}
+	}
+
+	immediate = {
+		add_character_flag = has_had_KoH_barbarossa_crusade.10
 	}
 	
 	option = {
@@ -380,13 +484,19 @@ KoH_barbarossa_crusade.11 = {
 		animation = personality_bold
 	}
 	
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.11
+		}
+	}
+
 	immediate = {
+		add_character_flag = has_had_KoH_barbarossa_crusade.11
         every_character_war = {
             limit = {
                 primary_defender = title:e_arabia.holder
                 primary_attacker = title:k_jerusalem.holder
             }
-            
             remove_participant = title:e_hre.holder 
         }
     }
@@ -430,7 +540,9 @@ KoH_barbarossa_crusade.11 = {
 			}
 			location = 5910
 		}
-		death = natural
+		death = {
+			death_reason = death_drowned
+		}
 	}
 }
 
@@ -446,7 +558,18 @@ KoH_barbarossa_crusade.12 = {
 		animation = personality_bold
 	}
 	
+	trigger = {
+		NOT = {
+			has_character_flag = has_had_KoH_barbarossa_crusade.12
+		}
+	}
+
+	immediate = {
+		add_character_flag = has_had_KoH_barbarossa_crusade.12
+	}
+
 	option = {
+		
 		name = KoH_barbarossa_crusade.12.a
 		spawn_army = {
 			uses_supply = no
