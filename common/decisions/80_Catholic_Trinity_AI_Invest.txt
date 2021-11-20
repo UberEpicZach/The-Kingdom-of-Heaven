@@ -6,7 +6,6 @@ invest_in_cardinal_AI = {
 	desc = invest_in_cardinal_AI_decision_desc
 	selection_tooltip = invest_in_cardinal_AI_decision_tooltip
 	major = yes
-	ai_goal = yes
 
 	ai_check_interval = 6
 
@@ -30,6 +29,7 @@ invest_in_cardinal_AI = {
 		}
 		gold > 100
 		monthly_character_income > 0.5
+		is_at_war = no
 	}
 
 	cooldown = { months = 6 }
@@ -41,7 +41,159 @@ invest_in_cardinal_AI = {
 	}
 
 	ai_will_do = {
-		base = 100
+		base = 10 
+		modifier = {
+			add = -100
+			has_trait = cynical
+		}
+		modifier = {
+			add = -100
+			has_trait = greedy
+		}
+		modifier = {
+			add = -15
+			has_trait = callous
+		}
+		modifier = {
+			add = -15
+			has_trait = sadistic
+		}
+		modifier = {
+			add = -15
+			has_trait = Gguttonous
+		}
+		modifier = {
+			add = 40
+			has_trait = zealous
+		}
+		modifier = {
+			add = 40
+			has_trait = ambitious
+		}
+		modifier = {
+			add = 20
+			has_trait = generous
+		}
+		modifier = {
+			add = 15
+			has_trait = humble
+		}
+		modifier = {
+			add = 5
+			has_trait = education_learning_1
+		}
+		modifier = {
+			add = 10
+			has_trait = education_learning_2
+		}
+		modifier = {
+			add = 15
+			has_trait = education_learning_3
+		}
+		modifier = {
+			add = 20
+			has_trait = education_learning_4
+		}
+		modifier = {
+			add = 25
+			has_trait = theologian
+		}
+		modifier = {
+			add = 5
+			has_trait = holy_warrior
+		}
+		modifier = {
+			add = -1000
+			has_trait = excommunicated 
+		}
+		modifier = {
+			add = -1000
+			has_trait = witch
+		}
+		modifier = {
+			add = 50
+			has_trait = profligate 
+		}
+		modifier = {
+			add = -5
+			has_trait = drunkard
+		}
+		modifier = {
+			add = 5
+			has_trait = contrite
+		}
+		modifier = {
+			add = 50
+			has_trait = improvident
+		}
+		modifier = {
+			add = -30
+			has_trait = reclusive
+		}
+		modifier = {
+			add = -5
+			has_trait = rakish
+		}
+		modifier = {
+			add = 10
+			has_trait = paragon
+		}
+		modifier = {
+			add = 30
+			has_trait = crusader_king
+		}
+		modifier = {
+			add = 10
+			has_trait = crusader
+		}
+		modifier = {
+			add = 50
+			has_trait = devoted
+		}
+		modifier = {
+			add = 10
+			has_trait = mystic_1
+		}
+		modifier = {
+			add = 20
+			has_trait = mystic_2
+		}
+		modifier = {
+			add = 30
+			has_trait = mystic_3
+		}
+		modifier = {
+			add = -10
+			has_trait = murderer 
+		}
+		modifier = {
+			add = 10
+			has_trait = sodomite  
+		}
+		modifier = {
+			add = -5
+			has_trait = incestuous  
+		}
+		modifier = {
+			add = -15
+			has_trait = deviant  
+		}
+		modifier = {
+			add = -5
+			has_trait = adulterer  
+		}
+		modifier = {
+			add = -5
+			has_trait = fornicator 
+		}
+		modifier = {
+			add = -5
+			has_trait = gallant  
+		}
+		modifier = {
+			add = -5
+			has_trait = fornicator 
+		}
 	}
 }
 
@@ -51,7 +203,6 @@ deinvest_in_cardinal_AI = {
 	desc = deinvest_in_cardinal_AI_decision_desc
 	selection_tooltip = deinvest_in_cardinal_AI_decision_tooltip
 	major = yes
-	ai_goal = yes
 
 	ai_check_interval = 6
 
@@ -83,7 +234,6 @@ deinvest_in_cardinal_AI = {
 	effect = {
 		custom_tooltip = deinvest_in_cardinal_AI_decision_effect_tooltip
 		deinvest_in_cardinal_effect = yes
-
 	}
 
 	ai_will_do = {
@@ -91,6 +241,39 @@ deinvest_in_cardinal_AI = {
 		modifier = {
 			add = 100
 			monthly_character_income < 0
+		}
+		modifier = {
+			add = 100
+			gold < 0
+			is_at_war = yes
+		}
+		modifier = {
+			add = 100
+			gold < 0
+		}
+		modifier = {
+			add = 5
+			has_trait = education_stewardship_2  
+		}
+		modifier = {
+			add = 10
+			has_trait = education_stewardship_3 
+		}
+		modifier = {
+			add = 10
+			has_trait = education_stewardship_4
+		}
+		modifier = {
+			add = 50
+			has_trait = avaricious  
+		}
+		modifier = {
+			add = 1050
+			has_trait = excommunicated   
+		}
+		modifier = {
+			add = 20
+			has_trait = reaver   
 		}
 	}
 }
