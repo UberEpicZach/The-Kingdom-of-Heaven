@@ -10,7 +10,7 @@ type window_cardinals_special_character = widget { #For showing the Pope, Prefer
         texture = "gfx/interface/CollegeCardinals/papacy_nameplate_large_bg.dds"
         position = {-12 -10} #don't fucking change
         text_single = {
-            block "text" {text = "[Character.GetUIName]"}
+            block "text" {text = "CARDINAL_WIND_UNIUI_POPENAME"}
             parentanchor = hcenter|vcenter
             default_format = "#light_background"
             using = Font_Type_Flavor
@@ -22,7 +22,7 @@ type window_cardinals_special_character = widget { #For showing the Pope, Prefer
     text_single = {
         parentanchor = bottom|hcenter
         position = {0 -25}
-        text = "[Character.GetUIName]"
+        text = "CARDINAL_WIND_UNIUI_POPENAME"
     }
 }
 type window_cardinals_portrait = portrait_head { # Normal character portrait used for Cardinals.
