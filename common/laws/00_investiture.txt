@@ -1,7 +1,10 @@
-﻿investiture = { 
+﻿@crown_authority_cooldown_years = 20
+@tribal_authority_cooldown_years = 10
+
+investiture = { 
 	default = papal_investiture
 	cumulative = yes
-	flag = realm_law
+	flag = investiture_law
 	
 	papal_investiture = {
 		modifier = {
