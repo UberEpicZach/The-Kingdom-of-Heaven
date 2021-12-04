@@ -1,0 +1,200 @@
+﻿investiture = { 
+	default = papal_investiture
+	cumulative = yes
+	flag = realm_law
+	
+	papal_investiture = {
+		modifier = {
+			direct_vassal_opinion = 10
+			#feudal_government_tax_contribution_mult = -0.1
+			#vassal_levy_contribution_mult = -0.1
+		}
+		flag = papal_enacted
+		can_keep = { realm_law_use_investiture = yes }
+
+		can_pass = {
+		}
+
+		pass_cost = {
+			prestige = {
+					add = 1000
+			}
+		}
+	}
+	
+	free_investiture = {
+		modifier = {
+			direct_vassal_opinion = -10
+			#feudal_government_tax_contribution_mult = 0.1
+			#vassal_levy_contribution_mult = 0.1
+		}
+		flag = free_enacted
+	
+		can_keep = { realm_law_use_investiture = yes }
+
+		can_pass = {
+			trigger_if = {
+				is_independent_ruler = yes
+				has_realm_law = papal_investiture
+				realm_law_pass_investiture = yes
+				NOT = {
+					has_primary_title = title:k_papal_state
+				}
+			}
+		}
+		
+		pass_cost = {
+			piety = {
+					add = 1000
+			}
+		}
+		
+		on_pass = {
+			if = {
+				limit = {
+					NOT = { has_realm_law = free_investiture }
+				}
+			}
+			set_variable = {
+				name = crown_authority_cooldown
+				years = @crown_authority_cooldown_years
+			}
+
+			hidden_effect = {
+					every_vassal = {
+						add_realm_law_skip_effects = free_investiture
+					}
+
+					every_vassal = {
+						limit = {
+							any_vassal = {
+								has_government = theocracy_government
+							}
+						} 
+						add_opinion = {
+							target = root
+							modifier = koh_free_investiture
+							opinion = 10
+						}
+					}
+
+					title:k_papal_state.holder = {
+						add_opinion = {
+							target = root
+							modifier = koh_free_investiture
+							opinion = -150
+						}
+					}
+		
+					every_vassal = {
+						limit = {
+								has_government = theocracy_government
+							} 
+						add_opinion = {
+							target = root
+							modifier = koh_free_investiture
+							opinion = 10
+						}
+					}
+
+					every_ruler = {
+						limit = {
+							AND = {
+								has_trait = KOH_guelph
+							}
+						}
+						add_opinion = {
+							target = root
+							modifier = koh_free_investiture
+							opinion = -150
+						}
+					}
+				}
+			}
+
+		ai_will_do = {
+			if = {
+				limit = { has_realm_law = papal_investiture }
+				value = 1
+
+				ai_value_modifier = {
+					ai_energy = 1.0
+				}
+				modifier = {
+					add = 0.75
+					has_trait = cynical
+				}
+				modifier = {
+					add = 2
+					has_trait = ambitious
+				}
+				modifier = {
+					add = 0.25
+					has_trait = craven
+				}
+				modifier = {
+					add = 0.25
+					piety >= 275
+				}
+				modifier = {
+					add = -5
+					faith = {
+						religious_head = { reverse_opinion = { target = root value >= 100 } }
+					}
+				}
+				modifier = {
+					add = -4
+					faith = {
+						religious_head = { reverse_opinion = { target = root value >= 75 } }
+					}
+				}
+				modifier = {
+					add = -3
+					faith = {
+						religious_head = { reverse_opinion = { target = root value >= 50 } }
+					}
+				}
+				modifier = {
+					add = -1.5
+					faith = {
+						religious_head = { reverse_opinion = { target = root value >= 25 } }
+					}
+				}
+				modifier = {
+					add = -1.5
+					faith = {
+						religious_head = { reverse_opinion = { target = root value >= 0 } }
+					}
+				}
+				modifier = {
+					add =  -1.5
+					faith = {
+						religious_head = { NOT = { reverse_opinion = { target = root value <= -25 } } }
+					}
+				}
+				modifier = {
+					add = 3
+					faith = {
+						religious_head = { NOT = { reverse_opinion = { target = root value <= -50 } } }
+					}
+				}
+				modifier = {
+					add = 4
+					faith = {
+						religious_head = { NOT = { reverse_opinion = { target = root value <= -75 } } }
+					}
+				}
+				modifier = {
+					add = 5
+					faith = {
+						religious_head = { NOT = { reverse_opinion = { target = root value <= -99 } } }
+					}
+				}
+				modifier = {
+					add = 2
+					has_trait = trait_education_learning_4
+				}
+			}
+		}
+	}
+}
