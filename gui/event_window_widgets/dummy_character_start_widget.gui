@@ -1,0 +1,46 @@
+vbox = {
+    name = "dummy_character_start_widget"
+    layoutpolicy_horizontal = expanding
+    margin = { 5 0 }
+    spacing = 10
+    HideEventWidget = {
+        blockoverride "onstart" {
+            # INITIALIZE DUMMY CHARACTERS; MAKING THEM ACCESSIBLE FROM SCRIPT AND ON_ACTIONS
+            on_start = "[GetScriptedGui('custom_gui_initialize_male').Execute( GuiScope.SetRoot( GetDummyMale.MakeScope ).End )]"
+            on_start = "[GetScriptedGui('custom_gui_initialize_female').Execute( GuiScope.SetRoot( GetDummyFemale.MakeScope ).End )]"   
+        }
+    }
+
+    
+}
+Types HiddenEventWidgets {
+    type HideEventWidget = fixedgridbox {
+        name = "option_grid"
+        addcolumn = 490
+        addrow = 42
+        datamodel = "[EventWindow.GetOptions]"
+
+        item = {
+            button_event_standard = {
+                name = "event_option_button"
+                text = "Close window"
+                state = {
+                    name = widget_show
+                    trigger_on_create = yes
+                    
+                    # Prevent it from showing
+                    on_start = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.InterruptAnimation('show')]"        
+                    on_start = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.AccessParent.InterruptAnimation('_hide')]"    
+					
+                    block "onstart" {
+                    }
+                    duration = 1 # Needed for.. Reasons?
+
+                    # Close the window
+                    on_finish = "[EventOption.Select]"
+				}
+            }
+        }
+    }
+    expand = {}
+}

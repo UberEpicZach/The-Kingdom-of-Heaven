@@ -33,10 +33,10 @@
 		give_nickname = nick_the_missionary	#Ascends to the throne of Daylam
 		effect = {
 			set_relation_friend = character:163166	#Loyally supported by his brother throughout.
-			#add_hook = {
-			#	target = character:163166
-			#	type = loyalty_hook
-			#}
+			add_hook = {
+				target = character:163166
+				type = loyalty_hook
+			}
 		}
 	}
 	884.1.6 = {
@@ -1430,7 +1430,7 @@
 	father = 45050
 	1080.1.1 = {
 		birth = "1080.1.1"
-		add_pressed_claim = title:d_ismaili
+		add_pressed_claim = d_ismaili
 	}
 	1137.1.1 = {
 		death = "1137.1.1"
@@ -1450,7 +1450,7 @@
 	father = 45050
 	1075.1.1 = {
 		birth = "1075.1.1"
-		add_pressed_claim = title:d_ismaili
+		add_pressed_claim = d_ismaili
 	}
 	1115.1.1 = {
 		death = "1115.1.1"
@@ -1470,7 +1470,7 @@
 	father = 45050
 	1076.1.1 = {
 		birth = "1076.1.1"
-		add_pressed_claim = title:d_ismaili
+		add_pressed_claim = d_ismaili
 	}
 	1115.1.1 = {
 		death = "1115.1.1"
@@ -1491,7 +1491,7 @@
 	father = 45056
 	1100.1.1 = {
 		birth = "1100.1.1"
-		add_pressed_claim = title:d_ismaili
+		add_pressed_claim = d_ismaili
 	}
 	1138.1.1 = {
 		death = "1138.1.1"
@@ -1511,7 +1511,7 @@
 	father = 45057
 	1110.1.1 = {
 		birth = "1110.1.1"
-		add_pressed_claim = title:d_ismaili
+		add_pressed_claim = d_ismaili
 	}
 	1171.1.1 = {
 		death = "1171.1.1"
@@ -1822,9 +1822,6 @@
 	626.1.8 = {
 		birth = "626.1.8"
 	}
-	652.1.1 = {
-		add_spouse = 180638 # Shahrbanu
-	}
 	680.10.10 = {
 		death = "680.10.10"
 	}
@@ -1836,7 +1833,6 @@
 	religion = "ismaili"
 	culture = "bedouin"
 	father = 33912
-	mother = 180638
 	trait = sayyid
 	659.1.1 = {
 		birth = "659.1.1"
@@ -5627,7 +5623,7 @@
 163016 = {
 	name = "Adb_Shams"
 	dynasty = 7296
-	religion = "pagan"
+	religion = "ashari"
 	culture = "bedouin"
 	trait = "twin"
 	father = 163004
@@ -5717,7 +5713,7 @@
 163022 = {
 	name = "Musa"
 	dynasty = 589
-	religion = "imami"
+	religion = "ismaili"
 	culture = "bedouin"
 	father = 33915
 	trait = sayyid
@@ -5732,7 +5728,7 @@
 163023 = {
 	name = "Ali"
 	dynasty = 589
-	religion = "imami"
+	religion = "ismaili"
 	culture = "bedouin"
 	father = 163022
 	trait = sayyid
@@ -5747,7 +5743,7 @@
 163024 = {
 	name = "Muhammad"
 	dynasty = 589
-	religion = "imami"
+	religion = "ismaili"
 	culture = "bedouin"
 	father = 163023
 	trait = sayyid
@@ -5762,7 +5758,7 @@
 163025 = {
 	name = "Ali"
 	dynasty = 589
-	religion = "imami"
+	religion = "ismaili"
 	culture = "bedouin"
 	father = 163024
 	trait = sayyid
@@ -5777,7 +5773,7 @@
 163026 = {
 	name = "Hasan"
 	dynasty = 589
-	religion = "imami"
+	religion = "ismaili"
 	culture = "bedouin"
 	father = 163025
 	trait = sayyid
@@ -5792,7 +5788,7 @@
 163027 = {
 	name = "Mahdi"
 	dynasty = 589
-	religion = "imami"
+	religion = "ismaili"
 	culture = "bedouin"
 	father = 163026
 	trait = sayyid
@@ -6063,7 +6059,7 @@
 163045 = {
 	name = "Muhammad" #Muhammadite Imam
 	dynasty = 589
-	religion = "imami"
+	religion = "ismaili"
 	culture = "bedouin"
 	father = 163025
 	trait = sayyid
@@ -8598,6 +8594,10 @@
 
 	1035.1.1 = {
 		birth = yes
+		effect = {
+			add_family_to_republic_families = yes
+			set_up_elected_ruler_republic = yes
+		}
 	}
 	1078.1.1 = {
 		death = yes
@@ -8669,7 +8669,7 @@
 		add_spouse = 20858
 	}
 	1065.1.1 = {
-		add_pressed_claim = title:d_valencia
+		add_pressed_claim = d_valencia
 	}
 	1069.1.1 = {
 		death = yes
@@ -8689,13 +8689,13 @@
 		birth = yes
 	}
 	1110.1.1 = {
-		add_pressed_claim = title:c_castellon
+		add_pressed_claim = c_castellon
 	}
 	1110.5.1 = {
-		add_pressed_claim = title:c_zaragoza
+		add_pressed_claim = c_zaragoza
 	}
 	1118.12.18 = {
-		remove_claim = title:c_zaragoza
+		remove_claim = c_zaragoza
 	}
 	1130.1.1 = {
 		death = yes
@@ -8715,25 +8715,25 @@
 		birth = yes
 	}
 	1144.1.1 = {
-		add_pressed_claim = title:d_valencia
-		add_pressed_claim = title:c_valencia
-		add_pressed_claim = title:c_castellon		
+		add_pressed_claim = d_valencia
+		add_pressed_claim = c_valencia
+		add_pressed_claim = c_castellon		
 	}
 	1145.1.1 = {
-		remove_claim = title:d_valencia
-		remove_claim = title:c_valencia
-		remove_claim = title:c_castellon
+		remove_claim = d_valencia
+		remove_claim = c_valencia
+		remove_claim = c_castellon
 	}
 	1145.7.1 = {
-		add_pressed_claim = title:d_valencia
-		add_pressed_claim = title:c_valencia
-		add_pressed_claim = title:c_castellon
+		add_pressed_claim = d_valencia
+		add_pressed_claim = c_valencia
+		add_pressed_claim = c_castellon
 	}
 	1146.1.1 = {
-		add_pressed_claim = title:c_denia
+		add_pressed_claim = c_denia
 	}
 	1147.1.1 = {
-		remove_claim = title:d_valencia
+		remove_claim = d_valencia
 	}
 	1163.1.1 = {
 		death = yes
@@ -8788,9 +8788,9 @@
 		birth = yes
 	}
 	1126.1.1 = {
-		add_pressed_claim = title:d_valencia
-		add_pressed_claim = title:c_valencia
-		add_pressed_claim = title:c_castellon
+		add_pressed_claim = d_valencia
+		add_pressed_claim = c_valencia
+		add_pressed_claim = c_castellon
 	}
 	1144.1.1 = {
 		death = yes
@@ -8810,13 +8810,13 @@
 		birth = yes
 	}
 	1109.1.1 = {
-		add_pressed_claim = title:c_murcia
+		add_pressed_claim = c_murcia
 	}
 	1145.9.1 = {
-		remove_claim = title:c_murcia
+		remove_claim = c_murcia
 	}
 	1146.1.1 = {
-		add_pressed_claim = title:c_murcia
+		add_pressed_claim = c_murcia
 	}
 	1168.1.1 = {
 		death = yes
@@ -11329,7 +11329,7 @@
 		birth = "735.1.1"
 	}
 	769.1.1 = {
-		add_pressed_claim = title:d_tripolitania
+		add_pressed_claim = d_tripolitania
 	}
 	771.11.27 = {
 		death = yes
@@ -11569,23 +11569,11 @@
 	}
 }
 
-218004 = {	#Fictional
-	name = Abdullah
-#	dynasty = #TODO_CD_ERCC
-	religion = ashari
-	culture = bedouin
 
-	840.1.1 = {
-		birth = yes
-	}
-	881.1.1 = {
-		death = yes
-	}
-}
 
-218005 = {	#Fictional
+218000005 = {	#Fictional
 	name = Shujah
-#	dynasty = #TODO_CD_ERCC
+#	dynasty = #TOD_CD_ERCC
 	religion = ibadi
 	culture = bedouin
 	
@@ -11599,7 +11587,7 @@
 
 218006 = {	#Fictional
 	name = Sadiq
-#	dynasty = #TODO_CD_ERCC
+#	dynasty = #TOD_CD_ERCC
 	religion = ibadi
 	culture = bedouin
 	
@@ -11721,7 +11709,7 @@ bedouin0005 = {
 	}
 }
 bedouin0006 = {
-	name = "Abu-l-Fadl al-Malik"
+	name = "Abu-l-Fadl_al-Malik"
 	dynasty = bedouindyn001
 	religion = ashari
 	culture = bedouin

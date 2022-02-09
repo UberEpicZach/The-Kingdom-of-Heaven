@@ -23,31 +23,9 @@
 					target = scope:attacker.faith
 				}
 			}
-			trigger_if = {
-				limit = {
-					culture = {
-						has_cultural_parameter = cb_lower_piety_level_requirement
-					}
-				}
-				piety_level >= -1
-			}
-			trigger_else = {
-				piety_level >= 0
-			}
+			piety_level >= 0
 		}
-		trigger_else = {
-			trigger_if = {
-				limit = {
-					culture = {
-						has_cultural_parameter = cb_lower_piety_level_requirement
-					}
-				}
-				piety_level >= 0
-			}
-			trigger_else = {
-				piety_level >= 1
-			}
-		}
+		trigger_else = { piety_level >= 1 }
 	}
 
 	allowed_against_character = {
@@ -157,7 +135,7 @@
 			if = {
 				limit = {
 					scope:attacker = {
-						has_trait = crusader_state_trait
+						has_trait = crusader_state
 					}
 				}
 				multiply = {
@@ -180,6 +158,7 @@
 				}
 			}
 
+			
 			if = {
 				limit = {
 					scope:attacker.faith = {
@@ -234,21 +213,6 @@
 				multiply = {
 					value = warfare_legacy_2_discount
 					desc = CB_ATTACKER_DYNASTY_WARFARE
-				}
-			}
-
-			# Culture
-			if = {
-				limit = {
-					scope:attacker = {
-						culture = {
-							has_cultural_parameter = cheaper_cbs
-						}
-					}
-				}
-				multiply = {
-					value = 0.8
-					desc = "CB_ATTACKER_CULTURE"
 				}
 			}
 
@@ -386,25 +350,11 @@
 			}
 		}
 
-		ordered_in_list = {
-			list = target_titles
-			order_by = tier
-			max = 1
-
-			save_scope_as = war_goal_title
-		}
-
 		scope:attacker.faith = {
-			change_fervor = {
-				value = -1
-				desc = fervor_loss_religious_war
-			}
+			change_fervor = -1
 		}
 		scope:defender.faith = {
-			change_fervor = {
-				value = 3
-				desc = fervor_gain_religious_war
-			}
+			change_fervor = 3
 		}
 
 		# Truce
@@ -581,31 +531,9 @@ religious_war = {
 					target = scope:attacker.faith
 				}
 			}
-			trigger_if = {
-				limit = {
-					culture = {
-						has_cultural_parameter = cb_lower_piety_level_requirement
-					}
-				}
-				piety_level >= 0
-			}
-			trigger_else = {
-				piety_level >= 1
-			}
+			piety_level >= 1
 		}
-		trigger_else = {
-			trigger_if = {
-				limit = {
-					culture = {
-						has_cultural_parameter = cb_lower_piety_level_requirement
-					}
-				}
-				piety_level >= 1
-			}
-			trigger_else = {
-				piety_level >= 2
-			}
-		}
+		trigger_else = { piety_level >= 2 }
 	}
 
 	allowed_against_character = {
@@ -706,7 +634,7 @@ religious_war = {
 			if = {
 				limit = {
 					scope:attacker = {
-						has_trait = crusader_state_trait
+						has_trait = crusader_state
 					}
 				}
 				multiply = {
@@ -784,21 +712,6 @@ religious_war = {
 				multiply = {
 					value = warfare_legacy_2_discount
 					desc = CB_ATTACKER_DYNASTY_WARFARE
-				}
-			}
-
-			# Culture
-			if = {
-				limit = {
-					scope:attacker = {
-						culture = {
-							has_cultural_parameter = cheaper_cbs
-						}
-					}
-				}
-				multiply = {
-					value = 0.8
-					desc = "CB_ATTACKER_CULTURE"
 				}
 			}
 
@@ -937,25 +850,11 @@ religious_war = {
 			}
 		}
 
-		ordered_in_list = {
-			list = target_titles
-			order_by = tier
-			max = 1
-
-			save_scope_as = war_goal_title
-		}
-
 		scope:attacker.faith = {
-			change_fervor = {
-				value = -2
-				desc = fervor_loss_religious_war
-			}
+			change_fervor = -2
 		}
 		scope:defender.faith = {
-			change_fervor = {
-				value = 4
-				desc = fervor_gain_religious_war
-			}
+			change_fervor = 4
 		}
 
 		# Truce
@@ -1144,43 +1043,12 @@ major_religious_war = {
 					target = scope:attacker.faith
 				}
 			}
-			trigger_if = {
-				limit = {
-					culture = {
-						has_cultural_parameter = cb_lower_piety_level_requirement
-					}
-				}
-				piety_level >= 2
-			}
-			trigger_else = {
-				piety_level >= 3
-			}
+			piety_level >= 3
 		}
-		trigger_else = {
-			trigger_if = {
-				limit = {
-					culture = {
-						has_cultural_parameter = cb_lower_piety_level_requirement
-					}
-				}
-				piety_level >= 3
-			}
-			trigger_else = {
-				piety_level >= 4
-			}
-		}
-		trigger_if = {
-			limit = {
-				culture = {
-					NOT = {
-						has_cultural_parameter = no_limit_to_kingdom_level_holy_wars
-					}
-				}
-			}
-			custom_description = {
-				text = declared_major_religious_war_flag_tt
-				NOT = { has_character_flag = declared_major_religious_war_flag }
-			}
+		trigger_else = { piety_level >= 4 }
+		custom_description = {
+			text = declared_major_religious_war_flag_tt
+			NOT = { has_character_flag = declared_major_religious_war_flag }
 		}
 	}
 
@@ -1281,7 +1149,7 @@ major_religious_war = {
 			if = {
 				limit = {
 					scope:attacker = {
-						has_trait = crusader_state_trait
+						has_trait = crusader_state
 					}
 				}
 				multiply = {
@@ -1357,21 +1225,6 @@ major_religious_war = {
 				multiply = {
 					value = warfare_legacy_2_discount
 					desc = CB_ATTACKER_DYNASTY_WARFARE
-				}
-			}
-
-			# Culture
-			if = {
-				limit = {
-					scope:attacker = {
-						culture = {
-							has_cultural_parameter = cheaper_cbs
-						}
-					}
-				}
-				multiply = {
-					value = 0.8
-					desc = "CB_ATTACKER_CULTURE"
 				}
 			}
 
@@ -1513,25 +1366,11 @@ major_religious_war = {
 			}
 		}
 
-		ordered_in_list = {
-			list = target_titles
-			order_by = tier
-			max = 1
-
-			save_scope_as = war_goal_title
-		}
-
 		scope:attacker.faith = {
-			change_fervor = {
-				value = -5
-				desc = fervor_loss_religious_war
-			}
+			change_fervor = -5
 		}
 		scope:defender.faith = {
-			change_fervor = {
-				value = 10
-				desc = fervor_gain_religious_war
-			}
+			change_fervor = 10
 		}
 
 		# Truce
@@ -1715,10 +1554,8 @@ excommunication_war = {
 
 		scope:attacker = {
 			#We can't DoW our own liege
-			NOR = {
+			NOT = {
 				liege = scope:defender
-			#No pot calling the kettle black
-				has_trait = excommunicated
 			}
 
 			trigger_if = {
@@ -1893,6 +1730,7 @@ excommunication_war = {
 		}
 
 		scope:defender = {
+			depose = yes
 
 			#Used for the piety_change scripted effect.
 			save_scope_as = loser
@@ -2037,21 +1875,6 @@ flowery_war_cb = {
 				multiply = {
 					value = warfare_legacy_2_discount
 					desc = CB_ATTACKER_DYNASTY_WARFARE
-				}
-			}
-
-			# Culture
-			if = {
-				limit = {
-					scope:attacker = {
-						culture = {
-							has_cultural_parameter = cheaper_cbs
-						}
-					}
-				}
-				multiply = {
-					value = 0.8
-					desc = "CB_ATTACKER_CULTURE"
 				}
 			}
 
@@ -3093,10 +2916,6 @@ flowery_war_cb = {
 	max_defender_score_from_battles = 200
 
 	max_ai_diplo_distance_to_title = 500
-	
-	ai_score = {
-		value = raid_for_captives_ai_score_value
-	}
 
 	ai_score_mult = {
 		value = 1
@@ -3236,10 +3055,6 @@ undirected_great_holy_war = {
 		debug_log = undirected_ghw_debug_loc
 	}
 
-	should_invalidate = {
-		scope:attacker.faith = scope:defender.faith # Primary defender has converted
-	}
-
 	on_invalidated_desc = msg_invalidate_war_title
 	
 	on_invalidated = {
@@ -3317,13 +3132,6 @@ undirected_great_holy_war = {
 				every_war_attacker = {
 					add_achievement_flag_effect = { FLAG = achievement_for_the_faith_flag }
 				}
-			}
-		}
-
-		scope:defender.faith = {		#needed for hold_court.6150
-			set_variable = {
-				name = 6150_lost_ghw_recently		
-				years = 5
 			}
 		}
 
@@ -3671,25 +3479,11 @@ undirected_great_holy_war = {
 			}
 		}
 
-		ordered_in_list = {
-			list = target_titles
-			order_by = tier
-			max = 1
-
-			save_scope_as = war_goal_title
-		}
-
 		scope:attacker.faith = {
-			change_fervor = {
-				value = -25
-				desc = fervor_loss_great_holy_war
-			}
+			change_fervor = -25
 		}
 		scope:defender.faith = {
-			change_fervor = {
-				value = 30
-				desc = fervor_gain_great_holy_war
-			}
+			change_fervor = 30
 		}
 
 		#Truce between the chief beneficiary & all defenders
@@ -3717,6 +3511,11 @@ undirected_great_holy_war = {
 			}
 		}
 
+		scope:attacker = {
+			faith = {
+				change_fervor = -15
+			}
+		}
 		scope:attacker.faith.great_holy_war.ghw_target_title = { #Loc keys for localization fluff.
 			save_scope_as = target_kingdom
 		}
@@ -3731,19 +3530,6 @@ undirected_great_holy_war = {
 		}
 		scope:attacker.faith.great_holy_war = {
 			save_scope_as = the_ghw
-		}
-
-		scope:attacker = {
-			faith = {
-				change_fervor = {
-					value = -15
-					desc = fervor_loss_lost_great_holy_war
-				}
-				set_variable = {			#needed for hold_court.6150
-					name = 6150_lost_ghw_recently
-					years = 5
-				}
-			}
 		}
 
 		scope:defender = {	#Achievement setup.
@@ -3882,9 +3668,6 @@ directed_great_holy_war = {
 				}
 			}
 		}
-
-		#The war seems to be launching without a valid defender sometimes, so we double-check that one is set here
-		exists = scope:defender
 	}
 
 	on_declaration = {
@@ -3985,12 +3768,6 @@ directed_great_holy_war = {
 
 		debug_log = directed_ghw_debug_loc
 	}
-
-	should_invalidate = {
-		scope:attacker.faith = scope:defender.faith # Primary defender has converted
-	}
-
-	on_invalidated_desc = msg_invalidate_war_title
 
 	on_victory_desc = {
 		desc = great_holy_war_directed_victory_desc
@@ -4131,25 +3908,11 @@ directed_great_holy_war = {
 			}
 		}
 
-		ordered_in_list = {
-			list = target_titles
-			order_by = tier
-			max = 1
-
-			save_scope_as = war_goal_title
-		}
-
 		scope:attacker.faith = {
-			change_fervor = {
-				value = -25
-				desc = fervor_loss_great_holy_war
-			}
+			change_fervor = -25
 		}
 		scope:defender.faith = {
-			change_fervor = {
-				value = 30
-				desc = fervor_gain_great_holy_war
-			}
+			change_fervor = 30
 		}
 
 		#Truce between the chief beneficiary & all defenders
@@ -4228,13 +3991,9 @@ directed_great_holy_war = {
 
 		scope:attacker = {
 			faith = {
-				change_fervor = {
-					value = -15
-					desc = fervor_loss_lost_great_holy_war
-				}
+				change_fervor = -15
 			}
 		}
-
 		#Set 30 years cooldown.
 		hidden_effect = {
 			scope:attacker = {

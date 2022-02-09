@@ -1425,7 +1425,7 @@
 		birth = "1118.1.1"
 	}
 	1134.1.1 = {
-		add_pressed_claim = title:c_jaffa
+		add_pressed_claim = c_jaffa
 	}
 		1135.1.1 = {
 		add_spouse = 223581
@@ -3298,8 +3298,8 @@
 	}
 	1180.4.28 = {
 		add_spouse = 205522 #Isabelle de Hainaut
-		add_pressed_claim = title:d_toulouse
-		add_pressed_claim = title:c_vermandois
+		add_pressed_claim = d_toulouse
+		add_pressed_claim = c_vermandois
 		create_alliance = character:205522
 		create_alliance = {
 						target = character:205520
@@ -3341,9 +3341,9 @@
 		add_spouse = 201505 #Ingeborg of Denmark
 	}
 	1204.1.1 = {
-		add_pressed_claim = title:d_poitou
-		add_pressed_claim = title:c_poitiers
-		add_pressed_claim = title:c_thouars
+		add_pressed_claim = d_poitou
+		add_pressed_claim = c_poitiers
+		add_pressed_claim = c_thouars
 		give_nickname = nick_the_great
 	}
 	1222.9.1 = {
@@ -4486,7 +4486,7 @@
 
 205742 = {
 	name = "Alain"
-	dynasty_house = house_penthievre #House of Penthièvre
+	dynasty = 317
 	religion = "catholic"
 	culture = french
 	father = 205743
@@ -4501,7 +4501,7 @@
 
 205743 = {
 	name = "Henri"
-	dynasty_house = house_penthievre #House of Penthièvre #Rennes house of Penthièvre
+	dynasty = 317 #Rennes house of Penthièvre
 	religion = "catholic"
 	culture = french
 	trait = education_learning_3
@@ -4540,7 +4540,7 @@
 205746 = {
 	name = "Alix" #a daughter without name, spouse of Conan le Bref de Léon
 	female = yes
-	dynasty_house = house_penthievre #House of Penthièvre #Rennes house of Penthièvre
+	dynasty = 317 #Rennes house of Penthièvre
 	religion = "catholic"
 	culture = french
 	father = 205743 #Henri de Bretagne
@@ -4555,7 +4555,7 @@
 
 205747 = {
 	name = "Geslin"
-	dynasty_house = house_penthievre #House of Penthièvre
+	dynasty = 317
 	religion = "catholic"
 	culture = french
 	father = 205743
@@ -4570,7 +4570,7 @@
 
 205748 = {
 	name = "Conan"
-	dynasty_house = house_penthievre #House of Penthièvre
+	dynasty = 317
 	religion = "catholic"
 	culture = french
 	trait = education_learning_3
@@ -6274,12 +6274,12 @@
 	}
 	1032.1.1 = {
 		# Renounced claim to the Throne of France in exchange for Burgundy.
-		remove_claim = title:k_france
-		remove_claim = title:c_ile_de_france
-		remove_claim = title:c_brie_francaise
-		remove_claim = title:c_orleans
-		remove_claim = title:c_sens
-		remove_claim = title:c_beaumont
+		remove_claim = k_france
+		remove_claim = c_ile_de_france
+		remove_claim = c_brie_francaise
+		remove_claim = c_orleans
+		remove_claim = c_sens
+		remove_claim = c_beaumont
 		
 		#Capetian house of Burgundy
 		dynasty_house = house_bourgogne
@@ -10584,7 +10584,7 @@
 		birth = "1198.1.1"
 	}
 	1222.1.1 = {
-		add_pressed_claim = title:k_armenia
+		add_pressed_claim = k_armenia
 	}
 	1226.1.1 = {
 		death = "1226.1.1"
@@ -11867,7 +11867,7 @@
 		birth = "1043.1.1"
 	}
 	1060.1.1 = {
-		add_pressed_claim = title:d_anjou
+		add_pressed_claim = d_anjou
 	}
 	1109.4.14 = {
 		death = "1109.4.14"
@@ -19199,12 +19199,12 @@ KOH0060 = {
 		birth = "1332.5.17"
 	}
 	1332.5.17 = {
-		add_pressed_claim = title:k_france
-		add_pressed_claim = title:d_champagne
-		add_pressed_claim = title:c_angouleme
+		add_pressed_claim = k_france
+		add_pressed_claim = d_champagne
+		add_pressed_claim = c_angouleme
 	}
 	1361.11.21 = {
-		add_pressed_claim = title:d_burgundy
+		add_pressed_claim = d_burgundy
 	}
 	1387.1.1 = {
 		death = "1387.1.1"
@@ -19389,18 +19389,18 @@ KOH0060 = {
 		birth = "1310.1.28"
 	}
 	1316.11.19 = {
-		add_pressed_claim = title:k_navarra
-		add_pressed_claim = title:d_champagne
-		add_pressed_claim = title:d_navarra
-		add_pressed_claim = title:c_navarra
+		add_pressed_claim = k_navarra
+		add_pressed_claim = d_champagne
+		add_pressed_claim = d_navarra
+		add_pressed_claim = c_navarra
 	}
 	1328.2.1 = {
-		remove_claim = title:k_navarra
-		remove_claim = title:d_navarra
-		remove_claim = title:c_navarra
+		remove_claim = k_navarra
+		remove_claim = d_navarra
+		remove_claim = c_navarra
 	}
 	1335.1.1 = {
-		remove_claim = title:d_champagne
+		remove_claim = d_champagne
 	}
 	1349.10.6 = {
 		death = "1349.10.6"
@@ -20345,10 +20345,10 @@ KOH0060 = {
 		birth = "1306.1.11"
 	}
 	1312.3.15 = {
-		add_pressed_claim = title:d_athens
-		add_pressed_claim = title:c_atheniai
-		add_pressed_claim = title:c_hellas
-		add_pressed_claim = title:c_demetrias
+		add_pressed_claim = d_athens
+		add_pressed_claim = c_atheniai
+		add_pressed_claim = c_hellas
+		add_pressed_claim = c_demetrias
 	}
 	1325.1.11 = {
 		add_spouse = 461714
@@ -20917,8 +20917,8 @@ KOH0060 = {
 		birth = "1310.1.1"
 	}
 	1329.11.4 = {
-		add_pressed_claim = title:d_savoie
-		add_pressed_claim = title:c_savoie
+		add_pressed_claim = d_savoie
+		add_pressed_claim = c_savoie
 	}
 	1344.6.29 = {
 		death = "1344.6.29"
@@ -22778,10 +22778,10 @@ KOH0060 = {
 		birth = "1262.1.1"
 	}
 	1278.1.1 = {
-		add_pressed_claim = title:c_euboia
+		add_pressed_claim = c_euboia
 	}
 	1317.1.1 = {
-		remove_claim = title:c_euboia
+		remove_claim = c_euboia
 	}
 	1323.1.1 = {
 		death = "1323.1.1"
@@ -22804,7 +22804,7 @@ KOH0060 = {
 		birth = "1215.1.1"
 	}
 	1230.1.1 = {
-		add_pressed_claim = title:c_euboia
+		add_pressed_claim = c_euboia
 	}
 	1278.1.1 = {
 		death = "1278.1.1"
@@ -30943,7 +30943,7 @@ KOH0060 = {
 		add_spouse = 138003 # Ildégarde de Thouars
 	}
 	1088.1.1 = {
-		add_pressed_claim = title:c_la_marche #claim from his mother
+		add_pressed_claim = c_la_marche #claim from his mother
 	}
 	1101.1.1 = {
 		trait = faith_warrior
@@ -31430,8 +31430,8 @@ KOH0060 = {
 	father = 461905 #Hugues III of Cyprus
 	mother = 461906 #Isabelle d'Ibelin
 	1267.1.1 = {
-		add_pressed_claim = title:c_jerusalem
-		add_pressed_claim = title:d_jerusalem
+		add_pressed_claim = c_jerusalem
+		add_pressed_claim = d_jerusalem
 		birth = "1267.1.1"
 	}
 	1285.5.20 = {
@@ -31447,19 +31447,19 @@ KOH0060 = {
 	father = 461905 #Hugues III of Cyprus
 	mother = 461906 #Isabelle d'Ibelin
 	1271.1.1 = {
-		add_pressed_claim = title:c_jerusalem
-		add_pressed_claim = title:d_jerusalem
+		add_pressed_claim = c_jerusalem
+		add_pressed_claim = d_jerusalem
 		birth = "1271.1.1"
 	}
 	1306.4.26 = {
-		add_pressed_claim = title:k_cyprus
-		add_pressed_claim = title:c_limisol
-		add_pressed_claim = title:c_famagusta
+		add_pressed_claim = k_cyprus
+		add_pressed_claim = c_limisol
+		add_pressed_claim = c_famagusta
 	}
 	1310.6.5 = {
-		remove_claim = title:k_cyprus
-		remove_claim = title:c_limisol
-		remove_claim = title:c_famagusta
+		remove_claim = k_cyprus
+		remove_claim = c_limisol
+		remove_claim = c_famagusta
 	}
 	#1317.10.16 = {
 		#add_spouse = Constance daughter of Frederic II of Sicilia
@@ -31511,7 +31511,7 @@ KOH0060 = {
 	father = 40054
 	mother = 138003
 	1065.1.1 = {
-		add_pressed_claim = title:c_la_marche #claim from his grand mother
+		add_pressed_claim = c_la_marche #claim from his grand mother
 		birth = "1065.1.1"
 	}
 	#pre 1106 married Sarrasine de Lezay b 1067- d 1144
@@ -31548,7 +31548,7 @@ KOH0060 = {
 	father = 205667
 	1106.1.1 = {
 		give_nickname = nick_the_old
-		add_pressed_claim = title:c_la_marche #claim from his grand grand mother
+		add_pressed_claim = c_la_marche #claim from his grand grand mother
 		birth = "1106.1.1"
 	}
 	1140.1.1 = {
@@ -31695,8 +31695,8 @@ KOH0060 = {
 		add_spouse = 223522 #Sibylla of Jerusalem
 	}
 	1187.10.2 = {
-		add_pressed_claim = title:c_jerusalem
-		add_pressed_claim = title:d_jerusalem
+		add_pressed_claim = c_jerusalem
+		add_pressed_claim = d_jerusalem
 	}
 	1194.7.18 = {
 		death = "1194.7.18"
@@ -31822,8 +31822,8 @@ KOH0060 = {
 		add_spouse = 223582 #Echive d'Ibelin
 	}
 	1197.9.10 = {
-		add_pressed_claim = title:c_jerusalem
-		add_pressed_claim = title:d_jerusalem
+		add_pressed_claim = c_jerusalem
+		add_pressed_claim = d_jerusalem
 	}
 	1198.1.1 = {
 		add_spouse = 223524 #Isabelle de Jerusalem/d'Anjou

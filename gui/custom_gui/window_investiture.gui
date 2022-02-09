@@ -1,0 +1,278 @@
+﻿types Investiture { # Types are essentially templates. They are typically done in the gui/shared folder but can be done in any file.
+	type investiture_vbox = vbox { # That means that in any gui file I can add investiture_vbox = {} and it will automatically call all this code in it. Think scripted effects for GUI
+        visible = "[GetVariableSystem.HasValue( 'faith_view_tabs', 'investiture' )]" # A visible block shows if something is visible (duh.) Variable systems are very useful for different tabs in gui, with each button giving a certain value that calls to that gui.
+        layoutpolicy_horizontal = expanding # Not entirely sure what it does, but generally you should put it in. If you have an hbox in an hbox you need to add it to an interior one
+        layoutpolicy_vertical = expanding # Same as above. If you have a vbox in a vbox you need to add it to an interior one
+
+        state = { # States will rarely need to be used, typically don't bother
+            name = _show # This triggers when it becomes visible, you can add blocks to call scripted gui if you want
+            using = Animation_FadeIn_Quick
+        }
+
+        state = {
+            name = _hide # This triggers when it becomes invisible, similar to the above.
+            alpha = 0 # 0 is transparent, 1 opaque.
+        }
+        scrollbox = { # A vertical scrollbox
+            name = "investiture_scrollbox" # You don't actually need this but I recommend you add them
+            layoutpolicy_horizontal = expanding
+            layoutpolicy_vertical = expanding
+            background = { # The background of the selected element
+                texture = "gfx/interface/illustrations/lifestyles_background/diplomacy_lifestyle.dds" # Texture blocks get that specific texture. Be warned, they are stretched to fit
+                alpha = 0.3 # Only partly opaque
+                modify_texture = { # Modify textures are useful occasionally
+                    name = "mask"
+                    texture = "gfx/interface/component_masks/mask_rough_edges.dds" # This adds rough edges, which helps in blend in. I recommend you use it most of the time
+                    spriteType = Corneredstretched # This is needed to stretch a mask, though not a normal texture.
+                    spriteborder = { 0 0 }
+                    blend_mode = alphamultiply # The texture itself is black and partly transparent at parts. This makes it so the plain black bits are opaque while the partly transparent parts make the corresponding parts on the texture that level of transparent.
+                }
+            }
+            blockoverride "scrollbox_content" # You need this for scrollboxes since they are a type of their own.
+            {
+
+                text_multi = {
+                    autoresize = yes
+                    maximumsize = { 550 200 }
+                    text = "INVESTITURE_DESC"
+                    default_format = "#weak"
+                    align = center
+                }
+        
+                dynamicgridbox = { # Gets items for everything in a list
+                    layoutpolicy_vertical = expanding
+                    allow_outside = yes # This allows things to move outside of it without changing the size of the item itself.
+                    ignoreinvisible = yes # Ignores invisible things. Not always necessary but are needed for dynamic gridboxes
+                    maxhorizontalslots = 1 # Unless you use flipdirection = yes for this then it is unecessary.
+                    maxverticalslots = 100 # If there are over 100 items on a list it will still only generate 100 at max
+                    block "datamodel" { # The datamodel is where you get the list from.
+                        datamodel = "[GetPlayer.GetPrimaryTitle.MakeScope.GetList('theocracy_vassals_for_investiture')]" # Get you, get your primary title, make it the scope, get the list theocracy_vassals_for_investiture from that scope. AKA that list on your primary title is the list
+                    }
+                    item = { # This is generated for each item in the list
+                        widget = {
+                            datacontext = "[Scope.GetCharacter]" # Since every item in the list is a character, I get the character so that every other thing in the item can use Character instead of Scope.GetCharacter at the start.
+                            # I should also explain something about datacontexts, datamodels, onclicks, visibles, and enableds. They use data_types, which you can use the console command DumpDataTypes to get all of them. There are global functions, like GetPlayer or Scope, which can start those data functions, and normal functions with branch out from them.
+                            block "size" {
+                                size = { 500 170 } # The size of the items. This is not the maximum size, but the minimum size that it takes up
+                            }
+                            hbox = { # Everything in it is arranged horizontally and centered vertically.
+                                vbox = { # Arranged vertically and centered horizontally.
+                                    datacontext = "[Character.GetPrimaryTitle]" # Datacontext essentially just means that it gets one here
+                                    coa_title_big = {} # This gets the datacontext title and shows it as a large coa.
+                                }
+                                spacer = { size = { 10 0 } } # Literally what it sounds like. Adds some empty space.
+                                vbox = {
+                                    text_single = { # Text. text_multi is better for descriptions though.
+                                        text = "Current Holder:" # I should have put in a loc key but I just put in the loc since I'm lazy.
+                                        default_format = "#high" # If you don't want to do #bold or #italic or #G in the loc key itself, you can get it here. That said, you can't do "#bold #italic" and can only get one formatting change here.
+                                        fontsize = 16 # I am not explaining this.
+                                    }
+                                    portrait_head = {} # Gets the character in the closest datacontext in it's branch (the primary title is a seperate branch off from the main hbox so it doesn't get that one, instead getting Scope.GetCharacter.
+                                }
+                                spacer = { size = { 15 0 } }
+                                vbox = {
+                                    datacontext = "[Scope.GetCharacter.GetPrimaryTitle.MakeScope.Var('theocratic_successor').GetCharacter]" # Get's the character's primary title's variable theocratic_successor and gets the character stored on it.
+                                    text_single = {
+                                        text = "Successor:"
+                                        default_format = "#high"
+                                        fontsize = 16
+                                    }
+                                    portrait_head = {}
+                                }
+                                spacer = { size = { 15 0 } }
+                                button_sidepanel_right = { # This is a type I'm calling here
+                                    blockoverride "button_text" # So we need a blockoverride.
+                                    {
+                                        text = "Appoint Successor"
+                                    }
+                                    visible = "[And(Not(GetScriptedGui('set_up_new_successor').IsShown(GuiScope.SetRoot(Scope.GetCharacter.GetPrimaryTitle.MakeScope).End)),GetScriptedGui('can_see_investiture_law').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]" # Not(), And(), Nor() and the like are the GUI versions of NOT, AND, NOR, etc. Items can be seperated with a comma. Capitalization here is important
+                                    onclick = "[GetScriptedGui('get_all_investiture_candidates').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_title_inv',Scope.GetCharacter.GetPrimaryTitle.MakeScope).End)]" # AddScope is the GUI version of save_scope_as for script values. It follows the format ('scope name',who is the scope data functions)
+                                    onclick = "[GetVariableSystem.Toggle('window_appoint_successor_theocracy')]"
+                                }
+                                expand = {} # Normally stuff is spread out to cover all the empty space, leading to a lot of unintended spacing. This one block covers all the empty space instead, leaving the other things to clump up as intended. Just always add this to most large vboxes or hboxes with a lot of content.
+                            }
+                        }
+                    }
+                }
+            }
+            expand = {}
+        }
+    }
+
+    type window_appoint_successor_theocracy = window {
+        size = { 600 850 }
+        position = { 600 55 }
+        layer = middle
+        visible = "[GetVariableSystem.Exists('window_appoint_successor_theocracy')]" # This is shown if that variable system exists, regardless of the variable.
+    
+        using = Window_Background # Using is useful for preset backgrounds and the like. All windows should at least have this and the decoration block
+        using = Window_Decoration
+        using = Animation_ShowHide_Standard
+
+        vbox = {
+            using = Window_Margins
+            restrictparent_min = yes
+    
+            header_pattern = { # Also a type. Just copy paste this typically and change the text and onclick.
+                layoutpolicy_horizontal = expanding
+    
+                blockoverride "header_text"
+                {
+                    text = "Appoint Successor"
+                }
+    
+                blockoverride "button_close"
+                {
+                    onclick = "[GetVariableSystem.Clear( 'window_appoint_successor_theocracy' )]"
+                }
+            }
+    
+            vbox = {
+                layoutpolicy_horizontal = expanding
+                layoutpolicy_vertical = expanding
+                vbox = {
+                    datacontext = "[GetPlayer.GetPrimaryTitle.MakeScope.Var('selected_title_for_investiture').Title]" # Get your primary title's variable selected_title_for_investiture and the title stored on it
+                    text_multi = {
+                        autoresize = yes
+                        maximumsize = { 520 250 }
+                        text = "INVESTITURE_APPOINT"
+                        default_format = "#weak"
+                        align = center
+                    }
+                    text_multi = {
+                        autoresize = yes
+                        maximumsize = { 200 100 }
+                        text = "INVESTITURE_TITLE"
+                        default_format = "#bold"
+                        align = center
+                    }
+                    coa_title_medium = {}
+                }
+                scrollbox = {
+                    name = "appoint_investiture_successor_scrollarea"
+                    layoutpolicy_horizontal = expanding
+                    layoutpolicy_vertical = expanding
+                    #size = {100% 100%}
+                    size = { 530 800 }
+                    background = {
+                        texture = "gfx/interface/illustrations/lifestyles_background/learning_lifestyle.dds"
+                        alpha = 0.3
+                        modify_texture = {
+                            name = "mask"
+                            texture = "gfx/interface/component_masks/mask_rough_edges.dds"
+                            spriteType = Corneredstretched
+                            spriteborder = { 0 0 }
+                            blend_mode = alphamultiply
+                        }
+                    }
+
+                    
+                    blockoverride "scrollbox_content"
+                    {
+                        dynamicgridbox = {
+
+
+                            
+                            datacontext = "[GetPlayer]"
+                            layoutpolicy_vertical = expanding
+                            allow_outside = yes
+                            ignoreinvisible = yes
+                            maxhorizontalslots = 1
+                            maxverticalslots = 100
+                            block "datamodel" {
+                                datamodel = "[GetPlayer.GetPrimaryTitle.MakeScope.GetList('theocrat_candidates')]"
+                            }
+                            item = {
+                                widget = {
+                                    datacontext = "[Scope.GetCharacter]"
+                                    block "size" {
+                                        size = { 500 121 }
+                                    }
+                                    hbox = {
+                                        portrait_head = {}
+                                        vbox = {
+                                            text_single = {
+                                                fontsize = 20
+                                                text = "[Character.GetFirstName]"
+                                                default_format = "#high"
+                                            }
+                                            hbox = {
+                                                minimumsize = { 210 -1 }
+                                                vbox = {
+                                                    minimumsize = { 100 -1 }
+                                                    hbox = {
+                                                        text_single = {
+                                                            text = "Diplomacy:  "
+                                                        }
+                                                        text_single = {
+                                                            text = "[Character.MakeScope.ScriptValue('diplomacy_theocrat')|0]" # For some fucked up reason we can't call up any of a person's stats so I have to manually do it via a script value
+                                                        }
+                                                    }
+                                                    hbox = {
+                                                        text_single = {
+                                                            text = "Stewardship:  "
+                                                        }
+                                                        text_single = {
+                                                            text = "[Character.MakeScope.ScriptValue('stewardship_theocrat')|0]"
+                                                        }
+                                                    }
+                                                    hbox = {
+                                                        text_single = {
+                                                            text = "Martial:  "
+                                                        }
+                                                        text_single = {
+                                                            text = "[Character.MakeScope.ScriptValue('martial_theocrat')|0]"
+                                                        }
+                                                    }
+                                                }
+                                                vbox = {
+                                                    minimumsize = { 100 -1 }
+                                                    hbox = {
+                                                        text_single = {
+                                                            text = "Intrigue:  "
+                                                        }
+                                                        text_single = {
+                                                            text = "[Character.MakeScope.ScriptValue('intrigue_theocrat')|0]"
+                                                        }
+                                                    }
+                                                    hbox = {
+                                                        text_single = {
+                                                            text = "Learning:  "
+                                                        }
+                                                        text_single = {
+                                                            text = "[Character.MakeScope.ScriptValue('learning_theocrat')|0]"
+                                                        }
+                                                    }
+                                                    hbox = {
+                                                        text_single = {
+                                                            text = "Prowess:  "
+                                                        }
+                                                        text_single = {
+                                                            text = "[Character.GetProwess]" # Except prowess. For some reason we can call prowess.
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            expand = {}
+                                        }
+                                        spacer = {
+                                            size = { 20 10 }
+                                        }
+                                        button = {
+                                            texture = "gfx/interface/icons/title_status/icon_claim_pressed.dds"
+                                            size = { 90 90 }
+                                            tooltip = appoint_governor
+                                            onclick = "[GetScriptedGui('set_up_new_successor').Execute(GuiScope.SetRoot(Scope.Char.MakeScope).AddScope('title_inheritor',GetPlayer.GetPrimaryTitle.MakeScope.Var('selected_title_for_investiture').Title.MakeScope).End)]"
+                                            onclick = "[GetVariableSystem.Clear('window_appoint_successor_theocracy')]" # Close the windows when clicked as well.
+                                            onclick = "[GetScriptedGui('get_all_realm_theocracies').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" # Refreshes the list for me
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

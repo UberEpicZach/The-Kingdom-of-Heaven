@@ -1,596 +1,596 @@
-﻿# namespace = KOH_guelphs_ghibellines
+﻿namespace = KOH_guelphs_ghibellines
 
 
-# KOH_guelphs_ghibellines.1 = { #forming a league
-# 	title = KOH_guelphs_ghibellines.1.t
-# 	desc = KOH_guelphs_ghibellines.1.desc
-# 	theme = unfriendly
-# 	left_portrait = {
-# 		character = this
-# 	}
+KOH_guelphs_ghibellines.1 = { #forming a league
+	title = KOH_guelphs_ghibellines.1.t
+	desc = KOH_guelphs_ghibellines.1.desc
+	theme = unfriendly
+	left_portrait = {
+		character = this
+	}
 
-# 	trigger = {		
-# 		highest_held_title_tier = tier_duchy
-# 		NOT = { exists = title:k_italy.holder }
-# 		NOT = { has_global_variable = LombardLeague}  
-# 		exists = title:e_hre.holder
-# 		OR = {
-# 		    has_title = title:c_lombardia
-# 		    has_title = title:c_brescia
-# 		    has_title = title:c_como
-# 		    has_title = title:c_pavia
-# 		    has_title = title:c_cremona
-# 		    has_title = title:c_parma
-# 		    has_title = title:c_piacenza
-# 		    has_title = title:c_genoa
-# 		    has_title = title:c_modena
-# 		    has_title = title:c_reggio_emilia
-# 		    has_title = title:c_canavese
-# 		    has_title = title:c_mantua
-# 		    has_title = title:c_venezia
-# 		    has_title = title:c_treviso
-# 		    has_title = title:c_verona
-# 		    has_title = title:c_padova
-# 		}
-# 		OR = {
-# 		    has_trait = ambitious
-# 			has_trait = zealous
-# 			has_trait = KOH_guelph
-# 		    faith = {
-# 				religious_head = { reverse_opinion = { target = ROOT value = 50 } }
-# 			}
-# 		}
-# 		has_culture = culture:italian
-# 		has_religion = religion:christianity_religion
+	trigger = {		
+		highest_held_title_tier = tier_duchy
+		NOT = { exists = title:k_italy.holder }
+		NOT = { has_global_variable = LombardLeague}  
+		exists = title:e_hre.holder
+		OR = {
+		    has_title = title:c_lombardia
+		    has_title = title:c_brescia
+		    has_title = title:c_como
+		    has_title = title:c_pavia
+		    has_title = title:c_cremona
+		    has_title = title:c_parma
+		    has_title = title:c_piacenza
+		    has_title = title:c_genoa
+		    has_title = title:c_modena
+		    has_title = title:c_reggio_emilia
+		    has_title = title:c_canavese
+		    has_title = title:c_mantua
+		    has_title = title:c_venezia
+		    has_title = title:c_treviso
+		    has_title = title:c_verona
+		    has_title = title:c_padova
+		}
+		OR = {
+		    has_trait = ambitious
+			has_trait = zealous
+			has_trait = KOH_guelph
+		    faith = {
+				religious_head = { reverse_opinion = { target = ROOT value = 50 } }
+			}
+		}
+		has_culture = culture:italian
+		has_religion = religion:christianity_religion
 
-# 		liege = {
-# 		    has_title = title:e_hre
-# 			primary_title = {
-# 				OR = {
-# 					has_realm_law = crown_authority_2
-# 					has_realm_law = crown_authority_3
-# 					has_realm_law = crown_authority_4
-# 				}
-# 			}
-# 			NOT = {
-# 			    any_character_war = {
-# 					primary_defender = title:e_hre.holder
-# 					using_cb = liberty_faction_war
-# 				}
-# 			}
-# 		}
-# 	}
+		liege = {
+		    has_title = title:e_hre
+			primary_title = {
+				OR = {
+					has_realm_law = crown_authority_2
+					has_realm_law = crown_authority_3
+					has_realm_law = crown_authority_4
+				}
+			}
+			NOT = {
+			    any_character_war = {
+					primary_defender = title:e_hre.holder
+					using_cb = liberty_faction_war
+				}
+			}
+		}
+	}
 
-# 	immediate = {
-# 		set_global_variable = {
-# 			name = LombardLeague
-# 			value = yes
-# 		}
+	immediate = {
+		set_global_variable = {
+			name = LombardLeague
+			value = yes
+		}
 
-# 		ROOT = { save_scope_as = ruler }
-# 	}
+		ROOT = { save_scope_as = ruler }
+	}
 
-# 	option = { 
-# 		name = KOH_guelphs_ghibellines.1.a
+	option = { 
+		name = KOH_guelphs_ghibellines.1.a
 
-# 		add_prestige = 200
-# 		add_piety = 100
-# 		hidden_effect = {
-# 			create_dynamic_title = {
-# 				tier = empire
-# 				name = "Lombard League"
-# 			}
-# 			create_title_and_vassal_change = {
-# 				type = conquest
-# 				save_scope_as = change
-# 				add_claim_on_loss = no
-# 			}
-# 			scope:new_title = {
-# 				set_capital_county = root.location
-# 				generate_coa = yes
-# 				set_landless_title = yes
-# 				set_destroy_on_succession = yes
-# 				set_delete_on_destroy = yes
-# 				set_no_automatic_claims = yes
-# 				set_definitive_form = yes
-# 				set_can_be_named_after_dynasty = no
-# 				change_title_holder = {
-# 					holder = root
-# 					change = scope:change
-# 				}
-# 			}
+		add_prestige = 200
+		add_piety = 100
+		hidden_effect = {
+			create_dynamic_title = {
+				tier = empire
+				name = "Lombard League"
+			}
+			create_title_and_vassal_change = {
+				type = conquest
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			scope:new_title = {
+				set_capital_county = root.location
+				generate_coa = yes
+				set_landless_title = yes
+				set_destroy_on_succession = yes
+				set_delete_on_destroy = yes
+				set_no_automatic_claims = yes
+				set_definitive_form = yes
+				set_can_be_named_after_dynasty = no
+				change_title_holder = {
+					holder = root
+					change = scope:change
+				}
+			}
 
-# 			scope:new_title.holder = { save_scope_as = ruler } 
+			scope:new_title.holder = { save_scope_as = ruler } 
 
-# 			resolve_title_and_vassal_change = scope:change
-
-
+			resolve_title_and_vassal_change = scope:change
 
 
-# 			title:e_hre.holder = {
-# 				trigger_event = {
-# 					id = KOH_guelphs_ghibellines.2
-# 					days = 1
-# 				}
-# 			}
+
+
+			title:e_hre.holder = {
+				trigger_event = {
+					id = KOH_guelphs_ghibellines.2
+					days = 1
+				}
+			}
 			
-# 			every_ruler = {
-# 				limit = {
-# 					has_culture_group = culture_group:latin_group
-# 					NOT = {
-# 						has_trait = KOH_ghibelline
-# 						this = root
-# 						liege = {
-# 							highest_held_title_tier <= tier_duchy
-# 						}
-# 					}
-# 					OR = {
-# 						has_trait = KOH_guelph
-# 						has_title = title:c_lombardia
-# 						has_title = title:c_brescia
-# 						has_title = title:c_como
-# 						has_title = title:c_pavia
-# 						has_title = title:c_cremona
-# 						has_title = title:c_parma
-# 						has_title = title:c_piacenza
-# 						has_title = title:c_genoa
-# 						has_title = title:c_modena
-# 						has_title = title:c_reggio_emilia
-# 						has_title = title:c_canavese
-# 						has_title = title:c_mantua
-# 						has_title = title:c_venezia
-# 						has_title = title:c_treviso
-# 						has_title = title:c_verona
-# 						has_title = title:c_padova
-# 					}
-# 				}
-# 				trigger_event = {
-# 					id = KOH_guelphs_ghibellines.3
-# 					days = {5 15}
-# 				}
-# 			}
-# 		}
+			every_ruler = {
+				limit = {
+					has_culture_group = culture_group:latin_group
+					NOT = {
+						has_trait = KOH_ghibelline
+						this = root
+						liege = {
+							highest_held_title_tier <= tier_duchy
+						}
+					}
+					OR = {
+						has_trait = KOH_guelph
+						has_title = title:c_lombardia
+						has_title = title:c_brescia
+						has_title = title:c_como
+						has_title = title:c_pavia
+						has_title = title:c_cremona
+						has_title = title:c_parma
+						has_title = title:c_piacenza
+						has_title = title:c_genoa
+						has_title = title:c_modena
+						has_title = title:c_reggio_emilia
+						has_title = title:c_canavese
+						has_title = title:c_mantua
+						has_title = title:c_venezia
+						has_title = title:c_treviso
+						has_title = title:c_verona
+						has_title = title:c_padova
+					}
+				}
+				trigger_event = {
+					id = KOH_guelphs_ghibellines.3
+					days = {5 15}
+				}
+			}
+		}
 		
-# 		ai_chance = {
-# 			base = 10
-# 			ai_value_modifier = {
-# 				ai_energy = 1.0
-# 			}
+		ai_chance = {
+			base = 10
+			ai_value_modifier = {
+				ai_energy = 1.0
+			}
 
-# 			modifier = {
-# 				add = 100
-# 				stewardship >= 12
-# 			}
-# 		}		
-# 	}
-# 	option = { 
-# 		name = KOH_guelphs_ghibellines.1.b
+			modifier = {
+				add = 100
+				stewardship >= 12
+			}
+		}		
+	}
+	option = { 
+		name = KOH_guelphs_ghibellines.1.b
 		
-# 	}
-# }
+	}
+}
 
-# KOH_guelphs_ghibellines.2 = { #HRE Reacts
-# 	title = KOH_guelphs_ghibellines.2.t
-# 	desc = KOH_guelphs_ghibellines.2.desc
-# 	theme = unfriendly
-# 	left_portrait = {
-# 		character = this
-# 	}
+KOH_guelphs_ghibellines.2 = { #HRE Reacts
+	title = KOH_guelphs_ghibellines.2.t
+	desc = KOH_guelphs_ghibellines.2.desc
+	theme = unfriendly
+	left_portrait = {
+		character = this
+	}
 
-# 	option = { 
-# 		name = KOH_guelphs_ghibellines.2.a
+	option = { 
+		name = KOH_guelphs_ghibellines.2.a
 		
-# 		start_war = {
+		start_war = {
 
-# 		}
+		}
 
-# 		ai_chance = {
-# 			base = 100
-# 		}
-# 	}
-# 	option = { 
-# 		name = KOH_guelphs_ghibellines.2.b
-# 	}
-# }
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = { 
+		name = KOH_guelphs_ghibellines.2.b
+	}
+}
 
-# KOH_guelphs_ghibellines.3 = { #Join?
-# 	title = KOH_guelphs_ghibellines.3.t
-# 	desc = KOH_guelphs_ghibellines.3.desc
-# 	theme = unfriendly
-# 	left_portrait = {
-# 		character = this
-# 	}
+KOH_guelphs_ghibellines.3 = { #Join?
+	title = KOH_guelphs_ghibellines.3.t
+	desc = KOH_guelphs_ghibellines.3.desc
+	theme = unfriendly
+	left_portrait = {
+		character = this
+	}
 
-# 	option = { 
-# 		name = KOH_guelphs_ghibellines.3.a
+	option = { 
+		name = KOH_guelphs_ghibellines.3.a
 		
 
-# 		create_title_and_vassal_change = {
-# 			type = swear_fealty  #or whatever
-# 			save_scope_as = change
-# 		}
+		create_title_and_vassal_change = {
+			type = swear_fealty  #or whatever
+			save_scope_as = change
+		}
 		
-# 		change_liege = {
-# 			liege = scope:ruler
-# 			change = scope:change
-# 		}
-# 		resolve_title_and_vassal_change = scope:change
+		change_liege = {
+			liege = scope:ruler
+			change = scope:change
+		}
+		resolve_title_and_vassal_change = scope:change
 
-# 		scope:ruler = {
-# 			send_interface_message = {
-# 				type = event_steward_task_good
-# 				title = "New League Member"
-# 				desc = "[ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] joins the League"
-# 				left_icon = root.primary_title
-# 				right_icon = root
-# 			}
-# 		}
+		scope:ruler = {
+			send_interface_message = {
+				type = event_steward_task_good
+				title = "New League Member"
+				desc = "[ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] joins the League"
+				left_icon = root.primary_title
+				right_icon = root
+			}
+		}
 
-# 		title:e_hre.holder = {
-# 			send_interface_message = {
-# 				type = event_generic_bad_text
-# 				title = "New Lombard League Member"
-# 				desc = "[ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] joins the Lombard League"
-# 				left_icon = root
-# 				right_icon = root.primary_title
-# 			}
-# 		}
+		title:e_hre.holder = {
+			send_interface_message = {
+				type = event_generic_bad_text
+				title = "New Lombard League Member"
+				desc = "[ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] joins the Lombard League"
+				left_icon = root
+				right_icon = root.primary_title
+			}
+		}
 
-# 		ai_chance = {
-# 			base = 0.15
-# 			ai_value_modifier = {
-# 				ai_energy = 1.0
-# 			}
-# 			modifier = {
-# 				add = 0.75
-# 				has_trait = cynical
-# 			}
-# 			modifier = {
-# 				add = 10
-# 				has_trait = KOH_guelph
-# 			}
+		ai_chance = {
+			base = 0.15
+			ai_value_modifier = {
+				ai_energy = 1.0
+			}
+			modifier = {
+				add = 0.75
+				has_trait = cynical
+			}
+			modifier = {
+				add = 10
+				has_trait = KOH_guelph
+			}
 
-# 			modifier = {
-# 				add = -20
-# 				has_trait = KOH_ghibelline
-# 			}
+			modifier = {
+				add = -20
+				has_trait = KOH_ghibelline
+			}
 
-# 			modifier = {
-# 				add = 2
-# 				has_trait = ambitious
-# 			}
-# 			modifier = {
-# 				add = 0.25
-# 				has_trait = craven
-# 			}
-# 			modifier = {
-# 				add = 0.25
-# 				piety >= 275
-# 			}
-# 			modifier = {
-# 				add = 5
-# 				faith = {
-# 					religious_head = { reverse_opinion = { target = ROOT value = 100 } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 4
-# 				faith = {
-# 					religious_head = { reverse_opinion = { target = ROOT value = 75 } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 3
-# 				faith = {
-# 					religious_head = { reverse_opinion = { target = ROOT value = 50 } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 1.5
-# 				faith = {
-# 					religious_head = { reverse_opinion = { target = ROOT value = 25 } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 1.5
-# 				faith = {
-# 					religious_head = { reverse_opinion = { target = ROOT value = 0 } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 0.35
-# 				faith = {
-# 					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -25 } } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 0.35
-# 				faith = {
-# 					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -50 } } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 0.35
-# 				faith = {
-# 					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -75 } } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 0.35
-# 				faith = {
-# 					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -99 } } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 2
-# 				has_trait = trait_education_learning_4
-# 			}
-# 			modifier = {
-# 			    add = 0.25
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 75
-# 				    }
-# 			    }
-# 		    }
-# 			modifier = {
-# 			    add = 0.25
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 99
-# 				    }
-# 			    }
-# 		    }
-# 			modifier = {
-# 			    add = 5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = -25
-# 				    }
-# 			    }
-# 		    }
+			modifier = {
+				add = 2
+				has_trait = ambitious
+			}
+			modifier = {
+				add = 0.25
+				has_trait = craven
+			}
+			modifier = {
+				add = 0.25
+				piety >= 275
+			}
+			modifier = {
+				add = 5
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 100 } }
+				}
+			}
+			modifier = {
+				add = 4
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 75 } }
+				}
+			}
+			modifier = {
+				add = 3
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 50 } }
+				}
+			}
+			modifier = {
+				add = 1.5
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 25 } }
+				}
+			}
+			modifier = {
+				add = 1.5
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 0 } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -25 } } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -50 } } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -75 } } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -99 } } }
+				}
+			}
+			modifier = {
+				add = 2
+				has_trait = trait_education_learning_4
+			}
+			modifier = {
+			    add = 0.25
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 75
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 0.25
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 99
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = -25
+				    }
+			    }
+		    }
 
-# 			modifier = {
-# 			    add = 5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = -50
-# 				    }
-# 			    }
-# 		    }
-# 			modifier = {
-# 			    add = 5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = -75
-# 				    }
-# 			    }	
-# 			}
-# 			modifier = {
-# 			    add = 5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = -99
-# 				    }
-# 			    }
-# 		    }
-# 		}	
-# 	}
-# 	option = { 
-# 		name = KOH_guelphs_ghibellines.3.b
-# 		add_piety = -25
-# 		add_prestige = -50
+			modifier = {
+			    add = 5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = -50
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = -75
+				    }
+			    }	
+			}
+			modifier = {
+			    add = 5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = -99
+				    }
+			    }
+		    }
+		}	
+	}
+	option = { 
+		name = KOH_guelphs_ghibellines.3.b
+		add_piety = -25
+		add_prestige = -50
 
-# 		ai_chance = {
-# 			base = 0.25
-# 			modifier = {
-# 				add = 2.35
-# 				has_trait = cynical
-# 			}
-# 			modifier = {
-# 				add = -20
-# 				has_trait = KOH_guelph
-# 			}
+		ai_chance = {
+			base = 0.25
+			modifier = {
+				add = 2.35
+				has_trait = cynical
+			}
+			modifier = {
+				add = -20
+				has_trait = KOH_guelph
+			}
 
-# 			modifier = {
-# 				add = 15
-# 				has_trait = KOH_ghibelline
-# 			}
-# 			modifier = {
-# 				add = 0.5
-# 				has_trait = ambitious
-# 			}
-# 			modifier = {
-# 				add = 3.25
-# 				has_trait = craven
-# 			}
-# 			modifier = {
-# 				add = -3.25
-# 				has_trait = zealous
-# 			}
-# 			modifier = {
-# 				add = 0.5
-# 				piety >= 275
-# 			}
-# 			modifier = {
-# 				add = 0.35
-# 				faith = {
-# 					religious_head = { reverse_opinion = { target = ROOT value = 100 } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 0.35
-# 				faith = {
-# 					religious_head = { reverse_opinion = { target = ROOT value = 75 } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 0.35
-# 				faith = {
-# 					religious_head = { reverse_opinion = { target = ROOT value = 50 } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 0.5
-# 				faith = {
-# 					religious_head = { reverse_opinion = { target = ROOT value = 25 } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 0.5
-# 				faith = {
-# 					religious_head = { reverse_opinion = { target = ROOT value = 0 } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 2.35
-# 				faith = {
-# 					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -25 } } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 2.35
-# 				faith = {
-# 					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -50 } } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 2.35
-# 				faith = {
-# 					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -75 } } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 2.35
-# 				faith = {
-# 					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -99 } } }
-# 				}
-# 			}
-# 			modifier = {
-# 				add = 0.35
-# 				has_trait = trait_education_learning_4
-# 			}
-# 			modifier = {
-# 			    add = 0.25
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 75
-# 				    }
-# 			    }
-# 		    }
-# 			modifier = {
-# 			    add = 1.5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 0
-# 				    }
-# 			    }
-# 		    }
-# 			modifier = {
-# 			    add = 1.5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 10
-# 				    }
-# 			    }
-# 		    }
+			modifier = {
+				add = 15
+				has_trait = KOH_ghibelline
+			}
+			modifier = {
+				add = 0.5
+				has_trait = ambitious
+			}
+			modifier = {
+				add = 3.25
+				has_trait = craven
+			}
+			modifier = {
+				add = -3.25
+				has_trait = zealous
+			}
+			modifier = {
+				add = 0.5
+				piety >= 275
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 100 } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 75 } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 50 } }
+				}
+			}
+			modifier = {
+				add = 0.5
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 25 } }
+				}
+			}
+			modifier = {
+				add = 0.5
+				faith = {
+					religious_head = { reverse_opinion = { target = ROOT value = 0 } }
+				}
+			}
+			modifier = {
+				add = 2.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -25 } } }
+				}
+			}
+			modifier = {
+				add = 2.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -50 } } }
+				}
+			}
+			modifier = {
+				add = 2.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -75 } } }
+				}
+			}
+			modifier = {
+				add = 2.35
+				faith = {
+					religious_head = { NOT = { reverse_opinion = { target = ROOT value = -99 } } }
+				}
+			}
+			modifier = {
+				add = 0.35
+				has_trait = trait_education_learning_4
+			}
+			modifier = {
+			    add = 0.25
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 75
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 0
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 10
+				    }
+			    }
+		    }
 
-# 			modifier = {
-# 			    add = 1.5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 20
-# 				    }
-# 			    }
-# 		    }
-# 			modifier = {
-# 			    add = 1.5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 30
-# 				    }
-# 			    }
-# 		    }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 20
+				    }
+			    }
+		    }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 30
+				    }
+			    }
+		    }
 
-# 			modifier = {
-# 			    add = 1.5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 40
-# 				    }
-# 			    }
-# 		    }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 40
+				    }
+			    }
+		    }
 
-# 			modifier = {
-# 			    add = 1.5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 50
-# 				    }
-# 			    }
-# 		    }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 50
+				    }
+			    }
+		    }
 
-# 			modifier = {
-# 			    add = 1.5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 60
-# 				    }
-# 			    }
-# 		    }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 60
+				    }
+			    }
+		    }
 
-# 			modifier = {
-# 			    add = 1.5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 70
-# 				    }
-# 			    }
-# 		    }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 70
+				    }
+			    }
+		    }
 
-# 			modifier = {
-# 			    add = 1.5
-# 			    liege = {
-# 			        reverse_opinion = {
-# 			            target = ROOT
-# 			            value = 80
-# 				    }
-# 			    }
-# 		    }
-# 		}
-# 	}
-# }
+			modifier = {
+			    add = 1.5
+			    liege = {
+			        reverse_opinion = {
+			            target = ROOT
+			            value = 80
+				    }
+			    }
+		    }
+		}
+	}
+}
 
-# KOH_guelphs_ghibellines.4 = { #war?
-# 	title = KOH_guelphs_ghibellines.4.t
-# 	desc = KOH_guelphs_ghibellines.4.desc
-# 	theme = unfriendly
-# 	left_portrait = {
-# 		character = this
-# 	}
+KOH_guelphs_ghibellines.4 = { #war?
+	title = KOH_guelphs_ghibellines.4.t
+	desc = KOH_guelphs_ghibellines.4.desc
+	theme = unfriendly
+	left_portrait = {
+		character = this
+	}
 
-# 	option = { 
-# 		name = KOH_guelphs_ghibellines.4.a
+	option = { 
+		name = KOH_guelphs_ghibellines.4.a
 		
 
 	
-# 	}
-# 	option = { 
-# 		name = KOH_guelphs_ghibellines.4.b
-# 	}
-# }
+	}
+	option = { 
+		name = KOH_guelphs_ghibellines.4.b
+	}
+}

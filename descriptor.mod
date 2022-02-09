@@ -1,7 +1,7 @@
-version="1.5.0.1"
+version="1.4.*"
 tags={
 	"Historical"
 	"Bookmarks"
 }
-name="The Kingdom of Heaven Developer"
-supported_version="1.5.0.1"
+name="The Kingdom of Heaven"
+supported_version="1.4.4"

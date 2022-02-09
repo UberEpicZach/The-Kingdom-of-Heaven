@@ -1641,8 +1641,8 @@
 	mother = 1029 #Ragnhild erv Olav
 	1055.1.1 = {
 		birth = "1055.1.1"
-		add_pressed_claim = title:d_gwynedd
-		add_pressed_claim = title:c_dublin
+		add_pressed_claim = d_gwynedd
+		add_pressed_claim = c_dublin
 	}
 	1095.1.1 = {
 		add_spouse = 214814 #Angharad ferch Owain
@@ -2013,7 +2013,7 @@
 
 	820.1.1 = {
 		birth = "820.1.1"
-		remove_claim = title:d_the_isles
+		remove_claim = d_the_isles
 		give_nickname = "nick_the_great"
 		capital = c_anglesey
 	}
@@ -2048,8 +2048,8 @@
 	father = 40502
 	mother = 123
 	1053.1.2 = {
-		add_pressed_claim = title:d_gwynedd
-		add_pressed_claim = title:d_powys
+		add_pressed_claim = d_gwynedd
+		add_pressed_claim = d_powys
 		birth = "1053.1.2"
 	}
 	1066.1.1 = {
@@ -2073,8 +2073,8 @@
 	father = 40502
 	mother = 123
 	1054.1.2 = {
-		add_pressed_claim = title:d_gwynedd
-		add_pressed_claim = title:d_powys
+		add_pressed_claim = d_gwynedd
+		add_pressed_claim = d_powys
 		birth = "1054.1.2"
 	}
 	1063.1.2 = {
@@ -2825,10 +2825,10 @@
 		birth = "920.1.1"
 	}
 	942.1.1 = {
-		add_pressed_claim = title:c_gwynedd
+		add_pressed_claim = c_gwynedd
 	}
 	950.1.1 = {
-		remove_claim = title:c_gwynedd
+		remove_claim = c_gwynedd
 	}	
 	979.1.1 = {
 		death = "979.1.1"
@@ -2903,7 +2903,7 @@
 	father = 138472 #Gruffydd ap Iago
 	1033.1.1 = {
 		birth = "1033.1.1"
-		add_pressed_claim = title:d_gwynedd
+		add_pressed_claim = d_gwynedd
 	}
 	1074.1.1 = {
 		death = "1074.1.1"
@@ -2920,7 +2920,7 @@
 		birth = "1050.1.1"
 	}
 	1074.1.1 = {
-		add_pressed_claim = title:d_gwynedd
+		add_pressed_claim = d_gwynedd
 	}
 	1081.1.1 = {
 		death = "1081.1.1"
@@ -3467,9 +3467,9 @@
 	819.1.2 = {
 		add_spouse = 159088
 	}
-	820.1.1 = {
-		give_nickname = nick_the_oppressor	#Technically, the translation is "Oppression", not "the Oppressor", which is a fair bit grimmer. Alternately known as "the Freckled", so swings and roundabouts, really.
-	}
+	#820.1.1 = {
+	#	give_nickname = nick_the_oppressor	#Technically, the translation is "Oppression", not "the Oppressor", which is a fair bit grimmer. Alternately known as "the Freckled", so swings and roundabouts, really.
+	#}
 	844.1.1 = {
 		death = "844.1.1"
 	}
@@ -4187,7 +4187,7 @@
 	father = 159087
 	790.1.1 = {
 		birth = "790.1.1"
-		add_pressed_claim = title:c_powys
+		add_pressed_claim = c_powys
 	}
 	878.1.1 = {
 		death = "878.1.1"
@@ -4201,7 +4201,7 @@
 	father = 159091
 	820.1.1 = {
 		birth = "820.1.1"
-		add_pressed_claim = title:c_powys
+		add_pressed_claim = c_powys
 	}
 	900.1.1 = {
 		death = "900.1.1"
@@ -4215,7 +4215,7 @@
 	father = 159092
 	850.1.1 = {
 		birth = "850.1.1"
-		add_pressed_claim = title:c_powys
+		add_pressed_claim = c_powys
 	}
 	930.1.1 = {
 		death = "930.1.1"
@@ -5493,7 +5493,7 @@
 	father = 159365
 	810.1.1 = {
 		birth = "810.1.1"
-		add_pressed_claim = title:c_gwent
+		add_pressed_claim = c_gwent
 	}
 	885.1.1 = {
 		death = "885.1.1"
@@ -5507,7 +5507,7 @@
 	father = 159366
 	850.1.1 = {
 		birth = "850.1.1"
-		add_pressed_claim = title:c_gwent
+		add_pressed_claim = c_gwent
 	}
 	920.1.1 = {
 		death = "920.1.1"
@@ -5907,7 +5907,7 @@
 	560.1.1 = {
 		death = "560.1.1"
 		give_nickname = nick_the_saint
-		dynasty_house = house_british_isles_dyfnaint #Devnent
+		dynasty = 1029041 #Devnent
 	}
 }
 159443 = {
@@ -5922,7 +5922,7 @@
 	577.1.1 = {
 		name = "Gereint"
 		culture = "breton"
-		dynasty_house = house_british_isles_dyfnaint #Devnent
+		dynasty = 1029041 #Devnent
 	}
 	598.1.1 = {
 		death = "598.1.1"
@@ -5940,7 +5940,7 @@
 	577.1.1 = {
 		name = "Bledric"
 		culture = "breton"
-		dynasty_house = house_british_isles_dyfnaint #Devnent
+		dynasty = 1029041 #Devnent
 	}
 	613.1.1 = {
 		death = "613.1.1"
@@ -5960,7 +5960,7 @@
 	577.1.1 = {
 		name = "Neulenna"
 		culture = "breton"
-		dynasty_house = house_british_isles_dyfnaint #Devnent
+		dynasty = 1029041 #Devnent
 	}
 	590.1.1 = {
 		death = "590.1.1"
@@ -5978,7 +5978,7 @@
 	577.1.1 = {
 		name = "Domuel"
 		culture = "breton"
-		dynasty_house = house_british_isles_dyfnaint #Devnent
+		dynasty = 1029041 #Devnent
 	}
 	605.1.1 = {
 		death = "605.1.1"
@@ -8436,7 +8436,7 @@
 	father = 159366
 	848.1.1 = {
 		birth = yes
-		add_pressed_claim = title:c_gwent
+		add_pressed_claim = c_gwent
 	}
 	910.1.1={
 		death = yes

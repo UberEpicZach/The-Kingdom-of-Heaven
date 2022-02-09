@@ -1,0 +1,19 @@
+pdxmesh = {
+	name = "imperial_city_mesh"
+	file = "imperial_city.mesh"
+
+	meshsettings = {
+		name = "imperial_cityShape"
+		index = 0
+		texture_diffuse = "imperial_city_diffuse.dds"
+		texture_normal = "prophet_shield_normal.dds"
+		
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "imperial_city_entity"
+	pdxmesh = "imperial_city_mesh"
+}

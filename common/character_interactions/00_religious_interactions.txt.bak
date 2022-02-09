@@ -124,12 +124,7 @@ ask_for_conversion_courtier_interaction = {
 		if = {
 			limit = { scope:hook = yes }
 			scope:actor = {
-				if = {
-					limit = {
-						has_usable_hook = scope:recipient
-					}
-					use_hook = scope:recipient
-				}
+				use_hook = scope:recipient
 			}
 			scope:recipient = {
 				trigger_event = char_interaction.0180
@@ -181,94 +176,6 @@ ask_for_conversion_courtier_interaction = {
 		modifier = { # The AI will only use a Hook if they couldn't otherwise do this
 			scope:hook = yes
 			add = -1
-		}
-		
-		modifier = { # The AI doesn't really want to convert Diasporic culture courtiers
-			scope:recipient = {
-				faith.religion = religion:judaism_religion
-				culture = {
-					has_cultural_tradition = tradition_diasporic
-				}
-			}
-			factor = 0
-		}
-
-		modifier = { # Do not convert Righteous faith subjects, unless disturbingly zealous
-			factor = 0
-			scope:actor = {
-				ai_zeal < 100
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_fully_accepted_level
-					}
-				}
-			}
-			NOT = {
-				scope:recipient = {
-					is_close_family_of = scope:actor
-				}
-			}
-		}
-
-		modifier = { # Astray faiths require specific circumstances to demand conversion of
-			factor = 0
-			scope:actor = {
-				has_tolerant_faith_or_culture_trigger = yes
-				ai_zeal < 50
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_astray_level
-					}
-				}
-			}
-			NOT = {
-				scope:recipient = {
-					is_close_family_of = scope:actor
-				}
-			}
-		}
-
-		modifier = { # Astray faiths require specific circumstances to demand conversion of
-			factor = 0
-			scope:actor = {
-				faith = { has_doctrine = doctrine_pluralism_fundamentalist }
-				ai_zeal < -10
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_astray_level
-					}
-				}
-			}
-			NOT = {
-				scope:recipient = {
-					is_close_family_of = scope:actor
-				}
-			}
-		}
-
-		modifier = { # Astray faiths require specific circumstances to demand conversion of
-			factor = 0
-			scope:actor = {
-				NOR = {
-					faith = { has_doctrine = doctrine_pluralism_fundamentalist }
-					has_tolerant_faith_or_culture_trigger = yes
-				}
-				ai_zeal < 0
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_astray_level
-					}
-				}
-			}
-			NOT = {
-				scope:recipient = {
-					is_close_family_of = scope:actor
-				}
-			}
 		}
 	}
 }
@@ -494,12 +401,15 @@ demand_conversion_vassal_ruler_interaction = {
 	}
 
 	auto_accept = {
-		custom_description = {
-			text = "spending_hook"
-			subject = scope:actor
-			object = scope:recipient
-			scope:hook = yes
-			scope:actor = { has_strong_hook = scope:recipient }
+		OR = {
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			custom_description = {
+				text = "spending_hook"
+				subject = scope:actor
+				object = scope:recipient
+				scope:hook = yes
+				scope:actor = { has_strong_hook = scope:recipient }
+			}
 		}
 	}
 
@@ -675,133 +585,6 @@ demand_conversion_vassal_ruler_interaction = {
 				gold < demand_conversion_bribe_size
 			}
 		}
-
-		modifier = {
-			factor = 0
-			scope:recipient.demand_conversion_likelihood_calculation < 90
-			scope:actor = {
-				culture = {
-					has_cultural_parameter = less_likely_to_force_conversion
-				}
-			}
-		}
-
-		modifier = { # Do not convert Righteous faith subjects, unless disturbingly zealous
-			factor = 0
-			scope:actor = {
-				ai_zeal < 100
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_fully_accepted_level
-					}
-				}
-			}
-			NOT = { # If the subject has one of your holy sites, always try to convert
-				scope:recipient = {
-					any_sub_realm_county = {
-						any_county_province = {
-							barony = {
-								is_holy_site_of = scope:actor.faith
-							}
-						}
-					}
-				}
-			}
-			NOT = {
-				scope:recipient = {
-					is_close_family_of = scope:actor
-				}
-			}
-		}
-
-		modifier = { # Astray faiths require specific circumstances to demand conversion of
-			factor = 0
-			scope:actor = {
-				has_tolerant_faith_or_culture_trigger = yes
-				ai_zeal < 50
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_astray_level
-					}
-				}
-			}
-			NOT = { # If the subject has one of your holy sites, always try to convert
-				scope:recipient = {
-					any_sub_realm_county = {
-						any_county_province = {
-							barony = {
-								is_holy_site_of = scope:actor.faith
-							}
-						}
-					}
-				}
-			}
-			NOT = {
-				scope:recipient = {
-					is_close_family_of = scope:actor
-				}
-			}
-		}
-
-		modifier = { # Astray faiths require specific circumstances to demand conversion of
-			factor = 0
-			scope:actor = {
-				faith = { has_doctrine = doctrine_pluralism_fundamentalist }
-				ai_zeal < -10
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_astray_level
-					}
-				}
-			}
-			NOT = { # If the subject has one of your holy sites, always try to convert
-				scope:recipient = {
-					any_sub_realm_county = {
-						any_county_province = {
-							barony = {
-								is_holy_site_of = scope:actor.faith
-							}
-						}
-					}
-				}
-			}
-			NOT = {
-				scope:recipient = {
-					is_close_family_of = scope:actor
-				}
-			}
-		}
-
-		modifier = { # Astray faiths require specific circumstances to demand conversion of
-			factor = 0
-			scope:actor = {
-				NOR = {
-					faith = { has_doctrine = doctrine_pluralism_fundamentalist }
-					has_tolerant_faith_or_culture_trigger = yes
-				}
-				ai_zeal < 0
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_astray_level
-					}
-				}
-			}
-			NOT = { # If the subject has one of your holy sites, always try to convert
-				scope:recipient = {
-					any_sub_realm_county = {
-						any_county_province = {
-							barony = {
-								is_holy_site_of = scope:actor.faith
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 	ai_accept = {
 		base = 0
@@ -928,128 +711,6 @@ demand_conversion_player_ruler_interaction = {
 		modifier = {
 			factor = 0
 			scope:recipient.demand_conversion_likelihood_calculation < 10
-		}
-		
-		modifier = { # Do not convert Righteous faith subjects, unless disturbingly zealous
-			factor = 0
-			scope:actor = {
-				ai_zeal < 100
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_fully_accepted_level
-					}
-				}
-			}
-			NOT = { # If the subject has one of your holy sites, always try to convert
-				scope:recipient = {
-					any_sub_realm_county = {
-						any_county_province = {
-							barony = {
-								is_holy_site_of = scope:actor.faith
-							}
-						}
-					}
-				}
-			}
-			NOT = {
-				scope:recipient = {
-					is_close_family_of = scope:actor
-				}
-			}
-		}
-
-		modifier = { # Astray faiths require specific circumstances to demand conversion of
-			factor = 0
-			scope:actor = {
-				has_tolerant_faith_or_culture_trigger = yes
-				ai_zeal < 50
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_astray_level
-					}
-				}
-			}
-			NOT = { # If the subject has one of your holy sites, always try to convert
-				scope:recipient = {
-					any_sub_realm_county = {
-						any_county_province = {
-							barony = {
-								is_holy_site_of = scope:actor.faith
-							}
-						}
-					}
-				}
-			}
-			NOT = {
-				scope:recipient = {
-					is_close_family_of = scope:actor
-				}
-			}
-		}
-
-		modifier = { # Astray faiths require specific circumstances to demand conversion of
-			factor = 0
-			scope:actor = {
-				faith = { has_doctrine = doctrine_pluralism_fundamentalist }
-				ai_zeal < -10
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_astray_level
-					}
-				}
-			}
-			NOT = { # If the subject has one of your holy sites, always try to convert
-				scope:recipient = {
-					any_sub_realm_county = {
-						any_county_province = {
-							barony = {
-								is_holy_site_of = scope:actor.faith
-							}
-						}
-					}
-				}
-			}
-			NOT = {
-				scope:recipient = {
-					is_close_family_of = scope:actor
-				}
-			}
-		}
-
-		modifier = { # Astray faiths require specific circumstances to demand conversion of
-			factor = 0
-			scope:actor = {
-				NOR = {
-					faith = { has_doctrine = doctrine_pluralism_fundamentalist }
-					has_tolerant_faith_or_culture_trigger = yes
-				}
-				ai_zeal < 0
-				faith = {
-					faith_hostility_level = {
-						target = scope:recipient.faith
-						value <= faith_astray_level
-					}
-				}
-			}
-			NOT = { # If the subject has one of your holy sites, always try to convert
-				scope:recipient = {
-					any_sub_realm_county = {
-						any_county_province = {
-							barony = {
-								is_holy_site_of = scope:actor.faith
-							}
-						}
-					}
-				}
-			}
-			NOT = {
-				scope:recipient = {
-					is_close_family_of = scope:actor
-				}
-			}
 		}
 	}
 }
@@ -1420,16 +1081,6 @@ seek_indulgences_interaction = {
 			who = scope:recipient
 			multiplier = 1
 		}
-		
-		modifier = { # Same language
-			add = 5
-			desc = speaks_same_language_interaction_reason
-			trigger = {
-				scope:actor = {
-					knows_language_of_culture = scope:recipient.culture
-				}
-			}
-		}
 	}
 	
 	ai_min_reply_days = 1
@@ -1580,15 +1231,6 @@ declaration_of_repentance_interaction = {
 			opinion_target = scope:actor
 			who = scope:recipient
 			multiplier = 1
-		}
-		modifier = { # Same language
-			add = 5
-			desc = speaks_same_language_interaction_reason
-			trigger = {
-				scope:actor = {
-					knows_language_of_culture = scope:recipient.culture
-				}
-			}
 		}
 		modifier = {
 			add = {
@@ -2069,45 +1711,40 @@ request_excommunication_interaction = {
 
 	on_accept = {
 		if = {
-			limit = {
-				scope:secondary_recipient = { is_alive = yes }
-			}
-			if = {
-				limit = { scope:excommunication_hook = yes }
-				scope:actor = {
-					use_hook = scope:recipient
-				}
-			}
-
+			limit = { scope:excommunication_hook = yes }
 			scope:actor = {
-				#Spend piety for the excommunication.
-				add_piety = massive_piety_loss
+				use_hook = scope:recipient
+			}
+		}
 
-				#Letter event to inform character the pope agreed to their request.
-				trigger_event = {
-					id = religious_interaction.1022
-				}
+		scope:actor = {
+			#Spend piety for the excommunication.
+			add_piety = massive_piety_loss
+
+			#Letter event to inform character the pope agreed to their request.
+			trigger_event = {
+				id = religious_interaction.1022
 			}
-			excommunicate_character = {
-				TARGET_CHARACTER = scope:secondary_recipient
-				REQUESTING_CHARACTER = scope:actor
+		}
+		excommunicate_character = {
+			TARGET_CHARACTER = scope:secondary_recipient
+			REQUESTING_CHARACTER = scope:actor
+		}
+		scope:secondary_recipient = {
+			#Letter event to inform character that they have been excommunicated.
+			trigger_event = {
+				id = religious_interaction.1020
 			}
-			scope:secondary_recipient = {
-				#Letter event to inform character that they have been excommunicated.
-				trigger_event = {
-					id = religious_interaction.1020
-				}
-				hidden_effect = { #Nudge towards rivalry
-					if = {
-						limit = {
-							NOR = {
-								has_relation_rival = scope:actor
-								has_relation_potential_rival = scope:actor
-							}
-							scope:actor = { is_alive = yes }
+			hidden_effect = { #Nudge towards rivalry
+				if = {
+					limit = {
+						NOR = {
+							has_relation_rival = scope:actor
+							has_relation_potential_rival = scope:actor
 						}
-						set_relation_potential_rival = scope:actor
+						scope:actor = { is_alive = yes }
 					}
+					set_relation_potential_rival = scope:actor
 				}
 			}
 		}
@@ -2455,7 +2092,7 @@ send_to_holy_order_interaction = {
 			}
 			desc = TAKE_THE_VOWS_INSPIRING_CLERGY
 		}
-		
+
 		modifier = {
 			add = {
 				add = 20
@@ -2968,6 +2605,7 @@ take_vows_interaction = {
 			#is_close_or_extended_family_of = scope:actor
 			##
 			can_take_religious_vows_trigger = yes #Triggers that applies to both Monastery or Holy Order requirements
+
 		}
 	}
 	
@@ -2997,6 +2635,7 @@ take_vows_interaction = {
 	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
 
 	send_options_exclusive = no
+
 
 	cost = {
 		piety = scope:recipient.ask_to_take_vows_piety_cost
@@ -3050,7 +2689,7 @@ take_vows_interaction = {
 			}
 			
 			show_as_tooltip = {
-				send_child_to_clergy_effect = yes
+				send_child_to_clergy_effect = yes #devoted trait is given here
 			}
 			scope:recipient = {
 				
@@ -3066,27 +2705,15 @@ take_vows_interaction = {
 				
 				if = {
 					limit = {
-						scope:actor.top_liege = {
-							any_vassal_or_below = {
-								is_male = yes
-								has_government = theocracy_government
-								primary_title.tier > tier_barony
-								faith = scope:actor.faith
-							}
-						}
+						is_male = yes
+						exists = scope:secondary_actor
 					}
-					scope:actor.top_liege = {
-						random_vassal_or_below = {
-							limit = {
-							    is_male = yes
-								has_government = theocracy_government
-								primary_title.tier > tier_barony
-								faith = scope:actor.faith
-							}
-							save_scope_as = theocratic_travel_target
-						}
+					visit_court_of = scope:secondary_actor #clearer information
+					scope:secondary_actor = { add_courtier = scope:recipient }
+					add_character_flag = {
+						flag = blocked_from_leaving
+						years = 100
 					}
-					visit_court_of = scope:theocratic_travel_target
 				}
 				else_if = {
 					limit = {

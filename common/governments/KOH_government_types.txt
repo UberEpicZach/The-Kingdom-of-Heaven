@@ -2,7 +2,6 @@
 	create_cadet_branches = yes
 	rulers_should_have_dynasty = yes
 	dynasty_named_realms = yes
-	royal_court = yes
 
 	fallback = 1
 
@@ -29,7 +28,6 @@ feudal_government_raid = {
 	create_cadet_branches = yes
 	rulers_should_have_dynasty = yes
 	dynasty_named_realms = yes
-	royal_court = yes
 	
 	primary_holding = castle_holding
 	required_county_holdings = { castle_holding city_holding church_holding }
@@ -109,14 +107,14 @@ theocracy_government = {
 
 clan_government = {
 	primary_holding = castle_holding
-	primary_heritages = { heritage_arabic heritage_iranian heritage_turkic }
+	primary_culture_groups = { arabic_group iranian_group }
+	primary_cultures = { turkish }
 	
 	fallback = 2
 	
 	preferred_religions = { islam_religion }
 	create_cadet_branches = yes
 	rulers_should_have_dynasty = yes
-	royal_court = yes
 
 	valid_holdings = { castle_holding }
 	required_county_holdings = { castle_holding city_holding church_holding }
@@ -198,7 +196,6 @@ tribal_government = {
 		republic_government_vassal_opinion = -20
 	
 		ai_war_chance = 0.25
-		monthly_prestige = 0.2
 	}
 	
 	flag = government_can_raid_rule
@@ -262,4 +259,18 @@ holy_order_county_government = {
 
 	valid_holdings = { castle_holding city_holding church_holding }
 	color = hsv{ 0.00 0.00 0.66 }
+}
+
+governor_government = {
+	primary_holding = castle_holding
+	required_county_holdings = { castle_holding city_holding church_holding }
+
+	ai = {
+		arrange_marriage = yes
+		use_goals = yes
+		perform_religious_reformation = no
+	}
+
+	vassal_contract = { republic_government_obligations }
+	color = hsv{ 0.50 0.50 0.50 }
 }

@@ -97,7 +97,6 @@ portrait_mean_beards_clothes_modifier = {
 portrait_scottish_unique_haircut = {
 	modifier = {
 		add = 60
-		exists = culture
 		culture = culture:scottish
 	}
 }
@@ -105,8 +104,7 @@ portrait_scottish_unique_haircut = {
 portrait_frankish_unique_haircut = {
 	modifier = {
 		add = 60
-		exists = culture
-		culture = { has_cultural_pillar = heritage_frankish }
+		culture.culture_group = culture_group:frankish_group
 	}
 }
 

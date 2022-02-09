@@ -1,0 +1,76 @@
+pdxmesh = {
+	name = "male_great_helm_02_teutonic_mesh"
+	file = "male_great_helm_02_teutonic.mesh"
+
+	blend_shape = { id = "male_great_helm_02_teutonic_bs_fat"		type = "male_great_helm_02_teutonic_bs_fat.mesh" }
+	blend_shape = { id = "male_great_helm_02_teutonic_bs_muscular"		type = "male_great_helm_02_teutonic_bs_muscular.mesh" }
+
+
+	meshsettings = {
+		name = "western_coif_01"
+		index = 0
+		texture_diffuse = "western_coif_01_diffuse.dds"
+		texture_normal = "western_coif_01_normal.dds"
+		texture_specular = "western_coif_01_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+
+	meshsettings = {
+		name = "western_great_helm_02b"
+		index = 0
+		texture_diffuse = "western_great_helm_02_diffuse.dds"
+		texture_normal = "western_great_helm_02_normal.dds"
+		texture_specular = "western_great_helm_02_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	meshsettings = {
+		name = "teutonic_crest_01b"
+		index = 0
+		texture_diffuse = "teutonic_crest_02_diffuse.dds"
+		texture_normal = "teutonic_crest_02_normal.dds"
+		texture_specular = "teutonic_crest_02_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}	
+	
+	
+}
+
+entity = {
+	name = "male_great_helm_02_teutonic_entity"
+	pdxmesh = "male_great_helm_02_teutonic_mesh"
+
+	attribute = { name = "bs_fat_1" blend_shape = "male_great_helm_02_teutonic_bs_fat" }
+	attribute = { name = "bs_muscular_1"						blend_shape = "male_great_helm_02_teutonic_bs_muscular" }	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
