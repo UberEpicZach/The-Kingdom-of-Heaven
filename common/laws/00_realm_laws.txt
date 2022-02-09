@@ -370,7 +370,7 @@ investiture = {
 
 		pass_cost = {
 			prestige = {
-					add = 1000
+				add = 1000
 			}
 		}
 	}
@@ -398,7 +398,7 @@ investiture = {
 		
 		pass_cost = {
 			piety = {
-					add = 1000
+				add = 1000
 			}
 		}
 		
@@ -471,7 +471,7 @@ investiture = {
 				value = 1
 
 				ai_value_modifier = {
-					ai_energy = 1.0
+					ai_rationality = 1.0
 				}
 				modifier = {
 					add = 0.75
@@ -482,7 +482,7 @@ investiture = {
 					has_trait = ambitious
 				}
 				modifier = {
-					add = 0.25
+					add = -0.25
 					has_trait = craven
 				}
 				modifier = {
@@ -514,13 +514,7 @@ investiture = {
 					}
 				}
 				modifier = {
-					add = -1.5
-					faith = {
-						religious_head = { reverse_opinion = { target = root value >= 0 } }
-					}
-				}
-				modifier = {
-					add =  -1.5
+					add =  1.5
 					faith = {
 						religious_head = { NOT = { reverse_opinion = { target = root value <= -25 } } }
 					}

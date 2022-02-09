@@ -898,7 +898,7 @@ window = {
 								name = "usurp_title"
 								text = "TITLE_VIEW_USURP_TITLE"
 								visible = "[And( Not(Character.IsLocalPlayer), TitleViewWindow.ShowUsurp )]"
-								enabled = "[TitleViewWindow.CanTitleBeUsurped]"
+								enabled = "[And(TitleViewWindow.CanTitleBeUsurped,Not(ObjectsEqual(Title.Self,GetGlobalVariable('papal_states').Title)))]"
 								onclick = "[TitleViewWindow.UsurpTitle]"
 								tooltip = "[TitleViewWindow.GetUsurpTitleButtonTooltip]"
 							}

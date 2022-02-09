@@ -446,6 +446,15 @@ KOH_Parition = {
 
 KOH_ON_START = {
 	effect = {
+
+		#make papacy not usurpable
+		title:k_papal_state.holder = {
+			set_global_variable = {
+				name = papal_states
+				value = title:k_papal_state
+			}
+		}
+		
 		every_living_character = {
 			set_variable = {
 				name = Chivalry
@@ -645,72 +654,82 @@ KOH_ON_START = {
 	}
 }
 
+yearly_global_pulse = {
+	on_actions = {
+        KOH_pulse_monthly
+		KOH_yearly
+        delay = { months = 1 }
+	}
+}
+
 KOH_yearly = {
 	effect = {
 		if = {
 			limit = {
 				has_game_rule = never_mongol_invasion
-				NOT = { has_global_variable = mongols_have_appeared}
+				NOT = { 
+					has_global_variable = mongols_have_appeared
+				}
 				title:c_ulaanbaatar.holder = {
 					is_ai = no
-					}
-				}
-				random = {
-					chance = temujin_appearance_base_chance
-					modifier = {
-						factor = 0.25
-						current_date < 1180.1.1
-					}
-					modifier = {
-						add = 11
-						current_date > 1200.1.1
-					}
-					modifier = {
-						add = 5
-						current_date > 1220.1.1
-					}
-					modifier = {
-						add = 5
-						current_date > 1235.1.1
-					}
-					set_global_variable = {
-						name = mongols_have_appeared
-						value = yes
-					}
-					debug_log = "Attempting to spawn mongol invasion within 240 days"
-					trigger_event = {
-						id = mongol_invasion.0001
-						days = { 2 240 }
-					}
 				}
 			}
-			else_if = {
-				limit = {
-					has_game_rule = random_mongol_invasion
-					NOT = { has_global_variable = mongols_have_appeared}
+			random = {
+				chance = temujin_appearance_base_chance
+				modifier = {
+					factor = 0.25
+					current_date < 1180.1.1
 				}
-				random = {
-					chance = temujin_appearance_base_chance
-					modifier = {
-						factor = 0.25
-						current_date < 1180.1.1
-					}
-					modifier = {
-						add = 3
-						current_date > 1200.1.1
-					}
-					modifier = {
-						add = 5
-						current_date > 1220.1.1
-					}
-					modifier = {
-						add = 5
-						current_date > 1235.1.1
-					}
-					set_global_variable = {
-						name = mongols_have_appeared
-						value = yes
-					}
+				modifier = {
+					add = 11
+					current_date > 1200.1.1
+				}
+				modifier = {
+					add = 5
+					current_date > 1220.1.1
+				}
+				modifier = {
+					add = 5
+					current_date > 1235.1.1
+				}
+				set_global_variable = {
+					name = mongols_have_appeared
+					value = yes
+				}
+				debug_log = "Attempting to spawn mongol invasion within 240 days"
+				trigger_event = {
+					id = mongol_invasion.0001
+					days = { 2 240 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = random_mongol_invasion
+				NOT = { has_global_variable = mongols_have_appeared}
+			}
+			random = {
+				chance = temujin_appearance_base_chance
+				modifier = {
+					factor = 0.25
+					current_date < 1180.1.1
+				}
+				modifier = {
+					add = 3
+					current_date > 1200.1.1
+				}
+				modifier = {
+					add = 5
+					current_date > 1220.1.1
+				}
+				modifier = {
+					add = 5
+					current_date > 1235.1.1
+				}
+				set_global_variable = {
+					name = mongols_have_appeared
+					value = yes
+				}
 				debug_log = "Attempting to spawn mongol invasion within 240 days"
 				trigger_event = {
 					id = mongol_invasion.0001
@@ -818,6 +837,75 @@ KOH_HOLY_ORDER_GOVERNMENT = {
 	}
 }
 
+KOH_pulse_monthly = { 
+    on_actions = {
+        delay = { months = 1 }
+		KOH_pulse_monthly
+	}
+
+	effect = {
+		if = {
+			limit = {
+				any_ruler = { 
+					top_liege = { 
+						has_primary_title = title:e_arabia 
+					}
+					has_opinion_modifier = {
+						target = character:223590
+						modifier = raided_me_opinion
+					} 
+				}
+				character:226000 = {
+					NOT = {	has_character_flag = Jihad_incoming }
+				}
+			}
+			character:223523 = {
+				trigger_event = {
+					id = KoH_saladin.100
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = global_var:SaladinHasTakenJerusalem 
+			}
+			every_ruler = {
+				limit = {
+					faith = faith:catholic
+					is_landed = yes
+					highest_held_title_tier >= tier_county
+					NOT = { 
+						OR = {
+							has_character_flag = had_event_had_event_KoH_saladin.120
+							has_title = title:k_jerusalem
+						} 
+					}
+				}
+			trigger_event = KoH_saladin.120
+			}
+		}
+		if = {
+			limit = {
+				exists = global_var:SaladinHasTakenJerusalem 
+			}
+			every_ruler = {
+				limit = {
+					AND = {
+						has_title = title:k_jerusalem
+						NOT = {
+							has_character_flag = had_event_KoH_saladin.121
+						}
+					}
+				}
+				trigger_event = KoH_saladin.121
+			}
+		}
+	}
+	events = { 
+		KoH_SicillianConflict.1
+    }
+}
+
 three_year_playable_pulse = {
 	on_actions = {
 		delay = { days = 18 }
@@ -911,10 +999,5 @@ KOH_on_war_started = {
 				}
 			}
 		}
-	}
-}
-on_death = {
-	on_actions = {
-		investiture 
 	}
 }
