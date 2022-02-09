@@ -170,13 +170,13 @@ k_papal_state = {
 	532.1.1 = {
 		holder = 7760
 	}
-	535.5.8 = {
+	535.5.13 = {
 		holder = 7759
 	}
-	536.4.22 = {
+	536.6.8 = {
 		holder = 7764
 	}
-	536.6.8 = {
+	537.3.29 = {
 		holder = 7900
 	}
 	555.6.7 = {
@@ -377,7 +377,7 @@ k_papal_state = {
 	931.3.15 = {
 		holder = 7917
 	}
-	935.12.1 = {
+	935.12.20 = {
 		holder = 7834
 	}
 	939.7.13 = {
@@ -392,7 +392,7 @@ k_papal_state = {
 	955.12.16 = {
 		holder = 7931
 	}
-	964.4.14 = {
+	964.5.14 = {
 		holder = 7830
 	}
 	964.6.23 = {
@@ -440,7 +440,7 @@ k_papal_state = {
 	1045.1.20 = {
 		holder = 7820
 	}
-	1045.2.10 = {
+	1045.3.10 = {
 		holder = 7937
 	}
 	1045.5.1 = {
@@ -1871,100 +1871,90 @@ d_sunni = {
 	}
 }
 
-
-d_shiite = {
+d_shiite = { # Ismaili
 	610.1.1 = {
-			holder_ignore_head_of_faith_requirement = 33922
+		holder_ignore_head_of_faith_requirement = 33922 # Muhammad
 		succession_laws = {
 			temporal_head_of_faith_succession_law
 		}	
 	}
 	632.6.8 = {
-		holder_ignore_head_of_faith_requirement = 33911
+		holder_ignore_head_of_faith_requirement = 33911 # Ali
 	}
 	661.2.28 = {
-		holder = 33926
+		holder = 33926 # Hasan
 	}
 	670.3.6 = {
-		holder = 33912
+		holder = 33912 # Hussayn
 	}
 	680.10.10 = {
-		holder = 33913
+		holder = 33913 # Ali Zayn al-Abidin
 	}
 	712.1.1 = {
-		holder = 33914
+		holder = 33914 # Muhammad al Baqir
 	}
 	733.1.1 = {
-		holder = 33915
+		holder = 33915 # Jafar al Sadiq
 	}
 	765.12.14 = {
-		holder = 163022
+		holder = 33917 # Muhammad
 	}
-	769.1.1 = {
-		holder = 0
+	813.1.1 = {
+		holder = 33918 # Abdullah Ahmad al-Wafi
 	}
-	769.1.2 = {
-		holder = 163022
+	828.1.1 = {
+		holder = 33919 # Ahmed Muhammad at-Taqi
 	}
-	799.9.1 = {
-		holder = 163023
+	840.1.1 = {
+		holder = 33920 # Hussayn Rabi Abdullah
 	}
-	818.8.23 = {
-		holder = 163024
-	}
-	835.11.24 = {
-		holder = 163025
-	}
-	866.12.30 = {
-		holder = 0
+	867.1.1 = {
+		holder = 0 # Prevent startup errors
 	}
 	868.1.1 = {
-		holder = 163026
+		holder = 33920 # Hussayn Rabi Abdullah
 	}
-	874.1.1 = {
-		holder = 163027
-	}
-	909.1.1 = {
-		holder = 32900
+	881.1.1 = {
+		holder = 32900 # Abdullah Rabi Abdullah
 	}
 	934.1.1 = {
-		holder = 32901
+		holder = 32901 # al-Qaim
 	}
 	946.5.17 = {
-		holder = 32902
+		holder = 32902 # al-Mansur
 	}
 	953.3.19 = {
-		holder = 32903
+		holder = 32903 # al-Muizz
 	}
 	975.1.1 = {
-		holder = 3090
+		holder = 3090 # al-Aziz
 	}
 	996.10.13 = {
-		holder = 3092
+		holder = 3092 # al-Hakim
 	}
 	1021.2.12 = {
-		holder = 3094
+		holder = 3094 # az-Zahir
 	}
 	1036.6.13 = {
-		holder = 3096
+		holder = 3096 # al-Mustansir
 	}
 	1094.1.10 = {
-		holder = 3100
+		holder = 3100 # al-Mustali
 	}
 	1101.1.1 = {
-		holder = 32905
+		holder = 32905 # al-Amir
 	}
 	1130.1.1 = {
-		holder = 32907
+		holder = 32907 # al-Hafiz
 	}
 	1149.1.1 = {
-		holder = 32908
+		holder = 32908 # al-Zafir
 	}
 	1154.1.1 = {
-		holder = 32909
+		holder = 32909 # al-Faiz
 	}
 	1160.1.1 = {
-		holder = 32910
+		holder = 32910 # al-Adid
 	}
 	1171.1.1 = {
 		holder = 0 # Fall of the Fatimid Caliphate
@@ -5121,5 +5111,35 @@ d_yungdrung_bon = {
 	}
 	1348.1.1={
 		holder = 304235
+	}
+}
+
+d_imami = { # Twelver Imams
+	765.12.14 = {
+		succession_laws = {
+			temporal_head_of_faith_succession_law
+		}
+		holder_ignore_head_of_faith_requirement = 163022 # Musa al-Kadhim
+	}
+	799.9.1 = {
+		holder_ignore_head_of_faith_requirement = 163023 # Ali al-Ridha
+	}
+	818.8.23 = {
+		holder_ignore_head_of_faith_requirement = 163024 # Muhammad al-Taqi
+	}
+	835.11.24 = {
+		holder_ignore_head_of_faith_requirement = 163025 # Ali al-Hadi
+	}
+	866.12.30 = {
+		holder_ignore_head_of_faith_requirement = 0
+	}
+	868.1.1 = {
+		holder_ignore_head_of_faith_requirement = 163026 # Hasan al-Askari
+	}
+	874.1.1 = {
+		holder_ignore_head_of_faith_requirement = 163027 # Muhammad al-Mahdi
+	}
+	909.1.1 = {
+		holder = 0
 	}
 }

@@ -153,9 +153,9 @@ on_title_gain = {
 khwarezmid_invasion = {
 	effect = {
 		title:k_khwarezmia.holder = {
-			add_pressed_claim = k_persia
-			add_pressed_claim = k_daylam
-			add_pressed_claim = k_khorasan
+			add_pressed_claim = title:k_persia
+			add_pressed_claim = title:k_daylam
+			add_pressed_claim = title:k_khorasan
 		
 			spawn_army = {
 				uses_supply = no
@@ -725,15 +725,15 @@ on_birth_child = {
 
 KOH_HENRYHENRY = {
 	effect = {
-			if = {
-				limit = {
-					ROOT = {
-						AND = {
-							dynasty = dynasty:KOH_D_023
-							is_male = yes
-						}
+		if = {
+			limit = {
+				ROOT = {
+					AND = {
+						dynasty = dynasty:KOH_D_023
+						is_male = yes
 					}
 				}
+			}
 			change_first_name = "Heinrich"
 			add_trait = fecund
 		}

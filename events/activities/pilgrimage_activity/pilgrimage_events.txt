@@ -2451,10 +2451,7 @@ pilgrimage.2511 = {
 	option = {
 		name = pilgrimage.2511.c
 		trigger = {
-			NOR = {
-				has_trait = athletic
-				has_trait = lazy
-			}
+			has_traits_that_negate_athletic_trigger = no #Are we already athletic or does any of our traits contradict athletic?
 			health >= 2.0
 		}
 
@@ -2624,6 +2621,13 @@ pilgrimage.3002 = {
 
 	option = {
 		name = pilgrimage.3002.a
+		trigger = {
+			# Should not show up for the AI with strict regional heresies enabled
+			OR = {
+				NOT = { has_game_rule = strict_regional_heresy }
+				is_ai = no
+			}
+		}
 		add_piety = massive_piety_loss
 		set_character_faith = faith:adamites
 		if = {
@@ -3262,6 +3266,7 @@ pilgrimage.3301 = {
 			exists = scope:activity.var:had_pilgrimage_3301
 		}
 		religion = religion:buddhism_religion
+		exists = root.capital_province
 	}
 
 	immediate = {
@@ -3351,6 +3356,10 @@ pilgrimage.4001 = {
 		character = root
 		animation = ecstasy
 	}
+	artifact = {
+		target = scope:christian_saint_bone_scope
+		position = lower_right_portrait
+	}
 
 	trigger = {
 		exists = scope:activity
@@ -3358,6 +3367,7 @@ pilgrimage.4001 = {
 
 	immediate = {
 		save_holy_site_for_loc_effect = yes
+		christian_saint_bone_creation_effect = yes
 		play_music_cue = "mx_cue_epic_sacral_moment"
 	}
 	
@@ -3493,6 +3503,10 @@ pilgrimage.5001 = {
 		character = root
 		animation = happiness
 	}
+	artifact = {
+		target = scope:christian_saint_bone_scope
+		position = lower_right_portrait
+	}
 
 	trigger = {
 		pilgrimage_is_to = { DESTINATION = c_roma }
@@ -3500,6 +3514,7 @@ pilgrimage.5001 = {
 
 	immediate = {
 		save_holy_site_for_loc_effect = yes
+		christian_saint_bone_creation_effect = yes
 	}
 	
 	option = {
@@ -3546,6 +3561,10 @@ pilgrimage.5011 = {
 		character = root
 		animation = ecstasy
 	}
+	artifact = {
+		target = scope:christian_saint_bone_scope
+		position = lower_right_portrait
+	}
 
 	trigger = {
 		pilgrimage_is_to = { DESTINATION = c_jerusalem }
@@ -3553,6 +3572,7 @@ pilgrimage.5011 = {
 
 	immediate = {
 		save_holy_site_for_loc_effect = yes
+		christian_saint_bone_creation_effect = yes
 	}
 	
 	option = {
@@ -3585,6 +3605,10 @@ pilgrimage.5021 = {
 		character = root
 		animation = happiness
 	}
+	artifact = {
+		target = scope:christian_saint_bone_scope
+		position = lower_right_portrait
+	}
 
 	trigger = {
 		pilgrimage_is_to = { DESTINATION = c_byzantion }
@@ -3592,6 +3616,7 @@ pilgrimage.5021 = {
 
 	immediate = {
 		save_holy_site_for_loc_effect = yes
+		christian_saint_bone_creation_effect = yes
 	}
 	
 	option = {
@@ -3624,6 +3649,10 @@ pilgrimage.5031 = {
 		character = root
 		animation = happiness
 	}
+	artifact = {
+		target = scope:christian_saint_bone_scope
+		position = lower_right_portrait
+	}
 
 	trigger = {
 		pilgrimage_is_to = { DESTINATION = c_alexandria }
@@ -3631,6 +3660,7 @@ pilgrimage.5031 = {
 
 	immediate = {
 		save_holy_site_for_loc_effect = yes
+		christian_saint_bone_creation_effect = yes
 	}
 	
 	option = {
