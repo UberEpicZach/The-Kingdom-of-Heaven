@@ -602,9 +602,7 @@ special_genes = {
 			spindly = {
 				index = 0
 				male = {
-					setting = { attribute = "bs_body_gaunt_1"  value = { min = 0.0 max = 1.0 }	}
-					setting = { attribute = "bs_body_slim_1"  value = { min = 0.0 max = 0.5 }	}
-					setting = { attribute = "bs_gaunt_1_body"  value = { min = 0.0 max = 1.0 }	}
+					setting = { attribute = "bs_body_slim_1"  value = { min = 0.0 max = 0.3 }	}
 				}
 				female = male
 				boy = male
@@ -656,6 +654,29 @@ special_genes = {
 
 		}
 
+		gene_bs_cloak = { ## Special Genes used for cloak blend shapes.
+
+			no_cloak = {
+				index = 0
+				male = {
+				}
+				female = male
+				boy = male
+				girl = male
+			}
+			cloak = {
+				index = 1
+				male = {
+				}
+				female = {
+					setting = { attribute = "bs_cloak"  value = { min = 0.0 max = 1.0 }	}
+				}
+				boy = male
+				girl = female
+			}
+
+		}
+
 		pose = { # Keeping this gene because the game expects it to be there
 		}
 	}
@@ -673,6 +694,8 @@ special_genes = {
 				female = {
 					100 = female_headgear_special_head_bandage_01
 				}
+				boy = male
+				girl = female
 			}
 
 		}
@@ -687,6 +710,8 @@ special_genes = {
 				female = {
 					100 = female_headgear_special_eye_patch_01
 				}
+				boy = male
+				girl = female
 			}
 
 		}
@@ -724,6 +749,8 @@ special_genes = {
 				female = {
 					100 = female_headgear_special_face_mask_01
 				}
+				boy = male
+				girl = female
 			}
 
 		}
@@ -738,6 +765,8 @@ special_genes = {
 				female = {
 					100 = female_headgear_special_blindfold_01
 				}
+				boy = male
+				girl = female
 			}
 
 		}

@@ -9,6 +9,7 @@ k_aquitaine = {
 	
 	778.1.1 = {
 		holder = 6392
+		succession_laws = { male_only_law }	#Salic Law
 	}
 	781.1.1 = {
 		holder = 90095	#Louis le Pieux
@@ -118,7 +119,7 @@ d_gascogne = {	#AKA Vasconia
 		holder = 127051 #Sanche-Guillaume de Gascogne
 	}
 	1032.10.4 = {
-		holder = 127055 #Bùrenger d'Angoulùme
+		holder = 127055 #BÈrenger d'AngoulÍme
 	}
 	1036.1.1 = {
 		holder = 228 #Eudes d'Aquitaine
@@ -140,6 +141,9 @@ d_gascogne = {	#AKA Vasconia
 	}
 	1137.7.22 = {
 		holder = 205500 #Louis VII de France
+	}
+	1152.3.21 = {
+		holder = 205730 #Alienor d'Aquitaine
 	}
 	1152.5.18 = {
 		liege = "k_england"
@@ -1778,6 +1782,20 @@ c_rodez = {
 }
 
 c_millau = {
+	#840 - Foucaud
+	850.1.1 = {
+		holder = 127006 #Fredelo de Toulouse
+		liege = d_toulouse
+	}
+	852.1.1 = {
+		holder = 40230 #Raymond Ier de Toulouse
+	}
+	865.4.16 = {
+		holder = 127007 #Bernard de Toulouse
+	}
+	874.8.1 = {
+		holder = 40232 #Eudes de Toulouse
+	}
 	1013.1.1 = {
 		holder = 138234 #Richard I of Millau
 	}
@@ -2045,7 +2063,7 @@ c_carcassonne = {
 	933.1.1 = {
 		holder = 40180	#Arnaud I de Comminges
 	}
-	957.1.1 = {
+	957.11.27 = {
 		holder = 40182	#Rogier I
 	}
 	1011.4.1 = {
@@ -2170,6 +2188,9 @@ c_foix = {
 		liege = "d_toulouse"
 	}
 	1064.1.1 = {
+		holder = 6620 # Pierre-Bernard
+	}
+	1071.1.1 = {
 		holder = 40194 #Roger II de Foix
 	}
 	1124.1.10 = {
@@ -2289,9 +2310,63 @@ c_armagnac = {
 }
 
 c_bigorre = {
+	735.1.1 = {
+		holder = 190483 #Hatto
+	}
+	735.1.1 = {
+		liege = 0
+	}
+	744.1.1 = {
+		liege = k_france
+	}
+	759.1.1 = {
+		holder = 190484 #Loup
+	}
+	775.1.1 = {
+		holder = 190485 #Adalric
+	}
+	800.1.1 = {
+		holder = 190486 #Jimeno
+	}
+	816.1.1 = {
+		holder = 190489 #Loup
+	}
+	820.1.1 = {
+		holder = 190490 #Donat Loup
+	}
+	836.1.1 = {
+		holder = 190501 #Guillaume
+	}
+	866.1.1 = {
+		liege = "d_gascogne"
+		holder = 138162 #Loup Centule I de B√©arn
+	}
+	905.1.1 = {
+		holder = 138164 #Centule II de B√©arn
+	}
+	940.1.1 = {
+		holder = 138166 #Gaston I de B√©arn
+	}
+	984.1.1 = {
+		holder = 138168 #Centule III de B√©arn
+	}
+	1004.1.1 = {
+		holder = 138170 #Gaston II de B√©arn
+	}
+	1022.1.1 = {
+		holder = 40000 #Centule IV de B√©arn
+	}
+	1030.1.1 = {
+		holder = 1078 # Bernard I of Bigorre/Gersenda
+	}
+	1034.1.1 = {
+		holder = 40188 # Bernard II of Bigorre
+	}
+	1077.1.1 = {
+		holder = occitan0001 # Raymond III Bigorre
+	}
 	1080.1.1 = {
-		holder = 40003
-		liege =
+		holder = 40003 #Centule V de B√©arn
 	}
 	1090.1.1 = {
 		holder = 138176

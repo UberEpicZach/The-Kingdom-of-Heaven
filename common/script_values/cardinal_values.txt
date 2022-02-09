@@ -105,11 +105,11 @@ cardinal_location_bonus = {
 	if = 		{limit = {exists = location location.county = title:c_roma} 							add = cardinal_score_location_rome}
 	else_if = 	{limit = {exists = location location.barony = {is_holy_site_of = faith:catholic}}		add = cardinal_score_location_holy_site}
 }
-cardinal_culture_bonus = {
-	value = 0
-	if = 		{limit = {culture = title:c_roma.culture} 						add = cardinal_score_culture}
-	else_if = 	{limit = {culture_group = title:c_roma.culture.culture_group} 	add = cardinal_score_culture_group}
-}
+# cardinal_culture_bonus = {
+# 	value = 0
+# 	if = 		{limit = {culture = title:c_roma.culture} 						add = cardinal_score_culture}
+# 	#else_if = 	{limit = {culture_group = title:c_roma.culture.culture_group} 	add = cardinal_score_culture_group}
+# }
 cardinal_virtue_bonus = {
 	value = num_virtuous_traits
 	multiply = cardinal_score_per_virtue

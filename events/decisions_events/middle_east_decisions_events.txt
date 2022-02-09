@@ -52,9 +52,14 @@ middle_east_decisions.0001 = {
 			title:k_arabia = {
 				set_de_jure_liege_title = title:e_outremer
 			}
+			#Saving the title scope for loc purposes
+			title:e_outremer = { save_scope_as = outremer_title }
 			faith:ashari.religion = {
 				every_faith = {
-					change_fervor = -30
+					change_fervor = {
+						value = -30
+						desc = fervor_gain_formed_outremer
+					}
 				}
 			}
 			every_held_title = { # Should shift all dejure of all Empires owned at the time.
@@ -98,9 +103,6 @@ middle_east_decisions.0001 = {
 				title:d_sinai = {
 					set_de_jure_liege_title = title:k_jerusalem
 				}
-			}
-			title:e_outremer = {
-				add_title_law = outremer_elective_succession_law
 			}
 		}
 		hidden_effect = {
@@ -165,12 +167,18 @@ middle_east_decisions.0001 = {
 			}
 			every_vassal = { # Culture conversion.
 				limit = {
-					has_same_culture_group_as = root
+					culture = { has_same_culture_heritage = root.culture }
 				}
+				if = {
+					limit = { exists = scope:new_culture }
 				random = {
 					chance = 50
-					set_culture = culture:outremer
-					capital_county = { set_county_culture = culture:outremer }
+						set_culture = scope:new_culture
+						if = {
+							limit = { exists = capital_county }
+							capital_county = { set_county_culture = scope:new_culture }
+						}
+					}
 				}
 			}
 		}
@@ -393,7 +401,13 @@ middle_east_decisions.0005 = {
 		name = middle_east_decisions.0005.a
 		add_prestige = major_prestige_gain
 		add_piety = major_piety_gain
-		faith = { change_fervor = 25 }
+		title:k_israel = { save_scope_as = israel_title }
+		faith = {
+			change_fervor = {
+				value = 25
+				desc = fervor_gain_israel_recreated
+			}
+		}
 		hidden_effect = {
 			every_player = {
 				limit = {
@@ -505,6 +519,15 @@ middle_east_decisions.0007 = {
 				exists = cp:councillor_court_chaplain
 				cp:councillor_court_chaplain = { faith = scope:scoped_ruler.faith }
 			}
+			if = {
+				limit = {
+					root.faith = { has_doctrine = doctrine_no_head }
+				}
+				hidden_effect = {
+					root.faith = { remove_doctrine = doctrine_no_head }
+					root.faith = { add_doctrine = doctrine_spiritual_head }
+				}
+			}
 			cp:councillor_court_chaplain = { save_scope_as = new_priest }
 		}
 		else = {
@@ -560,7 +583,12 @@ middle_east_decisions.0007 = {
 		name = middle_east_decisions.0007.a
 		add_prestige = major_prestige_gain
 		add_piety = major_piety_gain
-		faith = { change_fervor = 10 }
+		faith = {
+			change_fervor = {
+				value = 10
+				desc = fervor_gain_priesthood_recreated
+			}
+		}
 		if = { # Vassalize if possible/needed.
 			limit = {
 				highest_held_title_tier > scope:new_priest.highest_held_title_tier
@@ -580,6 +608,13 @@ middle_east_decisions.0007 = {
 			resolve_title_and_vassal_change = scope:change
 		}
 		hidden_effect = {
+			if = {
+				limit = { root = { has_faith = faith:kabarism } }
+				trigger_event = {
+					id = religious_decision.0501
+					days = 360
+				}
+			}
 			every_player = {
 				limit = {
 					NOT = { this = root }
@@ -749,7 +784,12 @@ middle_east_decisions.0009 = {
 		name = middle_east_decisions.0009.a
 		add_prestige = major_prestige_gain
 		add_piety = major_piety_gain
-		faith = { change_fervor = 10 }
+		faith = {
+			change_fervor = {
+				value = 10
+				desc = fervor_gain_priesthood_recreated
+			}
+		}
 		if = { # Vassalize if possible/needed.
 			limit = {
 				highest_held_title_tier > scope:new_priest.highest_held_title_tier
@@ -1059,7 +1099,10 @@ middle_east_decisions.0013 = {
 							}
 						}
 					}
-					change_fervor = -15
+					change_fervor = {
+						value = -15
+						desc = fervor_loss_saoshyant
+					}
 				}
 			}
 		}

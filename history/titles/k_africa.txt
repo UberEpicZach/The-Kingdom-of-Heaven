@@ -71,6 +71,21 @@ k_africa = {
 	}
 	1062.1.1 = {
 		holder = 20825
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = {
+					set_court_language = language_arabic
+					if = {
+						limit = { NOT = { knows_court_language_of = this } }
+						learn_court_language_of = this
+					}
+				}
+			}
+		}
 	}
 	1108.1.1 = {
 		holder = 3906

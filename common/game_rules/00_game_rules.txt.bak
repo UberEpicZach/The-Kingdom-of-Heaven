@@ -16,37 +16,6 @@
 	}
 }
 
-exclave_independence = {
-	default = ai_significant_exclave_independence
-	
-	off_exclave_independence = {
-	
-	}
-	
-	ai_limited_exclave_independence = {
-	
-	}
-	
-	ai_significant_exclave_independence = {
-	
-	}
-	
-	ai_total_exclave_independence = {
-	
-	}
-
-	limited_exclave_independence = {
-	
-	}
-	
-	significant_exclave_independence = {
-	
-	}
-	
-	total_exclave_independence = {
-	
-	}
-}
 
 multiplayer_murder_schemes = {
 	default = default_multiplayer_murder_schemes
@@ -335,9 +304,19 @@ random_ruler_placement = {
 }
 
 hungarian_migration = {
-	default = launch_historical
+	default = launch_immediate
 	launch_historical = {}
 	launch_immediate = {}
 	launch_random = {}
 	launch_off = { flag = blocks_achievements }
+}
+
+dlc_fp1_scandinavian_adventurers = {
+	default = fp1_scandi_adventurers_frequent
+	#dlc = "The Northern Lords"
+	fp1_scandi_adventurers_rare = { flag = blocks_achievements }
+	fp1_scandi_adventurers_occasional = {}
+	fp1_scandi_adventurers_frequent = {}
+	fp1_scandi_adventurers_apocalyptic = {}
+	fp1_scandi_adventurers_off = { flag = blocks_achievements }
 }

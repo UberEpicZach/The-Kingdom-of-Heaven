@@ -1654,7 +1654,7 @@ great_holy_war.0092 = {
 		NOT = { has_trait = incapable }
 		ai_zeal >= 0
 		root.faith = scope:the_faith
-		NOT = { target_is_liege_or_above = scope:target_character }
+		NOT = { target_is_liege_or_above = scope:ghw_defender } #scope:target_character isn't created in the holy war decision where this event is called
 		scope:the_faith = { #Crusade still exists
 			exists = great_holy_war
 			great_holy_war = {
@@ -3691,7 +3691,10 @@ great_holy_war.0055 = {
 		ghw_war_declarer.faith = { save_scope_as = the_faith }
 
 		faith = {
-			change_fervor = -10
+			change_fervor = {
+				value =  -10
+				desc = fervor_loss_crusade_invalid
+			}
 			set_variable = {
 				name = variable_ghw_cooldown
 				value = yes
@@ -4220,6 +4223,7 @@ great_holy_war.0084 = {
 				}
 				save_scope_as = fallback_host
 			}
+		
 		}
 		#Generate a fallback recipient.
 		create_character = {

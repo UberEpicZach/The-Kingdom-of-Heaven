@@ -20,7 +20,7 @@ yearly_persian.1001 = {
 
 	trigger = {
 		is_available_adult = yes
-		culture_group = culture_group:iranian_group
+		culture = { has_cultural_pillar = heritage_iranian }
 		NOT = { has_character_flag = had_event_yearly_persian_1002 }
 	}
 
@@ -42,7 +42,7 @@ yearly_persian.1002 = {
 
 	trigger = {
 		is_available_adult = yes
-		culture_group = culture_group:iranian_group
+		culture = { has_cultural_pillar = heritage_iranian }
 	}
 
 	weight_multiplier = {
@@ -63,20 +63,20 @@ yearly_persian.1002 = {
 			flag = had_event_yearly_persian_1002
 			years = 5
 		}
-		culture_group:iranian_group = {
+		culture = {
 			save_scope_as = iranian # For loc
 		}
 
 		# Compile list of affected characters for Option A.
 		every_vassal = {
 			limit = {
-				culture_group = culture_group:iranian_group
+				culture = { has_cultural_pillar = heritage_iranian }
 			}
 			add_to_list = iranian_characters
 		}
 		every_courtier = {
 			limit = {
-				culture_group = culture_group:iranian_group
+				culture = { has_cultural_pillar = heritage_iranian }
 			}
 			add_to_list = iranian_characters
 		}
@@ -243,7 +243,7 @@ yearly_persian.1101 = {
 			triggered_desc = {
 				trigger = {
 					dynasty = dynasty:613 # Seljuk
-					culture = culture:turkish
+					culture = { has_cultural_pillar = heritage_turkic }
 				}
 				desc = yearly_persian.1101.desc.seljuk
 			}
@@ -260,11 +260,9 @@ yearly_persian.1101 = {
 		OR = {
 			AND = {
 				dynasty = dynasty:613 # Seljuk
-				culture = culture:turkish
+				culture = { has_cultural_pillar = heritage_turkic }
 			}
-			culture = culture:levantine
-			culture = culture:bedouin
-			culture = culture:hijazi
+			culture = { has_cultural_pillar = heritage_arabic }
 		}
 		any_sub_realm_county = {
 			percent >= 0.25
@@ -322,7 +320,7 @@ yearly_persian.1101 = {
 		name = yearly_persian.1101.b.seljuk
 		trigger = {
 			dynasty = dynasty:613 # Seljuk
-			culture = culture:turkish
+			culture = { has_cultural_pillar = heritage_turkic }
 		}
 
 		set_culture = culture:persian

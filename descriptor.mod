@@ -1,8 +1,7 @@
-version="1.4.*"
+version="1.5.0.1"
 tags={
 	"Historical"
 	"Bookmarks"
 }
-name="The Kingdom of Heaven"
-supported_version="1.4.4"
-path="F:/CK3 Mod Folder/The-Kingdom-of-Heaven"
+name="The Kingdom of Heaven Developer"
+supported_version="1.5.0.1"

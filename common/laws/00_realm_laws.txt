@@ -353,12 +353,12 @@ tribal_authority = {
 
 investiture = { 
 	default = papal_investiture
-	cumulative = yes
+	cumulative = no
 	flag = realm_law
 	
 	papal_investiture = {
 		modifier = {
-			direct_vassal_opinion = 10
+			clergy_opinion = 10
 			#feudal_government_tax_contribution_mult = -0.1
 			#vassal_levy_contribution_mult = -0.1
 		}
@@ -377,7 +377,7 @@ investiture = {
 	
 	free_investiture = {
 		modifier = {
-			direct_vassal_opinion = -10
+			clergy_opinion = -910
 			#feudal_government_tax_contribution_mult = 0.1
 			#vassal_levy_contribution_mult = 0.1
 		}
