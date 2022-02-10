@@ -163,23 +163,23 @@ assassins_mongol_trigger_koh = {
 	}
 }
 
-assassins_ayyubid_trigger_koh = {
-    NOT = { exists = global_var:ayyubids_provoke_assassins }
-    exists = title:d_hashshashin.holder
-    title:d_hashshashin.holder = {
-        has_government = holy_order_county_government
-    }
-	OR = {
-		AND = {
-			exists = title:e_arabia
-			character_is_realm_neighbor = title:e_arabia.holder
-		}
-		AND = {
-			exists = title:k_syria
-			character_is_realm_neighbor = title:k_syria.holder
-		}
-	}
-}
+# assassins_ayyubid_trigger_koh = {
+#     NOT = { exists = global_var:ayyubids_provoke_assassins }
+#     exists = title:d_hashshashin.holder
+#     title:d_hashshashin.holder = {
+#         has_government = holy_order_county_government
+#     }
+# 	OR = {
+# 		AND = {
+# 			exists = title:e_arabia
+# 			character_is_realm_neighbor = title:e_arabia.holder
+# 		}
+# 		AND = {
+# 			exists = title:k_syria
+# 			character_is_realm_neighbor = title:k_syria.holder
+# 		}
+# 	}
+# }
 
 sainthood_event1trigger = {
 	NOR = {
