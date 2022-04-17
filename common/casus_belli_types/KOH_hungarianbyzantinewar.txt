@@ -87,7 +87,14 @@
 	}
 
 	on_white_peace = {
-		
+		scope:attacker = { show_pow_release_message_effect = yes }
+		# Prestige loss for the attacker
+		scope:attacker = {
+			add_prestige = {
+				value = minor_prestige_value
+				multiply = -1.0
+			}
+		}
 		# press claims
 		every_in_list = {
 			list = target_titles
@@ -163,35 +170,6 @@
 			desc = claim_cb_defeat_desc
 		}
 
-	}
-
-	on_white_peace = {
-		scope:attacker = { show_pow_release_message_effect = yes }
-		# Prestige loss for the attacker
-		scope:attacker = {
-			add_prestige = {
-				value = minor_prestige_value
-				multiply = -1.0
-			}
-		}
-
-		# Prestige for the attacker's war allies
-		add_from_contribution_attackers = {
-			prestige = minor_prestige_value
-			opinion = {
-				modifier = contributed_in_war
-			}
-		}
-
-		# Prestige for the defender's war allies
-		add_from_contribution_defenders = {
-			prestige = minor_prestige_value
-			opinion = {
-				modifier = contributed_in_war
-			}
-		}
-
-		add_truce_white_peace_effect = yes
 	}
 
 	on_defeat_desc = {
@@ -277,5 +255,4 @@
 	attacker_wargoal_percentage = 0.8
 
 	max_ai_diplo_distance_to_title = 1000
-	min_ai_score = 100
 }

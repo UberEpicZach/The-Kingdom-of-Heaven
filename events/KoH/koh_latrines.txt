@@ -1,5 +1,69 @@
 ﻿namespace = KoH_erfurt_affair
 
+
+###SCRIPTED EFFECTS 
+
+
+scripted_effect invite_count = {
+	if = {
+		limit = { $CHAR$ = { is_alive = yes }}
+		$CHAR$ = {
+			invite_and_set_death_chance = {
+				CHANCE = $CHANCE$
+			}
+		}
+	}
+	else_if = {
+		limit = { $TITLE$ = { is_title_created = yes } }
+		$TITLE$.holder = {
+			invite_and_set_death_chance = {
+				CHANCE = $CHANCE$
+			}
+		}
+	}
+}
+
+scripted_effect invite_and_set_death_chance = {
+	set_latrine_death_chance = {
+		CHANCE = $CHANCE$
+	}
+	if = {
+		limit = { # don't trigger the event twice
+			NOT = {
+				is_in_list = potential_participants
+			}
+		}
+		add_to_list = potential_participants
+	}
+}
+
+scripted_effect set_latrine_death_chance = {
+	set_variable = {
+		name = KoH_erfurt_affair_deathChanceVar
+		value = $CHANCE$
+	}
+}
+
+
+scripted_effect successful_diet_leader_effects = {
+	scope:bossman = {
+		add_prestige = {
+			value = medium_prestige_loss
+			add = major_prestige_loss
+		}
+		add_dynasty_prestige = major_dynasty_prestige_value
+		add_relation_friend = scope:feuding_bishop
+		add_diplomacy_skill = 3
+	}
+	scope:feuding_bishop = {
+		add_prestige = {
+			value = medium_prestige_loss
+			add = major_prestige_loss
+		}
+		add_dynasty_prestige = major_dynasty_prestige_value
+	}
+}
+
 KoH_erfurt_affair.1 = {
 	title = KoH_erfurt_affair.1.t
 	desc = KoH_erfurt_affair.1.desc
@@ -201,46 +265,6 @@ KoH_erfurt_affair.2 = {
 	}
 }
 
-scripted_effect invite_count = {
-	if = {
-		limit = { $CHAR$ = { is_alive = yes }}
-		$CHAR$ = {
-			invite_and_set_death_chance = {
-				CHANCE = $CHANCE$
-			}
-		}
-	}
-	else_if = {
-		limit = { $TITLE$ = { is_title_created = yes } }
-		$TITLE$.holder = {
-			invite_and_set_death_chance = {
-				CHANCE = $CHANCE$
-			}
-		}
-	}
-}
-
-scripted_effect invite_and_set_death_chance = {
-	set_latrine_death_chance = {
-		CHANCE = $CHANCE$
-	}
-	if = {
-		limit = { # don't trigger the event twice
-			NOT = {
-				is_in_list = potential_participants
-			}
-		}
-		add_to_list = potential_participants
-	}
-}
-
-scripted_effect set_latrine_death_chance = {
-	set_variable = {
-		name = KoH_erfurt_affair_deathChanceVar
-		value = $CHANCE$
-	}
-}
-
 KoH_erfurt_affair.3 = {
 	title = KoH_erfurt_affair.3.t
 	desc = KoH_erfurt_affair.3.desc
@@ -334,25 +358,6 @@ KoH_erfurt_affair.401 = {
 			}
 		}
 
-	}
-}
-
-scripted_effect successful_diet_leader_effects = {
-	scope:bossman = {
-		add_prestige = {
-			value = medium_prestige_loss
-			add = major_prestige_loss
-		}
-		add_dynasty_prestige = major_dynasty_prestige_value
-		add_relation_friend = scope:feuding_bishop
-		add_diplomacy_skill = 3
-	}
-	scope:feuding_bishop = {
-		add_prestige = {
-			value = medium_prestige_loss
-			add = major_prestige_loss
-		}
-		add_dynasty_prestige = major_dynasty_prestige_value
 	}
 }
 

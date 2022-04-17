@@ -140,12 +140,13 @@ KoH_saladin.101 = {
 					target = character:223590
 					value >= 70
 				}
-				add_opinion = {
-					modifier = refusal_opinion
-					opinion = low_negative_opinion
-					target = scope:recipient
-				}
 			}
+			add_opinion = {
+				modifier = refusal_opinion
+				opinion = low_negative_opinion
+				target = scope:recipient
+			}
+			
 		}
 	}
 
@@ -161,12 +162,13 @@ KoH_saladin.101 = {
 					}
 					has_trait = zealous
 				}
-				add_opinion = {
-					modifier = hate_opinion
-					opinion = low_negative_opinion
-					target = title:k_jerusalem.holder
-				}
 			}
+			add_opinion = {
+				modifier = hate_opinion
+				opinion = low_negative_opinion
+				target = title:k_jerusalem.holder
+			}
+			
 		}
 		random_list = {
 			30 = {

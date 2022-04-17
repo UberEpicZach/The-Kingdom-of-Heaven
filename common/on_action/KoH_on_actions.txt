@@ -8,9 +8,11 @@
 }
 
 yearly_playable_pulse = {
-	delay = { months = 1 }
-    KOH_pulse_monthly
-	KOH_yearly
+	on_actions = {
+		delay = { months = 1 }
+    	KOH_pulse_monthly
+		KOH_yearly
+	}
 }
 
 KOH_pulse_monthly = { 

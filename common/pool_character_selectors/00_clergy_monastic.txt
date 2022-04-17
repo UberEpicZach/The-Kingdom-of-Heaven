@@ -27,11 +27,15 @@
 		}
 		modifier = {
 			add = 200
-			has_same_culture_as = scope:base
+			culture = {
+				has_same_culture_as = scope:base
+			}
 		}
 		modifier = {
 			add = 100
-			has_same_culture_heritage = scope:base.culture
+			culture = {
+				has_same_culture_heritage = scope:base.culture
+			}
 		}
 		modifier = {
 			factor = 1.3

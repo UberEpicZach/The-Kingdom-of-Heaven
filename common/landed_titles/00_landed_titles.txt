@@ -5092,6 +5092,32 @@ e_germany = {
 			}
 		}
 	}
+
+	k_lotharingia = {
+		color = { 110 110 160 }
+		color2 = { 220 220 20 }
+		
+		capital = c_luxembourg #Luxemburg
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_central_germanic }
+				}
+				add = @better_than_the_alternatives_score
+			}
+			if = {
+				limit = {
+					OR = {
+						culture = culture:french
+						culture = culture:norman
+						culture = culture:occitan
+					}
+				}
+				add = @better_than_the_alternatives_score
+			}
+		}
+	}
 	
 	k_east_francia = {	#Germany
 		color = { 160 160 160 }
@@ -27976,8 +28002,8 @@ e_russia = {	#Kievan Rus
 				color2 = { 255 255 255 }
 				
 				cultural_names = {
-					finnish = cn_tihvina
-					karelian = cn_tihvina
+					name_list_finnish = cn_tihvina
+					name_list_karelian = cn_tihvina
 				}
 			
 				b_tikhvin = {
@@ -27987,8 +28013,8 @@ e_russia = {	#Kievan Rus
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						finnish = cn_tihvina
-						karelian = cn_tihvina
+						name_list_finnish = cn_tihvina
+						name_list_karelian = cn_tihvina
 					}
 				}
 				b_kirishi = {
@@ -28273,12 +28299,12 @@ e_russia = {	#Kievan Rus
 					province = 5129
 					
 					cultural_names = {
-						lithuanian = cn_polockas
-						polish = cn_polock
-						swedish = cn_pallteskja
-						norse = cn_pallteskja
-						danish = cn_pallteskja
-						norwegian = cn_pallteskja
+						name_list_lithuanian = cn_polockas
+						name_list_polish = cn_polock
+						name_list_swedish = cn_pallteskja
+						name_list_norse = cn_pallteskja
+						name_list_danish = cn_pallteskja
+						name_list_norwegian = cn_pallteskja
 					}
 					
 					color = { 127 184 184 }
@@ -51075,8 +51101,8 @@ e_france = {
 			capital = c_besancon # Besancon
 			
 			cultural_names = {
-				name_list_french = "Franche-Comté"
-				name_list_german = "Freigrafschaft"
+				name_list_french = franchecomte
+				name_list_german = freigrafschaft
 				 
 			}
 
