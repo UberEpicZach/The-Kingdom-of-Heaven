@@ -1,64 +1,78 @@
 ﻿
 special_genes = { 
 
-accessory_genes = {
+	accessory_genes = {
 
-#####################################
-#									#
-# 			  HEADGEAR 			    #
-#									#
-#####################################
+		#####################################
+		#									#
+		# 			  HEADGEAR 			    #
+		#									#
+		#####################################
 
-	
-	headgearKOH = {
+		
+		headgearKOH = {
 
-		no_headgearKOH = {
-			index = 1
-			male = {
-				1 = empty
-			}
-			female = {
-				1 = empty
+			no_headgearKOH = {
+				index = 1
+				male = {
+					1 = empty
+				}
+				female = {
+					1 = empty
+				}
+
+				# So that children always have clothes!
+				boy = {
+					1 = empty
+				}
+				girl = {
+					1 = empty
+				}
 			}
 
-			# So that children always have clothes!
-			boy = {
-				1 = empty
+		
+
+			ayyubid_royalty_war = {
+				index = 2
+				male = {
+					1 = male_headgear_ayyubid_war_royality_01
+					
+				}
+				female = {
+					1 = female_headgear_secular_mena_war_nobility_01
+					
+				}
+				boy = male
+				girl = female
 			}
-			girl = {
-				1 = empty
+
+
+			royal_helmet = { 
+				index = 3
+				male = {
+					1 = royal_helmet
+				}
+				female = {
+					1 = female_headgear_secular_western_war_nobility_01
+				}
+				boy = male
+				girl = female
 			}
+
+			# baldwin_imperial_hat_01 = {
+			# 	index = 4
+			# 	male = {
+			# 		1 = male_headgear_secular_sub_saharan_imperial_01
+					
+			# 	}
+			# 	female = {
+			# 		1 = female_headgear_secular_mena_royalty_01
+					
+			# 	}
+			# 	boy = male
+			# 	girl = female
+			# }
+
 		}
-
-	   
-
-		ayyubid_royalty_war = {
-			index = 2
-			male = {
-				1 = male_headgear_ayyubid_war_royality_01
-				
-			}
-			female = {
-				1 = female_headgear_secular_mena_war_nobility_01
-				
-			}
-			boy = male
-            girl = female
-		}
-
-
-		royal_helmet = { 
-			index = 3
-			male = {
-				1 = royal_helmet
-			}
-			female = {
-				1 = female_headgear_secular_western_war_nobility_01
-			}
-			boy = male
-			girl = female
-			}
-		}
-
 	}
 }
