@@ -11,7 +11,9 @@ portrait_shipwrecked = {
 }
 
 portrait_ayyubid_clothing_trigger = {
-	culture = { has_graphical_culture = ayyubid_clothing_gfx }
+	top_liege = {
+        has_dynasty = dynasty:24000
+    }
 }
 
 portrait_saladin_trigger = {
@@ -51,10 +53,6 @@ portrait_tamar_trigger = {
 			this = character:466517
 		}
 	}
-}
-
-portrait_ayyubid_clothing_trigger = {
-	culture = { has_graphical_culture = ayyubid_clothing_gfx }
 }
 
 portrait_templar_trigger = {
