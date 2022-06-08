@@ -450,54 +450,16 @@
 }
 
 #Galzuud 2001145
-303140 = {
-	name = "Osor"
-	dynasty = 2001145	#Galzuud
-	religion = siberian_pagan
-	culture = buryat
-	835.6.19 = {
-		birth = yes
-	}
-	889.8.20 = {
-		death = yes
-	}
-}
 303141 = {
 	name = "Namzil"
 	dynasty = 2001145	#Galzuud
 	religion = siberian_pagan
 	culture = buryat
-	father = 303140
+	father = galzuud0001
 	857.10.8 = {
 		birth = yes
 	}
 	903.2.13 = {
-		death = yes
-	}
-}
-
-303142 = {
-	name = "Geleg"
-	dynasty = 2001145	#Galzuud
-	religion = siberian_pagan
-	culture = buryat
-	1043.3.12 = {
-		birth = yes
-	}
-	1095.1.26 = {
-		death = yes
-	}
-}
-303143 = {
-	name = "Dashinima"
-	dynasty = 2001145	#Galzuud
-	religion = siberian_pagan
-	culture = buryat
-	father = 303142
-	1068.8.5 = {
-		birth = yes
-	}
-	1115.10.30 = {
 		death = yes
 	}
 }
@@ -506,7 +468,7 @@
 	dynasty = 2001145	#Galzuud
 	religion = siberian_pagan
 	culture = buryat
-	father = 303143
+	father = galzuud0003
 	1094.7.18 = {
 		birth = yes
 	}
@@ -550,6 +512,19 @@
 		birth = yes
 	}
 	1224.7.2 = {
+		death = yes
+	}
+}
+
+galzuud0001 = {
+	name = "Osor"
+	dynasty = 2001145	#Galzuud
+	religion = siberian_pagan
+	culture = buryat
+	835.6.19 = {
+		birth = yes
+	}
+	889.8.20 = {
 		death = yes
 	}
 }
@@ -1314,3 +1289,30 @@
 	}
 }
 #
+
+galzuud0002 = {
+	name = "Dashinima"
+	dynasty = 2001145	#Galzuud
+	religion = siberian_pagan
+	culture = buryat
+	father = 303142
+	1068.8.5 = {
+		birth = yes
+	}
+	1115.10.30 = {
+		death = yes
+	}
+}
+
+galzuud0003 = {
+	name = "Geleg"
+	dynasty = 2001145	#Galzuud
+	religion = siberian_pagan
+	culture = buryat
+	1043.3.12 = {
+		birth = yes
+	}
+	1095.1.26 = {
+		death = yes
+	}
+}

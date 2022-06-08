@@ -242,7 +242,7 @@ k_papal_state = {
 	681.1.10 = {
 		holder = 7877
 	}
-		683.7.3 = {
+	683.7.3 = {
 		holder = 7876
 	}
 	685.5.8 = {
@@ -1707,7 +1707,7 @@ d_sunni = {
 	683.1.1 = {
 		holder = 163031
 	}
-	684.6.1 = {
+	684.12.1 = {
 		holder = 163003
 	}
 	685.5.7 = {
@@ -1731,7 +1731,7 @@ d_sunni = {
 	743.2.6 = {
 		holder = 163037
 	}
-	744.4.15 = {
+	744.6.16 = {
 		holder = 163038
 	}
 	744.10.3 = {
@@ -1743,7 +1743,7 @@ d_sunni = {
 	750.1.1 = {
 		holder = 34001
 	}
-	754.1.1 = {
+	754.6.10 = {
 		holder = 34002
 	}
 	775.1.1 = {
@@ -1876,11 +1876,11 @@ d_shiite = { # Ismaili
 		holder_ignore_head_of_faith_requirement = 33922 # Muhammad
 		succession_laws = {
 			temporal_head_of_faith_succession_law
-		}	
+		}
 	}
 	632.6.8 = {
 		holder_ignore_head_of_faith_requirement = 33911 # Ali
-	}
+	}	
 	661.2.28 = {
 		holder = 33926 # Hasan
 	}
@@ -2854,7 +2854,6 @@ e_latin_empire = {
 
 k_pechenegs = {
 	#Pechenegs in the Pontic Steppe
-		#Pechenegs in the Pontic Steppe
 	901.1.1 = {
 		government = tribal_government	#Migration to Hungary.
 		liege = 0
@@ -3492,6 +3491,20 @@ e_byzantium = {
 	# 1100.1.1 = {
 	# 	change_development_level = 18
 	# }
+	
+	866.1.1 = {
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = {
+					set_court_type = court_intrigue
+				}
+			}
+		}
+	}
 	
 	3.1.27 = {
 		holder = 145290
@@ -4419,7 +4432,7 @@ e_arabia = {
 	683.1.1 = {
 		holder = 163031
 	}
-	684.6.1 = {
+	684.12.1 = {
 		holder = 163003
 	}
 	685.5.7 = {
@@ -4443,7 +4456,7 @@ e_arabia = {
 	743.2.6 = {
 		holder = 163037
 	}
-	744.4.15 = {
+	744.6.16 = {
 		holder = 163038
 	}
 	744.10.3 = {
@@ -4455,7 +4468,7 @@ e_arabia = {
 	750.1.1 = {
 		holder = 34001
 	}
-	754.1.1 = {
+	754.6.10 = {
 		holder = 34002
 	}
 	775.1.1 = {

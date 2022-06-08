@@ -83,7 +83,7 @@
 	father = 602
 	mother = 603
 	960.1.2 = {
-		birth = "960.1.2"
+		birth = yes
 	}
 	977.1.2 = {
 		add_spouse = 609
@@ -96,7 +96,8 @@
 		add_spouse = 41100
 	}
 	1015.7.15 = {
-		death = "1015.7.15"
+		give_nickname = nick_the_great
+		death = yes
 	}
 }
 	
@@ -5215,8 +5216,8 @@
 	culture = "russian"
 	father = 222544
 	mother = 125902
-	1103.1.2 = {
-		birth = "1103.1.2"
+	1109.1.2 = {
+		birth = "1109.1.2"
 	}
 	1144.1.2 = {
 		add_spouse = 222543
@@ -9642,15 +9643,15 @@
 	trait = education_martial_1
 	father = 604
 	979.1.2 = {
-		birth = "979.1.2"
+		birth = yes
 	}
 	1016.1.2 = {
 		add_pressed_claim = title:d_kiev
-	add_pressed_claim = title:c_kiev
-	add_pressed_claim = title:c_korsun
+		add_pressed_claim = title:c_kiev
+		add_pressed_claim = title:c_korsun
 	}
 	1019.1.2 = {
-		death = "1019.1.2"
+		death = yes
 	}
 }
 
@@ -9668,7 +9669,7 @@
 	father = 608
 	mother = 609
 	983.1.2 = {
-		birth = "983.1.2"
+		birth = yes
 	}
 	1015.1.2 = {
 		add_pressed_claim = title:d_kiev
@@ -9677,7 +9678,8 @@
 		add_spouse = 100511
 	}
 	1054.2.20 = {
-		death = "1054.2.20"
+		give_nickname = nick_the_wise
+		death = yes
 	}
 }
 
@@ -10767,6 +10769,7 @@
 
 161257 = {
 	name = "Wyszeslawa" # Daughter to Grand Prince Sviatoslav
+	dna = 161257_queen_wyszeslawa
 	female = yes
 	dynasty = 705 # Rurikovich
 	religion = "orthodox"
@@ -10775,6 +10778,9 @@
 	mother = 125044
 	1047.1.1 = {
 		birth = "1047.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}	
 	}
 	1099.1.1 = {
 		death = "1099.1.1"
@@ -11822,7 +11828,7 @@
 302140 = {
 	name = "Vysheslav"
 	dynasty = 2001027	#Tivertsi
-	religion = "slavic_pagan"
+	religion = "orthodox"
 	culture = "russian"
 	1040.9.16 = {
 		birth = "1040.9.16"

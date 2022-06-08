@@ -296,11 +296,13 @@
 	stewardship = 4
 	religion = "tengri_pagan"
 	culture = "cuman"
-	trait = ill
 	trait = education_martial_2
 	1039.1.1 = {
 		birth = "1039.1.1"
 	}
+	1066.1.1 = {
+        contract_disease_effect = { DISEASE = ill TREATMENT_EVENT = yes }
+    }
 	1089.1.1 = {
 		death = "1089.1.1"
 	}
@@ -3597,21 +3599,9 @@
 		birth = yes
 	}
 	1045.11.30 = {
-		add_spouse = 302782
+		add_spouse = cuman0001
 	}
 	1073.7.1 = {
-		death = yes
-	}
-}
-302782 = {
-	name = "Yildiz"
-	female = yes
-	religion = tengri_pagan
-	culture = cuman
-	1027.11.27 = {
-		birth = yes
-	}
-	1095.3.5 = {
 		death = yes
 	}
 }
@@ -3621,7 +3611,7 @@
 	religion = tengri_pagan
 	culture = cuman
 	father = 302781
-	mother = 302782
+	mother = cuman0001
 	1047.1.19 = {
 		birth = yes
 	}
@@ -3629,20 +3619,6 @@
 		add_spouse = 302785
 	}
 	1108.8.23 = {
-		death = yes
-	}
-}
-302784 = {
-	name = "Ituk"
-	dynasty = 2001118	#Batpaktan
-	religion = tengri_pagan
-	culture = cuman
-	father = 302781
-	mother = 302782
-	1051.12.3 = {
-		birth = yes
-	}
-	1100.4.11 = {
 		death = yes
 	}
 }
@@ -3944,7 +3920,7 @@
 }
 302824 = {
 	name = "Sarica"
-	#female = yes
+	female = yes
 	dynasty = 2001119	#Altunopa
 	religion = tengri_pagan
 	culture = cuman
@@ -3962,7 +3938,6 @@
 }
 302825 = {
 	name = "BO_nek"
-	female = yes
 	religion = tengri_pagan
 	culture = cuman
 	1063.5.13 = {
@@ -4003,7 +3978,7 @@
 }
 302828 = {
 	name = "Irge"
-	#female = yes
+	female = yes
 	dynasty = 2001119	#Altunopa
 	religion = tengri_pagan
 	culture = cuman
@@ -4021,7 +3996,6 @@
 }
 302829 = {
 	name = "Baytursun"
-	female = yes
 	religion = tengri_pagan
 	culture = cuman
 	1058.3.10 = {
@@ -4194,7 +4168,7 @@
 }
 302841 = {
 	name = "Sati"
-	#female = yes	
+	female = yes
 	dynasty = 2001119	#Altunopa
 	religion = tengri_pagan
 	culture = cuman
@@ -4357,7 +4331,7 @@
 		death = yes
 	}
 }
- 
+
 ### Additional fictional underlings under Khan Saru of Cumania in k_pontic_steppe 1066
 #Added so that Khan Saru doesn't hold everything (and goes above domain limit) in Cumania
 303436 = {
@@ -4384,4 +4358,33 @@
 		death = yes
 	}
 }
+
+cuman0001 = {
+	name = "Yildiz"
+	female = yes
+	religion = tengri_pagan
+	culture = cuman
+	1027.11.27 = {
+		birth = yes
+	}
+	1095.3.5 = {
+		death = yes
+	}
+}
+
+cuman0002 = {
+	name = "Ituk"
+	dynasty = 2001118	#Batpaktan
+	religion = tengri_pagan
+	culture = cuman
+	father = 302781
+	mother = cuman0001
+	1051.12.3 = {
+		birth = yes
+	}
+	1100.4.11 = {
+		death = yes
+	}
+}
+
 ### End of fictional underlings under Khan Saru of Cumania in k_pontic_steppe 1066

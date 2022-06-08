@@ -34,7 +34,7 @@
 	}
 	1010.1.1 = {
 		death = "1010.1.1"
-	} 
+	}
 }
 
 131702 = {
@@ -2021,14 +2021,14 @@
 		add_spouse = 159802
 		set_relation_rival = character:159801	#Not a great fan of his brother-in-law.
 	}
-	867.1.1 = {
-		effect = {
-			add_hook = {	#Anarawd was fiercely loyal to his father.
-				target = character:81830
-				type = loyalty_hook
-			}
-		}
-	}
+	#867.1.1 = {
+	#	effect = {
+	#		add_hook = {	#Anarawd was fiercely loyal to his father.
+	#			target = character:81830
+	#			type = loyalty_hook
+	#		}
+	#	}
+	#}
 	878.1.1 = {
 		death = "878.1.1"
 	}
@@ -2824,12 +2824,6 @@
 	920.1.1 = {
 		birth = "920.1.1"
 	}
-	942.1.1 = {
-		add_pressed_claim = title:c_gwynedd
-	}
-	950.1.1 = {
-		remove_claim = title:c_gwynedd
-	}	
 	979.1.1 = {
 		death = "979.1.1"
 	}
@@ -4187,7 +4181,6 @@
 	father = 159087
 	790.1.1 = {
 		birth = "790.1.1"
-		add_pressed_claim = title:c_powys
 	}
 	878.1.1 = {
 		death = "878.1.1"
@@ -4201,7 +4194,6 @@
 	father = 159091
 	820.1.1 = {
 		birth = "820.1.1"
-		add_pressed_claim = title:c_powys
 	}
 	900.1.1 = {
 		death = "900.1.1"
@@ -4215,7 +4207,6 @@
 	father = 159092
 	850.1.1 = {
 		birth = "850.1.1"
-		add_pressed_claim = title:c_powys
 	}
 	930.1.1 = {
 		death = "930.1.1"
@@ -5493,7 +5484,6 @@
 	father = 159365
 	810.1.1 = {
 		birth = "810.1.1"
-		add_pressed_claim = title:c_gwent
 	}
 	885.1.1 = {
 		death = "885.1.1"
@@ -5507,7 +5497,6 @@
 	father = 159366
 	850.1.1 = {
 		birth = "850.1.1"
-		add_pressed_claim = title:c_gwent
 	}
 	920.1.1 = {
 		death = "920.1.1"
@@ -6038,7 +6027,7 @@
 }
 
 159807 = {
-	name = "Macsen" # Wledig
+	name = "Macsen" # Wledig, or, as he is better known, Emperor Magnus Maximus, pretender to the WRE
 	dynasty = 1029129 #Gwent
 	religion = "catholic"
 	culture = "roman"
@@ -8436,7 +8425,6 @@
 	father = 159366
 	848.1.1 = {
 		birth = yes
-		add_pressed_claim = title:c_gwent
 	}
 	910.1.1={
 		death = yes

@@ -54,7 +54,7 @@
 		birth = "1074.1.1"
 	}
 	1078.3.31 = {
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 	}
 	1095.1.1 = {
 		death = "1095.1.1"
@@ -1254,7 +1254,7 @@
 }
 
 1726 = {
-	name = "Konstantinos"
+	name = "Konstantinos"	#Konstantinos IX of BYZ
 	dynasty = 636
 	religion = "orthodox"
 	culture = "greek"
@@ -1397,7 +1397,7 @@
 		add_spouse = 4558
 	}
 	1072.8.1 = {
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 		trait = ambitious
 	}	
 	1074.1.1 = {
@@ -1467,16 +1467,16 @@
 		birth = "1002.1.1"
 	}
 	1071.8.26 = {
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 	}
 	1078.1.1 = {
 		add_spouse = 41552
 	}
 	1078.3.31 = {
-		remove_claim = e_byzantium
+		remove_claim = title:e_byzantium
 	}
 	1081.4.1 = {
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 	}
 	1081.12.10 = {
 		death = "1081.12.10"
@@ -1484,7 +1484,7 @@
 }
 
 1742 = {
-	name = "Alexios"
+	name = "Alexios" #Alexios I Komnenos
 	dynasty = 634
 	martial = 9
 	diplomacy = 9
@@ -1494,6 +1494,7 @@
 	culture = "greek"
 	trait = brave
 	trait = diligent
+	trait = bossy
 	trait = arrogant
 	trait = calm
 	trait = greedy
@@ -1501,22 +1502,22 @@
 	father = 1752
 	mother = 4511
 	1056.1.1 = {
-		birth = "1056.1.1"
+		birth = yes
 	}
 	1071.1.1 = {
 		trait = education_stewardship_4
 	}
 	1072.8.1 = {
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 	}
 	1078.1.1 = {
 		add_spouse = 1743
 	}
 	1081.12.10 = {
-		remove_claim = e_byzantium
+		remove_claim = title:e_byzantium
 	}
 	1118.8.15 = {
-		death = "1118.8.15"
+		death = yes
 	}
 }
 
@@ -1619,7 +1620,7 @@
 }
 
 1749 = {
-	name = "Anna"
+	name = "Anna" 
 	female = yes
 	dynasty = 633
 	religion = "orthodox"
@@ -1661,7 +1662,7 @@
 		add_spouse = 4511
 	}
 	1061.1.1 = {
-		add_pressed_claim = "e_byzantium"
+		add_pressed_claim = title:e_byzantium
 	}
 	1066.1.1 = {
 		trait = infirm
@@ -2030,10 +2031,12 @@
 	religion = "orthodox"
 	culture = "greek"
 	trait = honest
-	trait = ill
 	trait = education_stewardship_1
 	1030.1.1 = {
 		birth = "1030.1.1"
+	}
+	1066.1.1 = {
+		contract_disease_effect = { DISEASE = ill TREATMENT_EVENT = yes }
 	}
 	1066.9.8 = {
 		death = "1066.9.8"
@@ -2308,12 +2311,14 @@
 	religion = "orthodox"
 	culture = "greek"
 	trait = greedy
-	trait = ill
 	trait = education_martial_2
 	father = 41315
 	mother = 1739
 	1011.1.1 = {
 		birth = "1011.1.1"
+	}
+	1066.1.1 = {
+		contract_disease_effect = { DISEASE = ill TREATMENT_EVENT = yes }
 	}
 	1068.1.1 = {
 		death = "1068.1.1"
@@ -2881,7 +2886,6 @@
 	religion = "orthodox"
 	culture = "greek"
 	trait = calm
-	trait = ill
 	trait = education_martial_2
 	father = 41320
 	mother = 159535
@@ -2893,6 +2897,9 @@
 	}
 	1050.1.1 = {
 		add_spouse = 159288
+	}
+	1066.1.1 = {
+		contract_disease_effect = { DISEASE = ill TREATMENT_EVENT = yes }
 	}
 	1067.1.1 = {
 		death = "1067.1.1"
@@ -3123,6 +3130,62 @@
 	}
 	1032.1.1 = {
 		death = "1032.1.1"
+	}
+}
+
+303451 = {
+	name = "Alexandros"	#placeholder brother of Konstantinos IX Monomachos
+	dynasty = 636	#Monomachos
+	religion = "orthodox"
+	culture = "greek"
+	father = 20560
+	1001.1.1 = {
+		birth = yes
+	}
+	1059.1.1 = {
+		death = yes
+	}
+}
+
+303452 = {
+	name = "Theodosios"
+	#AKA "Monomachos the moron", who failed to seize the throne in 1056 and became a "figure of fun"
+	dynasty = 636	#Monomachos
+	religion = "orthodox"
+	culture = "greek"
+	martial = 2
+	diplomacy = 0
+	intrigue = 1
+	stewardship = 2
+	trait = education_intrigue_1
+	father = 303451
+	1022.1.1 = {
+		birth = yes
+	}
+	1076.1.1 = {
+		death = yes
+	}
+}
+
+4495 = {
+	name = "Elena"
+	#Wife of Mihailo of Duklja (serbian file)
+	dynasty = 636	#Monomachos
+	female = yes
+	martial = 6
+	diplomacy = 5
+	intrigue = 7
+	stewardship = 6
+	religion = "orthodox"
+	culture = "greek"
+	trait = arrogant
+	trait = education_intrigue_1
+	father = 303451
+	1024.1.1 = {
+		birth = "1024.1.1"
+	}
+	1080.1.1 = {
+		death = "1080.1.1"
 	}
 }
 
@@ -4016,7 +4079,7 @@
 		add_spouse = 232536
 	}
 	1185.11.7 = {
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 	}
 	1186.1.1 = {
 		death = "1186.1.1"
@@ -4383,7 +4446,7 @@
 		birth = "1170.1.2"
 	}
 	1204.5.16 = {
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 	}
 	1215.1.2 = {
 		death = "1215.1.2"
@@ -4427,11 +4490,11 @@
 	mother = 216510
 	1182.1.2 = {
 		birth = "1182.1.2"
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 	}
 	1184.1.1 = {
 		set_relation_guardian = 466517
-		}
+	}
 	1204.1.2 = {
 		add_spouse = 232509
 	}
@@ -4610,7 +4673,7 @@
 	}
 	1185.9.12 = {
 		death = {
-		death_reason = death_head_ripped_off
+			death_reason = death_head_ripped_off
 		}
 	}
 }
@@ -4663,7 +4726,7 @@
 	}
 	1183.9.24 = {
 		death = {
-		death_reason = death_execution
+			death_reason = death_execution
 		}
 	}
 }
@@ -4678,6 +4741,7 @@
 	culture = "greek"
 	trait = education_learning_3
 	trait = scholar
+	trait = intellect_good_3
 	trait = born_in_the_purple
 	father = 1742
 	mother = 1743
@@ -4813,7 +4877,7 @@
 215571 = {
 	name = "Maria"
 	# AKA: Maria Taronitissa
-	dynasty = 101510
+	dynasty_house = house_taronites
 	female = yes
 	martial = 5
 	diplomacy = 7
@@ -5117,7 +5181,7 @@ KOH_GREEK01 = {
 		birth = "1113.1.1"
 	}
 	1143.4.8 = {
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 	}
 	1154.1.2 = {
 		death = "1154.1.2"
@@ -5842,7 +5906,7 @@ KOH_GREEK01 = {
 }
 
 232545 = {
-	name = "Eudoxia"
+	name = "Eudokia"
 	female = yes
 	dynasty = 634
 	religion = "orthodox"
@@ -5905,7 +5969,7 @@ KOH_GREEK01 = {
 	}
 	1183.1.1 = {
 		death = {
-		death_reason = death_childbirth
+			death_reason = death_childbirth
 		}
 	}
 }
@@ -6590,7 +6654,7 @@ KOH_GREEK01 = {
 
 41536 = {
 	name = "Gregorios"
-	dynasty = 101510
+	dynasty_house = house_taronites
 	martial = 6
 	diplomacy = 6
 	intrigue = 6
@@ -6609,7 +6673,7 @@ KOH_GREEK01 = {
 
 41537 = {
 	name = "Michael"
-	dynasty = 101510
+	dynasty_house = house_taronites
 	martial = 6
 	diplomacy = 6
 	intrigue = 5
@@ -7450,7 +7514,7 @@ KOH_GREEK01 = {
 		add_spouse = 465554
 	}
 	1319.1.1 = {
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 	}
 	1383.6.15 = {
 		death = "1383.6.15"
@@ -10867,6 +10931,9 @@ KOH_GREEK01 = {
 	120.1.1 = {
 		birth = "120.1.1"
 	}
+	167.4.20 = {
+		name = "Soterius"
+	}
 	174.1.1 = {
 		death = "174.1.1"
 	}
@@ -11125,19 +11192,19 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_diplomacy_3
 	679.1.1 = {
-		birth = "679.1.1"
+		birth = yes
 	}
 	741.11.28 = {
 		name = "Zacharias"
-	# AKA: Zacharias
+		# AKA: St Zachary
 	}
 	752.3.14 = {
-		death = "752.3.14"
+		death = yes
 	}
 }
 
 7867 = {
-	name = "Zacharias"
+	name = "Gregorius"
 	martial = 6
 	diplomacy = 7
 	intrigue = 8
@@ -11149,14 +11216,14 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_diplomacy_3
 	690.1.1 = {
-		birth = "690.1.1"
+		birth = yes
 	}
 	731.2.11 = {
 		name = "Gregorius"
-	# AKA: Zacharias
+		# AKA: St Gregory III
 	}
 	741.11.28 = {
-		death = "741.11.28"
+		death = yes
 	}
 }
 
@@ -11173,14 +11240,14 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_diplomacy_3
 	664.1.1 = {
-		birth = "664.1.1"
+		birth = yes
 	}
 	708.2.4 = {
 		name = "Constantinus"
-	# AKA: Constantinus
+		# AKA: Constantine
 	}
 	715.4.9 = {
-		death = "715.4.9"
+		death = yes
 	}
 }
 
@@ -11221,19 +11288,19 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_diplomacy_3
 	650.1.1 = {
-		birth = "650.1.1"
+		birth = yes
 	}
 	705.1.11 = {
 		name = "Ioannes"
-	# AKA: Plato
+		# AKA: John VII
 	}
 	707.10.18 = {
-		death = "707.10.18"
+		death = yes
 	}
 }
 
 7872 = {
-	name = "Plato"
+	name = "Ioannes"
 	martial = 6
 	diplomacy = 7
 	intrigue = 8
@@ -11245,19 +11312,19 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_diplomacy_3
 	655.1.1 = {
-		birth = "655.1.1"
+		birth = yes
 	}
 	701.9.8 = {
 		name = "Ioannes"
-	# AKA: Plato
+		# AKA: John VI
 	}
 	705.1.11 = {
-		death = "705.1.11"
+		death = yes
 	}
 }
 
 7873 = {
-	name = "Plato"
+	name = "Sergius"
 	martial = 6
 	diplomacy = 7
 	intrigue = 8
@@ -11269,19 +11336,19 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_diplomacy_3
 	650.1.1 = {
-		birth = "650.1.1"
+		birth = yes
 	}
 	687.9.21 = {
 		name = "Sergius"
-	# AKA: Plato
+		# AKA: St Sergius I
 	}
 	701.9.8 = {
-		death = "701.9.8"
+		death = yes
 	}
 }
 
 7874 = {
-	name = "Plato"
+	name = "Conon"
 	martial = 6
 	diplomacy = 7
 	intrigue = 8
@@ -11293,19 +11360,19 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_diplomacy_3
 	630.1.1 = {
-		birth = "630.1.1"
+		birth = yes
 	}
 	686.8.2 = {
 		name = "Conon"
-	# AKA: Plato
+		# AKA: Conon
 	}
 	687.9.21 = {
-		death = "687.9.21"
+		death = yes
 	}
 }
 
 7875 = {
-	name = "Plato"
+	name = "Ioannes"
 	martial = 6
 	diplomacy = 7
 	intrigue = 8
@@ -11317,19 +11384,19 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_diplomacy_3
 	635.1.1 = {
-		birth = "635.1.1"
+		birth = yes
 	}
 	685.5.8 = {
 		name = "Ioannes"
-	# AKA: Plato
+		# AKA: John V
 	}
 	686.8.2 = {
-		death = "686.8.2"
+		death = yes
 	}
 }
 
 7878 = {
-	name = "Paulus"
+	name = "Agatho"
 	martial = 6
 	diplomacy = 7
 	intrigue = 8
@@ -11341,19 +11408,19 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_diplomacy_3
 	577.1.1 = {
-		birth = "577.1.1"
+		birth = yes
 	}
 	678.4.11 = {
 		name = "Agatho"
-	# AKA: Paulus
+		# AKA: St Agatho
 	}
 	681.1.10 = {
-		death = "681.1.10"
+		death = yes
 	}
 }
 
 7879 = {
-	name = "Mauricius"
+	name = "Donus"
 	martial = 6
 	diplomacy = 7
 	intrigue = 8
@@ -11365,19 +11432,19 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_diplomacy_3
 	577.1.1 = {
-		birth = "577.1.1"
+		birth = yes
 	}
 	676.6.17 = {
 		name = "Donus"
-	# AKA: Mauricius
+		# AKA: Donus
 	}
 	678.4.11 = {
-		death = "678.4.11"
+		death = yes
 	}
 }
 
 7884 = {
-	name = "Rufinianus"
+	name = "Theodorus"
 	martial = 6
 	diplomacy = 7
 	intrigue = 8
@@ -11389,14 +11456,14 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_diplomacy_3
 	577.1.1 = {
-		birth = "577.1.1"
+		birth = yes
 	}
 	642.10.12 = {
 		name = "Theodorus"
-	# AKA: Rufinianus
+		# AKA: Theodore I
 	}
 	649.5.14 = {
-		death = "649.5.14"
+		death = yes
 	}
 }
 
@@ -11678,7 +11745,7 @@ KOH_GREEK01 = {
 		add_spouse = 41200
 	}
 	1068.1.1 = {
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 	}
 	1082.1.1 = {
 		death = "1082.1.1"
@@ -11696,7 +11763,7 @@ KOH_GREEK01 = {
 		birth = "1060.1.1"
 	}
 	1068.1.1 = {
-		add_pressed_claim = e_byzantium
+		add_pressed_claim = title:e_byzantium
 	}
 	1081.10.18 = {
 		death = "1081.10.18"
@@ -13922,6 +13989,9 @@ KOH_GREEK01 = {
 	1162.1.1 = {
 		birth = "1162.1.1"
 	}
+	1204.1.1 = {
+		add_spouse = 34415
+	}	
 	1212.1.1 = {
 		death = "1212.1.1"
 	}
@@ -14539,7 +14609,7 @@ KOH_GREEK01 = {
 34465 = {
 	name = "Anna"
 	female = yes
-	dynasty = 101510
+	dynasty_house = house_taronites
 	religion = "orthodox"
 	culture = "greek"
 	father = 41537
@@ -14554,7 +14624,7 @@ KOH_GREEK01 = {
 
 34466 = {
 	name = "Ioannes"
-	dynasty = 101510
+	dynasty_house = house_taronites
 	religion = "orthodox"
 	culture = "greek"
 	father = 41537
@@ -14569,7 +14639,7 @@ KOH_GREEK01 = {
 
 34467 = {
 	name = "Michael"
-	dynasty = 101510
+	dynasty_house = house_taronites
 	religion = "orthodox"
 	culture = "greek"
 	father = 34466
@@ -14583,7 +14653,7 @@ KOH_GREEK01 = {
 
 34468 = {
 	name = "Gregorios"
-	dynasty = 101510
+	dynasty_house = house_taronites
 	religion = "orthodox"
 	culture = "greek"
 	father = 41537
@@ -14598,7 +14668,7 @@ KOH_GREEK01 = {
 
 34469 = {
 	name = "Isaakios" #real name unknown
-	dynasty = 101510
+	dynasty_house = house_taronites
 	religion = "orthodox"
 	culture = "greek"
 	father = 41537
@@ -14613,7 +14683,7 @@ KOH_GREEK01 = {
 
 34470 = {
 	name = "Ioannes"
-	dynasty = 101510
+	dynasty_house = house_taronites
 	religion = "orthodox"
 	culture = "greek"
 	father = 34469
@@ -18755,10 +18825,14 @@ KOH_GREEK01 = {
 	trait = zealous
 	trait = education_learning_4
 	3.1.1 = {
-		birth = "3.1.1"
+		birth = yes
+	}
+	30.1.1 = {
+		name = "Petrus"
 	}
 	64.10.13 = {
-		death = "64.10.13"
+		trait = saint
+		death = yes
 	}
 }
 
@@ -21287,6 +21361,61 @@ KOH_GREEK01 = {
 		birth = yes
 	}
 	947.1.1 = {
+		death = yes
+	}
+}
+
+70599 = {
+	name = "Andrew"
+	# AKA: Andreas 'the Apostle'
+	dynasty = 8661
+	martial = 3
+	diplomacy = 9
+	intrigue = 9
+	stewardship = 9
+	religion = orthodox
+	culture = greek
+	trait = trusting
+	trait = brave
+	trait = education_learning_4
+	
+	8.1.1 = {
+		birth = yes
+		give_nickname = nick_the_apostle
+	}
+	65.1.1 = {
+		death = yes
+	}
+}
+
+# Byzantine Governors of Malta
+
+greek0001 = {
+	name = "Himerios" # Fictional
+	dynasty = 1022309
+	religion = "orthodox"
+	culture = "greek"
+	father = "145859"
+
+	782.1.1 = {
+		birth = yes
+	}
+	845.1.1 = {
+		death = yes
+	}
+}
+
+greek0002 = {
+	name = "Ambrosios"
+	dynasty = 1022309
+	religion = "orthodox"
+	culture = "greek"
+	father = "greek0001"
+
+	825.1.1 = {
+		birth = yes
+	}
+	872.1.1 = {
 		death = yes
 	}
 }

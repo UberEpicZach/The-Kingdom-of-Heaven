@@ -9,7 +9,7 @@
 	trait = infertile
 	father = 7976 # Boso the Elder
 	831.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	854.1.1 = {
 		effect = {
@@ -27,7 +27,7 @@
 		}
 	}
 	875.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -44,30 +44,10 @@
 	father = 10026
 	mother = 10027
 	1035.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1085.1.1 = {
-		death = "yes"
-	}
-}
-
-10014 = {
-	name = "Judith"
-	female = yes
-	dynasty = 752
-	martial = 4
-	diplomacy = 6
-	intrigue = 4
-	stewardship = 7
-	religion = "catholic"
-	culture = french
-	trait = education_diplomacy_2
-	father = 260
-	1037.1.2 = {
-		birth = "1037.1.2"
-	}
-	1087.1.2 = {
-		death = "1087.1.2"
+		death = yes
 	}
 }
 
@@ -199,7 +179,7 @@
 10065 = {
 	name = "Eustache"
 	# AKA: Eustatius
-	dynasty = 308
+	dynasty_house = house_boulogne
 	martial = 6
 	diplomacy = 6
 	intrigue = 4
@@ -224,7 +204,7 @@
 10067 = {
 	name = "Baudouin"
 	# AKA: Boudewijn
-	dynasty = 308
+	dynasty_house = house_boulogne
 	martial = 6
 	diplomacy = 6
 	intrigue = 4
@@ -247,7 +227,7 @@
 10069 = {
 	name = "Arnould"
 	# AKA: Arnulf
-	dynasty = 308
+	dynasty_house = house_boulogne
 	martial = 6
 	diplomacy = 6
 	intrigue = 4
@@ -266,7 +246,7 @@
 10071 = {
 	name = "Eustache"
 	# AKA: Eustatius
-	dynasty = 308
+	dynasty_house = house_boulogne
 	martial = 5
 	diplomacy = 2
 	intrigue = 4
@@ -294,7 +274,7 @@
 10072 = {
 	name = "Godefroy"
 	# AKA: Godfried
-	dynasty = 308
+	dynasty_house = house_boulogne
 	martial = 8
 	diplomacy = 8
 	intrigue = 6
@@ -320,7 +300,7 @@
 10073 = {
 	name = "Baudouin"
 	# AKA: Boudewijn
-	dynasty = 308
+	dynasty_house = house_boulogne
 	martial = 6
 	diplomacy = 6
 	intrigue = 9
@@ -467,7 +447,7 @@
 106591 = {
 	name = "Gisela"
 	female = yes
-	dynasty = 420
+	dynasty_house = house_luxemburg
 	martial = 5
 	diplomacy = 7
 	intrigue = 7
@@ -1103,29 +1083,9 @@
 	}
 }
 
-#131710 = {
-#	name = "ManassE_s"
-#	# AKA: Manasses
-#	dynasty = 20035
-#	martial = 5
-#	diplomacy = 5
-#	intrigue = 6
-#	stewardship = 4
-#	religion = "catholic"
-#	culture = french
-#	trait = cynical
-#	trait = education_diplomacy_2
-#	986.1.1 = {
-#		birth = "1000.1.1"
-#	}
-#	1050.1.1 = {
-#		death = "1050.1.1"
-#	}
-#}
-
 131715 = {
 	name = "Rainier"
-	dynasty = 25060
+	dynasty_house = house_chaumontois
 	martial = 5
 	diplomacy = 5
 	intrigue = 5
@@ -1158,10 +1118,10 @@
 	trait = education_stewardship_3
 	father = 144951
 	960.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1016.7.6 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -1178,13 +1138,13 @@
 	trait = education_martial_2
 	father = 1358
 	1014.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1046.1.1 = {
 		add_spouse = 393
 	}
 	1051.3.26 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -1201,10 +1161,10 @@
 	culture = french
 	father = 1354
 	977.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1017.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -1221,10 +1181,10 @@
 	father = 1354
 	mother = 1355
 	1000.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1035.4.13 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -1238,11 +1198,13 @@
 	stewardship = 7
 	religion = "catholic"
 	culture = french
-	trait = ill
 	trait = education_learning_3
 	father = 1358
 	1021.1.1 = {
 		birth = "1021.1.1"
+	}
+	1066.1.1 = {
+		contract_disease_effect = { DISEASE = ill TREATMENT_EVENT = yes }
 	}
 	1071.1.2 = {
 		death = "1071.1.2"
@@ -1427,7 +1389,7 @@
 	1134.1.1 = {
 		add_pressed_claim = title:c_jaffa
 	}
-		1135.1.1 = {
+	1135.1.1 = {
 		add_spouse = 223581
 	}
 	1185.1.1 = {
@@ -1449,7 +1411,7 @@
 		add_spouse = 800502
 	}
 	1190.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -1474,7 +1436,7 @@
 		}
 	}
 	1189.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -1489,7 +1451,7 @@
 		birth = "1112.1.1"
 	}
 	1150.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -1924,6 +1886,18 @@
 	}
 }
 
+144607 = {
+	name = "Robert"
+	religion = "catholic"
+	culture = french
+	1089.1.1 = {
+		birth = "1089.1.1"
+	}
+	1147.1.13 = {
+		death = "1147.1.13"
+	}
+}
+
 144608 = {
 	name = "Everard"
 	religion = "catholic"
@@ -2308,29 +2282,6 @@
 	}
 }
 
-20112 = {
-	name = "Richard"
-	dynasty = 22001
-	martial = 8
-	diplomacy = 5
-	intrigue = 6
-	stewardship = 6
-	religion = "catholic"
-	culture = french
-	trait = just
-	trait = education_martial_2
-	father = 260
-	986.1.1 = {
-		birth = "986.1.1"
-	}
-	1029.1.2 = {
-		add_spouse = 10015
-	}
-	1067.1.1 = {
-		death = "1067.1.1"
-	}
-}
-
 2013 = {
 	name = "Oddon"
 	# AKA: Odo
@@ -2381,7 +2332,7 @@
 20142 = {
 	name = "Eustache"
 	# AKA: Eustatius 'Gernobadatus'
-	dynasty = 308
+	dynasty_house = house_boulogne
 	martial = 7
 	diplomacy = 2
 	intrigue = 4
@@ -2758,6 +2709,7 @@
 	stewardship = 5
 	religion = "catholic"
 	culture = french
+	trait = clubfooted
 	trait = education_diplomacy_2
 	father = 303432
 	1160.1.2 = {
@@ -2767,7 +2719,7 @@
 		add_spouse = 204658
 	}
 	1210.1.2 = {
-		death = "1206.1.2"
+		death = "1210.1.2"
 	}
 }
 
@@ -3008,6 +2960,7 @@
 	1145.1.1 = {
 		birth = "1145.1.1"
 	}
+	#Raoul I de Coucy (1174.1.1)
 	1217.1.1 = {
 		death = "1217.1.1"
 	}
@@ -3621,7 +3574,7 @@
 	father = 205520
 	mother = 212589
 	1174.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1204.1.1 = {
 		add_spouse = 213542
@@ -3711,7 +3664,7 @@
 	#}
 	
 	1216.6.11 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -4413,13 +4366,13 @@
 	father = 205727 #Robert II de Courtenay
 	#mother = #Mahaut de Mehun
 	1218.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#1249.1.1 = {
 	#	add_spouse = #Petronille de Joigny
 	#}
 	1250.2.8 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -4432,13 +4385,13 @@
 	#mother = #Petronille de Joigny
 	female = yes
 	1250.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#1259.1.1 = {
 	#	add_spouse = 455546 #Robert II d'Artois
 	#}
 	1275.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -4790,8 +4743,8 @@
 	1146.1.2 = {
 		add_spouse = 205823
 	}
-	1181.1.1 = {
-		death = "1181.1.1"
+	1181.1.2 = {
+		death = "1181.1.2"
 	}
 }
 
@@ -4887,7 +4840,7 @@
 	name = "Mathilde"
 	# AKA: Mahaut
 	female = yes
-	dynasty = 308
+	dynasty_house = house_boulogne
 	martial = 8
 	diplomacy = 5
 	intrigue = 6
@@ -5223,6 +5176,7 @@
 	religion = "catholic"
 	culture = french
 	trait = humble
+	trait = gluttonous
 	trait = education_stewardship_3
 	father = KOH0167
 	1167.1.2 = {
@@ -5441,7 +5395,7 @@
 	trait = education_martial_2
 
 	1201.5.23 = {
-		birth = "yes"
+		birth = yes
 	}
 	1219.1.1 = {
 		give_nickname = nick_the_troubadour
@@ -5457,7 +5411,7 @@
 		add_spouse = 7477
 	}
 	1253.7.8 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -5842,7 +5796,7 @@
 	1003.1.1 = { #circa
 		remove_spouse = 1147 #Berthe de Bourgogne
 	}
-	1003.1.5 = { #circa  					
+	1003.1.5 = { #circa
 		add_spouse = 333 #Constance d'Arles
 	}
 	1031.1.1 = {
@@ -6229,13 +6183,13 @@
 	father = 206 #Robert II of France
 	mother = 333 #Constance d'Arles
 	1008.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1051.5.19 = {
 		add_spouse = 627 #Anne de Kiev
 	}
 	1060.8.4 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -6294,7 +6248,7 @@
 	}
 	1048.1.1 = {
 		remove_spouse = 209 #Hélie de Semur-en-Brionnais, before 1055
-	}			 
+	}
 	1049.1.1 = {
 		add_spouse = 375 #Ermengarde [Blanche] d'Anjou, before 1056
 	}
@@ -6852,6 +6806,46 @@
 	}
 	1219.1.1 = {
 		death = "1219.1.1"
+	}
+}
+
+212650 = {
+	name = "Gertrude"
+	female = yes
+	dynasty = 23110
+	martial = 6
+	diplomacy = 6
+	intrigue = 7
+	stewardship = 5
+	religion = "catholic"
+	culture = french
+	trait = cynical
+	trait = stuttering
+	trait = education_intrigue_2
+	father = 212651
+	1141.1.1 = {
+		birth = "1141.1.1"
+	}
+	1189.12.26 = {
+		death = "1189.12.26"
+	}
+}
+
+212651 = {
+	name = "Godefroi"
+	dynasty = 23110
+	martial = 6
+	diplomacy = 5
+	intrigue = 6
+	stewardship = 6
+	religion = "catholic"
+	culture = french
+	trait = education_martial_2
+	1102.1.2 = {
+		birth = "1102.1.2"
+	}
+	1157.1.2 = {
+		death = "1157.1.2"
 	}
 }
 
@@ -8040,6 +8034,9 @@
 	stewardship = 5
 	religion = "catholic"
 	culture = french #Outremer
+	trait = chaste
+	trait = humble
+	trait = education_martial_2
 	father = 93008
 	mother = KOH0040
 	1136.1.1 = {
@@ -8310,7 +8307,7 @@
 	intrigue = 8
 	stewardship = 7
 	religion = "catholic"
-	culture = norman
+	culture = french
 	trait = humble
 	trait = cynical
 	trait = education_learning_3
@@ -8673,8 +8670,8 @@
 	1059.1.1 = {
 		birth = "1059.1.1"
 	}
-	1110.1.1 = {
-		death = "1110.1.1"
+	1111.1.1 = {
+		death = "1111.1.1"
 	}
 }
 
@@ -9155,7 +9152,7 @@
 
 232011 = {
 	name = "Arnould" #count of Guines
-	dynasty = 102
+	dynasty_house = house_guines
 	martial = 4
 	diplomacy = 5
 	intrigue = 6
@@ -9179,7 +9176,7 @@
 
 232013 = {
 	name = "Gervais"
-	#Gervais of Rethel	   
+	#Gervais of Rethel
 	dynasty = 20035
 	martial = 7
 	diplomacy = 6
@@ -9191,7 +9188,7 @@
 	father = 90082
 	mother = 90077
 	1056.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1108.1.1 = {
 		add_spouse = 34352
@@ -9203,7 +9200,7 @@
 
 232014 = {
 	name = "Mathilde"
-	#Mathilde of Rethel				
+	#Mathilde of Rethel
 	female = yes
 	dynasty = 20035
 	martial = 6
@@ -9219,7 +9216,7 @@
 		birth = "1076.1.1"
 	}
 	1095.1.1 = {
-		add_spouse = 232015
+		add_spouse = 232015 # matrilineal
 	}
 	1151.1.1 = {
 		death = "1151.1.1"
@@ -10188,8 +10185,9 @@
 	trait = arrogant
 	trait = greedy
 	trait = fickle
+	sexuality = heterosexual
 	835.1.1 = {
-		birth = "yes"
+		birth = yes
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
@@ -10202,7 +10200,7 @@
 		add_piety = 750 # This period of life dominated by holy wars in southern Italy.
 	}
 	875.8.12 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -10257,7 +10255,7 @@
 30910 = {
 	name = "Ida"
 	female = yes
-	dynasty = 308
+	dynasty_house = house_boulogne
 	religion = "catholic"
 	culture = french
 	father = 10065
@@ -10273,7 +10271,7 @@
 30911 = {
 	name = "Gerberge"
 	female = yes
-	dynasty = 308
+	dynasty_house = house_boulogne
 	religion = "catholic"
 	culture = french
 	father = 10065
@@ -10288,7 +10286,7 @@
 
 30913 = {
 	name = "Raoul"
-	dynasty = 308
+	dynasty_house = house_boulogne
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -10303,7 +10301,7 @@
 
 30914 = {
 	name = "Eustache"
-	dynasty = 308
+	dynasty_house = house_boulogne
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -10318,7 +10316,7 @@
 
 30915 = {
 	name = "Godefroy"
-	dynasty = 308
+	dynasty_house = house_boulogne
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -11426,7 +11424,7 @@
 	mother = 31397
 	
 	1208.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1239.1.1 = {
 		add_spouse = 31417
@@ -11438,7 +11436,7 @@
 		add_spouse = 125733
 	}
 	1278.1.14 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -11541,7 +11539,7 @@
 
 316 = {
 	name = "Lambert"
-	dynasty = 308
+	dynasty_house = house_boulogne
 	martial = 4
 	diplomacy = 8
 	intrigue = 4
@@ -11566,7 +11564,7 @@
 317 = {
 	name = "Judith"
 	female = yes
-	dynasty = 308
+	dynasty_house = house_boulogne
 	martial = 6
 	diplomacy = 7
 	intrigue = 5
@@ -12246,6 +12244,47 @@
 	}
 }
 
+40060 = {
+	name = "Simon"
+	dynasty = 40010
+	martial = 2
+	diplomacy = 10
+	intrigue = 5
+	stewardship = 5
+	religion = "catholic"
+	culture = french
+	trait = gluttonous
+	trait = education_intrigue_4
+	1045.1.1 = {
+		birth = "1045.1.1"
+	}
+	1061.1.2 = {
+		add_spouse = 40055
+	}
+	1095.1.1 = {
+		death = "1095.1.1"
+	}
+}
+
+40062 = {
+	name = "Simon"
+	dynasty = 40010
+	martial = 8
+	diplomacy = 5
+	intrigue = 2
+	stewardship = 7
+	religion = "catholic"
+	culture = french
+	father = 40060
+	mother = 40055
+	1065.1.1 = {
+		birth = "1065.1.1"
+	}
+	1115.1.1 = {
+		death = "1115.1.1"
+	}
+}
+
 40080 = {
 	name = "Wulgrin" #Wulgrim I Taillefer
 	dynasty = 541
@@ -12288,7 +12327,7 @@
 	father = 40090 #Guillaume IV Taillefer
 	mother = 40097 #Gerberge d'Anjou
 	985.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married 999.1.1 Aimeric de Limousin 40308
 	1045.1.1 = {
@@ -12305,7 +12344,7 @@
 	father = 372
 	mother = 413
 	971.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#980 married Guillaume IV Taillefer 40090
 	1040.4.1 = {
@@ -12738,7 +12777,7 @@
 
 40266 = {
 	name = "Aldebert" #Hildebert I de Limoges
-	dynasty = 729
+	dynasty_house = house_limoges
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -12758,7 +12797,7 @@
 
 40270 = {
 	name = "Foucher" #Foucher I de Limoges
-	dynasty = 729
+	dynasty_house = house_limoges
 	martial = 6
 	diplomacy = 3
 	intrigue = 5
@@ -12777,7 +12816,7 @@
 40272 = {
 	name = "AdhE_mar" #Adhémar I de Ségur
 	# AKA: Adhemar
-	dynasty = 729
+	dynasty_house = house_limoges
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -12796,7 +12835,7 @@
 40273 = {
 	name = "Emma" # de Ségur
 	female = yes
-	dynasty = 729 #de Limoges
+	dynasty_house = house_limoges #de Limoges
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -12815,7 +12854,7 @@
 
 40290 = {
 	name = "Bernat" #Bernard I de Comborn
-	dynasty = 13100 #de Comborn was 727 de Toulouse
+	dynasty_house = house_comborn #de Comborn was 727 de Toulouse
 	martial = 6
 	diplomacy = 4
 	intrigue = 7
@@ -12836,7 +12875,7 @@
 
 40296 = {
 	name = "Guy" #Guy I de Limoges
-	dynasty = 729 #was 100147 de Limousin
+	dynasty_house = house_limoges #was 100147 de Limousin
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -12859,7 +12898,7 @@
 40298 = {
 	name = "AdhE_mar" #Adhémar I de Limoges
 	# AKA: Adhemar
-	dynasty = 729 #was 100147 de Limousin
+	dynasty_house = house_limoges #was 100147 de Limousin
 	religion = "catholic"
 	culture = french
 	father = 40296 #Guy I de Limoges
@@ -12877,7 +12916,7 @@
 40300 = {
 	name = "AdhE_mar" #Adhémar II de Limoges
 	# AKA: Adhemar
-	dynasty = 729 #was 100147 de Limousin
+	dynasty_house = house_limoges #was 100147 de Limousin
 	religion = "catholic"
 	culture = french
 	father = 40298 #Adhémar I de Limoges
@@ -12895,7 +12934,7 @@
 40301 = {
 	name = "Aimeline" #de Limoges
 	female = yes
-	dynasty = 729 #was 100147 de Limousin
+	dynasty_house = house_limoges #was 100147 de Limousin
 	religion = "catholic"
 	culture = french
 	father = 40300 #Adhémar II de Limoges
@@ -12912,7 +12951,7 @@
 40303 = {
 	name = "Marie" #de Limoges
 	female = yes
-	dynasty = 729 #was 100147 de Limousin
+	dynasty_house = house_limoges #was 100147 de Limousin
 	religion = "catholic"
 	culture = french
 	father = 40300 #Adhémar II de Limoges
@@ -12929,7 +12968,7 @@
 40304 = {
 	name = "AdhE_mar" #Adhémar III de Limoges
 	# AKA: Adhemar
-	dynasty = 729 #was 100147 de Limousin
+	dynasty_house = house_limoges #was 100147 de Limousin
 	religion = "catholic"
 	culture = french
 	father = 40300 #Adhémar II de Limoges
@@ -12946,7 +12985,7 @@
 
 40306 = {
 	name = "Bernard" #Bernard I de Brosse
-	dynasty = 13102
+	dynasty_house = house_brosse
 	religion = "catholic"
 	culture = french
 	father = 40298 #Adhémar I de Limoges
@@ -13049,7 +13088,7 @@
 	930.1.2 = {
 		birth = "930.1.2"
 	}
-	968.1.2 = {
+	968.2.1 = {
 		add_spouse = 40323
 	}
 	979.1.2 = {
@@ -13108,7 +13147,7 @@
 	father = 40330
 	mother = 40323
 	971.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1015.1.2 = {
 		death = "1015.1.2"
@@ -13736,7 +13775,7 @@ KOH0060 = {
 
 40398 = {
 	name = "Raoul" # I of Vexin
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	religion = "catholic"
 	culture = french
 	father = 168064
@@ -13751,12 +13790,12 @@ KOH0060 = {
 
 40399 = {
 	name = "Raoul" # II of Vexin
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	religion = "catholic"
 	culture = french
 	father = 40398
 	909.1.1 = {
-		birth = "yes" # Estimate
+		birth = yes # Estimate
 	}
 	943.1.1 = {
 		death = "943.1.1"
@@ -13765,7 +13804,7 @@ KOH0060 = {
 
 40400 = {
 	name = "Gauthier" # I of Vexin
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 8
 	diplomacy = 6
 	intrigue = 7
@@ -13774,7 +13813,7 @@ KOH0060 = {
 	culture = french
 	father = 40399
 	927.1.1 = { # Estimate
-		birth = "yes"
+		birth = yes
 	}
 	992.1.1 = {
 		death = "992.1.1"
@@ -13783,7 +13822,7 @@ KOH0060 = {
 
 40402 = {
 	name = "Gauthier" # II 'le Blanc'
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 8
 	diplomacy = 6
 	intrigue = 7
@@ -13804,7 +13843,7 @@ KOH0060 = {
 
 40404 = {
 	name = "Gauthier" # Walter III of Vexin, Valois, Maine and Amiens
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 3
 	diplomacy = 6
 	intrigue = 7
@@ -13827,7 +13866,7 @@ KOH0060 = {
 
 40406 = {
 	name = "Raoul"
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 5
 	diplomacy = 6
 	intrigue = 7
@@ -13851,7 +13890,7 @@ KOH0060 = {
 	name = "Alix-AdE_le"
 	# AKA: Alix
 	female = yes
-	dynasty = 380
+	dynasty = house_vexin_amiens
 	martial = 3
 	diplomacy = 2
 	intrigue = 8
@@ -13873,7 +13912,7 @@ KOH0060 = {
 	name = "AdE_laI_de"
 	# AKA: Adelaide
 	female = yes
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 5
 	diplomacy = 7
 	intrigue = 4
@@ -13893,7 +13932,7 @@ KOH0060 = {
 
 40412 = {
 	name = "Thibault"
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 4
 	diplomacy = 6
 	intrigue = 7
@@ -13913,7 +13952,7 @@ KOH0060 = {
 
 40414 = {
 	name = "Adam"
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 6
 	diplomacy = 5
 	intrigue = 6
@@ -13933,7 +13972,7 @@ KOH0060 = {
 
 40416 = {
 	name = "Dreux"
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 8
 	diplomacy = 6
 	intrigue = 7
@@ -13956,7 +13995,7 @@ KOH0060 = {
 40418 = {
 	name = "Raoul"
 	#AKA Ralph the Timid
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 7
 	diplomacy = 6
 	intrigue = 5
@@ -13980,7 +14019,7 @@ KOH0060 = {
 
 40422 = {
 	name = "Geoffroy"
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 8
 	diplomacy = 6
 	intrigue = 7
@@ -13998,7 +14037,7 @@ KOH0060 = {
 
 40424 = {
 	name = "Eudes"
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 5
 	diplomacy = 7
 	intrigue = 8
@@ -14018,7 +14057,7 @@ KOH0060 = {
 
 40426 = {
 	name = "Eudes"
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 8
 	diplomacy = 6
 	intrigue = 5
@@ -14038,7 +14077,7 @@ KOH0060 = {
 
 40428 = {
 	name = "Osmond"
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 4
 	diplomacy = 6
 	intrigue = 7
@@ -14337,7 +14376,7 @@ KOH0060 = {
 	name = "PE_tronille"
 	# AKA: Petronille
 	female = yes
-	dynasty = 23115
+	dynasty = 80
 	martial = 8
 	diplomacy = 6
 	intrigue = 7
@@ -14706,29 +14745,6 @@ KOH0060 = {
 	}
 }
 
-41237 = {
-	name = "Gundreda"
-	female = yes
-	dynasty = 352
-	martial = 7
-	diplomacy = 5
-	intrigue = 4
-	stewardship = 6
-	religion = "catholic"
-	culture = french
-	trait = temperate
-	trait = chaste
-	trait = education_intrigue_1
-	father = 41241
-	mother = 41242
-	1050.1.1 = {
-		birth = "1050.1.1"
-	}
-	1100.1.1 = {
-		death = "1100.1.1"
-	}
-}
-
 413 = {
 	name = "Adelais"
 	female = yes
@@ -14843,7 +14859,7 @@ KOH0060 = {
 41729 = {
 	name = "Godefroy"
 	# AKA: Godfried
-	dynasty = 308
+	dynasty_house = house_boulogne
 	martial = 2
 	diplomacy = 7
 	intrigue = 4
@@ -14987,8 +15003,8 @@ KOH0060 = {
 	966.1.2 = {
 		birth = "966.1.2"
 	}
-	1030.1.1 = {
-		death = "1030.1.1"
+	1030.1.2 = {
+		death = "1030.1.2"
 	}
 }
 
@@ -15007,8 +15023,8 @@ KOH0060 = {
 	1002.1.2 = {
 		birth = "1002.1.2"
 	}
-	1055.1.1 = {
-		death = "1055.1.1"
+	1055.1.2 = {
+		death = "1055.1.2"
 	}
 }
 
@@ -15029,8 +15045,8 @@ KOH0060 = {
 	1018.1.1 = {
 		add_spouse = 431
 	}
-	1052.1.1 = {
-		death = "1052.1.1"
+	1052.11.20 = {
+		death = "1052.11.20"
 	}
 }
 
@@ -15054,8 +15070,8 @@ KOH0060 = {
 	1048.1.1 = {
 		add_spouse = 255
 	}
-	1053.1.1 = {
-		death = "1053.1.1"
+	1053.10.25 = {
+		death = "1053.10.25"
 	}
 }
 
@@ -15092,7 +15108,7 @@ KOH0060 = {
 	culture = french
 	trait = education_learning_3
 	980.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1063.1.2 = {
 		death = "1063.1.2"
@@ -15524,7 +15540,7 @@ KOH0060 = {
 
 454994 = {
 	name = "Arnould" #count of Guines
-	dynasty = 102
+	dynasty_house = house_guines
 	martial = 8
 	diplomacy = 8
 	intrigue = 6
@@ -16044,7 +16060,7 @@ KOH0060 = {
 455418 = {
 	name = "Jeanne"
 	female = yes
-	dynasty = 353
+	dynasty_house = house_evreux
 	martial = 5
 	diplomacy = 5
 	intrigue = 4
@@ -17181,7 +17197,7 @@ KOH0060 = {
 	father = 455516
 	mother = 455517
 	1296.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1369.1.2 = {
 		death = "1369.1.2"
@@ -19109,7 +19125,7 @@ KOH0060 = {
 
 455810 = {
 	name = "Philippe"
-	dynasty = 353
+	dynasty_house = house_evreux
 	martial = 4
 	diplomacy = 4
 	intrigue = 8
@@ -19137,7 +19153,7 @@ KOH0060 = {
 
 455811 = {
 	name = "Louis"
-	dynasty = 353
+	dynasty_house = house_evreux
 	martial = 6
 	diplomacy = 6
 	intrigue = 7
@@ -19164,7 +19180,7 @@ KOH0060 = {
 455812 = {
 	name = "Marie"
 	female = yes
-	dynasty = 353
+	dynasty_house = house_evreux
 	martial = 7
 	diplomacy = 8
 	intrigue = 6
@@ -19185,7 +19201,7 @@ KOH0060 = {
 
 455813 = {
 	name = "Charles"
-	dynasty = 353
+	dynasty_house = house_evreux
 	martial = 4
 	diplomacy = 7
 	intrigue = 7
@@ -19215,7 +19231,7 @@ KOH0060 = {
 455814 = {
 	name = "Blanche"
 	female = yes
-	dynasty = 353
+	dynasty_house = house_evreux
 	martial = 8
 	diplomacy = 4
 	intrigue = 4
@@ -19239,7 +19255,7 @@ KOH0060 = {
 455815 = {
 	name = "Agnes"
 	female = yes
-	dynasty = 353
+	dynasty_house = house_evreux
 	martial = 6
 	diplomacy = 4
 	intrigue = 7
@@ -19259,7 +19275,7 @@ KOH0060 = {
 
 455816 = {
 	name = "Philippe"
-	dynasty = 353
+	dynasty_house = house_evreux
 	martial = 7
 	diplomacy = 7
 	intrigue = 6
@@ -19278,7 +19294,7 @@ KOH0060 = {
 
 455817 = {
 	name = "Charles"
-	dynasty = 353
+	dynasty_house = house_evreux
 	martial = 8
 	diplomacy = 7
 	intrigue = 5
@@ -19301,7 +19317,7 @@ KOH0060 = {
 
 455818 = {
 	name = "Louis"
-	dynasty = 353
+	dynasty_house = house_evreux
 	martial = 7
 	diplomacy = 5
 	intrigue = 4
@@ -19321,7 +19337,7 @@ KOH0060 = {
 455822 = {
 	name = "Marguerite" #d'Evreux
 	female = yes
-	dynasty = 353
+	dynasty_house = house_evreux
 	religion = "catholic"
 	culture = french
 	father = 455811
@@ -19753,10 +19769,10 @@ KOH0060 = {
 	culture = french
 
 	1260.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1302.7.11 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -20479,7 +20495,6 @@ KOH0060 = {
 	1170.1.11 = {
 		birth = "1170.1.11"
 	}
-	
 	1210.1.1 = {
 		add_spouse = 34994 #Maria de Montferrat, Queen of Jerusalem
 	}
@@ -21584,7 +21599,7 @@ KOH0060 = {
 	father = 462742
 	mother = 455501 # Jeanne, Countess of Hainaut
 	1311.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1356.6.23 = {
 		death = "1356.6.23"
@@ -21894,7 +21909,7 @@ KOH0060 = {
 487045 = {
 	name = "Marie"
 	female = yes
-	dynasty = 353
+	dynasty_house = house_evreux
 	martial = 5
 	diplomacy = 6
 	intrigue = 5
@@ -22303,7 +22318,7 @@ KOH0060 = {
 	father = 91005 #Robert III de Hesbaye
 	mother = 91122 #Waldrade d'Orléans
 	830.1.1 = {
-		birth = "yes" #between 815 and 830
+		birth = yes #between 815 and 830
 	}
 #	854.1.1 = { Can't find a source for this spouse
 #		add_spouse = 91123 #Emma, d. of Conrad I of Burgundy
@@ -22345,14 +22360,14 @@ KOH0060 = {
 
 6442 = {
 	name = "Robert" #Robert I of France
-	dynasty = 743 #Robertine
+	dynasty = 743 #Robertine (dynasty of house Capet)
 	religion = "catholic"
 	culture = french
 	father = 6440 #Robert the Strong of Anjou
 	mother = 161485 #Adelaide of Tours
 	trait = physique_good_1
 	866.8.1 = { #Born after Robert's death
-		birth = "yes"
+		birth = yes
 	}
 	886.1.1 = {
 		add_spouse = 91124 #Adèle du Maine
@@ -22452,7 +22467,7 @@ KOH0060 = {
 	mother = 161485 #Adelaide of Tours
 	trait = calm
 	857.1.1 = {
-		birth = "852.1.1"
+		birth = yes
 	}
 	866.7.2 = {
 		effect = {
@@ -22463,7 +22478,7 @@ KOH0060 = {
 		add_spouse = 91125 #Théodérade de Troyes
 	}
 	898.1.3 = {
-		death = "898.1.3"
+		death = yes
 	}
 }
 
@@ -22517,7 +22532,7 @@ KOH0060 = {
 	culture = french
 	
 	1069.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1090.1.1 = {
 		employer = 108500 #Alfonso 'el Bravo' of Léon
@@ -22529,7 +22544,7 @@ KOH0060 = {
 		dynasty = 741 # de Bourgogne
 	}
 	1112.5.22 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -24846,10 +24861,10 @@ KOH0060 = {
 	culture = french
 
 	1225.1.19 = {
-		birth = "yes"
+		birth = yes
 	}
 	1283.8.11 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -24913,10 +24928,10 @@ KOH0060 = {
 	culture = french
 
 	1242.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1295.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -24943,10 +24958,10 @@ KOH0060 = {
 	culture = french
 
 	1318.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1368.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -25969,10 +25984,10 @@ KOH0060 = {
 	father = 144998 #(King Lothaire II)
 	mother = 168314
 	863.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	925.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -26352,7 +26367,7 @@ KOH0060 = {
 	father = 361
 	mother = 1111
 	972.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1040.1.1 = {
 		death = "1040.1.1"
@@ -26361,7 +26376,7 @@ KOH0060 = {
 
 90045 = {
 	name = "Engelbert"
-	dynasty = 23115
+	dynasty = 80
 	martial = 5
 	diplomacy = 5
 	intrigue = 5
@@ -26379,7 +26394,7 @@ KOH0060 = {
 
 90046 = {
 	name = "Engelbert"
-	dynasty = 23115
+	dynasty = 80
 	martial = 5
 	diplomacy = 5
 	intrigue = 5
@@ -26397,7 +26412,7 @@ KOH0060 = {
 
 90047 = {
 	name = "Gauthier"
-	dynasty = 23115
+	dynasty = 80
 	martial = 5
 	diplomacy = 5
 	intrigue = 4
@@ -26439,7 +26454,7 @@ KOH0060 = {
 
 90049 = {
 	name = "Engelbert"
-	dynasty = 23115
+	dynasty = 80
 	martial = 4
 	diplomacy = 4
 	intrigue = 4
@@ -26477,6 +26492,76 @@ KOH0060 = {
 		death = "1027.1.2"
 	}
 }
+
+90051 = {
+	name = "Geoffroy"
+	dynasty = 23110
+	martial = 7
+	diplomacy = 5
+	intrigue = 5
+	stewardship = 6
+	religion = "catholic"
+	culture = french
+	trait = zealous
+	trait = education_martial_1
+	father = 90050
+	mother = 40447
+	1027.1.2 = {
+		birth = "1027.1.2"
+	}
+	1048.1.2 = {
+		add_spouse = 90052
+	}
+	1077.1.2 = {
+		death = "1077.1.2"
+	}
+}
+
+90052 = {
+	name = "Blanche"
+	female = yes
+	martial = 3
+	diplomacy = 7
+	intrigue = 5
+	stewardship = 6
+	religion = "catholic"
+	culture = french
+	trait = chaste
+	trait = education_learning_3
+	1024.1.2 = {
+		birth = "1024.1.2"
+	}
+	1074.1.2 = {
+		death = "1074.1.2"
+	}
+}
+
+90053 = {
+	name = "Geoffroy"
+	dynasty = 23110
+	martial = 5
+	diplomacy = 5
+	intrigue = 5
+	stewardship = 5
+	religion = "catholic"
+	culture = french
+	trait = arbitrary
+	trait = education_stewardship_2
+	father = 90051
+	mother = 90052
+	1051.1.2 = {
+		birth = "1051.1.2"
+	}
+	1066.1.2 = {
+		effect = {
+			create_betrothal = character:90069
+		}
+	}
+	1101.1.2 = {
+		death = "1101.1.2"
+	}
+}
+
 
 90054 = {
 	name = "Hilduin"
@@ -26962,13 +27047,13 @@ KOH0060 = {
 	trait = education_diplomacy_2
 	970.1.1 = {
 		#Estimated around 965-970, very roughly
-		birth = "yes"
+		birth = yes
 	}
 	1032.3.29 = {
 		#Strangely enough, it's clear he died a 29 of March... but as far as the year goes...
 		#Several estimates : 1048, 990, after 1026, 1032...
 		#Went with 1032, as it seems like the safest bet
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -26987,14 +27072,14 @@ KOH0060 = {
 	father = 131710
 	1022.1.1 = {
 		#A few estimates, "around 990" and 1022 seem to be the most prevalent ones, but we also see "between 1010-1020"
-		birth = "yes"
+		birth = yes
 	}
 	1046.1.1 = {
 		add_spouse = 90081
 	}
 	1081.1.1 = {
 		#Many estimates as well : 1048, 1056, 1080, 1081...
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -27015,13 +27100,13 @@ KOH0060 = {
 	mother = 90081
 	1040.1.1 = {
 		#Estimated between 1030 & 1040
-		birth = "yes"
+		birth = yes
 	}
 	1056.1.1 = {
 		add_spouse = 90077
 	}
 	1118.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -27128,13 +27213,13 @@ KOH0060 = {
 	father = 144998 #(King Lothaire II)
 	mother = 168314
 	855.12.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	885.1.1 = {
 		trait = blind
 	}
 	895.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -27164,6 +27249,8 @@ KOH0060 = {
 	dna = 90104_charles_the_bald
 	# AKA: Charles 'le Chauvre'
 	dynasty = 25061
+	religion = "catholic"
+	culture = french
 	martial = 6
 	diplomacy = 3
 	intrigue = 7
@@ -27173,13 +27260,12 @@ KOH0060 = {
 	trait = deceitful
 	trait = impatient
 	trait = stubborn
-	religion = "catholic"
-	culture = french
+	sexuality = heterosexual
 	father = 90095
 	mother = 7986
 	
 	823.1.14 = {
-		birth = "yes"
+		birth = yes
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
@@ -27195,7 +27281,7 @@ KOH0060 = {
 		add_spouse = 168164
 	}
 	877.6.10 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -27481,7 +27567,7 @@ KOH0060 = {
 	father = 90104 #(King Charles the Bald)
 	mother = 167830 #(Irminitrude of Orléans)
 	843.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	862.3.1 = {
 		add_spouse = 91385 # Ansgarde de Bourgogne
@@ -27495,7 +27581,7 @@ KOH0060 = {
 		add_spouse = 168091
 	}
 	879.1.11 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -27594,7 +27680,7 @@ KOH0060 = {
 	father = 90130
 	mother = 151301
 	817.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	838.1.1 = {
 		add_spouse = 168018
@@ -27629,7 +27715,7 @@ KOH0060 = {
 
 90150 = {
 	name = "Simon"
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	martial = 8
 	diplomacy = 2
 	intrigue = 5
@@ -27687,7 +27773,7 @@ KOH0060 = {
 
 9050 = {
 	name = "Evrard"
-	dynasty = 23115
+	dynasty = 80
 	martial = 4
 	diplomacy = 4
 	intrigue = 4
@@ -27799,7 +27885,7 @@ KOH0060 = {
 	#and Mahaut de Châlon de Donzy, daughter of Lambert (988)
 	
 	1003.10.15 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -30232,7 +30318,7 @@ KOH0060 = {
 	1196.1.1 = {
 		add_spouse = KOH0017 #Marguerite d'Ibelin
 	}
-		1205.1.1 = {
+	1205.1.1 = {
 		death = "1205.1.1"
 	}
 }
@@ -30601,10 +30687,10 @@ KOH0060 = {
 	father = 34597
 	mother = 34583
 	1221.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1246.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -32563,7 +32649,7 @@ KOH0060 = {
 
 32135 = {
 	name = "Adelof"
-	dynasty = 308 #de Boulogne
+	dynasty_house = house_boulogne #de Boulogne
 	religion = "catholic"
 	culture = french
 	father = 90108
@@ -32579,7 +32665,7 @@ KOH0060 = {
 32136 = {
 	name = "Mathilde"
 	female = yes
-	dynasty = 308 #de Boulogne
+	dynasty_house = house_boulogne #de Boulogne
 	religion = "catholic"
 	culture = french
 	father = 32135
@@ -32593,7 +32679,7 @@ KOH0060 = {
 
 32137 = {
 	name = "ManassE_s" #count de Guines
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 40900
@@ -32612,7 +32698,7 @@ KOH0060 = {
 32145 = {
 	name = "Sibylle"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32137
@@ -32629,7 +32715,7 @@ KOH0060 = {
 32146 = {
 	name = "Adelaide"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -32643,7 +32729,7 @@ KOH0060 = {
 }
 32147 = {
 	name = "Foulques" #count of Beirut
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 40900
@@ -32658,7 +32744,7 @@ KOH0060 = {
 
 32148 = {
 	name = "Guy"
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 40900
@@ -32673,7 +32759,7 @@ KOH0060 = {
 
 32149 = {
 	name = "Hugues"
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 40900
@@ -32689,7 +32775,7 @@ KOH0060 = {
 32150 = {
 	name = "Adelaide"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 40900
@@ -32736,7 +32822,7 @@ KOH0060 = {
 32154 = {
 	name = "Gisela"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 40900
@@ -32751,7 +32837,7 @@ KOH0060 = {
 
 32155 = {
 	name = "Baudouin" #count of Guines
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 232011
@@ -32782,7 +32868,7 @@ KOH0060 = {
 }
 32157 = {
 	name = "Guillaume"
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 232011
@@ -32800,7 +32886,7 @@ KOH0060 = {
 
 32158 = {
 	name = "ManassE_s"
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 232011
@@ -32816,7 +32902,7 @@ KOH0060 = {
 32159 = {
 	name = "Marguerite"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 232011
@@ -32831,7 +32917,7 @@ KOH0060 = {
 
 32160 = {
 	name = "Arnould" #count of Guines
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32155
@@ -32849,7 +32935,7 @@ KOH0060 = {
 
 32161 = {
 	name = "Guillaume"
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32155
@@ -32863,7 +32949,7 @@ KOH0060 = {
 }
 32162 = {
 	name = "ManassE_s"
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32155
@@ -32880,7 +32966,7 @@ KOH0060 = {
 32163 = {
 	name = "Marguerite"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32155
@@ -32895,7 +32981,7 @@ KOH0060 = {
 32164 = {
 	name = "Adeline"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32155
@@ -32910,7 +32996,7 @@ KOH0060 = {
 
 32165 = {
 	name = "Geoffroy"
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	trait = bastard
@@ -32954,7 +33040,7 @@ KOH0060 = {
 
 32168 = {
 	name = "Baudouin" #count of Guines
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32160
@@ -32988,7 +33074,7 @@ KOH0060 = {
 
 32172 = {
 	name = "Baudouin"
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32168
@@ -33005,7 +33091,7 @@ KOH0060 = {
 32173 = {
 	name = "Adelaide"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32168
@@ -33022,7 +33108,7 @@ KOH0060 = {
 32174 = {
 	name = "Ida"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32168
@@ -33037,7 +33123,7 @@ KOH0060 = {
 
 32175 = {
 	name = "Baudouin" #count of Guines
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 454994
@@ -33068,7 +33154,7 @@ KOH0060 = {
 
 32178 = {
 	name = "Jean"
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 454994
@@ -33083,7 +33169,7 @@ KOH0060 = {
 32179 = {
 	name = "Alix"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 454994
@@ -33099,7 +33185,7 @@ KOH0060 = {
 32180 = {
 	name = "Jeanne"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32175
@@ -33115,7 +33201,7 @@ KOH0060 = {
 32181 = {
 	name = "Blanche"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32175
@@ -33131,7 +33217,7 @@ KOH0060 = {
 32183 = {
 	name = "Adelaide"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 232011
@@ -33146,7 +33232,7 @@ KOH0060 = {
 
 40900 = {
 	name = "Baudouin"
-	dynasty = 102
+	dynasty_house = house_guines
 	martial = 7
 	diplomacy = 4
 	intrigue = 7
@@ -33169,7 +33255,7 @@ KOH0060 = {
 
 160385 = {
 	name = "Guillaume"
-	dynasty = 102
+	dynasty_house = house_guines
 	martial = 5
 	diplomacy = 6
 	intrigue = 7
@@ -33190,7 +33276,7 @@ KOH0060 = {
 
 160386 = {
 	name = "Reinel"
-	dynasty = 102
+	dynasty_house = house_guines
 	martial = 5
 	diplomacy = 7
 	intrigue = 5
@@ -33212,7 +33298,7 @@ KOH0060 = {
 160387 = {
 	name = "Adela"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	martial = 3
 	diplomacy = 5
 	intrigue = 3
@@ -33234,7 +33320,7 @@ KOH0060 = {
 160388 = {
 	name = "Beatrice"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	martial = 5
 	diplomacy = 5
 	intrigue = 5
@@ -33333,7 +33419,7 @@ KOH0060 = {
 		add_spouse = 800503
 	}
 	1175.2.2 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -34031,7 +34117,7 @@ KOH0060 = {
 	father = 322 #Bernard I de la marche
 	mother = 323 #Amelie de Razes/Montignac
 	1012.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#1036 married to Bernard Aton III Trencavel count of Albi 40202
 	1068.1.1 = {
@@ -34081,6 +34167,9 @@ KOH0060 = {
 	mother = 323 #Amelie de Razes/Montignac
 	1032.1.1 = {
 		birth = "1032.1.1"
+	}
+	1050.1.1 = {
+		set_primary_title_to = title:c_la_marche
 	}
 	1088.1.1 = {
 		death = "1088.1.1"
@@ -34152,7 +34241,8 @@ KOH0060 = {
 40072 = {
 	name = "Boson" #Boson II de la marche/périgord
 	#dynasty = 100145
-	dynasty = 98 #trick to have the perigord dynasty appear correctly in dynasty tree
+	#dynasty = 98 #trick to have the perigord dynasty appear correctly in dynasty tree
+	dynasty_house = house_perigord # proper cadet branch
 	religion = "catholic"
 	culture = french
 	father = 40070 #Boson I
@@ -35698,7 +35788,7 @@ KOH0060 = {
 	}
 	1129.1.1 = {
 		add_spouse = KOH0038
-		}
+	}
 	1171.1.1 = {
 		death = "1171.1.1"
 	}
@@ -35895,21 +35985,21 @@ KOH0060 = {
 
 138067 = {
 	name = "Foucher" #Foucher II de Ségur
-	dynasty = 729
+	dynasty_house = house_limoges
 	religion = "catholic"
 	culture = french
 	father = 40270 #Foucher I de Limoges
 	910.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	950.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
 138066 = {
 	name = "Hildegaire" #Hildegaire I de Limoges
-	dynasty = 729
+	dynasty_house = house_limoges
 	religion = "catholic"
 	culture = french
 	father = 40266 #Hildebert I de Limoges
@@ -35924,7 +36014,7 @@ KOH0060 = {
 
 127018 = {
 	name = "Adalmode" #de Limoges
-	dynasty = 729
+	dynasty_house = house_limoges
 	female = yes
 	religion = "catholic"
 	culture = french	
@@ -35940,7 +36030,7 @@ KOH0060 = {
 
 138068 = {
 	name = "Guy" #Guy II de Limoges
-	dynasty = 729
+	dynasty_house = house_limoges
 	religion = "catholic"
 	culture = french
 	father = 40298 #Adhémar I de Limoges
@@ -35955,7 +36045,7 @@ KOH0060 = {
 138082 = {
 	name = "Emma" #de Limoges
 	female = yes
-	dynasty = 729 #de Limoges
+	dynasty_house = house_limoges #de Limoges
 	religion = "catholic"
 	culture = french
 	father = 40304 #Adhémar III de Limoges
@@ -35972,7 +36062,7 @@ KOH0060 = {
 138083 = {
 	name = "Humberge" #Brunissent de Limoges
 	female = yes
-	dynasty = 729 #de Limoges
+	dynasty_house = house_limoges #de Limoges
 	religion = "catholic"
 	culture = french
 	father = 40304 #Adhémar III de Limoges
@@ -35987,7 +36077,7 @@ KOH0060 = {
 
 138069 = {
 	name = "Guy" #Guy III de Limoges
-	dynasty = 729
+	dynasty_house = house_limoges
 	religion = "catholic"
 	culture = french
 	father = 40304 #Adhémar III de Limoges
@@ -36002,7 +36092,7 @@ KOH0060 = {
 138072 = {
 	name = "Marie" # de Limoges
 	female = yes
-	dynasty = 729 #de Limoges
+	dynasty_house = house_limoges #de Limoges
 	religion = "catholic"
 	culture = french
 	father = 138069 #Guy III de Limoges
@@ -36018,7 +36108,7 @@ KOH0060 = {
 40294 = {
 	name = "GE_raud" # Géraud I de Limoges
 	# AKA: Geraud
-	dynasty = 729 # de Limoges was 100147 de Limousin
+	dynasty_house = house_limoges # de Limoges was 100147 de Limousin
 	religion = "catholic"
 	culture = french
 	father = 138066 #Hildegaire I de Limoges
@@ -36097,7 +36187,7 @@ KOH0060 = {
 	culture = french
 	father = 40088 #Arnaud I Mancer Taillefer
 	970.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1000.1.1 = {
 		add_spouse = 40097 #Gerberge d'Anjou
@@ -36963,7 +37053,7 @@ KOH0060 = {
 
 33207 = {
 	name = "Eudes"
-	dynasty = 7281
+	dynasty_house = house_chiny
 	religion = "catholic"
 	culture = french
 	father = 161918 #Arnoul de Chiny
@@ -36981,7 +37071,7 @@ KOH0060 = {
 
 33208 = {
 	name = "AdalbE_ron"
-	dynasty = 7281
+	dynasty_house = house_chiny
 	religion = "catholic"
 	culture = french
 	trait = education_learning_2	
@@ -36998,7 +37088,7 @@ KOH0060 = {
 33209 = {
 	name = "Ida"
 	female = yes
-	dynasty = 7281
+	dynasty_house = house_chiny
 	religion = "catholic"
 	culture = french
 	trait = education_learning_2	
@@ -38411,7 +38501,7 @@ KOH0060 = {
 	mother = 205898 #Adela de Normandie
 	trait = incapable
 	1085.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1104.1.1 = {
 		add_spouse = 91329 #Agnès de Sully
@@ -38429,7 +38519,7 @@ KOH0060 = {
 	father = 91331 #Guillaume de Blois
 	mother = 91329 #Agnès de Sully
 	1108.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1130.1.1 = {
 		name = "Archambaud"
@@ -38446,7 +38536,7 @@ KOH0060 = {
 	culture = french
 	father = 91332 #Eudes/Archambaud de Sully
 	1130.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1195.1.1 = {
 		death = "1195.1.1"
@@ -38474,7 +38564,7 @@ KOH0060 = {
 	culture = french
 	father = 91334 #Archambaud IV de Sully
 	1185.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1250.1.1 = {
 		death = "1250.1.1" #after 1248
@@ -38488,7 +38578,7 @@ KOH0060 = {
 	culture = french
 	father = 91335 #Henri I de Sully
 	1224.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1269.1.1 = {
 		death = "1269.1.1"
@@ -38502,7 +38592,7 @@ KOH0060 = {
 	culture = french
 	father = 91336 #Henri II de Sully
 	1252.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1285.1.1 = {
 		death = "1285.1.1"
@@ -40948,7 +41038,7 @@ KOH0060 = {
 144982 = {
 	name = "Gerberga"
 	female = yes
-	dynasty = 1044116 #Nibelunging
+	dynasty_house = house_nibelunging #Nibelunging
 	religion = "catholic"
 	culture = french
 	father = 144983
@@ -40962,7 +41052,7 @@ KOH0060 = {
 
 144983 = {
 	name = "Theoderic"
-	dynasty = 1044116 #Nibelunging
+	dynasty_house = house_nibelunging #Nibelunging
 	religion = "catholic"
 	culture = french
 	father = 144984
@@ -40976,7 +41066,7 @@ KOH0060 = {
 
 144984 = {
 	name = "Nibelung"
-	dynasty = 1044116 #Nibelunging
+	dynasty_house = house_nibelunging #Nibelunging
 	religion = "catholic"
 	culture = french
 	father = 144985
@@ -40990,7 +41080,7 @@ KOH0060 = {
 
 144985 = {
 	name = "Childebrand"
-	dynasty = 1044116 #Nibelunging
+	dynasty_house = house_nibelunging #Nibelunging
 	religion = "catholic"
 	culture = french
 	father = 144986
@@ -41020,8 +41110,9 @@ KOH0060 = {
 	trait = temperate
 	trait = calm
 	trait = education_intrigue_3
+	sexuality = heterosexual
 	836.1.1 = {
-		birth = "yes"
+		birth = yes
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
@@ -41039,7 +41130,7 @@ KOH0060 = {
 		remove_spouse = 6877 # Finally granted a divorce by Pope Adrian II
 	}
 	869.8.8 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -41215,7 +41306,7 @@ KOH0060 = {
 
 161292 = {
 	name = "Foulques"
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	religion = "catholic"
 	culture = french
 	father = 40416
@@ -41502,6 +41593,7 @@ KOH0165 = {
 	dynasty = 721
 	religion = "catholic"
 	culture = french
+	trait = bastard
 	father = 7475
 	mother = 205503
 	1148.1.1 = {
@@ -41533,6 +41625,7 @@ KOH0165 = {
 	religion = "catholic"
 	culture = french
 	father = 161355
+	mother = 161356
 	1163.1.1 = {
 		birth = "1163.1.1"
 	}
@@ -41596,7 +41689,7 @@ KOH0118 = {
 161361 = {
 	name = "Mathilde"
 	female = yes
-	dynasty = 102
+	dynasty_house = house_guines
 	religion = "catholic"
 	culture = french
 	father = 32160
@@ -43426,7 +43519,7 @@ KOH0118 = {
 
 163066 = {
 	name = "Ekkehard"	#AKA Ecchard, Eccard, Echard
-	dynasty = 1044116 #Nibelunging
+	dynasty_house = house_nibelunging #Nibelunging
 	religion = "catholic"
 	culture = french
 	father = 144985
@@ -43468,7 +43561,7 @@ KOH0118 = {
 
 161910 = {
 	name = "Adalbero" #Bishop of Verdun
-	dynasty = 22007
+	dynasty_house = house_wigeriche
 	culture = french
 	religion = "catholic"
 	father = 11008 #Friedrich Wigeriche
@@ -43483,7 +43576,7 @@ KOH0118 = {
 
 161911 = {
 	name = "Friedrich" #Count of Verdun
-	dynasty = 22007
+	dynasty_house = house_wigeriche
 	culture = french
 	religion = "catholic"
 	father = 144992 #Gottfried Wigeriche
@@ -43498,7 +43591,7 @@ KOH0118 = {
 
 161912 = {
 	name = "AdalbE_ron" #Prince-Bishop of Verdun 1131-1156
-	dynasty = 7281 #de Chiny
+	dynasty_house = house_chiny #de Chiny
 	religion = "catholic"
 	culture = french
 	father = 161918
@@ -43513,7 +43606,7 @@ KOH0118 = {
 
 161913 = {
 	name = "Arnoul" #Prince-Bishop of Verdun 1171- 14 August 1181
-	dynasty = 7281 #de Chiny
+	dynasty_house = house_chiny #de Chiny
 	religion = "catholic"
 	culture = french
 	father = 161914 #Albert de Chiny
@@ -43528,7 +43621,7 @@ KOH0118 = {
 
 161914 = {
 	name = "Albert"
-	dynasty = 7281 #Chiny
+	dynasty_house = house_chiny #Chiny
 	culture = french
 	religion = "catholic"	
 	father = 33207 #Otton de Chiny
@@ -43547,7 +43640,7 @@ KOH0118 = {
 161915 = {
 	name = "Alix"
 	female = yes
-	dynasty = 7281 #Chiny
+	dynasty_house = house_chiny #Chiny
 	culture = french
 	religion = "catholic"	
 	father = 161914 #Albert de Chiny
@@ -43562,7 +43655,7 @@ KOH0118 = {
 
 161916 = {
 	name = "Louis"
-	dynasty = 7281 #Chiny
+	dynasty_house = house_chiny #Chiny
 	culture = french
 	religion = "catholic"	
 	father = 6410 #Eudes Karling
@@ -43579,7 +43672,7 @@ KOH0118 = {
 
 161917 = {
 	name = "Louis"
-	dynasty = 7281 #Chiny
+	dynasty_house = house_chiny #Chiny
 	culture = french
 	religion = "catholic"	
 	father = 161916 #Louis I
@@ -43597,7 +43690,7 @@ KOH0118 = {
 
 161918 = {
 	name = "Arnoul"
-	dynasty = 7281 #Chiny
+	dynasty_house = house_chiny #Chiny
 	culture = french
 	religion = "catholic"	
 	father = 161917
@@ -43619,7 +43712,7 @@ KOH0118 = {
 161919 = {
 	name = "Ida"
 	female = yes
-	dynasty = 7281 #Chiny
+	dynasty_house = house_chiny #Chiny
 	culture = french
 	religion = "catholic"	
 	father = 161914 #Albert de Chiny
@@ -44379,13 +44472,13 @@ KOH0118 = {
 	father = 161967
 	mother = 161972
 	1079.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1100.1.1 = {
 		add_spouse = 161979 #Adelaide
 	}
 	1133.5.15 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -44470,7 +44563,7 @@ KOH0118 = {
 	religion = "catholic"
 	mother = 161937 #Helvide de Thourotte
 	1216.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1252.8.10 = {
 		death = "1252.8.10"
@@ -45537,7 +45630,7 @@ KOH0118 = {
 
 168063 = {
 	name = "Raoul"
-	dynasty = 380
+	dynasty_house = house_vexin_amiens
 	religion = "catholic"
 	culture = french
 	father = 40402
@@ -46391,7 +46484,7 @@ KOH0118 = {
 	father = 1164
 	mother = 1701
 	906.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	962.1.1 = {
 		death = "962.1.1"
@@ -46641,13 +46734,13 @@ KOH0118 = {
 	religion = "catholic"
 	culture = french
 	1038.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1097.1.1 = {
 			trait = faith_warrior
 	}
 	1098.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 180782 = {
@@ -46659,10 +46752,10 @@ KOH0118 = {
 	culture = french
 	father = 180781
 	1080.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1126.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46694,10 +46787,10 @@ KOH0118 = {
 	culture = french
 
 	1272.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1348.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46712,10 +46805,10 @@ KOH0118 = {
 	culture = french
 
 	1237.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1270.8.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46731,10 +46824,10 @@ KOH0118 = {
 	culture = french
 
 	1290.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1346.4.30 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46750,10 +46843,10 @@ KOH0118 = {
 	culture = french
 
 	1273.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1319.4.10 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46766,18 +46859,18 @@ KOH0118 = {
 	culture = occitan
 
 	1160.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1196.1.1 = {
 		add_spouse = 205527
 	}
 	1216.9.29 = {
-		death = "yes"
+		death = yes
 	}
 }
 
 200188 = {
-	name = "AinE_s"
+	name = "Agnes"
 	female = yes
 	dynasty = 5092
 
@@ -46788,10 +46881,10 @@ KOH0118 = {
 	culture = occitan
 
 	1205.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1231.7.11 = {
-		death = "yes"
+		death = yes
 	}
 }
 71559 = {
@@ -46805,10 +46898,10 @@ KOH0118 = {
 	culture = french
 
 	1272.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1323.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46822,10 +46915,10 @@ KOH0118 = {
 	culture = french
 
 	1303.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1365.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46839,10 +46932,10 @@ KOH0118 = {
 	culture = french
 
 	1335.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1410.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46856,10 +46949,10 @@ KOH0118 = {
 	culture = french
 
 	1337.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1392.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46875,10 +46968,10 @@ KOH0118 = {
 	culture = french
 
 	1260.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1303.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46894,10 +46987,10 @@ KOH0118 = {
 	culture = french
 
 	1221.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1238.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46913,10 +47006,10 @@ KOH0118 = {
 	culture = french
 
 	1223.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1269.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46933,10 +47026,10 @@ KOH0118 = {
 	trait = education_learning_1
 
 	1225.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1267.12.30 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46954,10 +47047,10 @@ KOH0118 = {
 	trait = education_learning_1
 
 	1227.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1273.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46973,10 +47066,10 @@ KOH0118 = {
 	culture = french
 
 	567.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	585.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -46992,10 +47085,10 @@ KOH0118 = {
 	culture = french
 
 	569.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	619.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 73786 = {
@@ -47006,10 +47099,10 @@ KOH0118 = {
 	culture = french
 
 	815.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	870.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 127019 = {
@@ -47024,13 +47117,13 @@ KOH0118 = {
 	religion = catholic
 	culture = french
 	841.3.22 = {
-		birth = "yes"
+		birth = yes
 	}
 	864.1.1 = {
 		add_spouse = 127020
 	}
 	886.1.6 = {
-		death = "yes"
+		death = yes
 	}
 }
 183345 = {
@@ -47061,10 +47154,10 @@ KOH0118 = {
 	culture = french
 	trait = education_learning_2
 	793.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	868.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303407 = {
@@ -47074,10 +47167,10 @@ KOH0118 = {
 	religion = catholic
 	culture = french
 	834.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	901.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303408 = {
@@ -47086,10 +47179,10 @@ KOH0118 = {
 	religion = catholic
 	culture = french
 	820.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	859.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303409 = {
@@ -47099,10 +47192,10 @@ KOH0118 = {
 	culture = french
 	father = 303408
 	840.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	890.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -47111,11 +47204,12 @@ KOH0118 = {
 	name = "Baudoin"	#Baudoin I count of Clermont
 	religion = catholic
 	culture = french
+	dynasty = 89
 	956.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1023.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303411 = {
@@ -47123,11 +47217,12 @@ KOH0118 = {
 	religion = catholic
 	culture = french
 	father = 303410
+	dynasty = 89
 	974.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1042.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 #303412 = {
@@ -47136,10 +47231,10 @@ KOH0118 = {
 #	culture = french
 #	father = 303411
 #	1007.1.1 = {
-#		birth = "yes"
+#		birth = yes
 #	}
 #	1088.1.1 = {
-#		death = "yes"
+#		death = yes
 #	}
 #}
 #End of counts of Clermont
@@ -47149,10 +47244,10 @@ KOH0118 = {
 	culture = french
 	religion = catholic
 	833.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	886.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -47163,10 +47258,10 @@ KOH0118 = {
 	culture = french
 	religion = catholic
 	823.1.1 = {		#random guess
-		birth = "yes"
+		birth = yes
 	}
 	887.1.1 = {		#his son inherited his title
-		death = "yes"
+		death = yes
 	}
 }
 303415 = {
@@ -47176,10 +47271,10 @@ KOH0118 = {
 	religion = catholic
 	father = 303413
 	849.1.1 = {		#random guess
-		birth = "yes"
+		birth = yes
 	}
 	905.1.1 = {		#random guess
-		death = "yes"
+		death = yes
 	}
 }
 303416 = {
@@ -47188,10 +47283,10 @@ KOH0118 = {
 	culture = french
 	religion = catholic
 	1015.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1060.1.1 = {		#died after 1057
-		death = "yes"
+		death = yes
 	}
 }
 303417 = {
@@ -47201,10 +47296,10 @@ KOH0118 = {
 	religion = catholic
 	father = 303415
 	1040.1.1 = {		#random guess
-		birth = "yes"
+		birth = yes
 	}
 	1110.1.1 = {		#died after 1057
-		death = "yes"
+		death = yes
 	}
 }
 #End of counts of Langres
@@ -47213,10 +47308,10 @@ KOH0118 = {
 	culture = french
 	religion = catholic
 	1001.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1074.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303419 = {
@@ -47224,10 +47319,10 @@ KOH0118 = {
 	culture = french
 	religion = catholic
 	815.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	892.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303420 = {
@@ -47237,96 +47332,96 @@ KOH0118 = {
 	culture = french
 	father = 163065
 	852.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	899.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 ##Adrien of Orleans' family
 303421 = {
 	name = "Adrien"	#Adrian count of Orleans
-	dynasty = 100138 #Orléans
+	dynasty_house = house_orleans #Orléans
 	religion = catholic
 	culture = french
 	father = 167825	#Gerold, in swabian file
 	755.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	821.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303422 = {
 	name = "Guillaume"	#Guillaume of Orleans
 	#AKA William
-	dynasty = 100138 #Orléans
+	dynasty_house = house_orleans #Orléans
 	religion = catholic
 	culture = french
 	father = 303421	#Adrien of Orleans
 	785.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	850.5.25 = {
-		death = "yes"
+		death = yes
 	}
 }
 167829 = {
 	name = "Eudes"	#Eudes of Orleans
 	#AKA Odo I
-	dynasty = 100138 #Orléans	
+	dynasty_house = house_orleans #Orléans	
 	religion = catholic	
 	culture = french
 	father = 303421		
 	780.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	834.5.25 = {
-		death = "yes"
+		death = yes
 	}
 }
 91122 = {
 	name = "Waldrade" #Waldrade
 	# AKA: Waldrade d'Orleans
 	female = yes
-	dynasty = 100138 #Orléans
+	dynasty_house = house_orleans #Orléans
 	religion = "catholic"
 	culture = french
 	father = 303421	#Adrien of Orleans
 	795.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	840.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 167830 = {	
 	name = "Irmintrud"
 	#AKA Ermentrude, wife of Charles the Bald
 	female = yes	
-	dynasty = 100138 #Orléans	
+	dynasty_house = house_orleans #Orléans	
 	religion = catholic	
 	culture = french
 	father = 167829		
 	823.9.27 = {		
-		birth = "yes"
+		birth = yes
 	}
 	869.10.6 = {		
-		death = "yes"
+		death = yes
 	}
 }
 303423 = {	
 	name = "Guillaume"	#Guillaume d'Orleans, son of Eudes d'Orleans
 	#AKA William
-	dynasty = 100138 #Orléans	
+	dynasty_house = house_orleans #Orléans	
 	religion = catholic	
 	culture = french
 	father = 167829		
 	829.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	866.1.1 = {	#beheaded by order of Charles the Bald
-		death = "yes"
+		death = yes
 	}
 }
 ## End of d'Orleans family
@@ -47337,10 +47432,10 @@ KOH0118 = {
 	religion = catholic
 	culture = french
 	893.1.1 = {	#random guess
-		birth = "yes"
+		birth = yes
 	}
 	935.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303425 = {
@@ -47350,10 +47445,10 @@ KOH0118 = {
 	culture = french
 	father = 303424
 	915.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	952.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303426 = {
@@ -47363,10 +47458,10 @@ KOH0118 = {
 	culture = french
 	father = 303425
 	945.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1012.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303427 = {
@@ -47376,10 +47471,10 @@ KOH0118 = {
 	culture = french
 	father = 303426
 	980.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1038.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303428 = {
@@ -47389,10 +47484,10 @@ KOH0118 = {
 	culture = french
 	father = 303427
 	1010.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1052.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303429 = {
@@ -47402,10 +47497,10 @@ KOH0118 = {
 	culture = french
 	father = 303428
 	1040.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1099.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303430 = {
@@ -47415,10 +47510,10 @@ KOH0118 = {
 	culture = french
 	father = 303429
 	1070.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1128.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303431 = {
@@ -47428,10 +47523,10 @@ KOH0118 = {
 	culture = french
 	father = 303430
 	1113.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1160.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 303432 = {
@@ -47441,10 +47536,10 @@ KOH0118 = {
 	culture = french
 	father = 303431
 	1148.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1176.11.17 = {
-		death = "yes"
+		death = yes
 	}
 }
 ## End of de La Châtre family in Issoudun/Deols
@@ -47464,13 +47559,13 @@ KOH0118 = {
 	trait = education_learning_2
 	
 	1184.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1203.1.1 = {
 		add_spouse = 71178
 	}
 	1272.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -47482,10 +47577,10 @@ french0001 = {
 	trait = education_martial_3
 	
 	866.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	933.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -47500,12 +47595,73 @@ arpitan0001 = {
 	mother = 1177
 	
 	1024.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1063.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
+
+# Counts of Clermont II
+french0002 = {
+	name = "Ermengarde"	#Wife of Renaud I count of Clermont
+	female = yes
+	religion = catholic
+	culture = french
+	father = 303411
+	1016.1.1 = {
+		birth = yes
+	}
+	1078.1.1 = {
+		death = yes
+	}
+}
+
+french0003 = {
+	name = "Hughes"	#Son of Renaud I count of Clermont
+	religion = catholic
+	culture = french
+	father = 303412
+	mother = french0002
+	dynasty = 89
+	1030.1.1 = {
+		birth = yes
+	}
+	1101.1.1 = {
+		death = yes
+	}
+}
+
+french0004 = {
+	name = "Albert"	#Son of Renaud I count of Clermont
+	religion = catholic
+	culture = french
+	father = 303412
+	mother = french0002
+	dynasty = 89
+	1033.1.1 = {
+		birth = yes
+	}
+	1105.1.1 = {
+		death = yes
+	}
+}
+
+french0005 = {
+	name = "Baudoin"	#Son of Renaud I count of Clermont
+	religion = catholic
+	culture = french
+	father = 303412
+	mother = french0002
+	dynasty = 89
+	1035.1.1 = {
+		birth = yes
+	}
+	1105.1.1 = {
+		death = yes
+	}
+}
+
 
 KOH0001 = {
 	name = "Richilde"
@@ -47820,7 +47976,7 @@ KOH0019 = {
 	trait = beauty_good_2
 	trait = education_stewardship_1
  	1160.1.1 = {
- 		birth = "yes"
+ 		birth = yes
  		effect = {
  			add_character_flag = has_scripted_appearance
  		}
@@ -47847,10 +48003,10 @@ KOH0020 = {
 	prowess = 14
 	1115.1.1 = {
 		birth = "1115.1.1"
-		}
+	}
 	1152.1.1 = {
 		employer = 223650 #Raimond III of Tripoli
-		}
+	}
 	1155.1.1 = {
 		death = {
 		death_reason = death_battle
@@ -48057,10 +48213,10 @@ KOH0202 = {
 	father = 168182
 	mother = 91020
 	1130.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1191.2.24 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -48311,7 +48467,7 @@ KOH0074 = {
 	religion = "catholic"
 	culture = french
 	1095.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1127.1.1  = {
 		add_spouse = KOH0073 #Hélvide de Baudément
@@ -48329,7 +48485,7 @@ KOH0075 = {
 	father = KOH0072 #Hugues de Montréal
 	mother = KOH0073 #Hélvide de Baudément
 	1118.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1145.1.1  = {
 		add_spouse = KOH0076 #Adélaïde de Pleurs
@@ -48347,7 +48503,7 @@ KOH0076 = {
 	culture = french
 	father = KOH0109 #Manasses de Pleurs
 	1120.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1171.1.1 = {
 		death = "1171.1.1"
@@ -48362,7 +48518,7 @@ KOH0077 = {
 	father = KOH0075 #Anséric I de Montréal
 	mother = KOH0076 #Adélaïde de Pleurs
 	1150.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1170.1.1  = {
 		add_spouse = 206009 #Sibylle de Bourgogne
@@ -48382,7 +48538,7 @@ KOH0078 = {
 	father = KOH0075 #Anséric III de Montréal
 	mother = KOH0076 #Adélaïde de Pleurs
 	1146.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1205.1.1 = {
 		death = "1205.1.1"
@@ -48397,7 +48553,7 @@ KOH0079 = {
 	father = KOH0080 #Ithier III de Toucy
 	mother = KOH0081 #Élisabeth de Joigny
 	1135.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1162.1.1  = {
 		add_spouse = KOH0078 #Agnès de Montréal
@@ -48414,7 +48570,7 @@ KOH0080 = {
 	culture = french
 	father = KOH0185
 	1100.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1130.1.1  = {
 		add_spouse = KOH0081 #Élisabeth de Joigny
@@ -48433,7 +48589,7 @@ KOH0081 = {
 	father = KOH0089 #Renaud III de Joigny
 	mother = KOH0090 #Wandalmode de Beaujeu
 	1112.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1157.1.1 = {
 		death = "1157.1.1"
@@ -48449,7 +48605,7 @@ KOH0082 = {
 	father = KOH0080 #Ithier III de Toucy
 	mother = KOH0081 #Élisabeth de Joigny
 	1137.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1188.1.1 = {
 		death = "1188.1.1"
@@ -48464,7 +48620,7 @@ KOH0083 = {
 	father = KOH0079 #Narjot II de Toucy
 	mother = KOH0078 #Agnès de Montréal
 	1170.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1218.1.1 = {
 		death = "1218.1.1"
@@ -48479,7 +48635,7 @@ KOH0084 = {
 	father = KOH0079 #Narjot II de Toucy
 	mother = KOH0078 #Agnès de Montréal
 	1175.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1177.1.1 = {
 		death = "1177.1.1"
@@ -48494,7 +48650,7 @@ KOH0085 = {
 	father = KOH0079 #Narjot II de Toucy
 	mother = KOH0078 #Agnès de Montréal
 	1175.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1218.1.1 = {
 		death = "1218.1.1"
@@ -48512,7 +48668,7 @@ KOH0086 = {
 	trait = zealous
 	trait = compassionate
 	1177.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1184.1.1 = {
 		trait = devoted
@@ -48531,7 +48687,7 @@ KOH0087 = {
 	father = KOH0079 #Narjot II de Toucy
 	mother = KOH0078 #Agnès de Montréal
 	1179.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1224.1.1 = {
 		death = "1224.1.1"
@@ -48547,7 +48703,7 @@ KOH0088 = {
 	father = KOH0079 #Narjot II de Toucy
 	mother = KOH0078 #Agnès de Montréal
 	1183.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1183.6.1 = {
 		effect = {	
@@ -48567,7 +48723,7 @@ KOH0089 = {
 	father = 40446 #Renaud II de Joigny
 	mother = 90070 #Vainmonde de Courtenay
 	1090.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1109.1.1  = {
 		add_spouse = KOH0090 #Wandalmode de Beajeu
@@ -48590,7 +48746,7 @@ KOH0091 = {
 	father = 205897 #Étienne II de Blois
 	mother = 205898 #Adèle d'Angleterre
 	1104.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1148.1.1 = {
 		death = "1148.1.1"
@@ -48605,7 +48761,7 @@ KOH0092 = {
 	father = KOH0089 #Renaud III de Joigny
 	mother = KOH0091 #Alix de Blois
 	1120.11.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1160.1.1  = {
 		add_spouse = KOH0102 #Adélaïde de Nevers
@@ -48624,7 +48780,7 @@ KOH0096 = {
 	father = 90076 #Guy II de Rochefort
 	#Adelais de Crécy
 	1090.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1138.1.1 = {
 		death = "1138.1.1"
@@ -48639,7 +48795,7 @@ KOH0101 = {
 	father = 205711 #Guillaume IV de Nevers
 	mother = 205712 #Ida von Sponheim
 	1151.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1178.1.1  = {
 		add_spouse = KOH0100 #Alix de Beaujeu
@@ -48658,7 +48814,7 @@ KOH0102 = {
 	father = 205711 #Guillaume IV de Nevers
 	mother = 205712 #Ida von Sponheim
 	1144.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1198.1.1 = {
 		death = "1198.1.1"
@@ -48673,7 +48829,7 @@ KOH0103 = {
 	father = KOH0077 #Anséric II de Montréal
 	mother = 206009 #Sibylle de Bourgogne
 	1171.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1228.8.1 = {
 		death = "1228.8.1"
@@ -48688,7 +48844,7 @@ KOH0104 = {
 	father = KOH0077 #Anséric II de Montréal
 	mother = 206009 #Sibylle de Bourgogne
 	1173.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1224.6.1 = {
 		death = "1224.6.1"
@@ -48703,7 +48859,7 @@ KOH0105 = {
 	father = KOH0077 #Anséric II de Montréal
 	mother = 206009 #Sibylle de Bourgogne
 	1175.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1209.1.1 = {
 		death = "1209.1.1"
@@ -48718,7 +48874,7 @@ KOH0106 = {
 	father = KOH0077 #Anséric II de Montréal
 	mother = 206009 #Sibylle de Bourgogne
 	1177.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1240.10.1 = {
 		death = "1240.10.1"
@@ -48733,7 +48889,7 @@ KOH0107 = {
 	father = KOH0077 #Anséric II de Montréal
 	mother = 206009 #Sibylle de Bourgogne
 	1179.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1183.1.1 = {
 		trait = devoted
@@ -48752,7 +48908,7 @@ KOH0108 = {
 	father = KOH0077 #Anséric II de Montréal
 	mother = 206009 #Sibylle de Bourgogne
 	1181.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1222.1.1 = {
 		death = "1222.1.1"
@@ -48765,7 +48921,7 @@ KOH0109 = {
 	religion = "catholic"
 	culture = french
 	1100.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1148.1.1 = {
 		death = "1148.1.1"
@@ -48798,7 +48954,7 @@ KOH0112 = {
 	father = KOH0092 #Renaud IV de Joigny
 	mother = KOH0102 #Adélaïde de Nevers
 	1160.11.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1220.1.1 = {
 		death = "1220.1.1"
@@ -48813,7 +48969,7 @@ KOH0113 = {
 	father = KOH0092 #Renaud IV de Joigny
 	mother = KOH0102 #Adélaïde de Nevers
 	1165.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1237.1.1 = {
 		death = "1237.1.1"
@@ -48829,7 +48985,7 @@ KOH0114 = {
 	father = KOH0092 #Renaud IV de Joigny
 	mother = KOH0102 #Adélaïde de Nevers
 	1168.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1213.1.1 = {
 		death = "1213.1.1"
@@ -48844,7 +49000,7 @@ KOH0115 = {
 	father = KOH0092 #Renaud IV de Joigny
 	mother = KOH0102 #Adélaïde de Nevers
 	1175.1.2 = {
-		birth = "yes"
+		birth = yes
 	}
 	1176.1.1 = {
 		effect = {
@@ -48864,7 +49020,7 @@ KOH0116 = {
 	father = KOH0112 #Guillaume de Joigny
 	mother = 205729 #Alice de Courtenay
 	1179.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1179.4.1 = {
 		death = "1179.4.1"
@@ -48879,7 +49035,7 @@ KOH0117 = {
 	father = KOH0112 #Guillaume de Joigny
 	mother = 205729 #Alice de Courtenay
 	1183.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1222.4.1 = {
 		death = "1222.4.1"
@@ -48892,10 +49048,10 @@ KOH0123 = {
 	culture = french
 	religion = catholic
 	990.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1059.4.12 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -48906,10 +49062,10 @@ KOH0124 = {
 	religion = catholic
 	father = KOH0123
 	1010.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1070.1.10 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -48920,10 +49076,10 @@ KOH0125 = {
 	religion = catholic
 	father = KOH0123
 	1012.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1083.5.22 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -48934,10 +49090,10 @@ KOH0126 = {
 	religion = catholic
 	father = KOH0123
 	1014.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1089.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -48948,10 +49104,10 @@ KOH0127 = {
 	religion = catholic
 	father = KOH0123
 	1016.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1089.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -48963,11 +49119,11 @@ KOH0128 = {
 	religion = catholic
 	father = KOH0125
 	1032.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	#married Hugues de Grantmesnil
 	1091.7.11 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -48979,11 +49135,11 @@ KOH0129 = {
 	religion = catholic
 	father = KOH0125
 	1068.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	#married Guillaume du Puy-du-Fou
 	1113.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -48994,13 +49150,13 @@ KOH0130 = {
 	religion = catholic
 	father = KOH0125
 	1070.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1100.1.1 = {
 		add_spouse = KOH0162 #Beatrix de Clermont
 	}
 	1155.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49011,11 +49167,11 @@ KOH0131 = {
 	religion = catholic
 	father = KOH0125
 	1072.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	#married Agnes de Croisilles
 	1117.7.15 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49027,11 +49183,11 @@ KOH0132 = {
 	religion = catholic
 	father = KOH0125
 	1074.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	#married Bouchard Seigneur de Montmorency
 	1104.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49043,10 +49199,10 @@ KOH0133 = {
 	father = KOH0130
 	mother = KOH0162
 	1108.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1130.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49058,11 +49214,11 @@ KOH0134 = {
 	father = KOH0130
 	mother = KOH0162
 	1111.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	#married Mathilde de Chateaudun
 	1171.7.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49074,10 +49230,10 @@ KOH0135 = {
 	father = KOH0130
 	mother = KOH0162
 	1116.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1180.5.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49088,11 +49244,11 @@ KOH0136 = {
 	religion = catholic
 	father = KOH0135
 	1151.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	#married Ada de Persan
 	1204.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49103,10 +49259,10 @@ KOH0137 = {
 	religion = catholic
 	father = KOH0135
 	1153.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1220.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49117,10 +49273,10 @@ KOH0138 = {
 	religion = catholic
 	father = KOH0135
 	1155.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1222.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49132,10 +49288,10 @@ KOH0139 = {
 	religion = catholic
 	father = KOH0135
 	1157.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1205.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49147,10 +49303,10 @@ KOH0140 = {
 	religion = catholic
 	father = KOH0135
 	1160.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1205.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49162,10 +49318,10 @@ KOH0141 = {
 	religion = catholic
 	father = KOH0135
 	1162.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1220.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49176,10 +49332,10 @@ KOH0142 = {
 	religion = catholic
 	father = KOH0134
 	1146.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1154.1.1 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49190,13 +49346,13 @@ KOH0143 = {
 	religion = catholic
 	father = KOH0134
 	1148.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	1175.1.1 = {
 		add_spouse = 91081
 	}
 	1208.11.21 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49208,11 +49364,11 @@ KOH0144 = {
 	religion = catholic
 	father = KOH0134
 	1160.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	#married Anseau de l'Isle-Adam
 	1186.12.4 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49223,12 +49379,12 @@ KOH0145 = {
 	religion = catholic
 	father = KOH0134
 	1162.1.1 = {		
-		birth = "yes"
+		birth = yes
 	}
 	#married Gertrude de Soissons before 1193
 	#married Jeanne de Garlade before 1214
 	1222.6.15 = {		
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49272,10 +49428,10 @@ KOH0154 = {
 	religion = "catholic"
 	culture = french
 	1009.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1059.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49286,10 +49442,10 @@ KOH0155 = {
 	culture = french
 	father = KOH0154
 	1039.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1100.5.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49300,7 +49456,7 @@ KOH0156 = {
 	culture = french
 	father = KOH0155
 	1070.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1103.1.1 = {
 		add_spouse = 419 #Adélaïde de Vermandois
@@ -49310,7 +49466,7 @@ KOH0156 = {
 		add_spouse = 34308 #Clémence de Bar
 	}
 	1155.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49321,10 +49477,10 @@ KOH0157 = {
 	culture = french
 	father = KOH0155
 	1062.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1119.11.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49336,11 +49492,11 @@ KOH0158 = {
 	culture = french
 	father = KOH0155
 	1066.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Hugues d'Avranches, Earl of Chester
 	1108.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49352,12 +49508,12 @@ KOH0159 = {
 	culture = french
 	father = KOH0155
 	1068.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Gilbert Fitzrichard de Clare, son of Richard de Brionne
 	#married Bouchard de Montmorency as 3rd wife
 	1108.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49369,11 +49525,11 @@ KOH0160 = {
 	culture = french
 	father = KOH0155
 	1070.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Gerard de Gerberoy
 	1136.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49385,11 +49541,11 @@ KOH0161 = {
 	culture = french
 	father = KOH0155
 	1072.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Dreux de Mello
 	1117.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49401,11 +49557,11 @@ KOH0162 = {
 	culture = french
 	father = KOH0155
 	1074.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Mathieu I Comte de Beaumont
 	1112.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49418,7 +49574,7 @@ KOH0163 = {
 	father = KOH0156
 	mother = 419
 	1104.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1118.1.1 = {
 		add_spouse = 31158 #Prince Karl of Denmark, Duke of Flanders
@@ -49427,7 +49583,7 @@ KOH0163 = {
 		add_spouse = 161350 #Hugues, Comte de Saint-Pol
 	}
 	1146.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49439,10 +49595,10 @@ KOH0164 = {
 	father = KOH0156
 	mother = 419
 	1106.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1119.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49454,10 +49610,10 @@ KOH0166 = {
 	father = KOH0156
 	mother = 34308
 	1136.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1152.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49469,13 +49625,13 @@ KOH0167 = {
 	father = KOH0156
 	mother = 34308
 	1137.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1164.1.1 = {
 		add_spouse = KOH0182 #Alix de Breteuil
 	}
 	1191.10.15 = { #Battle of Acre
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49488,11 +49644,11 @@ KOH0168 = {
 	father = KOH0156
 	mother = 34308
 	1138.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Guy III de Senlis, Seigneur de Chantilly
 	1187.10.27 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49504,13 +49660,13 @@ KOH0169 = {
 	father = KOH0156
 	mother = 34308
 	1139.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1166.1.1 = {
 		add_spouse = KOH0183
 	}
 	1187.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49522,13 +49678,13 @@ KOH0170 = {
 	father = KOH0156
 	mother = 34308
 	1141.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1160.1.1 = {
 		trait = devoted
 	}
 	1200.5.28 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49541,11 +49697,11 @@ KOH0171 = {
 	father = KOH0156
 	mother = 34308
 	1143.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Aubry, Comte de Dammartin
 	1218.7.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49558,11 +49714,11 @@ KOH0172 = {
 	father = KOH0156
 	mother = 34308
 	1144.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Roricon de la Tournelle
 	1189.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49575,10 +49731,10 @@ KOH0173 = {
 	father = KOH0167
 	mother = KOH0182
 	1166.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1182.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49591,11 +49747,11 @@ KOH0174 = {
 	father = KOH0167
 	mother = KOH0182
 	1168.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Guillaume, Seigneur de Vierzon
 	1201.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49607,10 +49763,10 @@ KOH0175 = {
 	father = KOH0167
 	mother = KOH0182
 	1179.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1182.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49619,13 +49775,13 @@ KOH0176 = {
 	religion = "catholic"
 	culture = french
 	1166.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1182.1.1 = {
 		add_spouse = KOH0174
 	}
 	1197.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49637,10 +49793,10 @@ KOH0177 = {
 	father = KOH0169
 	mother = KOH0183
 	1168.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1225.3.30 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49650,7 +49806,7 @@ KOH0178 = {
 	religion = "catholic"
 	culture = french
 	1113.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1127.1.1 = {
 		add_spouse = 800502
@@ -49659,7 +49815,7 @@ KOH0178 = {
 		remove_spouse = 800502
 	}
 	1148.1.19 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49671,7 +49827,7 @@ KOH0179 = {
 	father = KOH0178
 	mother = 800502
 	1128.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1146.1.1 = {
 		add_spouse = KOH0180 #Holdeburge
@@ -49680,7 +49836,7 @@ KOH0179 = {
 		add_spouse = 204986 #Alix de Dreux
 	}
 	1162.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49689,10 +49845,10 @@ KOH0180 = {
 	religion = "catholic"
 	culture = french
 	1126.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1156.8.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49704,11 +49860,11 @@ KOH0181 = {
 	father = KOH0178
 	mother = 800502
 	1129.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Remburge, daughter of Roger Ferat
 	1169.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49721,11 +49877,11 @@ KOH0182 = {
 	father = KOH0179
 	mother = KOH0180
 	1148.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Raoul, Comte de Clermont
 	1197.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49738,11 +49894,11 @@ KOH0183 = {
 	father = KOH0179
 	mother = KOH0180
 	1150.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Simon, Comte de Clermont
 	1208.3.14 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49755,11 +49911,11 @@ KOH0184 = {
 	father = KOH0179
 	mother = 204986
 	1159.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Baudouin du Donjon
 	1226.10.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49769,10 +49925,10 @@ KOH0185 = {
 	religion = "catholic"
 	culture = french
 	1080.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1109.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49784,10 +49940,10 @@ KOH0186 = {
 	culture = french
 	father = KOH0185
 	1109.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1177.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49797,7 +49953,7 @@ KOH0187 = {
 	religion = "catholic"
 	culture = french
 	1101.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1137.1.1 = {
 		add_spouse = 91082
@@ -49806,7 +49962,7 @@ KOH0187 = {
 		add_spouse = KOH0186
 	}
 	1157.4.29 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49819,10 +49975,10 @@ KOH0188 = {
 	father = KOH0187
 	mother = 91082
 	1139.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1183.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49832,13 +49988,13 @@ KOH0189 = {
 	religion = "catholic"
 	culture = french
 	1135.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1155.1.1 = {
 		add_spouse = KOH0188
 	}
 	1191.6.1 = { #died at Acre
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49850,10 +50006,10 @@ KOH0190 = {
 	father = KOH0189
 	mother = KOH0188
 	1156.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1191.5.1 = { #died at Acre
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49865,11 +50021,11 @@ KOH0191 = {
 	father = KOH0189
 	mother = KOH0188
 	1158.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Emmeline de Broyes
 	1236.6.16 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49882,11 +50038,11 @@ KOH0192 = {
 	father = KOH0189
 	mother = KOH0188
 	1160.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Eudes de Grancey
 	1225.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49898,13 +50054,13 @@ KOH0193 = {
 	father = KOH0187
 	mother = KOH0186
 	1142.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1166.1.1 = {
 		add_spouse = KOH0197
 	}
 	1187.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49916,10 +50072,10 @@ KOH0194 = {
 	father = KOH0187
 	mother = KOH0186
 	1144.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1153.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49932,10 +50088,10 @@ KOH0195 = {
 	father = KOH0187
 	mother = KOH0186
 	1146.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1180.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49945,13 +50101,13 @@ KOH0196 = {
 	religion = "catholic"
 	culture = french
 	1130.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1149.1.1 = {
 		add_spouse = 73288
 	}
 	1169.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49964,10 +50120,10 @@ KOH0197 = {
 	father = KOH0196
 	mother = 73288
 	1150.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1169.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49979,10 +50135,10 @@ KOH0198 = {
 	father = KOH0193
 	mother = KOH0197
 	1171.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1222.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -49995,11 +50151,11 @@ KOH0199 = {
 	father = KOH0193
 	mother = KOH0197
 	1175.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Gervais de Châteauneuf
 	1203.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50057,10 +50213,10 @@ KOH0201 = {
 	father = 205881
 	mother = 183123
 	1110.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1150.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50079,7 +50235,7 @@ KOH0203 = {
 		add_spouse = KOH0202
 	}
 	1183.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50091,10 +50247,10 @@ KOH0204 = {
 	father = KOH0202
 	mother = KOH0203
 	1148.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1191.5.5 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50106,13 +50262,13 @@ KOH0205 = {
 	father = KOH0202
 	mother = KOH0203
 	1150.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1183.1.1 = {
 		add_spouse = KOH0213
 	}
 	1217.9.8 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50125,10 +50281,10 @@ KOH0206 = {
 	father = KOH0202
 	mother = KOH0203
 	1153.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1200.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50141,10 +50297,10 @@ KOH0207 = {
 	father = KOH0202
 	mother = KOH0203
 	1157.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1223.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50275,11 +50431,11 @@ KOH0227 = {
 	religion = "catholic"
 	culture = french
 	1030.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Gertrude de Toul
 	1081.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50290,11 +50446,11 @@ KOH0228 = {
 	culture = french
 	father = KOH0227
 	1070.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Gisele de Vaudemont, who then married Renaud, Comte de Bar
 	1119.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50322,13 +50478,13 @@ KOH0230 = {
 	culture = french
 	father = KOH0228
 	1105.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1140.1.1 = {
 		add_spouse = KOH0229 #Hadewide de Lorraine
 	}
 	1142.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50339,10 +50495,10 @@ KOH0231 = {
 	culture = french
 	father = KOH0228
 	1101.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1145.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50353,10 +50509,10 @@ KOH0232 = {
 	culture = french
 	father = KOH0230
 	1141.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1162.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50367,13 +50523,13 @@ KOH0233 = {
 	culture = french
 	father = KOH0231
 	1126.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1146.1.1 = {
 		add_spouse = KOH0235
 	}
 	1191.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50384,10 +50540,10 @@ KOH0234 = {
 	culture = french
 	father = KOH0232
 	1161.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1180.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50397,7 +50553,7 @@ KOH0235 = {
 	religion = "catholic"
 	culture = french
 	1130.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	1185.1.1 = {
 		death = yes
@@ -50413,11 +50569,11 @@ KOH0236 = {
 	father = KOH0233
 	mother = KOH0235
 	1147.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Mathieu de Lorraine
 	1206.1.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50429,11 +50585,11 @@ KOH0237 = {
 	father = KOH0233
 	mother = KOH0235
 	1149.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Helvise, widow of Henri de Vitry, of Rethel
 	1234.3.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 
@@ -50445,11 +50601,11 @@ KOH0238 = {
 	father = KOH0233
 	mother = KOH0235
 	1149.1.1 = {
-		birth = "yes"
+		birth = yes
 	}
 	#married Cecile de Clermont
 	1234.3.1 = {
-		death = "yes"
+		death = yes
 	}
 }
 

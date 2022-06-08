@@ -5906,7 +5906,7 @@
 	intrigue = 5
 	stewardship = 4
 	religion = "catholic"
-	culture = cisalpine
+	culture = "hungarian"
 	trait = lustful
 	trait = greedy
 	trait = craven
@@ -9526,9 +9526,13 @@
 	trait = just
 	trait = calm
 	trait = education_martial_4
+	sexuality = heterosexual
 	
 	820.1.1 = {
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}	
 	}
 
 	844.1.1 = {

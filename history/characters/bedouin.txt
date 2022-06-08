@@ -1,6 +1,6 @@
 ﻿45108 = {
 	name = "Hasan" # ibn Zayd (great-great-grandson of Hasan ibn Zayd, governor of Medina)
-	dynasty = 7512 # Alavids of Tabaristan
+	dynasty = 7296 # Hashimid
 	religion = "zayidi"
 	culture = "bedouin"
 	father = 163128
@@ -421,24 +421,6 @@
 	}
 }
 
-20740 = {
-	name = "Sulayman"
-	dynasty = 101048
-	martial = 8
-	diplomacy = 8
-	intrigue = 4
-	stewardship = 8
-	religion = "ashari"
-	culture = "bedouin"
-	trait = education_martial_2
-	1039.1.1 = {
-		birth = "1039.1.1"
-	}
-	1089.1.1 = {
-		death = "1089.1.1"
-	}
-}
-
 20815 = {
 	name = "Ismat"
 	dynasty = 101047
@@ -454,26 +436,6 @@
 	}
 	1089.1.1 = {
 		death = "1089.1.1"
-	}
-}
-
-20818 = {
-	name = "Mu_ansar"
-	dynasty = 100808
-	martial = 4
-	diplomacy = 5
-	intrigue = 6
-	stewardship = 7
-	religion = "ashari"
-	culture = "bedouin"
-	trait = diligent
-	trait = education_martial_3
-	trait = cynical
-	1041.1.1 = {
-		birth = "1041.1.1"
-	}
-	1091.1.1 = {
-		death = "1091.1.1"
 	}
 }
 
@@ -1430,7 +1392,6 @@
 	father = 45050
 	1080.1.1 = {
 		birth = "1080.1.1"
-		add_pressed_claim = title:d_ismaili
 	}
 	1137.1.1 = {
 		death = "1137.1.1"
@@ -1450,7 +1411,6 @@
 	father = 45050
 	1075.1.1 = {
 		birth = "1075.1.1"
-		add_pressed_claim = title:d_ismaili
 	}
 	1115.1.1 = {
 		death = "1115.1.1"
@@ -1470,7 +1430,6 @@
 	father = 45050
 	1076.1.1 = {
 		birth = "1076.1.1"
-		add_pressed_claim = title:d_ismaili
 	}
 	1115.1.1 = {
 		death = "1115.1.1"
@@ -1491,7 +1450,6 @@
 	father = 45056
 	1100.1.1 = {
 		birth = "1100.1.1"
-		add_pressed_claim = title:d_ismaili
 	}
 	1138.1.1 = {
 		death = "1138.1.1"
@@ -1511,7 +1469,6 @@
 	father = 45057
 	1110.1.1 = {
 		birth = "1110.1.1"
-		add_pressed_claim = title:d_ismaili
 	}
 	1171.1.1 = {
 		death = "1171.1.1"
@@ -1958,6 +1915,9 @@
 	religion = "ashari"
 	culture = "bedouin"
 	father = 33922
+	trait = chaste
+	trait = honest
+	trait = zealous
 	605.1.1 = {
 		birth = "605.1.1"
 	}
@@ -6419,7 +6379,7 @@
 }
 159377 = {
 	name = "Kilab" #
-	dynasty = 1029035
+	dynasty_house = house_kilabid
 	martial = 7
 	diplomacy = 6
 	intrigue = 5
@@ -6527,7 +6487,7 @@
 }
 159383 = {
 	name = "Salih" #
-	dynasty = 1029035
+	dynasty_house = house_kilabid
 	martial = 7
 	diplomacy = 6
 	intrigue = 5
@@ -6545,7 +6505,7 @@
 }
 159384 = {
 	name = "Mukallad" #
-	dynasty = 1029035
+	dynasty_house = house_kilabid
 	martial = 7
 	diplomacy = 6
 	intrigue = 5
@@ -6563,7 +6523,7 @@
 }
 159385 = {
 	name = "Salih" #
-	dynasty = 1029035
+	dynasty_house = house_kilabid
 	martial = 7
 	diplomacy = 6
 	intrigue = 5
@@ -6581,7 +6541,7 @@
 }
 159386 = {
 	name = "Kamil" #
-	dynasty = 1029035
+	dynasty_house = house_kilabid
 	martial = 7
 	diplomacy = 6
 	intrigue = 5
@@ -6599,7 +6559,7 @@
 }
 159387 = {
 	name = "Amir" #
-	dynasty = 1029035
+	dynasty_house = house_kilabid
 	martial = 7
 	diplomacy = 6
 	intrigue = 5
@@ -6900,7 +6860,7 @@
 }
 74041 = {
 	name = "Mohammad"
-	dynasty = 1056
+	dynasty_house = house_ukhaidhirid
 
 	culture = "bedouin"
 	religion = "ismaili"
@@ -6960,7 +6920,7 @@
 	name = "Zayd"
 	dynasty = 7296
 	religion = "ismaili"
-	culture = "hijazi"
+	culture = "bedouin"
 	trait = sayyid
 	father = 33926
 	653.1.1 = {
@@ -6975,7 +6935,7 @@
 	name = "Hasan"
 	dynasty = 7296
 	religion = "ismaili"
-	culture = "hijazi"
+	culture = "bedouin"
 	trait = sayyid
 	father = 163124
 	703.1.1 = {
@@ -6990,7 +6950,7 @@
 	name = "Ismail"
 	dynasty = 7296
 	religion = "ismaili"
-	culture = "hijazi"
+	culture = "bedouin"
 	trait = sayyid
 	father = 163125
 	740.1.1 = {
@@ -7005,7 +6965,7 @@
 	name = "Muhammad"
 	dynasty = 7296
 	religion = "ismaili"
-	culture = "hijazi"
+	culture = "bedouin"
 	trait = sayyid
 	father = 163126
 	780.1.1 = {
@@ -7020,7 +6980,7 @@
 	name = "Zayd"
 	dynasty = 7296
 	religion = "ismaili"
-	culture = "hijazi"
+	culture = "bedouin"
 	trait = sayyid
 	father = 163127
 	810.1.1 = {
@@ -7035,7 +6995,7 @@
 	name = "Ibrahim"
 	dynasty = 7296
 	religion = "ismaili"
-	culture = "hijazi"
+	culture = "bedouin"
 	trait = sayyid
 	father = 33929
 	780.1.1 = {
@@ -7050,7 +7010,7 @@
 	name = "Yusuf"
 	dynasty = 7296
 	religion = "ismaili"
-	culture = "hijazi"
+	culture = "bedouin"
 	trait = sayyid
 	father = 163129
 	810.1.1 = {
@@ -7874,7 +7834,7 @@
 	name = "Isma_il"
 	dynasty = 7296
 
-	culture = "hijazi"
+	culture = "bedouin"
 	religion = "ismaili"
 	trait = sayyid
 	father = 163130
@@ -7887,7 +7847,7 @@
 }
 160016 = {
 	name = "Yusuf"
-	dynasty = 1056
+	dynasty_house = house_ukhaidhirid
 
 	culture = "bedouin"
 	religion = "ismaili"
@@ -7902,7 +7862,7 @@
 }
 160017 = {
 	name = "Isma_il"
-	dynasty = 1056
+	dynasty_house = house_ukhaidhirid
 
 	culture = "bedouin"
 	religion = "ismaili"
@@ -7917,7 +7877,7 @@
 }
 160018 = {
 	name = "Hasan"
-	dynasty = 1056
+	dynasty_house = house_ukhaidhirid
 
 	culture = "bedouin"
 	religion = "ismaili"
@@ -7932,7 +7892,7 @@
 }
 160019 = {
 	name = "Isma_il"
-	dynasty = 1056
+	dynasty_house = house_ukhaidhirid
 
 	culture = "bedouin"
 	religion = "ismaili"
@@ -7947,7 +7907,7 @@
 }
 160020 = {
 	name = "Ahmad"
-	dynasty = 1056
+	dynasty_house = house_ukhaidhirid
 
 	culture = "bedouin"
 	religion = "ismaili"
@@ -8006,7 +7966,7 @@
 
 163166 = {
 	name = "Muhammad"
-	dynasty = 7512
+	dynasty = 7296 # Hashimid
 	religion = "zayidi"
 	culture = "bedouin"
 	trait = sayyid
@@ -9528,131 +9488,6 @@
 	}
 }
 
-200261 = {
-	name = "Yahya"
-	dynasty = 1046029
-
-	religion = ashari
-	culture = bedouin
-
-	966.1.1 = {
-		birth = yes
-	}
-	1020.1.1 = {
-		death = yes
-	}
-}
-
-200262 = {
-	name = "Ahmad"
-	dynasty = 1046029
-
-	father = 200261
-
-	religion = ashari
-	culture = bedouin
-
-	991.1.1 = {
-		birth = yes
-	}
-	1042.1.1 = {
-		death = yes
-	}
-}
-
-200263 = {
-	name = "al-Abbas"
-	dynasty = 1046029
-
-	father = 200262
-
-	religion = ashari
-	culture = bedouin
-
-	1018.1.1 = {
-		birth = yes
-	}
-	1070.1.1 = {
-		death = yes
-	}
-}
-
-200264 = {
-	name = "Muhamad"
-	dynasty = 1046029
-
-	father = 200261
-
-	religion = ashari
-	culture = bedouin
-
-	993.1.1 = {
-		birth = yes
-	}
-	1051.1.1 = {
-		death = yes
-	}
-}
-
-200265 = {
-	name = "Jalaf"
-	dynasty = 1046029
-
-	father = 200261
-
-	religion = ashari
-	culture = bedouin
-
-	995.1.1 = {
-		birth = yes
-	}
-	1048.1.1 = {
-		death = yes
-	}
-}
-
-200266 = {
-	name = "Fath"
-	dynasty = 1046029
-
-	father = 200265
-
-	religion = ashari
-	culture = bedouin
-
-	1026.1.1 = {
-		birth = yes
-	}
-	1049.1.1 = {
-		add_spouse = 200268
-	}
-	1053.1.1 = {
-		employer = 3212 # Abbad Abbadid
-		move_to_pool = yes
-	}
-	1083.1.1 = {
-		death = yes
-	}
-}
-
-200267 = {
-	name = "Nars"
-	dynasty = 1046029
-
-	father = 200266
-	mother = 200268
-
-	religion = ashari
-	culture = bedouin
-
-	1051.1.1 = {
-		birth = yes
-	}
-	1107.1.1 = {
-		death = yes
-	}
-}
-
 200268 = {
 	name = "Suraya"
 	female = yes
@@ -10634,7 +10469,7 @@
 		birth = yes
 	}
 	844.1.1 = {
-		dynasty = 1029124
+		dynasty_house = house_yazidid
 		death = yes
 	}
 }
@@ -10649,7 +10484,7 @@
 		birth = yes
 	}
 	844.1.1 = {
-		dynasty = 1029124
+		dynasty_house = house_yazidid
 	}
 	882.1.1 = {
 		death = yes
@@ -10666,7 +10501,7 @@
 		birth = yes
 	}
 	844.1.1 = {
-		dynasty = 1029124
+		dynasty_house = house_yazidid
 	}
 	881.1.1 = {
 		death = yes
@@ -11574,7 +11409,7 @@
 #	dynasty = #TODO_CD_ERCC
 	religion = ashari
 	culture = bedouin
-
+	
 	840.1.1 = {
 		birth = yes
 	}
@@ -12115,7 +11950,7 @@ bedouin0024 = {
 }
 bedouin0025 = {
 	name = "Hibatallah" #Kanz al-Dawla
-	dynasty = bedouindyn004 #Banu'l-Kanz
+	dynasty_house = house_banu_kanz #Banu'l-Kanz
 	religion = "ashari"
 	culture = bedouin
 	father = bedouin0024
@@ -12128,7 +11963,7 @@ bedouin0025 = {
 }
 bedouin0026 = {
 	name = "al-Makarim" #fictional son of Kanz al-Dawla
-	dynasty = bedouindyn004 #Banu'l-Kanz
+	dynasty_house = house_banu_kanz #Banu'l-Kanz
 	religion = "ashari"
 	culture = bedouin
 	father = bedouin0025
@@ -12141,7 +11976,7 @@ bedouin0026 = {
 }
 bedouin0027 = {
 	name = "Yazid"
-	dynasty = bedouindyn004 #Banu'l-Kanz
+	dynasty_house = house_banu_kanz #Banu'l-Kanz
 	religion = "ashari"
 	culture = bedouin
 	father = bedouin0026
@@ -12154,7 +11989,7 @@ bedouin0027 = {
 }
 bedouin0028 = {
 	name = "Ishaq"
-	dynasty = bedouindyn004 #Banu'l-Kanz
+	dynasty_house = house_banu_kanz #Banu'l-Kanz
 	religion = "ashari"
 	culture = bedouin
 	father = bedouin0027
@@ -12167,7 +12002,7 @@ bedouin0028 = {
 }
 bedouin0029 = {
 	name = "Bishr"
-	dynasty = bedouindyn004 #Banu'l-Kanz
+	dynasty_house = house_banu_kanz #Banu'l-Kanz
 	religion = "ashari"
 	culture = bedouin
 	father = bedouin0028
@@ -12180,7 +12015,7 @@ bedouin0029 = {
 }
 bedouin0030 = {
 	name = "al-Mutawwaj"
-	dynasty = bedouindyn004 #Banu'l-Kanz
+	dynasty_house = house_banu_kanz #Banu'l-Kanz
 	religion = "ashari"
 	culture = bedouin
 	father = bedouin0029
@@ -12193,7 +12028,7 @@ bedouin0030 = {
 }
 bedouin0031 = {
 	name = "Muhammad" #Ibn al-Mutawwaj, not known by his name
-	dynasty = bedouindyn004 #Banu'l-Kanz
+	dynasty_house = house_banu_kanz #Banu'l-Kanz
 	religion = "ashari"
 	culture = bedouin
 	father = bedouin0030
@@ -12206,7 +12041,7 @@ bedouin0031 = {
 }
 bedouin0032 = {
 	name = "Ishaq"
-	dynasty = bedouindyn004 #Banu'l-Kanz
+	dynasty_house = house_banu_kanz #Banu'l-Kanz
 	religion = "ashari"
 	culture = bedouin
 	father = bedouin0031
@@ -12219,7 +12054,7 @@ bedouin0032 = {
 }
 bedouin0033 = {
 	name = "Yazid"
-	dynasty = bedouindyn004 #Banu'l-Kanz
+	dynasty_house = house_banu_kanz #Banu'l-Kanz
 	religion = "ashari"
 	culture = bedouin
 	father = bedouin0032
@@ -14061,3 +13896,68 @@ bedouin00162 = { #fictional governor of Hijaz
 	}
 }
 
+# Mazyadids / Banu Mazyad
+159481 = {
+	name = "Mayzad" #
+	dynasty = 587
+	religion = "ismaili"
+	culture = "levantine"
+	920.1.1 = {
+		birth = "920.1.1" #Unknown
+	}
+	973.1.1 = {
+		death = "973.1.1"
+	}
+}
+159482 = {
+	name = "Ali" #
+	dynasty = 587
+	religion = "ismaili"
+	culture = "bedouin"
+	father = 159481
+	955.1.1 = {
+		birth = "955.1.1" #Unknown
+	}
+	1017.1.1 = {
+		death = "1017.1.1"
+	}
+}
+159483 = {
+	name = "Dubays" #
+	dynasty = 587
+	religion = "ismaili"
+	culture = "bedouin"
+	father = 159482
+	1000.1.1 = {
+		birth = "1000.1.1" #Unknown
+	}
+	1081.1.1 = {
+		death = "1081.1.1"
+	}
+}
+159484 = {
+	name = "Mansur" #
+	dynasty = 587
+	religion = "ismaili"
+	culture = "bedouin"
+	father = 159483
+	1035.1.1 = {
+		birth = "1035.1.1" #Unknown
+	}
+	1086.1.1 = {
+		death = "1086.1.1"
+	}
+}
+159485 = {
+	name = "Sadaka" #
+	dynasty = 587
+	religion = "ismaili"
+	culture = "bedouin"
+	father = 159484
+	1060.1.1 = {
+		birth = "1060.1.1" #Unknown
+	}
+	1107.1.1 = {
+		death = "1107.1.1"
+	}
+}

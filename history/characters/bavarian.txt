@@ -312,29 +312,9 @@
 	}
 }
 ##Start of dynasty von Wittelsbach
-11060 = {
-	name = "Otto"
-	dynasty_house = house_wittelsbach
-	martial = 5
-	diplomacy = 7
-	intrigue = 6
-	stewardship = 7
-	religion = "catholic"
-	culture = bavarian
-	trait = education_stewardship_2
-	father = 20257
-	mother = 4257
-	1056.1.1 = {
-		birth = "1056.1.1"
-	}
-	1108.1.1 = {
-		death = "1108.1.1"
-	}
-}
-
 20257 = {
 	name = "Otto" #Otto I
-	dynasty_house = house_wittelsbach
+	dynasty_house = house_babenberg # house_wittelsbach founded 1119
 	martial = 6
 	diplomacy = 5
 	intrigue = 6
@@ -354,9 +334,10 @@
 		death = yes
 	}
 }
+
 11060 = {
 	name = "Otto" #Otto II
-	dynasty_house = house_wittelsbach
+	dynasty_house = house_babenberg # house_wittelsbach founded 1119
 	martial = 5
 	diplomacy = 7
 	intrigue = 6
@@ -373,7 +354,6 @@
 		death = yes
 	}
 }
-
 
 212931 = {
 	name = "Hedwig"
@@ -665,7 +645,7 @@
 
 40715 = {
 	name = "Bernhard"
-	dynasty_house = house_wittelsbach
+	dynasty_house = house_babenberg # house_wittelsbach founded 1119
 	martial = 7
 	diplomacy = 6
 	intrigue = 7
@@ -5815,6 +5795,9 @@
 	1039.1.1 = {
 		birth = "1039.1.1"
 	}
+	1061.1.1 = {
+		set_primary_title_to = title:c_frontenhausen
+	}
 	1108.1.1 = {
 		death = "1108.1.1"
 	}
@@ -5997,7 +5980,7 @@
 		add_spouse = 212931
 	}
 	1157.1.1 = {
-		capital = c_worms
+		capital = title:c_worms
 	}
 	1175.1.15 = {
 		add_spouse = 201519
@@ -6878,7 +6861,7 @@
 }
 30248 = {
 	name = "Dietrich"
-	dynasty = 7105
+	dynasty_house = house_katlenburg
 	martial = 6
 	diplomacy = 4
 	intrigue = 6
@@ -6897,7 +6880,7 @@
 
 30249 = {
 	name = "Dietrich"
-	dynasty = 7105
+	dynasty_house = house_katlenburg
 	martial = 6
 	diplomacy = 4
 	intrigue = 6
@@ -8654,11 +8637,11 @@
 	dynasty = 1062031
 	religion = "catholic"
 	culture = bavarian
-	father = 260067
-	1160.1.1 = {
+	father = 260063
+	1090.1.1 = {
 		birth = yes
 	}
-	1188.1.1 = {
+	1130.1.1 = {
 		death = yes
 	}
 }
@@ -8667,7 +8650,7 @@
 	dynasty = 1062031
 	religion = "catholic"
 	culture = bavarian
-	father = 260063
+	father = 260064
 	1100.1.1 = {
 		birth = yes
 	}
@@ -10073,6 +10056,51 @@ bavarian0001 = {
 		birth = yes
 	}
 	1055.2.25 = {
+		death = yes
+	}
+}
+
+bavarian0002 = {
+	name = "Konrad" #Prince-Bishop of Konstanz, I
+	religion = "catholic"
+	culture = bavarian
+	trait = education_learning_4
+	father = 7992 # Count Heinrich
+	dynasty = 650 # Welf
+	914.1.1 = {
+		birth = yes
+	}
+	975.11.26 = {
+		death = yes
+	}
+}
+
+bavarian0003 = {
+	name = "Gebhard" #Saint Gebhard of Konstanz
+	religion = "catholic"
+	culture = bavarian
+	trait = education_learning_4
+	trait = architect
+	trait = generous
+	trait = pilgrim
+	dynasty = 9587 # Bregenz
+	949.1.1 = {
+		birth = yes
+	}
+	995.1.1 = {
+		death = yes
+	}
+}
+
+bavarian0004 = {
+	name = "Rothard" #Prince-Bishop Rudhart of Konstanz
+	religion = "catholic"
+	culture = bavarian
+	trait = education_learning_2
+	951.1.1 = {
+		birth = yes
+	}
+	1022.1.1 = {
 		death = yes
 	}
 }

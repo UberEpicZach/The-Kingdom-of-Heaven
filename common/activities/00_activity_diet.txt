@@ -2,7 +2,6 @@
 	expiration_days = 300
 	has_activity_window = yes
 	days_until_auto_start = 20
-	frame = 2
 	color = { 0.853906 0.867188 0.105469 1 }
 	valid = {
 		activity_owner = {
@@ -121,25 +120,25 @@
 	}
 }
 
-activity_saintly_pilgrimage = {
-	solo = yes
-	frame = 1
-	color = { 0.98 0.85 0.37 1 } # Medium Yellow
-	on_spawn = {
-		invite_character_to_activity = activity_owner
-		accept_invitation_for_character = activity_owner
-	}
-	on_activate = {
-		activity_owner = {
-			trigger_event = {
-				id = saintly_pilgrimage.1
-				days = { 10 20 }
-			}
-		}
-	}
-	on_complete = {
-		activity_owner = {
-			remove_character_flag = planning_an_activity
-		}	
-	}
-}
+# activity_saintly_pilgrimage = {
+# 	solo = yes
+# 	frame = 1
+# 	color = { 0.98 0.85 0.37 1 } # Medium Yellow
+# 	on_spawn = {
+# 		invite_character_to_activity = activity_owner
+# 		accept_invitation_for_character = activity_owner
+# 	}
+# 	on_activate = {
+# 		activity_owner = {
+# 			trigger_event = {
+# 				id = saintly_pilgrimage.1
+# 				days = { 10 20 }
+# 			}
+# 		}
+# 	}
+# 	on_complete = {
+# 		activity_owner = {
+# 			remove_character_flag = planning_an_activity
+# 		}	
+# 	}
+# }

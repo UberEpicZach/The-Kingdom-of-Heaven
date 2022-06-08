@@ -834,7 +834,6 @@
 	stewardship = 6
 	religion = "catholic"
 	culture = "catalan"
-	trait = ill
 	trait = education_martial_1
 	trait = diligent
 	father = 110610
@@ -844,6 +843,9 @@
 	}
 	1052.1.1 = {
 		add_spouse = 110613
+	}
+	1066.1.1 = {
+		contract_disease_effect = { DISEASE = ill TREATMENT_EVENT = yes }
 	}
 	1102.1.1 = {
 		death = "1102.1.1"
@@ -3493,13 +3495,15 @@
 	stewardship = 3
 	religion = "catholic"
 	culture = "catalan"
-	trait = ill
 	trait = drunkard
 	trait = education_diplomacy_1
 	father = 70163
 	mother = 70164
 	1049.1.1 = {
 		birth = "1049.1.1"
+	}
+	1066.1.1 = {
+		contract_disease_effect = { DISEASE = ill TREATMENT_EVENT = yes }
 	}
 	1117.1.1 = {
 		death = "1117.1.1"
@@ -3924,12 +3928,14 @@
 	religion = "catholic"
 	culture = "catalan"
 	trait = content
-	trait = ill
 	trait = education_stewardship_2
 	father = 70184
 	mother = 54002
 	1061.1.1 = {
 		birth = "1061.1.1"
+	}
+	1066.1.1 = {
+		contract_disease_effect = { DISEASE = ill TREATMENT_EVENT = yes }
 	}
 	1075.1.1 = {
 		death = "1075.1.1"
@@ -3985,13 +3991,13 @@
 	stewardship = 7
 	religion = "catholic"
 	culture = "catalan"
-	trait = ill
 	trait = education_stewardship_2
 	1050.1.1 = {
 		birth = "1050.1.1"
 	}
 	1066.1.1 = {
 		employer = 110550
+		contract_disease_effect = { DISEASE = ill TREATMENT_EVENT = yes }
 	}
 	1078.1.1 = {
 		death = "1078.1.1"
@@ -4008,12 +4014,14 @@
 	religion = "catholic"
 	culture = "catalan"
 	trait = wrathful
-	trait = ill
 	trait = education_martial_2
 	father = 110520
 	mother = 325
 	1055.1.1 = {
 		birth = "1055.1.1"
+	}
+	1066.1.1 = {
+		contract_disease_effect = { DISEASE = ill TREATMENT_EVENT = yes }
 	}
 	1076.11.2 = {
 		death = "1076.11.2"
@@ -10807,28 +10815,6 @@
 	}
 	1400.8.2 = {
 		death = "1400.8.2"
-	}
-}
-
-110636 = {
-	name = "Clemencia"
-	female = yes
-	dynasty = 686
-	martial = 4
-	diplomacy = 6
-	intrigue = 6
-	stewardship = 5
-	religion = "catholic"
-	culture = "catalan"
-	trait = honest
-	trait = just
-	trait = education_intrigue_2
-	father = 40188
-	1037.1.2 = {
-		birth = "1037.1.2"
-	}
-	1065.1.2 = {
-		death = "1065.1.2"
 	}
 }
 

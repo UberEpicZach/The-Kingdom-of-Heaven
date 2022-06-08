@@ -986,7 +986,7 @@
 
 144605 = {
 	name = "Archambaut"
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 205600
@@ -2006,7 +2006,7 @@
 40009 = {
 	name = "Bernat" #Bernard I d'Armagnac
 	# AKA: Barnard
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 70152 #Guillaume de Barcelona
@@ -2022,7 +2022,7 @@
 40010 = {
 	name = "Guiraud" #Géraud I Trencaleon d'Armagnac
 	# AKA: Geraud 'Trencaleon'
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	martial = 8
 	religion = "catholic"
 	culture = "occitan"
@@ -2043,7 +2043,7 @@
 40012 = {
 	name = "Bernat" #Bernard II Tumapaler d'Armagnac
 	# AKA: Barnard 'Tempaler'
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 40010 #Géraud I Trencaleon d'Armagnac
@@ -2061,7 +2061,7 @@
 40016 = {
 	name = "Arnaut-Bernat"
 	# AKA: Arnaud
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 40012  #Bernard II Tumapaler d'Armagnac
@@ -2149,7 +2149,7 @@
 40138 = {
 	name = "GuilhE_m" #Guillaume I de Thiern
 	# AKA: Guilhem
-	dynasty = 13113 #was 733 Auvergne
+	dynasty_house = house_thiern #was 733 Auvergne
 	religion = "catholic"
 	culture = "occitan"
 	father = 40136 #Guy II de Thiern
@@ -2841,7 +2841,7 @@
 71618 = {
 	name = "Raimond-Arnaut" #Raymond Arnaud II de Dax
 	# AKA: Raimond
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 138358 #Pierre Arnaud Dat de Mixe
@@ -2860,7 +2860,7 @@
 71619 = {
 	name = "PE_ire" #Pierre II de Dax
 	# AKA: Peire
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 71618
@@ -2879,7 +2879,7 @@
 71620 = {
 	name = "Navar" #Navarra/Navarrine de Dax
 	female = yes
-	dynasty = 8757
+	dynasty_house = house_dax
 
 	father = 71619
 	mother = 205562
@@ -2897,7 +2897,7 @@
 
 71621 = {
 	name = "Navar" #Navarre de Dax
-	dynasty = 8757
+	dynasty_house = house_dax
 	female = yes
 	religion = "catholic"
 	culture = "occitan"
@@ -2998,7 +2998,7 @@
 
 71761 = {
 	name = "Joana" #de Foix
-	dynasty = 684
+	dynasty_house = house_foix
 	female = yes
 	religion = "catholic"
 	culture = "occitan"
@@ -3493,7 +3493,7 @@
 40315 = {
 	name = "Ascelina" #de Limoges de Gévaudan
 	female = yes
-	dynasty = 729 #de Limoges
+	dynasty_house = house_limoges #de Limoges
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -3511,7 +3511,7 @@
 
 138043 = {
 	name = "Alias" #Hélie I de Périgord
-	dynasty = 98 #father dID 100145 de la marche
+	dynasty = 100145 #father dID 100145 de la marche
 	religion = "catholic"
 	culture = "occitan"
 	father = 40070 #Boson I
@@ -3526,7 +3526,7 @@
 
 138046 = {
 	name = "Alias" #Hélie II du Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 40072 #Boson II de la marche/périgord
@@ -3541,7 +3541,7 @@
 
 40074 = {
 	name = "Boson" #Boson III de Périgord
-	dynasty = 98 #father dID 100145 de la marche
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 40072 #Boson II de la marche/périgord
@@ -3575,7 +3575,7 @@
 
 40076 = {
 	name = "Aldebert" #Adalbert II Cadoirac du Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 40074 #Boson III du Périgord
@@ -3591,7 +3591,7 @@
 
 138049 = {
 	name = "Alias" #Hélie III du Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 40076 #Adalbert II de Périgord
@@ -3605,7 +3605,7 @@
 
 138050 = {
 	name = "GuilhE_m" #Talairand de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 138049 #Hélie III de Périgord
@@ -3619,7 +3619,7 @@
 
 138051 = {
 	name = "Alias" #Hélie IV de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 138050 #Guillaume Talairand de Périgord
@@ -3633,7 +3633,7 @@
 
 138052 = {
 	name = "Alias" #Hélie V Rudel de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 138049 #Hélie III de Périgord
@@ -3647,7 +3647,7 @@
 
 138053 = {
 	name = "Aldebert" #Adalbert III de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 40076 #Adalbert II Cadoirac du Périgord
@@ -3661,7 +3661,7 @@
 
 205601 = {
 	name = "Boson" #Boson IV de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 138053 #Adalbert III de Périgord
@@ -3679,7 +3679,7 @@
 205604 = {
 	name = "Jordana"
 	female = yes
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 205601 #Boson IV de Périgord
@@ -3695,7 +3695,7 @@
 
 205600 = {
 	name = "Alias" #Hélie VI de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 205601 #Boson IV de Périgord
@@ -3711,7 +3711,7 @@
 
 205602 = {
 	name = "Archambaut" #Archambaud I de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 205600 #Hélie VI de Périgord
@@ -3725,7 +3725,7 @@
 
 205603 = {
 	name = "Alias" #Hélie VII or V de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 205600 #Hélie VI de Périgord
@@ -3742,7 +3742,7 @@
 
 138058 = {
 	name = "Archambaut" #Archambaud II de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 205603 #Hélie VII de Périgord
@@ -3756,7 +3756,7 @@
 
 138059 = {
 	name = "Alias" #Hélie VIII de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 138058 #Archambaud II de Périgord
@@ -3770,7 +3770,7 @@
 
 138060 = {
 	name = "Archambaut" #Archambaud III de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 138059 #Hélie VIII de Périgord
@@ -3787,7 +3787,7 @@
 
 455561 = {
 	name = "Alias" #Hélie IX (fmg) or VII (wiki) du Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 138060 #Hélie VIII de Périgord
@@ -3810,7 +3810,7 @@
 
 455560 = {
 	name = "Archambaut" #Archambaud IV du Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 455561 #Hélie IX du Périgord
@@ -3826,7 +3826,7 @@
 
 455563 = {
 	name = "Rogier-Bernat" #de Périgord
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 455561 #Hélie IX du Périgord
@@ -3844,7 +3844,7 @@
 	name = "AinE_s" #de Périgord
 	# AKA: Agnes
 	female = yes
-	dynasty = 98
+	dynasty_house = house_perigord
 	religion = "catholic"
 	culture = "occitan"
 	father = 455561 #Hélie IX du Périgord
@@ -3920,7 +3920,7 @@
 
 40308 = {
 	name = "Amalric" #Aymeric Ostofrancus I de Rochechouart
-	dynasty = 5001 # was 100147 de Limousin
+	dynasty_house = house_rochechouart # was 100147 de Limousin
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -3942,7 +3942,7 @@
 
 40310 = {
 	name = "Amalric" #Aymeric II de Rochechouart
-	dynasty = 5001 #was 100147 de Limousin
+	dynasty_house = house_rochechouart #was 100147 de Limousin
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -3962,7 +3962,7 @@
 40313 = {
 	name = "Rotberga" #de Rochechouart
 	female = yes
-	dynasty = 5001 #was 100147 de Limousin
+	dynasty_house = house_rochechouart #was 100147 de Limousin
 	religion = "catholic"
 	culture = "occitan"
 	father = 40310 #Aymeric II de Rochechouart
@@ -3977,7 +3977,7 @@
 
 40312 = {
 	name = "Amalric" #Aymeric III de Rochechouart
-	dynasty = 5001 #was 100147 de Limousin
+	dynasty_house = house_rochechouart #was 100147 de Limousin
 	martial = 6
 	diplomacy = 5
 	intrigue = 5
@@ -3998,7 +3998,7 @@
 
 138073 = {
 	name = "Amalric" #Aymeric IV de Rochechouart
-	dynasty = 5001
+	dynasty_house = house_rochechouart
 	religion = "catholic"
 	culture = "occitan"
 	father = 40312 #Aymeric III de Rochechouart
@@ -4015,7 +4015,7 @@
 
 138097 = {
 	name = "Amalric" #Aymeric V de Rochechouart
-	dynasty = 5001
+	dynasty_house = house_rochechouart
 	religion = "catholic"
 	culture = "occitan"
 	father = 138073 #Aymeric IV de Rochechouart
@@ -4032,7 +4032,7 @@
 
 138099 = {
 	name = "Aymeric" #unknown de Rochechouart
-	dynasty = 5001
+	dynasty_house = house_rochechouart
 	religion = "catholic"
 	culture = "occitan"
 	father = 138097 #Aymeric V de Rochechouart
@@ -4049,7 +4049,7 @@
 
 138100 = {
 	name = "Amalric" #Aymeric VI de Rochechouart
-	dynasty = 5001
+	dynasty_house = house_rochechouart
 	religion = "catholic"
 	culture = "occitan"
 	father = 138097 #Aymeric V de Rochechouart
@@ -4063,7 +4063,7 @@
 
 138101 = {
 	name = "Amalric" #Aymeric VII de Rochechouart
-	dynasty = 5001
+	dynasty_house = house_rochechouart
 	religion = "catholic"
 	culture = "occitan"
 	father = 138100 #Aymeric VI de Rochechouart
@@ -4078,7 +4078,7 @@
 
 138102 = {
 	name = "Amalric" #Aymeric VIII de Rochechouart
-	dynasty = 5001
+	dynasty_house = house_rochechouart
 	religion = "catholic"
 	culture = "occitan"
 	father = 138101 #Aymeric VII de Rochechouart
@@ -4095,7 +4095,7 @@
 
 138104 = {
 	name = "Amalric" #Aymeric IX de Rochechouart
-	dynasty = 5001
+	dynasty_house = house_rochechouart
 	religion = "catholic"
 	culture = "occitan"
 	father = 138102 #Aymeric VIII de Rochechouart
@@ -4110,7 +4110,7 @@
 
 138105 = {
 	name = "Amalric" #Aymeric X de Rochechouart
-	dynasty = 5001
+	dynasty_house = house_rochechouart
 	religion = "catholic"
 	culture = "occitan"
 	father = 138104 #Aymeric IX de Rochechouart
@@ -4124,7 +4124,7 @@
 
 138106 = {
 	name = "Amalric" #Aymeric XI de Rochechouart
-	dynasty = 5001
+	dynasty_house = house_rochechouart
 	religion = "catholic"
 	culture = "occitan"
 	father = 138105 #Aymeric X de Rochechouart
@@ -4138,7 +4138,7 @@
 
 138107 = {
 	name = "Simon" #Simon I de Rochechouart
-	dynasty = 5001
+	dynasty_house = house_rochechouart
 	religion = "catholic"
 	culture = "occitan"
 	father = 138104 #Aymeric IX de Rochechouart
@@ -4152,7 +4152,7 @@
 
 138108 = {
 	name = "Joan" #Jean I de Rochechouart
-	dynasty = 5001
+	dynasty_house = house_rochechouart
 	religion = "catholic"
 	culture = "occitan"
 	father = 138107 #Simon I de Rochechouart
@@ -4166,7 +4166,7 @@
 
 138080 = {
 	name = "Archambaut" #Archambaud I de comborn
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	religion = "catholic"
 	culture = "occitan"
 	#father = 40270 #Foucher I de Limoges or
@@ -4188,7 +4188,7 @@
 
 40276 = {
 	name = "Archambaut" #Archambaud II de comborn/Turenne
-	dynasty = 13100 #de Comborn was 727 de Toulouse
+	dynasty_house = house_comborn #de Comborn was 727 de Toulouse
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -4226,7 +4226,7 @@
 
 40278 = {
 	name = "Ebles" #Ebles I de Comborn/Turenne
-	dynasty = 13100 #was 727 de Toulouse
+	dynasty_house = house_comborn #was 727 de Toulouse
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -4248,21 +4248,21 @@
 
 40282 = {
 	name = "Boson" #Boson I de Turenne
-	dynasty_house = house_turenne #was 5098 de Turenne
+	dynasty_house = house_comborn #was 5098 de Turenne
 	religion = "catholic"
 	culture = "occitan"
 	father = 40280 #Guillaume I de Turenne
 	1015.1.1 = {
 		birth = "1015.1.1"
 	}
-	1103.1.1 = {
-		death = "1103.1.1"
+	1091.1.1 = {
+		death = "1091.1.1"
 	}
 }
 
 138096 = {
 	name = "Raimond" #Raymond I de Turenne
-	dynasty_house = house_turenne #was 5098 de Turenne
+	dynasty_house = house_comborn #was 5098 de Turenne
 	religion = "catholic"
 	culture = "occitan"
 	father = 40282 #Boson I de Turenne
@@ -4276,7 +4276,7 @@
 
 40284 = {
 	name = "Archambaut" #Archambaud III de Comborn
-	dynasty = 13100 #de Comborn was 727 de Toulouse
+	dynasty_house = house_comborn #de Comborn was 727 de Toulouse
 	martial = 7
 	diplomacy = 7
 	intrigue = 4
@@ -4303,7 +4303,7 @@
 	name = "Unia" #Agnès de Comborn
 	# AKA: Agnes
 	female = yes
-	dynasty = 13100 #de Comborn was 727 de Toulouse
+	dynasty_house = house_comborn #de Comborn was 727 de Toulouse
 	martial = 6
 	diplomacy = 7
 	intrigue = 4
@@ -4429,7 +4429,7 @@
 
 205626 = {
 	name = "Archambaut" #Archambaud IV de comborn
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	martial = 5
 	diplomacy = 5
 	intrigue = 8
@@ -4454,7 +4454,7 @@
 138070 = {
 	name = "Gui" #Guy IV de Limoges
 	# AKA: Gui
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 205626 #Archambaud IV de comborn
@@ -4472,7 +4472,7 @@
 
 205621 = {
 	name = "AdhE_mar" #Ademar IV de Limoges
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	martial = 5
 	diplomacy = 5
 	intrigue = 8
@@ -4500,7 +4500,7 @@
 205620 = {
 	name = "Boson" #Adhémar V Boson de Limoges
 	# AKA: Boson-Ademar
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	martial = 8
 	diplomacy = 5
 	intrigue = 7
@@ -4525,7 +4525,7 @@
 205623 = {
 	name = "Humberge" #de Limoges
 	female = yes
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	martial = 6
 	diplomacy = 6
 	intrigue = 6
@@ -4546,7 +4546,7 @@
 205624 = {
 	name = "Maria" #de Limoges
 	female = yes
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	martial = 7
 	diplomacy = 4
 	intrigue = 8
@@ -4570,7 +4570,7 @@
 205625 = {
 	name = "Aigline" #de Limoges
 	female = yes
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	martial = 5
 	diplomacy = 6
 	intrigue = 6
@@ -4594,7 +4594,7 @@
 138098 = {
  	name = "Margarida" #de Limoges
 	female = yes
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 205620 #Adhémar V Boson de Limoges
@@ -4611,7 +4611,7 @@
 
 205622 = {
 	name = "Gui" #Guy V de Comborn
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	martial = 5
 	diplomacy = 8
 	intrigue = 4
@@ -4634,7 +4634,7 @@
 138103 = {
  	name = "Margarida" #de Limoges
 	female = yes
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 205622 #Guy V de Comborn
@@ -4650,7 +4650,7 @@
 
 205627 = {
 	name = "AdhE_mar" #de Comborn
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	martial = 5
 	diplomacy = 5
 	intrigue = 2
@@ -4673,7 +4673,7 @@
 
 205628 = {
 	name = "GuilhE_m" #the pilgrim
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	religion = "catholic"
 	culture = "occitan"
 	trait = honest
@@ -4689,7 +4689,7 @@
 
 205605 = {
 	name = "Archambaut" #Archambaud V de Comborn
-	dynasty = 13100
+	dynasty_house = house_comborn
 	martial = 7
 	diplomacy = 6
 	intrigue = 4
@@ -4713,7 +4713,7 @@
 205607 = {
 	name = "Guilheumina" #de Comborn
 	female = yes
-	dynasty = 13100
+	dynasty_house = house_comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 205605 #Archambaud V de Comborn
@@ -4729,7 +4729,7 @@
 
 138071 = {
 	name = "Gui" #Guy VI de Comborn
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 205622 #Guy V de Comborn
@@ -4745,7 +4745,7 @@
 455590 = {
 	name = "Maria" #Marie I de Comborn
 	female = yes
-	dynasty = 13100 #de Comborn
+	dynasty_house = house_comborn #de Comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138071 #Guy VI de comborn/Limoges
@@ -4760,7 +4760,7 @@
 
 138084 = {
 	name = "Archambaut" #Archambaud VI de Comborn
-	dynasty = 13100
+	dynasty_house = house_comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 205605 #Archambaud V de Comborn
@@ -4776,7 +4776,7 @@
 
 138085 = {
 	name = "Guichard" #Guichard I de Comborn
-	dynasty = 13100
+	dynasty_house = house_comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138084 #Archambaud VI de Comborn
@@ -4791,7 +4791,7 @@
 
 138087 = {
 	name = "Alias" #Hélie I de Comborn
-	dynasty = 13100
+	dynasty_house = house_comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138085 #Guichard I de Comborn
@@ -4806,7 +4806,7 @@
 
 138088 = {
 	name = "Guichard" #Guichard II de Comborn
-	dynasty = 13100
+	dynasty_house = house_comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138087 # Hélie I de Comborn
@@ -4823,7 +4823,7 @@
 
 138086 = {
 	name = "Bernat" #Bernard II de Comborn
-	dynasty = 13100
+	dynasty_house = house_comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138084 #Archambaud VI de Comborn
@@ -4838,7 +4838,7 @@
 
 138089 = {
 	name = "Archambaut" #Archambaud VII de Comborn
-	dynasty = 13100
+	dynasty_house = house_comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138086 #Bernard II de Comborn
@@ -4853,7 +4853,7 @@
 
 138090 = {
 	name = "Gui" #de Comborn
-	dynasty = 13100
+	dynasty_house = house_comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138089#Archambaud VII de Comborn
@@ -4871,7 +4871,7 @@
 138092 = {
 	name = "Maria" # de Comborn de Treignac
 	female = yes
-	dynasty = 13100
+	dynasty_house = house_comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138090 #Guy de Comborn
@@ -4888,7 +4888,7 @@
 
 138091 = {
 	name = "Guichard" #Guichard III de Comborn
-	dynasty = 13100
+	dynasty_house = house_comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138088 # Guichard II de Comborn
@@ -4904,7 +4904,7 @@
 
 138081 = {
 	name = "Guichard" #Guichard IV de Comborn
-	dynasty = 13100
+	dynasty_house = house_comborn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138091 # Guichard III de Comborn
@@ -4949,7 +4949,7 @@
 40014 = {
 	name = "Guiraud" #Géraud II d'armagnac
 	# AKA: Geraud
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 40012 #Bernard II Tumapaler d'Armagnac
@@ -4968,7 +4968,7 @@
 	name = "Gisla" #d'Armagnac
 	# AKA: Gisle
 	female = yes
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 40012 #Bernard II Tumapaler d'Armagnac
@@ -4985,7 +4985,7 @@
 40018 = {
 	name = "Bernat" #Bernard III d'Armagnac
 	# AKA: Barnard
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 40014 #Géraud II d'armagnac
@@ -5001,7 +5001,7 @@
 
 205671 = {
 	name = "Guiraud" #Géraud III d'Armagnac
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 40018 #Bernard III d'Armagnac
@@ -5036,7 +5036,7 @@
 138127 = {
 	name = "MascarO_sa" #d'Armagnac
 	female = yes
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 205671 #Géraud III d'Armagnac
@@ -5052,7 +5052,7 @@
 
 205670 = {
 	name = "Bernat" #Bernard IV d'Armagnac
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 205671 #Géraud III d'Armagnac
@@ -5067,7 +5067,7 @@
 
 205673 = {
 	name = "Guiraud" #Géraud IV Trencaléon d'armagnac
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 205670 #Bernard IV d'Armagnac
@@ -5085,7 +5085,7 @@
 	name = "Maria" #d'Armagnac
 	# AKA: Marie
 	female = yes
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 205670 #Bernard IV d'Armagnac
@@ -5108,8 +5108,8 @@
 	1011.7.29 = {
 		add_spouse = 40011 #Adélaïda de Gascogne
 	}
-	1059.1.1 = {
-		death = "1059.1.1"
+	1065.1.2 = {
+		death = "1065.1.2"
 	}
 }
 
@@ -5600,8 +5600,8 @@
 	1040.1.1 = {
 		birth = yes
 	}
-	1103.1.1 = {
-		death = "1103.1.1"
+	1064.1.1 = {
+		death = "1064.1.1"
 	}
 }
 
@@ -5614,8 +5614,8 @@
 	1060.1.1 = {
 		 birth = yes
 	}
-	1140.1.1 = {
-		death = "1140.1.1"
+	1098.1.1 = {
+		death = "1098.1.1"
 	}
 }
 
@@ -5777,7 +5777,7 @@
 
 205564 = {
 	name = "Rogier" #Roger de Couserans
-	dynasty = 386 #de Comminges
+	dynasty_house = house_comminges #de Comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 205561 #Bernard III Dodon de Comminges/de Samatan
@@ -5795,7 +5795,7 @@
 
 40180 = {
 	name = "Arnaut" #Arnaud I de Comminges
-	dynasty = 386 #was 684 de Foix
+	dynasty_house = house_comminges #was 684 de Foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 138188 #Aznar III de Comminges
@@ -5811,7 +5811,7 @@
 40196 = {
 	name = "Odon" #Odon I de Razès/Comminges
 	# AKA: Odo
-	dynasty = 386 #was 684 de Foix
+	dynasty_house = house_comminges #was 684 de Foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 40180 #Arnaud I de Comminges
@@ -5825,7 +5825,7 @@
 
 40198 = {
 	name = "Arnaut" #Arnaud II de Razès
-	dynasty = 386 #was 684 de Foix
+	dynasty_house = house_comminges #was 684 de Foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 40196 #Odon I de Razès/Comminges
@@ -5840,7 +5840,7 @@
 323 = {
 	name = "AmE_lie" #Amélie de Montignac
 	female = yes
-	dynasty = 386 #was 684 de Foix
+	dynasty_house = house_comminges #was 684 de Foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 40198 #Arnaud II de Razès
@@ -5855,7 +5855,7 @@
 
 40182 = {
 	name = "Rogier" #Rogier I de Carcassonne
-	dynasty = 386 #was 684 de Foix
+	dynasty_house = house_comminges #was 684 de Foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 40180 #Arnaud I de Comminges
@@ -5872,7 +5872,7 @@
 40184 = {
 	name = "Raimond-Rogier" #Raymond Roger de Carcassonne
 	# AKA: Raimond
-	dynasty = 386 #was 684 de Foix
+	dynasty_house = house_comminges #was 684 de Foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 40182 #Rogier I de Comminges
@@ -5886,7 +5886,7 @@
 
 1078 = {
 	name = "Bernat-Rogier"
-	dynasty = 684
+	dynasty_house = house_foix
 	martial = 4
 	diplomacy = 6
 	intrigue = 7
@@ -5899,15 +5899,15 @@
 	995.1.1 = {
 		birth = "997.1.1"
 	}
-	1037.1.1 = {
-		death = "1037.1.1"
+	1034.1.1 = {
+		death = "1034.1.1"
 	}
 }		
 
 6641 = {
 	name = "ClemE_ncia" #Clémence de Foix
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 1078 #Bernard Roger I de Carcassonne/Foix
@@ -5923,7 +5923,7 @@
 1079 = {
 	name = "Estefania"
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 	martial = 6
 	diplomacy = 6
 	intrigue = 8
@@ -5943,7 +5943,7 @@
 138160 = {
 	name = "Rogier" #Roger I de Foix	
 	# AKA: Peire	
-	dynasty = 684	
+	dynasty_house = house_foix	
 	religion = "catholic"	
 	culture = "occitan"		
 	father = 1078 #Bernard Roger I de Carcassonne/Foix		
@@ -5957,7 +5957,7 @@
 
 6620 = {
 	name = "PE_ire-Bernat"
-	dynasty = 684
+	dynasty_house = house_foix
 	martial = 4
 	diplomacy = 6
 	intrigue = 6
@@ -5977,7 +5977,7 @@
 
 40194 = {
 	name = "Rogier" #Roger II de Foix
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 6620 #Pierre Bernard I de Foix	
@@ -5998,7 +5998,7 @@
 1077 = {
 	name = "Ermessentz"
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 	martial = 7
 	diplomacy = 5
 	intrigue = 5
@@ -6016,15 +6016,37 @@
 
 40188 = {
 	name = "Bernat" #Bernard II de Bigorre
-	dynasty = 686 #was 684 de Foix
+	dynasty_house = house_bigorre #was 684 de Foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 1078 #Bernard Roger I de Carcassonne/Foix
-	1010.1.1 = {
-		birth = "1010.1.1"
+	1016.1.1 = {
+		birth = "1016.1.1"
 	}
 	1077.6.24 = {
 		death = "1077.6.24"
+	}
+}
+
+110636 = {
+	name = "Clemencia"
+	female = yes
+	dynasty_house = house_bigorre
+	martial = 4
+	diplomacy = 6
+	intrigue = 6
+	stewardship = 5
+	religion = "catholic"
+	culture = "occitan"
+	trait = honest
+	trait = just
+	trait = education_intrigue_2
+	father = 40188
+	1037.1.2 = {
+		birth = "1037.1.2"
+	}
+	1065.1.2 = {
+		death = "1065.1.2"
 	}
 }
 
@@ -6032,7 +6054,7 @@
 	name = "Beatritz" #Béatrix I de Bigorre
 	# AKA: Beatrix
 	female = yes
-	dynasty = 686 #was 684 de Foix
+	dynasty_house = house_bigorre #was 684 de Foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 40188 #Bernard II de Bigorre
@@ -6047,7 +6069,7 @@
 40186 = {
 	name = "PEEire-Raimond" #Pierre-Raymond de Carcassonne
 	# AKA: Peire
-	dynasty = 386 #was 684 de Foix
+	dynasty_house = house_comminges #was 684 de Foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 40184 #Raymond Roger de Carcassonne
@@ -6065,7 +6087,7 @@
 40187 = {
 	name = "Ermengarda" #de Foix/Comminges
 	female = yes
-	dynasty = 386 #was 684 de Foix
+	dynasty_house = house_comminges #was 684 de Foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 40186 #Pierre-Raymond de Carcassonne
@@ -6074,14 +6096,14 @@
 		birth = "1050.1.1"
 	}
 	#1062.1.3 married Raymond Bernard Trencavel
-	1099.1.1 = {
-		death = "1099.1.1"
+	1101.1.1 = {
+		death = "1101.1.1"
 	}
 }
 
 205551 = {
 	name = "Rogier" #Roger III de Foix
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 40194 #Roger II de Foix
@@ -6100,7 +6122,7 @@
 205556 = {
 	name = "Brunichilde" #Bradimène de Foix
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 205551	#Roger III de Foix
@@ -6118,7 +6140,7 @@
 	name = "DolC_a" #de Foix
 	# AKA: Dulce
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 205551	#Roger III de Foix
@@ -6134,7 +6156,7 @@
 205550 = {
 	name = "Rogier-Bernat" #Roger Bernard I de Foix
 	# AKA: Roger
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 205551	#Roger III de Foix
@@ -6154,7 +6176,7 @@
 205555 = {
 	name = "Sibilla" #Sybille de Foix
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 205550 #Roger Bernard I de Foix
@@ -6170,7 +6192,7 @@
 205553 = {
 	name = "Esclarmonde" #de Foix
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "cathar"
 	culture = "occitan"
 	father = 205550 #Roger Bernard I de Foix
@@ -6188,7 +6210,7 @@
 205554 = {
 	name = "Raimond-Rogier" #Raymond-Roger de Foix
 	# AKA: Raimond
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 205550 #Roger Bernard I de Foix
@@ -6210,7 +6232,7 @@
 	name = "Cecilia" #Cécile de Foix
 	# AKA: Cecile
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 205554 #Raymond-Roger de Foix
@@ -6226,7 +6248,7 @@
 138152 = {
 	name = "Rogier-Bernat" #Roger Bernard II de Foix
 	# AKA: Raimond
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 205554 #Raymond-Roger de Foix
@@ -6251,7 +6273,7 @@
 138154 = {
 	name = "Rogier" #Roger IV de Foix
 	# AKA: Raimond
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 138152 #Roger Bernard II de Foix
@@ -6268,7 +6290,7 @@
 	name = "Sibilla" #de Foix
 	# AKA: Sybille
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 138154 #Roger IV de Foix
@@ -6285,7 +6307,7 @@
 	name = "Esclarmonda" #de Foix
 	# AKA: Esclarmonde
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 138154 #Roger IV de Foix
@@ -6301,7 +6323,7 @@
 455542 = {
 	name = "Rogier-Bernat" #Roger Bernard III de Foix
 	# AKA: Roger
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 138154 #Roger IV de Foix
@@ -6321,7 +6343,7 @@
 455543 = {
 	name = "Brunissenda" #de Foix
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 455542 #Roger Bernard III de Foix
@@ -6337,7 +6359,7 @@
 
 455544 = {
 	name = "Gaston" #Gaston I de Foix
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 455542 #Roger Bernard III de Foix
@@ -6360,7 +6382,7 @@
 
 455540 = {
 	name = "Gaston" #Gaston II de Foix
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 455544 #Gaston I de Foix
@@ -6382,7 +6404,7 @@
 	name = "AliE_nor" #Eléonore de Comminges
 	# AKA: Eleonore
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 455550 #Bernard VII de Comminges
@@ -6397,7 +6419,7 @@
 
 455541 = {
 	name = "Gaston" #Gaston III de Foix
-	dynasty = 684
+	dynasty_house = house_foix
 	religion = "catholic"
 	culture = "occitan"
 	father = 455540 #Gaston II de Foix
@@ -6432,7 +6454,7 @@
 
 138164 = {
 	name = "Centolh" #Centulle II de Béarn
-	dynasty = 337
+	dynasty_house = house_bearn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138162 #Centulle Loup I de Béarn
@@ -6446,7 +6468,7 @@
 
 138166 = {
 	name = "Gaston" #Gaston I de Béarn
-	dynasty = 337
+	dynasty_house = house_bearn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138164 #Centulle II de Béarn
@@ -6460,7 +6482,7 @@
 
 138168 = {
 	name = "Centolh" #Centulle III de Béarn
-	dynasty = 337
+	dynasty_house = house_bearn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138166 #Gaston I de Béarn
@@ -6474,7 +6496,7 @@
 
 138170 = {
 	name = "Gaston" #Gaston II de Béarn
-	dynasty = 337
+	dynasty_house = house_bearn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138168 #Centulle III de Béarn
@@ -6488,7 +6510,7 @@
 
 40000 = {
 	name = "Centolh" #Centule IV de Béarn
-	dynasty = 337
+	dynasty_house = house_bearn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138170 #Gaston II de Béarn
@@ -6506,7 +6528,7 @@
 
 40002 = {
 	name = "Gaston" #Gaston III de Béarn
-	dynasty = 337
+	dynasty_house = house_bearn
 	religion = "catholic"
 	culture = "occitan"
 	father = 40000 #Centule IV de Béarn
@@ -6524,7 +6546,7 @@
 
 40003 = {
 	name = "Centolh" #Centule V de Béarn
-	dynasty = 337
+	dynasty_house = house_bearn
 	religion = "catholic"
 	culture = "occitan"
 	father = 40002 #Gaston III de Béarn
@@ -6548,7 +6570,7 @@
 
 138172 = {
 	name = "Gaston" #Gaston IV de Béarn
-	dynasty = 337
+	dynasty_house = house_bearn
 	religion = "catholic"
 	culture = "occitan"
 	father = 40003 #Centulle V de Béarn
@@ -6569,7 +6591,7 @@
 138173 = {
 	name = "Guiscarde" #de Béarn
 	female = yes
-	dynasty = 337
+	dynasty_house = house_bearn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138172 #Gaston IV de Béarn
@@ -6584,7 +6606,7 @@
 
 138174 = {
 	name = "Centolh" #Centule VI/VII de Béarn
-	dynasty = 337
+	dynasty_house = house_bearn
 	religion = "catholic"
 	culture = "occitan"
 	father = 138172  #Gaston IV de Béarn
@@ -6599,7 +6621,7 @@
 
 138176 = {
 	name = "Bernat" #Bernard III de Bigorre
-	dynasty = 686 #or 337 de Béarn
+	dynasty_house = house_bigorre #or 337 de Béarn
 	religion = "catholic"
 	culture = "occitan"
 	father = 40003 #Centulle V de Béarn
@@ -6614,7 +6636,7 @@
 
 138178 = {
 	name = "Centolh" #Centule II de Bigorre
-	dynasty = 686 #or 337 de Béarn
+	dynasty_house = house_bigorre #or 337 de Béarn
 	religion = "catholic"
 	culture = "occitan"
 	father = 40003 #Centulle V de Béarn
@@ -6833,7 +6855,7 @@
 
 138190 = {
 	name = "Rogier" #Roger I de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138188 #Aznar III de Comminges
@@ -6848,7 +6870,7 @@
 138191 = {
 	name = "Arsenda" #Arsinde de Comminges
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 40180 #Arnaud I de Comminges
@@ -6863,7 +6885,7 @@
 
 138192 = {
 	name = "Arnaut" #Arnaud II de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138190 #Roger I de Comminges
@@ -6877,7 +6899,7 @@
 
 138193 = {
 	name = "Rogier" #Roger II de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138192 #Arnaud II de Comminges
@@ -6891,7 +6913,7 @@
 
 138189 = {
 	name = "Odon" #Odon I de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138192 #Arnaud II de Comminges
@@ -6905,7 +6927,7 @@
 
 138194 = {
 	name = "Arnaut" #Arnaud III de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138193 #Roger II de Comminges
@@ -6919,7 +6941,7 @@
 
 138196 = {
 	name = "Rogier" #Roger III de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138194 #Arnaud III de Comminges
@@ -6933,7 +6955,7 @@
 
 138198 = {
 	name = "Bernat" #Bernard I de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138196 #Roger III de Comminges
@@ -6948,7 +6970,7 @@
 138199 = {
 	name = "Bernate" #Bernarde de Comminges
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138198 #Bernard I de Comminges
@@ -6963,7 +6985,7 @@
 
 138200 = {
 	name = "Bernat" #Bernard II de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138198 #Bernard I de Comminges
@@ -6978,7 +7000,7 @@
 205561 = {
 	name = "Dodon" #Bernard III Dodon de Comminges/de Samatan
 	# AKA: Dodon
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138198
@@ -6996,7 +7018,7 @@
 
 205560 = {
 	name = "Bernat" #Bernard IV de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 205561 #Bernard III Dodon de Comminges/de Samatan
@@ -7025,7 +7047,7 @@
 205565 = {
 	name = "Fortaner" #Fortanier de Comminges
 	# AKA: Arnaud
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 205561 #Bernard III Dodon de Comminges/de Samatan
@@ -7040,7 +7062,7 @@
 
 205566 = {
 	name = "Gui" #Guy de Peguilhan
-	dynasty = 386 #de Comminges
+	dynasty_house = house_comminges #de Comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 205561 #Bernard III Dodon de Comminges/de Samatan
@@ -7055,7 +7077,7 @@
 
 205567 = {
 	name = "Bernat" #Bernard de Couserans
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 205564 #Roger de Couserans
@@ -7070,7 +7092,7 @@
 
 138202 = {
 	name = "Bernat" #Bernard V de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 205560 #Bernard IV de Comminges
@@ -7087,7 +7109,7 @@
 
 138204 = {
 	name = "Bernat" #Bernard VI de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138202 #Bernard V de Comminges
@@ -7104,7 +7126,7 @@
 138195 = {
 	name = "MascarO_sa" #Mascarose de Comminges
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138204 #Bernard VI de Comminges
@@ -7119,7 +7141,7 @@
 
 455550 = {
 	name = "Bernat" #Bernard VII de Comminges
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 138204 #Bernard VI de Comminges
@@ -7135,7 +7157,7 @@
 455555 = {
 	name = "PEEire-Raimond" #Pierre-Raymond I de Comminges
 	# AKA: Pierre
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 455550 #Bernard VII de Comminges
@@ -7152,7 +7174,7 @@
 455552 = {
 	name = "Joan-Raimond" #Jean-Raymond de Comminges
 	# AKA: Jean
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 455550 #Bernard VII de Comminges
@@ -7168,7 +7190,7 @@
 455553 = {
 	name = "Bernat" #Bernard VIII de Comminges
 	# AKA: Bernard
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 455550 #Bernard VII de Comminges
@@ -7207,7 +7229,7 @@
 	name = "Cecilia" #Cécile de Comminges
 	# AKA: Cecile
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 455553 #Bernard VIII de Comminges
@@ -7224,7 +7246,7 @@
 455557 = {
 	name = "Joana" #de Comminges
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 455553 #Bernard VIII de Comminges
@@ -7247,8 +7269,8 @@
 		birth = "895.1.1"
 	}	
 	#married Riquilda de barcelona
-	952.1.1 = {	
-		death = "952.1.1"
+	936.1.1 = {	
+		death = "936.1.1"
 	}
 }
 
@@ -7507,7 +7529,7 @@
 138239 = {
 	name = "Beatritz" #Béatrice II de Bigorre
 	female = yes
-	dynasty = 686
+	dynasty_house = house_bigorre
 	religion = "catholic"
 	culture = "occitan"
 	father = 138178 #Centule II de Bigorre
@@ -7606,8 +7628,8 @@
 	1082.1.1 = {
 		birth = "1082.1.1"
 	}
-	1090.1.1 = {
-		death = "1090.1.1"
+	1130.1.1 = {
+		death = "1130.1.1"
 	}
 }
 
@@ -8073,7 +8095,7 @@
 	name = "Petronilha" #Pétronille de Comminges
 	# AKA: Petronille
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 205560 #Bernard IV de Comminges
@@ -8532,7 +8554,7 @@
 
 138284 = {
 	name = "Raimond-Rogier" #Raymond Roger de Carcassonne
-	dynasty = 386
+	dynasty_house = house_comminges
 	religion = "catholic"
 	culture = "occitan"
 	father = 40186 #Pierre-Raymond de Carcassonne
@@ -9306,7 +9328,7 @@
 
 138364 = {
 	name = "Aner" #Aner I d'Oloron/Dax
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 7562 #Sancho IV de Gascogne
@@ -9320,7 +9342,7 @@
 
 138344 = {
 	name = "Arnaut-Lop" #Arnaud I Loup de Dax/ Loup I d'Oloron
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 138364 #Aner I d'Oloron/Dax
@@ -9338,7 +9360,7 @@
 138345 = {
 	name = "Sibilla" #Sybille d'Armagnac
 	female = yes
-	dynasty = 100209
+	dynasty_house = house_armagnac
 	religion = "catholic"
 	culture = "occitan"
 	father = 40009 #Bernard I d'Armagnac
@@ -9352,7 +9374,7 @@
 
 138346 = {
 	name = "Arnaut-Lop" #Arnaud II Loup "Fortis" de Dax
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 138344 #Arnaud Loup I de Dax
@@ -9369,7 +9391,7 @@
 
 138348 = {
 	name = "Raimond-Arnaut" #Raymond Arnaud I de Dax
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 138346 #Arnaud II Loup "Fortis" de Dax
@@ -9383,7 +9405,7 @@
 
 138350 = {
 	name = "Navar" #Navarre I de Dax
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	female = yes
@@ -9398,7 +9420,7 @@
 
 138352 = {
 	name = "Garcia-Arnaut" #Garcia Arnaud I de Dax
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 138346 #Arnaud II Loup "Fortis" de Dax
@@ -9413,7 +9435,7 @@
 
 138360 = {
 	name = "Arnaut" #Arnaud I Garcia de Mixe
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 138352 #Garcia Arnaud I de Dax
@@ -9427,7 +9449,7 @@
 
 138362 = {
 	name = "Dat-Arnaut" #Dat Arnaud de Mixe
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 138360 #Arnaud I Garcia de Mixe
@@ -9441,7 +9463,7 @@
 
 138354 = {
 	name = "Arnaut" #Arnaud III Raymond de Dax
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 138348 #Raymond Arnaud I de Dax
@@ -9455,7 +9477,7 @@
 
 138356 = {
 	name = "PEEire-Arnaut" #Pierre I Arnaud de Dax
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 138354 #Arnaud III de Dax
@@ -9470,7 +9492,7 @@
 138355 = {
 	name = "Guirande" #Guiraude/Guirelda de Dax
 	female = yes
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 138354 #Arnaud III de Dax
@@ -9485,7 +9507,7 @@
 
 138358 = {
 	name = "PEEire-Arnaut" #Arnaud Dat de Mixe
-	dynasty = 8757
+	dynasty_house = house_dax
 	religion = "catholic"
 	culture = "occitan"
 	father = 138362 #Dat Arnaud de Mixe
@@ -10748,7 +10770,7 @@
 	intrigue = 6
 	stewardship = 4
 	religion = "catholic"
-	culture = "french" #Outremer
+	culture = "occitan"
 	trait = education_diplomacy_3
 	trait = disputed_heritage
 	trait = physique_bad_2
@@ -11060,7 +11082,7 @@
 		birth = "905.1.1" #unknown
 	}
 	920.1.1 = {
-		dynasty = 13113 #de Thiern
+		dynasty_house = house_thiern #de Thiern
 	}
 	942.2.1 = {
 		death = "942.2.1" #before
@@ -11070,7 +11092,7 @@
 
 KOH0052 = {
 	name = "Gui" #Gui I de Thiern
-	dynasty = 13113 #de Thiern
+	dynasty_house = house_thiern #de Thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 40132 #Malfroid de Thiern
@@ -11085,7 +11107,7 @@ KOH0052 = {
 40134 = {
 	name = "EstE_ve" #Etienne I de Thiern
 	# AKA: Etienne
-	dynasty = 13113 #de Thiern
+	dynasty_house = house_thiern #was 733 Auvergne
 	religion = "catholic"
 	culture = "occitan"
 	father = 40132 #Malfroid de Thiern
@@ -11115,7 +11137,7 @@ KOH0053 = {
 
 40136 = {
 	name = "Gui" #Guy II de Thiern
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 40134 #Etienne I de Thiern
@@ -11133,7 +11155,7 @@ KOH0053 = {
 
 KOH0054 = {
 	name = "Théotard"
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 40134 #Etienne I de Thiern
@@ -11148,7 +11170,7 @@ KOH0054 = {
 
 KOH0055 = {
 	name = "Gilbert"
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 40134 #Etienne I de Thiern
@@ -11176,7 +11198,7 @@ KOH0056 = {
 
 KOH0057 = {
 	name = "Théotard"
-	dynasty = 13113 
+	dynasty_house = house_thiern 
 	religion = "catholic"
 	culture = "occitan"
 	father = 40136 #Guy II de Thiern
@@ -11191,7 +11213,7 @@ KOH0057 = {
 
 KOH0058 = {
 	name = "GuilhE_m" #Guillaume I de Thiern
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 40136 #Guy II de Thiern
@@ -11223,7 +11245,7 @@ KOH0059 = {
 40140 = {
 	name = "EstE_ve" #Etienne II de Thiern
 	# AKA: Etienne
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 40136 #Guy II de Thiern
@@ -11240,7 +11262,7 @@ KOH0059 = {
 40141 = {
 	name = "EstE_ve" #Etienne III de Thiern
 	# AKA: Etienne
-	dynasty = 13113 #was 733 Auvergne
+	dynasty_house = house_thiern #was 733 Auvergne
 	religion = "catholic"
 	culture = "occitan"
 	father = 40140 #Etienne II de Thiern
@@ -11263,7 +11285,7 @@ KOH0059 = {
 40142 = {
 	name = "GuilhE_m" #Guillaume II de Thiern
 	# AKA: Guilhem
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = KOH0058 #Guillaume I de Thiern
@@ -11282,7 +11304,7 @@ KOH0059 = {
 40144 = {
 	name = "GuilhE_m" #Guillaume III de Thiern
 	# AKA: Guilhem
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	trait = education_martial_2
@@ -11299,7 +11321,7 @@ KOH0059 = {
 91149 = {
 	name = "Gui" #Guy III de Thiern/Chalon
 	# AKA: Guy
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 40142 #Guillaume II de Thiern
@@ -11317,7 +11339,7 @@ KOH0059 = {
 
 KOH0061 = {
 	name = "Hugues" 
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 40142 #Guillaume II de Thiern
@@ -11333,7 +11355,7 @@ KOH0061 = {
 KOH0062 = {
 	name = "Wandelmode"
 	female = yes
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 40142 #Guillaume II de Thiern
@@ -11349,7 +11371,7 @@ KOH0062 = {
 
 KOH0063 = {
 	name = "Gui" #Guy III de Thiern
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 40144 #Guillaume III de Thiern
@@ -11363,7 +11385,7 @@ KOH0063 = {
 
 KOH0064 = {
 	name = "Gui" #Guy IV de Thiern
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = KOH0063 #Guy III de Thiern
@@ -11377,7 +11399,7 @@ KOH0064 = {
 
 KOH0065 = {
 	name = "Gui" #Guy V de Thiern
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = KOH0064 #Guy IV de Thiern
@@ -11394,7 +11416,7 @@ KOH0065 = {
 
 KOH0068 = {
 	name = "Gui" #Guy VI de Thiern
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = KOH0065 #Guy V de Thiern
@@ -11409,7 +11431,7 @@ KOH0068 = {
 
 KOH0066 = {
 	name = "EstE_ve"
-	dynasty = 13113 
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = KOH0065 #Guy V de Thiern
@@ -11424,7 +11446,7 @@ KOH0066 = {
 
 205691 = {
 	name = "GuilhE_m" #Guillaume I de Chalon
-	dynasty = 13113 
+	dynasty = 736 #was 733 Auvergne
 	religion = "catholic"
 	culture = "occitan"
 	father = 91149 #Guy III de Thiers	
@@ -11441,7 +11463,7 @@ KOH0066 = {
 
 KOH0069 = {
 	name = "Gui" #lord of Montpensier
-	dynasty = 13113
+	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
 	father = 91149 #Guy III de Thiers	
@@ -11919,6 +11941,22 @@ KOH0071 = {
 	}
 }
 
+206043 = {
+	name = "Daufine" #d'Auvergne
+	female = yes
+	dynasty = 733
+	religion = "catholic"
+	culture = "occitan"
+	father = 206042 #Dauphin d'Auvergne
+	mother = 205607 #Guillemette de Comborn
+	1168.1.1 = {
+		birth = "1168.1.1" #unknown
+	}
+	1199.1.1 = {
+		death = "1199.1.1"
+	}
+}
+
 206044 = {
 	name = "GuilhE_m" #Guillaume II de Clermont
 	dynasty = 733
@@ -12192,9 +12230,9 @@ KOH0071 = {
 	1138.11.1 = {
 		birth = "1138.11.1"
 	}
-	1158 = {
+	1158.1.1 = {
 		add_spouse = KOH0111 #Guillelme
-	}
+	}	
 	1206.6.12 = {
 		death = "1206.6.12"
 	}
@@ -12902,7 +12940,7 @@ KOH0111 = {
 
 93806 = {
 	name = "Bergon"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 138352 #Garcia Arnaud I de Dax
@@ -12916,7 +12954,7 @@ KOH0111 = {
 
 93807 = {
 	name = "Garcia"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93806
@@ -12930,7 +12968,7 @@ KOH0111 = {
 
 93808 = {
 	name = "Bergon"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93807
@@ -12945,7 +12983,7 @@ KOH0111 = {
 
 93809 = {
 	name = "Vivian"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93808
@@ -12959,7 +12997,7 @@ KOH0111 = {
 
 93810 = {
 	name = "Raimond-Brun"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93809
@@ -12973,7 +13011,7 @@ KOH0111 = {
 
 93811 = {
 	name = "Vivian"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93810
@@ -12987,7 +13025,7 @@ KOH0111 = {
 
 93812 = {
 	name = "Bernard"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93810
@@ -13001,7 +13039,7 @@ KOH0111 = {
 
 93813 = {
 	name = "Brun"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93810
@@ -13015,7 +13053,7 @@ KOH0111 = {
 
 93814 = {
 	name = "Raimond-Brun"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93813
@@ -13029,7 +13067,7 @@ KOH0111 = {
 
 93815 = {
 	name = "Raimond-Brun"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93814
@@ -13043,7 +13081,7 @@ KOH0111 = {
 
 93816 = {
 	name = "Arnaut-GuilhE_m"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93813
@@ -13057,7 +13095,7 @@ KOH0111 = {
 
 93817 = {
 	name = "Arnaut-GuilhE_m"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93816
@@ -13071,7 +13109,7 @@ KOH0111 = {
 
 93818 = {
 	name = "Auger"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93816
@@ -13085,7 +13123,7 @@ KOH0111 = {
 
 93819 = {
 	name = "Bernard"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93816
@@ -13099,7 +13137,7 @@ KOH0111 = {
 
 93820 = {
 	name = "Arnaut-GuilhE_m"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93817
@@ -13113,7 +13151,7 @@ KOH0111 = {
 
 93821 = {
 	name = "Auger"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93817
@@ -13127,7 +13165,7 @@ KOH0111 = {
 
 93822 = {
 	name = "Raimond-Brun"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93820
@@ -13141,7 +13179,7 @@ KOH0111 = {
 
 93823 = {
 	name = "Arnaut-GuilhE_m"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93822
@@ -13155,7 +13193,7 @@ KOH0111 = {
 
 93824 = {
 	name = "Brunat"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93822
@@ -13169,7 +13207,7 @@ KOH0111 = {
 
 93825 = {
 	name = "Arnaut-Raimond"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93822
@@ -13183,7 +13221,7 @@ KOH0111 = {
 
 93826 = {
 	name = "Arnaut-Raimond"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93825
@@ -13197,7 +13235,7 @@ KOH0111 = {
 
 93827 = {
 	name = "Arnaut-GuilhE_m"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93825
@@ -13211,7 +13249,7 @@ KOH0111 = {
 
 93828 = {
 	name = "Bernard"
-	dynasty = 5003 #de Gramont
+	dynasty_house = house_gramont #de Gramont
 	religion = "catholic"
 	culture = "occitan"
 	father = 93825
@@ -13830,7 +13868,7 @@ KOH0111 = {
 
 200110 = {
 	name = "Rogier"
-	dynasty = 386
+	dynasty_house = house_comminges
 
 	father = 205564
 	mother = 205555
@@ -13851,7 +13889,7 @@ KOH0111 = {
 
 200111 = {
 	name = "Rogier"
-	dynasty = 386
+	dynasty_house = house_comminges
 
 	father = 200110
 	mother = 72083
@@ -13890,7 +13928,7 @@ KOH0111 = {
 
 200113 = {
 	name = "Raimond"
-	dynasty = 386
+	dynasty_house = house_comminges
 
 	father = 200111
 	mother = 200112
@@ -13908,7 +13946,7 @@ KOH0111 = {
 
 200114 = {
 	name = "Arnaut"
-	dynasty = 386
+	dynasty_house = house_comminges
 
 	father = 200111
 	mother = 200112
@@ -13930,7 +13968,7 @@ KOH0111 = {
 200115 = {
 	name = "Girauda"
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 
 	father = 200111
 	mother = 200112
@@ -13949,7 +13987,7 @@ KOH0111 = {
 200116 = {
 	name = "Orgaix"
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 
 	father = 200111
 	mother = 200112
@@ -13968,7 +14006,7 @@ KOH0111 = {
 200122 = {
 	name = "Sibilla"
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 
 	father = 200114
 	mother = 200121
@@ -13987,7 +14025,7 @@ KOH0111 = {
 200123 = {
 	name = "Violant"
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 
 	father = 200114
 	mother = 200121
@@ -14006,7 +14044,7 @@ KOH0111 = {
 200124 = {
 	name = "Beatritz"
 	female = yes
-	dynasty = 386
+	dynasty_house = house_comminges
 
 	father = 200114
 	mother = 200121
@@ -14065,7 +14103,7 @@ KOH0111 = {
 200138 = {
 	name = "CecI_lia"
 	female = yes
-	dynasty = 684
+	dynasty_house = house_foix
 
 	father = 138152
 
@@ -14605,6 +14643,21 @@ KOH0111 = {
 		death = yes
 	}
 }
+
+occitan0001 = {
+	name = "Raimond-Rogier" # Raymond III Bigorre
+	dynasty_house = house_bigorre #was 684 de Foix
+	religion = "catholic"
+	culture = "occitan"
+	father = 40188 #Bernard II de Bigorre
+	1052.1.1 = {
+		birth = "1052.1.1"
+	}
+	1080.1.1 = {
+		death = "1080.1.1"
+	}
+}
+
 
 KOH0090 = {
 	name = "Wandalmode" #Wandalmode de Beajeu

@@ -1503,13 +1503,15 @@
 	stewardship = 4
 	religion = "catholic"
 	culture = "basque"
-	trait = ill
 	trait = beauty_bad_2
 	trait = education_martial_2
 	father = 107520
 	mother = 107521
 	1062.1.1 = {
 		birth = "1062.1.1"
+	}
+	1066.1.1 = {
+		contract_disease_effect = { DISEASE = ill TREATMENT_EVENT = yes }
 	}
 	1084.1.1 = {
 		death = "1084.1.1"
@@ -1525,7 +1527,7 @@
 	stewardship = 5
 	religion = "catholic"
 	culture = "basque"
-	trait = ill
+	trait = sickly
 	trait = temperate
 	trait = education_stewardship_4
 	father = 107520

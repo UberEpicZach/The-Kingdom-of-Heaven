@@ -198,6 +198,7 @@
 	stewardship = 5
 	religion = "insular_celtic"
 	culture = "irish"
+	father = 131102
 	trait = generous
 	trait = education_martial_2
 	1045.1.1 = {
@@ -450,6 +451,8 @@
 	}
 	880.1.1 = {
 		remove_spouse = 165001 #Eithne ingen Áed Findliath - likely divorced
+	}
+	880.1.2 = {
 		add_spouse = 165002 #Máel Muire ingen Cináeda mac Ailpín
 	}
 	916.5.25 = {
@@ -2803,7 +2806,7 @@
 
 909 = {
 	name = "Tadg" #Tadg in Eich Gil
-	dynasty_house = house_british_isles_conchobair
+	dynasty = 9216
 	martial = 5
 	diplomacy = 5
 	intrigue = 8
@@ -6516,6 +6519,7 @@
 	trait = wrathful
 	trait = impatient
 	trait = education_martial_3
+	sexuality = heterosexual
 	father = 902 #Donnchad son Brian Bóruma
 	1027.1.1 = {
 		birth = "1027.1.1"
@@ -9864,7 +9868,7 @@
 		birth = "915.1.1"
 	}
 	933.1.1 = {
-		add_spouse = 166064
+		add_spouse = 166065
 	}
 	973.1.1 = {
 		death = "973.1.1"
@@ -10839,9 +10843,8 @@
 }
 
 
-83600 = {
+83600 = { #Debated existence, and probably part of the Clanna Dergthened "dynasty"
 	name = "EO_gan_Taidlech" #AKA Mug Nuadat
-	dynasty_house = house_british_isles_eoganachta
 	religion = "pagan"
 	culture = "irish"
 	140.1.1 = {
@@ -10853,9 +10856,8 @@
 }
 
 
-83601 = {
+83601 = { #Probably part of the Clanna Dergthened "dynasty"
 	name = "Ailill_O_lomm"
-	dynasty_house = house_british_isles_eoganachta
 	father = 83600
 	religion = "pagan"
 	culture = "irish"
@@ -10881,11 +10883,12 @@
 	179.1.1 = {
 		birth = "179.1.1"
 	}
+	210.1.1 = { #We don't know when Eógan Mór (83603) founded the house
+		dynasty_house = house_british_isles_eoganachta
+	}
 	255.1.1 = {
 		death = "255.1.1"
 	}
-
-
 }
 
 83603 = {
@@ -15469,7 +15472,7 @@
 		birth = yes
 	}
 	480.1.1 = {
-		dynasty = 554 #Mac Loairn
+		dynasty_house = house_british_isles_loairn
 	}
 	497.1.1 = {
 		death = yes

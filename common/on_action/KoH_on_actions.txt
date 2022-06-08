@@ -4,7 +4,6 @@
 		#on_artifact_initialization
 		KOH_Italian_Familes
 		#KOH_investiture
-		KOH_Clothing_effects
 	}
 }
 
@@ -788,19 +787,19 @@ on_birth_child = {
 
 KOH_HENRYHENRY = {
 	effect = {
-			if = {
-				limit = {
-					ROOT = {
-						AND = {
-							dynasty = dynasty:KOH_D_023
-							is_male = yes
-						}
+		if = {
+			limit = {
+				ROOT = {
+					AND = {
+						dynasty = dynasty:KOH_D_023
+						is_male = yes
 					}
 				}
 			}
-			change_first_name = "Heinrich"
-			add_trait = fecund
-		}	 
+		}
+		change_first_name = "Heinrich"
+		add_trait = fecund
+	}	 
 }
 
 KOH_bloodline_birth = {

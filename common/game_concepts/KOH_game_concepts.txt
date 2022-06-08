@@ -1,26 +1,4 @@
-﻿investiture = {
-	texture = "gfx/interface/icons/message_feed/law.dds"
-	#texture = "gfx/interface/icons/laws/crown_authority_0.dds"
-	parent = law
-}
-
-free_investiture = {
-	parent = investiture 
-	alias = { free_investitures }
-	texture = "gfx/interface/icons/message_feed/law.dds"
-	#texture = "gfx/interface/icons/laws/crown_authority_0.dds"
-	parent = law
-} 
- 
-papal_investiture = {
-	parent = investiture 
-	alias = { papal_investitures }
-	texture = "gfx/interface/icons/message_feed/law.dds"
-	#texture = "gfx/interface/icons/laws/crown_authority_1.dds"
-	parent = law
-}
-
-investiture_contest = {
+﻿investiture_contest = {
 	texture = "gfx/interface/icons/message_feed/heresy.dds"
 	parent = faith
 	alias = { investiture_contests }
@@ -47,32 +25,4 @@ erfurt_latrine_disaster = {
 	texture = "gfx/interface/icons/message_feed/law.dds"
 	parent = historical_events 
 	alias = { latrine_disaster }
-}
-
-collegeofcardinals = {
-	texture = "gfx/interface/CollegeCardinals/HouseofCardinalsButton.png"
-	#texture = "gfx/interface/icons/laws/crown_authority_0.dds"
-	parent = religion
-	alias = { collegeofcardinals }
-}
-
-praedictus = {
-	texture = "gfx/interface/CollegeCardinals/HouseofCardinalsButton.png"
-	#texture = "gfx/interface/icons/laws/crown_authority_0.dds"
-	parent = religion
-	alias = { praedictus }
-}
-
-papabile = {
-	texture = "gfx/interface/CollegeCardinals/HouseofCardinalsButton.png"
-	#texture = "gfx/interface/icons/laws/crown_authority_0.dds"
-	parent = religion
-	alias = { papabile }
-}
-
-cardinal = {
-	texture = "gfx/interface/CollegeCardinals/HouseofCardinalsButton.png"
-	#texture = "gfx/interface/icons/laws/crown_authority_0.dds"
-	parent = religion
-	alias = { cardinal }
 }

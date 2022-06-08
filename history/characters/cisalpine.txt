@@ -562,7 +562,7 @@ KOH0244 = {
 
 20299 = {
 	name = "Folco" # Folco (I) d'Este, Duke of Lombardia (1097-1128), Count of Luni (1097-1128)
-	dynasty_house = house_obertenghi
+	dynasty_house = house_este
 	martial = 5
 	diplomacy = 8
 	intrigue = 4
@@ -14583,9 +14583,10 @@ KOH0244 = {
 	845.1.1 = {
 		birth = "845.1.1"
 	}
-	866.1.1 = {
-		add_spouse = 167978
-	}
+	# Martino now a bishop, cannot be married
+	#866.1.1 = { 
+	#	add_spouse = 167978
+	#}
 	896.9.1 = {
 		death = "896.9.1"
 	}
@@ -14671,6 +14672,7 @@ KOH0244 = {
 	religion = "catholic"
 	culture = "cisalpine"
 	trait = education_diplomacy_1
+	father = 70633
 
 	1020.1.1 = {
 		birth = yes
@@ -19744,82 +19746,6 @@ cisalpine0177 = {
 }
 
 cisalpine0178 = {
-	name = "Griseida" # Griseida da Romano
-	dynasty = 13025
-	female = yes
-	religion = "catholic"
-	culture = "cisalpine"
-
-	father = 70664
-	
-	1241.1.1 = {
-		birth = yes
-	}
-	1260.8.26 = {
-		death = {
-			death_reason = death_execution
-		}
-	}
-}
-
-cisalpine0179 = {
-	name = "Tornalasce" # Tornalasce da Romano
-	dynasty = 13025
-	female = yes
-	religion = "catholic"
-	culture = "cisalpine"
-
-	father = 70664
-	
-	1243.1.1 = {
-		birth = yes
-	}
-	1260.8.26 = {
-		death = {
-			death_reason = death_execution
-		}
-	}
-}
-
-cisalpine0180 = {
-	name = "Amabilia" # Amabilia da Romano
-	dynasty = 13025
-	female = yes
-	religion = "catholic"
-	culture = "cisalpine"
-
-	father = 70664
-	
-	1245.1.1 = {
-		birth = yes
-	}
-	1260.8.26 = {
-		death = {
-			death_reason = death_execution
-		}
-	}
-}
-
-cisalpine0177 = {
-	name = "Pietro" # Pietro da Romano
-	dynasty = 13025
-	religion = "catholic"
-	culture = "cisalpine"
-
-	father = 71036
-	trait = bastard
-	
-	1222.1.1 = {
-		birth = yes
-	}
-	1248.1.1 = {
-		death = {
-			death_reason = death_dungeon
-		}
-	}
-}
-
-cisalpine0178 = {
 	name = "Agnese" # Agnese da Romano, wife of Giacomo dei Guidotti
 	dynasty = 13025
 	female = yes
@@ -21373,22 +21299,6 @@ cisalpine0268 = {
 	}
 }
 
-cisalpine0268 = {
-	name = "Guglielmo" # Guglielmo di Occimano
-	dynasty_house = house_occimiano
-	religion = "catholic"
-	culture = "cisalpine"
-
-	father = cisalpine0267
-
-	1130.1.1 = {
-		birth = yes
-	}
-	1198.7.15 = {
-		death = yes
-	}
-}
-
 cisalpine0269 = {
 	name = "Corrado" # Corrado di Occimano
 	dynasty_house = house_occimiano
@@ -21488,22 +21398,6 @@ cisalpine0274 = {
 		birth = yes
 	}
 	1272.1.1 = {
-		death = yes
-	}
-}
-
-cisalpine0274 = {
-	name = "Francesco" # Francesco da Verona
-	dynasty = 68
-	religion = "catholic"
-	culture = "cisalpine"
-
-	father = 31477
-
-	1266.1.1 = {
-		birth = yes
-	}
-	1276.1.1 = {
 		death = yes
 	}
 }
@@ -22590,57 +22484,6 @@ cisalpine0336 = {
 	}
 }
 
-cisalpine0334 = {
-	name = "Aimone" # Aimone di Ceva
-	dynasty_house = house_ceva
-	religion = "catholic"
-	culture = "cisalpine"
-	trait = education_diplomacy_1
-
-	father = cisalpine0318
-
-	1305.1.1 = {
-		birth = yes
-	}
-	1385.7.4 = {
-		death = yes
-	}
-}
-
-cisalpine0335 = {
-	name = "Zanono" # Giovanni di Ceva 'Zanono'
-	dynasty_house = house_ceva
-	religion = "catholic"
-	culture = "cisalpine"
-	trait = education_intrigue_1
-
-	father = cisalpine0318
-
-	1307.1.1 = {
-		birth = yes
-	}
-	1385.7.4 = {
-		death = yes
-	}
-}
-
-cisalpine0336 = {
-	name = "Cristoforo" # Cristoforo di Ceva
-	dynasty_house = house_ceva
-	religion = "catholic"
-	culture = "cisalpine"
-	trait = education_martial_1
-
-	father = cisalpine0318
-
-	1309.1.1 = {
-		birth = yes
-	}
-	1401.6.8 = {
-		death = yes
-	}
-}
-
 cisalpine0337 = {
 	name = "Giacopo" # Giacopo di Ceva
 	dynasty_house = house_ceva
@@ -22677,22 +22520,6 @@ cisalpine0338 = {
 
 cisalpine0339 = {
 	name = "Galeazzo" # Galeazzo di Ceva
-	dynasty_house = house_ceva
-	religion = "catholic"
-	culture = "cisalpine"
-
-	father = cisalpine0338
-
-	1335.1.1 = {
-		birth = yes
-	}
-	1401.6.8 = {
-		death = yes
-	}
-}
-
-cisalpine0339 = {
-	name = "Oddone" # Oddone di Ceva
 	dynasty_house = house_ceva
 	religion = "catholic"
 	culture = "cisalpine"
@@ -24243,7 +24070,7 @@ cisalpine0428 = {
 		add_spouse = cisalpine0893
 	}
 	1300.1.1 = {
-		add_spouse = cisalpine0912
+		add_spouse = cisalpine0939
 	}
 	1313.7.1 = {
 		death = yes
@@ -24715,24 +24542,6 @@ cisalpine0457 = {
 		birth = yes
 	}
 	1190.4.8 = {
-		death = yes
-	}
-}
-
-cisalpine0457 = {
-	name = "Lanfranco" # Lanfranco di Biandrate
-	dynasty_house = house_biandrate
-	religion = "catholic"
-	culture = "cisalpine"
-	trait = education_martial_1
-
-	father = 71262
-	mother = 71261
-
-	1144.1.1 = {
-		birth = yes
-	}
-	1201.1.1 = {
 		death = yes
 	}
 }
@@ -27514,24 +27323,7 @@ cisalpine0620 = {
 }
 
 cisalpine0621 = {
-	name = "Beatrice" # Beatrice Visconti, spouse of Guido de Valperga
-	dynasty = 234
-	female = yes
-	religion = "catholic"
-	culture = "cisalpine"
-
-	father = cisalpine0620
-
-	1124.1.1 = {
-		birth = yes
-	}
-	1174.1.1 = {
-		death = yes
-	}
-}
-
-cisalpine0621 = {
-	name = "Berta" # Berta Visconti, spouse of Pagano della Torre
+	name = "Berta" # Berta Visconti, spouse of Jacopo della Torre
 	dynasty = 234
 	female = yes
 	religion = "catholic"
@@ -30174,25 +29966,6 @@ cisalpine0773 = {
 	}
 }
 
-cisalpine0773 = {
-	name = "Donella" # Donella da Correggio, spouse of Carlo Fieschi
-	dynasty = 13064
-	female = yes
-	religion = "catholic"
-	culture = "cisalpine"
-	trait = education_stewardship_1
-
-	father = cisalpine0748
-	mother = cisalpine0801
-
-	1305.1.1 = {
-		birth = yes
-	}
-	1370.1.1 = {
-		death = yes
-	}
-}
-
 cisalpine0774 = {
 	name = "Teresa" # Teresa Rossi
 	dynasty = 101841
@@ -32608,92 +32381,6 @@ cisalpine0912 = {
 }
 
 cisalpine0913 = {
-	name = "Giovanni" # Giovanni Fieschi
-	dynasty_house = house_fieschi
-	religion = "catholic"
-	culture = "cisalpine"
-
-	father = cisalpine0912
-	
-	1335.1.1 = {
-		birth = yes
-	}
-	1383.1.1 = {
-		death = yes
-	}
-}
-
-cisalpine0914 = {
-	name = "Carlo" # Carlo Fieschi
-	dynasty_house = house_fieschi
-	religion = "catholic"
-	culture = "cisalpine"
-
-	father = cisalpine0912
-	
-	1337.1.1 = {
-		birth = yes
-	}
-	1413.1.1 = {
-		death = yes
-	}
-}
-
-cisalpine0915 = {
-	name = "Antonio" # Antonio Fieschi, Cleric
-	dynasty_house = house_fieschi
-	religion = "catholic"
-	culture = "cisalpine"
-	trait = celibate
-	trait = theologian
-	trait = education_learning_2
-
-	father = cisalpine0904
-	
-	1281.1.1 = {
-		birth = yes
-	}
-	1305.1.1 = {
-		death = yes
-	}
-}
-
-cisalpine0916 = {
-	name = "Gabriele" # Gabriele Fieschi
-	dynasty_house = house_fieschi
-	religion = "catholic"
-	culture = "cisalpine"
-	trait = education_stewardship_1
-
-	father = cisalpine0904
-	
-	1282.1.1 = {
-		birth = yes
-	}
-	1305.1.1 = {
-		death = yes
-	}
-}
-
-cisalpine0912 = {
-	name = "Eliana" # Eliana Fieschi, spouse of Alberto del Carretto
-	dynasty_house = house_fieschi
-	female = yes
-	religion = "catholic"
-	culture = "cisalpine"
-	trait = education_stewardship_1
-
-	father = cisalpine0904
-	
-	1284.1.1 = {
-		birth = yes
-	}
-	1305.1.1 = {
-		death = yes
-	}
-}
-
-cisalpine0913 = {
 	name = "Teodolfo" # Teodolfo (I), Bishop of Genoa (958-968)
 	religion = "catholic"
 	culture = "cisalpine"
@@ -32900,6 +32587,338 @@ cisalpine0925 = {
 		birth = yes
 	}
 	1116.8.22 = {
+		death = yes
+	}
+}
+
+cisalpine0926 = {
+	name = "Pietro" # Pietro da Romano
+	dynasty = 13025
+	religion = "catholic"
+	culture = "cisalpine"
+
+	father = 71036
+	trait = bastard
+	
+	1222.1.1 = {
+		birth = yes
+	}
+	1248.1.1 = {
+		death = {
+			death_reason = death_dungeon
+		}
+	}
+}
+
+cisalpine0927 = {
+	name = "Griseida" # Griseida da Romano
+	dynasty = 13025
+	female = yes
+	religion = "catholic"
+	culture = "cisalpine"
+
+	father = 70664
+	
+	1241.1.1 = {
+		birth = yes
+	}
+	1260.8.26 = {
+		death = {
+			death_reason = death_execution
+		}
+	}
+}
+
+cisalpine0928 = {
+	name = "Tornalasce" # Tornalasce da Romano
+	dynasty = 13025
+	female = yes
+	religion = "catholic"
+	culture = "cisalpine"
+
+	father = 70664
+	
+	1243.1.1 = {
+		birth = yes
+	}
+	1260.8.26 = {
+		death = {
+			death_reason = death_execution
+		}
+	}
+}
+
+cisalpine0929 = {
+	name = "Amabilia" # Amabilia da Romano
+	dynasty = 13025
+	female = yes
+	religion = "catholic"
+	culture = "cisalpine"
+
+	father = 70664
+	
+	1245.1.1 = {
+		birth = yes
+	}
+	1260.8.26 = {
+		death = {
+			death_reason = death_execution
+		}
+	}
+}
+
+cisalpine0930 = {
+	name = "Ziramonte" # Ziramonte da Romano
+	dynasty = 13025
+	religion = "catholic"
+	culture = "cisalpine"
+
+	father = 70655
+	trait = bastard
+	
+	1206.1.1 = {
+		birth = yes
+	}
+	1255.1.1 = {
+		death = yes
+	}
+}
+
+cisalpine0931 = {
+	name = "Guglielmo" # Guglielmo di Occimano
+	dynasty_house = house_occimiano
+	religion = "catholic"
+	culture = "cisalpine"
+
+	father = cisalpine0267
+
+	1130.1.1 = {
+		birth = yes
+	}
+	1198.7.15 = {
+		death = yes
+	}
+}
+
+cisalpine0932 = {
+	name = "Francesco" # Francesco da Verona
+	dynasty = 68
+	religion = "catholic"
+	culture = "cisalpine"
+
+	father = 31477
+
+	1266.1.1 = {
+		birth = yes
+	}
+	1276.1.1 = {
+		death = yes
+	}
+}
+
+cisalpine0933 = {
+	name = "Aimone" # Aimone di Ceva
+	dynasty_house = house_ceva
+	religion = "catholic"
+	culture = "cisalpine"
+	trait = education_diplomacy_1
+
+	father = cisalpine0318
+
+	1305.1.1 = {
+		birth = yes
+	}
+	1385.7.4 = {
+		death = yes
+	}
+}
+
+cisalpine0934 = {
+	name = "Cristoforo" # Cristoforo di Ceva
+	dynasty_house = house_ceva
+	religion = "catholic"
+	culture = "cisalpine"
+	trait = education_martial_1
+
+	father = cisalpine0318
+
+	1309.1.1 = {
+		birth = yes
+	}
+	1401.6.8 = {
+		death = yes
+	}
+}
+
+cisalpine0935 = {
+	name = "Oddone" # Oddone di Ceva
+	dynasty_house = house_ceva
+	religion = "catholic"
+	culture = "cisalpine"
+
+	father = cisalpine0338
+
+	1335.1.1 = {
+		birth = yes
+	}
+	1401.6.8 = {
+		death = yes
+	}
+}
+
+cisalpine0936 = {
+	name = "Lanfranco" # Lanfranco di Biandrate
+	dynasty_house = house_biandrate
+	religion = "catholic"
+	culture = "cisalpine"
+	trait = education_martial_1
+
+	father = 71262
+	mother = 71261
+
+	1144.1.1 = {
+		birth = yes
+	}
+	1201.1.1 = {
+		death = yes
+	}
+}
+
+cisalpine0937 = {
+	name = "Beatrice" # Beatrice Visconti, spouse of Guido de Valperga
+	dynasty = 234
+	female = yes
+	religion = "catholic"
+	culture = "cisalpine"
+
+	father = cisalpine0620
+
+	1124.1.1 = {
+		birth = yes
+	}
+	1174.1.1 = {
+		death = yes
+	}
+}
+
+cisalpine0938 = {
+	name = "Donella" # Donella da Correggio, spouse of Carlo Fieschi
+	dynasty = 13064
+	female = yes
+	religion = "catholic"
+	culture = "cisalpine"
+	trait = education_stewardship_1
+
+	father = cisalpine0748
+	mother = cisalpine0801
+
+	1305.1.1 = {
+		birth = yes
+	}
+	1370.1.1 = {
+		death = yes
+	}
+}
+
+cisalpine0939 = {
+	name = "Eliana" # Eliana Fieschi, spouse of Alberto del Carretto
+	dynasty_house = house_fieschi
+	female = yes
+	religion = "catholic"
+	culture = "cisalpine"
+	trait = education_stewardship_1
+
+	father = cisalpine0904
+	
+	1284.1.1 = {
+		birth = yes
+	}
+	1305.1.1 = {
+		death = yes
+	}
+}
+
+cisalpine0940 = {
+	name = "Giovanni" # Giovanni Fieschi
+	dynasty_house = house_fieschi
+	religion = "catholic"
+	culture = "cisalpine"
+
+	father = cisalpine0912
+	
+	1335.1.1 = {
+		birth = yes
+	}
+	1383.1.1 = {
+		death = yes
+	}
+}
+
+cisalpine0941 = {
+	name = "Carlo" # Carlo Fieschi
+	dynasty_house = house_fieschi
+	religion = "catholic"
+	culture = "cisalpine"
+
+	father = cisalpine0912
+	
+	1337.1.1 = {
+		birth = yes
+	}
+	1413.1.1 = {
+		death = yes
+	}
+}
+
+cisalpine0942 = {
+	name = "Antonio" # Antonio Fieschi, Cleric
+	dynasty_house = house_fieschi
+	religion = "catholic"
+	culture = "cisalpine"
+	trait = celibate
+	trait = theologian
+	trait = education_learning_2
+
+	father = cisalpine0904
+	
+	1281.1.1 = {
+		birth = yes
+	}
+	1305.1.1 = {
+		death = yes
+	}
+}
+
+cisalpine0943 = {
+	name = "Gabriele" # Gabriele Fieschi
+	dynasty_house = house_fieschi
+	religion = "catholic"
+	culture = "cisalpine"
+	trait = education_stewardship_1
+
+	father = cisalpine0904
+	
+	1282.1.1 = {
+		birth = yes
+	}
+	1305.1.1 = {
+		death = yes
+	}
+}
+
+cisalpine0944 = {
+	name = "Zanono" # Giovanni di Ceva 'Zanono'
+	dynasty_house = house_ceva
+	religion = "catholic"
+	culture = "cisalpine"
+	trait = education_intrigue_1
+
+	father = cisalpine0318
+
+	1307.1.1 = {
+		birth = yes
+	}
+	1385.7.4 = {
 		death = yes
 	}
 }
@@ -34493,7 +34512,7 @@ cisalpine0925 = {
 	stewardship = 7
 	religion = "catholic"
 	culture = cisalpine
-	trait = ill
+	trait = sickly
 	father = 544
 	mother = 545
 	1004.1.2 = {
@@ -35377,12 +35396,12 @@ cisalpine0925 = {
 	1135.1.1 = {
 		birth = "1135.1.1"
 	}
-	1180.1.1 = {
-		effect = {
-			add_family_to_republic_families = yes
-			effect_create_personal_army = yes
-		}
-	}
+	#1180.1.1 = {
+	#	effect = {
+	#		add_family_to_republic_families = yes
+	#		effect_create_personal_army = yes
+	#	}
+	#}
 	1210.1.1 = {
 		death = "1210.1.1"
 	}
@@ -36119,13 +36138,12 @@ cisalpine0925 = {
 	1132.1.1 = {
 		birth = "1132.1.1"
 	}
-	1180.1.1 = {
-		effect = {
-			add_family_to_republic_families = yes
-			effect_create_personal_army = yes
-		}
-	}
-	
+	#1180.1.1 = {
+	#	effect = {
+	#		add_family_to_republic_families = yes
+	#		effect_create_personal_army = yes
+	#	}
+	#}
 	1190.1.1 = {
 		death = "1190.1.1"
 	}
@@ -36498,11 +36516,11 @@ cisalpine0925 = {
 	}
 	1178.1.1 = {
 		capital = c_venezia
-		effect = {
-			add_family_to_republic_families = yes
-			set_up_elected_ruler_republic = yes
-			effect_create_personal_army = yes
-		}
+		#effect = {
+		#	add_family_to_republic_families = yes
+		#	set_up_elected_ruler_republic = yes
+		#	effect_create_personal_army = yes
+		#}
 	}
 	1192.1.1 = {
 		death = "1192.1.1"
