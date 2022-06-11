@@ -1,0 +1,2291 @@
+﻿namespace = KOH_Pentecost
+
+scripted_effect end_the_diet = {
+	scope:diet = {
+		every_participant = {
+			trigger_event = KOH_Pentecost.23
+		}
+		complete_activity = no # presumably this will cancel all the notifications about the generic diet ending
+	}
+}
+
+
+scripted_trigger everyone_has_responded = {
+	list_size = {
+		name = participants_not_responded
+		value = 0
+	}
+}
+
+
+scripted_effect tournament_outcome_effect = {
+	send_interface_message = {
+		title = $KEY$.t
+		desc = $KEY$.desc
+		tooltip = $KEY$.tt
+		left_icon = this
+		goto = scope:diet.activity_province
+
+		add_prestige = $PRESTIGE$
+	}
+
+	custom_tooltip = $KEY$
+
+	custom_description = {
+		text = pentecost_tournament_points
+		subject = this
+		value = $WIN_VALUE_MODIFIER$
+
+		set_variable = {
+			name = $TYPE$_win_modifier
+			value = $WIN_VALUE_MODIFIER$
+		}
+	}
+
+	show_as_tooltip = {
+		add_prestige = $PRESTIGE$
+	}
+}
+
+scripted_effect tournament_effect = {
+	#the toasts are here for the tooltips
+	random_list = {
+		#hopefully script values wil work here, not sure
+		0 = {
+			modifier = {
+				add = $KEY$_A_chance
+			}
+			tournament_outcome_effect = {
+				TYPE = $KEY$
+				KEY = $KEY$_A
+				PRESTIGE = major_prestige_gain
+				WIN_VALUE_MODIFIER = 0.3
+			}
+		}
+
+		0 = {
+			modifier = {
+				add = $KEY$_B_chance
+			}
+			tournament_outcome_effect = {
+				TYPE = $KEY$
+				KEY = $KEY$_B
+				PRESTIGE = minor_prestige_gain
+				WIN_VALUE_MODIFIER = 0.1
+			}
+		}
+
+		0 = {
+			modifier = {
+				add = $KEY$_C_chance
+			}
+			tournament_outcome_effect = {
+				TYPE = $KEY$
+				KEY = $KEY$_C
+				PRESTIGE = 0
+				WIN_VALUE_MODIFIER = -0.1
+			}
+		}
+
+		0 = {
+			modifier = {
+				add = $KEY$_D_chance
+			}
+			tournament_outcome_effect = {
+				TYPE = $KEY$
+				KEY = $KEY$_D
+				PRESTIGE = medium_prestige_loss
+				WIN_VALUE_MODIFIER = -0.3
+			}
+
+			increase_wounds_no_death_effect = {
+				REASON = duel
+			}
+		}
+	}
+}
+
+
+scripted_effect rank_the_players = {
+	save_temporary_scope_value_as = {
+		name = counter
+		value = 1
+	}
+	ordered_in_list = {
+		list = participants_accepted
+		order_by = {
+			value = $KEY$_ranking_base
+			multiply = var:$KEY$_win_modifier
+		}
+		set_variable = {
+			name = $KEY$_position
+			value = scope:counter
+		}
+		save_temporary_scope_value_as = {
+			name = counter
+			value = {
+				value = scope:counter
+				add = 1
+			}
+		}
+	}
+}
+
+scripted_effect handle_winner = {
+	# just get rid of this guy tbh
+	ordered_in_list = {
+		list = participants_accepted
+		order_by = var:$KEY$_position
+		position = 0 # only the winner
+
+		send_interface_toast = {
+			title = $KEY$.win.t
+			desc = $KEY$.win.desc
+			tooltip = $KEY$.win.tt
+			left_icon = this
+			goto = scope:diet.activity_province
+
+			$KEY$_prize = yes
+		}
+
+		save_scope_as = $KEY$_winner
+
+		remove_from_list = participants_accepted
+	}
+}
+
+scripted_effect inform_losers = {
+	every_in_list = { # tell the participants who won, and what place they're in
+		list = participants_accepted
+		send_interface_message = {
+			title = $KEY$.lose.t
+			desc = $KEY$.lose.desc
+			tooltip = $KEY$.lose.tt
+			left_icon = scope:$KEY$_winner
+			goto = scope:diet.activity_province
+		}
+	}
+	
+	clear_saved_scope = participants_accepted
+}
+
+scripted_effect inform_watchers = {
+	every_in_list = { # tell the watchers who won
+		list = participants_declined
+		send_interface_message = {
+			title = $KEY$.watch.t
+			desc = $KEY$.watch.desc
+			tooltip = $KEY$.watch.tt
+			left_icon = scope:$KEY$_winner
+			goto = scope:diet.activity_province
+
+			show_as_tooltip = {
+				scope:$KEY$_winner = {
+					$KEY$_prize = yes
+				}
+			}
+		}
+	}
+
+	clear_saved_scope = participants_declined
+}
+
+scripted_effect process_results = {
+	if = {
+		limit = {
+			list_size = {
+				name = participants_accepted
+				value > 0
+			}
+		}
+		rank_the_players = {
+			KEY = $KEY$
+		}
+
+		# just get rid of this guy tbh
+		handle_winner = {
+			KEY = $KEY$
+		}
+
+		inform_losers = {
+			KEY = $KEY$
+		}
+
+		inform_watchers = {
+			KEY = $KEY$
+		}
+	}
+}
+
+
+scripted_effect retrigger_KOH_1 = {
+	debug_log = "retriggered KOH_Pentecost.1"
+	if = {
+		limit = { is_alive = yes }
+		trigger_event = {
+			id = KOH_Pentecost.1
+			weeks = 2
+		}
+	}
+}
+KOH_Pentecost.1 = {
+	title = KOH_Pentecost.1.t
+	desc = KOH_Pentecost.1.desc
+	type = character_event
+	theme = crown
+
+	right_portrait = {
+		character = this
+		animation = happiness
+	}
+
+	trigger = {
+		is_available_for_activity_trigger = yes
+	}
+
+	on_trigger_fail = {
+		retrigger_KOH_1 = yes
+	}
+
+	immediate = {
+		# we redo this in the next event, this is only here so the description works
+		if = {
+			limit = { title:d_mainz.title_capital_county.holder = title:d_mainz.holder }
+			title:d_mainz.title_capital_county = {
+				save_scope_as = mainz_county
+			}
+		}
+		else = {
+			title:d_mainz.holder.capital_county = {
+				save_scope_as = mainz_county
+			}
+		}
+	}
+
+	option = { # let's do this
+		name = KOH_Pentecost.1.a
+		custom_tooltip = KOH_Pentecost.1.a.tt
+
+        trigger_event = KOH_Pentecost.2
+
+		ai_chance = {
+			base = 100 # doesn't matter what it is as long as it's non-zero
+		}
+	}
+
+	option = { # not now
+		name = KOH_Pentecost.1.b
+
+		ai_chance = {
+			base = 0
+		}
+
+		add_prestige = major_prestige_loss
+
+		retrigger_KOH_1 = yes
+
+		stress_impact = {
+			arrogant = medium_stress_impact_gain
+		}
+	}
+}
+
+
+KOH_Pentecost.2 = {
+	title = KOH_Pentecost.2.t
+	desc = KOH_Pentecost.2.desc
+	type = character_event
+	theme = realm
+
+	right_portrait = {
+		character = scope:frederick
+		animation = idle
+	}
+
+	immediate = {
+		# assuming we're scoped to Frederick
+		save_scope_as = frederick
+		character:7557 = {
+			save_scope_as = konrad
+		}
+
+		if = {
+			limit = { title:d_mainz.title_capital_county.holder = title:d_mainz.holder }
+			title:d_mainz.title_capital_county = {
+				save_scope_as = mainz_county
+			}
+		}
+		else = {
+			title:d_mainz.holder.capital_county = {
+				save_scope_as = mainz_county
+			}
+		}
+
+	    scope:mainz_county.title_province = {
+            spawn_activity = {
+                type = activity_diet
+                owner = root
+            }
+        }
+
+        activity = {
+        	save_scope_as = diet
+        }
+
+
+        #booleans
+        save_scope_value_as = {
+        	name = pope_coming
+        	value = yes # this one starts as yes so if you rip off konrad the pope doesn't even ask
+        }
+        save_scope_value_as = {
+        	name = lion_coming
+        	value = no
+        }
+        save_scope_value_as = {
+        	name = many_tournaments
+        	value = no
+        }
+	}
+
+	option = { # southern circles
+		name = KOH_Pentecost.2.a
+
+		save_scope_value_as = {
+			name = invite_width
+			value = 0
+		}
+	}
+
+	option = { # all germans
+		name = KOH_Pentecost.2.b
+		custom_tooltip = KOH_Pentecost.cost_1
+
+		add_prestige = minor_prestige_gain
+
+		save_scope_value_as = {
+			name = invite_width
+			value = 1
+		}
+	}
+
+	option = { # all vassals
+		name = KOH_Pentecost.2.c
+		custom_tooltip = KOH_Pentecost.cost_2
+
+		add_prestige = major_prestige_gain
+
+		save_scope_value_as = {
+			name = invite_width
+			value = 2
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = KOH_Pentecost.3
+			days = 10
+		}
+	}
+}
+
+KOH_Pentecost.3 = {
+	title = KOH_Pentecost.3.t
+	desc = KOH_Pentecost.3.desc
+	type = character_event
+	theme = martial
+
+	immediate = {
+		# this shouldn't be necessary
+		save_scope_value_as = {
+			name = spending
+			value = 0
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.3.a
+
+		add_prestige = minor_prestige_loss
+
+		save_scope_value_as = {
+			name = spending
+			value = scope:invite_width
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.3.b
+		custom_tooltip = KOH_Pentecost.cost_2
+
+		save_scope_value_as = {
+			name = spending
+			value = {
+				value = scope:invite_width
+				add = 2
+			}
+		}
+
+        save_scope_value_as = {
+        	name = many_tournaments
+        	value = yes
+        }
+	}
+
+	after = {
+		if = {
+			limit = { scope:spending > 2 }
+			trigger_event = {
+				id = KOH_Pentecost.4
+				weeks = 1
+			}
+		}
+		else = {
+			trigger_event = {
+				id = KOH_Pentecost.7
+				weeks = 1
+			}
+		}
+	}
+}
+
+
+scripted_effect no_funding = {
+	add_character_modifier = {
+		modifier = pentecost_no_funding_modifier
+		years = 3
+	}
+
+	reverse_add_opinion = {
+		modifier = pentecost_missing_funding_opinion
+		target = cp:councillor_steward
+	}
+}
+KOH_Pentecost.4 = {
+	title = KOH_Pentecost.4.t
+	desc = KOH_Pentecost.4.desc
+	type = character_event
+	theme = crown
+
+	right_portrait = {
+		character = scope:frederick
+		animation = happiness
+	}
+
+	option = {
+		name = KOH_Pentecost.4.a
+
+		trigger_event = KOH_Pentecost.5
+	}
+
+	option = {
+		name = KOH_Pentecost.4.b
+
+		trigger_event = KOH_Pentecost.6
+	}
+
+	option = {
+		name = KOH_Pentecost.4.c
+
+		add_character_modifier = {
+			modifier = pentecost_frugal_modifier
+			years = 5
+		}
+
+		no_funding = yes
+
+		trigger_event = KOH_Pentecost.7
+	}
+}
+
+
+scripted_effect konrad_pays = {
+	add_piety = minor_piety_loss
+	add_gold = medium_gold_value
+}
+scripted_effect success_msg = {
+	send_interface_message = {
+		type = send_interface_message_good
+		title = KOH_Pentecost.5.succeed.t
+		desc = KOH_Pentecost.5.succeed.desc
+		tooltip = KOH_Pentecost.5.succeed.tt
+		left_icon = scope:konrad
+	}
+}
+scripted_effect fail_msg = {
+	send_interface_message = {
+		type = send_interface_message_bad
+		title = KOH_Pentecost.5.fail.t
+		desc = KOH_Pentecost.5.fail.desc
+		tooltip = KOH_Pentecost.5.fail.tt
+		left_icon = scope:konrad
+	}
+}
+KOH_Pentecost.5 = {
+	title = KOH_Pentecost.5.t
+	desc = KOH_Pentecost.5.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = cp:councillor_steward
+		animation = idle
+	}
+
+	left_portrait = {
+		character = scope:konrad
+		animation = idle
+	}
+
+	option = {
+		name = KOH_Pentecost.5.a
+		custom_tooltip = KOH_Pentecost.5.a.tt
+
+		random_list = {
+			55 = {
+				reverse_add_opinion = {
+					modifier = pentecost_persuaded_to_invest_opinion
+					target = scope:konrad
+				}
+				konrad_pays = yes
+			}
+
+			45 = {
+				reverse_add_opinion = {
+					modifier = pentecost_refused_to_invest_opinion
+					target = scope:konrad
+				}
+				add_piety = medium_piety_loss
+
+				no_funding = yes
+			}
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.5.b
+		custom_tooltip = KOH_Pentecost.5.b.tt
+
+		random_list = {
+			70 = {
+				add_gold = {
+					value = medium_gold_value
+					add = minor_gold_value
+				}
+
+				scope:konrad = {
+					add_character_modifier = pentecost_tax_scammed_modifier
+				}
+
+				hidden_effect = {
+					random = {
+						chance = 50
+						reverse_add_opinion = {
+							modifier = pentecost_suspicious_opinion
+							target = scope:konrad
+							years = 20
+						}
+					}
+				}
+			}
+
+			30 = {
+				reverse_add_opinion = {
+					modifier = pentecost_attempted_to_defraud_me_opinion
+					target = scope:konrad
+				}
+
+				no_funding = yes
+
+				add_piety_level = -1
+				add_piety = major_piety_loss
+
+				save_scope_value_as = {
+					name = pope_coming
+					value = no
+				}
+			}
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.5.c
+
+		add_piety = minor_piety_loss
+	}
+
+	after = {
+		trigger_event = KOH_Pentecost.7
+	}
+}
+
+
+KOH_Pentecost.6 = {
+	title = KOH_Pentecost.6.t
+	desc = KOH_Pentecost.6.desc
+	type = character_event
+	theme = corruption
+
+	right_portrait = {
+		character = scope:court_jew
+		animation = beg
+	}
+
+	immediate = {
+		# most of this code just makes sure the jew's faith matches a group in your empire
+		save_temporary_scope_value_as = {
+			name = jews_in_HRE
+			value = no
+		}
+		title:e_hre = {
+			random_in_de_facto_hierarchy = {
+				continue = {
+					#not sure if this is necessary
+					tier >= tier_county
+				}
+				limit = {
+					trigger_if = {
+						limit = { tier = tier_county }
+						religion = religion:judaism_religion
+					}
+					trigger_else = {
+						always = no
+					}
+				}
+				faith = {
+					save_temporary_scope_as = jew_faith
+				}
+				culture = {
+					save_temporary_scope_as = jew_culture
+				}
+				title_province = {
+					save_temporary_scope_as = pool_place
+				}
+				save_temporary_scope_value_as = {
+					name = jews_in_HRE
+					value = yes
+				}
+			}
+		}
+
+		# default
+		if = {
+			limit = { scope:jews_in_HRE = no }
+			faith:rabbinism = {
+				save_temporary_scope_as = jew_faith
+			}
+
+			#where do we spawn him?
+			title:e_hre = {
+				random_in_de_facto_hierarchy = {
+					continue = {
+						#not sure if this is necessary
+						tier >= tier_county
+					}
+					limit = {
+						tier = tier_county
+						title_province = {
+							geographical_region = world_europe_west_germania
+						}
+					}
+					alternative_limit = {
+						tier = tier_county
+					}
+					culture = {
+						save_temporary_scope_as = jew_culture
+					}
+					title_province = {
+						save_temporary_scope_as = pool_place
+					}
+				}
+			}
+		}
+
+		create_character = {
+			gender = male
+			faith = scope:jew_faith
+			culture = scope:jew_culture
+			trait = zealous
+			location = scope:pool_place
+			#save_event_target_as = court_jew # this doesn't work for some reason, so we do it below
+			after_creation = {
+				save_scope_as = court_jew
+				add_stewardship_skill = mediocre_skill_rating # this is on top of the base, so he's pretty OP
+			}
+		}
+	}
+
+	option = { # yes
+		name = KOH_Pentecost.6.a
+
+		add_courtier = scope:court_jew
+		add_gold = minor_gold_value
+
+		add_character_modifier = {
+			modifier = pentecost_court_jew_modifier
+			years = 5
+		}
+		capital_county = {
+			add_county_modifier = {
+				modifier = pentecost_court_jew_capital_modifier
+				years = 5
+			}
+		}
+	}
+
+	option = { # no
+		name = KOH_Pentecost.6.b
+
+		add_gold = major_gold_value
+		capital_county = {
+			change_county_control = minor_county_control_loss
+		}
+		add_character_modifier = {
+			modifier = pentecost_overtaxed_jews_modifier
+			years = 10
+		}
+	}
+
+	after = {
+		trigger_event = KOH_Pentecost.7
+	}
+}
+
+
+KOH_Pentecost.7 = {
+	title = KOH_Pentecost.7.t
+	desc = KOH_Pentecost.7.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = scope:frederick
+		animation = irritated
+	}
+
+	left_portrait = {
+		character = scope:pope
+		animation = idle
+	}
+
+	trigger = {
+		scope:pope_coming = yes # some things stop him asking
+		title:k_papal_state = { # checking there's a pope to invite
+			is_title_created = yes
+		}
+	}
+
+	on_trigger_fail = {
+		trigger_event = KOH_Pentecost.8
+	}
+
+	immediate = {
+		title:k_papal_state.holder = {
+			save_scope_as = pope
+		}
+
+		save_scope_value_as = { # default
+			name = pope_coming
+			value = no
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.7.a
+
+		custom_tooltip = KOH_Pentecost.7.a.tt
+		save_scope_value_as = {
+			name = pope_coming
+			value = yes
+		}
+
+		reverse_add_opinion = {
+			modifier = pentecost_open_to_talks_opinion
+			target = scope:pope
+			months = 9
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.7.b
+
+		reverse_add_opinion = {
+			modifier = pentecost_refused_talks_opinion
+			target = scope:pope
+		}
+
+		add_character_modifier = {
+			modifier = pentecost_defying_papacy_modifier
+			years = 5
+		}
+	}
+
+	after = {
+		trigger_event = {
+			id = KOH_Pentecost.8
+			days = { 7 14 }
+		}
+	}
+}
+
+
+KOH_Pentecost.8 = {
+	title = KOH_Pentecost.8.t
+	desc = KOH_Pentecost.8.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = scope:lion
+		animation = idle
+	}
+
+	left_portrait = {
+		character = scope:konrad
+		animation = idle
+	}
+
+	trigger = {
+		character:212600 = {
+			is_available_for_activity_trigger = yes
+		}
+	}
+
+	on_trigger_fail = {
+		trigger_event = KOH_Pentecost.10
+	}
+
+	immediate = {
+		character:212600 = {
+			save_scope_as = lion
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.8.a
+		custom_tooltip = KOH_Pentecost.8.a.tt
+
+		save_scope_value_as = {
+			name = lion_coming
+			value = yes
+		}
+
+		reverse_add_opinion = {
+			modifier = pentecost_accepted_my_suggestion_opinion
+			target = scope:konrad
+		}
+
+		trigger_event = KOH_Pentecost.10
+	}
+
+	option = {
+		name = KOH_Pentecost.8.b
+		custom_tooltip = KOH_Pentecost.8.b.tt
+
+		imprison_character_effect = {
+			IMPRISONER = scope:frederick
+			TARGET = scope:konrad
+		}
+		add_tyranny = -15 #the above gives 20 for landed characters
+		scope:konrad.capital_county = {
+			change_county_control = medium_county_control_loss
+		}
+
+		trigger_event = KOH_Pentecost.9
+	}
+}
+
+
+KOH_Pentecost.9 = {
+	title = KOH_Pentecost.9.t
+	desc = KOH_Pentecost.9.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = cp:councillor_steward
+		animation = idle
+	}
+
+	left_portrait = {
+		character = scope:konrad
+		animation = idle
+	}
+
+	trigger = {
+		scope:pope_coming = yes
+	}
+
+	on_trigger_fail = {
+		trigger_event = KOH_Pentecost.10
+	}
+
+	option = {
+		name = KOH_Pentecost.9.a
+
+		add_piety = medium_piety_loss
+
+		save_scope_value_as = {
+			name = pope_coming
+			value = no
+		}
+
+		scope:pope = {
+			remove_opinion = {
+				modifier = pentecost_open_to_talks_opinion
+				target = scope:frederick
+			}
+			add_opinion = { # he's not a fan
+				modifier = pentecost_fickle_snake_opinion
+				target = scope:frederick
+			}
+		}
+
+		add_character_modifier = {
+			modifier = pentecost_defying_papacy_2_modifier
+			years = 5
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.9.b
+
+		add_character_modifier = {
+			modifier = pentecost_submitting_to_papacy_modifier
+			years = 5
+		}
+
+		scope:konrad = {
+			release_from_prison = yes # this may go wrong if he's somehow extremely speedily left your prison and entered someone else's
+		}
+	}
+
+	after = {
+		trigger_event = KOH_Pentecost.10
+	}
+}
+
+
+scripted_effect add_to_invited = {
+	# passed LISTNAME
+	title:e_hre = {
+		# should be:
+		#every_$LISTNAME$ = {
+		every_in_de_facto_hierarchy = {
+			continue = { tier > tier_barony }
+			limit = {
+
+				# workaround bc scripted_lists isn't working for some reason
+				trigger_if = {
+					limit = {
+						is_title_created = yes
+					}
+					$LISTNAME$_trigger = yes
+					NOT = {
+						holder = {
+							is_in_list = invited
+						}
+					}
+				}
+				trigger_else = {
+					NOT = {
+						always = yes
+					}
+				}
+			}
+			holder = {
+				add_to_list = invited
+			}
+		}
+	}
+}
+
+#workarounds
+scripted_trigger KOH_Pentecost_base_vassal_title_trigger = {
+	OR = {
+		tier = tier_county
+		tier = tier_duchy
+		tier = tier_kingdom
+	}
+	holder = {
+		is_available_for_activity_trigger = yes
+	}
+}
+scripted_trigger KOH_Pentecost_southern_circle_vassal_title_trigger = {
+	holder = {
+		OR = {
+			culture = culture:swabian
+			culture = culture:franconian
+			culture = culture:bavarian
+		}
+	}
+	KOH_Pentecost_base_vassal_title_trigger = yes
+}
+scripted_trigger KOH_Pentecost_german_vassal_title_trigger = {
+	holder = {
+		OR = {
+			culture = culture:swabian
+			culture = culture:franconian
+			culture = culture:bavarian
+			culture = culture:saxon
+			culture = culture:dutch
+		}
+	}
+	KOH_Pentecost_base_vassal_title_trigger = yes
+}
+
+
+scripted_trigger can_buy_upgrade = {
+	save_temporary_scope_value_as = { # yes, we can do this in a trigger!
+		name = price
+		value = { # we need to do this here bc arguments don't take script values well
+			value = Pentecost_base_cost
+			multiply = $MULTIPLE$
+		}
+	}
+	can_make_expensive_purchase_trigger = {
+		PRICE = scope:price
+	}
+}
+KOH_Pentecost.10 = {
+	title = KOH_Pentecost.10.t
+	desc = KOH_Pentecost.10.desc
+	type = character_event
+	theme = stewardship
+
+	option = {
+		name = KOH_Pentecost.10.a
+
+		scope:mainz_county = {
+			add_county_modifier = {
+				modifier = pentecost_site_overcrowding_modifier
+				years = 10
+			}
+		}
+
+		trigger_event = {
+			id = KOH_Pentecost.12
+			days = 45
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.10.b
+
+		add_gold = {
+			value = Pentecost_base_cost
+			multiply = -16
+		}
+
+		scope:mainz_county = {
+			add_county_modifier = {
+				modifier = pentecost_site_paved_modifier
+				years = 25
+			}
+		}
+
+		trigger = {
+			can_buy_upgrade = {
+				MULTIPLE = 16
+			}
+		}
+
+		trigger_event = {
+			id = KOH_Pentecost.12
+			days = 45
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.10.c
+
+		add_gold = {
+			value = Pentecost_base_cost
+			multiply = -40
+		}
+
+		scope:mainz_county = {
+			add_county_modifier = {
+				modifier = pentecost_site_city_of_diets_modifier
+				years = 100
+			}
+			change_development_level = 2
+		}
+
+		trigger = {
+			can_buy_upgrade = {
+				MULTIPLE = 40
+			}
+		}
+
+		show_as_unavailable = {
+			always = yes
+		}
+
+		trigger_event = {
+			id = KOH_Pentecost.11
+			days = 45
+		}
+	}
+
+	immediate = {
+		scope:mainz_county = {
+			add_county_modifier = {
+				modifier = pentecost_site_modifier
+				years = 15
+			}
+		}
+	}
+
+	after = {
+		custom_description_no_bullet = {
+			text = send_invitations_to_pentecost
+
+			add_to_list = invited # add frederick
+
+			if = {
+				limit = { scope:invite_width = 0 }
+				add_to_invited = {
+					LISTNAME = KOH_Pentecost_southern_circle_vassal_title
+				}
+			}
+			else_if = {
+				limit = { scope:invite_width = 1 }
+				add_to_invited = {
+					LISTNAME = KOH_Pentecost_german_vassal_title
+				}
+			}
+			else = {
+				add_to_invited = {
+					LISTNAME = KOH_Pentecost_base_vassal_title
+				}
+			}
+			every_in_list = {
+				list = invited
+				scope:diet = {
+					invite_character_to_activity = prev
+				}
+				trigger_event = KOH_Pentecost.1001
+			}
+		}
+	}
+}
+
+
+KOH_Pentecost.1001 = {
+	opening = KOH_Pentecost.1001.opening
+	desc = KOH_Pentecost.1001.desc
+	type = letter_event
+
+	sender = scope:frederick
+
+	option = {
+		name = KOH_Pentecost.1001.a
+
+		scope:diet = {
+			accept_invitation_for_character = prev
+		}
+
+		trigger = {
+			is_available_for_activity_trigger = yes
+		}
+
+		show_as_unavailable = {
+			always = yes
+		}
+
+		# perhaps adjust for opinion of Fred?
+		ai_chance = {
+			base = 80
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.1001.b
+
+		scope:diet = {
+			decline_invitation_for_character = prev
+		}
+
+		add_prestige = {
+			value = miniscule_prestige_loss
+			divide = 7
+		}
+
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+
+KOH_Pentecost.11 = {
+	title = KOH_Pentecost.11.t
+	desc = KOH_Pentecost.11.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = scope:frederick
+		animation = happiness
+	}
+
+	left_portrait = {
+		character = scope:konrad
+		animation = admiration
+	}
+
+	immediate = {
+		reverse_add_opinion = {
+			modifier = built_city_of_diets_for_me_opinion
+			target = scope:konrad
+		}
+
+		add_prestige = medium_prestige_gain
+	}
+
+	option = {
+		name = KOH_Pentecost.11.a
+
+		scope:konrad = {
+			vassal_contract_increase_obligation_level = feudal_government_taxes
+		}
+	}
+
+	after = {
+		trigger_event = KOH_Pentecost.12
+	}
+}
+
+
+scripted_effect appoint_swordbearer = {
+	#uses $CHOSEN$ and $SNUBBED$
+	$CHOSEN$ = {
+		add_character_modifier = pentecost_imperial_swordbearer_modifier
+	}
+
+	reverse_add_opinion = {
+		modifier = pentecost_sided_with_me_opinion
+		target = $CHOSEN$
+	}
+
+	reverse_add_opinion = {
+		modifier = pentecost_sided_against_me_opinion
+		target = $SNUBBED$
+	}
+}
+KOH_Pentecost.12 = {
+	title = KOH_Pentecost.12.t
+	desc = KOH_Pentecost.12.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = scope:count_hainaut
+		animation = idle
+	}
+
+	left_portrait = {
+		character = scope:duke_lorraine
+		animation = idle
+	}
+
+	immediate = {
+		title:c_hainaut.holder = {
+			save_scope_as = count_hainaut
+		}
+		title:d_lower_lorraine.holder = {
+			save_scope_as = duke_lorraine
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.12.a
+
+		add_stress = miniscule_stress_impact_loss
+
+		appoint_swordbearer = {
+			CHOSEN = scope:count_hainaut
+			SNUBBED = scope:duke_lorraine
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.12.b
+
+		add_prestige = miniscule_prestige_gain
+
+		appoint_swordbearer = {
+			CHOSEN = scope:duke_lorraine
+			SNUBBED = scope:count_hainaut
+		}
+	}
+
+	after = {
+		# set up so events don't happen twice
+		save_scope_value_as = {
+			name = met_with_pope
+			value = no
+		}
+		save_scope_value_as = {
+			name = met_with_lion
+			value = no
+		}
+		save_scope_value_as = {
+			name = had_bishop_squabble
+			value = no
+		}
+		trigger_event = {
+			on_action = events_during_pentecost_on_action
+		}
+	}
+}
+
+scripted_effect transfer_to_pope = {
+	every_in_de_jure_hierarchy = {
+		continue = {
+			tier > tier_county
+		}
+
+		if = {
+			limit = {
+				OR = {
+					holder = scope:frederick
+					NOT = {
+						is_title_created = yes
+					}
+				}
+			}
+			change_title_holder_include_vassals = { # if it's mine the pope gets it
+				holder = scope:pope
+				change = scope:change
+			}
+		}
+		else_if = {
+			limit = { # all their stuff is being turned over
+				holder = {
+					highest_held_title_tier <= tier_duchy
+					any_held_title = { # are they wholly within the turnover area?
+						count = all
+						OR = {
+							duchy = scope:tuscany
+							duchy = title:d_pisa
+							duchy = title:d_latium
+							duchy = title:d_spoleto
+						}
+					}
+				}
+			}
+			holder = {
+				change_liege = {
+					liege = scope:pope
+					change = scope:change
+				}
+			}
+		}
+		else = { # he wants it, but we can't give it to him
+			scope:pope = {
+				add_pressed_claim = prev
+			}
+		}
+	}
+}
+
+KOH_Pentecost.13 = {
+	title = KOH_Pentecost.13.t
+	desc = KOH_Pentecost.13.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = cp:councillor_steward
+		animation = idle
+	}
+
+	left_portrait = {
+		character = scope:konrad
+		animation = idle
+	}
+
+	trigger = {
+		scope:pope_coming = yes
+		scope:met_with_pope = no
+	}
+
+	immediate = {
+		save_scope_value_as = {
+			name = excommunication_chance
+			value = -1 # so we can work out if the pope says no
+		}
+
+		title:d_toscana = {
+			save_scope_as = tuscany
+		}
+
+		title:k_romagna = {
+			save_scope_as = romagna
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.13.a
+
+		scope:pope = {
+			pay_short_term_gold = {
+				target = scope:frederick
+				gold = 220
+			}
+		}
+
+		reverse_add_opinion = {
+			modifier = pentecost_ceded_tuscany_opinion
+			target = scope:pope
+		}
+
+		#do this here for the tt
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = change
+		}
+
+		scope:tuscany = {
+			change_title_holder_include_vassals = {
+				holder = scope:pope
+				change = scope:change
+			}
+			hidden_effect = {
+				set_de_jure_liege_title = scope:romagna
+			}
+		}
+
+		title:d_spoleto = {
+			hidden_effect = {
+				transfer_to_pope = yes
+			}
+		}
+
+		hidden_effect = {
+			title:d_pisa = {
+				if = {
+					limit = {
+						kingdom = title:k_italy # let's not ruin someone's custom kingdom
+					}
+					set_de_jure_liege_title = scope:romagna
+				}
+			}
+
+			# yield vassals and land in spoleto and latium
+
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		add_character_modifier = pentecost_papal_auth_over_empire_modifier
+	}
+
+	option = {
+		name = KOH_Pentecost.13.b
+
+		random_list = {
+			60 = {
+				add_prestige = minor_prestige_gain
+				add_prestige_experience = major_dynasty_prestige_gain # the kind of thing that shows up well in the history books
+
+				house = {
+					add_house_modifier = {
+						modifier = pentecost_tuscany_money_to_pope_modifier
+						years = 250
+					}
+				}
+
+				scope:pope = {
+					remove_claim = scope:tuscany
+				}
+
+				reverse_add_opinion = {
+					modifier = pentecost_came_to_an_agreement_opinion
+					target = scope:pope
+				}
+			}
+
+			40 = {
+				custom_description = {
+					text = pentecost_pope_angered
+					object = scope:pope
+					save_scope_value_as = {
+						name = excommunication_chance
+						value = 5
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.13.c
+
+		random_list = {
+			10 = {
+				add_prestige = massive_prestige_value
+				add_character_modifier = pentecost_italian_domination_modifier
+
+				scope:pope = {
+					remove_claim = scope:tuscany
+				}
+			}
+
+			90 = {
+				custom_description = {
+					text = pentecost_pope_angered
+					object = scope:pope
+					save_scope_value_as = {
+						name = excommunication_chance
+						value = 50
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		save_scope_value_as = {
+			name = met_with_pope
+			value = yes
+		}
+		if = {
+			limit = { scope:excommunication_chance < 0 } # the pope says yes
+			trigger_event = {
+				on_action = events_during_pentecost_on_action
+			}
+		}
+		else = {
+			trigger_event = KOH_Pentecost.14
+		}
+	}
+}
+
+
+KOH_Pentecost.14 = {
+	title = KOH_Pentecost.14.t
+	desc = KOH_Pentecost.14.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = cp:councillor_steward
+		animation = idle
+	}
+
+	left_portrait = {
+		character = scope:konrad
+		animation = idle
+	}
+
+	immediate = {
+		add_piety = massive_piety_loss
+		progress_towards_rival_effect = {
+			CHARACTER = scope:pope
+			OPINION = yes
+		}
+		progress_towards_rival_effect = {
+			CHARACTER = scope:pope
+			OPINION = yes
+		}
+
+		#excommunicated?
+		save_scope_value_as = {
+			name = excommunicated
+			value = no
+		}
+		random = {
+			chance = scope:excommunication_chance
+			save_scope_value_as = {
+				name = excommunicated
+				value = yes
+			}
+			add_excommunication_tooltip_only_effect = yes # this is here so you don't get the alerts till you click the button
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.14.a
+
+		if = {
+			limit = { scope:excommunicated = yes }
+			hidden_effect = {
+				add_excommunication_actual_effect = yes
+			}
+		}
+	}
+
+	after = {
+		trigger_event = {
+			on_action = events_during_pentecost_on_action
+		}
+	}
+}
+
+
+KOH_Pentecost.15 = {
+	title = KOH_Pentecost.15.t
+	desc = KOH_Pentecost.15.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = scope:lion
+		animation = idle
+	}
+
+	trigger = {
+		scope:lion_coming = yes
+		scope:met_with_lion = no
+	}
+
+	immediate = {
+		title:d_ostfalen = {
+			save_scope_as = welf_land
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.15.a
+		custom_tooltip = KOH_Pentecost.15.a.tt
+
+		trigger = {
+			title:d_ostfalen = {
+				any_de_jure_top_liege = {
+					scope:frederick = this
+				}
+			}
+		}
+
+		create_title_and_vassal_change = {
+			type = returned
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+
+		character:212605 = { # heinrich welf
+			if = {
+				limit = {
+					trigger_if = {
+						limit = {
+							is_alive = yes
+						}
+						trigger_if = {
+							limit = {
+								is_landed = yes
+							}
+							NOT = {
+								is_vassal_or_below_of = scope:frederick
+							}
+						}
+					}
+					always = yes # not sure of the behaviour of limit = {}
+				}
+
+				custom_description = {
+					text = Pentecost_land_lion_random_county
+					debug_log = "Pentecost random land given to welf"
+					scope:welf_land = {
+						random_in_de_jure_hierarchy = {
+							continue = {
+								tier > tier_county
+							}
+							limit = {
+								tier = tier_county
+								holder = {
+									top_liege = scope:frederick
+								}
+							}
+							change_title_holder_include_vassals = {
+								holder = scope:lion
+								change = scope:change
+								take_baronies = yes
+							}
+
+							debug_log_scopes = no
+						}
+					}
+				}
+			}
+			else = { # this is what usually happens
+				custom_description = {
+					text = Pentecost_land_lion_heidrich
+					every_held_title = {
+						change_title_holder_include_vassals = {
+							holder = scope:lion
+							change = scope:change
+							take_baronies = yes
+						}
+
+						debug_log_scopes = no
+					}
+				}
+			}
+		}
+
+		scope:welf_land = {
+			if = {
+				limit = {
+					trigger_if = {
+						limit = {
+							is_title_created = yes
+						}
+						NOT = {
+							holder = character:212600
+						}
+					}
+				}
+				change_title_holder_include_vassals = {
+					holder = scope:lion
+					change = scope:change
+					take_baronies = yes
+				}
+			}
+		}
+
+		scope:lion = {
+			change_liege = {
+				liege = scope:frederick # it's you!
+				change = scope:change
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+
+
+		hidden_effect = {
+			remove_relation_rival = scope:lion
+		}
+		remove_relation_potential_rival = scope:lion # in case
+		create_alliance = scope:lion
+
+		reverse_add_opinion = {
+			modifier = perk_negotiated_alliance_opinion
+			target = scope:lion
+		}
+		hidden_effect = {
+			add_opinion = {
+				modifier = perk_negotiated_alliance_opinion
+				target = scope:lion
+			}
+		}
+
+		ai_chance = {
+			base = 15
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.15.b
+		custom_tooltip = KOH_Pentecost.15.b.tt
+
+		add_prestige = medium_prestige_gain
+
+		ai_chance = {
+			base 85
+		}
+	}
+
+	after = {
+		save_scope_value_as = {
+			name = met_with_lion
+			value = yes
+		}
+
+		trigger_event = {
+			on_action = events_during_pentecost_on_action
+		}
+	}
+}
+
+
+KOH_Pentecost.16 = {
+	title = KOH_Pentecost.16.t
+	desc = KOH_Pentecost.16.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = scope:phillip
+		animation = idle
+	}
+
+	left_portrait = {
+		character = scope:other_konrad
+		animation = idle
+	}
+
+	trigger = {
+		scope:had_bishop_squabble = no
+	}
+
+	immediate = {
+		save_scope_value_as = {
+			name = disappointed_phillip
+			value = no
+		}
+
+		character:213181 = {
+			save_scope_as = phillip
+		}
+		character:KOH_FULDA043 = {
+			save_scope_as = other_konrad
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.16.a
+		custom_tooltip = KOH_Pentecost.16.a.tt
+
+
+
+		trigger_event = {
+			on_action = events_during_pentecost_on_action
+		}
+
+		reverse_add_opinion = {
+			modifier = pentecost_sided_with_me_opinion
+			target = scope:phillip
+		}
+		reverse_add_opinion = {
+			modifier = pentecost_sided_against_me_opinion
+			target = scope:other_konrad
+		}
+		scope:phillip = {
+			add_character_modifier = {
+				modifier = pentecost_rights_reaffirmed_modifier
+				years = 10
+			}
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.16.b
+		custom_tooltip = KOH_Pentecost.16.b.tt
+
+		reverse_add_opinion = {
+			modifier = pentecost_sided_with_me_surprisingly_opinion
+			target = scope:other_konrad
+		}
+		reverse_add_opinion = {
+			modifier = pentecost_sided_against_me_surprisingly_opinion
+			target = scope:phillip
+		}
+
+		save_scope_value_as = {
+			name = disappointed_phillip
+			value = yes
+		}
+	}
+
+	option = {
+		name = KOH_Pentecost.16.c
+		custom_tooltip = KOH_Pentecost.16.c.tt
+
+		add_character_modifier = {
+			modifier = pentecost_absent_liege_modifier
+			years = 3
+		}
+		add_character_modifier = {
+			modifier = feast_life_reaffirmed_modifier
+			years = 2
+		}
+
+		reverse_add_opinion = {
+			modifier = pentecost_ignored_opinion
+			target = scope:other_konrad
+		}
+		reverse_add_opinion = {
+			modifier = pentecost_ignored_opinion
+			target = scope:phillip
+		}
+	}
+
+	after = {
+		save_scope_value_as = {
+			name = had_bishop_squabble
+			value = yes
+		}
+		if = { 
+			limit = { scope:disappointed_phillip = yes }
+			trigger_event = KOH_Pentecost.17
+		}
+		else = {
+			trigger_event = {
+				on_action = events_during_pentecost_on_action
+			}
+		}
+	}
+}
+
+
+KOH_Pentecost.17 = {
+	title = KOH_Pentecost.17.t
+	desc = KOH_Pentecost.17.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = scope:phillip
+		animation = idle
+	}
+
+	left_portrait = {
+		character = scope:other_konrad
+		animation = idle
+	}
+
+	option = {
+		name = KOH_Pentecost.17.a
+
+		reverse_add_opinion = {
+			modifier = pentecost_apologised_opinion
+			target = scope:phillip
+		}
+
+		add_trait = fickle
+	}
+
+	option = {
+		name = KOH_Pentecost.17.b
+
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = change
+		}
+		title:d_fulda = {
+			change_title_holder = {
+				holder = scope:other_konrad
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+		scope:other_konrad = {
+			add_prestige = massive_prestige_gain
+		}
+	}
+
+	after = {
+		trigger_event = {
+			on_action = events_during_pentecost_on_action
+		}
+	}
+}
+
+
+KOH_Pentecost.1801 = {
+	hidden = yes
+
+	immediate = {
+		scope:diet = {
+			every_participant = {
+				add_to_list = participants_not_responded
+				trigger_event = KOH_Pentecost.18
+			}
+		}
+	}
+}
+
+
+
+KOH_Pentecost.18 = {
+	title = KOH_Pentecost.18.t
+	desc = KOH_Pentecost.18.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = cp:councillor_steward
+		animation = idle
+	}
+
+	left_portrait = {
+		character = scope:konrad
+		animation = idle
+	}
+
+	option = {
+		name = KOH_Pentecost.18.a
+
+		tournament_effect = {
+			KEY = gyrum
+		}
+
+		add_to_list = participants_accepted
+	}
+
+	option = {
+		name = KOH_Pentecost.18.b
+
+		add_to_list = participants_declined # to tell them who won	
+	}
+
+	after = {
+		remove_from_list = participants_not_responded
+		scope:frederick = {
+			trigger_event = KOH_Pentecost.1901
+		}
+	}
+}
+
+scripted_effect gyrum_prize = {
+	add_prestige = massive_prestige_gain
+	add_gold = medium_gold_value
+}
+KOH_Pentecost.1901 = {
+	hidden = yes
+	trigger = {
+		everyone_has_responded = yes
+	}
+
+	immediate = {
+		process_results = {
+			KEY = gyrum
+		}
+
+
+		if = {
+			limit = {
+				scope:many_tournaments = no
+			}
+			end_the_diet = yes
+		}
+		else = {
+			scope:diet = {
+				every_participant = {
+					add_to_list = participants_not_responded
+					trigger_event = KOH_Pentecost.19
+				}
+			}
+		}
+	}
+}
+
+
+
+KOH_Pentecost.19 = {
+	title = KOH_Pentecost.19.t
+	desc = KOH_Pentecost.19.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = cp:councillor_steward
+		animation = idle
+	}
+
+	left_portrait = {
+		character = scope:konrad
+		animation = idle
+	}
+
+	option = {
+		name = KOH_Pentecost.19.a
+
+		tournament_effect = {
+			KEY = joust
+		}
+
+		add_to_list = participants_accepted
+	}
+
+	option = {
+		name = KOH_Pentecost.19.b
+
+		add_to_list = participants_declined
+	}
+
+	after = {
+		remove_from_list = participants_not_responded
+		scope:frederick = {
+			trigger_event = KOH_Pentecost.20
+		}
+	}
+}
+
+scripted_effect joust_prize = {
+	add_prestige = massive_prestige_gain
+	add_gold = medium_gold_value
+}
+KOH_Pentecost.20 = {
+	title = KOH_Pentecost.20.t
+	desc = KOH_Pentecost.20.desc
+	type = character_event
+	theme = battle
+
+	right_portrait = {
+		character = scope:frederick
+		animation = idle
+	}
+
+	trigger = {
+		everyone_has_responded = yes
+	}
+
+	option = {
+		name = KOH_Pentecost.20.a
+
+		process_results = {
+			KEY = joust
+		}
+
+		hidden_effect = {
+			random_list = {
+				50 = {
+					scope:diet = {
+						every_participant = {
+							add_to_list = participants_not_responded
+							trigger_event = KOH_Pentecost.21
+						}
+					}
+				}
+				50 = {
+					scope:diet = {
+						every_participant = {
+							add_to_list = participants_not_responded # just so everyone gets the last event at the same time
+							trigger_event = KOH_Pentecost.22
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+KOH_Pentecost.21 = {
+	title = KOH_Pentecost.21.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { this = scope:frederick }
+				desc = KOH_Pentecost.21.desc.Fred
+			}
+			desc = KOH_Pentecost.21.desc
+		}
+	}
+	type = character_event
+	theme = stewardship
+
+	option = {
+		name = {
+			trigger = { this = scope:frederick }
+			text = KOH_Pentecost.21.a.Fred
+		}
+		name = KOH_Pentecost.21.a
+
+		tournament_effect = {
+			KEY = grand_melee
+		}
+
+		add_to_list = participants_accepted
+	}
+
+	option = {
+		name = {
+			trigger = { this = scope:frederick }
+			text = KOH_Pentecost.21.b.Fred
+		}
+		name = KOH_Pentecost.21.b
+
+		add_to_list = participants_declined # to tell them who won
+	}
+
+	after = {
+		remove_from_list = participants_not_responded
+		scope:frederick = {
+			trigger_event = KOH_Pentecost.2301
+		}
+	}
+}
+
+
+KOH_Pentecost.22 = {
+	title = KOH_Pentecost.22.t
+	desc = KOH_Pentecost.22.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = scope:frederick
+		animation = sadness
+	}
+
+	option = {
+		name = KOH_Pentecost.22.a
+
+		add_prestige = miniscule_prestige_loss
+
+		add_gold = tiny_gold_value
+	}
+
+	after = {
+		remove_from_list = participants_not_responded
+		scope:frederick = {
+			trigger_event = KOH_Pentecost.2302
+		}
+	}
+}
+
+scripted_effect grand_melee_prize = {
+	add_prestige = massive_prestige_gain
+	add_gold = medium_gold_value
+}
+KOH_Pentecost.2301 = {
+	hidden = yes
+
+	trigger = {
+		everyone_has_responded = yes
+	}
+
+	immediate = {
+		process_results = {
+			KEY = grand_melee
+		}
+
+		end_the_diet = yes
+	}
+}
+
+KOH_Pentecost.2302 = {
+	hidden = yes
+
+	trigger = {
+		everyone_has_responded = yes
+	}
+
+	immediate = {
+		end_the_diet = yes
+	}
+}
+
+
+KOH_Pentecost.23 = {
+	title = KOH_Pentecost.23.t
+	desc = KOH_Pentecost.23.desc
+	type = character_event
+	theme = stewardship
+
+	right_portrait = {
+		character = scope:frederick
+		animation = war_over_win
+	}
+
+	trigger = {
+		everyone_has_responded = yes # for replies from 22
+	}
+
+	option = {
+		name = KOH_Pentecost.23.a
+
+		custom_tooltip = KOH_Pentecost.23.a.tt
+
+		add_prestige = major_prestige_gain
+
+		add_stress = minor_stress_loss
+	}
+}

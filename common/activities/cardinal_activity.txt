@@ -1,0 +1,20 @@
+﻿#cardinal_activity = {
+#	is_valid = {
+#		activity_owner = title:k_papal_state.holder
+#	}
+#	on_spawn = {
+#		every_in_global_list = {
+#			variable = cardinals
+#			prev = {
+#				invite_character_to_activity = prev.story_owner
+#				accept_invitation_for_character = prev.story_owner
+#			}
+#		}
+#		activity_owner = {
+#			get_title = title:k_papal_state
+#			title:k_papal_state = {
+#				set_variable = sede_vacante
+#			}
+#		}
+#	}
+#}

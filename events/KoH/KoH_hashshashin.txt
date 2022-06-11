@@ -1,0 +1,358 @@
+﻿namespace = KoH_hashshashin
+
+KoH_hashshashin.101 = { #Assassins attempt to kill Mongol leader Start Event
+	type = character_event
+	title = KoH_hashshashin.101.t
+	desc = KoH_hashshashin.101.d
+	hidden = yes
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = { 
+		assassins_mongol_trigger_koh = yes
+	}
+
+	immediate = {
+		set_global_variable = mongols_provoke_assassins
+	}
+	option = {
+		name = KoH_hashshashin.101.a
+		custom_tooltip = KoH_hashshashin..101.a.tt
+	
+		trigger_event = {
+			id = KoH_hashshashin.2
+			days = 15
+		}	
+	}
+}
+
+KoH_hashshashin.2 = {
+	type = character_event
+	title = KoH_hashshashin.2.t
+	desc = KoH_hashshashin.2.d
+	theme = intrigue
+	override_background = { event_background = wilderness_mountains }
+
+
+	option = {
+		name = KoH_hashshashin.2.a 
+		if = {
+			limit = {
+				AND = {
+					exists = title:e_mongol_empire
+					character_is_realm_neighbor = title:e_mongol_empire.holder
+				}
+			}
+			title:e_mongol_empire.holder = {
+				save_scope_as = mongol_emperor
+				random_list = {
+					40 = {
+						trigger_event = {
+							id = KoH_hashshashin.3
+							days = 5
+						}
+					}
+					60 = {
+						trigger_event = {
+							id = KoH_hashshashin.4
+							days = 5
+						}
+					}
+				}
+			}
+		}
+						
+		if = {
+			limit = {
+				AND = {
+					exists = title:e_ilkhanate
+					character_is_realm_neighbor = title:e_ilkhanate.holder
+				}
+			}
+			title:e_ilkhanate.holder = {
+				save_scope_as = mongol_emperor
+				random_list = {
+					40 = {
+						trigger_event = {
+							id = KoH_hashshashin.3
+							days = 5
+						}
+					}
+					60 = {
+						trigger_event = {
+							id = KoH_hashshashin.4
+							days = 5
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+KoH_hashshashin.3 = {
+	type = character_event
+	title = KoH_hashshashin.3.t
+	desc = KoH_hashshashin.3.d
+	hidden = yes
+
+	immediate = {
+		death = { death_reason = death_hashshashin }
+		every_player = {
+			trigger_event = KoH_hashshashin.5 # Assassins Victory
+		}
+		random_knight = {
+			save_scope_as = commander
+		}
+		scope:commander = {
+			death = { death_reason = death_hashshashin_failed }
+		}
+		title:d_hashshashin.holder = {
+			send_interface_toast = {
+				title = "The Assassin's Succeed!"
+			
+				left_icon = d_hashshashin.holder					
+				right_icon = root
+			
+				custom_tooltip = "The Assassin's have succeeded in Assassinating the Mongol Emperor"
+			}
+		}
+	}
+}
+
+KoH_hashshashin.4 = {
+	type = character_event
+	title = KoH_hashshashin.4.t
+	desc = KoH_hashshashin.4.d
+	hidden = yes
+
+	immediate = {
+		save_scope_as = mongol_emperor
+		random_knight = {
+			save_scope_as = commander
+		}
+		scope:commander = {
+			death = { death_reason = death_hashshashin_failed }
+		}
+		every_player = {
+			trigger_event = KoH_hashshashin.6 # Assassins Victory
+		}
+		title:d_hashshashin.holder = {
+			send_interface_toast = {
+				title = "The Assassin's Failed!"
+			
+				left_icon = d_hashshashin.holder					
+				right_icon = root
+			
+				custom_tooltip = "The Assassin's have failed in Assassinating the Mongol Emperor"
+			}
+		}
+	}
+}
+
+KoH_hashshashin.5 = {
+	type = character_event
+	title = KoH_hashshashin.5.t
+	desc = KoH_hashshashin.5.d
+	theme = intrigue
+	override_background = { event_background = wilderness_mountains }
+
+	immediate = {
+		title:e_mongol_empire.holder = {
+			save_scope_as = mongol_emperor
+		}
+	}
+
+	option = {
+		name = KoH_hashshashin.5.a
+	}
+}
+
+KoH_hashshashin.6 = {
+	type = character_event
+	title = KoH_hashshashin.6.t
+	desc = KoH_hashshashin.6.d
+	theme = intrigue
+	override_background = { event_background = wilderness_mountains }
+
+	option = {
+		name = KoH_hashshashin.6.a
+	}
+}
+
+# Courtier is killed
+KoH_hashshashin.7 = {
+	hidden = yes
+
+	trigger = {
+		is_ruler = yes
+		OR = {
+			has_religion = religion:islam_religion
+			top_liege = { has_title  = title:e_byzantium }
+			top_liege = { has_title  = title:k_jerusalem }
+			top_liege = { has_title  = title:d_antioch }
+		}
+	}
+
+	immediate = {
+		random_courtier_or_guest = {
+			limit = {
+				OR = {
+					has_religion = religion:islam_religion
+					top_liege = { has_title  = title:e_byzantium }
+					top_liege = { has_title  = title:k_jerusalem }
+					top_liege = { has_title  = title:d_antioch }
+				}
+			}
+			save_scope_as = assassintarget
+		}
+
+		random_list = {
+			33 = {
+				trigger_event = KoH_hashshashin.8 
+			}
+			33 = {
+				trigger_event = KoH_hashshashin.9
+			}
+			33 = {
+				trigger_event = KoH_hashshashin.10 
+			}
+		}
+	}
+
+	option = {
+		name = KoH_hashshashin.7.a
+	}
+}
+
+#88016
+KoH_hashshashin.8 = {
+	type = character_event
+	title = KoH_hashshashin.8.t
+	desc = KoH_hashshashin.8.d
+	theme = intrigue
+	override_background = { event_background = throne_room }
+
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+
+	right_portrait = {
+		character = scope:assassintarget
+		animation = severelywounded
+	}
+
+	option = {
+		name = KoH_hashshashin.8.a
+
+		add_stress = medium_stress_gain
+		scope:assassintarget = {
+			death = { death_reason = death_hashshashin }
+		}
+
+	}
+}
+#88017
+KoH_hashshashin.9 = {
+	type = character_event
+	title = KoH_hashshashin.9.t
+	desc = KoH_hashshashin.9.d
+	theme = intrigue
+	override_background = { event_background = throne_room }
+
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+
+	right_portrait = {
+		character = scope:assassintarget
+		animation = severelywounded
+	}
+
+	option = {
+		name = KoH_hashshashin.9.a
+
+		add_stress = medium_stress_gain
+		scope:assassintarget = {
+			death = { death_reason = death_hashshashin }
+		}
+
+	} 	
+}
+#88018
+KoH_hashshashin.10 = { #num_sinful_traits
+	type = character_event
+	title = KoH_hashshashin.10.t
+	desc = KoH_hashshashin.10.d
+
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+
+	right_portrait = {
+		character = scope:assassintarget
+		animation = severelywounded
+	}
+	theme = intrigue
+	override_background = { event_background = garden }
+
+	option = {
+		name = KoH_hashshashin.10.a
+
+		scope:assassintarget = {
+			death = { death_reason = death_hashshashin }
+		}
+
+		add_stress = medium_stress_gain
+
+		random = {
+			chance = 50
+			add_trait = paranoid 
+		}
+	}
+}
+
+KoH_hashshashin.11 = { #num_sinful_traits
+	type = character_event
+	title = KoH_hashshashin.11.t
+	desc = KoH_hashshashin.11.d
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	theme = intrigue
+	override_background = { event_background = garden }
+
+	trigger = {
+		num_sinful_traits >= 2
+		has_religion = religion:islam_religion
+		is_ruler = yes
+	}
+
+	immediate = {
+		save_scope_as = assassintarget
+
+		title:d_hashshashin.holder = {
+			random_courtier = {
+				limit = {
+					has_trait = order_member
+				}
+				save_scope_as = assassin
+			} 
+		}
+	}
+
+	option = {
+		name = KoH_hashshashin.10.a
+
+		scope:assassintarget = {
+			death = { death_reason = death_hashshashin }
+		}
+	}
+}

@@ -1,0 +1,182 @@
+namespace = KoH_pet
+
+KoH_pet.1 = {
+	type = character_event
+	title = KoH_pet.1.t
+	desc = KoH_pet.1.d
+	theme = pet
+	left_portrait = {
+		character = root
+		animation = personality_cynical
+	}
+
+	immediate = {
+		#To give some options to show
+		assign_name_options_cat_story_cycle_effect = yes
+		assign_name_options_cat_story_cycle_effect = yes
+		assign_name_options_cat_story_cycle_effect = yes
+		play_music_cue = "mx_cue_low_key_positive"
+
+		if = {
+			limit = { is_ai = yes }
+			random_list = {
+				1 = {
+					trigger = { has_character_flag = name_mite }
+					set_variable = {
+						name = story_cycle_cat_name
+						value = flag:cat_name_mite
+					}
+				}
+				1 = {
+					trigger = { has_character_flag = name_paws }
+					set_variable = {
+						name = story_cycle_cat_name
+						value = flag:cat_name_paws
+					}
+				}
+				1 = {
+					trigger = { has_character_flag = name_gray }
+					set_variable = {
+						name = story_cycle_cat_name
+						value = flag:cat_name_gray
+					}
+				}
+				1 = {
+					trigger = { has_character_flag = name_flame }
+					set_variable = {
+						name = story_cycle_cat_name
+						value = flag:cat_name_flame
+					}
+				}
+				1 = {
+					trigger = { has_character_flag = name_snow }
+					set_variable = {
+						name = story_cycle_cat_name
+						value = flag:cat_name_snow
+					}
+				}
+				1 = {
+					trigger = { has_character_flag = name_shadow }
+					set_variable = {
+						name = story_cycle_cat_name
+						value = flag:cat_name_shadow
+					}
+				}
+				1 = {
+					trigger = { has_character_flag = name_gyb }
+					set_variable = {
+						name = story_cycle_cat_name
+						value = flag:cat_name_gyb
+					}
+				}
+				1 = {
+					trigger = { has_character_flag = name_meone }
+					set_variable = {
+						name = story_cycle_cat_name
+						value = flag:cat_name_meone
+					}
+				}
+				1 = {
+					trigger = { has_character_flag = name_cruibne }
+					set_variable = {
+						name = story_cycle_cat_name
+						value = flag:cat_name_cruibne
+					}
+				}
+			}
+		}
+	}
+
+	widget = {
+		gui = "event_window_widget_enter_text"
+		container = "dynamic_birth_name"
+		controller = {
+			type = text
+			data = {
+				key = story_cycle_cat_name
+				default = {
+					localization_key = cat_name_mite
+					trigger = {
+						has_character_flag = name_mite
+					}
+				}
+				default = {
+					localization_key = cat_name_paws
+					trigger = {
+						has_character_flag = name_paws
+					}
+				}
+				default = {
+					localization_key = cat_name_gray
+					trigger = {
+						has_character_flag = name_gray
+					}
+				}
+				default = {
+					localization_key = cat_name_flame
+					trigger = {
+						has_character_flag = name_flame
+					}
+				}
+				default = {
+					localization_key = cat_name_snow
+					trigger = {
+						has_character_flag = name_snow
+					}
+				}
+				default = {
+					localization_key = cat_name_shadow
+					trigger = {
+						has_character_flag = name_shadow
+					}
+				}
+				default = {
+					localization_key = cat_name_gyb
+					trigger = {
+						has_character_flag = name_gyb
+					}
+				}
+				default = {
+					localization_key = cat_name_meone
+					trigger = {
+						has_character_flag = name_meone
+					}
+				}
+				default = {
+					localization_key = cat_name_cruibne
+					trigger = {
+						has_character_flag = name_cruibne
+					}
+				}
+			}
+		}
+		setup_scope = {
+			root = { save_scope_as = text_target }
+		}
+	}
+
+	option = { 
+		name = KoH_pet.1.a
+	}
+
+	after = {
+		remove_character_flag = is_naming_cat
+		remove_character_flag = name_gyb
+		remove_character_flag = name_mite
+		remove_character_flag = name_paws
+		remove_character_flag = name_gray
+		remove_character_flag = name_flame
+		remove_character_flag = name_snow
+		remove_character_flag = name_meone
+		remove_character_flag = name_cruibne
+		
+		if = {
+			# We entered custom text into the pop up
+			limit = { NOT = { has_variable = story_cycle_cat_name } }
+			set_variable = {
+				name = story_cycle_cat_name
+				value = flag:custom
+			}
+		}
+	}
+}

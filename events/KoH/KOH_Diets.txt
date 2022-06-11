@@ -1,0 +1,668 @@
+﻿namespace = KOH_diets
+
+#CHAIN 1- Event #1 - “Yet Another Territorial Dispute”
+KOH_diets.1 = { 
+	type = character_event
+	title = KOH_diets.1.t
+	desc = KOH_diets.1.d
+	theme = war
+	
+	left_portrait = {
+		character = scope:vassal_1
+		animation = personality_bold
+	}
+
+	right_portrait = {
+		character = scope:vassal_2
+		animation = personality_bold
+	}
+
+	trigger = {
+		any_vassal = {
+			limit = {
+				save_temporary_scope_as = tmp_vassal
+				any_claim = {
+				  explicit = yes # Whichever
+				  pressed = no # Whichever
+				  tier = tier_county
+				  is_neighbor_to_realm = scope:tmp_vassal
+				  holder.liege = prev.liege
+				  save_temporary_scope_as = tmp_county
+				}
+			  }
+			  save_temporary_scope_as = vassal_1
+			  random_claim = {
+				  explicit = yes # Whichever
+				  pressed = no # Whichever
+				  tier = tier_county
+				  is_neighbor_to_realm = scope:vassal_1
+				  holder.liege = scope:vassal_1.liege
+				  save_scope_as = county
+				  holder = {save_temporary_scope_as = vassal_2}
+			  }
+			}
+		}
+
+	immediate = {
+		random_vassal = {
+			limit = {
+			  save_temporary_scope_as = tmp_vassal
+			  any_claim = {
+				explicit = yes # Whichever
+				pressed = no # Whichever
+				tier = tier_county
+				is_neighbor_to_realm = scope:tmp_vassal
+				holder.liege = prev.liege
+				save_temporary_scope_as = tmp_county
+			  }
+			}
+			save_scope_as = vassal_1
+			random_claim = {
+				explicit = yes # Whichever
+				pressed = no # Whichever
+				tier = tier_county
+				is_neighbor_to_realm = scope:vassal_1
+				holder.liege = scope:vassal_1.liege
+				save_scope_as = county
+				holder = {save_scope_as = vassal_2}
+			}
+
+			scope:county = {
+				random_neighboring_county = {
+					limit = {
+						holder = scope:vassal_1
+					}
+					save_scope_as = second_county
+				}
+			}
+		}
+	}
+
+	
+
+	option = { # It is my duty to hear the basis of these claims.
+		name = KOH_diets.1.a
+		trigger = {
+			NOT = {
+				has_trait = arbitrary 
+				has_trait = lazy
+			}
+		}
+
+		scope:vassal_1 = {
+			trigger_event = {
+				id = KOH_diets.4 
+				days = 2
+			}
+		}
+	}
+
+	option = { # I’ve already heard enough! Split the territory in half.
+		name = KOH_diets.1.b
+	
+		random_list = {
+			50 = {
+				add_trait = arbitrary
+			}
+			20 = {
+				add_trait = just
+			}
+			30 = {
+
+			}
+		}
+		
+		scope:vassal_2 = {
+			add_opinion = {
+				modifier = angry_opinion
+				target = root
+				opinion = {
+					value = -50
+				}
+			}
+		}
+
+		scope:vassal_1 = {
+			add_opinion = {
+				modifier = grateful_opinion
+				target = root
+				opinion = {
+					value = 10
+				}
+			}
+		}
+
+		scope:county = { #vassal 2
+			add_county_modifier = {
+				modifier = split_county_loss
+				years = 25
+			}
+		}
+
+		scope:second_county = { #vassal 1
+			add_county_modifier = {
+				modifier = split_county_win
+				years = 25
+			}
+		}
+		add_tyranny = minor_tyranny_gain
+	}
+
+	option = { # This is not my issue.
+		name = KOH_diets.1.c
+	
+		scope:vassal_2 = {
+			add_opinion = {
+				modifier = unjust_opinion
+				target = root
+				opinion = {
+					value = -20
+				}
+			}
+		}
+
+		scope:vassal_1 = {
+			add_opinion = {
+				modifier = unjust_opinion
+				target = root
+				opinion = {
+					value = -20
+				}
+			}
+		}
+
+		scope:vassal_1 = {
+			trigger_event = {
+				id = KOH_diets.2
+				days = 2
+			}
+		}
+	}
+}
+
+KOH_diets.2 = { #  Event #2 - “Imperial Inaction”
+	type = character_event
+	title = KOH_diets.2.t
+	desc = KOH_diets.2.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = { # Assemble our retinues - the county is mine.
+		name = KOH_diets.2.a
+		trigger = {
+			is_close_or_extended_family_of = scope:vassal_2
+		}
+		
+		set_relation_rival = scope:vassal_2
+
+		start_war = {
+			cb = claim_cb
+			target = scope:vassal_2
+			claimant = scope:vassal_1
+			target_title = scope:county
+		}
+	}
+
+	option = { # Assemble our retinues - the villages are mine.
+		name = KOH_diets.2.b
+		set_relation_rival = scope:vassal_2
+
+		scope:second_county = {
+			add_county_modifier = {
+				modifier = county_dispute
+				years = 25
+			}
+		}
+
+		scope:vassal_2 = {
+			trigger_event = {
+				id = KOH_diets.3
+				days = 2
+			}
+		}
+	}
+
+	option = { # Damnations! There is nothing I can do.
+		name = KOH_diets.2.c
+
+	}
+}
+
+KOH_diets.3 = { #Event #3 - “Imperial Inaction”
+	type = character_event
+	title = KOH_diets.3.t
+	desc = KOH_diets.3.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = KOH_diets.3.a
+		
+		scope:county = {
+			add_county_modifier = {
+				modifier = county_dispute
+				years = 25
+			}
+		}
+	}
+} 
+
+KOH_diets.4 = { # Event #4 - “An Audience Before the Emperor”
+	type = character_event
+	title = KOH_diets.4.t
+	desc = KOH_diets.4.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	
+	option = { #  Argue on the grounds of Inheritance.
+		name = KOH_diets.4.a
+		trigger = {
+			is_close_or_extended_family_of = scope:vassal_2
+		}
+
+		trigger_event = {
+			id = KOH_diets.5
+			days = 2
+		}
+	}
+
+	option = { # Argue on the grounds of mismanagement. 
+		name = KOH_diets.4.b
+		
+		scope:vassal_1.stewardship > scope:vassal_2.stewardship 
+		
+		
+		
+		
+		
+		
+		
+		
+		duel = {
+			skill = stewardship
+			target = scope:vassal_2
+			8 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.25
+				}
+				desc = hunt.4003.c.tt_success #change this
+				send_interface_toast = {
+					title = hunt.4003.c.tt_success
+					add_gold = minor_gold_value
+					add_prestige = medium_prestige_gain
+				}
+			}
+			12 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.25
+					min = -9
+				}
+				desc = hunt.4003.c.tt_failure
+				send_interface_toast = {
+					title = hunt.4003.c.tt_failure
+					add_prestige = minor_prestige_loss
+					scope:county = {
+						add_county_modifier = {
+							modifier = hunt_upset_hunting_county_modifier
+							years = 10
+						}
+					}
+				}
+			}
+		}
+
+	option = { # Well, you do owe me a favour…
+		name = KOH_diets.4.a
+		trigger = {
+			is_close_or_extended_family_of = scope:vassal_2
+		}
+	}
+
+	option = { #  Argue on the grounds of practicality.
+
+		name = KOH_diets.4.a
+		trigger = {
+			is_close_or_extended_family_of = scope:vassal_2
+		}
+	}
+}
+
+# KOH_diets.5 = {
+# 	type = character_event
+# 	title = KOH_diets.5.t
+# 	desc = KOH_diets.5.d
+	
+# 	theme = war
+	
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_bold
+# 	}
+	
+# 	immediate = {
+# 		every_ruler = {
+#             limit = {
+#                 any_held_title = {
+#                     this = title:e_hre
+#                 }
+#             }
+#             save_scope_as = barbarossa
+#         }
+# 	}
+	
+# 	option = {
+# 		name = KOH_diets.5.a
+# 		scope:barbarossa = {
+# 			add_character_flag = { 
+# 				flag = denied_passage
+# 			}
+# 			trigger_event = {
+# 				id = KOH_diets.6
+# 				days = 1
+# 			}
+# 		}
+# 		custom_tooltip = deny_passage
+# 	}
+# 	option = {
+# 		name = KOH_diets.5.b
+# 		scope:barbarossa = {
+# 			add_character_flag = { 
+# 				flag = allowed_passage
+# 			}
+# 			trigger_event = {
+# 				id = KOH_diets.6
+# 				days = 1
+# 			}
+# 		}
+# 		custom_tooltip = allow_passage
+# 	}
+# }
+
+# KOH_diets.6 = {
+# 	type = character_event
+# 	title = KOH_diets.6.t
+# 	desc = KOH_diets.6.d
+	
+# 	theme = war
+	
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_bold
+# 	}
+	
+# 	option = {
+# 		name = KOH_diets.6.a
+# 		trigger = {
+# 			has_character_flag = denied_passage
+# 		}
+# 		trigger_event = {
+# 			id = KOH_diets.8
+# 			days = 10
+# 		}
+# 	}
+# 	option = {
+# 		name = KOH_diets.6.b
+# 		scope:barbarossa = {
+# 			trigger_event = {
+# 				id = KOH_diets.7
+# 				days = 10
+# 			}
+# 		}
+# 	}
+# }
+
+# KOH_diets.7 = {
+# 	type = character_event
+# 	title = KOH_diets.7.t
+# 	desc = KOH_diets.7.d
+	
+# 	theme = war
+	
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_bold
+# 	}
+	
+# 	option = {
+# 		name = KOH_diets.7.a
+# 		if = {
+# 			limit = {
+# 				has_character_flag = denied_passage
+# 			}
+# 			change_variable = {
+# 				name = num_of_crossbows
+# 				subtract = 1
+# 			}
+# 			change_variable = {
+# 				name = num_of_levies
+# 				subtract = 500
+# 			}
+# 			custom_tooltip = fighting_broke_out
+# 		}
+# 		trigger_event = {
+# 			id = KOH_diets.9
+# 			days = 30
+# 		}
+# 	}
+# }
+
+# KOH_diets.8 = {
+# 	type = character_event
+# 	title = KOH_diets.8.t
+# 	desc = KOH_diets.9.d
+	
+# 	theme = war
+	
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_bold
+# 	}
+	
+# 	option = {
+# 		name = KOH_diets.8.a
+# 		change_variable = {
+# 			name = num_of_knights
+# 			divide = 2
+# 		}
+# 		custom_tooltip = we_were_ambushed
+# 		trigger_event = {
+# 			id = KOH_diets.9
+# 			days = 40
+# 		}
+# 	}
+# }
+
+# KOH_diets.9 = {
+# 	type = character_event
+# 	title = KOH_diets.9.t
+# 	desc = KOH_diets.9.d
+	
+# 	theme = war
+	
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_bold
+# 	}
+	
+# 	option = {
+# 		name = KOH_diets.9.a
+# 		hidden_effect = {
+# 			random_list = {
+# 				50 = {
+# 					change_variable = {
+# 						name = num_of_heavy_swords
+# 						subtract = 1
+# 					}
+# 					change_variable = {
+# 						name = num_of_levies
+# 						subtract = 500
+# 					}
+# 				}
+# 			}
+# 		}
+# 		custom_tooltip = skirmish_happens
+# 		trigger_event = {
+# 			id = KOH_diets.10
+# 			days = 40
+# 		}
+# 	}
+# }
+
+# KOH_diets.10 = {
+# 	type = character_event
+# 	title = KOH_diets.10.t
+# 	desc = KOH_diets.10.d
+	
+# 	theme = war
+	
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_bold
+# 	}
+	
+# 	option = {
+# 		name = KOH_diets.10.a
+# 		hidden_effect = {
+# 			random_list = {
+# 				60 = {
+# 					trigger_event = {
+# 						id = KOH_diets.11
+# 						days = 5
+# 					}
+# 				}
+# 				40 = {
+# 					trigger_event = {
+# 						id = KOH_diets.12
+# 						days = 5
+# 					}
+# 				}
+# 			}
+# 		}
+# 		custom_tooltip = chance_of_drowning
+# 	}
+# }
+
+# KOH_diets.11 = {
+# 	type = character_event
+# 	title = KOH_diets.11.t
+# 	desc = KOH_diets.11.d
+	
+# 	theme = war
+	
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_bold
+# 	}
+	
+# 	immediate = {
+#         every_character_war = {
+#             limit = {
+#                 primary_defender = title:e_arabia.holder
+#                 primary_attacker = title:k_jerusalem.holder
+#             }
+            
+#             remove_participant = title:e_hre.holder 
+#         }
+#     }
+
+# 	option = {
+# 		name = KOH_diets.11.a
+# 		set_variable = {
+# 			name = num_of_levies
+# 			value = 1000
+# 		}
+# 		set_variable = {
+# 			name = num_of_heavy_swords
+# 			value = 0
+# 		}
+# 		set_variable = {
+# 			name = num_of_crossbows
+# 			value = 1
+# 		}
+# 		set_variable = {
+# 			name = num_of_knights
+# 			value = 1
+# 		}
+# 		spawn_army = {
+# 			uses_supply = no
+# 			inheritable = yes
+# 			name = barbarossa_crusaders
+# 			men_at_arms = {
+# 				type = jerusalem_knights
+# 				stacks = var:num_of_knights
+# 			}
+# 			men_at_arms = {
+# 				type = crossbowmen
+# 				stacks = var:num_of_crossbows
+# 			}
+# 			men_at_arms = {
+# 				type = armored_footmen
+# 				stacks = var:num_of_heavy_swords
+# 			}
+# 			levies = {
+# 				value = var:num_of_levies
+# 			}
+# 			location = 5910
+# 		}
+# 		death = natural
+# 	}
+# }
+
+# KOH_diets.12 = {
+# 	type = character_event
+# 	title = KOH_diets.12.t
+# 	desc = KOH_diets.12.d
+	
+# 	theme = war
+	
+# 	left_portrait = {
+# 		character = root
+# 		animation = personality_bold
+# 	}
+	
+# 	option = {
+# 		name = KOH_diets.12.a
+# 		spawn_army = {
+# 			uses_supply = no
+# 			inheritable = yes
+# 			name = barbarossa_crusaders
+# 			men_at_arms = {
+# 				type = jerusalem_knights
+# 				stacks = var:num_of_knights
+# 			}
+# 			men_at_arms = {
+# 				type = crossbowmen
+# 				stacks = var:num_of_crossbows
+# 			}
+# 			men_at_arms = {
+# 				type = armored_footmen
+# 				stacks = var:num_of_heavy_swords
+# 			}
+# 			levies = {
+# 				value = var:num_of_levies
+# 			}
+# 			location = 5910
+# 		}
+# 		change_chivalry_effect = { 
+# 			Chivalry = 2
+# 		}
+# 	}
+# }

@@ -1,0 +1,808 @@
+﻿namespace = KoH_saladin
+
+KoH_saladin.105 = {
+	type = character_event
+	title = "The Templars, propose a raid..."
+	desc = "The Kings Peace, has been hard on buisness, now if we could simply gather the templars, we could do successfully in raiding a nearby Muslim Caravan."
+	hidden = yes
+	theme = faith
+	override_background = {
+		event_background = temple_scope
+	}
+
+	option = {
+		name = KoH_saladin.100.a
+		
+		spawn_army = {
+			name = "Knights Templar"
+			men_at_arms = {
+				type = teutonic_knights
+				location = 490
+				stacks = 10
+			}
+			location = 5980
+			origin = 9666
+			inheritable = no
+		}	
+	}
+}
+
+
+KoH_saladin.100 = {
+	type = character_event
+	title = "you shouldn't see this actually"
+	desc = KoH_saladin.100.d
+	hidden = yes
+	theme = faith
+	override_background = {
+		event_background = temple_scope
+	}
+
+	immediate = {
+		character:226000 = {
+			add_character_flag = Jihad_incoming
+		}
+	}
+
+	trigger = {
+		character:226000 = {
+			NOT = {	has_character_flag = Jihad_incoming }
+		}
+	}
+
+	option = {
+		name = KoH_saladin.100.a
+		
+		character:226000 = {
+			send_interface_message = {
+				type = event_generic_neutral
+				title = "Renaud de Châtillon"
+				desc = "Renaud de Châtillon, Crusader of Jerusalem, Has raided a group of caravans; slaughering all in the name of his faith, we first await to see any response from Jerusalem - else we shall march and remove the Crusaders once and for all."
+
+				left_icon = character:223590
+			}
+		}
+
+
+		character:226000 = {
+			trigger_event = {
+			id = KoH_saladin.1
+			days = 100
+			}
+		}
+
+		title:k_jerusalem.holder = {
+			trigger_event = {
+			id = KoH_saladin.101
+			days = 30
+			}
+		}
+	}
+}
+
+KoH_saladin.101 = {
+	type = character_event
+	title = KoH_saladin.101.t
+	desc = KoH_saladin.101.d
+	theme = war
+	override_background = {
+		event_background = throne_room
+	}
+
+	left_portrait = { 
+		character = character:223590
+		outfit_tags = { war_outfit }
+		animation = marshal
+	}
+
+	immediate = {
+		title:c_kerak.holder = {
+			save_scope_as = Reynald
+		}
+		title:c_jerusalem.holder = {
+			save_scope_as = Baldwin
+		}
+		title:e_arabia.holder = {
+			save_scope_as = Saladin
+		}
+	}
+
+	option = { #Personally Imprision
+		name = KoH_saladin.101.a
+		add_character_flag = punished_reynald
+
+		random_list = {
+			30 = {
+				character:223590 = {
+					Jerusalem_ReynaldImprison = yes
+				}
+			}
+			60 = {
+			 	title:k_jerusalem.holder = {
+			 		imprison = {
+			 			target = character:223590
+			 			type = dungeon
+			 		}
+					add_character_flag = PersonalPunish
+			 	}
+				send_interface_toast = {
+					title = "Success!"
+					desc = "You successfully imprisioned [Reynald.GetTitledFirstName]."
+					left_icon = title:k_jerusalem.holder					
+					right_icon = character:223590
+				}
+			}
+		}
+
+		every_vassal = {
+			limit = {
+				opinion = {
+					target = character:223590
+					value >= 70
+				}
+			}
+			add_opinion = {
+				modifier = refusal_opinion
+				opinion = low_negative_opinion
+				target = scope:recipient
+			}
+			
+		}
+	}
+
+	option = { #Send him to Saladin
+		name = KoH_saladin.101.b
+		add_character_flag = punished_reynald
+		every_vassal = {
+			limit = {
+				OR = {
+					opinion = {
+						target = character:223590
+						value >= 70
+					}
+					has_trait = zealous
+				}
+			}
+			add_opinion = {
+				modifier = hate_opinion
+				opinion = low_negative_opinion
+				target = title:k_jerusalem.holder
+			}
+			
+		}
+		random_list = {
+			30 = {
+				character:223590 = {
+					Jerusalem_ReynaldImprison = yes
+				}
+			}
+			60 = {
+			 	title:e_arabia.holder = {
+			 		imprison = {
+			 			target = character:223590
+			 			type = dungeon
+			 		}
+			 	}
+				send_interface_toast = {
+					title = "Success!"
+					desc = "You successfully imprisioned [Reynald.GetTitledFirstName]."
+					left_icon = title:k_jerusalem.holder					
+					right_icon = character:223590
+				}
+				title:k_jerusalem.holder = {
+					add_character_flag = GameToSaladin
+				}
+			}
+		}
+	}
+
+	option = { #Do Nothing
+		name = KoH_saladin.101.c
+
+		title:c_kerak.holder = {
+			add_opinion = {
+				opinion = 50
+				modifier = grateful_opinion
+				target = title:k_jerusalem.holder
+			}
+		}
+
+		title:e_arabia.holder = {
+			add_opinion = {
+				opinion = -70
+				modifier = hate_opinion
+				target = title:k_jerusalem.holder
+			}
+		}
+
+		title:k_jerusalem.holder = {
+			every_vassal = {
+				limit = {
+					OR = {
+						opinion = {
+							target = character:223590
+							value <= -50
+						}
+						has_trait = just
+					}
+				}
+				add_opinion = {
+					modifier = unjust_opinion
+					opinion = low_negative_opinion
+					target = title:k_jerusalem.holder
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 60
+		}
+	}
+}
+
+KoH_saladin.1 = {
+	type = character_event
+	title = KoH_saladin.1.t
+	
+	immediate = {
+		title:c_kerak.holder = {
+			save_scope_as = Reynald
+		}
+		title:c_jerusalem.holder = {
+			save_scope_as = Baldwin
+		}
+		title:e_arabia.holder = {
+			save_scope_as = Saladin
+		}
+	}
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						OR = {
+							title:k_jerusalem.holder = {
+								has_character_flag = GameToSaladin
+							}
+							title:k_jerusalem.holder = {
+								has_character_flag = PersonalPunish
+							}
+						}
+					}
+				}
+				desc = KoH_saladin.1.d2 
+			}
+			triggered_desc = {
+				trigger = {
+					title:k_jerusalem.holder = {
+						has_character_flag = GameToSaladin
+					}
+				}
+				desc = KoH_saladin.1.d1
+			}
+			triggered_desc = {
+				trigger = {
+					title:k_jerusalem.holder = {
+						has_character_flag = PersonalPunish
+					}
+				}
+				desc = KoH_saladin.1.d3
+			}
+		}
+	}
+	
+	theme = faith
+	override_background = {
+		event_background = temple_scope
+	}
+	left_portrait = ROOT
+
+	option = {
+		name = KoH_saladin.1.a
+		
+		trigger = {
+			NOT = {
+				OR = {
+					title:k_jerusalem.holder = {
+						has_character_flag = GameToSaladin
+					}
+					title:k_jerusalem.holder = {
+						has_character_flag = PersonalPunish
+					}
+				}
+			}
+		}
+
+		custom_tooltip = KoH_saladins_jihad
+		
+		start_war = { 
+			casus_belli = KOH_jihad
+			target = scope:Baldwin
+			target_title = title:c_jerusalem
+			claimant = scope:Saladin
+		}
+		
+		spawn_army = {
+			uses_supply = no
+			inheritable = no
+			name = saladins_fanatics
+			men_at_arms = {
+				type = trebuchet
+				stacks = 10
+			}
+			levies = 1
+			location = capital_province
+		}
+
+		spawn_army = {
+			uses_supply = no
+			inheritable = no
+			name = saladins_fanatics
+			men_at_arms = {
+				type = saladin_riders
+				stacks = 25
+			}
+			levies = 1
+			location = capital_province
+		}
+
+		spawn_army = {
+			uses_supply = no
+			inheritable = no
+			name = saladins_fanatics
+			men_at_arms = {
+				type = saladin_riders
+				stacks = 25
+			}
+			levies = 1
+			location = capital_province
+		}
+
+		spawn_army = {
+			uses_supply = no
+			inheritable = no
+			name = saladins_fanatics
+			men_at_arms = {
+				type = saladin_riders
+				stacks = 10
+			}
+			levies = 1
+			location = capital_province
+		}
+		hidden_effect = {
+			scope:Baldwin = {
+				trigger_event = KoH_saladin.2
+			}
+			
+			every_character_war = {
+				limit = {
+					primary_defender = title:k_jerusalem.holder
+					primary_attacker = title:e_arabia.holder
+				}
+				add_defender = global_var:templar_holy_order_title.holder
+				
+				add_defender = global_var:hospitaller_holy_order_title.holder
+			}
+		}
+		ai_chance = {
+			base = 60
+		}
+
+	}
+
+	option = {
+		name = KoH_saladin.1.b
+		
+		trigger = {
+			title:k_jerusalem.holder = {
+				has_character_flag = GameToSaladin
+			}
+		}
+
+		add_opinion = {
+			opinion = 70
+			modifier = grateful_opinion
+			target = title:k_jerusalem.holder
+		}
+		
+		character:223590 = {
+			death = {
+				death_reason = death_execution
+				killer = root
+			}
+		}
+
+		ai_chance = {
+			base = 60
+		}
+	}
+
+	option = {
+		name = KoH_saladin.1.c
+		
+		trigger = {
+			title:k_jerusalem.holder = {
+				has_character_flag = GameToSaladin
+			}
+		}
+
+		custom_tooltip = KoH_saladins_jihad
+	
+		start_war = { 
+			casus_belli = KOH_jihad
+			target = scope:Baldwin
+			target_title = title:c_jerusalem
+			claimant = scope:saladin
+		}
+		
+		spawn_army = {
+			uses_supply = no
+			inheritable = no
+			name = saladins_fanatics
+			men_at_arms = {
+				type = trebuchet
+				stacks = 10
+			}
+			levies = 1
+			location = capital_province
+		}
+
+		spawn_army = {
+			uses_supply = no
+			inheritable = no
+			name = saladins_fanatics
+			men_at_arms = {
+				type = saladin_riders
+				stacks = 25
+			}
+			levies = 1
+			location = capital_province
+		}
+
+		spawn_army = {
+			uses_supply = no
+			inheritable = no
+			name = saladins_fanatics
+			men_at_arms = {
+				type = saladin_riders
+				stacks = 25
+			}
+			levies = 1
+			location = capital_province
+		}
+
+		spawn_army = {
+			uses_supply = no
+			inheritable = no
+			name = saladins_fanatics
+			men_at_arms = {
+				type = saladin_riders
+				stacks = 10
+			}
+			levies = 1
+			location = capital_province
+		}
+
+		character:223590 = {
+			death = {
+				death_reason = death_execution
+				killer = root
+			}
+		}
+
+		hidden_effect = {
+			scope:Baldwin = {
+				trigger_event = KoH_saladin.2
+			}
+			
+			every_character_war = {
+				limit = {
+					primary_defender = title:k_jerusalem.holder
+					primary_attacker = title:e_arabia.holder
+				}
+			add_defender = global_var:templar_holy_order_title.holder
+			
+			add_defender = global_var:hospitaller_holy_order_title.holder
+			}
+		}
+		ai_chance = {
+			base = 60
+		}
+
+	}
+
+	option = {
+		name = KoH_saladin.1.d
+		
+		trigger = {
+			title:k_jerusalem.holder = {
+				has_character_flag = PersonalPunish
+			}
+		}
+
+		add_opinion = {
+			opinion = 70
+			modifier = grateful_opinion
+			target = title:k_jerusalem.holder
+		}
+
+		every_vassal = { 
+			limit = {
+				has_trait = zealous
+			}
+			add_opinion = {
+				opinion = -20
+				modifier = weak_opinion
+				target = title:e_arabia.holder
+			}
+		}
+	}
+
+	option = {
+		name = KoH_saladin.1.e
+		
+	}
+}
+
+KoH_saladin.2 = {
+	type = character_event
+	title = KoH_saladin.2.t
+	desc = KoH_saladin.2.d
+	
+	theme = war
+	
+	trigger = {
+		NOT = {
+			exists = global_var:SaladinEventTrigger
+		}
+	}
+
+	left_portrait = {
+		character = ROOT
+		animation = personality_bold
+	}
+	
+	immediate = {
+		title:c_kerak.holder = {
+			save_scope_as = Reynald
+		}
+		title:c_jerusalem.holder = {
+			save_scope_as = Baldwin
+		}
+		title:e_arabia.holder = {
+			save_scope_as = Saladin
+		}
+	}
+
+
+	option = {
+		name = KoH_saladin.2.a
+		
+		custom_tooltip = ride_for_jerusalem
+		change_chivalry_effect = { 
+			Chivalry = 3
+		}
+		
+		spawn_army = {
+			uses_supply = no
+			inheritable = no
+			name = knights_of_jerusalem
+			men_at_arms = {
+				type = jerusalem_knights
+				stacks = 20
+			}
+			location = capital_province
+		}
+
+		set_global_variable = SaladinEventTrigger
+	}
+}
+
+KoH_saladin.3 = { #King's Crusade
+	type = character_event
+	title = KoH_saladin.3.t
+	desc = KoH_saladin.3.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:k_jerusalem
+				}
+			}
+			save_scope_as = KoH_jerusalem
+		}
+		every_ruler = {
+			limit = {
+				any_held_title = {
+					this = title:e_arabia
+				}
+			}
+			save_scope_as = Saladin
+		}
+	}
+	
+	option = {
+		name = KoH_saladin.3.a
+		
+		title:k_jerusalem.holder = {
+
+			add_claim = title:c_jerusalem
+
+			start_war = { 
+				casus_belli = KOH_crusade
+				target = title:e_arabia.holder
+				target_title = c_jerusalem
+				claimant = title:k_jerusalem.holder
+			}
+
+			every_character_war = {
+				limit = {
+					primary_attacker = title:k_jerusalem.holder
+					primary_defender = title:e_arabia.holder
+				}
+				add_attacker = global_var:templar_holy_order_title.holder
+				
+				add_attacker  = global_var:hospitaller_holy_order_title.holder
+			}
+		}
+
+		character:204510 = {
+			if = {
+				limit = {
+					NOT = {	has_character_flag = has_had_RichardTheLionheart.7 }
+				}
+				trigger_event = {
+					id = KoH_RichardTheLionheart.7
+					days = 20 
+				}
+				add_character_flag = {
+					flag = has_had_RichardTheLionheart.7
+				}
+			}
+		}
+		character:212501 = {
+			if = {
+				limit = {
+					NOT = {	has_character_flag = has_had_Barbarossa_crusade }
+				}
+				trigger_event = {
+					id = KoH_barbarossa_crusade.101
+					days = 20 
+				}
+				add_character_flag = {
+					flag = has_had_Barbarossa_crusade
+				}
+			}
+		}
+	}
+}
+
+KoH_saladin.4 = { #King's Crusade
+	type = character_event
+	title = KoH_saladin.4.t
+	desc = KoH_saladin.4.d
+	hidden = yes
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_england
+                }
+            }
+            save_scope_as = england_ruler
+        }
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:k_france
+                }
+            }
+            save_scope_as = france_ruler
+        }
+		every_ruler = {
+            limit = {
+                any_held_title = {
+                    this = title:e_hre
+                }
+            }
+            save_scope_as = hre_ruler
+        }
+
+		title:k_jerusalem.holder = {
+			every_character_war = {
+				limit = {
+					primary_defender = title:e_arabia.holder
+					primary_attacker = title:k_jerusalem.holder
+				}
+				add_attacker = title:k_england.holder
+				add_attacker = title:k_france.holder
+				add_attacker = title:e_hre.holder 
+			}
+		}
+		title:e_hre.holder = {
+			trigger_event = {
+				id = KoH_barbarossa_crusade.1
+
+			}
+		}
+		character:204510 = {
+			trigger_event = {
+				id = KoH_RichardTheLionheart.16 
+			}
+		}
+	}
+
+	option = {
+		name = KoH_saladin.4.a
+		
+		custom_tooltip = to_jerusalem
+	}
+}
+
+KoH_saladin.120 = { #Send the Catholic World, Jerusalem has fallen
+	type = character_event
+	title = KoH_saladin.120.t
+	desc = KoH_saladin.120.d
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		title:c_jerusalem.holder  = { save_scope_as = Saladin}
+	}
+
+	option = {
+		name = KoH_saladin.120.a
+	
+		add_character_flag = {
+			flag = had_event_had_event_KoH_saladin.120
+		}
+	}
+}
+
+KoH_saladin.121 = { #Send to Jerusalem Ruler
+	type = character_event
+	title = KoH_saladin.121.t
+	desc = KoH_saladin.121.d
+	
+	theme = war
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_KoH_saladin.121
+		}
+
+		title:c_jerusalem.holder  = { save_scope_as = Saladin}
+
+		trigger_event = {
+			id = KoH_saladin.3
+			days = 1
+		}
+	}
+	
+	option = {
+		name = KoH_saladin.121.a
+		
+	}
+}

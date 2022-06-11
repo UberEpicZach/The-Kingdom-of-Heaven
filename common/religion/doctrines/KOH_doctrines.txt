@@ -1,0 +1,214 @@
+﻿doctrine_clerical_succession = {
+	group = "clergy"
+	doctrine_clerical_succession_temporal_appointment = { # Temporal, Free
+		piety_cost = {
+			value = faith_doctrine_cost_high
+			if = {
+				limit = { has_doctrine = doctrine_clerical_succession_temporal_appointment }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+			else = {
+				if = {
+					limit = {
+						OR = { # Was Spiritual
+							has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
+							has_doctrine = doctrine_clerical_succession_spiritual_appointment
+						}
+					}
+					multiply = faith_changed_doctrine_cost_mult_two_step
+				}
+				if = {
+					limit = {
+						OR = {	# Was Fixed
+							has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
+							has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment
+						}
+					}
+					multiply = faith_changed_doctrine_cost_mult_two_step
+				}
+			}
+			# Round up to the nearest multiple of 25
+			divide = 25
+			ceiling = yes
+			multiply = 25
+		}
+
+		parameters = {
+			clerical_appointment_ruler = yes
+			clerical_appointment_fixed = no
+		}
+	} 
+	doctrine_clerical_succession_spiritual_appointment = { # Spiritual, Free
+		piety_cost = {
+			value = faith_doctrine_cost_high
+			if = {
+				limit = { has_doctrine = doctrine_clerical_succession_spiritual_appointment }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+			else = {
+				if = {
+					limit = {
+						OR = { # Was Temporal
+							has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment
+							has_doctrine = doctrine_clerical_succession_temporal_appointment
+						}
+					}
+					multiply = faith_changed_doctrine_cost_mult_two_step
+				}
+				if = {
+					limit = {
+						OR = {	# Was Fixed
+							has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
+							has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment
+						}
+					}
+					multiply = faith_changed_doctrine_cost_mult_two_step
+				}	
+			}
+			# Round up to the nearest multiple of 25
+			divide = 25
+			ceiling = yes
+			multiply = 25
+		}
+
+		can_pick = {
+			custom_description = {
+				text = incompatible_doctrine_spiritual_appointment_temporal_trigger
+				NOT = { flag:doctrine_temporal_head = { is_in_list = selected_doctrines } }
+			}
+		}		
+
+		parameters = {
+			clerical_appointment_head_of_faith = yes
+			clerical_appointment_fixed = no
+		}
+	}
+	doctrine_clerical_succession_temporal_fixed_appointment = { # Temporal, Fixed
+		piety_cost = {
+			value = faith_doctrine_cost_high
+			if = {
+				limit = { has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+			else = {
+				if = {
+					limit = {
+						OR = { # Was Spiritual
+							has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
+							has_doctrine = doctrine_clerical_succession_spiritual_appointment
+						}
+					}
+					multiply = faith_changed_doctrine_cost_mult_two_step
+				}
+				if = {
+					limit = {
+						OR = {	# Was free
+							has_doctrine = doctrine_clerical_succession_spiritual_appointment
+							has_doctrine = doctrine_clerical_succession_temporal_appointment
+						}
+					}
+					multiply = faith_changed_doctrine_cost_mult_two_step
+				}
+			}
+			# Round up to the nearest multiple of 25
+			divide = 25
+			ceiling = yes
+			multiply = 25
+		}
+		parameters = {
+			clerical_appointment_head_of_faith = yes
+			clerical_appointment_fixed = no
+		}
+	}
+	doctrine_clerical_succession_spiritual_fixed_appointment = { # Spiritual, Fixed
+		piety_cost = {
+			value = faith_doctrine_cost_high
+			if = {
+				limit = { has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+			else = {
+				if = {
+					limit = {
+						OR = { # Was Temporal
+							has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment
+							has_doctrine = doctrine_clerical_succession_temporal_appointment
+						}
+					}
+					multiply = faith_changed_doctrine_cost_mult_two_step
+				}
+				if = {
+					limit = {
+						OR = {	# Was Free
+							has_doctrine = doctrine_clerical_succession_spiritual_appointment
+							has_doctrine = doctrine_clerical_succession_temporal_appointment
+						}
+					}
+					multiply = faith_changed_doctrine_cost_mult_two_step
+				}
+			}
+			# Round up to the nearest multiple of 25
+			divide = 25
+			ceiling = yes
+			multiply = 25
+		}
+
+		can_pick = {
+			custom_description = {
+				text = incompatible_doctrine_spiritual_appointment_temporal_trigger
+				NOT = { flag:doctrine_temporal_head = { is_in_list = selected_doctrines } }
+			}
+		}
+
+		parameters = {
+			clerical_appointment_head_of_faith = yes
+			clerical_appointment_fixed = yes
+		}
+	}
+	doctrine_clerical_succession_investiture_contest = {
+		piety_cost = {
+			value = faith_doctrine_cost_high
+			if = {
+				limit = { has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+			else = {
+				if = {
+					limit = {
+						OR = { # Was Temporal
+							has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment
+							has_doctrine = doctrine_clerical_succession_temporal_appointment
+						}
+					}
+					multiply = faith_changed_doctrine_cost_mult_two_step
+				}
+				if = {
+					limit = {
+						OR = {	# Was Free
+							has_doctrine = doctrine_clerical_succession_spiritual_appointment
+							has_doctrine = doctrine_clerical_succession_temporal_appointment
+						}
+					}
+					multiply = faith_changed_doctrine_cost_mult_two_step
+				}
+			}
+			# Round up to the nearest multiple of 25
+			divide = 25
+			ceiling = yes
+			multiply = 25
+		}
+
+		can_pick = {
+			custom_description = {
+				text = incompatible_doctrine_spiritual_appointment_temporal_trigger
+				NOT = { flag:doctrine_temporal_head = { is_in_list = selected_doctrines } }
+			}
+		}
+
+		parameters = {
+			clerical_appointment_ruler = yes
+			clerical_appointment_fixed = yes
+
+		}
+	}
+}

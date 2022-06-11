@@ -1,0 +1,85 @@
+﻿l_english:
+ create_crusader_state_decision:0 "Create [CrusaderStates|E]"
+ 
+#varitations 
+ create_dynamic_crusader_state_decision_holy_land_confirm:0 "Welcome to the Holy Land.."
+ create_dynamic_crusader_state_decision_iberia_confirm:0 "Welcome to Iberia.."
+ create_dynamic_crusader_state_decision_near_east_confirm:0 "Welcome to the Near East.." 
+ create_dynamic_crusader_state_decision_mediterranean_confirm:0 "Welcome to the Mediterranean.." 
+ create_dynamic_crusader_state_decision_egypt_confirmc:0 "Welcome to Egypt.."
+ create_dynamic_crusader_state_decision_confirm:0 "Welcome to the Holy Lands.."
+
+#Variations
+ create_dynamic_crusader_state_decision_holy_land_desc:0 "We have occupied an entire duchy in the Holy Land.\nIf we so wish, we could settle some of our men in the area, take control of the Duchy and create a [CrusaderStates|E]."
+ create_dynamic_crusader_state_decision_iberia_desc:0 "We have occupied an entire duchy in the recovered lands of Iberia.\nIf we so wish, we could settle some of our men in the area, take control of the Duchy and create a [CrusaderStates|E]."
+ create_dynamic_crusader_state_decision_near_east_desc:0 "We have occupied an entire duchy in the Near East.\nIf we so wish, we could settle some of our men in the area, take control of the Duchy and create a [CrusaderStates|E]."
+ create_dynamic_crusader_state_decision_mediterranean_desc:0 "We have occupied an entire duchy in the Mediterranean.\nIf we so wish, we could settle some of our men in the area, take control of the Duchy and create a [CrusaderStates|E]."
+ create_dynamic_crusader_state_decision_egypt_desc:0 "We have occupied an entire duchy in the Egyptian Lands. \nIf we so wish, we could settle some of our men in the area, take control of the Duchy and create a [CrusaderStates|E]."
+ create_dynamic_crusader_state_decision_desc:0 "We have occupied an entire duchy in the Holy Lands. \nIf we so wish, we could settle some of our men in the area, take control of the Duchy and create a [CrusaderStates|E]."
+
+
+ create_dynamic_crusader_state_decision_tooltip:9 "A [CrusaderStates|E] will be established!"
+ create_dynamic_crusader_state_decision_effect_tooltip:0 "You gather your men to decide the future of this territory, for a [CrusaderStates|E] could be established in the name of your beneficiary, or in your own name independently abicating your old lands to move here, or by incorporating the lands directly into your realm!"
+ create_dynamic_crusader_state:0 "During a crusade, You must have an entire [duchy|E] [occupied|E], in the lands of the primary defender of a [great_holy_wars|E], that is not within the target kingdom realm."
+ 
+ adbicate_cruasder_state:0 "#S You leave your old life behind, abdicating your old possessions to your heirs following fedual succession law.\n\nYou turn to focus your dedication to the faith by defending these new regions of the [duchyforloc.GetNameNoTooltip], in the Holy Land."
+
+ benefiticary_cruasder_state:0 "#S You send your men to secure the perimeter territories of the [duchyforloc.GetNameNoTooltip], and you begin the preparations for the ascension of [beneficiary.GetFullName] to the throne of the great new [duchyforloc.GetName].\n"
+
+ self_serving_cruasder_state:0 "#S You directly sieze the land into [primary_title.GetNameNoTier], this is generally seen as self-serving from the collective crusader forces, using pledged crusaders to further your own goals, and in relation you may face consequence in form of greatly damaged relations with the rest of the Crusaders and the Pope himself.\n"
+
+ leaving_cruasder_state:0 "#S You take second thoughts on the possible state, and move to leave these lands as they are, and take direction to head towards and further the war-goal."
+
+ game_concept_CrusaderState: "Crusader State"
+ game_concept_CrusaderStates: "Crusader State"
+ game_concept_CrusaderState_desc: "A Crusader State, is a feudal [duchy|E]-tier realm carved out of a [holy_war|E]'s defender duchy, which isn't the main target of the Crusade."
+
+ CrusaderState: "Crusader State"
+ CrusaderState: "Crusader State"
+ CrusaderState_desc: "A Crusader State, is a feudal [duchy|E]-tier realm carved out of a [holy_war|E]'s defender duchy, which isn't the main target of the Crusade"
+
+ has_taken_crusader_state:0 "Crusader State Decision"
+ #events
+  CrusaderStateEvents.1.t: "A State in the Outremer"
+  CrusaderStateEvents.1.desc: "My men storm the walls of [countyforloc.GetNameNoTierNoTooltip], and finally take the last proper bastion of the [duchyforloc.GetNameNoTooltip]. If I settled my men around the area they could probably support the ongoing Crusade for the [target_kingdom.GetName] and help us claim victory, but the Pope will not be pleased if I unrightfully take these lands for myself."
+  CrusaderStateEvents.1.a: "I will find a suitable ruler for this new land!"
+  CrusaderStateEvents.1.b: "The [duchyforloc.GetNameNoTooltip] sounds like an appropriate part of [primary_title.GetNameNoTier]."
+  CrusaderStateEvents.1.c: "I will leave [primary_title.GetNameNoTier] behind to settle down in the [duchyforloc.GetNameNoTooltip] personally."
+  CrusaderStateEvents.1.d: "I have no interest in these lands."
+  CrusaderStateEvents.2.t: "A State in the Outremer"
+  CrusaderStateEvents.2.desc.intro: "As the war for the [target_kingdom.GetName] rages on, a messenger rides by, bearing the coat of arms of [war_attacker.GetTitledFirstName] of [primary_title.GetNameNoTier], he stops before you to deliver a message to the Crusader Forces, from the armies of [primary_title.GetNameNoTierNoTooltip], \n\nHe proclaims that"
+
+  CrusaderStateEvents.2.desc.1: "\"With the capture of [countyforloc.GetNameNoTierNoTooltip], and the rest of the [duchyforloc.GetNameNoTooltip], [war_attacker.GetTitledFirstName] of [primary_title.GetNameNoTier] has formed the foundations of a new [CrusaderStates|E] of [duchyforloc.GetNameNoTooltipNoTier], placing its hands to his Beneficiary [beneficiary.GetFullName], who will protect these lands from this moment fourth.\""
+
+  # “\"With the capture of [countyforloc.GetNameNoTierNoTooltip], and the rest of the [duchyforloc.GetNameNoTooltip], [war_attacker.GetTitledFirstName] of [war_attacker.GetPrimaryTitle.GetNameNoTierNoTooltip] has formed the foundations of a new Crusader State of [duchyforloc.GetNameNoTooltipNoTierNoTooltip], placing its hands to his Beneficiary [beneficiary.GetFullName], who will protect these lands from this moment fourth.\""
+
+  CrusaderStateEvents.2.desc.2: "\"With the capture of [countyforloc.GetNameNoTierNoTooltip], and the rest of the [duchyforloc.GetName], [war_attacker.GetTitledFirstName] of [war_attacker.GetPrimaryTitle.GetName] has seized the territories and intends to keep it, as part of a greater [war_attacker.GetPrimaryTitle.GetNameNoTier].\" \n\nAlthough the men around you sigh in relief that such a strategic position has been taken, many are visibly taken aback by this action, for they claim [war_attacker.GetTitledFirstName] had used the Crusade and the lives of many who had taken the cross, to benefit primarly, himself and his realm."
+
+  CrusaderStateEvents.2.desc.3: "\"With the capture of [countyforloc.GetNameNoTierNoTooltip], and the rest of the [duchyforloc.GetName], [war_attacker.GetTitledFirstName] of [primary_title.GetNameNoTierNoTooltip] has abdicated all his continental [primary_title.GetAdjective] lands to his heirs, and has personally taken fourth to forming a [CrusaderStates|E] in the lands of [duchyforloc.GetNameNoTooltip], to where he will from this day fourth defend the lands of the [duchyforloc.GetName].\""
+
+  CrusaderStateEvents.2.a: "Ok"
+
+  CrusaderStateEvents.5.t: "A State in the Outremer"
+  CrusaderStateEvents.5.desc: "It has been a few days since the creation of the Crusader State of [duchyforloc.GetNameNoTier] from your valiant troops, setting up your beneficary [beneficiary.GetFullName] as the local ruler, and you frequently begin to ponder....."
+  CrusaderStateEvents.5.a: "Maybe in another life, it could have been me?"
+  CrusaderStateEvents.5.b: "[war_attacker.GetPrimaryTitle.GetName] has always be my home, I wish [beneficiary.GetFullName] the best future."
+
+  #Modifiers
+  opinion_selfish_crusader: "Self-serving Crusader"
+  settledcrusaders: "Settled Crusaders"
+  settledcrusaders_desc: "#I A significant force of Crusader Forces are settled here, to forge this new state"
+  settledcrusadersgood: "Settled Crusaders"
+  settledcrusadersgood_desc: "#I A significant force of Crusader Forces are settled here, to forge this new state"
+
+  #armies
+  CrusaderKnights: "Crusader Knights"
+
+  #CB's
+  CB_CRUSADER_STATE_COST: "Crusader State"
+
+  #Traits 
+  trait_crusader_state:0 "Crusader Leader"
+  trait_crusader_state_male_desc:0 "A great crusader who has carved his own [CrusaderStates|E] out of the lands of the infidels."
+  trait_crusader_state_female_desc:0 "A great Crusader who has carved her own [CrusaderStates|E] out of the lands of the infidels."
+  trait_crusader_state_fallback_desc:0 "A great Crusader who has carved their [CrusaderStates|E] out of the lands of infidels."
+  trait_crusader_state_fallback_dead:0 "Holy Crusader Leader" 

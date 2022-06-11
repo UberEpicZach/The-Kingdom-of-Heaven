@@ -1,0 +1,32 @@
+﻿#Setup values
+holy_order_gold_cost = {
+	value = 500
+	if = {
+		limit = {
+			is_ai = yes
+		}
+		add = -300
+	}
+	if = {
+		limit = {
+			has_trait = crusader_state
+		}
+		add = -250
+	}
+}
+
+holy_order_piety_cost = {
+	value = 1000
+	if = {
+		limit = {
+			is_ai = yes
+		}
+		add = -600
+	}
+	if = {
+		limit = {
+			has_trait = crusader_state
+		}
+		add = -400
+	}
+}

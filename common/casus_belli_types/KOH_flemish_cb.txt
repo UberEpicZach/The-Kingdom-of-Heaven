@@ -1,0 +1,1204 @@
+﻿KOH_flemish_cb = {
+	group = claim
+	mutually_exclusive_titles = {
+		always = yes
+	}
+
+	allowed_for_character = { 
+		has_title = title:c_brugge
+	}
+
+	allowed_against_character = {
+		#faith.religion = scope:attacker.faith.religion
+	}
+
+	# Root is the title
+	# scope:claimant is the claimant
+	# scope:attacker is the attacker
+	# scope:defender is the defender
+	is_allowed_claim_title = {
+		scope:claimant =  {
+			NOT = { has_trait = incapable }
+			is_imprisoned = no
+			OR = {
+				this = scope:attacker
+				AND = {
+					religion = scope:attacker.religion
+					dynasty = scope:attacker.dynasty
+				}
+			}
+		}
+	}
+
+	cost = {}
+
+
+	target_titles = claim
+	#target_title_tier = all
+
+	on_declaration = {
+		on_declared_war = yes
+		KOH_flanders_vassals = yes
+		
+	}
+
+	should_invalidate = {
+		NOT = {
+			any_in_list = {
+				list = target_titles
+				any_in_de_jure_hierarchy = {
+					tier >= tier_county
+					exists = holder
+					holder = {
+						OR = {
+							this = scope:defender
+							target_is_liege_or_above = scope:defender
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_invalidated_desc = msg_claim_war_invalidated_message
+
+	on_invalidated = {
+	}
+
+	on_victory_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					scope:claimant = { is_local_player = yes }
+				}
+				desc = claim_cb_victory_desc_attacker_claimant
+			}
+			triggered_desc = {
+				trigger = { scope:attacker = { is_local_player = yes } }
+				desc = claim_cb_victory_desc_attacker
+			}
+			desc = claim_cb_victory_desc
+		}
+	}
+
+	on_victory = {
+		scope:attacker = {
+			show_pow_release_message_effect = yes
+			trigger_event = {
+				id = KOH_flemish_war.4
+				days = 2
+			}
+
+			if = {
+				limit = { has_character_flag = starting_war_won }
+				trigger_event = { 
+					id = KOH_flemish_war.7
+					days = 10
+				}
+			 }
+			 else = { add_character_flag = starting_war_won }
+		}
+		create_title_and_vassal_change = {
+			type = conquest_claim
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+
+		# Create a claim CB which is executed to handle title/vassal changes, in addition to being used to calculate Prestige awards for war participants.
+		setup_claim_cb = {
+			titles = target_titles
+			attacker = scope:attacker
+			defender = scope:defender
+			claimant = scope:claimant
+			change = scope:change
+		}
+
+		resolve_title_and_vassal_change = scope:change
+
+		if = {
+			limit = {
+				NOT = { scope:claimant = scope:attacker }
+				scope:claimant.primary_title.tier < scope:attacker.primary_title.tier
+				trigger_if = {
+					limit = {
+						exists = scope:claimant.liege
+					}
+					NOT = { scope:claimant.liege = scope:attacker }
+				}
+				trigger_else = {
+					always = yes
+				}
+			}
+
+			create_title_and_vassal_change = {
+				type = conquest_claim
+				save_scope_as = change_two
+				add_claim_on_loss = yes
+			}
+			scope:claimant = {
+				change_liege = {
+					liege = scope:attacker
+					change = scope:change_two
+				}
+			}
+			resolve_title_and_vassal_change = scope:change_two
+		}
+
+		if = {
+			limit = {
+				NOT = { scope:claimant = scope:attacker }
+				scope:attacker = {
+					can_add_hook = {
+					  	type = favor_hook
+					  	target = scope:claimant
+					}
+				}
+			}
+			scope:attacker = {
+				add_hook = {
+		  			target = scope:claimant
+		  			type = favor_hook
+		 		}
+			}
+		}
+
+
+		# Attacker gets Prestige Experience, Defender loses Prestige, all other participants gain Prestige based on their war contribution.
+		modify_all_participants_fame_values = {
+			WINNER = scope:attacker
+			LOSER = scope:defender
+			FAME_BASE = scope:cb_prestige_factor # Set by 'setup_claim_cb'
+			IS_RELIGIOUS_WAR = no
+			WINNER_FAME_SCALE = 10
+			LOSER_FAME_SCALE = -10
+			WINNER_ALLY_FAME_SCALE = 10
+			LOSER_ALLY_FAME_SCALE = 10
+		}
+
+		# truce
+		add_truce_attacker_victory_effect = yes
+
+	}
+
+	on_white_peace_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = claim_cb_white_peace_desc_defender
+			}
+			desc = claim_cb_white_peace_desc
+		}
+
+	}
+
+	on_white_peace = {
+		scope:attacker = {
+			show_pow_release_message_effect = yes
+			trigger_event = {
+				id = KOH_flemish_war.5
+				days = 2
+			}
+
+			if = {
+				limit = { has_character_flag = starting_war_won }
+				trigger_event = { 
+					id = KOH_flemish_war.7
+					days = 10
+				}
+			 }
+			 else = { add_character_flag = starting_war_won }
+			}	
+
+		# press claims
+		every_in_list = {
+			list = target_titles
+			if = {
+				limit = { scope:claimant = { has_weak_claim_on = prev } }
+				scope:claimant = {
+					make_claim_strong = prev
+				}
+			}
+		}
+
+		# Create an 'helper' claim CB which we won't execute, but can use to determine how much Prestige should be given to war participants.
+		setup_claim_cb = {
+			titles = target_titles
+			attacker = scope:attacker
+			defender = scope:defender
+			claimant = scope:claimant
+			victory = no
+		}
+		# Prestige loss for the attacker
+		scope:attacker = {
+			add_prestige = {
+				value = scope:cb_prestige_factor # Set by 'setup_claim_cb'
+				multiply = -5.0
+			}
+		}
+		# Allies on both sides get full prestige value for helping in the war, based on their war participation.
+		modify_allies_of_participants_fame_values = {
+			WINNER = scope:attacker
+			FAME_BASE = scope:cb_prestige_factor # Set by 'setup_claim_cb'
+			IS_RELIGIOUS_WAR = no
+			WINNER_ALLY_FAME_SCALE = 10
+			LOSER_ALLY_FAME_SCALE = 10
+		}
+		# Defender neither gains nor loses any prestige.
+
+		if = {
+			limit = {
+				NOT = { scope:claimant = scope:attacker }
+				scope:attacker = {
+					can_add_hook = {
+					  	type = favor_hook
+					  	target = scope:claimant
+					}
+				}
+			}
+			scope:attacker = {
+				add_hook = {
+		  			target = scope:claimant
+		  			type = favor_hook
+		 		}
+			}
+		}
+
+		# Truce
+		add_truce_white_peace_effect = yes
+	}
+
+	on_defeat_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = claim_cb_defeat_desc_defender
+			}
+			triggered_desc = {
+				trigger = { scope:claimant = { is_local_player = yes } }
+				desc = claim_cb_defeat_desc_attacker_claimant
+			}
+			triggered_desc = {
+				trigger = { scope:attacker = { is_local_player = yes } }
+				desc = claim_cb_defeat_desc_attacker
+			}
+			desc = claim_cb_defeat_desc
+		}
+
+	}
+
+	on_defeat = {
+		scope:attacker = {
+			show_pow_release_message_effect = yes
+			trigger_event = {
+				id = KOH_flemish_war.6
+				days = 2
+			}
+		}
+
+		# lose claims
+		every_in_list = {
+			list = target_titles
+			scope:claimant = {
+				remove_claim = prev
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = { scope:claimant = scope:attacker }
+				scope:attacker = {
+					can_add_hook = {
+					  	type = favor_hook
+					  	target = scope:claimant
+					}
+				}
+			}
+			scope:attacker = {
+				add_hook = {
+		  			target = scope:claimant
+		  			type = favor_hook
+		 		}
+			}
+		}
+
+		# Attacker pays gold to the defender as reparations.
+		scope:attacker = {
+			pay_short_term_gold = {
+				gold = 3
+				target = scope:defender
+				yearly_income = yes
+			}
+		}
+		# Create an 'helper' claim CB which we won't execute, but can use to determine how much Prestige should be given to war participants.
+		setup_claim_cb = {
+			titles = target_titles
+			attacker = scope:attacker
+			defender = scope:defender
+			claimant = scope:claimant
+			victory = no
+		}
+		# Attacker loses Prestige, all other war participants gain Prestige (Defender gains full prestige, all allies on both sides gain based on war contribution).
+		modify_all_participants_fame_values = {
+			WINNER = scope:defender
+			LOSER = scope:attacker
+			FAME_BASE = scope:cb_prestige_factor # Set by 'setup_claim_cb'
+			IS_RELIGIOUS_WAR = no
+			WINNER_FAME_SCALE = 10
+			LOSER_FAME_SCALE = -10
+			WINNER_ALLY_FAME_SCALE = 10
+			LOSER_ALLY_FAME_SCALE = 10
+		}
+
+		# Truce
+		add_truce_attacker_defeat_effect = yes
+
+		scope:attacker = {
+			save_temporary_scope_as = loser
+		}
+		on_lost_aggression_war_discontent_loss = yes
+	}
+
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+
+	transfer_behavior = transfer
+
+	attacker_allies_inherit = yes
+	defender_allies_inherit = yes
+
+	war_name = "CLAIM_WAR_NAME"
+	my_war_name = "CLAIM_WAR_NAME_MY"
+	war_name_base = "CLAIM_WAR_NAME_BASE"
+	cb_name = "CLAIM_CB_NAME"
+	interface_priority = 60
+
+	should_show_war_goal_subview = yes
+
+	max_attacker_score_from_battles = 200
+	max_defender_score_from_battles = 50
+	attacker_score_from_battles_scale = 100				# War Score from battles won by the Attacker is modified by this value
+	defender_score_from_battles_scale = 50
+
+	attacker_wargoal_percentage = 0.8
+
+	max_ai_diplo_distance_to_title = 1000
+}
+
+KOH_toulouse_cb = {
+	group = vassalization
+	mutually_exclusive_titles = {
+		always = yes
+	}
+
+	allowed_for_character = { 
+		has_title = title:k_france
+		is_at_war = no
+		has_trait = augustus_of_the_french
+	}
+
+	allowed_against_character = {
+		scope:defender = {
+			this = title:d_toulouse.holder 
+			is_independent_ruler = yes
+		}
+		scope:attacker = {
+			any_neighboring_top_liege_realm_owner = {
+				this = scope:defender
+			}
+			has_title = title:k_france
+		}
+	}
+
+	cost = {
+		prestige = {
+			value = 1000
+		}
+	}
+
+	should_invalidate = {
+		OR = {
+			scope:defender = {
+				is_independent_ruler = no
+			}
+			scope:defender.primary_title.tier >= scope:attacker.primary_title.tier
+		}
+	}
+
+	on_invalidated_desc = msg_vassalization_war_invalidated_message
+
+	target_titles = claim
+	#target_title_tier = all
+
+	on_declaration = {
+		on_declared_war = yes
+	}
+
+	on_invalidated_desc = msg_claim_war_invalidated_message
+
+	on_invalidated = {
+	}
+
+	on_victory_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:attacker = { is_local_player = yes } }
+				desc = vassalization_cb_victory_desc_attacker
+			}
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = vassalization_cb_victory_desc_defender
+			}
+			desc = vassalization_cb_victory_desc
+		}
+	}
+	
+	on_victory = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		scope:defender = {
+			change_liege = {
+				liege = scope:attacker
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		
+		
+		# Prestige level progress for the attacker
+		scope:attacker = {
+			add_prestige_experience = {
+				value = medium_prestige_value
+			}
+		}
+
+		# Prestige loss for the defender
+		scope:defender = {
+			add_prestige = {
+				value = medium_prestige_value
+				multiply = -1.0
+			}
+		}
+
+		# Prestige for the attacker's war allies
+		add_from_contribution_attackers = {
+			prestige = {
+				value = major_prestige_value
+			}
+			opinion = {
+				modifier = contributed_in_war
+			}
+		}
+
+		# Prestige for the defender's war allies
+		add_from_contribution_defenders = {
+			prestige = {
+				value = major_prestige_value
+			}
+			opinion = {
+				modifier = contributed_in_war
+			}
+		}
+		
+		# Truce
+		add_truce_attacker_victory_effect = yes
+				
+	}
+
+	on_white_peace_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = vassalization_cb_white_peace_desc_defender
+			}
+			desc = vassalization_cb_white_peace_desc
+		}
+	}
+	
+	on_white_peace = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+		# Prestige loss for the attacker
+		scope:attacker = {
+			add_prestige = {
+				value = minor_prestige_value
+				multiply = -1.0
+			}
+			stress_impact = {
+				ambitious = medium_stress_impact_gain
+				arrogant = medium_stress_impact_gain
+			}
+		}
+
+		# Prestige for the attacker's war allies
+		add_from_contribution_attackers = {
+			prestige = minor_prestige_value
+			opinion = {
+				modifier = contributed_in_war
+			}
+		}
+
+		# Prestige for the defender's war allies
+		add_from_contribution_defenders = {
+			prestige = minor_prestige_value
+			opinion = {
+				modifier = contributed_in_war
+			}
+		}
+		
+		scope:defender = {
+			stress_impact = {
+				arrogant = medium_stress_impact_gain
+			}
+		}
+
+		# Truce
+		add_truce_white_peace_effect = yes
+	}
+
+	on_defeat_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = vassalization_cb_white_peace_desc_defender
+			}
+			triggered_desc = {
+				trigger = {
+					scope:attacker = {
+						is_local_player = yes
+						has_targeting_faction = yes
+					}
+				}
+				desc = vassalization_cb_defeat_desc_attacker
+			}
+			desc = vassalization_cb_white_peace_desc
+		}
+	}
+	
+	on_defeat = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+		
+		# Prestige loss for the attacker
+		scope:attacker = {
+			pay_short_term_gold = {
+				gold = 3
+				target = scope:defender
+				yearly_income = yes
+			}
+			add_prestige = {
+				value = major_prestige_value
+				multiply = -1.0
+			}
+		}
+
+		# Prestige for the defender
+		scope:defender = {
+			add_prestige = {
+				value = medium_prestige_value
+			}
+		}
+
+		# Prestige for the attacker's war allies
+		add_from_contribution_attackers = {
+			prestige = major_prestige_value
+			opinion = {
+				modifier = contributed_in_war
+			}
+		}
+
+		# Prestige for the defender's war allies
+		add_from_contribution_defenders = {
+			prestige = major_prestige_value
+			opinion = {
+				modifier = contributed_in_war
+			}
+		}
+		
+		scope:attacker = {
+			save_temporary_scope_as = loser
+		}
+
+		# Truce
+		add_truce_attacker_defeat_effect = yes
+		
+		on_lost_aggression_war_discontent_loss = yes
+	}
+	
+	on_primary_attacker_death = inherit
+	on_primary_defender_death = inherit
+	
+	attacker_allies_inherit = yes
+	defender_allies_inherit = yes
+	
+	war_name = "VASSALIZATION_WAR_NAME"
+	war_name_base = "VASSALIZATION_WAR_NAME_BASE"
+	cb_name = "VASSALIZATION_CB_NAME"
+	interface_priority = 59
+	
+	ticking_war_score_targets_entire_realm = yes
+	max_defender_score_from_occupation = 150
+	max_attacker_score_from_occupation = 150
+	attacker_ticking_warscore = 0
+	attacker_wargoal_percentage = 0.8
+	
+	max_ai_diplo_distance_to_title = 500
+
+	ai_score_mult = {
+		value = 1
+		# As a feudal gov never attack tribal for vassalization
+		add = {
+			if = {
+				limit = {
+					scope:attacker = {
+						NOT = { has_government = tribal_government }
+					}
+					scope:defender = {
+							has_government = tribal_government
+					}
+				}
+				add = -1000
+			}
+		}
+	}
+}
+
+KOH_French_Revolt = {
+	group = civil_war
+	allowed_for_character = {
+		scope:attacker = {
+			this = character:161410
+		}
+	}
+
+	allowed_against_character = {
+		scope:attacker = {
+			liege = scope:defender
+		}
+	}
+
+	target_de_jure_regions_above = yes
+
+	valid_to_start = {
+	}
+
+	on_declaration = {
+	}
+
+	on_victory_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = liberty_war_victory_defender_desc
+			}
+			desc = liberty_war_victory_desc
+		}
+		desc = liberty_war_victory_end_desc
+		
+	}
+
+	on_victory = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+		scope:defender = {
+			if = {
+				limit = { has_realm_law = crown_authority_1 }
+				add_realm_law = crown_authority_0
+			}
+			if = {
+				limit = { has_realm_law = crown_authority_2 }
+				add_realm_law = crown_authority_1
+			}
+			if = {
+				limit = { has_realm_law = crown_authority_3 }
+				add_realm_law = crown_authority_2
+			}
+			add_prestige = -500
+
+			every_character_war = {
+				limit = {
+					is_attacker = scope:attacker
+					is_defender = scope:defender
+				}
+				every_war_attacker = {
+					if = {
+						limit = {
+							can_add_hook = {
+								type = favor_hook
+								target = scope:defender
+							}
+						}
+						add_hook = {
+							type = favor_hook
+							target = scope:defender
+						}
+					}
+				}
+			}
+
+			add_character_flag = {
+				flag = recent_liberty_faction_war
+				years = liberty_war_victory_cooldown
+			}
+		}
+
+		hidden_effect = {
+			scope:attacker = {
+				add_truce_both_ways = {
+					character = scope:defender
+					days = 1825
+					war = root.war
+					result = victory
+				}
+				joined_faction = {
+					save_scope_as = saved_faction
+					add_faction_discontent = -200
+					every_faction_member = {
+						if = {
+							limit = {
+								exists = scope:attacker.joined_faction # Can get destroyed as we loop through
+							}
+							leave_faction_with_cooldown_effect = {
+								FACTION = scope:attacker.joined_faction
+								YEARS = liberty_war_victory_cooldown
+							}
+						}
+						else = {
+							add_faction_cooldown_effect = { YEARS = liberty_war_victory_cooldown }
+						}
+					}
+				}
+				# The faction should have already been destroyed due to all members leaving above, but in case it hasn't, destroy it now. 
+				if = {
+					limit = { exists = scope:saved_faction }
+					scope:saved_faction = {
+						destroy_faction = yes
+					}
+				}
+			}
+		}	
+	}
+
+	white_peace_possible = no
+
+	on_white_peace_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = liberty_war_white_peace_defender_desc
+			}
+			triggered_desc = {
+				trigger = {
+					scope:attacker.joined_faction = {
+						any_faction_member = { is_local_player = yes }
+					}
+				}
+				desc = liberty_war_white_peace_attacker_desc
+			}
+			desc = liberty_war_white_peace_desc
+		}
+		desc = liberty_war_white_peace_end_desc
+		
+	}
+
+	on_white_peace = {
+		scope:attacker = {
+			show_pow_release_message_effect = yes
+			stress_impact = {
+ 				ambitious = medium_stress_impact_gain
+ 				arrogant = medium_stress_impact_gain
+ 			}
+		}
+		hidden_effect = {
+			scope:attacker = {
+				add_truce_both_ways = {
+					character = scope:defender
+					days = 1825
+					war = root.war
+					result = white_peace
+				}
+				joined_faction = {
+					add_faction_discontent = -200
+				}
+			}
+		}
+		scope:defender = {
+			stress_impact = {
+ 				arrogant = medium_stress_impact_gain
+ 			}
+			add_character_flag = {
+				flag = recent_liberty_faction_war
+				years = faction_war_white_peace_cooldown
+			}
+		}
+		on_white_peace_faction_revolt_war = yes
+	}
+
+	on_defeat_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:defender = { is_local_player = yes } }
+				desc = liberty_war_defeat_defender_desc
+			}
+			triggered_desc = {
+				trigger = {
+					scope:attacker.joined_faction = {
+						any_faction_member = { is_local_player = yes }
+					}
+				}
+				desc = liberty_war_defeat_attacker_desc
+			}
+			desc = liberty_war_defeat_desc
+		}
+		desc = liberty_war_defeat_end_desc
+		
+	}
+
+	on_defeat = {
+		scope:attacker = { show_pow_release_message_effect = yes }
+		scope:defender = {
+			if = {
+				limit = { has_character_flag = starting_war_won }
+				trigger_event = { 
+					id = KOH_flemish_war.7
+					days = 10
+				}
+			 }
+			else = { add_character_flag = starting_war_won }
+			
+			add_character_flag = {
+				flag = recent_liberty_faction_war
+				years = faction_war_defeat_cooldown
+			}
+			add_dread = medium_dread_gain
+			add_achievement_flag_effect = { FLAG = achievement_know_your_place_flag }
+		}
+		on_lost_faction_revolt_war = yes
+	}
+
+	on_invalidated_desc = msg_invalidate_war_title
+
+	check_attacker_inheritance_validity = no
+
+	on_primary_attacker_death = inherit_faction
+	on_primary_defender_death = inherit
+
+	transfer_behavior = transfer
+
+	attacker_allies_inherit = no
+	defender_allies_inherit = yes
+
+	war_name = "LIBERTY_WAR_NAME"
+
+	interface_priority = 80
+
+	use_de_jure_wargoal_only = yes
+
+	attacker_wargoal_percentage = 0.8
+
+	max_attacker_score_from_battles = 100
+	max_defender_score_from_battles = 50
+
+	max_ai_diplo_distance_to_title = 500
+}
+
+# KOH_guelph_war = {
+# 	group = vassalization
+# 	mutually_exclusive_titles = {
+# 		always = yes
+# 	}
+
+# 	allowed_for_character = { 
+# 		OR = {
+# 			dynasty = {
+# 				has_dynasty_modifier = dynasty_guelph
+# 			}
+# 			has_trait = KOH_guelph
+# 		}
+# 		is_at_war = no
+# 		is_ruler = yes
+# 		has_culture_group = culture_group:latin_group 
+# 	}
+
+# 	allowed_against_character = {
+# 		scope:defender = {
+# 			OR = {
+# 				has_trait = KOH_ghibelline
+# 				dynasty = {
+# 					has_dynasty_modifier = dynasty_ghibelline
+# 				}
+# 			}
+# 			is_ruler = yes
+# 			has_culture_group = culture_group:latin_group 
+# 		}
+# 		scope:attacker = {
+# 			OR = {
+# 				dynasty = {
+# 					has_dynasty_modifier = dynasty_guelph
+# 				}
+# 				has_trait = KOH_guelph
+# 			}
+# 			is_at_war = no
+# 			is_ruler = yes
+# 			has_culture_group = culture_group:latin_group 
+# 		}
+# 	}
+
+# 	cost = {
+# 		prestige = {
+# 			value = 1000
+# 		}
+# 	}
+
+# 	should_invalidate = {
+# 		OR = {
+# 			scope:defender = {
+# 				OR = {
+# 					dynasty = {
+# 						has_dynasty_modifier = dynasty_guelph
+# 					}
+# 					has_trait = KOH_guelph
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	on_invalidated_desc = msg_vassalization_war_invalidated_message
+
+# 	target_titles = claim
+# 	#target_title_tier = all
+
+# 	on_declaration = {
+# 		on_declared_war = yes
+# 	}
+
+# 	on_invalidated_desc = msg_claim_war_invalidated_message
+
+# 	on_invalidated = {
+# 	}
+
+# 	on_victory_desc = {
+# 		first_valid = {
+# 			triggered_desc = {
+# 				trigger = { scope:attacker = { is_local_player = yes } }
+# 				desc = vassalization_cb_victory_desc_attacker
+# 			}
+# 			triggered_desc = {
+# 				trigger = { scope:defender = { is_local_player = yes } }
+# 				desc = vassalization_cb_victory_desc_defender
+# 			}
+# 			desc = vassalization_cb_victory_desc
+# 		}
+# 	}
+	
+# 	on_victory = {
+# 		scope:attacker = { show_pow_release_message_effect = yes }
+# 		create_title_and_vassal_change = {
+# 			type = swear_fealty
+# 			save_scope_as = change
+# 			add_claim_on_loss = no
+# 		}
+# 		scope:defender = {
+# 			change_liege = {
+# 				liege = scope:attacker
+# 				change = scope:change
+# 			}
+# 			resolve_title_and_vassal_change = scope:change
+# 		}
+		
+		
+# 		# Prestige level progress for the attacker
+# 		scope:attacker = {
+# 			add_prestige_experience = {
+# 				value = medium_prestige_value
+# 			}
+# 		}
+
+# 		# Prestige loss for the defender
+# 		scope:defender = {
+# 			add_prestige = {
+# 				value = medium_prestige_value
+# 				multiply = -1.0
+# 			}
+# 		}
+
+# 		# Prestige for the attacker's war allies
+# 		add_from_contribution_attackers = {
+# 			prestige = {
+# 				value = major_prestige_value
+# 			}
+# 			opinion = {
+# 				modifier = contributed_in_war
+# 			}
+# 		}
+
+# 		# Prestige for the defender's war allies
+# 		add_from_contribution_defenders = {
+# 			prestige = {
+# 				value = major_prestige_value
+# 			}
+# 			opinion = {
+# 				modifier = contributed_in_war
+# 			}
+# 		}
+		
+# 		# Truce
+# 		add_truce_attacker_victory_effect = yes
+				
+# 	}
+
+# 	on_white_peace_desc = {
+# 		first_valid = {
+# 			triggered_desc = {
+# 				trigger = { scope:defender = { is_local_player = yes } }
+# 				desc = vassalization_cb_white_peace_desc_defender
+# 			}
+# 			desc = vassalization_cb_white_peace_desc
+# 		}
+# 	}
+	
+# 	on_white_peace = {
+# 		scope:attacker = { show_pow_release_message_effect = yes }
+# 		# Prestige loss for the attacker
+# 		scope:attacker = {
+# 			add_prestige = {
+# 				value = minor_prestige_value
+# 				multiply = -1.0
+# 			}
+# 			stress_impact = {
+# 				ambitious = medium_stress_impact_gain
+# 				arrogant = medium_stress_impact_gain
+# 			}
+# 		}
+
+# 		# Prestige for the attacker's war allies
+# 		add_from_contribution_attackers = {
+# 			prestige = minor_prestige_value
+# 			opinion = {
+# 				modifier = contributed_in_war
+# 			}
+# 		}
+
+# 		# Prestige for the defender's war allies
+# 		add_from_contribution_defenders = {
+# 			prestige = minor_prestige_value
+# 			opinion = {
+# 				modifier = contributed_in_war
+# 			}
+# 		}
+		
+# 		scope:defender = {
+# 			stress_impact = {
+# 				arrogant = medium_stress_impact_gain
+# 			}
+# 		}
+
+# 		# Truce
+# 		add_truce_white_peace_effect = yes
+# 	}
+
+# 	on_defeat_desc = {
+# 		first_valid = {
+# 			triggered_desc = {
+# 				trigger = { scope:defender = { is_local_player = yes } }
+# 				desc = vassalization_cb_white_peace_desc_defender
+# 			}
+# 			triggered_desc = {
+# 				trigger = {
+# 					scope:attacker = {
+# 						is_local_player = yes
+# 						has_targeting_faction = yes
+# 					}
+# 				}
+# 				desc = vassalization_cb_defeat_desc_attacker
+# 			}
+# 			desc = vassalization_cb_white_peace_desc
+# 		}
+# 	}
+	
+# 	on_defeat = {
+# 		scope:attacker = { show_pow_release_message_effect = yes }
+		
+# 		# Prestige loss for the attacker
+# 		scope:attacker = {
+# 			pay_short_term_gold = {
+# 				gold = 3
+# 				target = scope:defender
+# 				yearly_income = yes
+# 			}
+# 			add_prestige = {
+# 				value = major_prestige_value
+# 				multiply = -1.0
+# 			}
+# 		}
+
+# 		# Prestige for the defender
+# 		scope:defender = {
+# 			add_prestige = {
+# 				value = medium_prestige_value
+# 			}
+# 		}
+
+# 		# Prestige for the attacker's war allies
+# 		add_from_contribution_attackers = {
+# 			prestige = major_prestige_value
+# 			opinion = {
+# 				modifier = contributed_in_war
+# 			}
+# 		}
+
+# 		# Prestige for the defender's war allies
+# 		add_from_contribution_defenders = {
+# 			prestige = major_prestige_value
+# 			opinion = {
+# 				modifier = contributed_in_war
+# 			}
+# 		}
+		
+# 		scope:attacker = {
+# 			save_temporary_scope_as = loser
+# 		}
+
+# 		# Truce
+# 		add_truce_attacker_defeat_effect = yes
+		
+# 		on_lost_aggression_war_discontent_loss = yes
+# 	}
+	
+# 	on_primary_attacker_death = inherit
+# 	on_primary_defender_death = inherit
+	
+# 	attacker_allies_inherit = yes
+# 	defender_allies_inherit = yes
+	
+# 	war_name = "VASSALIZATION_WAR_NAME"
+# 	war_name_base = "VASSALIZATION_WAR_NAME_BASE"
+# 	cb_name = "VASSALIZATION_CB_NAME"
+# 	interface_priority = 59
+	
+# 	ticking_war_score_targets_entire_realm = yes
+# 	max_defender_score_from_occupation = 150
+# 	max_attacker_score_from_occupation = 150
+# 	attacker_ticking_warscore = 0
+# 	attacker_wargoal_percentage = 0.8
+	
+# 	max_ai_diplo_distance_to_title = 500
+
+# 	ai_score_mult = {
+# 		value = 1
+# 		# As a feudal gov never attack tribal for vassalization
+# 		add = {
+# 			if = {
+# 				limit = {
+# 					scope:attacker = {
+# 						NOT = { has_government = tribal_government }
+# 					}
+# 					scope:defender = {
+# 							has_government = tribal_government
+# 					}
+# 				}
+# 				add = -1000
+# 			}
+# 		}
+# 	}
+# }

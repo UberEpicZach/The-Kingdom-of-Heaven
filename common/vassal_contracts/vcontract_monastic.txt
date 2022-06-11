@@ -1,0 +1,70 @@
+﻿@ai_standard_liege_desire = 2
+@ai_standard_vassal_desire = 1
+
+
+
+
+##plans for obligations
+#isolated: focus on learning and liege piety ; opinion (++)
+#autonomous: some gold(+) + devlopment(++), local income bonus ; opinion neutral _default_
+#vassal: more gold(++), developement(+) ; opinion (-)
+#realm: gold (++), culture spread ; opinion (--)
+#_gold is faith blocked
+#_gold is piety level dependent
+
+##plans for advocatus
+
+
+monastic_government_obligations = {
+	display_mode = tree
+	icon = gold_icon #needs a specific icon MyMo
+	#display_mode = tree
+	obligation_levels = {
+		#mon_1 = {
+		#	default = yes
+		default = {
+			position = { 0 0 }
+			levies = {
+				if = {
+					limit = { NOT = { scope:liege.faith = scope:vassal.faith } }
+					value = 0.0
+				}
+				else = {
+					value = 0.5
+					multiply = scope:liege.piety_level
+				}
+			}
+			tax = {
+				#wrong faith is 0.0
+				if = {
+					limit = { NOT = { scope:liege.faith = scope:vassal.faith } }
+					value = 0.0
+				}
+				#else base is 0.2
+				else = {
+					value = 0.2
+				}	
+				#increased if liege is over 1st piety level and increased further by piety level
+				else_if = {
+					limit = { scope:liege.piety_level >= 1 }
+					add = 0.05
+					add = {
+						value = 0.1
+						multiply = scope:liege.piety_level
+					}
+				}
+			}
+			contribution_desc = {
+				first_valid = {
+					triggered_desc = {
+						trigger = { NOT = { scope:liege.faith = scope:vassal.faith } }
+						desc = "monastic_government_vassal_contribution_wrong_faith"
+					}
+					desc = "monastic_government_vassal_contribution_piety_level"
+				}
+			}
+		}
+	}
+}
+
+
