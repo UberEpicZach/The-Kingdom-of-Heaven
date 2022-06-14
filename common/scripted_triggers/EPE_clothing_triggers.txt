@@ -1,0 +1,869 @@
+﻿epe_allow_nudity_in_barbershop_trigger = {
+	should_show_nudity = yes
+	age >= 18
+}
+
+###Seljuk Turks
+portrait_seljuk_clothing_trigger = {
+	scope:culture = { portrait_seljuk_clothing_contents_trigger = yes }
+}
+
+portrait_seljuk_clothing_spouse_trigger = {
+	culture = {
+		portrait_seljuk_clothing_contents_trigger = yes
+	}
+}
+
+portrait_seljuk_clothing_contents_trigger = {
+	has_clothing_gfx = seljuk_clothing_gfx
+}
+
+
+#############################
+##########################################################
+##non muslim iranians
+##########################################################
+portrait_early_eastern_iranian_trigger = {
+	scope:culture = { portrait_early_eastern_iranian_contents_trigger = yes }
+}
+
+portrait_early_eastern_iranian_spouse_trigger = {
+	culture = {
+		portrait_early_eastern_iranian_contents_trigger = yes
+	}
+}
+
+portrait_early_eastern_iranian_contents_trigger = {
+	has_clothing_gfx = iranian_clothing_gfx 
+}
+
+##Islamic Iranians
+
+portrait_islamic_iranian_trigger = {
+	NOT = { religion = religion:zoroastrianism_religion }
+	NOT = { religion = religion:buddhism_religion }
+	NOT = { religion = religion:hinduism_religion }
+	NOT = { religion = religion:christianity_religion }
+	NOT = { religion = religion:dualism_religion }
+	NOT = { religion = religion:hellenism_religion }
+	NOT = { religion = religion:zunism_religion }
+	religion = religion:islam_religion		
+}
+
+##########################################################################
+####Christian Iranians 
+##########################################################################	
+
+portrait_christian_iranian_trigger = {
+	religion = religion:christianity_religion		
+}
+
+##########################################################################
+####Hindu Iranians 
+##########################################################################	
+
+portrait_hindu_iranian_trigger = {
+	religion = religion:hinduism_religion		
+}
+
+
+
+##non muslim iranians
+
+portrait_non_iranian_trigger = {
+	NOT = { religion = religion:christianity_religion }
+    NOT = { religion = religion:islam_religion }
+	NOT = { religion = religion:hinduism_religion }	
+}
+##########################################################
+##########################################################
+
+portrait_tahirid_trigger = {
+
+    dynasty = dynasty:811
+
+} 
+
+
+##EPE_culture_era_tribal_trigger = {
+#	culture = { 
+#		AND = {
+#			has_cultural_era_or_later = culture_era_tribal 
+#			#NOT = { 
+#			#	has_cultural_era_or_later = culture_era_early_medieval
+#			#}	
+#		}
+#	}
+#}
+ 
+EPE_culture_era_early_medieval_trigger = {
+	culture = { 
+		AND = {
+			OR = {
+				has_cultural_era_or_later = culture_era_tribal 
+				has_cultural_era_or_later = culture_era_early_medieval
+			}
+			NOT = { 
+				has_cultural_era_or_later = culture_era_high_medieval 
+			}	
+		}
+	}
+}
+
+EPE_culture_era_high_medieval_trigger = {
+	culture = { 
+		AND = {
+			OR = {
+				has_cultural_era_or_later = culture_era_high_medieval 
+				has_cultural_era_or_later = culture_era_late_medieval #removed after 
+			}
+			#NOT = { 
+			#	has_cultural_era_or_later = culture_era_late_medieval
+			#}	
+		}
+	}
+}
+
+EPE_culture_era_late_medieval_trigger = {
+	culture = {	
+		has_cultural_era_or_later = culture_era_late_medieval 
+	}
+}
+
+
+##Early Eastern slavic
+portrait_northern_slav_clothing_trigger = {
+	scope:culture = { portrait_northern_slav_clothing_contents_trigger = yes }
+}
+
+portrait_northern_slav_clothing_contents_trigger = {
+	has_clothing_gfx = northern_slav_clothing_gfx
+}
+
+portrait_northern_slav_clothing_spouse_trigger = {
+	culture = {
+		portrait_northern_slav_clothing_contents_trigger = yes
+	}
+}
+
+
+##Cuman
+portrait_cuman_clothing_trigger = {
+	scope:culture = { portrait_cuman_clothing_contents_trigger = yes }
+}
+
+portrait_cuman_clothing_contents_trigger = {
+	has_clothing_gfx = cuman_clothing_gfx
+}
+
+portrait_cuman_clothing_spouse_trigger = {
+	culture = {
+		portrait_cuman_clothing_contents_trigger = yes
+	}
+}
+
+
+##Uyghurs
+portrait_uyghur_clothing_trigger = {
+	scope:culture = { portrait_uyghur_clothing_contents_trigger = yes }
+}
+
+portrait_uyghur_clothing_contents_trigger = {
+	has_clothing_gfx = uyghur_clothing_gfx
+}
+
+portrait_uyghur_clothing_spouse_trigger = {
+	culture = {
+		portrait_uyghur_clothing_contents_trigger = yes
+	}
+}
+
+
+
+##Balto-Finnic
+portrait_balto_finnic_clothing_trigger = {
+	scope:culture = { portrait_balto_finnic_clothing_contents_trigger = yes }
+}
+
+portrait_balto_finnic_clothing_contents_trigger = {
+	has_clothing_gfx = balto_finnic_clothing_gfx
+}
+
+portrait_balto_finnic_clothing_spouse_trigger = {
+	culture = {
+		portrait_balto_finnic_clothing_contents_trigger = yes
+	}
+}
+
+
+##Iberian Christian
+portrait_iberia_clothing_trigger = {
+	scope:culture = { portrait_iberia_clothing_contents_trigger = yes }
+}
+##Iberian Christian
+portrait_iberia_clothing_spouse_trigger = {
+	culture = {
+		portrait_iberia_clothing_contents_trigger = yes
+	}
+}
+##Iberian Christian
+portrait_iberia_clothing_contents_trigger = {
+    #NOT = { religion = religion:islam_religion }
+	has_clothing_gfx = iberia_clothing_gfx
+}
+
+
+
+##Iberian Muslim
+portrait_iberia_muslim_clothing_trigger = {
+	OR = {
+		scope:culture = { portrait_iberia_muslim_clothing_contents_trigger = yes }
+		AND = {
+			is_landed = yes
+			religion = religion:islam_religion
+			capital_province = {
+				geographical_region = world_europe_west_iberia
+			}
+		}
+	}
+}
+
+portrait_iberia_muslim_clothing_spouse_trigger = {
+	OR = {
+		culture = {
+			portrait_iberia_muslim_clothing_contents_trigger = yes
+		}
+		AND = {
+			is_landed = yes
+			religion = religion:islam_religion
+			capital_province = {
+				geographical_region = world_europe_west_iberia
+			}
+		}
+	}
+}
+
+portrait_iberia_muslim_clothing_contents_trigger = {
+	OR = {
+	has_clothing_gfx = iberia_clothing_gfx
+	has_clothing_gfx = iberian_muslim_clothing_gfx	
+		}	
+}
+
+##Iberian
+
+portrait_iberia_trigger = {
+    NOT = { religion = religion:islam_religion }
+}
+
+##Iberian Muslim
+
+portrait_iberia_muslim_trigger = {
+	religion = religion:islam_religion	
+}
+
+###Andalusian
+portrait_andalusian_clothing_trigger = {
+	scope:culture = { portrait_andalusian_clothing_contents_trigger = yes }
+}
+portrait_andalusian_clothing_spouse_trigger = {
+	culture = { portrait_andalusian_clothing_contents_trigger = yes }
+}
+portrait_andalusian_clothing_contents_trigger = {
+	OR = {
+	    has_clothing_gfx = iberian_muslim_clothing_gfx	
+		this = culture:andalusian
+		any_parent_culture_or_above = { this = culture:andalusian }
+	}
+}
+ 
+
+
+##North africa
+portrait_maghreb_clothing_trigger = {
+	scope:culture = { portrait_maghreb_clothing_contents_trigger = yes }
+}
+
+portrait_maghreb_clothing_contents_trigger = {
+	has_clothing_gfx = maghreb_clothing_gfx
+}
+
+portrait_maghreb_clothing_spouse_trigger = {
+	culture = {
+		portrait_maghreb_clothing_contents_trigger = yes
+	}
+}
+
+##Hungarian
+portrait_hungarian_clothing_trigger = {
+	scope:culture = { portrait_hungarian_clothing_contents_trigger = yes }
+}
+
+portrait_hungarian_clothing_contents_trigger = {
+	has_clothing_gfx = hungarian_clothing_gfx
+}
+
+portrait_hungarian_clothing_spouse_trigger = {
+	culture = {
+		portrait_hungarian_clothing_contents_trigger = yes
+	}
+}
+
+##Anglo-saxon
+portrait_anglo_saxon_clothing_trigger = {
+	scope:culture = { portrait_anglo_saxon_clothing_contents_trigger = yes }
+}
+
+portrait_anglo_saxon_clothing_contents_trigger = {
+	has_clothing_gfx = anglo_saxon_clothing_gfx
+}
+
+portrait_anglo_saxon_clothing_spouse_trigger = {
+	culture = {
+		portrait_anglo_saxon_clothing_contents_trigger = yes
+	}
+}
+
+##Polish
+portrait_polish_clothing_trigger = {
+	scope:culture = { portrait_polish_clothing_contents_trigger = yes }
+}
+
+portrait_polish_clothing_contents_trigger = {
+	has_clothing_gfx = polish_clothing_gfx
+}
+
+portrait_polish_clothing_spouse_trigger = {
+	culture = {
+		portrait_polish_clothing_contents_trigger = yes
+	}
+}
+
+##West Slav
+portrait_west_slav_clothing_trigger = {
+	scope:culture = { portrait_west_slav_clothing_contents_trigger = yes }
+}
+
+portrait_west_slav_clothing_contents_trigger = {
+	has_clothing_gfx = west_slav_clothing_gfx
+}
+
+portrait_west_slav_clothing_spouse_trigger = {
+	culture = {
+		portrait_west_slav_clothing_contents_trigger = yes
+	}
+}
+
+##Khazar
+portrait_Khazar_clothing_trigger = {
+	scope:culture = { portrait_Khazar_clothing_contents_trigger = yes }
+}
+
+portrait_Khazar_clothing_contents_trigger = {
+	has_clothing_gfx = Khazar_clothing_gfx
+}
+
+portrait_Khazar_clothing_spouse_trigger = {
+	culture = {
+		portrait_Khazar_clothing_contents_trigger = yes
+	}
+}
+
+##Kirghiz
+portrait_kirghiz_clothing_trigger = {
+	scope:culture = { portrait_kirghiz_clothing_contents_trigger = yes }
+}
+
+portrait_kirghiz_clothing_contents_trigger = {
+	has_clothing_gfx = kirghiz_clothing_gfx
+}
+
+portrait_kirghiz_clothing_spouse_trigger = {
+	culture = {
+		portrait_kirghiz_clothing_contents_trigger = yes
+	}
+}
+
+##German
+portrait_german_clothing_trigger = {
+	scope:culture = { portrait_german_clothing_contents_trigger = yes }
+}
+
+portrait_german_clothing_contents_trigger = {
+	has_clothing_gfx = german_clothing_gfx
+}
+
+portrait_german_clothing_spouse_trigger = {
+	culture = {
+		portrait_german_clothing_contents_trigger = yes
+	}
+}
+
+##Burmese
+portrait_burmese_clothing_trigger = {
+	scope:culture = { portrait_burmese_clothing_contents_trigger = yes }
+}
+
+portrait_burmese_clothing_spouse_trigger = {
+	culture = { portrait_burmese_clothing_contents_trigger = yes }
+}
+portrait_burmese_clothing_contents_trigger = {
+	has_clothing_gfx = burmese_clothing_gfx
+}
+
+
+##Sahelian
+portrait_sahelian_clothing_trigger = {
+	scope:culture = { portrait_sahelian_clothing_contents_trigger = yes }
+}
+
+portrait_sahelian_clothing_spouse_trigger = {
+	culture = { portrait_sahelian_clothing_contents_trigger = yes }
+}
+portrait_sahelian_clothing_contents_trigger = {
+	has_clothing_gfx = sahelian_clothing_gfx
+}
+
+###Georgian
+portrait_georgian_clothing_trigger = {
+	scope:culture = { portrait_georgian_clothing_contents_trigger = yes }
+}
+
+portrait_georgian_clothing_contents_trigger = {
+	has_clothing_gfx = georgian_clothing_gfx
+}
+
+portrait_georgian_clothing_spouse_trigger = {
+	culture = {
+		portrait_georgian_clothing_contents_trigger = yes
+	}
+}
+
+
+
+###Bulgarian
+portrait_bulgarian_clothing_trigger = {
+	scope:culture = { portrait_bulgarian_clothing_contents_trigger = yes }
+}
+
+portrait_bulgarian_clothing_contents_trigger = {
+	has_clothing_gfx = bulgarian_clothing_gfx
+}
+
+portrait_bulgarian_clothing_spouse_trigger = {
+	culture = {
+		portrait_bulgarian_clothing_contents_trigger = yes
+	}
+}
+
+
+###Armenian
+portrait_armenian_clothing_trigger = {
+	scope:culture = { portrait_armenian_clothing_contents_trigger = yes }
+}
+
+portrait_armenian_clothing_contents_trigger = {
+	has_clothing_gfx = armenian_clothing_gfx
+}
+
+portrait_armenian_clothing_spouse_trigger = {
+	culture = {
+		portrait_armenian_clothing_contents_trigger = yes
+	}
+}
+
+
+###South Slav
+portrait_south_slav_clothing_trigger = {
+	scope:culture = { portrait_south_slav_clothing_contents_trigger = yes }
+}
+
+portrait_south_slav_clothing_contents_trigger = {
+	has_clothing_gfx = south_slav_clothing_gfx
+}
+
+portrait_south_slav_clothing_spouse_trigger = {
+	culture = {
+		portrait_south_slav_clothing_contents_trigger = yes
+	}
+}
+
+###Merovingian (frankish)
+portrait_merovingian_clothing_trigger = {
+	scope:culture = { portrait_merovingian_clothing_contents_trigger = yes }
+}
+portrait_merovingian_clothing_spouse_trigger = {
+	culture = { portrait_merovingian_clothing_contents_trigger = yes }
+}
+portrait_merovingian_clothing_contents_trigger = {
+	this = culture:frankish
+}
+
+###Saka
+portrait_saka_clothing_trigger = {
+	scope:culture = { portrait_saka_clothing_contents_trigger = yes }
+}
+
+portrait_saka_clothing_contents_trigger = {
+	has_clothing_gfx = saka_clothing_gfx
+}
+
+portrait_saka_clothing_spouse_trigger = {
+	culture = {
+		portrait_saka_clothing_contents_trigger = yes
+	}
+}
+
+
+###Visigothic
+portrait_visigothic_clothing_trigger = {
+	scope:culture = { portrait_visigothic_clothing_contents_trigger = yes }
+}
+portrait_visigothic_clothing_spouse_trigger = {
+	culture = { portrait_visigothic_clothing_contents_trigger = yes }
+}
+portrait_visigothic_clothing_contents_trigger = {
+	this = culture:visigothic
+}
+
+###Bedouin(arabs)
+portrait_bedouin_clothing_trigger = {
+	scope:culture = { portrait_bedouin_clothing_contents_trigger = yes }
+}
+
+portrait_bedouin_clothing_contents_trigger = {
+	has_clothing_gfx = bedouin_clothing_gfx
+}
+
+portrait_bedouin_clothing_spouse_trigger = {
+	culture = {
+		portrait_bedouin_clothing_contents_trigger = yes
+	}
+}
+
+###Tibetan
+portrait_tibetan_clothing_trigger = {
+	scope:culture = { portrait_tibetan_clothing_contents_trigger = yes }
+}
+
+portrait_tibetan_clothing_contents_trigger = {
+	has_clothing_gfx = tibetan_clothing_gfx
+}
+
+portrait_tibetan_clothing_spouse_trigger = {
+	culture = {
+		portrait_tibetan_clothing_contents_trigger = yes
+	}
+}
+
+##Western Turkic
+portrait_western_turk_clothing_trigger = {
+	scope:culture = { portrait_western_turk_clothing_contents_trigger = yes }
+}
+
+portrait_western_turk_clothing_contents_trigger = {
+	has_clothing_gfx = western_turk_clothing_gfx
+}
+
+portrait_western_turk_clothing_spouse_trigger = {
+	culture = {
+		portrait_western_turk_clothing_contents_trigger = yes
+	}
+}
+
+##Magyar
+portrait_magyar_clothing_trigger = {
+	scope:culture = { portrait_magyar_clothing_contents_trigger = yes }
+}
+
+portrait_magyar_clothing_contents_trigger = {
+	has_clothing_gfx = magyar_clothing_gfx
+}
+
+portrait_magyar_clothing_spouse_trigger = {
+	culture = {
+		portrait_magyar_clothing_contents_trigger = yes
+	}
+}
+
+####################################################################################################
+##################
+#####East African
+##################
+####################################################################################################
+
+portrait_east_african_clothing_trigger = {
+	scope:culture = { portrait_east_african_clothing_contents_trigger = yes }
+}
+
+portrait_east_african_clothing_spouse_trigger = {
+	culture = {
+		portrait_east_african_clothing_contents_trigger = yes
+	}
+}
+
+portrait_east_african_clothing_contents_trigger = {
+	has_clothing_gfx = east_african_clothing_gfx
+}
+
+
+###Nubia
+portrait_nubian_clothing_trigger = {
+	scope:culture = { portrait_nubian_clothing_contents_trigger = yes }
+}
+portrait_nubian_clothing_spouse_trigger = {
+	culture = { portrait_nubian_clothing_contents_trigger = yes }
+}
+portrait_nubian_clothing_contents_trigger = {
+	OR = {
+		this = culture:nubian
+		any_parent_culture_or_above = { this = culture:nubian }
+		this = culture:daju
+		any_parent_culture_or_above = { this = culture:daju }		
+	}
+}
+ 
+ 
+##East African christian
+portrait_east_african_non_islamic_trigger = {
+    NOT = { religion = religion:islam_religion }
+	religion = religion:christianity_religion		
+}
+
+##East African non christian
+portrait_east_african_non_christian_trigger = {
+    NOT = { religion = religion:christianity_religion }
+}
+
+
+
+##########################################################################
+####Christian Norse
+##########################################################################				
+##Norse christian
+portrait_northern_christian_trigger = {
+	religion = religion:christianity_religion		
+}
+
+##Norse non christian
+portrait_northern_non_christian_trigger = {
+    NOT = { religion = religion:christianity_religion }
+}		
+
+
+
+##########################################################################
+####Western Muslim & Christian
+##########################################################################				
+##Western
+
+portrait_western_christian_trigger = {
+    NOT = { religion = religion:islam_religion }
+}
+
+##Western Muslim
+
+portrait_western_muslim_trigger = {
+	religion = religion:islam_religion	
+}
+
+
+##########################################################################
+####Pagan Byzantine
+##########################################################################		
+
+portrait_pagan_byzantine_trigger = {
+
+	NOT = { religion = religion:christianity_religion }
+    NOT = { religion = religion:islam_religion }
+    NOT = { religion = religion:judaism_religion }	
+}
+
+
+####################################################################################################
+####################################################################################################
+
+###Normans
+portrait_norman_clothing_trigger = {
+	scope:culture = { portrait_norman_clothing_contents_trigger = yes }
+}
+portrait_norman_clothing_spouse_trigger = {
+	culture = { portrait_norman_clothing_contents_trigger = yes }
+}
+portrait_norman_clothing_contents_trigger = {
+	OR = {
+		this = culture:norman
+		any_parent_culture_or_above = { this = culture:norman }	
+	}
+}
+ 
+
+####Norman Sicily knights
+portrait_norman_sicily_knights_clothing_trigger = {
+	OR = {
+		this = culture:norman
+		any_parent_culture_or_above = { this = culture:norman }	
+	}
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = { 
+		                   OR = {
+							geographical_region = world_europe_south_italy
+						} 
+					}
+
+	}
+	trigger_if = {
+		limit = {
+			exists = host.capital_province
+			NOT = { exists = capital_province }
+		}
+		host.capital_province = { 
+		                   OR = {
+							geographical_region = world_europe_south_italy
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = liege.capital_province
+			NOT = { exists = capital_province }
+		}
+		liege.capital_province = { 
+		                   OR = {
+							geographical_region = world_europe_south_italy
+						} 
+					}
+	}
+	trigger_if = {
+		limit = {
+			exists = location.province_owner.capital_province
+			NOT = { exists = capital_province }
+		}
+		location.province_owner.capital_province = { 
+		                   OR = {
+							geographical_region = world_europe_south_italy
+						} 
+					}
+	}
+}
+
+
+##############################
+#######   Armor eras   #######
+##############################
+###Tribal era
+EPE_armor_era_tribal_medieval_trigger = {
+    culture = { 
+        AND = {
+            OR = {
+                has_cultural_era_or_later = culture_era_tribal 
+            }
+            NOT = { 
+                has_cultural_era_or_later = culture_era_early_medieval 
+            }
+        }
+    }
+}
+
+###Early era
+EPE_armor_era_early_medieval_trigger = {
+    culture = { 
+        AND = {
+            OR = {
+                has_cultural_era_or_later = culture_era_early_medieval 
+            }
+            NOT = { 
+                has_cultural_era_or_later = culture_era_high_medieval 
+            }
+        }
+    }
+}
+
+###High medieval era
+EPE_armor_era_high_medieval_trigger = {
+    culture = { 
+        AND = {
+            OR = {
+                has_cultural_era_or_later = culture_era_high_medieval 
+            }
+            NOT = { 
+                has_cultural_era_or_later = culture_era_late_medieval 
+            }
+        }
+    }
+}
+
+
+EPE_innovation_knighthood_trigger = {
+    culture = { 
+        AND = {
+            OR = {
+                has_innovation = innovation_knighthood 
+            }
+            NOT = { 
+                has_innovation = innovation_plate_armor 
+            }
+        }
+    }
+}
+
+###Late medieval era
+EPE_armor_era_late_medieval_trigger = {
+	culture = {	
+		has_cultural_era_or_later = culture_era_late_medieval 
+	}
+}
+
+EPE_innovation_plate_armor_trigger = {
+	scope:culture = { has_innovation = innovation_plate_armor }
+	is_male = yes
+}
+
+EPE_innovation_ermine_cloaks_trigger = {
+	scope:culture = { has_innovation = innovation_ermine_cloaks }
+}
+
+
+############
+###DLC Triggers
+
+##Norse flavor dlc trigger
+portrait_norse_flavor_dlc_trigger = {
+	has_fp1_dlc_trigger = yes
+}
+
+
+##Abbasid clothing dlc trigger
+portrait_dde_abbasid_flavor_dlc_trigger = {
+	has_dlc = "Fashion of the Abbasid Court"
+}
+
+##Holy Roman Empire clothing dlc trigger
+portrait_dde_hre_flavor_dlc_trigger = {
+	has_dlc = "Garments of the Holy Roman Empire"
+}
+
+
+##Iberian flavor dlc trigger
+portrait_iberian_flavor_dlc_trigger = {
+	has_fp2_dlc_trigger = yes
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
