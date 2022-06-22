@@ -1603,46 +1603,46 @@ beards = {
     }	
 	
 	
-##	afro
+#	afro
 	
-    # no_beard_for_gene_afro = {
-    #     dna_modifiers = {
-    #         accessory = {
-    #             mode = add
-    #             gene = beards
-    #             template = no_beard
-    #             range = { 0 1 } # For the randomness to work correctly
-    #         }
-    #     }   
-    #     # outfit_tags = { no_clothes }
-    #     weight = {
-    #         base = 0
-    #         # modifier = {
-    #         #     add = 70
-    #         #     exists = this				
-    #         #     has_gene = {
-    #         #         category = gene_hair_type
-    #         #         template = hair_afro_no_beard
-    #         #     }
-    #         # }
-    #         # modifier = { # Muslims should always have a beard
-    #         #     add = 200
-    #         #     scope:faith.religion = religion:islam_religion
-    #         #     has_gene = {
-    #         #         category = gene_hair_type
-    #         #         template = hair_afro_no_beard
-    #         #     }
-    #         # }
-    #         modifier = {
-    #             add = -100
-    #             exists = this
-    #             OR = {
-    #                 is_from_ruler_designer = yes
-    #                 has_character_flag = has_scripted_appearance
-    #             }
-    #         }
-    #     }
-    # }		
+    no_beard_for_gene_afro = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = no_beard
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }   
+        # outfit_tags = { no_clothes }
+        weight = {
+            base = 0
+            modifier = {
+                add = 70
+                exists = this				
+                has_gene = {
+                    category = gene_hair_type
+                    template = hair_afro_no_beard
+                }
+            }
+            modifier = { # Muslims should always have a beard
+                add = 200
+                scope:faith.religion = religion:islam_religion
+                has_gene = {
+                    category = gene_hair_type
+                    template = hair_afro_no_beard
+                }
+            }
+            modifier = {
+                add = -100
+                exists = this
+                OR = {
+                    is_from_ruler_designer = yes
+                    has_character_flag = has_scripted_appearance
+                }
+            }
+        }
+    }		
 	
 	
 	

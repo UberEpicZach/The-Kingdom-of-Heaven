@@ -131,12 +131,12 @@ KoH_FreeCity.2 = {
 
 		title:e_hre.holder = {
 			send_interface_toast = {
-				title = "Free City Conflict Resolved"
+				title = KoH_FreeCity.2.a.toast
 					
 				left_icon = scope:root				
 				right_icon = scope:FreeCityAttacker
 			
-				custom_tooltip = "[FreeCityAttacker.GetTitledFirstName] backed down, and ended the war"	
+				custom_tooltip = KoH_FreeCity.2.a.toast_custom_tooltip	
 			}
 		}
 	}

@@ -3,7 +3,9 @@
 jerusalem_knights = { # Actually all Christian knightly orders, not just the Teutons.
 	type = heavy_cavalry
 
-	can_recruit = no
+	can_recruit = {
+		always = no
+	}
 	
 	# Slightly stronger than normal Heavy Infantry MaA, to represent zeal & dedication to the cause.
 	damage = 150 
@@ -36,7 +38,9 @@ jerusalem_knights = { # Actually all Christian knightly orders, not just the Teu
 saladin_riders = {
 	type = light_cavalry
 	
-	can_recruit = no
+	can_recruit = {
+		always = no
+	}
 	
 	damage = 32
 	toughness = 15
@@ -72,7 +76,9 @@ saladin_riders = {
 assassins = { # Actually all Christian knightly orders, not just the Teutons.
 	type = skirmishers
 
-	can_recruit = no
+	can_recruit = {
+		always = no
+	}
 	
 	# Slightly stronger than normal Heavy Infantry MaA, to represent zeal & dedication to the cause.
 	damage = 100 

@@ -28,12 +28,12 @@ KoH_byzantinecrisis.1 = {
 
 		hidden_effect = {
 			character:215500 = {
-				get_title = c_brysis
+				get_title = title:c_brysis
 			}
 		}
 
 		character:223020 = { 
-			get_title = c_famagusta
+			get_title = title:c_famagusta
 
 			create_title_and_vassal_change = {
 				type = independency
@@ -166,7 +166,7 @@ KoH_byzantinecrisis.3 = { #Norman
 			}
 
 			scope:ByzantineEmperor = {
-				get_title = k_epirus
+				get_title = title:k_epirus
 			}
 
 			every_ruler = {
@@ -369,7 +369,7 @@ KoH_byzantinecrisis.4 = { #Bulgarian
 			resolve_title_and_vassal_change = scope:change
 		}
 		character:217500 = {
-			get_title = c_constanta
+			get_title = title:c_constanta
 	
 		}
 
@@ -582,7 +582,7 @@ KoH_byzantinecrisis.6 = {
 		name = KoH_byzantinecrisis.6.a
 		
 		scope:NormanKing = {
-			get_title = c_thessalonika
+			get_title = title:c_thessalonika
 		}
 
 		scope:Thessalonkia = {
@@ -599,7 +599,7 @@ KoH_byzantinecrisis.6 = {
 		name = KoH_byzantinecrisis.6.b
 
 		scope:NormanKing = {
-			get_title = c_thessalonika
+			get_title = title:c_thessalonika
 		}
 
 		scope:Thessalonkia = {
@@ -669,7 +669,7 @@ KoH_byzantinecrisis.7 = {
 		set_designated_heir = character:KOH0035
 
 		character:KOH0035 = {
-			get_title = d_thrace
+			get_title = title:d_thrace
 		}
 
 		character:KOH0035 = {
@@ -695,7 +695,7 @@ KoH_byzantinecrisis.7 = {
 				years = 100
 			}
 
-			add_claim = e_byzantium
+			add_pressed_claim = title:e_byzantium
 		}
 	}
 
@@ -1088,7 +1088,7 @@ KoH_byzantinecrisis.9 = {
 	left_portrait = {
 		character = root
 		animation = personality_bold
-	}
+	} 
 	immediate = {
 		every_ruler = {
 			limit = {
@@ -1100,7 +1100,7 @@ KoH_byzantinecrisis.9 = {
 		}
 
 		character:215500 = {
-			add_pressed_claim = e_byzantium
+			add_pressed_claim = title:e_byzantium
 
 			start_war = {
 				casus_belli = claim_cb
@@ -1136,7 +1136,7 @@ KoH_byzantinecrisis.9 = {
 				}
 				send_interface_toast = {
 					type = event_toast_effect_good
-					title = "The Peasants Storm the Palace"
+					title = KoH_byzantinecrisis.9.a.toast
 					left_icon = root
 				}
 			}

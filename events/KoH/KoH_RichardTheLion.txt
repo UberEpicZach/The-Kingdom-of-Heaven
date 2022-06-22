@@ -38,10 +38,10 @@ KoH_RichardTheLionheart.1 = {
 
 		
 		character:204510 = {
-			get_title = d_aquitaine
-			get_title = d_poitou
-			get_title = d_gascogne
-			get_title = d_bourbon
+			get_title = title:d_aquitaine
+			get_title = title:d_poitou
+			get_title = title:d_gascogne
+			get_title = title:d_bourbon
 		}
 		hidden_effect = {
 			title:c_bourbon.holder = {
@@ -276,21 +276,35 @@ KoH_RichardTheLionheart.2023 = { #Geoffery goes to Joust!
 		character = root
 		animation = personality_rational
 	}
+
+	right_portrait = {
+		character = scope:leader
+		animation = marshal
+		outfit_tags = { war_outfit1 }
+	}
+
 	trigger = {
 		NOT = { has_character_flag = had_event_RichardTheLionheart.2023 }
 	}
 	immediate = {
+
+		create_character = {
+			template = holy_order_leader_character
+			location = root.location
+			save_scope_as = leader
+		}
+
 		add_character_flag = {
 			flag = had_event_RichardTheLionheart.2023
-		}
-		trigger_event = {
-				id = KoH_RichardTheLionheart.2024
-				days = 4
 		}
 	}
 	option = {
 		name = KoH_RichardTheLionheart.2023.a
 
+		trigger_event = {
+			id = KoH_RichardTheLionheart.2024
+			days = 12
+		}
 	}
 }
 
@@ -322,9 +336,9 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 		name = KoH_RichardTheLionheart.2024.a #enter the joust
 		
 		random_list = {
-			5 = { custom_description = { text = "You will win the joust" } }
-			4 = { custom_description = { text = "You will lose the Joust but survive untouched" } }
-			1 = { custom_description = { text = "You may suffer injuries or even face death" } }
+			5 = { custom_tooltip = { text = KoH_RichardTheLionheart.2024.a_tooltip_1 } }
+			4 = { custom_tooltip = { text = KoH_RichardTheLionheart.2024.b_tooltip_2 } }
+			1 = { custom_tooltip = { text = KoH_RichardTheLionheart.2024.c_tooltip_3 } }
 		}
 		
 		hidden_effect = {
@@ -336,7 +350,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 				mother = character:205740
 				father = character:204511
 				dynasty = 106
-				faith = "catholic"
+				faith = faith:catholic
 				trait = beauty_good_2
 				save_scope_as = arthur
 			}
@@ -346,8 +360,8 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 			}
 
 			scope:arthur = {
-				get_title = c_west_riding
-				get_title = c_nantes
+				get_title = title:c_west_riding
+				get_title = title:c_nantes
 			}
 
 			if = {
@@ -558,10 +572,10 @@ KoH_RichardTheLionheart.2 = { #Death in Joust
 		animation = grief
 	}
 	trigger = {
-			#character:204511 = { is_alive = yes }
-			character:205506 = { is_alive = yes }
-			character:205506 = { is_local_player = no }
-			NOT = { has_character_flag = had_event_RichardTheLionheart.2 }
+		#character:204511 = { is_alive = yes }
+		character:205506 = { is_alive = yes }
+		character:205506 = { is_ai = yes }
+		NOT = { has_character_flag = had_event_RichardTheLionheart.2 }
 	}
 	immediate = {
 		add_character_flag = {
@@ -582,7 +596,7 @@ KoH_RichardTheLionheart.2 = { #Death in Joust
 	}
 	option = {
 		name = KoH_RichardTheLionheart.2.a
-		}
+	}
 }
 
 KoH_RichardTheLionheart.202 = { #Henry makes action against Brittney
@@ -1062,9 +1076,9 @@ KoH_RichardTheLionheart.8 = {
 		}
 
 		character:205730 = {
-			get_title = d_aquitaine
-			get_title = d_poitou
-			get_title = d_gascogne
+			get_title = title:d_aquitaine
+			get_title = title:d_poitou
+			get_title = title:d_gascogne
 			
 			hidden_effect = {
 				title:c_bourbon.holder = {

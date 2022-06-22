@@ -24,8 +24,7 @@ male_headgear_baldwin_face_mask_01 = {
 }
 
 male_headgear_secular_sub_saharan_imperial_01 = {	
-	set_tags = "cap,mask_hat"
-	#entity = { required_tags = "mask"		shared_pose_entity = head       entity = male_headgear_secular_sub_saharan_imperial_01_mask_entity  }
+	set_tags = "cap"
 	entity = { required_tags = ""			shared_pose_entity = head		entity = male_headgear_secular_sub_saharan_imperial_01_entity 	 }		
 }
 
@@ -33,6 +32,12 @@ royal_helmet = {
 	set_tags = "no_hair"
 	set_tags = "crown"
 	entity = { required_tags = ""		shared_pose_entity = head		entity = royal_helmet_entity }
+}
+
+royal_helmet_without_crown = {
+	set_tags = "no_hair"
+	set_tags = "crown"
+	entity = { required_tags = ""		shared_pose_entity = head		entity = royal_helmet_without_crown_entity }
 }
 
 male_headgear_ayyubid_war_royality_01 = {

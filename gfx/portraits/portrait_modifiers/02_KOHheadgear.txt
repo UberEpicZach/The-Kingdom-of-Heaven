@@ -465,7 +465,7 @@ KOHheadgear = {
 			}
 		}
 	}
-	richard = {
+	richard_king = {
 		dna_modifiers = {
 			accessory = {
 				mode = add				
@@ -478,6 +478,49 @@ KOHheadgear = {
 				mode = add
 				gene = headgearKOH
 				template = royal_helmet 
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 40
+				AND = {
+					portrait_richard_trigger = yes
+					portrait_wear_armor_trigger = yes
+					is_female = no
+					OR = {
+						highest_held_title_tier = tier_kingdom
+						has_title = title:k_england
+					}
+				}
+			}
+			modifier = {
+				add = 140
+				AND = {
+					portrait_wear_armor_trigger = yes
+					this = character:204510
+					OR = {
+						highest_held_title_tier = tier_kingdom
+						has_title = title:k_england
+					}
+				}
+			}
+		}
+	}
+	richard_not_king = {
+		dna_modifiers = {
+			accessory = {
+				mode = add				
+				gene = headgear
+				template = no_headgear
+				value = 0.5
+			}
+			accessory = {
+				
+				mode = add
+				gene = headgearKOH
+				template = royal_helmet_without_crown 
 				range = { 0 1 } # For the randomness to work correctly
 			}
 		}

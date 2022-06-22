@@ -2,9 +2,6 @@
 
 KoH_SicillianConflict.1 = {
 	type = character_event
-	title = KoH_SicillianConflict.1.t
-	desc =  KoH_SicillianConflict.1.d
-	theme = war
 	hidden = yes
 
 	left_portrait = {
@@ -74,9 +71,10 @@ KoH_SicillianConflict.2 = {
 
 	trigger = {
 		character:211509 = {
-			has_character_flag = SicillianConflictHasOccuredFlag }
-			title:k_sicily.holder = character:211509 
+			has_character_flag = SicillianConflictHasOccuredFlag 
 		}
+		title:k_sicily.holder = character:211509 
+	}
 
 	option = {
 		name = KoH_SicillianConflict.2.a

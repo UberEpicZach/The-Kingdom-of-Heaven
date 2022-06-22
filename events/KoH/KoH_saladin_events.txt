@@ -635,12 +635,12 @@ KoH_saladin.3 = { #King's Crusade
 		
 		title:k_jerusalem.holder = {
 
-			add_claim = title:c_jerusalem
+			add_pressed_claim = title:c_jerusalem
 
 			start_war = { 
 				casus_belli = KOH_crusade
 				target = title:e_arabia.holder
-				target_title = c_jerusalem
+				target_title = title:c_jerusalem
 				claimant = title:k_jerusalem.holder
 			}
 

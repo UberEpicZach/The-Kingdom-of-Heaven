@@ -1,19 +1,10 @@
-namespace = KoH_holy_orders
+﻿namespace = KoH_holy_orders
 
 #Title Cleanup
 #Templar Holdings
 KoH_holy_orders.1 = {
 	type = character_event
-	title = KoH_holy_orders.1.t
-	desc = KoH_holy_orders.1.d
-	theme = war
 	hidden = yes
-	
-
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
 	
 	immediate = {
 		every_living_character = {
@@ -240,15 +231,7 @@ KoH_holy_orders.1 = {
 #Hospitaler Cleanup
 KoH_holy_orders.2 = {
 	type = character_event
-	title = KoH_holy_orders.2.t
-	desc = KoH_holy_orders.2.d
-	theme = war
 	hidden = yes
-
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
 	
 	immediate = {
 		every_living_character = {
@@ -421,15 +404,7 @@ KoH_holy_orders.2 = {
 #Setting up Knights of Calatrava
 KoH_holy_orders.5 = {
 	type = character_event
-	title = KoH_holy_orders.5.t
-	desc = KoH_holy_orders.5.d
-	theme = war
 	hidden = yes
-
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
 	
 	immediate = {
 		every_living_character = {
@@ -699,15 +674,7 @@ KoH_holy_orders.5 = {
 #Setting Up Knights of Santiago 
 KoH_holy_orders.7 = {
 	type = character_event
-	title = KoH_holy_orders.7.t
-	desc = KoH_holy_orders.7.d
-	theme = war
 	hidden = yes
-
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
 	
 	immediate = {
 		every_living_character = {
@@ -1102,9 +1069,6 @@ KoH_holy_orders.7 = {
 
 KoH_holy_orders.102 = { 
 	type = character_event
-	title = KoH_holy_orders.102.t
-	desc = KoH_holy_orders.102.d
-	theme = war
 	hidden = yes
 
 	immediate = {
@@ -1116,10 +1080,6 @@ KoH_holy_orders.102 = {
 			}
 			save_scope_as = asssassin
 		}
-	}
-
-	option = {
-		name = KoH_holy_orders.102.a
 
 		scope:asssassin = {
 
@@ -1191,18 +1151,10 @@ KoH_holy_orders.102 = {
 
 KoH_holy_orders.103 = {
 	type = character_event
-	title = KoH_holy_orders.103.t
-	desc = KoH_holy_orders.103.d
-	theme = war
 	hidden = yes
 	
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
-	
 	immediate = {
-		get_title = b_artah
+		get_title = title:b_artah
 		create_dynamic_title = {
 			tier = kingdom
 			name = OrderofHashshashin

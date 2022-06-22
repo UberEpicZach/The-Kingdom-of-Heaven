@@ -615,7 +615,7 @@ KoH_balians_adventure.12 = {
 		}
 
 		character:KOH0050 = {
-			get_title = c_lepuiset
+			get_title = title:c_lepuiset
 		}
 
 		create_title_and_vassal_change = {
@@ -848,7 +848,6 @@ KoH_balians_adventure.17 = {
 			duel = {
 				skill = prowess
 				target = scope:combatant_3
-				value = 10
 				10 = {
 					compare_modifier = {
 						value = scope:duel_value

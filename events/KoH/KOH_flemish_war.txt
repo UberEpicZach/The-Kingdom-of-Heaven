@@ -244,20 +244,20 @@ KOH_flemish_war.4 = {
             save_scope_as = Flanders
 		}
 	}
-
+	
 	#Reclaim control of Flanders, return lands to rightful families
 	option = {
 		name = flemish.war.4.a
 		scope:Flanders = {
-			get_title = d_flanders
+			get_title = title:d_flanders
 			pay_short_term_gold = {
 				target = scope:France
 				gold = scope:France.major_gold_value
 			}
 		}
 		scope:Vermandois = {
-			get_title = c_vermandois
-			get_title = c_amiens
+			get_title = title:c_vermandois
+			get_title = title:c_amiens
 		}
 		scope:France = {
 			add_diplomacy_skill = 2
@@ -273,16 +273,16 @@ KOH_flemish_war.4 = {
 	option = {
 		name = flemish.war.4.b
 		scope:Flanders = {
-			get_title = d_flanders
+			get_title = title:d_flanders
 			pay_short_term_gold = {
 				target = scope:France
 				gold = scope:France.major_gold_value
 			}
 		}
 		scope:France = {
-			get_title = c_vermandois
-			get_title = c_valois
-			get_title = c_amiens
+			get_title = title:c_vermandois
+			get_title = title:c_valois
+			get_title = title:c_amiens
 			add_diplomacy_skill = -2
 		}
 		reverse_add_opinion = {
@@ -417,9 +417,9 @@ KOH_flemish_war.6 = {
 			add_claim_on_loss = no
 		}
 		scope:Vermandois = {
-			get_title = c_vermandois
-			get_title = c_valois
-			get_title = c_amiens
+			get_title = title:c_vermandois
+			get_title = title:c_valois
+			get_title = title:c_amiens
 			change_liege = {
 				liege = scope:Flanders
 				change = scope:change_2
