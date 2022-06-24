@@ -429,10 +429,66 @@ KOHheadgear = {
 				add = 30
 				portrait_baldwin_trigger = yes
 				is_female = no
+				is_at_war = yes
+				portrait_wear_armor_trigger = yes				
 			}
 			modifier = {
 				add = 130
 				this = character:223523
+				is_at_war = yes
+				portrait_wear_armor_trigger = yes	
+			}
+		}
+	}
+	
+	baldwin_clean = {
+		dna_modifiers = {
+			morph = {
+				mode = modify
+				gene = gene_bs_forehead_brow_forward
+				template = forehead_brow_forward_neg
+				value = -1.0
+			}
+			morph = {
+				mode = modify
+				gene = gene_bs_eye_upper_lid_size
+				template = eye_upper_lid_size_neg
+				value = -1.0
+			}
+			morph = {
+				mode = modify
+				gene = gene_bs_eye_fold_shape
+				template = eye_fold_shape_pos
+				value = -1.0
+			}		
+			accessory = {
+				mode = add
+				gene = baldwin_face_mask
+				template = face_mask_clean
+				#value = 1.0
+				range = { 1 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = sub_saharan_imperial
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 30
+				portrait_baldwin_trigger = yes
+				is_female = no
+				is_at_war = no
+				portrait_wear_armor_trigger = no				
+			}
+			modifier = {
+				add = 130
+				this = character:223523
+				is_at_war = no
+				portrait_wear_armor_trigger = no	
 			}
 		}
 	}
