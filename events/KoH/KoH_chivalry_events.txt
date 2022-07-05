@@ -636,88 +636,88 @@ chivalry.11 = {
 	}
 }
 
-chivalry.12 = {
-	type = character_event
-	title = chivalry.12.t
-	desc = chivalry.12.d
-	theme = martial_chivalry_focus
-	left_portrait = {
-		character = root
-	}
+# chivalry.12 = {
+# 	type = character_event
+# 	title = chivalry.12.t
+# 	desc = chivalry.12.d
+# 	theme = martial_chivalry_focus
+# 	left_portrait = {
+# 		character = root
+# 	}
 	
-	trigger = {
-		var:Chivalry >= 10
-	}
+# 	trigger = {
+# 		var:Chivalry >= 10
+# 	}
 
-	immediate = {
-		set_variable = {
-			name = bloodline_founder
-			value = root
-		}
-	}
+# 	immediate = {
+# 		set_variable = {
+# 			name = bloodline_founder
+# 			value = root
+# 		}
+# 	}
 
-	option = {
-		name = chivalry.12.a
+# 	option = {
+# 		name = chivalry.12.a
 
-		custom_tooltip = bloodline_1_creator_tooltip
-		set_variable = has_bloodline_1
-		hidden_effect = {
-			add_character_modifier = {
-				modifier = bloodline_1_modifier
-			}
-			every_child = {
-				limit = {
-					has_dynasty = yes
-				}
-				set_variable = has_bloodline_1
-				add_character_modifier = {
-					modifier = bloodline_1_modifier
-					days = -1
-				}
-				set_variable = {
-					name = bloodline_founder
-					value = root
-				}
-				trigger_event = {
-					id = chivalry.13
-				}
-			}
-		}
-	}
-}
+# 		custom_tooltip = bloodline_1_creator_tooltip
+# 		set_variable = has_bloodline_1
+# 		hidden_effect = {
+# 			# add_character_modifier = {
+# 			# 	modifier = bloodline_1_modifier
+# 			# }
+# 			every_child = {
+# 				limit = {
+# 					has_dynasty = yes
+# 				}
+# 				set_variable = has_bloodline_1
+# 				add_character_modifier = {
+# 					modifier = bloodline_1_modifier
+# 					days = -1
+# 				}
+# 				set_variable = {
+# 					name = bloodline_founder
+# 					value = root
+# 				}
+# 				trigger_event = {
+# 					id = chivalry.13
+# 				}
+# 			}
+# 		}
+# 	}
+# }
 
-chivalry.13 = {
-	type = character_event
-	title = chivalry.13.t
-	desc = chivalry.13.d
-	theme = martial_chivalry_focus
+# chivalry.13 = {
+# 	type = character_event
+# 	title = chivalry.13.t
+# 	desc = chivalry.13.d
+# 	theme = martial_chivalry_focus
 	
-	hidden = yes
+# 	hidden = yes
 	
-	trigger = {
-		has_variable = has_bloodline_1
-	}
+# 	trigger = {
+# 		has_variable = has_bloodline_1
+# 	}
 	
-	immediate = {
-		every_child = {
-			limit = {
-				has_dynasty = yes
-			}
-			set_variable = has_bloodline_1
-			add_character_modifier = {
-				modifier = bloodline_1_modifier
-			}
-			trigger_event = {
-				id = chivalry.13
-			}
-		}
-	}
+# 	immediate = {
+# 		every_child = {
+# 			limit = {
+# 				has_dynasty = yes
+# 			}
+# 			set_variable = has_bloodline_1
+# 			add_character_modifier = {
+# 				modifier = bloodline_1_modifier
+# 			}
+# 			trigger_event = {
+# 				id = chivalry.13
+# 			}
+# 		}
+# 	}
 	
-	option = {
-		name = chivalry.13.a
+# 	option = {
+# 		name = chivalry.13.a
 		
-	}
-}
+# 	}
+# }
 
 chivalry.14 = {
 	type = character_event
@@ -950,11 +950,12 @@ chivalry.18 = {
 
 		add_trait = strong
 		add_trait = scaly
-		add_trait = possessed
+		add_trait = possessed_1
 
 		add_character_modifier = {
-			modifier = Dragonskin
+			modifier = koh_dragonskin
 		}
+		
 		random_list = {
 			50 = {
 				set_nickname_effect = { NICKNAME = nick_the_dragon }

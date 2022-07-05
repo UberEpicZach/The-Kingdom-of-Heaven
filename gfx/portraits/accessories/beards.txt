@@ -10,7 +10,7 @@ male_beard_western_01 = {
 
 male_beard_western_02 = {
 	entity = { required_tags = "no_beard"	shared_pose_entity = head }
-	entity = { required_tags = "coif_1" shared_pose_entity = head   entity = "male_beard_western_02_coif_1_entity" }		
+	entity = { required_tags = "coif_1" shared_pose_entity = head   entity = "male_beard_western_02_coif_1_entity" }	
 	entity = {  shared_pose_entity = head   entity = male_beard_western_02_entity }	
 }
 
@@ -26,13 +26,13 @@ male_beard_western_04 = {
 
 male_beard_western_05 = {
 	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = { required_tags = "coif_1" shared_pose_entity = head   entity = "male_beard_western_02_coif_1_entity" }		
 	entity = {  shared_pose_entity = head   entity = male_beard_western_05_entity }	
 }
 
 male_beard_western_06 = {
 	entity = { required_tags = "no_beard"			shared_pose_entity = head		 }
 	entity = { required_tags = "coif_1" shared_pose_entity = head   entity = "male_beard_western_02_coif_1_entity" }		
-	entity = { required_tags = "hood_beard"	shared_pose_entity = head 	entity = "male_beard_western_06_hood_entity" }
 	entity = {  shared_pose_entity = head   entity = male_beard_western_06_entity }	
 }
 
@@ -43,7 +43,6 @@ male_beard_western_07 = {
 
 male_beard_western_08 = {
 	entity = { required_tags = "no_beard"	shared_pose_entity = head }
-	entity = { required_tags = "hood_beard"	shared_pose_entity = head 	entity = "male_beard_western_08_hood_entity" }
 	entity = {  shared_pose_entity = head   entity = male_beard_western_08_entity }	
 }
 
@@ -67,15 +66,13 @@ male_beard_mena_01 = {
 }
 
 male_beard_mena_02 = {
-	entity = { required_tags = "no_beard"			shared_pose_entity = head		 }
-	entity = { required_tags = "hood_beard"			shared_pose_entity = head 	entity = "male_beard_mena_02_hood_entity" }
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
 	entity = {	shared_pose_entity = head   entity = male_beard_mena_02_entity }	
 }
 
 male_beard_mena_03 = {
-	entity = { required_tags = "no_beard"			shared_pose_entity = head		 }
-	entity = { required_tags = "hood_beard"			shared_pose_entity = head 	entity = "male_beard_mena_03_hood_entity" }
-	entity = {  shared_pose_entity = head  	 entity = male_beard_mena_03_entity }	
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head  	entity = male_beard_mena_03_entity }	
 }
 
 male_beard_mena_04 = {
@@ -85,34 +82,23 @@ male_beard_mena_04 = {
 
 
 
-
-
 ## NORTHERN ##
 
 
 male_beard_northern_01 = {
-	entity = { required_tags = "no_beard"			shared_pose_entity = head		 }
-	entity = { required_tags = "coif_1" shared_pose_entity = head   entity = "male_beard_western_02_coif_1_entity" }		
-	entity = { required_tags = "hood_beard"			shared_pose_entity = head 	entity = "male_beard_northern_01_hood_entity" }
-
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
 	entity = {  shared_pose_entity = head   entity = male_beard_northern_01_entity }	
 }
 
 male_beard_northern_02 = {
 	entity = { required_tags = "no_beard"	shared_pose_entity = head }
-	entity = { required_tags = "hood_beard" shared_pose_entity = head   entity = "male_beard_northern_02_hood_entity" }	
-
-entity = {  shared_pose_entity = head   entity = male_beard_northern_02_entity }
+	entity = {  shared_pose_entity = head   entity = male_beard_northern_02_entity }
 }
 
 male_beard_northern_03 = {
 	entity = { required_tags = "no_beard"	shared_pose_entity = head }
-	entity = { required_tags = "hood_beard" shared_pose_entity = head   entity = "male_beard_northern_03_hood_entity" }	
 	entity = {  shared_pose_entity = head   entity = male_beard_northern_03_entity }
-
 }
-
-
 
 
 ## STEEPE ##
@@ -120,17 +106,15 @@ male_beard_northern_03 = {
 
 male_beard_steppe_01 = {
 	entity = { required_tags = "no_beard"	shared_pose_entity = head }
-	entity = { required_tags = "coif_1" shared_pose_entity = head   entity = "male_beard_steppe_01_coif_1_entity" }	
+	entity = { required_tags = "coif_1" shared_pose_entity = head   entity = "male_beard_steppe_01_coif_1_entity" }		
 	entity = {  shared_pose_entity = head   entity = male_beard_steppe_01_entity }	
 }
 
 male_beard_steppe_02 = {
 	entity = { required_tags = "no_beard"	shared_pose_entity = head }
-	entity = { required_tags = "coif_1" shared_pose_entity = head   entity = "male_beard_steppe_02_coif_1_entity" }		
+	entity = { required_tags = "coif_1" shared_pose_entity = head   entity = "male_beard_steppe_02_coif_1_entity" }			
 	entity = {  shared_pose_entity = head   entity = male_beard_steppe_02_entity }	
 }
-
-
 
 
 ## SUB SAHARAN ##
@@ -148,13 +132,8 @@ male_beard_sub_saharan_02 = {
 
 male_beard_sub_saharan_03 = {
 	entity = { required_tags = "no_beard"	shared_pose_entity = head }
-	entity = { required_tags = "hood_beard"			shared_pose_entity = head 	entity = "male_beard_sub_saharan_03_hood_entity" }
 	entity = {  shared_pose_entity = head   entity = male_beard_sub_saharan_03_entity }	
 }
-
-
-
-
 
 
 ## INDIAN ##
@@ -172,48 +151,81 @@ male_beard_indian_02 = {
 
 male_beard_indian_03 = {
 	entity = { required_tags = "no_beard"	shared_pose_entity = head }
-	entity = { required_tags = "hood_beard"			shared_pose_entity = head 	entity = "male_beard_indian_03_hood_entity" }	
 	entity = {  shared_pose_entity = head   entity = male_beard_indian_03_entity }	
 }
-
 
 
 ## RTT ##
 
 
 male_beard_rtt_01 = {
-	entity = { required_tags = "no_beard"		shared_pose_entity = head }
-	entity = { required_tags = "hood_beard"		shared_pose_entity = head 	entity = "male_beard_rtt_01_hood_entity" }
-	entity = {  shared_pose_entity = head   	entity = male_beard_rtt_01_entity }	
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head	entity = male_beard_rtt_01_entity }	
 }
 
 
 ## FP1 - Fury of the Northmen ##
 
 male_beard_fp1_01 = {
-	entity = { required_tags = "no_beard"			shared_pose_entity = head }
-	entity = {  shared_pose_entity = head  			 entity = male_beard_fp1_01_entity }	
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head	entity = male_beard_fp1_01_entity }	
 }	
 
 male_beard_fp1_02 = {
-	entity = { required_tags = "no_beard"			shared_pose_entity = head }
-	entity = { required_tags = "coif_1" shared_pose_entity = head   entity = "male_beard_fp1_02_coif_1_entity" }			
-	entity = {  shared_pose_entity = head  			 entity = male_beard_fp1_02_entity }	
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head	entity = male_beard_fp1_02_entity }	
 }	
 
 male_beard_fp1_03 = {
-	entity = { required_tags = "no_beard"			shared_pose_entity = head }
-	entity = {  shared_pose_entity = head  			 entity = male_beard_fp1_03_entity }	
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head	entity = male_beard_fp1_03_entity }	
 }	
 
 male_beard_fp1_04 = {
-	entity = { required_tags = "no_beard"			shared_pose_entity = head }
-	entity = { required_tags = "hood_beard"		shared_pose_entity = head 	entity = "male_beard_fp1_04_hood_entity" }
-	entity = {  shared_pose_entity = head  			 entity = male_beard_fp1_04_entity }	
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head	entity = male_beard_fp1_04_entity }	
 }	
 
 male_beard_fp1_05 = {
 	entity = { required_tags = "no_beard"			shared_pose_entity = head }
-	entity = { required_tags = "hood_beard"			shared_pose_entity = head 	entity = "male_beard_fp1_05_hood_entity" }
-	entity = {  shared_pose_entity = head  			 entity = male_beard_fp1_05_entity }	
+	entity = {  shared_pose_entity = head			entity = male_beard_fp1_05_entity }	
+}	
+
+
+## FP2 - Fate of Iberia ##
+
+
+male_beard_fp2_iberian_muslim_01 = {
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = { shared_pose_entity = head	entity = male_beard_fp2_iberian_muslim_01_entity }
+}	
+
+male_beard_fp2_iberian_muslim_02 = {
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head	entity = male_beard_fp2_iberian_muslim_02_entity }	
+}	
+
+male_beard_fp2_iberian_muslim_03 = {
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head	entity = male_beard_fp2_iberian_muslim_03_entity }	
+}	
+
+male_beard_fp2_iberian_christian_01 = {
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head	entity = male_beard_fp2_iberian_christian_01_entity }	
+}	
+
+male_beard_fp2_iberian_christian_02 = {
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head	entity = male_beard_fp2_iberian_christian_02_entity }	
+}	
+
+male_beard_fp2_iberian_christian_03 = {
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head	entity = male_beard_fp2_iberian_christian_03_entity }	
+}	
+
+male_beard_fp2_iberian_christian_04 = {
+	entity = { required_tags = "no_beard"	shared_pose_entity = head }
+	entity = {  shared_pose_entity = head	entity = male_beard_fp2_iberian_christian_04_entity }	
 }	

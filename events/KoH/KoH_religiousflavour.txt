@@ -671,7 +671,7 @@ KoH_religiousflavour.13 = { #Duty-Bound
 		name = KoH_religiousflavour.13.a
 		
 		scope:Priest = {
-			add_trait = Deviant
+			give_deviant_secret_or_trait_effect = yes
 
 			if = {
 				limit = { exists = dynasty }
@@ -758,7 +758,7 @@ KoH_religiousflavour.14 = { #Duty-Bound - Varaint
 		name = KoH_religiousflavour.14.a
 		
 		scope:Priest = {
-			add_trait = Deviant
+			give_deviant_secret_or_trait_effect = yes
 
 			if = {
 				limit = { exists = dynasty }
