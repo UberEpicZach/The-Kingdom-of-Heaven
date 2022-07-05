@@ -57107,7 +57107,26 @@ e_maghreb = {
 			}
 		}
 	}
+}
+
+e_sahara = {
+	color = { 205 148 60 }
+	color2 = { 255 255 255 }
 	
+	capital = c_murzuk # in Fezzan
+	# Touat
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				OR = {
+					culture = culture:butr
+					culture = culture:baranis
+				}
+			}
+			add = @correct_culture_primary_score
+		}
+	}
 	k_anbiya = {
 		color = { 102 99 95 }
 		color2 = { 255 255 255 }
