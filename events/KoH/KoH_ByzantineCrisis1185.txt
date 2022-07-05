@@ -274,7 +274,7 @@ KoH_byzantinecrisis.4 = { #Bulgarian
 		character:217501 = {
 			get_title = title:c_turnovo
 			get_title = title:c_kran
-			get_title = title:c_silistra
+			get_title = title:c_dorostorum
 			get_title = title:c_aytos
 			get_title = title:d_turnovo
 			get_title = title:k_bulgaria
@@ -287,7 +287,7 @@ KoH_byzantinecrisis.4 = { #Bulgarian
 			add_pressed_claim = title:d_muntenia
 			add_pressed_claim = title:d_oltenia
 			add_pressed_claim = title:d_temes
-			add_pressed_claim = title:d_transylvaninia
+			add_pressed_claim = title:d_transylvanian_alps
 
 			add_gold = 500
 			add_prestige = 500
@@ -341,7 +341,7 @@ KoH_byzantinecrisis.4 = { #Bulgarian
 			add_pressed_claim = title:d_muntenia
 			add_pressed_claim = title:d_oltenia
 			add_pressed_claim = title:d_temes
-			add_pressed_claim = title:d_transylvaninia
+			add_pressed_claim = title:d_transylvanian_alps
 
 			create_title_and_vassal_change = {
 				type = independency #or whatever
@@ -674,7 +674,7 @@ KoH_byzantinecrisis.7 = {
 
 		character:KOH0035 = {
 			add_opinion = {
-				modifier = pleased_me
+				modifier = pleased_opinion
 				opinion = 100
 				target = scope:Emperor
 			}

@@ -2073,6 +2073,10 @@ e_britannia = {
 					color = { 255 95 20 }
 					color2 = { 255 255 255 }
 				}
+				c_east_riding = {
+					color = { 255 139 15 }
+					color2 = { 255 255 255 }
+				}
 
 				b_pockington = {
 					cultural_names = {
@@ -22431,7 +22435,7 @@ e_scandinavia = {
 	}
 }
 
-e_wendish_empire = {
+e_west_slavia = { # West Slavs: Polish, Polabian, Czech, etc.
 	color = { 130 20 50 }
 	color2 = { 200 0 0 }
 	
@@ -22466,13 +22470,6 @@ e_wendish_empire = {
 	#	allow = {
 	#		k_bohemia = { has_holder = no }
 	#	}
-	}
-
-	k_winideheim = {
-		color = { 158 102 36 }
-		color2 = { 200 0 0 }
-
-		capital = c_praha # Praha
 	}
 
 	k_poland = {
@@ -83109,11 +83106,21 @@ k_toro = {
 	
 	can_create = { always = no }
 }
+
 k_winideheim = {
 	color = { 158 102 36 }
 	color2 = { 200 0 0 }
 
 	capital = c_praha # Praha
-	
-	can_create = { always = no }
 }
+
+k_sorbia = {
+	color = { 75 15 15 }
+	color2 = { 255 255 255 }
+
+	cultural_names = {
+		name_list_polabian = cn_polabia
+		#Kingdom of Polabia
+	}
+}
+
