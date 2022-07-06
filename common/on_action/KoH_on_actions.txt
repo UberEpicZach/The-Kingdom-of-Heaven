@@ -458,33 +458,33 @@ KOH_ON_START = {
 			}
 		}
 		
-		every_living_character = {
-			set_variable = {
-				name = Chivalry
-				value = 0
-			}
-		}
-
+		# every_living_character = {
+		# 	set_variable = {
+		# 		name = Chivalry
+		# 		value = 0
+		# 	}
+		# }
+		#Makes Henry II die early
 		character:204500 = {
 			add_character_modifier = {
 				modifier = Heathly
 				years = 5
 			}
 		}
-
+		#Makes Baldwin live just a little longer
 		character:223523 = {
 			add_character_modifier = {
 				modifier = Last_Burst_of_Energy
 				years = 2
 			}
 		}
-
+		#Increase the HRE's Vassal Limit
 		character:212501 = { 
 			add_character_modifier = {
 				modifier = EmperorVassals
 			}
 		}
-
+		#Starts Balian's Event Chain
 		character:223570 = {
 			if = {
 				limit = {
@@ -494,10 +494,10 @@ KOH_ON_START = {
 				trigger_event = {
 					id = KoH_balians_adventure.1
 					days = 1 
-					}
+				}
 			} 
 		}
-
+		#Starts Richard's Marriage Chain
 		character:204510 = {
 		   if = {
                 limit = {
@@ -509,6 +509,7 @@ KOH_ON_START = {
                 }
 			}
 		}
+		#Extended from above
 		character:205506 = {
             if = {
                 limit = {
@@ -520,6 +521,7 @@ KOH_ON_START = {
                 }
             }
 		}
+		#Extended from above
 		character:204510 = {
 		   if = {
                 limit = {
@@ -531,6 +533,7 @@ KOH_ON_START = {
                 }
 			}
 		}
+		#Buffs the world slightly, REMOVE THIS AFTER WORK IS BALANCED PROPERLY
 		every_living_character = {
 			if = {
 				limit = {
@@ -542,6 +545,7 @@ KOH_ON_START = {
 				}
 			}
 		}
+		#Begins the Byzantine Crisis Chain
 		character:215529 = {
 			if = {
 				limit = {
@@ -554,6 +558,7 @@ KOH_ON_START = {
 			}
 			add_trait = stress_gain_remove
 		}
+		#Starts the Jerusalem Chain
 		character:223590 = {
 			if = {
 				limit = {
@@ -565,6 +570,7 @@ KOH_ON_START = {
 				}
 			}
 		}
+		#Extended from above
 		title:e_arabia.holder = {
 			if = {
 				limit = {
@@ -576,6 +582,7 @@ KOH_ON_START = {
 				}
 			}
 		}
+		#Balian Marriage Chain
 		character:223522 = {
 			if = {
 				limit = {
@@ -587,6 +594,7 @@ KOH_ON_START = {
 				}
 			}
 		}
+		#Extended from above
 		character:223570 = {
 			if = {
 				limit = {
@@ -598,6 +606,7 @@ KOH_ON_START = {
 				}
 			}
 		}
+		#Tamar Marriage Chain
 		character:466517 = {
 			if = {
 				limit = {
@@ -609,6 +618,7 @@ KOH_ON_START = {
 				}
 			}
 		}
+		#Extended from above
 		character:466516 = {
 			if = {
 				limit = {
@@ -652,6 +662,37 @@ KOH_ON_START = {
 					id = KoH_religiousflavour.15
 					days = 152
 				}
+			}
+		}
+		#Portugal Decision
+		title:k_portugal.holder = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				add_to_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:form_portugal_decision
+				}
+				set_global_variable = {
+					name = form_portugal_decision
+					value = scope:portugal_former
+				}
+				every_sub_realm_county = {
+					limit = {
+						tier = tier_county
+						culture = { has_cultural_pillar = heritage_iberian }
+						OR = {
+							de_jure_liege = title:d_porto
+							de_jure_liege = title:d_coimbra
+							de_jure_liege = title:d_beja
+							de_jure_liege = title:d_algarve
+						}
+					}
+					custom = portugese_convert_iberian_counties
+					set_county_culture = culture:portuguese
+				}
+				add_prestige = massive_prestige_gain
 			}
 		}
 	}
