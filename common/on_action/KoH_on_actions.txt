@@ -94,7 +94,7 @@ MyMo_ongamestart = {
 		### MyMo : 50% of non county temple become monasteries ###
 		every_province = {
 			limit = {
-				faith = { has_doctrine = tenet_monasticism }
+				county.holder.faith = { has_doctrine = tenet_monasticism }
 				has_holding_type = church_holding
 			}
 			random = {
@@ -693,6 +693,16 @@ KOH_ON_START = {
 					set_county_culture = culture:portuguese
 				}
 				add_prestige = massive_prestige_gain
+			}
+			#Fix the Struggle Stage
+			if = {
+				limit = {
+					any_character_struggle = { is_struggle_type = iberian_struggle }
+				}
+				random_character_struggle = {
+					limit = { is_struggle_type = iberian_struggle }
+					change_struggle_phase = struggle_iberia_phase_hostility
+				}
 			}
 		}
 	}
