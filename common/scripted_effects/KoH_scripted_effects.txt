@@ -673,21 +673,20 @@ KOH_flanders_vassals = {
 }
 
 FrenchStuff = {
-	title:e_france = {
-		every_in_de_jure_hierarchy = {
-			limit = {
-				AND = {
-					tier = tier_duchy
-					holder = {
-						top_liege = title:k_england.holder
-					}
-				}
-			}
-			title:k_france.holder = {
-				add_pressed_claim = PREV
-			}
-		}
-	}
+    title:e_france = {
+        every_in_de_jure_hierarchy = {
+            limit = {
+                    exists = holder
+                    tier = tier_duchy
+                    holder = {
+                        top_liege = title:k_england.holder
+                    }
+            }
+            title:k_france.holder = {
+                add_pressed_claim = PREV
+            }
+        }
+    }
 }
 
 Jerusalem_ReynaldImprison = {
