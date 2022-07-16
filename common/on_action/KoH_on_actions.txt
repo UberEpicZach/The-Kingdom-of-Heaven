@@ -94,8 +94,14 @@ MyMo_ongamestart = {
 		### MyMo : 50% of non county temple become monasteries ###
 		every_province = {
 			limit = {
-				county.holder.faith = { has_doctrine = tenet_monasticism }
-				has_holding_type = church_holding
+				AND = {
+					county = {
+						holder = {
+							faith = { has_doctrine = tenet_monasticism }
+						}
+					}
+					has_holding_type = church_holding
+				}
 			}
 			random = {
 				chance = 50
