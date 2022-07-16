@@ -9,85 +9,85 @@
 
 yearly_playable_pulse = {
 	on_actions = {
-		delay = { months = 1 }
-    	KOH_pulse_monthly
+		delay = { months = 2 }
+    	#KOH_pulse_monthly
 		KOH_yearly
 		
 	}
 }
 
-KOH_pulse_monthly = { 
-	effect = {
-		if = {
-			limit = {
-				any_ruler = { 
-					top_liege = { 
-						has_primary_title = title:e_arabia 
-					}
-					has_opinion_modifier = {
-						target = character:223590
-						modifier = raided_me_opinion
-					} 
-				}
-				title:e_arabia.holder = {
-					NOT = {	has_character_flag = Jihad_incoming }
-				}
-			}
-			title:k_jerusalem.holder = {
-				trigger_event = {
-					id = KoH_saladin.100
-					days = 1 
-				}
-			}
-		}
-		if = {
-			limit = {
-				exists = global_var:SaladinHasTakenJerusalem 
-			}
-			every_ruler = {
-				limit = {
-					faith = faith:catholic
-					is_landed = yes
-					highest_held_title_tier >= tier_county
-					NOT = { 
-						OR = {
-							has_character_flag = had_event_had_event_KoH_saladin.120
-							has_title = title:k_jerusalem
-							} 
-						}
-					}
-				trigger_event = {
-					id = KoH_saladin.120
-					days = 1 
-				}
-			}
-		}
-		if = {
-			limit = {
-				exists = global_var:SaladinHasTakenJerusalem 
-			}
-			every_ruler = {
-				limit = {
-					AND = {
-						has_title = title:k_jerusalem
-						NOT = {
-							has_character_flag = had_event_KoH_saladin.121
-						}
-					}
-				}
-				trigger_event = KoH_saladin.121
-			}
-		}
-		investitureopinioneffect = yes
-	}
-	events = { 
-		KoH_SicillianConflict.1
-    }
-	on_actions = {
-        delay = { months = 1 }
-		KOH_pulse_monthly
-	}
-}
+# KOH_pulse_monthly = { #causes Namespace.2 error spam
+# 	effect = {
+# 		if = {
+# 			limit = {
+# 				any_ruler = { 
+# 					top_liege = { 
+# 						has_primary_title = title:e_arabia 
+# 					}
+# 					has_opinion_modifier = {
+# 						target = character:223590
+# 						modifier = raided_me_opinion
+# 					} 
+# 				}
+# 				title:e_arabia.holder = {
+# 					NOT = {	has_character_flag = Jihad_incoming }
+# 				}
+# 			}
+# 			title:k_jerusalem.holder = {
+# 				trigger_event = {
+# 					id = KoH_saladin.100
+# 					days = 1 
+# 				}
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				exists = global_var:SaladinHasTakenJerusalem 
+# 			}
+# 			every_ruler = {
+# 				limit = {
+# 					faith = faith:catholic
+# 					is_landed = yes
+# 					highest_held_title_tier >= tier_county
+# 					NOT = { 
+# 						OR = {
+# 							has_character_flag = had_event_had_event_KoH_saladin.120
+# 							has_title = title:k_jerusalem
+# 							} 
+# 						}
+# 					}
+# 				trigger_event = {
+# 					id = KoH_saladin.120
+# 					days = 1 
+# 				}
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				exists = global_var:SaladinHasTakenJerusalem 
+# 			}
+# 			every_ruler = {
+# 				limit = {
+# 					AND = {
+# 						has_title = title:k_jerusalem
+# 						NOT = {
+# 							has_character_flag = had_event_KoH_saladin.121
+# 						}
+# 					}
+# 				}
+# 				trigger_event = KoH_saladin.121
+# 			}
+# 		}
+# 		investitureopinioneffect = yes
+# 	}
+# 	events = { 
+# 		KoH_SicillianConflict.1
+#     }
+# 	on_actions = {
+#         delay = { months = 1 }
+# 		KOH_pulse_monthly
+# 	}
+# }
 
 MyMo_ongamestart = {
 	effect = {
@@ -873,22 +873,22 @@ KOH_bloodline_birth = {
 	}
 }
 
-KOH_HOLY_ORDER_GOVERNMENT = {
-	effect = {
-		investitureopinioneffect = yes
-        if = {
-            limit = {
-                scope:title = {  
-                    NOT = { has_trait = order_member }
-                    OR = {
-						has_government = holy_order_county_government
-         	       }
-				}
-			}
-            add_trait = order_member
-        }
-	}
-}
+# KOH_HOLY_ORDER_GOVERNMENT = {
+# 	effect = {
+# 		investitureopinioneffect = yes
+#         if = {
+#             limit = {
+#                 scope:title = {  
+#                     NOT = { has_trait = order_member }
+#                     OR = {
+# 						has_government = holy_order_county_government
+#          	       }
+# 				}
+# 			}
+#             add_trait = order_member
+#         }
+# 	}
+# }
 
 KOH_pulse_monthly = { 
     on_actions = {
