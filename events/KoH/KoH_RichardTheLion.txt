@@ -33,10 +33,16 @@ KoH_RichardTheLionheart.1 = {
 		name = KoH_RichardTheLionheart.1.a
 
 		title:b_angers.title_province = {
-			add_building = curtain_walls_01
+			if = {
+				limit = {
+					NOT = {
+						has_building = curtain_walls_01
+					}
+				}
+				add_building = curtain_walls_01
+			}
 		}
 
-		
 		character:204510 = {
 			get_title = title:d_aquitaine
 			get_title = title:d_poitou
