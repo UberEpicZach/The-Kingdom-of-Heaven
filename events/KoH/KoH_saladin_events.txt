@@ -243,6 +243,8 @@ KoH_saladin.101 = {
 KoH_saladin.1 = {
 	type = character_event
 	title = KoH_saladin.1.t
+	theme = faith
+	left_portrait = root
 	
 	immediate = {
 		title:c_kerak.holder = {
@@ -291,12 +293,6 @@ KoH_saladin.1 = {
 			}
 		}
 	}
-	
-	theme = faith
-	override_background = {
-		event_background = temple_scope
-	}
-	left_portrait = ROOT
 
 	option = {
 		name = KoH_saladin.1.a
@@ -371,19 +367,20 @@ KoH_saladin.1 = {
 			location = capital_province
 		}
 		hidden_effect = {
-			scope:Baldwin = {
+			title:k_jerusalem.holder = {
 				trigger_event = KoH_saladin.2
 			}
-			
-			every_character_war = {
-				limit = {
-					primary_defender = title:k_jerusalem.holder
-					primary_attacker = title:e_arabia.holder
-				}
-				add_defender = global_var:templar_holy_order_title.holder
+			# title:k_jerusalem.holder = {
+			# 	every_character_war = {
+			# 		limit = {
+			# 			primary_defender = title:k_jerusalem.holder
+			# 			primary_attacker = title:e_arabia.holder
+			# 		}
+			# 		add_defender = global_var:templar_holy_order_title.holder
 				
-				add_defender = global_var:hospitaller_holy_order_title.holder
-			}
+			# 		add_defender = global_var:hospitaller_holy_order_title.holder
+			# 	}
+			# }
 		}
 		ai_chance = {
 			base = 60
@@ -492,18 +489,19 @@ KoH_saladin.1 = {
 		}
 
 		hidden_effect = {
-			scope:Baldwin = {
+			title:k_jerusalem.holder = {
 				trigger_event = KoH_saladin.2
 			}
-			
-			every_character_war = {
-				limit = {
-					primary_defender = title:k_jerusalem.holder
-					primary_attacker = title:e_arabia.holder
+			title:k_jerusalem.holder = {
+				every_character_war = {
+					limit = {
+						primary_defender = title:k_jerusalem.holder
+						primary_attacker = title:e_arabia.holder
+					}
+					add_defender = global_var:templar_holy_order_title.holder
+				
+					add_defender = global_var:hospitaller_holy_order_title.holder
 				}
-			add_defender = global_var:templar_holy_order_title.holder
-			
-			add_defender = global_var:hospitaller_holy_order_title.holder
 			}
 		}
 		ai_chance = {
@@ -580,9 +578,9 @@ KoH_saladin.2 = {
 		name = KoH_saladin.2.a
 		
 		custom_tooltip = ride_for_jerusalem
-		change_chivalry_effect = { 
-			Chivalry = 3
-		}
+		# change_chivalry_effect = { 
+		# 	Chivalry = 3
+		# }
 		
 		spawn_army = {
 			uses_supply = no
