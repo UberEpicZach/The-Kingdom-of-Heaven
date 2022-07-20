@@ -1,33 +1,33 @@
-﻿change_chivalry_effect = {
-	hidden_effect = {
-		remove_character_modifier = chivalry
-		remove_character_modifier = chivalry_1
-		remove_character_modifier = chivalry_2
-		remove_character_modifier = chivalry_3
-		remove_character_modifier = chivalry_4
-		remove_character_modifier = chivalry_5
-		remove_character_modifier = chivalry_6
-		remove_character_modifier = chivalry_7
-		remove_character_modifier = chivalry_8
-		remove_character_modifier = chivalry_9
-		remove_character_modifier = chivalry_10
-	}
-	switch = {
-		trigger = var:Chivalry # Why is this capitalized? T_T
-		1 = { add_character_modifier = chivalry_1 }
-		2 = { add_character_modifier = chivalry_2 }
-		3 = { add_character_modifier = chivalry_3 }
-		4 = { add_character_modifier = chivalry_4 }
-		5 = { add_character_modifier = chivalry_5 }
-		6 = { add_character_modifier = chivalry_6 }
-		7 = { add_character_modifier = chivalry_7 }
-		8 = { add_character_modifier = chivalry_8 }
-		9 = { add_character_modifier = chivalry_9 }
-		10 = { add_character_modifier = chivalry_10 }
+﻿# change_chivalry_effect = {
+# 	hidden_effect = {
+# 		remove_character_modifier = chivalry
+# 		remove_character_modifier = chivalry_1
+# 		remove_character_modifier = chivalry_2
+# 		remove_character_modifier = chivalry_3
+# 		remove_character_modifier = chivalry_4
+# 		remove_character_modifier = chivalry_5
+# 		remove_character_modifier = chivalry_6
+# 		remove_character_modifier = chivalry_7
+# 		remove_character_modifier = chivalry_8
+# 		remove_character_modifier = chivalry_9
+# 		remove_character_modifier = chivalry_10
+# 	}
+# 	switch = {
+# 		trigger = var:Chivalry # Why is this capitalized? T_T
+# 		1 = { add_character_modifier = chivalry_1 }
+# 		2 = { add_character_modifier = chivalry_2 }
+# 		3 = { add_character_modifier = chivalry_3 }
+# 		4 = { add_character_modifier = chivalry_4 }
+# 		5 = { add_character_modifier = chivalry_5 }
+# 		6 = { add_character_modifier = chivalry_6 }
+# 		7 = { add_character_modifier = chivalry_7 }
+# 		8 = { add_character_modifier = chivalry_8 }
+# 		9 = { add_character_modifier = chivalry_9 }
+# 		10 = { add_character_modifier = chivalry_10 }
 
-		fallback = { add_character_modifier = chivalry }
-	}
-}
+# 		fallback = { add_character_modifier = chivalry }
+# 	}
+# }
 
 add_my_faction ={
 	root = {

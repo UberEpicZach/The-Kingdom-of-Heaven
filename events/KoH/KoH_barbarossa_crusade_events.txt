@@ -39,7 +39,7 @@ KoH_barbarossa_crusade.1 = {
 	
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.1
+			has_character_flag = has_had_KoH_barbarossa_crusade_1
 		}
 	}
 
@@ -66,7 +66,7 @@ KoH_barbarossa_crusade.1 = {
 			name = num_of_knights
 			value = 4
 		}
-		add_character_flag = has_had_KoH_barbarossa_crusade.1
+		add_character_flag = has_had_KoH_barbarossa_crusade_1
 	}
 }
 
@@ -79,7 +79,7 @@ KoH_barbarossa_crusade.2 = {
 	
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.2
+			has_character_flag = has_had_KoH_barbarossa_crusade_2
 		}
 	}
 
@@ -94,7 +94,7 @@ KoH_barbarossa_crusade.2 = {
 			id = KoH_barbarossa_crusade.3
 			days = 40
 		}
-		add_character_flag = has_had_KoH_barbarossa_crusade.2
+		add_character_flag = has_had_KoH_barbarossa_crusade_2
 	}
 }
 
@@ -112,12 +112,12 @@ KoH_barbarossa_crusade.3 = {
 
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.3
+			has_character_flag = has_had_KoH_barbarossa_crusade_3
 		}
 	}
 	
 	immediate = {
-		add_character_flag = has_had_KoH_barbarossa_crusade.3
+		add_character_flag = has_had_KoH_barbarossa_crusade_3
 	}
 
 	option = {
@@ -175,12 +175,12 @@ KoH_barbarossa_crusade.4 = {
 
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.4
+			has_character_flag = has_had_KoH_barbarossa_crusade_4
 		}
 	}
 	
 	immediate = {
-		add_character_flag = has_had_KoH_barbarossa_crusade.4
+		add_character_flag = has_had_KoH_barbarossa_crusade_4
 		every_ruler = {
             limit = {
                 any_held_title = {
@@ -217,12 +217,12 @@ KoH_barbarossa_crusade.5 = {
 	
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.5
+			has_character_flag = has_had_KoH_barbarossa_crusade_5
 		}
 	}
 
 	immediate = {
-		add_character_flag = has_had_KoH_barbarossa_crusade.5
+		add_character_flag = has_had_KoH_barbarossa_crusade_5
 		every_ruler = {
             limit = {
                 any_held_title = {
@@ -275,12 +275,12 @@ KoH_barbarossa_crusade.6 = {
 
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.6
+			has_character_flag = has_had_KoH_barbarossa_crusade_6
 		}
 	}
 	
 	immediate = {
-		add_character_flag = has_had_KoH_barbarossa_crusade.6
+		add_character_flag = has_had_KoH_barbarossa_crusade_6
 	}
 
 	option = {
@@ -318,12 +318,12 @@ KoH_barbarossa_crusade.7 = {
 	
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.7
+			has_character_flag = has_had_KoH_barbarossa_crusade_7
 		}
 	}
 
 	immediate = {
-		add_character_flag = has_had_KoH_barbarossa_crusade.7
+		add_character_flag = has_had_KoH_barbarossa_crusade_7
 	}
 
 	option = {
@@ -363,11 +363,11 @@ KoH_barbarossa_crusade.8 = {
 
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.8
+			has_character_flag = has_had_KoH_barbarossa_crusade_8
 		}
 	}
 	immediate = {
-		add_character_flag = has_had_KoH_barbarossa_crusade.8
+		add_character_flag = has_had_KoH_barbarossa_crusade_8
 	}
 
 	option = {
@@ -398,11 +398,11 @@ KoH_barbarossa_crusade.9 = {
 
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.9
+			has_character_flag = has_had_KoH_barbarossa_crusade_9
 		}
 	}
 	immediate = {
-		add_character_flag = has_had_KoH_barbarossa_crusade.1
+		add_character_flag = has_had_KoH_barbarossa_crusade_9
 	}
 	option = {
 		name = KoH_barbarossa_crusade.9.a
@@ -442,12 +442,12 @@ KoH_barbarossa_crusade.10 = {
 
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.10
+			has_character_flag = has_had_KoH_barbarossa_crusade_10
 		}
 	}
 
 	immediate = {
-		add_character_flag = has_had_KoH_barbarossa_crusade.10
+		add_character_flag = has_had_KoH_barbarossa_crusade_10
 	}
 	
 	option = {
@@ -486,12 +486,12 @@ KoH_barbarossa_crusade.11 = {
 	
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.11
+			has_character_flag = has_had_KoH_barbarossa_crusade_11
 		}
 	}
 
 	immediate = {
-		add_character_flag = has_had_KoH_barbarossa_crusade.11
+		add_character_flag = has_had_KoH_barbarossa_crusade_11
         every_character_war = {
             limit = {
                 primary_defender = title:e_arabia.holder
@@ -560,12 +560,12 @@ KoH_barbarossa_crusade.12 = {
 	
 	trigger = {
 		NOT = {
-			has_character_flag = has_had_KoH_barbarossa_crusade.12
+			has_character_flag = has_had_KoH_barbarossa_crusade_12
 		}
 	}
 
 	immediate = {
-		add_character_flag = has_had_KoH_barbarossa_crusade.12
+		add_character_flag = has_had_KoH_barbarossa_crusade_12
 	}
 
 	option = {
@@ -592,8 +592,8 @@ KoH_barbarossa_crusade.12 = {
 			}
 			location = province:5910
 		}
-		change_chivalry_effect = { 
-			Chivalry = 2
-		}
+		# change_chivalry_effect = { 
+		# 	Chivalry = 2
+		# }
 	}
 }

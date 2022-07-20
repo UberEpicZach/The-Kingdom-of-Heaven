@@ -14,12 +14,12 @@ KoH_RichardTheLionheart.1 = {
 	}
 
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.1 }
+		NOT = { has_character_flag = had_event_RichardTheLionheart_1 }
 	}
 
 	immediate = {
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.1
+			flag = had_event_RichardTheLionheart_1
 		}
 		character:204500 = {
 			trigger_event = {
@@ -246,7 +246,7 @@ KoH_RichardTheLionheart.101 = { #Henry Event
 	}
 	
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.101}
+		NOT = { has_character_flag = had_event_RichardTheLionheart_101}
 		character:204500 = { is_alive = yes }
 	}
 
@@ -256,7 +256,7 @@ KoH_RichardTheLionheart.101 = { #Henry Event
 		
 		hidden_effect = {
 
-			add_character_flag = had_event_RichardTheLionheart
+			add_character_flag = had_event_RichardTheLionheart_101
 			
 			character:204511 = {
 
@@ -290,7 +290,7 @@ KoH_RichardTheLionheart.2023 = { #Geoffery goes to Joust!
 	}
 
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.2023 }
+		NOT = { has_character_flag = had_event_RichardTheLionheart_2023 }
 	}
 	immediate = {
 
@@ -301,7 +301,7 @@ KoH_RichardTheLionheart.2023 = { #Geoffery goes to Joust!
 		}
 
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.2023
+			flag = had_event_RichardTheLionheart_2023
 		}
 	}
 	option = {
@@ -329,12 +329,12 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 	}
 
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.2024 }
+		NOT = { has_character_flag = had_event_RichardTheLionheart_2024 }
 	}
 
 	immediate = {
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.2024
+			flag = had_event_RichardTheLionheart_2024
 		}
 		save_scope_as = geoffery
 	}
@@ -581,11 +581,11 @@ KoH_RichardTheLionheart.2 = { #Death in Joust
 		#character:204511 = { is_alive = yes }
 		character:205506 = { is_alive = yes }
 		character:205506 = { is_ai = yes }
-		NOT = { has_character_flag = had_event_RichardTheLionheart.2 }
+		NOT = { has_character_flag = had_event_RichardTheLionheart_2 }
 	}
 	immediate = {
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.2
+			flag = had_event_RichardTheLionheart_2
 		}
 
 		character:204511 = {
@@ -633,7 +633,7 @@ KoH_RichardTheLionheart.202 = { #Henry makes action against Brittney
 
 	immediate = {
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.202
+			flag = had_event_RichardTheLionheart_202
 		}
 
 		character:204511 = {
@@ -831,13 +831,13 @@ KoH_RichardTheLionheart.4 = {
 		animation = personality_bold
 	}
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.4}
+		NOT = { has_character_flag = had_event_RichardTheLionheart_4}
 		character:204500 = { is_alive = yes }
 		character:204514 = { is_alive = yes }
 	}
 	immediate = {
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.4
+			flag = had_event_RichardTheLionheart_4
 		}
 	}
 
@@ -884,12 +884,12 @@ KoH_RichardTheLionheart.5 = {
 	}
 	
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.5}
+		NOT = { has_character_flag = had_event_RichardTheLionheart_5}
 		character:204500 = { is_alive = yes }
 	}
 	immediate = {
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.5
+			flag = had_event_RichardTheLionheart_5
 		}
 		every_ruler = {
             limit = {
@@ -933,12 +933,12 @@ KoH_RichardTheLionheart.6 = {
 	}
 	
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.6}
+		NOT = { has_character_flag = had_event_RichardTheLionheart_6}
 		character:204500 = { is_alive = yes }
 	}
 	immediate = {
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.6
+			flag = had_event_RichardTheLionheart_6
 		}
 		character:204500 = {
 			random_targeting_faction = {
@@ -1039,13 +1039,13 @@ KoH_RichardTheLionheart.8 = {
 	}
 	
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.8}
+		NOT = { has_character_flag = had_event_RichardTheLionheart_8}
 		character:204500 = { is_alive = yes }
 		character:205730 = { is_alive = yes }
 	}
 	immediate = {
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.8
+			flag = had_event_RichardTheLionheart_8
 		}
 		character:205730 = {
 			if = {
@@ -1296,14 +1296,14 @@ KoH_RichardTheLionheart.9 = {
 		animation = personality_bold
 	}
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.9}
+		NOT = { has_character_flag = had_event_RichardTheLionheart_9}
 		character:204500 = { is_alive = yes }
 		character:205730 = { is_alive = yes }
 		character:205506 = { is_alive = yes }
 	}
 	immediate = {
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.9
+			flag = had_event_RichardTheLionheart_9
 		}
 	}
 	
@@ -1340,14 +1340,14 @@ KoH_RichardTheLionheart.10 = {
 		animation = personality_bold
 	}
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.10}
+		NOT = { has_character_flag = had_event_RichardTheLionheart_10}
 		character:204500 = { is_alive = yes }
 		character:205506 = { is_alive = yes }
 		character:204510 = { is_alive = yes }
 	}
 	immediate = {
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.10
+			flag = had_event_RichardTheLionheart_10
 		}
 		every_ruler = {
             limit = {
@@ -1396,14 +1396,14 @@ KoH_RichardTheLionheart.11 = {
 		animation = personality_bold
 	}
 	trigger = {
-		NOT = { has_character_flag = had_event_RichardTheLionheart.11}
+		NOT = { has_character_flag = had_event_RichardTheLionheart_11}
 		character:204500 = { is_alive = yes }
 		character:205506 = { is_alive = yes }
 		character:204510 = { is_alive = yes }
 	}
 	immediate = {
 		add_character_flag = {
-			flag = had_event_RichardTheLionheart.11
+			flag = had_event_RichardTheLionheart_11
 		}
 	}
 	
@@ -1677,7 +1677,7 @@ KoH_RichardTheLionheart.17 = { #genoa
 
 	immediate = {
 		add_character_flag = {
-			flag = had_RichardTheLionheart.17
+			flag = had_RichardTheLionheart_17
 		}
 		if = {
 			limit = {
@@ -1714,7 +1714,7 @@ KoH_RichardTheLionheart.18 = { #rome
 
 	immediate = {
 		add_character_flag = {
-			flag = had_RichardTheLionheart.18
+			flag = had_RichardTheLionheart_18
 		}
 		if = {
 			limit = {
@@ -1779,7 +1779,7 @@ KoH_RichardTheLionheart.19 = { #rome
 
 	immediate = {
 		add_character_flag = {
-			flag = had_RichardTheLionheart.19
+			flag = had_RichardTheLionheart_19
 		}
 		every_ruler = {
             limit = {
@@ -1845,7 +1845,7 @@ KoH_RichardTheLionheart.20 = { #sicilly
 
 	immediate = {
 		add_character_flag = {
-			flag = had_RichardTheLionheart.20
+			flag = had_RichardTheLionheart_20
 		}
 		if = {
 			limit = {
