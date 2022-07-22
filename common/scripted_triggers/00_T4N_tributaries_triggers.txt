@@ -28,10 +28,16 @@ is_suzerain = {
 }
 
 has_tributaries = {
-	OR = {
-		variable_list_size = { name = non_permanent_tributaries value > 0 }
-		variable_list_size = { name = permanent_tributaries value > 0 }
-	}
+    OR = {
+        AND = {
+            has_variable_list = non_permanent_tributaries
+            variable_list_size = { name = non_permanent_tributaries value > 0 }
+        }
+        AND = {
+            has_variable_list = permanent_tributaries
+            variable_list_size = { name = permanent_tributaries value > 0 }
+        }
+    }    
 }
 
 has_permanent_tributaries = {
