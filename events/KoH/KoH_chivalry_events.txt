@@ -368,65 +368,65 @@ chivalry.7 = {
 	}
 }
 
-chivalry.8 = {
-	type = character_event
-	title = chivalry.8.t
-	desc = chivalry.8.d
-	theme = martial_chivalry_focus
-	left_portrait = {
-		character = root
-	}
+# chivalry.8 = {
+# 	type = character_event
+# 	title = chivalry.8.t
+# 	desc = chivalry.8.d
+# 	theme = martial_chivalry_focus
+# 	left_portrait = {
+# 		character = root
+# 	}
 	
-	right_portrait = {
-		character = scope:enemy_commander
-	}
+# 	right_portrait = {
+# 		character = scope:enemy_commander
+# 	}
 	
-	immediate = {
-		random_side_commander = {
-			save_scope_as = enemy_commander
-		}
-	}
-	option = {
-		name = chivalry.8.a
+# 	immediate = {
+# 		random_side_commander = {
+# 			save_scope_as = enemy_commander
+# 		}
+# 	}
+# 	option = {
+# 		name = chivalry.8.a
 		
-		# change_chivalry_effect = { 
-		# 	Chivalry = 1
-		# }
-		custom_tooltip = add_1_chivalry_tt
+# 		# change_chivalry_effect = { 
+# 		# 	Chivalry = 1
+# 		# }
+# 		custom_tooltip = add_1_chivalry_tt
 		
-		random_list = {
-			20 = {
-				add_trait = brave
-			}
-		}
+# 		random_list = {
+# 			20 = {
+# 				add_trait = brave
+# 			}
+# 		}
 		
-		root = {
-			save_scope_as = combatant_2
-		}
-		scope:enemy_commander = {
-			save_scope_as = combatant_1
-			trigger_event = {
-				id = KoH_duels.3
-			}
-		}
-	}
+# 		root = {
+# 			save_scope_as = combatant_2
+# 		}
+# 		scope:enemy_commander = {
+# 			save_scope_as = combatant_1
+# 			trigger_event = {
+# 				id = KoH_duels.3
+# 			}
+# 		}
+# 	}
 	
-	option = {
-		name = chivalry.8.b
+# 	option = {
+# 		name = chivalry.8.b
 		
-		# change_chivalry_effect = { 
-		# 	Chivalry = -1
-		# }
-		custom_tooltip = remove_1_chivalry_tt
+# 		# change_chivalry_effect = { 
+# 		# 	Chivalry = -1
+# 		# }
+# 		custom_tooltip = remove_1_chivalry_tt
 		
-		add_prestige = -50
-		random_list = {
-			20 = {
-				add_trait = craven
-			}
-		}
-	}
-}
+# 		add_prestige = -50
+# 		random_list = {
+# 			20 = {
+# 				add_trait = craven
+# 			}
+# 		}
+# 	}
+# }
 
 chivalry.9 = {
 	type = character_event
