@@ -1426,19 +1426,9 @@ KoH_RichardTheLionheart.11 = {
 
 KoH_RichardTheLionheart.12 = {
 	type = character_event
-	title = KoH_RichardTheLionheart.12.t
-	desc = KoH_RichardTheLionheart.12.d
-	theme = war
 	hidden = yes
 	
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
-	
-	option = {
-		name = KoH_RichardTheLionheart.12.a
-
+	immediate = {
 		every_character_war = {
 			limit = {
 				primary_defender = title:k_england.holder
@@ -1446,7 +1436,7 @@ KoH_RichardTheLionheart.12 = {
 			}
 			add_attacker = title:k_france.holder
 			add_attacker = title:k_scotland.holder
-			}
+		}
 	}
 }
 
@@ -1511,7 +1501,7 @@ KoH_RichardTheLionheart.14 = {
 			character:211500 = {
 				send_interface_toast = {
 					type = event_toast_effect_good
-					title = "You've gained a strange illness"
+					title = KoH_RichardTheLionheart.14.illness
 					left_icon = character:211500
 				}
 				add_trait = typhus
@@ -1593,7 +1583,7 @@ KoH_RichardTheLionheart.15 = {
 			spawn_army = {
 				uses_supply = yes
 				inheritable = yes
-				name = Richards_Professional
+				name = KoH_RichardTheLionheart.15.Richards_Professional
 				men_at_arms = {
 				type = teutonic_knights
 				stacks = 15
@@ -1603,7 +1593,7 @@ KoH_RichardTheLionheart.15 = {
 			spawn_army = {
 				uses_supply = yes
 				inheritable = yes
-				name = Richards_Professional
+				name = KoH_RichardTheLionheart.15.Richards_Professional
 				men_at_arms = {
 				type = armored_horsemen
 				stacks = 20
@@ -1738,33 +1728,33 @@ KoH_RichardTheLionheart.18 = { #rome
 			50 = {
 				send_interface_toast = {
 					type = event_toast_effect_good
-					title = "The Pope Agrees To Meet"
+					title = KoH_RichardTheLionheart.18.b.success
 					left_icon = title:k_england.holder
 				}
 				trigger_event = {
-					id = KoH_RichardTheLionheart.19 #
+					id = KoH_RichardTheLionheart.181 #
 					days = 2
-					}
+				}
 			}
 			50 = {
 				send_interface_toast = {
 					type = event_toast_effect_good
-					title = "The Pope Declines To Meet"
+					title = KoH_RichardTheLionheart.18.b.fail
 					left_icon = title:k_england.holder
 				}
 				trigger_event = {
 					id = KoH_RichardTheLionheart.20 #
-					days = 2
+					days = 15
 				}
 			}
 		}
 	}
 }
 
-KoH_RichardTheLionheart.19 = { #rome
+KoH_RichardTheLionheart.181 = { #rome
 	type = character_event
-	title = KoH_RichardTheLionheart.19.t
-	desc = KoH_RichardTheLionheart.19.d
+	title = KoH_RichardTheLionheart.181.t
+	desc = KoH_RichardTheLionheart.181.d
 	theme = war
 
 	left_portrait = {
@@ -1779,8 +1769,18 @@ KoH_RichardTheLionheart.19 = { #rome
 
 	immediate = {
 		add_character_flag = {
-			flag = had_RichardTheLionheart_19
+			flag = had_RichardTheLionheart_181
 		}
+		if = {
+			limit = {
+				AND = {
+					is_ai = no
+					has_title = title:k_england
+				}
+			}
+			pan_camera_to_title = title:b_roma
+		}
+		
 		every_ruler = {
             limit = {
                 any_held_title = {
@@ -1801,7 +1801,7 @@ KoH_RichardTheLionheart.19 = { #rome
 	}
 
 	option = {
-		name = KoH_RichardTheLionheart.18.a
+		name = KoH_RichardTheLionheart.181.a
 
 		random_list = {
 			50 = {
@@ -1813,7 +1813,7 @@ KoH_RichardTheLionheart.19 = { #rome
 				trigger_event = {
 					id = KoH_RichardTheLionheart.20 #
 					days = 1
-					}
+				}
 				add_piety_level = 1
 			}
 			50 = {
@@ -1823,12 +1823,49 @@ KoH_RichardTheLionheart.19 = { #rome
 					left_icon = title:k_england.holder
 				}
 				trigger_event = {
-					id = KoH_RichardTheLionheart.20 #
+					id = KoH_RichardTheLionheart.191 #
 					days = 1
 				}
 				add_piety = -100
 			}
 		}
+	}
+}
+
+KoH_RichardTheLionheart.19 = { #sicilly
+	type = character_event
+	title = KoH_RichardTheLionheart.19.t
+	desc = KoH_RichardTheLionheart.19.d
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_RichardTheLionheart_20
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ai = no
+					has_title = title:k_england
+				}
+			}
+			pan_camera_to_title = title:b_messina
+		}
+		# character:204510 = {
+		# 	trigger_event = {
+		# 		id = KoH_RichardTheLionheart.21
+		# 		days = 10
+		# 	}
+		# }
+	}
+
+	option = {
+		name = KoH_RichardTheLionheart.19.a
 	}
 }
 
@@ -1856,12 +1893,12 @@ KoH_RichardTheLionheart.20 = { #sicilly
 			}
 			pan_camera_to_title = title:b_messina
 		}
-		character:204510 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.21
-				days = 10
-			}
-		}
+		# character:204510 = {
+		# 	trigger_event = {
+		# 		id = KoH_RichardTheLionheart.21
+		# 		days = 10
+		# 	}
+		# }
 	}
 
 	option = {
