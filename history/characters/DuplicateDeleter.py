@@ -23,9 +23,7 @@ def dupefinder(chardict):
             print(character +" appears on these lines:" + str(chardict[character])[1:-1])
 
 path = input("Where is the filepath with the duplicate?: ")
-newfile = input("Where do you wanna store the new file without the duplicate?: ")
 #path = "C:/Users/denny/OneDrive/Desktop/wetransfer_duplicate-finder-py_2022-07-22_1935/asturleonese.txt"
-assert os.path.exists(newfile), "The path entered was invalid"
 assert os.path.exists(path), "The path entered was invalid"
 with open(path, encoding="utf8") as textfile:
     textlines = [x.rstrip() for x in textfile]
@@ -50,7 +48,7 @@ def readblock(line):
     x = 0
     word = '{'
     word2 = '}'
-    with open(newfile, 'a', encoding='utf-8') as f:
+    with open("duplicatedeleter.txt", 'a', encoding='utf-8') as f:
         while z >= 1:
             intline = int(line) - 1
             row = open(path, encoding= 'UTF8').readlines()[intline + x]
