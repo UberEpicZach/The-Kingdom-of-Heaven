@@ -61,13 +61,16 @@ NGraphics = {
 	SURROUND_MAP_HIGHCLOUDCOLOR = { 1.0 0.0 0.0 }
 	SURROUND_MAP_SHADOWCOLOR = { 0.9 0.0 0.0 }
 
-	WINTER_GRAPHICS_DEFAULT_FADE_SPEED = 0.035				# Snow fade speed used when the game is paused
-	WINTER_GRAPHICS_FADE_SPEEDS = { 0 0 0 0.05 0.085 } 		# Snow fade speed based on the current game speed if the game is unpaused. If 0 is defined for a speed, it will use WINTER_GRAPHICS_DEFAULT_FADE_SPEED instead
+	WINTER_GRAPHICS_DEFAULT_FADE_SPEED = 0.14				# Snow fade speed used when the game is paused
+	WINTER_GRAPHICS_FADE_SPEEDS = { 0 0 0 0.2 0.34 } 		# Snow fade speed based on the current game speed if the game is unpaused. If 0 is defined for a speed, it will use WINTER_GRAPHICS_DEFAULT_FADE_SPEED instead
 
 	ERRORHOOF_DIVISOR = 100
+
 	# Court
 	COURT_EMISSIVE_STRENGTH = 5			# Strength of all emissive materials in the court shader
 	COURT_GEMCUBE_STRENGTH = 1			# Strength of cubemap in the gemcube shader
+	SECONDARY_SHADOW_STRENGTH = 1
+	SHADOW_DEPTH_FACTOR = 1000
 	COURT_HOVER_GROW = 2.5				# Speed for hover effect increase in royal court scene
 	COURT_HOVER_FADE = -8.				# Speed for hover effect fade in royal court scene
 }
@@ -293,6 +296,9 @@ NMapModes = {
 	WATER_BORDERS_ZOOM_STEP = 8 # at what zoom level disable borders along water shores
 	CIVIL_WAR_REALM_INTERPOLATE_FACTOR = 0.45 # Factor of interpolation for civil wars when combining their primary title colour with the default map colour
 	CIVIL_WAR_DARKEN_INTERPOLATE_FACTOR = 0.45 # The factor of interpolation for civil wars when combining the above merged colour with black to darken it
+	STRUGGLE_INVOLVED_COLOR = { 0.6 0.35 0.2 1 }
+	STRUGGLE_INTERLOPER_COLOR = { 0.2 0.4 0.4 1 }
+	STRUGGLE_UNINVOLVED_COLOR = { 0.5 0.5 0.5 1 }
 }
 
 NWarMapModes = {
@@ -333,7 +339,7 @@ NGui = {
 	TOAST_MESSAGE_POST_HOVER_DELAY = 1.0 # When a message is hovered it doesn't disappear, but the above timeout still runs. When leaving with the mouse and the time has run out, leave the message on the screen for TOAST_MESSAGE_POST_HOVER_DELAY seconds.
 	EVENT_WINDOW_EDGE_PIXELS = 200	# If an event window is moved outside the game window this number of pixels will stay inside it
 	EVENT_PORTRAIT_DEFAULT_ENVIRONMENT = "environment_event_standard" # Default portrait environment for animated event portraits
-	EVENT_OPTIONS_SHOWN_HIDE_UNAVAILABLE = 3 # How many options can be shown before unavailable options are not shown anymore (can lead to none/only some unavailable options being shown according to their order in the event)
+	EVENT_OPTIONS_SHOWN_HIDE_UNAVAILABLE = 4 # How many options can be shown before unavailable options are not shown anymore (can lead to none/only some unavailable options being shown according to their order in the event)
 	EVENT_OPTIONS_DISABLED_TIME = 0.5 # How long are event options unclickable after an event spawns, to prevent accidental clicks?
 	MORE_INTERACTIONS_MOVED_TO_COMMON = 2 # If the common interactions are empty how many non common ones are moved to be shown as common. If there is going to be only one left in the more section it will be moved too.
 	DAYS_SINCE_LAST_RAID_SHOULD_DISBAND = 60	# If this long since last raided, prompt player to disband their troops if they're not at war
@@ -505,6 +511,10 @@ NGameIcons = {
 	SCHEME_TYPE_ICON_PATH = "gfx/interface/icons/scheme_types"
 	ARTIFACT_ICON_PATH = "gfx/interface/icons/artifact"
 	COURT_AMENITY_ICON_PATH = "gfx/interface/icons/amenities"
+	STRUGGLE_PHASE_TYPE_ICON_PATH = "gfx/interface/icons/struggle_types"
+	STRUGGLE_TYPE_ICON_PATH = "gfx/interface/icons/struggle_types"
+	MAP_MODE_ICON_PATH = "gfx/interface/icons/flat_icons/map_modes"
+	MEMORY_TYPE_ICON_PATH = "gfx/interface/icons/memory_types"
 }
 
 NOwnMapMode = {
@@ -686,15 +696,12 @@ NRoyalCourt = {
 	# Sound effect played when camera moves from one point to another
 	CAMERA_MOVEMENT_SOUND_EFFECT_PATH = "event:/DLC/EP1/SFX/courtcamera"
 
+
 	COURT_LANGUAGE_GRANDEST_COURTS_TO_SHOW = 5 # The top X grandest royal courts should be shown in the court language view
 	TOP_COURTS_TO_SHOW = 10 # How many courts to show in the "top x grand courts" tooltip
 	CLOSE_COURTS_TO_SHOW = 5 # How many courts above and below the player in the ranking to show if the player isn't in the top
 
 	COURT_EVENT_AVAILABLE_SOUND_EFFECT_PATH = "event:/DLC/EP1/SFX/UI/Notifications/royal_court_event_available" # Sound effect played when a court event is available.
-}
-
-NCourtPositions = {
-	COURT_POSITIONS_BACKGROUND_PATH = "gfx/interface/illustrations/court_positions"
 }
 
 NCoatOfArmsDesigner = {

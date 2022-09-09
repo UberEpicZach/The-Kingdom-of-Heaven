@@ -1,0 +1,123 @@
+﻿# A wild Genghis Khan appears!
+spawn_temujin_character_effect = {
+	title:c_khentii.title_province = {
+		save_scope_as = temujins_birthplace
+	}
+
+	if = {
+		limit = {
+			AND = {
+				character:125501 = {
+					is_alive = yes
+				}
+				title:c_ulaanbaatar.holder = character:125501
+			}
+		}
+		character:125501 = {
+			save_scope_as = temujin
+		}
+		scope:temujin = {
+			# Make temporarily immune to disease
+			add_character_flag = {
+				flag = immune_to_disease
+				years = 15
+			}
+			add_trait = greatest_of_khans
+			give_temujin_land_effect = yes
+			add_gold = 5000
+			add_dread = high_dread
+			form_the_mongol_empire_effect = yes
+			add_prestige = 25000
+			dynasty = {
+				add_dynasty_prestige_level = 5
+				add_dynasty_prestige = 10000
+				add_dynasty_perk = warfare_legacy_1
+				add_dynasty_perk = warfare_legacy_2
+				add_dynasty_perk = warfare_legacy_3
+				add_dynasty_perk = warfare_legacy_4
+				if = {
+					limit = {
+						has_dlc_feature = hybridize_culture
+					}
+					add_dynasty_perk = ep1_culture_legacy_1
+				}
+			}
+		}
+	}
+	else = {
+		create_character = {
+			name = "Temujin" # AKA: Genghis Khan
+			location = scope:temujins_birthplace
+			template = genghis_khan_character_template
+			save_scope_as = temujin
+		}
+		scope:temujin = {
+			# Make temporarily immune to disease
+			add_character_flag = {
+				flag = immune_to_disease
+				years = 15
+			}
+
+			add_trait = greatest_of_khans
+			give_temujin_land_effect = yes
+			add_gold = 5000
+			add_dread = high_dread
+			spawn_temujins_court_effect = yes
+			form_the_mongol_empire_effect = yes
+			add_prestige = 25000
+			dynasty = {
+				add_dynasty_prestige_level = 5
+				add_dynasty_prestige = 10000
+				add_dynasty_perk = warfare_legacy_1
+				add_dynasty_perk = warfare_legacy_2
+				add_dynasty_perk = warfare_legacy_3
+				add_dynasty_perk = warfare_legacy_4
+				if = {
+					limit = {
+						has_dlc_feature = hybridize_culture
+					}
+					add_dynasty_perk = ep1_culture_legacy_1
+				}
+			}
+		}
+	}
+
+	every_player = {
+		trigger_event = mongol_invasion.1002 # Mongol Empire spawned notification
+	}
+}
+
+make_mongolia_invade_tibet = {
+	title:e_mongolia= {
+		spawn_mongol_troops_effect = yes
+		start_wars_for_tibet_effect = yes
+	}
+}
+
+start_wars_for_tibet_effect = {
+	save_temporary_scope_as = mongol_conqueror
+	# Build a list of potential targets
+	get_title = title:c_mazongshan 
+
+	every_neighboring_top_liege_realm_owner = {
+		limit = {
+			any_sub_realm_county = {
+				title_province = { geographical_region = world_tibet }
+			}
+		}
+		if = {
+			limit = { NOT = { is_in_list = top_liege_targets } }
+			add_to_temporary_list = top_liege_targets
+		}
+	}
+	every_in_list = {
+		list = top_liege_targets
+		save_temporary_scope_as = new_war_target
+		primary_title.empire = { save_temporary_scope_as = war_target_title }
+		# Declare the war
+		scope:mongol_conqueror = {
+			start_war = {
+				cb = mongol_realm_invasion_war
+				target = scope:new_war_target.top_liege
+				target_title = scope:war_target_title.empire
+	

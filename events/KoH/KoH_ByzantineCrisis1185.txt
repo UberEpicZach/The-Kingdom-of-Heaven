@@ -526,6 +526,10 @@ KoH_byzantinecrisis.6 = {
 		scope:NormanKing = {
 			add_gold = 1000
 			add_prestige = 500
+			add_character_modifier = {
+				modifier = instantsiege
+				days = 3
+			}
 
 			spawn_army = {
 				uses_supply = no
@@ -580,10 +584,6 @@ KoH_byzantinecrisis.6 = {
 	
 	option = {
 		name = KoH_byzantinecrisis.6.a
-		
-		scope:NormanKing = {
-			get_title = title:c_thessalonika
-		}
 
 		scope:Thessalonkia = {
 			add_opinion = {

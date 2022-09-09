@@ -28,7 +28,7 @@ mongol_invasion_target_character_weight = {
 					geographical_region = special_mongol_empire_conquest_region_prio_1
 				}
 			}
-			add = 1000
+			add = 5000
 		}
 		else_if = {
 			limit = {
@@ -36,7 +36,7 @@ mongol_invasion_target_character_weight = {
 					geographical_region = special_mongol_empire_conquest_region_prio_2
 				}
 			}
-			add = 100
+			add = 3000
 		}
 		else_if = {
 			limit = {
@@ -44,7 +44,7 @@ mongol_invasion_target_character_weight = {
 					geographical_region = special_mongol_empire_conquest_region_prio_3
 				}
 			}
-			add = 10
+			add = 2000
 		}
 		else_if = {
 			limit = {
@@ -60,7 +60,7 @@ mongol_invasion_target_character_weight = {
 					geographical_region = special_mongol_empire_conquest_region_prio_5
 				}
 			}
-			add = 0.1
+			add = 500
 		}
 		else_if = {
 			limit = {
@@ -68,7 +68,24 @@ mongol_invasion_target_character_weight = {
 					geographical_region = special_mongol_empire_conquest_region_cleanup
 				}
 			}
-			add = 0.01
+			add = 250
+		}
+		else_if = {
+			limit = {
+				title_province = {
+					geographical_region = world_tibet
+				}
+			}
+			add = -100
+		}
+		if = { # Try to disincentivize slamming your head against byzantium immediately
+			limit = {
+				holder.top_liege = {
+					has_title = title:e_byzantium
+					current_military_strength >= 25000
+				}
+			}
+			multiply = 0.1
 		}
 	}
 }
@@ -121,19 +138,62 @@ mongol_breakup_succession_score = {
 		}
 		add = 15
 	}
-	# Having more titles gives higher priority
-	every_held_title = {
-		add = {
-			value = tier
-			multiply = 10
-		}
-	}
-
-	# Not being a part of the empire doesn't disqualify you, but puts you at the bottom of the list
+	# Skill bonuses
+	add = sum_of_all_skills_value
+	
+	# Gender preference, can't check for realm law so using faith
 	if = {
 		limit = {
-			NOT = {
-				target_is_liege_or_above = scope:old_mongol_emperor
+			is_female = yes
+			scope:old_mongol_emperor.faith = {
+				has_doctrine_parameter = male_dominated_law
+			}
+		}
+		multiply = 0.1
+	}
+	else_if = {
+		limit = {
+			scope:old_mongol_emperor.faith = {
+				has_doctrine_parameter = female_dominated_law
+			}
+		}
+		multiply = 0.1
+	}
+	
+	# A penalty for not being the same culture, mongol, or an accepted culture
+	if = {
+		limit = {
+			NOR = {
+				culture = scope:old_mongol_emperor.culture
+				culture = culture:mongol
+				culture = {
+					cultural_acceptance = {
+						target = scope:old_mongol_emperor.culture
+						value >= 75
+					}
+				}
+			}
+		}
+		multiply = 0.1
+	}
+	
+	# Not adult
+	if = {
+		limit = {
+			is_adult = no
+		}
+		multiply = 0.1
+	}
+
+	# Ill health
+	if = {
+		limit = {
+			OR = {
+				has_contagious_deadly_disease_trigger = yes
+				has_epidemic_disease_trigger = yes
+				health <= poor_health
+				has_trait = infirm
+				has_trait = incapable
 			}
 		}
 		multiply = 0.01
@@ -157,5 +217,18 @@ temujin_soldier_female_chance = {
 	}
 	else = {
 	 	add = 50
+	}
+}
+
+mongol_successor_faith_chance = {
+	value = 0
+	save_temporary_scope_as = county_faith_check
+	add = {
+		scope:faith_changer = {
+			every_vassal = {
+				faith = scope:county_faith_check.faith
+			}
+			add = 5
+		}
 	}
 }

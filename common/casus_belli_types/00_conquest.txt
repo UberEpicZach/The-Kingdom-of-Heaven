@@ -19,7 +19,6 @@ county_conquest_cb = {
 			}
 		}
 	}
-
 	target_titles = all
 	target_title_tier = county
 	ignore_effect = change_title_holder
@@ -79,8 +78,7 @@ county_conquest_cb = {
 	}
 
 	on_invalidated_desc = msg_county_conquest_war_invalidated_message
-	on_invalidated = {
-	}
+	on_invalidated = {}
 
 	cost = {
 		piety = {
@@ -719,7 +717,6 @@ ducal_conquest_cb = {
 		#	}
 		#}
 	}
-
 	target_titles = neighbor_land
 	target_title_tier = all
 	target_de_jure_regions_above = yes
@@ -1062,7 +1059,6 @@ ireland_laudabiliter_conquest_cb = {
 			}
 		}
 	}
-
 	target_titles = all
 	target_title_tier = all
 	target_de_jure_regions_above = yes

@@ -225,7 +225,7 @@ KOH_holy_orders = {
 		}
 	}
 }
-
+ 
 on_natural_death_second_chance = { #Added a perk requirement
 	trigger = {
 		has_perk = know_thyself_perk
@@ -840,7 +840,6 @@ KOH_REYNALD_ACTION = {
 on_birth_child = {
 	on_actions = {
 		KOH_HENRYHENRY
-		KOH_bloodline_birth
 	}
 }
 
@@ -859,26 +858,6 @@ KOH_HENRYHENRY = {
 		change_first_name = "Heinrich"
 		add_trait = fecund
 	}	 
-}
-
-KOH_bloodline_birth = {
-	effect = {
-		investitureopinioneffect = yes
-		#Add bastardy traits and set correct House
-		if = {
-			limit = {
-				any_parent = {
-					has_dynasty = yes
-					has_variable = has_bloodline_1
-				}
-			}
-			set_variable = has_bloodline_1
-			add_character_modifier = {
-				modifier = bloodline_1_modifier
-				days = -1
-			}
-		}
-	}
 }
 
 # KOH_HOLY_ORDER_GOVERNMENT = {
@@ -1006,30 +985,6 @@ KOH_events_tri_yearly_pulse = {
 	}
 	effect = {
 		investitureopinioneffect = yes
-	}
-}
-
-on_commander_combat_pulse = {
-	on_actions = {
-		KOH_battle_on_action
-	}
-} 
-
-KOH_battle_on_action = {
-	random_events = {
-		chance_of_no_event = {
-			value = 30
-			if = {
-				limit = {
-					is_at_war = yes # Won't get spammed while at war
-				}
-				add = 10
-			}
-		}
-		23000 = 0 # 20000?
-
-		#100 = chivalry.7		# Battle
-		#100 = chivalry.8
 	}
 }
 

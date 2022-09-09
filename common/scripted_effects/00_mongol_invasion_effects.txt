@@ -18,6 +18,7 @@ give_temujin_land_effect = {
 		}
 	}
 	resolve_title_and_vassal_change = scope:title_change
+	capital_county = { change_county_control = 100 }
 }
 
 # A wild Genghis Khan appears!
@@ -26,34 +27,81 @@ spawn_temujin_character_effect = {
 		save_scope_as = temujins_birthplace
 	}
 
-	every_living_character = {
+	if = {
 		limit = {
-			any_held_title = {
-				this = title:c_ulaanbaatar
+			AND = {
+				character:125501 = {
+					is_alive = yes
+				}
+				title:c_ulaanbaatar.holder = character:125501
 			}
 		}
-		save_scope_as = temujin
-	}
-
-	scope:temujin = {
-		# Make temporarily immune to disease
-		add_character_flag = {
-			flag = immune_to_disease
-			years = 15
+		character:125501 = {
+			save_scope_as = temujin
 		}
-		add_trait = greatest_of_khans
-		give_temujin_land_effect = yes
-		add_gold = 5000
-		add_dread = high_dread
-		form_the_mongol_empire_effect = yes
-		add_prestige = 25000
-		dynasty = {
-			add_dynasty_prestige_level = 5
-			add_dynasty_prestige = 10000
-			add_dynasty_perk = warfare_legacy_1
-			add_dynasty_perk = warfare_legacy_2
-			add_dynasty_perk = warfare_legacy_3
-			add_dynasty_perk = warfare_legacy_4
+		scope:temujin = {
+			# Make temporarily immune to disease
+			add_character_flag = {
+				flag = immune_to_disease
+				years = 15
+			}
+			add_trait = greatest_of_khans
+			give_temujin_land_effect = yes
+			add_gold = 5000
+			add_dread = high_dread
+			form_the_mongol_empire_effect = yes
+			add_prestige = 25000
+			dynasty = {
+				add_dynasty_prestige_level = 5
+				add_dynasty_prestige = 10000
+				add_dynasty_perk = warfare_legacy_1
+				add_dynasty_perk = warfare_legacy_2
+				add_dynasty_perk = warfare_legacy_3
+				add_dynasty_perk = warfare_legacy_4
+				if = {
+					limit = {
+						has_dlc_feature = hybridize_culture
+					}
+					add_dynasty_perk = ep1_culture_legacy_1
+				}
+			}
+		}
+	}
+	else = {
+		create_character = {
+			name = "Temujin" # AKA: Genghis Khan
+			location = scope:temujins_birthplace
+			template = genghis_khan_character_template
+			save_scope_as = temujin
+		}
+		scope:temujin = {
+			# Make temporarily immune to disease
+			add_character_flag = {
+				flag = immune_to_disease
+				years = 15
+			}
+
+			add_trait = greatest_of_khans
+			give_temujin_land_effect = yes
+			add_gold = 5000
+			add_dread = high_dread
+			spawn_temujins_court_effect = yes
+			form_the_mongol_empire_effect = yes
+			add_prestige = 25000
+			dynasty = {
+				add_dynasty_prestige_level = 5
+				add_dynasty_prestige = 10000
+				add_dynasty_perk = warfare_legacy_1
+				add_dynasty_perk = warfare_legacy_2
+				add_dynasty_perk = warfare_legacy_3
+				add_dynasty_perk = warfare_legacy_4
+				if = {
+					limit = {
+						has_dlc_feature = hybridize_culture
+					}
+					add_dynasty_perk = ep1_culture_legacy_1
+				}
+			}
 		}
 	}
 
@@ -81,6 +129,29 @@ form_the_mongol_empire_effect = {
 	}
 	resolve_title_and_vassal_change = scope:title_change
 
+	if = {
+		limit = {
+			NOT = {
+				has_government = tribal_government
+			}
+		}
+		change_government = tribal_government
+	}
+	
+	if = {
+		limit = { has_realm_law = tribal_authority_0 }
+		remove_realm_law = tribal_authority_0
+	}
+	if = {
+		limit = { has_realm_law = tribal_authority_1 }
+		remove_realm_law = tribal_authority_1
+	}
+	if = {
+		limit = { has_realm_law = tribal_authority_3 }
+		remove_realm_law = tribal_authority_3
+	}
+	add_realm_law_skip_effects = tribal_authority_2
+
 	add_realm_law_skip_effects = high_partition_succession_law
 
 	assert_if = {
@@ -89,8 +160,6 @@ form_the_mongol_empire_effect = {
 	}
 
 	hidden_effect = { set_primary_title_to = title:e_mongol_empire }
-
-	spawn_mongol_troops_effect = yes
 
 	every_held_title = {
 		limit = {
@@ -102,9 +171,7 @@ form_the_mongol_empire_effect = {
 		}
 	}
 
-	add_character_modifier = {
-		modifier = the_great_khan_modifier
-	}
+	spawn_mongol_troops_effect = yes
 
 	set_global_variable = {
 		name = mongol_empire_has_spawned
@@ -143,6 +210,7 @@ spawn_mongol_troops_effect = {
 			stacks = 5
 		}
 		location = capital_province
+		origin = capital_province
 	}
 	spawn_army = {
 		uses_supply = no
@@ -176,6 +244,7 @@ spawn_mongol_troops_effect = {
 			stacks = 5
 		}
 		location = capital_province
+		origin = capital_province
 	}
 	spawn_army = {
 		uses_supply = no
@@ -209,6 +278,7 @@ spawn_mongol_troops_effect = {
 			stacks = 5
 		}
 		location = capital_province
+		origin = capital_province
 	}
 	spawn_army = {
 		uses_supply = no
@@ -242,6 +312,7 @@ spawn_mongol_troops_effect = {
 			stacks = 5
 		}
 		location = capital_province
+		origin = capital_province
 	}
 }
 
@@ -274,6 +345,64 @@ spawn_mongol_troops_condensed_effect = {
 			stacks = 25
 		}
 		location = capital_province
+		origin = capital_province
+	}
+}
+
+spawn_mongol_successor_state_troops_effect = {
+	spawn_army = {
+		uses_supply = no
+		inheritable = yes
+		name = mongol_event_troops
+		levies = {
+			value = 1000
+		}
+		men_at_arms = {
+			type = horse_archers
+			stacks = 5
+		}
+		men_at_arms = {
+			type = light_horsemen
+			stacks = 5
+		}
+		location = capital_province
+		origin = capital_province
+	}
+	spawn_army = {
+		uses_supply = no
+		inheritable = yes
+		name = mongol_event_troops
+		levies = {
+			value = 1000
+		}
+		men_at_arms = {
+			type = horse_archers
+			stacks = 5
+		}
+		men_at_arms = {
+			type = light_horsemen
+			stacks = 5
+		}
+		location = capital_province
+		origin = capital_province
+	}
+	spawn_army = {
+		uses_supply = no
+		inheritable = yes
+		name = mongol_event_troops
+		levies = {
+			value = 1000
+		}
+		men_at_arms = {
+			type = horse_archers
+			stacks = 5
+		}
+		men_at_arms = {
+			type = light_horsemen
+			stacks = 5
+		}
+		location = capital_province
+		origin = capital_province
 	}
 }
 
@@ -438,7 +567,7 @@ spawn_temujins_court_effect = {
 			years = 10
 		}
 		# Set friendship with Temujin
-		set_relation_friend = scope:temujin
+		set_random_friendship_reason = { TARGET = scope:temujin }
 	}
 	
 	# Spawn some generic Bagathurs
@@ -757,6 +886,62 @@ assign_core_mongol_titles_to_heir_effect = {
 			NOT = { exists = global_var:handed_out_mongolia_in_mongol_succession }
 			NOT = { exists = title:e_mongolia.holder }
 		}
+
+		
+		# If the character doesn't hold any titles in the relevant
+		if = {
+			limit = {
+				NOT = {
+					any_held_title = {
+						tier = tier_county
+						title_province = {
+							NOR = {
+								geographical_region = special_mongol_empire_ilkhanate_region
+								geographical_region = special_mongol_empire_golden_horde_region
+								geographical_region = special_mongol_empire_chagatai_region
+								geographical_region = special_mongol_empire_black_horde_region
+								geographical_region = special_mongol_empire_white_horde_region
+								geographical_region = special_mongol_empire_aarlud_khanate_region
+								geographical_region = special_mongol_empire_togskol_khanate_region
+								geographical_region = special_mongol_empire_baruun_khanate_region
+							}
+						}
+					}
+				}
+			}
+			scope:old_mongol_emperor = {
+				random_sub_realm_county = {
+					limit = {
+						title_province = {
+							NOR = {
+								geographical_region = special_mongol_empire_ilkhanate_region
+								geographical_region = special_mongol_empire_golden_horde_region
+								geographical_region = special_mongol_empire_chagatai_region
+								geographical_region = special_mongol_empire_black_horde_region
+								geographical_region = special_mongol_empire_white_horde_region
+								geographical_region = special_mongol_empire_aarlud_khanate_region
+								geographical_region = special_mongol_empire_togskol_khanate_region
+								geographical_region = special_mongol_empire_baruun_khanate_region
+							}
+						}
+					}
+					save_scope_as = county_to_transfer
+				}
+			}
+			create_title_and_vassal_change = {
+				type = granted
+				save_scope_as = title_change
+				add_claim_on_loss = no
+			}
+			scope:county_to_transfer = {
+				change_title_holder = {
+					holder = scope:candidate
+					change = scope:title_change
+				}
+			}
+			resolve_title_and_vassal_change = scope:title_change
+		}
+
 		# Create and grant title
 		create_title_and_vassal_change = {
 			type = granted
@@ -784,77 +969,28 @@ assign_core_mongol_titles_to_heir_effect = {
 			name = handed_out_mongolia_in_mongol_succession
 			value = yes
 		}
-
-		# TODO: De jure and lower changes
 	}
 	save_scope_as = mongolia_ruler
 	add_to_list = candidate_granted_title
 
+	every_character_war = {
+		end_war = white_peace
+	}
+	if = {
+		limit = {
+			has_title = title:e_mongolia.title_capital_county
+		}
+		set_realm_capital = title:e_mongolia.title_capital_county
+	}
+	spawn_mongol_successor_state_troops_effect = yes
+	add_gold = 1000
+	add_dread = 100
 	scope:mongolia_ruler = {
 		make_mongolia_invade_tibet = yes
 	}
 }
 
-make_mongolia_invade_tibet = {
-	title:e_mongolia= {
-		spawn_mongol_troops_effect = yes
-		start_wars_for_tibet_effect = yes
-	}
-}
-
-start_wars_for_tibet_effect = {
-	save_temporary_scope_as = mongol_conqueror
-	# Build a list of potential targets
-	get_title = title:c_mazongshan 
-
-	every_neighboring_top_liege_realm_owner = {
-		limit = {
-			any_sub_realm_county = {
-				title_province = { geographical_region = world_tibet }
-			}
-		}
-		if = {
-			limit = { NOT = { is_in_list = top_liege_targets } }
-			add_to_temporary_list = top_liege_targets
-		}
-	}
-	every_in_list = {
-		list = top_liege_targets
-		save_temporary_scope_as = new_war_target
-		primary_title.empire = { save_temporary_scope_as = war_target_title }
-		# Declare the war
-		scope:mongol_conqueror = {
-			start_war = {
-				cb = mongol_realm_invasion_war
-				target = scope:new_war_target.top_liege
-				target_title = scope:war_target_title.empire
-			}
-		}
-	}
-}
-
 grant_ilkhanate_effect = {
-	create_title_and_vassal_change = {
-		type = created
-		save_scope_as = title_change
-		add_claim_on_loss = no
-	}
-	title:e_ilkhanate = {
-		change_title_holder = {
-			holder = scope:candidate
-			change = scope:title_change
-		}
-	}
-	resolve_title_and_vassal_change = scope:title_change
-
-	scope:candidate = {
-		save_scope_as = ilkhanate_ruler
-	}
-	set_global_variable = {
-		name = ilkhanate_handed_out
-		value = yes
-	}
-
 	# If the character doesn't hold any titles in the relevant
 	if = {
 		limit = {
@@ -890,11 +1026,157 @@ grant_ilkhanate_effect = {
 		}
 		resolve_title_and_vassal_change = scope:title_change
 	}
+	create_title_and_vassal_change = {
+		type = created
+		save_scope_as = title_change
+		add_claim_on_loss = no
+	}
+	title:e_ilkhanate = {
+		change_title_holder = {
+			holder = scope:candidate
+			change = scope:title_change
+		}
+	}
+	resolve_title_and_vassal_change = scope:title_change
+
+	scope:candidate = {
+		save_scope_as = ilkhanate_ruler
+	}
+	set_global_variable = {
+		name = ilkhanate_handed_out
+		value = yes
+	}
+
+	# Give the character the appropriate capital area, if possible
+	if = {
+		limit = {
+			scope:old_mongol_emperor = {
+				any_sub_realm_county = {
+					duchy = title:e_ilkhanate.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+			}
+		}
+		scope:old_mongol_emperor = {
+			every_sub_realm_county = {
+				limit = {
+					duchy = title:e_ilkhanate.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+				add_to_list = titles_taken
+			}
+		}
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		every_in_list = {
+			list = titles_taken
+			change_title_holder = {
+				holder = scope:candidate
+				change = scope:title_change
+				take_baronies = yes
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+	}
+	
+	every_character_war = {
+		end_war = white_peace
+	}
+	if = {
+		limit = {
+			has_title = title:e_ilkhanate.title_capital_county
+		}
+		set_realm_capital = title:e_ilkhanate.title_capital_county
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				capital_county.title_province = {
+					geographical_region = special_mongol_empire_ilkhanate_region
+				}
+			}
+			any_held_title = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_ilkhanate_region
+				}
+			}
+		}
+		random_held_title = {
+			limit = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_ilkhanate_region
+				}
+			}
+			scope:candidate = {
+				set_realm_capital = prev
+			}
+		}
+	}
+	spawn_mongol_successor_state_troops_effect = yes
+	add_gold = 1000
+	add_dread = 100
 }
 
 grant_golden_horde_effect = {
 	debug_log = "Golden Horde about to be created"
 	debug_log_scopes = no
+	
+	# If the character doesn't hold any titles in the relevant
+	if = {
+		limit = {
+			NOT = {
+				any_held_title = {
+					tier = tier_county
+					title_province = {
+						geographical_region = special_mongol_empire_golden_horde_region
+					}
+				}
+			}
+		}
+		scope:old_mongol_emperor = {
+			random_sub_realm_county = {
+				limit = {
+					title_province = {
+						geographical_region = special_mongol_empire_golden_horde_region
+					}
+				}
+				save_scope_as = county_to_transfer
+			}
+		}
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		scope:county_to_transfer = {
+			change_title_holder = {
+				holder = scope:candidate
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+	}
 	create_title_and_vassal_change = {
 		type = created
 		save_scope_as = title_change
@@ -917,6 +1199,98 @@ grant_golden_horde_effect = {
 		value = yes
 	}
 
+	# Give the character the appropriate capital area, if possible
+	if = {
+		limit = {
+			scope:old_mongol_emperor = {
+				any_sub_realm_county = {
+					duchy = title:e_golden_horde.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+			}
+		}
+		scope:old_mongol_emperor = {
+			every_sub_realm_county = {
+				limit = {
+					duchy = title:e_golden_horde.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+				add_to_list = titles_taken
+			}
+		}
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		every_in_list = {
+			list = titles_taken
+			change_title_holder = {
+				holder = scope:candidate
+				change = scope:title_change
+				take_baronies = yes
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+	}
+	every_character_war = {
+		end_war = white_peace
+	}
+	if = {
+		limit = {
+			has_title = title:e_golden_horde.title_capital_county
+		}
+		set_realm_capital = title:e_golden_horde.title_capital_county
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				capital_county.title_province = {
+					geographical_region = special_mongol_empire_golden_horde_region
+				}
+			}
+			any_held_title = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_golden_horde_region
+				}
+			}
+		}
+		random_held_title = {
+			limit = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_golden_horde_region
+				}
+			}
+			scope:candidate = {
+				set_realm_capital = prev
+			}
+		}
+	}
+	spawn_mongol_successor_state_troops_effect = yes
+	add_gold = 1000
+	add_dread = 100
+}
+
+grant_chagatai_effect = {
+
 	# If the character doesn't hold any titles in the relevant
 	if = {
 		limit = {
@@ -924,7 +1298,7 @@ grant_golden_horde_effect = {
 				any_held_title = {
 					tier = tier_county
 					title_province = {
-						geographical_region = special_mongol_empire_golden_horde_region
+						geographical_region = special_mongol_empire_chagatai_region
 					}
 				}
 			}
@@ -933,7 +1307,7 @@ grant_golden_horde_effect = {
 			random_sub_realm_county = {
 				limit = {
 					title_province = {
-						geographical_region = special_mongol_empire_golden_horde_region
+						geographical_region = special_mongol_empire_chagatai_region
 					}
 				}
 				save_scope_as = county_to_transfer
@@ -952,10 +1326,6 @@ grant_golden_horde_effect = {
 		}
 		resolve_title_and_vassal_change = scope:title_change
 	}
-	# TODO: Transfer all appropriate vassals, or territories from other new emperors
-}
-
-grant_chagatai_effect = {
 	create_title_and_vassal_change = {
 		type = created
 		save_scope_as = title_change
@@ -977,6 +1347,98 @@ grant_chagatai_effect = {
 		name = chagatai_handed_out
 		value = yes
 	}
+	
+	# Give the character the appropriate capital area, if possible
+	if = {
+		limit = {
+			scope:old_mongol_emperor = {
+				any_sub_realm_county = {
+					duchy = title:e_chagatai.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+			}
+		}
+		scope:old_mongol_emperor = {
+			every_sub_realm_county = {
+				limit = {
+					duchy = title:e_chagatai.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+				add_to_list = titles_taken
+			}
+		}
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		every_in_list = {
+			list = titles_taken
+			change_title_holder = {
+				holder = scope:candidate
+				change = scope:title_change
+				take_baronies = yes
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+	}
+	every_character_war = {
+		end_war = white_peace
+	}
+	if = {
+		limit = {
+			has_title = title:e_chagatai.title_capital_county
+		}
+		set_realm_capital = title:e_chagatai.title_capital_county
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				capital_county.title_province = {
+					geographical_region = special_mongol_empire_chagatai_region
+				}
+			}
+			any_held_title = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_chagatai_region
+				}
+			}
+		}
+		random_held_title = {
+			limit = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_chagatai_region
+				}
+			}
+			scope:candidate = {
+				set_realm_capital = prev
+			}
+		}
+	}
+	spawn_mongol_successor_state_troops_effect = yes
+	add_gold = 1000
+	add_dread = 100
+}
+
+grant_black_horde_effect = {
 
 	# If the character doesn't hold any titles in the relevant
 	if = {
@@ -985,7 +1447,7 @@ grant_chagatai_effect = {
 				any_held_title = {
 					tier = tier_county
 					title_province = {
-						geographical_region = special_mongol_empire_chagatai_region
+						geographical_region = special_mongol_empire_black_horde_region
 					}
 				}
 			}
@@ -994,7 +1456,7 @@ grant_chagatai_effect = {
 			random_sub_realm_county = {
 				limit = {
 					title_province = {
-						geographical_region = special_mongol_empire_chagatai_region
+						geographical_region = special_mongol_empire_black_horde_region
 					}
 				}
 				save_scope_as = county_to_transfer
@@ -1013,10 +1475,6 @@ grant_chagatai_effect = {
 		}
 		resolve_title_and_vassal_change = scope:title_change
 	}
-	# TODO: Transfer all appropriate vassals, or territories from other new emperors
-}
-
-grant_black_horde_effect = {
 	create_title_and_vassal_change = {
 		type = created
 		save_scope_as = title_change
@@ -1039,6 +1497,98 @@ grant_black_horde_effect = {
 		value = yes
 	}
 
+		
+	# Give the character the appropriate capital area, if possible
+	if = {
+		limit = {
+			scope:old_mongol_emperor = {
+				any_sub_realm_county = {
+					duchy = title:e_black_horde.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+			}
+		}
+		scope:old_mongol_emperor = {
+			every_sub_realm_county = {
+				limit = {
+					duchy = title:e_black_horde.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+				add_to_list = titles_taken
+			}
+		}
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		every_in_list = {
+			list = titles_taken
+			change_title_holder = {
+				holder = scope:candidate
+				change = scope:title_change
+				take_baronies = yes
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+	}
+	every_character_war = {
+		end_war = white_peace
+	}
+	if = {
+		limit = {
+			has_title = title:e_black_horde.title_capital_county
+		}
+		set_realm_capital = title:e_black_horde.title_capital_county
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				capital_county.title_province = {
+					geographical_region = special_mongol_empire_black_horde_region
+				}
+			}
+			any_held_title = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_black_horde_region
+				}
+			}
+		}
+		random_held_title = {
+			limit = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_black_horde_region
+				}
+			}
+			scope:candidate = {
+				set_realm_capital = prev
+			}
+		}
+	}
+	spawn_mongol_successor_state_troops_effect = yes
+	add_gold = 1000
+	add_dread = 100
+}
+
+grant_white_horde_effect = {
 	# If the character doesn't hold any titles in the relevant
 	if = {
 		limit = {
@@ -1046,7 +1596,7 @@ grant_black_horde_effect = {
 				any_held_title = {
 					tier = tier_county
 					title_province = {
-						geographical_region = special_mongol_empire_black_horde_region
+						geographical_region = special_mongol_empire_white_horde_region
 					}
 				}
 			}
@@ -1055,7 +1605,7 @@ grant_black_horde_effect = {
 			random_sub_realm_county = {
 				limit = {
 					title_province = {
-						geographical_region = special_mongol_empire_black_horde_region
+						geographical_region = special_mongol_empire_white_horde_region
 					}
 				}
 				save_scope_as = county_to_transfer
@@ -1074,10 +1624,7 @@ grant_black_horde_effect = {
 		}
 		resolve_title_and_vassal_change = scope:title_change
 	}
-	# TODO: Transfer all appropriate vassals, or territories from other new emperors
-}
-
-grant_white_horde_effect = {
+	
 	create_title_and_vassal_change = {
 		type = created
 		save_scope_as = title_change
@@ -1100,6 +1647,98 @@ grant_white_horde_effect = {
 		value = yes
 	}
 
+	# Give the character the appropriate capital area, if possible
+	if = {
+		limit = {
+			scope:old_mongol_emperor = {
+				any_sub_realm_county = {
+					duchy = title:e_white_horde.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+			}
+		}
+		scope:old_mongol_emperor = {
+			every_sub_realm_county = {
+				limit = {
+					duchy = title:e_white_horde.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+				add_to_list = titles_taken
+			}
+		}
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		every_in_list = {
+			list = titles_taken
+			change_title_holder = {
+				holder = scope:candidate
+				change = scope:title_change
+				take_baronies = yes
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+	}
+	every_character_war = {
+		end_war = white_peace
+	}
+	if = {
+		limit = {
+			has_title = title:e_white_horde.title_capital_county
+		}
+		set_realm_capital = title:e_white_horde.title_capital_county
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				capital_county.title_province = {
+					geographical_region = special_mongol_empire_white_horde_region
+				}
+			}
+			any_held_title = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_white_horde_region
+				}
+			}
+		}
+		random_held_title = {
+			limit = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_white_horde_region
+				}
+			}
+			scope:candidate = {
+				set_realm_capital = prev
+			}
+		}
+	}
+	spawn_mongol_successor_state_troops_effect = yes
+	add_gold = 1000
+	add_dread = 100
+}
+
+grant_aarlud_khanate_effect = {
+
 	# If the character doesn't hold any titles in the relevant
 	if = {
 		limit = {
@@ -1107,7 +1746,7 @@ grant_white_horde_effect = {
 				any_held_title = {
 					tier = tier_county
 					title_province = {
-						geographical_region = special_mongol_empire_white_horde_region
+						geographical_region = special_mongol_empire_aarlud_khanate_region
 					}
 				}
 			}
@@ -1116,7 +1755,7 @@ grant_white_horde_effect = {
 			random_sub_realm_county = {
 				limit = {
 					title_province = {
-						geographical_region = special_mongol_empire_white_horde_region
+						geographical_region = special_mongol_empire_aarlud_khanate_region
 					}
 				}
 				save_scope_as = county_to_transfer
@@ -1135,10 +1774,6 @@ grant_white_horde_effect = {
 		}
 		resolve_title_and_vassal_change = scope:title_change
 	}
-	# TODO: Transfer all appropriate vassals, or territories from other new emperors
-}
-
-grant_aarlud_khanate_effect = {
 	create_title_and_vassal_change = {
 		type = created
 		save_scope_as = title_change
@@ -1160,6 +1795,98 @@ grant_aarlud_khanate_effect = {
 		name = aarlud_khanate_handed_out
 		value = yes
 	}
+	
+	# Give the character the appropriate capital area, if possible
+	if = {
+		limit = {
+			scope:old_mongol_emperor = {
+				any_sub_realm_county = {
+					duchy = title:e_aarlud_khanate.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+			}
+		}
+		scope:old_mongol_emperor = {
+			every_sub_realm_county = {
+				limit = {
+					duchy = title:e_aarlud_khanate.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+				add_to_list = titles_taken
+			}
+		}
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		every_in_list = {
+			list = titles_taken
+			change_title_holder = {
+				holder = scope:candidate
+				change = scope:title_change
+				take_baronies = yes
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+	}
+	every_character_war = {
+		end_war = white_peace
+	}
+	if = {
+		limit = {
+			has_title = title:e_aarlud_khanate.title_capital_county
+		}
+		set_realm_capital = title:e_aarlud_khanate.title_capital_county
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				capital_county.title_province = {
+					geographical_region = special_mongol_empire_aarlud_khanate_region
+				}
+			}
+			any_held_title = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_aarlud_khanate_region
+				}
+			}
+		}
+		random_held_title = {
+			limit = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_aarlud_khanate_region
+				}
+			}
+			scope:candidate = {
+				set_realm_capital = prev
+			}
+		}
+	}
+	spawn_mongol_successor_state_troops_effect = yes
+	add_gold = 1000
+	add_dread = 100
+}
+
+grant_togskol_khanate_effect = {
 
 	# If the character doesn't hold any titles in the relevant
 	if = {
@@ -1168,7 +1895,7 @@ grant_aarlud_khanate_effect = {
 				any_held_title = {
 					tier = tier_county
 					title_province = {
-						geographical_region = special_mongol_empire_aarlud_khanate_region
+						geographical_region = special_mongol_empire_togskol_khanate_region
 					}
 				}
 			}
@@ -1177,7 +1904,7 @@ grant_aarlud_khanate_effect = {
 			random_sub_realm_county = {
 				limit = {
 					title_province = {
-						geographical_region = special_mongol_empire_aarlud_khanate_region
+						geographical_region = special_mongol_empire_togskol_khanate_region
 					}
 				}
 				save_scope_as = county_to_transfer
@@ -1196,10 +1923,6 @@ grant_aarlud_khanate_effect = {
 		}
 		resolve_title_and_vassal_change = scope:title_change
 	}
-	# TODO: Transfer all appropriate vassals, or territories from other new emperors
-}
-
-grant_togskol_khanate_effect = {
 	create_title_and_vassal_change = {
 		type = created
 		save_scope_as = title_change
@@ -1222,6 +1945,98 @@ grant_togskol_khanate_effect = {
 		value = yes
 	}
 
+	# Give the character the appropriate capital area, if possible
+	if = {
+		limit = {
+			scope:old_mongol_emperor = {
+				any_sub_realm_county = {
+					duchy = title:e_togskol_khanate.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+			}
+		}
+		scope:old_mongol_emperor = {
+			every_sub_realm_county = {
+				limit = {
+					duchy = title:e_togskol_khanate.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
+					}
+				}
+				add_to_list = titles_taken
+			}
+		}
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		every_in_list = {
+			list = titles_taken
+			change_title_holder = {
+				holder = scope:candidate
+				change = scope:title_change
+				take_baronies = yes
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+	}
+	every_character_war = {
+		end_war = white_peace
+	}
+	if = {
+		limit = {
+			has_title = title:e_togskol_khanate.title_capital_county
+		}
+		set_realm_capital = title:e_togskol_khanate.title_capital_county
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				capital_county.title_province = {
+					geographical_region = special_mongol_empire_togskol_khanate_region
+				}
+			}
+			any_held_title = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_togskol_khanate_region
+				}
+			}
+		}
+		random_held_title = {
+			limit = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_togskol_khanate_region
+				}
+			}
+			scope:candidate = {
+				set_realm_capital = prev
+			}
+		}
+	}
+	spawn_mongol_successor_state_troops_effect = yes
+	add_gold = 1000
+	add_dread = 100
+}
+
+grant_baruun_khanate_effect = {
+
 	# If the character doesn't hold any titles in the relevant
 	if = {
 		limit = {
@@ -1229,7 +2044,7 @@ grant_togskol_khanate_effect = {
 				any_held_title = {
 					tier = tier_county
 					title_province = {
-						geographical_region = special_mongol_empire_togskol_khanate_region
+						geographical_region = special_mongol_empire_baruun_khanate_region
 					}
 				}
 			}
@@ -1238,7 +2053,7 @@ grant_togskol_khanate_effect = {
 			random_sub_realm_county = {
 				limit = {
 					title_province = {
-						geographical_region = special_mongol_empire_togskol_khanate_region
+						geographical_region = special_mongol_empire_baruun_khanate_region
 					}
 				}
 				save_scope_as = county_to_transfer
@@ -1257,10 +2072,6 @@ grant_togskol_khanate_effect = {
 		}
 		resolve_title_and_vassal_change = scope:title_change
 	}
-	# TODO: Transfer all appropriate vassals, or territories from other new emperors
-}
-
-grant_baruun_khanate_effect = {
 	create_title_and_vassal_change = {
 		type = created
 		save_scope_as = title_change
@@ -1282,27 +2093,40 @@ grant_baruun_khanate_effect = {
 		name = baruun_khanate_handed_out
 		value = yes
 	}
-
-	# If the character doesn't hold any titles in the relevant
+	
+	# Give the character the appropriate capital area, if possible
 	if = {
 		limit = {
-			NOT = {
-				any_held_title = {
-					tier = tier_county
-					title_province = {
-						geographical_region = special_mongol_empire_baruun_khanate_region
+			scope:old_mongol_emperor = {
+				any_sub_realm_county = {
+					duchy = title:e_baruun_khanate.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
 					}
 				}
 			}
 		}
 		scope:old_mongol_emperor = {
-			random_sub_realm_county = {
+			every_sub_realm_county = {
 				limit = {
-					title_province = {
-						geographical_region = special_mongol_empire_baruun_khanate_region
+					duchy = title:e_baruun_khanate.title_capital_county.duchy
+					NOR = {
+						holder = scope:candidate
+						holder = { # Don't steal the player's lands
+							is_ai = no
+						}
+						holder = {
+							any_liege_or_above = { is_ai = no }
+						}
 					}
 				}
-				save_scope_as = county_to_transfer
+				add_to_list = titles_taken
 			}
 		}
 		create_title_and_vassal_change = {
@@ -1310,15 +2134,55 @@ grant_baruun_khanate_effect = {
 			save_scope_as = title_change
 			add_claim_on_loss = no
 		}
-		scope:county_to_transfer = {
+		every_in_list = {
+			list = titles_taken
 			change_title_holder = {
 				holder = scope:candidate
 				change = scope:title_change
+				take_baronies = yes
 			}
 		}
 		resolve_title_and_vassal_change = scope:title_change
 	}
-	# TODO: Transfer all appropriate vassals, or territories from other new emperors
+	every_character_war = {
+		end_war = white_peace
+	}
+	if = {
+		limit = {
+			has_title = title:e_baruun_khanate.title_capital_county
+		}
+		set_realm_capital = title:e_baruun_khanate.title_capital_county
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				capital_county.title_province = {
+					geographical_region = special_mongol_empire_baruun_khanate_region
+				}
+			}
+			any_held_title = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_baruun_khanate_region
+				}
+			}
+		}
+		random_held_title = {
+			limit = {
+				tier = tier_county
+				title_province = {
+					geographical_region = special_mongol_empire_baruun_khanate_region
+				}
+			}
+			scope:candidate = {
+				set_realm_capital = prev
+			}
+		}
+	}
+	spawn_mongol_successor_state_troops_effect = yes
+	add_gold = 1000
+	add_dread = 100
+}
 }
 
 
@@ -2982,6 +3846,44 @@ break_up_mongol_empire_effect = { # Intended to run in the Mongol Emperor's scop
 		trigger_event = {
 			id = mongol_invasion.9999
 			days = 1
+		}
+	}
+}
+
+make_mongolia_invade_tibet = {
+	title:e_mongolia= {
+		spawn_mongol_troops_effect = yes
+		start_wars_for_tibet_effect = yes
+	}
+}
+
+start_wars_for_tibet_effect = {
+	save_temporary_scope_as = mongol_conqueror
+	# Build a list of potential targets
+	get_title = title:c_mazongshan 
+
+	every_neighboring_top_liege_realm_owner = {
+		limit = {
+			any_sub_realm_county = {
+				title_province = { geographical_region = world_tibet }
+			}
+		}
+		if = {
+			limit = { NOT = { is_in_list = top_liege_targets } }
+			add_to_temporary_list = top_liege_targets
+		}
+	}
+	every_in_list = {
+		list = top_liege_targets
+		save_temporary_scope_as = new_war_target
+		primary_title.empire = { save_temporary_scope_as = war_target_title }
+		# Declare the war
+		scope:mongol_conqueror = {
+			start_war = {
+				cb = mongol_realm_invasion_war
+				target = scope:new_war_target.top_liege
+				target_title = scope:war_target_title.empire
+			}
 		}
 	}
 }
