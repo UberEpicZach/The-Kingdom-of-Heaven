@@ -122,9 +122,10 @@ VertexStruct VS_OUTPUT_PDXMESHPORTRAIT
 	float3 	Bitangent		: TEXCOORD2;
 	float2 	UV0				: TEXCOORD3;
 	float2 	UV1				: TEXCOORD4;
-	float3 	WorldSpacePos	: TEXCOORD5;
+	float2 	UV2				: TEXCOORD5;
+	float3 	WorldSpacePos	: TEXCOORD6;
 	# This instance index is used to fetch custom user data from the Data[] array (see pdxmesh.fxh)
-	uint 	InstanceIndex	: TEXCOORD6;
+	uint 	InstanceIndex	: TEXCOORD7;
 };
 
 # SCourtSceneLightConstants::MaxLightCount in cpp code controls light array sizes
@@ -206,6 +207,7 @@ VertexShader = {
 			Out.Bitangent = In.Bitangent;
 			Out.UV0 = In.UV0;
 			Out.UV1 = In.UV1;
+			Out.UV2 = In.UV2;
 			Out.WorldSpacePos = In.WorldSpacePos;
 			return Out;
 		}
@@ -1373,6 +1375,50 @@ Effect portrait_attachment_alpha_to_coverageShadow
 	PixelShader = "PixelPdxMeshStandardShadow"
 	RasterizerState = "ShadowRasterizerState"
 	Defines = { "PDX_MESH_BLENDSHAPES" }
+}
+
+Effect portrait_attachment_with_coa
+{
+	VertexShader = "VS_standard"
+	PixelShader = "PS_attachment"
+	Defines = { "COA_ENABLED" "PDX_MESH_BLENDSHAPES" }
+}
+
+Effect portrait_attachment_with_coa_selection
+{
+	VertexShader = "VS_standard"
+	PixelShader = "PS_attachment"
+	Defines = { "COA_ENABLED" "PDX_MESH_BLENDSHAPES" }
+}
+
+Effect portrait_attachment_with_coaShadow
+{
+	VertexShader = "VertexPdxMeshStandardShadow"
+	PixelShader = "PixelPdxMeshStandardShadow"
+	RasterizerState = "ShadowRasterizerState"
+	Defines = { "PDXMESH_DISABLE_DITHERED_OPACITY" "PDX_MESH_BLENDSHAPES" }
+}
+
+Effect portrait_attachment_with_coa_and_variations
+{
+	VertexShader = "VS_standard"
+	PixelShader = "PS_attachment"
+	Defines = { "COA_ENABLED" "VARIATIONS_ENABLED" "PDX_MESH_BLENDSHAPES" }
+}
+
+Effect portrait_attachment_with_coa_and_variations_selection
+{
+	VertexShader = "VS_standard"
+	PixelShader = "PS_attachment"
+	Defines = { "COA_ENABLED" "VARIATIONS_ENABLED" "PDX_MESH_BLENDSHAPES" }
+}
+
+Effect portrait_attachment_with_coa_and_variationsShadow
+{
+	VertexShader = "VertexPdxMeshStandardShadow"
+	PixelShader = "PixelPdxMeshStandardShadow"
+	RasterizerState = "ShadowRasterizerState"
+	Defines = { "PDXMESH_DISABLE_DITHERED_OPACITY" "PDX_MESH_BLENDSHAPES" }
 }
 
 Effect portrait_hair
