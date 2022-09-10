@@ -13,17 +13,17 @@
 	}
 	854.1.1 = {
 		effect = {
-			set_relation_rival = character:168314 # Waldrada, husband's lover
+			set_relation_rival = { reason = rival_historical target = character:168314 }  # Waldrada, husband's lover
 		}
 	}
 	861.1.1 = {
 		effect = {
-			set_relation_rival = character:144998 # Husband Lothaire II, tries to annul marriage
+			set_relation_rival = { reason = rival_historical target = character:144998 }  # Husband Lothaire II, tries to annul marriage
 		}
 	}
 	863.1.1 = {
 		effect = {
-			set_relation_friend = character:90104 #(King Charles the Bald), defended her marriage and gave shelter
+			set_relation_friend = { reason = friend_generic_history target = character:90104 }  #(King Charles the Bald), defended her marriage and gave shelter
 		}
 	}
 	875.1.1 = {
@@ -7842,12 +7842,12 @@
 	#1158 married Amaury d'Anjou, king of Jerusalem
 	1169.1.2 = {
 		effect = {
-			set_relation_rival = character:215560 #Maria Komnenos
+			set_relation_rival = { reason = rival_historical target = character:215560 }  #Maria Komnenos
 		}
 	}
 	1184.1.1 = {
 		effect = {
-			set_relation_lover = character:223505 #Amaury de Lusignan
+			set_relation_lover = { reason = lover_history target = character:223505 }  #Amaury de Lusignan
 		}
 	}
 	1184.9.1 = {
@@ -22471,7 +22471,7 @@ KOH0060 = {
 	}
 	866.7.2 = {
 		effect = {
-			set_relation_rival = character:6878 # Hastein the Viking, killed his father
+			set_relation_rival = { reason = rival_historical target = character:6878 }  # Hastein the Viking, killed his father
 		}
 	}
 	884.1.1 = {
@@ -27275,7 +27275,7 @@ KOH0060 = {
 		give_nickname = nick_the_bald
 	}
 	858.12.1 = {
-		set_relation_rival = character:90107 #(Ludwig the German), tried to take his Kingdom title
+		set_relation_rival = { reason = rival_historical target = character:90107 }  #(Ludwig the German), tried to take his Kingdom title
 	}
 	870.1.1 = {
 		add_spouse = 168164
@@ -27575,7 +27575,7 @@ KOH0060 = {
 	}
 	866.7.1 = {
 		remove_spouse = 91385 # Ansgarde de Bourgogne
-		set_relation_friend = character:7853 # Pope Nicholas
+		set_relation_friend = { reason = friend_generic_history target = character:7853 }  # Pope Nicholas
 	}
 	875.1.1 = {
 		add_spouse = 168091

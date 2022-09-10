@@ -4427,7 +4427,7 @@
 	}
 	1075.1.1 = {
 		effect = {
-			set_relation_lover = character:108500 #King Alfonso VI of León
+			set_relation_lover = { reason = lover_history target = character:108500 }  #King Alfonso VI of León
 		}
 	}
 	1128.1.1 = {
@@ -5458,7 +5458,7 @@
 		effect = {
 			add_pressed_claim = title:c_coimbra
 			add_gold = 250 #this guy knows his administration
-			set_relation_friend = character:70019
+			set_relation_friend = { reason = friend_generic_history target = character:70019 } 
 			set_realm_capital = title:c_santiago
 			set_primary_title_to = title:c_santiago
 		}

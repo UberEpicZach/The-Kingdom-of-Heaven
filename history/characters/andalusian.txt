@@ -484,7 +484,7 @@
 	}
 	1063.1.1 = {
 		effect = {
-			set_relation_lover = character:3214 # Emir al-Mu'tamid of Seville
+			set_relation_lover = { reason = lover_history target = character:3214 }  # Emir al-Mu'tamid of Seville
 		}
 		employer = 3214
 	}
@@ -1940,7 +1940,7 @@
 	}
 	866.1.1 = {
 		effect = {
-			set_relation_lover = character:73958 #his wife! (fictional, but it seemed fiting for this romantic figure)
+			set_relation_lover = { reason = lover_history target = character:73958 }  #his wife! (fictional, but it seemed fiting for this romantic figure)
 			set_relation_potential_rival = character:73683 #The Umayyad emir
 			add_pressed_claim = title:c_coimbra #he attacked it together with Surunbaqi
 			add_pressed_claim = title:c_beja #he attacked it together with Surunbaqi

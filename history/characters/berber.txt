@@ -7113,7 +7113,7 @@ danis0005 = {
 		effect = {
 			set_relation_nemesis = character:73957 #Ibn Marwan
 			set_relation_potential_friend = character:73683 #The Umayyad emir
-			set_relation_rival = character:surunbaqi0001 #Sad'un al-Surunbaqi 
+			set_relation_rival = { reason = rival_historical target = character:surunbaqi0001 } #Sad'un al-Surunbaqi 
 			set_realm_capital = title:c_alcacer_do_sal #Qasr abi Danis was an important fortress that they built 
 			learn_language_of_culture = culture:bedouin
 			reverse_add_opinion = {
@@ -7771,7 +7771,7 @@ khali0008 = { #Banu Khali matriarch (fictional)
 	}
 	1065.1.1 = {
 		effect = {
-			set_relation_rival = character:3214 # Muhammad ibn Abbad, 26 year old in 1066, and heir to the Abbadid Emirate
+			set_relation_rival = { reason = rival_historical target = character:3214 }  # Muhammad ibn Abbad, 26 year old in 1066, and heir to the Abbadid Emirate
 		}
 	}
 	1075.6.1 = {

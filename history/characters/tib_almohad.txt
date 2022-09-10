@@ -31,7 +31,7 @@
 	}
 	1121.1.1 = {
 		employer = ibn_tumart
-		set_relation_friend = character:ibn_tumart
+		set_relation_friend = { reason = friend_generic_history target = character:ibn_tumart }
 	}
 	1144.1.1 = {
 		add_pressed_claim = title:e_maghreb
@@ -568,7 +568,7 @@ almohad_descendants_006 = {
 		birth = "1139.1.1"
 	}
 	1163.1.1 = {
-		set_relation_friend = character:224000 # Umar faithfully supported Abu Ya'qub Yusuf
+		set_relation_friend = { reason = friend_generic_history target = character:224000 }  # Umar faithfully supported Abu Ya'qub Yusuf
 	}
 	1191.1.1 = {
 		death = "1191.1.1"
@@ -1031,7 +1031,7 @@ almohad0008 = {
 		set_realm_capital = title:c_almeria # Closest to Baeza
 	}
 	1224.1.1 = { # Should be 1225 but to make things more interesting :)
-		set_relation_friend = character:457620 # Fernando III, made an alliance with him which is NOT NORMAL
+		set_relation_friend = { reason = friend_generic_history target = character:457620 }  # Fernando III, made an alliance with him which is NOT NORMAL
 	}
 	1226.7.1 = {
 		death = {
@@ -1056,7 +1056,7 @@ fernando_de_adelmon = {
 		name = "Fernando"
 		give_nickname = nick_adelmon
 		employer = 457620 # Taken care by Fernando III after the death of his father
-		set_relation_friend = character:457620
+		set_relation_friend = { reason = friend_generic_history target = character:457620 } 
 	}
 	1273.1.1 = { # Maybe?
 		death = yes

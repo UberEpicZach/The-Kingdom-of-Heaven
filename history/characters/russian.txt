@@ -9790,10 +9790,10 @@
 	}
 	1066.1.1 = {	#Extreme tension in Kievan Rus, period of civil wars
 		effect = {
-			set_relation_rival = character:686	#Mstislav in Novgorod
-			set_relation_rival = character:628	#Sviatoslav in Chernigov
-			set_relation_rival = character:630	#Vsevolod in Pereyaslavl
-			set_relation_rival = character:650	#Vseslav in Polotsk
+			set_relation_rival = { reason = rival_historical target = character:686 } 	#Mstislav in Novgorod
+			set_relation_rival = { reason = rival_historical target = character:628 } 	#Sviatoslav in Chernigov
+			set_relation_rival = { reason = rival_historical target = character:630 } 	#Vsevolod in Pereyaslavl
+			set_relation_rival = { reason = rival_historical target = character:650 } 	#Vseslav in Polotsk
 			
 			add_opinion = {
 				target = character:686	#Mstislav in Novgorod
@@ -9856,8 +9856,8 @@
 	}
 	1066.1.1 = {	#Extreme tension in Kievan Rus, period of civil wars
 		effect = {
-			set_relation_rival = character:630	#Vsevolod in Pereyaslavl
-			set_relation_rival = character:650	#Vseslav in Polotsk
+			set_relation_rival = { reason = rival_historical target = character:630 } 	#Vsevolod in Pereyaslavl
+			set_relation_rival = { reason = rival_historical target = character:650 } 	#Vseslav in Polotsk
 			
 			add_opinion = {
 				target = character:626	#Iziaslav in Kiev
@@ -9905,7 +9905,7 @@
 	}
 	1066.1.1 = {	#Extreme tension in Kievan Rus, period of civil wars
 		effect = {
-			set_relation_rival = character:650	#Vseslav in Polotsk
+			set_relation_rival = { reason = rival_historical target = character:650 } 	#Vseslav in Polotsk
 			
 			add_opinion = {
 				target = character:626	#Iziaslav in Kiev
@@ -10358,9 +10358,9 @@
 	}
 	1066.1.1 = {	#Extreme tension in Kievan Rus, period of civil wars
 		effect = {
-			set_relation_rival = character:628	#Sviatoslav in Chernigov
-			set_relation_rival = character:630	#Vsevolod in Pereyaslavl
-			set_relation_rival = character:650	#Vseslav in Polotsk
+			set_relation_rival = { reason = rival_historical target = character:628 } 	#Sviatoslav in Chernigov
+			set_relation_rival = { reason = rival_historical target = character:630 } 	#Vsevolod in Pereyaslavl
+			set_relation_rival = { reason = rival_historical target = character:650 } 	#Vseslav in Polotsk
 			
 			add_opinion = {
 				target = character:626	#Iziaslav in Kiev

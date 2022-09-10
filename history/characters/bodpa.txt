@@ -1079,7 +1079,7 @@
 		trait = zealous
 	}
 	762.1.1={
-		#effect = { set_relation_friend = c_247110 }
+		#effect = { set_relation_friend = { reason = friend_generic_history target = c_247110 }
 	}
 	763.1.1={
 		add_concubine = 247109
@@ -4495,9 +4495,9 @@
 	}
 	750.1.1={
 		effect = {
-			set_relation_friend = character:252002
-			set_relation_friend = character:247342
-			set_relation_friend = character:252005
+			set_relation_friend = { reason = friend_generic_history target = character:252002 } 
+			set_relation_friend = { reason = friend_generic_history target = character:247342 } 
+			set_relation_friend = { reason = friend_generic_history target = character:252005 } 
 		}
 	}
 	755.1.2={

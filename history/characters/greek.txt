@@ -1593,7 +1593,7 @@
 	}
 	1066.1.1 = {
 		effect = {
-			set_relation_rival = character:1734	#A bit early, as the events that would cause this wouldn't start till 1067, but better to have the rivalry ready to go straight off the bat.
+			set_relation_rival = { reason = rival_historical target = character:1734 } 	#A bit early, as the events that would cause this wouldn't start till 1067, but better to have the rivalry ready to go straight off the bat.
 		}
 	}
 	1088.5.12 = {
@@ -4627,16 +4627,16 @@
 		add_spouse = KOH0037
 	}
 	1150.1.1 = {
-		set_relation_lover = character:232545
+		set_relation_lover = { reason = lover_history target = character:232545 } 
 	}
 	1165.1.1 = {
-		set_relation_lover = character:223744
+		set_relation_lover = { reason = lover_history target = character:223744 } 
 	}
 	1164.1.1 = {
-		set_relation_friend = character:223520
+		set_relation_friend = { reason = friend_generic_history target = character:223520 } 
 	}
 	1168.1.1 = {
-		set_relation_lover = character:231066
+		set_relation_lover = { reason = lover_history target = character:231066 } 
 		trait = excommunicated
 		give_nickname = nick_the_seducer
 	}
@@ -4647,7 +4647,7 @@
 		add_spouse = 205519
 	}
 	1184.1.1 = {
-		set_relation_rival = character:215500
+		set_relation_rival = { reason = rival_historical target = character:215500 } 
 	}
 	1185.9.12 = {
 		death = {
