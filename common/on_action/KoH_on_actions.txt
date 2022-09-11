@@ -847,16 +847,16 @@ KOH_HENRYHENRY = {
 	effect = {
 		if = {
 			limit = {
-				ROOT = {
+				root = {
 					AND = {
 						dynasty = dynasty:KOH_D_023
 						is_male = yes
 					}
 				}
 			}
+			change_first_name = "Heinrich"
+			add_trait = fecund
 		}
-		change_first_name = "Heinrich"
-		add_trait = fecund
 	}	 
 }
 

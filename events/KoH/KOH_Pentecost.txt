@@ -297,6 +297,11 @@ KOH_Pentecost.2 = {
 	type = character_event
 	theme = realm
 
+	left_portrait = {
+		character = cp:councillor_steward
+		animation = steward
+	}
+
 	right_portrait = {
 		character = scope:frederick
 		animation = idle
@@ -355,6 +360,10 @@ KOH_Pentecost.2 = {
 			name = invite_width
 			value = 0
 		}
+
+		ai_chance = {
+			base = 0
+		}
 	}
 
 	option = { # all germans
@@ -367,6 +376,10 @@ KOH_Pentecost.2 = {
 			name = invite_width
 			value = 1
 		}
+
+		ai_chance = {
+			base = 0
+		}
 	}
 
 	option = { # all vassals
@@ -378,6 +391,10 @@ KOH_Pentecost.2 = {
 		save_scope_value_as = {
 			name = invite_width
 			value = 2
+		}
+
+		ai_chance = {
+			base = 50
 		}
 	}
 
@@ -394,6 +411,16 @@ KOH_Pentecost.3 = {
 	desc = KOH_Pentecost.3.desc
 	type = character_event
 	theme = martial
+
+	left_portrait = {
+		character = cp:councillor_steward
+		animation = steward
+	}
+
+	right_portrait = {
+		character = scope:frederick
+		animation = idle
+	}
 
 	immediate = {
 		# this shouldn't be necessary
@@ -472,6 +499,26 @@ KOH_Pentecost.4 = {
 		animation = happiness
 	}
 
+	lower_right_portrait = {
+		character = scope:konrad
+		animation = happiness
+	}
+
+	left_portrait = {
+		character = cp:councillor_steward
+		animation = steward
+	}
+
+	lower_left_portrait = {
+		character = cp:councillor_chancellor
+	}
+
+	immediate = {
+		cp:councillor_steward = {
+			save_scope_as = steward
+		}
+	}
+
 	option = {
 		name = KOH_Pentecost.4.a
 
@@ -528,7 +575,7 @@ KOH_Pentecost.5 = {
 	theme = stewardship
 
 	right_portrait = {
-		character = cp:councillor_steward
+		character = scope:frederick
 		animation = idle
 	}
 
@@ -760,7 +807,7 @@ KOH_Pentecost.7 = {
 
 	right_portrait = {
 		character = scope:frederick
-		animation = irritated
+		animation = idle
 	}
 
 	left_portrait = {
@@ -1052,6 +1099,19 @@ KOH_Pentecost.10 = {
 	desc = KOH_Pentecost.10.desc
 	type = character_event
 	theme = stewardship
+	override_background = {
+		event_background = wilderness
+	}
+
+	right_portrait = {
+		character = scope:frederick
+		animation = idle
+	}
+
+	left_portrait = {
+		character = scope:konrad
+		animation = idle
+	}
 
 	option = {
 		name = KOH_Pentecost.10.a
@@ -1072,9 +1132,9 @@ KOH_Pentecost.10 = {
 	option = {
 		name = KOH_Pentecost.10.b
 
-		add_gold = {
+		remove_short_term_gold = {
 			value = Pentecost_base_cost
-			multiply = -16
+			multiply = 16
 		}
 
 		scope:mainz_county = {
@@ -1099,9 +1159,9 @@ KOH_Pentecost.10 = {
 	option = {
 		name = KOH_Pentecost.10.c
 
-		add_gold = {
+		remove_short_term_gold = {
 			value = Pentecost_base_cost
-			multiply = -40
+			multiply = 40
 		}
 
 		scope:mainz_county = {
@@ -1135,6 +1195,7 @@ KOH_Pentecost.10 = {
 				years = 15
 			}
 		}
+		save_scope_as = frederick
 	}
 
 	after = {
@@ -1162,6 +1223,7 @@ KOH_Pentecost.10 = {
 			}
 			every_in_list = {
 				list = invited
+				NOT = { this = scope:frederick }
 				scope:diet = {
 					invite_character_to_activity = prev
 				}
@@ -1224,7 +1286,9 @@ KOH_Pentecost.11 = {
 	desc = KOH_Pentecost.11.desc
 	type = character_event
 	theme = stewardship
-
+	override_background = {
+		event_background = market_west
+	}
 	right_portrait = {
 		character = scope:frederick
 		animation = happiness
@@ -1279,6 +1343,9 @@ KOH_Pentecost.12 = {
 	desc = KOH_Pentecost.12.desc
 	type = character_event
 	theme = stewardship
+	override_background = {
+		event_background = market_west
+	}
 
 	right_portrait = {
 		character = scope:count_hainaut
@@ -1391,18 +1458,25 @@ scripted_effect transfer_to_pope = {
 	}
 }
 
-KOH_Pentecost.13 = {
+KOH_Pentecost.13 = { #ADD TOAST NOTIFICATIONS
 	title = KOH_Pentecost.13.t
 	desc = KOH_Pentecost.13.desc
 	type = character_event
 	theme = stewardship
-
+	override_background = {
+		event_background = feast
+	}
 	right_portrait = {
 		character = cp:councillor_steward
 		animation = idle
 	}
 
 	left_portrait = {
+		character = scope:pope
+		animation = idle
+	}
+
+	lower_left_portrait = {
 		character = scope:konrad
 		animation = idle
 	}
@@ -1413,6 +1487,8 @@ KOH_Pentecost.13 = {
 	}
 
 	immediate = {
+		councillor_steward = { save_scope_as = steward }
+
 		save_scope_value_as = {
 			name = excommunication_chance
 			value = -1 # so we can work out if the pope says no
@@ -1630,7 +1706,7 @@ KOH_Pentecost.15 = {
 	title = KOH_Pentecost.15.t
 	desc = KOH_Pentecost.15.desc
 	type = character_event
-	theme = stewardship
+	theme = feast_activity
 
 	right_portrait = {
 		character = scope:lion
@@ -1645,6 +1721,10 @@ KOH_Pentecost.15 = {
 	immediate = {
 		title:d_ostfalen = {
 			save_scope_as = welf_land
+		}
+
+		title:k_england.holder = {
+			save_scope_as = englishking
 		}
 	}
 
@@ -1761,16 +1841,16 @@ KOH_Pentecost.15 = {
 			remove_relation_rival = scope:lion
 		}
 		remove_relation_potential_rival = scope:lion # in case
-		create_alliance = scope:lion
+		create_alliance = scope:englishking
 
 		reverse_add_opinion = {
 			modifier = perk_negotiated_alliance_opinion
-			target = scope:lion
+			target = scope:englishking
 		}
 		hidden_effect = {
 			add_opinion = {
 				modifier = perk_negotiated_alliance_opinion
-				target = scope:lion
+				target = scope:englishking
 			}
 		}
 
@@ -1807,7 +1887,7 @@ KOH_Pentecost.16 = {
 	title = KOH_Pentecost.16.t
 	desc = KOH_Pentecost.16.desc
 	type = character_event
-	theme = stewardship
+	theme = feast_activity
 
 	right_portrait = {
 		character = scope:phillip
@@ -1818,12 +1898,14 @@ KOH_Pentecost.16 = {
 		character = scope:other_konrad
 		animation = idle
 	}
-
+	cooldown = { years = 100 }
 	trigger = {
-		scope:had_bishop_squabble = no
+		NOT = { has_character_flag = had_event_KOH_Pentecost_16 }
 	}
 
 	immediate = {
+		set_character_flag = had_event_KOH_Pentecost_16
+
 		save_scope_value_as = {
 			name = disappointed_phillip
 			value = no
@@ -1841,11 +1923,9 @@ KOH_Pentecost.16 = {
 		name = KOH_Pentecost.16.a
 		custom_tooltip = KOH_Pentecost.16.a.tt
 
-
-
-		trigger_event = {
-			on_action = events_during_pentecost_on_action
-		}
+		# trigger_event = {
+		# 	on_action = events_during_pentecost_on_action
+		# }
 
 		reverse_add_opinion = {
 			modifier = pentecost_sided_with_me_opinion
@@ -1906,10 +1986,6 @@ KOH_Pentecost.16 = {
 	}
 
 	after = {
-		save_scope_value_as = {
-			name = had_bishop_squabble
-			value = yes
-		}
 		if = { 
 			limit = { scope:disappointed_phillip = yes }
 			trigger_event = KOH_Pentecost.17
@@ -1927,7 +2003,7 @@ KOH_Pentecost.17 = {
 	title = KOH_Pentecost.17.t
 	desc = KOH_Pentecost.17.desc
 	type = character_event
-	theme = stewardship
+	theme = courtyard
 
 	right_portrait = {
 		character = scope:phillip
@@ -1992,20 +2068,29 @@ KOH_Pentecost.1801 = {
 
 
 
-KOH_Pentecost.18 = {
+KOH_Pentecost.18 = { #FOR GUESTS
 	title = KOH_Pentecost.18.t
 	desc = KOH_Pentecost.18.desc
 	type = character_event
-	theme = stewardship
+	theme = war
 
 	right_portrait = {
-		character = cp:councillor_steward
-		animation = idle
+		character = scope:knight1
+		animation = marshal
 	}
 
 	left_portrait = {
-		character = scope:konrad
-		animation = idle
+		character = scope:knight2
+		animation = throne_room_two_handed_passive_1
+	}
+
+	immediate = {
+		random_knight = {
+			save_scope = knight1
+		}
+		random_knight = {
+			save_scope = knight2
+		}
 	}
 
 	option = {
@@ -2073,15 +2158,15 @@ KOH_Pentecost.19 = {
 	type = character_event
 	theme = stewardship
 
-	right_portrait = {
-		character = cp:councillor_steward
-		animation = idle
-	}
+	# right_portrait = {
+	# 	character = cp:councillor_steward
+	# 	animation = idle
+	# }
 
-	left_portrait = {
-		character = scope:konrad
-		animation = idle
-	}
+	# left_portrait = {
+	# 	character = scope:konrad
+	# 	animation = idle
+	# }
 
 	option = {
 		name = KOH_Pentecost.19.a
@@ -2117,9 +2202,9 @@ KOH_Pentecost.20 = {
 	type = character_event
 	theme = battle
 
-	right_portrait = {
+	left_portrait = {
 		character = scope:frederick
-		animation = idle
+		animation = throne_room_two_handed_passive_1
 	}
 
 	trigger = {
