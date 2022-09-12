@@ -184,7 +184,7 @@ KoH_religiousflavour.2 = { #Monks Make Good Beer
 				add_trait = drunkard
 				send_interface_toast = {
 					type = event_toast_effect_bad
-					title = "You have become a Drunkard"
+					title = KoH_religiousflavour.2.a.drunkard
 					left_icon = root
 				}
 			}
@@ -205,7 +205,7 @@ KoH_religiousflavour.2 = { #Monks Make Good Beer
 				add_trait = temperate
 				send_interface_toast = {
 					type = event_toast_effect_good
-					title = "You have become Temperate"
+					title = KoH_religiousflavour.2.b.temperate
 					left_icon = root
 				}
 			}
@@ -254,7 +254,7 @@ KoH_religiousflavour.3 = { #Monks Make Good Wine
 				add_trait = drunkard
 				send_interface_toast = {
 					type = event_toast_effect_bad
-					title = "You have become a Drunkard"
+					title = KoH_religiousflavour.2.a.drunkard
 					left_icon = root
 				}
 			}
@@ -275,7 +275,7 @@ KoH_religiousflavour.3 = { #Monks Make Good Wine
 				add_trait = temperate
 				send_interface_toast = {
 					type = event_toast_effect_good
-					title = "You have become Temperate"
+					title = KoH_religiousflavour.2.b.temperate
 					left_icon = root
 				}
 			}
@@ -363,7 +363,7 @@ KoH_religiousflavour.5 = { #Monks is fantastic painter
 	option = { 
 		name = KoH_religiousflavour.5.a
 
-		remove_short_term_gold = -10
+		remove_short_term_gold = 10
 		add_prestige = 30
 	}
 
@@ -436,7 +436,7 @@ KoH_religiousflavour.7 = { #Monks is fantastic painter
 	option = { 
 		name = KoH_religiousflavour.7.a
 
-		remove_short_term_gold = -30
+		remove_short_term_gold = 30
 		add_prestige = 30
 		random = {
 			chance = 20
@@ -598,7 +598,7 @@ KoH_religiousflavour.12 = { #Donate to local monastery
 
 	option = { 
 		name = KoH_religiousflavour.12.a
-		remove_short_term_gold = -30
+		remove_short_term_gold = 30
 		add_piety = 30
 	}
 	
@@ -701,29 +701,27 @@ KoH_religiousflavour.14 = { #Duty-Bound - Varaint
 
 		exists = dynasty
 		dynasty = { 
-				any_dynasty_member = { 
-				AND = {
-					is_alive = yes
-					dynasty = root.dynasty
-					has_government = theocracy_government
-					OR = {
-						has_trait = reveler_1
-						has_trait = reveler_2
-						has_trait = reveler_3
-						has_trait = drunkard
-						has_trait = lustful 
-					}
-				} 
-			}
+			any_dynasty_member = { 
+				is_alive = yes
+				dynasty = root.dynasty
+				has_government = theocracy_government
+				OR = {
+					has_trait = reveler_1
+					has_trait = reveler_2
+					has_trait = reveler_3
+					has_trait = drunkard
+					has_trait = lustful 
+				}
+			} 
 		}
 	}
 
 	immediate = {
 		dynasty = { 
 			every_dynasty_member = { 
-				AND = {
-					is_alive = yes
-					AND = {
+				if = {
+					limit = {
+						is_alive = yes
 						dynasty = root.dynasty
 						has_government = theocracy_government
 						OR = {
@@ -734,8 +732,8 @@ KoH_religiousflavour.14 = { #Duty-Bound - Varaint
 							has_trait = lustful 
 						}
 					}
+					save_scope_as = Priest 
 				}
-				save_scope_as = Priest 
 			}
 		}
 
@@ -793,7 +791,7 @@ KoH_religiousflavour.15 = {
 	immediate = {
 		create_character = {
 			name = "Pèire de Vaudès"
-			female = no
+			gender_female_chance = 0
 			dynasty = no
 			trait = heresiarch
 			location = root
@@ -1043,7 +1041,10 @@ KoH_religiousflavour.20 = {
 		}
 
 		faith:waldensian = {
-			change_fervor = major_fervor_gain
+			change_fervor = {
+				value = 28
+				desc = Birthplace_of_Waldensianism
+			}
 		}
 
 		title:c_roma.holder = {
@@ -1096,40 +1097,40 @@ KoH_religiousflavour.21 = {
 	}
 }
 
-#Waldensians in Lyon
-#cardinal names
-KoH_religiousflavour.22 = {
-	hidden = yes
+# #Waldensians in Lyon
+# #cardinal names
+# KoH_religiousflavour.22 = {
+# 	hidden = yes
 
-	immediate = {
-		every_living_cardinal = {
-			add_prestige = 1
-			add_trait = koh_cardinal
-			#give_nickname = nick_cardinal
-			# if = {
-			# 	limit = {
-			# 		OR = {
-			# 			has_council_position = councillor_court_chaplain
-			# 			is_theocratic_lessee = yes
-			# 			is_landed = no
-			# 		}
-			# 	}
-			# 	give_nickname = nick_cardinal
-			# }
-		}
-	}
-}
+# 	immediate = {
+# 		every_living_cardinal = {
+# 			add_prestige = 1
+# 			add_trait = koh_cardinal
+# 			#give_nickname = nick_cardinal
+# 			# if = {
+# 			# 	limit = {
+# 			# 		OR = {
+# 			# 			has_council_position = councillor_court_chaplain
+# 			# 			is_theocratic_lessee = yes
+# 			# 			is_landed = no
+# 			# 		}
+# 			# 	}
+# 			# 	give_nickname = nick_cardinal
+# 			# }
+# 		}
+# 	}
+# }
 
-#cardinal election won
-KoH_religiousflavour.23 = {
-	hidden = yes
+# #cardinal election won
+# KoH_religiousflavour.23 = {
+# 	hidden = yes
 
-	immediate = {
-		send_interface_toast = {
-			title = "Cardinal Election"				
-			right_icon = prev
+# 	immediate = {
+# 		send_interface_toast = {
+# 			title = "Cardinal Election"				
+# 			right_icon = prev
 			
-			custom_tooltip = "You have gained a hook"
-		}
-	}
-}
+# 			custom_tooltip = "You have gained a hook"
+# 		}
+# 	}
+# }

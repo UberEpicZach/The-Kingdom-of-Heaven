@@ -395,46 +395,6 @@ KoH_erfurt_affair.51 = {
 	}
 }
 
-KoH_erfurt_affair.601 = { # kills people
-	hidden = yes
-
-	immediate = {
-		scope:diet = {
-			every_participant = {
-				limit = { has_variable = KoH_erfurt_affair_deathChanceVar }
-				random = {
-					chance = var:KoH_erfurt_affair_deathChanceVar
-					add_to_list = died_from_latrine_disaster
-				}
-				# cleanup, sometimes the script doesn't get here (e.g. they die halfway through), but it's not a big deal
-				remove_variable = KoH_erfurt_affair_deathChanceVar
-			}
-			disaster_effects = yes # this is the only place it's called for real
-
-			every_participant = {
-				trigger_event = KoH_erfurt_affair.6
-				add_to_list = got_latrine_disaster_event
-			}
-		}
-
-		title:e_hre.holder = {
-			every_vassal_or_below = {
-				if = {
-					limit = {
-						NOT = {
-							is_in_list = got_latrine_disaster_event
-						}
-					}
-					trigger_event = KoH_erfurt_affair.7
-				}
-			}
-		}
-		title:e_hre.holder = {
-			trigger_event = KoH_erfurt_affair.7
-		}
-	}
-}
-
 scripted_effect disaster_effects = {
 	every_in_list = {
 		list = died_from_latrine_disaster
@@ -477,6 +437,46 @@ scripted_effect disaster_effects = {
 		add_prestige = {
 			value = medium_prestige_loss
 			add = major_prestige_loss
+		}
+	}
+}
+
+KoH_erfurt_affair.601 = { # kills people
+	hidden = yes
+
+	immediate = {
+		scope:diet = {
+			every_participant = {
+				limit = { has_variable = KoH_erfurt_affair_deathChanceVar }
+				random = {
+					chance = var:KoH_erfurt_affair_deathChanceVar
+					add_to_list = died_from_latrine_disaster
+				}
+				# cleanup, sometimes the script doesn't get here (e.g. they die halfway through), but it's not a big deal
+				remove_variable = KoH_erfurt_affair_deathChanceVar
+			}
+			disaster_effects = yes # this is the only place it's called for real
+
+			every_participant = {
+				trigger_event = KoH_erfurt_affair.6
+				add_to_list = got_latrine_disaster_event
+			}
+		}
+
+		title:e_hre.holder = {
+			every_vassal_or_below = {
+				if = {
+					limit = {
+						NOT = {
+							is_in_list = got_latrine_disaster_event
+						}
+					}
+					trigger_event = KoH_erfurt_affair.7
+				}
+			}
+		}
+		title:e_hre.holder = {
+			trigger_event = KoH_erfurt_affair.7
 		}
 	}
 }

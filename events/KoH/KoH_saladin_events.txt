@@ -2,8 +2,8 @@
 
 KoH_saladin.105 = {
 	type = character_event
-	title = "The Templars, propose a raid..."
-	desc = "The Kings Peace, has been hard on buisness, now if we could simply gather the templars, we could do successfully in raiding a nearby Muslim Caravan."
+	#title = "The Templars, propose a raid..."
+	#desc = "The Kings Peace, has been hard on buisness, now if we could simply gather the templars, we could do successfully in raiding a nearby Muslim Caravan."
 	hidden = yes
 	theme = faith
 	override_background = {
@@ -14,7 +14,7 @@ KoH_saladin.105 = {
 		name = KoH_saladin.100.a
 		
 		spawn_army = {
-			name = "Knights Templar"
+			name = KoH_saladin.100.a.troops
 			men_at_arms = {
 				type = teutonic_knights
 				location = 490
@@ -30,8 +30,8 @@ KoH_saladin.105 = {
 
 KoH_saladin.100 = {
 	type = character_event
-	title = "you shouldn't see this actually"
-	desc = KoH_saladin.100.d
+	#title = "you shouldn't see this actually"
+	#desc = KoH_saladin.100.d
 	hidden = yes
 	theme = faith
 	override_background = {
@@ -56,8 +56,8 @@ KoH_saladin.100 = {
 		character:226000 = {
 			send_interface_message = {
 				type = event_generic_neutral
-				title = "Renaud de Châtillon"
-				desc = "Renaud de Châtillon, Crusader of Jerusalem, Has raided a group of caravans; slaughering all in the name of his faith, we first await to see any response from Jerusalem - else we shall march and remove the Crusaders once and for all."
+				title = KoH_saladin.100.a.tt
+				desc = KoH_saladin.100.a.tt.d
 
 				left_icon = character:223590
 			}
@@ -126,8 +126,8 @@ KoH_saladin.101 = {
 					add_character_flag = PersonalPunish
 			 	}
 				send_interface_toast = {
-					title = "Success!"
-					desc = "You successfully imprisioned [Reynald.GetTitledFirstName]."
+					title = KoH_saladin.101.a.tt
+					desc = KoH_saladin.101.a.tt.d
 					left_icon = title:k_jerusalem.holder					
 					right_icon = character:223590
 				}
@@ -184,8 +184,8 @@ KoH_saladin.101 = {
 			 		}
 			 	}
 				send_interface_toast = {
-					title = "Success!"
-					desc = "You successfully imprisioned [Reynald.GetTitledFirstName]."
+					title = KoH_saladin.101.a.tt
+					desc = KoH_saladin.101.a.tt.d
 					left_icon = title:k_jerusalem.holder					
 					right_icon = character:223590
 				}

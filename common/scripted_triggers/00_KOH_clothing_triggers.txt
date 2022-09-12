@@ -6,6 +6,10 @@
     }
 }
 
+portrait_epe_loaded = {
+    exists = global_var:EPE_is_loaded
+}
+
 portrait_shipwrecked = {
     has_character_flag = shipwrecked
 }
@@ -77,7 +81,7 @@ portrait_hospitaller_trigger = {
                 liege = { has_title = global_var:hospitaller_holy_order_title }
             }
             has_primary_title = global_var:hospitaller_holy_order_title
-      }
+        }
     }
 }
 
