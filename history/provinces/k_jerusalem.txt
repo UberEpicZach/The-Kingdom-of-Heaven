@@ -17,14 +17,17 @@
 		religion = catholic 
 		culture = french #Outremer
 	}
+	1183.1.1 = {
+		effect = { add_building_slot = 1 }
+	}
 	1184.1.1 = {
 		holding = castle_holding
 		buildings = {
-			common_tradeport_01
+			castle_03
+			city_04
+			common_tradeport_06
 			watchtowers_06
-			plantations_01
-			military_camps_01
-			castle_04
+			barracks_04
 		}
 	}
 	1291.1.1 = { 
@@ -47,6 +50,11 @@
 		culture = french #Outremer
 		holding = castle_holding
 	}
+	1184.1.1 = {
+		buildings = {
+			castle_02
+		}
+	}
 	1270.1.1 = { 		
 		religion = ashari 
 		culture = levantine
@@ -68,6 +76,14 @@
 		religion = catholic 
 		culture = french #Outremer
 	}
+	1184.1.1 = {
+		buildings = {
+			city_02
+			guild_halls_03
+			plantations_04
+			cereal_fields_03
+		}
+	}
 	1270.1.1 = { 		
 		religion = ashari 
 		culture = levantine
@@ -81,14 +97,22 @@
 	# Misc
 	culture = levantine
 	religion = orthodox
-	holding = city_holding
+	holding = castle_holding
 	
 	# History
 	1099.7.22 = { 
 		religion = catholic 
 		culture = french #Outremer
 	}
-	
+	1184.1.1 = {
+		buildings = {
+			castle_02
+			curtain_walls_03
+			guild_halls_03
+			barracks_03
+			military_camps_02
+		}
+	}
 	1270.1.1 = { 		
 		religion = ashari 
 		culture = levantine
@@ -123,6 +147,18 @@
 		culture = french #Outremer
 		buildings = { castle_04 }
 	}
+	1183.1.1 = {
+		effect = { add_building_slot = 1 }
+	}
+	1184.1.1 = {
+		buildings = {
+			city_04
+			common_tradeport_08
+			guild_halls_08
+			watchtowers_06
+			barracks_05
+		}
+	}
 	1295.1.1 = { 		
 		religion = ashari 
 		culture = levantine
@@ -144,6 +180,14 @@
 		culture = french #Outremer
 		holding = church_holding
 	}
+	1184.1.1 = {
+		buildings = {
+			temple_02
+			common_tradeport_03
+			watchtowers_03
+			monastic_schools_04
+		}
+	}
 	1265.1.1 = {
 		religion = ashari 
 		culture = levantine
@@ -164,6 +208,15 @@
 		religion = catholic 
 		culture = french #Outremer
 	}
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			common_tradeport_04
+			watchtowers_06
+			barracks_04
+			military_camps_04
+		}
+	}
 	1268.1.1 = {
 		religion = ashari 
 		culture = levantine
@@ -178,7 +231,15 @@
 	religion = karaism
 	
 	# History
-	
+	1184.1.1 = {
+		buildings = {
+			city_02
+			monastic_schools_04
+			watchtowers_02
+			guild_halls_03
+			cereal_fields_03
+		}
+	}	
 }
 
 # 5964 - NABLUS
@@ -194,6 +255,15 @@
 	1099.7.22 = { 
 		religion = catholic 
 		culture = french #Outremer
+	}
+	1184.1.1 = {
+		buildings = {
+			city_03
+			temple_03
+			guild_halls_04
+			pastures_04
+			cereal_fields_04
+		}
 	}
 	1187.1.1 = {
 		religion = ashari 
@@ -224,12 +294,26 @@
 			plantations_01
 			cereal_fields_01
 			military_camps_01
-			castle_04
+			castle_02
 		}
 	}
 	1099.7.22 = { 
 		religion = catholic 
 		culture = french #Outremer
+	}
+	1183.1.1 = {
+		effect = { add_building_slot = 2 }
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			city_03
+			temple_03
+			guild_halls_06
+			watchtowers_06
+			monastic_schools_05
+			plantations_05
+		}
 	}
 	1244.1.1 = {
 		religion = ashari 
@@ -254,6 +338,14 @@
 		religion = catholic 
 		culture = french #Outremer	
 	}
+	1184.1.1 = {
+		buildings = {
+			temple_04
+			monastic_schools_05
+			watchtowers_03
+			pastures_03
+		}
+	}
 	1244.1.1 = {
 		religion = ashari 
 		culture = levantine
@@ -272,6 +364,14 @@
 	640.1.1 = { religion = karaism }
 	1153.1.1 = {
 		culture = french #Outremer
+	}
+	1184.1.1 = {
+		buildings = {
+			common_tradeport_04
+			castle_02
+			watchtowers_05
+			barracks_04
+		}
 	}
 	1191.1.1 = { religion = catholic }
 	1247.1.1 = { 
@@ -294,6 +394,14 @@
 		religion = catholic 
 		culture = french #Outremer
 	}
+	1184.1.1 = {
+		buildings = {
+			castle_02
+			watchtowers_04
+			pastures_04
+			cereal_fields_04
+		}
+	}
 	1193.1.1 = {		
 		religion = ashari 
 		culture = levantine
@@ -312,6 +420,14 @@
 	1118.1.1 = {
 		religion = catholic 
 		culture = french #Outremer
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_02
+			watchtowers_04
+			cereal_fields_03
+			pastures_03
+		}
 	}
 	1187.1.1 = {
 		culture = levantine
@@ -335,6 +451,11 @@
 	1118.1.1 = {
 		religion = catholic 
 		culture = french #Outremer
+	}
+	1184.1.1 = {
+		buildings = {
+			temple_02
+		}
 	}
 	1187.1.1 = {
 		culture = levantine
@@ -374,6 +495,12 @@
 		religion = catholic 
 		culture = french #Outremer
 	}
+	1184.1.1 = {
+		buildings = {
+			city_02
+			common_tradeport_03
+		}
+	}
 	1187.1.1 = {
 		culture = levantine
 		religion = ashari
@@ -390,6 +517,13 @@
 	holding = castle_holding
 	
 	# History
+	1184.1.1 = {
+		buildings = {
+			hill_forts_06
+			barracks_05
+			castle_03
+		}
+	}
 	1187.1.1 = {
 		culture = levantine
 		religion = ashari
@@ -407,6 +541,13 @@
 	1116.1.1 = {
 		religion = catholic 
 		culture = french #Outremer
+	}
+	1184.1.1 = {
+		buildings = {
+			city_02
+			monastic_schools_04
+			guild_halls_02
+		}
 	}
 	1187.1.1 = {
 		culture = levantine
@@ -427,7 +568,14 @@
 	1116.1.1 = {
 		religion = catholic 
 		culture = french #Outremer
-		buildings = { castle_04 }
+		buildings = { castle_03 }
+	}
+	1184.1.1 = {
+		buildings = {
+			hill_forts_06
+			barracks_05
+			military_camps_04
+		}
 	}
 	1188.1.1 = {
 		culture = levantine
@@ -449,6 +597,14 @@
 		culture = french #Outremer
 		holding = castle_holding
 	}
+	1184.1.1 = {
+		buildings = {
+			castle_02
+			watchtowers_03
+			barracks_03
+			military_camps_02
+		}
+	}
 	1187.1.1 = {
 		culture = levantine
 		religion = ashari
@@ -469,6 +625,15 @@
 		culture = french #Outremer
 		holding = castle_holding
 	}
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			watchtowers_04
+			barracks_04
+			military_camps_04
+			pastures_03
+		}
+	}
 	1244.1.1 = {
 		culture = levantine
 		religion = ashari
@@ -485,6 +650,13 @@
 	# History
 	1141.1.1 = {
 		holding = castle_holding
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_02
+			watchtowers_02
+			plantations_01
+		}
 	}
 	1187.1.1 = {
 		culture = levantine
@@ -504,6 +676,14 @@
 	# History
 	1099.1.1 = { culture = french #Outremer 
 	}
+	1184.1.1 = {
+		buildings = {
+			monastic_schools_04
+			cereal_fields_02
+			pastures_02
+			city_02
+		}
+	}
 	1263.1.1 = {
 		culture = levantine
 		religion = ashari
@@ -518,7 +698,11 @@
 	religion = rabbinism
 	
 	# History
+	1184.1.1 = {
+		buildings = {
 
+		}
+	}
 }
 
 # 9664 - GIBELET
@@ -535,7 +719,139 @@
 		religion = catholic 
 		culture = french #Outremer	
 	}
+	1184.1.1 = {
+		buildings = {
+			city_02
+			castle_02
+			watchtowers_04
+			common_tradeport_04
+			guild_halls_04
+		}
+	}
 	1300.1.1 = {
+		culture = levantine
+		religion = ashari
+	}
+}
+
+# 5916 - ANTARTUS
+5916 = {	# 5916 - Antartus
+	
+	# Misc
+	culture = levantine
+	religion = orthodox
+	holding = city_holding
+	
+	# History
+	1184.1.1 = {
+		buildings = {
+			city_02
+			castle_03
+			common_tradeport_04
+			watchtowers_05
+			barracks_05
+			military_camps_05
+
+		}
+	}
+	1295.1.1 = { religion = ashari }
+}
+
+# 5918 - TRIPOLIS
+5918 = {	# 5918 - Tripoli
+	
+	# Misc
+	culture = levantine
+	religion = hellenic_pagan
+	holding = castle_holding
+	
+	# History
+	636.1.1 = {
+		religion = ashari
+		buildings = {
+			common_tradeport_01
+			military_camps_01
+		}
+	}
+	1066.1.1 = {
+		buildings = {
+			common_tradeport_02
+			military_camps_01
+			watchtowers_01
+		}
+	}
+	1099.7.22 = { 
+		religion = catholic 
+		culture = french #Outremer
+		buildings = { castle_03 }
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			watchtowers_05
+			common_tradeport_05
+			guild_halls_04
+			barracks_04
+		}
+	}
+	1289.1.1 = { 
+		religion = ashari 
+		culture = levantine
+	}
+}
+
+# 5919 - BEIRUT
+5919 = {	# 5919 - Beirut
+	
+	# Misc
+	culture = levantine
+	religion = orthodox
+	holding = castle_holding
+	
+	# History
+	636.1.1 = { religion = ashari }
+	1099.7.22 = { 
+		religion = catholic 
+		culture = french #Outremer
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_02
+			watchtowers_04
+			common_tradeport_04
+			guild_halls_04
+			hill_farms_04
+		}
+	}
+	1289.1.1 = { 
+		religion = ashari 
+		culture = levantine
+	}
+
+}
+
+# 5920 - SAIDA
+5920 = {	# 5920 - Saida #Sidon
+	
+	# Misc
+	culture = levantine
+	religion = ashari
+	holding = castle_holding
+	
+	# History
+	1100.1.1 = {
+		religion = catholic 
+		culture = french #Outremer
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			watchtowers_05
+			barracks_04
+			military_camps_03
+		}
+	}
+	1260.1.1 = {
 		culture = levantine
 		religion = ashari
 	}
@@ -551,6 +867,12 @@
 	
 	# History
 	1099.7.22 = { culture = french #Outremer 
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_02
+			hill_forts_04
+		}
 	}
 	1270.1.1 = { culture = levantine }
 }
@@ -568,7 +890,13 @@
 		religion = catholic 
 		culture = french #Outremer
 	}
-	1244 = {
+	1184.1.1 = {
+		buildings = {
+			temple_02
+			monastic_schools_04
+		}
+	}
+	1244.1.1 = {
 		culture = levantine
 		religion = ashari
 	}
@@ -586,7 +914,15 @@
 		culture = french #Outremer
 		holding = castle_holding
 	}
-	1266 = {
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			watchtowers_04
+			barracks_04
+			military_camps_04
+		}
+	}
+	1266.1.1 = {
 		culture = levantine
 		religion = ashari
 	}
@@ -604,6 +940,15 @@
 		religion = catholic 
 		culture = french #Outremer
 		holding = castle_holding
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			watchtowers_04
+			barracks_03
+			military_camps_03
+			pastures_02
+		}
 	}
 	1244.1.1 = {
 		culture = levantine
@@ -625,6 +970,14 @@
 		holding = castle_holding
 		buildings = { castle_02 }
 	}
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			watchtowers_04
+			barracks_04
+			military_camps_04
+		}
+	}
 	1270.1.1 = {
 		culture = levantine
 		religion = ashari
@@ -644,6 +997,14 @@
 	1099.7.22 = {
 		religion = catholic 
 		culture = french #Outremer	
+	}
+	1184.1.1 = {
+		buildings = {
+			city_03
+			temple_04
+			monastic_schools_05
+			guild_halls_03
+		}
 	}
 	1187.1.1 = {
 		culture = levantine
@@ -665,6 +1026,13 @@
 		culture = french #Outremer
 		buildings = { castle_04 }
 	}
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_08
+			barracks_04
+			military_camps_04
+		}
+	}
 	1265.1.1 = {
 		culture = levantine
 		religion = ashari
@@ -685,7 +1053,15 @@
 		holding = castle_holding
 		buildings = { castle_01 }
 	}
-	
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			watchtowers_04
+			cereal_fields_04
+			pastures_04
+			plantations_04
+		}
+	}
 	1271.1.1 = {
 		culture = levantine
 		religion = ashari
@@ -707,9 +1083,47 @@
 		culture = french #Outremer
 		buildings = { castle_03 }
 	}
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			watchtowers_06
+			barracks_05
+			military_camps_05
+			hunting_grounds_05
+		}
+	}
 	1271.1.1 = {
 		culture = levantine
 		religion = ashari
+	}
+}
+
+
+# 9675 - Al-Mishtaya
+9675 = {	# 9675 - Al-Mishtaya
+	
+	# Misc
+	culture = levantine
+	religion = orthodox
+	holding = castle_holding
+	
+	# History
+	636.1.1 = { religion = ashari }
+	1099.7.22 = { 
+		religion = catholic 
+		culture = french #Outremer
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_02
+			monastic_schools_04
+			watchtowers_04
+			barracks_03
+		}
+	}
+	1289.1.1 = { 
+		religion = christian
+		culture = levantine
 	}
 }
 
@@ -726,6 +1140,14 @@
 		religion = catholic 
 		culture = french #Outremer
 		buildings = { castle_03 }
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			watchtowers_04
+			barracks_04
+			military_camps_04
+		}
 	}
 	1268.1.1 = {
 		culture = levantine
