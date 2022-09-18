@@ -2878,6 +2878,10 @@ grant_vassal_interaction = {
 						has_trait = fredrick_barbarossa
 					}
 				}
+
+				scope:actor = { 
+					has_trait = fredrick_barbarossa
+				}
 			}
 		}
 		trigger_if = {
@@ -2935,6 +2939,11 @@ grant_vassal_interaction = {
 						has_trait = KOH_ghibelline
 					}
 				}
+				AND = {
+					scope:actor = { 
+						has_trait = fredrick_barbarossa
+					}
+				}
 			}
 		}
 
@@ -2966,7 +2975,6 @@ grant_vassal_interaction = {
 		custom_description = {
 			text = "basic_perfers_realm_splintering"
 			subject = root
-			object = scope:actor
 			NOT = {
 				root = {
 					has_trait = fredrick_barbarossa
