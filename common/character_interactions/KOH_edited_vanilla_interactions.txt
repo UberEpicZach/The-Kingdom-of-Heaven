@@ -2961,6 +2961,18 @@ grant_vassal_interaction = {
 				}
 			}
 		}
+
+		# Character perfers a splintered realm
+		custom_description = {
+			text = "basic_perfers_realm_splintering"
+			subject = root
+			object = scope:actor
+			NOT = {
+				root = {
+					has_trait = fredrick_barbarossa
+				}
+			}
+		}
 	}
 	
 	auto_accept = {

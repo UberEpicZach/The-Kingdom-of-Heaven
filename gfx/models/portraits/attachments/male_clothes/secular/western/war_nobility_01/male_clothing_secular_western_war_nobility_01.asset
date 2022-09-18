@@ -1,8 +1,8 @@
 pdxmesh = {
 	name = "male_clothing_secular_western_war_nobility_01_mesh"
-	file = "male_clothing_secular_western_war_nobility_01.mesh"
+	file = "male_clothing_secular_western_war_nobility_01.mesh" 
 
-	blend_shape = { id = "male_clothing_secular_western_war_nobility_01_bs_fat"				type = "male_clothing_secular_western_war_nobility_01_bs_fat.mesh" }
+    blend_shape = { id = "male_clothing_secular_western_war_nobility_01_bs_fat"			type = "male_clothing_secular_western_war_nobility_01_bs_fat.mesh" }
 	blend_shape = { id = "male_clothing_secular_western_war_nobility_01_bs_gaunt"				type = "male_clothing_secular_western_war_nobility_01_bs_gaunt.mesh" }
 	blend_shape = { id = "male_clothing_secular_western_war_nobility_01_bs_muscular"			type = "male_clothing_secular_western_war_nobility_01_bs_muscular.mesh" }	
 	blend_shape = { id = "male_clothing_secular_western_war_nobility_01_bs_old"				type = "male_clothing_secular_western_war_nobility_01_bs_old.mesh" }
@@ -20,11 +20,8 @@ pdxmesh = {
 		shader_file = "gfx/FX/jomini/portrait.shader"
 	}
 }
- 
-entity = {
-	name = "male_clothing_secular_western_war_nobility_01_entity"
-	pdxmesh = "male_clothing_secular_western_war_nobility_01_mesh"
-}
+
+
 
 entity = {
 	name = "male_clothing_secular_western_war_nobility_01_low_entity"
@@ -40,12 +37,12 @@ entity = {
 
 
 	game_data = {
-		portrait_entity_user_data = {
+        portrait_entity_user_data = {
 			portrait_accessory = {
 				pattern_mask = "gfx/models/portraits/attachments/male_clothes/secular/western/war_nobility_01/male_clothing_secular_western_war_nobility_01_masks.dds"	#Any 4-channel texture. Each channel will be used to mask a pattern from the variation object
-				variation = "western_surcoats_01"	#A "variation" object in gfx/portraits/accessory_variations/
+				variation = "western_war_noble_01"	#A "variation" object in gfx/portraits/accessory_variations/
 			}
-		}
+        }
 	}
 }
 

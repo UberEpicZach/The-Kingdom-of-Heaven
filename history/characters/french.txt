@@ -7889,6 +7889,35 @@
 			add_character_flag = has_scripted_appearance
 		}
 	}
+	1177.11.25 = {
+		effect = {
+			province:5963 = {
+				save_scope_as = battle_province
+			}
+			character:223523 = {
+				create_character_memory = {
+					type = battle_won_memory
+							
+					participants = {
+						loser = character:226000
+						ruler = character:226000
+					}
+
+				}
+				
+				scope:new_memory = {
+					save_scope_as = battle_memory
+				}
+				
+				scope:battle_memory = {
+					set_variable = {
+						name = battle_location
+						value = scope:battle_province
+					}
+				}
+			}
+		}
+	}
 	1185.3.16 = {
 		death = "1185.3.16"
 	}
@@ -7981,12 +8010,14 @@
 	trait = beauty_good_3
 	trait = physique_bad_2
 	trait = education_intrigue_1
+	health = 3
 	father = 223540
 	mother = 223522
 	1177.1.1 = {
 		birth = "1177.1.1"
 		effect = {
 			add_character_flag = has_scripted_appearance
+			add_pressed_claim = title:k_jerusalem
 		}
 	}
 	1186.8.2 = {
