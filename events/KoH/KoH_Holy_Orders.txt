@@ -1181,10 +1181,7 @@ KoH_holy_orders.103 = {
 			add_title_law = holy_order_succession_law
 		}
 
-		set_global_variable = {
-			name = assassin_holy_order_title
-			value = scope:new_title
-		}
+		set_global_variable = { name = assassin_holy_order_title value = scope:new_title }
 		
 		create_character = {
 			template = holy_order_leader_character
