@@ -4714,11 +4714,21 @@ e_hre = {
 		
 		
 		capital = c_frankfurt
-		
+
 		can_create = {
 			trigger_if = {
 				limit = { is_ai = yes }
 				NOT = { exists = title:e_hre }
+			}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
 			}
 		}
 
@@ -9084,6 +9094,19 @@ e_hre = {
 		
 
 		capital = c_praha # Praha
+
+		can_create = {
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
+		}		
 		
 		ai_primary_priority = {
 			if = {
@@ -9531,11 +9554,15 @@ e_hre = {
 		capital = c_lombardia # Pavia
 		
 		can_create = {
-			trigger_if = {
-				limit = {
-					is_ai = yes
-				}
-				faith = { religion_tag = christianity_religion }
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
 			}
 		}
 		
@@ -50729,6 +50756,19 @@ e_france = {
 		
 		
 		capital	= c_arles # Arles
+
+		can_create = {
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
+		}
 		
 		ai_primary_priority = {
 			if = {
