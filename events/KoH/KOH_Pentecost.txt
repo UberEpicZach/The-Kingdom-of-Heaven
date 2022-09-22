@@ -482,10 +482,16 @@ scripted_effect no_funding = {
 		modifier = pentecost_no_funding_modifier
 		years = 3
 	}
+	random_list = {
+		60 = {
 
-	reverse_add_opinion = {
-		modifier = pentecost_missing_funding_opinion
-		target = cp:councillor_steward
+		}
+		40 = {
+			reverse_add_opinion = {
+				modifier = pentecost_missing_funding_opinion
+				target = cp:councillor_steward
+			}
+		}
 	}
 }
 KOH_Pentecost.4 = {
@@ -516,6 +522,9 @@ KOH_Pentecost.4 = {
 	immediate = {
 		cp:councillor_steward = {
 			save_scope_as = steward
+		}
+		cp:councillor_chancellor = {
+			save_scope_as = chancellor
 		}
 	}
 
@@ -1199,10 +1208,13 @@ KOH_Pentecost.10 = {
 	}
 
 	after = {
-		custom_description_no_bullet = {
+		custom_description = {
 			text = send_invitations_to_pentecost
 
-			add_to_list = invited # add frederick
+			scope:diet = {
+				invite_character_to_activity = prev
+				accept_invitation_for_character = prev
+			}
 
 			if = {
 				limit = { scope:invite_width = 0 }
@@ -1247,7 +1259,7 @@ KOH_Pentecost.1001 = {
 		scope:diet = {
 			accept_invitation_for_character = prev
 		}
-
+ 
 		trigger = {
 			is_available_for_activity_trigger = yes
 		}
@@ -1349,20 +1361,28 @@ KOH_Pentecost.12 = {
 
 	right_portrait = {
 		character = scope:count_hainaut
-		animation = idle
+		animation = rage
 	}
 
 	left_portrait = {
 		character = scope:duke_lorraine
-		animation = idle
+		animation = rage
 	}
 
 	immediate = {
 		title:c_hainaut.holder = {
 			save_scope_as = count_hainaut
+			add_character_flag = {
+				flag = event_war_clothes
+				days = 30
+			}
 		}
 		title:d_lower_lorraine.holder = {
 			save_scope_as = duke_lorraine
+			add_character_flag = {
+				flag = event_war_clothes
+				days = 30
+			}
 		}
 	}
 
@@ -1916,6 +1936,12 @@ KOH_Pentecost.16 = {
 		}
 		character:KOH_FULDA043 = {
 			save_scope_as = other_konrad
+		}
+		title:c_fulda = {
+			save_scope_as = fulda
+		}
+		title:c_cologne = {
+			save_scope_as = cologne
 		}
 	}
 

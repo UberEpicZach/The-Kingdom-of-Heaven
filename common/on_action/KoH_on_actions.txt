@@ -16,141 +16,26 @@ yearly_playable_pulse = {
 }
 
 on_death = {
+	on_actions = {
+		on_kotr_death
+	}
 	events = {
 		KoH_SicillianConflict.11
 	}
 }
 
-# KOH_pulse_monthly = { #causes Namespace.2 error spam
-# 	effect = {
-# 		if = {
-# 			limit = {
-# 				any_ruler = { 
-# 					top_liege = { 
-# 						has_primary_title = title:e_arabia 
-# 					}
-# 					has_opinion_modifier = {
-# 						target = character:223590
-# 						modifier = raided_me_opinion
-# 					} 
-# 				}
-# 				title:e_arabia.holder = {
-# 					NOT = {	has_character_flag = Jihad_incoming }
-# 				}
-# 			}
-# 			title:k_jerusalem.holder = {
-# 				trigger_event = {
-# 					id = KoH_saladin.100
-# 					days = 1 
-# 				}
-# 			}
-# 		}
-# 		if = {
-# 			limit = {
-# 				exists = global_var:SaladinHasTakenJerusalem 
-# 			}
-# 			every_ruler = {
-# 				limit = {
-# 					faith = faith:catholic
-# 					is_landed = yes
-# 					highest_held_title_tier >= tier_county
-# 					NOT = { 
-# 						OR = {
-# 							has_character_flag = had_event_had_event_KoH_saladin.120
-# 							has_title = title:k_jerusalem
-# 							} 
-# 						}
-# 					}
-# 				trigger_event = {
-# 					id = KoH_saladin.120
-# 					days = 1 
-# 				}
-# 			}
-# 		}
-# 		if = {
-# 			limit = {
-# 				exists = global_var:SaladinHasTakenJerusalem 
-# 			}
-# 			every_ruler = {
-# 				limit = {
-# 					AND = {
-# 						has_title = title:k_jerusalem
-# 						NOT = {
-# 							has_character_flag = had_event_KoH_saladin.121
-# 						}
-# 					}
-# 				}
-# 				trigger_event = KoH_saladin.121
-# 			}
-# 		}
-# 		investitureopinioneffect = yes
-# 	}
-# 	events = { 
-# 		KoH_SicillianConflict.1
-#     }
-# 	on_actions = {
-#         delay = { months = 1 }
-# 		KOH_pulse_monthly
-# 	}
-# }
-
-# MyMo_ongamestart = {
-# 	effect = {
-# 		### MyMo : 50% of non county temple become monasteries ###
-# 		every_province = {
-# 			# limit = {
-# 			# 	AND = {
-# 			# 		county = {
-# 			# 			holder = {
-# 			# 				faith = { has_doctrine = tenet_monasticism }
-# 			# 			}
-# 			# 		}
-# 			# 		has_holding_type = church_holding
-# 			# 	}
-# 			# }
-# 			random = {
-# 				chance = 50
-# 				modifier = {
-# 					factor = 0
-# 					# List of baronies which will stay Temple
-# 					mymo_historic_bishopric = yes
-# 				}
-# 				modifier = {
-# 					factor = 2
-# 					# List of baronies which will become Monastery
-# 					mymo_historic_abbey = yes
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					is_county_capital = yes
-# 					#no capital county but historical ones
-# 					NOT = {
-# 						# List of baronies which are county capital and will become Monastery
-# 						mymo_historic_abbey_county_level = yes
-# 					}
-# 				}
-# 				set_holding_type = monastery_holding
-# 				save_scope_as = monastery_province
-# 				create_character = {
-# 					template = monk_character
-# 					employer = scope:monastery_province.province_owner
-# 					culture = scope:monastery_province.culture
-# 					faith = scope:monastery_province.faith
-# 					after_creation = {
-# 						if = {
-# 							limit = { scope:monastery_province = { is_county_capital = yes } }
-# 							get_title = scope:monastery_province.county
-# 						}
-# 						else = {
-# 							get_title = scope:monastery_province.barony
-# 						}
-# 						trigger_event = mymo.1
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
-# }
+on_kotr_death = {
+	trigger ={
+		has_court_position = King_of_the_germans_court_position
+	}
+	if = {
+		limit = {
+			exists = title:k_king_of_the_germans.holder
+			scope:employee = title:k_king_of_the_germans.holder
+		}
+		destroy_title = title:k_king_of_the_germans
+	}
+}
 
 KOH_holy_orders = {
 	effect = {
@@ -340,6 +225,16 @@ on_gain_HRE = {
 		title:e_hre.holder = {
 			add_trait = KOH_Emperor
 		}
+		if = {
+			limit = {
+				exists = title:k_king_of_the_germans.holder
+				this = title:k_king_of_the_germans.holder
+			}
+			trigger_event = {
+				days = 1
+				id = KOH_diets.1
+			}
+		}
 	}
 }
 
@@ -490,6 +385,12 @@ KOH_ON_START = {
 		character:212501 = { 
 			add_character_modifier = {
 				modifier = EmperorVassals
+			}
+		}
+		title:e_hre.holder = {
+			trigger_event = {
+				id = KOH_Pentecost.1
+				days = 40
 			}
 		}
 		#Starts Balian's Event Chain
@@ -1029,3 +930,61 @@ on_war_won_defender = {
 		KoH_SicillianConflict.2
 	}
 }
+
+# MyMo_ongamestart = {
+# 	effect = {
+# 		### MyMo : 50% of non county temple become monasteries ###
+# 		every_province = {
+# 			# limit = {
+# 			# 	AND = {
+# 			# 		county = {
+# 			# 			holder = {
+# 			# 				faith = { has_doctrine = tenet_monasticism }
+# 			# 			}
+# 			# 		}
+# 			# 		has_holding_type = church_holding
+# 			# 	}
+# 			# }
+# 			random = {
+# 				chance = 50
+# 				modifier = {
+# 					factor = 0
+# 					# List of baronies which will stay Temple
+# 					mymo_historic_bishopric = yes
+# 				}
+# 				modifier = {
+# 					factor = 2
+# 					# List of baronies which will become Monastery
+# 					mymo_historic_abbey = yes
+# 				}
+# 				modifier = {
+# 					factor = 0
+# 					is_county_capital = yes
+# 					#no capital county but historical ones
+# 					NOT = {
+# 						# List of baronies which are county capital and will become Monastery
+# 						mymo_historic_abbey_county_level = yes
+# 					}
+# 				}
+# 				set_holding_type = monastery_holding
+# 				save_scope_as = monastery_province
+# 				create_character = {
+# 					template = monk_character
+# 					employer = scope:monastery_province.province_owner
+# 					culture = scope:monastery_province.culture
+# 					faith = scope:monastery_province.faith
+# 					after_creation = {
+# 						if = {
+# 							limit = { scope:monastery_province = { is_county_capital = yes } }
+# 							get_title = scope:monastery_province.county
+# 						}
+# 						else = {
+# 							get_title = scope:monastery_province.barony
+# 						}
+# 						trigger_event = mymo.1
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# }

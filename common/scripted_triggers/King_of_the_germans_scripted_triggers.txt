@@ -1,0 +1,20 @@
+﻿#Co-Emperor Scripted Trigger to establish candidates.
+
+is_shown_character_King_of_the_germans_candidate = {
+	scope:employee = {
+		OR = {
+			is_male = yes
+			is_close_or_extended_family_of = scope:liege
+			AND = {
+				is_vassal_of = scope:liege
+				highest_held_title_tier >= tier_county
+			}
+			trigger_if = {
+				limit = {
+					scope:liege = { has_title = title:e_hre }
+				}
+				has_claim_on = title:e_hre
+			}
+		}
+	}
+}

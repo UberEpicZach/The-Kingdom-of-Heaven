@@ -3580,6 +3580,7 @@
 	diplomacy = 9
 	intrigue = 7
 	stewardship = 16
+	health = 7
 	prowess = 17
 	religion = "catholic"
 	culture = swabian
@@ -3618,6 +3619,12 @@
 	}
 	1156.1.1 = {
 		add_spouse = 205599 #Beatrice of Burgundy
+	}
+	1169.1.1 = {
+		appoint_court_position = {
+			recipient = character:212507
+			court_position = King_of_the_germans_court_position
+		}
 	}
 	1190.6.2 = {
 		death = "1190.6.2"
