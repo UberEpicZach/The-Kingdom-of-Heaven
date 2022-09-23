@@ -88,7 +88,8 @@ spawn_temujin_character_effect = {
 }
 
 make_mongolia_invade_tibet = {
-	title:e_mongolia= {
+	title:e_mongolia.holder = {
+		cleanup_mongolia_effect = yes
 		spawn_mongol_troops_effect = yes
 		start_wars_for_tibet_effect = yes
 	}
@@ -98,8 +99,8 @@ start_wars_for_tibet_effect = {
 	save_temporary_scope_as = mongol_conqueror
 	# Build a list of potential targets
 	get_title = title:c_mazongshan 
-
-	every_neighboring_top_liege_realm_owner = {
+	add_prestige = 5000
+	every_ruler = {
 		limit = {
 			any_sub_realm_county = {
 				title_province = { geographical_region = world_tibet }
@@ -120,4 +121,170 @@ start_wars_for_tibet_effect = {
 				cb = mongol_realm_invasion_war
 				target = scope:new_war_target.top_liege
 				target_title = scope:war_target_title.empire
+			}
+		}
+	}
+}
+# All the Kara-Khitai realm
+# start_wars_for_chagatai_effect = {
+# 	save_temporary_scope_as = mongol_conqueror
+# 	# Build a list of potential targets
+# 	#get_title = title:c_mazongshan 
+# 	add_prestige = 5000
 	
+# 	if = {
+# 		limit = { NOT = { is_in_list = top_liege_targets } }
+# 		add_to_temporary_list = top_liege_targets
+# 	}
+
+# 	every_in_list = {
+# 		list = top_liege_targets
+# 		save_temporary_scope_as = new_war_target
+# 		primary_title.empire = { save_temporary_scope_as = war_target_title }
+# 		# Declare the war
+# 		scope:mongol_conqueror = {
+# 			start_war = {
+# 				cb = mongol_realm_invasion_war
+# 				target = scope:new_war_target.top_liege
+# 				target_title = scope:war_target_title.empire
+# 			}
+# 		}
+# 	}
+# }
+
+cleanup_mongolia_effect = {
+	every_sub_realm_county = {
+		limit = {
+			NOT = {
+				title_province = {
+					geographical_region = special_mongol_empire_yuan_region
+				}
+			}
+		}
+		add_to_temporary_list = mongolia_titles_to_give_away_counties
+
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = mongol_succession
+			add_claim_on_loss = no
+		}
+		
+		every_in_list = {
+			list = mongolia_titles_to_give_away_counties
+
+			#Ilkhanate counties
+			if = {
+				limit = {
+					exists = global_var:ilkhanate_handed_out
+					title_province = {
+						geographical_region = special_mongol_empire_ilkhanate_region
+					}
+				}
+				change_title_holder = {
+					holder = title:e_ilkhanate.holder
+					change = scope:mongol_succession
+				}
+			}
+
+			#Golden Horde counties
+			else_if = {
+				limit = {
+					exists = global_var:golden_horde_handed_out
+					title_province = {
+						geographical_region = special_mongol_empire_golden_horde_region
+					}
+				}
+				change_title_holder = {
+					holder = title:e_golden_horde.holder
+					change = scope:mongol_succession
+				}
+			}
+
+			#Chagatai counties
+			else_if = {
+				limit = {
+					exists = global_var:chagatai_handed_out
+					title_province = {
+						geographical_region = special_mongol_empire_chagatai_region
+					}
+				}
+				change_title_holder = {
+					holder = title:e_chagatai.holder
+					change = scope:mongol_succession
+				}
+			}
+
+			#Black Horde counties
+			else_if = {
+				limit = {
+					exists = global_var:black_horde_handed_out
+					title_province = {
+						geographical_region = special_mongol_empire_black_horde_region
+					}
+				}
+				change_title_holder = {
+					holder = title:e_black_horde.holder
+					change = scope:mongol_succession
+				}
+			}
+			#White Horde counties
+			else_if = {
+				limit = {
+					exists = global_var:white_horde_handed_out
+					title_province = {
+						geographical_region = special_mongol_empire_white_horde_region
+					}
+				}
+				change_title_holder = {
+					holder = title:e_white_horde.holder
+					change = scope:mongol_succession
+				}
+			}
+			#Aarlud Khanate counties
+			else_if = {
+				limit = {
+					exists = global_var:aarlud_khanate_handed_out
+					title_province = {
+						geographical_region = special_mongol_empire_aarlud_khanate_region
+					}
+				}
+				change_title_holder = {
+					holder = title:e_aarlud_khanate.holder
+					change = scope:mongol_succession
+				}
+			}
+			#Tögsköl Khanate counties
+			else_if = {
+				limit = {
+					exists = global_var:togskol_khanate_handed_out
+					title_province = {
+						geographical_region = special_mongol_empire_togskol_khanate_region
+					}
+				}
+				change_title_holder = {
+					holder = title:e_togskol_khanate.holder
+					change = scope:mongol_succession
+				}
+			}
+			#Baruun Khanate counties
+			else = {
+				limit = {
+					exists = global_var:baruun_khanate_handed_out
+					title_province = {
+						geographical_region = special_mongol_empire_baruun_khanate_region
+					}
+				}
+				change_title_holder = {
+					holder = title:e_baruun_khanate.holder
+					change = scope:mongol_succession
+				}
+			}
+		}
+
+		resolve_title_and_vassal_change = scope:mongol_succession
+
+		title:e_mongolia = {
+			set_title_name = YUAN
+		}
+	}
+}

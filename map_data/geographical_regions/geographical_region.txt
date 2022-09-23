@@ -91,7 +91,7 @@ world_europe_west_germania = {
 }
 world_europe_west_francia = {
 	duchies = {
-		d_berry d_anjou d_normandy d_orleans d_champagne d_valois d_burgundy d_bar d_aquitaine d_toulouse d_languedoc d_armagnac d_gascogne d_poitou d_auvergne d_bourbon d_brittany d_provence d_savoie d_dauphine d_upper_burgundy d_transjurania #d_brabant d_flanders
+		d_berry d_anjou d_normandy d_orleans d_champagne d_valois d_burgundy d_bar d_aquitaine d_toulouse d_languedoc d_armagnac d_gascogne d_poitou d_auvergne d_bourbon d_brittany d_provence d_savoie d_dauphine d_upper_burgundy d_transjurania d_paris #d_brabant d_flanders
 	}
 }
 world_europe_west_iberia = {
@@ -1818,6 +1818,19 @@ special_mongol_empire_conquest_all_regions = {
 	}
 }
 
+special_mongol_empire_yuan_region = {
+	regions = {
+		world_tibet
+	}
+	duchies = {
+		d_otuken d_ogrash d_selenga_valley d_ovorkhangai d_arkhangai d_khovsgol d_gobi_altai d_ubsunur_hollow d_khovd
+		d_togina d_tannu_ola d_western_sayan
+		d_khakass_hollow d_shoria d_kargassia d_eastern_sayan
+		d_uda_valley d_bargujin_tukum d_dauria d_baigaluuls d_tsagaanbaigal
+		d_yenisei_kan d_chuna_valley d_lena d_angara
+	}
+}
+
 # Mongol successor empires
 special_mongol_empire_ilkhanate_region = {
 	regions = {
@@ -1830,9 +1843,9 @@ special_mongol_empire_ilkhanate_region = {
 }
 
 special_mongol_empire_chagatai_region = {
-	regions = {
-		world_tibet
-	}
+	#regions = { I Disagree
+	#	world_tibet
+	#}
 	duchies = {
 		#Siberia
 		d_ostyaki d_konda d_pelym d_kazym d_sibir d_ishim d_tara d_lanikaz
