@@ -91,7 +91,120 @@ make_mongolia_invade_tibet = {
 	title:e_mongolia.holder = {
 		cleanup_mongolia_effect = yes
 		spawn_mongol_troops_effect = yes
+		spawn_mongol_successor_state_troops_effect = yes
+		spawn_mongol_troops_condensed_effect = yes
 		start_wars_for_tibet_effect = yes
+		set_character_faith_with_conversion = faith:lamaism
+		add_character_modifier = Chinese_reinforcements
+		random = {
+			chance = 35
+			every_held_title = {
+				limit = { tier = tier_county }
+				set_county_faith = faith:lamaism
+			}
+		}
+		every_child = {
+			set_character_faith_with_conversion = faith:lamaism #Also converts their spouse, children, and parents if applicable.
+		}
+		every_vassal = { # Muslims abandon Faith.
+			limit = {
+				NOT = { has_trait = zealous }
+			}
+			random = {
+				chance = 35
+				set_character_faith = faith:lamaism
+				every_held_title = {
+					limit = { tier = tier_county }
+					set_county_faith = faith:lamaism
+				}
+			}
+		}
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_warrior_character
+			faith = title:e_mongolia.holder.faith
+			culture = title:e_mongolia.holder.culture
+		}
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_warrior_character
+			faith = title:e_mongolia.holder.faith
+			culture = title:e_mongolia.holder.culture
+		}
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_warrior_character
+			faith = title:e_mongolia.holder.faith
+			culture = culture:han
+		}
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_warrior_character
+			faith = title:e_mongolia.holder.faith
+			culture = title:e_mongolia.holder.culture
+		}
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_warrior_character
+			faith = title:e_mongolia.holder.faith
+			culture = culture:han
+		}
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_warrior_character
+			faith = title:e_mongolia.holder.faith
+			culture = culture:han
+		}
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_warrior_character
+			faith = title:e_mongolia.holder.faith
+			culture = culture:han
+		}
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_warrior_character
+			faith = title:e_mongolia.holder.faith
+			culture = culture:han
+		}
+		
+		# Spawn some captured Han siege engineers
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_siege_engineer
+			faith = faith:shangqing
+			culture = culture:han
+		}
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_siege_engineer
+			faith = faith:shangqing
+			culture = culture:han
+		}
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_siege_engineer
+			faith = faith:shangqing
+			culture = culture:han
+		}
+		create_character = {
+			gender_female_chance = temujin_soldier_female_chance
+			employer = title:e_mongolia.holder
+			template = new_siege_engineer
+			faith = faith:shangqing
+			culture = culture:han
+		}
 	}
 }
 
