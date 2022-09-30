@@ -28,12 +28,14 @@ on_kotr_death = {
 	trigger ={
 		has_court_position = King_of_the_germans_court_position
 	}
-	if = {
-		limit = {
-			exists = title:k_king_of_the_germans.holder
-			scope:employee = title:k_king_of_the_germans.holder
+	effect = {
+		if = {
+			limit = {
+				exists = title:k_king_of_the_germans.holder
+				scope:employee = title:k_king_of_the_germans.holder
+			}
+			destroy_title = title:k_king_of_the_germans
 		}
-		destroy_title = title:k_king_of_the_germans
 	}
 }
 
@@ -343,6 +345,11 @@ KOH_Parition = {
 
 KOH_ON_START = {
 	effect = {
+
+		set_global_variable = {
+			name = KOH_is_loaded
+			value = yes
+		}
 
 		#make papacy not usurpable
 		title:k_papal_state.holder = {
