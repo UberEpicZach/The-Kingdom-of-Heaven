@@ -90,6 +90,7 @@
 	religion="tengri_pagan"
 	culture="mongol"
 	father=303255
+	mother=3032550
 	885.1.2 = {
 		birth = yes
 	}
@@ -225,6 +226,7 @@
 303266 = {
 	name="Ambaghai" # Ambaghai Khan
 	dynasty=11100
+		dynasty_house = house_Tayichi'ud
 	religion="tengri_pagan"
 	culture="mongol"
 	father=303265
@@ -232,6 +234,65 @@
 		birth=yes
 	}
 	1156.1.1={
+		death=yes
+	}
+}
+3032660 = {
+	name="Qada'an-Taishi" # Qada'an Taishi
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"
+	father=303266
+	1105.1.1={
+		birth=yes
+	}
+	1156.1.1={
+		death=yes
+	}
+}
+3032661 = {
+	name="Tarqutai-Kiriltuq" # Qada'an Taishi
+	dynasty=11100
+
+	religion="tengri_pagan"
+	culture="mongol"
+	father=3032660
+	1140.1.1={
+		birth=yes
+	}
+	
+	1206.1.1={
+		death=yes
+	}
+}
+3032662 = {
+	name="Tarqutai-Kiriltuq" # Qada'an Taishi
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"
+	father=3032660
+	1140.1.1={
+		birth=yes
+	}
+	1180.4.1={
+	effect={
+		imprison = {
+				target = character:205730
+				type = house_arrest
+			}
+		}
+		}
+		}
+		1180.5.1={
+	effect={
+		release = {
+				target = character:205730
+				type = house_arrest
+			}
+		}
+		}
+		}
+	1206.1.1={
 		death=yes
 	}
 }
@@ -436,6 +497,98 @@
 		death = yes
 	}
 }
+3032550 = {
+	name="Holuikhan" #
+	religion="tengri_pagan"
+	culture="uriankhai"
+	
+	female=yes
+	850.1.2 = {
+		birth=yes
+	}
+	900.1.2 = {
+		death=yes
+	}
+}
+3032551 = {
+	name="Jariradai" # Jaradan
+	religion="tengri_pagan"
+	culture="mongol"
+		dynasty=Jadaran
+	mother=3032550
+	882.1.2 = {
+		birth=yes
+	}
+	970.1.2 = {
+		death=yes
+	}
+}
+3032552 = {
+	name="Tugu'udei" # Bodonchar Munkhag
+	religion="tengri_pagan"
+	culture="mongol"
+		dynasty=Jadaran
+	father=3032551
+	960.1.2 = {
+		birth=yes
+	}
+	1050.1.2 = {
+		death=yes
+	}
+}
+3032553 = {
+	name="Tugu'udei" # Bodonchar Munkhag
+	religion="tengri_pagan"
+	culture="mongol"
+		dynasty=Jadaran
+	father=3032552
+	1040.1.2 = {
+		birth=yes
+	}
+	1100.1.2 = {
+		death=yes
+	}
+}
+3032554 = {
+	name="Qara'qada-an" # Bodonchar Munkhag
+	religion="tengri_pagan"
+	culture="mongol"
+		dynasty=Jadaran
+	father=3032553
+	1100.1.2 = {
+		birth=yes
+	}
+	1160.1.2 = {
+		death=yes
+	}
+}
+3032555 = {
+	name="Jamugha" # THAT Jamukha
+	religion="tengri_pagan"
+	culture="mongol"
+	dynasty=Jadaran
+	father=3032554
+	trait=ambitious
+	trait=wrathful
+	trait=deceitful
+	martial=10
+	trait=brillian_strategist
+	prowess = 12
+	diplomacy=16
+
+	1159.1.2 = {
+		birth=yes
+	}
+	1184.1.1 = {
+		set_relation_friend = { reason = friend_historical target = character:125501 } 
+	}
+	1201.1.2 = {
+		death={
+		death_reason = death_murder
+			killer = 125501
+			}
+	}
+}
 #Yesügei and his sons (except Temujin)
 93055 = {
 	name = "YesU_gei" # Father of Genghis Khan
@@ -459,6 +612,17 @@
 	female = yes
 	religion = "tengri_pagan"
 	culture = "mongol"
+	intrigue=15
+	learning=8
+	stewardship=15
+	martial=11
+	diplomacy=11 #The secret history of the mongols constantly emphasizes that Hoelun is serious business
+	
+	trait = brave
+	trait = compassionate
+	trait = diligent
+	trait = patient
+	
 	1139.1.1 = {
 		birth = "1139.1.1"
 	}
@@ -504,9 +668,13 @@
 		birth = yes
 	}
 	1180.1.2 = {
-		death = yes
+				death={
+		death_reason = death_murder
+			killer = 125501
+			}
 	}
-}
+	}
+
 303284 = {
 	name="Belgütei"
 	dynasty=11100
@@ -515,6 +683,7 @@
 	#trait="child_of_consort"
 	father=93055
 	mother=303282
+	trait=strong
 	1161.1.2 = {
 		birth = yes
 	}
@@ -825,6 +994,10 @@
 	}
 	1178.1.1 = {
 		add_spouse = 172004
+	}
+	1180.1.1 = {
+	
+		set_relation_rival = { reason =  rival_imprisoned target = character:3032661 } 
 	}
 	1206.1.1 = {
 		effect = {
@@ -5558,7 +5731,7 @@
 	}
 }
 303116 = {
-	name = "Yesunge"
+	name = "Qa'atai-darmala"
 	dynasty = 2001144	#Mergid
 	religion = tengri_pagan
 	culture = mongol
@@ -5568,6 +5741,9 @@
 	}
 	1156.5.6 = {
 		add_spouse = 303117
+	}
+	1184.1.1 = {
+		set_relation_rival = { reason = rival_historical target = character:125501 } 
 	}
 	1188.11.20 = {
 		death = yes
@@ -5823,15 +5999,17 @@
 	}
 }
 303135 = {
-	name = "Bedugun"
+	name = "Dayir-usun"
 	dynasty = 2001144	#Mergid
 	religion = tengri_pagan
 	culture = mongol
 	father = 303134
+	trait=vengeful
 	1127.7.12 = {
 		birth = yes
 	}
-	1150.1.2 = {
+	
+	1189.1.2 = {
 		death = yes
 	}
 }
@@ -5874,6 +6052,7 @@
 		death = yes
 	}
 }
+
 303139 = {
 	name = "Suyiketu"
 	dynasty = 2001144	#Mergid
@@ -5888,6 +6067,71 @@
 	}
 }
 
+3031390 = {
+	name = "Toqto'a"
+	dynasty = 2001144	#Mergid
+	religion = tengri_pagan
+	culture = mongol
+	father = 303139
+	trait=vengeful
+	1144.1.1 = {
+		birth = yes
+	}
+	1184.1.1 = {
+		set_relation_rival = { reason = rival_historical target = character:125501 } 
+	}
+	1208.1.2 = {
+		death = yes
+	}
+}
+3031391 = {
+	name = "Bilge"
+	dynasty = 2001144	#Mergid
+	religion = tengri_pagan
+	culture = mongol
+	father = 303138
+	1113.1.1 = {
+		birth = yes
+	}
+	1150.1.2 = {
+		death = yes
+	}
+}
+3031392 = {
+	name = "Chiledu"
+	dynasty = 2001144	#Mergid
+	religion = tengri_pagan
+	culture = mongol
+	father = 303139
+	1145.1.1 = {
+		birth = yes
+	}
+	1150.1.1={
+		add_spouse = 172003
+	}
+	1160.1.2 = {
+		death = yes
+	}
+}
+3031393 = {
+	name = "Chilger-bökö"
+	dynasty = 2001144	#Mergid
+	religion = tengri_pagan
+	culture = mongol
+	father = 303139
+	1148.1.1 = {
+		birth = yes
+	}
+	
+	1184.1.1 = {
+		set_relation_rival = { reason = rival_historical target = character:125501 } 
+	}
+	
+	
+	1200.1.2 = {
+		death = yes
+	}
+}
 #Bayad
 303140 = {
 	name = "Hulegu"
