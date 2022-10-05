@@ -298,10 +298,13 @@
 		death=yes
 	}
 }
-3032663 = {
+3032670 = {
 	name="Charaqa" 
-	
-	1140.1.1={
+	dynasty_house = house_qongqotan
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"	
+	1130.1.1={
 		birth=yes
 	}
 	
@@ -313,7 +316,24 @@
 			}
 	}
 }
-
+3032671 = {
+	name="Monglik" 
+	dynasty_house = house_qongqotan
+	dynasty=11100
+	father=3032670
+	religion="tengri_pagan"
+	culture="mongol"	
+	1150.1.1={
+		birth=yes
+	}
+	trait=compassionate
+	trait=loyal
+	trait=diligent
+	stewardship=15
+		
+	1251.1.1={
+		death= yes
+}
 #Borjigin Gen18
 303267 = {
 	name="Tumbinai_Setsen" # Father of Khabul Khan
