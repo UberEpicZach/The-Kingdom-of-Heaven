@@ -252,7 +252,7 @@
 	}
 }
 3032661 = {
-	name="Tarqutai-Kiriltuq" # Qada'an Taishi
+	name="Tarqutai-Kiriltuq" 
 	dynasty=11100
 	dynasty_house = house_Tayichi'ud
 	religion="tengri_pagan"
@@ -333,6 +333,7 @@
 		
 	1251.1.1={
 		death= yes
+		}
 }
 #Borjigin Gen18
 303267 = {
@@ -687,6 +688,7 @@
 	culture = "mongol"
 	father = 93055
 	mother = 172003
+	prowess=13
 	1164.1.2 = {
 		birth = yes
 	}
@@ -1076,7 +1078,7 @@
 	trait = education_martial_3
 	trait = hunter_1
 	trait = calm
-	1181.1.1 = {
+	1185.1.1 = {
 		birth = "1181.1.1"
 	}
 	1227.1.2 = {
@@ -3637,7 +3639,7 @@
 	trait = wrathful
 	trait = just
 	trait = drunkard
-	1183.1.1 = {
+	1186.1.1 = {
 		birth = "1183.1.1"
 	}
 	1242.1.1 = {
@@ -6660,6 +6662,73 @@ nogaid0008 = {
 		birth=yes
 	}
 	1380.1.1={
+		death=yes
+	}
+}
+companion0001= {
+	name="Sorqan-Shira"
+	dynasty=Suldus
+	religion="tengri_pagan"
+	culture="mongol"
+	1140.1.1={
+		birth=yes
+	}
+		1180.1.1={
+	employer = 3032661
+	}
+	1220.1.1={
+		death=yes
+	}
+}
+companion0002= {
+	name="Chimbai"
+	dynasty=Suldus
+	religion="tengri_pagan"
+	culture="mongol"
+	trait=deceitful
+	father=companion0001
+	1164.1.1={
+		birth=yes
+	}
+	1184.1.1 = {
+		set_relation_friend = { reason = friend_historical target = character:125501 } 
+	}
+	
+
+	1240.1.1={
+		death=yes
+	}
+}
+companion0003= {
+	name="Chila'un"
+	dynasty=Suldus
+	religion="tengri_pagan"
+	culture="mongol"
+	trait=deceitful
+	father=companion0001
+	1165.1.1={
+		birth=yes
+	}
+1184.1.1 = {
+		set_relation_friend = { reason = friend_historical target = character:125501 } 
+	}
+	1240.1.1={
+		death=yes
+	}
+}
+companion0004= {
+	name="Qada'an"
+	dynasty=Suldus
+	religion="tengri_pagan"
+	culture="mongol"
+	trait=deceitful
+	father=companion0001
+	female=yes
+	1168.1.1={
+		birth=yes
+	}
+
+	1240.1.1={
 		death=yes
 	}
 }
