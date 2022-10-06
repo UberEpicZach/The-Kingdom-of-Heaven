@@ -125,19 +125,17 @@ martyrs_death_trigger = {
 
 vassal_trigger = {
 	any_vassal = {
-		limit = {
-			save_temporary_scope_as = tmp_vassal
-			any_claim = {
-				explicit = yes # Whichever
-				pressed = no # Whichever
-				tier = tier_county
-				is_neighbor_to_realm = scope:tmp_vassal
-				holder.liege = prev.liege
-				save_temporary_scope_as = tmp_county
-			}
+		save_temporary_scope_as = tmp_vassal
+		any_claim = {
+			explicit = yes # Whichever
+			pressed = no # Whichever
+			tier = tier_county
+			is_neighbor_to_realm = scope:tmp_vassal
+			holder.liege = prev.liege
+			save_temporary_scope_as = tmp_county
 		}
 		save_temporary_scope_as = vassal_1
-		random_claim = {
+		any_claim = {
 			explicit = yes # Whichever
 			pressed = no # Whichever
 			tier = tier_county

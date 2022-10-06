@@ -15846,7 +15846,11 @@ fox_1 = {
 	1056.4.7 = {	
 		add_spouse = wolf_1
 		effect = {
-			set_relation_soulmate = character:wolf_1
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:wolf_1
+			}
 		}
 	}	
 	1082.1.2 = {

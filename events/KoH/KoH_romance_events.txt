@@ -364,7 +364,11 @@ KOH_richard_bride.4 = {
 		name = richard.bride.4.a
 
 		character:204510 = {
-			set_relation_soulmate = character:205506
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:205506
+			}
 		}
 		character:232000 = {
 			remove_trait = bastard
@@ -421,7 +425,11 @@ KOH_richard_bride.5 = {
 		name = richard.bride.5.a
 
 		character:205506 = {
-			set_relation_soulmate = character:204510
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:204510
+			}
 		}
 		character:232000 = {
 			remove_trait = bastard
@@ -1469,7 +1477,11 @@ KOH_balian_women.16 = {
 			opinion = 10
 		}
 		character:223570 = {
-			set_relation_soulmate = character:223522
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:223522
+			}
 		}
 		hidden_effect = {
 			character:223522 = {
@@ -1542,7 +1554,11 @@ KOH_balian_women.17 = {
 			opinion = 10
 		}
 		character:223570 = {
-			set_relation_soulmate = character:215560
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:215560
+			}
 		}
 		hidden_effect = {
 			character:215560 = {

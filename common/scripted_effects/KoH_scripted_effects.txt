@@ -535,7 +535,7 @@ scripted_effect_popethingevent = {
 }
 
 give_assassins_castle = {
-	title:b_alamut.province = { 
+	title:b_alamut.title_province = { 
 		if = {
 			limit = {
 				NOT = { has_building_or_higher = temple_03 }
@@ -655,7 +655,7 @@ KOH_flanders_vassals = {
 	title:k_france.holder = {
 	
 		spawn_army = {
-			name = "Army of Paris"
+			name = "Army_of_Paris"
 			levies = 3000
 			men_at_arms = {
 				type = teutonic_knights
@@ -728,7 +728,7 @@ cyprus_emperor = {
 	character:223020 = { 
 		create_dynamic_title = {
 			tier = kingdom
-			name = "Empire of Cyprus"
+			name = "Empire_of_Cyprus"
 		}
 		create_title_and_vassal_change = {
 			type = created

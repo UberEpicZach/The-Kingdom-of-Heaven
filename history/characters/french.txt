@@ -41155,7 +41155,11 @@ KOH0060 = {
 	854.1.1 = {
 		add_spouse = 6877 # Teutberga
 		effect = {
-			set_relation_soulmate = character:168314 # Waldrada
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:168314 # Waldrada
+			}
 		}
 	}
 	869.5.1 = {
@@ -50965,7 +50969,7 @@ KOH0240 = {
 	disallow_random_traits = yes
 	trait = education_learning_3
 	trait = devoted
-	learning = max_template_high_skill
+	learning = 24
 	1145.1.1 = {
 		birth = "1145.1.1"
 	}

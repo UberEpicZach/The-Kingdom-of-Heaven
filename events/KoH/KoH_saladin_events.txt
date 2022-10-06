@@ -5,14 +5,7 @@ KoH_saladin.105 = {
 	#title = "The Templars, propose a raid..."
 	#desc = "The Kings Peace, has been hard on buisness, now if we could simply gather the templars, we could do successfully in raiding a nearby Muslim Caravan."
 	hidden = yes
-	theme = faith
-	override_background = {
-		event_background = temple_scope
-	}
-
-	option = {
-		name = KoH_saladin.100.a
-		
+	immediate = {
 		spawn_army = {
 			name = KoH_saladin.100.a.troops
 			men_at_arms = {

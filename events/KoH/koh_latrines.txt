@@ -52,7 +52,7 @@ scripted_effect successful_diet_leader_effects = {
 			add = major_prestige_loss
 		}
 		add_dynasty_prestige = major_dynasty_prestige_value
-		add_relation_friend = scope:feuding_bishop
+		set_relation_friend = scope:feuding_bishop
 		add_diplomacy_skill = 3
 	}
 	scope:feuding_bishop = {
@@ -425,7 +425,7 @@ scripted_effect disaster_effects = {
 				value = medium_prestige_loss
 				add = major_prestige_loss
 			}
-			add_relation_rival = scope:bossman
+			set_relation_rival = scope:bossman
 		}
 	}
 	else_if = {

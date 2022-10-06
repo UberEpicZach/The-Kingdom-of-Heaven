@@ -4641,7 +4641,11 @@
 		give_nickname = nick_the_seducer
 	}
 	1170.1.1 = {
-		set_relation_soulmate = character:231066
+		set_relation_soulmate = { 
+			reason = soulmate_love_at_court 
+			copy_reason = lover 
+			target = character:231066
+		}
 	}
 	1183.9.24 = {
 		add_spouse = 205519

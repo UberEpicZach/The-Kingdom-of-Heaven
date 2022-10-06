@@ -1235,7 +1235,7 @@ KOH_Pentecost.10 = {
 			}
 			every_in_list = {
 				list = invited
-				NOT = { this = scope:frederick }
+				limit = { NOT = { this = scope:frederick } }
 				scope:diet = {
 					invite_character_to_activity = prev
 				}
@@ -1507,7 +1507,7 @@ KOH_Pentecost.13 = { #ADD TOAST NOTIFICATIONS
 	}
 
 	immediate = {
-		councillor_steward = { save_scope_as = steward }
+		cp:councillor_steward = { save_scope_as = steward }
 
 		save_scope_value_as = {
 			name = excommunication_chance
@@ -1924,7 +1924,7 @@ KOH_Pentecost.16 = {
 	}
 
 	immediate = {
-		set_character_flag = had_event_KOH_Pentecost_16
+		add_character_flag = had_event_KOH_Pentecost_16
 
 		save_scope_value_as = {
 			name = disappointed_phillip
@@ -2029,7 +2029,8 @@ KOH_Pentecost.17 = {
 	title = KOH_Pentecost.17.t
 	desc = KOH_Pentecost.17.desc
 	type = character_event
-	theme = courtyard
+	theme = stewardship
+	override_background = { event_background = courtyard }
 
 	right_portrait = {
 		character = scope:phillip
@@ -2112,10 +2113,10 @@ KOH_Pentecost.18 = { #FOR GUESTS
 
 	immediate = {
 		random_knight = {
-			save_scope = knight1
+			save_scope_as = knight1
 		}
 		random_knight = {
-			save_scope = knight2
+			save_scope_as = knight2
 		}
 	}
 

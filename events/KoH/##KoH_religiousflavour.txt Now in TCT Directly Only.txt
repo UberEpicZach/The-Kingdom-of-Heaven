@@ -1,0 +1,1146 @@
+﻿# namespace = KoH_religiousflavour
+
+
+# KoH_religiousflavour.1 = { #A Pope and His Estates
+# 	title = KoH_religiousflavour.1.t
+# 	desc = KoH_religiousflavour.1.desc
+# 	theme = unfriendly
+# 	left_portrait = {
+# 		character = this
+# 	} 
+
+# 	trigger = {		
+# 		root.faith = faith:catholic
+# 		exists = faith:catholic.religious_head
+# 		faith:catholic.religious_head = {
+# 			has_title = title:k_papal_state
+# 			dynasty = root.dynasty 
+# 		}
+# 		title:k_papal_state.holder = { 
+# 			NOT = { 
+# 				OR = { 
+# 					has_trait = greedy 
+# 					has_trait = zealous 
+# 				} 
+# 			} 
+# 		}
+
+# 		OR = {
+# 			any_sibling = {
+# 				is_male = yes
+# 				is_ruler = no
+# 				root.primary_title = {
+# 					place_in_line_of_succession = {
+# 					  target = PREV
+# 					  value > 2
+# 					}
+# 				}
+# 			}
+# 			any_child = {
+# 				is_male = yes
+# 				is_ruler = no
+# 				root.primary_title = {
+# 					place_in_line_of_succession = {
+# 					  target = PREV
+# 					  value > 2
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	immediate = {
+# 		scripted_effect_popethingevent = {}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.1.a
+
+		
+# 			scope:player_one = {
+# 				add_opinion = {
+# 					target = title:k_papal_state.holder 
+# 					opinion = 100
+# 					modifier = grateful_opinion
+# 				} 
+# 				add_opinion = {
+# 					target = ROOT
+# 					opinion = 100
+# 					modifier = grateful_opinion
+# 				} 
+
+# 				set_employer = title:k_papal_state.holder 
+# 				add_character_modifier = {
+# 					modifier = koh_governs_vast_estates
+# 					years = 5
+# 				}
+# 			}
+
+# 			scope:player_two = { 
+# 				add_opinion = {
+# 					target = title:k_papal_state.holder 
+# 					opinion = 100
+# 					modifier = grateful_opinion
+# 				} 
+
+# 				reverse_add_opinion = {
+# 					target = ROOT
+# 					opinion = 100
+# 					modifier = grateful_opinion
+# 				} 
+# 				set_employer = title:k_papal_state.holder 
+# 				add_character_modifier = {
+# 					modifier = koh_governs_vast_estates
+# 					years = 5
+# 				}
+# 			}
+			
+# 			title:k_papal_state.holder = {
+# 				add_opinion = {
+# 					target = scope:player_one
+# 					opinion = 20
+# 					modifier = grateful_opinion
+# 				} 
+
+# 				add_opinion = {
+# 					target = scope:player_two
+# 					opinion = 20
+# 					modifier = grateful_opinion
+# 				} 
+
+# 				add_opinion = {
+# 					target = ROOT
+# 					opinion = 15
+# 					modifier = grateful_opinion
+# 				}
+# 			}
+		
+# 		ai_chance = {
+# 			base = 100
+# 		}
+# 	}
+
+# 	# option = {
+# 	# 	name = KoH_religiousflavour.1.b
+
+# 	# 	add_piety = 50
+
+# 	# 	title:k_papal_state.holder = {
+# 	# 		add_opinion = {
+# 	# 			target = ROOT
+# 	# 			opinion = -15
+# 	# 			modifier = disappointed_opinion
+# 	# 		}
+# 	# 	}
+# 	# }
+
+# 	# option = {
+# 	# 	name = KoH_religiousflavour.1.c
+# 	# 	trigger = {
+# 	# 		OR = {
+# 	# 			has_trait = zealous
+# 	# 			learning <= 10
+# 	# 		}
+# 	# 	add_piety = 50
+
+# 	# 	title:k_papal_state.holder = {
+# 	# 		add_opinion = {
+# 	# 			target = ROOT
+# 	# 			opinion = -15
+# 	# 			modifier = disappointed_opinion
+# 	# 		}
+# 	# 		add_piety = -100
+# 	# 	}
+# 	# 	add_piety = 200
+# 	# 	add_learning_skill = 1
+# 	# 	}
+# 	# }
+# }
+
+# KoH_religiousflavour.2 = { #Monks Make Good Beer
+# 	title = KoH_religiousflavour.2.t
+# 	desc = KoH_religiousflavour.2.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 		# OR = {
+# 		# 	location = {
+# 		# 		region = world_europe_west
+# 		# 	}
+# 		# 	location = {
+# 		# 		region = world_europe_south
+# 		# 	}
+# 		# }
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.2.a
+
+# 		random = {
+# 			chance = 50
+# 			add_learning_skill = 1
+# 		}
+# 		if = {
+# 			limit = { NOT = { has_trait = drunkard } }
+# 			random = {
+# 				chance = 20
+# 				add_trait = drunkard
+# 				send_interface_toast = {
+# 					type = event_toast_effect_bad
+# 					title = KoH_religiousflavour.2.a.drunkard
+# 					left_icon = root
+# 				}
+# 			}
+# 		}
+
+# 		ai_chance = {
+# 			base = 50
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.2.b
+
+# 		if = {
+# 			limit = { NOT = { has_trait = temperate } }
+# 			random = {
+# 				chance = 20
+# 				add_trait = temperate
+# 				send_interface_toast = {
+# 					type = event_toast_effect_good
+# 					title = KoH_religiousflavour.2.b.temperate
+# 					left_icon = root
+# 				}
+# 			}
+# 		}
+
+# 		ai_chance = {
+# 			base = 50
+# 		}
+# 	}
+# }
+
+# KoH_religiousflavour.3 = { #Monks Make Good Wine
+# 	title = KoH_religiousflavour.3.t
+# 	desc = KoH_religiousflavour.3.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 		# OR = {
+# 		# 	location = {
+# 		# 		region = world_europe_west
+# 		# 	}
+# 		# 	location = {
+# 		# 		region = world_europe_south
+# 		# 	}
+# 		# }
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.3.a
+
+# 		random = {
+# 			chance = 50
+# 			add_learning_skill = 1
+# 		}
+# 		if = {
+# 			limit = { NOT = { has_trait = drunkard } }
+# 			random = {
+# 				chance = 20
+# 				add_trait = drunkard
+# 				send_interface_toast = {
+# 					type = event_toast_effect_bad
+# 					title = KoH_religiousflavour.2.a.drunkard
+# 					left_icon = root
+# 				}
+# 			}
+# 		}
+
+# 		ai_chance = {
+# 			base = 50
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.3.b
+
+# 		if = {
+# 			limit = { NOT = { has_trait = temperate } }
+# 			random = {
+# 				chance = 20
+# 				add_trait = temperate
+# 				send_interface_toast = {
+# 					type = event_toast_effect_good
+# 					title = KoH_religiousflavour.2.b.temperate
+# 					left_icon = root
+# 				}
+# 			}
+# 		}
+
+# 		ai_chance = {
+# 			base = 50
+# 		}
+# 	}
+# }
+# KoH_religiousflavour.4 = { #Monks have healing herbs
+# 	title = KoH_religiousflavour.4.t
+# 	desc = KoH_religiousflavour.4.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		piety_level >= 1
+# 		OR = {
+# 			has_trait = ill
+# 		}
+# 		has_religion = religion:christianity_religion
+# 		# OR = {
+# 		# 	location = {
+# 		# 		region = world_europe_west
+# 		# 	}
+# 		# 	location = {
+# 		# 		region = world_europe_south
+# 		# 	}
+# 		# }
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.4.a
+
+# 		random = {
+# 			chance = 30
+# 			remove_trait = ill
+# 		}
+
+# 		ai_chance = {
+# 			base = 80
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.4.b
+
+# 		if = {
+# 			limit = { NOT = { has_trait = paranoid } }
+# 			add_trait = paranoid
+# 		}
+# 	}
+# }
+
+# KoH_religiousflavour.5 = { #Monks is fantastic painter
+# 	title = KoH_religiousflavour.5.t
+# 	desc = KoH_religiousflavour.5.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 		NOT = { has_trait = blind }
+# 		# OR = {
+# 		# 	location = {
+# 		# 		region = world_europe_west
+# 		# 	}
+# 		# 	location = {
+# 		# 		region = world_europe_south
+# 		# 	}
+# 		# }
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.5.a
+
+# 		remove_short_term_gold = 10
+# 		add_prestige = 30
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.5.b
+
+# 	}
+# }
+
+# # KoH_religiousflavour.6 = { #Monks is fantastic painter
+# # 	title = KoH_religiousflavour.6.t
+# # 	desc = KoH_religiousflavour.6.desc
+# # 	theme = learning_scholarship_focus
+# # 	left_portrait = {
+# # 		character = this
+# # 	}
+
+# # 	trigger = {		
+# # 		is_commanding_army = no
+# # 		is_adult = yes
+# # 		is_imprisoned = no
+# # 		has_religion = religion:christianity_religion
+# # 		NOT = { has_trait = blind }
+# # 		# OR = {
+# # 		# 	location = {
+# # 		# 		region = world_europe_west
+# # 		# 	}
+# # 		# 	location = {
+# # 		# 		region = world_europe_south
+# # 		# 	}
+# # 		# }
+# # 	}
+
+# # 	option = { 
+# # 		name = KoH_religiousflavour.6.a
+
+# # 		remove_short_term_gold = -10
+# # 		add_prestige = 30
+# # 	}
+
+# # 	option = { 
+# # 		name = KoH_religiousflavour.6.b
+
+# # 	}
+# # }
+
+# KoH_religiousflavour.7 = { #Monks is fantastic painter
+# 	title = KoH_religiousflavour.7.t
+# 	desc = KoH_religiousflavour.7.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 		# OR = {
+# 		# 	location = {
+# 		# 		region = world_europe_west
+# 		# 	}
+# 		# 	location = {
+# 		# 		region = world_europe_south
+# 		# 	}
+# 		# }
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.7.a
+
+# 		remove_short_term_gold = 30
+# 		add_prestige = 30
+# 		random = {
+# 			chance = 20
+# 			add_learning_skill = 1
+# 		}
+# 	}
+# 	option = { 
+# 		name = KoH_religiousflavour.7.b
+
+# 	}
+# }
+
+# KoH_religiousflavour.8 = { #Monks is fantastic painter
+# 	title = KoH_religiousflavour.8.t
+# 	desc = KoH_religiousflavour.8.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 		# OR = {
+# 		# 	location = {
+# 		# 		region = world_europe_west
+# 		# 	}
+# 		# 	location = {
+# 		# 		region = world_europe_south
+# 		# 	}
+# 		# }
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.8.a
+
+# 		add_piety = 20
+
+# 		random = {
+# 			chance = 30
+# 			add_learning_skill = 1
+# 		}
+# 	}
+# 	option = { 
+# 		name = KoH_religiousflavour.8.b
+# 		if = {
+# 			limit = { NOT = { has_trait = cynical } }
+# 			add_trait = cynical
+# 		}
+# 	}
+# }
+
+# # KoH_religiousflavour.9 = { #Child wants to be monk/nun - select child
+# # 	title = KoH_religiousflavour.9.t
+# # 	desc = KoH_religiousflavour.9.desc
+# # 	theme = learning_scholarship_focus
+# # 	left_portrait = {
+# # 		character = this
+# # 	}
+# # 	hidden = yes
+
+# # 	trigger = {		
+# # 		is_commanding_army = no
+# # 		is_adult = yes
+# # 		is_imprisoned = no
+# # 		has_religion = religion:christianity_religion
+# # 		any_child = {
+# # 			is_ruler = no
+# # 			age = 13
+# # 			NOT = { age = 16 }
+# # 			NOT = { has_trait = cynical }
+# # 			NOT = { is_clergy = yes }
+# # 		}
+# # 	}
+
+# # 	immediate = {
+# # 		random_child = {
+# # 			limit = {
+# # 				is_ruler = no
+# # 				age = 13
+# # 				NOT = { age = 16 }
+# # 				NOT = { has_trait = cynical }
+# # 				NOT = { is_clergy = yes }
+# # 			}
+# # 			trigger_event = KoH_religiousflavour.10
+# # 		}
+# # 	}
+# # }
+
+# # KoH_religiousflavour.10 = { #MChild Event
+# # 	#title = KoH_religiousflavour.10.t
+# # 	#desc = KoH_religiousflavour.10.desc
+# # 	theme = learning_scholarship_focus
+# # 	left_portrait = {
+# # 		character = this
+# # 	}
+# # 	hidden = yes
+
+# # 	immediate = {
+# # 		FROM = {
+# # 			trigger_event = KoH_religiousflavour.11  }
+# # 	}
+# # }
+
+# # KoH_religiousflavour.11 = { #Child wants to be monk/nun - parent response
+# # 	title = KoH_religiousflavour.11.t
+# # 	desc = KoH_religiousflavour.11.desc
+# # 	theme = learning_scholarship_focus
+# # 	left_portrait = {
+# # 		character = this
+# # 	}
+# # 	right_portrait = {
+# # 		character = FROM
+# # 	}
+
+# # 	option = { 
+# # 		name = KoH_religiousflavour.11.a
+
+# # 		FROM = {
+# # 			add_trait = devoted
+# # 			add_opinion = {
+# # 				target = ROOT
+# # 				opinion = 50
+# # 				modifier = grateful_opinion
+# # 			}
+# # 		}
+# # 		custom_tooltip = { text = KoH_religiousflavour.11.a.tt}
+# # 	}
+
+# # 	option = { 
+# # 		name = KoH_religiousflavour.11.b
+# # 		FROM = {
+# # 			add_stress = major_stress_loss
+# # 			add_opinion = {
+# # 				target = ROOT
+# # 				opinion = 50
+# # 				modifier = angry_opinion
+# # 			}
+# # 		}
+# # 	}
+# # }
+
+# KoH_religiousflavour.12 = { #Donate to local monastery
+# 	title = KoH_religiousflavour.12.t
+# 	desc = KoH_religiousflavour.12.desc
+# 	theme = learning_scholarship_focus
+# 	left_portrait = {
+# 		character = this
+# 	}
+	
+# 	trigger = {		
+# 		is_commanding_army = no
+# 		is_adult = yes
+# 		is_imprisoned = no
+# 		has_religion = religion:christianity_religion
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.12.a
+# 		remove_short_term_gold = 30
+# 		add_piety = 30
+# 	}
+	
+# 	option = { 
+# 		name = KoH_religiousflavour.12.b
+# 		add_piety = -30
+# 	}
+# }
+
+# KoH_religiousflavour.13 = { #Duty-Bound
+# 	title = KoH_religiousflavour.13.t
+# 	desc = KoH_religiousflavour.13.desc
+# 	theme = learning_scholarship_focus
+# 	right_portrait = {
+# 		character = scope:Priest
+# 	}
+# 	lower_right_portrait = {
+# 		character = scope:lover
+# 	}
+
+# 	trigger = {		
+# 		has_religion = religion:christianity_religion
+# 		any_vassal_or_below = {
+# 			AND = {
+# 				has_government = theocracy_government
+# 				OR = {
+# 					has_trait = reveler_1
+# 					has_trait = reveler_2
+# 					has_trait = reveler_3
+# 					has_trait = drunkard
+# 					has_trait = lustful 
+# 				}
+# 			} 
+# 		}
+# 	}
+
+# 	immediate = {
+# 		random_vassal_or_below = {
+# 			limit = {
+# 				AND = {
+# 					has_government = theocracy_government
+# 					OR = {
+# 						has_trait = reveler_1
+# 						has_trait = reveler_2
+# 						has_trait = reveler_3
+# 						has_trait = drunkard
+# 						has_trait = lustful 
+# 					}
+# 				}
+# 			}
+# 			save_scope_as = Priest 
+# 		}
+
+# 		create_character = {
+# 			template = beautiful_peasant_character
+# 			age = { 17 22 }
+# 			gender_female_chance = root_attraction_based_female_chance
+# 			employer = scope:Priest.host
+# 			faith = scope:Priest.host.faith
+# 			culture = scope:Priest.host.culture
+# 			save_scope_as = lover
+# 		}
+
+# 		scope:Priest = {
+# 			set_relation_lover = scope:lover
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.13.a
+		
+# 		scope:Priest = {
+# 			give_deviant_secret_or_trait_effect = yes
+
+# 			if = {
+# 				limit = { exists = dynasty }
+# 				dynasty = {
+# 					add_dynasty_prestige = medium_dynasty_prestige_loss
+# 				}
+# 			}
+# 			add_piety = -1
+# 			add_piety_level = -1
+# 		}
+# 	}
+# }
+
+# KoH_religiousflavour.14 = { #Duty-Bound - Varaint
+# 	title = KoH_religiousflavour.14.t
+# 	desc = KoH_religiousflavour.14.desc
+# 	theme = learning_scholarship_focus
+# 	right_portrait = {
+# 		character = scope:Priest
+# 	}
+# 	lower_right_portrait = {
+# 		character = scope:lover
+# 	}
+
+# 	trigger = {		
+# 		has_religion = religion:christianity_religion
+
+# 		exists = dynasty
+# 		dynasty = { 
+# 			any_dynasty_member = { 
+# 				is_alive = yes
+# 				dynasty = root.dynasty
+# 				has_government = theocracy_government
+# 				OR = {
+# 					has_trait = reveler_1
+# 					has_trait = reveler_2
+# 					has_trait = reveler_3
+# 					has_trait = drunkard
+# 					has_trait = lustful 
+# 				}
+# 			} 
+# 		}
+# 	}
+
+# 	immediate = {
+# 		dynasty = { 
+# 			every_dynasty_member = { 
+# 				if = {
+# 					limit = {
+# 						is_alive = yes
+# 						dynasty = root.dynasty
+# 						has_government = theocracy_government
+# 						OR = {
+# 							has_trait = reveler_1
+# 							has_trait = reveler_2
+# 							has_trait = reveler_3
+# 							has_trait = drunkard
+# 							has_trait = lustful 
+# 						}
+# 					}
+# 					save_scope_as = Priest 
+# 				}
+# 			}
+# 		}
+
+# 		create_character = {
+# 			template = beautiful_peasant_character
+# 			age = { 17 22 }
+# 			gender_female_chance = root_attraction_based_female_chance
+# 			employer = scope:Priest.host
+# 			faith = scope:Priest.host.faith
+# 			culture = scope:Priest.host.culture
+# 			save_scope_as = lover
+# 		}
+
+# 		scope:lover = {
+# 			set_relation_lover = scope:Priest
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.14.a
+		
+# 		scope:Priest = {
+# 			give_deviant_secret_or_trait_effect = yes
+
+# 			if = {
+# 				limit = { exists = dynasty }
+# 				dynasty = {
+# 					add_dynasty_prestige = medium_dynasty_prestige_loss
+# 				}
+# 			}
+# 			add_piety = -1
+# 			add_piety_level = -1
+# 		}
+# 	}
+# }
+# #Waldensians in Lyon
+# KoH_religiousflavour.15 = {
+# 	title = KoH_religiousflavour.15.t
+# 	desc = KoH_religiousflavour.15.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+# 	left_portrait = {
+# 		character = title:c_lyon.holder
+# 	}
+# 	right_portrait = {
+# 		character = scope:peter
+# 	}
+
+# 	trigger = {
+# 		this = title:c_forez.holder
+# 	}
+
+# 	immediate = {
+# 		create_character = {
+# 			name = "Pèire de Vaudès"
+# 			gender_female_chance = 0
+# 			dynasty = no
+# 			trait = heresiarch
+# 			location = root
+# 			age = { 40 50 }
+# 			learning = 18
+# 			faith = faith:waldensian
+# 			culture = culture:french
+# 			save_scope_as = peter
+# 		}
+
+# 		title:c_lyon.holder = {
+# 			save_scope_as = archbishop
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.15.a
+# 		title:c_provence.holder = {
+# 			trigger_event = {
+# 				id = KoH_religiousflavour.16
+# 				days = { 5 10 }
+# 			}
+# 		}
+
+# 		title:c_savoie.holder = {
+# 			trigger_event = {
+# 				id = KoH_religiousflavour.16
+# 				days = { 5 10 }
+# 			}
+# 		}
+# 	}
+# 	option = { 
+# 		name = KoH_religiousflavour.15.b
+# 		trigger_event = {
+# 			id = KoH_religiousflavour.17
+# 			days = { 5 10 }
+# 		}
+# 	}
+# }
+
+# KoH_religiousflavour.16 = {
+# 	title = KoH_religiousflavour.16.t
+# 	desc = KoH_religiousflavour.16.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+
+# 	immediate = {
+# 		random_held_title = {
+# 			limit = { tier = tier_county }
+# 			save_scope_as = Waldensians_county
+# 		}
+
+# 		scope:Waldensians_county = {
+# 			set_county_faith = faith:waldensian
+
+# 			add_county_modifier = {
+# 				modifier = bastion_of_waldensianism_revolt_risk_modifier
+# 				years = 20
+# 			}
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.16.a
+
+
+# 	}
+# }
+
+# KoH_religiousflavour.17 = {
+# 	title = KoH_religiousflavour.17.t
+# 	desc = KoH_religiousflavour.17.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+# 	left_portrait = {
+# 		character = scope:archbishop
+# 	}
+# 	right_portrait = {
+# 		character = root
+# 	}
+
+# 	immediate = {
+# 		title:c_lyon.holder = {
+# 			save_scope_as = archbishop
+# 		}
+
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.17.a
+
+# 		scope:archbishop = {
+# 			add_opinion = {
+# 			target = root
+# 			modifier = pious_opinion
+# 			opinion = 10
+# 			}
+# 		}
+
+# 		add_piety = 50 
+
+# 		trigger_event = {
+# 			id = KoH_religiousflavour.18
+# 			days = 3 
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.17.b
+# 		custom_tooltip = KoH_religiousflavour.17.b.tt
+
+# 		scope:archbishop = {
+# 			add_opinion = {
+# 			target = root
+# 			modifier = temporal_condemnation_opinion
+# 			opinion = -30
+# 			}
+# 		}
+
+# 		trigger_event = {
+# 			id = KoH_religiousflavour.19
+# 			days = {10 20}
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.17.c
+# 		custom_tooltip = KoH_religiousflavour.17.c.tt
+
+# 		scope:archbishop = {
+# 			set_relation_rival = root
+# 		}
+
+# 		set_relation_rival = scope:archbishop
+
+# 		set_character_faith_with_conversion = faith:waldensian
+# 		add_piety = major_piety_loss
+
+# 		add_internal_flag = dangerous
+
+
+# 		trigger_event = {
+# 			id = KoH_religiousflavour.20
+# 			days = 3 
+# 		}
+
+# 		ai_chance = {
+# 			base = 80
+# 		}
+# 	}
+# }
+
+# KoH_religiousflavour.18 = {
+# 	title = KoH_religiousflavour.18.t
+# 	desc = KoH_religiousflavour.18.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+
+# 	immediate = {
+# 		title:c_forez = {
+# 			change_development_level = -2
+
+# 			add_county_modifier = {
+# 				modifier = Massacre_of_Feurs
+# 				years = 10
+# 			}
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.18.a	
+# 	}
+# }
+
+# KoH_religiousflavour.19 = {
+# 	title = KoH_religiousflavour.19.t
+# 	desc = KoH_religiousflavour.19.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+
+# 	immediate = {
+# 		add_excommunication_actual_effect = yes
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.19.a	
+
+# 		title:c_forez = {
+# 			set_county_faith = faith:waldensian
+
+# 			add_county_modifier = {
+# 				modifier = KOH_Religious_Tolerance
+# 				years = 20
+# 			}
+# 		}
+# 		set_nickname_effect = { NICKNAME = nick_the_tolerant }
+# 	}
+# }
+
+# KoH_religiousflavour.20 = {
+# 	title = KoH_religiousflavour.20.t
+# 	desc = KoH_religiousflavour.20.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+
+# 	immediate = {
+# 		add_excommunication_actual_effect = yes
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.20.a	
+
+# 		add_trait = heresiarch
+# 		add_trait = paragon
+
+# 		set_nickname_effect = { NICKNAME = nick_the_waldensian }
+
+# 		add_piety = 1000
+
+# 		title:c_forez = {
+# 			set_county_faith = faith:waldensian
+
+# 			add_county_modifier = {
+# 				modifier = Birthplace_of_Waldensianism
+# 				years = 100
+# 			}
+# 		}
+
+# 		title:c_lyon = {
+# 			set_county_faith = faith:waldensian
+
+
+# 			add_county_modifier = {
+# 				modifier = Birthplace_of_Waldensianism
+# 				years = 100
+# 			}
+# 		}
+
+# 		faith:waldensian = {
+# 			change_fervor = {
+# 				value = 28
+# 				desc = Birthplace_of_Waldensianism
+# 			}
+# 		}
+
+# 		title:c_roma.holder = {
+# 			add_opinion = {
+# 				target = root
+# 				modifier = temporal_condemnation_opinion
+# 				opinion = -30
+# 			}
+# 		}
+
+# 		every_ruler = {
+# 			limit = {
+# 				AND = {
+# 					NOT = { this = title:c_forez.holder }
+# 					has_religion = religion:christianity_religion
+# 				}
+# 			}
+# 			trigger_event = {
+# 				id = KoH_religiousflavour.21
+# 				days = 10
+# 			}
+# 		}
+# 	}
+# }
+
+# KoH_religiousflavour.21 = {
+# 	title = KoH_religiousflavour.21.t
+# 	desc = KoH_religiousflavour.21.desc
+# 	theme = faith 
+# 	override_background = {
+# 		event_background = market
+# 	}
+
+# 	right_portrait = {
+# 		character = title:c_forez.holder
+# 	}
+
+# 	immediate = {
+# 		title:c_forez.holder = {
+# 			save_scope_as = forez
+# 		}
+
+# 		title:c_roma.holder = {
+# 			save_scope_as = pope
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = KoH_religiousflavour.21.a	
+# 	}
+# }
+
+# # #Waldensians in Lyon
+# # #cardinal names
+# # KoH_religiousflavour.22 = {
+# # 	hidden = yes
+
+# # 	immediate = {
+# # 		every_living_cardinal = {
+# # 			add_prestige = 1
+# # 			add_trait = koh_cardinal
+# # 			#give_nickname = nick_cardinal
+# # 			# if = {
+# # 			# 	limit = {
+# # 			# 		OR = {
+# # 			# 			has_council_position = councillor_court_chaplain
+# # 			# 			is_theocratic_lessee = yes
+# # 			# 			is_landed = no
+# # 			# 		}
+# # 			# 	}
+# # 			# 	give_nickname = nick_cardinal
+# # 			# }
+# # 		}
+# # 	}
+# # }
+
+# # #cardinal election won
+# # KoH_religiousflavour.23 = {
+# # 	hidden = yes
+
+# # 	immediate = {
+# # 		send_interface_toast = {
+# # 			title = "Cardinal Election"				
+# # 			right_icon = prev
+			
+# # 			custom_tooltip = "You have gained a hook"
+# # 		}
+# # 	}
+# # }
