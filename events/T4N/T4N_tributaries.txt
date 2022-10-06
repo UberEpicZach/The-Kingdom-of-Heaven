@@ -137,23 +137,23 @@ tributaries.5 = {
 			}
 			every_in_list = {
 				variable = non_permanent_tributaries
-				pay_long_term_gold = { target = prev gold = { value = monthly_character_income  multiply = var:tribute_gold_percent }}
-				add_prestige = var:monthly_prestige_tributary
-				add_piety = var:monthly_piety_tributary
+				pay_long_term_gold = { target = prev gold = { value = monthly_character_income  multiply = 0.05 }}
+				add_prestige = -0.01
+				add_piety = 0
 				root = {
-					add_prestige = prev.var:monthly_prestige_suzerain
-					add_piety = prev.var:monthly_piety_suzerain
+					add_prestige = 0.01
+					add_piety = 0
 					change_variable = {
 						name = cash_display
-						add = { value = prev.monthly_character_income multiply = prev.var:tribute_gold_percent }
+						add = { value = prev.monthly_character_income multiply = 0.05 }
 					}
 					change_variable = {
 						name = prestige_display
-						add = prev.var:monthly_prestige_suzerain
+						add =  0.01
 					}
 					change_variable = {
 						name = piety_display
-						add = prev.var:monthly_piety_suzerain
+						add = 0
 					}
 				}
 				
@@ -166,25 +166,25 @@ tributaries.5 = {
 			every_in_list = {
 				variable = permanent_tributaries
 
-				pay_long_term_gold = { target = prev gold = { value = monthly_character_income  multiply = var:tribute_gold_percent }}
-				add_prestige = var:monthly_prestige_tributary
-				add_piety = var:monthly_piety_tributary
+				pay_long_term_gold = { target = prev gold = { value = monthly_character_income  multiply = 0.1 }}
+				add_prestige = -0.05
+				add_piety = 0
 				root = {
-					add_prestige = prev.var:monthly_prestige_suzerain
-					add_piety = prev.var:monthly_piety_suzerain
+					add_prestige = 0.05
+					add_piety = 0
 					change_variable = {
 						name = cash_display
-						add = { value = prev.monthly_character_income multiply = prev.var:tribute_gold_percent }
+						add = { value = prev.monthly_character_income multiply = 0.1 }
 					}
 					change_variable = {
 						name = prestige_display
-						add = prev.var:monthly_prestige_suzerain
+						add =  0.05
 					}
 					change_variable = {
 						name = piety_display
-						add = prev.var:monthly_piety_suzerain
+						add = 0
 					}
-				}		
+				}
 
 			}
 		}
