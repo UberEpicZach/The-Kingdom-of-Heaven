@@ -1,4 +1,7 @@
 ﻿on_game_start = {
+
+
+	
 	on_actions = {
 		KOH_ON_START
 		#on_artifact_initialization
@@ -345,6 +348,29 @@ KOH_Parition = {
 
 KOH_ON_START = {
 	effect = {
+
+		character:227012 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+			}
+			trigger_event = house_feud_hashashins.0001
+		}
+		
+		character:144056 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = house_feud_seljuk.0002
+					
+				}
+			}
+		}
 
 		set_global_variable = {
 			name = KOH_is_loaded
@@ -715,6 +741,8 @@ on_raid_action_completion = {
 		KOH_REYNALD_ACTION
 	}
 }
+
+
 
 KOH_REYNALD_ACTION = {
 	effect = {	
