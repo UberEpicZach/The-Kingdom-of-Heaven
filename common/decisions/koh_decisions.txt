@@ -93,7 +93,43 @@
 ##########################################################
 
 #to be done
+merkit_raid_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+	major = yes
+    
+	ai_check_interval = 6
+    ai_potential = {
+		always = yes
+	}
+    ai_will_do = 1
+    
+	desc = merkit_raid_decision_desc 
+	selection_tooltip =merkit_raid_decision_tooltip
+	is_shown = {
 
+		this = character:3031390#Toqto'a Beki
+		is_independent_ruler = yes
+		character:125501 = {
+			is_alive = yes
+		}
+		NOT = {
+			has_character_flag = already_merkit_raid
+			
+		}
+	}
+	is_valid = {
+		}
+	effect = {
+		add_character_flag = already_merkit_raid
+		
+		
+	}
+	cost = {
+		piety = {
+            value = 100
+        }
+	}
+}
 
 
 

@@ -656,7 +656,7 @@
 	stewardship=15
 	martial=11
 	diplomacy=11 #The secret history of the mongols constantly emphasizes that Hoelun is serious business
-	
+	trait=education_intrigue_4
 	trait = brave
 	trait = compassionate
 	trait = diligent
@@ -677,7 +677,12 @@
 	1135.1.1={
 		birth=yes
 	}
-	1169.1.1={
+	1180.1.1={
+	effect={
+	add_opinion_modifier={modifier=reason_child_died years=100 target=125501}
+	}
+	}
+	1185.1.1={
 		death=yes
 	}
 }
@@ -724,6 +729,8 @@
 	father=93055
 	mother=303282
 	trait=strong
+	prowess=10
+	intrigue=8
 	1161.1.2 = {
 		birth = yes
 	}
@@ -4378,11 +4385,14 @@
 	father = 172001
 	martial = 10
 	diplomacy = 4
-	intrigue = 6
+	intrigue = 8
 	stewardship = 6
 	trait = education_martial_3
 	1160.1.1 = {
 		birth = "1160.1.1"
+	}
+	1182.1.1={
+	employer = 3032661
 	}
 	1235.1.1 = {
 		death = "1235.1.1"
@@ -6690,7 +6700,7 @@ companion0002= {
 	1164.1.1={
 		birth=yes
 	}
-	1184.1.1 = {
+	1180.1.1 = {
 		set_relation_friend = { reason = friend_historical target = character:125501 } 
 	}
 	
@@ -6709,7 +6719,7 @@ companion0003= {
 	1165.1.1={
 		birth=yes
 	}
-1184.1.1 = {
+1180.1.1 = {
 		set_relation_friend = { reason = friend_historical target = character:125501 } 
 	}
 	1240.1.1={
@@ -6732,7 +6742,76 @@ companion0004= {
 		death=yes
 	}
 }
+companion0005= {
+	name="Naqu"
+	religion="tengri_pagan"
+	culture="mongol"
+	trait=trusting
+	trait=compassionate
+	stewardship=6
+	trait=education_stewardship_3
+	
 
+	1136.1.1={
+		birth=yes
+	}
+	1170.1.1={
+	effect={
+	add_gold=65
+	give_nickname=nick_the_rich
+	}
+	}
+
+	1206.1.1={
+		death=yes
+	}
+}
+companion0006= {
+	name="Bo'orchu"
+	religion="tengri_pagan"
+	culture="mongol"
+	father=companion0005
+	trait=just
+	trait=brave
+	trait=compassionate
+	trait=education_martial_2
+	prowess=10
+	intrigue=8
+
+	1167.1.1={
+		birth=yes
+	}
+	1182.1.1={
+	set_relation_friend = { reason = friend_historical target = character:125501 } 
+	employer = 125501
+
+	}
+
+	1206.1.1={
+		death=yes
+	}
+}
+companion0007= {
+	name="Qo'aqchin"
+	religion="tengri_pagan"
+	culture="mongol"
+
+	trait=brave
+	trait=deceitful
+	female=yes
+
+	1114.1.1={
+		birth=yes
+	}
+	1182.1.1={
+	employer = 125501
+
+	}
+
+	1186.1.1={
+		death=yes
+	}
+}
 #Mongol Vassals of Shazhou - fictional placeholders
 chanaid0001 = {
 	name="Chanai"
