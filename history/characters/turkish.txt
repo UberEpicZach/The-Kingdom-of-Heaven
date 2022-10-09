@@ -615,11 +615,16 @@ KOHTurk1 = {
 	religion = "ashari"
 	culture = "turkish"
 	father = 144055
-	1159.1.1 = {
-		birth = "1159.1.1"
+	trait = brave
+	trait = arrogant # Rashful and proud
+	trait = diligent # Can multitask by attempting to reform both administration and military
+	trait = education_martial_3 # "Some hold him as a noble, virtuous warrior, possessing the spirit of his great ancestors, struggling against impossible odds."
+	disallow_random_traits = yes
+	1169.1.1 = { # Unknown, however, it is known that he ruled at the age of seven
+		birth = "1169.1.1"
 	}
-	1194.3.1 = {
-		death = "1194.3.1"
+	1194.3.19 = {
+		death = "1194.3.19"
 	}
 
 	1175.1.1 = {
@@ -2330,7 +2335,7 @@ KOHTurk1 = {
 3036 = {
 	name = "Chagri-Beg"
 	# AKA: Chagri
-	dynasty = 613
+	dynasty_house = house_seljuk
 	martial = 7
 	diplomacy = 8
 	intrigue = 4
@@ -6054,7 +6059,7 @@ KOHTurk1 = {
 
 93128 = {
 	name = "Toghan_Shah"
-	dynasty = 613
+	dynasty_house = house_seljuk
 	religion = "ashari"
 	culture = "turkish"
 	father = 3040

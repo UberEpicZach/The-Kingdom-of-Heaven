@@ -3,7 +3,7 @@
 	dna = 32978_am
 	dynasty = 101875
 	religion = "masmudi"
-	culture = baranis
+	culture = berber
 	father = kumi_003
 	martial = 10
 	diplomacy = 15
@@ -31,12 +31,12 @@
 	}
 	1121.1.1 = {
 		employer = ibn_tumart
-		set_relation_friend = { reason = friend_generic_history target = character:ibn_tumart }
+		set_relation_friend = character:ibn_tumart
 	}
 	1144.1.1 = {
 		add_pressed_claim = title:e_maghreb
 		add_pressed_claim = title:k_maghreb
-		add_pressed_claim = title:d_rif
+		add_pressed_claim = title:d_tangiers
 		add_pressed_claim = title:d_fes
 		add_pressed_claim = title:d_alger
 		add_pressed_claim = title:k_africa
@@ -54,7 +54,7 @@
 		am_buff_effect = yes
 	}
 	1146.1.1 = {
-		remove_claim = title:d_rif
+		remove_claim = title:d_tangiers
 		remove_claim = title:d_fes
 	}
 	1147.1.1 = {
@@ -242,8 +242,9 @@ almohad1014 = {
 	religion = "masmudi"
 	culture = baranis
 	trait = zealous
-	trait = humble
+	trait = diligent
 	trait = just
+	trait = compassionate
 	father = 224000
 	1155.1.1 = {
 		birth = "1155.1.1"
@@ -251,6 +252,9 @@ almohad1014 = {
 	}
 	1180.1.1 = {
 		add_spouse = zahr_flor
+	}
+	1184.1.1 = {
+		add_trait = "strategist" # Talented organizer in both military and administrative matters
 	}
 	1199.1.23 = {
 		death = "1199.1.23"
@@ -283,9 +287,11 @@ almohad1014 = {
 	trait = just
 	trait = education_stewardship_4
 	father = 224000
-	disallow_random_traits = yes
 	1169.1.1 = {
 		birth = yes
+	}
+	1184.1.1 = {
+		disallow_random_traits = yes
 	}
 	1224.9.6 = {
 		give_nickname = nick_makhlu
@@ -458,10 +464,12 @@ almohad0006_ibn_almanzor = {
 	trait = content
 	trait = shy
 	father = 224000
-	disallow_random_traits = yes
 	1171.1.1 = {
 		birth = "1171.1.1"
 		give_nickname = nick_tahir
+	}
+	1184.1.1 = {
+		disallow_random_traits = yes
 	}
 	1236.1.1 = {
 		death = "1236.1.1"
@@ -513,7 +521,7 @@ almohad_descendants_003 = {
 	}
 }
 
-almohad_descendants_006 = {
+almohad_descendants_006 = { # Previously governor of Malaga in 1202, Silves and Algarve ca. 1203, Sijilmasa before 1221, and Seville 1221-1224
 	name = "Abd-al-Wahid"
 	dynasty = 101875
 	religion = "masmudi"
@@ -546,9 +554,9 @@ almohad_descendants_006 = {
 	1188.1.1 = {
 		birth = yes
 	}
-	# 1200.1.1 = {
-	# 	almohad1212buff_effect = yes
-	# }
+	1200.1.1 = {
+		almohad1212buff_effect = yes
+	}
 	1240.1.1 = {
 		death = yes
 	}
@@ -561,14 +569,9 @@ almohad_descendants_006 = {
 	culture = baranis
 	trait = temperate
 	trait = ambitious
-	trait = trusting
-	disallow_random_traits = yes
 	father = 32978
 	1139.1.1 = {
 		birth = "1139.1.1"
-	}
-	1163.1.1 = {
-		set_relation_friend = { reason = friend_generic_history target = character:224000 }  # Umar faithfully supported Abu Ya'qub Yusuf
 	}
 	1191.1.1 = {
 		death = "1191.1.1"
@@ -580,12 +583,7 @@ almohad_descendants_006 = {
 	dynasty = 101875
 	religion = "masmudi"
 	culture = baranis
-	trait = honest
-	trait = temperate
-	trait = trusting
-	trait = education_stewardship_2
 	father = 32978
-	disallow_random_traits = yes
 	1136.1.1 = {
 		birth = "1136.1.1"
 	}
@@ -635,7 +633,7 @@ almohad_descendants_006 = {
 	culture = baranis
 	trait = just
 	trait = humble
-	trait = zealous
+	trait = brave
 	trait = education_learning_4
 	disallow_random_traits = yes
 	father = 32978
@@ -678,9 +676,9 @@ almohad_descendants_006 = {
 		add_spouse = qamar_luna
 		trait = depressed
 	}
-	# 1212.6.17 = {
-	# 	almohad1212buff_effect = yes
-	# }
+	1212.6.17 = {
+		almohad1212buff_effect = yes
+	}
 	1213.1.1 = {
 		death = {
 			death_reason = death_murder
@@ -777,22 +775,26 @@ almohad0013 = {
 	dynasty = 101875
 	trait = zealous
 	trait = just
-	trait = humble
 	religion = "masmudi"
 	culture = baranis
 	father = 224000
-	disallow_random_traits = yes
 	1168.5.4 = {
 		birth = "1168.5.4"
 		give_nickname = nick_rashid
 	}
-	1225.9.1 = {
-		death = "1225.9.1"
+	1184.1.1 = {
+		disallow_random_traits = yes
+	}
+	1189.1.1 = {
+		death = {
+			death_reason = death_execution
+			killer = 32980
+		}
 	}
 }
 
 almohad0014 = { 
-	name = "Abu_Zayd_Muhammad" #ibn Yusuf Almohad2ndCaliph
+	name = "Abu_Zayd_Muhammad" # ibn Yusuf Almohad2ndCaliph, al-Hardani
 	dynasty = 101875
 	religion = "masmudi"
 	culture = baranis
@@ -800,8 +802,55 @@ almohad0014 = {
 	1168.10.4 = {
 		birth = "1168.10.4"
 	}
+	1184.1.1 = {
+		disallow_random_traits = yes
+	}
 	1225.12.1 = {
 		death = "1225.12.1"
+	}
+}
+
+almohad0020 = {
+	name = "Abu_Imran_Musa" # b. Abu Ya'qub Yusuf, governor of Tlemcen
+	dynasty = 101875
+	religion = "masmudi"
+	culture = "baranis"
+	father = 224000
+	1174.1.1 = { #?
+		birth = yes
+	}
+	1208.5.1 = { #sometime in 1208
+		death = {
+			death_reason = death_battle
+			killer = 32977
+		}
+	}
+}
+
+almohad0021 = {
+	name="Abu_Abdallah" # al-Hardani b. Abu Ya'qub Yusuf (?)
+	dynasty = 101875
+	religion = "masmudi"
+	culture = "baranis"
+	father = 224000 #? possibly same mother (note "al-Hardani") as Abu Zayd
+	1165.1.1 = { #?
+		birth = yes
+	}
+	1216.1.1 = { #?
+		death = yes
+	}
+}
+almohad0022 = {
+	name = "Abu_Umran" # b. Abu Abd Allah al-Hardani, governor of Bijaya under al-Ma'mun
+	dynasty = 101875
+	religion = "masmudi"
+	culture = "baranis"
+	father = 1230059
+	1196.1.1 = { #?
+		birth = yes
+	}
+	1245.1.1 = { #?
+		death = yes
 	}
 }
 
@@ -877,12 +926,14 @@ almohad0005 = {
 }
 
 almohad0006 = {
-	name = "Abu_Abdallah_Muhammad"
+	name = "Abu_Abdallah_Muhammad" # Governor of Majorca and later Valencia
+	dna = almohad0006_dna
 	dynasty = 101875
 	religion = "masmudi"
 	culture = baranis
 	father = 155085
-	1184.6.7 = {
+	sexuality = heterosexual
+	1174.6.7 = {
 		birth = yes
 	}
 	1222.1.1 = {
@@ -1031,7 +1082,7 @@ almohad0008 = {
 		set_realm_capital = title:c_almeria # Closest to Baeza
 	}
 	1224.1.1 = { # Should be 1225 but to make things more interesting :)
-		set_relation_friend = { reason = friend_generic_history target = character:457620 }  # Fernando III, made an alliance with him which is NOT NORMAL
+		set_relation_friend = character:457620 # Fernando III, made an alliance with him which is NOT NORMAL
 	}
 	1226.7.1 = {
 		death = {
@@ -1056,7 +1107,7 @@ fernando_de_adelmon = {
 		name = "Fernando"
 		give_nickname = nick_adelmon
 		employer = 457620 # Taken care by Fernando III after the death of his father
-		set_relation_friend = { reason = friend_generic_history target = character:457620 } 
+		set_relation_friend = character:457620
 	}
 	1273.1.1 = { # Maybe?
 		death = yes
@@ -1072,8 +1123,12 @@ almohad0009 = {
 	trait = generous
 	trait = trusting
 	trait = diligent
+	trait = education_diplomacy_4
 	1195.1.1 = {
 		birth = yes
+	}
+	1235.1.1 = {
+		employer = 460600
 	}
 	1236.4.22 = { # Baptised and become a Christian noble lord of Aragon
 		religion = catholic
@@ -1085,7 +1140,7 @@ almohad0009 = {
 }
 
 sons_of_vicente_001 = {
-	name = "Alda_Ferrandis"
+	name = "Alda_Ferrandis" # First of the Arenos dynasty
 	female = yes
 	dynasty = 101875
 	religion = "catholic"
@@ -1169,6 +1224,25 @@ sons_of_vicente_006 = {
 	}
 }
 
+sons_of_vicente_007 = {
+	name = "Hasan" # b. Abu Zayd, Almohad caliph for 5 days before fleeing Marrakech
+	dynasty = 101875
+	religion = "masmudi"
+	culture = "baranis"
+	father = almohad0009
+	1228.1.1 = { #?
+		birth = yes
+	}
+	1236.1.1 = {
+		religion = "catholic"
+		name = "Alfonso"
+	}
+	
+	1285.1.1 = { #?
+		death = yes
+	}
+}
+
 almohad0017 = { 
 	name = "Musa" #ibn al-Nasir
 	dynasty = 101875
@@ -1222,7 +1296,7 @@ qamar_luna = {
 		birth = yes
 	}
 	1199.1.1 = {
-		name = "Qamar"
+		name = "Qamara"
 		religion = "masmudi"
 	}
 	1232.1.1 = {
