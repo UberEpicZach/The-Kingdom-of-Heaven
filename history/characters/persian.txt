@@ -95,7 +95,9 @@
 
 144228 = {
 	name = "Nur_al-Din_Muhammed"
-	religion = "ismaili"
+	intrigue = 16
+	dynasty = Salam
+	religion = "nizari"
 	culture = "persian"
 	1130.1.1 = {
 		birth = yes
@@ -406,8 +408,6 @@
 
 	1175.1.1 = {
 		effect = {
-
-			
 			# Save target House for reference
 			
 			set_relation_rival = { reason = rival_historical target = character:144056 } 
@@ -417,25 +417,14 @@
 	1170.1.1 = {
 		effect = {
 			set_relation_rival = { reason = rival_historical target = character:226000 } 
-			
-
 		}
 	}
 
 	1180.1.1 = {
-
-		
-
 		set_realm_capital = title:c_alamut
 	}
 	1192.1.1 = {
 		death = "1192.1.1"
-	}
-
-	1184.1.1 = {
-
-		trigger_event = house_feud_hashashins.0001
-
 	}
 }
 

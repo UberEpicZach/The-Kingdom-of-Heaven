@@ -953,119 +953,7 @@ KoH_holy_orders.7 = {
 	}
 }
 
-#KoH_holy_orders.8 = {
-#	type = character_event
-#	title = KoH_holy_orders.8.t
-#	desc = KoH_holy_orders.8.d
-#	theme = war
-#	hidden = yes
-#
-#	immediate = {
-#		global_var:calatrava_holy_order_title.holder = {
-#				save_scope_as = holy_order
-#		}
-#	
-#	}
-#}
-
-#AGE OF CRUSADES AND JIHADS
-#KoH_holy_orders.100 = { 
-#	type = character_event
-#	title = KoH_holy_orders.100.t
-#	desc = KoH_holy_orders.100.d
-#	theme = war
-#	hidden = yes
-#	
-#	immediate = {
-#		faith:ashari = {
-#			change_fervor = 200
-#			save_scope_as = awakening_faith
-#			if = {
-#				limit = {
-#					exists = religious_head
-#				}
-#				religious_head = { save_scope_as = ghw_first_sponsor }
-#			}
-#			else = {
-#				random_theocratic_ruler = {
-#					limit = { faith = root }
-#					save_scope_as = ghw_first_sponsor
-#				}
-#			}
-#			if = { # Fallback
-#				limit = {
-#					NOT = {
-#						exists = scope:ghw_first_sponsor
-#					}
-#				}
-#				random_ruler = {
-#					limit = { faith = root }
-#					save_scope_as = ghw_first_sponsor
-#				}
-#			}
-#			religion = {
-#				set_variable = {
-#					name = variable_ghw_unlocked # Crusades
-#					value = yes
-#				}
-#			}
-#		}	
-#	}
-#}
-#AGE OF CRUSADES, WILL DELAY
-# KoH_holy_orders.101 = { 
-# 	type = character_event
-# 	title = KoH_holy_orders.101.t
-# 	desc = KoH_holy_orders.101.d
-# 	theme = war
-# 	hidden = yes
-#	
-# 	trigger = { 
-# 		trigger_if = {
-# 			limit = { 
-# 				title:c_jerusalem.holder = {
-# 				NOT = { faith.religion = religion:christianity_religion }
-# 			}
-# 		}
-# 	}
-#
-# 	immediate = {
-# 		faith:catholic = {
-# 			change_fervor = 200
-# 			save_scope_as = awakening_faith
-# 			if = {
-# 				limit = {
-# 					exists = religious_head
-# 				}
-# 				religious_head = { save_scope_as = ghw_first_sponsor }
-# 			}
-# 			else = {
-# 				random_theocratic_ruler = {
-# 					limit = { faith = root }
-# 					save_scope_as = ghw_first_sponsor
-# 				}
-# 			}
-# 			if = { # Fallback
-# 				limit = {
-# 					NOT = {
-# 						exists = scope:ghw_first_sponsor
-# 					}
-# 				}
-# 				random_ruler = {
-# 					limit = { faith = root }
-# 					save_scope_as = ghw_first_sponsor
-# #				}
-# #			}
-# #			religion = {
-# #				set_variable = {
-# #					name = variable_ghw_unlocked # Crusades
-# #					value = yes
-# #				}
-# #			}
-# #		}
-# #	}
-# #}
-
+ #144228 is proper head
 KoH_holy_orders.102 = { 
 	type = character_event
 	hidden = yes
@@ -1124,38 +1012,20 @@ KoH_holy_orders.102 = {
 	}
 }
 
-# create_dynamic_title = {
-# 	tier = kingdom
-# 	name = "Hashshashin Order"
-# }
-# create_title_and_vassal_change = {
-# 	type = created
-# 	save_scope_as = change
-# 	add_claim_on_loss = no
-# }
-# scope:new_title = {
-# 	set_capital_county = scope:peasant_county
-# 	set_landless_title = yes
-# 	set_delete_on_destroy = yes
-# 	set_no_automatic_claims = yes
-# 	set_definitive_form = yes
-# 	set_can_be_named_after_dynasty = no
-# 	change_title_holder = {
-# 		holder = title:d_hashshashin.holder
-# 		change = scope:change
-# 	}
-# }
-# resolve_title_and_vassal_change = scope:change
-# scope:new_title = { generate_coa = religious_title }
-
 KoH_holy_orders.103 = {
 	type = character_event
 	hidden = yes
 	
 	immediate = {
+		#Persian Branch
+		character:144228 = {
+			give_assassins_castle = yes
+		}
+		
+		#Syrian Branch
 		get_title = title:b_artah
 		create_dynamic_title = {
-			tier = kingdom
+			tier = duchy
 			name = OrderofHashshashin
 		}
 		create_title_and_vassal_change = {
@@ -1181,8 +1051,21 @@ KoH_holy_orders.103 = {
 			add_title_law = holy_order_succession_law
 		}
 
-		set_global_variable = { name = assassin_holy_order_title value = scope:new_title }
-		
+		scope:new_title.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:144228
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+
+
+		#Give holy order of assassin's to Syria
 		create_character = {
 			template = holy_order_leader_character
 			location = title:b_artah.title_province
@@ -1194,10 +1077,6 @@ KoH_holy_orders.103 = {
 			capital = title:b_artah
 			save_scope_as = assassin_holy_order
 		}
-
-		# scope:assassin_holy_order = {
-		# 	set_coa = title:d_hashshashin
-		# }
 
 		hidden_effect = {
 			if = {
@@ -1227,6 +1106,5 @@ KoH_holy_orders.103 = {
 				}
 			}
 		}
-		give_assassins_castle = yes
 	}
 }

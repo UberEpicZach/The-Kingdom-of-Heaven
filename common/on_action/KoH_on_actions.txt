@@ -350,33 +350,30 @@ KOH_ON_START = {
 	effect = {
 
 		character:227012 = {
-
-
 			if = {
-
-
 				limit = {
 					is_alive = yes
-					is_landed = yes
-				} trigger_event = house_feud_hashashins.0001
-
-
-			} 
+					#is_landed = yes
+				} 
+				trigger_event = {
+					id = house_feud_hashashins.0001
+					days = 3
+				} 
+			}
 		}
 			
 		
 		character:144056 = {
 			if = {
-
-
 				limit = {
-
 					is_alive = yes
 					is_landed = yes
-				} trigger_event = house_feud_seljuk.0002
-				
+				} 
+				trigger_event = {
+					id = house_feud_seljuk.0002
+					days = 3
+				}
 			} 
-			
 		}
 
 		set_global_variable = {
