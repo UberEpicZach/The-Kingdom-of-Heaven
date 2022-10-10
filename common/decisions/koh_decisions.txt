@@ -97,12 +97,16 @@ merkit_raid_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
 	major = yes
     
-	ai_check_interval = 6
-    ai_potential = {
+		
+	ai_check_interval = 10
+	
+	ai_potential = {
 		always = yes
 	}
-    ai_will_do = 1
-    
+
+	ai_will_do = {
+		base = 100
+	}
 	desc = merkit_raid_decision_desc 
 	selection_tooltip =merkit_raid_decision_tooltip
 	is_shown = {
@@ -122,7 +126,9 @@ merkit_raid_decision = {
 	effect = {
 		add_character_flag = already_merkit_raid
 		
-		
+		character:125501 = {
+			trigger_event = temujin.0001
+		}
 	}
 	cost = {
 		piety = {
