@@ -349,6 +349,21 @@ KOH_Parition = {
 KOH_ON_START = {
 	effect = {
 
+		#khwarazmian
+		character:230000 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				} 
+				trigger_event = {
+					id = khwarazmian_war_seljuk.0001
+					days = {30 40} #Make higher later
+				}
+			}
+		}
+
+		#Assassin-Seljuk House Feud
 		character:144228 = {
 			if = {
 				limit = {
@@ -356,15 +371,12 @@ KOH_ON_START = {
 					is_landed = yes
 				} 
 				trigger_event = {
-					id = house_feud_hashashins.0001
+					id = KOH_house_feuds.0001
 					days = 3
-			}
-				} 
-
-				
+				}
+			}		
 		}
-			
-		
+	
 		character:144056 = {
 			if = {
 				limit = {
@@ -372,7 +384,7 @@ KOH_ON_START = {
 					is_landed = yes
 				} 
 				trigger_event = {
-					id = house_feud_seljuk.0002
+					id = KOH_house_feuds.0002
 					days = 3
 				}
 			} 
