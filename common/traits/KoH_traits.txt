@@ -337,3 +337,22 @@ lion_of_the_empire = {
 
 	ai_honor = low_negative_ai_value
 }
+assassin_member = {
+	flag = can_not_marry
+	can_inherit = no
+	education = yes
+    prowess = 15
+	dread_baseline_add = 40
+	monthly_piety = 3
+	same_opinion_if_same_faith = 25
+	flag = can_not_marry
+	can_inherit = no
+	desc = {
+		desc = trait_assassin_member_desc
+	}
+	shown_in_ruler_designer = no
+	
+	ai_zeal = 10
+	ai_honor = 5
+	ai_greed = -10
+}

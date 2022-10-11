@@ -1,0 +1,35 @@
+namespace = khwarazmian_war_seljuk
+khwarazmian_war_seljuk.0001 = { # Use comments (like this one!) to put the event name here, this way other scripters can find the event you are working on without knowing the ID.
+	type = character_event
+	title = khwarazmian_war_seljuk.0001.t # Protip: you can use strings and later replace it with loc refs later
+	desc = khwarazmian_war_seljuk.0001.desc
+    
+
+	override_background = throne_room
+	theme = crown
+	right_portrait = {
+		character = character:230000
+		animation = war_attacker
+
+	} 
+	left_portrait = {
+		character = title:e_persia.holder
+		animation =  war_defender
+
+	} 
+	
+
+	option = { # Use comments to state what the option says or does (eg "No, I denounce you heretic!" or "Engage in duel against child"), much like with event titles, it's good practice.
+	id = khwarazmian_war_seljuk.0001.a
+		name = "Seljuk no more!"
+		make_claim_strong = title:k_persia
+		start_war = {
+			casus_belli = claim_cb
+			target = title:k_persia.holder
+				target_title = title:k_persia
+			}
+		
+	}
+
+	
+}
