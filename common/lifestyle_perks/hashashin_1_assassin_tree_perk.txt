@@ -43,7 +43,7 @@ assassin_2_perk = {
 	position = { 0 1.25 }
 	icon = node_intrigue
 	
-	parent = like_weed_in_a_garden_perk
+	parent = assassin_1_perk
 	
 	can_be_picked = {
 		always = yes
@@ -62,7 +62,7 @@ assassin_3_perk = {
 	position = { 0 2.5 }
 	icon = node_intrigue
 	
-	parent = unshackled_lust_perk
+	parent = assassin_2_perk
 	
 	can_be_picked = {
 		always = yes
@@ -81,7 +81,7 @@ assassin_4_perk = {
 	position = { 0 3.75 }
 	icon = node_intrigue
 	
-	parent = subtle_desire_perk
+	parent = assassin_3_perk
 	
 	can_be_picked = {
 		always = yes
@@ -138,7 +138,7 @@ assassin_6_perk = {
 	position = { 2 1.25 }
 	icon = node_intrigue
 	
-	parent = enticing_opportunity_perk
+	parent = assassin_5_perk
 
 	can_be_picked = {
 		always = yes
@@ -157,7 +157,7 @@ assassin_7_perk = {
 	position = { 2 2.5 }
 	icon = node_intrigue
 	
-	parent = home_advantage_perk
+	parent = assassin_6_perk
 
 	can_be_picked = {
 		always = yes
@@ -176,7 +176,7 @@ assassin_8_perk = {
 	position = { 2 3.75 }
 	icon = node_intrigue
 	
-	parent = graceful_recovery_perk
+	parent = assassin_7_perk
 
 	can_be_picked = {
 		always = yes
@@ -190,11 +190,11 @@ assassin_8_perk = {
 }
 
 
-Assassin_perk = {
+assassin_perk = {
 	lifestyle = assassin_lifestyle
 	tree = assassin
 	position = { 1 5 }
-	icon = Assassin_perk
+	icon = trait_assassin_member
 
 	name = {
 		first_valid = {
@@ -206,8 +206,8 @@ Assassin_perk = {
 		}
 	}
 	
-	parent = mortal_adoration_perk
-	parent = smooth_operator_perk
+	parent = assassin_4_perk
+	parent = assassin_8_perk
 	
 	can_be_picked = {
 		always = yes

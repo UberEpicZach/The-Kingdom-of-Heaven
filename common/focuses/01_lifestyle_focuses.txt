@@ -1,4 +1,4 @@
-﻿life_assassin_focus = {
+﻿assassin_lifestyle_focus = {
 	lifestyle = assassin_lifestyle
 	
 	modifier = {
@@ -6,8 +6,7 @@
 	}
 
 	desc = {
-		desc = diplomacy_foreign_affairs_focus_desc
-		desc = line_break
+		
 	}
 
 	auto_selection_weight = {
@@ -20,11 +19,11 @@
 		}
 		if = {
 			limit = {
-				has_trait = shy
+				
 			}
 			multiply = 0
 		}
 	}
 	
-	focus_id = 0
+	focus_id = 21
 }
