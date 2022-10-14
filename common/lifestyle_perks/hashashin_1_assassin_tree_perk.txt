@@ -1,20 +1,20 @@
 ﻿assassin_1_perk = {
 	lifestyle = assassin_lifestyle
 	tree = assassin
-	position = { 0 0 }
+	position = { 1 0 }
 	icon = node_intrigue
 	
 	auto_selection_weight = {
 		value = 11
 		if = {
 			limit = {
-				has_trait = order_memebr
+				
 			}
 			add = 1989
 		}
 		if = {
 			limit = {
-				has_focus = intrigue_temptation_focus
+				 
 			}
 			multiply = 5
 		}
@@ -28,19 +28,19 @@
 	}
 	
 	can_be_picked = {
-		has_trait = order_memebr
+		
 		always = yes
 	}
 	
-	character_modifier = {
-		fertility = 0.3
+	effect = {
+		add_trait_force_tooltip = order_member
 	}
 }
 
 assassin_2_perk = {
 	lifestyle = assassin_lifestyle
 	tree = assassin
-	position = { 0 1.25 }
+	position = { 0 1 }
 	icon = node_intrigue
 	
 	parent = assassin_1_perk
@@ -49,17 +49,17 @@ assassin_2_perk = {
 		always = yes
 	}
 	
-	effect = {
-		custom_description_no_bullet = {
-			text = unshackled_lust_perk_effect
-		}
+	character_modifier = {
+		monthly_prestige_gain_per_dread_mult = 0.08
 	}
-}
+
+	}
+
 
 assassin_3_perk = {
 	lifestyle = assassin_lifestyle
 	tree = assassin
-	position = { 0 2.5 }
+	position = { 0 2 }
 	icon = node_intrigue
 	
 	parent = assassin_2_perk
@@ -68,17 +68,17 @@ assassin_3_perk = {
 		always = yes
 	}
 	
-	effect = {
-		custom_description_no_bullet = {
-			text = subtle_desire_perk_effect
-		}
+	character_modifier = {
+		
+		prowess = 10
+		
 	}
 }
 
 assassin_4_perk = {
 	lifestyle = assassin_lifestyle
 	tree = assassin
-	position = { 0 3.75 }
+	position = { 0 3 }
 	icon = node_intrigue
 	
 	parent = assassin_3_perk
@@ -87,17 +87,18 @@ assassin_4_perk = {
 		always = yes
 	}
 	
-	effect = {
-		custom_description_no_bullet = {
-			text = mortal_adoration_perk_effect
-		}
+	character_modifier = {
+		learning_per_piety_level = 3
+		learning_scheme_power = 20
+		learning_scheme_resistance = 20
+		
 	}
 }
 
 assassin_5_perk = {
 	lifestyle = assassin_lifestyle
 	tree = assassin
-	position = { 2 0 }
+	position = { 2 1 }
 	icon = node_intrigue
 	
 	auto_selection_weight = {
@@ -122,20 +123,21 @@ assassin_5_perk = {
 			multiply = 0
 		}
 	}
-	
+	parent = assassin_1_perk
 	can_be_picked = {
 		always = yes
 	}
 	
 	character_modifier = {
-		seduce_scheme_power_mult = 0.3
+		monthly_piety = 3
+		
 	}
 }
 
 assassin_6_perk = {
 	lifestyle = assassin_lifestyle
 	tree = assassin
-	position = { 2 1.25 }
+	position = { 2 2 }
 	icon = node_intrigue
 	
 	parent = assassin_5_perk
@@ -144,17 +146,18 @@ assassin_6_perk = {
 		always = yes
 	}
 	
-	effect = {
-		custom_description_no_bullet = {
-			text = home_advantage_perk_effect
-		}
+	character_modifier = {
+		dread_gain_mult = 0.5
+		dread_baseline_add = 15
+		
 	}
-}
+	}
+
 
 assassin_7_perk = {
 	lifestyle = assassin_lifestyle
 	tree = assassin
-	position = { 2 2.5 }
+	position = { 2 3 }
 	icon = node_intrigue
 	
 	parent = assassin_6_perk
@@ -163,17 +166,17 @@ assassin_7_perk = {
 		always = yes
 	}
 	
-	effect = {
-		custom_description_no_bullet = {
-			text = graceful_recovery_perk_effect
-		}
+	character_modifier = {
+		hostile_scheme_power_mult = 0.2
+		owned_hostile_scheme_success_chance_add = 20
+		
 	}
 }
 
 assassin_8_perk = {
 	lifestyle = assassin_lifestyle
 	tree = assassin
-	position = { 2 3.75 }
+	position = { 2 4 }
 	icon = node_intrigue
 	
 	parent = assassin_7_perk
@@ -182,12 +185,32 @@ assassin_8_perk = {
 		always = yes
 	}
 	
-	effect = {
-		custom_description_no_bullet = {
-			text = smooth_operator_perk_effect
-		}
+	character_modifier = {
+		enemy_personal_scheme_success_chance_add = -30
+		enemy_hostile_scheme_success_chance_add = -15
+		murder_scheme_power_mult = 0.15
+		
+		
 	}
 }
+
+assassin_9_perk = {
+	lifestyle = assassin_lifestyle
+	tree = assassin
+	position = { 0.1 4 }
+	icon = node_intrigue
+	
+	parent = assassin_4_perk
+
+	can_be_picked = {
+		always = yes
+	}
+	
+	effect = {
+		add_trait_force_tooltip = lifestyle_herbalist
+	}
+}
+
 
 
 assassin_perk = {
@@ -206,7 +229,7 @@ assassin_perk = {
 		}
 	}
 	
-	parent = assassin_4_perk
+	parent = assassin_9_perk
 	parent = assassin_8_perk
 	
 	can_be_picked = {
