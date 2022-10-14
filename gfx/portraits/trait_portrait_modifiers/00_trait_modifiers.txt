@@ -360,6 +360,50 @@ leprosy = {
 	}
 }
 
+
+leprosy_king = {
+	leprosy_king = {
+		trigger = {
+			should_show_disturbing_portrait_modifiers = yes
+		}
+		traits = {
+			leper_king
+		}
+		dna_modifiers = {
+			morph = {
+				mode = add
+				gene = gene_leprosy_king
+				value = 1.0
+				template = leprosy_king
+			}
+			color = {
+				gene = skin_color
+				mode = modify				
+				x = 0.10
+				y = 0.20
+			}
+			accessory = {
+				mode = modify				
+				gene = eye_accessory
+				template = bloodshot_eyes
+				value = 0.5
+			}
+			morph = {
+				mode = modify				
+				gene = gene_eyebrows_shape
+				template = no_eyebrows
+				value = 0.5
+			}
+			morph = {
+				mode = modify				
+				gene = gene_eyebrows_fullness
+				template = no_eyebrows
+				value = 0.5
+			}
+		}
+	}
+}
+
 lovers_pox = {
 	lovers_pox = {
 		trigger = {
