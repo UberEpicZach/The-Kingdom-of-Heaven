@@ -1,7 +1,4 @@
 ﻿on_game_start = {
-
-
-	
 	on_actions = {
 		KOH_ON_START
 		#on_artifact_initialization
@@ -15,6 +12,15 @@ yearly_playable_pulse = {
 		delay = { months = 2 }
     	#KOH_pulse_monthly
 		KOH_yearly
+	}
+}
+
+# Called from code once a quarter for "playable" (count+) characters.
+# Root is the character
+# scope:quarter is which quarter it's for, from 1 to 4. Note that scope:quarter = 1 isn't necessarily in Q1 by calendar time
+quarterly_playable_pulse = {
+	on_actions = {
+		assassin_lifestyle_progress_pulse
 	}
 }
 

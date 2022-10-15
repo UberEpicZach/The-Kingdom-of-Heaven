@@ -28,12 +28,21 @@
 	}
 	
 	can_be_picked = {
-		
-		always = yes
+		always = yes 
 	}
-	
+	can_be_auto_selected = { 
+		OR = {
+			AND = {
+				exists = top_liege
+				top_liege = title:k_nizari_state
+			}
+			has_title = title:k_nizari_state
+			has_title = title:d_hashshashin
+		} 
+	}
+
 	effect = {
-		#add_trait_force_tooltip = order_member
+		add_trait_force_tooltip = order_member
 	}
 }
 
@@ -48,12 +57,20 @@ assassin_2_perk = {
 	can_be_picked = {
 		always = yes
 	}
-	
+	can_be_auto_selected = { 
+		OR = {
+			AND = {
+				exists = top_liege
+				top_liege = title:k_nizari_state
+			}
+			has_title = title:k_nizari_state
+			has_title = title:d_hashshashin
+		} 
+	}
 	character_modifier = {
 		monthly_prestige_gain_per_dread_mult = 0.08
 	}
-
-	}
+}
 
 
 assassin_3_perk = {
@@ -67,7 +84,16 @@ assassin_3_perk = {
 	can_be_picked = {
 		always = yes
 	}
-	
+	can_be_auto_selected = { 
+		OR = {
+			AND = {
+				exists = top_liege
+				top_liege = title:k_nizari_state
+			}
+			has_title = title:k_nizari_state
+			has_title = title:d_hashshashin
+		} 
+	}
 	character_modifier = {
 		
 		prowess = 10
@@ -86,7 +112,16 @@ assassin_4_perk = {
 	can_be_picked = {
 		always = yes
 	}
-	
+	can_be_auto_selected = { 
+		OR = {
+			AND = {
+				exists = top_liege
+				top_liege = title:k_nizari_state
+			}
+			has_title = title:k_nizari_state
+			has_title = title:d_hashshashin
+		} 
+	}
 	character_modifier = {
 		learning_per_piety_level = 3
 		learning_scheme_power = 20
@@ -127,7 +162,16 @@ assassin_5_perk = {
 	can_be_picked = {
 		always = yes
 	}
-	
+	can_be_auto_selected = { 
+		OR = {
+			AND = {
+				exists = top_liege
+				top_liege = title:k_nizari_state
+			}
+			has_title = title:k_nizari_state
+			has_title = title:d_hashshashin
+		} 
+	}
 	character_modifier = {
 		monthly_piety = 3
 		
@@ -145,13 +189,22 @@ assassin_6_perk = {
 	can_be_picked = {
 		always = yes
 	}
-	
+	can_be_auto_selected = { 
+		OR = {
+			AND = {
+				exists = top_liege
+				top_liege = title:k_nizari_state
+			}
+			has_title = title:k_nizari_state
+			has_title = title:d_hashshashin
+		} 
+	}
 	character_modifier = {
 		dread_gain_mult = 0.5
 		dread_baseline_add = 15
 		
 	}
-	}
+}
 
 
 assassin_7_perk = {
@@ -165,7 +218,16 @@ assassin_7_perk = {
 	can_be_picked = {
 		always = yes
 	}
-	
+	can_be_auto_selected = { 
+		OR = {
+			AND = {
+				exists = top_liege
+				top_liege = title:k_nizari_state
+			}
+			has_title = title:k_nizari_state
+			has_title = title:d_hashshashin
+		} 
+	}
 	character_modifier = {
 		hostile_scheme_power_mult = 0.2
 		owned_hostile_scheme_success_chance_add = 20
@@ -184,7 +246,16 @@ assassin_8_perk = {
 	can_be_picked = {
 		always = yes
 	}
-	
+	can_be_auto_selected = { 
+		OR = {
+			AND = {
+				exists = top_liege
+				top_liege = title:k_nizari_state
+			}
+			has_title = title:k_nizari_state
+			has_title = title:d_hashshashin
+		} 
+	}
 	character_modifier = {
 		enemy_personal_scheme_success_chance_add = -30
 		enemy_hostile_scheme_success_chance_add = -15
@@ -205,7 +276,16 @@ assassin_9_perk = {
 	can_be_picked = {
 		always = yes
 	}
-	
+	can_be_auto_selected = { 
+		OR = {
+			AND = {
+				exists = top_liege
+				top_liege = title:k_nizari_state
+			}
+			has_title = title:k_nizari_state
+			has_title = title:d_hashshashin
+		} 
+	}
 	effect = {
 		add_trait_force_tooltip = lifestyle_herbalist
 	}
@@ -231,7 +311,16 @@ assassin_perk = {
 	
 	parent = assassin_9_perk
 	parent = assassin_8_perk
-	
+	can_be_auto_selected = { 
+		OR = {
+			AND = {
+				exists = top_liege
+				top_liege = title:k_nizari_state
+			}
+			has_title = title:k_nizari_state
+			has_title = title:d_hashshashin
+		} 
+	}
 	can_be_picked = {
 		always = yes
 	}
