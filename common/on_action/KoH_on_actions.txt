@@ -24,6 +24,20 @@ quarterly_playable_pulse = {
 	}
 }
 
+# called when a siege completes. Does *not* fire on reoccupation by province order
+# root is the occupant
+# scope:barony is the barony title that got occupied
+# scope:county is the county title for the barony
+# scope:previous_controller is the previous controller of the county
+# scope:war is the war causing the previous controller and the occupant to be hostile
+# occupied_baronies is a list of all baronies that the siege caused the occupier to control (I.E., can include baronies with no fort level)
+on_siege_completion = {
+	events = {
+		
+	}
+}
+
+
 on_death = {
 	on_actions = {
 		on_kotr_death
