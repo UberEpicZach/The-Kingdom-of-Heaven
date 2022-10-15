@@ -15,14 +15,14 @@ yearly_playable_pulse = {
 	}
 }
 
-# Called from code once a quarter for "playable" (count+) characters.
-# Root is the character
-# scope:quarter is which quarter it's for, from 1 to 4. Note that scope:quarter = 1 isn't necessarily in Q1 by calendar time
-quarterly_playable_pulse = {
-	on_actions = {
-		assassin_lifestyle_progress_pulse
-	}
-}
+# # Called from code once a quarter for "playable" (count+) characters.
+# # Root is the character
+# # scope:quarter is which quarter it's for, from 1 to 4. Note that scope:quarter = 1 isn't necessarily in Q1 by calendar time
+# quarterly_playable_pulse = {
+# 	on_actions = {
+# 		assassin_lifestyle_progress_pulse
+# 	}
+# }
 
 # called when a siege completes. Does *not* fire on reoccupation by province order
 # root is the occupant
@@ -31,11 +31,11 @@ quarterly_playable_pulse = {
 # scope:previous_controller is the previous controller of the county
 # scope:war is the war causing the previous controller and the occupant to be hostile
 # occupied_baronies is a list of all baronies that the siege caused the occupier to control (I.E., can include baronies with no fort level)
-on_siege_completion = {
-	events = {
+# on_siege_completion = {
+# 	events = {
 		
-	}
-}
+# 	}
+# }
 
 
 on_death = {
@@ -392,7 +392,7 @@ KOH_ON_START = {
 				} 
 				trigger_event = {
 					id = KOH_house_feuds.0001
-					days = 3
+					days = 13
 				}
 			}		
 		}
@@ -405,7 +405,7 @@ KOH_ON_START = {
 				} 
 				trigger_event = {
 					id = KOH_house_feuds.0002
-					days = 3
+					days = 13
 				}
 			} 
 		}
