@@ -66,4 +66,27 @@ KOHcloaks = {
 			}
 		}
 	}
+	baldwin = {
+		dna_modifiers = {
+			accessory = {
+				mode = add				
+				gene = cloaks
+				template = no_cloak
+				value = 0.5
+			}
+			accessory = {
+				mode = add				
+				gene = cloaksKOH
+				template = baldwin_cloak
+				value = 0.70
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 130
+				portrait_baldwin_trigger = yes
+			}
+		}
+	}
 }

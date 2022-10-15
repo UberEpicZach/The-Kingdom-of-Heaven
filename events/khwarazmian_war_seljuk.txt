@@ -1,4 +1,4 @@
-namespace = khwarazmian_war_seljuk
+﻿namespace = khwarazmian_war_seljuk
 khwarazmian_war_seljuk.0001 = { # Use comments (like this one!) to put the event name here, this way other scripters can find the event you are working on without knowing the ID.
 	type = character_event
 	title = khwarazmian_war_seljuk.0001.t # Protip: you can use strings and later replace it with loc refs later
@@ -18,18 +18,13 @@ khwarazmian_war_seljuk.0001 = { # Use comments (like this one!) to put the event
 
 	} 
 	
-
 	option = { # Use comments to state what the option says or does (eg "No, I denounce you heretic!" or "Engage in duel against child"), much like with event titles, it's good practice.
-	id = khwarazmian_war_seljuk.0001.a
-		name = "Seljuk no more!"
+		name = khwarazmian_war_seljuk.0001.a
 		make_claim_strong = title:k_persia
 		start_war = {
 			casus_belli = claim_cb
 			target = title:k_persia.holder
-				target_title = title:k_persia
-			}
-		
+			target_title = title:k_persia
+		}
 	}
-
-	
 }

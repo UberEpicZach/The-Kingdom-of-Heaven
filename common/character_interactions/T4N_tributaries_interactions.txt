@@ -257,7 +257,7 @@ call_tributaries_to_war = {
 			is_at_war = yes
 		}
 		scope:actor = {
-			has_list = all_tributaries
+			has_variable_list = all_tributaries
 			any_in_list = {
 				variable = all_tributaries
 				exists = var:can_call_to_war_suzerain

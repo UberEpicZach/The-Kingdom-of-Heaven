@@ -601,7 +601,11 @@ KoH_saladin.3 = { #King's Crusade
 		character = root
 		animation = personality_bold
 	}
-	
+	trigger = {
+		NOT = {
+			exists = global_var:SaladinEventTrigger
+		}
+	}
 	immediate = {
 		every_ruler = {
 			limit = {
@@ -743,7 +747,7 @@ KoH_saladin.4 = { #King's Crusade
 	option = {
 		name = KoH_saladin.4.a
 		
-		custom_tooltip = to_jerusalem
+		custom_tooltip = KoH_saladin.4.a.to_jerusalem
 	}
 }
 
@@ -778,6 +782,12 @@ KoH_saladin.121 = { #Send to Jerusalem Ruler
 	desc = KoH_saladin.121.d
 	
 	theme = war
+
+	trigger = {
+		NOT = {
+			exists = global_var:SaladinEventTrigger
+		}
+	}
 
 	immediate = {
 		add_character_flag = {

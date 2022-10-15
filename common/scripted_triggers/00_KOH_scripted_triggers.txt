@@ -68,11 +68,6 @@ is_sea = {
 
 
 wifelover = {
-	exists = {
-		any_relation = {
-			type = lover 
-		}
-	}
 	exists = primary_spouse.location
 	
 	any_relation = {
@@ -115,9 +110,9 @@ assassins_mongol_trigger_koh = {
 # 	}
 # }
 
-KoH_is_loaded = {
-	always = yes
-}
+# KoH_is_loaded = {
+# 	always = yes
+# }
 
 martyrs_death_trigger = {
 	death_reason = death_sacrificed_to_gods

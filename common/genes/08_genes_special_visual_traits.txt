@@ -223,6 +223,43 @@ special_genes = {
 
 		}
 
+		gene_leprosy_king = {
+
+			leprosy_king = {
+				index = 5
+				male = {
+					#setting = { attribute = "bs_leper"  value = { min = 1.0 max = 1.0 }	}
+					decal = {											
+						body_part = head
+						textures = {
+							diffuse = "gfx/models/portraits/decals/visual_traits/decal_leprosy_diffuse.dds"
+							normal = "gfx/models/portraits/decals/visual_traits/decal_leprosy_normal.dds"
+						 	properties = "gfx/models/portraits/decals/visual_traits/decal_leprosy_properties.dds"
+						}
+						blend_modes = {				 #overlay/replace/hard_light/multiply
+							diffuse = hard_light
+							normal = overlay
+							properties = overlay
+						}
+						# age = {
+						# 	mode = multiply
+						# 	curve = {
+						# 		{ 0.0 0.0 }
+						# 		{ 0.38 0.0 }
+						# 		{ 0.7 0.8 }
+						# 	}
+						# }
+						priority = 10
+					}
+				}
+				female = male
+				boy = male
+				girl = male
+			}
+
+
+		}
+
 		gene_lovers_pox = {
 
 			lovers_pox = {

@@ -15,16 +15,16 @@ KoH_hashshashin.101 = { #Assassins attempt to kill Mongol leader Start Event
 
 	immediate = {
 		set_global_variable = mongols_provoke_assassins
-	}
-	option = {
-		name = KoH_hashshashin.101.a
-		custom_tooltip = KoH_hashshashin..101.a.tt
-	
 		trigger_event = {
 			id = KoH_hashshashin.2
 			days = 15
 		}	
 	}
+	# option = {
+	# 	#name = KoH_hashshashin.101.a
+	# 	#custom_tooltip = KoH_hashshashin.101.a.tt
+
+	# }
 }
 
 KoH_hashshashin.2 = {

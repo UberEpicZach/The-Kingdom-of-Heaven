@@ -337,3 +337,34 @@ lion_of_the_empire = {
 
 	ai_honor = low_negative_ai_value
 }
+assassin_member = {
+	flag = can_not_marry
+
+
+	potential = {
+		exists = title:k_nizari_state.holder
+		has_lifestyle = assassin_lifestyle
+	}
+
+	can_inherit = no
+	education = yes
+    prowess = 15
+	dread_baseline_add = 40
+	monthly_piety = 3
+	intrigue = 6
+	same_opinion_if_same_faith = 25
+	blocks_from_claim_inheritance_from_dynasty = yes
+	blocks_from_claim_inheritance = yes
+	flag = can_not_marry
+	can_inherit = no
+	birth = 0
+	random_creation = 0
+	desc = {
+		desc = trait_assassin_member_desc
+	}
+	shown_in_ruler_designer = no
+	
+	ai_zeal = 10
+	ai_honor = 5
+	ai_greed = -10
+}
