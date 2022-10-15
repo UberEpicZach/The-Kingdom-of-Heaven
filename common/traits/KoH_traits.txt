@@ -339,6 +339,13 @@ lion_of_the_empire = {
 }
 assassin_member = {
 	flag = can_not_marry
+
+
+	potential = {
+		exists = title:k_nizari_state.holder
+		has_lifestyle = assassin_lifestyle
+	}
+
 	can_inherit = no
 	education = yes
     prowess = 15
@@ -346,6 +353,8 @@ assassin_member = {
 	monthly_piety = 3
 	intrigue = 6
 	same_opinion_if_same_faith = 25
+	blocks_from_claim_inheritance_from_dynasty = yes
+	blocks_from_claim_inheritance = yes
 	flag = can_not_marry
 	can_inherit = no
 	birth = 0
