@@ -4,7 +4,10 @@ assassin_lifestyle = {
 		has_trait = education_assassin		
 	}
 	is_valid = {
-		has_faith = faith:nizari
+		OR = {
+			has_faith = faith:nizari
+			has_character_flag = joined_assassins
+		}
 	}
 	
 	xp_per_level = 1000
