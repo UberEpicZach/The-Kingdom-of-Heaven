@@ -47,6 +47,7 @@
 	#}
 
 	#valid_agent = {
+		is_assassin_trigger = yes
 	#	age >= 14
 	#}
 
@@ -99,26 +100,26 @@
 		}
 
 		#Not a valid witch
-		modifier = {
-			add = -1000
-			save_temporary_scope_as = witch_agent
-			NOT = { scope:owner = { knows_about_character_being_witch_trigger = { CHARACTER = scope:witch_agent } } }
-			desc = SCHEME_I_AM_NOT_WITCH
-		}
-		modifier = {
-			add = -50
-			save_temporary_scope_as = witch_agent
-			scope:owner = { knows_about_character_being_witch_trigger = { CHARACTER = scope:witch_agent } }
-			NOT = { faith = scope:target.faith }
-			desc = SCHEME_NOT_FOLLOWER_OF_WITCHGOD
-		}
+		# modifier = {
+		# 	add = -1000
+		# 	save_temporary_scope_as = witch_agent
+		# 	NOT = { scope:owner = { knows_about_character_being_witch_trigger = { CHARACTER = scope:witch_agent } } }
+		# 	desc = SCHEME_I_AM_NOT_WITCH
+		# }
+		# modifier = {
+		# 	add = -50
+		# 	save_temporary_scope_as = witch_agent
+		# 	scope:owner = { knows_about_character_being_witch_trigger = { CHARACTER = scope:witch_agent } }
+		# 	NOT = { faith = scope:target.faith }
+		# 	desc = SCHEME_NOT_FOLLOWER_OF_WITCHGOD
+		# }
 		
 		#I am a witch!
-		modifier = {
-			add = 50
-			scope:owner = { knows_about_character_being_witch_trigger = { CHARACTER = scope:witch_agent } }
-			desc = SCHEME_I_AM_WITCH
-		}
+		# modifier = {
+		# 	add = 50
+		# 	scope:owner = { knows_about_character_being_witch_trigger = { CHARACTER = scope:witch_agent } }
+		# 	desc = SCHEME_I_AM_WITCH
+		# }
 
 		# Cowardice
 		modifier = {
@@ -453,18 +454,19 @@
 		scheme_owner = { save_scope_as = owner }
 		scheme_target = { save_scope_as = target }
 
-		if = {
-			limit = {
-				scope:target = { any_secret = { secret_type = secret_witch } }
-			}
-			scope:owner = {
-				trigger_event = {
-					id = witch.2006
-					days = { 7 14 }
-				}
-			}
-		}
+		# if = {
+		# 	limit = {
+		# 		scope:target = { any_secret = { secret_type = secret_witch } }
+		# 	}
+		# 	scope:owner = {
+		# 		trigger_event = {
+		# 			id = witch.2006
+		# 			days = { 7 14 }
+		# 		}
+		# 	}
+		# }
 	}
+
 
 	on_monthly = {
 		save_scope_as = scheme
