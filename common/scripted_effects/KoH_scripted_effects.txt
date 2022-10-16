@@ -505,12 +505,16 @@ KOH_Crusade_lose = {
 	every_in_list = {
 		list = target_titles
 		change_title_holder = {
-			holder = character:226000
+			holder = title:e_arabia.holder
 			change = scope:change
 		}
 	}
 	resolve_title_and_vassal_change = scope:change
 	destroy_title = title:k_jerusalem
+
+	title:e_arabia.holder = {
+		SaladinChangeCultureFaith = yes
+	}
 }
 
 scripted_effect_popethingevent = {
@@ -826,4 +830,19 @@ fix_variable_error = {
     set_variable = {name = $ERROR$ value = flag:$ERROR$} 
     set_global_variable = {name = $ERROR$ value = flag:$ERROR$}  
     if = {limit = {OR = {has_character_flag = $ERROR$ var:$ERROR$ = flag:$ERROR$}} remove_variable = $ERROR$ remove_global_variable = $ERROR$}
+}
+
+SaladinChangeCultureFaith = {
+	every_held_title = {
+		limit = {
+			tier = tier_county
+			title_province = {
+				geographical_region = ghw_region_holy_land
+			}
+			culture = culture:french
+			faith = faith:catholic
+		}
+		set_county_culture = culture:levantine
+		set_county_faith = faith:ashari
+	}
 }

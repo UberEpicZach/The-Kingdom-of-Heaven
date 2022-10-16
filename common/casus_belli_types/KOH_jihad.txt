@@ -325,27 +325,27 @@ KOH_crusade = {
 		on_declared_war = yes
 	}
 
-	should_invalidate = {
-		OR = {
-			NOT = {
-				any_in_list = {
-					list = target_titles
-					any_in_de_jure_hierarchy = {
-						tier = tier_county
-						holder = {
-							OR = {
-								this = scope:defender
-								target_is_liege_or_above = scope:defender
-							}
-						}
-					}
-				}
-			}
-			#Faith change does not immediately invalidate, it's run through event war_event.3100
-			scope:war = { exists = var:invalidate_defender_faith_change }
-			scope:war = { exists = var:invalidate_attacker_faith_change }
-		}
-	}
+	# should_invalidate = {
+	# 	OR = {
+	# 		NOT = {
+	# 			any_in_list = {
+	# 				list = target_titles
+	# 				any_in_de_jure_hierarchy = {
+	# 					tier = tier_county
+	# 					holder = {
+	# 						OR = {
+	# 							this = scope:defender
+	# 							target_is_liege_or_above = scope:defender
+	# 						}
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 		#Faith change does not immediately invalidate, it's run through event war_event.3100
+	# 		scope:war = { exists = var:invalidate_defender_faith_change }
+	# 		scope:war = { exists = var:invalidate_attacker_faith_change }
+	# 	}
+	# }
 
 	on_invalidated_desc = {
 		first_valid = {
