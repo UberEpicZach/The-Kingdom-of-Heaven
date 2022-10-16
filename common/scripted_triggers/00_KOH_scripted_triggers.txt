@@ -141,3 +141,16 @@ vassal_trigger = {
 		}
 	}
 }
+
+is_assassin_trigger = {
+	OR = {
+		AND = {
+			exists = top_liege
+			top_liege = title:k_nizari_state.holder
+			
+		}
+		has_title = title:k_nizari_state
+		has_title = title:d_hashshashin
+		has_trait = assassin_member
+	}
+}
