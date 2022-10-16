@@ -603,10 +603,11 @@ KoH_saladin.3 = { #King's Crusade
 	}
 	trigger = {
 		NOT = {
-			exists = global_var:SaladinEventTrigger
+			has_character_flag = KoH_saladin.3
 		}
 	}
 	immediate = {
+		add_character_flag = KoH_saladin.3
 		every_ruler = {
 			limit = {
 				any_held_title = {
@@ -629,7 +630,6 @@ KoH_saladin.3 = { #King's Crusade
 		name = KoH_saladin.3.a
 		
 		title:k_jerusalem.holder = {
-
 			add_pressed_claim = title:c_jerusalem
 
 			start_war = { 
@@ -646,7 +646,7 @@ KoH_saladin.3 = { #King's Crusade
 				}
 				add_attacker = global_var:templar_holy_order_title.holder
 				
-				add_attacker  = global_var:hospitaller_holy_order_title.holder
+				add_attacker = global_var:hospitaller_holy_order_title.holder
 			}
 		}
 
@@ -785,9 +785,16 @@ KoH_saladin.121 = { #Send to Jerusalem Ruler
 
 	trigger = {
 		NOT = {
-			exists = global_var:SaladinEventTrigger
+			has_character_flag = had_event_KoH_saladin.121
 		}
 	}
+
+	# on_trigger_fail = {
+	# 	trigger_event = {
+	# 		id = KoH_saladin.121
+	# 		days = 50
+	# 	}
+	# }
 
 	immediate = {
 		add_character_flag = {

@@ -3255,10 +3255,10 @@
 		add_pressed_claim = title:c_vermandois
 		create_alliance = character:205522
 		create_alliance = {
-						target = character:205520
-						allied_through_owner = character:205506
-						allied_through_target = character:205522
-					}
+			target = character:205520
+			allied_through_owner = character:205506
+			allied_through_target = character:205522
+		}
 	}
 	1190.6.24 = {
 		trait = faith_warrior
@@ -8505,6 +8505,10 @@
 	}
 	1182.1.1 = {
 		add_spouse = 223753 #Sybille Mansel
+		add_character_modifier = {
+			modifier = event_nerf_to_vassal_accept
+			years = 15 # Removed after first use for balance purposes, expires if not used.
+		}
 	}
 	1186.1.1 = {
 		remove_spouse = 223753 #Sybille Mansel

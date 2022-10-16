@@ -453,9 +453,10 @@ KOH_crusade = {
 	on_defeat = {
 		custom_tooltip = crusade_desc_fail
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		hidden_effect = {
-			KOH_Crusade_lose = {}
+		scope:attacker = {
+			hidden_effect = {
+				KOH_Crusade_lose = {}
+			}
 		}
 		
 		# Prestige loss for the attacker

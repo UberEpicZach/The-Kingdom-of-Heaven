@@ -335,9 +335,9 @@ KOH_Saladin_Jihad = {
 					OR = {
 						has_character_flag = had_event_had_event_KoH_saladin.120
 						has_title = title:k_jerusalem
-						} 
-					}
+					} 
 				}
+			}
 			trigger_event = {
 				id = KoH_saladin.120
 				days = 20 
@@ -510,7 +510,7 @@ KOH_Crusade_lose = {
 		}
 	}
 	resolve_title_and_vassal_change = scope:change
-
+	destroy_title = title:k_jerusalem
 }
 
 scripted_effect_popethingevent = {
@@ -789,6 +789,31 @@ investitureopinioneffect = {
 					opinion = -150
 				}
 			}
+		}
+	}
+}
+create_house_feud_effect = {
+	house_feud_save_head_and_attacker_effect = yes
+	house_feud_rival_story_effect = { RIVAL = $KOHFEUDTARGET$ }
+	house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = $KOHFEUDTARGET$ }
+	random_owned_story = {
+		limit = { story_type = story_cycle_house_feud }
+		set_variable = {
+			name = house_feud_reason
+			value = flag:head_rivalry
+		}
+		house_feud_save_victim_attacker_effect = yes
+	}
+	$KOHFEUDTARGET$ = {
+		house_feud_rival_story_effect = { RIVAL = prev }
+		house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = prev }
+		random_owned_story = {
+			limit = { story_type = story_cycle_house_feud }
+			set_variable = {
+				name = house_feud_reason
+				value = flag:head_rivalry
+			}
+			house_feud_save_victim_attacker_effect = yes
 		}
 	}
 }
