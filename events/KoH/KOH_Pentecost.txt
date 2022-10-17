@@ -236,7 +236,7 @@ KOH_Pentecost.1 = {
 
 	right_portrait = {
 		character = this
-		animation = happiness
+		animation = personality_bold
 	}
 
 	trigger = {
@@ -259,6 +259,16 @@ KOH_Pentecost.1 = {
 			title:d_mainz.holder.capital_county = {
 				save_scope_as = mainz_county
 			}
+		}
+		#needs to be here for some loc tags
+		cp:councillor_steward = {
+			save_scope_as = steward
+		}
+		cp:councillor_chancellor = {
+			save_scope_as = chancellor
+		}
+		cp:councillor_marshal = {
+			save_scope_as = marshal
 		}
 	}
 
@@ -304,7 +314,7 @@ KOH_Pentecost.2 = {
 
 	right_portrait = {
 		character = scope:frederick
-		animation = idle
+		animation = personality_bold
 	}
 
 	immediate = {
@@ -517,15 +527,6 @@ KOH_Pentecost.4 = {
 
 	lower_left_portrait = {
 		character = cp:councillor_chancellor
-	}
-
-	immediate = {
-		cp:councillor_steward = {
-			save_scope_as = steward
-		}
-		cp:councillor_chancellor = {
-			save_scope_as = chancellor
-		}
 	}
 
 	option = {
@@ -1668,13 +1669,13 @@ KOH_Pentecost.14 = {
 	theme = stewardship
 
 	right_portrait = {
-		character = cp:councillor_steward
-		animation = idle
+		character = scope:pope
+		animation = anger
 	}
 
 	left_portrait = {
-		character = scope:konrad
-		animation = idle
+		character = scope:root
+		animation = dismissive
 	}
 
 	immediate = {
@@ -1730,7 +1731,7 @@ KOH_Pentecost.15 = {
 
 	right_portrait = {
 		character = scope:lion
-		animation = idle
+		animation = personality_rational
 	}
 
 	trigger = {
@@ -2183,17 +2184,12 @@ KOH_Pentecost.19 = {
 	title = KOH_Pentecost.19.t
 	desc = KOH_Pentecost.19.desc
 	type = character_event
-	theme = stewardship
+	theme = war
 
-	# right_portrait = {
-	# 	character = cp:councillor_steward
-	# 	animation = idle
-	# }
-
-	# left_portrait = {
-	# 	character = scope:konrad
-	# 	animation = idle
-	# }
+	right_portrait = {
+		character = root
+	 	animation = war_attacker
+	}
 
 	option = {
 		name = KOH_Pentecost.19.a
@@ -2227,10 +2223,10 @@ KOH_Pentecost.20 = {
 	title = KOH_Pentecost.20.t
 	desc = KOH_Pentecost.20.desc
 	type = character_event
-	theme = battle
+	theme = war
 
 	left_portrait = {
-		character = scope:frederick
+		character = root
 		animation = throne_room_two_handed_passive_1
 	}
 
@@ -2281,7 +2277,12 @@ KOH_Pentecost.21 = {
 		}
 	}
 	type = character_event
-	theme = stewardship
+	theme = war
+	
+	left_portrait = {
+		character = scope:frederick
+		animation = throne_room_two_handed_passive_1
+	}
 
 	option = {
 		name = {
@@ -2320,10 +2321,10 @@ KOH_Pentecost.22 = {
 	title = KOH_Pentecost.22.t
 	desc = KOH_Pentecost.22.desc
 	type = character_event
-	theme = stewardship
+	theme = battle
 
 	right_portrait = {
-		character = scope:frederick
+		character = root
 		animation = sadness
 	}
 
@@ -2381,7 +2382,9 @@ KOH_Pentecost.23 = {
 	desc = KOH_Pentecost.23.desc
 	type = character_event
 	theme = stewardship
-
+	override_background = {
+		event_background = market_west
+	}
 	right_portrait = {
 		character = scope:frederick
 		animation = war_over_win

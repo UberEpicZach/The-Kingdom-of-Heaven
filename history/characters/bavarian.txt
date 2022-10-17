@@ -1810,11 +1810,15 @@
 	culture = bavarian
 	trait = generous
 	trait = arbitrary
+	trait = chaste
 	trait = education_learning_2
 	father = 212600
 	mother = 212601
 	1150.1.1 = {
 		birth = "1150.1.1"
+	}
+	1177.2.2 = {
+		trait = celibate
 	}
 	1197.7.1 = {
 		death = "1197.7.1"
@@ -1932,6 +1936,11 @@
 	1173.1.1 = {
 		birth = "1173.1.1"
 	}
+	1174.1.2 = {
+		effect = {
+			create_betrothal = character:212492
+		}
+	}
 	1193.1.1 = {
 		add_spouse = 212492
 	}
@@ -1960,8 +1969,11 @@
 	1174.1.2 = {
 		birth = "1174.1.2"
 	}
-	1224.1.2 = {
-		death = "1224.1.2"
+	1184.1.1 = {
+		trait = ill
+	}
+	1190.1.2 = {
+		death = "1190.1.2"
 	}
 }
 
@@ -1981,6 +1993,11 @@
 	mother = 204509
 	1175.1.2 = {
 		birth = yes
+	}
+	1180.1.2 = {
+		effect = {
+			create_betrothal = character:106556
+		}
 	}
 	1214.5.19={
 		add_spouse = 106556
@@ -2006,8 +2023,8 @@
 	1172.1.2 = {
 		birth = "1172.1.2"
 	}
-	1222.1.2 = {
-		death = "1222.1.2"
+	1209.1.2 = {
+		death = "1209.1.2"
 	}
 }
 
@@ -2116,8 +2133,11 @@
 	trait = education_martial_2
 	father = 212600
 	mother = 204509
-	1184.4.11 = {
-		birth = "1184.4.11"
+	1184.1.1 = {
+		birth = "1184.1.1"
+		effect = {
+			create_betrothal = character:201507
+		}
 	}
 	1202.1.1 = {
 		add_spouse = 201507
