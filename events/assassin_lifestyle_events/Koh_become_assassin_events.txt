@@ -187,10 +187,10 @@ witch.2002 = {
 			ambitious = minor_stress_impact_gain
 		}
 	}
-
+ }
 #SUCCESS EVENTS
 
-join_assassins.2003 = { #by Mathilda Bjarnehed
+join_assassins.2003 = { 
 	type = character_event
 	title = join_assassins.2003.t
 	desc = join_assassins.2003.desc
@@ -214,7 +214,7 @@ join_assassins.2003 = { #by Mathilda Bjarnehed
 			limit = { exists = scope:scheme_discovered }
 			random_secret = {
 				limit = {
-					secret_type = secret_witch
+					secret_type = secret_assassin
 					NOT = { is_known_by = scope:target }
 				}
 				reveal_to = scope:target

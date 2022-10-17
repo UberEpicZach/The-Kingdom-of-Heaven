@@ -426,8 +426,8 @@
 
 			#SECRECY: DO I WANT TO PROCEED?
 			if = {
-				limit = { use_convert_to_witchcraft_secrecy_trigger = yes }
-				trigger_event = witch.2001
+				limit = { use_become_assassin_secrecy_trigger = yes }
+				trigger_event = join_assassins.2001
 			}
 			#CONTINUE WITH OUTCOME ON_ACTION FOR AI TARGETS
 			else_if = {
@@ -435,7 +435,7 @@
 
 				if = {
 					limit = { exists = scope:scheme_successful }
-					trigger_event = witch.2003 #Success event
+					trigger_event = join_assassins.2003 #Success event
 				}
 				else = {
 					trigger_event = {
