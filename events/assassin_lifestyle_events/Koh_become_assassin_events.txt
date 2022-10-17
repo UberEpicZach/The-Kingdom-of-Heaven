@@ -194,14 +194,19 @@ join_assassins.2003 = {
 	type = character_event
 	title = join_assassins.2003.t
 	desc = join_assassins.2003.desc
-	theme = witchcraft
+	theme = assassin_office
 	override_background = {
-		event_background = sitting_room
+		event_background = assassin_office
 	}
 	left_portrait = {
 		character = scope:target
 		animation = personality_rational
 	}
+	right_portrait = {
+		character = scope:actor
+		animation = admiration
+	}
+
 	immediate = {
 		scope:target = {
 			#give_witch_secret_or_trait_effect = yes
