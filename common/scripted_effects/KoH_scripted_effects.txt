@@ -75,7 +75,7 @@ add_my_faction ={
 }
 
 MothersFaction ={
-	title:c_poitiers.holder = {
+	title:c_bordeaux.holder = {
 	set_variable = {
 		name = claiming_title
 		value = title:d_aquitaine
@@ -94,13 +94,13 @@ MothersFaction ={
 			target = title:d_aquitaine.holder
 		}
 		joined_faction = {
-			set_special_character = title:c_poitiers.holder
+			set_special_character = title:c_bordeaux.holder
 			set_special_title = title:d_aquitaine
 		}
 		title:d_aquitaine.holder = {
 			add_to_variable_list = {
 				name = claimant_factions
-				target = title:c_poitiers.holder.joined_faction
+				target = title:c_bordeaux.holder.joined_faction
 			}
 		}
 

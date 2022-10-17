@@ -11406,5 +11406,25 @@ KOH_BAVARIAN078 = {
 	}
 }
 
-
+KOH_BAVARIAN079 = {
+	name = "Elezebet"
+	female = yes
+	religion = "catholic"
+	culture = bavarian
+	trait = beauty_good_1
+	trait = fecund
+	trait = lustful
+	1155.1.2 = {
+		birth = yes
+	}
+	1180.1.2 = {
+		effect = {
+			set_relation_lover = { reason = lover_history target = character:204510 } 
+			set_employer = character:204510
+		}
+	}
+	1200.1.1 = {
+		death = yes
+	}
+}
 

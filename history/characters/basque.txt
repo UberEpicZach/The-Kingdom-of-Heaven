@@ -6938,6 +6938,7 @@
 }
 206501 = {
 	name = "Berengela"
+	dna = 206501_berengaria_of_navarra
 	female = yes
 	dynasty_house = house_jimena_navarra
 	martial = 7
@@ -6946,16 +6947,25 @@
 	stewardship = 7
 	religion = catholic
 	culture = basque
-	trait = brave
+ 	trait = brave
+ 	trait = patient
+ 	trait = zealous
+ 	trait = unwed
 	trait = education_diplomacy_2
 	father = 206500
 	mother = 207502
-	1165.1.1 = {
-		birth = "1165.1.1"
+ 	1165.1.1 = {
+ 		birth = "1165.1.1"
+ 		effect = {
+ 			add_character_flag = has_scripted_appearance
+ 		}
+ 	}
+	1184.1.1 = {
+		name = "Berengaria"
 	}
-	1230.1.1 = {
+ 	1230.1.1 = {
 		death = "1230.1.1"
-	}
+ 	}
 }
 206502 = {
 	name = "Antso" #AKA: Antso VII 'Indartsua'

@@ -822,6 +822,7 @@
 	1183.1.1 = {
 		effect = {
 			set_primary_title_to = title:c_anjou
+			set_relation_ward = character:158_KOH_CKIII
 		}
 	}
 	1190.1.1 = {
@@ -3756,8 +3757,14 @@
 	trait = beauty_good_1
 	trait = patient
 	father = 204510
+	mother = KOH_BAVARIAN079
 	1181.1.2 = {
 		birth = "1181.1.2"
+	}
+	1183.1.1 = {
+		add_spouse = 158_KOH_CKIII
+		remove_trait = bastard
+		add_trait = bastard_founder
 	}
 	1231.1.2 = {
 		death = "1231.1.2"
