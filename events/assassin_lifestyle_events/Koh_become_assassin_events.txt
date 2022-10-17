@@ -235,92 +235,107 @@ join_assassins.2003 = {
 
 	#Great!
 	option = {
-		trigger = { witch_2003_unlock_reveal_trigger = no }
-		name = witch.2003.a
-
+		# trigger = { witch_2003_unlock_reveal_trigger = no }
+		name = join_assassins.2003.a
+		scope:target =  {
+			depose = yes
+			if = {
+				limit = {is_married = yes}
+				divorce = scope:target.primary_spouse
+			}
+			
+			set_character_faith = faith:nizari
+			#add_assassin_lifestyle_perk_points = 1
+			add_perk = assassin_1_perk
+				add_character_flag = joined_assassins
+		}
+		
+			title:k_nizari_state.holder = {
+				add_courtier = scope:target
+			}
 		scope:scheme = {
 			end_scheme = yes
 		}
 	}
 	
-	#Let them know who I am
-	option = {
-		trigger = { witch_2003_unlock_reveal_trigger = yes }
-		name = witch.2003.b
+	# #Let them know who I am
+	# option = {
+	# 	trigger = { witch_2003_unlock_reveal_trigger = yes }
+	# 	name = witch.2003.b
 
-		if = {
-			limit = {
-				exists = house
-				house = { has_house_modifier = witch_coven }
-			}
-			custom_tooltip = witch.2003.b.tt
-		}
+	# 	if = {
+	# 		limit = {
+	# 			exists = house
+	# 			house = { has_house_modifier = witch_coven }
+	# 		}
+	# 		custom_tooltip = witch.2003.b.tt
+	# 	}
 
-		scope:target = {
-			send_interface_message = {
-				type = event_generic_good
-				title = witch.2003.message
-				left_icon = scope:owner
-				scope:owner = {
-					random_secret = {
-						limit = {
-							secret_type = secret_assassin
-							NOT = { is_known_by = scope:target }
-						}
-						reveal_to = scope:target
-					}
-				}
-			}
-		}
+	# 	scope:target = {
+	# 		send_interface_message = {
+	# 			type = event_generic_good
+	# 			title = witch.2003.message
+	# 			left_icon = scope:owner
+	# 			scope:owner = {
+	# 				random_secret = {
+	# 					limit = {
+	# 						secret_type = secret_assassin
+	# 						NOT = { is_known_by = scope:target }
+	# 					}
+	# 					reveal_to = scope:target
+	# 				}
+	# 			}
+	# 		}
+	# 	}
 
-		reverse_add_opinion = {
-			target = scope:target
-			modifier = grateful_opinion
-			opinion = 20
-		}
+	# 	reverse_add_opinion = {
+	# 		target = scope:target
+	# 		modifier = grateful_opinion
+	# 		opinion = 20
+	# 	}
 
-		scope:scheme = {
-			end_scheme = yes
-		}
+	# 	scope:scheme = {
+	# 		end_scheme = yes
+	# 	}
 
-		ai_chance = {
-			base = 100
+	# 	ai_chance = {
+	# 		base = 100
 
-			modifier = {
-				has_trait = honest
-				add = 50
-			}
-			modifier = {
-				has_trait = trusting
-				add = 100
-			}
-		}
-	}
-	#Keep my secret
-	option = {
-		trigger = { witch_2003_unlock_reveal_trigger = yes }
-		name = witch.2003.c
+	# 		modifier = {
+	# 			has_trait = honest
+	# 			add = 50
+	# 		}
+	# 		modifier = {
+	# 			has_trait = trusting
+	# 			add = 100
+	# 		}
+	# 	}
+	# }
+	# #Keep my secret
+	# option = {
+	# 	trigger = { witch_2003_unlock_reveal_trigger = yes }
+	# 	name = witch.2003.c
 
-		scope:scheme = {
-			end_scheme = yes
-		}
+	# 	scope:scheme = {
+	# 		end_scheme = yes
+	# 	}
 
-		ai_chance = {
-			base = 50
-			modifier = {
-				has_trait = paranoid
-				add = 100
-			}
-			modifier = {
-				has_trait = craven
-				add = 50
-			}
-			modifier = {
-				has_trait = deceitful
-				add = 50
-			}
-		}
-	}
+	# 	ai_chance = {
+	# 		base = 50
+	# 		modifier = {
+	# 			has_trait = paranoid
+	# 			add = 100
+	# 		}
+	# 		modifier = {
+	# 			has_trait = craven
+	# 			add = 50
+	# 		}
+	# 		modifier = {
+	# 			has_trait = deceitful
+	# 			add = 50
+	# 		}
+	# 	}
+	# }
 
 	after = {
 		#Handle discover
