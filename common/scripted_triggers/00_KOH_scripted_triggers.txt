@@ -154,3 +154,12 @@ is_assassin_trigger = {
 		has_trait = assassin_member
 	}
 }
+
+
+use_become_assassin_secrecy_trigger = {
+	scope:owner = {
+		any_secret = { secret_type = secret_assassin }
+		# save_temporary_scope_as = witchract_secrecy_check
+		# trait_is_shunned_or_criminal_in_my_or_lieges_faith_trigger = { TRAIT = witch GENDER_CHARACTER = scope:witchract_secrecy_check }
+	}
+}
