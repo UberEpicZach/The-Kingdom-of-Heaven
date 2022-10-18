@@ -1845,10 +1845,38 @@ special_mongol_empire_ilkhanate_region = {
 		world_asia_minor
 		world_middle_east_jerusalem
 		world_middle_east_arabia
-		world_middle_east_persia
+	}
+	duchies = {
+		#Persia
+		d_isfahan d_kirman d_yazd d_rayy d_hamadan d_fars d_hormuz d_khuzestan  
+		#k_khorasan
+		d_nishapur d_merv d_ghur d_herat d_balkh d_nasa d_kohestan
+		#k_daylam
+		d_daylam d_tabaristan d_gurgan d_azerbaijan
+		#k_transoxiana
+		d_uzboy
+		#k_makran
+		d_jabal_kufs d_makran d_sistan
+		#k_kabulistan
+		d_kabul d_zabulistan
+		#k_khiva
+		#d_samarkand d_khiva d_dihistan
 	}
 }
 
+ilkhanate_de_jure_region = {
+	duchies = {
+		#k_daylam
+		d_daylam d_tabaristan d_gurgan d_azerbaijan
+		#Jazira
+		d_diyarrabia d_diyarmudar d_diyarbakr d_euphrates
+		#Armenia
+		d_mesopotamia d_vaspurakan d_greater_armenia
+		#Georgia
+		d_tao-klarjeti d_abkhazia d_georgia
+	}
+}
+	
 special_mongol_empire_chagatai_region = {
 	#regions = { I Disagree
 	#	world_tibet
@@ -1875,9 +1903,26 @@ special_mongol_empire_golden_horde_region = {
 	}
 }
 
+golden_horde_de_jure_region = {
+	duchies = {
+		#Turkestan
+		d_transcaspiana d_jemba d_barsuki d_aral_il d_khorezm
+		#Pontic Steppe
+		d_yedisan d_levedia d_don_valley d_khazaria d_ciscaucasia d_itil d_crimea d_alania d_azov d_pecheneg
+		#Cumania
+		d_kurgan d_mugodzhar_hills d_atyrau d_turgay d_kush-murun d_saryarka d_kazakh d_kentarlau d_karkaraly d_karabas d_betpa d_semey
+	}
+}
+
 special_mongol_empire_black_horde_region = {
 	regions = {
 		world_india	world_burma
+	}
+}
+
+black_horde_de_jure_region = {
+	regions = {
+		world_india_rajastan
 	}
 }
 
@@ -1904,9 +1949,28 @@ special_mongol_empire_white_horde_region = {
 	}
 }
 
+white_horde_de_jure_region = {
+	duchies = {
+		#Bohemia
+		d_bohemia d_moravia
+		#Hungary
+		d_visegrad d_somogy d_nyitra d_ungvar d_transcarpathia d_transylvania d_bihar d_temes d_bacs d_gyor d_syrmia
+		#Wallachia
+		d_oltenia d_muntenia d_transylvanian_alps d_moldova d_bugeac d_bukovina
+		#Bavaria
+		d_bavaria d_nordgau d_salzburg d_augsburg d_steyermark d_osterreich d_tyrol d_carinthia d_krain d_istria
+	}
+}
+
 special_mongol_empire_aarlud_khanate_region = {
 	regions = {
 		world_europe_west_britannia
+		world_europe_north
+	}
+}
+
+aarlud_khanate_de_jure_region = {
+	regions = {
 		world_europe_north
 	}
 }
@@ -1919,9 +1983,26 @@ special_mongol_empire_togskol_khanate_region = {
 	}
 }
 
+togskol_khanatede_jure_region = {
+	regions = {
+		world_europe_south_italy
+	}
+}
+
 special_mongol_empire_baruun_khanate_region = {
 	regions = {
 		world_africa
+	}
+}
+
+baruun_khanate_de_jure_region = {
+	duchies = {
+		#Egypt
+		d_cyrenaica d_alexandria d_delta d_cairo d_al-wahat d_al-said d_eastern_desert d_sinai
+		#Nubia
+		d_nobatia d_makuria d_shamir d_alwa d_sennar
+		#Blemmyia
+		d_naqis d_bazin d_baqlin
 	}
 }
 ### END Mongol Conquest regions
@@ -2068,6 +2149,17 @@ ghw_region_holy_land = {
 		c_maab
 	}
 }
+ghw_region_jerusalem = {
+	duchies = {
+		#Jerusalem
+		d_oultrejourdain d_palestine d_urdunn d_ascalon
+	}
+	counties = {
+		c_irbid
+		c_maab
+	}
+}
+
 ghw_region_iberia = {
 	duchies = {
 		#Galicia
@@ -2773,6 +2865,39 @@ ghw_region_north_eastern_india = {
 }
 
 ### END GHW Regions
+
+islamic_heartlands = { # Set up so that Apostolic survives a bit longer
+	duchies = {
+		#Arabia
+		d_jawf d_amman d_shammar d_medina d_mecca d_asir d_najd d_yamama d_al-hasa d_bahrain d_oman
+		#Yemen
+		d_sanaa d_jawf-al-yamani d_taizz d_hadramawt d_mahra
+		#Jerusalem
+		d_oultrejourdain d_palestine d_urdunn
+		#Southern Syria
+		d_lebanon d_damascus
+		#Jazira, excluding: d_diyarbakr, d_diyarmudar
+		d_diyarrabia d_euphrates
+		#Mesopotamia
+		d_samarra d_kurdistan d_wasit d_kufa d_basra d_baghdad
+		#Northern Syria, excluding: d_edessa
+		d_aleppo d_homs d_antioch d_palmyra
+		#Egypt
+		d_cyrenaica d_alexandria d_delta d_cairo d_al-wahat d_al-said d_eastern_desert d_sinai
+		#Persia
+		d_isfahan d_kirman d_yazd d_rayy d_hamadan d_fars d_hormuz d_khuzestan d_kermanshah
+		#Eastern Daylam
+		d_tabaristan d_gurgan
+		#Western Khorasan
+		d_nasa d_nishapur d_kohestan
+		#Africa
+		d_kairouan d_tunis d_kroumerie d_gabes d_jerid d_tripolitania d_syrte
+		#Tahert
+		d_tlemcen d_tahert d_alger d_bejaia d_zab d_mzab
+		#Maghreb
+		d_marrakesh d_sous d_tafilalt d_fes d_rif d_canarias
+	}
+}
 
 #####################
 # FP1 Regions
