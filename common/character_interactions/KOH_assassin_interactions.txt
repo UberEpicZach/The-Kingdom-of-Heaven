@@ -42,11 +42,11 @@ become_assassin_interaction = {
 				trigger_if = {
 					limit = {
 						any_secret = {
-							secret_type = secret_witch
+							secret_type = secret_assassin
 						}
 					}
 					any_secret = {
-						secret_type = secret_witch
+						secret_type = secret_assassin
 						NOT = {  any_secret_knower = { this = scope:actor } }
 					}
 				}
