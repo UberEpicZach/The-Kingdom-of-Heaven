@@ -84,9 +84,9 @@ join_assassins.2001 = {
 #Someone is trying to convert me to become an assassin (player only)
 join_assassins.2002 = { 
 	type = character_event
-	title = witch.2002.t
+	title = join_assassins.2002.t
 	desc = {
-		desc = witch.2002.start.desc
+		desc = join_assassins.2002.start.desc
 		# first_valid = {
 		# 	triggered_desc = {
 		# 		trigger = { exists = scope:scheme_discovered }
@@ -117,7 +117,7 @@ join_assassins.2002 = {
 				show_as_tooltip = {
 					random_secret = {
 						limit = {
-							secret_type = secret_witch
+							secret_type = secret_assassin
 							NOT = { is_known_by = root }
 						}
 						reveal_to = root
@@ -132,9 +132,13 @@ join_assassins.2002 = {
 
 	#Yes I want to be an assassin and move to your court
 	option = {
-		name = example.0001.a
+		name = join_assassins.2002.a
 		#custom_tooltip = example.0001.a_tt # Sample text
 	depose = yes
+	if = {
+		limit = {is_married = yes}
+		divorce = scope:target.primary_spouse
+	}
 	set_character_faith = faith:nizari
 	#add_assassin_lifestyle_perk_points = 1
 	add_perk = assassin_1_perk
@@ -143,7 +147,7 @@ join_assassins.2002 = {
 			add_courtier = scope:target
 		}
 		scope:owner = {
-			trigger_event = witch.2003
+			trigger_event = join_assassins.2003
 		}
 
 		stress_impact = {
@@ -155,8 +159,12 @@ join_assassins.2002 = {
 
 	#Yes I want to be an assassin but stay in my court
 	option = {	# Sample text
-		name = example.0001.b
-		custom_tooltip = example.0001.b_tt # Sample text
+		name = join_assassins.2002.b
+		#custom_tooltip = example.0001.b_tt # Sample text
+		if = {
+			limit = {is_married = yes}
+			divorce = scope:target.primary_spouse
+		}
 		set_character_faith = faith:nizari
 		add_perk = assassin_1_perk
 		add_character_flag = joined_assassins
@@ -166,12 +174,16 @@ join_assassins.2002 = {
 
 	#No I don't want to be an assassin
 	option = {
-		name = witch.2002.b
+		name = join_assassins.2002.c
 
-		add_piety = medium_piety_gain
+		start_sch
 
 		scope:owner = {
-			trigger_event = witch.2004
+			trigger_event = join_assassins.2004
+			start_scheme = {
+				target = character:target
+				type = murder
+			}
 		}
 
 		if = {
@@ -179,7 +191,7 @@ join_assassins.2002 = {
 			reverse_add_opinion = {
 				target = scope:owner
 				modifier = disappointed_opinion
-				opinion = -15
+				opinion = -50
 			}
 		}
 
@@ -258,6 +270,66 @@ join_assassins.2003 = {
 		}
 	}
 	
+	join_assassins.2004 = { #by Mathilda Bjarnehed
+	type = character_event
+	title = join_assassins.2004.t
+	desc = {
+		desc = join_assassins.2004.start.desc
+		# first_valid = {
+		# 	triggered_desc = {
+		# 		trigger = { exists = scope:scheme_discovered }
+		# 		desc = witch.2004.discovered.desc
+		# 	}
+		# 	desc = witch.2004.not_discovered.desc
+		# }
+	}
+	theme = witchcraft
+	override_background = {
+		event_background = sitting_room
+	}
+	left_portrait = {
+		character = scope:target
+		animation = anger
+	}
+
+	immediate = {
+		if = {
+			limit = { exists = scope:scheme_discovered }
+			random_secret = {
+				limit = {
+					secret_type = secret_assassin
+					NOT = { is_known_by = scope:target }
+				}
+				reveal_to = scope:target
+			}
+			reverse_add_opinion = {
+				target = scope:target
+				modifier = impious_opinion
+				opinion = -50
+			}
+		}
+		scope:target = {
+			add_character_flag = {	
+				flag = block_become_assassin
+				days = 7300
+			}
+		}
+	}
+	
+	option = {
+		name = join_assassins.2004.a
+
+		scope:scheme = {
+			end_scheme = yes
+		}
+	}
+}
+
+
+
+
+
+
 	# #Let them know who I am
 	# option = {
 	# 	trigger = { witch_2003_unlock_reveal_trigger = yes }
@@ -337,280 +409,227 @@ join_assassins.2003 = {
 	# 	}
 	# }
 
-	after = {
-		#Handle discover
-		if = {
-			limit = {
-				exists = scope:scheme_discovered
-				scope:target = {
-					is_ai = yes
-					OR = {
-						AND = {
-							is_ruler = no
-							exists = liege
-							liege = {
-								witch_2003_can_learn_owner_secret = yes
-								NOT = { this = scope:owner }
-							}
-						}
-						any_relation = { type = lover witch_2003_can_learn_owner_secret = yes }
-						any_consort = { witch_2003_can_learn_owner_secret = yes }
-						any_child = {
-							age >= 7
-							witch_2003_can_learn_owner_secret = yes
-						}
-					}
-				}
-			}
-			#Trigger the Overheard-event for the Scheme Owner
-			trigger_event = witch.2010
-		}
-	}
-}
+# 	after = {
+# 		#Handle discover
+# 		if = {
+# 			limit = {
+# 				exists = scope:scheme_discovered
+# 				scope:target = {
+# 					is_ai = yes
+# 					OR = {
+# 						AND = {
+# 							is_ruler = no
+# 							exists = liege
+# 							liege = {
+# 								witch_2003_can_learn_owner_secret = yes
+# 								NOT = { this = scope:owner }
+# 							}
+# 						}
+# 						any_relation = { type = lover witch_2003_can_learn_owner_secret = yes }
+# 						any_consort = { witch_2003_can_learn_owner_secret = yes }
+# 						any_child = {
+# 							age >= 7
+# 							witch_2003_can_learn_owner_secret = yes
+# 						}
+# 					}
+# 				}
+# 			}
+# 			#Trigger the Overheard-event for the Scheme Owner
+# 			trigger_event = witch.2010
+# 		}
+# 	}
+# }
 
-#Success, but discovered
-witch.2010 = { #by Mathilda Bjarnehed
-	type = character_event
-	title = witch.2010.t
-	desc = {
-		first_valid = {
-			triggered_desc = {
-				trigger = {
-					any_secret = {
-						secret_type = secret_witch
-						is_known_by = scope:target
-					}
-				}
-				desc = witch.talk.2010
-			}
-			desc = witch.leave.2010
-		}
-		desc = witch.end.2010
-	}
-	theme = witchcraft
-	override_background = {
-		event_background = sitting_room
-	}
-	left_portrait = {
-		character = scope:target
-		animation = personality_rational
-	}
+# #Success, but discovered
+# witch.2010 = { #by Mathilda Bjarnehed
+# 	type = character_event
+# 	title = witch.2010.t
+# 	desc = {
+# 		first_valid = {
+# 			triggered_desc = {
+# 				trigger = {
+# 					any_secret = {
+# 						secret_type = secret_witch
+# 						is_known_by = scope:target
+# 					}
+# 				}
+# 				desc = witch.talk.2010
+# 			}
+# 			desc = witch.leave.2010
+# 		}
+# 		desc = witch.end.2010
+# 	}
+# 	theme = witchcraft
+# 	override_background = {
+# 		event_background = sitting_room
+# 	}
+# 	left_portrait = {
+# 		character = scope:target
+# 		animation = personality_rational
+# 	}
 	
-	immediate = {
-		hidden_effect = {
-			scope:target = {
-				random_list = {
-					3 = {
-						trigger = {
-							is_ruler = no
-							exists = liege
-							liege = {
-								witch_2003_can_learn_owner_secret = yes
-								NOT = { this = scope:owner }
-							}
-						}
-						liege = { save_scope_as = listener }
-					}
-					5 = {
-						trigger = {
-							any_relation = { 
-								type = lover 
-								witch_2003_can_learn_owner_secret = yes 
-							}
-						}
-						random_relation = {
-							type = lover
-							limit = { witch_2003_can_learn_owner_secret = yes }
-							save_scope_as = listener
-						}
-					}
-					5 = {
-						trigger = {
-							any_consort = { witch_2003_can_learn_owner_secret = yes }
-						}
-						random_consort = {
-							limit = { witch_2003_can_learn_owner_secret = yes }
-							save_scope_as = listener
-						}
-					}
-					1 = {
-						trigger = {
-							any_child = {
-								age >= 7
-								witch_2003_can_learn_owner_secret = yes
-							}
-						}
-						random_child = {
-							limit = {
-								age >= 7
-								witch_2003_can_learn_owner_secret = yes
-							}
-							save_scope_as = listener
-						}
-					}
-				}
-			}
-			#Let's notify the Listener that they learned the secret
-			scope:listener = {
-				send_interface_message = {
-					type = event_generic_neutral
-					title = witch.2010.message
-					left_icon = scope:owner
-					scope:owner = {
-						random_secret = {
-							limit = { secret_type = secret_witch }
-							reveal_to = scope:listener
-						}
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = witch.2010.a
-		custom_tooltip = witch.2010.a.tt
-	}
-}
+# 	immediate = {
+# 		hidden_effect = {
+# 			scope:target = {
+# 				random_list = {
+# 					3 = {
+# 						trigger = {
+# 							is_ruler = no
+# 							exists = liege
+# 							liege = {
+# 								witch_2003_can_learn_owner_secret = yes
+# 								NOT = { this = scope:owner }
+# 							}
+# 						}
+# 						liege = { save_scope_as = listener }
+# 					}
+# 					5 = {
+# 						trigger = {
+# 							any_relation = { 
+# 								type = lover 
+# 								witch_2003_can_learn_owner_secret = yes 
+# 							}
+# 						}
+# 						random_relation = {
+# 							type = lover
+# 							limit = { witch_2003_can_learn_owner_secret = yes }
+# 							save_scope_as = listener
+# 						}
+# 					}
+# 					5 = {
+# 						trigger = {
+# 							any_consort = { witch_2003_can_learn_owner_secret = yes }
+# 						}
+# 						random_consort = {
+# 							limit = { witch_2003_can_learn_owner_secret = yes }
+# 							save_scope_as = listener
+# 						}
+# 					}
+# 					1 = {
+# 						trigger = {
+# 							any_child = {
+# 								age >= 7
+# 								witch_2003_can_learn_owner_secret = yes
+# 							}
+# 						}
+# 						random_child = {
+# 							limit = {
+# 								age >= 7
+# 								witch_2003_can_learn_owner_secret = yes
+# 							}
+# 							save_scope_as = listener
+# 						}
+# 					}
+# 				}
+# 			}
+# 			#Let's notify the Listener that they learned the secret
+# 			scope:listener = {
+# 				send_interface_message = {
+# 					type = event_generic_neutral
+# 					title = witch.2010.message
+# 					left_icon = scope:owner
+# 					scope:owner = {
+# 						random_secret = {
+# 							limit = { secret_type = secret_witch }
+# 							reveal_to = scope:listener
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = witch.2010.a
+# 		custom_tooltip = witch.2010.a.tt
+# 	}
+# }
 
 
 #FAILURE EVENTS
 
 #They refuse
-witch.2004 = { #by Mathilda Bjarnehed
-	type = character_event
-	title = witch.2004.t
-	desc = {
-		desc = witch.2004.start.desc
-		first_valid = {
-			triggered_desc = {
-				trigger = { exists = scope:scheme_discovered }
-				desc = witch.2004.discovered.desc
-			}
-			desc = witch.2004.not_discovered.desc
-		}
-	}
-	theme = witchcraft
-	override_background = {
-		event_background = sitting_room
-	}
-	left_portrait = {
-		character = scope:target
-		animation = anger
-	}
 
-	immediate = {
-		if = {
-			limit = { exists = scope:scheme_discovered }
-			random_secret = {
-				limit = {
-					secret_type = secret_witch
-					NOT = { is_known_by = scope:target }
-				}
-				reveal_to = scope:target
-			}
-			reverse_add_opinion = {
-				target = scope:target
-				modifier = impious_opinion
-				opinion = -20
-			}
-		}
-		scope:target = {
-			add_character_flag = {	
-				flag = block_become_assassin
-				days = 7300
-			}
-		}
-	}
+
+# #They tell their liege
+# witch.2005 = { #by Mathilda Bjarnehed
+# 	type = character_event
+# 	title = witch.2004.t
+# 	desc = {
+# 		desc = witch.2004.start.desc
+# 		desc = witch.2005.end.desc
+# 	}
+# 	theme = witchcraft
+# 	override_background = {
+# 		event_background = sitting_room
+# 	}
+# 	left_portrait = {
+# 		character = scope:target
+# 		animation = anger
+# 	}
+# 	trigger = {
+# 		scope:target = {
+# 			exists = liege
+# 			is_ruler = no
+# 			liege = { NOT = { this = scope:owner } }
+# 		}
+# 		exists = scope:scheme_discovered
+# 	}
+
+# 	weight_multiplier = {
+# 		base = 1
+
+# 		ai_value_modifier = {
+# 			who = scope:target
+# 			ai_zeal = 0.05
+# 			max = 2
+# 			min = -0.5
+# 		}
+# 		opinion_modifier = {
+# 			who = scope:target
+# 			opinion_target = root
+# 			multiplier = -0.05
+# 			max = 2
+# 			min = -0.5
+# 		}
+# 	}
+
+
+# 	immediate = {
+# 		random_secret = {
+# 			limit = {
+# 				secret_type = secret_witch
+# 			}
+# 			if = {
+# 				limit = { NOT = { is_known_by = scope:target } }
+# 				reveal_to = scope:target
+# 			}
+# 			if = {
+# 				limit = { NOT = { is_known_by = scope:target.liege } }
+# 				reveal_to = scope:target.liege
+# 			}
+# 		}
+# 		scope:target = {
+# 			add_character_flag = {	
+# 				flag = block_become_assassin
+# 				days = 7300
+# 			}
+# 		}
+# 		reverse_add_opinion = {
+# 			target = scope:target
+# 			modifier = impious_opinion
+# 			opinion = -20
+# 		}
+# 	}
 	
-	option = {
-		name = witch.2004.a
+# 	option = {
+# 		name = witch.2005.a
+# 		flavor = witch.2005.a.tt
 
-		scope:scheme = {
-			end_scheme = yes
-		}
-	}
-}
-
-#They tell their liege
-witch.2005 = { #by Mathilda Bjarnehed
-	type = character_event
-	title = witch.2004.t
-	desc = {
-		desc = witch.2004.start.desc
-		desc = witch.2005.end.desc
-	}
-	theme = witchcraft
-	override_background = {
-		event_background = sitting_room
-	}
-	left_portrait = {
-		character = scope:target
-		animation = anger
-	}
-	trigger = {
-		scope:target = {
-			exists = liege
-			is_ruler = no
-			liege = { NOT = { this = scope:owner } }
-		}
-		exists = scope:scheme_discovered
-	}
-
-	weight_multiplier = {
-		base = 1
-
-		ai_value_modifier = {
-			who = scope:target
-			ai_zeal = 0.05
-			max = 2
-			min = -0.5
-		}
-		opinion_modifier = {
-			who = scope:target
-			opinion_target = root
-			multiplier = -0.05
-			max = 2
-			min = -0.5
-		}
-	}
-
-
-	immediate = {
-		random_secret = {
-			limit = {
-				secret_type = secret_witch
-			}
-			if = {
-				limit = { NOT = { is_known_by = scope:target } }
-				reveal_to = scope:target
-			}
-			if = {
-				limit = { NOT = { is_known_by = scope:target.liege } }
-				reveal_to = scope:target.liege
-			}
-		}
-		scope:target = {
-			add_character_flag = {	
-				flag = block_become_assassin
-				days = 7300
-			}
-		}
-		reverse_add_opinion = {
-			target = scope:target
-			modifier = impious_opinion
-			opinion = -20
-		}
-	}
-	
-	option = {
-		name = witch.2005.a
-		flavor = witch.2005.a.tt
-
-		scope:scheme = {
-			end_scheme = yes
-		}
-	}
-}
+# 		scope:scheme = {
+# 			end_scheme = yes
+# 		}
+# 	}
+# }
 
 
 
