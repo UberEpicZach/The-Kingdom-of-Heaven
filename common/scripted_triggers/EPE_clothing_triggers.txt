@@ -222,9 +222,11 @@ portrait_balto_finnic_clothing_spouse_trigger = {
 ##Iberian Christian
 portrait_iberia_clothing_trigger = {
 	scope:culture = { portrait_iberia_clothing_contents_trigger = yes }
+	NOT = { religion = religion:islam_religion }
 }
 ##Iberian Christian
 portrait_iberia_clothing_spouse_trigger = {
+	NOT = { religion = religion:islam_religion }
 	culture = {
 		portrait_iberia_clothing_contents_trigger = yes
 	}
@@ -234,11 +236,9 @@ portrait_iberia_clothing_contents_trigger = {
     OR = {
 		AND = {
 			has_cultural_pillar = heritage_iberian
-			NOT = { religion = religion:islam_religion }
 		}
 		AND = {
 			any_parent_culture_or_above = { has_cultural_pillar = heritage_iberian } 
-			NOT = { religion = religion:islam_religion }
 		}
 	}
 }
@@ -278,11 +278,9 @@ portrait_iberia_muslim_clothing_contents_trigger = {
 	OR = {
 		AND = {
 			has_cultural_pillar = heritage_iberian
-			religion = religion:islam_religion
 		}
 		AND = {
 			any_parent_culture_or_above = { has_cultural_pillar = heritage_iberian } 
-			religion = religion:islam_religion
 		}
 	}
 }
