@@ -439,14 +439,14 @@
 				}
 				else = {
 					trigger_event = {
-						on_action = convert_to_witchcraft_failure_outcome
+						on_action = become_assassin_failure_outcome
 					}
 				}
 			}
 			#FOR PLAYER CHARACTER, SEND CHOICE EVENT
 			else = {
 				scope:target = {
-					trigger_event = witch.2002
+					trigger_event = join_assassins.2002
 				}
 			}
 		}
@@ -485,7 +485,7 @@
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = convert_to_witchcraft_scheme_invalidated_title
+					title = become_assassin_scheme_invalidated_title
 					left_icon = scope:target
 					custom_description_no_bullet = {
 						object = scope:target
@@ -503,7 +503,7 @@
 			}
 			scope:owner = {
 				send_interface_toast = {
-					title = convert_to_witchcraft_scheme_invalidated_title
+					title = become_assassin_scheme_invalidated_title
 					left_icon = scope:target
 					right_icon = scope:other_imprisoner
 					custom_description_no_bullet = {

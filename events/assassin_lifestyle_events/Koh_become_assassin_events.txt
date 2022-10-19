@@ -82,19 +82,19 @@ join_assassins.2001 = {
 }
 
 #Someone is trying to convert me to become an assassin (player only)
-witch.2002 = { 
+join_assassins.2002 = { 
 	type = character_event
 	title = witch.2002.t
 	desc = {
 		desc = witch.2002.start.desc
-		first_valid = {
-			triggered_desc = {
-				trigger = { exists = scope:scheme_discovered }
-				desc = witch.2002.discovery.desc
-			}
-			desc = witch.2002.no_discovery.desc
-		}
-		desc = witch.2002.end.desc
+		# first_valid = {
+		# 	triggered_desc = {
+		# 		trigger = { exists = scope:scheme_discovered }
+		# 		desc = witch.2002.discovery.desc
+		# 	}
+		# 	desc = witch.2002.no_discovery.desc
+		# }
+		# desc = witch.2002.end.desc
 	}
 	theme = witchcraft
 	override_background = {
@@ -133,7 +133,7 @@ witch.2002 = {
 	#Yes I want to be an assassin and move to your court
 	option = {
 		name = example.0001.a
-		custom_tooltip = example.0001.a_tt # Sample text
+		#custom_tooltip = example.0001.a_tt # Sample text
 	depose = yes
 	set_character_faith = faith:nizari
 	#add_assassin_lifestyle_perk_points = 1
