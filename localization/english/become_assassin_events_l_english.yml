@@ -1,5 +1,6 @@
 ﻿l_english:
 become_assassin_action:"recruiting"
+ become_assassin_scheme_invalidated_title:0 "@scheme_icon! Recruiting to the order Scheme Ends"
  join_assassins.2001.t:"Is [target.GetFirstName] Ready?"
  join_assassins.2001.start.desc:0 "[target.GetFirstName] Seems to have the potential, [target.GetSheHe] shall train under my guidance and I will see to his weaknesses. But is [target.GetFirstName] really ready?"
  #join_assassins.2001.secrecy.desc:0 ""
@@ -12,8 +13,10 @@ become_assassin_action:"recruiting"
 
  join_assassins.2003.t:1 "A New Member"
  join_assassins.2003.desc:0 "In the past few months, [target.GetFirstName] has been learning about our path and going through some tests.\n\n[target.GetSheHe|U] has pledged not to marry and bear children, and to dedicate [target.GetHerHis] life to our cause and Allah.\nAlso, [target.GetSheHe|U] swore to never doubt or hesitate to carry out future missions and not disgrace the order in any way.\n\nAside from swearing celibacy, [target.GetFirstName] has also confessed that Allah is the one and only God, and Mohammed is the last prophet of Allah and Ali was named by Mohammed as the leader of the Ummah.\n\n\nNow [target.GetSheHe]'s ready for the next step!"
-
  join_assassins.2003.a:0 "A new life, A new path! Welcome my [target.Custom('SisterBrother')|U]."
- witch.2003.b:0 "Now I can finally show [target.GetHerHim] my true self."
- witch.2003.b.tt:0 "[target.GetShortUIName|U] must know of your [secret|E] to be invited to a $activity_witch_ritual$"
- witch.2003.c:0 "[target.GetSheHe|U] must find [target.GetHerHis] own path."
+
+ witch.2002.t:0 "The order of the Hashashins"
+ witch.2002.start.desc:0 "I have been training with [actor.GetFirstName] for months. Having gone over everything about the creed, [actor.GetSheHe] says I am finally ready.\n\n[actor.GetSheHe] asks me\n\nDo you swear before the Allah that you shall carry out the given missions without any hesitation and doubt, to obey your superiors and never question them?\n\nDo you swear that Allah is the one true God and Mohammed is his prophet and Mohammed chose Ali is the leader of the Ummah?"
+ witch.2002.a:0 "With all my heart!"
+ witch.2002.b:0 "I want nothing to do with this. Begone, demon!"
+ witch.2002.c:0 "The world will know of your sin, [owner.GetFirstNameNoTooltip]!"
