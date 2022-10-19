@@ -37,7 +37,7 @@ join_assassins.2001 = {
 			limit = { scope:target = { is_ai = no } }
 			scope:target = {
 				trigger_event = {
-					id = witch.2002
+					id = join_assassins.2002
 					days = 3
 				}
 			}
@@ -45,7 +45,7 @@ join_assassins.2001 = {
 		else_if = {
 			limit = { exists = scope:scheme_successful }
 			trigger_event = {
-				id = witch.2003
+				id = join_assassins.2003
 				days = 3
 			}
 		}
