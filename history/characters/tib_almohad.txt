@@ -164,11 +164,13 @@ almohad1009 = {
 }
 
 almohad1010 = {
-	name = "Abu_Muhammad_Abdallah"
+	name = "Abu_Muhammad_Abdallah" # Governor of Bejaia/Bijaya during the 2nd Almohad Caliph reign
 	dynasty = 101875
 	religion = "masmudi"
 	culture = baranis
 	sexuality = heterosexual
+	trait = brave # Bravely opposed the bay'ah (pledge of allegiance) to the 2nd Almohad Caliph
+	trait = education_stewardship_2
 	father = 32978
 	1141.1.19 = {
 		birth= yes
@@ -198,30 +200,37 @@ almohad1012 = {
 	dynasty = 101875
 	religion = "masmudi"
 	culture = baranis
+	trait = education_stewardship_3 # Fictional, trusted enough to be governor of Tlemcen
+	trait = brave # Bravely joined a conspiracy against Abu Yusuf Ya'qub al-Mansur
+	trait = ambitious
 	sexuality = heterosexual
 	father = 32978
 	1145.9.13 = {
 		birth= yes
 	}
-	1212.6.14 ={
-		death = yes
+	1189.1.1 = {
+		death = yes # Lynched by the people of Tlemcen?
 	}
 }
 
 almohad1013 = {
-	name = "Sulayman"
+	name = "Sulayman" # AKA: Abu'l-Rabi' Sulayman
 	dynasty = 101875
 	religion = "masmudi"
 	culture = baranis
-	trait = education_learning_3 # Fictional
+	trait = education_stewardship_3 # Fictional, trusted enough to be governor of Tadla
+	trait = brave # Bravely joined a conspiracy against Abu Yusuf Ya'qub al-Mansur
 	trait = humble
 	sexuality = heterosexual
 	father = 32978
 	1149.3.1 = {
 		birth= yes
 	}
-	1213.1.1 ={
-		death = yes
+	1190.1.1 = {
+		death = {
+			death_reason = death_execution # Executed at Sale
+			killer = 32980
+		}
 	}
 }
 
@@ -252,6 +261,7 @@ almohad1014 = {
 	dynasty = 101875
 	religion = "masmudi"
 	culture = baranis
+	trait = education_martial_4
 	trait = zealous
 	trait = diligent
 	trait = honest
@@ -301,12 +311,10 @@ almohad1014 = {
 	trait = just
 	trait = education_stewardship_4
 	sexuality = heterosexual
+	disallow_random_traits = yes
 	father = 224000
-	1169.1.1 = {
+	1168.1.1 = {
 		birth = yes
-	}
-	1184.1.1 = {
-		disallow_random_traits = yes
 	}
 	1224.9.6 = {
 		give_nickname = nick_makhlu
@@ -486,13 +494,11 @@ almohad0006_ibn_almanzor = {
 	trait = content
 	trait = shy
 	sexuality = heterosexual
+	disallow_random_traits = yes
 	father = 224000
 	1171.1.1 = {
 		birth = "1171.1.1"
 		give_nickname = nick_tahir
-	}
-	1184.1.1 = {
-		disallow_random_traits = yes
 	}
 	1236.1.1 = {
 		death = "1236.1.1"
@@ -613,17 +619,38 @@ almohad_descendants_006 = { # Previously governor of Malaga in 1202, Silves and 
 }
 
 155086 = {
-	name = "_Uthman"
+	name = "Abu_Sa_id__Uthman"
+	dna = 155086_uthman_almohad_dna
+	dynasty = 101875
+	religion = "masmudi"
+	culture = baranis
+	trait = humble
+	trait = trusting
+	trait = brave
+	trait = forder
+	trait = loyal
+	trait = education_martial_3
+	sexuality = heterosexual
+	father = 32978
+	1136.1.1 = {
+		birth = yes
+	}
+	1196.1.1 = {
+		death = yes
+	}
+}
+almohad0023 = {
+	name = "Sa_id"
 	dynasty = 101875
 	religion = "masmudi"
 	culture = baranis
 	sexuality = heterosexual
-	father = 32978
-	1136.1.1 = {
-		birth = "1136.1.1"
+	father = 155086
+	1159.1.1 = {
+		birth = yes
 	}
-	1196.1.1 = {
-		death = "1196.1.1"
+	1213.1.1 = {
+		death = yes
 	}
 }
 
@@ -670,10 +697,10 @@ almohad_descendants_006 = { # Previously governor of Malaga in 1202, Silves and 
 	religion = "masmudi"
 	culture = baranis
 	sexuality = heterosexual
-	trait = stubborn # His decision is everything, none can oppose
+	#trait = stubborn # His decision is everything, none can oppose
 	trait = impatient # A hasty ruler
 	trait = calm # Too calm to leave revolts and a literal PLAGUE running on
-	trait = modest # Loves to give charity
+	trait = generous # Loves to give charity
 	trait = diligent # A very good learner and will do anything to pursue knowledge
 	trait = education_learning_4
 	trait = physique_bad_2 # It was said that he frequently got sick, to the point of bedridden for a year.
@@ -781,8 +808,8 @@ almohad0010 = {
 	culture = baranis
 	sexuality = heterosexual
 	father = 224000
-	1162.6.7 = {
-		birth = "1162.6.7"
+	1160.6.7 = {
+		birth = yes
 	}
 	1212.10.1 = {
 		death = "1212.10.1"
@@ -796,8 +823,8 @@ almohad0011 = {
 	culture = baranis
 	sexuality = heterosexual
 	father = 224000
-	1164.5.4 = {
-		birth = "1164.5.4"
+	1163.5.4 = {
+		birth = yes
 	}
 	1212.8.1 = {
 		death = "1212.8.1"
@@ -822,22 +849,22 @@ almohad0012 = {
 almohad0013 = {
 	name = "Abu_Hafs_Umar" #ibn Yusuf Almohad2ndCaliph
 	dynasty = 101875
-	trait = zealous
-	trait = just
+	trait = brave
+	trait = trusting
+	trait = honest
+	trait = education_stewardship_2
 	religion = "masmudi"
 	culture = baranis
 	sexuality = heterosexual
 	father = 224000
-	1168.5.4 = {
-		birth = "1168.5.4"
+	disallow_random_traits = yes
+	1157.5.4 = {
+		birth = yes
 		give_nickname = nick_rashid
 	}
-	1184.1.1 = {
-		disallow_random_traits = yes
-	}
-	1189.1.1 = {
+	1190.1.1 = {
 		death = {
-			death_reason = death_execution
+			death_reason = death_execution # Executed at Sale
 			killer = 32980
 		}
 	}

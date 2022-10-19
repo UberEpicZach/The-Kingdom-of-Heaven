@@ -5605,15 +5605,20 @@
 }
 
 155113 = {
-	name = "Karakush"
+	name = "Sharaf_al-Din_Qaraqush"
 	#AKA Sharaf al-Din Qaraqush
 	religion = "ashari"
-	culture = "levantine"
+	culture = "armenian"
+	trait = education_martial_4
+	trait = ambitious
+	trait = arbitrary
+	trait = brave
 	1150.1.1 = {
 		birth = "1150.1.1"
 	}
 	1212.1.1 = {
-		death = "1212.1.1"
+		death_type = death_execution # Failed his Banu Ghaniya ally, so the emir Yahya executed him
+		killer = 32977
 	}
 }
 
