@@ -7814,7 +7814,9 @@
 		add_spouse = 215560
 	}
 	1174.7.11 = {
-		death = "1174.7.11"
+		death = {
+			death_reason = death_ill
+		}
 	}
 }
 
@@ -8161,6 +8163,9 @@
 	}
 	1176.1.1 = {
 		add_spouse = 223592 #Stephanie de Milly
+		effect = {
+			add_character_modifier = { modifier = obese_modifier }
+		}
 	}
 	1187.7.4 = {
 		death = "1187.7.4"
@@ -31867,7 +31872,6 @@ KOH0060 = {
 }
 
 223502 = {
-	#secondary character could be deleted
 	name = "Alice"
 	dna = 223502_alice_de_lusignan
 	female = yes
@@ -31890,7 +31894,6 @@ KOH0060 = {
 }
 
 223503 = {
-	#secondary character could be deleted
 	name = "Marie"
 	dna = 223503_marie_de_lusignan
 	female = yes

@@ -10006,6 +10006,7 @@
 }
 207503 = {
 	name = "Constanza"
+	dna = 207503_constance_of_castille
 	female = yes
 	dynasty = 681
 	martial = 5
@@ -10020,6 +10021,9 @@
  
 	1138.1.1 = {
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1160.10.6 = {
 		death = {

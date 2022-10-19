@@ -1190,12 +1190,6 @@ hairstyles_scripted_characters = {
             modifier = {
                 add = 200
                 exists = this
-                exists = character:204512 #queen eleanor of castille
-                this = character:204512 #queen eleanor of castille
-            }
-            modifier = {
-                add = 200
-                exists = this
                 exists = character:800503 #blanche
                 this = character:800503 #blanche
             }
@@ -1288,12 +1282,6 @@ hairstyles_scripted_characters = {
                 exists = this
                 exists = character:easteregg_lysann_schlegel
                 this = character:easteregg_lysann_schlegel
-            }
-            modifier = {
-                add = 200
-                exists = this
-                exists = character:205518 #Princess Alys
-                this = character:205518 #Princess Alys
             }
             modifier = {
                 add = 200
@@ -1824,6 +1812,12 @@ hairstyles_scripted_characters = {
         }   
         weight = {
             base = 0
+            modifier = {
+                add = 200
+                exists = this
+                exists = character:205515 #Marguerite of France
+                this = character:205515 #Marguerite of France
+            }
         }
         
     }
@@ -1943,4 +1937,86 @@ hairstyles_scripted_characters = {
             }
         }
     }
+	female_hair_fp2_iberian_christian_01 = { # Maiden's Curls
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = fp2_hairstyles_iberian_christian_wavy
+                value = 0.19 # For the randomness to work correctly
+            }
+        }   
+        weight = {
+            base = 0
+            modifier = {
+                add = 200
+                exists = this
+                exists = character:KOH_BAVARIAN079 #Elezebet
+                this = character:KOH_BAVARIAN079 #Elezebet
+            }
+		    modifier = {
+                add = 200
+                exists = this
+                exists = character:204512 #queen eleanor of castille
+                this = character:204512 #queen eleanor of castille
+            }
+        }
+    }
+	female_hair_fp2_iberian_muslim_03_common = { # Four Braids
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = fp2_hairstyles_iberian_muslim_wavy
+                value = 0.21 # For the randomness to work correctly
+            }
+        }   
+        weight = {
+            base = 0
+            modifier = {
+                add = 200
+                exists = this
+                exists = character:207503 #Constance of Castille
+                this = character:207503 #Constance of Castille
+            }
+        }
+    }
+	female_hair_fp2_iberian_christian_02 = { # Long Straight with Middle Part
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = fp2_hairstyles_iberian_christian_wavy
+                value = 0.22 # For the randomness to work correctly
+            }
+        }
+		weight = {
+        base = 0
+			modifier = {
+                add = 200
+                exists = this
+                exists = character:205518 #Princess Alys
+                this = character:205518 #Princess Alys
+			}
+		}
+	}
+	female_hair_fp2_iberian_christian_03 = { #Wavy shoulder length
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = fp2_hairstyles_iberian_christian_wavy
+                value = 0.23 # For the randomness to work correctly
+            }
+        }
+		weight = {
+        base = 0
+			modifier = {
+                add = 200
+                exists = this
+                exists = character:205519 #Princess Agnes
+                this = character:205519 #Princess Agnes
+			}
+		}
+	}
 }

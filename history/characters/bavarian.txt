@@ -11408,14 +11408,18 @@ KOH_BAVARIAN078 = {
 
 KOH_BAVARIAN079 = {
 	name = "Elezebet"
+	dna = KOH_BAVARIAN079_Elezebet
 	female = yes
 	religion = "catholic"
 	culture = bavarian
-	trait = beauty_good_1
 	trait = fecund
 	trait = lustful
+	sexuality = heterosexual
 	1155.1.2 = {
 		birth = yes
+		effect = {
+ 			add_character_flag = has_scripted_appearance
+ 		}
 	}
 	1180.1.2 = {
 		effect = {
@@ -11427,4 +11431,5 @@ KOH_BAVARIAN079 = {
 		death = yes
 	}
 }
+
 
