@@ -126,7 +126,7 @@ tib_abu_yaqub_yusuf_death.5 = { # Plague
 	type = character_event
 	title = tib_abu_yaqub_yusuf_death.5.t
 	desc = tib_abu_yaqub_yusuf_death.5.d
-	theme = martial
+	theme = learning
 	
 	#left_portrait = {
 	#	character = root
@@ -154,7 +154,7 @@ tib_abu_yaqub_yusuf_death.6 = { # Present day, peace at the moment
 	type = character_event
 	title = tib_abu_yaqub_yusuf_death.6.t
 	desc = tib_abu_yaqub_yusuf_death.6.d
-	theme = martial
+	theme = faith
 	
 	left_portrait = {
 		character = root
@@ -179,7 +179,7 @@ tib_abu_yaqub_yusuf_death.6 = { # Present day, peace at the moment
 		}
 	}
 }
-tib_abu_yaqub_yusuf_death.7 = { # Ready for departure to Andalusia, to Jihad against Portugal, the Muslims' staunchest enemy
+tib_abu_yaqub_yusuf_death.7 = { # Ready for departure to Andalusia, accompanied by Ya'qub
 	type = character_event
 	title = tib_abu_yaqub_yusuf_death.7.t
 	desc = tib_abu_yaqub_yusuf_death.7.d
@@ -188,6 +188,10 @@ tib_abu_yaqub_yusuf_death.7 = { # Ready for departure to Andalusia, to Jihad aga
 	left_portrait = {
 		character = root
 		animation = personality_bold
+	}
+	right_portrait = {
+		character = character:32980
+		animation = happiness
 	}
     override_background = { event_background = docks }
 	trigger = {
@@ -211,6 +215,9 @@ tib_abu_yaqub_yusuf_death.7 = { # Ready for departure to Andalusia, to Jihad aga
 
 	option = {
 		name = tib_abu_yaqub_yusuf_death.7.a
+
+		title:e_maghreb.holder = { set_designated_heir = character:32980 }
+
 		trigger_event = {
 			id = tib_abu_yaqub_yusuf_death.8
 			days = { 39 40 }
@@ -269,7 +276,7 @@ tib_abu_yaqub_yusuf_death.8 = { # March towards Lisbon through Santarem!
 				stacks = 15
 			}
 			war_keep_on_attacker_victory = no
-			location = province:b_sevilla
+			location = province:1981
 		}
 		spawn_army = {
 			uses_supply = yes
@@ -280,7 +287,7 @@ tib_abu_yaqub_yusuf_death.8 = { # March towards Lisbon through Santarem!
 				stacks = 60
 			}
 			war_keep_on_attacker_victory = no
-			location = province:b_sevilla
+			location = province:1981
 		}
 
 		trigger_event = {
@@ -387,7 +394,7 @@ tib_abu_yaqub_yusuf_death.11 = { # Surrounded
         create_character = {
 			template = new_warrior_character
 			name = "Fernando"
-			location = b_santarem.title_province
+			location = 1755 # Santarem
 			faith = character:209503.faith
 			culture = character:209503.culture
 			gender_female_chance = 0
@@ -396,7 +403,7 @@ tib_abu_yaqub_yusuf_death.11 = { # Surrounded
 		create_character = {
 			template = new_warrior_character
 			name = "Martinho"
-			location = b_santarem.title_province
+			location = 1755 # Santarem
 			faith = character:209503.faith
 			culture = character:209503.culture
 			gender_female_chance = 0
@@ -405,7 +412,7 @@ tib_abu_yaqub_yusuf_death.11 = { # Surrounded
 		create_character = {
 			template = new_warrior_character
 			name = "Soeiro"
-			location = b_santarem.title_province
+			location = 1755 # Santarem
 			faith = character:209503.faith
 			culture = character:209503.culture
 			gender_female_chance = 0
@@ -414,7 +421,7 @@ tib_abu_yaqub_yusuf_death.11 = { # Surrounded
 		create_character = {
 			template = new_warrior_character
 			name = "Nunes"
-			location = b_santarem.title_province
+			location = 1755 # Santarem
 			faith = character:209503.faith
 			culture = character:209503.culture
 			gender_female_chance = 0
@@ -423,7 +430,7 @@ tib_abu_yaqub_yusuf_death.11 = { # Surrounded
 		create_character = {
 			template = new_warrior_character
 			name = "Sancho"
-			location = b_santarem.title_province
+			location = 1755 # Santarem
 			faith = character:209503.faith
 			culture = character:209503.culture
 			gender_female_chance = 0
@@ -432,7 +439,7 @@ tib_abu_yaqub_yusuf_death.11 = { # Surrounded
 		create_character = {
 			template = new_warrior_character
 			name = "Paio"
-			location = b_santarem.title_province
+			location = 1755 # Santarem
 			faith = character:209503.faith
 			culture = character:209503.culture
 			gender_female_chance = 0
@@ -452,7 +459,6 @@ tib_abu_yaqub_yusuf_death.11 = { # Surrounded
 
 	option = {
 		name = tib_abu_yaqub_yusuf_death.11.a
-		title:e_maghreb.holder = { set_designated_heir = character:32980 }
         scope:christian_combatant = {
             death = {
                 death_reason = death_battle
@@ -521,7 +527,7 @@ tib_abu_yaqub_yusuf_death.12 = { # The Angel of Death has Arrived...
         create_character = {
 			template = new_warrior_character
 			name = "Afonso"
-			location = b_santarem.title_province
+			location = 1755 # Santarem
 			faith = character:209503.faith
 			culture = character:209503.culture
 			gender_female_chance = 0
