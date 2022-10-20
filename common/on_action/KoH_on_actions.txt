@@ -685,6 +685,20 @@ KOH_ON_START = {
 				}
 			}
 		}
+
+		# Starts Yusuf's Event Chain
+		character:224000 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = tib_abu_yaqub_yusuf_death.1
+					days = 1 
+				}
+			} 
+		}
 	}
 }
 

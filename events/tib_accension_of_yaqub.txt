@@ -1,0 +1,31 @@
+namespace = tib_accension_of_yaqub
+
+tib_accension_of_yaqub.1 = { # Mourn the death of his father
+	type = character_event
+	title = tib_accension_of_yaqub.1.t
+	desc = tib_accension_of_yaqub.1.d
+	theme = faith
+	
+	left_portrait = {
+        character = character:32980
+		save_scope_as = moulay_yaqub
+		animation = grief
+	}
+    override_background = { event_background = temple_mosque }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = tib_accension_of_yaqub.1}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = tib_accension_of_yaqub.1
+		}
+	}
+
+	option = {
+		name = tib_accension_of_yaqub.1.a
+		trigger_event = {
+			id = tib_accension_of_yaqub.2
+		}
+	}
+}

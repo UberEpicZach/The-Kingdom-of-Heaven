@@ -1940,7 +1940,7 @@ hairstyles_scripted_characters = {
 
     ### FP2 Hair ###
 
-    male_hair_fp2_iberian_muslim_01 = {
+    male_hair_fp2_iberian_muslim_01 = { # Medium Short Wavy
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -1975,7 +1975,7 @@ hairstyles_scripted_characters = {
         }
     }
 
-    male_hair_fp2_iberian_muslim_02 = {
+    male_hair_fp2_iberian_muslim_02 = { # Long Curly Middle Parted
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -1995,7 +1995,7 @@ hairstyles_scripted_characters = {
         }
     }
 
-    male_hair_fp2_iberian_muslim_03 = {
+    male_hair_fp2_iberian_muslim_03 = { # Long Windswept
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -2024,6 +2024,12 @@ hairstyles_scripted_characters = {
                 exists = this
                 exists = character:107590 #el_cid
                 this = character:107590 #el_cid
+            }
+            modifier = {
+                add = 999
+               	exists = this
+               	exists = character:155085 # 'Umar ibn 'Abd al-Mu'min
+                this = character:155085 # 'Umar ibn 'Abd al-Mu'min
             }
         }
     }
@@ -2101,12 +2107,6 @@ hairstyles_scripted_characters = {
                 exists = this
                 exists = character:73957
                 this = character:73957
-            }
-            modifier = {
-                add = 999
-                exists = this
-                exists = character:207510 # Alfonso VIII El Noble
-                this = character:207510 # Alfonso VIII El Noble
             }
         }
     }

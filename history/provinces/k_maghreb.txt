@@ -8,6 +8,22 @@
 	1147.1.1 = {
 		religion = masmudi
 	}
+	1183.1.1 = {
+		effect = { add_building_slot = 2 }
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_04
+			city_03
+			temple_03
+			guild_halls_06
+			watchtowers_06
+			orchards_04
+			regimental_grounds_05
+			camel_farms_05
+			military_camps_05
+		}
+	}
 }
 4713 = {	#AITIYAT
 	#holding = none
@@ -29,6 +45,13 @@
 	holding = castle_holding
 	1147.1.1 = {
 		religion = masmudi
+	}
+	1163.1.1 = {
+		buildings = {
+			castle_01
+			camel_farms_01
+			cereal_fields_03
+		}
 	}
 }
 4710 = {	#DAI
@@ -272,6 +295,14 @@
 	culture = baranis
 	religion = ashari
 	holding = castle_holding
+	857.1.1 = {
+		special_building_slot = al_qarawiyyin_university
+		special_building = al_qarawiyyin_university
+		set_variable = { # To unlock the building
+			name = university
+			value = yes
+		}
+	}
 	867.1.1 = {
 		buildings = {
 			pastures_01
@@ -284,6 +315,20 @@
 			plantations_01
 			watchtowers_01
 			hunting_grounds_01
+		}
+	}
+	1183.1.1 = {
+		effect = { add_building_slot = 2 }
+	}
+	1184.1.1 = {
+		buildings = {
+			castle_03
+			city_03
+			temple_03
+			pastures_06
+			watchtowers_06
+			plantations_05
+			hunting_grounds_04
 		}
 	}
 }
