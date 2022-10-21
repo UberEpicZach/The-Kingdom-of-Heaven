@@ -289,11 +289,11 @@ tib_abu_yaqub_yusuf_death.8 = { # March towards Lisbon through Santarem!
 			war_keep_on_attacker_victory = no
 			location = province:1981
 		}
-
-		trigger_event = {
-			id = tib_abu_yaqub_yusuf_death.9
-			days = { 70 90 }
-		}
+		random_army = { assign_commander = root }
+		# trigger_event = {
+		# 	id = tib_abu_yaqub_yusuf_death.9
+		# 	days = { 70 90 }
+		# }
 	}
 }
 tib_abu_yaqub_yusuf_death.9 = { # The Siege of Santarem
@@ -301,13 +301,28 @@ tib_abu_yaqub_yusuf_death.9 = { # The Siege of Santarem
 	title = tib_abu_yaqub_yusuf_death.9.t
 	desc = tib_abu_yaqub_yusuf_death.9.d
 	theme = martial
-	
 	left_portrait = {
 		character = root
 		animation = war_attacker
 	}
     override_background = { event_background = army_camp }
 	trigger = {
+		this = character:224000
+		location = {
+			OR = {
+				this = province:1755
+				this = province:1754
+				this = province:1753
+			}
+		}
+		is_commanding_army = yes
+		army.location = {
+			OR = {
+				this = province:1755
+				this = province:1754
+				this = province:1753
+			}
+		}
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.9 }
 	}
@@ -324,14 +339,87 @@ tib_abu_yaqub_yusuf_death.9 = { # The Siege of Santarem
 			}
 			pan_camera_to_title = title:b_santarem
 		}
+		title:k_leon.holder = {
+			trigger_event = {
+				id = tib_abu_yaqub_yusuf_death.91
+				days = 10
+			} 
+		}
 	}
 
 	option = {
 		name = tib_abu_yaqub_yusuf_death.9.a
-		trigger_event = {
-			id = tib_abu_yaqub_yusuf_death.10
-			days = { 30 50 }
+	}
+}
+tib_abu_yaqub_yusuf_death.91 = { # A Grave News has Arrived!
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.91.t
+	desc = tib_abu_yaqub_yusuf_death.91.d
+	theme = martial
+	
+	left_portrait = {
+		character = character:208500
+		animation = idle
+	}
+    right_portrait = {
+        character = title:k_portugal.holder # Fernando of Leon
+		animation = stress
+    }
+    override_background = { event_background = army_camp }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.91 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.91
 		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.91.a
+		title:k_portugal.holder = {
+			every_character_war = {
+				limit = {
+					primary_defender = title:k_portugal.holder
+					primary_attacker = title:e_maghreb.holder
+				}
+				add_defender = title:k_leon.holder
+			}
+		}
+		
+		spawn_army = {
+			uses_supply = yes
+			inheritable = no
+			name = crusaders
+			men_at_arms = {
+				type = armored_footmen
+				stacks = 40
+			}
+			men_at_arms = {
+				type = armored_footmen
+				stacks = 40
+			}
+			men_at_arms = {
+				type = armored_footmen
+				stacks = 40
+			}
+			location = province:1757
+		}
+		title:e_maghreb.holder = {
+			trigger_event = {
+				id = tib_abu_yaqub_yusuf_death.10
+				days = { 5 7 }
+			}
+		}
+
+		ai_chance = {
+			base = 70
+		}
+	}
+	option = {
+		name = tib_abu_yaqub_yusuf_death.91.b
+
 	}
 }
 tib_abu_yaqub_yusuf_death.10 = { # A Grave News has Arrived!
@@ -356,6 +444,13 @@ tib_abu_yaqub_yusuf_death.10 = { # A Grave News has Arrived!
 		add_character_flag = {
 			flag = had_event_tib_abu_yaqub_yusuf_death.10
 		}
+		# every_character_war = {
+		# 	limit = {
+		# 		primary_defender = title:k_portugal.holder
+		# 		primary_attacker = title:e_amaghreb.holder
+		# 	}
+		# 	add_defender = title:k_leon.holder
+		# }
 	}
 
 	option = {
