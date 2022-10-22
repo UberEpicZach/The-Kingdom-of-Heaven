@@ -11,7 +11,7 @@
 	maximum_secrecy = 95
 	minimum_success = 5
 	maximum_success = 95
-	icon = icon_scheme_personal
+	icon = icon_scheme_hostile
 
 	
 	allow = {
@@ -438,9 +438,7 @@
 					trigger_event = join_assassins.2003 #Success event
 				}
 				else = {
-					trigger_event =  {
-						on_action = become_assassin_failure_outcome
-					}
+					trigger_event = join_assassins.2004
 				}
 			}
 			#FOR PLAYER CHARACTER, SEND CHOICE EVENT

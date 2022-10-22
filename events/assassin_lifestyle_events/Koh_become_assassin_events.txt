@@ -51,7 +51,7 @@ join_assassins.2001 = {
 		}
 		else = {
 			trigger_event = {
-				on_action = become_assassin_failure_outcome
+				id = join_assassins.2004
 				days = 3
 			}
 		}
@@ -134,14 +134,14 @@ join_assassins.2002 = {
 	option = {
 		name = join_assassins.2002.a
 		#custom_tooltip = example.0001.a_tt # Sample text
-	depose = yes
-	if = {
-		limit = {is_married = yes}
-		divorce = scope:target.primary_spouse
-	}
-	set_character_faith = faith:nizari
-	#add_assassin_lifestyle_perk_points = 1
-	add_perk = assassin_1_perk
+		depose = yes
+		if = {
+			limit = {is_married = yes}
+			divorce = scope:target.primary_spouse
+		}
+		set_character_faith = faith:nizari
+		#add_assassin_lifestyle_perk_points = 1
+		add_perk = assassin_1_perk
 		add_character_flag = joined_assassins
 		title:k_nizari_state.holder = {
 			add_courtier = scope:target
@@ -151,7 +151,6 @@ join_assassins.2002 = {
 		}
 
 		stress_impact = {
-			
 			craven = medium_stress_impact_gain
 		}
 	}
@@ -176,8 +175,6 @@ join_assassins.2002 = {
 	option = {
 		name = join_assassins.2002.c
 
-		start_sch
-
 		scope:owner = {
 			trigger_event = join_assassins.2004
 			start_scheme = {
@@ -199,7 +196,7 @@ join_assassins.2002 = {
 			ambitious = minor_stress_impact_gain
 		}
 	}
- }
+}
 #SUCCESS EVENTS
 
 join_assassins.2003 = { 
@@ -262,15 +259,15 @@ join_assassins.2003 = {
 				add_character_flag = joined_assassins
 		}
 		
-			title:k_nizari_state.holder = {
-				add_courtier = scope:target
-			}
+		title:k_nizari_state.holder = {
+			add_courtier = scope:target
+		}
 		scope:scheme = {
 			end_scheme = yes
 		}
 	}
 }
-	join_assassins.2004 = { #by Mathilda Bjarnehed
+join_assassins.2004 = { #by Mathilda Bjarnehed
 	type = character_event
 	title = join_assassins.2004.t
 	desc = {
