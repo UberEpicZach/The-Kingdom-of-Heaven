@@ -537,7 +537,7 @@ scripted_effect_popethingevent = {
 	   save_scope_as = player_two
 	}
 }
-
+ 
 give_assassins_castle = {
 	title:b_alamut.title_province = { 
 		if = {
@@ -845,4 +845,31 @@ SaladinChangeCultureFaith = {
 		set_county_culture = culture:levantine
 		set_county_faith = faith:ashari
 	}
+}
+
+give_assassin_secret_or_trait_effect = {
+	save_temporary_scope_as = assassin_character
+	if = {
+		limit = { #Not already a assassin
+			NOR = {
+				has_trait = assassin_member
+				any_secret = { secret_type = secret_assassin }
+			}	
+		}
+		if = {
+			limit = {
+				always = yes
+			}
+			add_secret = {
+				type = secret_assassin
+			}
+			random_secret = {
+				limit = { secret_type = secret_assassin }
+				save_scope_as = assassin:secret
+			}
+		}
+		else = {
+			add_trait = assassin_member
+		}
+	}	
 }
