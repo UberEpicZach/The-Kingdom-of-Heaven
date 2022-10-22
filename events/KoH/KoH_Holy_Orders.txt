@@ -987,12 +987,14 @@ KoH_holy_orders.102 = {
 				add_trait = order_member
 				add_trait = education_intrigue_4
 				set_character_faith = faith:nizari
+				give_assassin_secret_or_trait_effect = yes
 			}
 
 			every_courtier = {
 				add_trait = order_member
 				add_trait = education_intrigue_4
 				set_character_faith = faith:nizari
+				give_assassin_secret_or_trait_effect = yes
 			}
 			spawn_army = {
 				uses_supply = no
@@ -1009,6 +1011,27 @@ KoH_holy_orders.102 = {
 				location = capital_province
 			}
 		}
+
+		title:k_nizari_state.holder = {
+			every_vassal = {
+				every_courtier = {
+					add_trait = order_member
+					add_trait = education_intrigue_4
+					set_character_faith = faith:nizari
+				}
+				add_trait = order_member
+				add_trait = education_intrigue_4
+				set_character_faith = faith:nizari
+				give_assassin_secret_or_trait_effect = yes
+			}
+
+			every_courtier = {
+				add_trait = order_member
+				add_trait = education_intrigue_4
+				set_character_faith = faith:nizari
+				give_assassin_secret_or_trait_effect = yes
+			}
+		}
 	}
 }
 
@@ -1021,10 +1044,12 @@ KoH_holy_orders.103 = {
 		character:144228 = {
 			give_assassins_castle = yes
 			add_realm_law_skip_effects = assassin_order_county_succession_law
+			give_assassin_secret_or_trait_effect = yes
 		}
 		
 		#Syrian Branch
 		add_realm_law_skip_effects = assassin_order_county_succession_law
+		give_assassin_secret_or_trait_effect = yes
 		get_title = title:b_artah
 		create_dynamic_title = {
 			tier = duchy
@@ -1105,6 +1130,7 @@ KoH_holy_orders.103 = {
 				every_courtier = {
 					add_trait = order_member
 				}
+				give_assassin_secret_or_trait_effect = yes
 			}
 		}
 	}
