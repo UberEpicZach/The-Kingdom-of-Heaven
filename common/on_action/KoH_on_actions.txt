@@ -691,8 +691,8 @@ KOH_ON_START = {
 			}
 		}
 
-		# Starts Almohad Event Chain
-		character:224000 = { # Yusuf's last events
+		# Starts Yusuf's Event Chain
+		character:224000 = {
 			if = {
 				limit = {
 					is_alive = yes
@@ -992,10 +992,9 @@ KOH_on_war_started = {
 		if = {
 			limit = {
 				exists = title:e_hre.holder
-
 				scope:defender = {
 					has_trait = KOH_Free_City
-					liege = title:e_hre.holder
+					top_liege = title:e_hre.holder
 				}
 			}
 			scope:defender = {
@@ -1008,13 +1007,26 @@ KOH_on_war_started = {
 				}
 			}
 		}
+		#Has the instigator promised a vassal a war (vassal.2601)?
+		if = {
+			limit = {
+				exists = var:KOH_promised_war
+				var:KOH_promised_war = {
+					is_alive = yes
+					NOT = { this = scope:recipient }
+				}
+			}
+			trigger_event = {
+				id = koh_encouage_war.2610
+				days = { 7 10 }
+			}
+		}
 	}
 }
 
 on_war_won_attacker = {
 	events = {
 		KoH_SicillianConflict.2
-		tib_accension_of_yaqub.61
 	}
 }
 

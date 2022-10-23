@@ -1,20 +1,377 @@
-﻿# namespace = koh_chivalry
+﻿namespace = koh_encouage_war
 
-# koh_chivalry.1 = {
-# 	hidden = yes
-	
-# 	trigger = {
-# 		time_of_year = {
-# 			min = 11.1 # default: beginning of year
-# 			max = 11.2 # default: end of year
-# 		}
-# 	}
-	
-# 	immediate = {
-# 		update_chivalry = yes
-# 	}
-	
-# 	option = {
-# 		name = koh_chivalry.1.a
-# 	}
+##############################################
+# Warmongering vassal complains about peace
+# 2601 - 2620
+# by Linnéa Thimrén
+##############################################
+
+scripted_trigger KOH_potential_vassal_trigger = {
+	is_ai = yes
+	is_adult = yes
+	is_imprisoned = no
+	NOR = {
+		has_trait = compassionate
+		has_trait = craven
+		has_trait = content
+		has_trait = calm
+	}
+}
+
+# scripted_trigger koh_encouage_warholder_trigger = {
+# 	any_neighboring_top_liege_realm_owner = { this = root }
+# 	max_military_strength < root.max_military_strength
 # }
+
+koh_encouage_war.2601 = {
+	type = character_event
+	title = vassal.2601.t
+	desc = vassal.2601.desc
+	
+	theme = vassal
+	left_portrait = {
+		character = scope:warmongering_vassal
+		animation = personality_callous
+	}
+	right_portrait = scope:holder_of_claim
+	
+	trigger = {
+		any_character_struggle = {
+			involvement = involved
+			is_struggle_type = iberian_struggle
+			is_struggle_phase = struggle_iberia_phase_hostility
+		}
+		is_landed = yes
+		is_in_civil_war = no
+		NOT = { has_character_flag = had_event_vassal_2601 }
+		days_of_continuous_peace > 730
+		OR = {
+			AND = {
+				has_religion = religion:islam_religion
+				any_neighboring_top_liege_realm_owner = { 
+					has_religion = religion:christianity_religion
+				}
+				save_temporary_scope_as = holder_of_claim
+			}
+			AND = {
+				has_religion = religion:christianity_religion
+				any_neighboring_top_liege_realm_owner = { 
+					 has_religion = religion:islam_religion
+				}
+				save_temporary_scope_as = holder_of_claim
+			}
+		}
+		any_vassal = {
+			KOH_potential_vassal_trigger = yes
+		}
+	}
+
+	weight_multiplier = {
+		base = 0.5
+		modifier = {
+			add = 0.3
+			any_vassal = {
+				is_ai = yes
+				is_adult = yes
+				is_imprisoned = no
+				OR = {
+					has_trait = wrathful
+					has_trait = vengeful
+					has_trait = impatient
+					has_trait = brave
+				}
+			}
+		}
+		modifier = {
+			add = 0.3
+			any_vassal = {
+				is_ai = yes
+				is_adult = yes
+				is_imprisoned = no
+				OR = {
+					number_of_commander_traits >= 1
+					ai_boldness = medium_positive_boldness
+					ai_vengefulness = medium_positive_vengefulness
+					ai_zeal = medium_positive_zeal
+					martial >= medium_skill_rating
+				}
+			}
+		}
+	}
+
+	immediate = {
+		save_scope_as = liege_target
+		add_character_flag = {
+			flag = had_event_vassal_2601
+			days = 3650
+		}
+		random_claim = {
+			limit = {
+				exists = holder
+				holder = {
+					vassal_2601_holder_trigger = yes
+				}
+			}
+			weight = {
+				base = 100
+		  	  	modifier = {
+			  	  	add = {
+						value = 1
+						subtract = {
+							value = this.holder.max_military_strength
+							divide = { value = root.max_military_strength min = 1 }
+						}
+						multiply = 20
+					}
+				}
+			}
+			save_scope_as = claim_to_fight_for
+			holder = { save_scope_as = holder_of_claim }
+		}
+		if = {
+			limit = {
+				has_religion = religion:islam_religion
+				any_neighboring_top_liege_realm_owner = { 
+					has_religion = religion:christianity_religion
+				}
+			}
+			random_neighboring_top_liege_realm_owner = {
+				limit = {
+					has_religion = religion:christianity_religion 
+				}
+				save_scope_as = holder_of_claim 
+				random_sub_realm_county = {
+					limit = {
+						any_neighboring_county = {
+							holder.top_liege = scope:liege_target
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_religion = religion:christianity_religion
+				any_neighboring_top_liege_realm_owner = { 
+					has_religion = religion:islam_religion
+				}
+			}
+			random_neighboring_top_liege_realm_owner = {
+				limit = {
+					has_religion = religion:islam_religion
+				}
+				save_scope_as = holder_of_claim 
+				random_sub_realm_county = {
+					limit = {
+						any_neighboring_county = {
+							holder.top_liege = scope:liege_target
+						}
+					}
+				}
+			}
+		}
+
+		random_vassal = {
+			limit = {
+				KOH_potential_vassal_trigger = yes
+			}
+			weight = {
+				base = 100
+				modifier = {
+					add = 30
+					culture = root.culture
+				}
+				modifier = {
+					add = 30
+					faith = root.faith
+				}
+				modifier = {
+					add = 30
+					dynasty = root.dynasty
+				}
+				modifier = {
+					add = 70
+					is_powerful_vassal = yes
+				}
+				modifier = {
+					add = 100
+					calc_true_if = {
+						amount >= 2
+						has_trait = wrathful
+						has_trait = vengeful
+						has_trait = impatient
+						has_trait = brave
+					}
+				}
+				modifier = {
+					add = 100
+					OR = {
+						number_of_commander_traits >= 1
+						ai_boldness = medium_positive_boldness
+						ai_vengefulness = medium_positive_vengefulness
+						ai_zeal = medium_positive_zeal
+						martial >= medium_skill_rating
+					}
+				}
+			}
+			save_scope_as = warmongering_vassal
+			if = {
+				limit = { root = { is_ai = no }	}
+				assign_quirk_effect = yes
+			}
+		}
+	}
+
+	option = { #Yeah sure, let's go to war
+		name = vassal.2601.a
+		custom_tooltip = vassal.2601.a.tt
+		scope:warmongering_vassal = {
+			add_character_modifier = {
+				modifier = increased_levies_modifier
+				days = 1825
+			}
+			add_opinion = {
+				target = root
+				modifier = respect_opinion
+				opinion = medium_positive_opinion
+			}
+		}
+		set_variable = {
+			name = KOH_promised_war
+			value = scope:warmongering_vassal
+			days = 1850
+		}
+		set_variable = {
+			name = promised_to_claim
+			value = scope:claim_to_fight_for
+			days = 1850
+		}
+		trigger_event = {
+			id = koh_encouage_war.2620
+			days = 1830
+		}
+		stress_impact = {
+			craven = medium_stress_impact_gain
+			content = medium_stress_impact_gain
+			calm = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_vengefulness = 0.5
+				ai_boldness = 0.5
+				ai_zeal = 0.5
+			}
+		}
+	}
+	
+	option = { #Nah
+		name = vassal.2601.b
+		scope:warmongering_vassal = {
+			add_opinion = {
+				target = root
+				modifier = refusal_opinion
+				opinion = low_negative_opinion
+			}
+		}
+		add_prestige = medium_prestige_loss
+		add_piety = medium_prestige_loss
+		stress_impact = {
+			wrathful = medium_stress_impact_gain
+			ambitious = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_compassion = 0.5
+				ai_rationality = 0.5
+			}
+		}
+	}
+}
+
+#You declared war and your warmongering vassal is happy
+koh_encouage_war.2610 = {
+	type = character_event
+	title = vassal.2601.t
+	desc = vassal.2610.desc
+	
+	theme = vassal
+	left_portrait = {
+		character = scope:warmongering_vassal
+		animation = ecstasy
+	}
+
+	trigger = {
+		exists = var:KOH_promised_war
+		var:KOH_promised_war = {
+			is_alive = yes
+		}
+	}
+
+	immediate = {
+		var:KOH_promised_war = {
+			save_scope_as = warmongering_vassal
+		}
+		var:promised_to_claim = {
+			save_scope_as = claim_to_fight_for
+		}
+		scope:warmongering_vassal = {
+			add_opinion = {
+				modifier = kept_promise
+				target = root
+			}
+		}
+	}
+
+	option = {
+		name = vassal.2610.a
+	}
+
+	after = {
+		remove_variable = KOH_promised_war
+		remove_variable = promised_to_claim
+	}
+}
+
+#You promised vassal a war, but never declared one
+koh_encouage_war.2620 = {
+	type = character_event
+	title = vassal.2601.t
+	desc = vassal.2620.desc
+	
+	theme = unfriendly
+	left_portrait = {
+		character = scope:warmongering_vassal
+		animation = anger
+	}
+	
+	trigger = {
+		exists = var:KOH_promised_war
+		var:KOH_promised_war = {
+			is_alive = yes
+			is_vassal_of = root
+		}
+	}
+
+	immediate = {
+		scope:claim_to_fight_for.holder = { save_scope_as = holder_of_claim }
+		var:KOH_promised_war = {
+			save_scope_as = warmongering_vassal
+		}
+		scope:warmongering_vassal = {
+			add_opinion = {
+				modifier = respect_opinion
+				target = root
+				opinion = low_negative_opinion
+			}
+		}
+		add_prestige = medium_prestige_loss
+		add_piety = medium_prestige_loss
+		remove_variable = KOH_promised_war
+	}
+
+	option = {
+		name = vassal.2620.a
+	}
+}
