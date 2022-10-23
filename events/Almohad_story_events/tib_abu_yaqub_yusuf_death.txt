@@ -275,6 +275,10 @@ tib_abu_yaqub_yusuf_death.8 = { # March towards Lisbon through Santarem!
 				type = armored_footmen
 				stacks = 15
 			}
+			men_at_arms = {
+				type = armored_horsemen
+				stacks = 5
+			}
 			war_keep_on_attacker_victory = no
 			location = province:1981
 		}
@@ -284,7 +288,7 @@ tib_abu_yaqub_yusuf_death.8 = { # March towards Lisbon through Santarem!
 			name = almohad_siege_engines
 			men_at_arms = {
 				type = mangonel
-				stacks = 60
+				stacks = 5
 			}
 			war_keep_on_attacker_victory = no
 			location = province:1981
@@ -397,11 +401,11 @@ tib_abu_yaqub_yusuf_death.91 = { # A Grave News has Arrived!
 				stacks = 40
 			}
 			men_at_arms = {
-				type = armored_footmen
+				type = light_footmen
 				stacks = 40
 			}
 			men_at_arms = {
-				type = armored_footmen
+				type = caballero
 				stacks = 40
 			}
 			location = province:1757
@@ -632,6 +636,13 @@ tib_abu_yaqub_yusuf_death.12 = { # The Angel of Death has Arrived...
 
 	option = {
 		name = tib_abu_yaqub_yusuf_death.12.a
+		
+		every_character_war = {
+            limit = {
+                primary_attacker = character:224000
+            }
+            end_war = white_peace
+        }
 
         character:224000 = {
 			death = {
@@ -639,8 +650,9 @@ tib_abu_yaqub_yusuf_death.12 = { # The Angel of Death has Arrived...
                 killer = scope:christian_combatant_7
 			}
 		}
+		
 
-		title:e_maghreb.holder = { set_designated_heir = character:32980 }
+		#title:e_maghreb.holder = { set_designated_heir = character:32980 }
 
         character:32980 = { # Abu Yusuf Ya'qub
 			get_title = title:e_maghreb
@@ -652,13 +664,23 @@ tib_abu_yaqub_yusuf_death.12 = { # The Angel of Death has Arrived...
             get_title = title:c_tamasna
             get_title = title:c_asfi
             get_title = title:c_tinmallal
+			add_character_flag = {
+				flag = had_event_tib_abu_yaqub_yusuf_death.12
+			}
+			trigger_event = {
+				id = tib_accension_of_yaqub.1
+				days = 3
+			}
 		}
+
         set_player_character = character:32980
-		trigger_event = {
-			id = tib_accension_of_yaqub.1
-            id = tib_strings_of_umar.1
-            id = tib_almohad_conspiracy.1
-            id = tib_waves_of_raids.1 # Banu Ghaniya strikes again
+
+		#trigger_event = {
+		#	id = tib_accension_of_yaqub.1
+        #   id = tib_strings_of_umar.1
+        #   id = tib_almohad_conspiracy.1
+        #   id = tib_waves_of_raids.1 # Banu Ghaniya strikes again
 		}
+		#days = { 3 4 } # The Islamic mourning days are three days only, no less or more, assume the 4 days as the princes having rest or doing something else
 	}
 }

@@ -691,8 +691,8 @@ KOH_ON_START = {
 			}
 		}
 
-		# Starts Yusuf's Event Chain
-		character:224000 = {
+		# Starts Almohad Event Chain
+		character:224000 = { # Yusuf's last events
 			if = {
 				limit = {
 					is_alive = yes
@@ -1014,6 +1014,7 @@ KOH_on_war_started = {
 on_war_won_attacker = {
 	events = {
 		KoH_SicillianConflict.2
+		tib_accension_of_yaqub.61
 	}
 }
 
