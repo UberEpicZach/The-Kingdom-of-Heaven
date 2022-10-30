@@ -265,7 +265,7 @@ tib_abu_yaqub_yusuf_death.8 = { # March towards Lisbon through Santarem!
 			casus_belli = minor_religious_war
 			target = title:k_portugal.holder
 			target_title = title:c_lisboa
-			attacker = character:224000
+			#character:224000
 		}
 		spawn_army = {
 			uses_supply = yes
@@ -320,7 +320,7 @@ tib_abu_yaqub_yusuf_death.9 = { # The Siege of Santarem
 			}
 		}
 		is_commanding_army = yes
-		army.location = {
+		scope:army.location = {
 			OR = {
 				this = province:1755
 				this = province:1754

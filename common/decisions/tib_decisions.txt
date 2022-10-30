@@ -50,14 +50,14 @@ build_great_mosque_of_seville_decision = {
     effect = {
         save_scope_as = founder
 
-        trigger_event = major_decisions.mosque_seville
-		every_player = {
-			limit = {
-				NOT = { this = root }
-				is_within_diplo_range = { CHARACTER = root }
-			}
-			trigger_event = major_decisions.mosque_seville_2
-		}
+        trigger_event = major_decisions_mosque_seville.3
+		# every_player = {
+		# 	limit = {
+		# 		NOT = { this = root }
+		# 		is_within_diplo_range = { CHARACTER = root }
+		# 	}
+		# 	trigger_event = major_decisions_mosque_seville.2
+		# }
         build_great_mosque_of_seville_decision_effect = yes
 	}
 

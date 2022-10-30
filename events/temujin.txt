@@ -1,4 +1,5 @@
-namespace=temujin
+namespace = temujin
+
 temujin.0001 = {
 	type = character_event
 	theme = murder_scheme
@@ -19,22 +20,17 @@ temujin.0001 = {
 		character = scope:alert
 		animation = shock
 	}
-	
-	
-	
-	immediate = {
 		
-		companion0007={save_scope_as = alert}
+	immediate = {	
+		character:companion0007 = {
+			save_scope_as = alert
 		}
-		
-		
-	
-	
+	}
+
 	option = {	# Flee to Mount Qaldun
 		name = temujin.0001.a
 		
 		trigger_event = temujin.0002
-		
 		
 		ai_chance = {
 			base = 2
@@ -61,35 +57,29 @@ temujin.0002 = {
 		character = scope:uduyit
 		animation = personality_vengeful
 	}
-	lower_left_portrait={
-	character = scope:uwas
+	lower_left_portrait = {
+		character = scope:uwas
 		animation = personality_vengeful
-
 	}
 	
-	lower_right_portrait={
-	character = scope:qa'at
+	lower_right_portrait = {
+		character = scope:qaat
 		animation = personality_vengeful
-	
 	}
 	
 	immediate = {
-	#Soon rework this to make it trigger off of either holdings or houses
-		
-		character:3031390={save_scope_as = uduyit}
-		character:303135={save_scope_as = uwas}
-		character:303116={save_scope_as = qa'at}
-		}
-		
-		
-	
-	
+		#Soon rework this to make it trigger off of either holdings or houses
+		character:3031390 = { save_scope_as = uduyit}
+		character:303135 = { save_scope_as = uwas}
+		character:303116 = { save_scope_as = qaat}
+	}
+
 	option = {	# Flee to Mount Qaldun
 		name = temujin.0002.a
 		
 		trigger_event = temujin.0003
-		add_piety=400
-		add_prestige=400
+		add_piety = 400
+		add_prestige = 400
 		
 		ai_chance = {
 			base = 2
@@ -114,56 +104,53 @@ temujin.0003 = {
 		character = scope:uduyit
 		animation = personality_vengeful
 	}
-	lower_left_portrait={
-	character = scope:borte
+	lower_left_portrait = { 
+		character = scope:borte
 		animation = personality_vengeful
-
 	}
 	
-	lower_right_portrait={
-	character = scope:qo'aqchin
+	lower_right_portrait = { 
+		character = scope:qoaqchin
 		animation = personality_vengeful
-	
 	}
 	
 	immediate = {
-	#Soon rework this to make it trigger off of either holdings or houses
+		#Soon rework this to make it trigger off of either holdings or houses
+		character:3031390 = { save_scope_as = uduyit}
+		character:172004 = { save_scope_as = borte}
+		character:194414 = { save_scope_as = qoaqchin}
+		character:303282 = { save_scope_as = sochigel}
+		character:3032555 = { save_scope_as = jamukha}
+		character:303211 = { save_scope_as = toghril}
+		scope:uduyit = {  
+			imprison = {
+				target = scope:borte
+				type = dungeon
+			}
+			imprison = {
+				target = scope:qoaqchin
+				type = dungeon
+			}
+			imprison = {
+				target = scope:sochigel
+				type = dungeon
+			}
+		}
+	}
+
+	option = {	# Flee to Mount Qaldun
+		name = temujin.0003.a 
 		
-		character:3031390={save_scope_as = uduyit}
-		character:172004={save_scope_as = borte}
-		character:194414={save_scope_as = qo'aqchin}
-		character:303282={save_scope_as = sochigel}
-		character:3032555={save_scope_as = jamukha}
-		character:303211={save_scope_as = toghril}
-		uduyit={ imprison = {
-						target = borte
-						type = dungeon
-					}
-					imprison = {
-						target = qo'aqchin
-						type = dungeon
-					}
-					imprison = {
-						target = sochigel
-						type = dungeon
-					}
-					}
+		start_war = { 
+			cb = county_conquest_cb 
+			target = scope:uduyit 
+			target_title = title:c_mumo
 		}
 		
-		
-	
-	
-	option = {	# Flee to Mount Qaldun
-		name = temujin.0003.a
-		
-			#trigger_event = temujin.0002
-		
-		start_war={
-		cb=county_conquest_cb target=uduyit target_title=c_mumo}
 		ai_chance = {
 			base = 2
 		}
-		}
-		}
+	}
+}
 		
 

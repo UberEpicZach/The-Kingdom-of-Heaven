@@ -88,9 +88,6 @@
 # 	}
 # }
 
-##########################################################
-#Malte's Poggers Decisions
-##########################################################
 
 #to be done
 merkit_raid_decision = {
@@ -110,8 +107,7 @@ merkit_raid_decision = {
 	desc = merkit_raid_decision_desc 
 	selection_tooltip =merkit_raid_decision_tooltip
 	is_shown = {
-
-		this = character:3031390#Toqto'a Beki
+		this = character:3031390 #Toqto'a Beki
 		is_independent_ruler = yes
 		character:125501 = {
 			is_alive = yes
@@ -122,7 +118,7 @@ merkit_raid_decision = {
 		}
 	}
 	is_valid = {
-		}
+	}
 	effect = {
 		add_character_flag = already_merkit_raid
 		
