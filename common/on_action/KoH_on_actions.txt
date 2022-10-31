@@ -860,23 +860,6 @@ KOH_HENRYHENRY = {
 	}	 
 }
 
-# KOH_HOLY_ORDER_GOVERNMENT = {
-# 	effect = {
-# 		investitureopinioneffect = yes
-#         if = {
-#             limit = {
-#                 scope:title = {  
-#                     NOT = { has_trait = order_member }
-#                     OR = {
-# 						has_government = holy_order_county_government
-#          	       }
-# 				}
-# 			}
-#             add_trait = order_member
-#         }
-# 	}
-# }
-
 KOH_pulse_monthly = { 
     on_actions = {
         delay = { months = 1 }

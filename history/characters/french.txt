@@ -8165,8 +8165,8 @@
 		add_spouse = 223592 #Stephanie de Milly
 		effect = {
 			add_character_modifier = { modifier = obese_modifier }
+			add_character_modifier = koh_reynald
 		}
-		add_character_modifier = koh_reynald
 	}
 	1187.7.4 = {
 		death = "1187.7.4"
@@ -13937,7 +13937,7 @@ KOH0060 = {
 	name = "Alix-AdE_le"
 	# AKA: Alix
 	female = yes
-	dynasty = house_vexin_amiens
+	dynasty_house = house_vexin_amiens
 	martial = 3
 	diplomacy = 2
 	intrigue = 8
@@ -20399,7 +20399,7 @@ KOH0060 = {
 	diplomacy = 5
 	intrigue = 5
 	stewardship = 5
-	religion = "catholic"
+	religion = "catholic" 
 	culture = french
 	trait = brave
 	trait = education_martial_2
@@ -20410,8 +20410,8 @@ KOH0060 = {
 	}
 	1312.3.15 = {
 		add_pressed_claim = title:d_athens
-		add_pressed_claim = title:c_atheniai
-		add_pressed_claim = title:c_hellas
+		#add_pressed_claim = title:c_atheniai
+		#add_pressed_claim = title:c_hellas
 		add_pressed_claim = title:c_demetrias
 	}
 	1325.1.11 = {
@@ -22588,7 +22588,7 @@ KOH0060 = {
 		add_spouse = 207661 #Thérèse de León (1080-1130)
 	}
 	1096 = {
-		dynasty = 741 # de Bourgogne
+		dynasty_house = house_bourgogne # de Bourgogne
 	}
 	1112.5.22 = {
 		death = yes
@@ -40342,7 +40342,7 @@ KOH0060 = {
 
 93505 = {
 	name = "Robert"
-	dna = 93505_robert
+	#dna = 93505_robert #No DNA?
 	dynasty = 102030
 	religion = "catholic"
 	culture = french
@@ -43582,7 +43582,7 @@ KOH0118 = {
 
 163067 = {
 	name = "Bernard"
-	dynasty = 3135
+	#dynasty = 3135
 	religion = "catholic"
 	culture = french
 	820.1.1 = {
