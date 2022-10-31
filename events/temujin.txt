@@ -1,4 +1,4 @@
-namespace = temujin
+﻿namespace = temujin
 
 temujin.0001 = {
 	type = character_event
@@ -23,8 +23,8 @@ temujin.0001 = {
 	immediate = {	
 		character:companion0007 = {
 			save_scope_as = alert
-
-		companion0007={save_scope_as = alert}
+		}
+		character:companion0007={save_scope_as = alert}
 		character:125501={save_scope_as = temujin}
 
 		}
@@ -374,34 +374,28 @@ temujin.0009 = { # The Siege of Santarem
 	trigger = {
 		this = character:125501
 		location = {
-			
-				this = province:7517
-			
+			this = province:7517
 		}
 		is_commanding_army = yes
-		army.location = {
+		scope:army.location = {
 			OR = {
-				province:7517
+			this = province:7517
 			}
 		}
 		NOT = { has_character_flag = bortereturned }
-
-		
 	}
 	immediate = {
-	add_character_flag=bortereturned
-	remove_trait=unwed
-	scope:uduyit={
-	remove_concubine=scope:borte
-	}
-	scope:borte={
-	divorce=scope:chilger
-	
-	marry=root
-	}
-	
-	prestige=500
-	piety=500
+		add_character_flag = bortereturned
+		remove_trait = unwed
+		scope:uduyit = {
+			remove_concubine = scope:borte
+		}
+		scope:borte ={
+			divorce = scope:chilger
+			marry = root
+		}
+		add_prestige = 500
+		piety = 500
 	}
 
 	option = {
@@ -421,24 +415,16 @@ temujin.00035 = {
 		character = root
 		animation = shock
 	}
-	
 
-	
 	immediate = {
-	
-					
-					
-		}
-		
-		
-	
-	
+
+	}
+
 	option = {	# Flee to Mount Qaldun
 		name = temujin.0003.a
-		
-		
-		}
-		}
+	}
+}
+
 temujin.0004 = {
 	type = character_event
 	theme = murder_scheme
@@ -458,41 +444,34 @@ temujin.0004 = {
 		character = scope:borte
 		animation = shock
 	}
-	
-	
-	
+
 	immediate = {
+		character:companion0007 = {save_scope_as = alert }
+		character:3031393 = {save_scope_as = chilger }
+	}
 		
-		companion0007={save_scope_as = alert}
-		character:3031393={save_scope_as=chilger}
-		}
-		
-		
-		
-	
-	
 	option = {	# Flee to Mount Qaldun
 		name = temujin.0004.a
-		scope:temujin={
-		add_trait=unwed
-		add_trait=calm
+		scope:temujin = {
+			add_trait = unwed
+			add_trait = calm
 		}
 		
-		scope:chilger={
-		remove_trait=unwed
-		marry=scope:borte
+		scope:chilger = {
+			remove_trait = unwed
+			marry = scope:borte
 		}
-		scope:borte={
-		release_from_prison=yes
-		make_pregnant={
-		{ father= scope:temujin number_of_children= 1 known_bastard=no }
-		}}
-		
+		scope:borte = {
+			release_from_prison = yes
+			make_pregnant = { 
+				father= scope:temujin 
+				number_of_children = 1 
+				known_bastard = no 
+			}
+		}
 		
 		ai_chance = {
 			base = 2
 		}
 	}
-
-
 }
