@@ -138,7 +138,76 @@ merkit_raid_decision = {
 
 
 
+ khamag_khan_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	major = yes
+	desc = khamag_khan_decision_desc
 
+	ai_check_interval = 120
+
+	is_shown = {
+		
+			has_culture=mongol
+		
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:khamag_khan_decision
+			}
+		}
+	}
+
+	is_valid = {
+		
+		prestige_level >= 2
+	}
+
+	is_valid_showing_failures_only = {
+		is_adult = yes
+		is_available = yes
+	}
+
+	cost = {
+		prestige = {
+			value = minor_prestige_value
+		}
+		gold = {
+			value = minor_gold_value
+		}
+	}
+
+	effect = {
+	title:d_ogrash = {
+		change_title_holder = {
+			holder = root
+			
+		}	
+	}
+		#add_trait = khamag_uniter
+		#Can only happen once
+		spawn_minor_mongol_troops_condensed_effect = yes
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:khamag_khan_decision_decision
+		}
+		
+		show_as_tooltip = {
+			add_prestige = massive_prestige_value
+			add_prestige_level = 2
+			faith = {
+				change_fervor = major_fervor_gain
+			}
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
 
 
 
