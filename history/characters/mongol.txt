@@ -225,8 +225,8 @@
 }
 303266 = {
 	name="Ambaghai" # Ambaghai Khan
-	dynasty=11100
-		dynasty_house = house_Tayichi'ud
+	#dynasty=11100
+	dynasty_house = house_Tayichi'ud
 	religion="tengri_pagan"
 	culture="mongol"
 	father=303265
@@ -239,8 +239,8 @@
 }
 3032660 = {
 	name="Qada'an-Taishi" # Qada'an Taishi
-	dynasty=11100
-		dynasty_house = house_Tayichi'ud
+	#dynasty=11100
+	dynasty_house = house_Tayichi'ud
 	religion="tengri_pagan"
 	culture="mongol"
 	father=303266
@@ -253,7 +253,7 @@
 }
 3032661 = {
 	name="Tarqutai-Kiriltuq" 
-	dynasty=11100
+	#dynasty=11100
 	dynasty_house = house_Tayichi'ud
 	religion="tengri_pagan"
 	culture="mongol"
@@ -262,22 +262,21 @@
 		birth=yes
 	}
 	1180.4.1={
-	effect={
-		imprison = {
+		effect={
+			imprison = {
 				target = character:205730
 				type = house_arrest
 			}
 		}
+	}	
+	1180.5.1={
+		effect={
+			# release = {
+			# 	target = character:205730
+			# 	type = house_arrest
+			# }
 		}
-		
-		1180.5.1={
-	effect={
-		release = {
-				target = character:205730
-				type = house_arrest
-			}
-		}
-		}
+	}
 	1206.1.1={
 		death=yes
 	}
@@ -285,15 +284,13 @@
 3032662 = {
 	name="Todo'en-Girte" # Qada'an Taishi
 	dynasty_house = house_Tayichi'ud
-	dynasty=11100
+	#dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
 	father=3032660
 	1140.1.1={
 		birth=yes
 	}
-	
-		
 	1206.1.1={
 		death=yes
 	}
@@ -301,25 +298,24 @@
 3032670 = {
 	name="Charaqa" 
 	dynasty_house = house_qongqotan
-	dynasty=11100
+	#dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"	
 	1130.1.1={
 		birth=yes
 	}
 	
-		
 	1171.1.1={
 		death={
-		death_reason = death_murder
+			death_reason = death_murder
 			killer = 3032662
-			}
+		}
 	}
 }
 3032671 = {
 	name="Monglik" 
 	dynasty_house = house_qongqotan
-	dynasty=11100
+	#dynasty=11100
 	father=3032670
 	religion="tengri_pagan"
 	culture="mongol"	
@@ -611,7 +607,7 @@
 	trait=wrathful
 	trait=deceitful
 	martial=10
-	trait=brillian_strategist
+	trait=education_martial_4
 	prowess = 12
 	diplomacy=16
 
@@ -678,9 +674,13 @@
 		birth=yes
 	}
 	1180.1.1={
-	effect={
-	add_opinion_modifier={modifier=reason_child_died years=100 target=125501}
-	}
+		effect={
+			add_opinion = {
+				modifier = reason_child_died 
+				years=100 
+				target=125501
+			}
+		}
 	}
 	1185.1.1={
 		death=yes
@@ -6170,8 +6170,8 @@
 	culture = mongol
 	father = 303139
 	trait=unwed
-	trait=depressed
-	trait=hideous
+	trait=depressed_1
+	trait=beauty_bad_3
 	trait=craven
 	1148.1.1 = {
 		birth = yes
