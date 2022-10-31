@@ -320,53 +320,53 @@ chivalry.6 = {
 	}
 }
 
-chivalry.7 = {
-	type = character_event
-	title = chivalry.7.t
-	desc = chivalry.7.d
-	theme = martial_chivalry_focus
-	left_portrait = {
-		character = root
-	}
+# chivalry.7 = {
+# 	type = character_event
+# 	title = chivalry.7.t
+# 	desc = chivalry.7.d
+# 	theme = martial_chivalry_focus
+# 	left_portrait = {
+# 		character = root
+# 	}
 	
-	option = {
-		name = chivalry.7.a
+# 	option = {
+# 		name = chivalry.7.a
 		
-		# change_chivalry_effect = { 
-		# 	Chivalry = 1
-		# }
-		custom_tooltip = add_1_chivalry_tt
+# 		# change_chivalry_effect = { 
+# 		# 	Chivalry = 1
+# 		# }
+# 		custom_tooltip = add_1_chivalry_tt
 		
-		random_list = {
-			20 = {
-				add_trait = unyielding_defender
-				add_prestige = 100
-			}
-			80 = {
-				add_prestige = 50
-			}
-		}
-	}
+# 		random_list = {
+# 			20 = {
+# 				add_trait = unyielding_defender
+# 				add_prestige = 100
+# 			}
+# 			80 = {
+# 				add_prestige = 50
+# 			}
+# 		}
+# 	}
 	
-	option = {
-		name = chivalry.7.b
+# 	option = {
+# 		name = chivalry.7.b
 		
-		# change_chivalry_effect = { 
-		# 	Chivalry = -1
-		# }
-		custom_tooltip = remove_1_chivalry_tt
+# 		# change_chivalry_effect = { 
+# 		# 	Chivalry = -1
+# 		# }
+# 		custom_tooltip = remove_1_chivalry_tt
 		
-		random_list = {
-			20 = {
-				add_trait = aggressive_attacker
-				add_dread = 30
-			}
-			80 = {
-				add_dread = 10
-			}
-		}
-	}
-}
+# 		random_list = {
+# 			20 = {
+# 				add_trait = aggressive_attacker
+# 				add_dread = 30
+# 			}
+# 			80 = {
+# 				add_dread = 10
+# 			}
+# 		}
+# 	}
+# }
 
 # chivalry.8 = {
 # 	type = character_event

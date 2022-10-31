@@ -21,12 +21,8 @@ temujin.0001 = {
 		animation = shock
 	}
 	immediate = {	
-		character:companion0007 = {
-			save_scope_as = alert
-		}
-		character:companion0007={save_scope_as = alert}
-		character:125501={save_scope_as = temujin}
-
+		character:companion0007 = { save_scope_as = alert }
+		character:125501 = { save_scope_as = temujin }
 	}
 
 	option = {	# Flee to Mount Qaldun
@@ -118,12 +114,12 @@ temujin.0003 = {
 
 	#Soon rework this to make it trigger off of either holdings or houses
 		
-		character:3031390={save_scope_as = uduyit}
-		character:172004={save_scope_as = borte}
-		character:194414={save_scope_as = qoaqchin}
-		character:303282={save_scope_as = sochigel}
-		character:3032555={save_scope_as = jamukha}
-		character:303211={save_scope_as = toghril}
+		character:3031390 = {save_scope_as = uduyit}
+		character:172004 = {save_scope_as = borte}
+		character:194414 = {save_scope_as = qoaqchin}
+		character:303282 = {save_scope_as = sochigel}
+		character:3032555 = {save_scope_as = jamukha}
+		character:303211 = {save_scope_as = toghril}
 		
 		rightfully_imprison_character_effect = {
 			TARGET = scope:borte
@@ -137,51 +133,50 @@ temujin.0003 = {
 			TARGET = scope:sochigel
 			IMPRISONER = scope:uduyit
 		}
-					
-			
-		}
 	}
 
 	option = {	# Flee to Mount Qaldun
 		name = temujin.0003.a 
 		
-
-			#trigger_event = temujin.0002
-		scope:temujin={
-		add_trait=unwed
-		hidden_effect = {
-			scope:temujin = {
-				divorce = scope:borte
-				add_trait=unwed
-				add_trait=impatient
-				
+		#trigger_event = temujin.0002
+		scope:temujin = {
+			add_trait=unwed
+			hidden_effect = {
+				scope:temujin = {
+					divorce = scope:borte
+					add_trait = unwed
+					add_trait = impatient		
+				}
+			}
+			start_war = {
+				casus_belli = vengeance_war
+				target = scope:uduyit
+				target_title = title:c_mumo
 			}
 		}
+		scope:uduyit = {
+			trigger_event = {
+				id = temujin.0004
+				days = 5
+			}
 		}
-		  start_war = {
-            casus_belli = vengeance_war
-            target = scope:uduyit
-            target_title = title:c_mumo
-        }
+		scope:toghril = {
+			trigger_event = {
+				id = temujin.0005
+				days = 5
+			}
+		}
+		scope:jamukha = {
+			trigger_event = {
+				id = temujin.0007
+		 		days = 5
+			}
+		}
 		ai_chance = {
 			base = 2
 		}
-		scope:uduyit={
-		trigger_event = temujin.0004
-		 days = 5
-		}
-		scope:toghril={
-		trigger_event = temujin.0005
-		 days = 5
-		}
-		scope:jamukha={
-		trigger_event = temujin.0007
-		 days = 5
-		}
-		}
-		}
-		
-
+	}
+}
 
 temujin.0005 = {
 	type = character_event
@@ -199,33 +194,31 @@ temujin.0005 = {
 		character = scope:temujin
 		animation = personality_vengeful
 	}
-	
-	
 
-		
-		
-	
-	
 	option = {	# Flee to Mount Qaldun
 		name = temujin.0005.a
-		scope:temujin={
-		trigger_event=temujin.0006
-		 days = 5
+		scope:temujin = {
+			trigger_event = {
+				id = temujin.0006
+		 		days = 5
+			}
 		}
 		create_alliance = {
-	target = scope:temujin
-}
-scope:temujin={
-every_character_war={add_attacker=root}
-}
+			target = scope:temujin
+			allied_through_owner = scope:temujin
+			allied_through_target = root
+		}
+		scope:temujin = {
+			every_character_war  = { add_attacker = root }
+		}
 
 		ai_chance = {
 			base = 2
 		}
 	}
 
-option = {	
-name = temujin.0005.b
+	option = {	
+		name = temujin.0005.b
 		add_presige=-2000
 
 		ai_chance = {
@@ -245,19 +238,12 @@ temujin.0006 = {
 		character = scope:toghril
 		animation = personality_vengeful
 	}
-	
-	
+
 	right_portrait = {
 		character = scope:temujin
 		animation = personality_vengeful
 	}
-	
-	
 
-		
-		
-	
-	
 	option = {	# Flee to Mount Qaldun
 		name = temujin.0006.a
 		
@@ -266,8 +252,6 @@ temujin.0006 = {
 			base = 2
 		}
 	}
-
-
 }
 
 temujin.0007 = {
@@ -286,32 +270,28 @@ temujin.0007 = {
 		character = scope:temujin
 		animation = personality_vengeful
 	}
-	
-	
-
 		
-		
-	
-	
 	option = {	# Flee to Mount Qaldun
 		name = temujin.0007.a
-		scope:temujin={
-		trigger_event=temujin.0008
-		 days = 5
+		scope:temujin = {
+			trigger_event= {
+				id = temujin.0008
+				days = 5
+			}
 		}
 		create_alliance = {
-	target = scope:temujin
-}
-scope:temujin={
-every_character_war={add_attacker=root}
-}
+			target = scope:temujin
+			allied_through_owner = scope:temujin
+			allied_through_target = root
+		}
+		scope:temujin = {
+			every_character_war = {add_attacker=root}
+		}
 
 		ai_chance = {
 			base = 2
 		}
 	}
-
-
 }
 temujin.0008 = {
 	type = character_event
@@ -329,13 +309,6 @@ temujin.0008 = {
 		character = scope:temujin
 		animation = personality_vengeful
 	}
-	
-	
-
-		
-		
-	
-	
 	option = {	# Flee to Mount Qaldun
 		name = temujin.0008.a
 		
@@ -344,9 +317,6 @@ temujin.0008 = {
 			base = 2
 		}
 	}
-
-
-
 }
 temujin.0009 = { # The Siege of Santarem
 	type = character_event
@@ -357,16 +327,28 @@ temujin.0009 = { # The Siege of Santarem
 		character = root
 		animation = war_attacker
 	}
-	immediate={
-	character:3031390={save_scope_as = uduyit}
-		character:172004={save_scope_as = borte}
-		character:194414={save_scope_as = qoaqchin}
-		character:303282={save_scope_as = sochigel}
-		character:3032555={save_scope_as = jamukha}
-		character:303211={save_scope_as = toghril}
-		character:companion0007={save_scope_as = alert}
-		character:3031393={save_scope_as=chilger}
+	immediate = {
+		character:3031390 = {save_scope_as = uduyit}
+		character:172004 = {save_scope_as = borte}
+		character:194414 = {save_scope_as = qoaqchin}
+		character:303282 = {save_scope_as = sochigel}
+		character:3032555 = {save_scope_as = jamukha}
+		character:303211 = {save_scope_as = toghril}
+		character:companion0007 = {save_scope_as = alert}
+		character:3031393 = {save_scope_as=chilger}
+
+		add_character_flag = bortereturned
+		remove_trait = unwed
+		scope:uduyit = {
+			remove_concubine = scope:borte
 		}
+		scope:borte  = {
+			divorce = scope:chilger
+			marry = root
+		}
+		add_prestige = 500
+		add_piety = 500
+	}
     override_background = { event_background = army_camp }
 	trigger = {
 		this = character:125501
@@ -376,23 +358,10 @@ temujin.0009 = { # The Siege of Santarem
 		is_commanding_army = yes
 		scope:army.location = {
 			OR = {
-			this = province:7517
+				this = province:7517
 			}
 		}
 		NOT = { has_character_flag = bortereturned }
-	}
-	immediate = {
-		add_character_flag = bortereturned
-		remove_trait = unwed
-		scope:uduyit = {
-			remove_concubine = scope:borte
-		}
-		scope:borte ={
-			divorce = scope:chilger
-			marry = root
-		}
-		add_prestige = 500
-		piety = 500
 	}
 
 	option = {

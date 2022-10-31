@@ -251,7 +251,6 @@ on_gain_HRE = {
 		scope:title = title:e_hre
 	}
 	effect = {
-		investitureopinioneffect = yes
 		title:e_hre.holder = {
 			add_trait = KOH_Emperor
 		}
@@ -971,7 +970,7 @@ KOH_events_tri_yearly_pulse = {
 		100 = chivalry.1	# Serfdom
 		100 = chivalry.2		# A Duel
 		100 = chivalry.6		# Change Fighting Stance
-		#100 = chivalry.9 		# Dragon? # THREE EVENTS NEED LOC
+		10 = chivalry.9 		# Dragon? # THREE EVENTS NEED LOC
 		100 = chivalry.11		# Adulter Knight #NEEDS LOC
 		100 = chivalry.14		# Recruit a Knight #NEEDS LOC
 		
@@ -983,9 +982,6 @@ KOH_events_tri_yearly_pulse = {
 		100 = KoH_generalgeneric.1
 		100 = KoH_generalgeneric.2
 		100 = doublet.0001
-	}
-	effect = {
-		investitureopinioneffect = yes
 	}
 }
 

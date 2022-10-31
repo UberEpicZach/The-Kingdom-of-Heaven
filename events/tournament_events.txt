@@ -272,7 +272,6 @@ KOH_tourney.1 = {  # start event
 					is_alive = yes
 					NOT = { this = scope:host }
 				}
-				add_gold = 10
 				trigger_event = {
 					id = KOH_tourney.2   #invite possible participants
 					days = 1
@@ -1306,7 +1305,7 @@ KOH_tourney.151 = {     #inform the second place and handout prize money + prest
 		name = KOH_tourney.151.a	
 		
 		create_character_memory = {
-			type = koh_tournament_second_place 
+			type = koh_tournament_second_place
 			participants = {
 				TourneyHost = scope:host
 			}
