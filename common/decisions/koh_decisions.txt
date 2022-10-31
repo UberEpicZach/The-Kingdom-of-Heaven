@@ -133,12 +133,7 @@ merkit_raid_decision = {
 	}
 }
 
-
-
-
-
-
- khamag_khan_decision = {
+khamag_khan_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
 	major = yes
 	desc = khamag_khan_decision_desc
@@ -146,9 +141,7 @@ merkit_raid_decision = {
 	ai_check_interval = 120
 
 	is_shown = {
-		
-			has_culture=mongol
-		
+		has_culture = culture:mongol
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_decisions
@@ -158,7 +151,6 @@ merkit_raid_decision = {
 	}
 
 	is_valid = {
-		
 		prestige_level >= 2
 	}
 
@@ -177,26 +169,40 @@ merkit_raid_decision = {
 	}
 
 	effect = {
-	title:d_ogrash = {
-		change_title_holder = {
-			holder = root
-			
-		}	
-	}
+		save_scope_as = decision_taker
+
+		#you actually need this entire block to change the hands of the title!, 
+		#else it will *say* you'll get the title but you won't actually get it
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		title:d_ogrash = {
+			change_title_holder = {
+				holder = scope:decision_taker
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+
 		#add_trait = khamag_uniter
 		#Can only happen once
 		spawn_minor_mongol_troops_condensed_effect = yes
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
-			target = flag:khamag_khan_decision_decision
+			target = flag:khamag_khan_decision
 		}
 		
 		show_as_tooltip = {
 			add_prestige = massive_prestige_value
 			add_prestige_level = 2
 			faith = {
-				change_fervor = major_fervor_gain
-			}
+                change_fervor = {
+                    value = major_fervor_gain
+                    desc = fervor_gain_mongol_decision
+                }
+            }
 		}
 	}
 	
