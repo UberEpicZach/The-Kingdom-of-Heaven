@@ -20,10 +20,13 @@ temujin.0001 = {
 		character = scope:alert
 		animation = shock
 	}
-		
 	immediate = {	
 		character:companion0007 = {
 			save_scope_as = alert
+
+		companion0007={save_scope_as = alert}
+		character:125501={save_scope_as = temujin}
+
 		}
 	}
 
@@ -115,42 +118,381 @@ temujin.0003 = {
 	}
 	
 	immediate = {
-		#Soon rework this to make it trigger off of either holdings or houses
-		character:3031390 = { save_scope_as = uduyit}
-		character:172004 = { save_scope_as = borte}
-		character:194414 = { save_scope_as = qoaqchin}
-		character:303282 = { save_scope_as = sochigel}
-		character:3032555 = { save_scope_as = jamukha}
-		character:303211 = { save_scope_as = toghril}
-		scope:uduyit = {  
-			imprison = {
-				target = scope:borte
-				type = dungeon
-			}
-			imprison = {
-				target = scope:qoaqchin
-				type = dungeon
-			}
-			imprison = {
-				target = scope:sochigel
-				type = dungeon
-			}
+
+	#Soon rework this to make it trigger off of either holdings or houses
+		
+		character:3031390={save_scope_as = uduyit}
+		character:172004={save_scope_as = borte}
+		character:194414={save_scope_as = qoaqchin}
+		character:303282={save_scope_as = sochigel}
+		character:3032555={save_scope_as = jamukha}
+		character:303211={save_scope_as = toghril}
+		
+		rightfully_imprison_character_effect = {
+			TARGET = scope:borte
+			IMPRISONER = scope:uduyit
+		}
+		rightfully_imprison_character_effect = {
+			TARGET = scope:qoaqchin
+			IMPRISONER = scope:uduyit
+		}
+		rightfully_imprison_character_effect = {
+			TARGET = scope:sochigel
+			IMPRISONER = scope:uduyit
+		}
+					
+			
 		}
 	}
 
 	option = {	# Flee to Mount Qaldun
 		name = temujin.0003.a 
 		
-		start_war = { 
-			cb = county_conquest_cb 
-			target = scope:uduyit 
-			target_title = title:c_mumo
+
+			#trigger_event = temujin.0002
+		scope:temujin={
+		add_trait=unwed
+		hidden_effect = {
+			scope:temujin = {
+				divorce = scope:borte
+				add_trait=unwed
+				add_trait=impatient
+				
+			}
 		}
+		}
+		  start_war = {
+            casus_belli = vengeance_war
+            target = scope:uduyit
+            target_title = title:c_mumo
+        }
+		ai_chance = {
+			base = 2
+		}
+		scope:uduyit={
+		trigger_event = temujin.0004
+		 days = 5
+		}
+		scope:toghril={
+		trigger_event = temujin.0005
+		 days = 5
+		}
+		scope:jamukha={
+		trigger_event = temujin.0007
+		 days = 5
+		}
+		}
+		}
+		
+
+
+temujin.0005 = {
+	type = character_event
+	theme = murder_scheme
+	title = temujin.0005.t
+	desc = temujin.0005.desc
+	
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	
+	
+	right_portrait = {
+		character = scope:temujin
+		animation = personality_vengeful
+	}
+	
+	
+
+		
+		
+	
+	
+	option = {	# Flee to Mount Qaldun
+		name = temujin.0005.a
+		scope:temujin={
+		trigger_event=temujin.0006
+		 days = 5
+		}
+		create_alliance = {
+	target = scope:temujin
+}
+scope:temujin={
+every_character_war={add_attacker=root}
+}
+
+		ai_chance = {
+			base = 2
+		}
+	}
+
+option = {	
+name = temujin.0005.b
+		add_presige=-2000
+
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+
+temujin.0006 = {
+	type = character_event
+	theme = alliance
+	title = temujin.0006.t
+	desc = temujin.0006.desc
+	
+	left_portrait = {
+		character = scope:toghril
+		animation = personality_vengeful
+	}
+	
+	
+	right_portrait = {
+		character = scope:temujin
+		animation = personality_vengeful
+	}
+	
+	
+
+		
+		
+	
+	
+	option = {	# Flee to Mount Qaldun
+		name = temujin.0006.a
+		
+
+		ai_chance = {
+			base = 2
+		}
+	}
+
+
+}
+
+temujin.0007 = {
+	type = character_event
+	theme = alliance
+	title = temujin.0007.t
+	desc = temujin.0007.desc
+	
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	
+	
+	right_portrait = {
+		character = scope:temujin
+		animation = personality_vengeful
+	}
+	
+	
+
+		
+		
+	
+	
+	option = {	# Flee to Mount Qaldun
+		name = temujin.0007.a
+		scope:temujin={
+		trigger_event=temujin.0008
+		 days = 5
+		}
+		create_alliance = {
+	target = scope:temujin
+}
+scope:temujin={
+every_character_war={add_attacker=root}
+}
+
+		ai_chance = {
+			base = 2
+		}
+	}
+
+
+}
+temujin.0008 = {
+	type = character_event
+	theme = alliance
+	title = temujin.0008.t
+	desc = temujin.0008.desc
+	
+	left_portrait = {
+		character = scope:jamukha
+		animation = personality_vengeful
+	}
+	
+	
+	right_portrait = {
+		character = scope:temujin
+		animation = personality_vengeful
+	}
+	
+	
+
+		
+		
+	
+	
+	option = {	# Flee to Mount Qaldun
+		name = temujin.0008.a
+		
+
+		ai_chance = {
+			base = 2
+		}
+	}
+
+
+
+}
+temujin.0009 = { # The Siege of Santarem
+	type = character_event
+	title = temujin.0009.t
+	desc = temujin.0009.desc
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+	immediate={
+	character:3031390={save_scope_as = uduyit}
+		character:172004={save_scope_as = borte}
+		character:194414={save_scope_as = qoaqchin}
+		character:303282={save_scope_as = sochigel}
+		character:3032555={save_scope_as = jamukha}
+		character:303211={save_scope_as = toghril}
+		character:companion0007={save_scope_as = alert}
+		character:3031393={save_scope_as=chilger}
+		}
+    override_background = { event_background = army_camp }
+	trigger = {
+		this = character:125501
+		location = {
+			
+				this = province:7517
+			
+		}
+		is_commanding_army = yes
+		army.location = {
+			OR = {
+				province:7517
+			}
+		}
+		NOT = { has_character_flag = bortereturned }
+
+		
+	}
+	immediate = {
+	add_character_flag=bortereturned
+	remove_trait=unwed
+	scope:uduyit={
+	remove_concubine=scope:borte
+	}
+	scope:borte={
+	divorce=scope:chilger
+	
+	marry=root
+	}
+	
+	prestige=500
+	piety=500
+	}
+
+	option = {
+		name = temujin.0009.a
+	}
+}
+temujin.00035 = {
+	type = character_event
+	theme = abduct_scheme
+	override_background = {
+		event_background = wilderness_steppe
+	}
+	title = temujin.0005.t
+	desc = temujin.0005.desc
+	
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	
+
+	
+	immediate = {
+	
+					
+					
+		}
+		
+		
+	
+	
+	option = {	# Flee to Mount Qaldun
+		name = temujin.0003.a
+		
+		
+		}
+		}
+temujin.0004 = {
+	type = character_event
+	theme = murder_scheme
+	override_background = {
+		event_background = wilderness_steppe
+	}
+	title = temujin.0004.t
+	desc = temujin.0004.desc
+	
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	
+	
+	right_portrait = {
+		character = scope:borte
+		animation = shock
+	}
+	
+	
+	
+	immediate = {
+		
+		companion0007={save_scope_as = alert}
+		character:3031393={save_scope_as=chilger}
+		}
+		
+		
+		
+	
+	
+	option = {	# Flee to Mount Qaldun
+		name = temujin.0004.a
+		scope:temujin={
+		add_trait=unwed
+		add_trait=calm
+		}
+		
+		scope:chilger={
+		remove_trait=unwed
+		marry=scope:borte
+		}
+		scope:borte={
+		release_from_prison=yes
+		make_pregnant={
+		{ father= scope:temujin number_of_children= 1 known_bastard=no }
+		}}
+		
 		
 		ai_chance = {
 			base = 2
 		}
 	}
-}
-		
 
+
+}

@@ -401,3 +401,24 @@ cleanup_mongolia_effect = {
 		}
 	}
 }
+
+spawn_minor_mongol_troops_condensed_effect = {
+	spawn_army = {
+		uses_supply = no
+		inheritable = yes
+		name = mongol_event_troops
+		levies = {
+			value = 1000
+		}
+		men_at_arms = {
+			type = horse_archers
+			stacks = 5
+		}
+		men_at_arms = {
+			type = light_horsemen
+			stacks = 5
+		}
+		location = capital_province
+		origin = capital_province
+	}
+	}
