@@ -596,8 +596,8 @@ tib_abu_yaqub_yusuf_death.11 = { # Surrounded
         }
 		trigger_event = {
 			id = tib_abu_yaqub_yusuf_death.12
+			days = { 1 2 }
 		}
-		days = { 1 2 }
 	}
 }
 tib_abu_yaqub_yusuf_death.12 = { # The Angel of Death has Arrived...
@@ -667,10 +667,10 @@ tib_abu_yaqub_yusuf_death.12 = { # The Angel of Death has Arrived...
 			add_character_flag = {
 				flag = had_event_tib_abu_yaqub_yusuf_death.12
 			}
-			trigger_event = {
-				id = tib_accension_of_yaqub.1
-				days = 3
-			}
+			# trigger_event = { #Uncomment later when next chain is done
+			# 	id = tib_accension_of_yaqub.1
+			# 	days = 3
+			# }
 		}
 
         set_player_character = character:32980

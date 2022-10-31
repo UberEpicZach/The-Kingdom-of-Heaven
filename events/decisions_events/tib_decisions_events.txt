@@ -2,11 +2,11 @@
 
 major_decisions_mosque_seville.1 = {
 	type = character_event
-	title = major_decisions_mosque_seville.t
+	title = major_decisions_mosque_seville.1.t
 	desc = {
-		desc = major_decisions_mosque_seville.desc_first
+		desc = major_decisions_mosque_seville.1.desc_first
 		first_valid = {
-			desc = major_decisions_mosque_seville.desc
+			desc = major_decisions_mosque_seville.1.desc
 		}
 	}
 	theme = stewardship
@@ -43,8 +43,8 @@ major_decisions_mosque_seville.1 = {
 	option = { # fallback in case development somehow tumbles
 		trigger = { always = no }
 		fallback = yes
-		name = major_decisions_mosque_seville.fallback
-		custom_tooltip = major_decisions_mosque_seville.fallback.tt
+		name = major_decisions_mosque_seville.1.fallback
+		custom_tooltip = major_decisions_mosque_seville.1.fallback.tt
 	}
 }
 
@@ -67,7 +67,7 @@ major_decisions_mosque_seville.2 = {
 # Recruit the engineer(s) behind the building?
 major_decisions_mosque_seville.3 = {
 	type = character_event
-	title = major_decisions_mosque_seville_3.t
+	title = major_decisions_mosque_seville.3.t
 	desc = major_decisions_mosque_seville.3.desc
 	theme = stewardship
     

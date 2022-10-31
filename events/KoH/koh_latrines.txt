@@ -357,7 +357,7 @@ KoH_erfurt_affair.4 = { #funky
 				trigger = {
 					this = scope:bossman
 				}
-				desc = KoH_erfurt_affair.4.d.bossman
+				desc = KoH_erfurt_affair.4.desc.bossman
 			}
 			triggered_desc = {
 				trigger = {
@@ -365,7 +365,7 @@ KoH_erfurt_affair.4 = { #funky
 						this = scope:bossman
 					}
 				}
-				desc = KoH_erfurt_affair.4.d
+				desc = KoH_erfurt_affair.4.desc
 			}
 		}
 	}
@@ -530,12 +530,12 @@ KoH_erfurt_affair.6012 = { # A huge argument breaks out!
 	}
 
 	lower_left_portrait = {
-		character = participant2
+		character = scope:participant1
 		animation = anger
 	}
 
 	lower_right_portrait = {
-		character = participant2
+		character = scope:participant2
 		animation = anger
 	}
 
@@ -605,9 +605,6 @@ KoH_erfurt_affair.601 = { # kills people
 				days = 4
 			}
 		}
-	}
-	option = {
-		name = KoH_erfurt_affair.601.a
 	}
 }
 
