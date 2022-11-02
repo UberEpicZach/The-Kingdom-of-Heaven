@@ -298,9 +298,11 @@
 	857.1.1 = {
 		special_building_slot = al_qarawiyyin_university
 		special_building = al_qarawiyyin_university
-		set_variable = { # To unlock the building
-			name = university
-			value = yes
+		effect = {
+			set_variable = { # To unlock the building
+				name = university
+				value = yes
+			}
 		}
 	}
 	867.1.1 = {

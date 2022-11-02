@@ -12,7 +12,7 @@
 						has_government = feudal_government
 						OR = {
 							NOT = { is_married = yes }
-							NOT = { location = scope:councillor_liege.capital_province }
+							AND = { exists = location NOT = { location = scope:councillor_liege.capital_province } }
 							age < 16
 							has_trait = incapable
 							AND = {
@@ -35,7 +35,7 @@
 							NOT = { is_married = yes }
 							age < 16
 							has_trait = incapable
-							NOT = { location = scope:councillor_liege.capital_province }
+							AND = { exists = location NOT = { location = scope:councillor_liege.capital_province } }
 							AND = {
 								is_male = yes
 								OR = {

@@ -18,10 +18,11 @@ scripted_trigger KOH_potential_vassal_trigger = {
 	}
 }
 
-# scripted_trigger koh_encouage_warholder_trigger = {
-# 	any_neighboring_top_liege_realm_owner = { this = root }
-# 	max_military_strength < root.max_military_strength
-# }
+scripted_trigger koh_encouage_warholder_trigger = {
+	any_neighboring_top_liege_realm_owner = { this = root }
+}
+
+
 
 koh_encouage_war.2601 = {
 	type = character_event
@@ -105,29 +106,29 @@ koh_encouage_war.2601 = {
 			flag = had_event_vassal_2601
 			days = 3650
 		}
-		random_claim = {
-			limit = {
-				exists = holder
-				holder = {
-					vassal_2601_holder_trigger = yes
-				}
-			}
-			weight = {
-				base = 100
-		  	  	modifier = {
-			  	  	add = {
-						value = 1
-						subtract = {
-							value = this.holder.max_military_strength
-							divide = { value = root.max_military_strength min = 1 }
-						}
-						multiply = 20
-					}
-				}
-			}
-			save_scope_as = claim_to_fight_for
-			holder = { save_scope_as = holder_of_claim }
-		}
+		# random_claim = {
+		# 	limit = {
+		# 		exists = holder
+		# 		holder = {
+		# 			koh_encouage_warholder_trigger = yes
+		# 		}
+		# 	}
+		# 	weight = {
+		# 		base = 100
+		#   	  	modifier = {
+		# 	  	  	add = {
+		# 				value = 1
+		# 				subtract = {
+		# 					value = this.holder.max_military_strength
+		# 					divide = { value = root.max_military_strength min = 1 }
+		# 				}
+		# 				multiply = 20
+		# 			}
+		# 		}
+		# 	}
+		# 	save_scope_as = claim_to_fight_for
+		# 	holder = { save_scope_as = holder_of_claim }
+		# }
 		if = {
 			limit = {
 				has_religion = religion:islam_religion
@@ -146,6 +147,7 @@ koh_encouage_war.2601 = {
 							holder.top_liege = scope:liege_target
 						}
 					}
+					save_scope_as = claim_to_fight_for
 				}
 			}
 		}
@@ -167,6 +169,7 @@ koh_encouage_war.2601 = {
 							holder.top_liege = scope:liege_target
 						}
 					}
+					save_scope_as = claim_to_fight_for
 				}
 			}
 		}
@@ -235,6 +238,7 @@ koh_encouage_war.2601 = {
 				modifier = respect_opinion
 				opinion = medium_positive_opinion
 			}
+			add_pressed_claim = scope:claim_to_fight_for
 		}
 		set_variable = {
 			name = KOH_promised_war
@@ -275,7 +279,7 @@ koh_encouage_war.2601 = {
 			}
 		}
 		add_prestige = medium_prestige_loss
-		add_piety = medium_prestige_loss
+		add_piety = medium_piety_loss
 		stress_impact = {
 			wrathful = medium_stress_impact_gain
 			ambitious = medium_stress_impact_gain

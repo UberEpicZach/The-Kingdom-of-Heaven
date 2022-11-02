@@ -401,7 +401,7 @@
 }
 
 KOHTurk1 = {
-	name = "Mu'izz_al-Din_Sanjar_Shah"
+	name = "Mu_izz_al-Din_Sanjar_Shah"
 	dynasty = 101687
 	religion = "ashari"
 	culture = "turkish"
@@ -7475,12 +7475,20 @@ KOHTurk1 = {
 	dynasty = 1040201
 	religion = "ashari"
 	culture = "turkish"
+	attributes={
+		martial=12
+		stewardship=7
+		
+		}
 	1153.1.1 = {
 		birth = "1153.1.1"
 	}
 	1169.1.1 = {
 		trait = generous
 		trait = scholar
+		trait = strategist
+		trait=overseer
+		
 		trait = education_stewardship_3
 		employer = 144141
 	}

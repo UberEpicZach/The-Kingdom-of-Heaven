@@ -1,10 +1,12 @@
-﻿major_decisions.mosque_seville = {
+﻿namespace = major_decisions_mosque_seville
+
+major_decisions_mosque_seville.1 = {
 	type = character_event
-	title = major_decisions.mosque_seville.t
+	title = major_decisions_mosque_seville.1.t
 	desc = {
-		desc = major_decisions.mosque_seville.desc_first
+		desc = major_decisions_mosque_seville.1.desc_first
 		first_valid = {
-			desc = major_decisions.mosque_seville.desc
+			desc = major_decisions_mosque_seville.1.desc
 		}
 	}
 	theme = stewardship
@@ -35,22 +37,22 @@
 				}
 			}
 		}
-		name = major_decisions.mosque_seville.b_sevilla
+		name = major_decisions_mosque_seville.1.b_sevilla
 	}
 
 	option = { # fallback in case development somehow tumbles
 		trigger = { always = no }
 		fallback = yes
-		name = major_decisions.mosque_seville.fallback
-		custom_tooltip = major_decisions.mosque_seville.fallback.tt
+		name = major_decisions_mosque_seville.1.fallback
+		custom_tooltip = major_decisions_mosque_seville.1.fallback.tt
 	}
 }
 
 #Other players informed
-major_decisions.mosque_seville_2 = {
+major_decisions_mosque_seville.2 = {
 	type = character_event
-	title = major_decisions.mosque_seville.t
-	desc = major_decisions.mosque_seville_2.desc
+	title = major_decisions_mosque_seville.1.t
+	desc = major_decisions_mosque_seville.2.desc
 	left_portrait = {
 		character = scope:founder
 		animation = personality_rational
@@ -58,15 +60,15 @@ major_decisions.mosque_seville_2 = {
 	theme = stewardship
 
 	option = {
-		name = major_decisions.mosque_seville_2.a
+		name = major_decisions_mosque_seville.2.a
 	}
 }
 
 # Recruit the engineer(s) behind the building?
-major_decisions.mosque_seville_3 = {
+major_decisions_mosque_seville.3 = {
 	type = character_event
-	title = major_decisions.mosque_seville_3.t
-	desc = major_decisions.mosque_seville_3.desc
+	title = major_decisions_mosque_seville.3.t
+	desc = major_decisions_mosque_seville.3.desc
 	theme = stewardship
     
 	immediate = {
@@ -88,7 +90,7 @@ major_decisions.mosque_seville_3 = {
 	override_background = { event_background = throne_room }
 
 	option = { #Welcome!
-		name = major_decisions.mosque_seville_3.a
+		name = major_decisions_mosque_seville.3.a
 		scope:architect = {
 			add_opinion = {
 				target = root

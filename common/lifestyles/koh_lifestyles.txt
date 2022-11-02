@@ -1,7 +1,11 @@
 ﻿assassin_lifestyle = {
 
 	is_highlighted = {
-		has_trait = education_assassin		
+		OR = {
+			has_trait = assassin_member		
+			has_faith = faith:nizari
+			has_character_flag = joined_assassins
+		}
 	}
 	is_valid = {
 		OR = {

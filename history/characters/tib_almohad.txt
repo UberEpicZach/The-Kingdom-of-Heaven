@@ -31,13 +31,13 @@
 		}
 	}
 	1121.1.1 = {
-		employer = ibn_tumart
+		employer = character:ibn_tumart
 		set_relation_friend = character:ibn_tumart
 	}
 	1144.1.1 = {
 		add_pressed_claim = title:e_maghreb
 		add_pressed_claim = title:k_maghreb
-		add_pressed_claim = title:d_tangiers
+		add_pressed_claim = title:d_rif
 		add_pressed_claim = title:d_fes
 		add_pressed_claim = title:d_alger
 		add_pressed_claim = title:k_africa
@@ -52,10 +52,10 @@
 		add_pressed_claim = title:d_badajoz
 		add_pressed_claim = title:d_sevilla
 		add_pressed_claim = title:d_granada
-		am_buff_effect = yes
+		#am_buff_effect = yes
 	}
 	1146.1.1 = {
-		remove_claim = title:d_tangiers
+		remove_claim = title:d_rif
 		remove_claim = title:d_fes
 	}
 	1147.1.1 = {
@@ -592,9 +592,9 @@ almohad_descendants_006 = { # Previously governor of Malaga in 1202, Silves and 
 	1188.1.1 = {
 		birth = yes
 	}
-	1200.1.1 = {
-		almohad1212buff_effect = yes
-	}
+	# 1200.1.1 = {
+	# 	almohad1212buff_effect = yes
+	# }
 	1240.1.1 = {
 		death = yes
 	}
@@ -751,9 +751,9 @@ almohad0023 = {
 		add_spouse = qamar_luna
 		#trait = depressed
 	}
-	1212.6.17 = {
-		almohad1212buff_effect = yes
-	}
+	# 1212.6.17 = {
+	# 	almohad1212buff_effect = yes
+	# }
 	1213.1.1 = {
 		death = {
 			death_reason = death_murder # Got poisoned by one of his ministers that was sentenced to death by the Caliph.
@@ -882,11 +882,9 @@ almohad0014 = {
 	culture = baranis
 	sexuality = heterosexual
 	father = 224000
+	disallow_random_traits = yes
 	1165.10.4 = {
 		birth = yes
-	}
-	1184.1.1 = {
-		disallow_random_traits = yes
 	}
 	1225.12.1 = {
 		death = yes
@@ -1500,7 +1498,7 @@ hababa_amor = {
 # al-Kumi/Gumi Tribe
 kumi_001 = {
 	name = "Ya__la"
-	dynasty = tribe_Kumi
+	#dynasty = tribe_Kumi
 	religion = "ashari"
 	culture = baranis
 	sexuality = heterosexual
@@ -1513,7 +1511,7 @@ kumi_001 = {
 }
 kumi_002 = {
 	name = "Alwi"
-	dynasty = tribe_Kumi
+	#dynasty = tribe_Kumi
 	religion = "ashari"
 	culture = baranis
 	sexuality = heterosexual
@@ -1527,7 +1525,7 @@ kumi_002 = {
 }
 kumi_003 = {
 	name = "_Ali"
-	dynasty = tribe_Kumi
+	#dynasty = tribe_Kumi
 	religion = "ashari"
 	culture = baranis
 	sexuality = heterosexual

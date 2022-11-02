@@ -1,4 +1,4 @@
-##############################################
+﻿##############################################
 ######BECOME AN ASSASSIN SCHEME EVENTS######
 ##############################################
 
@@ -22,7 +22,7 @@ join_assassins.2001 = {
 		}
 		desc = join_assassins.2001.end.desc
 	}
-	theme = assassin_alley
+	theme = intrigue
 	override_background = {
 		event_background = assassin_alley
 	}
@@ -203,7 +203,7 @@ join_assassins.2003 = {
 	type = character_event
 	title = join_assassins.2003.t
 	desc = join_assassins.2003.desc
-	theme = assassin_office
+	theme = intrigue
 	override_background = {
 		event_background = assassin_office
 	}
@@ -630,65 +630,54 @@ join_assassins.2004 = { #by Mathilda Bjarnehed
 
 
 
+# join_assassins.0001 = { # Sample text
+# 	type = character_event
+# 	title = join_assassins.0001
+# 	desc = join_assassins.0001.desc
+# 	theme = alley_night
+# 	override_background = {
+# 		event_background = alley_night
+# 	}
+
+# 	left_portrait = {
+# 		character = root
+# 		animation = 
+# 	}
+
+# 	trigger = {
+
+# 	}
+
+# 	immediate = {	
+# 		save_scope_as = target
+# 	}
+
+# 	option = {	# Sample text
+# 		name = example.0001.a
+# 		custom_tooltip = example.0001.a_tt # Sample text
+# 	depose = yes
+# 	set_character_faith = faith:nizari
+# 	#add_assassin_lifestyle_perk_points = 1
+# 	add_perk = assassin_1_perk
+# 		add_character_flag = joined_assassins
+# 		title:k_nizari_state.holder = {
+# 			add_courtier = scope:target
+# 		}
+
+# 	}
+
+# 	option = {	# Sample text
+# 		name = example.0001.b
+# 		custom_tooltip = example.0001.b_tt # Sample text
+# 		set_character_faith = faith:nizari
+# 		add_perk = assassin_1_perk
+# 		add_character_flag = joined_assassins
+# 	}
 
 
-
-
-
-
-
-
-
-
-
-join_assassins.0001 = { # Sample text
-	type = character_event
-	title = join_assassins.0001
-	desc = join_assassins.0001.desc
-	theme = alley_night
-	override_background = {
-		event_background = alley_night
-	}
-
-	left_portrait = {
-		character = root
-		animation = 
-	}
-
-	trigger = {
-
-	}
-
-	immediate = {	
-		save_scope_as = target
-	}
-
-	option = {	# Sample text
-		name = example.0001.a
-		custom_tooltip = example.0001.a_tt # Sample text
-	depose = yes
-	set_character_faith = faith:nizari
-	#add_assassin_lifestyle_perk_points = 1
-	add_perk = assassin_1_perk
-		add_character_flag = joined_assassins
-		title:k_nizari_state.holder = {
-			add_courtier = scope:target
-		}
-
-	}
-
-	option = {	# Sample text
-		name = example.0001.b
-		custom_tooltip = example.0001.b_tt # Sample text
-		set_character_faith = faith:nizari
-		add_perk = assassin_1_perk
-		add_character_flag = joined_assassins
-	}
-
-
-	option = {	# Sample text
-		name = example.0001.c
-		custom_tooltip = example.0001.c_tt # Sample text
+# 	option = {	# Sample text
+# 		name = example.0001.c
+# 		custom_tooltip = example.0001.c_tt # Sample text
 		
-	}
-}
+# 	}
+# }

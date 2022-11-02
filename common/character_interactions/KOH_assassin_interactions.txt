@@ -77,7 +77,7 @@ become_assassin_interaction = {
 	#AI will do
 	
 	ai_potential = {
-		is_witch_trigger = yes
+		is_assassin_trigger = yes
 	}
 	
 	ai_target_quick_trigger = {
@@ -85,14 +85,11 @@ become_assassin_interaction = {
 	}
 
 	ai_targets = {
-		ai_recipients = family
+		ai_recipients = peer_vassals
 		max = 5
 	}
 	ai_targets = {
-		ai_recipients = guests
-		ai_recipients = courtiers
-		ai_recipients = liege
-		ai_recipients = vassals
+		ai_recipients = neighboring_rulers
 		chance = 0.2
 	}
 	

@@ -1,50 +1,4 @@
-﻿# host_diet_decision = {
-# 	picture = "gfx/interface/illustrations/decisions/decision_misc.dds"
-# 	ai_check_interval = 60
-
-# 	cost = { gold = standard_activity_cost }
-
-# 	#cooldown = { days = standard_feast_cooldown_time }
-
-# 	desc = host_feast_decision_opening_desc
-# 	selection_tooltip = host_feast_decision_tooltip
-
-# 	is_shown = {
-# 		is_landed = yes
-# 		highest_held_title_tier > tier_barony
-# 		top_liege = {
-# 			has_primary_title = title:e_hre
-# 		}
-# 	}
-
-# 	is_valid_showing_failures_only = {
-# 		is_available_adult = yes
-# 	}
-
-# 	effect = {
-# 		title:d_mainz.holder.capital_province = {
-# 			spawn_activity = {
-# 				type = activity_diet
-# 				owner = root
-# 			}
-# 		}
-# 		custom_tooltip = host_feast_decision_desc_vassals
-# 		if = {
-# 			limit = {
-# 				is_independent_ruler = no
-# 			}
-# 			custom_tooltip = host_feast_decision_desc_liege_opinion
-# 		}
-# 	}
-	
-# 	ai_potential = {
-# 	}
-
-# 	ai_will_do = {
-# 	}
-# }
-
-# GvG_Investiture_decision = {
+﻿# GvG_Investiture_decision = {
 # 	picture = "gfx/interface/illustrations/decisions/decision_misc.dds"
 # 	ai_check_interval = 60
 
@@ -88,9 +42,6 @@
 # 	}
 # }
 
-##########################################################
-#Malte's Poggers Decisions
-##########################################################
 
 #to be done
 merkit_raid_decision = {
@@ -110,8 +61,7 @@ merkit_raid_decision = {
 	desc = merkit_raid_decision_desc 
 	selection_tooltip =merkit_raid_decision_tooltip
 	is_shown = {
-
-		this = character:3031390#Toqto'a Beki
+		this = character:3031390 #Toqto'a Beki
 		is_independent_ruler = yes
 		character:125501 = {
 			is_alive = yes
@@ -122,7 +72,7 @@ merkit_raid_decision = {
 		}
 	}
 	is_valid = {
-		}
+	}
 	effect = {
 		add_character_flag = already_merkit_raid
 		
@@ -137,12 +87,87 @@ merkit_raid_decision = {
 	}
 }
 
+khamag_khan_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	major = yes
+	desc = khamag_khan_decision_desc
 
+	ai_check_interval = 120
 
+	is_shown = {
+		has_culture = culture:mongol
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:khamag_khan_decision
+			}
+		}
+	}
 
+	is_valid = {
+		prestige_level >= 2
+	}
 
+	is_valid_showing_failures_only = {
+		is_adult = yes
+		is_available = yes
+	}
 
+	cost = {
+		prestige = {
+			value = minor_prestige_value
+		}
+		gold = {
+			value = minor_gold_value
+		}
+	}
 
+	effect = {
+		save_scope_as = decision_taker
+
+		#you actually need this entire block to change the hands of the title!, 
+		#else it will *say* you'll get the title but you won't actually get it
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = no
+		}
+		title:d_ogrash = {
+			change_title_holder = {
+				holder = scope:decision_taker
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+
+		#add_trait = khamag_uniter
+		#Can only happen once
+		spawn_minor_mongol_troops_condensed_effect = yes
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:khamag_khan_decision
+		}
+		
+		show_as_tooltip = {
+			add_prestige = massive_prestige_value
+			add_prestige_level = 2
+			faith = {
+                change_fervor = {
+                    value = major_fervor_gain
+                    desc = fervor_gain_mongol_decision
+                }
+            }
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
 
 
 

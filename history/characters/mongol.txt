@@ -225,8 +225,8 @@
 }
 303266 = {
 	name="Ambaghai" # Ambaghai Khan
-	dynasty=11100
-		dynasty_house = house_Tayichi'ud
+	#dynasty=11100
+	dynasty_house = house_Tayichi'ud
 	religion="tengri_pagan"
 	culture="mongol"
 	father=303265
@@ -238,9 +238,9 @@
 	}
 }
 3032660 = {
-	name="Qada_an_Taishi" # Qada'an Taishi
-	dynasty=11100
-		dynasty_house = house_Tayichi'ud
+	name="Qada'an-Taishi" # Qada'an Taishi
+	#dynasty=11100
+	dynasty_house = house_Tayichi'ud
 	religion="tengri_pagan"
 	culture="mongol"
 	father=303266
@@ -253,7 +253,7 @@
 }
 3032661 = {
 	name="Tarqutai-Kiriltuq" 
-	dynasty=11100
+	#dynasty=11100
 	dynasty_house = house_Tayichi'ud
 	religion="tengri_pagan"
 	culture="mongol"
@@ -262,38 +262,35 @@
 		birth=yes
 	}
 	1180.4.1={
-	effect={
-		imprison = {
+		effect={
+			imprison = {
 				target = character:205730
 				type = house_arrest
 			}
 		}
+	}	
+	1180.5.1={
+		effect={
+			# release = {
+			# 	target = character:205730
+			# 	type = house_arrest
+			# }
 		}
-		
-		1180.5.1={
-	effect={
-		release = {
-				target = character:205730
-				type = house_arrest
-			}
-		}
-		}
+	}
 	1206.1.1={
 		death=yes
 	}
 }
 3032662 = {
-	name="Todo-en-Girte" # Qada'an Taishi
+	name="Todo'en-Girte" # Qada'an Taishi
 	dynasty_house = house_Tayichi'ud
-	dynasty=11100
+	#dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
 	father=3032660
 	1140.1.1={
 		birth=yes
 	}
-	
-		
 	1206.1.1={
 		death=yes
 	}
@@ -301,25 +298,24 @@
 3032670 = {
 	name="Charaqa" 
 	dynasty_house = house_qongqotan
-	dynasty=11100
+	#dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"	
 	1130.1.1={
 		birth=yes
 	}
 	
-		
 	1171.1.1={
 		death={
-		death_reason = death_murder
+			death_reason = death_murder
 			killer = 3032662
-			}
+		}
 	}
 }
 3032671 = {
 	name="Monglik" 
 	dynasty_house = house_qongqotan
-	dynasty=11100
+	#dynasty=11100
 	father=3032670
 	religion="tengri_pagan"
 	culture="mongol"	
@@ -378,7 +374,7 @@
 }
 #Borjigin Gen20 (sons of Semsochule)
 303270 = {
-	name="Ardi_Barlas" # Nephew of Khabul Khan
+	name="Ardi Barlas" # Nephew of Khabul Khan
 	dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
@@ -391,7 +387,7 @@
 	}
 }
 303271 = {
-	name="Angg_Goraan" # Nephew of Khabul Khan
+	name="Angg Goraan" # Nephew of Khabul Khan
 	dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
@@ -432,7 +428,7 @@
 	}
 }
 303274 = {
-	name="Hutugtu_Monhor"
+	name="Hutugtu Monhor"
 	dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
@@ -498,7 +494,7 @@
 }
 #Borjigin Gen21 (children of Bartan)
 303281 = {
-	name="Mengitu_Hiyan" # Uncle of Genghis Khan
+	name="Mengitü Hiyan" # Uncle of Genghis Khan
 	dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
@@ -511,7 +507,7 @@
 	}
 }
 303280 = {
-	name="Negun_Taiji" # Uncle of Genghis Khan
+	name="Negun Taiji" # Uncle of Genghis Khan
 	dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
@@ -553,7 +549,7 @@
 	name="Jariradai" # Jaradan
 	religion="tengri_pagan"
 	culture="mongol"
-	dynasty=Jadaran
+		dynasty=Jadaran
 	mother=3032550
 	882.1.2 = {
 		birth=yes
@@ -563,7 +559,7 @@
 	}
 }
 3032552 = {
-	name="Tuguudei" # Bodonchar Munkhag
+	name="Tugu'udei" # Bodonchar Munkhag
 	religion="tengri_pagan"
 	culture="mongol"
 		dynasty=Jadaran
@@ -576,7 +572,7 @@
 	}
 }
 3032553 = {
-	name="Tuguudei" # Bodonchar Munkhag
+	name="Tugu'udei" # Bodonchar Munkhag
 	religion="tengri_pagan"
 	culture="mongol"
 		dynasty=Jadaran
@@ -589,7 +585,7 @@
 	}
 }
 3032554 = {
-	name="Qara_qada_an" # Bodonchar Munkhag
+	name="Qara'qada-an" # Bodonchar Munkhag
 	religion="tengri_pagan"
 	culture="mongol"
 		dynasty=Jadaran
@@ -611,7 +607,7 @@
 	trait=wrathful
 	trait=deceitful
 	martial=10
-	trait=brillian_strategist
+	trait=education_martial_4
 	prowess = 12
 	diplomacy=16
 
@@ -623,9 +619,9 @@
 	}
 	1201.1.2 = {
 		death={
-			death_reason = death_murder
+		death_reason = death_murder
 			killer = 125501
-		}
+			}
 	}
 }
 #Yesügei and his sons (except Temujin)
@@ -678,9 +674,13 @@
 		birth=yes
 	}
 	1180.1.1={
-	effect={
-	add_opinion_modifier={modifier=reason_child_died years=100 target=125501}
-	}
+		effect={
+			add_opinion = {
+				modifier = reason_child_died 
+				years=100 
+				target=125501
+			}
+		}
 	}
 	1185.1.1={
 		death=yes
@@ -713,15 +713,15 @@
 		birth = yes
 	}
 	1180.1.2 = {
-		death={
-			death_reason = death_murder
+				death={
+		death_reason = death_murder
 			killer = 125501
-		}
+			}
 	}
-}
+	}
 
 303284 = {
-	name="BelgU_tei"
+	name="Belgütei"
 	dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
@@ -753,7 +753,7 @@
 	}
 }
 303286 = {
-	name="TemU_ge"
+	name="Temüge"
 	dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
@@ -767,7 +767,7 @@
 	}
 }
 303287 = {
-	name="TemU_len"
+	name="Temülen"
 	female=yes
 	dynasty=11100
 	religion="tengri_pagan"
@@ -5781,7 +5781,7 @@
 	}
 }
 303116 = {
-	name = "Qaatai-darmala"
+	name = "Qa'atai-darmala"
 	dynasty = 2001144	#Mergid
 	religion = tengri_pagan
 	culture = mongol
@@ -6118,7 +6118,7 @@
 }
 
 3031390 = {
-	name = "Toqto_a"
+	name = "Toqto'a"
 	dynasty = 2001144	#Mergid
 	religion = tengri_pagan
 	culture = mongol
@@ -6164,11 +6164,15 @@
 	}
 }
 3031393 = {
-	name = "Chilger-boko"
+	name = "Chilger-bökö"
 	dynasty = 2001144	#Mergid
 	religion = tengri_pagan
 	culture = mongol
 	father = 303139
+	trait=unwed
+	trait=depressed_1
+	trait=beauty_bad_3
+	trait=craven
 	1148.1.1 = {
 		birth = yes
 	}
@@ -6710,7 +6714,7 @@ companion0002= {
 	}
 }
 companion0003= {
-	name="Chilaun"
+	name="Chila'un"
 	dynasty=Suldus
 	religion="tengri_pagan"
 	culture="mongol"
@@ -6727,7 +6731,7 @@ companion0003= {
 	}
 }
 companion0004= {
-	name="Qadaan"
+	name="Qada'an"
 	dynasty=Suldus
 	religion="tengri_pagan"
 	culture="mongol"
@@ -6767,7 +6771,7 @@ companion0005= {
 	}
 }
 companion0006= {
-	name="Boorchu"
+	name="Bo'orchu"
 	religion="tengri_pagan"
 	culture="mongol"
 	father=companion0005
@@ -6792,7 +6796,7 @@ companion0006= {
 	}
 }
 companion0007= {
-	name="Qoaqchin"
+	name="Qo'aqchin"
 	religion="tengri_pagan"
 	culture="mongol"
 

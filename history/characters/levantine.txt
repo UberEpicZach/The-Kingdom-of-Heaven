@@ -5617,8 +5617,9 @@
 		birth = "1150.1.1"
 	}
 	1212.1.1 = {
-		death_type = death_execution # Failed his Banu Ghaniya ally, so the emir Yahya executed him
-		killer = 32977
+		death = {
+			death_reason = death_execution # Failed his Banu Ghaniya ally, so the emir Yahya executed him
+		}
 	}
 }
 
