@@ -1812,6 +1812,7 @@
 	trait = arbitrary
 	trait = chaste
 	trait = education_learning_2
+	sexuality = homosexual
 	father = 212600
 	mother = 212601
 	1150.1.1 = {
@@ -3273,7 +3274,7 @@
 		birth = "808.1.1"
 	}
 	874.6.1 = {
-		add_trait = incapable #Stroke, became speechless and paralyzed
+		trait = incapable #Stroke, became speechless and paralyzed
 	}
 	876.1.31 = {
 		death = "876.1.31"
@@ -9062,7 +9063,7 @@
 	#	employer = 20257
 	#}
 	1081.1.1 = {
-		add_trait = blademaster_1	#Add adult trait
+		trait = blademaster_1	#Add adult trait
 	}
 	1096.1.1 = {
 		death = "1096.1.1"
@@ -9087,7 +9088,7 @@
 		employer = 70622
 	}
 	1082.1.1 = {
-		add_trait = hunter_1	#Add adult trait
+		trait = hunter_1	#Add adult trait
 	}
 	1115.11.20 = {
 		death = "1115.11.20"
@@ -10109,6 +10110,8 @@ bavarian0003 = {
 	}
 	995.1.1 = {
 		death = yes
+		trait = saint
+		give_nickname = "nick_saint"
 	}
 }
 
@@ -11101,7 +11104,6 @@ KOH_BAVARIAN059 = {
 	religion = "catholic"
 	culture = "bavarian"
 	trait = devoted
-	trait = saint
 	trait = pilgrim
 	trait = theologian
 	trait = zealous
@@ -11110,6 +11112,8 @@ KOH_BAVARIAN059 = {
 	}
 	1139.1.1 = {
 		death = yes
+		trait = saint
+		give_nickname = "nick_saint"
 	}
 }
 
@@ -11318,12 +11322,13 @@ KOH_BAVARIAN073 = {
 	culture = "franconian"
 	trait = devoted
 	trait = zealous
-	trait = saint
 	1090.1.1 = {
 		birth = yes
 	}
 	1164.1.1 = {
 		death = yes
+		trait = saint
+		give_nickname = "nick_saint"
 	}
 }
 

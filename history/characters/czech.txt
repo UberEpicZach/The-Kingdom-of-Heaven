@@ -10,8 +10,9 @@
 	culture = "czech"
 	trait = diligent
 	trait = just
-	trait = ambitious
 	trait = calm
+	sexuality = asexual
+	trait = infertile
 	trait = education_diplomacy_3
 	father = 221522
 	mother = 218512
@@ -69,9 +70,21 @@
 	mother = 212852
 	1141.1.1 = {
 		birth = "1141.1.1"
+		effect = {
+			set_relation_friend = { reason = friend_generic_history target = character:212501 }  #his godfather
+		}
 	}
 	1157.1.1 = {
 		add_spouse = 219512
+	}
+	1182.1.1 = {
+		make_tributary = {
+            TYPE = tributary_permanent
+            SUZERAIN = character:212850
+            TRIBUTARY = character:212057
+		}
+		set_relation_potential_rival = character:212057
+		add_pressed_claim = title:d_moravia
 	}
 	1189.3.25 = {
 		death = "1189.3.25"
@@ -474,6 +487,7 @@
 	religion = "catholic"
 	culture = "czech"
 	trait = arrogant
+	sexuality = homosexual
 	trait = education_diplomacy_1
 	father = 212868
 	1165.1.1 = {
@@ -847,8 +861,8 @@
 		religion = "catholic"
 
 	}
-	890.1.1 = {
-		death = "890.1.1"
+	889.1.1 = {
+		death = "889.1.1"
 	}
 }
 
@@ -951,6 +965,8 @@
 			death_reason = death_murder
 			killer = 508
 		}
+		trait = saint
+		give_nickname = "nick_good_king"
 	}
 }
 
@@ -1069,9 +1085,18 @@
 	mother = 511
 	965.1.1 = {
 		birth = "965.1.1"
+		give_nickname = nick_the_red
+	}
+	1002.1.1 = {
+		trait = torturer
+	}
+	1004.1.1 = {
+		trait = blind
 	}
 	1037.1.1 = {
-		death = "1037.1.1"
+		death = {
+			death_reason = death_dungeon_passive
+		}
 	}
 }
 
@@ -1086,12 +1111,17 @@
 	religion = "catholic"
 	culture = "czech"
 	trait = honest
-	trait = disfigured
 	trait = education_martial_2
 	father = 510
 	mother = 513
 	978.1.1 = {
 		birth = "978.1.1"
+	}
+	1002.1.1 = {
+		trait = eunuch
+	}
+	1012.1.1 = {
+		trait = blind
 	}
 	1035.1.1 = {
 		death = "1035.1.1"
@@ -1117,8 +1147,10 @@
 	1001.1.1 = {
 		add_spouse = 517
 	}
-	1034.1.1 = {
-		death = "1034.1.1"
+	1034.11.9 = {
+		death = {
+			death_reason = death_murder
+		}
 	}
 }
 
@@ -1158,6 +1190,7 @@
 	}
 	1030.1.10 = {
 		add_spouse = 1437
+		give_nickname = nick_achilles
 	}
 	1055.1.10 = {
 		death = "1055.1.10"
@@ -1217,7 +1250,9 @@
 		add_spouse = 765
 	}
 	1092.1.14 = {
-		death = "1092.1.14"
+		death = {
+			death_reason = death_hunting_accident
+		}
 	}
 }
 
@@ -1634,7 +1669,9 @@
 		birth = "1067.1.1"
 	}
 	1109.9.21 = {
-		death = "1109.9.21"
+		death = {
+			death_reason = death_murder
+		}
 	}
 }
 
@@ -2950,6 +2987,8 @@
 	
 	997.4.23 = {
 		death = "997.4.23"
+		trait = saint
+		give_nickname = "nick_saint"
 	}
 }
 
