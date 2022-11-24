@@ -3212,6 +3212,9 @@
 			add_character_flag = has_scripted_appearance
 		}
 	}
+	1181 = {
+		set_relation_potential_rival = { reason = rival_historical target = character:205506 } #son stole her family lands
+	}
 	1190.1.2 = {
 		death = "1190.1.2"
 	}
@@ -3230,10 +3233,9 @@
 	culture = french
 	trait = ambitious
 	trait = intellect_good_1
-	trait = brave
-	trait = honest
 	trait = just
 	trait = cynical
+	trait = education_learning_4
 	sexuality = bisexual
 	father = 205500 #Louis VII le Jeune
 	mother = 205505 #Adèle de Champagne
@@ -3404,8 +3406,11 @@
 	}
 	#Henri I le Libéral (1164.1.1)
 	#Monastere in 1197
-	1197 = {
-		add_trait =  devoted
+	1181 = {
+		set_relation_rival = { reason = rival_historical target = character:205506 } #brother stole her son's fiancee
+	}
+	1183 = {
+		trait =  devoted
 	}
 	1198.1.1 = {
 		death = "1198.1.1"
@@ -5020,7 +5025,7 @@
 		birth = "1168.1.2"
 	}
 	1170.1.1 = {
-		add_trait = devoted
+		trait = devoted
 	}
 	1218.1.2 = {
 		death = "1218.1.2"
@@ -9350,7 +9355,7 @@
 		birth = "1107.1.2"
 	}
 	1129.1.1 = {
-		add_trait = devoted
+		trait = devoted
 	}
 	1154.1.2 = {
 		death = "1154.1.2"
@@ -23388,7 +23393,7 @@ KOH0060 = {
 		birth = "1143.1.1"
 	}
 	1175.1.1 = {
-			add_trait = devoted
+			trait = devoted
 	}
 	1186.3.3 = {
 		death = "1186.3.3"
@@ -26237,7 +26242,7 @@ KOH0060 = {
 		birth = "859.1.1"
 	}
 	880.1.1. = {
-		add_trait = unyielding_defender
+		trait = unyielding_defender
 	}
 	897.1.1 = {
 		death = "897.1.1"
@@ -27781,7 +27786,7 @@ KOH0060 = {
 	}
 	1098.1.2 = {
 		death = "1098.1.2"
-		give_nickname = nick_the_saint
+		give_nickname = "nick_saint"
 		trait = saint
 	}
 }
@@ -33416,8 +33421,8 @@ KOH0060 = {
 		add_spouse = KOH0019
 	}
 	1183.11.1 = {
-		add_trait = depressed_1
-		add_trait = unwed
+		trait = depressed_1
+		trait = unwed
 	}
 	1185.1.2 = {
 		add_spouse = 215560
@@ -33445,7 +33450,7 @@ KOH0060 = {
 		}
 	}
 	1170.1.1 = {
-		add_trait = devoted
+		trait = devoted
 	}
 	1184.12.12 = {
 		death = "1184.12.12"
@@ -48034,7 +48039,7 @@ KOH0019 = {
 		add_spouse = 223570
 	}
 	1183.9.1 = {
-		add_trait = depressed_1
+		trait = depressed_1
 	}
  	1183.11.1 = {
 		death = {

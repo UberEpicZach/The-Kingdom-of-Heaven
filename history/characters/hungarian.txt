@@ -985,9 +985,12 @@
 	diplomacy = 6
 	intrigue = 8
 	stewardship = 7
+	trait = diligent
+	trait = stubborn
+	trait = callous
 	religion = "catholic"
 	culture = "hungarian"
-	trait = education_stewardship_2
+	trait = education_stewardship_3
 	father = 219510
 	mother = 222573
 	1148.1.1 = {
@@ -2677,7 +2680,7 @@
 	diplomacy = 6
 	intrigue = 8
 	stewardship = 4
-	religion = "catholic"
+	religion = "magyar_pagan"
 	culture = "hungarian"
 	trait = chaste
 	trait = education_intrigue_2
@@ -2685,6 +2688,9 @@
 	mother = 753
 	969.1.1 = {
 		birth = "969.1.1"
+	}
+	985.1.1 = {
+		religion = "catholic"
 	}
 	987.1.1 = {
 		death = "987.1.1"
@@ -2699,10 +2705,11 @@
 	diplomacy = 8
 	intrigue = 7
 	stewardship = 5
-	religion = "catholic"
+	religion = "magyar_pagan"
 	culture = "hungarian"
-	trait = calm
+	trait = sadistic
 	trait = cynical
+	trait = wrathful
 	trait = education_martial_2
 	father = 460
 	mother = 483
@@ -2717,6 +2724,7 @@
 	}
 	985.1.1 = {
 		add_spouse = 759
+		religion = "catholic"
 	}
 	997.2.1 = {
 		death = "997.2.1"
@@ -5643,14 +5651,14 @@
 }
 
 482 = {
-	name = "IstvA_n"
-	# AKA: Istvan
+	name = "Vajk"
+	# AKA: St. Stephen of Hungary
 	dynasty = 708
 	martial = 6
 	diplomacy = 5
 	intrigue = 6
 	stewardship = 8
-	religion = "catholic"
+	religion = "magyar_pagan"
 	culture = "hungarian"
 	trait = just
 	trait = calm
@@ -5661,12 +5669,17 @@
 	975.1.1 = {
 		birth = "975.1.1"
 	}
+	985.1.1 = {
+		religion = "catholic"
+		name = "IstvA_n"
+	}
 	996.1.1 = {
 		add_spouse = 1297
 	}
 	1038.8.15 = {
 		death = "1038.8.15"
-		give_nickname = nick_the_saint
+		trait = saint
+		give_nickname = "nick_saint"
 	}
 }
 
@@ -5797,7 +5810,8 @@
 	}
 	1031.11.2 = {
 		death = "1031.11.2"
-		give_nickname = nick_the_saint
+		give_nickname = nick_saint
+		trait = saint
 	}
 }
 
@@ -5809,7 +5823,7 @@
 	diplomacy = 4
 	intrigue = 5
 	stewardship = 7
-	religion = "catholic"
+	religion = "magyar_pagan"
 	culture = "hungarian"
 	trait = arbitrary
 	trait = education_diplomacy_1
@@ -5817,6 +5831,9 @@
 	mother = 753
 	971.1.1 = {
 		birth = "971.1.1"
+	}
+	985.1.1 = {
+		religion = "catholic"
 	}
 	1023.1.1 = {
 		death = "1023.1.1"
@@ -5856,7 +5873,7 @@
 	diplomacy = 7
 	intrigue = 3
 	stewardship = 3
-	religion = "catholic"
+	religion = "magyar_pagan"
 	culture = "hungarian"
 	trait = ill
 	trait = diligent
@@ -5865,6 +5882,9 @@
 	mother = 753
 	973.1.1 = {
 		birth = "973.1.1"
+	}
+	985.1.1 = {
+		religion = "catholic"
 	}
 	1000.1.1 = {
 		death = "1000.1.1"
@@ -5956,7 +5976,7 @@
 	name = "Predslava"
 	# AKA: Predeslava
 	female = yes
-	religion = "pagan"
+	religion = "magyar_pagan"
 	culture = "hungarian"
 	942.1.2 = {
 		birth = "942.1.2"
