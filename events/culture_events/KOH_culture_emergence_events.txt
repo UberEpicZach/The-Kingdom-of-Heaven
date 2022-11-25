@@ -1,0 +1,185 @@
+﻿# Event for your culture to diverge
+KOH_culture_emergence_events.0002 = {
+	type = character_event
+	title = culture_emergence_events.0002.t
+	desc = culture_emergence_events.0002.desc
+	theme = realm
+	override_background = {
+		event_background = terrain_scope
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	
+	trigger = {
+		has_dlc_feature = diverge_culture
+		is_ai = no
+		exists = capital_county
+		capital_county = {
+			culture = root.culture
+		}
+		primary_title = { # We don't want 'Caliphal' or 'Papal' culture appearing :D
+			any_in_de_jure_hierarchy = {
+				tier = tier_county
+			}
+		}
+		culture = {
+			culture_age >= culture_divergence_cooldown
+			#culture_number_of_counties >= 15
+		}
+		NOT = {
+			culture = {
+				has_variable = recent_event_divergence
+			}
+		}
+		any_sub_realm_county = {
+			count >= 3
+			culture = root.culture
+		}
+		NOT = {
+			culture = {
+				any_culture_county = {
+					percent >= 0.5
+					holder = {
+						OR = {
+							this = root
+							is_vassal_or_below_of = root
+						}
+					}
+				}
+			}
+		}
+		NOT = {
+			faith.religious_head = root
+		}
+	}
+	
+	weight_multiplier = {
+		base = 1
+		modifier = {
+			add = 1
+			root.culture = {
+				culture_number_of_counties >= 70
+			}
+		}
+		modifier = {
+			add = 1
+			root.culture = {
+				culture_number_of_counties >= 60
+			}
+		}
+		modifier = {
+			add = 1
+			root.culture = {
+				culture_number_of_counties >= 50
+			}
+		}
+		modifier = {
+			add = 1
+			root.culture = {
+				culture_number_of_counties >= 40
+			}
+		}
+		modifier = {
+			add = 1
+			root.culture = {
+				culture_number_of_counties >= 30
+			}
+		}
+		modifier = {
+			add = 30
+			KOH_fp2_character_involved_in_struggle_trigger = yes
+		}
+		modifier = {
+			add = 1
+			has_game_rule = relaxed_divergent_culture_ai_frequency
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				has_game_rule = relaxed_divergent_culture_ai_frequency
+			}
+			root = {
+				is_independent_ruler = no
+				top_liege.culture = root.culture
+			}
+		}
+		modifier = {
+			factor = 0.2
+			is_ai = yes
+			has_game_rule = less_common_divergent_culture_ai_frequency
+		}
+		modifier = { # Covered by the Norse Culture Split
+			factor = 0
+			root = {
+				culture = culture:norse
+				capital_county = {
+					title_province = {
+						OR = {
+							geographical_region = custom_danish
+							geographical_region = custom_norwegian
+							geographical_region = custom_fennoscandia
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		root = {
+			save_scope_as = diverger
+		}
+		capital_county = {
+			save_scope_as = capital_county_scope
+		}
+		capital_county.culture = {
+			save_scope_as = divergence_offer_culture
+		}
+	}
+
+	option = {
+		name = culture_emergence_events.0002.a
+		
+		flavor = new_divergent_culture_tt
+		
+		custom_tooltip = culture_emergence_events.0002.new_divergence
+		custom_tooltip = culture_emergence_events.vassals
+		hidden_effect = {
+			create_divergent_culture_with_side_effects_excluding_cost = yes
+		}
+		
+		culture = {
+			set_variable = {
+				name = recent_event_divergence
+				#value = true
+				days = 400
+			}
+		}
+		
+		# For testing
+		#add_to_global_variable_list = { name = diverged_cultures_from_events target = root.culture }
+		#if = {
+		#	limit = {
+		#		any_in_global_list = {
+		#			variable = diverged_cultures_from_events # Error suppression
+		#		}
+		#	}
+		#}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = culture_emergence_events.0002.b
+		
+		add_dread = medium_dread_gain
+		
+		ai_chance = {
+			base = 0
+		}
+	}
+}
