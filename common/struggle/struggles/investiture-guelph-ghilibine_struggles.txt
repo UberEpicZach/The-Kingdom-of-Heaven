@@ -21,6 +21,10 @@
 	on_start = {
 		# Starting Events
 		trigger_event = { on_action = fp2_guelph_ghilibine_struggle_starting_events }
+
+		activate_struggle_catalyst = {
+			catalyst = catalyst_starting_progress
+		}
 	}
 
 	on_change_phase = {

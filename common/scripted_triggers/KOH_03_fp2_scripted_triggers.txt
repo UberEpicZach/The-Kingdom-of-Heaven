@@ -1,4 +1,64 @@
 ﻿
+#OVERWRITE 
+war_declarer_needs_hook_on_liege = {
+	scope:actor = {
+		trigger_if = {
+			limit = {
+				is_independent_ruler = no
+				any_character_struggle = {
+					involvement = involved
+					is_struggle_type = struggle_guelph_ghilibine
+				}
+				liege = scope:recipient.liege
+				NOT = { liege = scope:recipient }
+				liege = { has_realm_law_flag = vassal_internal_wars_banned }
+				liege = {
+					OR = {
+						any_character_struggle = {
+							involvement = involved
+							is_struggle_type = struggle_guelph_ghilibine
+						}
+						any_character_struggle = {
+							involvement = interloper
+							is_struggle_type = struggle_guelph_ghilibine
+						}
+					}
+				}
+				NOT = {
+					vassal_contract_has_flag = vassal_contract_war_override
+				}
+			}
+			always = no
+		}
+		trigger_if = {
+			limit = {
+				is_independent_ruler = no
+				liege = scope:recipient.liege
+				NOT = { liege = scope:recipient }
+				liege = { has_realm_law_flag = vassal_internal_wars_banned }
+				NOT = {
+					vassal_contract_has_flag = vassal_contract_war_override
+				}
+			}
+			always = yes
+		}
+		trigger_else_if = {
+			limit = {
+				is_independent_ruler = no
+				NOT = { liege = scope:recipient }
+				liege = { has_realm_law_flag = vassal_all_wars_banned }
+				NOT = {
+					vassal_contract_has_flag = vassal_contract_war_override
+				}
+			}
+			always = yes
+		}
+		trigger_else = {
+			always = no
+		}
+	}
+}
+
 ##################################################
 # General Triggers
 
