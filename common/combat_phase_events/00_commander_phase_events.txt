@@ -312,36 +312,32 @@ commander_killed = {
 			LEADER = scope:combat_side.side_primary_participant
 			LOCATION = scope:combat_side.combat.location
 		}
-		#Guelph Struggle
-		if = {
-			limit = {
-				AND = {
-					OR = {
-						KOH_fp2_character_involved_in_struggle_trigger = yes
-						KOH_fp2_character_interloper_in_struggle_trigger = yes
-					}
-					# exists = scope:enemy_knight
-					# scope:enemy_knight = {
-					# 	OR = {
-					# 		KOH_fp2_character_involved_in_struggle_trigger = yes
-					# 		KOH_fp2_character_interloper_in_struggle_trigger = yes
-					# 	}
-					# }
-				}
-			}
-		
-			every_living_character = {
-				death = {
-					death_reason = death_battle
-				}
-			}
+		# #Guelph Struggle
+		# if = {
+		# 	limit = {
+		# 		AND = {
+		# 			OR = {
+		# 				scope:army_owner = {
+		# 					KOH_fp2_character_involved_in_struggle_trigger = yes
+		# 					KOH_fp2_character_interloper_in_struggle_trigger = yes
+		# 				}
+		# 			}
+		# 			# exists = scope:enemy_knight
+		# 			# scope:enemy_knight = {
+		# 			# 	OR = {
+		# 			# 		KOH_fp2_character_involved_in_struggle_trigger = yes
+		# 			# 		KOH_fp2_character_interloper_in_struggle_trigger = yes
+		# 			# 	}
+		# 			# }
+		# 		}
+		# 	}
 
-			every_character_struggle = {
-				activate_struggle_catalyst = {
-					catalyst = catalyst_killed_in_battle
-				}
-			}
-		}
+		# 	every_character_struggle = {
+		# 		activate_struggle_catalyst = {
+		# 			catalyst = catalyst_killed_in_battle
+		# 		}
+		# 	}
+		# }
 		if = {
 			limit = {
 				scope:combat_side.enemy_side = {

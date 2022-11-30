@@ -641,7 +641,7 @@ knight_killed = {
 	type = knight
 
 	chance = {
-		base = 30
+		base = 1030
 		modifier = {
 			factor = { # Prowess directly reduces chance of injury/death
 				value = 30 # Value at which 'immortality' happens
@@ -762,6 +762,7 @@ knight_killed = {
 				every_character_struggle = {
 					activate_struggle_catalyst = {
 						catalyst = catalyst_killed_in_battle
+						character = scope:enemy_knight
 					}
 				}
 				death = {
@@ -792,35 +793,29 @@ knight_killed = {
 				death_reason = death_battle
 			}
 		}
-		# 		#Guelph Struggle
-		# if = {
-		# 	limit = {
-		# 		AND = {
-		# 			OR = {
-		# 				KOH_fp2_character_involved_in_struggle_trigger = yes
-		# 				KOH_fp2_character_interloper_in_struggle_trigger = yes
-		# 			}
-		# 			# exists = scope:enemy_knight
-		# 			# scope:enemy_knight = {
-		# 			# 	OR = {
-		# 			# 		KOH_fp2_character_involved_in_struggle_trigger = yes
-		# 			# 		KOH_fp2_character_interloper_in_struggle_trigger = yes
-		# 			# 	}
-		# 			# }
-		# 		}
-		# 	}
-		
-		# 	every_living_character = {
-		# 		death = {
-		# 			death_reason = death_battle
-		# 		}
-		# 	}
+		if = {
+			limit = {
+				AND = {
+					OR = {
+						scope:combat_side.side_primary_participant.liege_or_court_owner = {
+							KOH_fp2_character_involved_in_struggle_trigger = yes
+							KOH_fp2_character_interloper_in_struggle_trigger = yes
+						}
+					}
+					OR = {
+						scope:combat_side.enemy_side.side_primary_participant.liege_or_court_owner = {
+							KOH_fp2_character_involved_in_struggle_trigger = yes
+							KOH_fp2_character_interloper_in_struggle_trigger = yes
+						}
+					}
+				}
+			}
 
-		# 	every_character_struggle = {
-		# 		activate_struggle_catalyst = {
-		# 			catalyst = catalyst_killed_in_battle
-		# 		}
-		# 	}
-		# }
+			every_character_struggle = {
+				activate_struggle_catalyst = {
+					catalyst = catalyst_killed_in_battle
+				}
+			}
+		}
 	}
 }

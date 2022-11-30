@@ -446,9 +446,9 @@
 			future_phases = {
 				struggle_guelph_phase_hostile1 = {
 					catalysts = {
-					# 	catalyst_passing_of_time = minimal_struggle_catalyst_gain
+					#	catalyst_passing_of_time = minimal_struggle_catalyst_gain
 					# 	catalyst_gain_claim_on_title = minor_struggle_catalyst_gain
-					catalyst_gift_independent_ruler = minor_struggle_catalyst_gain # AI done
+						catalyst_gift_independent_ruler = minor_struggle_catalyst_gain # AI done
 					# 	catalyst_win_any_war_within_the_region = minor_struggle_catalyst_gain # Good
 					# 	catalyst_new_building_in_castle = minor_struggle_catalyst_gain # Good
 					# 	catalyst_becomes_rival_with_involved = major_struggle_catalyst_gain # Good
@@ -622,11 +622,11 @@
 			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_conciliation_bg.dds"
 
 			future_phases = {
-				struggle_guelph_phase_peace2 = {
+				struggle_guelph_phase_peace2 = { #towards Peace
 					catalysts = {
-					# 	catalyst_passing_of_time = minimal_struggle_catalyst_gain
+					 	catalyst_passing_of_time = minimal_struggle_catalyst_gain
 					# 	catalyst_gain_claim_on_title = minor_struggle_catalyst_gain
-					catalyst_gift_independent_ruler = minor_struggle_catalyst_gain # AI done
+						catalyst_gift_independent_ruler = minor_struggle_catalyst_gain # AI done
 					# 	catalyst_win_any_war_within_the_region = minor_struggle_catalyst_gain # Good
 					# 	catalyst_new_building_in_castle = minor_struggle_catalyst_gain # Good
 					# 	catalyst_becomes_rival_with_involved = major_struggle_catalyst_gain # Good
@@ -638,8 +638,8 @@
 					# 	catalyst_reveal_secret_important = major_struggle_catalyst_gain
 					# 	catalyst_broke_truce_against_important_character = massive_struggle_catalyst_gain # Cannot motivate the AI to do that without code support
 					}
-				}
-				struggle_guelph_phase_neutral = {
+				} 
+				struggle_guelph_phase_neutral = { #Towards Hostility!
 					catalysts = {
 					# 	catalyst_passing_of_time = minimal_struggle_catalyst_gain
 					# 	catalyst_gain_claim_on_title = minor_struggle_catalyst_gain
@@ -832,10 +832,10 @@
 			background = "gfx/interface/illustrations/struggle_backgrounds/struggle_conciliation_bg.dds"
 
 			future_phases = {
-				struggle_guelph_phase_peace2 = {
+				struggle_guelph_phase_peace1 = {
 					catalysts = {
 						catalyst_gift_independent_ruler = minor_struggle_catalyst_gain # AI done
-						# catalyst_passing_of_time = minimal_struggle_catalyst_gain
+						catalyst_passing_of_time = minimal_struggle_catalyst_gain
 						# catalyst_gain_claim_on_title = minor_struggle_catalyst_gain
 						# catalyst_win_any_war_within_the_region = minor_struggle_catalyst_gain # Good
 						# catalyst_new_building_in_castle = minor_struggle_catalyst_gain # Good
