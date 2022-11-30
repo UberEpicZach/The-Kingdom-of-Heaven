@@ -2,6 +2,7 @@
 	start_date = 1184.1.1
 	is_playable = yes
 	default = yes
+	group = bm_group_1184 
 	recommended = yes
 	# King Baudouin IV of Jerusalem ID: 223523
 	character = {
@@ -42,7 +43,7 @@
 bm_kings = { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
 	start_date = 1184.1.1
 	is_playable = yes
-	
+	group = bm_group_1184 
 
 	# King Philippe II ID: 205506
 	character = {
@@ -78,6 +79,38 @@ bm_kings = { #The initial map for bookmarks is set in interface\bookmarks. This 
 		position = { 350 375 }
 		
 		animation = marshal
+
+		character = {
+			name = "bookmark_richard_father"
+			history_id = 204500
+			relation = "BOOKMARK_RELATION_FATHER"
+			dynasty = 106
+			dynasty_splendor_level = 3
+			type = male
+			birth = 1133.3.5
+			title = k_england
+			government = feudal_government
+			culture = english
+			religion = catholic
+
+			animation = personality_bold
+		}
+
+		character = {
+			name = "bookmark_richard_brother"
+			history_id = 204514
+			relation = "BOOKMARK_RELATION_BROTHER"
+			dynasty = 106
+			dynasty_splendor_level = 3
+			type = male
+			birth = 1166.12.24
+			title = d_lancaster
+			government = feudal_government
+			culture = english
+			religion = catholic
+
+			animation = scheme
+		}
 	}
 	# Frederick Barbarossa  ID: 212501
 	character = {
@@ -118,7 +151,7 @@ bm_kings = { #The initial map for bookmarks is set in interface\bookmarks. This 
 bm_byzantine = {
 	start_date = 1184.1.1
 	is_playable = yes
-	
+	group = bm_group_1184 
 	# Andronikos komnenos ID: 215529
 	character = {
 		name = "bookmark_byzantine" # Emperor Andronikos 
@@ -170,6 +203,20 @@ bm_byzantine = {
 		position = { 1200 250 }
 		
 		animation = personality_callous
+		
+		character = { # Ermesinda Gatónez, wife, ID: 73759
+			name = "bookmark_georgia_alania" 
+			relation = "BOOKMARK_RELATION_SPOUSE_MALE"
+			dynasty = 507
+			type = male
+			birth = 1155.1.1
+			title = k_alania
+			culture = alanian
+			religion = orthodox
+			history_id = 466516
+			
+			animation = personality_bold
+		}
 	}
 	# hungary ID: 219500
 	character = {
@@ -193,7 +240,7 @@ bm_byzantine = {
 bm_reconquista = {
 	start_date = 1184.1.1
 	is_playable = yes
-	
+	group = bm_group_1184 
 	# Alfonso VIII 'el Noble ID: 215529
 	character = {
 		name = "bookmark_castille" # Alfonso
