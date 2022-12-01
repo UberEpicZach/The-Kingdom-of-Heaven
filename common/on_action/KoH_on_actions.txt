@@ -439,6 +439,42 @@ KOH_ON_START = {
 				modifier = Heathly
 				years = 5
 			}
+			if = {
+				limit = {
+					exits = global_var:CFP_is_loaded
+				}
+				hidden_effect_new_artifact = {
+					set_artifact_rarity_illustrious = yes
+					character:140 = {
+						save_scope_as = owner
+						create_artifact = {
+							name = artifact_cfp_bayeux_tapestry_name
+							description = placeholder # Will be regenerated in the post-creation effects
+							template = cfp_bayeux_tapestry_template
+							type = book
+							visuals = cfp_bayeux_tapestry
+							wealth = scope:wealth
+							quality = scope:quality
+							creator = character:148
+							modifier = cfp_bayeux_tapestry_modifier
+							save_scope_as = newly_created_artifact
+							decaying = no
+							history = {
+								location = b_london.title_province
+							}
+						}
+					}
+					scope:newly_created_artifact = {
+						set_artifact_description = artifact_cfp_bayeux_tapestry_description
+						set_variable = { name = historical_unique_artifact value = yes }
+						save_scope_as = epic
+
+						set_owner = {
+							target = character:204500
+						}
+					}
+				}
+			}
 		}
 		# #The Treaty of Falaise
 		# character:204500 = {
