@@ -326,7 +326,9 @@
 	trait=loyal
 	trait=diligent
 	stewardship=15
-		
+		1184.1.1={
+		employer=3032555
+		}
 	1251.1.1={
 		death= yes
 		}
@@ -406,14 +408,60 @@
 	dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
+	dynasty_house = house_jurkin
 	father=303268
 	1110.1.1={
 		birth=yes
 	}
-	1129.1.1={
+	1140.1.1={
 		death=yes
 	}
 }
+3032723 = {
+	name="Sacha-Beqi"
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"
+	father=303268
+	trait=deceitful
+	trait=disloyal
+	dynasty_house = house_jurkin
+	1135.1.1={
+		birth=yes
+		
+	}
+	1184.1.1={
+	employer=3032555
+	
+	}
+	1197.1.1={
+		death=yes
+	}
+}
+3032724 = {
+	name="Taichu"
+	dynasty=11100
+	dynasty_house = house_jurkin
+	religion="tengri_pagan"
+	culture="mongol"
+	father=303268
+	trait=deceitful
+	trait=disloyal
+	
+	1138.1.1={
+		birth=yes
+		
+	}
+	1184.1.1={
+	employer=3032555
+	
+	}
+	1197.1.1={
+		death=yes
+	}
+}
+
+
 303273 = {
 	name="Bartan" # Grandfather of Genghis Khan
 	dynasty=11100
@@ -618,6 +666,27 @@
 		set_relation_friend = { reason = friend_generic_history target = character:125501 } 
 	}
 	1201.1.2 = {
+		death={
+		death_reason = death_murder
+			killer = 125501
+			}
+	}
+}
+3032556 = {
+	name="Taichar" # THAT Jamukha
+	religion="tengri_pagan"
+	culture="mongol"
+	dynasty=Jadaran
+	father=3032554
+	trait=greedy
+	trait=envious
+	trait=impatient
+
+	1160.1.2 = {
+		birth=yes
+	}
+	
+	1186.1.2 = {
 		death={
 		death_reason = death_murder
 			killer = 125501
@@ -4393,6 +4462,9 @@
 	}
 	1182.1.1={
 	employer = 3032661
+	}
+	1184.1.1={
+	employer = 125501
 	}
 	1235.1.1 = {
 		death = "1235.1.1"
