@@ -7,7 +7,7 @@ war_declarer_needs_hook_on_liege = {
 				is_independent_ruler = no
 				any_character_struggle = {
 					involvement = involved
-					is_struggle_type = struggle_guelph_ghilibine
+					is_struggle_type = struggle_guelph_ghibelline
 				}
 				liege = scope:recipient.liege
 				NOT = { liege = scope:recipient }
@@ -16,11 +16,11 @@ war_declarer_needs_hook_on_liege = {
 					OR = {
 						any_character_struggle = {
 							involvement = involved
-							is_struggle_type = struggle_guelph_ghilibine
+							is_struggle_type = struggle_guelph_ghibelline
 						}
 						any_character_struggle = {
 							involvement = interloper
-							is_struggle_type = struggle_guelph_ghilibine
+							is_struggle_type = struggle_guelph_ghibelline
 						}
 					}
 				}
@@ -67,7 +67,7 @@ KOH_fp2_should_use_iberian_graphics_trigger = {
 	culture = { has_building_gfx = iberian_building_gfx }
 }
  
-KOH_fp2_character_any_involvement_struggle_guelph_ghilibine_trigger = {
+KOH_fp2_character_any_involvement_struggle_guelph_ghibelline_trigger = {
 	has_fp2_dlc_trigger = yes
 	OR = {
 		KOH_fp2_character_involved_in_struggle_trigger = yes
@@ -79,7 +79,7 @@ KOH_fp2_character_involved_in_struggle_trigger = {
 	has_fp2_dlc_trigger = yes
 	any_character_struggle = {
 		involvement = involved
-		is_struggle_type = struggle_guelph_ghilibine
+		is_struggle_type = struggle_guelph_ghibelline
 	}
 }
 
@@ -87,13 +87,13 @@ KOH_fp2_character_interloper_in_struggle_trigger = {
 	has_fp2_dlc_trigger = yes
 	any_character_struggle = {
 		involvement = interloper
-		is_struggle_type = struggle_guelph_ghilibine
+		is_struggle_type = struggle_guelph_ghibelline
 	}
 }
 
 KOH_fp2_character_uninvolved_in_struggle_trigger = {
 	has_fp2_dlc_trigger = yes
-	exists = struggle:struggle_guelph_ghilibine
+	exists = struggle:struggle_guelph_ghibelline
 	KOH_fp2_character_interloper_in_struggle_trigger = no
 	KOH_fp2_character_involved_in_struggle_trigger = no
 }
@@ -331,7 +331,7 @@ KOH_fp2_struggle_ending_percent_iberia_trigger = {
 
 # Checks no more than half of Iberia is owned by another
 KOH_fp2_struggle_ending_other_percent_iberia_trigger = {
-	struggle:struggle_guelph_ghilibine = {
+	struggle:struggle_guelph_ghibelline = {
 		NOT = {
 			any_involved_ruler = {
 				exists = primary_title # Max figured out that is_independent_ruler causes errors if you are unlanded
@@ -591,12 +591,12 @@ KOH_fp2_struggle_secure_iberian_foothold_outsider_kingdom_trigger = {
 }
 
 KOH_fp2_struggle_iberian_reclamation_should_vassalize_trigger = {
-	any_character_struggle = { is_struggle_type = struggle_guelph_ghilibine }
+	any_character_struggle = { is_struggle_type = struggle_guelph_ghibelline }
 	any_held_title = { tier < scope:attacker.primary_title.tier }
 	any_realm_county = {
 		count = all
 		duchy = { is_in_list = target_titles }
-		any_county_struggle = { is_struggle_type = struggle_guelph_ghilibine }
+		any_county_struggle = { is_struggle_type = struggle_guelph_ghibelline }
 	}
 }
 
@@ -609,33 +609,33 @@ KOH_fp2_iberian_reclamation_vassalize_iberian_trigger = {
 	holder = {
 		any_character_struggle = {
 			involvement = involved
-			is_struggle_type = struggle_guelph_ghilibine
+			is_struggle_type = struggle_guelph_ghibelline
 		}
 		liege = scope:defender
 		NOT = { this = scope:defender }
 		capital_county = {
-			any_county_struggle = { is_struggle_type = struggle_guelph_ghilibine }
+			any_county_struggle = { is_struggle_type = struggle_guelph_ghibelline }
 		}
 	}
 }
 
 KOH_fp2_iberian_reclamation_involved_county_trigger = {
 	any_realm_county = {
-		any_county_struggle = { is_struggle_type = struggle_guelph_ghilibine }
+		any_county_struggle = { is_struggle_type = struggle_guelph_ghibelline }
 	}
 }
 
 KOH_fp2_iberian_reclamation_vassalize_vassal_trigger = {
 	primary_title.tier >= tier_county
 	primary_title.tier < scope:attacker.primary_title.tier
-	any_character_struggle = { is_struggle_type = struggle_guelph_ghilibine }
+	any_character_struggle = { is_struggle_type = struggle_guelph_ghibelline }
 	capital_county = {
 		duchy = { is_in_list = target_titles }
 	}
 	any_sub_realm_county = {
 		count = all
 		duchy = { is_in_list = target_titles }
-		any_county_struggle = { is_struggle_type = struggle_guelph_ghilibine }
+		any_county_struggle = { is_struggle_type = struggle_guelph_ghibelline }
 	}
 }
 

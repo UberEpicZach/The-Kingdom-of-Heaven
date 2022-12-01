@@ -1,4 +1,4 @@
-﻿namespace = KOH_KOH_fp2_struggle
+﻿namespace = KOH_fp2_struggle
 
 ### SYSTEM EVENTS #################################################################
 ## # Parameter Events
@@ -39,8 +39,8 @@ KOH_fp2_struggle.0003 = {
 	scope = struggle
 
 	trigger = { # Should not need this, but, redundancy check! -h
-		exists = struggle:struggle_guelph_ghilibine
-		struggle:struggle_guelph_ghilibine = { any_involved_ruler = { count > 0 } } # For when the conflict is ongoing but nobody is left to fight it
+		exists = struggle:struggle_guelph_ghibelline
+		struggle:struggle_guelph_ghibelline = { any_involved_ruler = { count > 0 } } # For when the conflict is ongoing but nobody is left to fight it
 	}
 
 	immediate = {
@@ -55,7 +55,7 @@ KOH_fp2_struggle.0003 = {
 		}
 
 		# Go through the characters to distribute them between the potential transitions
-		struggle:struggle_guelph_ghilibine = {
+		struggle:struggle_guelph_ghibelline = {
 			every_involved_ruler = {
 				limit = { is_alive = yes }
 				#######################
@@ -452,7 +452,7 @@ KOH_fp2_struggle.0501 = { # Fullscreen Intro Event
 				trigger = {
 					any_character_struggle = {
 						involvement = involved
-						is_struggle_type = struggle_guelph_ghilibine
+						is_struggle_type = struggle_guelph_ghibelline
 					}
 				}
 				desc = KOH_fp2_struggle.0501.desc.involved
@@ -461,7 +461,7 @@ KOH_fp2_struggle.0501 = { # Fullscreen Intro Event
 				trigger = {
 					any_character_struggle = {
 						involvement = interloper
-						is_struggle_type = struggle_guelph_ghilibine
+						is_struggle_type = struggle_guelph_ghibelline
 					}
 				}
 				desc = KOH_fp2_struggle.0501.desc.interloper
@@ -472,7 +472,7 @@ KOH_fp2_struggle.0501 = { # Fullscreen Intro Event
 	trigger = { # we need to prevent this from firing for all players when a new player joins in MP
 		is_ai = no
 		NOT = { has_character_flag = KOH_fp2_struggle_intro_event_flag }
-		KOH_fp2_character_any_involvement_struggle_guelph_ghilibine_trigger = yes
+		KOH_fp2_character_any_involvement_struggle_guelph_ghibelline_trigger = yes
  	} 
 	override_background = { event_background = fp2_fullscreen_intro }
 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_animate" }
@@ -482,11 +482,11 @@ KOH_fp2_struggle.0501 = { # Fullscreen Intro Event
  			gui = "event_window_widget_struggle_info"
  			container = "dynamic_content_widget"
  			controller = struggle_info
- 			setup_scope = { struggle:struggle_guelph_ghilibine = { save_scope_as = struggle } }
+ 			setup_scope = { struggle:struggle_guelph_ghibelline = { save_scope_as = struggle } }
 		}
 	}
 	immediate = {
-		play_music_cue = "mx_Struggle_Opening"
+		play_music_cue = "KOH_To_Messina"
 		add_character_flag = KOH_fp2_struggle_intro_event_flag
 		save_scope_value_as = {
 			name = start
@@ -497,6 +497,14 @@ KOH_fp2_struggle.0501 = { # Fullscreen Intro Event
 		name = KOH_fp2_struggle.0501.a
 		clicksound = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_start_select"
 	}
+	option = {
+		name = KOH_fp2_struggle.0501.b
+		clicksound = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_start_select"
+	}
+	option = {
+		name = KOH_fp2_struggle.0501.c
+		clicksound = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_start_select"
+	}
 }
 
 ###################################
@@ -504,575 +512,575 @@ KOH_fp2_struggle.0501 = { # Fullscreen Intro Event
 # by Joe Parkin
 # 0900-0912
 ###################################
-KOH_fp2_struggle.0900 = { # Hostility
-	type = fullscreen_event
-	title = KOH_fp2_struggle.0900.t
-	desc = {
-		first_valid = {
-		    triggered_desc = {
-		        trigger = {
-					culture = {
-						OR = {
-							this = culture:basque
-							any_parent_culture = { this = culture:basque }
-							has_cultural_pillar = language_basque
-						}
-					}
-		        }
-		        desc = KOH_fp2_struggle.0900.opening.basque
-		    }
-		    triggered_desc = {
-		        trigger = {
-					culture = {
-						OR = {
-							this = culture:andalusian
-							any_parent_culture = { this = culture:andalusian }
-							has_cultural_pillar = language_arabic
-						}
-					}
-		        }
-		        desc = KOH_fp2_struggle.0900.opening.andalusian
-		    }
-		    triggered_desc = {
-		        trigger = {
-					culture = { has_cultural_pillar = heritage_iberian }
-		        }
-		        desc = KOH_fp2_struggle.0900.opening.iberian
-		    }
-		    desc = KOH_fp2_struggle.0900.opening
-		}
-		desc = KOH_fp2_struggle.0900.desc
-	}
-	theme = court
-	override_background = { event_background = fp2_fullscreen_hostility }
-	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
+# KOH_fp2_struggle.0900 = { # Hostility
+# 	type = fullscreen_event
+# 	title = KOH_fp2_struggle.0900.t
+# 	desc = {
+# 		first_valid = {
+# 		    triggered_desc = {
+# 		        trigger = {
+# 					culture = {
+# 						OR = {
+# 							this = culture:basque
+# 							any_parent_culture = { this = culture:basque }
+# 							has_cultural_pillar = language_basque
+# 						}
+# 					}
+# 		        }
+# 		        desc = KOH_fp2_struggle.0900.opening.basque
+# 		    }
+# 		    triggered_desc = {
+# 		        trigger = {
+# 					culture = {
+# 						OR = {
+# 							this = culture:andalusian
+# 							any_parent_culture = { this = culture:andalusian }
+# 							has_cultural_pillar = language_arabic
+# 						}
+# 					}
+# 		        }
+# 		        desc = KOH_fp2_struggle.0900.opening.andalusian
+# 		    }
+# 		    triggered_desc = {
+# 		        trigger = {
+# 					culture = { has_cultural_pillar = heritage_iberian }
+# 		        }
+# 		        desc = KOH_fp2_struggle.0900.opening.iberian
+# 		    }
+# 		    desc = KOH_fp2_struggle.0900.opening
+# 		}
+# 		desc = KOH_fp2_struggle.0900.desc
+# 	}
+# 	theme = court
+# 	override_background = { event_background = fp2_fullscreen_hostility }
+# 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
 
-	immediate = {
-		# Add all involved rulers to a list, for ping event
-		play_music_cue = "mx_Struggle_ending_hostility"
-		fp2_stuggle_ending_involved_list_effect = yes
-		give_nickname = nick_the_conquistador
-		dynasty = { add_dynasty_prestige = 10000 }
-	}
+# 	immediate = {
+# 		# Add all involved rulers to a list, for ping event
+# 		play_music_cue = "mx_Struggle_ending_hostility"
+# 		fp2_stuggle_ending_involved_list_effect = yes
+# 		give_nickname = nick_the_conquistador
+# 		dynasty = { add_dynasty_prestige = 10000 }
+# 	}
 
-	# Faith victory
-	option = {
-		name = KOH_fp2_struggle.0900.a
-		if = {
-			limit = { exists = house }
-			house = {
-				add_house_modifier = {
-					modifier = KOH_fp2_struggle_hostility_house_faith_modifier
-				}
-			}
-		}
-		# Piety reward for faith victory
-		add_piety = 1000
-		custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
-		custom_tooltip = KOH_fp2_struggle_hostility_holy_cb_tt
-		custom_tooltip = KOH_fp2_struggle_hostility_conversion_holy_tt
-		stress_impact = {
-			cynical = medium_stress_impact_gain
-		}
-		ai_chance = {
-			base = 100
-			ai_value_modifier = {
-				ai_zeal = 1
-			}
-		}
-	}
+# 	# Faith victory
+# 	option = {
+# 		name = KOH_fp2_struggle.0900.a
+# 		if = {
+# 			limit = { exists = house }
+# 			# house = {
+# 			# 	add_house_modifier = {
+# 			# 		modifier = KOH_fp2_struggle_hostility_house_faith_modifier
+# 			# 	}
+# 			# }
+# 		}
+# 		# Piety reward for faith victory
+# 		add_piety = 1000
+# 		custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
+# 		custom_tooltip = KOH_fp2_struggle_hostility_holy_cb_tt
+# 		custom_tooltip = KOH_fp2_struggle_hostility_conversion_holy_tt
+# 		stress_impact = {
+# 			cynical = medium_stress_impact_gain
+# 		}
+# 		ai_chance = {
+# 			base = 100
+# 			ai_value_modifier = {
+# 				ai_zeal = 1
+# 			}
+# 		}
+# 	}
 
-	# Culture victory
-	option = {
-		name = KOH_fp2_struggle.0900.b
-		# Renown reward for culture victory
-		if = {
-			limit = { exists = house }
-			dynasty = { add_dynasty_prestige = 1000 }
-			house = {
-				add_house_modifier = {
-					modifier = KOH_fp2_struggle_hostility_house_culture_modifier
-				}
-			}
-		}
-		custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
-		custom_tooltip = KOH_fp2_struggle_hostility_culture_cb_tt
-		custom_tooltip = KOH_fp2_struggle_hostility_conversion_culture_tt
-		# All Involved cultures lose acceptance of each other
-		custom_tooltip = {
-			text = KOH_fp2_struggle_hostility_culture_tt
-			KOH_fp2_struggle_hostility_cultural_acceptance_effect = yes
-		}
-		stress_impact = {
-			humble = medium_stress_impact_gain
-		}
-		ai_chance = {
-			base = 100
-		}
-	}
+# 	# Culture victory
+# 	option = {
+# 		name = KOH_fp2_struggle.0900.b
+# 		# Renown reward for culture victory
+# 		if = {
+# 			limit = { exists = house }
+# 			dynasty = { add_dynasty_prestige = 1000 }
+# 			house = {
+# 				# add_house_modifier = {
+# 				# 	modifier = KOH_fp2_struggle_hostility_house_culture_modifier
+# 				# }
+# 			}
+# 		}
+# 		custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
+# 		custom_tooltip = KOH_fp2_struggle_hostility_culture_cb_tt
+# 		custom_tooltip = KOH_fp2_struggle_hostility_conversion_culture_tt
+# 		# All Involved cultures lose acceptance of each other
+# 		custom_tooltip = {
+# 			text = KOH_fp2_struggle_hostility_culture_tt
+# 			KOH_fp2_struggle_hostility_cultural_acceptance_effect = yes
+# 		}
+# 		stress_impact = {
+# 			humble = medium_stress_impact_gain
+# 		}
+# 		ai_chance = {
+# 			base = 100
+# 		}
+# 	}
 
-	# Combined victory
-	option = {
-		name = KOH_fp2_struggle.0900.c
-		# Reduced renown and piety rewards for combined
-		if = {
-			limit = { exists = house }
-			house = {
-				add_house_modifier = {
-					modifier = KOH_fp2_struggle_hostility_house_combined_modifier
-					years = 200
-				}
-			}
-		}
-		add_prestige = 3000
-		custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
-		custom_tooltip = KOH_fp2_struggle_hostility_holy_cb_tt
-		custom_tooltip = culture_parameter_cb_lower_piety_level_requirement
-		custom_tooltip = KOH_fp2_struggle_hostility_culture_cb_tt
-		custom_tooltip = KOH_fp2_struggle_hostility_conversion_holy_tt
-		custom_tooltip = KOH_fp2_struggle_hostility_conversion_culture_tt
-		# All Involved cultures lose acceptance of each other
-		custom_tooltip = {
-			text = KOH_fp2_struggle_hostility_culture_large_tt 
-			KOH_fp2_struggle_hostility_cultural_acceptance_large_effect = yes
-		}
-		stress_impact = {
-			humble = medium_stress_impact_gain
-			cynical = medium_stress_impact_gain
-		}
-		ai_chance = {
-			base = 100
-			ai_value_modifier = {
-				ai_zeal = 2
-				ai_boldness = 1
-			}
-		}
-	}
+# 	# Combined victory
+# 	option = {
+# 		name = KOH_fp2_struggle.0900.c
+# 		# Reduced renown and piety rewards for combined
+# 		if = {
+# 			limit = { exists = house }
+# 			house = {
+# 				# add_house_modifier = {
+# 				# 	modifier = KOH_fp2_struggle_hostility_house_combined_modifier
+# 				# 	years = 200
+# 				# }
+# 			}
+# 		}
+# 		add_prestige = 3000
+# 		custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
+# 		custom_tooltip = KOH_fp2_struggle_hostility_holy_cb_tt
+# 		custom_tooltip = culture_parameter_cb_lower_piety_level_requirement
+# 		custom_tooltip = KOH_fp2_struggle_hostility_culture_cb_tt
+# 		custom_tooltip = KOH_fp2_struggle_hostility_conversion_holy_tt
+# 		custom_tooltip = KOH_fp2_struggle_hostility_conversion_culture_tt
+# 		# All Involved cultures lose acceptance of each other
+# 		custom_tooltip = {
+# 			text = KOH_fp2_struggle_hostility_culture_large_tt 
+# 			KOH_fp2_struggle_hostility_cultural_acceptance_large_effect = yes
+# 		}
+# 		stress_impact = {
+# 			humble = medium_stress_impact_gain
+# 			cynical = medium_stress_impact_gain
+# 		}
+# 		ai_chance = {
+# 			base = 100
+# 			ai_value_modifier = {
+# 				ai_zeal = 2
+# 				ai_boldness = 1
+# 			}
+# 		}
+# 	}
 
-	after = {
-		# End Struggle
-		struggle:struggle_guelph_ghilibine = {
-			end_struggle = struggle_iberia_ending_hostility_decision
-		}
-		# Notify
-		every_player = {
-			limit = {
-				NOT = { this = root }
-			}
-			trigger_event = KOH_fp2_struggle.0910
-		}
-	}
-}
+# 	after = {
+# 		# End Struggle
+# 		struggle:struggle_guelph_ghibelline = {
+# 			end_struggle = struggle_iberia_ending_hostility_decision
+# 		}
+# 		# Notify
+# 		every_player = {
+# 			limit = {
+# 				NOT = { this = root }
+# 			}
+# 			trigger_event = KOH_fp2_struggle.0910
+# 		}
+# 	}
+# }
 
-KOH_fp2_struggle.0910 = {
-	type = fullscreen_event
-	title = KOH_fp2_struggle.0900.t
-	desc = {
-		first_valid = {
-		    triggered_desc = {
-		        trigger = { is_in_list = struggle_involvees }
-		        desc = KOH_fp2_struggle.0910.opening.involved
-		    }
-		    desc = KOH_fp2_struggle.0910.opening
-		}
-		desc = KOH_fp2_struggle.0910.desc
-		first_valid = {
-		    triggered_desc = {
-		        trigger = {
-		        	scope:struggle_ender.house = { has_house_modifier = KOH_fp2_struggle_hostility_house_faith_modifier }
-		        }
-		        desc = KOH_fp2_struggle.0910.closing.faith
-		    }
-		    triggered_desc = {
-		        trigger = {
-		        	scope:struggle_ender.house = { has_house_modifier = KOH_fp2_struggle_hostility_house_culture_modifier }
-		        }
-		        desc = KOH_fp2_struggle.0910.closing.culture
-		    }
-		    desc = KOH_fp2_struggle.0910.closing.combined
-		}
-	}
-	theme = court
-	override_background = { event_background = fp2_fullscreen_hostility }
-	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
+# KOH_fp2_struggle.0910 = {
+# 	type = fullscreen_event
+# 	title = KOH_fp2_struggle.0900.t
+# 	desc = {
+# 		first_valid = {
+# 		    triggered_desc = {
+# 		        trigger = { is_in_list = struggle_involvees }
+# 		        desc = KOH_fp2_struggle.0910.opening.involved
+# 		    }
+# 		    desc = KOH_fp2_struggle.0910.opening
+# 		}
+# 		desc = KOH_fp2_struggle.0910.desc
+# 		first_valid = {
+# 		    triggered_desc = {
+# 		        trigger = {
+# 		        	#scope:struggle_ender.house = { has_house_modifier = KOH_fp2_struggle_hostility_house_faith_modifier }
+# 		        }
+# 		        desc = KOH_fp2_struggle.0910.closing.faith
+# 		    }
+# 		    triggered_desc = {
+# 		        trigger = {
+# 		        	#scope:struggle_ender.house = { has_house_modifier = KOH_fp2_struggle_hostility_house_culture_modifier }
+# 		        }
+# 		        desc = KOH_fp2_struggle.0910.closing.culture
+# 		    }
+# 		    desc = KOH_fp2_struggle.0910.closing.combined
+# 		}
+# 	}
+# 	theme = court
+# 	override_background = { event_background = fp2_fullscreen_hostility }
+# 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
 
-	immediate = {
-		play_music_cue = "mx_Struggle_ending_hostility"
-		##### Major Effects #####
-		show_as_tooltip = {
-			scope:struggle_ender = {
-				#dynasty = { add_dynasty_prestige = 10000 }
-				KOH_fp2_struggle_hostility_ender_effect = yes
-			}
-		}
-		# Hispania is available!
-		custom_tooltip = KOH_fp2_struggle_can_create_empire_of_hispania_tt 
-		# Choose Holy War boost, Culture War boost, or both
-		scope:struggle_ender.house = {
-			switch = {
-				trigger = has_house_modifier
-				KOH_fp2_struggle_hostility_house_faith_modifier = {
-					show_as_tooltip = { add_house_modifier = KOH_fp2_struggle_hostility_house_faith_modifier }
-					custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
-					custom_tooltip = KOH_fp2_struggle_hostility_holy_cb_tt
-				}
-				KOH_fp2_struggle_hostility_house_culture_modifier = {
-					show_as_tooltip = { add_house_modifier = KOH_fp2_struggle_hostility_house_culture_modifier }
-					custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
-					custom_tooltip = KOH_fp2_struggle_hostility_culture_cb_tt
-					custom_tooltip = KOH_fp2_struggle_hostility_culture_tt
-				}
-				KOH_fp2_struggle_hostility_house_combined_modifier = {
-					show_as_tooltip = { add_house_modifier = KOH_fp2_struggle_hostility_house_combined_modifier }
-					custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
-					custom_tooltip = KOH_fp2_struggle_hostility_holy_cb_tt
-					custom_tooltip = KOH_fp2_struggle_hostility_culture_cb_tt
-					custom_tooltip = KOH_fp2_struggle_hostility_culture_large_tt
-				}
-			}
-		}
-	}
+# 	immediate = {
+# 		play_music_cue = "mx_Struggle_ending_hostility"
+# 		##### Major Effects #####
+# 		show_as_tooltip = {
+# 			scope:struggle_ender = {
+# 				#dynasty = { add_dynasty_prestige = 10000 }
+# 				KOH_fp2_struggle_hostility_ender_effect = yes
+# 			}
+# 		}
+# 		# Hispania is available!
+# 		custom_tooltip = KOH_fp2_struggle_can_create_empire_of_hispania_tt 
+# 		# Choose Holy War boost, Culture War boost, or both
+# 		scope:struggle_ender.house = {
+# 			switch = {
+# 				trigger = has_house_modifier
+# 				KOH_fp2_struggle_hostility_house_faith_modifier = {
+# 					show_as_tooltip = { add_house_modifier = KOH_fp2_struggle_hostility_house_faith_modifier }
+# 					custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
+# 					custom_tooltip = KOH_fp2_struggle_hostility_holy_cb_tt
+# 				}
+# 				KOH_fp2_struggle_hostility_house_culture_modifier = {
+# 					show_as_tooltip = { add_house_modifier = KOH_fp2_struggle_hostility_house_culture_modifier }
+# 					custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
+# 					custom_tooltip = KOH_fp2_struggle_hostility_culture_cb_tt
+# 					custom_tooltip = KOH_fp2_struggle_hostility_culture_tt
+# 				}
+# 				KOH_fp2_struggle_hostility_house_combined_modifier = {
+# 					show_as_tooltip = { add_house_modifier = KOH_fp2_struggle_hostility_house_combined_modifier }
+# 					custom_description_no_bullet = { text = KOH_fp2_struggle_house_tt }
+# 					custom_tooltip = KOH_fp2_struggle_hostility_holy_cb_tt
+# 					custom_tooltip = KOH_fp2_struggle_hostility_culture_cb_tt
+# 					custom_tooltip = KOH_fp2_struggle_hostility_culture_large_tt
+# 				}
+# 			}
+# 		}
+# 	}
 
-	# Ok
-	option = {
-		name = {
-			text = KOH_fp2_struggle.0910.a
-			trigger = { is_in_list = struggle_involvees }
-		}
-		name = {
-			text = KOH_fp2_struggle.0910.b
-			trigger = {
-				NOT = { is_in_list = struggle_involvees }
-			}
-		}
-	}
-}
+# 	# Ok
+# 	option = {
+# 		name = {
+# 			text = KOH_fp2_struggle.0910.a
+# 			trigger = { is_in_list = struggle_involvees }
+# 		}
+# 		name = {
+# 			text = KOH_fp2_struggle.0910.b
+# 			trigger = {
+# 				NOT = { is_in_list = struggle_involvees }
+# 			}
+# 		}
+# 	}
+# }
 
-KOH_fp2_struggle.0901 = { # Compromise
-	type = fullscreen_event
-	title = KOH_fp2_struggle.0901.t
-	desc = {
-		first_valid = {
-		    triggered_desc = {
-		        trigger = {
-					culture = {
-						OR = {
-							this = culture:basque
-							any_parent_culture = { this = culture:basque }
-							has_cultural_pillar = language_basque
-						}
-					}
-		        }
-		        desc = KOH_fp2_struggle.0900.opening.basque
-		    }
-		    triggered_desc = {
-		        trigger = {
-					culture = {
-						OR = {
-							this = culture:andalusian
-							any_parent_culture = { this = culture:andalusian }
-							has_cultural_pillar = language_arabic
-						}
-					}
-		        }
-		        desc = KOH_fp2_struggle.0900.opening.andalusian
-		    }
-		    triggered_desc = {
-		        trigger = {
-					culture = { has_cultural_pillar = heritage_iberian }
-		        }
-		        desc = KOH_fp2_struggle.0900.opening.iberian
-		    }
-		    desc = KOH_fp2_struggle.0900.opening
-		}
-		desc = KOH_fp2_struggle.0901.desc
-	}
-	theme = court
-	override_background = { event_background = fp2_fullscreen_compromise }
-	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
+# KOH_fp2_struggle.0901 = { # Compromise
+# 	type = fullscreen_event
+# 	title = KOH_fp2_struggle.0901.t
+# 	desc = {
+# 		first_valid = {
+# 		    triggered_desc = {
+# 		        trigger = {
+# 					culture = {
+# 						OR = {
+# 							this = culture:basque
+# 							any_parent_culture = { this = culture:basque }
+# 							has_cultural_pillar = language_basque
+# 						}
+# 					}
+# 		        }
+# 		        desc = KOH_fp2_struggle.0900.opening.basque
+# 		    }
+# 		    triggered_desc = {
+# 		        trigger = {
+# 					culture = {
+# 						OR = {
+# 							this = culture:andalusian
+# 							any_parent_culture = { this = culture:andalusian }
+# 							has_cultural_pillar = language_arabic
+# 						}
+# 					}
+# 		        }
+# 		        desc = KOH_fp2_struggle.0900.opening.andalusian
+# 		    }
+# 		    triggered_desc = {
+# 		        trigger = {
+# 					culture = { has_cultural_pillar = heritage_iberian }
+# 		        }
+# 		        desc = KOH_fp2_struggle.0900.opening.iberian
+# 		    }
+# 		    desc = KOH_fp2_struggle.0900.opening
+# 		}
+# 		desc = KOH_fp2_struggle.0901.desc
+# 	}
+# 	theme = court
+# 	override_background = { event_background = fp2_fullscreen_compromise }
+# 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
 
-	immediate = {
-		play_music_cue = "mx_Struggle_ending_compromise"
-		# Independent/Split De Jure Duchies will become De Jure Kingdoms
-		if = {
-			limit = {
-				title:e_spain = {
-					any_in_de_jure_hierarchy = { KOH_fp2_struggle_ending_compromise_independent_duchy_trigger = yes }
-				}
-			}
-			custom_tooltip = {
-				text = KOH_fp2_struggle_compromise_create_new_kingdoms_tt
-				KOH_fp2_struggle_compromise_duchies_to_kingdoms_effect = yes
-			}
-		}
-		# Move duchies to right kingdoms
-		KOH_fp2_struggle_compromise_transfer_duchies_effect = yes
-		# Turn kingdoms to empires
-		KOH_fp2_struggle_compromise_kingdoms_to_empires_effect = yes
-		# distribute small kingdoms
-		KOH_fp2_struggle_compromise_distribute_kingdoms_to_neighbouring_empires_effect = yes
-		# assign the new title to existing characters
-		KOH_fp2_struggle_compromise_distribute_the_actual_titles = yes
+# 	immediate = {
+# 		play_music_cue = "mx_Struggle_ending_compromise"
+# 		# Independent/Split De Jure Duchies will become De Jure Kingdoms
+# 		if = {
+# 			limit = {
+# 				title:e_spain = {
+# 					any_in_de_jure_hierarchy = { KOH_fp2_struggle_ending_compromise_independent_duchy_trigger = yes }
+# 				}
+# 			}
+# 			custom_tooltip = {
+# 				text = KOH_fp2_struggle_compromise_create_new_kingdoms_tt
+# 				KOH_fp2_struggle_compromise_duchies_to_kingdoms_effect = yes
+# 			}
+# 		}
+# 		# Move duchies to right kingdoms
+# 		KOH_fp2_struggle_compromise_transfer_duchies_effect = yes
+# 		# Turn kingdoms to empires
+# 		KOH_fp2_struggle_compromise_kingdoms_to_empires_effect = yes
+# 		# distribute small kingdoms
+# 		KOH_fp2_struggle_compromise_distribute_kingdoms_to_neighbouring_empires_effect = yes
+# 		# assign the new title to existing characters
+# 		KOH_fp2_struggle_compromise_distribute_the_actual_titles = yes
 
-		# Set up truces
-		KOH_fp2_struggle_compromise_truce_effect = yes
+# 		# Set up truces
+# 		KOH_fp2_struggle_compromise_truce_effect = yes
 
-		##### Major Effects #####
-		KOH_fp2_struggle_compromise_ender_effect = yes
+# 		##### Major Effects #####
+# 		KOH_fp2_struggle_compromise_ender_effect = yes
 		
-		# Tooltips!
-		KOH_fp2_struggle_compromise_tooltip_effect = yes
+# 		# Tooltips!
+# 		KOH_fp2_struggle_compromise_tooltip_effect = yes
 
-		##### Minor Effects #####
-		# Self-sufficiency modifiers for each independent realm
-		KOH_fp2_struggle_compromise_modifier_rewards_effect = yes
-		set_global_variable = {
-			name = KOH_fp2_struggle_compromise_ending
-			value = yes
-		}
-		# Add all involved rulers to a list, for ping event
-		fp2_stuggle_ending_involved_list_effect = yes
-	}
+# 		##### Minor Effects #####
+# 		# Self-sufficiency modifiers for each independent realm
+# 		KOH_fp2_struggle_compromise_modifier_rewards_effect = yes
+# 		set_global_variable = {
+# 			name = KOH_fp2_struggle_compromise_ending
+# 			value = yes
+# 		}
+# 		# Add all involved rulers to a list, for ping event
+# 		fp2_stuggle_ending_involved_list_effect = yes
+# 	}
 
-	# Ok
-	option = {
-		name = KOH_fp2_struggle.0901.a
-		if = {
-			limit = {
-				any_in_list = {
-					list = kingdom_empire
-					this = root.primary_title
-				}
-			}
-			custom_tooltip = KOH_fp2_struggle.0901.tt
-		}
-	}
+# 	# Ok
+# 	option = {
+# 		name = KOH_fp2_struggle.0901.a
+# 		if = {
+# 			limit = {
+# 				any_in_list = {
+# 					list = kingdom_empire
+# 					this = root.primary_title
+# 				}
+# 			}
+# 			custom_tooltip = KOH_fp2_struggle.0901.tt
+# 		}
+# 	}
 
-	after = {
-		stress_impact = {
-			arrogant = medium_stress_impact_gain
-		}
-		# End Struggle
-		struggle:struggle_guelph_ghilibine = {
-			end_struggle = struggle_iberia_ending_compromise_decision
-		}
-		every_player = {
-			limit = {
-				NOT = { this = root }
-			}
-			trigger_event = KOH_fp2_struggle.0911
-		}
-	}
-}
+# 	after = {
+# 		stress_impact = {
+# 			arrogant = medium_stress_impact_gain
+# 		}
+# 		# End Struggle
+# 		struggle:struggle_guelph_ghibelline = {
+# 			end_struggle = struggle_iberia_ending_compromise_decision
+# 		}
+# 		every_player = {
+# 			limit = {
+# 				NOT = { this = root }
+# 			}
+# 			trigger_event = KOH_fp2_struggle.0911
+# 		}
+# 	}
+# }
 
-KOH_fp2_struggle.0911 = {
-	type = fullscreen_event
-	title = KOH_fp2_struggle.0901.t
-	desc = {
-		first_valid = {
-		    triggered_desc = {
-		        trigger = { is_in_list = struggle_involvees }
-		        desc = KOH_fp2_struggle.0910.opening.involved
-		    }
-		    desc = KOH_fp2_struggle.0910.opening
-		}
-		desc = KOH_fp2_struggle.0911.desc
-	}
-	theme = court
-	override_background = { event_background = fp2_fullscreen_compromise }
-	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
+# KOH_fp2_struggle.0911 = {
+# 	type = fullscreen_event
+# 	title = KOH_fp2_struggle.0901.t
+# 	desc = {
+# 		first_valid = {
+# 		    triggered_desc = {
+# 		        trigger = { is_in_list = struggle_involvees }
+# 		        desc = KOH_fp2_struggle.0910.opening.involved
+# 		    }
+# 		    desc = KOH_fp2_struggle.0910.opening
+# 		}
+# 		desc = KOH_fp2_struggle.0911.desc
+# 	}
+# 	theme = court
+# 	override_background = { event_background = fp2_fullscreen_compromise }
+# 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
 
-	immediate = {
-		play_music_cue = "mx_Struggle_ending_compromise"
-		##### Major Effects #####
-		show_as_tooltip = {
-			scope:struggle_ender = { KOH_fp2_struggle_compromise_ender_effect = yes }
-		}
-		# Independent/Split De Jure Duchies will become De Jure Kingdoms
-		custom_tooltip = KOH_fp2_struggle_compromise_create_new_kingdoms_tt
-		# RIP Hispania
-		KOH_fp2_struggle_compromise_tooltip_effect = yes
+# 	immediate = {
+# 		play_music_cue = "mx_Struggle_ending_compromise"
+# 		##### Major Effects #####
+# 		show_as_tooltip = {
+# 			scope:struggle_ender = { KOH_fp2_struggle_compromise_ender_effect = yes }
+# 		}
+# 		# Independent/Split De Jure Duchies will become De Jure Kingdoms
+# 		custom_tooltip = KOH_fp2_struggle_compromise_create_new_kingdoms_tt
+# 		# RIP Hispania
+# 		KOH_fp2_struggle_compromise_tooltip_effect = yes
 
-		##### Minor Effects #####
-		if = {
-			limit = {
-				any_in_list = {
-					list = kingdom_empire
-					OR = {
-						this = root.primary_title
-						this = root.primary_title.de_jure_liege
-						this = root.primary_title.de_jure_liege.de_jure_liege
-					}
-				}
-			}
-			custom_tooltip = KOH_fp2_struggle.0901.tt
-		}
-		if = {
-			limit = { is_in_list = struggle_involvees }
-			show_as_tooltip = {
-				KOH_fp2_struggle_compromise_modifier_rewards_personal_house_effect = yes
-				KOH_fp2_struggle_compromise_modifier_rewards_personal_county_effect = yes
-			}
-		}
-	}
+# 		##### Minor Effects #####
+# 		if = {
+# 			limit = {
+# 				any_in_list = {
+# 					list = kingdom_empire
+# 					OR = {
+# 						this = root.primary_title
+# 						this = root.primary_title.de_jure_liege
+# 						this = root.primary_title.de_jure_liege.de_jure_liege
+# 					}
+# 				}
+# 			}
+# 			custom_tooltip = KOH_fp2_struggle.0901.tt
+# 		}
+# 		if = {
+# 			limit = { is_in_list = struggle_involvees }
+# 			show_as_tooltip = {
+# 				KOH_fp2_struggle_compromise_modifier_rewards_personal_house_effect = yes
+# 				KOH_fp2_struggle_compromise_modifier_rewards_personal_county_effect = yes
+# 			}
+# 		}
+# 	}
 
-	# Ok
-	option = {
-		name = {
-			text = KOH_fp2_struggle.0911.a
-			trigger = { is_in_list = struggle_involvees }
-		}
-		name = {
-			text = KOH_fp2_struggle.0910.b
-			trigger = {
-				NOT = { is_in_list = struggle_involvees }
-			}
-		}
-	}
-}
+# 	# Ok
+# 	option = {
+# 		name = {
+# 			text = KOH_fp2_struggle.0911.a
+# 			trigger = { is_in_list = struggle_involvees }
+# 		}
+# 		name = {
+# 			text = KOH_fp2_struggle.0910.b
+# 			trigger = {
+# 				NOT = { is_in_list = struggle_involvees }
+# 			}
+# 		}
+# 	}
+# }
 
-KOH_fp2_struggle.0902 = { # Conciliation
-	type = fullscreen_event
-	title = KOH_fp2_struggle.0902.t
-	desc = {
-		first_valid = {
-		    triggered_desc = {
-		        trigger = {
-					culture = {
-						OR = {
-							this = culture:basque
-							any_parent_culture = { this = culture:basque }
-							has_cultural_pillar = language_basque
-						}
-					}
-		        }
-		        desc = KOH_fp2_struggle.0900.opening.basque
-		    }
-		    triggered_desc = {
-		        trigger = {
-					culture = {
-						OR = {
-							this = culture:andalusian
-							any_parent_culture = { this = culture:andalusian }
-							has_cultural_pillar = language_arabic
-						}
-					}
-		        }
-		        desc = KOH_fp2_struggle.0900.opening.andalusian
-		    }
-		    triggered_desc = {
-		        trigger = {
-					culture = { has_cultural_pillar = heritage_iberian }
-		        }
-		        desc = KOH_fp2_struggle.0900.opening.iberian
-		    }
-		    desc = KOH_fp2_struggle.0900.opening
-		}
-		desc = KOH_fp2_struggle.0902.desc
-	}
-	theme = court
-	override_background = { event_background = fp2_fullscreen_conciliation }
-	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
+# KOH_fp2_struggle.0902 = { # Conciliation
+# 	type = fullscreen_event
+# 	title = KOH_fp2_struggle.0902.t
+# 	desc = {
+# 		first_valid = {
+# 		    triggered_desc = {
+# 		        trigger = {
+# 					culture = {
+# 						OR = {
+# 							this = culture:basque
+# 							any_parent_culture = { this = culture:basque }
+# 							has_cultural_pillar = language_basque
+# 						}
+# 					}
+# 		        }
+# 		        desc = KOH_fp2_struggle.0900.opening.basque
+# 		    }
+# 		    triggered_desc = {
+# 		        trigger = {
+# 					culture = {
+# 						OR = {
+# 							this = culture:andalusian
+# 							any_parent_culture = { this = culture:andalusian }
+# 							has_cultural_pillar = language_arabic
+# 						}
+# 					}
+# 		        }
+# 		        desc = KOH_fp2_struggle.0900.opening.andalusian
+# 		    }
+# 		    triggered_desc = {
+# 		        trigger = {
+# 					culture = { has_cultural_pillar = heritage_iberian }
+# 		        }
+# 		        desc = KOH_fp2_struggle.0900.opening.iberian
+# 		    }
+# 		    desc = KOH_fp2_struggle.0900.opening
+# 		}
+# 		desc = KOH_fp2_struggle.0902.desc
+# 	}
+# 	theme = court
+# 	override_background = { event_background = fp2_fullscreen_conciliation }
+# 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
 
-	immediate = {
-		play_music_cue = "mx_Struggle_ending_conciliation"
-		set_global_variable = {
-			name = KOH_fp2_struggle_conciliation_ending
-			value = yes
-		}
-		# Add all involved rulers to a list, for ping event
-		fp2_stuggle_ending_involved_list_effect = yes
+# 	immediate = {
+# 		play_music_cue = "mx_Struggle_ending_conciliation"
+# 		set_global_variable = {
+# 			name = KOH_fp2_struggle_conciliation_ending
+# 			value = yes
+# 		}
+# 		# Add all involved rulers to a list, for ping event
+# 		fp2_stuggle_ending_involved_list_effect = yes
 
-		# Add all involved cultures with counties to a list, for marriage and holy war checks
-		KOH_fp2_struggle_ending_culture_list_effect = yes
+# 		# Add all involved cultures with counties to a list, for marriage and holy war checks
+# 		KOH_fp2_struggle_ending_culture_list_effect = yes
 
-		# Change cultural acceptance
-		KOH_fp2_struggle_conciliation_cultural_acceptance_effect = yes
+# 		# Change cultural acceptance
+# 		KOH_fp2_struggle_conciliation_cultural_acceptance_effect = yes
 
-		##### Major Effects #####
-		KOH_fp2_struggle_conciliation_ender_effect = yes
-		KOH_fp2_struggle_conciliation_tooltip_effect = yes
-		KOH_fp2_struggle_conciliation_modifier_rewards_effect = yes
-	}
+# 		##### Major Effects #####
+# 		KOH_fp2_struggle_conciliation_ender_effect = yes
+# 		KOH_fp2_struggle_conciliation_tooltip_effect = yes
+# 		KOH_fp2_struggle_conciliation_modifier_rewards_effect = yes
+# 	}
 
-	# 
-	option = {
-		name = KOH_fp2_struggle.0902.a
-	}
+# 	# 
+# 	option = {
+# 		name = KOH_fp2_struggle.0902.a
+# 	}
 
-	after = {
-		# End Struggle
-		struggle:struggle_guelph_ghilibine = {
-			end_struggle = struggle_iberia_ending_conciliation_decision
-		}
-		stress_impact = {
-			arrogant = medium_stress_impact_gain
-			zealous = medium_stress_impact_gain
-		}
-		# Notify
-		every_player = {
-			limit = {
-				NOT = { this = root }
-			}
-			trigger_event = KOH_fp2_struggle.0912
-		}
-	}
-}
+# 	after = {
+# 		# End Struggle
+# 		struggle:struggle_guelph_ghibelline = {
+# 			end_struggle = struggle_iberia_ending_conciliation_decision
+# 		}
+# 		stress_impact = {
+# 			arrogant = medium_stress_impact_gain
+# 			zealous = medium_stress_impact_gain
+# 		}
+# 		# Notify
+# 		every_player = {
+# 			limit = {
+# 				NOT = { this = root }
+# 			}
+# 			trigger_event = KOH_fp2_struggle.0912
+# 		}
+# 	}
+# }
 
-KOH_fp2_struggle.0912 = {
-	type = fullscreen_event
-	title = KOH_fp2_struggle.0902.t
-	desc = {
-		first_valid = {
-		    triggered_desc = {
-		        trigger = { is_in_list = struggle_involvees }
-		        desc = KOH_fp2_struggle.0910.opening.involved
-		    }
-		    desc = KOH_fp2_struggle.0910.opening
-		}
-		desc = KOH_fp2_struggle.0912.desc
-	}
-	theme = court
-	override_background = { event_background = fp2_fullscreen_conciliation }
-	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
+# KOH_fp2_struggle.0912 = {
+# 	type = fullscreen_event
+# 	title = KOH_fp2_struggle.0902.t
+# 	desc = {
+# 		first_valid = {
+# 		    triggered_desc = {
+# 		        trigger = { is_in_list = struggle_involvees }
+# 		        desc = KOH_fp2_struggle.0910.opening.involved
+# 		    }
+# 		    desc = KOH_fp2_struggle.0910.opening
+# 		}
+# 		desc = KOH_fp2_struggle.0912.desc
+# 	}
+# 	theme = court
+# 	override_background = { event_background = fp2_fullscreen_conciliation }
+# 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_end_animate" }
 
-	immediate = {
-		play_music_cue = "mx_Struggle_ending_conciliation"
-		##### Major Effects #####
-		show_as_tooltip = {
-			scope:struggle_ender = { KOH_fp2_struggle_conciliation_ender_effect = yes }
-		}
-		KOH_fp2_struggle_conciliation_tooltip_effect = yes
+# 	immediate = {
+# 		play_music_cue = "mx_Struggle_ending_conciliation"
+# 		##### Major Effects #####
+# 		show_as_tooltip = {
+# 			scope:struggle_ender = { KOH_fp2_struggle_conciliation_ender_effect = yes }
+# 		}
+# 		KOH_fp2_struggle_conciliation_tooltip_effect = yes
 
-		##### Minor Effects #####
-		# All involved rulers gain diff culture opinion and learn language scheme power
-		if = {
-			limit = { is_in_list = struggle_involvees }
-			show_as_tooltip = { KOH_fp2_struggle_conciliation_modifier_rewards_personal_effect = yes }
-		}
-	}
+# 		##### Minor Effects #####
+# 		# All involved rulers gain diff culture opinion and learn language scheme power
+# 		if = {
+# 			limit = { is_in_list = struggle_involvees }
+# 			show_as_tooltip = { KOH_fp2_struggle_conciliation_modifier_rewards_personal_effect = yes }
+# 		}
+# 	}
 
-	# Ok
-	option = {
-		name = {
-			text = KOH_fp2_struggle.0912.a
-			trigger = { is_in_list = struggle_involvees }
-		}
-		name = {
-			text = KOH_fp2_struggle.0910.b
-			trigger = {
-				NOT = { is_in_list = struggle_involvees }
-			}
-		}
-	}
-}
+# 	# Ok
+# 	option = {
+# 		name = {
+# 			text = KOH_fp2_struggle.0912.a
+# 			trigger = { is_in_list = struggle_involvees }
+# 		}
+# 		name = {
+# 			text = KOH_fp2_struggle.0910.b
+# 			trigger = {
+# 				NOT = { is_in_list = struggle_involvees }
+# 			}
+# 		}
+# 	}
+# }
 
 ###################################
 # Stoking the Fire
 # By Ola Jentzsch
 ###################################
 scripted_trigger KOH_fp2_struggle_1000_tension_county_trigger = {
-	any_province = { geographical_region = world_europe_west_iberia }
+	any_province = { geographical_region = custom_investiture_struggle }
 	tier = tier_county
 	faith = { save_temporary_scope_as = compare_faith }
 	root = {
@@ -2174,7 +2182,7 @@ KOH_fp2_struggle.1002 = {
 
 	 	root.capital_province = { #so that it only triggers for people close to Andalusia 
 			OR = {
-				geographical_region = world_europe_west_iberia 
+				geographical_region = custom_investiture_struggle 
 				geographical_region = world_europe_west_francia
 				geographical_region = world_europe_south_italy
 			}
@@ -2187,7 +2195,7 @@ KOH_fp2_struggle.1002 = {
 	 	NOT = { #So that it doesn't fire for the Umayyads when they control Iberia
 		 	AND = {
 			 	culture = culture:levantine  
-			 	root.capital_province = { geographical_region = world_europe_west_iberia }
+			 	root.capital_province = { geographical_region = custom_investiture_struggle }
 		 	}
 	 	}
 
@@ -2920,7 +2928,7 @@ KOH_fp2_struggle.1010 = { # Soul of Iron, by Ola Jentzsch
 
 		#scope:blacksmith_county = { 
 		#	any_county_struggle = { #TODO: Fix this bugged trigger
-		#		is_struggle_type = struggle_guelph_ghilibine
+		#		is_struggle_type = struggle_guelph_ghibelline
 		#	}
 		#}
 
@@ -3150,7 +3158,7 @@ KOH_fp2_struggle.1010 = { # Soul of Iron, by Ola Jentzsch
 		
 		custom_tooltip = KOH_fp2_struggle.1010.paranoid_rivals  #your neighbors gets really paranoid when they learn about this
 		hidden_effect = {
-			struggle:struggle_guelph_ghilibine = {
+			struggle:struggle_guelph_ghibelline = {
 				every_involved_ruler = {
 					limit = {
 						NOT = { is_allied_to = root }	
@@ -4405,7 +4413,7 @@ KOH_fp2_struggle.1050 = {
 
 		fp2_character_involved_in_struggle_trigger = yes 
 
-		struggle:struggle_guelph_ghilibine = { is_struggle_phase = struggle_iberia_phase_hostility }	
+		struggle:struggle_guelph_ghibelline = { is_struggle_phase = struggle_iberia_phase_hostility }	
 	}
 		
 	cooldown = { #this event shouldn't fire too often, since the context with the spouse's dream is pretty specific. 
@@ -5162,7 +5170,7 @@ KOH_fp2_struggle.2001 = {
 
 	trigger = {
 		has_fp2_dlc_trigger = yes
-		struggle:struggle_guelph_ghilibine = {
+		struggle:struggle_guelph_ghibelline = {
 			OR = {
 				is_struggle_phase = struggle_iberia_phase_hostility
 			}
@@ -5981,7 +5989,7 @@ KOH_fp2_struggle.2003 = {
 
 	trigger = {
 		has_fp2_dlc_trigger = yes
-		struggle:struggle_guelph_ghilibine = {
+		struggle:struggle_guelph_ghibelline = {
 			OR = {
 				is_struggle_phase = struggle_iberia_phase_opportunity
 				is_struggle_phase = struggle_iberia_phase_hostility
@@ -8027,7 +8035,7 @@ KOH_fp2_struggle.2007 = {
 	trigger = {
 		has_fp2_dlc_trigger = yes
 		is_ai = no # Overpowered for AI, player only.
-		struggle:struggle_guelph_ghilibine = {
+		struggle:struggle_guelph_ghibelline = {
 			OR = {
 				is_struggle_phase = struggle_iberia_phase_hostility
 			}
@@ -8103,12 +8111,12 @@ KOH_fp2_struggle.2007 = {
 		}
 
 		# Get Different Faith (updated to whole religion)
-		struggle:struggle_guelph_ghilibine = {
+		struggle:struggle_guelph_ghibelline = {
 			random_involved_ruler = {
 				limit = {
 					NOT = { religion = root.religion }
 					faith = { save_temporary_scope_as = temp_involved_faith }
-					struggle:struggle_guelph_ghilibine = { is_faith_involved_in_struggle = scope:temp_involved_faith }
+					struggle:struggle_guelph_ghibelline = { is_faith_involved_in_struggle = scope:temp_involved_faith }
 				}
 				religion = { save_scope_as = fp2_2007_foreign_faith }
 			}
@@ -8596,8 +8604,8 @@ KOH_fp2_struggle.2008 = {
 		root.top_liege = root
 
 		trigger_if = {
-			limit = { exists = struggle:struggle_guelph_ghilibine }
-			struggle:struggle_guelph_ghilibine = {
+			limit = { exists = struggle:struggle_guelph_ghibelline }
+			struggle:struggle_guelph_ghibelline = {
 				OR = {
 					is_struggle_phase = struggle_iberia_phase_hostility
 				}
@@ -8977,11 +8985,11 @@ KOH_fp2_struggle.2009 = {
 		has_fp2_dlc_trigger = yes
 		is_independent_ruler = yes
 		exists = cp:councillor_marshal
-		KOH_fp2_character_any_involvement_struggle_guelph_ghilibine_trigger = yes
+		KOH_fp2_character_any_involvement_struggle_guelph_ghibelline_trigger = yes
 
-		exists = struggle:struggle_guelph_ghilibine
+		exists = struggle:struggle_guelph_ghibelline
 		exists = primary_title
-		struggle:struggle_guelph_ghilibine = {
+		struggle:struggle_guelph_ghibelline = {
 			any_involved_ruler = { # Redundancy check in response to errors on automated tests, should (theoretically) not be necessary
 				NOT = { this = root } # Alternative point of failure could be "this" being null, but that would cause errors outside my event.
 				exists = primary_title
@@ -9008,7 +9016,7 @@ KOH_fp2_struggle.2009 = {
 	}
 
 	immediate = {
-		struggle:struggle_guelph_ghilibine = { # Struggle existance is already verified by event trigger
+		struggle:struggle_guelph_ghibelline = { # Struggle existance is already verified by event trigger
 			random_involved_ruler = { 
 				limit = {
 					NOT = { this = root } # Otherwise you might be the other involved ruler
@@ -9745,7 +9753,7 @@ KOH_fp2_struggle.2013 = {
 				secret_owner = {
 					NOT = { this = scope:temp_prisoner_with_secret }
 					is_independent_ruler = yes 
-					KOH_fp2_character_any_involvement_struggle_guelph_ghilibine_trigger = yes
+					KOH_fp2_character_any_involvement_struggle_guelph_ghibelline_trigger = yes
 				} 
 			}
 		}
@@ -9759,7 +9767,7 @@ KOH_fp2_struggle.2013 = {
 					secret_owner = {
 						NOT = { this = scope:temp_prisoner_with_secret }
 						is_independent_ruler = yes 
-						KOH_fp2_character_any_involvement_struggle_guelph_ghilibine_trigger = yes
+						KOH_fp2_character_any_involvement_struggle_guelph_ghibelline_trigger = yes
 					} 
 				} 
 			}
@@ -10677,8 +10685,8 @@ KOH_fp2_struggle.2021 = { # Main event
 
 		# Spy Network Logic, once upon a time used to be elegant.
 		if = {
-			limit = { exists = struggle:struggle_guelph_ghilibine }
-			struggle:struggle_guelph_ghilibine = {
+			limit = { exists = struggle:struggle_guelph_ghibelline }
+			struggle:struggle_guelph_ghibelline = {
 				if = {
 					limit = { # Theoretically, effects which do not meet its conditions (the limit) are skipped over. However, the nightly has proven that wrong.
 						any_involved_ruler = { # As such we take a _much_ more conservative approach of triple checking everything.
@@ -11065,7 +11073,7 @@ KOH_fp2_struggle.3001 = {
 		}
 		gold < minor_gold_value #you don't have much gold
 		NOT = { has_character_flag = sold_crown_charmod } #you haven't sold your crown before
-		struggle:struggle_guelph_ghilibine = {
+		struggle:struggle_guelph_ghibelline = {
 			NOT = { is_struggle_phase = struggle_iberia_phase_compromise } #you're not in the compromise phase
 		}
 	}
@@ -11278,7 +11286,7 @@ KOH_fp2_struggle.3011 = {
 	
 	trigger = {
 		has_fp2_dlc_trigger = yes
-		KOH_fp2_character_any_involvement_struggle_guelph_ghilibine_trigger = yes #there's an ongoing struggle (includes dlc check)
+		KOH_fp2_character_any_involvement_struggle_guelph_ghibelline_trigger = yes #there's an ongoing struggle (includes dlc check)
 		is_available_even_at_war_adult = yes
 		is_landed = yes
 		any_character_war = {
@@ -11293,7 +11301,7 @@ KOH_fp2_struggle.3011 = {
 			has_game_rule = default_gender_equality
 			has_game_rule = inversed_gender_equality
 		}
-		struggle:struggle_guelph_ghilibine = { #there's a struggle going on
+		struggle:struggle_guelph_ghibelline = { #there's a struggle going on
 			OR = {
 				is_struggle_phase = struggle_iberia_phase_hostility
 				is_struggle_phase = struggle_iberia_phase_opportunity
@@ -11501,10 +11509,10 @@ KOH_fp2_struggle.3021 = {
 	
 	trigger = {
 		has_fp2_dlc_trigger = yes
-		KOH_fp2_character_any_involvement_struggle_guelph_ghilibine_trigger = yes
+		KOH_fp2_character_any_involvement_struggle_guelph_ghibelline_trigger = yes
 		is_available_even_at_war_adult = yes
 		NOT = { has_character_flag = had_event_struggle_3021 } #so you don't research the same thing again
-		struggle:struggle_guelph_ghilibine = { #there's some kind of hostility going on
+		struggle:struggle_guelph_ghibelline = { #there's some kind of hostility going on
 			OR = {
 				is_struggle_phase = struggle_iberia_phase_hostility
 			}
