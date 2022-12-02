@@ -356,11 +356,11 @@ temujin.0009 = { # The Siege of Santarem
 			this = province:7517
 		}
 		is_commanding_army = yes
-		scope:army.location = {
-			OR = {
-				this = province:7517
-			}
-		}
+		#scope:army.location = {
+		#	OR = {
+		#		this = province:7517
+		#	}
+		#}
 		NOT = { has_character_flag = bortereturned }
 	}
 
