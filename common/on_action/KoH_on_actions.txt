@@ -283,6 +283,14 @@ KOH_Italian_Familes = {
 		title:c_padua.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_guelph }}} 
 		title:c_vicenza.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_guelph }}} 
 		title:k_venice.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_guelph }}} 
+		title:c_orvieto.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_guelph }}}
+		title:c_firenze.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_guelph }}}
+		title:c_lucca.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_guelph }}}
+		title:c_ancona.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_guelph }}}
+		title:c_ravenna.holder = {add_trait = KOH_guelph } #Ravenna is a lowborn Bishop
+		#neutral / hasn't sided fully
+		#title:c_volterra
+
 		title:c_arezzo.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}}   
 		title:c_assissi.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}} 
 		title:c_como.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}} 
@@ -294,7 +302,11 @@ KOH_Italian_Familes = {
 		title:c_spoleto.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}} 
 		title:c_terni.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}} 
 		title:c_urbino.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}} 	
-	
+		title:c_siena.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}}
+		title:c_prato.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}}
+		title:c_rimini.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}}
+
+
 		every_ruler = {
 			limit = {
 				exists = house
