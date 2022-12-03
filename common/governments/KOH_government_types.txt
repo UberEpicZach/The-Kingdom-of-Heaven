@@ -30,6 +30,8 @@ republic_government = {
 	primary_holding = city_holding
 	valid_holdings = { castle_holding }
 	required_county_holdings = { city_holding castle_holding church_holding }
+	create_cadet_branches = yes
+	rulers_should_have_dynasty = yes
 
 	vassal_contract = { republic_government_obligations }
 	color = hsv{ 0.00 1.00 0.98 }

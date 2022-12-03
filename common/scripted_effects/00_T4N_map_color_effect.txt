@@ -117,6 +117,46 @@ T4N_e_tributary_map = {
 			}
 			every_county_province = { barony = { set_color_from_title = title:d_tributary_map_suzerain } }
 		}
+		else_if = {
+			limit = {
+				holder = {
+					has_trait = KOH_ghibelline
+				}
+			}
+			every_county_province = { barony = { set_color_from_title = title:d_tributary_map_ghibelline } }
+		}
+		else_if = {
+			limit = {
+				holder = {
+					has_trait = KOH_guelph
+				}
+			}
+			every_county_province = { barony = { set_color_from_title = title:d_tributary_map_guelph } }
+		}
+		else = {
+			every_county_province = { barony = { set_color_from_title = title:d_tributary_map_base } }
+		}
+	}
+}
+
+KOH_guelph_ghibelline_map = {
+	every_county = {
+		if = {
+			limit = {
+				holder = {
+					has_trait = KOH_ghibelline
+				}
+			}
+			every_county_province = { barony = { set_color_from_title = title:d_tributary_map_ghibelline } }
+		}
+		else_if = {
+			limit = {
+				holder = {
+					has_trait = KOH_guelph
+				}
+			}
+			every_county_province = { barony = { set_color_from_title = title:d_tributary_map_gueplh } }
+		}
 		else = {
 			every_county_province = { barony = { set_color_from_title = title:d_tributary_map_base } }
 		}

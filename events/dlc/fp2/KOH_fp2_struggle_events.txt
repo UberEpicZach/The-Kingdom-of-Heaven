@@ -470,12 +470,11 @@ KOH_fp2_struggle.0501 = { # Fullscreen Intro Event
 	}
 	theme = realm
 	trigger = { # we need to prevent this from firing for all players when a new player joins in MP
-		is_ai = no
 		NOT = { has_character_flag = KOH_fp2_struggle_intro_event_flag }
 		KOH_fp2_character_any_involvement_struggle_guelph_ghibelline_trigger = yes
  	} 
 	override_background = { event_background = fp2_fullscreen_intro }
-	override_sound = { reference = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_ui_intro_animate" }
+	override_sound = { reference = "event:/DLC/FP2/SFX/UI/fp2_struggle_ui_intro_animate" }
 
 	widgets = {
 		widget = {
@@ -493,17 +492,411 @@ KOH_fp2_struggle.0501 = { # Fullscreen Intro Event
 			value = yes
 		}
 	}
-	option = {
+	option = { #For the Empire
 		name = KOH_fp2_struggle.0501.a
-		clicksound = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_start_select"
+		clicksound = "event:/DLC/FP2/SFX/UI/fp2_struggle_start_select"
+
+		trigger = { 
+			NOT = {
+				this = title:e_hre.holder
+				has_trait = KOH_guelph
+			}
+			any_character_struggle = {
+				involvement = involved
+				is_struggle_type = struggle_guelph_ghibelline
+			}
+		}
+
+		add_character_flag = ghibelline_cb
+		add_trait = KOH_ghibelline
+
+		if = {
+			limit = {
+				exists = house
+			}
+			add_house_modifier = dynasty_ghibelline
+		}
+
+		ai_chance = {
+			modifier = {
+				add = 10
+				capital_county = {
+					development_level <= 15
+				}
+			}
+			modifier = {
+				add = 0.37
+				has_trait = cynical
+			}
+			modifier = {
+				add = 1
+				has_trait = ambitious
+			}
+			modifier = {
+				add = -0.5
+				has_trait = craven
+			}
+			modifier = {
+				add = -0.37
+				has_trait = zealous
+			}
+			modifier = {
+				add = -0.5
+				has_trait = lazy
+			}
+			modifier = {
+				add = -0.25
+				has_trait = stubborn
+			}
+			modifier = {
+				add = 0.25
+				has_trait = fickle
+			}
+			modifier = {
+				add = 0.5
+				has_trait = greedy
+			}
+			modifier = {
+				add = -1
+				has_trait = humble
+			}
+			modifier = {
+				add = 1
+				has_trait = arrogant
+			}
+			modifier = {
+				add = -0.25
+				has_trait = just
+			}
+			modifier = {
+				add = 0.25
+				has_trait = arbitrary
+			}
+			modifier = {
+				add = 0.12
+				has_trait = gluttonous
+			}
+			modifier = { 
+				add = -0.12
+				has_trait = trusting
+			}
+			modifier = {
+				add = -0.25
+				has_perk = theologian_perk
+			}
+			modifier = {
+				add = 0.12
+				has_trait = scholar
+			}
+			modifier = {
+				add = -0.25
+				has_trait = celibate			
+			}
+			modifier = {
+				add = -0.12
+				has_trait = flagellant
+			}
+			modifier = {
+				add = -0.05
+				has_trait = contrite
+			}
+			modifier = { 
+				add = -0.5
+				has_trait = paragon
+			}
+			modifier = {
+				add = -0.25
+				has_trait = consecrated_blood
+			}
+			modifier = { 
+				add = -1
+				faith.religious_head = { reverse_opinion = { target = root value >= 100 } }
+			}
+			modifier = {
+				add = -0.5
+				faith.religious_head = { reverse_opinion = { target = root value >= 75 } }
+			}
+			modifier = { 
+				add = -0.25
+				faith.religious_head = { reverse_opinion = { target = root value >= 50 } }
+			}
+			modifier = {
+				add = -0.25
+				faith.religious_head = { reverse_opinion = { target = root value >= 25} }
+			}
+			modifier = {
+				add = 0.12	
+				faith.religious_head = { reverse_opinion = { target = root value >= -25 } }
+			}
+			modifier = {
+				add = 0.25
+				faith.religious_head = { reverse_opinion = { target = root value >= -50 } }
+			}
+			modifier = {
+				add = 0.5
+				faith.religious_head = { reverse_opinion = { target = root value >= -75 } }
+			}
+			modifier = {
+				add = 1
+				faith.religious_head = { reverse_opinion = { target = root value >= -99 } }
+			}
+		}
 	}
-	option = {
+	option = { #For the Pope 
 		name = KOH_fp2_struggle.0501.b
-		clicksound = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_start_select"
+		clicksound = "event:/DLC/FP2/SFX/UI/fp2_struggle_start_select"
+
+		trigger = { 
+			NOT = {
+				this = title:e_hre.holder
+				has_trait = KOH_ghibelline
+			}
+			any_character_struggle = {
+				involvement = involved
+				is_struggle_type = struggle_guelph_ghibelline
+			}
+		}
+
+		if = {
+			limit = {
+				exists = house
+			}
+			add_house_modifier = dynasty_guelph
+		}
+
+		add_character_flag = guelph_cb
+		add_trait = KOH_guelph
+
+
+		#Papal
+		ai_chance = {
+			modifier = {
+				add = 10
+				capital_county = {
+					development_level >= 15
+				}
+			}
+			modifier = {
+				add = -0.37
+				has_trait = cynical
+			}
+			modifier = {
+				add = -1
+				has_trait = ambitious
+			}
+			modifier = {
+				add = 0.5
+				has_trait = craven
+			}
+			modifier = {
+				add = 0.37
+				has_trait = zealous
+			}
+			modifier = {
+				add = 0.5
+				has_trait = lazy
+			}
+			modifier = {
+				add = 0.25
+				has_trait = stubborn
+			}
+			modifier = {
+				add = -0.25
+				has_trait = fickle
+			}
+			modifier = {
+				add = -0.5
+				has_trait = greedy
+			}
+			modifier = {
+				add = 1
+				has_trait = humble
+			}
+			modifier = {
+				add = -1
+				has_trait = arrogant
+			}
+			modifier = {
+				add = 0.25
+				has_trait = just
+			}
+			modifier = {
+				add = -0.25
+				has_trait = arbitrary
+			}
+			modifier = {
+				add = -0.12
+				has_trait = gluttonous
+			}
+			modifier = { 
+				add = 0.12
+				has_trait = trusting
+			}
+			modifier = {
+				add = 2.25
+				has_perk = theologian_perk
+			}
+			modifier = {
+				add = -0.12
+				has_trait = scholar
+			}
+			modifier = {
+				add = 0.25
+				has_trait = celibate			
+			}
+			modifier = {
+				add = 0.12
+				has_trait = flagellant
+			}
+			modifier = {
+				add = 0.05
+				has_trait = contrite
+			}
+			modifier = { 
+				add = 0.5
+				has_trait = paragon
+			}
+			modifier = {
+				add = 0.25
+				has_trait = consecrated_blood
+			}
+			modifier = { 
+				add = 1
+				faith.religious_head = { reverse_opinion = { target = root value >= 100 } }
+			}
+			modifier = {
+				add = 0.5
+				faith.religious_head = { reverse_opinion = { target = root value >= 75 } }
+			}
+			modifier = { 
+				add = 0.25
+				faith.religious_head = { reverse_opinion = { target = root value >= 50 } }
+			}
+			modifier = {
+				add = 0.12
+				faith.religious_head = { reverse_opinion = { target = root value >= 25} }
+			}
+			modifier = {
+				add = -0.12	
+				faith.religious_head = { reverse_opinion = { target = root value >= -25 } }
+			}
+			modifier = {
+				add = -0.25
+				faith.religious_head = { reverse_opinion = { target = root value >= -50 } }
+			}
+			modifier = {
+				add = -0.5
+				faith.religious_head = { reverse_opinion = { target = root value >= -75 } }
+			}
+			modifier = {
+				add = -1
+				faith.religious_head = { reverse_opinion = { target = root value >= -99 } }
+			}
+		}
 	}
-	option = {
+	option = { #Neutral
 		name = KOH_fp2_struggle.0501.c
-		clicksound = "event:/DLC/FP2/SFX/UI/KOH_fp2_struggle_start_select"
+		clicksound = "event:/DLC/FP2/SFX/UI/fp2_struggle_start_select"
+
+		trigger = { 
+			NOT = {
+				this = title:e_hre.holder
+				has_trait = KOH_ghibelline
+				has_trait = KOH_guelph
+			}
+			any_character_struggle = {
+				involvement = involved
+				is_struggle_type = struggle_guelph_ghibelline
+			}
+		}
+
+		ai_chance = {
+			modifier = {
+				add = 7
+				has_trait = cynical
+			}
+			modifier = {
+				add = 7.5
+				has_trait = craven
+			}
+			modifier = {
+				add = 10
+				has_trait = content
+			}
+			modifier = {
+				add = 0.5
+				has_trait = lazy
+			}
+			modifier = {
+				add = 0.50
+				has_trait = stubborn
+			}
+			modifier = {
+				add = 1
+				has_trait = arrogant
+			}
+			modifier = {
+				add = 0.25
+				has_trait = arbitrary
+			}
+			modifier = { 
+				add = 6
+				faith.religious_head = { reverse_opinion = { target = root value >= 50 } }
+			}
+		
+			modifier = { 
+				add = 6
+				title:e_hre.holder = { reverse_opinion = { target = root value >= 50 } }
+			}
+		}
+	}
+	option = { # are the empire
+		name = KOH_fp2_struggle.0501.c
+		clicksound = "event:/DLC/FP2/SFX/UI/fp2_struggle_start_select"
+
+		trigger = { 
+			this = title:e_hre.holder
+		}
+
+		ai_chance = {
+			modifier = {
+				add = 7
+				has_trait = cynical
+			}
+			modifier = {
+				add = 7.5
+				has_trait = craven
+			}
+			modifier = {
+				add = 10
+				has_trait = content
+			}
+			modifier = {
+				add = 0.5
+				has_trait = lazy
+			}
+			modifier = {
+				add = 0.50
+				has_trait = stubborn
+			}
+			modifier = {
+				add = 1
+				has_trait = arrogant
+			}
+			modifier = {
+				add = 0.25
+				has_trait = arbitrary
+			}
+			modifier = { 
+				add = 6
+				faith.religious_head = { reverse_opinion = { target = root value >= 50 } }
+			}
+		
+			modifier = { 
+				add = 6
+				title:e_hre.holder = { reverse_opinion = { target = root value >= 50 } }
+			}
+		}
 	}
 }
 
