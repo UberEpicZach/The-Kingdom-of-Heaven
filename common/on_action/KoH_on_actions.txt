@@ -288,6 +288,7 @@ KOH_Italian_Familes = {
 		title:c_lucca.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_guelph }}}
 		title:c_ancona.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_guelph }}}
 		title:c_ravenna.holder = {add_trait = KOH_guelph } #Ravenna is a lowborn Bishop
+		title:c_camaldoli.holder = {add_trait = KOH_guelph } #Camaldoli is a lowborn Bishop
 		#neutral / hasn't sided fully
 		#title:c_volterra
 
@@ -305,7 +306,7 @@ KOH_Italian_Familes = {
 		title:c_siena.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}}
 		title:c_prato.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}}
 		title:c_rimini.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}}
-
+		title:c_casentino.holder = { if = { limit = { exists = house } house = { add_house_modifier = dynasty_ghibelline }}}
 
 		every_ruler = {
 			limit = {

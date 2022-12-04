@@ -1,0 +1,1222 @@
+180502 = {
+	name = "Candida"	# fictional placeholder
+	# wife of Guido II della Gherardesca
+	female = yes
+	dynasty = MB_guidi
+	religion = "catholic"
+	culture = "italian"
+	father = 1091007
+	1047.1.1 = {
+		birth = "1047.1.1"
+	}
+	1108.1.1 = {
+		death = "1108.1.1"
+	}
+}
+235016 = {
+	name = "Guisiana"   # fictional placeholder
+	# daughter of Count Guido Guerra III Guidi, second wife of William I of Cagliari
+	female = yes
+	dynasty = MB_guidi
+	religion = "catholic"
+	culture = "italian"
+	father = 1091012
+	1176.1.1 = {
+	  birth = yes
+	}
+	1229.1.1 = {
+	  death = yes
+	}
+}
+###############################################################
+#  SWMH italian characters
+###############################################################
+# SWMH Character Range: 1.000.091.000 - 1.000.092.999
+##############################################################################################
+#Guidi
+
+# Teudegrimo 1
+1091000 = {
+	name="Teudegrimo" # foudner of the dynasty, German(Saxon) noble. conte palatine of Toscana 924 with his seat in Pistoia.
+	dynasty=MB_guidi
+	martial=9
+	diplomacy=8
+	intrigue=4
+	stewardship=8
+	religion="catholic"
+	culture="italian"
+	trait="education_martial_3"
+	trait="arrogant"
+	890.1.1 = {
+		birth=yes
+	}
+	#909.1.1 = {
+	#	add_spouse=1063007 # Englarata Gausi/Onesti
+	#}
+	942.1.1 = {
+		death=yes
+	}
+}
+#(son of Teudegrimo I, attested 2nd october 942 and 967, seemingly died without issue. Diacono of the Ravenna. sentence in abstensia 7th of April 967 for beating up the archbishop of Ravenna. Likely the first to get hold of Modigliana.
+1091001 = {
+	name="Ranieri" 
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=3
+	intrigue=11
+	stewardship=6
+	religion="catholic"
+	culture="italian"
+	trait="greedy"
+	trait="education_diplomacy_2"
+	father=1091000
+	#mother=1063007
+	924.1.1 = {
+		birth="924.1.1"
+	}
+	967.1.1 = {
+		death="967.1.1" 
+	}
+}
+# Guido I, younger son of Teudegrimo I, attested 2nd of october 942. married Gervisa
+1091002 = {
+	name="Guido"
+	dynasty=MB_guidi
+	martial=4
+	diplomacy=10
+	intrigue=7
+	stewardship=8
+	religion="catholic"
+	culture="italian"
+	trait="education_intrigue_2"
+	trait="arrogant"
+	father=1091000
+	#mother=1063007
+	927.1.1 = {
+		birth="927.1.1"
+	}
+	980.1.1 = {
+		death="980.1.1"
+	}
+}
+# Teudegrimo II (Son of Guido I, the name of his wife was Guilla or Willa, marquise Teubaldo's daughter, while Teubaldo was son of marquise Bonifazio I Ripuario), conte di Modigalian, died before the 8th of July 992.
+1091003 = {
+	name="Teudegrimo" 
+	dynasty=MB_guidi
+	martial=3
+	diplomacy=9
+	intrigue=6
+	stewardship=6
+	religion="catholic"
+	culture="italian"
+	father=1091002
+	945.1.1 = {
+		birth="945.1.1"
+	}
+	992.1.1 = {
+		death="992.1.1"
+	}
+}
+# Guido II, son of Teudegrimo II, atteseted in 1017, his wife was countess Emilia, she died in 1029, he live after her death I presume.
+1091004 = {
+	name="Guido" 
+	dynasty=MB_guidi
+	martial=3
+	diplomacy=9
+	intrigue=5
+	stewardship=7
+	religion="catholic"
+	culture="italian"
+	father=1091003
+	960.1.1 = {
+		birth="960.1.1"
+	}
+	1029.1.1 = {
+		death="1029.1.1"
+	}
+}
+# Teudegrimo III(son of Guido II)
+1091005 = {
+	name="Teudegrimo" 
+	dynasty=MB_guidi
+	martial=7
+	diplomacy=8
+	intrigue=6
+	stewardship=9
+	religion="catholic"
+	culture="italian"
+	father=1091004
+	975.1.1 = {
+		birth="975.1.1"
+	}
+	1055.1.1 = {
+		death="1055.1.1"
+	}
+}
+# Guido 3(son of Guido II, his wife was Adeletta, daughter of Ildebrando, probably an Aldobrandi family member)
+1091006 = {
+	name="Guido" 
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=7
+	intrigue=4
+	stewardship=6
+	religion="catholic"
+	culture="italian"
+	trait="calm"
+	trait="education_stewardship_2"
+	father=1091004
+	988.1.1 = {
+		birth="988.1.1"
+	}
+	1043.1.1 = {
+		death="1043.1.1"
+	}
+}
+1091023 = { # Alberto son of Teudegrimo III.
+	name="Alberto"
+	dynasty=MB_guidi
+	martial=6
+	diplomacy=5
+	intrigue=7
+	stewardship=6
+	religion="catholic"
+	culture="italian"
+	father=1091004
+	990.1.1 = {
+		birth="990.1.1"
+	}
+	1040.1.1 = {
+		death="1040.1.1"
+	}
+}
+# Guido 4(grandson of Teudegrimo III, his father was count Alberto (this character should be added), son of Teudegrimo I
+1091007 = {
+	name="Guido"
+	dynasty=MB_guidi
+	martial=7
+	diplomacy=8
+	intrigue=6
+	stewardship=9
+	religion="catholic"
+	culture="italian"
+	trait="calm"
+	trait="honest"
+	father=1091023
+	1012.1.1 = {
+		birth="1012.1.1"
+	}
+	1065.1.1 = {
+		death="1065.1.1"
+	}
+}
+# Guido V(son of Guido IV, his first wife was Ermellina di Mangona(alberti), they had 3 sons, one of them, Ruggieri, died young in 1097).Ermelina died the 21th of januar 1096 and he remarried to Sofia widow of Arrigo del M. S. Maria.
+1091008 = {
+	name="Guido" 
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=10
+	intrigue=6
+	stewardship=12
+	religion="catholic"
+	culture="italian"
+	trait="education_martial_3"
+	trait="diligent"
+	trait="ambitious"
+	father=1091007
+	1035.1.1 = {
+		birth="1035.1.1"
+	}
+	1103.1.1 = {
+		death="1103.1.1"
+	}
+}
+#Teudegrimo IV (son of Guido V)
+1091010 = {
+	name="Teudegrimo"
+	dynasty=MB_guidi
+	martial=9
+	diplomacy=4
+	intrigue=7
+	stewardship=3
+	religion="catholic"
+	culture="italian"
+	trait="shy"
+	father=1091008
+	1068.1.1 = {
+		birth="1068.1.1"
+	}
+	1099.1.1 = {
+		death="1099.1.1"
+	}
+}
+#Guido Guerra I, oldest son of Guido V, his wife was countess Imilia, Raniero Sinibaldo's daughter. attested 1100, 1103, 1122 and 1131
+1091009 = {
+	name="Guido Guerra" 
+	dynasty=MB_guidi
+	martial=12
+	diplomacy=7
+	intrigue=10
+	stewardship=8
+	religion="catholic"
+	culture="italian"
+	trait="education_martial_4"
+	trait="arrogant"
+	trait="ambitious"
+	father=1091008
+	1067.1.1 = {
+		birth="1067.1.1"
+	}
+	1131.1.1 = {
+		death="1131.1.1"
+	}
+}
+1065060 = {#Sofia daughter of Guido Guerra
+	name="Sofia"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    female=yes
+    father=1091009
+	1088.1.1 = {
+		birth=yes
+	}
+	1125.1.1 = {
+		death=yes
+	}
+}
+#Guido Guerra II, son of Guido Guerra I
+1091011 = {
+	name="Guido Guerra"
+	dynasty=MB_guidi
+	martial=12
+	diplomacy=12
+	intrigue=6
+	stewardship=11
+	religion="catholic"
+	culture="italian"
+	trait="education_martial_4"
+	trait="arrogant"
+	trait="gregarious"
+	father=1091009
+	1104.1.1 = {
+		birth="1104.1.1"
+	}
+	1186.1.1 = {
+		death="1186.1.1"
+	}
+}
+#Guido Guerra III (son of Guido Guerra II, the most powerful lord of Tuscany during his times, his wife was the beautiful Gualdrada, Bellincione Berti de' Ravignani's daughter, they had 5 sons)
+1091012 = {
+	name="Guido Guerra" 
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=6
+	intrigue=6
+	stewardship=5
+	religion="catholic"
+	culture="italian"
+	trait="gregarious"
+	trait="arrogant"
+	trait="ambitious"
+	trait="greedy"
+	trait="education_stewardship_4"
+	father=1091011
+	1150.1.1 = {
+		birth="1150.1.1"
+	}
+	1220.1.1 = {
+		death="1220.1.1"
+	}
+}
+######Modigliana
+#Guido Guerra IV, father of Ghibeline branch di Modigliana (son of Guido Guerra III, his wife was countess Giovanna de' Pallavicini, sister of marquise Oberto de' Pallavicini, they had 2 sons)
+1091013 = {
+	name="Guido Guerra"
+	dynasty=MB_guidi
+	martial=9
+	diplomacy=9
+	intrigue=5
+	stewardship=7
+	religion="catholic"
+	culture="italian"
+	trait="education_martial_3"
+	trait="gregarious"
+	trait="arrogant"
+	trait="honest"
+	father=1091012
+	1178.1.1 = {
+		birth="1178.1.1"
+	}
+	1246.1.1 = {
+		death="1246.1.1"
+	}
+}
+#Guido-Novello, oldest son of Guido Guerra IV, ghibline leader. married Giouanna, attested 1252(leading an army for the ghibelines of firenze), 1253, 1261, 1263, 1266, 1269, 1275, 1286 and 1289(lead troops for ghibelines again as podesta of arezzo?). conte di Modigliana e Casentino, Vicario di Firenze 1261 podesta of Arezzo 1289.
+1091018 = {
+	name="Guido-Novello"
+	dynasty=MB_guidi
+	martial=9
+	diplomacy=7
+	intrigue=7
+	stewardship=8
+	religion="catholic"
+	culture="italian"
+	trait="education_martial_3"
+	trait="arrogant"
+	trait="ambitious"
+	father=1091013
+	1206.1.1 = {
+		birth=yes
+	}
+	1289.6.11 = {
+		death=yes
+	}
+}
+1065061 = {#Manfredi d'Ampinana, oldest son of Guido Novello I, attested 1291 and 1299. Like his brother he held a string of castles in the Apiennes and Mugello.
+	name="Manfredi"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1091018
+	1226.1.1 = {
+		birth=yes
+	}
+	1300.1.1 = {
+		death=yes
+	}
+}
+1065062 = {#Federigo, 2nd son of Guido Novello I, attested 1292 and 1311(debt, owed money to the Medici)
+	name="Federigo"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065061
+	1240.1.1 = {
+		birth=yes
+	}
+	1312.1.1 = {
+		death=yes
+	}
+}
+1065063 = {#Guido Novello II, son of Federigo, attested 1322 and 1342
+	name="Guido Novello"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065062
+	1265.1.1 = {
+		birth=yes
+	}
+	1342.1.1 = {
+		death=yes
+	}
+}
+1065064 = {#Agnolo, son of Guido Novello II, attestd 1357
+	name="Agnolo"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065063
+	1285.1.1 = {
+		birth=yes
+	}
+	1360.1.1 = {
+		death=yes
+	}
+}
+1065065 = {#Altomilla, daughter of Federigo
+	name="Altomilla"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065062
+	female=yes
+	1270.1.1 = {
+		birth=yes
+	}
+	1315.1.1 = {
+		death=yes
+	}
+}
+1065066 = {#Giovanna, daughter of Federigo, married conte Tegrino di Modigliana(porciano?).
+	name="Giovanna"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065062
+	female=yes
+	1256.1.1 = {
+		birth=yes
+	}
+	1305.1.1 = {
+		death=yes
+	}
+}
+1065067 = {#Guglielmo Spadalunga, 3rd son of Guido Novello I, attested 1298, 1299 and 16th of february 1328. ghibeline, led german cavalry against the Romena branch in 1328.
+	name="Guglielmo"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065061
+	1255.1.1 = {
+		birth=yes
+	}
+	1329.1.1 = {
+		death=yes
+	}
+}
+1065068 = {#Galeotto, son of Guglielmo. attested 1331, 1349 and 1353 ghibeline
+	name="Galeotto"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065067
+	1285.1.1 = {
+		birth=yes
+	}
+	1354.1.1 = {
+		death=yes
+	}
+}
+1065069 = {#Ricciardo, son of Guglielmo attsested 1333, ghibeline, podesta of Lucca 1326.
+	name="Ricciardo"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065067
+	1280.1.1 = {
+		birth=yes
+	}
+	1335.1.1 = {
+		death=yes
+	}
+}
+###Battifolle, subbranch of the Modigliana.
+# Simon I# second son of Guido Guerra IV, attested 1265 and 1274
+1091019 = {
+	name="Simone"
+	dynasty=MB_guidi
+	martial=10
+	diplomacy=6
+	intrigue=6
+	stewardship=7
+	religion="catholic"
+	culture="italian"
+	trait="education_martial_3"
+	trait="arrogant"
+	trait="ambitious"
+	father=1091013
+	1209.1.1 = {
+		birth=yes
+	}
+	1275.1.1 = {
+		death=yes
+	}
+}
+1065070 = {#Guido di Battifolle, son of Simone I. conte di Battifolle 1283, vicario di firenze 1316.
+	name="Guido"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1091019
+	1235.1.1 = {
+		birth=yes
+	}
+	1317.1.1 = {
+		death=yes
+	}
+}
+1065071 = {#Ugo, son of Guido, conte di battifolle by 1325, podesta of Siena 1319. last attested 1330.
+	name="Ugo"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065070
+	1260.1.1 = {
+		birth=yes
+	}
+	1331.1.1 = {
+		death=yes
+	}
+}
+1065072 = {#Guido di Battifolle II, son of Ugo. conte di Battifolle 1336, last attested 1375.
+	name="Guido"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065071
+	1290.1.1 = {
+		birth=yes
+	}
+	1375.1.1 = {
+		death=yes
+	}
+}
+##Poppi, subsubbranch of the Modigliana.
+1065073 = {#Simone II, son of Guido di Battifolle I, conte di Poppi 1318, capitano generale di firenze 1319. conte palatino di toscana 1355.
+	name="Simone"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065070
+	1279.1.1 = {
+		birth=yes
+	}
+	1356.1.1 = {
+		death=yes
+	}
+}
+1065074 = {#Roberto di Battifolle, son of Simone II, attested 1374.
+	name="Roberto"
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065073
+	1300.1.1 = {
+		birth=yes
+	}
+	1375.1.1 = {
+		death=yes
+	}
+}
+###### Dovadola
+#Marcovaldo, founder of the original Guelph branch, di Dovadola (son of Guido Guerra III, his wife was Beatrice di Capraia(alberti), they had 2 sons)
+1091014 = {
+	name="Marcovaldo"
+	dynasty=MB_guidi
+	martial=7
+	diplomacy=8
+	intrigue=10
+	stewardship=8
+	religion="catholic"
+	culture="italian"
+	trait="education_intrigue_2"
+	trait="ambitious"
+	trait="greedy"
+	father=1091012
+	1187.1.1 = {
+		birth="1187.1.1"
+	}
+	# 1205.1.1 = {
+	# 	add_spouse=	1065090 # Beatrice di Carparia
+	# }	
+	1229.1.12 = {
+		death="1229.1.12"
+	}
+}
+#Guido Guerra 5, oldest son of Marcovaldo, conte di Dovadola, attested 1254, 1255 and 1263.
+1091020 = {
+	name="Guido Guerra"
+	dynasty=MB_guidi
+	martial=9
+	diplomacy=8
+	intrigue=5
+	stewardship=7
+	religion="catholic"
+	culture="italian"
+	trait="education_martial_2"
+	trait="arrogant"
+	trait="ambitious"
+	father=1091014
+	#mother=1065090 # Beatrice di Carparia
+	1219.1.1 = {
+		birth="1219.1.1" 
+	}
+	1263.1.1 = {
+		death="1263.1.1"
+	}
+}
+# Ruggieri II# second son of Marcovaldo, conte di Dovadola. attested 1255, 1263. dead by 1271
+1091021 = {
+	name="Ruggieri"
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=7
+	intrigue=10
+	stewardship=8
+	religion="catholic"
+	culture="italian"
+	trait="education_intrigue_2"
+	trait="greedy"
+	trait="ambitious"
+	father=1091014
+	#mother=1065090 # Beatrice di Carparia
+	1221.1.1 = {
+		birth="1221.1.1" 
+	}
+	1271.1.1 = {
+		death="1271.1.1"
+	}
+}
+#Guido Salvatico #son of Ruggieri II, podesta of Siena 1282 and 1288, florentine commander against Pisa in 1287, attested as conte di Dovadola in 1271, 1273 and 1278. last attested 1301(transfeered most of his propperty to his son Ruggieri )
+1091022 = {
+	name="Guido Salvatico"
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=9
+	intrigue=6
+	stewardship=10
+	religion="catholic"
+	culture="italian"
+	trait="education_stewardship_2"
+	trait="arrogant"
+	trait="ambitious"
+	father=1091021
+	1239.1.1 = {
+		birth=yes
+	}
+	1305.1.1 = {
+		death=yes
+	}
+}
+1091036 = {
+	name="Ruggieri"#Rugieri, son of guido Salvatico, conte di Dovadola, conte di Dovdola 1301, podesta of Firenze 1304, capitano del popolo of siena 1322, 
+	dynasty=MB_guidi
+	martial=6
+	diplomacy=5
+	intrigue=6
+	stewardship=4
+	religion="catholic"
+	culture="italian"
+	father=1091022
+	1260.1.1 = {
+		birth=yes 
+	}
+	1323.1.1 = {
+		death=yes
+	}
+}
+#Marcovaldo II, son of Ruggieri III, attested 1340.
+1091037 = {
+	name="Marcovaldo"
+	dynasty=MB_guidi
+	martial=6
+	diplomacy=5
+	intrigue=4
+	stewardship=8
+	religion="catholic"
+	culture="italian"
+	father=1091036
+	1282.1.1 = {
+		birth = yes
+	}
+	1341.1.1 = {
+		death = yes
+	}
+}
+#Francesco# son of Ruggieri III, brother of Marcovaldo, he get the family castle after the death of his brother, unknown dates
+1091038 = {
+	name="Francesco"
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=7
+	intrigue=5
+	stewardship=4
+	religion="catholic"
+	culture="italian"
+	father=1091036
+	1288.1.1 = {
+		birth=yes 
+	}
+	1347.1.1 = {
+		death=yes
+	}
+}
+#Malatesta# son of Francesco, unknown date of birth
+1091039 = {
+	name="Malatesta"
+	dynasty=MB_guidi
+	martial=6
+	diplomacy=7
+	intrigue=8
+	stewardship=6
+	religion="catholic"
+	culture="italian"
+	father=1091038
+	1324.1.1 = {
+		birth=yes
+	}
+	1407.1.1 = {
+		death=yes
+	}
+}
+#Giovanni# son of malatesta, unknown dates of birth and death
+1091040 = {
+	name="Giovanni"
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=7
+	intrigue=6
+	stewardship=4
+	religion="catholic"
+	culture="italian"
+	father=1091039
+	1336.1.1 = {
+		birth=yes
+	}
+	1413.1.1 = {
+		death=yes
+	}
+}
+#Carlo# son of Malatesta, unknown dates of birth and death
+1091041 = {
+	name="Carlo"
+	dynasty=MB_guidi
+	martial=3
+	diplomacy=6
+	intrigue=7
+	stewardship=4
+	religion="catholic"
+	culture="italian"
+	father=1091039
+	1343.1.1 = {
+		birth="1343.1.1"
+	}
+	1420.1.1 = {
+		death="1420.1.1"
+	}
+}
+#Francesco# son of Malatesta, unknown dates of birth and death
+1091042 = {
+	name="Francesco"
+	dynasty=MB_guidi
+	martial=4
+	diplomacy=8
+	intrigue=6
+	stewardship=4
+	religion="catholic"
+	culture="italian"
+	father=1091039
+	1345.1.1 = {
+		birth="1345.1.1"
+	}
+	1418.1.1 = {
+		death="1418.1.1"
+	}
+}
+#Guelfo# son of Malatesta, unknown dates of birth and death
+1091043 = {
+	name="Guido d'Aghinolfo"
+	dynasty=MB_guidi
+	martial=3
+	diplomacy=6
+	intrigue=4
+	stewardship=8
+	religion="catholic"
+	culture="italian"
+	father=1091039
+	1346.1.1 = {
+		birth="1346.1.1"
+	}
+	1429.1.1 = {
+		death="1429.1.1"
+	}
+}
+######Romena branch
+#(son of Guido Guerra III, father of Di Romena branch), ghibelines
+1091015 = {
+	name="Aghinolfo" 
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=6
+	intrigue=6
+	stewardship=5
+	religion="catholic"
+	culture="italian"
+	trait="education_learning_2"
+	trait="content"
+	father=1091012
+	1185.1.1 = {
+		birth="1185.1.1"
+	}
+	1248.1.1 = {
+		death="1248.1.1"
+	}
+}
+#Guido d'Aghinolfo# son of Aghinolfo, nephew of Guido Guerra III. Conte di Romena.
+1091027 = {
+	name="Guido"
+	dynasty=MB_guidi
+	martial=4
+	diplomacy=5
+	intrigue=7
+	stewardship=9
+	religion="catholic"
+	culture="italian"
+    father=1091015
+	1229.1.1 = {
+		birth=yes
+	}
+	1281.1.1 = {
+		death=yes
+	}
+}
+#Alessandro# son of Aghinolfo, nephew of Guido Guerra III, unknown date of birth and death 
+1091028 = {
+	name="Alessandro"
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=7
+	intrigue=5
+	stewardship=6
+	religion="catholic"
+	culture="italian"
+	father=1091015
+	1232.1.1 = {
+		birth="1232.1.1"
+	}
+	1295.1.1 = {
+		death="1295.1.1"
+	}
+}
+#Aghinolfo 2# son of Guido d'Aghinolfo and countess gualrada, conte di Romena in 1338. minted coins he wasn't supposed to mint.
+1091029 = {
+	name="Aghinolfo"
+	dynasty=MB_guidi
+	martial=6
+	diplomacy=3
+	intrigue=5
+	stewardship=9
+	religion="catholic"
+	culture="italian"
+	father=1091027
+	1255.1.1 = {
+		birth=yes
+	}
+	1338.1.1 = {
+		death=yes
+	}
+}
+1065038 = {
+	name="Ildebrandino" # Ildebrandino/Bandino, son of Guido, bishop of Arezzo 1289-1313
+	dynasty=MB_guidi
+	martial=3
+	diplomacy=6
+	intrigue=4
+	stewardship=8
+	religion="catholic"
+	culture="italian"
+    father=1091027
+	1260.1.1 = {
+		birth=yes
+	}
+	1313.1.1 = {
+		death=yes
+	}
+}
+#Alberto# son of Aghinolfo 2, unknown date of birth and death
+1091030 = {
+	name="Alberto"
+	dynasty=MB_guidi
+	martial=9
+	diplomacy=8
+	intrigue=7
+	stewardship=4
+	religion="catholic"
+	culture="italian"
+	father=1091029
+	1289.1.1 = {
+		birth=yes
+	}
+	1315.1.1 = {
+		death=yes
+	}
+}
+#Uberto, son of Aghinolfo II.
+1091031 = {
+	name="Uberto"
+	dynasty=MB_guidi
+	martial=9
+	diplomacy=7
+	intrigue=8
+	stewardship=7
+	religion="catholic"
+	culture="italian"
+	father=1091029
+	1272.1.1 = {
+		birth= yes
+	}
+	1311.1.1 = {
+		death= yes
+	}
+}
+#Piero, oldest son of Uberto, conte di Romena. attested 1339 and 1341.
+1091034 = {
+	name="Piero"
+	dynasty=MB_guidi
+	martial=6
+	diplomacy=5
+	intrigue=7
+	stewardship=6
+	religion="catholic"
+	culture="italian"
+	father=1091031
+	1285.1.1 = {
+		birth=yes
+	}
+	1342.1.1 = {
+		death=yes
+	}
+}
+#Bandino I, son of Uberto, conte di Montegranelli, attested as conte di Romena 1339, 1341 and 1357.
+1091033 = {
+	name="Bandino"
+	dynasty=MB_guidi
+	martial=8
+	diplomacy=7
+	intrigue=6
+	stewardship=5
+	religion="catholic"
+	culture="italian"
+	father=1091031
+	1290.1.1 = {
+		birth=yes
+	}
+	1359.1.1 = {
+		death=yes
+	}
+}
+1091035 = {
+	name="NiccolO_"#NiccolO_, son of Bandino, nephew of Alberto, unknown dates
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=7
+	intrigue=6
+	stewardship=6
+	religion="catholic"
+	culture="italian"
+	father=1091033
+	1310.1.1 = {
+		birth=yes
+	}
+	1380.1.1 = {
+		death=yes
+	}
+}
+######Porciano branch.
+1091016 = {
+	name="Teudegrimo" #(son of Guido Guerra III, father of di Porciano branch), married Albiera, conte di Porciano
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=6
+	intrigue=6
+	stewardship=5
+	religion="catholic"
+	culture="italian"
+	trait="education_martial_2"
+	trait="humble"
+	father=1091012
+	1183.1.1 = {
+		birth="1183.1.1"
+	}
+	1239.1.1 = {
+		death="1239.1.1"
+	}
+}
+1091032 = {
+	name="Tegrino"#Tegrino il Vecchio, son of Teudegrimo?, conte di Porciano. married Gualdrada, ghibeline, attested 1220, 1253 and 1260
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1091016
+	1205.1.1 = {
+		birth=yes
+	}
+	1265.1.1 = {
+		death=yes
+	}
+}
+1065075 = {
+	name="Guido"#Guido son of Tegrino, conte di Porciano, attested 1267, 1281 and 1286, guelph?
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1091032
+	1225.1.1 = {
+		birth=yes
+	}
+	1287.1.1 = {
+		death=yes
+	}
+}
+1065076 = {
+	name="Fazio"#Fazio, second son of Guido, attested 1299 and 1309
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065075
+	1255.1.1 = {
+		birth=yes
+	}
+	1309.1.1 = {
+		death=yes
+	}
+}
+1065077 = {
+	name="Corrado"#Corrado, son of Guido
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065075
+	1247.1.1 = {
+		birth=yes
+	}
+	1289.1.1 = {
+		death=yes
+	}
+}
+1065078 = {
+	name="Amerigo"#Amerigo, son of Corrado, podesta of Firenze 1291?
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065077
+	1265.1.1 = {
+		birth=yes
+	}
+	1310.1.1 = {
+		death=yes
+	}
+}
+1065079 = {
+	name="Guido Zaffiro"#Guido Zaffiro, son of Amerigo, conte of?, attested 1326 and 1353, married Margharita di Modigliana
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065078
+	1295.1.1 = {
+		birth=yes
+	}
+	1354.1.1 = {
+		death=yes
+	}
+}
+1065080 = {
+	name="Guido"#Guido, son of Guido I di Porciano
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065075
+	1250.1.1 = {
+		birth=yes
+	}
+	1310.1.1 = {
+		death=yes
+	}
+}
+###### Second Porciano branch, this branch was affirmed to Porciano by the emperor in 1311.
+1065081 = {
+	name="Tancredi"#Tancredi, brother of a Bandino, son of Guido?, conte di Porciano 1311 and 1333.
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065080
+	1270.1.1 = {
+		birth=yes
+	}
+	1333.1.1 = {
+		death=yes
+	}
+}
+1065082 = {
+	name="Guido Uberto"#Guido Uberto/Guidoalberto, son of Tancredi. conte di Porciano 1341. dead by 1349
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065081
+	1290.1.1 = {
+		birth=yes
+	}
+	1349.1.1 = {
+		death=yes
+	}
+}
+1065083 = {
+	name="Bandino"#Bandino, younger brother of Tancredi
+	dynasty=MB_guidi
+	religion="catholic"
+	culture="italian"
+    father=1065080
+	1270.1.1 = {
+		birth=yes
+	}
+	1333.1.1 = {
+		death=yes
+	}
+}
+#####
+#Ruggieri 1# died before his older brother Guido Guerra IV (son of Guido Guerra III)
+1091017 = {
+	name="Ruggieri"
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=6
+	intrigue=3
+	stewardship=5
+	religion="catholic"
+	culture="italian"
+	trait="education_learning_1"
+	trait="ill"
+	father=1091012
+	1180.1.1 = {
+		birth="1180.1.1"
+	}
+	1225.5.9 = {
+		death="1225.5.9"
+	}
+}
+#Guido# son of Teudegrimo, nephew of Guido Guerra III unknown date of birth and death 
+1091024 = {
+	name="Guido"
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=6
+	intrigue=7
+	stewardship=5
+	religion="catholic"
+	culture="italian"
+	father=1091016
+	1235.1.1 = {
+		birth="1235.1.1"
+	}
+	1300.1.1 = {
+		death="1300.1.1"
+	}
+}
+#Guido Francesco# son of Guido?, if so it would be nephew of Teudegrimo di Porciano, unknown date of birth, conte di Porciano 1357
+1091025 = {
+	name="Guido"
+	dynasty=MB_guidi
+	martial=4
+	diplomacy=5
+	intrigue=6
+	stewardship=7
+	religion="catholic"
+	culture="italian"
+	father=1091024
+	1275.1.1 = {
+		birth="1275.1.1"
+	}
+	1369.1.1 = {
+		death="1369.1.1"
+	}
+}
+#Antonio# son of Guido Francesco, nephew of Guido, unknown date of birth and death, by 1392 he was surely adult maybe 25 or nearly 30 years old, in 1400 he rebelled against Firenze siding himself for Milano, by 1402 he lost and was exiled, his lands were confiscated by the florentines 
+1091026 = {
+	name="Antonio"
+	dynasty=MB_guidi
+	martial=5
+	diplomacy=5
+	intrigue=6
+	stewardship=6
+	religion="catholic"
+	culture="italian"
+	father=1091025
+	1362.1.1 = {
+		birth="1362.1.1"
+	}
+	1410.1.1 = {
+		death="1410.1.1"
+	}
+}

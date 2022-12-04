@@ -57,7 +57,7 @@ knight_berserker_attack = {
 		scope:combat_side.enemy_side = {
 			any_side_knight = {
 				is_alive = yes
-				this.prowess <= { value = root.prowess multiply = 0.8 }
+				this.prowess <= root.prowess_for_combat_event_opponent
 			}
 		}
 	}
@@ -127,7 +127,7 @@ knight_berserker_attack = {
 				scope:combat_side.enemy_side = {
 					any_side_knight = {
 						is_alive = yes
-						this.prowess <= { value = root.prowess multiply = 0.8 }
+						this.prowess <= root.prowess_for_combat_event_opponent
 					}
 				}
 			}
@@ -135,7 +135,7 @@ knight_berserker_attack = {
 				random_side_knight = {
 					limit = {
 						is_alive = yes
-						this.prowess <= { value = root.prowess multiply = 0.8 }
+						this.prowess <= root.prowess_for_combat_event_opponent
 					}
 					save_temporary_scope_as = enemy_knight
 				}
@@ -275,14 +275,14 @@ knight_become_berserker = {
 			limit = {
 				scope:combat_side.enemy_side = {
 					any_side_knight = {
-						this.prowess <= { value = root.prowess multiply = 0.8 }
+						this.prowess <= root.prowess_for_combat_event_opponent
 					}
 				}
 			}
 			scope:combat_side.enemy_side = {
 				random_side_knight = {
 					limit = {
-						this.prowess <= { value = root.prowess multiply = 0.8 }
+						this.prowess <= root.prowess_for_combat_event_opponent
 					}
 					save_temporary_scope_as = enemy_knight
 				}
@@ -339,7 +339,7 @@ knight_shieldmaiden_attack = {
 		scope:combat_side.enemy_side = {
 			any_side_knight = {
 				is_alive = yes
-				this.prowess <= { value = root.prowess multiply = 0.8 }
+				this.prowess <= root.prowess_for_combat_event_opponent
 			}
 		}
 	}
@@ -409,7 +409,7 @@ knight_shieldmaiden_attack = {
 				scope:combat_side.enemy_side = {
 					any_side_knight = {
 						is_alive = yes
-						this.prowess <= { value = root.prowess multiply = 0.8 }
+						this.prowess <= root.prowess_for_combat_event_opponent
 					}
 				}
 			}
@@ -417,7 +417,7 @@ knight_shieldmaiden_attack = {
 				random_side_knight = {
 					limit = {
 						is_alive = yes
-						this.prowess <= { value = root.prowess multiply = 0.8 }
+						this.prowess <= root.prowess_for_combat_event_opponent
 					}
 					save_temporary_scope_as = enemy_knight
 				}
@@ -497,14 +497,14 @@ knight_wounded = {
 			limit = {
 				scope:combat_side.enemy_side = {
 					any_side_knight = {
-						this.prowess >= { value = root.prowess multiply = 0.8 }
+						this.prowess >= root.prowess_for_combat_event_opponent
 					}
 				}
 			}
 			scope:combat_side.enemy_side = {
 				random_side_knight = {
 					limit = {
-						this.prowess >= { value = root.prowess multiply = 0.8 }
+						this.prowess >= root.prowess_for_combat_event_opponent
 					}
 					save_temporary_scope_as = enemy_knight
 					add_prestige = knight_prestige_gain_on_wound_inverse
@@ -573,7 +573,7 @@ knight_maimed = {
 		}
 		modifier = { # No deaths when vastly outnumbering the enemy
 			factor = 0
-			scope:combat_side.side_strength > { value = scope:combat_side.enemy_side.side_strength multiply = 5 }
+			scope:combat_side.side_strength > scope:combat_side.enemy_side.vastly_outnumbered_combat_side_threshold
 		}
 		modifier = {
 			factor = 1.05
@@ -600,14 +600,14 @@ knight_maimed = {
 			limit = {
 				scope:combat_side.enemy_side = {
 					any_side_knight = {
-						this.prowess >= { value = root.prowess multiply = 0.8 }
+						this.prowess >= root.prowess_for_combat_event_opponent
 					}
 				}
 			}
 			scope:combat_side.enemy_side = {
 				random_side_knight = {
 					limit = {
-						this.prowess >= { value = root.prowess multiply = 0.8 }
+						this.prowess >= root.prowess_for_combat_event_opponent
 					}
 					save_temporary_scope_as = enemy_knight
 					add_prestige = knight_prestige_gain_on_wound_inverse
@@ -641,7 +641,7 @@ knight_killed = {
 	type = knight
 
 	chance = {
-		base = 1030
+		base = 30
 		modifier = {
 			factor = { # Prowess directly reduces chance of injury/death
 				value = 30 # Value at which 'immortality' happens
@@ -667,7 +667,7 @@ knight_killed = {
 		}
 		modifier = { # No deaths when vastly outnumbering the enemy
 			factor = 0
-			scope:combat_side.side_strength > { value = scope:combat_side.enemy_side.side_strength multiply = 5 }
+			scope:combat_side.side_strength > scope:combat_side.enemy_side.vastly_outnumbered_combat_side_threshold
 		}
 		modifier = {
 			factor = 1.05
@@ -726,14 +726,14 @@ knight_killed = {
 			limit = {
 				scope:combat_side.enemy_side = {
 					any_side_knight = {
-						this.prowess >= { value = root.prowess multiply = 0.8 }
+						this.prowess >= root.prowess_for_combat_event_opponent
 					}
 				}
 			}
 			scope:combat_side.enemy_side = {
 				random_side_knight = {
 					limit = {
-						this.prowess >= { value = root.prowess multiply = 0.8 }
+						this.prowess >= root.prowess_for_combat_event_opponent
 					}
 					save_temporary_scope_as = enemy_knight
 					add_prestige = knight_prestige_gain_on_kill_inverse
@@ -760,6 +760,8 @@ knight_killed = {
 					}
 				}
 				every_character_struggle = {
+					involvement = involved
+					is_struggle_type = struggle_guelph_ghibelline
 					activate_struggle_catalyst = {
 						catalyst = catalyst_killed_in_battle
 						character = scope:enemy_knight
@@ -785,6 +787,8 @@ knight_killed = {
 				}
 			}
 			every_character_struggle = {
+				involvement = involved
+				is_struggle_type = struggle_guelph_ghibelline
 				activate_struggle_catalyst = {
 					catalyst = catalyst_killed_in_battle
 				}
@@ -812,6 +816,8 @@ knight_killed = {
 			}
 
 			every_character_struggle = {
+				involvement = involved
+				is_struggle_type = struggle_guelph_ghibelline
 				activate_struggle_catalyst = {
 					catalyst = catalyst_killed_in_battle
 				}
