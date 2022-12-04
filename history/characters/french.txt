@@ -368,13 +368,14 @@
 	intrigue = 7
 	stewardship = 7
 	religion = "catholic"
-	culture = french
+	culture = norman
 	trait = education_martial_1
 	trait = ambitious
 	father = 204506
 	mother = 202991
 	1134.6.1 = {
 		birth = "1134.6.1"
+		learn_language = language_occitano_romance
 	}
 	1158.7.27 = {
 		death = "1158.7.27"
@@ -2578,6 +2579,10 @@
 	father = 204506
 	1147.1.1 = {
 		birth = "1147.1.1"
+		learn_language = language_occitano_romance
+	}
+	1174.1.1 = {
+		learn_language = language_brythonic
 	}
 	#1174 married Dafydd ap Owain 214700
 	1214.1.1 = {
@@ -2589,7 +2594,7 @@
 	name = "Geoffroy"
 	dna = 204506_geoffrey_le_bel
 	# AKA: Geoffrey the Handsome
-	dynasty = 106
+	dynasty = 723
 	martial = 5
 	diplomacy = 8
 	intrigue = 7
@@ -2609,6 +2614,9 @@
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
+	}
+	1128.1.1 = { 
+		dynasty = 106
 	}
 	1130.1.2 = {
 		give_nickname = nick_the_handsome
@@ -3185,6 +3193,7 @@
 	mother = 205730 #Aliénor d'Aquitaine
 	1151.7.28 = {
 		birth = "1151.7.28"
+		learn_language = language_occitano_romance
 	}
 	#Thibaut V le Bon
 	1195.1.1 = {
@@ -3403,6 +3412,7 @@
 	trait = education_stewardship_4
 	1145.1.1 = {
 		birth = "1145.1.1"
+		learn_language = language_occitano_romance
 	}
 	#Henri I le Libéral (1164.1.1)
 	#Monastere in 1197
@@ -52127,7 +52137,7 @@ KOH0240 = {
 	name = "Itier"
 	dynasty = 40016
 	religion = "catholic"
-	culture = french
+	culture = "occitan"
 	trait = education_stewardship_3
 	1155.1.1 = {
 		birth = "1155.1.1"
@@ -52142,11 +52152,12 @@ KOH0240 = {
 	female = yes
 	dynasty = 40016
 	religion = "catholic"
-	culture = french
+	culture = "occitan"
 	trait = beauty_good_2
 	father = 157_KOH_CKIII
 	1180.1.1 = {
 		birth = "1180.1.1"
+		learn_language = language_french
 	}
 	1198.1.1 = {
 		death = "1198.1.1"
