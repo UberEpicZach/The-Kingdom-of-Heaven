@@ -59,7 +59,6 @@ KOH_richard_bride.1 = {
 
 		character:204510 = {
 			set_sexuality = homosexual
-			add_trait = unwed
 		}
 		hidden_effect = {
 			character:205518 = {
@@ -101,6 +100,9 @@ KOH_richard_bride.2 = {
 			flag = had_event_richard_bride.2
 		}
 		hidden_effect = {
+			character:204510 = {
+				remove_trait = unwed
+			}
 			character:205518 = {
 				remove_trait = unwed
 			}
@@ -231,10 +233,13 @@ KOH_richard_bride.3 = {
 		}
 			hidden_effect = {
 				character:205518 = {
-				remove_trait = unwed
+					remove_trait = unwed
 				}
 				character:206501 = {
-				remove_trait = unwed
+					remove_trait = unwed
+				}
+				character:204510 = {
+					remove_trait = unwed
 				}
 			}
 		every_ruler = {
@@ -371,8 +376,9 @@ KOH_richard_bride.4 = {
 			}
 		}
 		character:232000 = {
-			remove_trait = bastard
+			remove_trait = bastard_founder
 			add_trait = legitimized_bastard
+			dynasty = 106
 		}
 		hidden_effect = {
 			character:KOH0046 = {
@@ -432,8 +438,9 @@ KOH_richard_bride.5 = {
 			}
 		}
 		character:232000 = {
-			remove_trait = bastard
+			remove_trait = bastard_founder
 			add_trait = legitimized_bastard
+			dynasty = 106
 		}
 		hidden_effect = {
 			character:KOH0046 = {
@@ -497,6 +504,9 @@ KOH_richard_bride.6 = {
 	option = {
 		name = richard.bride.6.a
 
+		character:204510 = {
+			remove_trait = unwed
+		}
 		character:205518 = {
 			remove_trait = unwed
 		}
