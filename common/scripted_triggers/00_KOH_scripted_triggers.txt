@@ -163,3 +163,21 @@ use_become_assassin_secrecy_trigger = {
 		# trait_is_shunned_or_criminal_in_my_or_lieges_faith_trigger = { TRAIT = witch GENDER_CHARACTER = scope:witchract_secrecy_check }
 	}
 }
+
+diplomacy_family_0007_election_title_trigger = {
+	save_temporary_scope_as = election_title
+	has_order_of_succession = election
+	any_election_candidate = {
+		has_election_vote_of = {
+			who = root
+			title = scope:election_title
+		}
+		save_temporary_scope_as = election_candidate
+		scope:election_title = {
+			
+			any_elector = {
+				diplomacy_family_0007_elector_trigger = { CANDIDATE = scope:election_candidate TITLE = scope:election_title }
+			}
+		}
+	}
+}

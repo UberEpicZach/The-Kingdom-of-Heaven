@@ -873,3 +873,22 @@ give_assassin_secret_or_trait_effect = {
 		}
 	}	
 }
+
+republic_house_check = {
+	primary_title = {
+		# if = {
+		# 	limit = {
+		# 		any_in_list = {
+		# 			list = Republican_houses
+		# 			count >= 1
+		# 		}
+		# 	}
+			
+		every_in_list = {
+			variable = Republican_houses
+			house_head = {
+				add_gold = 10
+			}
+		}
+	}
+}

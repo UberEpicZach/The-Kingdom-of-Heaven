@@ -46,9 +46,31 @@ on_army_enter_province = {
 on_death = {
 	on_actions = {
 		on_kotr_death
+		on_republic_death
 	}
 	events = {
 		KoH_SicillianConflict.11
+	}
+}
+
+on_republic_death = {
+	events = {
+		KOH_ItalianCommunes.5
+	}
+}
+
+five_year_everyone_pulse = {
+	trigger = {
+		exists = primary_title
+		primary_title = {
+			any_in_list = {
+				variable = Republican_houses
+				count >= 1
+			}
+		}
+	}
+	events = {
+		KOH_ItalianCommunes.4
 	}
 }
 
@@ -348,7 +370,7 @@ KOH_Italian_Familes_Monthly = {
 				AND = {
 					exists = house
 					house = {
-						has_dynasty_modifier = dynasty_guelph
+						has_house_modifier = dynasty_guelph
 					}
 					is_landed = yes
 					is_adult = yes
@@ -364,7 +386,7 @@ KOH_Italian_Familes_Monthly = {
 				AND = {
 					exists = house
 					house = {
-						has_dynasty_modifier = dynasty_ghibelline
+						has_house_modifier = dynasty_ghibelline
 					}
 					is_landed = yes
 					is_adult = yes
@@ -454,7 +476,7 @@ KOH_ON_START = {
 			}
 			if = {
 				limit = {
-					exits = global_var:CFP_is_loaded
+					exists = global_var:CFP_is_loaded
 				}
 				hidden_effect_new_artifact = {
 					set_artifact_rarity_illustrious = yes
@@ -752,6 +774,19 @@ KOH_ON_START = {
 				}
 			} 
 		}
+
+		#Republic Families 
+		faith:catholic = {
+			every_faith_ruler = {
+				limit = {
+					any_character_struggle = {
+						is_struggle_type = struggle_guelph_ghibelline
+						involvement = involved
+					}
+				}
+				trigger_event = KOH_ItalianCommunes.1
+			}
+		}
 	}
 }
 
@@ -953,7 +988,7 @@ KOH_pulse_monthly = {
 						} 
 					}
 				}
-			trigger_event = KoH_saladin.120
+				trigger_event = KoH_saladin.120
 			}
 		}
 		if = {
@@ -1072,9 +1107,9 @@ on_war_won_defender = {
 	}
 }
 on_siege_completion={
-events={
-temujin.0009
-}
+	events = {
+		temujin.0009
+	}
 }
 # MyMo_ongamestart = {
 # 	effect = {

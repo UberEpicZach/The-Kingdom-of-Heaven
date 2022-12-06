@@ -1,579 +1,1623 @@
-﻿# namespace = KOH_ItalianCommunes
+﻿namespace = KOH_ItalianCommunes
 
-# scripted_trigger ItalianCommune_county_trigger = {
-# 	tier = tier_county
-# 	this = root.capital_county
-# }
+KOH_ItalianCommunes.1 = {
+	type = character_event
+	hidden = yes
+	theme = dynasty
+	left_portrait = root
 
-# #Random Generated Characters
-# KOH_ItalianCommunes.1 = {
-# 	type = character_event
-# 	title = KOH_ItalianCommunes.1.t
-# 	desc = {
-# 		desc = KOH_ItalianCommunes.1.desc
-# 	}
-# 	theme = dynasty
-# 	left_portrait = root
+	immediate = {
+		if = {
+			limit = {
+				exists = house
+			}
+			primary_title = {
+				save_scope_as = republic_title
 
-# 	trigger = {
-# 			is_adult = yes
-# 			is_ai = no
-# 		}
+				add_to_variable_list = {
+					name = Republican_houses
+					target = root.house
+				}
+			}
+			every_vassal_or_below = {
+				limit = {
+					exists = house
+					house = {
+						any_house_member = {
+							count >= 3
+						}
+					}
+				}
+				scope:republic_title = {
+					add_to_variable_list = {
+						name = Republican_houses
+						target = prev.house
+					}
+				}
+			}
+			every_courtier = {
+				limit = {
+					exists = house
+					house = {
+						any_house_member = {
+							count >= 3
+						}
+					}
+				}
+				scope:republic_title = {
+					add_to_variable_list = {
+						name = Republican_houses
+						target = prev.house
+					}
+				}
+			}
+		}
+	}
+}
 
-# 	immediate = {
+KOH_ItalianCommunes.2 = {
+	type = character_event
+	title = KOH_ItalianCommunes.4.t
+	desc = {
+		desc = KOH_ItalianCommunes.4.desc
+	}
+	theme = dynasty
+	left_portrait = root
 
-# 		root = {
-# 			add_character_flag = original_root
-# 		}
+	immediate = {
 
-# 		random_held_title = {
-# 			limit = {
-# 				ItalianCommune_county_trigger = yes
-# 			}
-# 			save_scope_as = county
-# 		}
-# 	}
+	}
+	option = {
+		name = KOH_ItalianCommunes.4.a
 
-# 	#Option 1
-# 	option = {
-# 		name = KOH_ItalianCommunes.1.a
-# 		custom_tooltip = "A Bureaucrat Candidate"
-
-# 		root = { random_dummy_gender_landholder_effect = yes }
-# 		create_character = {
-# 			age = { 20 30 }
-# 			location = root.capital_province
-# 			gender = scope:dummy_gender
-# 			faith = this.faith
-# 			culture = this.culture
-# 			dynasty = none
-# 			random_traits = yes
-# 			stewardship = { 10 12 }
-# 			save_scope_as = elective1
-# 		}
-
-# 		root = {
-# 			get_title = c_unlanded
-# 		}
-	
-# 		trigger_event = KOH_ItalianCommunes.2
-# 	}
-# 	#Option 2
-# 	option = {
-# 		name = KOH_ItalianCommunes.1.b
-# 		custom_tooltip = "A Diplomat Candidate"
-# 		root = { random_dummy_gender_landholder_effect = yes }
-# 		create_character = {
-# 			age = { 40 50 }
-# 			location = root.capital_province
-# 			gender = scope:dummy_gender
-# 			faith = this.faith
-# 			culture = this.culture
-# 			dynasty = inherit
-# 			random_traits = yes
-# 			diplomacy = { 10 12 }
-# 			save_scope_as = elective1
-# 		}
-
-# 		scope:elective1 = {
-# 			if = {
-# 				limit = {
-# 					is_married = no
-# 				}
-# 				create_character = {
-# 					location = scope:elective1.location
-# 					culture = scope:elective1.culture
-# 					faith = scope:elective1.faith
-# 					gender_female_chance = {
-# 						if = {
-# 							limit = { scope:elective1 = { is_male = yes } }
-# 							value = 100
-# 						}
-# 						else = {
-# 							value = 0
-# 						}
-# 					}
-# 					age = scope:elective1.age
-# 					save_scope_as = spouse
-# 				}
-	
-# 				if = {
-# 					limit = { is_male = yes }
-# 					marry = scope:spouse
-# 				}
-# 				else = {
-# 					marry_matrilineal = scope:spouse
-# 				}
-# 			}
-# 			else = {
-# 				primary_spouse = { save_scope_as = spouse }
-# 			}
-	
-# 			if = {
-# 				limit = { is_male = yes }
-# 				save_scope_as = father
-# 				scope:spouse = { save_scope_as = mother }
-# 			}
-# 			else = {
-# 				save_scope_as = mother
-# 				scope:spouse = { save_scope_as = father }
-# 			}
-	
-# 			#Create child 1 (mother age 17+)
-# 			if = {
-# 				limit = { scope:mother.age >= 17 }
-# 				create_character = {
-# 					location = scope:elective1.location
-# 					culture = scope:elective1.culture
-# 					faith = scope:elective1.faith
-# 					gender_female_chance = {
-# 						if = {
-# 							limit = {
-# 								is_ruler = yes
-# 								scope:elective1 = { has_realm_law = male_only_law }
-# 							}
-# 							value = 0
-# 						}
-# 						else = {
-# 							limit = {
-# 								is_ruler = yes
-# 								scope:elective1 = { has_realm_law = female_only_law }
-# 							}
-# 							value = 100
-# 						}
-# 						else = {
-# 							value = 50
-# 						}
-# 					}
-# 					age = {
-# 						value = scope:mother.age
-# 						subtract = 17
-# 					}
-# 					father = scope:father
-# 					mother = scope:mother
-# 					dynasty = inherit
-# 					save_scope_as = child_1
-# 				}
-# 			}
-# 		}
-
-# 		root = {
-# 			get_title = c_unlanded
-# 		}
-# 		trigger_event = KOH_ItalianCommunes.2
-# 	}
-# 	#Option 3
-# 	option = {
-# 		name = KOH_ItalianCommunes.1.c
-# 		custom_tooltip = "A Military Candidate"
-# 		root = { random_dummy_gender_landholder_effect = yes }
-# 		create_character = {
-# 			age = { 20 30 }
-# 			location = root.capital_province
-# 			gender = scope:dummy_gender
-# 			faith = this.faith
-# 			random_traits = yes
-# 			culture = this.culture
-# 			dynasty = none
-# 			martial = { 10 12 }
-# 			save_scope_as = elective1
-# 		}
-
-# 		root = {
-# 			get_title = c_unlanded
-# 		}
-
-# 		trigger_event = KOH_ItalianCommunes.2
-# 	}
-# 	#Option 4
-# 	option = {
-# 		trigger = { 
-# 			root = {
-# 				any_child = {
-# 					count >= 1
-# 				}
-# 			}
-# 		}
-
-# 		name = KOH_ItalianCommunes.1.d
-# 		custom_tooltip = "Reelect from family"
-		
-# 		root = {
-# 			get_title = c_unlanded
-# 		}
-		
-# 		root.primary_heir = {
-# 			save_scope_as = elective1
-# 		}
-
-# 		root.primary_heir = {
-# 			get_title = scope:county
-# 		}
-
-# 		trigger_event = KOH_ItalianCommunes.2
-# 	}
-# 	#Option 5
-# 	option = {
-# 		name = KOH_ItalianCommunes.1.e
-# 		custom_tooltip = "Run for Releection"
-# 		random_list = {
-# 			25 = { #
-# 				root = { random_dummy_gender_landholder_effect = yes }
-# 				create_character = {
-# 					age = { 20 30 }
-# 					location = root.capital_province
-# 					gender = scope:dummy_gender
-# 					faith = this.faith
-# 					culture = this.culture
-# 					dynasty = none
-# 					random_traits = yes
-# 					stewardship = { 10 12 }
-# 					save_scope_as = elective1
-# 				}
-
-# 				root = {
-# 					get_title = c_unlanded
-# 				}
-		
-# 				scope:elective1 = {
-# 					get_title = scope:county
-# 				}
-
-# 				send_interface_toast = {
-# 					type = event_toast_effect_good
-# 					title = "[elective1.GetName] has won the election"
-# 					left_icon = scope:elective1
-# 				}
-# 				trigger_event = KOH_ItalianCommunes.2
-
-# 			}
-# 			25 = {
-# 				root = { random_dummy_gender_landholder_effect = yes }
-# 				create_character = {
-# 					age = { 40 50 }
-# 					location = root.capital_province
-# 					gender = scope:dummy_gender
-# 					faith = this.faith
-# 					culture = this.culture
-# 					dynasty = inherit
-# 					random_traits = yes
-# 					diplomacy = { 10 12 }
-# 					save_scope_as = elective1
-# 				}
-
-# 				root = {
-# 					get_title = c_unlanded
-# 				}
-		
-# 				scope:elective1 = {
-# 					get_title = scope:county
-# 				}
-
-# 				send_interface_toast = {
-# 					type = event_toast_effect_good
-# 					title = "[elective1.GetName] has won the election"
-# 					left_icon = scope:elective1
-# 				}
-# 				trigger_event = KOH_ItalianCommunes.2
-# 			}
-# 			25 = {
-# 				root = { random_dummy_gender_landholder_effect = yes }
-# 				create_character = {
-# 					age = { 20 30 }
-# 					location = root.capital_province
-# 					gender = scope:dummy_gender
-# 					faith = this.faith
-# 					random_traits = yes
-# 					culture = this.culture
-# 					dynasty = none
-# 					martial = { 10 12 }
-# 					save_scope_as = elective1
-# 				}
-
-# 				root = {
-# 					get_title = c_unlanded
-# 				}
+		primary_title = {
+			if = {
+				limit = {
+					any_in_list = {
+						variable = Republican_houses
+						count >= 1
+					}
+				}
 				
-# 				scope:elective1 = {
-# 					get_title = scope:county
-# 				}
+				every_in_list = {
+					variable = Republican_houses
+					house_head = {
+						add_gold = 10
+					}
+				}
+			}
+		}
+	}
+}
 
-# 				send_interface_toast = {
-# 					type = event_toast_effect_good
-# 					title = "[elective1.GetName] has won the election"
-# 					left_icon = scope:elective1
-# 				}
-# 				trigger_event = KOH_ItalianCommunes.2
-# 			}
-# 			25 = {
-# 				send_interface_toast = {
-# 					type = event_toast_effect_good
-# 					title = "You have won the Re-Election"
-# 					left_icon = root
-# 				}
-# 			}
-# 		}
+#Election Candidates!
+KOH_ItalianCommunes.4 = {
+	type = character_event
+	title = KOH_ItalianCommunes.4.t
+	desc = {
+		desc = KOH_ItalianCommunes.4.desc
+	}
+	theme = dynasty
+	left_portrait = root
+
+	immediate = {
+		save_scope_as = republic_holder
+		primary_title = {
+			save_scope_as = republic_title
+		}
+		every_held_title = {
+			add_to_list = held_titles
+		}
+		scope:republic_title = {
+			#FIRST CANDIDATE
+			if = {
+				limit = {
+					any_in_list = {
+						variable = Republican_houses
+						count >= 2
+					}
+				}
+
+				random_in_list = {
+					variable = Republican_houses
+					limit = {
+						NOT = {
+							this = root.house
+						}
+					}
+					save_scope_as = house_1
+					ordered_house_member = {
+						limit = {
+							is_male = yes
+							age >= 18
+							NOR = {
+								has_trait = incapable
+								has_trait = infirm
+							}
+						}
+						order_by = {
+							value = 0
+							# Ideally ones with at least a bit of the relevant skills.
+							if = {
+								limit = { diplomacy >= decent_skill_rating }
+								add = 15
+							}
+							#Educations can help political opinion!
+							if = {
+								limit = { has_trait = education_stewardship_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_stewardship_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_stewardship_4 }
+								add = 20
+							}
+							#Diplo
+							if = {
+								limit = { has_trait = education_diplomacy_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_4 }
+								add = 20
+							}
+							#Martial
+							if = {
+								limit = { 
+									has_trait = education_martial_4
+									scope:republic_title.holder = {
+										is_at_war = yes
+									}
+								}
+								add = 50
+							}
+							if = {
+								limit = { has_trait = education_martial_4 }
+								add = 20
+							}
+							#Intriuge
+							if = {
+								limit = { has_trait = education_intrigue_4 }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = diligent }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = just }
+								add = 30
+							}
+							if = {
+								limit = { has_trait = diplomat }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = architect }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = administrator }
+								add = 20
+							}
+						}
+						save_scope_as = ElectionCandidate
+					}
+				}
+			}
+			#SECOND CANDIDATE
+			if = {
+				limit = {
+					any_in_list = {
+						variable = Republican_houses
+						count >= 3
+					}
+				}
+				
+				random_in_list = {
+					variable = Republican_houses
+					save_scope_as = house_2
+					limit = {
+						NOT = {
+							this = scope:house_1
+							this = root.house
+						}
+					}
+					ordered_house_member = {
+						limit = {
+							is_male = yes
+							age >= 18
+							NOR = {
+								has_trait = incapable
+								has_trait = infirm
+							}
+						}
+						order_by = {
+							value = 0
+							# Ideally ones with at least a bit of the relevant skills.
+							if = {
+								limit = { diplomacy >= decent_skill_rating }
+								add = 15
+							}
+							#Educations can help political opinion!
+							if = {
+								limit = { has_trait = education_stewardship_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_stewardship_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_stewardship_4 }
+								add = 20
+							}
+							#Diplo
+							if = {
+								limit = { has_trait = education_diplomacy_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_4 }
+								add = 20
+							}
+							#Martial
+							if = {
+								limit = { 
+									has_trait = education_martial_4
+									scope:republic_title.holder = {
+										is_at_war = yes
+									}
+								}
+								add = 50
+							}
+							if = {
+								limit = { has_trait = education_martial_4 }
+								add = 20
+							}
+							#Intriuge
+							if = {
+								limit = { has_trait = education_intrigue_4 }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = diligent }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = just }
+								add = 30
+							}
+							if = {
+								limit = { has_trait = diplomat }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = architect }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = administrator }
+								add = 20
+							}
+						}
+						save_scope_as = ElectionCandidate2
+					}
+				}
+			}
+			#THIRD CANDIDATE
+			if = {
+				limit = {
+					any_in_list = {
+						variable = Republican_houses
+						count >= 4
+					}
+				}
+				
+				random_in_list = {
+					variable = Republican_houses
+					save_scope_as = house_3
+					limit = {
+						NOT = {
+							this = scope:house_1
+							this = scope:house_2
+							this = root.house
+						}
+					}
+					ordered_house_member = {
+						limit = {
+							is_male = yes
+							age >= 18
+							NOR = {
+								has_trait = incapable
+								has_trait = infirm
+							}
+						}
+						order_by = {
+							value = 0
+							# Ideally ones with at least a bit of the relevant skills.
+							if = {
+								limit = { diplomacy >= decent_skill_rating }
+								add = 15
+							}
+							#Educations can help political opinion!
+							if = {
+								limit = { has_trait = education_stewardship_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_stewardship_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_stewardship_4 }
+								add = 20
+							}
+							#Diplo
+							if = {
+								limit = { has_trait = education_diplomacy_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_4 }
+								add = 20
+							}
+							#Martial
+							if = {
+								limit = { 
+									has_trait = education_martial_4
+									scope:republic_title.holder = {
+										is_at_war = yes
+									}
+								}
+								add = 50
+							}
+							if = {
+								limit = { has_trait = education_martial_4 }
+								add = 20
+							}
+							#Intriuge
+							if = {
+								limit = { has_trait = education_intrigue_4 }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = diligent }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = just }
+								add = 30
+							}
+							if = {
+								limit = { has_trait = diplomat }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = architect }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = administrator }
+								add = 20
+							}
+						}
+						save_scope_as = ElectionCandidate3
+					}
+				}
+			}
+			#FOURTH CANDIDATE
+			if = {
+				limit = {
+					any_in_list = {
+						variable = Republican_houses
+						count >= 5
+					}
+				}
+				
+				random_in_list = {
+					variable = Republican_houses
+					save_scope_as = house_4
+					limit = {
+						NOT = {
+							this = scope:house_1
+							this = scope:house_2
+							this = scope:house_3
+							this = root.house
+						}
+					}
+					ordered_house_member = {
+						limit = {
+							is_male = yes
+							age >= 18
+							NOR = {
+								has_trait = incapable
+								has_trait = infirm
+							}
+						}
+						order_by = {
+							value = 0
+							# Ideally ones with at least a bit of the relevant skills.
+							if = {
+								limit = { diplomacy >= decent_skill_rating }
+								add = 15
+							}
+							#Educations can help political opinion!
+							if = {
+								limit = { has_trait = education_stewardship_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_stewardship_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_stewardship_4 }
+								add = 20
+							}
+							#Diplo
+							if = {
+								limit = { has_trait = education_diplomacy_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_4 }
+								add = 20
+							}
+							#Martial
+							if = {
+								limit = { 
+									has_trait = education_martial_4
+									scope:republic_title.holder = {
+										is_at_war = yes
+									}
+								}
+								add = 50
+							}
+							if = {
+								limit = { has_trait = education_martial_4 }
+								add = 20
+							}
+							#Intriuge
+							if = {
+								limit = { has_trait = education_intrigue_4 }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = diligent }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = just }
+								add = 30
+							}
+							if = {
+								limit = { has_trait = diplomat }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = architect }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = administrator }
+								add = 20
+							}
+						}
+						save_scope_as = ElectionCandidate4
+					}
+				}
+			}
+			#FIFTH CANDIDATE
+			if = {
+				limit = {
+					any_in_list = {
+						variable = Republican_houses
+						count >= 6
+					}
+				}
+				
+				random_in_list = {
+					variable = Republican_houses
+					save_scope_as = house_5
+					limit = {
+						NOT = {
+							this = scope:house_1
+							this = scope:house_2
+							this = scope:house_3
+							this = scope:house_4
+							this = root.house
+						}
+					}
+					ordered_house_member = {
+						limit = {
+							is_male = yes
+							age >= 18
+							NOR = {
+								has_trait = incapable
+								has_trait = infirm
+							}
+						}
+						order_by = {
+							value = 0
+							# Ideally ones with at least a bit of the relevant skills.
+							if = {
+								limit = { diplomacy >= decent_skill_rating }
+								add = 15
+							}
+							#Educations can help political opinion!
+							if = {
+								limit = { has_trait = education_stewardship_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_stewardship_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_stewardship_4 }
+								add = 20
+							}
+							#Diplo
+							if = {
+								limit = { has_trait = education_diplomacy_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_4 }
+								add = 20
+							}
+							#Martial
+							if = {
+								limit = { 
+									has_trait = education_martial_4
+									scope:republic_title.holder = {
+										is_at_war = yes
+									}
+								}
+								add = 50
+							}
+							if = {
+								limit = { has_trait = education_martial_4 }
+								add = 20
+							}
+							#Intriuge
+							if = {
+								limit = { has_trait = education_intrigue_4 }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = diligent }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = just }
+								add = 30
+							}
+							if = {
+								limit = { has_trait = diplomat }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = architect }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = administrator }
+								add = 20
+							}
+						}
+						save_scope_as = ElectionCandidate5
+					}
+				}
+			}
+		}
+	}
+
+	#Option 1
+	option = {
+		name = KOH_ItalianCommunes.4.a
+		custom_tooltip = "Run for Releection"
+		random_list = {
+			25 = { #ElectionCandidate1
+				trigger = {
+					exists = scope:ElectionCandidate
+				}
+				scope:ElectionCandidate = {
+					create_title_and_vassal_change = {
+						type = 	election
+						save_scope_as = change
+						add_claim_on_loss = yes
+					}
+					scope:republic_title = {
+						change_title_holder = {
+							holder = scope:ElectionCandidate
+							change = scope:change
+						}
+					}
+					every_in_list = {
+						list = held_titles
+						change_title_holder = {
+							holder = scope:ElectionCandidate
+							change = scope:change
+						}
+					}
+
+					resolve_title_and_vassal_change = scope:change
+					hidden_effect = { change_government = republic_government }
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
+
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate.GetName] has won the election"
+					left_icon = scope:ElectionCandidate
+				}
+			}
+
+			25 = { #ElectionCandidate2
+				trigger = {
+					exists = scope:ElectionCandidate2
+				}
+				scope:ElectionCandidate2 = {
+					create_title_and_vassal_change = {
+						type = election
+						save_scope_as = change
+						add_claim_on_loss = yes
+					}
+					scope:republic_title = {
+						change_title_holder = {
+							holder = scope:ElectionCandidate2
+							change = scope:change
+						}
+					}
+					every_in_list = {
+						list = held_titles
+						change_title_holder = {
+							holder = scope:ElectionCandidate2
+							change = scope:change
+						}
+					}
+					resolve_title_and_vassal_change = scope:change
+					hidden_effect = { change_government = republic_government }
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
+
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate2.GetName] has won the election"
+					left_icon = scope:ElectionCandidate2
+				}
+			}
+		
+			25 = { #ElectionCandidate3
+				trigger = {
+					exists = scope:ElectionCandidate3
+				}
+				scope:ElectionCandidate3 = {
+					create_title_and_vassal_change = {
+						type = election
+						save_scope_as = change
+						add_claim_on_loss = yes
+					}
+					scope:republic_title = {
+						change_title_holder = {
+							holder = scope:ElectionCandidate3
+							change = scope:change
+						}
+					}
+					every_in_list = {
+						list = held_titles
+						change_title_holder = {
+							holder = scope:ElectionCandidate3
+							change = scope:change
+						}
+					}
+					resolve_title_and_vassal_change = scope:change
+					hidden_effect = { change_government = republic_government }
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
+
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate3.GetName] has won the election"
+					left_icon = scope:ElectionCandidate3
+				}
+			}
+	
+
+			25 = { #ElectionCandidate4
+				trigger = {
+					exists = scope:ElectionCandidate4
+				}
 			
-# 	}
-# }
+				scope:ElectionCandidate4 = {
+					create_title_and_vassal_change = {
+						type = election
+						save_scope_as = change
+						add_claim_on_loss = yes
+					}
+					scope:republic_title = {
+						change_title_holder = {
+							holder = scope:ElectionCandidate4
+							change = scope:change
+						}
+					}
+					every_in_list = {
+						list = held_titles
+						change_title_holder = {
+							holder = scope:ElectionCandidate4
+							change = scope:change
+						}
+					}
+					resolve_title_and_vassal_change = scope:change
+					hidden_effect = { change_government = republic_government }
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
 
-# KOH_ItalianCommunes.2 = {
-# 	type = character_event
-# 	hidden = yes 
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate4.GetName] has won the election"
+					left_icon = scope:ElectionCandidate4
+				}
+			}
 
-# 	immediate = {
-# 		scope:elective1 = {
-# 			get_title = scope:county
-# 		}
+			25 = { #ElectionCandidate5
+				trigger = {
+					exists = scope:ElectionCandidate5
+				}
+				scope:ElectionCandidate5 = {
+					create_title_and_vassal_change = {
+						type = election
+						save_scope_as = change
+						add_claim_on_loss = yes
+					}
+					scope:republic_title = {
+						change_title_holder = {
+							holder = scope:ElectionCandidate5
+							change = scope:change
+						}
+					}
+					every_in_list = {
+						list = held_titles
+						change_title_holder = {
+							holder = scope:ElectionCandidate5
+							change = scope:change
+						}
+					}
+					resolve_title_and_vassal_change = scope:change
+					hidden_effect = { change_government = republic_government }
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
 
-# 		set_player_character = scope:elective1
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate5.GetName] has won the election"
+					left_icon = scope:ElectionCandidate5
+				}
+			}
+			25 = {
+				custom_tooltip = "You win the election, and retain controll over the republic."
+				send_interface_toast = {
+					type = event_toast_effect_good
+					#custom_tooltip = "You will play as them"
+					title = "[republic_holder.GetName] has won the election"
+					left_icon = scope:republic_holder
+				}
+			}
+		}
+	}
+}
 
-# 		trigger_event = KOH_ItalianCommunes.3
-# 	}
-# }
+#Election Candidates!
+KOH_ItalianCommunes.5 = {
+	type = character_event
+	hidden = yes
+	theme = dynasty
+	left_portrait = root
 
-# KOH_ItalianCommunes.3 = {
-# 	type = character_event
-# 	hidden = yes 
+	trigger = {
+		exists = primary_title
+		primary_title = {
+			any_in_list = {
+				variable = Republican_houses
+				count >= 1
+			}
+		}
+	}
 
-# 	immediate = {
-# 		character:KOHHOLDEROFUNLANDED = { get_title = c_unlanded }
-# 		set_employer = scope:county.holder
-# 		move_to_pool = yes
-# 	}
-# } 
+	immediate = {
+		save_scope_as = republic_holder
+		primary_title = {
+			save_scope_as = republic_title
+		}
+		every_held_title = {
+			add_to_list = held_titles
+		}
 
-# KOH_ItalianCommunes.4 = {
-# 	type = character_event
-# 	title = KOH_ItalianCommunes.4.t
-# 	desc = {
-# 		desc = KOH_ItalianCommunes.4.desc
-# 	}
-# 	theme = dynasty
-# 	left_portrait = root
+		scope:republic_title = {
+			#FIRST CANDIDATE
+			if = {
+				limit = {
+					any_in_list = {
+						variable = Republican_houses
+						count >= 2
+					}
+				}
 
-# 	immediate = {
-# 		random_living_character = {
-# 			limit = {
-# 				has_culture_group = culture_group:latin_group
-# 				has_dynasty = yes   
-# 				is_landed = no        
-# 				age = 19
-# 				is_male = yes
-# 			}
+				random_in_list = {
+					variable = Republican_houses
+					limit = {
+						NOT = {
+							this = root.house
+						}
+					}
+					save_scope_as = house_1
+					ordered_house_member = {
+						limit = {
+							is_male = yes
+							age >= 18
+							NOR = {
+								has_trait = incapable
+								has_trait = infirm
+							}
+						}
+						order_by = {
+							value = 0
+							# Ideally ones with at least a bit of the relevant skills.
+							if = {
+								limit = { diplomacy >= decent_skill_rating }
+								add = 15
+							}
+							#Educations can help political opinion!
+							if = {
+								limit = { has_trait = education_stewardship_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_stewardship_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_stewardship_4 }
+								add = 20
+							}
+							#Diplo
+							if = {
+								limit = { has_trait = education_diplomacy_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_4 }
+								add = 20
+							}
+							#Martial
+							if = {
+								limit = { 
+									has_trait = education_martial_4
+									scope:republic_title.holder = {
+										is_at_war = yes
+									}
+								}
+								add = 50
+							}
+							if = {
+								limit = { has_trait = education_martial_4 }
+								add = 20
+							}
+							#Intriuge
+							if = {
+								limit = { has_trait = education_intrigue_4 }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = diligent }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = just }
+								add = 30
+							}
+							if = {
+								limit = { has_trait = diplomat }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = architect }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = administrator }
+								add = 20
+							}
+						}
+						save_scope_as = ElectionCandidate
+					}
+				}
+			}
+			#SECOND CANDIDATE
+			if = {
+				limit = {
+					any_in_list = {
+						variable = Republican_houses
+						count >= 3
+					}
+				}
+				
+				random_in_list = {
+					variable = Republican_houses
+					save_scope_as = house_2
+					limit = {
+						NOT = {
+							this = scope:house_1
+							this = root.house
+						}
+					}
+					ordered_house_member = {
+						limit = {
+							is_male = yes
+							age >= 18
+							NOR = {
+								has_trait = incapable
+								has_trait = infirm
+							}
+						}
+						order_by = {
+							value = 0
+							# Ideally ones with at least a bit of the relevant skills.
+							if = {
+								limit = { diplomacy >= decent_skill_rating }
+								add = 15
+							}
+							#Educations can help political opinion!
+							if = {
+								limit = { has_trait = education_stewardship_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_stewardship_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_stewardship_4 }
+								add = 20
+							}
+							#Diplo
+							if = {
+								limit = { has_trait = education_diplomacy_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_4 }
+								add = 20
+							}
+							#Martial
+							if = {
+								limit = { 
+									has_trait = education_martial_4
+									scope:republic_title.holder = {
+										is_at_war = yes
+									}
+								}
+								add = 50
+							}
+							if = {
+								limit = { has_trait = education_martial_4 }
+								add = 20
+							}
+							#Intriuge
+							if = {
+								limit = { has_trait = education_intrigue_4 }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = diligent }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = just }
+								add = 30
+							}
+							if = {
+								limit = { has_trait = diplomat }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = architect }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = administrator }
+								add = 20
+							}
+						}
+						save_scope_as = ElectionCandidate2
+					}
+				}
+			}
+			#THIRD CANDIDATE
+			if = {
+				limit = {
+					any_in_list = {
+						variable = Republican_houses
+						count >= 4
+					}
+				}
+				
+				random_in_list = {
+					variable = Republican_houses
+					save_scope_as = house_3
+					limit = {
+						NOT = {
+							this = scope:house_1
+							this = scope:house_2
+							this = root.house
+						}
+					}
+					ordered_house_member = {
+						limit = {
+							is_male = yes
+							age >= 18
+							NOR = {
+								has_trait = incapable
+								has_trait = infirm
+							}
+						}
+						order_by = {
+							value = 0
+							# Ideally ones with at least a bit of the relevant skills.
+							if = {
+								limit = { diplomacy >= decent_skill_rating }
+								add = 15
+							}
+							#Educations can help political opinion!
+							if = {
+								limit = { has_trait = education_stewardship_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_stewardship_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_stewardship_4 }
+								add = 20
+							}
+							#Diplo
+							if = {
+								limit = { has_trait = education_diplomacy_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_4 }
+								add = 20
+							}
+							#Martial
+							if = {
+								limit = { 
+									has_trait = education_martial_4
+									scope:republic_title.holder = {
+										is_at_war = yes
+									}
+								}
+								add = 50
+							}
+							if = {
+								limit = { has_trait = education_martial_4 }
+								add = 20
+							}
+							#Intriuge
+							if = {
+								limit = { has_trait = education_intrigue_4 }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = diligent }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = just }
+								add = 30
+							}
+							if = {
+								limit = { has_trait = diplomat }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = architect }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = administrator }
+								add = 20
+							}
+						}
+						save_scope_as = ElectionCandidate3
+					}
+				}
+			}
+			#FOURTH CANDIDATE
+			if = {
+				limit = {
+					any_in_list = {
+						variable = Republican_houses
+						count >= 5
+					}
+				}
+				
+				random_in_list = {
+					variable = Republican_houses
+					save_scope_as = house_4
+					limit = {
+						NOT = {
+							this = scope:house_1
+							this = scope:house_2
+							this = scope:house_3
+							this = root.house
+						}
+					}
+					ordered_house_member = {
+						limit = {
+							is_male = yes
+							age >= 18
+							NOR = {
+								has_trait = incapable
+								has_trait = infirm
+							}
+						}
+						order_by = {
+							value = 0
+							# Ideally ones with at least a bit of the relevant skills.
+							if = {
+								limit = { diplomacy >= decent_skill_rating }
+								add = 15
+							}
+							#Educations can help political opinion!
+							if = {
+								limit = { has_trait = education_stewardship_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_stewardship_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_stewardship_4 }
+								add = 20
+							}
+							#Diplo
+							if = {
+								limit = { has_trait = education_diplomacy_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_4 }
+								add = 20
+							}
+							#Martial
+							if = {
+								limit = { 
+									has_trait = education_martial_4
+									scope:republic_title.holder = {
+										is_at_war = yes
+									}
+								}
+								add = 50
+							}
+							if = {
+								limit = { has_trait = education_martial_4 }
+								add = 20
+							}
+							#Intriuge
+							if = {
+								limit = { has_trait = education_intrigue_4 }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = diligent }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = just }
+								add = 30
+							}
+							if = {
+								limit = { has_trait = diplomat }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = architect }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = administrator }
+								add = 20
+							}
+						}
+						save_scope_as = ElectionCandidate4
+					}
+				}
+			}
+			#FIFTH CANDIDATE
+			if = {
+				limit = {
+					any_in_list = {
+						variable = Republican_houses
+						count >= 6
+					}
+				}
+				
+				random_in_list = {
+					variable = Republican_houses
+					save_scope_as = house_5
+					limit = {
+						NOT = {
+							this = scope:house_1
+							this = scope:house_2
+							this = scope:house_3
+							this = scope:house_4
+							this = root.house
+						}
+					}
+					ordered_house_member = {
+						limit = {
+							is_male = yes
+							age >= 18
+							NOR = {
+								has_trait = incapable
+								has_trait = infirm
+							}
+						}
+						order_by = {
+							value = 0
+							# Ideally ones with at least a bit of the relevant skills.
+							if = {
+								limit = { diplomacy >= decent_skill_rating }
+								add = 15
+							}
+							#Educations can help political opinion!
+							if = {
+								limit = { has_trait = education_stewardship_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_stewardship_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_stewardship_4 }
+								add = 20
+							}
+							#Diplo
+							if = {
+								limit = { has_trait = education_diplomacy_2 }
+								add = 5
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_3 }
+								add = 10
+							}
+							if = {
+								limit = { has_trait = education_diplomacy_4 }
+								add = 20
+							}
+							#Martial
+							if = {
+								limit = { 
+									has_trait = education_martial_4
+									scope:republic_title.holder = {
+										is_at_war = yes
+									}
+								}
+								add = 50
+							}
+							if = {
+								limit = { has_trait = education_martial_4 }
+								add = 20
+							}
+							#Intriuge
+							if = {
+								limit = { has_trait = education_intrigue_4 }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = diligent }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = just }
+								add = 30
+							}
+							if = {
+								limit = { has_trait = diplomat }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = architect }
+								add = 20
+							}
+							if = {
+								limit = { has_trait = administrator }
+								add = 20
+							}
+						}
+						save_scope_as = ElectionCandidate5
+					}
+				}
+			}
+		}
+	}
+
+	#Option 1
+	option = {
+		name = KOH_ItalianCommunes.5.a
+		custom_tooltip = "Run for Releection"
+		random_list = {
+			25 = { #ElectionCandidate1
+				trigger = {
+					exists = scope:ElectionCandidate
+				}
+				scope:ElectionCandidate = {
+					create_title_and_vassal_change = {
+						type = 	election
+						save_scope_as = change
+						add_claim_on_loss = yes
+					}
+					scope:republic_title = {
+						change_title_holder = {
+							holder = scope:ElectionCandidate
+							change = scope:change
+						}
+					}
+					every_in_list = {
+						list = held_titles
+						change_title_holder = {
+							holder = scope:ElectionCandidate
+							change = scope:change
+						}
+					}
+
+					resolve_title_and_vassal_change = scope:change
+					hidden_effect = { change_government = republic_government }
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
+
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate.GetName] has won the election"
+					left_icon = scope:ElectionCandidate
+				}
+			}
+
+			25 = { #ElectionCandidate2
+				trigger = {
+					exists = scope:ElectionCandidate2
+				}
+				scope:ElectionCandidate2 = {
+					create_title_and_vassal_change = {
+						type = election
+						save_scope_as = change
+						add_claim_on_loss = yes
+					}
+					scope:republic_title = {
+						change_title_holder = {
+							holder = scope:ElectionCandidate2
+							change = scope:change
+						}
+					}
+					every_in_list = {
+						list = held_titles
+						change_title_holder = {
+							holder = scope:ElectionCandidate2
+							change = scope:change
+						}
+					}
+					resolve_title_and_vassal_change = scope:change
+					hidden_effect = { change_government = republic_government }
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
+
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate2.GetName] has won the election"
+					left_icon = scope:ElectionCandidate2
+				}
+			}
 		
-# 			if = {
-# 				limit = { 
-# 					dynasty = { 
-# 						any_dynasty_member = { 
-# 							count >= 3 
-# 						} 
-# 					}
-# 				}
-# 				save_scope_as = ElectionCandidate
-# 			}
-# 		}	
+			25 = { #ElectionCandidate3
+				trigger = {
+					exists = scope:ElectionCandidate3
+				}
+				scope:ElectionCandidate3 = {
+					create_title_and_vassal_change = {
+						type = election
+						save_scope_as = change
+						add_claim_on_loss = yes
+					}
+					scope:republic_title = {
+						change_title_holder = {
+							holder = scope:ElectionCandidate3
+							change = scope:change
+						}
+					}
+					every_in_list = {
+						list = held_titles
+						change_title_holder = {
+							holder = scope:ElectionCandidate3
+							change = scope:change
+						}
+					}
+					resolve_title_and_vassal_change = scope:change
+					hidden_effect = { change_government = republic_government }
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
 
-# 		random_living_character = {
-# 			limit = {
-# 				has_culture_group = culture_group:latin_group
-# 				has_dynasty = yes   
-# 				is_landed = no        
-# 				age = 19
-# 				is_male = yes
-# 			}
-		
-# 			if = {
-# 				limit = { 
-# 					dynasty = { 
-# 						any_dynasty_member = { 
-# 							count >= 3 
-# 						} 
-# 					}
-# 				}
-# 				save_scope_as = ElectionCandidate2
-# 			}
-# 		}
-		
-# 		random_living_character = {
-# 			limit = {
-# 				has_culture_group = culture_group:latin_group
-# 				has_dynasty = yes   
-# 				is_landed = no        
-# 				age = 19
-# 				is_male = yes
-# 			}
-		
-# 			if = {
-# 				limit = { 
-# 					dynasty = { 
-# 						any_dynasty_member = { 
-# 							count >= 3 
-# 						} 
-# 					}
-# 				}
-# 				save_scope_as = ElectionCandidate3
-# 			}
-# 		}	
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate3.GetName] has won the election"
+					left_icon = scope:ElectionCandidate3
+				}
+			}
+	
 
-# 		random_held_title = {
-# 			limit = {
-# 				ItalianCommune_county_trigger = yes
-# 			}
-# 			save_scope_as = county
-# 		}
-# 	}
-
-# 	#Option 1
-# 	option = {
-# 		name = KOH_ItalianCommunes.4.a
-# 		custom_tooltip = "Run for Releection"
-# 		random_list = {
-# 			25 = { #ElectionCandidate1
-# 				root = {
-# 					get_title = title:c_unlanded
-# 				}
-		
-# 				scope:ElectionCandidate = {
-# 					get_title = scope:county
-# 					change_government = republic_government
-# 					add_character_flag = {
-# 						flag = RecentElection
-# 						months = 60
-# 					}
-# 				}
-
-# 				send_interface_toast = {
-# 					type = event_toast_effect_good
-# 					custom_tooltip = "You will play as them"
-# 					title = "[ElectionCandidate.GetName] has won the election"
-# 					left_icon = scope:ElectionCandidate
-# 				}
-# 				trigger_event = KOH_ItalianCommunes.5
-
-# 			}
-
-# 			25 = { #ElectionCandidate1
-# 				root = {
-# 					get_title = title:c_unlanded
-# 				}
+			25 = { #ElectionCandidate4
+				trigger = {
+					exists = scope:ElectionCandidate4
+				}
 			
-# 				scope:ElectionCandidate2 = {
-# 					get_title = scope:county
-# 					change_government = republic_government
-# 					add_character_flag = {
-# 						flag = RecentElection
-# 						months = 60
-# 					}
-# 				}
+				scope:ElectionCandidate4 = {
+					create_title_and_vassal_change = {
+						type = election
+						save_scope_as = change
+						add_claim_on_loss = yes
+					}
+					scope:republic_title = {
+						change_title_holder = {
+							holder = scope:ElectionCandidate4
+							change = scope:change
+						}
+					}
+					every_in_list = {
+						list = held_titles
+						change_title_holder = {
+							holder = scope:ElectionCandidate4
+							change = scope:change
+						}
+					}
+					resolve_title_and_vassal_change = scope:change
+					hidden_effect = { change_government = republic_government }
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
 
-# 				send_interface_toast = {
-# 					type = event_toast_effect_good
-# 					custom_tooltip = "You will play as them"
-# 					title = "[ElectionCandidate2.GetName] has won the election"
-# 					left_icon = scope:ElectionCandidate2
-# 				}
-# 				trigger_event = KOH_ItalianCommunes.6
-					
-# 			}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate4.GetName] has won the election"
+					left_icon = scope:ElectionCandidate4
+				}
+			}
 
-# 			25 = { #ElectionCandidate1
-# 				root = {
-# 					get_title = title:c_unlanded
-# 				}
-			
-# 				scope:ElectionCandidate3 = {
-# 					get_title = scope:county
-# 					change_government = republic_government
-# 					add_character_flag = {
-# 						flag = RecentElection
-# 						months = 60
-# 					}
-# 				}
+			25 = { #ElectionCandidate5
+				trigger = {
+					exists = scope:ElectionCandidate5
+				}
+				scope:ElectionCandidate5 = {
+					create_title_and_vassal_change = {
+						type = election
+						save_scope_as = change
+						add_claim_on_loss = yes
+					}
+					scope:republic_title = {
+						change_title_holder = {
+							holder = scope:ElectionCandidate5
+							change = scope:change
+						}
+					}
+					every_in_list = {
+						list = held_titles
+						change_title_holder = {
+							holder = scope:ElectionCandidate5
+							change = scope:change
+						}
+					}
+					resolve_title_and_vassal_change = scope:change
+					hidden_effect = { change_government = republic_government }
+					add_character_flag = {
+						flag = RecentElection
+						months = 60
+					}
+				}
 
-# 				send_interface_toast = {
-# 					type = event_toast_effect_good
-# 					custom_tooltip = "You will play as them"
-# 					title = "[ElectionCandidate3.GetName] has won the election"
-# 					left_icon = scope:ElectionCandidate3
-# 				}
-# 				trigger_event = KOH_ItalianCommunes.7
-
-# 			}
-
-# 			25 = {
-# 				send_interface_toast = {
-# 					type = event_toast_effect_good
-# 					custom_tooltip = "You will serve another term"
-# 					title = "You have won the Re-Election"
-# 					left_icon = root
-# 				}
-# 				add_character_flag = {
-# 					flag = RecentElection
-# 					months = 60
-# 				}
-# 			}
-# 		}
-# 	}
-# }
-
-			
-
-# #ElectionCandidate1
-# KOH_ItalianCommunes.5 = {
-# 	type = character_event
-# 	hidden = yes 
-
-# 	immediate = {
-# 		scope:ElectionCandidate = {
-# 			get_title = scope:county
-# 		}
-
-# 		set_player_character = scope:ElectionCandidate
-
-# 		trigger_event = KOH_ItalianCommunes.8
-# 	}
-# }	
-# #ElectionCandidate2
-# KOH_ItalianCommunes.6 = {
-# 	type = character_event
-# 	hidden = yes 
-
-# 	immediate = {
-# 		scope:ElectionCandidate2 = {
-# 			get_title = scope:county
-# 		}
-
-# 		set_player_character = scope:ElectionCandidate2
-
-# 		trigger_event = KOH_ItalianCommunes.8
-# 	}
-# }	
-# #ElectionCandidate3
-# KOH_ItalianCommunes.7 = {
-# 	type = character_event
-# 	hidden = yes 
-
-# 	immediate = {
-# 		scope:ElectionCandidate3 = {
-# 			get_title = scope:county
-# 		}
-
-# 		set_player_character = scope:ElectionCandidate3
-
-# 		trigger_event = KOH_ItalianCommunes.8
-# 	}
-# }	
-
-# KOH_ItalianCommunes.8 = {
-# 	type = character_event
-# 	hidden = yes 
-
-# 	immediate = {
-# 		character:KOHHOLDEROFUNLANDED = {
-# 			get_title = c_unlanded
-# 		}
-# 		set_employer = scope:county.holder
-# 		move_to_pool = yes
-# 	}
-# }
+				send_interface_toast = {
+					type = event_toast_effect_good
+					custom_tooltip = "You will play as them"
+					title = "[ElectionCandidate5.GetName] has won the election"
+					left_icon = scope:ElectionCandidate5
+				}
+			}
+			25 = {
+				custom_tooltip = "You win the election, and retain controll over the republic."
+				send_interface_toast = {
+					type = event_toast_effect_good
+					#custom_tooltip = "You will play as them"
+					title = "[republic_holder.GetName] has won the election"
+					left_icon = scope:republic_holder
+				}
+			}
+		}
+	}
+}
