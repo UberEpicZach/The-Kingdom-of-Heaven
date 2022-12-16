@@ -1,0 +1,656 @@
+﻿namespace = KOH_guelphs_ghibellines_filler
+
+
+####################################
+# 		  Slanderous Poet  		   #
+#        ZombieSchrodCat		   #
+#            001-004               #
+####################################
+
+KOH_guelphs_ghibellines_filler.0001 = { #start
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0001.t
+	desc = KOH_guelphs_ghibellines_filler.0001.desc
+
+	theme = learning_theology_focus 
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	left_portrait = {
+		character = scope:slanderous_guelph_poet
+		animation = personality_honorable
+	}
+
+	trigger = {
+		is_landed = yes
+		exists = title:e_hre.holder
+		OR = {
+			has_trait = KOH_guelph
+			has_trait = KOH_ghibelline
+		}
+		any_held_title = {
+			tier = tier_county
+		}
+		NOT = {
+			has_character_flag = slanderous_poet
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = slanderous_poet
+			years = 5
+		}
+		hidden_effect = {
+			create_character = {
+				location = root.capital_province
+				age = { 20 45 }
+				gender = male
+				faith = this.faith
+				trait = poet
+				trait = KOH_guelph
+				culture = this.culture
+				save_scope_as = slanderous_guelph_poet
+			}
+		}
+	}
+
+	option = { #Glory to the Papcy
+		name = KOH_guelphs_ghibellines_filler.0001.a
+		trigger = {
+			has_trait = KOH_guelph
+		}
+		add_piety = minor_piety_gain
+		add_prestige = minor_prestige_loss
+	}
+
+	option = { #Glory to the Emperor
+		name = KOH_guelphs_ghibellines_filler.0001.b
+		trigger = {
+			has_trait = KOH_ghibelline
+		}
+		add_piety = minor_piety_loss
+		add_prestige = minor_prestige_gain
+		root = {
+			imprison = {
+				target = scope:slanderous_guelph_poet
+				type = dungeon
+			}
+		}
+	}
+
+
+	option = { #he will be fined for such slander
+		name = KOH_guelphs_ghibellines_filler.0001.c
+		add_gold = 25
+		hidden_effect = {
+			random_list = {
+				50 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0002
+						days = 15
+					}
+				}
+				50 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0003
+						days = 15
+					}
+				}
+			}
+		}
+	}
+
+	option = { #I will finance the poet, if he changes his subject
+		name = KOH_guelphs_ghibellines_filler.0001.d
+		trigger = {
+			diplomacy > 10
+		}
+		remove_short_term_gold = 15
+		hidden_effect = {
+			random_list = {
+				50 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0002
+						days = 15
+					}
+				}
+				50 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0004
+						days = 15
+					}
+				}
+			}
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0002 = {#poet starts slandering you
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0002.t
+	desc = KOH_guelphs_ghibellines_filler.0002.desc
+
+	theme = learning_theology_focus 
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = anger
+	}
+
+	option = { #bastard poet
+		name = KOH_guelphs_ghibellines_filler.0002.a
+		add_piety = minor_piety_loss
+		add_prestige = minor_prestige_loss
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0003 = {#poet ends up in stockades in neighboring city
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0003.t
+	desc = KOH_guelphs_ghibellines_filler.0003.desc
+
+	theme = learning_theology_focus 
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = schadenfreude 
+	}
+
+	option = { #bastard poet
+		name = KOH_guelphs_ghibellines_filler.0003.a
+		add_stress = minor_stress_loss
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0004 = {#poet signs your praises - end
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0004.t
+	desc = KOH_guelphs_ghibellines_filler.0004.desc
+
+	theme = learning_theology_focus 
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = { #bastard poet
+		name = KOH_guelphs_ghibellines_filler.0004.a
+		add_stress = minor_stress_loss
+		add_piety = minor_piety_gain
+		add_prestige = minor_prestige_gain
+	}
+}
+
+####################################
+# 		  Walls of our City		   #
+#        ZombieSchrodCat		   #
+#            005-011               #
+####################################
+
+KOH_guelphs_ghibellines_filler.0005 = { #start
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0005.t
+	desc = KOH_guelphs_ghibellines_filler.0005.desc
+
+	theme = war  
+	override_background = {
+		event_background = throne_room 
+	}
+
+	right_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	trigger = {
+		is_landed = yes
+		exists = title:e_hre.holder
+		OR = {
+			has_trait = KOH_guelph
+			has_trait = KOH_ghibelline
+		}
+		any_held_title = {
+			tier = tier_county
+		}
+		NOT = {
+			has_character_flag = stronger_walls
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = stronger_walls
+			years = 5
+		}
+	}
+
+	option = { #seek the masons to strenghten the walls
+		name = KOH_guelphs_ghibellines_filler.0005.a
+		trigger_event = {
+			id = KOH_guelphs_ghibellines_filler.0006
+			days = 15
+		}
+	}
+
+	option = { #seek the mercenaries to boost garrison for walls
+		name = KOH_guelphs_ghibellines_filler.0005.b
+		trigger_event = {
+			id = KOH_guelphs_ghibellines_filler.0007
+			days = 15
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0006 = {#the masons
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0006.t
+	desc = KOH_guelphs_ghibellines_filler.0006.desc
+
+	theme = war 
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	option = { #Guelph - pay with piety
+		name = KOH_guelphs_ghibellines_filler.0006.a
+		trigger = {
+			has_trait = KOH_guelph
+		}
+		add_piety = medium_piety_loss
+		hidden_effect = {
+			random_list = {
+				70 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0008
+						days = 15
+					}
+				}
+				30 = {
+					trigger_event = { 
+						id = KOH_guelphs_ghibellines_filler.0009
+						days = 15
+					}
+				}
+			}
+		}
+	}
+
+	option = { #Ghibelline - pay with prestige
+		name = KOH_guelphs_ghibellines_filler.0006.b
+		trigger = {
+			has_trait = KOH_ghibelline
+		}
+		add_prestige = medium_prestige_loss
+		hidden_effect = {
+			random_list = {
+				70 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0008
+						days = 15
+					}
+				}
+				30 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0009
+						days = 15
+					}
+				}
+			}
+		}
+	}
+
+	option = { #strenghten the walls - good stewardship
+		name = KOH_guelphs_ghibellines_filler.0006.c
+		trigger = {
+			stewardship >= 10
+		}
+		remove_short_term_gold = 20
+		hidden_effect = {
+			random_list = {
+				70 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0008
+						days = 15
+					}
+				}
+				30 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0009
+						days = 15
+					}
+				}
+			}
+		}
+	}
+
+	option = { #strenghten the walls - poor stewardship
+		name = KOH_guelphs_ghibellines_filler.0006.d
+		trigger = {
+			stewardship < 10
+		}
+		remove_short_term_gold = 50
+		hidden_effect = {
+			random_list = {
+				50 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0008
+						days = 15
+					}
+				}
+				50 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0009
+						days = 15
+					}
+				}
+			}
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0007 = {#the mercenaries
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0007.t
+	desc = KOH_guelphs_ghibellines_filler.0007.desc
+
+	theme = war 
+	override_background = {
+		event_background = army_camp 
+	}
+
+	right_portrait = {
+		character = root
+		animation = personality_honorable 
+	}
+
+	option = { #Guelph - pay with piety
+		name = KOH_guelphs_ghibellines_filler.0007.a
+		trigger = {
+			has_trait = KOH_guelph
+		}
+		add_piety = medium_piety_loss
+		hidden_effect = {
+			random_list = {
+				70 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0010
+						days = 15
+					}
+				}
+				30 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0011
+						days = 15
+					}
+				}
+			}
+		}
+	}
+
+	option = { #Ghibelline - pay with prestige
+		name = KOH_guelphs_ghibellines_filler.0007.b
+		trigger = {
+			has_trait = KOH_ghibelline
+		}
+		add_prestige = medium_prestige_loss
+		hidden_effect = {
+			random_list = {
+				70 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0010
+						days = 15
+					}
+				}
+				30 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0011
+						days = 15
+					}
+				}
+			}
+		}
+	}
+
+	option = { #boost the garrison - good
+		name = KOH_guelphs_ghibellines_filler.0007.c
+		trigger = {
+			martial >= 10
+		}
+		remove_short_term_gold = 20
+		hidden_effect = {
+			random_list = {
+				70 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0010
+						days = 15
+					}
+				}
+				30 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0011
+						days = 15
+					}
+				}
+			}
+		}
+	}
+
+	option = { #boost the garrison - poor
+		name = KOH_guelphs_ghibellines_filler.0007.d
+		trigger = {
+			martial < 10
+		}
+		remove_short_term_gold = 50
+		hidden_effect = {
+			random_list = {
+				50 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0010
+						days = 15
+					}
+				}
+				50 = {
+					trigger_event = {
+						id = KOH_guelphs_ghibellines_filler.0011
+						days = 15
+					}
+				}
+			}
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0008 = {#Good Mason
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0008.t
+	desc = KOH_guelphs_ghibellines_filler.0008.desc
+
+	theme = war
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = { #strong walls!
+		name = KOH_guelphs_ghibellines_filler.0008.a
+		capital_county = {
+			add_county_modifier = {
+				modifier = stronger_walls
+				years = 10
+			}
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0009 = {#bad Mason
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0009.t
+	desc = KOH_guelphs_ghibellines_filler.0009.desc
+
+	theme = war
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = anger
+	}
+
+	option = { #talkative mason
+		name = KOH_guelphs_ghibellines_filler.0009.a
+		capital_county = {
+			add_county_modifier = {
+				modifier = exploted_walls
+				years = 10
+			}
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0010 = {#Good mercenary
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0010.t
+	desc = KOH_guelphs_ghibellines_filler.0010.desc
+
+	theme = war
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = { #bastard poet
+		name = KOH_guelphs_ghibellines_filler.0010.a
+		capital_county = {
+			add_county_modifier = {
+				modifier = mercenary_levies
+				years = 10
+			}
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0011 = {#bad mercenary - end
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0011.t
+	desc = KOH_guelphs_ghibellines_filler.0011.desc
+
+	theme = war
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = anger
+	}
+
+	option = { #bastard poet
+		name = KOH_guelphs_ghibellines_filler.0011.a
+		capital_county = {
+			add_county_modifier = {
+				modifier = mercenary_drained_levies
+				years = 10
+			}
+		}
+	}
+}
+
+####################################
+# 	Merchants and Mercenaries	   #
+#        ZombieSchrodCat		   #
+#            012-012               #
+####################################
+
+KOH_guelphs_ghibellines_filler.0012 = { #start
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0012.t
+	desc = KOH_guelphs_ghibellines_filler.0012.desc
+
+	theme = unfriendly  
+	override_background = {
+		event_background = market_west  
+	}
+
+	right_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	trigger = {
+		is_landed = yes
+		exists = title:e_hre.holder
+		OR = {
+			has_trait = KOH_guelph
+			has_trait = KOH_ghibelline
+		}
+		any_held_title = {
+			tier = tier_county
+		}
+		NOT = {
+			has_character_flag = stronger_walls
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = stronger_walls
+			years = 5
+		}
+	}
+
+	option = { #agree with the mercenaries
+		name = KOH_guelphs_ghibellines_filler.0012.a
+		add_prestige = minor_prestige_gain
+		add_character_modifier = {
+			modifier = mercenaries_not_merchants
+			years = 5
+		}
+		
+	}
+
+	option = { #agree with the merchants
+		name = KOH_guelphs_ghibellines_filler.0012.b
+		add_piety = minor_piety_gain
+		add_character_modifier = {
+			modifier = merchants_not_mercenaries
+			years = 5
+		}
+	}
+
+	option = { #let them settle their own issues
+		name = KOH_guelphs_ghibellines_filler.0012.c
+		add_piety = minor_piety_loss
+		add_prestige = minor_prestige_loss
+	}
+}

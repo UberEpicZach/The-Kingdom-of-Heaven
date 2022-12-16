@@ -1,0 +1,31 @@
+﻿stronger_walls = {
+	icon = martial_positive
+	garrison_size = 0.10
+}
+
+mercenary_levies = {
+	icon = martial_positive
+	levy_size = 0.10
+}
+
+mercenary_drained_levies = {
+	icon = martial_negative
+	levy_size = -0.1
+}
+
+exploted_walls = {
+	icon = intrigue_negative
+	garrison_size = -0.10
+}
+
+mercenaries_not_merchants = {
+	icon = martial_positive
+	mercenary_hire_cost_mult = -0.2
+	monthly_income = -0.2
+}
+
+merchants_not_mercenaries = {
+	icon = stewardship_positive
+	mercenary_hire_cost_mult = 0.2
+	monthly_income = 0.2
+}
