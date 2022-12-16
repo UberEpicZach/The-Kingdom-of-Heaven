@@ -441,7 +441,7 @@ KOH_ON_START = {
 			}
 			if = {
 				limit = {
-					exits = global_var:CFP_is_loaded
+					exists = global_var:CFP_is_loaded
 				}
 				hidden_effect_new_artifact = {
 					set_artifact_rarity_illustrious = yes
