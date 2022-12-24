@@ -4,7 +4,7 @@ Includes = {
 	"jomini/jomini_water_default.fxh"
 	"jomini/jomini_water_pdxmesh.fxh"
 	"jomini/jomini_water.fxh"
-	# MOD(godherja)
+	# MOD(godherja-snowfall)
 	#"jomini/jomini_fog_of_war.fxh"
 	"gh_atmospheric.fxh"
 	# END MOD
@@ -63,7 +63,7 @@ PixelShader =
 					#endif
 				#endif
 				
-				// MOD(godherja)
+				// MOD(godherja-snowfall)
 				//Water.rgb = ApplyFogOfWarMultiSampled( Water.rgb, Input.WorldSpacePos, FogOfWarAlpha );
 				Water.rgb = GH_ApplyAtmosphericEffects( Water.rgb, Input.WorldSpacePos, FogOfWarAlpha, 0.4f );
 				// END MOD
@@ -111,7 +111,7 @@ PixelShader =
 						ApplySecondaryColorGame( Water.rgb, float2( Input.UV01.x, 1.0f - Input.UV01.y ) );
 				#endif
 				
-				// MOD(godherja)
+				// MOD(godherja-snowfall)
 				//Water.rgb = ApplyFogOfWarMultiSampled( Water.rgb, Input.WorldSpacePos, FogOfWarAlpha );
 				Water.rgb = GH_ApplyAtmosphericEffects( Water.rgb, Input.WorldSpacePos, FogOfWarAlpha, 0.4f );
 				// END MOD

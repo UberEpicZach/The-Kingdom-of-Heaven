@@ -10,7 +10,7 @@ PixelShader = {
 			float3 OutputColor = Color;
 
 			OutputColor = GH_ApplySnowfall(OutputColor, WorldSpacePos);
-			OutputColor = ApplyFogOfWar(OutputColor, WorldSpacePos, FogOfWarAlphaMask, ShadowMultiplier);
+			OutputColor = ApplyFogOfWar(OutputColor, WorldSpacePos, FogOfWarAlphaMask/*, ShadowMultiplier*/);
 
 			return OutputColor;
 		}

@@ -3,7 +3,7 @@ Includes = {
 	
 	"jomini/jomini_lighting.fxh"
 	"jomini/jomini_fog.fxh"
-	# MOD(godherja)
+	# MOD(godherja-snowfall)
 	#"jomini/jomini_fog_of_war.fxh"
 	"gh_atmospheric.fxh"
 	# END MOD
@@ -195,9 +195,12 @@ PixelShader =
 	
 			float3 Color = CalculateSunLighting( MaterialProps, LightingProps, EnvironmentMap );
 			
+			// MOD(godherja-snowfall)
+			//Color = ApplyFogOfWar( Color, WorldSpacePos, FogOfWarAlpha );
 			Color = GH_ApplyAtmosphericEffects( Color, WorldSpacePos, FogOfWarAlpha );
+			// END MOD			
 			Color = ApplyDistanceFog( Color, WorldSpacePos );
-			
+						
 			Color.rgb = lerp( Color.rgb, BorderColor, BorderPostLightingBlend );
 
 			DebugReturn( Color, MaterialProps, LightingProps, EnvironmentMap );

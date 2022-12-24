@@ -2,7 +2,7 @@ Includes = {
 	"cw/camera.fxh"
 	"cw/pdxterrain.fxh"
 	"dynamic_masks.fxh"
-	"gh_utils.fxh"
+	#"gh_utils.fxh"
 }
 
 PixelShader = {
@@ -63,6 +63,7 @@ PixelShader = {
 		// Macros
 		//
 
+		// Extracted from gh_utils.fxh
 		#ifndef PDX_OPENGL
 			#define GH_UNROLL_EXACT(ITERATIONS_COUNT) [unroll(ITERATIONS_COUNT)]
 		#else

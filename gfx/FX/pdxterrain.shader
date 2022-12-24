@@ -6,7 +6,7 @@ Includes = {
 	"cw/camera.fxh"
 	"jomini/jomini_fog.fxh"
 	"jomini/jomini_lighting.fxh"
-	# MOD(godherja)
+	# MOD(godherja-snowfall)
 	#"jomini/jomini_fog_of_war.fxh"
 	"gh_atmospheric.fxh"
 	# END MOD
@@ -461,7 +461,7 @@ PixelShader =
 					FinalColor = lerp( FinalColor, FlatMap, FlatMapLerp );
 				#endif
 
-				// MOD(godherja)
+				// MOD(godherja-snowfall)
 				#ifndef UNDERWATER
 					FinalColor = GH_ApplyAtmosphericEffects( FinalColor, Input.WorldSpacePos, FogOfWarAlpha );
 					FinalColor = ApplyDistanceFog( FinalColor, Input.WorldSpacePos );
@@ -536,7 +536,10 @@ PixelShader =
 				float3 FinalColor = CalculateSunLightingLowSpec( MaterialProps, LightingProps );
 
 				#ifndef UNDERWATER
+					// MOD(godherja-snowfall)
+					//FinalColor = ApplyFogOfWar( FinalColor, Input.WorldSpacePos, FogOfWarAlpha );
 					FinalColor = GH_ApplyAtmosphericEffects( FinalColor, Input.WorldSpacePos, FogOfWarAlpha );
+					// END MOD
 					FinalColor = ApplyDistanceFog( FinalColor, Input.WorldSpacePos );
 				#endif
 

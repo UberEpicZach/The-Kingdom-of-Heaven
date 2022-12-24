@@ -1,6 +1,6 @@
 Includes = {
 	"jomini/jomini_river_surface.fxh"
-	# MOD(godherja)
+	# MOD(godherja-snowfall)
 	#"jomini/jomini_fog_of_war.fxh"
 	"gh_atmospheric.fxh"
 	# END MOD
@@ -29,7 +29,10 @@ PixelShader =
 			{		
 				float4 Color = CalcRiverSurface( Input );
 				
+				// MOD(godherja-snowfall)
+				//Color.rgb = ApplyFogOfWar( Color.rgb, Input.WorldSpacePos, FogOfWarAlpha );
 				Color.rgb = GH_ApplyAtmosphericEffects( Color.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				// END MOD
 				Color.rgb = ApplyDistanceFog( Color.rgb, Input.WorldSpacePos );
 				
 				Color.a *= 1.0f - FlatMapLerp;
