@@ -48,17 +48,15 @@ scripted_effect set_latrine_death_chance = {
 scripted_effect successful_diet_leader_effects = {
 	scope:bossman = {
 		add_prestige = {
-			value = medium_prestige_loss
-			add = major_prestige_loss
+			value = medium_prestige_gain
 		}
 		add_dynasty_prestige = major_dynasty_prestige_value
-		add_relation_friend = scope:feuding_bishop
+		set_relation_friend = scope:feuding_bishop
 		add_diplomacy_skill = 3
 	}
 	scope:feuding_bishop = {
 		add_prestige = {
-			value = medium_prestige_loss
-			add = major_prestige_loss
+			value = medium_prestige_gain
 		}
 		add_dynasty_prestige = major_dynasty_prestige_value
 	}
@@ -89,6 +87,15 @@ KoH_erfurt_affair.1 = {
 		}
 		character:212430 = {
 			save_scope_as = bossman
+		}
+		character:212507 = {
+			save_scope_as = kingheinrich
+		}
+		title:d_mainz.title_capital_county = {
+			save_scope_as = mainz_county
+		}
+		title:d_thuringia.title_capital_county = {
+			save_scope_as = thuringia_county
 		}
 	}
 
@@ -158,6 +165,16 @@ KoH_erfurt_affair.2 = {
 	desc = KoH_erfurt_affair.2.desc
 	theme = diplomacy
 
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+
+	lower_right_portrait = {
+		character = scope:feuding_bishop
+		animation = anger
+	}
+
 	immediate = {
 		character:7557 = {
 			save_scope_as = feuding_bishop
@@ -177,7 +194,7 @@ KoH_erfurt_affair.2 = {
 			days = { 20 30 } # that should be long enough - if the multiplayer event timeout is lengthened, increase this
 		}
 
-		capital_province = {
+		province:3007 = {
 			spawn_activity = {
 				type = activity_diet
 				owner = root
@@ -260,6 +277,11 @@ KoH_erfurt_affair.2 = {
 
 		every_in_list = {
 			list = potential_participants
+			limit = {
+				NOT = {
+					this = character:212430
+				}
+			}
 			trigger_event = KoH_erfurt_affair.3
 		}
 	}
@@ -282,6 +304,7 @@ KoH_erfurt_affair.3 = {
 		}
 
 		scope:diet = {
+			hidden_effect = { invite_character_to_activity = prev }
 			accept_invitation_for_character = prev
 		}
 	}
@@ -326,10 +349,36 @@ KoH_erfurt_affair.301 = {
 	#}
 }
 
-KoH_erfurt_affair.4 = {
+KoH_erfurt_affair.4 = { #funky
 	title = KoH_erfurt_affair.4.t
-	desc = KoH_erfurt_affair.4.desc
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					this = scope:bossman
+				}
+				desc = KoH_erfurt_affair.4.desc.bossman
+			}
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						this = scope:bossman
+					}
+				}
+				desc = KoH_erfurt_affair.4.desc
+			}
+		}
+	}
 	theme = feast_activity
+	left_portrait = {
+		character = scope:bossman
+		animation = frontend_left_idle
+	}
+
+	right_portrait = {
+		character = scope:feuding_bishop
+		animation = frontend_right_idle
+	}
 	
 	option = {
 		name = KoH_erfurt_affair.4.a
@@ -342,26 +391,34 @@ KoH_erfurt_affair.401 = {
 	immediate = {
 
 		random_list = {
-			5 = {
+			20 = {
 				trigger_event = KoH_erfurt_affair.50
 				scope:diet = {
 					every_participant = {
 						# only the counts and such get the prestige
-						limit = { has_variable = KoH_erfurt_affair_deathChanceVar }
+						limit = { NOT = { this = scope:bossman has_variable = KoH_erfurt_affair_deathChanceVar } }
 						trigger_event = KoH_erfurt_affair.51
 					}
 				}
 			}
 
-			95 = {
-				trigger_event = KoH_erfurt_affair.601
+			80 = {
+				scope:diet = {
+					every_participant = {
+						# only the counts and such get the prestige
+						trigger_event = KoH_erfurt_affair.6012
+					}
+				}
+				trigger_event = {
+					id = KoH_erfurt_affair.601
+					days = 6
+				}
 			}
 		}
-
 	}
 }
 
-KoH_erfurt_affair.50 = {
+KoH_erfurt_affair.50 = { #This is for Thurgia
 	title = KoH_erfurt_affair.50.t
 	desc = KoH_erfurt_affair.50.desc
 	theme = feast_activity
@@ -377,7 +434,7 @@ KoH_erfurt_affair.50 = {
 	}
 }
 
-KoH_erfurt_affair.51 = {
+KoH_erfurt_affair.51 = { #This is for everyone else in the room
 	title = KoH_erfurt_affair.51.t
 	desc = KoH_erfurt_affair.51.desc
 	theme = feast_activity
@@ -425,7 +482,7 @@ scripted_effect disaster_effects = {
 				value = medium_prestige_loss
 				add = major_prestige_loss
 			}
-			add_relation_rival = scope:bossman
+			#set_relation_rival = scope:bossman
 		}
 	}
 	else_if = {
@@ -440,6 +497,70 @@ scripted_effect disaster_effects = {
 		}
 	}
 }
+
+KoH_erfurt_affair.6012 = { # A huge argument breaks out! 
+	type = character_event 
+	title = KoH_erfurt_affair.6012.t
+	theme = feast_activity
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					this = scope:bossman
+				}
+				desc = KoH_erfurt_affair.6012.d.bossman #from the perpecitive of Thurgia
+			}
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						this = scope:bossman
+					}
+				}
+				desc = KoH_erfurt_affair.6012.d.others #Viewed from others
+			}
+		}
+	}
+	left_portrait = {
+		character = this
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:feuding_bishop
+		animation = anger
+	}
+
+	lower_left_portrait = {
+		character = scope:participant1
+		animation = anger
+	}
+
+	lower_right_portrait = {
+		character = scope:participant2
+		animation = anger
+	}
+
+	immediate = {
+		scope:diet = {
+			random_participant = {
+				save_scope_as = participant1
+			}
+			random_participant = {
+				if = {
+					limit = {
+						NOT = {
+							this = scope:participant1
+						}
+					}
+					save_scope_as = participant2
+				}
+			}
+		}
+	}
+	option = {
+		name = KoH_erfurt_affair.6012.a
+	}
+}
+
 
 KoH_erfurt_affair.601 = { # kills people
 	hidden = yes
@@ -471,12 +592,18 @@ KoH_erfurt_affair.601 = { # kills people
 							is_in_list = got_latrine_disaster_event
 						}
 					}
-					trigger_event = KoH_erfurt_affair.7
+					trigger_event = {
+						id = KoH_erfurt_affair.7
+						days = 4
+					}
 				}
 			}
 		}
 		title:e_hre.holder = {
-			trigger_event = KoH_erfurt_affair.7
+			trigger_event = {
+				id = KoH_erfurt_affair.7
+				days = 4
+			}
 		}
 	}
 }

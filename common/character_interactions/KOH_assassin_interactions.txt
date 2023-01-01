@@ -1,0 +1,171 @@
+﻿
+become_assassin_interaction = {
+	icon = icon_personal
+	category = interaction_category_friendly
+
+	interface_priority = 90
+	scheme = become_assassin
+
+	send_name = START_SCHEME
+
+	desc = become_assassin_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			is_assassin_trigger = yes
+			can_start_scheme = {
+				type = become_assassin
+				target = scope:recipient
+			}
+		}
+		scope:recipient = {
+			NOT = {
+				is_assassin_trigger = yes
+			}
+		}
+		NOT = { scope:actor = scope:recipient }
+	} 
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			NOT = { is_at_war_with = scope:recipient }
+			can_start_scheme = {
+				type = become_assassin
+				target = scope:recipient
+			}
+		}
+		custom_description = {
+			text = has_a_witch_secret_known_by_character
+			subject = scope:recipient
+			object = scope:actor
+			scope:recipient = { #If they are a secret witch I must not know about it
+				trigger_if = {
+					limit = {
+						any_secret = {
+							secret_type = secret_assassin
+						}
+					}
+					any_secret = {
+						secret_type = secret_assassin
+						NOT = {  any_secret_knower = { this = scope:actor } }
+					}
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		hidden_effect = {
+			scope:actor = {
+				send_interface_toast = {
+					title = become_assassin_interaction_notification
+
+					left_icon = scope:actor					
+					right_icon = scope:recipient
+
+					start_scheme = {
+						type = become_assassin
+						target = scope:recipient
+					}
+				}
+			}
+		}
+	}
+
+	auto_accept = yes
+
+	#AI will do
+	
+	ai_potential = {
+		is_assassin_trigger = yes
+	}
+	
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+
+	ai_targets = {
+		ai_recipients = peer_vassals
+		max = 5
+	}
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		chance = 0.2
+	}
+	
+	ai_frequency = 72
+
+
+	ai_will_do = {
+		base = -45
+		
+		# Do I like recipient & are they trustworthy
+		opinion_modifier = {
+			who = scope:actor
+			opinion_target = scope:recipient
+			multiplier = 0.5
+		}
+		compatibility_modifier = {
+			who = scope:actor
+			compatibility_target = scope:recipient
+			multiplier = 0.2
+		}
+		opinion_modifier = {
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+		}
+		ai_value_modifier = {
+			who = scope:recipient
+			ai_honor = 0.2
+			ai_compassion = 0.1
+			ai_rationality = 0.2
+			ai_greed = 0.2
+			ai_sociability = 0.1
+		}
+		ai_value_modifier = {
+			trigger = { trait_is_shunned_or_criminal_in_faith_trigger = { FAITH = scope:recipient.faith TRAIT = witch GENDER_CHARACTER = scope:actor } }
+			ai_zeal = -0.5
+			max = 20
+		}
+
+		# Are they important (to me)
+		modifier = {
+			add = {
+				value = scope:recipient.highest_held_title_tier
+				subtract = scope:actor.highest_held_title_tier
+				multiply = 10
+			}
+		}
+		modifier = {
+			OR = {
+				is_close_family_of = scope:recipient
+				is_consort_of = scope:recipient
+				has_relation_lover = scope:recipient
+				has_relation_friend = scope:recipient
+			}
+			add = 20
+		}
+		modifier = {
+			OR = {
+				has_relation_best_friend = scope:recipient
+				has_relation_soulmate = scope:recipient
+			}
+			add = 30
+		}
+		modifier = {
+			exists = house
+			exists = scope:recipient.house
+			house = scope:recipient.house
+			add = 10
+		}
+
+		# Do I want to spread the word
+		ai_value_modifier = {
+			ai_sociability = 0.2
+			ai_compassion = 0.1
+			ai_boldness = 0.4
+			min = -20
+		}
+	}
+}

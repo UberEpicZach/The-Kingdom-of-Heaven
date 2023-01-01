@@ -884,11 +884,24 @@
 		death = "1160.1.1"
 	}
 }
+mardanish_the_founder = {
+	name = "Mardanish"
+	dynasty = 12211
+	religion = mozarabic_church
+	culture = andalusian
+	1077.1.1 = {
+		birth = yes
+	}
+	1140.1.1 = {
+		death = yes
+	}
+}
 73240 = {
 	name = "Sa_d"
 	dynasty = 12211
 	religion = muwalladi
 	culture = andalusian
+	father = mardanish_the_founder
 	1100.1.1 = {
 		birth = "1100.1.1"
 	}
@@ -900,12 +913,16 @@
 	}
 }
 73241 = {
-	name = "Muhammad"
+	name = "Abu_Abdallah_Muhammad"
 	dynasty = 12211
 	religion = muwalladi
 	culture = andalusian
 	father = 73240
 	mother = 73242
+	trait = education_martial_3
+	trait = brave
+	trait = diligent
+	trait = patient # ?
 	1124.1.1 = {
 		birth = "1124.1.1"
 	}
@@ -923,21 +940,32 @@
 		death = "1172.3.1"
 	}
 }
+
 73243 = {
 	name = "Abd-al-Hajjaj"
 	dynasty = 12211
 
-	religion = ashari
+	religion = muwalladi
 	culture = andalusian
 
 	father = 73240
 	mother = 73242
 
+	trait = education_martial_3
+	trait = ambitious
+	trait = diligent
+	trait = brave
+
 	1126.1.1 = {
 		birth = yes
 	}
+	#1172.1.1 = {
+		#religion = ismaili
+	#}
 	1172.1.1 = {
-		religion = ismaili
+		add_pressed_claim = title:k_valencia
+		add_pressed_claim = title:d_murcia
+		add_pressed_claim = title:d_granada
 	}
 	1186.1.1 = {
 		death = yes
@@ -952,9 +980,9 @@
 	1150.1.1 = {
 		birth = "1150.1.1"
 	}
-	1172.3.1 = {
-		religion = "ismaili"
-	}
+	#1172.3.1 = {
+		#religion = "ismaili"
+	#}
 	1212.1.1 = {
 		death = "1212.1.1"
 	}

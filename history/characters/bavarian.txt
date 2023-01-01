@@ -1810,11 +1810,16 @@
 	culture = bavarian
 	trait = generous
 	trait = arbitrary
+	trait = chaste
 	trait = education_learning_2
+	sexuality = homosexual
 	father = 212600
 	mother = 212601
 	1150.1.1 = {
 		birth = "1150.1.1"
+	}
+	1177.2.2 = {
+		trait = celibate
 	}
 	1197.7.1 = {
 		death = "1197.7.1"
@@ -1859,6 +1864,7 @@
 	}
 	1168.1.1 = {
 		add_spouse = 204509
+		learn_language = language_french
 	}
 	1195.8.6 = {
 		death = "1195.8.6"
@@ -1931,6 +1937,12 @@
 	mother = 204509
 	1173.1.1 = {
 		birth = "1173.1.1"
+		learn_language = language_french
+	}
+	1174.1.2 = {
+		effect = {
+			create_betrothal = character:212492
+		}
 	}
 	1193.1.1 = {
 		add_spouse = 212492
@@ -1959,9 +1971,13 @@
 	mother = 204509
 	1174.1.2 = {
 		birth = "1174.1.2"
+		learn_language = language_french
 	}
-	1224.1.2 = {
-		death = "1224.1.2"
+	1184.1.1 = {
+		trait = ill
+	}
+	1190.1.2 = {
+		death = "1190.1.2"
 	}
 }
 
@@ -1981,6 +1997,12 @@
 	mother = 204509
 	1175.1.2 = {
 		birth = yes
+		learn_language = language_french
+	}
+	1180.1.2 = {
+		effect = {
+			create_betrothal = character:106556
+		}
 	}
 	1214.5.19={
 		add_spouse = 106556
@@ -2005,9 +2027,10 @@
 	mother = 204509
 	1172.1.2 = {
 		birth = "1172.1.2"
+		learn_language = language_french
 	}
-	1222.1.2 = {
-		death = "1222.1.2"
+	1209.1.2 = {
+		death = "1209.1.2"
 	}
 }
 
@@ -2116,8 +2139,12 @@
 	trait = education_martial_2
 	father = 212600
 	mother = 204509
-	1184.4.11 = {
-		birth = "1184.4.11"
+	1184.1.1 = {
+		birth = "1184.1.1"
+		effect = {
+			create_betrothal = character:201507
+		}
+		learn_language = language_french
 	}
 	1202.1.1 = {
 		add_spouse = 201507
@@ -3253,7 +3280,7 @@
 		birth = "808.1.1"
 	}
 	874.6.1 = {
-		add_trait = incapable #Stroke, became speechless and paralyzed
+		trait = incapable #Stroke, became speechless and paralyzed
 	}
 	876.1.31 = {
 		death = "876.1.31"
@@ -9042,7 +9069,7 @@
 	#	employer = 20257
 	#}
 	1081.1.1 = {
-		add_trait = blademaster_1	#Add adult trait
+		trait = blademaster_1	#Add adult trait
 	}
 	1096.1.1 = {
 		death = "1096.1.1"
@@ -9067,7 +9094,7 @@
 		employer = 70622
 	}
 	1082.1.1 = {
-		add_trait = hunter_1	#Add adult trait
+		trait = hunter_1	#Add adult trait
 	}
 	1115.11.20 = {
 		death = "1115.11.20"
@@ -10089,6 +10116,8 @@ bavarian0003 = {
 	}
 	995.1.1 = {
 		death = yes
+		trait = saint
+		give_nickname = "nick_saint"
 	}
 }
 
@@ -10504,20 +10533,20 @@ KOH_BAVARIAN026 = {
 	}
 }
 
-KOH_BAVARIAN026 = {
-	name = "Konrad" 
-	religion = "catholic"
-	culture = "bavarian"
-	dynasty = KOH_D_08
-	father = KOH_BAVARIAN025
-	1193.1.1 = {
-		birth = yes
-	}
-	1260.1.1 = {
-		death = yes
+# KOH_BAVARIAN026 = {
+# 	name = "Konrad" 
+# 	religion = "catholic"
+# 	culture = "bavarian"
+# 	dynasty = KOH_D_08
+# 	father = KOH_BAVARIAN025
+# 	1193.1.1 = {
+# 		birth = yes
+# 	}
+# 	1260.1.1 = {
+# 		death = yes
 		
-	}
-}
+# 	}
+#}
 
 KOH_BAVARIAN027 = {
 	name = "Herrand" #II
@@ -11081,7 +11110,6 @@ KOH_BAVARIAN059 = {
 	religion = "catholic"
 	culture = "bavarian"
 	trait = devoted
-	trait = saint
 	trait = pilgrim
 	trait = theologian
 	trait = zealous
@@ -11090,6 +11118,8 @@ KOH_BAVARIAN059 = {
 	}
 	1139.1.1 = {
 		death = yes
+		trait = saint
+		give_nickname = "nick_saint"
 	}
 }
 
@@ -11298,12 +11328,13 @@ KOH_BAVARIAN073 = {
 	culture = "franconian"
 	trait = devoted
 	trait = zealous
-	trait = saint
 	1090.1.1 = {
 		birth = yes
 	}
 	1164.1.1 = {
 		death = yes
+		trait = saint
+		give_nickname = "nick_saint"
 	}
 }
 
@@ -11386,5 +11417,32 @@ KOH_BAVARIAN078 = {
 	}
 }
 
+KOH_BAVARIAN079 = {
+	name = "Elezebet"
+	dna = KOH_BAVARIAN079_Elezebet
+	female = yes
+	religion = "catholic"
+	culture = bavarian
+	trait = fecund
+	trait = lustful
+	sexuality = heterosexual
+	trait = unwed
+	1155.1.2 = {
+		birth = yes
+		effect = {
+ 			add_character_flag = has_scripted_appearance
+ 		}
+	}
+	1180.1.2 = {
+		effect = {
+			set_relation_lover = { reason = lover_history target = character:204510 } 
+			set_employer = character:204510
+		}
+		learn_language = language_occitano_romance
+	}
+	1200.1.1 = {
+		death = yes
+	}
+}
 
 

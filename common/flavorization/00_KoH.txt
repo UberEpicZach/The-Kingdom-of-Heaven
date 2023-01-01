@@ -469,7 +469,7 @@ duke_male_margrave = {
     special = holder
     tier = duchy
     priority = 120
-    titles = { d_lausitz d_meissen d_nordgau d_ostmark d_osterreich d_steyermark d_istria d_baden }
+    titles = { d_lausitz d_meissen d_nordgau d_ostmark d_osterreich d_steyermark d_istria d_baden d_frisia d_moravia}
     top_liege = no
 }
 
@@ -479,14 +479,14 @@ duke_female_margrave = {
     special = holder
     tier = duchy
     priority = 120
-    titles = { d_lausitz d_meissen d_nordgau d_ostmark d_osterreich d_steyermark d_istria d_frisia }
+    titles = { d_lausitz d_meissen d_nordgau d_ostmark d_osterreich d_steyermark d_istria d_baden d_frisia d_moravia}
     top_liege = no
 }
 
 duchy_margraviate = {
     type = title
     tier = duchy
-    titles = { d_lausitz d_meissen d_nordgau d_ostmark d_osterreich d_steyermark d_istria d_frisia } 
+    titles = { d_lausitz d_meissen d_nordgau d_ostmark d_osterreich d_steyermark d_istria d_baden d_frisia d_moravia } 
     priority = 120
     top_liege = no
 }
@@ -523,7 +523,7 @@ duke_male_prince = {
     special = holder
     tier = duchy
     priority = 120
-    titles = { d_anhalt d_urdunn d_antioch}
+    titles = { d_anhalt d_urdunn d_antioch d_bohemia}
     top_liege = no
 }
 
@@ -533,7 +533,7 @@ duke_female_prince = {
     special = holder
     tier = duchy
     priority = 120
-    titles = { d_anhalt d_urdunn d_antioch}
+    titles = { d_anhalt d_urdunn d_antioch d_bohemia}
     top_liege = no
 }
 
@@ -712,3 +712,13 @@ prince_magyar_female = {
     priority = 120
     titles = { k_magyar }
 }
+
+# king_of_the_germans = {
+#     type = character
+# 	gender = male
+# 	special = court_position
+#     #tier = kingdom
+#     #top_liege = no
+# 	priority = 299
+# 	council_position = King_of_the_germans_court_position
+# }

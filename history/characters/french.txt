@@ -368,13 +368,14 @@
 	intrigue = 7
 	stewardship = 7
 	religion = "catholic"
-	culture = french
+	culture = norman
 	trait = education_martial_1
 	trait = ambitious
 	father = 204506
 	mother = 202991
 	1134.6.1 = {
 		birth = "1134.6.1"
+		learn_language = language_occitano_romance
 	}
 	1158.7.27 = {
 		death = "1158.7.27"
@@ -2578,6 +2579,10 @@
 	father = 204506
 	1147.1.1 = {
 		birth = "1147.1.1"
+		learn_language = language_occitano_romance
+	}
+	1174.1.1 = {
+		learn_language = language_brythonic
 	}
 	#1174 married Dafydd ap Owain 214700
 	1214.1.1 = {
@@ -2589,7 +2594,7 @@
 	name = "Geoffroy"
 	dna = 204506_geoffrey_le_bel
 	# AKA: Geoffrey the Handsome
-	dynasty = 106
+	dynasty = 723
 	martial = 5
 	diplomacy = 8
 	intrigue = 7
@@ -2609,6 +2614,9 @@
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
+	}
+	1128.1.1 = { 
+		dynasty = 106
 	}
 	1130.1.2 = {
 		give_nickname = nick_the_handsome
@@ -3185,6 +3193,7 @@
 	mother = 205730 #Aliénor d'Aquitaine
 	1151.7.28 = {
 		birth = "1151.7.28"
+		learn_language = language_occitano_romance
 	}
 	#Thibaut V le Bon
 	1195.1.1 = {
@@ -3212,6 +3221,9 @@
 			add_character_flag = has_scripted_appearance
 		}
 	}
+	1181 = {
+		set_relation_potential_rival = { reason = rival_historical target = character:205506 } #son stole her family lands
+	}
 	1190.1.2 = {
 		death = "1190.1.2"
 	}
@@ -3230,10 +3242,9 @@
 	culture = french
 	trait = ambitious
 	trait = intellect_good_1
-	trait = brave
-	trait = honest
 	trait = just
 	trait = cynical
+	trait = education_learning_4
 	sexuality = bisexual
 	father = 205500 #Louis VII le Jeune
 	mother = 205505 #Adèle de Champagne
@@ -3255,10 +3266,10 @@
 		add_pressed_claim = title:c_vermandois
 		create_alliance = character:205522
 		create_alliance = {
-						target = character:205520
-						allied_through_owner = character:205506
-						allied_through_target = character:205522
-					}
+			target = character:205520
+			allied_through_owner = character:205506
+			allied_through_target = character:205522
+		}
 	}
 	1190.6.24 = {
 		trait = faith_warrior
@@ -3401,11 +3412,15 @@
 	trait = education_stewardship_4
 	1145.1.1 = {
 		birth = "1145.1.1"
+		learn_language = language_occitano_romance
 	}
 	#Henri I le Libéral (1164.1.1)
 	#Monastere in 1197
-	1197 = {
-		add_trait =  devoted
+	1181 = {
+		set_relation_rival = { reason = rival_historical target = character:205506 } #brother stole her son's fiancee
+	}
+	1183 = {
+		trait =  devoted
 	}
 	1198.1.1 = {
 		death = "1198.1.1"
@@ -4925,6 +4940,11 @@
 	1174.1.2 = {
 		birth = "1174.1.2"
 	}
+	1174.1.3 = {
+		effect = {
+			create_betrothal = character:212609
+		}
+	}
 	1224.1.2 = {
 		death = "1224.1.2"
 	}
@@ -5015,7 +5035,7 @@
 		birth = "1168.1.2"
 	}
 	1170.1.1 = {
-		add_trait = devoted
+		trait = devoted
 	}
 	1218.1.2 = {
 		death = "1218.1.2"
@@ -7809,7 +7829,9 @@
 		add_spouse = 215560
 	}
 	1174.7.11 = {
-		death = "1174.7.11"
+		death = {
+			death_reason = death_ill
+		}
 	}
 }
 
@@ -7887,6 +7909,35 @@
 		birth = "1161.1.6"
 		effect = {
 			add_character_flag = has_scripted_appearance
+		}
+	}
+	1177.11.25 = {
+		effect = {
+			province:5963 = {
+				save_scope_as = battle_province
+			}
+			character:223523 = {
+				create_character_memory = {
+					type = battle_won_memory
+							
+					participants = {
+						loser = character:226000
+						ruler = character:226000
+					}
+
+				}
+				
+				scope:new_memory = {
+					save_scope_as = battle_memory
+				}
+				
+				scope:battle_memory = {
+					set_variable = {
+						name = battle_location
+						value = scope:battle_province
+					}
+				}
+			}
 		}
 	}
 	1185.3.16 = {
@@ -7981,12 +8032,14 @@
 	trait = beauty_good_3
 	trait = physique_bad_2
 	trait = education_intrigue_1
+	health = 3
 	father = 223540
 	mother = 223522
 	1177.1.1 = {
 		birth = "1177.1.1"
 		effect = {
 			add_character_flag = has_scripted_appearance
+			add_pressed_claim = title:k_jerusalem
 		}
 	}
 	1186.8.2 = {
@@ -8111,7 +8164,7 @@
 	trait = deceitful
 	trait = wrathful
 	trait = education_martial_3
-	trait = KOH_Reynald
+	#trait = KOH_Reynald
 	father = 223600
 	mother = 223601
 	1131.1.1 = {
@@ -8125,6 +8178,10 @@
 	}
 	1176.1.1 = {
 		add_spouse = 223592 #Stephanie de Milly
+		effect = {
+			add_character_modifier = { modifier = obese_modifier }
+			add_character_modifier = koh_reynald
+		}
 	}
 	1187.7.4 = {
 		death = "1187.7.4"
@@ -8474,6 +8531,10 @@
 	}
 	1182.1.1 = {
 		add_spouse = 223753 #Sybille Mansel
+		add_character_modifier = {
+			modifier = event_nerf_to_vassal_accept
+			years = 15 # Removed after first use for balance purposes, expires if not used.
+		}
 	}
 	1186.1.1 = {
 		remove_spouse = 223753 #Sybille Mansel
@@ -9304,7 +9365,7 @@
 		birth = "1107.1.2"
 	}
 	1129.1.1 = {
-		add_trait = devoted
+		trait = devoted
 	}
 	1154.1.2 = {
 		death = "1154.1.2"
@@ -13891,7 +13952,7 @@ KOH0060 = {
 	name = "Alix-AdE_le"
 	# AKA: Alix
 	female = yes
-	dynasty = house_vexin_amiens
+	dynasty_house = house_vexin_amiens
 	martial = 3
 	diplomacy = 2
 	intrigue = 8
@@ -20353,7 +20414,7 @@ KOH0060 = {
 	diplomacy = 5
 	intrigue = 5
 	stewardship = 5
-	religion = "catholic"
+	religion = "catholic" 
 	culture = french
 	trait = brave
 	trait = education_martial_2
@@ -20364,8 +20425,8 @@ KOH0060 = {
 	}
 	1312.3.15 = {
 		add_pressed_claim = title:d_athens
-		add_pressed_claim = title:c_atheniai
-		add_pressed_claim = title:c_hellas
+		#add_pressed_claim = title:c_atheniai
+		#add_pressed_claim = title:c_hellas
 		add_pressed_claim = title:c_demetrias
 	}
 	1325.1.11 = {
@@ -22542,7 +22603,7 @@ KOH0060 = {
 		add_spouse = 207661 #Thérèse de León (1080-1130)
 	}
 	1096 = {
-		dynasty = 741 # de Bourgogne
+		dynasty_house = house_bourgogne # de Bourgogne
 	}
 	1112.5.22 = {
 		death = yes
@@ -23342,7 +23403,7 @@ KOH0060 = {
 		birth = "1143.1.1"
 	}
 	1175.1.1 = {
-			add_trait = devoted
+			trait = devoted
 	}
 	1186.3.3 = {
 		death = "1186.3.3"
@@ -26191,7 +26252,7 @@ KOH0060 = {
 		birth = "859.1.1"
 	}
 	880.1.1. = {
-		add_trait = unyielding_defender
+		trait = unyielding_defender
 	}
 	897.1.1 = {
 		death = "897.1.1"
@@ -27735,7 +27796,7 @@ KOH0060 = {
 	}
 	1098.1.2 = {
 		death = "1098.1.2"
-		give_nickname = nick_the_saint
+		give_nickname = "nick_saint"
 		trait = saint
 	}
 }
@@ -31519,7 +31580,7 @@ KOH0060 = {
 	mother = 461906 #Isabelle d'Ibelin
 	1267.1.1 = {
 		add_pressed_claim = title:c_jerusalem
-		add_pressed_claim = title:d_jerusalem
+		add_pressed_claim = title:d_palestine
 		birth = "1267.1.1"
 	}
 	1285.5.20 = {
@@ -31536,17 +31597,17 @@ KOH0060 = {
 	mother = 461906 #Isabelle d'Ibelin
 	1271.1.1 = {
 		add_pressed_claim = title:c_jerusalem
-		add_pressed_claim = title:d_jerusalem
+		add_pressed_claim = title:d_palestine
 		birth = "1271.1.1"
 	}
 	1306.4.26 = {
 		add_pressed_claim = title:k_cyprus
-		add_pressed_claim = title:c_limisol
+		add_pressed_claim = title:c_nicosia
 		add_pressed_claim = title:c_famagusta
 	}
 	1310.6.5 = {
 		remove_claim = title:k_cyprus
-		remove_claim = title:c_limisol
+		remove_claim = title:c_nicosia
 		remove_claim = title:c_famagusta
 	}
 	#1317.10.16 = {
@@ -31784,7 +31845,7 @@ KOH0060 = {
 	}
 	1187.10.2 = {
 		add_pressed_claim = title:c_jerusalem
-		add_pressed_claim = title:d_jerusalem
+		add_pressed_claim = title:d_palestine
 	}
 	1194.7.18 = {
 		death = "1194.7.18"
@@ -31827,7 +31888,6 @@ KOH0060 = {
 }
 
 223502 = {
-	#secondary character could be deleted
 	name = "Alice"
 	dna = 223502_alice_de_lusignan
 	female = yes
@@ -31850,7 +31910,6 @@ KOH0060 = {
 }
 
 223503 = {
-	#secondary character could be deleted
 	name = "Marie"
 	dna = 223503_marie_de_lusignan
 	female = yes
@@ -31911,7 +31970,7 @@ KOH0060 = {
 	}
 	1197.9.10 = {
 		add_pressed_claim = title:c_jerusalem
-		add_pressed_claim = title:d_jerusalem
+		add_pressed_claim = title:d_palestine
 	}
 	1198.1.1 = {
 		add_spouse = 223524 #Isabelle de Jerusalem/d'Anjou
@@ -33372,8 +33431,8 @@ KOH0060 = {
 		add_spouse = KOH0019
 	}
 	1183.11.1 = {
-		add_trait = depressed_1
-		add_trait = unwed
+		trait = depressed_1
+		trait = unwed
 	}
 	1185.1.2 = {
 		add_spouse = 215560
@@ -33401,7 +33460,7 @@ KOH0060 = {
 		}
 	}
 	1170.1.1 = {
-		add_trait = devoted
+		trait = devoted
 	}
 	1184.12.12 = {
 		death = "1184.12.12"
@@ -40298,7 +40357,7 @@ KOH0060 = {
 
 93505 = {
 	name = "Robert"
-	dna = 93505_robert
+	#dna = 93505_robert #No DNA?
 	dynasty = 102030
 	religion = "catholic"
 	culture = french
@@ -41124,7 +41183,11 @@ KOH0060 = {
 	854.1.1 = {
 		add_spouse = 6877 # Teutberga
 		effect = {
-			set_relation_soulmate = character:168314 # Waldrada
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:168314 # Waldrada
+			}
 		}
 	}
 	869.5.1 = {
@@ -43534,7 +43597,7 @@ KOH0118 = {
 
 163067 = {
 	name = "Bernard"
-	dynasty = 3135
+	#dynasty = 3135
 	religion = "catholic"
 	culture = french
 	820.1.1 = {
@@ -47986,7 +48049,7 @@ KOH0019 = {
 		add_spouse = 223570
 	}
 	1183.9.1 = {
-		add_trait = depressed_1
+		trait = depressed_1
 	}
  	1183.11.1 = {
 		death = {
@@ -50682,7 +50745,7 @@ KOH0240 = {
 }
 
 014_KOH_CKIII = {
-    name = "Hervé"
+    name = "Herve"
 	dynasty = KOH_montmorency
     religion = "catholic"
     culture = french
@@ -50863,7 +50926,7 @@ KOH0240 = {
 }
 
 039_KOH_CKIII = {
-	name = "Aénor"
+	name = "AE_nor"
 	female = yes
 	dynasty_house = house_ponthieu
 	religion = "catholic"
@@ -50891,7 +50954,7 @@ KOH0240 = {
 }
 
 059_KOH_CKIII = {
-	name = "Albéric" 
+	name = "AlbE_ric" 
 	religion = "catholic"
 	culture = french
 	1080.1.1 = {
@@ -50931,6 +50994,10 @@ KOH0240 = {
 	name = "Girart" #d'Arcy
 	religion = "catholic"
 	culture = french
+	disallow_random_traits = yes
+	trait = education_learning_3
+	trait = devoted
+	learning = 24
 	1145.1.1 = {
 		birth = "1145.1.1"
 	}
@@ -51060,7 +51127,7 @@ KOH0240 = {
 }
 
 073_KOH_CKIII = {
-	name = "Manassès"
+	name = "ManassE_s"
 	religion = "catholic"
 	culture = french
 	1143.1.1 = {
@@ -51100,7 +51167,7 @@ KOH0240 = {
 }
 
 086_KOH_CKIII = {
-	name = "Albéric" #de Reims
+	name = "AlbE_ric" #de Reims
 	religion = "catholic"
 	culture = french
 	trait = theologian
@@ -51138,7 +51205,7 @@ KOH0240 = {
 }
 
 089_KOH_CKIII = {
-	name = "Barthélémy" #de Senlis
+	name = "Barthelemy" #de Senlis
 	religion = "catholic"
 	culture = french
 	1112.1.1 = {
@@ -51206,7 +51273,7 @@ KOH0240 = {
 #Unknown birth dates [END]
 
 094_KOH_CKIII = {
-	name = "Étienne"
+	name = "Etienne"
 	dynasty = KOH_joinville
 	religion = "catholic"
 	culture = french
@@ -51268,7 +51335,7 @@ KOH0240 = {
 }
 
 098_KOH_CKIII = {
-	name = "Étienne"
+	name = "Etienne"
 	dynasty = KOH_joinville
 	religion = "catholic"
 	culture = french
@@ -51326,7 +51393,7 @@ KOH0240 = {
 }
 
 102_KOH_CKIII = {
-	name = "Aldéarde"
+	name = "Aldearde"
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -51357,7 +51424,7 @@ KOH0240 = {
 }
 
 104_KOH_CKIII = {
-	name = "Félicité"
+	name = "Felicite"
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -51490,7 +51557,7 @@ KOH0240 = {
 }
 
 113_KOH_CKIII = {
-	name = "Alpaïs"
+	name = "AlpaI_s"
 	female = yes
 	dynasty = KOH_marolles
 	religion = "catholic"
@@ -51540,7 +51607,7 @@ KOH0240 = {
 }
 
 116_KOH_CKIII = {
-	name = "Gisèle"
+	name = "GisE_le"
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -51800,7 +51867,7 @@ KOH0240 = {
 }
 
 133_KOH_CKIII = {
-	name = "Empéria"
+	name = "Emperia"
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -51873,7 +51940,7 @@ KOH0240 = {
 }
 
 138_KOH_CKIII = {
-	name = "Damète"
+	name = "Damete"
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -51922,7 +51989,7 @@ KOH0240 = {
 }
 
 141_KOH_CKIII = {
-	name = "Damète"
+	name = "Damete"
 	female = yes
 	religion = "catholic"
 	culture = french
@@ -52063,5 +52130,36 @@ KOH0240 = {
 	}
 	1179.1.1 = {
 		death = "1179.1.1"
+	}
+}
+
+157_KOH_CKIII = {
+	name = "Itier"
+	dynasty = 40016
+	religion = "catholic"
+	culture = "occitan"
+	trait = education_stewardship_3
+	1155.1.1 = {
+		birth = "1155.1.1"
+	}
+	1183.1.1 = {
+		death = "1183.1.1"
+	}
+}
+
+158_KOH_CKIII = {
+	name = "AmE_lie"
+	female = yes
+	dynasty = 40016
+	religion = "catholic"
+	culture = "occitan"
+	trait = beauty_good_2
+	father = 157_KOH_CKIII
+	1180.1.1 = {
+		birth = "1180.1.1"
+		learn_language = language_french
+	}
+	1198.1.1 = {
+		death = "1198.1.1"
 	}
 }

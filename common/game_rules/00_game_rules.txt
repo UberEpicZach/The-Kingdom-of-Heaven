@@ -16,6 +16,37 @@
 	}
 }
 
+exclave_independence = {
+	default = off_exclave_independence
+	
+	off_exclave_independence = {
+	
+	}
+	
+	ai_limited_exclave_independence = {
+	
+	}
+	
+	ai_significant_exclave_independence = {
+	
+	}
+	
+	ai_total_exclave_independence = {
+	
+	}
+
+	limited_exclave_independence = {
+	
+	}
+	
+	significant_exclave_independence = {
+	
+	}
+	
+	total_exclave_independence = {
+	
+	}
+}
 
 multiplayer_murder_schemes = {
 	default = default_multiplayer_murder_schemes
@@ -319,6 +350,18 @@ de_jure_requirement = {
 	}
 }
 
+empire_obscurity_requirement = {
+	default = off_empire_obscurity_requirement
+
+	on_empire_obscurity_requirement = {
+	
+	}
+	
+	off_empire_obscurity_requirement = {
+	
+	}
+}
+
 custom_kingdoms = {
 	default = on_custom_kingdoms
 
@@ -327,6 +370,22 @@ custom_kingdoms = {
 	}
 	
 	off_custom_kingdoms = {
+	
+	}
+}
+
+generate_families = {
+	default = off_generate_families
+
+	on_generate_families = {
+	
+	}
+	
+	on_generate_families_ai_only = {
+	
+	}
+
+	off_generate_families = {
 	
 	}
 }
@@ -426,4 +485,11 @@ dlc_fp1_scandinavian_adventurers = {
 	fp1_scandi_adventurers_frequent = {}
 	fp1_scandi_adventurers_apocalyptic = {}
 	fp1_scandi_adventurers_off = { flag = blocks_achievements }
+}
+
+dissolution_umayyad = {
+	default = dissolution_historical_date
+	dissolution_unconstrained = {}
+	dissolution_after_caliph_death = {}
+	dissolution_historical_date = {}
 }

@@ -5,14 +5,7 @@ KoH_saladin.105 = {
 	#title = "The Templars, propose a raid..."
 	#desc = "The Kings Peace, has been hard on buisness, now if we could simply gather the templars, we could do successfully in raiding a nearby Muslim Caravan."
 	hidden = yes
-	theme = faith
-	override_background = {
-		event_background = temple_scope
-	}
-
-	option = {
-		name = KoH_saladin.100.a
-		
+	immediate = {
 		spawn_army = {
 			name = KoH_saladin.100.a.troops
 			men_at_arms = {
@@ -608,8 +601,13 @@ KoH_saladin.3 = { #King's Crusade
 		character = root
 		animation = personality_bold
 	}
-	
+	trigger = {
+		NOT = {
+			has_character_flag = KoH_saladin.3
+		}
+	}
 	immediate = {
+		add_character_flag = KoH_saladin.3
 		every_ruler = {
 			limit = {
 				any_held_title = {
@@ -632,7 +630,6 @@ KoH_saladin.3 = { #King's Crusade
 		name = KoH_saladin.3.a
 		
 		title:k_jerusalem.holder = {
-
 			add_pressed_claim = title:c_jerusalem
 
 			start_war = { 
@@ -649,7 +646,7 @@ KoH_saladin.3 = { #King's Crusade
 				}
 				add_attacker = global_var:templar_holy_order_title.holder
 				
-				add_attacker  = global_var:hospitaller_holy_order_title.holder
+				add_attacker = global_var:hospitaller_holy_order_title.holder
 			}
 		}
 
@@ -750,7 +747,7 @@ KoH_saladin.4 = { #King's Crusade
 	option = {
 		name = KoH_saladin.4.a
 		
-		custom_tooltip = to_jerusalem
+		custom_tooltip = KoH_saladin.4.a.to_jerusalem
 	}
 }
 
@@ -786,6 +783,19 @@ KoH_saladin.121 = { #Send to Jerusalem Ruler
 	
 	theme = war
 
+	trigger = {
+		NOT = {
+			has_character_flag = had_event_KoH_saladin.121
+		}
+	}
+
+	# on_trigger_fail = {
+	# 	trigger_event = {
+	# 		id = KoH_saladin.121
+	# 		days = 50
+	# 	}
+	# }
+
 	immediate = {
 		add_character_flag = {
 			flag = had_event_KoH_saladin.121
@@ -796,6 +806,21 @@ KoH_saladin.121 = { #Send to Jerusalem Ruler
 		trigger_event = {
 			id = KoH_saladin.3
 			days = 1
+		}
+
+		scope:saladin = {
+			every_held_title = {
+				limit = {
+					tier = tier_county
+					title_province = {
+						geographical_region = ghw_region_holy_land
+					}
+					culture = culture:french
+					religion = religion:christianity_religion
+				}
+				set_county_culture = culture:levantine
+				set_county_faith = faith:ashari
+			}
 		}
 	}
 	

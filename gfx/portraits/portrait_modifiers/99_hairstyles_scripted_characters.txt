@@ -1190,12 +1190,6 @@ hairstyles_scripted_characters = {
             modifier = {
                 add = 200
                 exists = this
-                exists = character:204512 #queen eleanor of castille
-                this = character:204512 #queen eleanor of castille
-            }
-            modifier = {
-                add = 200
-                exists = this
                 exists = character:800503 #blanche
                 this = character:800503 #blanche
             }
@@ -1288,12 +1282,6 @@ hairstyles_scripted_characters = {
                 exists = this
                 exists = character:easteregg_lysann_schlegel
                 this = character:easteregg_lysann_schlegel
-            }
-            modifier = {
-                add = 200
-                exists = this
-                exists = character:205518 #Princess Alys
-                this = character:205518 #Princess Alys
             }
             modifier = {
                 add = 200
@@ -1824,6 +1812,12 @@ hairstyles_scripted_characters = {
         }   
         weight = {
             base = 0
+            modifier = {
+                add = 200
+                exists = this
+                exists = character:205515 #Marguerite of France
+                this = character:205515 #Marguerite of France
+            }
         }
         
     }
@@ -1943,4 +1937,278 @@ hairstyles_scripted_characters = {
             }
         }
     }
+
+    ### FP2 Hair ###
+
+    male_hair_fp2_iberian_muslim_01 = { # Medium Short Wavy
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_03
+                value = 0.1 # For the randomness to work correctly
+            }
+        }   
+        weight = {
+            base = 0
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:73813
+                this = character:73813
+            }
+
+            modifier = {
+                add = 999
+               	exists = this
+               	exists = character:32980 # Abu Yusuf Ya'qub al-Mansur
+                this = character:32980 # Abu Yusuf Ya'qub al-Mansur
+            }
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:155086 # Abu Sa'id 'Uthman Almohad
+                this = character:155086 #Abu Sa'id 'Uthman Almohad
+            }
+        }
+    }
+
+    male_hair_fp2_iberian_muslim_02 = { # Long Curly Middle Parted
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_03
+                value = 0.2 # For the randomness to work correctly
+            }
+        }   
+        weight = {
+            base = 0
+            modifier = {
+                add = 999
+               	exists = this
+               	exists = character:224000 # Abu Ya'qub Yusuf
+                this = character:224000 # Abu Ya'qub Yusuf
+            }
+        }
+    }
+
+    male_hair_fp2_iberian_muslim_03 = { # Long Windswept
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_03
+                value = 0.4 # For the randomness to work correctly
+            }
+        }   
+        weight = {
+            base = 0
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:danis0005
+                this = character:danis0005
+            }
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:surunbaqi0001
+                this = character:surunbaqi0001
+            }
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:107590 #el_cid
+                this = character:107590 #el_cid
+            }
+            modifier = {
+                add = 999
+               	exists = this
+               	exists = character:155085 # 'Umar ibn 'Abd al-Mu'min
+                this = character:155085 # 'Umar ibn 'Abd al-Mu'min
+            }
+        }
+    }
+
+     male_hair_fp2_iberian_christian_01 = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_03
+                value = 0.6# For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:70150
+                this = character:70150
+            }
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:70019
+                this = character:70019
+            }
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:73815
+                this = character:73815
+            }
+        }
+    }
+
+    male_hair_fp2_iberian_christian_02 = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_03
+                value = 0.84 # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:barcelona_00003
+                this = character:barcelona_00003
+            }
+        }
+    }
+
+    male_hair_fp2_iberian_christian_03 = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = scripted_character_hairstyles_03
+                value = 1 # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+
+             modifier = {
+                add = 999
+                exists = this
+                exists = character:73957
+                this = character:73957
+            }
+        }
+    }
+    male_hair_fp2_iberian_christian_04 = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = fp2_hairstyles_iberian_christian_wavy
+                value = 1 # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:207510 # Alfonso VIII El Noble
+                this = character:207510 # Alfonso VIII El Noble
+            }
+        }
+    }
+	female_hair_fp2_iberian_christian_01 = { # Maiden's Curls
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = fp2_hairstyles_iberian_christian_wavy
+                value = 0.19 # For the randomness to work correctly
+            }
+        }   
+        weight = {
+            base = 0
+            modifier = {
+                add = 200
+                exists = this
+                exists = character:KOH_BAVARIAN079 #Elezebet
+                this = character:KOH_BAVARIAN079 #Elezebet
+            }
+		    modifier = {
+                add = 200
+                exists = this
+                exists = character:204512 #queen eleanor of castille
+                this = character:204512 #queen eleanor of castille
+            }
+        }
+    }
+	female_hair_fp2_iberian_muslim_03_common = { # Four Braids
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = fp2_hairstyles_iberian_muslim_wavy
+                value = 0.21 # For the randomness to work correctly
+            }
+        }   
+        weight = {
+            base = 0
+            modifier = {
+                add = 200
+                exists = this
+                exists = character:207503 #Constance of Castille
+                this = character:207503 #Constance of Castille
+            }
+        }
+    }
+	female_hair_fp2_iberian_christian_02 = { # Long Straight with Middle Part
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = fp2_hairstyles_iberian_christian_wavy
+                value = 0.22 # For the randomness to work correctly
+            }
+        }
+		weight = {
+        base = 0
+			modifier = {
+                add = 200
+                exists = this
+                exists = character:205518 #Princess Alys
+                this = character:205518 #Princess Alys
+			}
+		}
+	}
+	female_hair_fp2_iberian_christian_03 = { #Wavy shoulder length
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = hairstyles
+                template = fp2_hairstyles_iberian_christian_wavy
+                value = 0.23 # For the randomness to work correctly
+            }
+        }
+		weight = {
+        base = 0
+			modifier = {
+                add = 200
+                exists = this
+                exists = character:205519 #Princess Agnes
+                this = character:205519 #Princess Agnes
+			}
+		}
+	}
 }

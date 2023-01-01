@@ -2205,6 +2205,7 @@ sicilian0008 = {
 
 	1182.1.1 = {
 		birth = yes
+		learn_language = language_italian
 	}
 	1187.1.1 = {
 		death = yes
@@ -2233,6 +2234,7 @@ sicilian0008 = {
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
+		learn_language = language_italian
 	}
 	1166.5.7 = {
 		capital = c_palermo
@@ -2243,7 +2245,11 @@ sicilian0008 = {
 	}
 	1182.1.1 = {
 		effect = {
-			set_relation_soulmate = character:204513
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:204513
+			}
 		}
 	}
 	1187.1.1 = {

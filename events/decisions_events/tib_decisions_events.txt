@@ -1,0 +1,114 @@
+﻿namespace = major_decisions_mosque_seville
+
+major_decisions_mosque_seville.1 = {
+	type = character_event
+	title = major_decisions_mosque_seville.1.t
+	desc = {
+		desc = major_decisions_mosque_seville.1.desc_first
+		first_valid = {
+			desc = major_decisions_mosque_seville.1.desc
+		}
+	}
+	theme = stewardship
+	left_portrait = {
+		character = scope:founder
+		animation = personality_rational
+	}
+
+	option = {
+		trigger = {
+			any_sub_realm_barony = { this = title:b_sevilla }
+			title:b_sevilla = {
+				county = { development_level >= 20 }
+				title_province = { has_special_building_slot = no }
+			}
+		}
+		title:b_sevilla.title_province = {
+			title:b_sevilla = {
+				if = {
+					limit = { NOT = { holder = root } }
+					holder = {
+						add_opinion = {
+							target = root
+							modifier = pleased_opinion
+							opinion = 30
+						}
+					}
+				}
+			}
+		}
+		name = major_decisions_mosque_seville.1.b_sevilla
+	}
+
+	option = { # fallback in case development somehow tumbles
+		trigger = { always = no }
+		fallback = yes
+		name = major_decisions_mosque_seville.1.fallback
+		custom_tooltip = major_decisions_mosque_seville.1.fallback.tt
+	}
+}
+
+#Other players informed
+major_decisions_mosque_seville.2 = {
+	type = character_event
+	title = major_decisions_mosque_seville.1.t
+	desc = major_decisions_mosque_seville.2.desc
+	left_portrait = {
+		character = scope:founder
+		animation = personality_rational
+	}
+	theme = stewardship
+
+	option = {
+		name = major_decisions_mosque_seville.2.a
+	}
+}
+
+# Recruit the engineer(s) behind the building?
+major_decisions_mosque_seville.3 = {
+	type = character_event
+	title = major_decisions_mosque_seville.3.t
+	desc = major_decisions_mosque_seville.3.desc
+	theme = stewardship
+    
+	immediate = {
+		create_character = {
+			employer = root
+			template = andalusian_engineer_character
+			save_scope_as = architect
+		}
+	}
+
+	left_portrait = {
+		character = scope:architect
+		animation = throne_room_conversation_1
+	}
+    right_portrait = {
+		character = scope:founder
+		animation = personality_rational
+	}
+	override_background = { event_background = throne_room }
+
+	option = { #Welcome!
+		name = major_decisions_mosque_seville.3.a
+		scope:architect = {
+			add_opinion = {
+				target = root
+				modifier = friendliness_opinion
+				opinion = 15
+			}
+		}
+	}
+
+	option = { #Send away
+		name = major_decisions.2011.b
+		scope:architect = {
+			move_to_pool = yes
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -10
+			}
+		}
+	}
+}

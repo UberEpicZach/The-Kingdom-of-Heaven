@@ -601,6 +601,9 @@
 	}
 	1184.1.1 = {
 		give_nickname = nick_the_lion
+		effect = {
+			set_relation_soulmate = { reason = soulmate_history target = character:KOH0148 }
+		}
 	}
 	1186.1.1 = {
 		add_spouse = 202987
@@ -832,7 +835,7 @@
 	stewardship = 7
 	religion = "catholic"
 	culture = "scottish"
-	trait = bastard
+	trait = bastard_founder
 	trait = education_diplomacy_1
 	father = 202999
 	mother = KOH0148
@@ -1950,7 +1953,7 @@
 	stewardship = 9
 	religion = "catholic"
 	culture = "scottish"
-	trait = bastard
+	trait = bastard_founder
 	trait = lazy
 	father = 202999
 	mother = KOH0148
@@ -1967,7 +1970,7 @@ KOH0150 = {
 	dynasty_house = house_galightly
 	religion = "catholic"
 	culture = "scottish"
-	trait = bastard
+	trait = bastard_founder
 	father = 202999
 	mother = KOH0148
 	1168.1.1 = {
@@ -2001,7 +2004,7 @@ KOH0152 = {
 	dynasty_house = house_william
 	religion = "catholic"
 	culture = "scottish"
-	trait = bastard
+	trait = bastard_founder
 	trait = beauty_good_2
 	father = 202999
 	mother = KOH0148
@@ -8011,5 +8014,36 @@ KOH0153 = {
 	}
 	1178.1.1 = {
 		death = yes
+	}
+}
+
+KOH0148 = {
+	name = "Isabel"
+	female = yes
+	dynasty = 25058
+	religion = "catholic"
+	culture = "scottish"
+	trait = education_learning_2
+	trait = beauty_good_2
+	father = KOH0149
+	1143.1.1 = {
+		birth = "1143.1.1"
+	}
+	1214.12.4 = {
+		death = "1234.1.1"
+	}
+}
+
+KOH0149 = {
+	name = "Robert"
+	dynasty = 25058
+	religion = "catholic"
+	culture = "scottish"
+	trait = education_martial_2
+	1123.1.1 = {
+		birth = "1123.1.1"
+	}
+	1182.1.1 = {
+		death = "1182.1.1"
 	}
 }

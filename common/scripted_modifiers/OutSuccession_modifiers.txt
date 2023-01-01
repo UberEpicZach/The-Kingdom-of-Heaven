@@ -28,4 +28,16 @@
         }
         add = 150
     }
+    modifier = {
+        desc = tooltip_outremer_elector_proximity_by_blood
+        scope:holder = {
+            scope:candidate = {
+                this = character:223541
+            }
+        }
+        scope:candidate = {
+            this = character:223541
+        }
+        add = 50
+    }
 }

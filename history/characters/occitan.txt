@@ -1028,6 +1028,12 @@
 	1154.8.18 = {
 		add_spouse = 205503
 	}
+	1184.1.1 = {
+		add_character_modifier = {
+			modifier = event_nerf_to_vassal_accept
+			years = 15 # Removed after first use for balance purposes, expires if not used.
+		}
+	}
 	1194.12.1 = {
 		death = "1194.12.1"
 	}
@@ -1288,8 +1294,6 @@
 	religion = "catholic"
 	culture = "occitan"
 	trait = beauty_good_1
-	trait = diligent
-	trait = just
 	trait = arrogant
 	trait = calm
 	trait = brave
@@ -1302,6 +1306,7 @@
 			add_character_flag = has_scripted_appearance
 			add_character_flag = ImprisonedByHenry
 		}
+		learn_language = language_french
 	}
 	1204.4.1 = {
 		death = "1204.4.1"
@@ -11154,7 +11159,7 @@ KOH0053 = {
 }
 
 KOH0054 = {
-	name = "Théotard"
+	name = "Theotard"
 	dynasty_house = house_thiern
 	religion = "catholic"
 	culture = "occitan"
@@ -11197,7 +11202,7 @@ KOH0056 = {
 }
 
 KOH0057 = {
-	name = "Théotard"
+	name = "Theotard"
 	dynasty_house = house_thiern 
 	religion = "catholic"
 	culture = "occitan"
@@ -11279,6 +11284,7 @@ KOH0059 = {
 	1124.2.8 = {
 		death = "1124.2.8"
 		trait = saint
+		give_nickname = "nick_saint"
 	}
 }
 
@@ -11920,7 +11926,7 @@ KOH0071 = {
 }
 
 206042 = {
-	name = "Robèrt" #(Robert IV) Dauphin d'Auvergne count of Clermont
+	name = "RobE_rt" #(Robert IV) Dauphin d'Auvergne count of Clermont
 	# AKA: Guillaume
 	dynasty = 733
 	religion = "catholic"
@@ -15153,7 +15159,7 @@ KOH0241 = {
 }
 
 051_KOH_CKIII = {
-	name = "Elzéart"
+	name = "Elzeart"
 	dynasty = KOH_uses
 	religion = "catholic"
 	culture = occitan
@@ -15210,7 +15216,7 @@ KOH0241 = {
 }
 
 055_KOH_CKIII = {
-	name = "Raymond Rascas"
+	name = "Raymond_Rascas"
 	dynasty = KOH_uses
 	religion = "catholic"
 	culture = occitan
@@ -15254,7 +15260,7 @@ KOH0241 = {
 }
 
 074_KOH_CKIII = {
-	name = "Béraud"
+	name = "Beraud"
 	dynasty = KOH_mercoeur 
 	religion = "catholic"
 	culture = occitan
@@ -15267,7 +15273,7 @@ KOH0241 = {
 }
 
 075_KOH_CKIII = {
-	name = "Albéarde"
+	name = "Albearde"
 	female = yes
 	dynasty = KOH_mercoeur
 	religion = "catholic"
@@ -15282,7 +15288,7 @@ KOH0241 = {
 }
 
 076_KOH_CKIII = {
-	name = "Béraud"
+	name = "Beraud"
 	dynasty = KOH_mercoeur
 	religion = "catholic"
 	culture = occitan
@@ -15299,7 +15305,7 @@ KOH0241 = {
 }
 
 077_KOH_CKII = {
-	name = "Béraud"
+	name = "Beraud"
 	dynasty = KOH_mercoeur
 	religion = "catholic"
 	culture = occitan
@@ -15349,7 +15355,7 @@ KOH0241 = {
 }
 
 080_KOH_CKIII = {
-	name = "Béraud"
+	name = "Beraud"
 	dynasty = KOH_mercoeur
 	religion = "catholic"
 	culture = occitan

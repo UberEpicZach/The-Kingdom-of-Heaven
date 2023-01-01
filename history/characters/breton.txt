@@ -63,7 +63,7 @@
 }
 
 008_KOH_CKIII = {
-    name = "Hascoët"
+    name = "Hascoet"
     dynasty = KOH_retz
     religion = "catholic"
     culture = breton
@@ -1022,13 +1022,16 @@
 	trait = stubborn
 	trait = administrator
 	trait = education_stewardship_4
+	learning = 15
 	father = 205741 #Konan IV le Petit
 	mother = 203510 #Marguerite de Huntinton
 	1161.6.12 = {
 		birth = "1161.6.12"
 		effect = {
 			add_character_flag = has_scripted_appearance
-		}	
+		}
+		learn_language = language_french
+		learn_language = language_latin
 	}
 	1201.9.5 = {
 		death = "1201.9.5"

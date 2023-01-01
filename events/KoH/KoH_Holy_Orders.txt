@@ -76,7 +76,7 @@ KoH_holy_orders.1 = {
 			# Walls & Towers.
 			if = {
 				limit = {
-					NOT = { has_building_or_higher = curtain_walls_01 }
+					NOT = { has_building_or_higher = regimental_grounds_01 }
 				}
 				# If it doesn't have a free building slot, give it one.
 				if = {
@@ -84,7 +84,7 @@ KoH_holy_orders.1 = {
 					add_building_slot = 1
 				}
 				# Add the building.
-				add_building = curtain_walls_01
+				add_building = regimental_grounds_05
 			}
 			# Barracks.
 			if = {
@@ -97,7 +97,7 @@ KoH_holy_orders.1 = {
 					add_building_slot = 1
 				}
 				# Add the building.
-				add_building = barracks_01
+				add_building = barracks_05
 			}
 			# Military Camps.
 			if = {
@@ -110,7 +110,7 @@ KoH_holy_orders.1 = {
 					add_building_slot = 1
 				}
 				# Add the building.
-				add_building = military_camps_01
+				add_building = military_camps_05
 			}
 		}
 	
@@ -118,7 +118,7 @@ KoH_holy_orders.1 = {
 			# Walls & Towers.
 			if = {
 				limit = {
-					NOT = { has_building_or_higher = curtain_walls_01 }
+					NOT = { has_building_or_higher = regimental_grounds_01 }
 				}
 				# If it doesn't have a free building slot, give it one.
 				if = {
@@ -126,7 +126,7 @@ KoH_holy_orders.1 = {
 					add_building_slot = 1
 				}
 				# Add the building.
-				add_building = curtain_walls_01
+				add_building = regimental_grounds_04
 			}
 			# Barracks.
 			if = {
@@ -160,7 +160,7 @@ KoH_holy_orders.1 = {
 			# Walls & Towers.
 			if = {
 				limit = {
-					NOT = { has_building_or_higher = curtain_walls_01 }
+					NOT = { has_building_or_higher = regimental_grounds_01 }
 				}
 				# If it doesn't have a free building slot, give it one.
 				if = {
@@ -168,7 +168,7 @@ KoH_holy_orders.1 = {
 					add_building_slot = 1
 				}
 				# Add the building.
-				add_building = curtain_walls_01
+				add_building = regimental_grounds_04
 			}
 			# Barracks.
 			if = {
@@ -294,7 +294,7 @@ KoH_holy_orders.2 = {
 			# Walls & Towers.
 			if = {
 				limit = {
-					NOT = { has_building_or_higher = curtain_walls_01 }
+					NOT = { has_building_or_higher = regimental_grounds_01 }
 				}
 				# If it doesn't have a free building slot, give it one.
 				if = {
@@ -302,7 +302,7 @@ KoH_holy_orders.2 = {
 					add_building_slot = 1
 				}
 				# Add the building.
-				add_building = curtain_walls_01
+				add_building = regimental_grounds_04
 			}
 			# Barracks.
 			if = {
@@ -336,7 +336,7 @@ KoH_holy_orders.2 = {
 			# Walls & Towers.
 			if = {
 				limit = {
-					NOT = { has_building_or_higher = curtain_walls_01 }
+					NOT = { has_building_or_higher = regimental_grounds_01 }
 				}
 				# If it doesn't have a free building slot, give it one.
 				if = {
@@ -344,7 +344,7 @@ KoH_holy_orders.2 = {
 					add_building_slot = 1
 				}
 				# Add the building.
-				add_building = curtain_walls_01
+				add_building = regimental_grounds_04
 			}
 			# Barracks.
 			if = {
@@ -953,119 +953,7 @@ KoH_holy_orders.7 = {
 	}
 }
 
-#KoH_holy_orders.8 = {
-#	type = character_event
-#	title = KoH_holy_orders.8.t
-#	desc = KoH_holy_orders.8.d
-#	theme = war
-#	hidden = yes
-#
-#	immediate = {
-#		global_var:calatrava_holy_order_title.holder = {
-#				save_scope_as = holy_order
-#		}
-#	
-#	}
-#}
-
-#AGE OF CRUSADES AND JIHADS
-#KoH_holy_orders.100 = { 
-#	type = character_event
-#	title = KoH_holy_orders.100.t
-#	desc = KoH_holy_orders.100.d
-#	theme = war
-#	hidden = yes
-#	
-#	immediate = {
-#		faith:ashari = {
-#			change_fervor = 200
-#			save_scope_as = awakening_faith
-#			if = {
-#				limit = {
-#					exists = religious_head
-#				}
-#				religious_head = { save_scope_as = ghw_first_sponsor }
-#			}
-#			else = {
-#				random_theocratic_ruler = {
-#					limit = { faith = root }
-#					save_scope_as = ghw_first_sponsor
-#				}
-#			}
-#			if = { # Fallback
-#				limit = {
-#					NOT = {
-#						exists = scope:ghw_first_sponsor
-#					}
-#				}
-#				random_ruler = {
-#					limit = { faith = root }
-#					save_scope_as = ghw_first_sponsor
-#				}
-#			}
-#			religion = {
-#				set_variable = {
-#					name = variable_ghw_unlocked # Crusades
-#					value = yes
-#				}
-#			}
-#		}	
-#	}
-#}
-#AGE OF CRUSADES, WILL DELAY
-# KoH_holy_orders.101 = { 
-# 	type = character_event
-# 	title = KoH_holy_orders.101.t
-# 	desc = KoH_holy_orders.101.d
-# 	theme = war
-# 	hidden = yes
-#	
-# 	trigger = { 
-# 		trigger_if = {
-# 			limit = { 
-# 				title:c_jerusalem.holder = {
-# 				NOT = { faith.religion = religion:christianity_religion }
-# 			}
-# 		}
-# 	}
-#
-# 	immediate = {
-# 		faith:catholic = {
-# 			change_fervor = 200
-# 			save_scope_as = awakening_faith
-# 			if = {
-# 				limit = {
-# 					exists = religious_head
-# 				}
-# 				religious_head = { save_scope_as = ghw_first_sponsor }
-# 			}
-# 			else = {
-# 				random_theocratic_ruler = {
-# 					limit = { faith = root }
-# 					save_scope_as = ghw_first_sponsor
-# 				}
-# 			}
-# 			if = { # Fallback
-# 				limit = {
-# 					NOT = {
-# 						exists = scope:ghw_first_sponsor
-# 					}
-# 				}
-# 				random_ruler = {
-# 					limit = { faith = root }
-# 					save_scope_as = ghw_first_sponsor
-# #				}
-# #			}
-# #			religion = {
-# #				set_variable = {
-# #					name = variable_ghw_unlocked # Crusades
-# #					value = yes
-# #				}
-# #			}
-# #		}
-# #	}
-# #}
-
+ #144228 is proper head
 KoH_holy_orders.102 = { 
 	type = character_event
 	hidden = yes
@@ -1099,12 +987,14 @@ KoH_holy_orders.102 = {
 				add_trait = order_member
 				add_trait = education_intrigue_4
 				set_character_faith = faith:nizari
+				give_assassin_secret_or_trait_effect = yes
 			}
 
 			every_courtier = {
 				add_trait = order_member
 				add_trait = education_intrigue_4
 				set_character_faith = faith:nizari
+				give_assassin_secret_or_trait_effect = yes
 			}
 			spawn_army = {
 				uses_supply = no
@@ -1121,41 +1011,48 @@ KoH_holy_orders.102 = {
 				location = capital_province
 			}
 		}
+
+		title:k_nizari_state.holder = {
+			every_vassal = {
+				every_courtier = {
+					add_trait = order_member
+					add_trait = education_intrigue_4
+					set_character_faith = faith:nizari
+				}
+				add_trait = order_member
+				add_trait = education_intrigue_4
+				set_character_faith = faith:nizari
+				give_assassin_secret_or_trait_effect = yes
+			}
+
+			every_courtier = {
+				add_trait = order_member
+				add_trait = education_intrigue_4
+				set_character_faith = faith:nizari
+				give_assassin_secret_or_trait_effect = yes
+			}
+		}
 	}
 }
-
-# create_dynamic_title = {
-# 	tier = kingdom
-# 	name = "Hashshashin Order"
-# }
-# create_title_and_vassal_change = {
-# 	type = created
-# 	save_scope_as = change
-# 	add_claim_on_loss = no
-# }
-# scope:new_title = {
-# 	set_capital_county = scope:peasant_county
-# 	set_landless_title = yes
-# 	set_delete_on_destroy = yes
-# 	set_no_automatic_claims = yes
-# 	set_definitive_form = yes
-# 	set_can_be_named_after_dynasty = no
-# 	change_title_holder = {
-# 		holder = title:d_hashshashin.holder
-# 		change = scope:change
-# 	}
-# }
-# resolve_title_and_vassal_change = scope:change
-# scope:new_title = { generate_coa = religious_title }
 
 KoH_holy_orders.103 = {
 	type = character_event
 	hidden = yes
 	
 	immediate = {
+		#Persian Branch
+		character:144228 = {
+			give_assassins_castle = yes
+			add_realm_law_skip_effects = assassin_order_county_succession_law
+			give_assassin_secret_or_trait_effect = yes
+		}
+		
+		#Syrian Branch
+		add_realm_law_skip_effects = assassin_order_county_succession_law
+		give_assassin_secret_or_trait_effect = yes
 		get_title = title:b_artah
 		create_dynamic_title = {
-			tier = kingdom
+			tier = duchy
 			name = OrderofHashshashin
 		}
 		create_title_and_vassal_change = {
@@ -1178,9 +1075,23 @@ KoH_holy_orders.103 = {
 		scope:new_title = { 
 			set_coa = title:d_hashshashin
 			set_color_from_title = title:d_hashshashin
-			add_title_law = holy_order_succession_law
 		}
 
+		scope:new_title.holder = {
+			create_title_and_vassal_change = {
+				type = granted #or whatever
+				save_scope_as = change
+			}
+			
+			change_liege = {
+				liege = character:144228
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+
+
+		#Give holy order of assassin's to Syria
 		create_character = {
 			template = holy_order_leader_character
 			location = title:b_artah.title_province
@@ -1192,10 +1103,6 @@ KoH_holy_orders.103 = {
 			capital = title:b_artah
 			save_scope_as = assassin_holy_order
 		}
-
-		# scope:assassin_holy_order = {
-		# 	set_coa = title:d_hashshashin
-		# }
 
 		hidden_effect = {
 			if = {
@@ -1223,8 +1130,8 @@ KoH_holy_orders.103 = {
 				every_courtier = {
 					add_trait = order_member
 				}
+				give_assassin_secret_or_trait_effect = yes
 			}
 		}
-		give_assassins_castle = yes
 	}
 }

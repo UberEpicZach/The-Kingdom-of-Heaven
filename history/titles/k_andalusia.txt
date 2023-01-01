@@ -136,10 +136,10 @@ d_cordoba = {
 	1148.1.1 = {
 		holder = 0
 	}
-	1163.1.1 = {
-		holder = 155086 # Abu Sa'id Uthman Almohad
-		liege = k_maghreb
-	}
+	#1163.1.1 = {
+	#	holder = 155086 # Abu Sa'id Uthman Almohad
+	#	liege = k_maghreb
+	#}
 	1212.7.16 = {
 		de_jure_liege = k_castille
 	}
@@ -281,7 +281,7 @@ c_cordoba = {
 		holder = 224001 # Abd al-Razzaq Yahyavid
 		liege = k_maghreb
 	}
-	1163.1.1 = {
+	1168.1.1 = { # Received as reward for putting down major revolts in the Almohad realm
 		holder = 155086 # Abu Sa'id Uthman Almohad
 		liege = k_maghreb
 	}
@@ -903,8 +903,8 @@ d_granada = {
 	1146.1.1 = {
 		holder = 0
 	}
-	1184.1.1 = {
-		holder = almohad0014
+	1163.1.1 = {
+		holder = 155086 # Abu Sa'id Uthman Almohad
 		liege = k_maghreb
 	}
 	1237.1.1 = {
@@ -1018,15 +1018,15 @@ c_granada = {
 		holder = 73241 # Muhammad Mardanishid
 		liege = d_murcia
 	}
-	1172.1.1 = {
-		holder = 224015 # Ya'qub Bilalid
-		liege = k_maghreb
-	}
-	1178.1.1 = {
-		holder = 224016 # Abd al-Malik Gharnatid
-	}
-	1184.1.1 = {
-		holder = almohad0014
+	#1172.1.1 = {
+	#	holder = 224015 # Ya'qub Bilalid
+	#	liege = k_maghreb
+	#}
+	#1178.1.1 = {
+	#	holder = 224016 # Abd al-Malik Gharnatid
+	#}
+	1163.1.1 = {
+		holder = 155086 # Abu Sa'id Uthman Almohad
 		liege = k_maghreb
 	}
 	1200.1.1 = {
@@ -1155,13 +1155,13 @@ c_almeria = {
 		holder = 224015 # Ya'qub Bilalid
 		liege = k_maghreb
 	}
-	1178.1.1 = {
-		holder = 224016 # Abd al-Malik Gharnatid
-	}
-	1184.1.1 = {
-		holder = almohad0014
+	1163.1.1 = {
+		holder = 155086 # Abu Sa'id Uthman Almohad
 		liege = k_maghreb
 	}
+	#1178.1.1 = {
+	#	holder = 224016 # Abd al-Malik Gharnatid
+	#}
 	1200.1.1 = {
 		holder = 73617 # Tariq Sebtaid
 	}
@@ -1305,17 +1305,17 @@ c_cabra = {
 		holder = 73241 # Muhammad Mardanishid
 		liege = d_murcia
 	}
-	1172.1.1 = {
-		holder = 224015 # Ya'qub Bilalid
+	1163.1.1 = {
+		holder = 155086 # Abu Sa'id Uthman Almohad
 		liege = k_maghreb
 	}
-	1178.1.1 = {
-		holder = 224016 # Abd al-Malik Gharnatid
-	}
-	1184.1.1 = {
-		holder = almohad0014
-		liege = k_maghreb
-	}
+	#1172.1.1 = {
+	#	holder = 224015 # Ya'qub Bilalid
+	#	liege = k_maghreb
+	#}
+	#1178.1.1 = {
+	#	holder = 224016 # Abd al-Malik Gharnatid
+	#}
 	1200.1.1 = {
 		holder = 73617 # Tariq Sebatid
 	}
@@ -1474,13 +1474,13 @@ c_malaga = {
 		holder = 224015 # Ya'qub Bilalid
 		liege = k_maghreb
 	}
-	1178.1.1 = {
-		holder = 224016 # Abd al-Malik Gharnatid
-	}
-	1184.1.1 = {
-		holder = almohad0014
+	1163.1.1 = {
+		holder = 155086 # Abu Sa'id Uthman Almohad
 		liege = k_maghreb
 	}
+	#1178.1.1 = {
+	#	holder = 224016 # Abd al-Malik Gharnatid
+	#}
 	1200.1.1 = {
 		holder = 73617 # Tariq Sebtaid
 	}
@@ -1537,9 +1537,15 @@ d_sevilla = {
 	1091.1.1 = {
 		holder = 0
 	}
-	1163.1.1 = {
-		holder = almohad1012 # Abu Ishaq Ibrahim
+	1148.1.1 = {
+		holder = 32979 # Muhammad Almohad
 		liege = k_maghreb
+	}
+	1163.1.1 = {
+		holder = 155086 # Abu Sa'id Uthman Almohad
+	}
+	1173.1.1 = {
+		holder = almohad0012# Abu Ishaq Ibrahim ibn Yusuf
 	}
 	1249.1.1 = {
 		de_jure_liege = k_castille
@@ -1633,11 +1639,14 @@ c_sevilla = {
 		holder = 73224 # Ayuub Yaafarid
 	}
 	1148.1.1 = {
-		holder = 224020 # Muhammad Ishbiliyid
+		holder = 32979 # Muhammad Almohad
+		liege = k_maghreb
 	}
 	1163.1.1 = {
-		holder = almohad1012 # Abu Ishaq Ibrahim
-		liege = k_maghreb
+		holder = 155086 # Abu Sa'id Uthman Almohad
+	}
+	1173.1.1 = {
+		holder = almohad0012 # Abu Ishaq Ibrahim ibn Yusuf
 	}
 	1190.1.1 = {
 		holder = 73611 # Yahya Utmanid
@@ -1746,11 +1755,14 @@ c_cadiz = {
 		holder = 73224 # Ayyub Yaafarid
 	}
 	1148.1.1 = {
-		holder = 224020 # Muhammad Ishbiliyid
+		holder = 32979 # Muhammad Almohad
+		liege = k_maghreb
 	}
 	1163.1.1 = {
-		holder = almohad1012 # Abu Ishaq Ibrahim
-		liege = k_maghreb
+		holder = 155086 # Abu Sa'id Uthman Almohad
+	}
+	1173.1.1 = {
+		holder = almohad0012# Abu Ishaq Ibrahim ibn Yusuf
 	}
 	1190.1.1 = {
 		holder = 73611 # Yahya Utmanid
@@ -1882,11 +1894,14 @@ c_algeciras = {
 		holder = 73224 # Ayyub Yaafarid
 	}
 	1148.1.1 = {
-		holder = 224020 # Muhammad Ishbiliyid
+		holder = 32979 # Muhammad Almohad
+		liege = k_maghreb
 	}
 	1163.1.1 = {
-		holder = almohad1012 # Abu Ishaq Ibrahim
-		liege = k_maghreb
+		holder = 155086 # Abu Sa'id Uthman Almohad
+	}
+	1173.1.1 = {
+		holder = almohad0012# Abu Ishaq Ibrahim ibn Yusuf
 	}
 	1190.1.1 = {
 		holder = 73611 # Yahya Utmanid
@@ -2006,9 +2021,13 @@ c_niebla = {
 	}
 	1148.1.1 = {
 		holder = 224020 # Muhammad Ishbiliyid
+		liege = d_sevilla
 	}
 	1163.1.1 = {
-		liege = d_sevilla
+		holder = 155086 # Abu Sa'id Uthman Almohad
+	}
+	1173.1.1 = {
+		holder = almohad0012# Abu Ishaq Ibrahim ibn Yusuf
 	}
 	1190.1.1 = {
 		holder = 73611 # Yahya Utmanid
@@ -2126,6 +2145,12 @@ c_moura = {
 	1148.1.1 = {
 		holder = 224020 # Muhammad Ishbiliyid
 		liege = d_sevilla
+	}
+	1163.1.1 = {
+		holder = 155086 # Abu Sa'id Uthman Almohad
+	}
+	1173.1.1 = {
+		holder = almohad0012# Abu Ishaq Ibrahim ibn Yusuf
 	}
 	1190.1.1 = {
 		holder = 73611 # Yahya Utmanid

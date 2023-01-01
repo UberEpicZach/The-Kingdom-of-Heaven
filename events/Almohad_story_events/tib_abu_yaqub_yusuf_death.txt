@@ -1,0 +1,686 @@
+﻿namespace = tib_abu_yaqub_yusuf_death
+
+tib_abu_yaqub_yusuf_death.1 = { # Reflection of his rule
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.1.t
+	desc = tib_abu_yaqub_yusuf_death.1.d
+	theme = faith
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+    override_background = { event_background = garden }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.1}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.1
+		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.1.a
+		trigger_event = {
+			id = tib_abu_yaqub_yusuf_death.2
+		}
+	}
+}
+tib_abu_yaqub_yusuf_death.2 = { # The war against Ibn Mardanish
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.2.t
+	desc = tib_abu_yaqub_yusuf_death.2.d
+	theme = martial
+	
+	left_portrait = {
+		character = character:73241 # Muhammad ibn Sa'd ibn Mardanish
+		animation = idle
+	}
+    override_background = { event_background = battlefield }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.2}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.2
+		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.2.a
+		trigger_event = {
+			id = tib_abu_yaqub_yusuf_death.3
+		}
+	}
+}
+tib_abu_yaqub_yusuf_death.3 = { # Revolts on the east of the Maghreb
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.3.t
+	desc = tib_abu_yaqub_yusuf_death.3.d
+	theme = martial
+	
+	right_portrait = {
+		character = root
+		animation = war_over_win
+	}
+    override_background = { event_background = wilderness_desert }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.3}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.3
+		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.3.a
+		trigger_event = {
+			id = tib_abu_yaqub_yusuf_death.4
+		}
+	}
+}
+tib_abu_yaqub_yusuf_death.4 = { # Revolts on the west of the Maghreb, VS Qaraqush al-Taqawi
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.4.t
+	desc = tib_abu_yaqub_yusuf_death.4.d
+	theme = martial
+	
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+    right_portrait = {
+		character = character:155113 # Qaraqush
+		animation = war_defender
+	}
+    lower_left_portrait = {
+        character = character:33013 # 'Uthman Hafsid
+    }
+    lower_right_portrait = {
+        character = character:226000 # Saladin
+    }
+    override_background = { event_background = terrain }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.4}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.4
+		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.4.a
+		trigger_event = {
+			id = tib_abu_yaqub_yusuf_death.5
+		}
+	}
+}
+tib_abu_yaqub_yusuf_death.5 = { # Plague
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.5.t
+	desc = tib_abu_yaqub_yusuf_death.5.d
+	theme = learning
+	
+	#left_portrait = {
+	#	character = root
+	#	animation = war_defender
+	#}
+    override_background = { event_background = battlefield }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.5}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.5
+		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.5.a
+		trigger_event = {
+			id = tib_abu_yaqub_yusuf_death.6
+		}
+	}
+}
+tib_abu_yaqub_yusuf_death.6 = { # Present day, peace at the moment
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.6.t
+	desc = tib_abu_yaqub_yusuf_death.6.d
+	theme = faith
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+    override_background = { event_background = garden }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.6}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.6
+		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.6.a
+		trigger_event = {
+			id = tib_abu_yaqub_yusuf_death.7
+			days = { 29 30 }
+		}
+	}
+}
+tib_abu_yaqub_yusuf_death.7 = { # Ready for departure to Andalusia, accompanied by Ya'qub
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.7.t
+	desc = tib_abu_yaqub_yusuf_death.7.d
+	theme = martial
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = character:32980
+		animation = happiness
+	}
+    override_background = { event_background = docks }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.7 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.7
+		}
+        if = {
+			limit = {
+				AND = {
+					this = character:224000
+					is_ai = no
+				}	
+			}
+			pan_camera_to_title = title:b_sabta
+		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.7.a
+
+		title:e_maghreb.holder = { set_designated_heir = character:32980 }
+
+		trigger_event = {
+			id = tib_abu_yaqub_yusuf_death.8
+			days = { 39 40 }
+		}
+	}
+}
+tib_abu_yaqub_yusuf_death.8 = { # March towards Lisbon through Santarem!
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.8.t
+	desc = tib_abu_yaqub_yusuf_death.8.d
+	theme = martial
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+    right_portrait = {
+		character = character:almohad0012 # Requested military support form Seville
+		animation = personality_honorable
+	}
+    override_background = { event_background = army_camp }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.8 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.8
+		}
+        if = {
+			limit = {
+				AND = {
+					this = character:224000
+					is_ai = no
+				}	
+			}
+			pan_camera_to_title = title:b_sevilla
+		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.8.a
+
+		start_war = {
+			casus_belli = minor_religious_war
+			target = title:k_portugal.holder
+			target_title = title:c_lisboa
+			#character:224000
+		}
+		spawn_army = {
+			uses_supply = yes
+			inheritable = yes
+			name = almohad_imperial_army
+			men_at_arms = {
+				type = armored_footmen
+				stacks = 15
+			}
+			men_at_arms = {
+				type = armored_horsemen
+				stacks = 5
+			}
+			war_keep_on_attacker_victory = no
+			location = province:1981
+		}
+		spawn_army = {
+			uses_supply = yes
+			inheritable = yes
+			name = almohad_siege_engines
+			men_at_arms = {
+				type = mangonel
+				stacks = 5
+			}
+			war_keep_on_attacker_victory = no
+			location = province:1981
+		}
+		random_army = { assign_commander = root }
+		# trigger_event = {
+		# 	id = tib_abu_yaqub_yusuf_death.9
+		# 	days = { 70 90 }
+		# }
+	}
+}
+tib_abu_yaqub_yusuf_death.9 = { # The Siege of Santarem
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.9.t
+	desc = tib_abu_yaqub_yusuf_death.9.d
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+    override_background = { event_background = army_camp }
+	trigger = {
+		this = character:224000
+		location = {
+			OR = {
+				this = province:1755
+				this = province:1754
+				this = province:1753
+			}
+		}
+		is_commanding_army = yes
+		scope:army.location = {
+			OR = {
+				this = province:1755
+				this = province:1754
+				this = province:1753
+			}
+		}
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.9 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.9
+		}
+        if = {
+			limit = {
+				AND = {
+					this = character:224000
+					is_ai = no
+				}	
+			}
+			pan_camera_to_title = title:b_santarem
+		}
+		title:k_leon.holder = {
+			trigger_event = {
+				id = tib_abu_yaqub_yusuf_death.91
+				days = 10
+			} 
+		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.9.a
+	}
+}
+tib_abu_yaqub_yusuf_death.91 = { # A Grave News has Arrived!
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.91.t
+	desc = tib_abu_yaqub_yusuf_death.91.d
+	theme = martial
+	
+	left_portrait = {
+		character = character:208500
+		animation = idle
+	}
+    right_portrait = {
+        character = title:k_portugal.holder # Fernando of Leon
+		animation = stress
+    }
+    override_background = { event_background = army_camp }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.91 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.91
+		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.91.a
+		title:k_portugal.holder = {
+			every_character_war = {
+				limit = {
+					primary_defender = title:k_portugal.holder
+					primary_attacker = title:e_maghreb.holder
+				}
+				add_defender = title:k_leon.holder
+			}
+		}
+		
+		spawn_army = {
+			uses_supply = yes
+			inheritable = no
+			name = crusaders
+			men_at_arms = {
+				type = armored_footmen
+				stacks = 40
+			}
+			men_at_arms = {
+				type = light_footmen
+				stacks = 40
+			}
+			men_at_arms = {
+				type = caballero
+				stacks = 40
+			}
+			location = province:1757
+		}
+		title:e_maghreb.holder = {
+			trigger_event = {
+				id = tib_abu_yaqub_yusuf_death.10
+				days = { 5 7 }
+			}
+		}
+
+		ai_chance = {
+			base = 70
+		}
+	}
+	option = {
+		name = tib_abu_yaqub_yusuf_death.91.b
+
+	}
+}
+tib_abu_yaqub_yusuf_death.10 = { # A Grave News has Arrived!
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.10.t
+	desc = tib_abu_yaqub_yusuf_death.10.d
+	theme = martial
+	
+	left_portrait = {
+		character = root
+		animation = stress # DAMN YOU!!! Bring the tents across the river. NOW!
+	}
+    lower_right_portrait = {
+        character = character:208500 # Fernando of Leon
+    }
+    override_background = { event_background = army_camp }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.10 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.10
+		}
+		# every_character_war = {
+		# 	limit = {
+		# 		primary_defender = title:k_portugal.holder
+		# 		primary_attacker = title:e_amaghreb.holder
+		# 	}
+		# 	add_defender = title:k_leon.holder
+		# }
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.10.a
+		trigger_event = {
+			id = tib_abu_yaqub_yusuf_death.11
+			days = { 5 7 }
+		}
+	}
+}
+
+tib_abu_yaqub_yusuf_death.11 = { # Surrounded
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.11.t
+	desc = tib_abu_yaqub_yusuf_death.11.d
+	theme = martial
+	
+	left_portrait = {
+		character = root # I will handle this myself then!
+		animation = aggressive_sword
+	}
+    right_portrait = {
+		character = scope:christian_combatant
+		animation = aggressive_sword
+	}
+    override_background = { event_background = army_camp }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.11 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.11
+		}
+
+        create_character = {
+			template = new_warrior_character
+			name = "Fernando"
+			location = province:1755 # Santarem
+			faith = character:209503.faith
+			culture = character:209503.culture
+			gender_female_chance = 0
+			save_scope_as = christian_combatant
+		}
+		create_character = {
+			template = new_warrior_character
+			name = "Martinho"
+			location = province:1755 # Santarem
+			faith = character:209503.faith
+			culture = character:209503.culture
+			gender_female_chance = 0
+			save_scope_as = christian_combatant_2
+		}
+		create_character = {
+			template = new_warrior_character
+			name = "Soeiro"
+			location = province:1755 # Santarem
+			faith = character:209503.faith
+			culture = character:209503.culture
+			gender_female_chance = 0
+			save_scope_as = christian_combatant_3
+		}
+		create_character = {
+			template = new_warrior_character
+			name = "Nunes"
+			location = province:1755 # Santarem
+			faith = character:209503.faith
+			culture = character:209503.culture
+			gender_female_chance = 0
+			save_scope_as = christian_combatant_4
+		}
+		create_character = {
+			template = new_warrior_character
+			name = "Sancho"
+			location = province:1755 # Santarem
+			faith = character:209503.faith
+			culture = character:209503.culture
+			gender_female_chance = 0
+			save_scope_as = christian_combatant_5
+		}
+		create_character = {
+			template = new_warrior_character
+			name = "Paio"
+			location = province:1755 # Santarem
+			faith = character:209503.faith
+			culture = character:209503.culture
+			gender_female_chance = 0
+			save_scope_as = christian_combatant_6
+		}
+
+		if = {
+			limit = {
+				AND = {
+					this = character:224000
+					is_ai = no
+				}	
+			}
+			pan_camera_to_title = title:b_santarem
+		}
+	}	
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.11.a
+        scope:christian_combatant = {
+            death = {
+                death_reason = death_battle
+                killer = character:224000
+            }
+        }
+		scope:christian_combatant_2 = {
+            death = {
+                death_reason = death_battle
+                killer = character:224000
+            }
+        }
+		scope:christian_combatant_3 = {
+            death = {
+                death_reason = death_battle
+                killer = character:224000
+            }
+        }
+		scope:christian_combatant_4 = {
+            death = {
+                death_reason = death_battle
+                killer = character:224000
+            }
+        }
+		scope:christian_combatant_5 = {
+            death = {
+                death_reason = death_battle
+                killer = character:224000
+            }
+        }
+		scope:christian_combatant_6 = {
+            death = {
+                death_reason = death_battle
+                killer = character:224000
+            }
+        }
+		trigger_event = {
+			id = tib_abu_yaqub_yusuf_death.12
+			days = { 1 2 }
+		}
+	}
+}
+tib_abu_yaqub_yusuf_death.12 = { # The Angel of Death has Arrived...
+	type = character_event
+	title = tib_abu_yaqub_yusuf_death.12.t
+	desc = tib_abu_yaqub_yusuf_death.12.d
+	theme = martial
+	
+	right_portrait = {
+		character = root
+		animation = poison
+	}
+    left_portrait = {
+        character = scope:christian_combatant_7
+        animation = aggressive_spear
+    }
+    override_background = { event_background = battlefield }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.12 }
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_abu_yaqub_yusuf_death.12
+		}
+        create_character = {
+			template = new_warrior_character
+			name = "Afonso"
+			location = province:1755 # Santarem
+			faith = character:209503.faith
+			culture = character:209503.culture
+			gender_female_chance = 0
+			save_scope_as = christian_combatant_7
+		}
+	}
+
+	option = {
+		name = tib_abu_yaqub_yusuf_death.12.a
+		
+		every_character_war = {
+            limit = {
+                primary_attacker = character:224000
+            }
+            end_war = white_peace
+        }
+
+        character:224000 = {
+			death = {
+				death_reason = death_battle
+                killer = scope:christian_combatant_7
+			}
+		}
+		
+
+		#title:e_maghreb.holder = { set_designated_heir = character:32980 }
+
+        character:32980 = { # Abu Yusuf Ya'qub
+			get_title = title:e_maghreb
+            get_title = title:k_maghreb
+            get_title = title:d_masmudi
+            get_title = title:d_marrakesh
+            get_title = title:c_marrakesh
+            get_title = title:c_fazaz
+            get_title = title:c_tamasna
+            get_title = title:c_asfi
+            get_title = title:c_tinmallal
+			add_character_flag = {
+				flag = had_event_tib_abu_yaqub_yusuf_death.12
+			}
+			# trigger_event = { #Uncomment later when next chain is done
+			# 	id = tib_accension_of_yaqub.1
+			# 	days = 3
+			# }
+		}
+
+        set_player_character = character:32980
+
+		#trigger_event = {
+		#	id = tib_accension_of_yaqub.1
+        #   id = tib_strings_of_umar.1
+        #   id = tib_almohad_conspiracy.1
+        #   id = tib_waves_of_raids.1 # Banu Ghaniya strikes again
+		#}
+		#days = { 3 4 } # The Islamic mourning days are three days only, no less or more, assume the 4 days as the princes having rest or doing something else
+	}
+}

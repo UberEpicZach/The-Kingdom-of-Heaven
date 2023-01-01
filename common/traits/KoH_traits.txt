@@ -135,23 +135,23 @@ stress_gain_remove = {
 	}
 }
 
-KOH_Reynald = {
+# KOH_Reynald = {
 
-	good = no
-	birth = 0
-	random_creation = 0
+# 	good = no
+# 	birth = 0
+# 	random_creation = 0
 
-	desc = {
-		desc = KOH_Reynald_desc
-	}
-	shown_in_ruler_designer = no
-	ai_boldness = dominant_positive_ai_value
-	ai_honor = very_low_negative_ai_value
-	ai_greed = dominant_positive_ai_value
-	ai_vengefulness = very_high_positive_ai_value
-	ai_rationality = very_low_negative_ai_value
-	ai_energy = dominant_positive_ai_value
-}
+# 	desc = {
+# 		desc = KOH_Reynald_desc
+# 	}
+# 	shown_in_ruler_designer = no
+# 	ai_boldness = dominant_positive_ai_value
+# 	ai_honor = very_low_negative_ai_value
+# 	ai_greed = dominant_positive_ai_value
+# 	ai_vengefulness = very_high_positive_ai_value
+# 	ai_rationality = very_low_negative_ai_value
+# 	ai_energy = dominant_positive_ai_value
+# }
 
 KOH_Free_City = {
 	birth = 0
@@ -231,8 +231,6 @@ richard_the_lionheart = {
 	monthly_piety_gain_mult = 0.2
 	monthly_prestige = 1
 	
-	opinion_of_liege = 15
-	
 	stress_gain_mult = -0.25
 	
 	ai_war_cooldown = -0.25
@@ -247,6 +245,35 @@ richard_the_lionheart = {
 	ai_boldness = high_positive_ai_value
 	ai_zeal = dominant_positive_ai_value
 }
+eyes_aflame = {
+	martial = 10
+	diplomacy = 5
+	stewardship=10
+	intrigue=1
+	monthly_diplomacy_lifestyle_xp_gain_mult = 1
+	monthly_martial_lifestyle_xp_gain_mult = 1
+	monthly_stewardship_lifestyle_xp_gain_mult = 1
+
+	monthly_piety_gain_mult = 0.2
+	monthly_prestige = 1
+	
+	stress_gain_mult = -0.25
+	
+	ai_war_cooldown = -1
+	ai_war_chance = 3	
+	
+	desc = {
+		desc = trait_richard_the_lionheart_desc
+	}
+	shown_in_ruler_designer = no
+	ai_honor = high_positive_ai_value
+	ai_energy = very_high_positive_ai_value
+	ai_boldness = high_positive_ai_value
+	ai_greed = high_positive_ai_value
+	ai_greed = high_negative_ai_value
+	ai_zeal = dominant_negative_ai_value
+}
+
 
 koh_dragon = {
 	martial = 10
@@ -293,6 +320,7 @@ KOH_Emperor = {
 	random_creation = 0
 	levy_size = 0.1
 	opposite_opinion = -100
+	vassal_limit = 30
 	shown_in_ruler_designer = no
 	desc = {
 		desc = KOH_Emperor_desc
@@ -337,4 +365,34 @@ lion_of_the_empire = {
 	shown_in_ruler_designer = no
 
 	ai_honor = low_negative_ai_value
+}
+assassin_member = {
+	lifestyle = yes
+	flag = can_not_marry
+	potential = {
+		exists = title:k_nizari_state.holder
+		has_lifestyle = assassin_lifestyle
+	}
+
+	can_inherit = no
+	education = yes
+    prowess = 15
+	dread_baseline_add = 40
+	monthly_piety = 3
+	intrigue = 6
+	same_opinion_if_same_faith = 25
+	blocks_from_claim_inheritance_from_dynasty = yes
+	blocks_from_claim_inheritance = yes
+	flag = can_not_marry
+	can_inherit = no
+	birth = 0
+	random_creation = 0
+	desc = {
+		desc = trait_assassin_member_desc
+	}
+	shown_in_ruler_designer = no
+	
+	ai_zeal = 10
+	ai_honor = 5
+	ai_greed = -10
 }

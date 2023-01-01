@@ -566,11 +566,13 @@
 	dna = 204500_henry_curtmantle
 	dynasty = 106
 	martial = 7
+	prowess = 9
 	diplomacy = 4
-	intrigue = 8
+	intrigue = 10
 	stewardship = 6
+	learning = 12
 	religion = "catholic"
-	culture = "english"
+	culture = "norman"
 	trait = wrathful
 	trait = greedy
 	trait = ambitious
@@ -582,14 +584,26 @@
 		birth = "1133.3.5"
 		effect = {
 			add_character_flag = has_scripted_appearance
+			learn_language = language_occitano_romance
 		}
 	}
 	1152.5.18 = {
 		add_spouse = 205730
+		}
+	1154.10.25 = {
+		culture = english
+	}
+	1174.1.1 = {
+		make_tributary = {
+			TYPE = tributary_non_permanent
+			SUZERAIN = character:204500
+			TRIBUTARY = title:k_scotland.holder
+		}
 	}
 	1176.1.1 = {
 		effect = {
 			set_relation_ward = character:204772
+			add_character_modifier = { modifier = obese_modifier }
 		}
 	}
 	1180.1.1 = {
@@ -608,26 +622,26 @@
 	}
 }
 
-204502 = {
-	name = "Constance"
-	female = yes
-	dynasty = 106
-	martial = 6
-	diplomacy = 6
-	intrigue = 5
-	stewardship = 6
-	religion = "catholic"
-	culture = "english"
-	trait = calm
-	father = 204511
-	mother = 205740
-	1183.1.2 = {
-		birth = "1183.1.2"
-	}
-	1233.1.2 = {
-		death = "1233.1.2"
-	}
-}
+#204502 = {
+#	name = "Constance"
+#	female = yes
+#	dynasty = 106
+#	martial = 6
+#	diplomacy = 6
+#	intrigue = 5
+#	stewardship = 6
+#	religion = "catholic"
+#	culture = "english"
+#	trait = calm
+#	father = 204511
+#	mother = 205740
+#	1183.1.2 = {
+#		birth = "1183.1.2"
+#	}
+#	1233.1.2 = {
+#		death = "1233.1.2"
+#	}
+# }
 
 204503 = {
 	name = "Eleonore"
@@ -638,11 +652,13 @@
 	intrigue = 4
 	stewardship = 8
 	religion = "catholic"
-	culture = "english"
+	culture = "breton"
+	trait = beauty_good_3
 	father = 204511
 	mother = 205740
-	1184.1.2 = {
-		birth = "1184.1.2"
+	1181.1.1 = {
+		birth = "1181.1.1"
+		learn_language = language_french
 	}
 	1234.1.2 = {
 		death = "1234.1.2"
@@ -658,11 +674,12 @@
 	intrigue = 6
 	stewardship = 7
 	religion = "catholic"
-	culture = "english"
+	culture = "breton"
 	father = 204511
 	mother = 205740
-	1185.1.2 = {
-		birth = "1185.1.2"
+	1183.1.1 = {
+		birth = "1183.1.1"
+		learn_language = language_french
 	}
 	1235.1.2 = {
 		death = "1235.1.2"
@@ -696,12 +713,16 @@
 	intrigue = 6
 	stewardship = 4
 	religion = "catholic"
-	culture = "english"
+	culture = "norman"
 	trait = education_learning_2
 	father = 204500
 	mother = 205730
 	1153.8.17 = {
 		birth = "1153.8.17"
+		learn_language = language_occitano_romance
+	}
+	1154.10.25 = {
+		culture = english
 	}
 	1156.4.2 = {
 		death = "1156.4.2"
@@ -728,6 +749,8 @@
 	mother = 205730
 	1155.2.28 = {
 		birth = "1155.2.28"
+		learn_language = language_occitano_romance
+		learn_language = language_french
 	}
 	1172.1.2 = {
 		give_nickname = nick_the_young
@@ -760,6 +783,8 @@
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
+		learn_language = language_occitano_romance
+		learn_language = language_french
 	}
 	1206.1.2 = {
 		death = "1206.1.2"
@@ -782,6 +807,7 @@
 	trait = brave
 	trait = beauty_good_1
 	trait = arrogant
+	trait = unwed
 	trait = education_martial_4
 	trait = richard_the_lionheart
 	sexuality = bisexual
@@ -796,6 +822,8 @@
 			add_character_flag = has_scripted_appearance
 		}
 		give_nickname = nick_the_lionheart
+		learn_language = language_occitano_romance
+		learn_language = language_french
 	}
 	1166.1.1 = {
 		effect = {
@@ -815,6 +843,7 @@
 	1183.1.1 = {
 		effect = {
 			set_primary_title_to = title:c_anjou
+			set_relation_ward = character:158_KOH_CKIII
 		}
 	}
 	1190.1.1 = {
@@ -852,6 +881,8 @@
 	mother = 205730
 	1158.9.23 = {
 		birth = "1158.9.23"
+		learn_language = language_occitano_romance
+		learn_language = language_french
 	}
 	1181.1.1 = {
 		effect = {
@@ -875,6 +906,7 @@
 	diplomacy = 5
 	intrigue = 7
 	stewardship = 8
+	learning = 8
 	religion = "catholic"
 	culture = "english"
 	trait = ambitious
@@ -886,6 +918,11 @@
 	mother = 205730
 	1161.10.13 = {
 		birth = "1161.10.13"
+		learn_language = language_occitano_romance
+		learn_language = language_french
+	}
+	1177.9.17 = {
+		learn_language = language_iberian
 	}
 	1214.10.31 = {
 		death = "1214.10.31"
@@ -915,11 +952,14 @@
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
+		learn_language = language_occitano_romance
+		learn_language = language_french
 	}
 	1178.1.1 = {
 		effect = {
 			set_relation_friend = { reason = friend_generic_history target = character:212508 } 
 		}
+		learn_language = language_italian
 	}
 	1215.1.2 = {
 		death = "1215.1.2"
@@ -948,6 +988,8 @@
 		effect = {
 			add_character_flag = has_scripted_appearance
 		}
+		learn_language = language_occitano_romance
+		learn_language = language_french
 	}
 	1189.8.29 = {
 		add_spouse = 204665
@@ -1003,13 +1045,16 @@
 	intrigue = 6
 	stewardship = 6
 	religion = "catholic"
-	culture = "english"
+	culture = "norman"
 	trait = bastard
 	trait = chaste
 	trait = education_learning_3
 	father = 204500
 	1152.1.2 = {
 		birth = "1152.1.2"
+	}
+	1154.10.25 = {
+		culture = english
 	}
 	1212.12.12 = {
 		death = "1212.12.12"
@@ -1033,6 +1078,7 @@
 	mother = 204515
 	1173.1.18 = {
 		birth = "1173.1.18"
+		learn_language = language_french
 	}
 	1202.1.1 = {
 		add_spouse = 204532
@@ -1284,7 +1330,7 @@
 204540 = {
 	name = "William"
 	dynasty = 101709
-	martial = 14
+	martial = 17
 	diplomacy = 7
 	intrigue = 6
 	stewardship = 8
@@ -1302,6 +1348,10 @@
 		birth = "1146.1.1"
 	}
 	1183.3.1 = {
+		employer = 204500
+		give_council_position = councillor_marshal
+	}
+	1184.1.1 = {
 		employer = 204500
 		give_council_position = councillor_marshal
 	}
@@ -1954,7 +2004,7 @@
 	intrigue = 7
 	stewardship = 6
 	religion = "catholic"
-	culture = "english"
+	culture = "french"
 	trait = bastard
 	trait = lustful
 	trait = deceitful
@@ -1964,7 +2014,10 @@
 		birth = "1134.1.2"
 	}
 	1154.1.2 = {
-		add_spouse = 204641
+		add_matrilineal_spouse = 204641
+	}
+	1154.10.25 = {
+		culture = english
 	}
 	1202.5.7 = {
 		death = "1202.5.7"
@@ -1988,6 +2041,7 @@
 	mother = 204641
 	1154.1.2 = {
 		birth = "1154.1.2"
+		learn_language = language_french
 	}
 	1204.1.2 = {
 		death = "1204.1.2"
@@ -2010,6 +2064,7 @@
 	mother = 204641
 	1160.1.2 = {
 		birth = "1160.1.2"
+		learn_language = language_french
 	}
 	1210.1.2 = {
 		death = "1210.1.2"
@@ -2032,6 +2087,7 @@
 	mother = 204641
 	1162.1.2 = {
 		birth = "1162.1.2"
+		learn_language = language_french
 	}
 	1212.1.2 = {
 		death = "1212.1.2"
@@ -2055,6 +2111,7 @@
 	mother = 204641
 	1163.1.1 = {
 		birth = "1163.1.1"
+		learn_language = language_french
 	}
 	1228.12.13 = {
 		death = "1228.12.13"
@@ -2076,6 +2133,7 @@
 	mother = 204641
 	1166.1.2 = {
 		birth = "1166.1.2"
+		learn_language = language_french
 	}
 	1216.1.2 = {
 		death = "1216.1.2"
@@ -2098,6 +2156,7 @@
 	mother = 204641
 	1170.1.2 = {
 		birth = "1170.1.2"
+		learn_language = language_french
 	}
 	1220.1.2 = {
 		death = "1220.1.2"
@@ -2113,7 +2172,7 @@
 	intrigue = 8
 	stewardship = 4
 	religion = "catholic"
-	culture = "english"
+	culture = "norman"
 	trait = zealous
 	trait = inbred
 	trait = education_diplomacy_2
@@ -2121,6 +2180,9 @@
 	mother = 204646
 	1137.1.1 = {
 		birth = "1137.1.1"
+	}
+	1154.1.1 = {
+		culture = english
 	}
 	1199.7.13 = {
 		death = "1199.7.13"
@@ -3640,6 +3702,7 @@
 	mother = 204641
 	1166.1.1 = {
 		birth = "1166.1.1"
+		learn_language = language_french
 	}
 	1225.10.13 = {
 		add_spouse = 230526
@@ -3744,13 +3807,20 @@
 	intrigue = 7
 	stewardship = 4
 	religion = "catholic"
-	culture = "english"
+	culture = "occitan"
 	trait = bastard
 	trait = beauty_good_1
 	trait = patient
 	father = 204510
+	mother = KOH_BAVARIAN079
 	1181.1.2 = {
 		birth = "1181.1.2"
+		learn_language = language_french
+	}
+	1183.1.1 = {
+		add_spouse = 158_KOH_CKIII
+		remove_trait = bastard
+		add_trait = bastard_founder
 	}
 	1231.1.2 = {
 		death = "1231.1.2"
@@ -12524,7 +12594,7 @@
 	intrigue = 8
 	stewardship = 8
 	religion = "catholic"
-	culture = "english"
+	culture = "norman"
 	trait = humble
 	trait = diligent
 	trait = education_learning_2
@@ -12532,6 +12602,7 @@
 	mother = 202991
 	1136.7.22 = {
 		birth = "1136.7.22"
+		learn_language = language_occitano_romance
 	}
 	1164.2.1 = {
 		death = "1164.2.1"
@@ -13092,36 +13163,6 @@ KOH0031 = {
 	}
 	1228.1.24 = {
 		death = "yes"
-	}
-}
-
-KOH0148 = {
-	name = "Isabel"
-	female = yes
-	dynasty = 25058
-	religion = "catholic"
-	culture = "english"
-	trait = beauty_good_2
-	father = KOH0149
-	1143.1.1 = {
-		birth = "1143.1.1"
-	}
-	1214.12.4 = {
-		death = "1234.1.1"
-	}
-}
-
-KOH0149 = {
-	name = "Robert"
-	dynasty = 25058
-	religion = "catholic"
-	culture = "english"
-	trait = education_martial_2
-	1123.1.1 = {
-		birth = "1123.1.1"
-	}
-	1182.1.1 = {
-		death = "1182.1.1"
 	}
 }
 

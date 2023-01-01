@@ -3580,6 +3580,7 @@
 	diplomacy = 9
 	intrigue = 7
 	stewardship = 16
+	health = 7
 	prowess = 17
 	religion = "catholic"
 	culture = swabian
@@ -3618,6 +3619,12 @@
 	}
 	1156.1.1 = {
 		add_spouse = 205599 #Beatrice of Burgundy
+	}
+	1169.1.1 = {
+		appoint_court_position = {
+			recipient = character:212507
+			court_position = King_of_the_germans_court_position
+		}
 	}
 	1190.6.2 = {
 		death = "1190.6.2"
@@ -10504,6 +10511,8 @@
 	}
 	973.1.1 = {
 		death = yes
+		trait = saint
+		give_nickname = "nick_saint"
 	}
 }
 
@@ -10736,12 +10745,13 @@ KOH_SWABIAN05 = {
 	name = "Adalgod"
 	religion = "catholic"
 	culture = swabian
-	trait = saint
 	1100.1.2 = {
 		birth = yes
 	}
 	1165.1.2 = {
 		death = yes
+		trait = saint
+		give_nickname = "nick_saint"
 	}
 }
 

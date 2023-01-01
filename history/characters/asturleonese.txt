@@ -1,78 +1,4 @@
-﻿71322 = {
-	name = "Urraca" # Urraca Ovéquiz de León
-	dynasty = 436
-	female = yes
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 70034
-	mother = 71320
-	1083.1.1 = {
-		birth = "1083.1.1"
-	}
-	1104.12.29 = {
-		death = "1104.12.29"
-	}
-}
-71324 = {
-	name = "Fernando" # Fernando Núñez
-	dynasty = 8738
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 71323
-	mother = 70040
-	1068.1.1 = {
-		birth = "1068.1.1"
-	}
-	1108.3.31 = {
-		death = "1108.3.31"
-	}
-}
-71325 = {
-	name = "Pelayu" # Pelayo Bermúdez de León
-	dynasty = 436
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 70041
-	trait = bastard
-	trait = education_learning_1
-	1072.1.1 = {
-		birth = "1072.1.1"
-	}
-	1115.1.1 = {
-		death = "1115.1.1"
-	}
-}
-71327 = {
-	name = "Elvira" # Elvira Fernández de León
-	dynasty = 436
-	female = yes
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 70046
-	mother = 71326
-	1079.1.1 = {
-		birth = "1079.1.1"
-	}
-	1098.1.1 = {
-		death = "1098.1.1"
-	}
-}
-71328 = {
-	name = "Sancha" # Sancha Fernández de León
-	dynasty = 436
-	female = yes
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 70046
-	mother = 71326
-	1081.1.1 = {
-		birth = "1081.1.1"
-	}
-	1134.1.1 = {
-		death = "1134.1.1"
-	}
-}
-71329 = {
+﻿71329 = {
 	name = "Alfonsu" # Alfonso Muñoz, Baron of Cea (1051-1059)
 	dynasty = alfonso # Alfonso Dynasty
 	religion = catholic
@@ -167,18 +93,6 @@
 		death = "1160.1.1"
 	}
 }
-71355 = {
-	name = "Enderquina"
-	female = yes
-	religion = "catholic"
-	culture = "asturleonese"
-	1070.1.1 = {
-		birth = "1070.1.1"
-	}
-	1138.1.1 = {
-		death = "1138.1.1"
-	}
-}
 71369 = {
 	name = "Tegridia" # Tegridia Martínez
 	dynasty = 8620 # Flaínez Dynasty
@@ -192,23 +106,6 @@
 	}
 	1119.1.1 = {
 		death = "1119.1.1"
-	}
-}
-71949 = {
-	name = "NuN_u" # Nuño Menéndez
-	dynasty = 12114
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72901
-	mother = 72898
-	1115.1.1 = {
-		birth = "1115.1.1"
-	}
-	1176.1.1 = {
-		add_spouse = 207562
-	}
-	1187.1.20 = {
-		death = "1187.1.20"
 	}
 }
 72171 = {
@@ -691,20 +588,6 @@
 		death = "1134.1.1"
 	}
 }
-72724 = {
-	name = "Gotina"
-	female = yes
-
-	religion = catholic
-	culture = asturleonese
-
-	1068.1.1 = {
-		birth = yes
-	}
-	1115.1.1 = {
-		death = yes
-	}
-}
 72725 = {
 	name = "Pedru" # Pedro Díaz del Valle
 	dynasty = 12159 # Valle Dynasty
@@ -820,9 +703,6 @@
 	mother = 71350
 	1109.1.1 = {
 		birth = "1109.1.1"
-	}
-	1137.1.1 = {
-		dynasty = 401
 	}
 	1150.1.1 = {
 		add_spouse = 72756
@@ -1203,19 +1083,25 @@
 	1151.1.1 = {
 		birth = "1151.1.1"
 	}
+	1161.1.1 = {
+		trait = devoted
+	}
 	1221.1.1 = {
 		death = "1221.1.1"
 	}
 }
 72758 = {
 	name = "A_lvaru" # Álvaro Díaz del Valle, Founder of the House Álvarez de las Asturias
-	dynasty = 401
+	dynasty = 12159
 	religion = catholic
 	culture = asturleonese
 	father = 72731
 	mother = 72756
 	1153.1.1 = {
 		birth = "1153.1.1"
+	}
+	1173.1.1 = {
+		dynasty_house = house_Alvarez_Asturias
 	}
 	1212.1.1 = {
 		add_spouse = 72992
@@ -1226,7 +1112,7 @@
 }
 72759 = {
 	name = "OrdoN_u" # Ordoño Álvarez de las Asturias
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	religion = catholic
 	culture = asturleonese
 	father = 72758
@@ -1240,7 +1126,7 @@
 }
 72760 = {
 	name = "Pedru" # Pedro Álvarez de las Asturias
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	religion = catholic
 	culture = asturleonese
 	father = 72758
@@ -1257,7 +1143,7 @@
 }
 72761 = {
 	name = "Alfonsu" # Alfonso Álvarez de las Asturias
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	religion = catholic
 	culture = asturleonese
 	father = 72758
@@ -1274,7 +1160,7 @@
 }
 72762 = {
 	name = "A_lvaru" # Álvaro Álvarez de las Asturias
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	religion = catholic
 	culture = asturleonese
 	father = 72758
@@ -1291,7 +1177,7 @@
 }
 72763 = {
 	name = "Mayor" # Mayor Álvarez de las Asturias
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	female = yes
 	religion = catholic
 	culture = asturleonese
@@ -1306,7 +1192,7 @@
 }
 72764 = {
 	name = "Nicor" # Nicor Álvarez de las Asturias
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	female = yes
 	religion = catholic
 	culture = asturleonese
@@ -1321,7 +1207,7 @@
 }
 72766 = {
 	name = "Taresa" # Teresa (Alfónsez) Álvarez de las Asturias
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	female = yes
 	religion = catholic
 	culture = asturleonese
@@ -1348,7 +1234,7 @@
 }
 72768 = {
 	name = "Taresa" # Teresa Álvarez de las Asturias
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	female = yes
 	religion = catholic
 	culture = asturleonese
@@ -1363,7 +1249,7 @@
 }
 72769 = {
 	name = "Pedru" # Pedro (Pérez) Álvarez de las Asturias
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	religion = catholic
 	culture = asturleonese
 	father = 72760
@@ -1380,7 +1266,7 @@
 }
 72770 = {
 	name = "Rodrigu" # Rodrigo (Pérez) Álvarez de las Asturias
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	religion = catholic
 	culture = asturleonese
 	father = 72760
@@ -1421,7 +1307,7 @@
 }
 72773 = {
 	name = "Rodrigu" # Rodrigo (Rodríguez) Álvarez de las Asturias
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	religion = catholic
 	culture = asturleonese
 	father = 72770
@@ -1439,7 +1325,7 @@
 72774 = {
 	name = "Sancha" # Sancha (Rodríguez) Álvarez de las Asturias
 	female = yes
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	religion = catholic
 	culture = asturleonese
 	father = 72770
@@ -1454,7 +1340,7 @@
 72775 = {
 	name = "Taresa" # Teresa (Rodríguez) Álvarez de las Asturias
 	female = yes
-	dynasty = 401
+	dynasty_house = house_Alvarez_Asturias
 	religion = catholic
 	culture = asturleonese
 	father = 72770
@@ -1464,215 +1350,6 @@
 	}
 	1339.1.1 = {
 		death = "1339.1.1"
-	}
-}
-72787 = {
-	name = "Sancha" # Sancha González
-	female = yes
-	dynasty = 12180
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 73066
-	mother = 73063
-	1087.1.1 = {
-		birth = "1087.1.1"
-	}
-	1140.1.1 = {
-		death = "1140.1.1"
-	}
-}
-72860 = {
-	name = "Fronilde" # Fronilde Fernández de Ledesma
-	female = yes
-	dynasty = 12167
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72870
-	mother = 72938
-	1111.1.1 = {
-		birth = "1111.1.1"
-	}
-	1187.2.10 = {
-		death = "1187.2.10"
-	}
-}
-72867 = {
-	name = "GO_mez" # Gómez Núñez de Ledesma
-	dynasty = 12167
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72868
-	mother = 72869
-	1070.1.1 = {
-		birth = "1070.1.1"
-	}
-	1136.1.1 = {
-		add_spouse = 72866
-	}
-	1138.1.1 = {
-		death = "1138.1.1"
-	}
-}
-72868 = {
-	name = "NuN_u" # Nuño de Ledesma
-	dynasty = 12167
-	religion = "catholic"
-	culture = "asturleonese"
-	1040.1.1 = {
-		birth = "1040.1.1"
-	}
-	1069.1.1 = {
-		add_spouse = 72869
-	}
-	1071.1.1 = {
-		death = "1071.1.1"
-	}
-}
-72869 = {
-	name = "Sancha"
-	female = yes
-	religion = "catholic"
-	culture = "asturleonese"
-	1051.1.1 = {
-		birth = "1051.1.1"
-	}
-	1111.1.1 = {
-		death = "1111.1.1"
-	}
-}
-72870 = {
-	name = "Fernandu" # Fernando Núñez de Ledesma
-	dynasty = 12167
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72868
-	mother = 72869
-	1071.1.1 = {
-		birth = "1071.1.1"
-	}
-	1110.1.1 = {
-		add_spouse = 72938
-	}
-	1125.1.1 = {
-		death = "1125.1.1"
-	}
-}
-72871 = {
-	name = "Fernando" # Fernando Gómez de Ledesma
-	dynasty = 12167
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72867
-	mother = 72866
-	1137.1.1 = {
-		birth = "1137.1.1"
-	}
-	1160.1.1 = {
-		death = "1160.1.1"
-	}
-}
-72872 = {
-	name = "MarI_a" # María Gómez de Ledesma
-	female = yes
-	dynasty = 12167
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72867
-	mother = 72866
-	1138.1.1 = {
-		birth = "1138.1.1"
-	}
-	1200.1.1 = {
-		death = "1200.1.1"
-	}
-}
-72873 = {
-	name = "Fernandu"
-	dynasty = 12168
-	religion = "catholic"
-	culture = "asturleonese"
-	1100.1.1 = {
-		birth = "1100.1.1"
-	}
-	1155.1.1 = {
-		add_spouse = 72872
-	}
-	1156.1.1 = {
-		death = "1156.1.1"
-	}
-}
-72874 = {
-	name = "Pelayu" # Pelayo Fernández
-	dynasty = 12168
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72873
-	mother = 72872
-	1156.1.1 = {
-		birth = "1156.1.1"
-	}
-	1176.1.1 = {
-		add_spouse = 72876
-	}
-	1210.1.1 = {
-		death = "1210.1.1"
-	}
-}
-72875 = {
-	name = "Varela" # Varela Fernández
-	dynasty = 12168
-	female = yes
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72873
-	mother = 72872
-	1156.1.1 = {
-		birth = "1156.1.1"
-	}
-	1215.1.1 = {
-		death = "1215.1.1"
-	}
-}
-72876 = {
-	name = "MarI_a"
-	female = yes
-	religion = "catholic"
-	culture = "asturleonese"
-	1160.1.1 = {
-		birth = "1160.1.1"
-	}
-	1221.1.1 = {
-		death = "1221.1.1"
-	}
-}
-72901 = {
-	name = "Melendu"
-	dynasty = 12114
-	religion = "catholic"
-	culture = "asturleonese"
-	1083.1.1 = {
-		birth = "1083.1.1"
-	}
-	1110.1.1 = {
-		add_spouse = 72898
-	}
-	1129.1.1 = {
-		death = "1129.1.1"
-	}
-}
-72902 = {
-	name = "Mayor" # Mayor Menéndez
-	dynasty = 12114
-	female = yes
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72901
-	mother = 72898
-	1113.1.1 = {
-		birth = "1113.1.1"
-	}
-	1180.1.1 = {
-		death = "1180.1.1"
 	}
 }
 72950 = {
@@ -1838,151 +1515,6 @@
 	}
 	1343.1.1 = {
 		death = yes
-	}
-}
-72971 = {
-	name = "Diegu" # Diego de Carrión
-	dynasty = 12179
-	religion = "catholic"
-	culture = "asturleonese"
-	1100.1.1 = {
-		birth = "1100.1.1"
-	}
-	1130.1.1 = {
-		add_spouse = 72967
-	}
-	1156.1.1 = {
-		death = "1156.1.1"
-	}
-}
-72972 = {
-	name = "BosO_n" # Bosón Díaz de Carrión
-	dynasty = 12179
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72971
-	mother = 72967
-	1131.1.1 = {
-		birth = "1131.1.1"
-	}
-	1150.1.1 = {
-		add_spouse = 72974
-	}
-	1180.1.1 = {
-		death = "1180.1.1"
-	}
-}
-72973 = {
-	name = "Mayor" # Mayor Díaz de Carrión
-	female = yes
-	dynasty = 12179
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72971
-	mother = 72967
-	1133.1.1 = {
-		birth = "1133.1.1"
-	}
-	1156.1.1 = {
-		death = "1156.1.1"
-	}
-}
-72974 = {
-	name = "Urraca"
-	female = yes
-	religion = "catholic"
-	culture = "asturleonese"
-	1134.1.1 = {
-		birth = "1134.1.1"
-	}
-	1190.1.1 = {
-		death = "1190.1.1"
-	}
-}
-72975 = {
-	name = "Diegu" # Diego Bosón de Carrión
-	dynasty = 12179
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72972
-	mother = 72974
-	1152.1.1 = {
-		birth = "1152.1.1"
-	}
-	1200.1.1 = {
-		death = "1200.1.1"
-	}
-}
-72976 = {
-	name = "MartI_n" # Martín Bosón de Carrión
-	dynasty = 12179
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72972
-	mother = 72974
-	1154.1.1 = {
-		birth = "1154.1.1"
-	}
-	1205.1.1 = {
-		death = "1205.1.1"
-	}
-}
-72977 = {
-	name = "Pedru" # Pedro Bosón de Carrión
-	dynasty = 12179
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72972
-	mother = 72974
-	1156.1.1 = {
-		birth = "1156.1.1"
-	}
-	1203.1.1 = {
-		death = "1203.1.1"
-	}
-}
-72978 = {
-	name = "Domingu" # Domingo Bosón de Carrión
-	dynasty = 12179
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72972
-	mother = 72974
-	1158.1.1 = {
-		birth = "1158.1.1"
-	}
-	1208.1.1 = {
-		death = "1208.1.1"
-	}
-}
-72979 = {
-	name = "MarI_a" # María Bosón de Carrión
-	female = yes
-	dynasty = 12179
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72972
-	mother = 72974
-	1160.1.1 = {
-		birth = "1160.1.1"
-	}
-	1212.1.1 = {
-		death = "1212.1.1"
-	}
-}
-72980 = {
-	name = "Mayor" # Mayor Bosón de Carrión
-	dynasty = 12179
-	female = yes
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 72972
-	mother = 72974
-	1162.1.1 = {
-		birth = "1162.1.1"
-	}
-	1210.1.1 = {
-		death = "1210.1.1"
 	}
 }
 73038 = {
@@ -2203,49 +1735,6 @@
 	}
 	1182.1.1 = {
 		death = yes
-	}
-}
-73067 = {
-	name = "Pedru" # Pedro González
-	dynasty = 12180
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 73066
-	mother = 73063
-	1081.1.1 = {
-		birth = "1081.1.1"
-	}
-	1130.1.1 = {
-		death = "1130.1.1"
-	}
-}
-73068 = {
-	name = "Rodrigu" # Rodrigo González
-	dynasty = 12180
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 73066
-	mother = 73063
-	1083.1.1 = {
-		birth = "1083.1.1"
-	}
-	1134.1.1 = {
-		death = "1134.1.1"
-	}
-}
-73069 = {
-	name = "Cristina" # Cristina González
-	female = yes
-	dynasty = 12180
-	religion = "catholic"
-	culture = "asturleonese"
-	father = 73066
-	mother = 73063
-	1085.1.1 = {
-		birth = "1085.1.1"
-	}
-	1136.1.1 = {
-		death = "1136.1.1"
 	}
 }
 73070 = {

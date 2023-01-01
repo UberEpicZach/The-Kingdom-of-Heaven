@@ -320,53 +320,53 @@ chivalry.6 = {
 	}
 }
 
-chivalry.7 = {
-	type = character_event
-	title = chivalry.7.t
-	desc = chivalry.7.d
-	theme = martial_chivalry_focus
-	left_portrait = {
-		character = root
-	}
+# chivalry.7 = {
+# 	type = character_event
+# 	title = chivalry.7.t
+# 	desc = chivalry.7.d
+# 	theme = martial_chivalry_focus
+# 	left_portrait = {
+# 		character = root
+# 	}
 	
-	option = {
-		name = chivalry.7.a
+# 	option = {
+# 		name = chivalry.7.a
 		
-		# change_chivalry_effect = { 
-		# 	Chivalry = 1
-		# }
-		custom_tooltip = add_1_chivalry_tt
+# 		# change_chivalry_effect = { 
+# 		# 	Chivalry = 1
+# 		# }
+# 		custom_tooltip = add_1_chivalry_tt
 		
-		random_list = {
-			20 = {
-				add_trait = unyielding_defender
-				add_prestige = 100
-			}
-			80 = {
-				add_prestige = 50
-			}
-		}
-	}
+# 		random_list = {
+# 			20 = {
+# 				add_trait = unyielding_defender
+# 				add_prestige = 100
+# 			}
+# 			80 = {
+# 				add_prestige = 50
+# 			}
+# 		}
+# 	}
 	
-	option = {
-		name = chivalry.7.b
+# 	option = {
+# 		name = chivalry.7.b
 		
-		# change_chivalry_effect = { 
-		# 	Chivalry = -1
-		# }
-		custom_tooltip = remove_1_chivalry_tt
+# 		# change_chivalry_effect = { 
+# 		# 	Chivalry = -1
+# 		# }
+# 		custom_tooltip = remove_1_chivalry_tt
 		
-		random_list = {
-			20 = {
-				add_trait = aggressive_attacker
-				add_dread = 30
-			}
-			80 = {
-				add_dread = 10
-			}
-		}
-	}
-}
+# 		random_list = {
+# 			20 = {
+# 				add_trait = aggressive_attacker
+# 				add_dread = 30
+# 			}
+# 			80 = {
+# 				add_dread = 10
+# 			}
+# 		}
+# 	}
+# }
 
 # chivalry.8 = {
 # 	type = character_event
@@ -719,45 +719,45 @@ chivalry.11 = {
 # 	}
 # }
 
-chivalry.14 = {
-	type = character_event
-	title = chivalry.14.t
-	desc = chivalry.14.d
-	theme = martial_chivalry_focus
-	left_portrait = {
-		character = root
-		animation = idle
-	}
+# chivalry.14 = {
+# 	type = character_event
+# 	title = chivalry.14.t
+# 	desc = chivalry.14.d
+# 	theme = martial_chivalry_focus
+# 	left_portrait = {
+# 		character = root
+# 		animation = idle
+# 	}
 	
-	right_portrait = {
-		character = scope:recruiter
-		animation = idle
-	}
+# 	right_portrait = {
+# 		character = scope:recruiter
+# 		animation = idle
+# 	}
 	
-	immediate = {
-        create_character = {
-			age = { 25 40 }
-			location = root.capital_province
-			gender = male
-			dynasty = none
-			culture = this.culture
-			faith = this.faith
-			prowess = { 15 25 }
-			martial = { 14 30 }
-			save_scope_as = recruiter
-        }
-	}
+# 	immediate = {
+#         create_character = {
+# 			age = { 25 40 }
+# 			location = root.capital_province
+# 			gender = male
+# 			dynasty = none
+# 			culture = this.culture
+# 			faith = this.faith
+# 			prowess = { 15 25 }
+# 			martial = { 14 30 }
+# 			save_scope_as = recruiter
+#         }
+# 	}
 	
-	option = {
-		name = chivalry.14.a
-		recruit_courtier = scope:recruiter
-	}
+# 	option = {
+# 		name = chivalry.14.a
+# 		recruit_courtier = scope:recruiter
+# 	}
 	
-	option = {
-		name = chivalry.14.b
+# 	option = {
+# 		name = chivalry.14.b
 		
-	}
-}
+# 	}
+# }
 
 chivalry.15 = {
 	type = character_event

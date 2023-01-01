@@ -75,7 +75,7 @@ add_my_faction ={
 }
 
 MothersFaction ={
-	title:c_poitiers.holder = {
+	title:c_bordeaux.holder = {
 	set_variable = {
 		name = claiming_title
 		value = title:d_aquitaine
@@ -94,13 +94,13 @@ MothersFaction ={
 			target = title:d_aquitaine.holder
 		}
 		joined_faction = {
-			set_special_character = title:c_poitiers.holder
+			set_special_character = title:c_bordeaux.holder
 			set_special_title = title:d_aquitaine
 		}
 		title:d_aquitaine.holder = {
 			add_to_variable_list = {
 				name = claimant_factions
-				target = title:c_poitiers.holder.joined_faction
+				target = title:c_bordeaux.holder.joined_faction
 			}
 		}
 
@@ -335,9 +335,9 @@ KOH_Saladin_Jihad = {
 					OR = {
 						has_character_flag = had_event_had_event_KoH_saladin.120
 						has_title = title:k_jerusalem
-						} 
-					}
+					} 
 				}
+			}
 			trigger_event = {
 				id = KoH_saladin.120
 				days = 20 
@@ -505,12 +505,16 @@ KOH_Crusade_lose = {
 	every_in_list = {
 		list = target_titles
 		change_title_holder = {
-			holder = character:226000
+			holder = title:e_arabia.holder
 			change = scope:change
 		}
 	}
 	resolve_title_and_vassal_change = scope:change
+	destroy_title = title:k_jerusalem
 
+	title:e_arabia.holder = {
+		SaladinChangeCultureFaith = yes
+	}
 }
 
 scripted_effect_popethingevent = {
@@ -533,9 +537,9 @@ scripted_effect_popethingevent = {
 	   save_scope_as = player_two
 	}
 }
-
+ 
 give_assassins_castle = {
-	title:b_alamut.province = { 
+	title:b_alamut.title_province = { 
 		if = {
 			limit = {
 				NOT = { has_building_or_higher = temple_03 }
@@ -655,7 +659,7 @@ KOH_flanders_vassals = {
 	title:k_france.holder = {
 	
 		spawn_army = {
-			name = "Army of Paris"
+			name = "Army_of_Paris"
 			levies = 3000
 			men_at_arms = {
 				type = teutonic_knights
@@ -728,7 +732,7 @@ cyprus_emperor = {
 	character:223020 = { 
 		create_dynamic_title = {
 			tier = kingdom
-			name = "Empire of Cyprus"
+			name = "Empire_of_Cyprus"
 		}
 		create_title_and_vassal_change = {
 			type = created
@@ -792,6 +796,31 @@ investitureopinioneffect = {
 		}
 	}
 }
+create_house_feud_effect = {
+	house_feud_save_head_and_attacker_effect = yes
+	house_feud_rival_story_effect = { RIVAL = $KOHFEUDTARGET$ }
+	house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = $KOHFEUDTARGET$ }
+	random_owned_story = {
+		limit = { story_type = story_cycle_house_feud }
+		set_variable = {
+			name = house_feud_reason
+			value = flag:head_rivalry
+		}
+		house_feud_save_victim_attacker_effect = yes
+	}
+	$KOHFEUDTARGET$ = {
+		house_feud_rival_story_effect = { RIVAL = prev }
+		house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = prev }
+		random_owned_story = {
+			limit = { story_type = story_cycle_house_feud }
+			set_variable = {
+				name = house_feud_reason
+				value = flag:head_rivalry
+			}
+			house_feud_save_victim_attacker_effect = yes
+		}
+	}
+}
 
 fix_variable_error = {
     save_scope_as = $ERROR$ 
@@ -801,4 +830,46 @@ fix_variable_error = {
     set_variable = {name = $ERROR$ value = flag:$ERROR$} 
     set_global_variable = {name = $ERROR$ value = flag:$ERROR$}  
     if = {limit = {OR = {has_character_flag = $ERROR$ var:$ERROR$ = flag:$ERROR$}} remove_variable = $ERROR$ remove_global_variable = $ERROR$}
+}
+
+SaladinChangeCultureFaith = {
+	every_held_title = {
+		limit = {
+			tier = tier_county
+			title_province = {
+				geographical_region = ghw_region_holy_land
+			}
+			culture = culture:french
+			faith = faith:catholic
+		}
+		set_county_culture = culture:levantine
+		set_county_faith = faith:ashari
+	}
+}
+
+give_assassin_secret_or_trait_effect = {
+	save_temporary_scope_as = assassin_character
+	if = {
+		limit = { #Not already a assassin
+			NOR = {
+				has_trait = assassin_member
+				any_secret = { secret_type = secret_assassin }
+			}	
+		}
+		if = {
+			limit = {
+				always = yes
+			}
+			add_secret = {
+				type = secret_assassin
+			}
+			random_secret = {
+				limit = { secret_type = secret_assassin }
+				save_scope_as = assassin_secret
+			}
+		}
+		else = {
+			add_trait = assassin_member
+		}
+	}	
 }

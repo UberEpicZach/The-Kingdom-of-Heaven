@@ -95,11 +95,26 @@
 
 144228 = {
 	name = "Nur_al-Din_Muhammed"
-	religion = "ismaili"
+	intrigue = 16
+	dynasty = KOH_salam
+	religion = "nizari"
 	culture = "persian"
 	1130.1.1 = {
 		birth = yes
 	}
+
+
+	1175.1.1 = {
+		effect = {
+			# Save target House for reference
+			
+			set_relation_rival = { reason = rival_historical target = character:144056 } 
+
+		}
+	}
+
+
+
 	1210.1.1 = {
 		death = "1210.1.1"
 	}
@@ -386,8 +401,10 @@
 	culture = "persian"
 	trait = diligent
 	trait = zealous
+	trait = assassin_member
 	trait = education_intrigue_4
-	trait = order_member
+	
+	
 	
 	1129.1.1 = {
 		birth = yes
@@ -403,11 +420,21 @@
 		#	set_relation_adoptee = character:KOH0030
 		#}
 	#}
+
+	1175.1.1 = {
+		effect = {
+			# Save target House for reference
+			
+			set_relation_rival = { reason = rival_historical target = character:144056 } 
+
+		}
+	}
 	1170.1.1 = {
 		effect = {
 			set_relation_rival = { reason = rival_historical target = character:226000 } 
 		}
 	}
+
 	1180.1.1 = {
 		set_realm_capital = title:c_alamut
 	}

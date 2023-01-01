@@ -140,7 +140,7 @@
 
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-		custom_tooltip = jihad_desc
+		#custom_tooltip = jihad_desc
 
 		hidden_effect = {
 			KOH_Saladin_Jihad = {}
@@ -325,27 +325,27 @@ KOH_crusade = {
 		on_declared_war = yes
 	}
 
-	should_invalidate = {
-		OR = {
-			NOT = {
-				any_in_list = {
-					list = target_titles
-					any_in_de_jure_hierarchy = {
-						tier = tier_county
-						holder = {
-							OR = {
-								this = scope:defender
-								target_is_liege_or_above = scope:defender
-							}
-						}
-					}
-				}
-			}
-			#Faith change does not immediately invalidate, it's run through event war_event.3100
-			scope:war = { exists = var:invalidate_defender_faith_change }
-			scope:war = { exists = var:invalidate_attacker_faith_change }
-		}
-	}
+	# should_invalidate = {
+	# 	OR = {
+	# 		NOT = {
+	# 			any_in_list = {
+	# 				list = target_titles
+	# 				any_in_de_jure_hierarchy = {
+	# 					tier = tier_county
+	# 					holder = {
+	# 						OR = {
+	# 							this = scope:defender
+	# 							target_is_liege_or_above = scope:defender
+	# 						}
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 		#Faith change does not immediately invalidate, it's run through event war_event.3100
+	# 		scope:war = { exists = var:invalidate_defender_faith_change }
+	# 		scope:war = { exists = var:invalidate_attacker_faith_change }
+	# 	}
+	# }
 
 	on_invalidated_desc = {
 		first_valid = {
@@ -401,7 +401,7 @@ KOH_crusade = {
 
 	on_victory = {
 		scope:attacker = { show_pow_release_message_effect = yes }
-		custom_tooltip = crusade_desc
+		custom_tooltip = crusade_victory_desc
 
 		hidden_effect = {
 			KOH_Crusade_Win = {}
@@ -453,9 +453,10 @@ KOH_crusade = {
 	on_defeat = {
 		custom_tooltip = crusade_desc_fail
 		scope:attacker = { show_pow_release_message_effect = yes }
-
-		hidden_effect = {
-			KOH_Crusade_lose = {}
+		scope:attacker = {
+			hidden_effect = {
+				KOH_Crusade_lose = {}
+			}
 		}
 		
 		# Prestige loss for the attacker

@@ -269,12 +269,25 @@
 						catalyst_release_important = massive_struggle_catalyst_gain
 					}
 				}
+				struggle_iberia_phase_hostility = {						
+					catalysts = {
+						catalyst_passing_of_time = minimal_struggle_catalyst_gain
+						catalyst_gain_claim_on_title = minor_struggle_catalyst_gain
+						catalyst_win_any_war_within_the_region = major_struggle_catalyst_gain # Good
+						catalyst_new_building_in_castle = minor_struggle_catalyst_gain # How to do AI?
+						catalyst_becomes_rival_with_involved = major_struggle_catalyst_gain # Good
+						catalyst_using_a_hook_on_very_important_character = medium_struggle_catalyst_gain # good
+						catalyst_unnatural_death_important_character = medium_struggle_catalyst_gain
+						catalyst_usurp_title = major_struggle_catalyst_gain # good
+						catalyst_forced_conversion = medium_struggle_catalyst_gain
+						catalyst_reveal_secret_important = major_struggle_catalyst_gain
+						catalyst_broke_truce_against_important_character = massive_struggle_catalyst_gain # Cannot motivate the AI to do that without code support
+					}
+				}
 			}
 
 			war_effects = {
 				###### Common
-				
-				# Nothing
 
 				##### Involved
 				involved_parameters = {
@@ -288,8 +301,8 @@
 
 				involved_character_modifier = {
 					same_culture_mercenary_hire_cost_mult = -0.3
-					ai_war_chance = 1
-					ai_war_cooldown = -0.5
+					ai_war_chance = 6
+					ai_war_cooldown = -0.2
 					army_pursuit_mult = 0.2
 					army_siege_value_mult = 0.2
 					enemy_hard_casualty_modifier = 0.5
@@ -318,7 +331,6 @@
 				###### Common
 				common_parameters = {
 					county_faith_conversion_in_region_proceeds_slower = yes
-					holy_wars_in_region_cannot_be_declared = yes # not sure if relevant?
 				}
 
 				###### Involved

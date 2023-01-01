@@ -665,6 +665,13 @@ d_hashshashin = {
 	
 }
 
+k_nizari_state = {
+	color = { 100 100 0 }
+	
+	
+	capital = c_alamut
+}
+
 d_bektashi = {
 
 	color = { 90 150 0 }
@@ -861,7 +868,7 @@ e_north_sea = {
 
 k_pechenegs = {
 	color = { 132 108 72}
-	
+	ignore_titularity_for_title_weighting = yes
 	capital = c_odessa # Odessa
 }
 
@@ -4714,11 +4721,21 @@ e_hre = {
 		
 		
 		capital = c_frankfurt
-		
+
 		can_create = {
 			trigger_if = {
 				limit = { is_ai = yes }
 				NOT = { exists = title:e_hre }
+			}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
 			}
 		}
 
@@ -9084,6 +9101,19 @@ e_hre = {
 		
 
 		capital = c_praha # Praha
+
+		can_create = {
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
+		}		
 		
 		ai_primary_priority = {
 			if = {
@@ -9531,11 +9561,15 @@ e_hre = {
 		capital = c_lombardia # Pavia
 		
 		can_create = {
-			trigger_if = {
-				limit = {
-					is_ai = yes
-				}
-				faith = { religion_tag = christianity_religion }
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
 			}
 		}
 		
@@ -11143,6 +11177,8 @@ e_byzantium = {
 
 	k_rum = {
 		color = { 144 182 161 }
+		can_be_named_after_dynasty = no
+		ignore_titularity_for_title_weighting = yes
 	}
 
 	k_mentese = {
@@ -41069,6 +41105,7 @@ e_persia = {
 	capital = c_isfahan #	Esfahan
 	
 	definite_form = yes
+	can_be_named_after_dynasty = yes
 	
 	ai_primary_priority = {
 		if = {
@@ -50050,7 +50087,7 @@ e_france = {
 				b_reims = {
 					province = 2390
 
-					color = { 7 60 160 }
+					color = { 62 700 600 }
 					
 				}
 				b_epernay = {
@@ -50729,6 +50766,19 @@ e_france = {
 		
 		
 		capital	= c_arles # Arles
+
+		can_create = {
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
+		}
 		
 		ai_primary_priority = {
 			if = {
@@ -55143,7 +55193,7 @@ e_maghreb = {
 	color = { 209 63 44 }
 	
 	
-	capital = c_kairwan # Kairouan
+	capital = c_marrakesh # Marrakech
 	
 	ai_primary_priority = {
 		if = {
@@ -57785,7 +57835,7 @@ e_sahara = {
 
 e_arabia = {
 	color = { 255 202 7 }
-	
+	can_be_named_after_dynasty = yes
 	
 	capital = c_damascus # Damascus
 	
@@ -83108,4 +83158,3 @@ k_sorbia = {
 		#Kingdom of Polabia
 	}
 }
-

@@ -805,6 +805,197 @@ beards_scripted_characters = {
         }
     }
 
+    ### FP2 Beards ###
+
+    male_beard_fp2_iberian_christian_01 = { # Twin braids with metal rings
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_02
+                value = 0.11 # For the randomness to work correctly
+            }
+        }   
+        weight = {
+            base = 0
+        }
+    }
+
+    male_beard_fp2_iberian_christian_02 = { # Twin braids with metal rings
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_02
+                value = 0.235 # For the randomness to work correctly
+            }
+        }   
+        weight = {
+            base = 0
+
+             modifier = {
+                add = 999
+                exists = this
+                exists = character:168137
+                this = character:168137
+            }
+
+            modifier = {
+                add = 999
+               	exists = this
+               	exists = character:70292
+                this = character:70292
+            }
+        }
+    }
+
+    male_beard_fp2_iberian_christian_03 = { # Caballeros
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_02
+                value = 0.36 # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:73813
+                this = character:73813
+            }
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:surunbaqi0001
+                this = character:surunbaqi0001
+            }
+
+            modifier = {
+                add = 999
+               	exists = this
+               	exists = character:32980 # Abu Yusuf Ya'qub al-Mansur
+                this = character:32980 # Abu Yusuf Ya'qub al-Mansur
+            }
+            modifier = {
+                add = 999
+               	exists = this
+               	exists = character:155085 # 'Umar ibn 'Abd al-Mu'min
+                this = character:155085 # 'Umar ibn 'Abd al-Mu'min
+            }
+        }
+    }
+
+    male_beard_fp2_iberian_christian_04 = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_02
+                value = 0.485 # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:barcelona_00003
+                this = character:barcelona_00003
+            }
+        }
+    }
+
+    male_beard_fp2_iberian_muslim_01 = { # Thick Groomed Beard
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_02
+                value = 0.61 # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+
+             modifier = {
+                add = 999
+                exists = this
+                exists = character:70150
+                this = character:70150
+            }
+
+             modifier = {
+                add = 999
+                exists = this
+                exists = character:73683
+                this = character:73683
+            }
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:207510 # Alfonso VIII El Noble
+                this = character:207510 # Alfonso VIII El Noble
+            }
+
+            modifier = {
+                add = 999
+                exists = this
+                exists = character:155086 # Abu Sa'id 'Uthman Almohad
+                this = character:155086 #Abu Sa'id 'Uthman Almohad
+            }
+        }
+    }
+
+    male_beard_fp2_iberian_muslim_02 = { # Scholar's beard
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_02
+                value = 0.735 # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+
+              modifier = {
+                add = 999
+                exists = this
+                exists = character:danis0005
+                this = character:danis0005
+            }
+
+            modifier = {
+                add = 999
+               	exists = this
+               	exists = character:224000 # Abu Ya'qub Yusuf
+                this = character:224000 # Abu Ya'qub Yusuf
+            }
+        }
+    }
+
+    male_beard_fp2_iberian_muslim_03 = { # Forked beard
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = beards
+                template = scripted_character_beards_02
+                value = 0.860 # For the randomness to work correctly
+            }
+        }
+        weight = {
+            base = 0
+
+        }
+    }
+
     male_beard_custom_01 = { # Long narrow wavy
         dna_modifiers = {
             accessory = {

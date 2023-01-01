@@ -15,9 +15,11 @@ portrait_seljuk_clothing_spouse_trigger = {
 }
 
 portrait_seljuk_clothing_contents_trigger = {
-	has_clothing_gfx = seljuk_clothing_gfx
+	OR = {
+		this = culture:turkish
+		any_parent_culture_or_above = { this = culture:turkish }
+	}
 }
-
 
 #############################
 ##########################################################
@@ -34,7 +36,10 @@ portrait_early_eastern_iranian_spouse_trigger = {
 }
 
 portrait_early_eastern_iranian_contents_trigger = {
-	has_clothing_gfx = iranian_clothing_gfx 
+	OR = {
+		has_cultural_pillar = heritage_iranian
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_iranian } 
+	}
 }
 
 ##Islamic Iranians
@@ -79,9 +84,7 @@ portrait_non_iranian_trigger = {
 ##########################################################
 
 portrait_tahirid_trigger = {
-
     dynasty = dynasty:811
-
 } 
 
 
@@ -137,7 +140,10 @@ portrait_northern_slav_clothing_trigger = {
 }
 
 portrait_northern_slav_clothing_contents_trigger = {
-	has_clothing_gfx = northern_slav_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_east_slavic
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_east_slavic } 
+	}
 }
 
 portrait_northern_slav_clothing_spouse_trigger = {
@@ -153,7 +159,10 @@ portrait_cuman_clothing_trigger = {
 }
 
 portrait_cuman_clothing_contents_trigger = {
-	has_clothing_gfx = cuman_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_turkic
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_turkic } 
+	}
 }
 
 portrait_cuman_clothing_spouse_trigger = {
@@ -169,7 +178,12 @@ portrait_uyghur_clothing_trigger = {
 }
 
 portrait_uyghur_clothing_contents_trigger = {
-	has_clothing_gfx = uyghur_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_turkic
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_turkic } 
+		has_cultural_pillar = heritage_mongolic
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_mongolic } 
+	}
 }
 
 portrait_uyghur_clothing_spouse_trigger = {
@@ -186,7 +200,16 @@ portrait_balto_finnic_clothing_trigger = {
 }
 
 portrait_balto_finnic_clothing_contents_trigger = {
-	has_clothing_gfx = balto_finnic_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_baltic
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_baltic } 
+		has_cultural_pillar = heritage_balto_finnic
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_mongolic } 
+		has_cultural_pillar = heritage_ugro_permian
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_ugro_permian }
+		has_cultural_pillar = heritage_volga_finnic
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_volga_finnic }  
+	}
 }
 
 portrait_balto_finnic_clothing_spouse_trigger = {
@@ -199,17 +222,25 @@ portrait_balto_finnic_clothing_spouse_trigger = {
 ##Iberian Christian
 portrait_iberia_clothing_trigger = {
 	scope:culture = { portrait_iberia_clothing_contents_trigger = yes }
+	NOT = { religion = religion:islam_religion }
 }
 ##Iberian Christian
 portrait_iberia_clothing_spouse_trigger = {
+	NOT = { religion = religion:islam_religion }
 	culture = {
 		portrait_iberia_clothing_contents_trigger = yes
 	}
 }
 ##Iberian Christian
 portrait_iberia_clothing_contents_trigger = {
-    #NOT = { religion = religion:islam_religion }
-	has_clothing_gfx = iberia_clothing_gfx
+    OR = {
+		AND = {
+			has_cultural_pillar = heritage_iberian
+		}
+		AND = {
+			any_parent_culture_or_above = { has_cultural_pillar = heritage_iberian } 
+		}
+	}
 }
 
 
@@ -245,9 +276,13 @@ portrait_iberia_muslim_clothing_spouse_trigger = {
 
 portrait_iberia_muslim_clothing_contents_trigger = {
 	OR = {
-	has_clothing_gfx = iberia_clothing_gfx
-	has_clothing_gfx = iberian_muslim_clothing_gfx	
-		}	
+		AND = {
+			has_cultural_pillar = heritage_iberian
+		}
+		AND = {
+			any_parent_culture_or_above = { has_cultural_pillar = heritage_iberian } 
+		}
+	}
 }
 
 ##Iberian
@@ -271,7 +306,6 @@ portrait_andalusian_clothing_spouse_trigger = {
 }
 portrait_andalusian_clothing_contents_trigger = {
 	OR = {
-	    has_clothing_gfx = iberian_muslim_clothing_gfx	
 		this = culture:andalusian
 		any_parent_culture_or_above = { this = culture:andalusian }
 	}
@@ -285,7 +319,12 @@ portrait_maghreb_clothing_trigger = {
 }
 
 portrait_maghreb_clothing_contents_trigger = {
-	has_clothing_gfx = maghreb_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_arabic
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_arabic } 
+		has_cultural_pillar = heritage_berber
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_berber } 
+	}
 }
 
 portrait_maghreb_clothing_spouse_trigger = {
@@ -300,7 +339,10 @@ portrait_hungarian_clothing_trigger = {
 }
 
 portrait_hungarian_clothing_contents_trigger = {
-	has_clothing_gfx = hungarian_clothing_gfx
+	OR = {
+		this = culture:andalusian
+		any_parent_culture_or_above = { this = culture:andalusian }
+	}
 }
 
 portrait_hungarian_clothing_spouse_trigger = {
@@ -315,7 +357,10 @@ portrait_anglo_saxon_clothing_trigger = {
 }
 
 portrait_anglo_saxon_clothing_contents_trigger = {
-	has_clothing_gfx = anglo_saxon_clothing_gfx
+	OR = {
+		this = culture:anglo_saxon
+		any_parent_culture_or_above = { this = culture:anglo_saxon }
+	}
 }
 
 portrait_anglo_saxon_clothing_spouse_trigger = {
@@ -330,7 +375,10 @@ portrait_polish_clothing_trigger = {
 }
 
 portrait_polish_clothing_contents_trigger = {
-	has_clothing_gfx = polish_clothing_gfx
+	OR = {
+		this = culture:polish
+		any_parent_culture_or_above = { this = culture:polish }
+	}
 }
 
 portrait_polish_clothing_spouse_trigger = {
@@ -345,7 +393,10 @@ portrait_west_slav_clothing_trigger = {
 }
 
 portrait_west_slav_clothing_contents_trigger = {
-	has_clothing_gfx = west_slav_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_west_slavic
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_west_slavic } 
+	}
 }
 
 portrait_west_slav_clothing_spouse_trigger = {
@@ -360,7 +411,10 @@ portrait_Khazar_clothing_trigger = {
 }
 
 portrait_Khazar_clothing_contents_trigger = {
-	has_clothing_gfx = Khazar_clothing_gfx
+	OR = {
+		this = culture:khazar
+		any_parent_culture_or_above = { this = culture:khazar }
+	}
 }
 
 portrait_Khazar_clothing_spouse_trigger = {
@@ -375,7 +429,10 @@ portrait_kirghiz_clothing_trigger = {
 }
 
 portrait_kirghiz_clothing_contents_trigger = {
-	has_clothing_gfx = kirghiz_clothing_gfx
+	OR = {
+		this = culture:kirghiz
+		any_parent_culture_or_above = { this = culture:kirghiz }
+	}
 }
 
 portrait_kirghiz_clothing_spouse_trigger = {
@@ -390,7 +447,10 @@ portrait_german_clothing_trigger = {
 }
 
 portrait_german_clothing_contents_trigger = {
-	has_clothing_gfx = german_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_central_germanic
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_central_germanic } 
+	}
 }
 
 portrait_german_clothing_spouse_trigger = {
@@ -399,7 +459,7 @@ portrait_german_clothing_spouse_trigger = {
 	}
 }
 
-##Burmese
+##Burmese heritage_burman
 portrait_burmese_clothing_trigger = {
 	scope:culture = { portrait_burmese_clothing_contents_trigger = yes }
 }
@@ -408,7 +468,10 @@ portrait_burmese_clothing_spouse_trigger = {
 	culture = { portrait_burmese_clothing_contents_trigger = yes }
 }
 portrait_burmese_clothing_contents_trigger = {
-	has_clothing_gfx = burmese_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_burman
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_burman } 
+	}
 }
 
 
@@ -421,7 +484,14 @@ portrait_sahelian_clothing_spouse_trigger = {
 	culture = { portrait_sahelian_clothing_contents_trigger = yes }
 }
 portrait_sahelian_clothing_contents_trigger = {
-	has_clothing_gfx = sahelian_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_central_african
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_central_african } 
+		has_cultural_pillar = heritage_sahelian
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_sahelian } 
+		has_cultural_pillar = heritage_senegambian
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_senegambian } 
+	}
 }
 
 ###Georgian
@@ -430,7 +500,10 @@ portrait_georgian_clothing_trigger = {
 }
 
 portrait_georgian_clothing_contents_trigger = {
-	has_clothing_gfx = georgian_clothing_gfx
+	OR = {
+		this = culture:georgian
+		any_parent_culture_or_above = { this = culture:georgian }
+	}
 }
 
 portrait_georgian_clothing_spouse_trigger = {
@@ -447,7 +520,10 @@ portrait_bulgarian_clothing_trigger = {
 }
 
 portrait_bulgarian_clothing_contents_trigger = {
-	has_clothing_gfx = bulgarian_clothing_gfx
+	OR = {
+		this = culture:bulgarian
+		any_parent_culture_or_above = { this = culture:bulgarian }
+	}
 }
 
 portrait_bulgarian_clothing_spouse_trigger = {
@@ -463,7 +539,10 @@ portrait_armenian_clothing_trigger = {
 }
 
 portrait_armenian_clothing_contents_trigger = {
-	has_clothing_gfx = armenian_clothing_gfx
+	OR = {
+		this = culture:armenian
+		any_parent_culture_or_above = { this = culture:armenian }
+	}
 }
 
 portrait_armenian_clothing_spouse_trigger = {
@@ -479,7 +558,10 @@ portrait_south_slav_clothing_trigger = {
 }
 
 portrait_south_slav_clothing_contents_trigger = {
-	has_clothing_gfx = south_slav_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_south_slavic
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_south_slavic } 
+	}
 }
 
 portrait_south_slav_clothing_spouse_trigger = {
@@ -505,7 +587,10 @@ portrait_saka_clothing_trigger = {
 }
 
 portrait_saka_clothing_contents_trigger = {
-	has_clothing_gfx = saka_clothing_gfx
+	OR = {
+		this = culture:saka
+		any_parent_culture_or_above = { this = culture:saka }
+	}
 }
 
 portrait_saka_clothing_spouse_trigger = {
@@ -532,7 +617,12 @@ portrait_bedouin_clothing_trigger = {
 }
 
 portrait_bedouin_clothing_contents_trigger = {
-	has_clothing_gfx = bedouin_clothing_gfx
+	OR = {
+		this = culture:bedouin
+		any_parent_culture_or_above = { this = culture:bedouin }
+		this = culture:yemeni
+		any_parent_culture_or_above = { this = culture:yemeni }
+	}
 }
 
 portrait_bedouin_clothing_spouse_trigger = {
@@ -547,7 +637,10 @@ portrait_tibetan_clothing_trigger = {
 }
 
 portrait_tibetan_clothing_contents_trigger = {
-	has_clothing_gfx = tibetan_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_tibetan
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_tibetan } 
+	}
 }
 
 portrait_tibetan_clothing_spouse_trigger = {
@@ -562,7 +655,16 @@ portrait_western_turk_clothing_trigger = {
 }
 
 portrait_western_turk_clothing_contents_trigger = {
-	has_clothing_gfx = western_turk_clothing_gfx
+	OR = {
+		this = culture:chuvash
+		any_parent_culture_or_above = { this = culture:chuvash }
+		this = culture:bolghar
+		any_parent_culture_or_above = { this = culture:bolghar }
+		this = culture:pecheneg
+		any_parent_culture_or_above = { this = culture:pecheneg }
+		this = culture:avar
+		any_parent_culture_or_above = { this = culture:avar }
+	}
 }
 
 portrait_western_turk_clothing_spouse_trigger = {
@@ -577,12 +679,12 @@ portrait_magyar_clothing_trigger = {
 }
 
 portrait_magyar_clothing_contents_trigger = {
-	has_clothing_gfx = magyar_clothing_gfx
+	this = culture:mogyer
 }
 
 portrait_magyar_clothing_spouse_trigger = {
 	culture = {
-		portrait_magyar_clothing_contents_trigger = yes
+		this = culture:mogyer
 	}
 }
 
@@ -603,7 +705,12 @@ portrait_east_african_clothing_spouse_trigger = {
 }
 
 portrait_east_african_clothing_contents_trigger = {
-	has_clothing_gfx = east_african_clothing_gfx
+	OR = {
+		has_cultural_pillar = heritage_east_african
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_east_african }
+		has_cultural_pillar = heritage_somalian
+		any_parent_culture_or_above = { has_cultural_pillar = heritage_somalian }  
+	}
 }
 
 
@@ -634,6 +741,61 @@ portrait_east_african_non_islamic_trigger = {
 portrait_east_african_non_christian_trigger = {
     NOT = { religion = religion:christianity_religion }
 }
+
+###Tuareg/Zaghawa
+portrait_zaghawa_clothing_trigger = {
+	scope:culture = { portrait_zaghawa_clothing_contents_trigger = yes }
+}
+portrait_zaghawa_clothing_spouse_trigger = {
+	culture = { portrait_zaghawa_clothing_contents_trigger = yes }
+}
+portrait_zaghawa_clothing_contents_trigger = {
+	OR = {
+		this = culture:zaghawa
+		any_parent_culture_or_above = { this = culture:zaghawa }	
+	}
+}
+
+
+####################################################################################################
+##################
+###English/Norman
+##################
+####################################################################################################
+
+portrait_english_clothing_trigger = {
+	scope:culture = { portrait_english_clothing_contents_trigger = yes }
+}
+
+portrait_english_clothing_spouse_trigger = {
+	culture = {
+		portrait_english_clothing_contents_trigger = yes
+	}
+}
+
+portrait_english_clothing_contents_trigger = {
+	OR = {
+		this = culture:english
+		any_parent_culture_or_above = { this = culture:english }
+		this = culture:norman
+		any_parent_culture_or_above = { this = culture:norman }	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -669,6 +831,23 @@ portrait_western_muslim_trigger = {
 
 
 ##########################################################################
+####Indian Muslim & Hindu
+##########################################################################				
+##Indian
+
+portrait_indian_non_muslim_trigger = {
+    NOT = { religion = religion:islam_religion }
+}
+
+##Indian Muslim
+
+portrait_indian_muslim_trigger = {
+	religion = religion:islam_religion	
+}
+
+
+
+##########################################################################
 ####Pagan Byzantine
 ##########################################################################		
 
@@ -700,51 +879,65 @@ portrait_norman_clothing_contents_trigger = {
 
 ####Norman Sicily knights
 portrait_norman_sicily_knights_clothing_trigger = {
-	OR = {
-		this = culture:norman
-		any_parent_culture_or_above = { this = culture:norman }	
-	}
+	scope:culture = { portrait_norman_sicily_knights_clothing_contents_trigger = yes }
 	trigger_if = {
 		limit = { exists = capital_province }
-		capital_province = { 
-		                   OR = {
-							geographical_region = world_europe_south_italy
-						} 
-					}
-
+		capital_province = { geographical_region = world_europe_south_italy }
 	}
 	trigger_if = {
 		limit = {
 			exists = host.capital_province
 			NOT = { exists = capital_province }
 		}
-		host.capital_province = { 
-		                   OR = {
-							geographical_region = world_europe_south_italy
-						} 
-					}
+		host.capital_province = { geographical_region = world_europe_south_italy }
 	}
 	trigger_if = {
 		limit = {
 			exists = liege.capital_province
 			NOT = { exists = capital_province }
 		}
-		liege.capital_province = { 
-		                   OR = {
-							geographical_region = world_europe_south_italy
-						} 
-					}
+		liege.capital_province = { geographical_region = world_europe_south_italy  }
 	}
 	trigger_if = {
 		limit = {
 			exists = location.province_owner.capital_province
 			NOT = { exists = capital_province }
 		}
-		location.province_owner.capital_province = { 
-		                   OR = {
-							geographical_region = world_europe_south_italy
-						} 
-					}
+		location.province_owner.capital_province = { geographical_region = world_europe_south_italy }
+	}
+}
+portrait_norman_sicily_knights_clothing_spouse_trigger = {
+	culture = { portrait_norman_sicily_knights_clothing_contents_trigger = yes }
+	trigger_if = {
+		limit = { exists = capital_province }
+		capital_province = { geographical_region = world_europe_south_italy }
+	}
+	trigger_if = {
+		limit = {
+			exists = host.capital_province
+			NOT = { exists = capital_province }
+		}
+		host.capital_province = { geographical_region = world_europe_south_italy }
+	}
+	trigger_if = {
+		limit = {
+			exists = liege.capital_province
+			NOT = { exists = capital_province }
+		}
+		liege.capital_province = { geographical_region = world_europe_south_italy  }
+	}
+	trigger_if = {
+		limit = {
+			exists = location.province_owner.capital_province
+			NOT = { exists = capital_province }
+		}
+		location.province_owner.capital_province = { geographical_region = world_europe_south_italy }
+	}
+}
+portrait_norman_sicily_knights_clothing_contents_trigger = {
+	OR = {
+		this = culture:norman
+		any_parent_culture_or_above = { this = culture:norman }
 	}
 }
 

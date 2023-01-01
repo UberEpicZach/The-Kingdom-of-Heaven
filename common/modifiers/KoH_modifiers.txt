@@ -1,78 +1,4 @@
-﻿chivalry = {
-	icon = feast_positive
-}
-chivalry_1 = {
-	icon = feast_positive
-	prowess = 1
-	general_opinion = 2
-	monthly_prestige = 0.2
-	dread_baseline_add = -10
-}
-chivalry_2 = {
-	icon = feast_positive
-	prowess = 2
-	general_opinion = 4 
-	monthly_prestige = 0.4
-	dread_baseline_add = -20
-}
-chivalry_3 = {
-	icon = feast_positive
-	prowess = 3
-	general_opinion = 6
-	monthly_prestige = 0.6
-	dread_baseline_add = -30
-}
-chivalry_4 = {
-	icon = feast_positive
-	prowess = 4
-	general_opinion = 8
-	monthly_prestige = 0.8
-	dread_baseline_add = -40
-}
-chivalry_5 = {
-	icon = feast_positive
-	prowess = 5
-	general_opinion = 10
-	monthly_prestige = 1
-	dread_baseline_add = -50
-}
-chivalry_6 = {
-	icon = feast_positive
-	prowess = 6
-	general_opinion = 12
-	monthly_prestige = 1.2
-	dread_baseline_add = -60
-}
-chivalry_7 = {
-	icon = feast_positive
-	prowess = 7
-	general_opinion = 14
-	monthly_prestige = 1.4
-	dread_baseline_add = -70
-}
-chivalry_8 = {
-	icon = feast_positive
-	prowess = 8
-	general_opinion = 16
-	monthly_prestige = 1.6
-	dread_baseline_add = -80
-}
-chivalry_9 = {
-	icon = feast_positive
-	prowess = 9
-	general_opinion = 18
-	monthly_prestige = 1.8
-	dread_baseline_add = -90
-}
-chivalry_10 = {
-	icon = feast_positive
-	prowess = 10
-	general_opinion = 20
-	monthly_prestige = 2
-	dread_baseline_add = -100
-}
-
-RichardHighTaxes = {
+﻿RichardHighTaxes = {
 	icon = feast_negative
 	general_opinion = -10
 }
@@ -153,7 +79,7 @@ bastion_of_waldensianism_revolt_risk_modifier = {
 	icon = county_modifier_opinion_positive
 	county_opinion_add = -30
 
-	faith_conversion_piety_cost_mult = 0.5
+	#faith_conversion_piety_cost_mult = 0.5
 }
 
 Massacre_of_Feurs = {
@@ -168,7 +94,7 @@ KOH_Religious_Tolerance = {
 	development_growth_factor = 0.20
 	county_opinion_add = 30
 
-	faith_conversion_piety_cost_mult = 0.5
+	#faith_conversion_piety_cost_mult = 0.5
 }
 
 Birthplace_of_Waldensianism = {
@@ -176,7 +102,7 @@ Birthplace_of_Waldensianism = {
 	development_growth_factor = 0.20
 	county_opinion_add = 360
 
-	faith_conversion_piety_cost_mult = 0.8
+	#faith_conversion_piety_cost_mult = 0.8
 }
 
 saintly_bloodline = {
@@ -207,22 +133,60 @@ Last_Burst_of_Energy = {
 	health = 0.3
 }
 
-split_county_loss = {
-	monthly_income = -0.2
-	development_growth_factor = -0.1
-}
+# split_county_loss = {
+# 	monthly_income = -0.2
+# 	development_growth_factor = -0.1
+# }
 
-split_county_win = {
-	monthly_income = 0.2
-	development_growth_factor = 0.1
-}
+# split_county_win = {
+# 	monthly_income = 0.2
+# 	development_growth_factor = 0.1
+# }
 
-county_dispute = {
-	monthly_income = -0.4
-	development_growth_factor = -0.2
-}
+# county_dispute = {
+# 	monthly_income = -0.4
+# 	development_growth_factor = -0.2
+# }
 
 instantsiege = {
 	icon = martial_positive
 	army_siege_value_mult = 1000 #This is an InstaSiege!
 }
+
+Tourney_Winner = {
+	icon = prestige_positive
+	monthly_prestige = 0.1
+}
+
+Tourney_Second_Place = {
+	icon = prestige_positive
+	monthly_prestige = 0.05
+}
+
+Chinese_reinforcements = {
+	icon = martial_positive
+	knight_limit = 15
+	knight_effectiveness_mult = 0.1
+	levy_reinforcement_rate = 0.5
+	advantage = 2
+	levy_size = 0.3
+}
+
+# Gives a -30 bonus acceptance to vassalisation interaction
+event_nerf_to_vassal_accept = {
+	icon = diplomacy_negative
+}
+
+# embarkment = {
+# 	icon = prestige_positive
+# 	embarkation_cost_mult = 75
+# }
+
+koh_reynald = {
+	ai_boldness = dominant_positive_ai_value
+	ai_honor = very_low_negative_ai_value
+	ai_greed = dominant_positive_ai_value
+	ai_vengefulness = very_high_positive_ai_value
+	ai_rationality = very_low_negative_ai_value
+	ai_energy = dominant_positive_ai_value
+}	

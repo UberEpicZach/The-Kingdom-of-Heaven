@@ -1,0 +1,332 @@
+﻿bm_jerusalem = { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
+	start_date = 1184.1.1
+	is_playable = yes
+	default = yes
+	group = bm_group_1184 
+	recommended = yes
+	# King Baudouin IV of Jerusalem ID: 223523
+	character = {
+		name = "bookmark_baud" # King Baudouin IV of Jerusalem
+		dynasty = 723
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 223523
+		birth = 1161.1.2
+		title = k_jerusalem
+		government = feudal_government
+		culture = french
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
+		position = { 750 400 }
+		
+		animation = worry
+
+	}
+	# Saladin ID: 226000
+	character = {
+		name = "bookmark_saladin" # saladin
+		dynasty = 24000
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 226000
+		birth = 1138.1.1
+		title = e_arabia
+		government = feudal_government
+		culture = levantine
+		religion = ashari
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 750 700 }
+		
+		animation = disapproval
+	}
+}
+bm_kings = { #The initial map for bookmarks is set in interface\bookmarks. This is a .dds file that would need edited. For now a placeholder works. 
+	start_date = 1184.1.1
+	is_playable = yes
+	group = bm_group_1184 
+
+	# King Philippe II ID: 205506
+	character = {
+		name = "bookmark_france" # King Philippe of France
+		dynasty = KOHD0005
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 205506
+		birth = 1161.1.2
+		title = k_france
+		government = feudal_government
+		culture = french
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 450 750 }
+		
+		animation = flirtation
+
+	}
+	# Richard The Lionheart ID: 204510
+	character = {
+		name = "bookmark_richard" # Richard
+		dynasty = 106
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 204510
+		birth = 1157.9.8
+		title = c_anjou
+		government = feudal_government
+		culture = french
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 350 375 }
+		
+		animation = marshal
+
+		character = {
+			name = "bookmark_richard_father"
+			history_id = 204500
+			relation = "BOOKMARK_RELATION_FATHER"
+			dynasty = 106
+			dynasty_splendor_level = 3
+			type = male
+			birth = 1133.3.5
+			title = k_england
+			government = feudal_government
+			culture = english
+			religion = catholic
+
+			animation = personality_bold
+		}
+
+		character = {
+			name = "bookmark_richard_brother"
+			history_id = 204514
+			relation = "BOOKMARK_RELATION_BROTHER"
+			dynasty = 106
+			dynasty_splendor_level = 3
+			type = male
+			birth = 1166.12.24
+			title = d_lancaster
+			government = feudal_government
+			culture = english
+			religion = catholic
+
+			animation = scheme
+		}
+	}
+	# Frederick Barbarossa  ID: 212501
+	character = {
+		name = "bookmark_hre" # Frederick Barbarossa
+		dynasty = 529
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 212501
+		birth = 1122.1.1
+		title = e_hre
+		government = feudal_government
+		culture = swabian
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 900 700 }
+		
+		animation = personality_callous
+	}
+	# balian ID: 223570
+	character = {
+		name = "bookmark_balian" # balian
+		dynasty = 23102
+		dynasty_splendor_level = 1
+		type = male
+		history_id = 223570
+		birth = 1140.1.1
+		title = c_lepuiset
+		government = feudal_government
+		culture = french
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
+		position = { 750 400 }
+		
+		animation = stress
+	}
+}
+
+bm_byzantine = {
+	start_date = 1184.1.1
+	is_playable = yes
+	group = bm_group_1184 
+	# Andronikos komnenos ID: 215529
+	character = {
+		name = "bookmark_byzantine" # Emperor Andronikos 
+		dynasty = 634
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 215529
+		birth = 1118.1.1
+		title = e_byzantium
+		government = feudal_government
+		culture = greek
+		religion = orthodox
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
+		position = { 900 600 }
+		
+		animation = flirtation
+
+	}
+	# Norman ID: 211500
+	character = {
+		name = "bookmark_norman" # William
+		dynasty = 678
+		dynasty_splendor_level = 2
+		type = male
+		history_id = 211500
+		birth = 1155.1.1
+		title = k_sicily
+		government = feudal_government
+		culture = sicilian
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 400 575 }
+		
+		animation = celebrate_sword
+	}
+	# Tamar  ID: 466517
+	character = {
+		name = "bookmark_georgia" # Tamar
+		dynasty = 507
+		dynasty_splendor_level = 2
+		type = female
+		history_id = 466517
+		birth = 1160.1.1
+		title = k_georgia
+		government = feudal_government
+		culture = georgian
+		religion = orthodox
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 1200 250 }
+		
+		animation = personality_callous
+		
+		character = { # Ermesinda Gatónez, wife, ID: 73759
+			name = "bookmark_georgia_alania" 
+			relation = "BOOKMARK_RELATION_SPOUSE_MALE"
+			dynasty = 507
+			type = male
+			birth = 1155.1.1
+			title = k_alania
+			culture = alanian
+			religion = orthodox
+			history_id = 466516
+			
+			animation = personality_bold
+		}
+	}
+	# hungary ID: 219500
+	character = {
+		name = "bookmark_hungary" # bela
+		dynasty = 708
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 219500
+		birth = 1148.1.1
+		title = k_hungary
+		government = feudal_government
+		culture = hungarian
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
+		position = { 450 250 }
+		
+		animation = aggressive_sword
+	}
+}
+
+bm_reconquista = {
+	start_date = 1184.1.1
+	is_playable = yes
+	group = bm_group_1184 
+	# Alfonso VIII 'el Noble ID: 215529
+	character = {
+		name = "bookmark_castille" # Alfonso
+		dynasty = 681
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 207510
+		birth = 1155.11.11
+		title = k_castille
+		government = feudal_government
+		culture = castilian
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 750 250 }
+		
+		animation = personality_bold
+
+	}
+	#Fernando II de León ID: 208500
+	character = {
+		name = "bookmark_leon" # Fernando
+		dynasty = 681
+		dynasty_splendor_level = 2
+		type = male
+		history_id = 208500
+		birth = 1137.1.1
+		title = k_leon
+		government = feudal_government
+		culture = castilian
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 450 190 }
+		
+		animation = personality_bold
+	}
+	# # Afonso I Henriques the Conqueror ID: 209503
+	character = {
+		name = "bookmark_portugual" # Afonso
+		dynasty_house = house_bourgogne
+		dynasty_splendor_level = 2
+		type = male
+		history_id = 209503
+		birth = 1109.7.25
+		title = k_portugal
+		government = feudal_government
+		culture = portuguese
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		position = { 310 480 }
+		
+		animation = personality_callous
+	}
+	# Ramon-Berenguer ID: 210500
+	character = {
+		name = "bookmark_aragon" # Ramon-Berenguer
+		dynasty = 100204
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 210500
+		birth = 1157.3.25
+		title = k_aragon
+		government = feudal_government
+		culture = catalan
+		religion = catholic
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
+		position = { 1050 250 }
+		
+		animation = personality_callous
+	}
+
+	# Caliph Abu Ya`qub Yusuf ID: 224000
+	character = {
+		name = "bookmark_almohad" # Ramon-Berenguer
+		dynasty = 101875
+		dynasty_splendor_level = 3
+		type = male
+		history_id = 224000
+		birth = 1135.1.1
+		title = k_maghreb
+		government = feudal_government
+		culture = baranis
+		religion = masmudi
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
+		position = { 900 600 }
+		
+		animation = personality_callous
+	}
+
+}

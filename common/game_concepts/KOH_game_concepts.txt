@@ -1,4 +1,22 @@
-﻿historical_events = {
+﻿investiture_contest = {
+	texture = "gfx/interface/icons/message_feed/heresy.dds"
+	parent = faith
+	alias = { investiture_contests }
+}
+
+guelphs = {
+	texture = "gfx/interface/icons/message_feed/heresy.dds"
+	parent = investiture 
+	alias = { guelph }
+}
+
+ghibellines = {
+	texture = "gfx/interface/icons/message_feed/heresy.dds"
+	parent = investiture 
+	alias = { ghibelline }
+}
+
+historical_events = {
 	texture = "gfx/interface/icons/message_feed/law.dds"
 	alias = { historicalevents }
 }

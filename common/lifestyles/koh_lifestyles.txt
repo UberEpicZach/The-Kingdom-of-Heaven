@@ -1,0 +1,19 @@
+﻿assassin_lifestyle = {
+
+	is_highlighted = {
+		OR = {
+			has_trait = assassin_member		
+			has_faith = faith:nizari
+			has_character_flag = joined_assassins
+		}
+	}
+	is_valid = {
+		OR = {
+			has_faith = faith:nizari
+			has_character_flag = joined_assassins
+		}
+	}
+	
+	xp_per_level = 1000
+	base_xp_gain = 50
+}

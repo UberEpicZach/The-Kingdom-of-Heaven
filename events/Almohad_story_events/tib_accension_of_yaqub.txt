@@ -1,0 +1,341 @@
+﻿namespace = tib_accension_of_yaqub
+
+tib_accension_of_yaqub.1 = { # Mourn the death of his father
+	type = character_event
+	title = tib_accension_of_yaqub.1.t
+	desc = tib_accension_of_yaqub.1.d
+	theme = faith
+
+	left_portrait = {
+        character = root
+		animation = grief
+	}
+
+    override_background = { event_background = temple_mosque }
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_accension_of_yaqub.1
+		}
+	}
+
+	option = {
+		name = tib_accension_of_yaqub.1.a
+		trigger_event = {
+			id = tib_accension_of_yaqub.11
+			days = { 5 7 }
+		}
+	}
+}
+tib_accension_of_yaqub.11 = { # Vows for revenge against Portugal
+	type = character_event
+	title = tib_accension_of_yaqub.11.t
+	desc = tib_accension_of_yaqub.11.d
+	theme = martial
+
+	left_portrait = {
+        character = root
+		animation = anger
+	}
+	lower_right_portrait = {
+		character = title:k_portugal.holder
+	}
+
+    override_background = { event_background = corridor_night }
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_accension_of_yaqub.11
+		}
+	}
+
+	option = {
+		name = tib_accension_of_yaqub.11.a
+		set_relation_nemesis = character:209503 # Afonso
+		set_relation_nemesis = character:209500 # Sancho
+		trigger_event = {
+			id = tib_accension_of_yaqub.2
+			days = { 2 3 }
+		}
+	}
+}
+tib_accension_of_yaqub.2 = { # Given bay'ah by the shaykhs and sayyids, keep the death as a secret for a while, ponder the burden of new responsibility
+	type = character_event
+	title = tib_accension_of_yaqub.2.t
+	desc = tib_accension_of_yaqub.2.d
+	theme = diplomacy
+	
+	left_portrait = {
+        character = root
+		animation = sadness
+	}
+    override_background = { event_background = council_chamber }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.2}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_accension_of_yaqub.2
+		}
+	}
+
+	option = {
+		name = tib_accension_of_yaqub.2.a
+		trigger_event = {
+			id = tib_accension_of_yaqub.3
+			days = { 1 2 }
+		}
+	}
+}
+tib_accension_of_yaqub.3 = { # First course of action, managing the realm at Andalusia, perhaps even moving the capital to Seville for a period
+	type = character_event
+	title = tib_accension_of_yaqub.3.t
+	desc = tib_accension_of_yaqub.3.d
+	theme = stewardship
+	
+	right_portrait = {
+        character = root
+		animation = personality_rational
+	}
+    override_background = { event_background = throne_room }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.3}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_accension_of_yaqub.3
+		}
+	}
+
+	option = {
+		name = tib_accension_of_yaqub.3.a
+
+		character:32980 = { # Abu Yusuf Ya'qub
+			get_title = title:c_sevilla
+			set_realm_capital = title:c_sevilla
+		}
+
+		trigger_event = {
+			id = tib_accension_of_yaqub.4
+		}
+	}
+}
+
+# Supposed to do reforms for the Almohad doctrine, such as rejecting the infallibility of Ibn Tumart, even as far as to ridicule people who learned his books. He tried to
+# persuade the scholars to leave Ibn Tumart's teachings. As if he rejected Ibn Tumart as Mahdi, which is detrimental to the zealous Almohad followers
+tib_accension_of_yaqub.4 = { # First course of action, managing the realm at Andalusia, perhaps even moving the capital to Seville for a period
+	type = character_event
+	title = tib_accension_of_yaqub.4.t
+	desc = tib_accension_of_yaqub.4.d
+	theme = stewardship
+	 
+	right_portrait = {
+        character = root
+		animation = personality_rational
+	}
+    override_background = { event_background = throne_room }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.4}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_accension_of_yaqub.4
+		}
+	}
+
+	option = {
+		name = tib_accension_of_yaqub.4.a
+		trigger_event = {
+			id = tib_accension_of_yaqub.51
+			days = { 30 60 }
+		}
+	}
+}
+tib_accension_of_yaqub.51 = { # Banu Ghaniya seizes the Tunisian provinces with the help of Arabs and Mamluks
+	type = character_event
+	title = tib_accension_of_yaqub.51.t
+	desc = tib_accension_of_yaqub.51.d
+	theme = martial
+	
+	left_portrait = {
+        character = title:d_mallorca.holder
+		animation = celebrate_sword
+	}
+    override_background = { event_background = battlefield }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.51}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_accension_of_yaqub.51
+		}
+	}
+
+	option = {
+		name = tib_accension_of_yaqub.51.a
+
+		title:d_mallorca.holder = { # Banu Ghaniya
+			create_alliance = character:155113 # Qaraqush's Mamluks
+			create_alliance = title:d_cyrenaica.holder # Banu Sulaym
+			# Banu Hilal missing
+			get_title = title:d_bejaia
+            get_title = title:c_bejaia
+            get_title = title:c_satif
+            get_title = title:c_annaba
+            get_title = title:c_constantine
+            get_title = title:c_bilizma
+            get_title = title:c_satfura
+			get_title = title:d_kairouan
+            get_title = title:c_kairwan
+            get_title = title:c_mahdiya
+			get_title = title:c_sfax
+			get_title = title:c_west_qamuda
+			get_title = title:c_qashtiliya
+			get_title = title:c_tabassa
+		}
+		title:d_tunis.holder = { # Hafsid governor
+            add_pressed_claim = title:c_satfura
+			add_pressed_claim = title:d_kairouan
+            add_pressed_claim = title:c_kairwan
+            add_pressed_claim = title:c_mahdiya
+			add_pressed_claim = title:c_sfax
+			add_pressed_claim = title:c_west_qamuda
+			add_pressed_claim = title:c_qashtiliya
+			add_pressed_claim = title:c_tabassa
+		}
+		character:almohad1010 = {
+			add_pressed_claim = title:d_bejaia
+            add_pressed_claim = title:c_bejaia
+            add_pressed_claim = title:c_satif
+            add_pressed_claim = title:c_annaba
+            add_pressed_claim = title:c_constantine
+            add_pressed_claim = title:c_bilizma
+		}
+		character:almohad1010 = {
+			set_employer = character:32980
+		}
+		trigger_event = {
+			id = tib_accension_of_yaqub.5
+		}
+	}
+}
+tib_accension_of_yaqub.5 = { # Ya'qub's reaction to the lost of Ifriqiya territories
+	type = character_event
+	title = tib_accension_of_yaqub.5.t
+	desc = tib_accension_of_yaqub.5.d
+	theme = martial
+	
+	left_portrait = {
+        character = root
+		animation = disbelief
+	}
+    override_background = { event_background = throne_room }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.5}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_accension_of_yaqub.5
+		}
+	}
+
+	option = {
+		name = tib_accension_of_yaqub.5.a
+		set_relation_rival = title:d_mallorca.holder
+		trigger_event = {
+			id = tib_accension_of_yaqub.6
+			days = { 5 7 }
+		}
+	}
+}
+tib_accension_of_yaqub.6 = { # Assembled the troops to clean the mess before continuing Jihad
+	type = character_event
+	title = tib_accension_of_yaqub.6.t
+	desc = tib_accension_of_yaqub.6.d
+	theme = war
+	
+	left_portrait = {
+        character = root
+		animation = marshal
+	}
+    override_background = { event_background = army_camp }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.6}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_accension_of_yaqub.6
+		}
+	}
+
+	option = {
+		name = tib_accension_of_yaqub.6.a
+		start_war = {
+			casus_belli = claim_cb
+			target = title:d_mallorca.holder
+            target_title =	title:c_satfura
+			target_title =	title:d_kairouan
+            target_title =	title:c_kairwan
+            target_title =	title:c_mahdiya
+			target_title =	title:c_sfax
+			target_title =	title:c_west_qamuda
+			target_title =	title:c_qashtiliya
+			target_title =	title:c_tabassa
+			#attacker = character:32980 
+			claimant = character:33013
+		}
+		root = {
+			add_prestige = 5000
+		}
+	}
+}
+tib_accension_of_yaqub.61 = { # Continue defense
+	type = character_event
+	title = tib_accension_of_yaqub.61.t
+	desc = tib_accension_of_yaqub.61.d
+	theme = war
+	
+	left_portrait = {
+        character = root
+		animation = celebrate_sword
+	}
+	right_portrait = {
+        character = title:d_mallorca.holder
+		animation = anger
+	}
+    override_background = { event_background = army_camp }
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.61}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_tib_accension_of_yaqub.61
+		}
+	}
+
+	option = {
+		name = tib_accension_of_yaqub.61.a
+		start_war = {
+			casus_belli = claim_cb
+			target = title:d_mallorca.holder
+			target_title =	title:d_bejaia
+            target_title =	title:c_bejaia
+            target_title =	title:c_satif
+			target_title =	title:c_annaba
+            target_title =	title:c_constantine
+            target_title =	title:c_bilizma
+			#attacker = character:32980
+			claimant = character:almohad1010
+		}
+		root = {
+			add_prestige = 5000
+		}
+	}
+}

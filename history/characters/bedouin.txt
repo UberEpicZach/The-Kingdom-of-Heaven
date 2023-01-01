@@ -791,27 +791,6 @@
 	}
 }
 
-3208 = {
-	name = "Hisham"
-	dynasty = 597
-	martial = 7
-	diplomacy = 7
-	intrigue = 6
-	stewardship = 5
-	religion = "ashari"
-	culture = "bedouin"
-	trait = humble
-	trait = sayyid
-	trait = education_intrigue_2
-	father = 73677
-	980.1.1 = {
-		birth = "980.1.1"
-	}
-	1036.1.1 = {
-		death = "1036.1.1"
-	}
-}
-
 3213 = {
 	name = "Romaica"
 	female = yes
@@ -4956,74 +4935,6 @@
 	}
 }
 
-73671 = {
-	name = "Muhammad"
-	dynasty = 597
-	religion = "ashari"
-	culture = "bedouin"
-	father = 73670
-	trait = sayyid
-	980.1.1 = {
-		birth = "980.1.1"
-	}
-	1010.7.23 = {
-		death = "1010.7.23"
-	}
-}
-
-73672 = {
-	name = "Abd-al-Rahman"
-	dynasty = 597
-
-	father = 73670
-
-	religion = ashari
-	culture = bedouin
-
-	trait = sayyid
-
-	989.1.1 = {
-		birth = yes
-	}
-	1024.1.17 = {
-		death = yes
-	}
-}
-
-73675 = {
-	name = "Suleyman"
-	dynasty = 597
-	religion = "ashari"
-	culture = "bedouin"
-	father = 73674
-	trait = sayyid
-	986.1.1 = {
-		birth = "986.1.1"
-	}
-	1016.7.1 = {
-		death = "1016.7.1"
-	}
-}
-
-73678 = {
-	name = "Abd-al-Rahman"
-	dynasty = 597
-
-	father = 73677
-
-	religion = ashari
-	culture = bedouin
-
-	trait = sayyid
-
-	979.1.1 = {
-		birth = yes
-	}
-	1018.6.1 = {
-		death = yes
-	}
-}
-
 73679 = {
 	name = "Abd-al-Rahman"
 	dynasty = 597
@@ -7889,20 +7800,6 @@
 		death = "843.1.1"
 	}
 }
-73211 = {
-	name = "Itimad"
-	female = yes
-
-	religion = ashari
-	culture = bedouin
-
-	1046.1.1 = {
-		birth = yes
-	}
-	1092.1.1 = {
-		death = yes
-	}
-}
 73248 = {
 	name = "Rasiq"
 	dynasty = 12208
@@ -8028,46 +7925,6 @@
 	}
 }
 
-45025 = {
-	name = "Abd-al-Aziz"
-	dynasty = 569
-	
-	father = 73226
-
-	religion = ashari
-	culture = bedouin
-
-	999.1.1 = {
-		birth = yes
-	}
-	1061.1.1 = {
-		death = yes
-	}
-}
-
-45026 = {
-	name = "Abd-al-Malik"
-	dynasty = 569
-	
-	father = 45025
-
-	religion = ashari
-	culture = bedouin
-
-	1020.1.1 = {
-		birth = yes
-	}
-	1060.1.1 = {
-		add_spouse = 20858
-	}
-	1065.1.1 = {
-		add_pressed_claim = title:d_valencia
-	}
-	1069.1.1 = {
-		death = yes
-	}
-}
-
 73210 = {
 	name = "Abd-al-Malik"
 	dynasty = 569
@@ -8106,37 +7963,20 @@
 	}
 }
 73216 = {
-	name = "Abd-al-Yabbar"
-	dynasty = 594
-	
-	father = 3214
-	mother = 73211
-	
-	religion = ashari
+	name = "Abd-al-Yabbar" # Abd al-Yabbar ibn Muhammad
+	dynasty = 594 # Banu Abbad Dynasty
+	religion = muwalladi
 	culture = bedouin
-	
+	trait = education_stewardship_1
+ 
+	father = 3214 # Emir al-Mu'tamid of Seville
+	mother = 73211 # Emira al-Rumaikiyya (andalusian.txt)
+ 
+ 
 	1067.1.1 = {
 		birth = yes
 	}
 	1095.1.1 = {
-		death = yes
-	}
-}
-
-73226 = {
-	name = "Abd-al-Rahman" #AKA: Sanchuelo
-	dynasty = 569
-
-	father = 3206
-	mother = 70125
-
-	religion = ashari
-	culture = bedouin
-	
-	983.1.1 = {
-		birth = yes
-	}
-	1009.1.1 = {
 		death = yes
 	}
 }
@@ -8853,41 +8693,6 @@
 		birth = yes
 	}
 	799.1.1 = {
-		death = yes
-	}
-}
-
-
-200220 = {
-	name = "Abd-al-Aziz"
-	dynasty = 1046023
-
-	father = 200219
-
-	religion = ashari
-	culture = bedouin
-
-	994.1.1 = {
-		birth = yes
-	}
-	1030.1.1 = {
-		death = yes
-	}
-}
-
-200221 = {
-	name = "Abd-al-Malik"
-	dynasty = 1046023
-
-	father = 200219
-
-	religion = ashari
-	culture = bedouin
-
-	998.1.1 = {
-		birth = yes
-	}
-	1034.1.1 = {
 		death = yes
 	}
 }
@@ -11901,6 +11706,12 @@ bedouin0071 = {
 	father = bedouin0070
 	1143.1.1 = {
 		birth = yes
+	}
+	1184.1.1 = {
+		add_character_modifier = {
+			modifier = event_nerf_to_vassal_accept
+			years = 15 # Removed after first use for balance purposes, expires if not used.
+		}
 	}
 	1201.1.1 = {
 		death = yes

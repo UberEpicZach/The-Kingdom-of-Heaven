@@ -2656,21 +2656,24 @@
 	dna = 226000_Saladin
 	dynasty = 24000
 	diplomacy = 8
-	martial = 8
+	martial = 10
 	stewardship = 10
 	intrigue = 7
 	learning = 7
-	prowess = 5
+	prowess = 7
 	religion = "ashari"
 	culture = "levantine"
-	trait = diligent
-	trait = calm
 	trait = generous
+	trait = calm
 	trait = just
+	trait = diligent
+	trait = education_martial_4
 	trait = august
 	trait = administrator
 	trait = righteous_of_the_faith
-	trait = education_martial_4
+	trait = holy_warrior
+	trait = organizer
+	trait = logistician
 	father = 226053
 	1138.1.1 = {
 		birth = "1138.1.1"
@@ -2689,6 +2692,7 @@
 		effect = {
 			set_relation_friend = { reason = friend_generic_history target = character:KOH0041 }
 			set_relation_friend = { reason = friend_generic_history target = character:KOH0025 }
+			create_house_feud_effect = { KOHFEUDTARGET = title:d_diyarrabia.holder }
 		}
 	}
 	1176.1.1 = {
@@ -5601,15 +5605,21 @@
 }
 
 155113 = {
-	name = "Karakush"
+	name = "Sharaf_al-Din_Qaraqush"
 	#AKA Sharaf al-Din Qaraqush
 	religion = "ashari"
-	culture = "levantine"
+	culture = "armenian"
+	trait = education_martial_4
+	trait = ambitious
+	trait = arbitrary
+	trait = brave
 	1150.1.1 = {
 		birth = "1150.1.1"
 	}
 	1212.1.1 = {
-		death = "1212.1.1"
+		death = {
+			death_reason = death_execution # Failed his Banu Ghaniya ally, so the emir Yahya executed him
+		}
 	}
 }
 
@@ -5978,6 +5988,7 @@
 	}# AKA: Saint Thomas the Apostle
 	72.12.21 = {
 		death = "72.12.21"
+		trait = saint
 	}
 }
 166237 = {
@@ -5999,6 +6010,7 @@
 	}# AKA: Saint Bartholomew the Apostle
 	70.1.1 = {
 		death = "70.1.1"
+		trait = saint
 	}
 }
 166238 = {
@@ -6021,6 +6033,7 @@
 	}# AKA: Saint Thaddeus the Apostle
 	77.1.1 = {
 		death = "77.1.1"
+		trait = saint
 	}
 }
 166239 = {

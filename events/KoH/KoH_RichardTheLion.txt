@@ -353,6 +353,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 				culture = culture:breton
 				age = 0.1
 				gender = male
+				location = root.location
 				mother = character:205740
 				father = character:204511
 				dynasty = 106
@@ -1013,7 +1014,7 @@ KoH_RichardTheLionheart.7 = {
 	option = {
 		name = KoH_RichardTheLionheart.7.a
 
-		custom_tooltip = "We pledge to Crusade for Jerusalem, will fire in 2 year"
+		custom_tooltip = KoH_RichardTheLionheart.7.a.tt
 		trigger_event = {
 			id = KoH_saladin.4
 			days = { 250 350 }
@@ -1023,7 +1024,7 @@ KoH_RichardTheLionheart.7 = {
 	option = {
 		name = KoH_RichardTheLionheart.7.b
 
-		custom_tooltip = "We can pledge another time!"
+		custom_tooltip = KoH_RichardTheLionheart.7.b.tt
 	}
 }
 #Mother Released
@@ -1811,7 +1812,7 @@ KoH_RichardTheLionheart.181 = { #rome
 					left_icon = title:k_england.holder
 				}
 				trigger_event = {
-					id = KoH_RichardTheLionheart.20 #
+					id = KoH_RichardTheLionheart.19 #SICILIY EVENT
 					days = 1
 				}
 				add_piety_level = 1
@@ -1823,7 +1824,7 @@ KoH_RichardTheLionheart.181 = { #rome
 					left_icon = title:k_england.holder
 				}
 				trigger_event = {
-					id = KoH_RichardTheLionheart.191 #
+					id = KoH_RichardTheLionheart.20 #
 					days = 1
 				}
 				add_piety = -100
@@ -1831,6 +1832,9 @@ KoH_RichardTheLionheart.181 = { #rome
 		}
 	}
 }
+
+#I NEED AN EVENT WHERE RICHARD HEARS FROM JOAN!!!!!
+
 
 KoH_RichardTheLionheart.19 = { #sicilly
 	type = character_event

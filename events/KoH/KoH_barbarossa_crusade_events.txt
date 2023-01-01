@@ -4,7 +4,9 @@ KoH_barbarossa_crusade.101 = {
 	title = KoH_barbarossa_crusade.101.t
 	desc = KoH_barbarossa_crusade.101.d
 	theme = war
-	
+	override_background = {
+		event_background = throne_room
+	}
 	left_portrait = {
 		character = root
 		animation = personality_bold
@@ -31,7 +33,9 @@ KoH_barbarossa_crusade.1 = {
 	title = KoH_barbarossa_crusade.1.t
 	desc = KoH_barbarossa_crusade.1.d
 	theme = war
-	
+	override_background = {
+		event_background = throne_room
+	}
 	left_portrait = {
 		character = root
 		animation = personality_bold
@@ -69,14 +73,16 @@ KoH_barbarossa_crusade.1 = {
 		add_character_flag = has_had_KoH_barbarossa_crusade_1
 	}
 }
-
+#
 KoH_barbarossa_crusade.2 = {
 	type = character_event
 	title = KoH_barbarossa_crusade.2.t
 	desc = KoH_barbarossa_crusade.2.d
 	
 	theme = war
-	
+	override_background = {
+		event_background = plains
+	}
 	trigger = {
 		NOT = {
 			has_character_flag = has_had_KoH_barbarossa_crusade_2
@@ -86,6 +92,10 @@ KoH_barbarossa_crusade.2 = {
 	left_portrait = {
 		character = root
 		animation = personality_bold
+	}
+
+	immediate = {
+		hidden_effect = { every_army = { limit = { army_owner = root } set_army_location = province:3116 } }
 	}
 	
 	option = {
@@ -102,12 +112,17 @@ KoH_barbarossa_crusade.3 = {
 	type = character_event
 	title = KoH_barbarossa_crusade.3.t
 	desc = KoH_barbarossa_crusade.3.d
-	
 	theme = war
-	
+	override_background = {
+		event_background = hills
+	}
 	left_portrait = {
 		character = root
-		animation = personality_bold
+		animation = personality_honorable
+	}
+	right_portrait = {
+		character = title:k_hungary.holder
+		animation = personality_compassionate 
 	}
 
 	trigger = {
@@ -118,13 +133,14 @@ KoH_barbarossa_crusade.3 = {
 	
 	immediate = {
 		add_character_flag = has_had_KoH_barbarossa_crusade_3
+		hidden_effect = { every_army = { limit = { army_owner = root } set_army_location = province:3842 } }
 	}
 
 	option = {
 		name = KoH_barbarossa_crusade.3.a
 		trigger_event = {
 			id = KoH_barbarossa_crusade.4
-			days = 80
+			days = 30
 		}
 		change_variable = {
 			name = num_of_knights
@@ -155,7 +171,7 @@ KoH_barbarossa_crusade.3 = {
 		name = KoH_barbarossa_crusade.3.b
 		trigger_event = {
 			id = KoH_barbarossa_crusade.4
-			days = 40
+			days = 15
 		}
 		custom_tooltip = faster_but_no_men
 	}
@@ -165,9 +181,10 @@ KoH_barbarossa_crusade.4 = {
 	type = character_event
 	title = KoH_barbarossa_crusade.4.t
 	desc = KoH_barbarossa_crusade.4.d
-	
+	override_background = {
+		event_background = wilderness_forest_pine
+	}
 	theme = war
-	
 	left_portrait = {
 		character = root
 		animation = personality_bold
@@ -189,13 +206,14 @@ KoH_barbarossa_crusade.4 = {
             }
             save_scope_as = byzantium_ruler
         }
+		hidden_effect = { every_army = { limit = { army_owner = root } set_army_location = province:3656 } }
 	}
 	
 	option = {
 		name = KoH_barbarossa_crusade.4.a
 		scope:byzantium_ruler = {
 			trigger_event = {
-				id = KoH_barbarossa_crusade.3
+				id = KoH_barbarossa_crusade.5
 				days = 1
 			}
 		}
@@ -264,8 +282,23 @@ KoH_barbarossa_crusade.5 = {
 KoH_barbarossa_crusade.6 = {
 	type = character_event
 	title = KoH_barbarossa_crusade.6.t
-	desc = KoH_barbarossa_crusade.6.d
-	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_character_flag = denied_passage
+				}
+				desc = KoH_barbarossa_crusade.6.d
+			}
+			triggered_desc = {
+				trigger = {
+					has_character_flag = allowed_passage
+				}
+				desc = KoH_barbarossa_crusade.6.d.alternate
+			}
+		}
+	}
+
 	theme = war
 	
 	left_portrait = {
@@ -281,6 +314,16 @@ KoH_barbarossa_crusade.6 = {
 	
 	immediate = {
 		add_character_flag = has_had_KoH_barbarossa_crusade_6
+
+		if = {
+			limit = {
+				has_character_flag = allowed_passage
+			}
+			hidden_effect = { every_army = { limit = { army_owner = root } set_army_location = province:496 } }
+		}
+		else = {
+			hidden_effect = { every_army = { limit = { army_owner = root } set_army_location = province:3761 } }
+		}
 	}
 
 	option = {
@@ -298,7 +341,7 @@ KoH_barbarossa_crusade.6 = {
 		scope:barbarossa = {
 			trigger_event = {
 				id = KoH_barbarossa_crusade.7
-				days = 10
+				days = 4
 			}
 		}
 	}
@@ -368,6 +411,7 @@ KoH_barbarossa_crusade.8 = {
 	}
 	immediate = {
 		add_character_flag = has_had_KoH_barbarossa_crusade_8
+		hidden_effect = { every_army = { limit = { army_owner = root } set_army_location = province:5657 } }
 	}
 
 	option = {
@@ -403,6 +447,7 @@ KoH_barbarossa_crusade.9 = {
 	}
 	immediate = {
 		add_character_flag = has_had_KoH_barbarossa_crusade_9
+		hidden_effect = { every_army = { limit = { army_owner = root } set_army_location = province:759 } }
 	}
 	option = {
 		name = KoH_barbarossa_crusade.9.a
@@ -447,6 +492,7 @@ KoH_barbarossa_crusade.10 = {
 	}
 
 	immediate = {
+		hidden_effect = { every_army = { limit = { army_owner = root } set_army_location = province:5636 } }
 		add_character_flag = has_had_KoH_barbarossa_crusade_10
 	}
 	
@@ -478,10 +524,13 @@ KoH_barbarossa_crusade.11 = {
 	desc = KoH_barbarossa_crusade.11.d
 	
 	theme = war
+	override_background = {
+		event_background = wilderness_wetlands
+	}
 	
 	left_portrait = {
 		character = root
-		animation = personality_bold
+		animation = shock
 	}
 	
 	trigger = {
@@ -497,15 +546,25 @@ KoH_barbarossa_crusade.11 = {
                 primary_defender = title:e_arabia.holder
                 primary_attacker = title:k_jerusalem.holder
             }
-            remove_participant = title:e_hre.holder 
+            remove_participant = prev
         }
+		hidden_effect = { every_army = { limit = { army_owner = root } set_army_location = root.capital_province } }
+		title:k_jerusalem.holder = {
+			every_character_war = {
+				limit = {
+					primary_attacker = title:k_jerusalem.holder
+					primary_defender = title:e_arabia.holder
+				}
+				add_attacker = title:d_osterreich.holder
+			}
+		}
     }
 
 	option = {
 		name = KoH_barbarossa_crusade.11.a
 		set_variable = {
 			name = num_of_levies
-			value = 1000
+			value = 5000
 		}
 		set_variable = {
 			name = num_of_heavy_swords
@@ -519,26 +578,28 @@ KoH_barbarossa_crusade.11 = {
 			name = num_of_knights
 			value = 1
 		}
-		spawn_army = {
-			uses_supply = no
-			inheritable = yes
-			name = barbarossa_crusaders
-			men_at_arms = {
-				type = jerusalem_knights
-				stacks = var:num_of_knights
+		title:d_osterreich.holder = {
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = barbarossa_crusaders
+				men_at_arms = {
+					type = jerusalem_knights
+					stacks = var:num_of_knights
+				}
+				men_at_arms = {
+					type = crossbowmen
+					stacks = var:num_of_crossbows
+				}
+				men_at_arms = {
+					type = armored_footmen
+					stacks = var:num_of_heavy_swords
+				}
+				levies = {
+					value = var:num_of_levies
+				}
+				location = province:5910
 			}
-			men_at_arms = {
-				type = crossbowmen
-				stacks = var:num_of_crossbows
-			}
-			men_at_arms = {
-				type = armored_footmen
-				stacks = var:num_of_heavy_swords
-			}
-			levies = {
-				value = var:num_of_levies
-			}
-			location = province:5910
 		}
 		death = {
 			death_reason = death_drowned
@@ -566,10 +627,10 @@ KoH_barbarossa_crusade.12 = {
 
 	immediate = {
 		add_character_flag = has_had_KoH_barbarossa_crusade_12
+		hidden_effect = { every_army = { limit = { army_owner = root } set_army_location = province:5910 } }
 	}
 
 	option = {
-		
 		name = KoH_barbarossa_crusade.12.a
 		spawn_army = {
 			uses_supply = no

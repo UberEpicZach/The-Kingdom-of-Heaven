@@ -1,2634 +1,2059 @@
-﻿# ### Deadlier Tournaments
-# namespace = KOH_Tournaments
-# # Invitation   Test
-# KOH_Tournaments.1000 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1000.t
-# 	desc = KOH_Tournaments.1000.d
-# 	theme = war
+﻿# koh Tournament decision
 
-# 	trigger = {
-# 		NOT = { has_character_flag = had_event_KOH_Tournaments.1 }
-# 	}
+namespace = KOH_tourney
 
-# 	option = {
-# 		name = KOH_Tournaments.1000.a
-# 		add_add_prestige = 50
-# 		add_character_flag = attending_tournament
-# 		hidden_effect = { trigger_event = { id = KOH_Tournaments.1000 days = 300 } } # Safety catch flag clearing
-# 	}
-# 	option = {
-# 		name = KOH_Tournaments.1000.b
-		
-# 	}
-# }
-
-# # Start of tournament
-# KOH_Tournaments.1001 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1001.t
-# 	desc = KOH_Tournaments.1001.d
-# 	theme = war
-
-# 	option = {
-# 		name = KOH_Tournaments.1001.a
-# 		trigger = {
-# 			is_at_war = no
-# 		}
-# 		hidden_effect = {
-
-# 			add_character_flag = tournament_begins
-# 			add_character_flag = tournament_60_days
-# 			add_character_flag = attending_tournament
-
-
-# 			clear_variable_list = your_realm_peeps
-# 			every_vassal_or_below = {
-# 					add_to_variable_list = {
-# 						name = your_realm_peeps
-# 						target = prev
-# 					}
-# 			}
-# 			every_courtier = {
-# 					add_to_variable_list = {
-# 						name = your_realm_peeps
-# 						target = prev
-# 					}
-				
-# 			}
-# 			every_close_or_extended_family_member = {
-			
-# 					add_to_variable_list = {
-# 						name = your_realm_peeps
-# 						target = prev
-# 					}
-		
-# 			}
-
-			
-# 			every_in_list = {
-# 				variable = your_realm_peeps
-# 				limit = {
-# 					has_character_flag = attending_tournament
-# 				}
-# 				trigger_event = { id = KOH_Tournaments.1050 days = 1 }
-# 				#Set score
-# 				trigger_event = { id = KOH_Tournaments.1060 days = 46 }
-# 			}
-			
-			
-# 			#Injuries
-		
-# 			every_in_list = {
-# 				variable = your_realm_peeps
-# 				limit = {
-# 					has_character_flag = attending_tournament
-# 				}
-# 				trigger_event = { id = KOH_Tournaments.1050 days = 1 }
-# 				#Set score
-# 				trigger_event = { id = KOH_Tournaments.1060 days = 46 }
-# 			}
-# 			#select winner
-# 			trigger_event = { 	id = KOH_Tournaments.1061 days = 48 }
-# 			#select runner up
-# 			trigger_event = { 	id = KOH_Tournaments.1062 days = 49 }
-# 			#select third place
-# 			trigger_event = { 	id = KOH_Tournaments.1063 days = 50 }
-# 			#Notify winners
-# 			trigger_event = { 	id = KOH_Tournaments.1064 days = 51 }
-# 		}
-# 	}
-# 	option = {
-# 		name = KOH_Tournaments.1001.b
-# 		add_gold = 200
-# 		add_prestige = -100
+KOH_tourney.1 = {  # start event
+	type = character_event
+	title = KOH_tourney.1.t
+	desc = KOH_tourney.1.desc
 	
-# 		every_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = {
-# 				has_character_flag = attending_tournament
-# 			}
-# 			trigger_event = { 	id = KOH_Tournaments.1037 }
-# 		}
-# 		remove_character_flag = epic_tournament
-# 		remove_character_flag = do_not_disturb
-# 		remove_character_flag = attending_tournament
-# 	}
-# }
+	theme = feast_activity
+	left_portrait = root
 
-# # Tournament has been cancelled
-# KOH_Tournaments.1037 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1037.t
-# 	desc = KOH_Tournaments.1037.d
-# 	theme = war
-# 	option = {
-# 		name = KOH_Tournaments.1037.a
-# 		add_prestige = -50
-# 		remove_character_flag = attending_tournament
-# 		remove_character_flag = do_not_disturb
-# 	}
-# }
+	immediate = {
+		save_scope_as = host
+		
+		capital_province = {
+			save_scope_as = host_location
+		}
 
-# # Message about death
-# KOH_Tournaments.1038 = {
+		if = {
+			limit = {
+				any_courtier_or_guest = {
+					is_available_healthy_adult = yes
+					OR = {
+						is_knight = yes
+						is_landed = yes	
+						prowess > average_skill_rating								
+					}	
+									
+					NOT = { has_government = theocracy_government }
+					NOT = { this = scope:host }
+					
+					culture = {
+						has_innovation = innovation_knighthood
+					}
+					is_male = yes	
+
+					scope:host = {
+						NOT = {
+							is_target_in_variable_list = {
+								name = potential_tourney_participants
+								target = prev
+							}
+						}
+					}					
+				}
+			}
+
+			every_courtier_or_guest = {	
+				limit = {
+					is_available_healthy_adult = yes	
+					OR = {
+						is_knight = yes
+						is_landed = yes	
+						prowess > average_skill_rating								
+					}	
+									
+					NOT = { has_government = theocracy_government }
+					NOT = { this = scope:host }
+					
+					culture = {
+						has_innovation = innovation_knighthood
+					}
+					is_male = yes	
+								
+					scope:host = {
+						NOT = {
+							is_target_in_variable_list = {
+								name = potential_tourney_participants
+								target = prev
+							}
+						}
+					}
+				}
+				scope:host = {
+					add_to_variable_list = {
+						name = potential_tourney_participants
+						target = prev
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					highest_held_title_tier = tier_duchy
+					liege = { highest_held_title_tier = tier_kingdom }
+					liege = {
+						any_vassal_or_below = {
+							is_available_healthy_adult = yes							
+							OR = {
+								is_knight = yes
+				
+								is_landed = yes	
+								prowess > average_skill_rating			
+							}	
+									
+							NOT = { has_government = theocracy_government }
+							NOT = { this = scope:host }
+							
+							culture = {
+								has_innovation = innovation_knighthood
+							}
+							is_male = yes	
+
+									
+							scope:host = {
+								NOT = {
+									is_target_in_variable_list = {
+										name = potential_tourney_participants
+										target = prev
+									}
+								}
+							}
+						}
+					}
+				}	
+			}
+			liege = {
+				every_vassal_or_below = {
+					limit = {
+						is_available_healthy_adult = yes							
+						OR = {
+							is_knight = yes
+			
+							is_landed = yes	
+							prowess > average_skill_rating			
+						}	
+								
+						NOT = { has_government = theocracy_government }
+						NOT = { this = scope:host }
+						
+						culture = {
+							has_innovation = innovation_knighthood
+						}
+						is_male = yes
+								
+						scope:host = {
+							NOT = {
+								is_target_in_variable_list = {
+									name = potential_tourney_participants
+									target = prev
+								}
+							}
+						}
+					}
+					scope:host = {
+						add_to_variable_list = {
+							name = potential_tourney_participants
+							target = prev
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					highest_held_title_tier > tier_duchy
+					any_vassal_or_below = {
+						is_available_healthy_adult = yes							
+						OR = {
+							is_knight = yes
+
+							is_landed = yes	
+							prowess > average_skill_rating			
+						}	
+
+						NOT = { has_government = theocracy_government }
+						NOT = { this = scope:host }
+						
+						culture = {
+							has_innovation = innovation_knighthood
+						}
+						is_male = yes
+
+						scope:host = {
+							NOT = {
+								is_target_in_variable_list = {
+									name = potential_tourney_participants
+									target = prev
+								}
+							}
+						}
+					}
+				}	
+			}
+			every_vassal_or_below = {
+				limit = {
+					is_available_healthy_adult = yes							
+					OR = {
+						is_knight = yes
+		
+						is_landed = yes	
+						prowess > average_skill_rating			
+					}	
+							
+					NOT = { has_government = theocracy_government }
+					NOT = { this = scope:host }
+					
+					culture = {
+						has_innovation = innovation_knighthood
+					}
+					is_male = yes
+								
+					scope:host = {
+						NOT = {
+							is_target_in_variable_list = {
+								name = potential_tourney_participants
+								target = prev
+							}
+						}
+					}
+				}
+				scope:host = {
+					add_to_variable_list = {
+						name = potential_tourney_participants
+						target = prev
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					highest_held_title_tier = tier_duchy
+					liege = {
+						is_available_healthy_adult = yes							
+						OR = {
+							is_knight = yes
+			
+							is_landed = yes	
+							prowess > average_skill_rating			
+						}	
+								
+						NOT = { has_government = theocracy_government }
+						NOT = { this = scope:host }
+						
+						culture = {
+							has_innovation = innovation_knighthood
+						}
+						is_male = yes
+
+						scope:host = {
+							NOT = {
+								is_target_in_variable_list = {
+									name = potential_tourney_participants
+									target = prev
+								}
+							}
+						}
+					}
+				}	
+			}
+			liege = {
+				scope:host = {
+					add_to_variable_list = {
+						name = potential_tourney_participants
+						target = prev
+					}
+				}
+			}
+		}	
+	}
+	option = {
+		name = KOH_tourney.1.a		
+
+		scope:host = {
+			every_in_list = {
+				variable = potential_tourney_participants
+				limit = {
+					is_alive = yes
+					NOT = { this = scope:host }
+				}
+				trigger_event = {
+					id = KOH_tourney.2   #invite possible participants
+					days = 1
+				}				
+			}
+		}
+		
+		ai_chance = {
+			base = 100
+		}		
+	}
+	after = {
+		scope:host = {
+			trigger_event = {
+				id = KOH_tourney.3   #Start the tournament
+				days = 15
+			}
+		}
+	}
+}
+
+KOH_tourney.2 = {    #invite possible participants
+	type = letter_event
+	opening = KOH_tourney.2.t
+	desc = KOH_tourney.2.desc
+	sender = scope:host
+
+	override_background = {
+		event_background = courtyard
+	}
+	left_portrait = {
+		character = root
+		animation = happiness 
+	}
+	
+	trigger = {
+		scope:host = {
+			is_at_war = no
+			liege = { is_at_war = no }
+		}
+	}
+	
+	immediate = {
+		save_scope_as = possibleparticipant
+	}
+
+	option = {   #yes
+		name = KOH_tourney.2.a
+		
+
+		scope:host = {
+			add_to_variable_list = {
+				name = tourney_participants
+				target = prev
+			}
+		}
+		add_character_flag = attending_tournament
+		
+		if = {
+			limit = {
+				scope:host = {
+					has_character_flag = king_tier_tournament
+				}
+			}
+			add_prestige = 20			
+		}		
+		
+		else = {
+			add_prestige = 10
+		}	
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 25
+				OR = {
+					is_knight = yes
+				}				
+			}
+			modifier = {
+				add = 50
+				has_trait = brave
+			}
+			modifier = {
+				add = 25
+				prowess >= average_skill_rating
+			}
+			modifier = {
+				add = 50
+				prowess >= high_skill_rating
+			}			
+		}		
+	}
+	
+	option = {   #no
+		name = KOH_tourney.2.b
+		
+		if = {
+			limit = {
+				scope:host = {
+					has_character_flag = king_tier_tournament
+				}
+			}
+			add_prestige = -20			
+		}		
+		
+		else = {
+			add_prestige = -10
+		}
+		
+		ai_chance = {
+			base = 50
+			
+			modifier = {
+				add = 300
+				scope:host = {
+					highest_held_title_tier = tier_empire
+				}
+			}			
+			modifier = {
+				add = 50
+				has_trait = craven
+			}
+			modifier = {
+				add = 100
+				has_trait_rank = {
+					trait = wounded
+					rank > 0
+				}
+			}			
+			modifier = {
+				add = 25
+				NOT = { 
+					OR = {
+						is_knight = yes
+					} 
+				}
+			}
+			modifier = {
+				add = 200
+				AND = {
+					prowess < average_skill_rating
+					scope:host = {
+						highest_held_title_tier = tier_empire
+					}
+				}				
+			}			
+			modifier = {
+				add = 50
+				prowess < average_skill_rating
+			}
+			modifier = {
+				add = 100
+				prowess <= low_skill_rating
+			}
+			modifier = {
+				add = 300
+				AND = {
+					is_landed = no
+					scope:host = {
+						highest_held_title_tier = tier_empire
+					}
+				}	
+			}							
+		}	
+	}	
+}	
+
+KOH_tourney.3 = {   #Start the tournament
+	type = character_event
+	title = KOH_tourney.3.t
+	desc = KOH_tourney.3.desc
+
+	theme = default
+	override_background = {
+		event_background = courtyard
+	}
+	left_portrait = {
+		character = root
+		animation = happiness 
+	}
+	
+	trigger = {
+		is_at_war = no
+		liege = { is_at_war = no }
+	}	
+	
+	option = {   # no war, all good, start
+		name = KOH_tourney.3.a
+		
+		scope:host.capital_province = {
+			spawn_activity = {
+                type = activity_tourney
+                owner = scope:host
+            }
+		}
+		scope:host.activity = {
+			save_scope_as = tourney
+		}
+		scope:host = {
+			every_in_list = {
+				variable = tourney_participants
+				limit = {
+					is_alive = yes
+					NOT = { this = scope:host }					
+				}
+				# show_as_tooltip = {
+				# 	scope:tourney = {
+				# 		invite_character_to_activity = prev
+				# 		accept_invitation_for_character = prev
+				# 	}
+				# }
+				trigger_event = {
+					id = KOH_tourney.31   #welcome all participants
+				}				
+			}
+		}	
+		
+		trigger_event = {    
+			id = KOH_tourney.4   #check the count of willing participants
+			days = 1		
+		}
+		ai_chance = {
+			base = 100
+		}
+	}	
+}
+
+KOH_tourney.31 = {   #welcome all participants
+	type = character_event
+	title = KOH_tourney.31.t
+	desc = KOH_tourney.31.desc
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	left_portrait = {
+		character = this
+		animation = happiness 
+	}
+	
+	immediate = {
+		scope:host.activity = { save_scope_as = tourney }
+	}
+
+	option = {   
+		name = KOH_tourney.31.a
+		
+		scope:tourney = {
+			invite_character_to_activity = prev
+			accept_invitation_for_character = prev
+		}
+
+		ai_chance = {
+			base = 100
+		}		
+	}		
+}
+
+KOH_tourney.4 = {     #check the count of willing participants
+	type = character_event
+	hidden = yes	
+	
+	immediate = {
+		if = {
+			limit = {
+				scope:host = {
+					has_variable_list = tourney_participants
+					any_in_list = {
+						variable = tourney_participants
+						is_alive = yes
+						NOT = { has_character_flag = removed }						
+						count < 4
+					}
+				}			
+			}
+			scope:host = {	
+				every_in_list = {
+					variable = tourney_participants
+					trigger_event = {    
+						id = KOH_tourney.5		 #cancel the tourney due to lack of participants, Message send to all but the host
+					}		
+				}
+			}	
+			trigger_event = {    
+				id = KOH_tourney.52  #cancel the tourney due to lack of participants, Message send to the host 
+				days = 1		
+			}			
+		}
+		
+		else_if = { 
+ 			limit = {
+				scope:host = {
+					has_variable_list = tourney_participants
+					OR = {
+						AND = {
+							has_character_flag = king_tier_tournament
+							any_in_list = {
+								variable = tourney_participants
+								is_alive = yes
+								NOT = { has_character_flag = removed }
+								count > 16    # may be changed later
+							}							
+						}
+						AND = {
+							NOT = {has_character_flag = king_tier_tournament}
+							any_in_list = {
+								variable = tourney_participants
+								is_alive = yes
+								NOT = { has_character_flag = removed }
+								count > 16
+							}
+						}
+					}	
+				}			
+			}					
+
+			scope:host = {
+				random_in_list = {
+					variable = tourney_participants
+					limit = {				
+						is_alive = yes
+						NOT = { has_character_flag = removed }
+					}	
+					weight = {
+						base = 100
+						modifier = {
+							factor = { # Prowess directly reduces chance of beeing removed
+								value = 30 
+								subtract = prowess
+								divide = 30
+								min = 0.1 
+							}
+						}
+					}					
+					trigger_event = {    
+						id = KOH_tourney.8	  #randomly remove one participant
+					}
+				}	
+			}
+
+			trigger_event = {    
+				id = KOH_tourney.4    #reiteration
+				days = 1
+			}
+			
+		}
+		
+		else_if = { 
+ 			limit = {
+				scope:host = {
+					has_variable_list = tourney_participants
+					OR = {
+						AND = {
+							has_character_flag = king_tier_tournament
+							any_in_list = {
+								variable = tourney_participants
+								is_alive = yes
+								NOT = { has_character_flag = removed }
+								count <= 16   # may be changed later
+							}							
+						}
+						AND = {
+							NOT = {has_character_flag = king_tier_tournament}
+							any_in_list = {
+								variable = tourney_participants
+								is_alive = yes
+								NOT = { has_character_flag = removed }
+								count <= 16
+							}
+						}
+					}					
+				}			
+			}					
+
+			trigger_event = {    
+				id = KOH_tourney.9	   #proceed the tourney
+				days = 1
+			}			 		
+		}
+	}
+}	
+
+
+KOH_tourney.5 = {    #cancel the tourney due to lack of participants, Message send to all but the host
+	type = character_event
+	title = KOH_tourney.5.t
+	desc = KOH_tourney.5.desc
+
+	theme = default
+	override_background = {
+		event_background = courtyard
+	}
+	left_portrait = {
+		character = root
+		animation = worry 
+	}
+
+	option = {
+		name = KOH_tourney.5.a	
+		ai_chance = {
+			base = 100
+		}		
+	}
+	after = {
+		remove_character_flag = attending_tournament
+		remove_character_flag = OnlyMyJousts
+		remove_character_flag = removed
+		remove_character_flag = lost_tournament
+		remove_character_flag = jouster1
+		remove_character_flag = jouster2
+		remove_character_flag = winner
+	}
+}
+
+KOH_tourney.52 = {    #cancel the tourney due to lack of participants, Message send to the host
+	type = character_event
+	title = KOH_tourney.52.t
+	desc = KOH_tourney.52.desc
+
+	theme = default
+	override_background = {
+		event_background = courtyard
+	}
+	left_portrait = {
+		character = root
+		animation = worry 
+	}
+	
+	trigger = {
+		is_at_war = no
+		liege = { is_at_war = no }
+	}	
+
+	option = {
+		name = KOH_tourney.52.a		
+		
+		if = {
+			limit = {
+				has_character_flag = king_tier_tournament
+			}
+			add_gold = 150
+			add_prestige = -200			
+		}	
+		
+		else = {
+			add_gold = 75
+			add_prestige = -100
+		}	
+		
+		ai_chance = {
+			base = 100
+		}		
+	}
+	
+	after = {
+		scope:host = {
+			remove_character_flag = holding_epic_tournament	
+			remove_character_flag = king_tier_tournament
+			clear_variable_list = tourney_participants
+			clear_variable_list = potential_tourney_participants			
+		}	
+	}	
+}
+
+KOH_tourney.53 = {    #cancel the tourney due to death of host
+	type = character_event
+	title = KOH_tourney.53.t
+	desc = KOH_tourney.53.desc
+
+	theme = default
+	override_background = {
+		event_background = courtyard
+	}
+	left_portrait = {
+		character = root
+		animation = worry 
+	}
+
+	option = {
+		name = KOH_tourney.53.a	
+		ai_chance = {
+			base = 100
+		}		
+	}
+	after = {
+		remove_character_flag = attending_tournament
+		remove_character_flag = OnlyMyJousts
+		remove_character_flag = removed
+		remove_character_flag = lost_tournament
+		remove_character_flag = jouster1
+		remove_character_flag = jouster2
+		remove_character_flag = winner		
+	}
+}
+
+KOH_tourney.54 = {    #cancel the tourney due to started war - host
+	type = character_event
+	title = KOH_tourney.54.t
+	desc = KOH_tourney.54.desc
+
+	theme = default
+	override_background = {
+		event_background = courtyard
+	}
+	left_portrait = {
+		character = root
+		animation = worry 
+	}
+
+	option = {
+		name = KOH_tourney.54.a	
+		
+		if = {
+			limit = {
+				has_character_flag = king_tier_tournament
+			}
+			add_gold = 150
+			add_prestige = -200			
+		}	
+		
+		else = {
+			add_gold = 75
+			add_prestige = -100
+		}		
+		
+		ai_chance = {
+			base = 100
+		}		
+	}
+	after = {
+		remove_character_flag = holding_epic_tournament	
+		remove_character_flag = king_tier_tournament
+		clear_variable_list = tourney_participants
+		clear_variable_list = potential_tourney_participants	
+	}
+}
+
+KOH_tourney.55 = {    #cancel the tourney due to started war - participants
+	type = character_event
+	title = KOH_tourney.55.t
+	desc = KOH_tourney.55.desc
+
+	theme = default
+	override_background = {
+		event_background = courtyard
+	}
+	left_portrait = {
+		character = this
+		animation = worry 
+	}
+
+	option = {
+		name = KOH_tourney.55.a	
+		ai_chance = {
+			base = 100
+		}		
+	}
+	after = {
+		remove_character_flag = attending_tournament
+		remove_character_flag = OnlyMyJousts
+		remove_character_flag = removed
+		remove_character_flag = lost_tournament
+		remove_character_flag = jouster1
+		remove_character_flag = jouster2
+		remove_character_flag = winner		
+	}
+}
+
+KOH_tourney.8 = {    #randomly remove one participant
+	type = character_event
+	title = KOH_tourney.8.t
+	desc = KOH_tourney.8.desc
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	left_portrait = {
+		character = root
+		animation = worry 
+	}
+	
+	option = {
+		name = KOH_tourney.8.a	
+		add_character_flag = removed	
+		
+		if = {
+			limit = {
+				scope:host = {
+					has_character_flag = king_tier_tournament
+				}
+			}
+			add_prestige = -70			
+		}		
+		
+		else = {
+			add_prestige = -35
+		}		
+
+		ai_chance = {
+			base = 0
+		}		
+	}
+	option = {
+		name = KOH_tourney.8.b	
+		add_character_flag = removed
+		add_character_flag = OnlyMyJousts
+		
+		if = {
+			limit = {
+				scope:host = {
+					has_character_flag = king_tier_tournament
+				}
+			}
+			add_prestige = -70			
+		}		
+		
+		else = {
+			add_prestige = -35
+		}
+		
+		ai_chance = {
+			base = 100
+		}		
+	}	
+}
+
+KOH_tourney.9 = {     #proceed the tourney
+	type = character_event
+	title = KOH_tourney.9.t   
+	desc = KOH_tourney.9.desc   
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	
+	trigger = {
+		is_at_war = no
+		liege = { is_at_war = no }
+	}	
+		
+	immediate = {
+		scope:host = {
+			every_in_list = {
+				variable = tourney_participants
+				limit = {
+					is_alive = yes
+					NOT = { has_character_flag = removed }
+				}
+				trigger_event = {
+					id = KOH_tourney.6   #welcome all remaining participants
+				}				
+			}
+		}		
+	}
+	option = {
+		name = KOH_tourney.9.a	 
+		ai_chance = {
+			base = 100
+		}		
+	}	
+	after = {
+		trigger_event = {    
+			id = KOH_tourney.7    #generate the next matchup
+			days = 1
+		}	
+	}	
+}	
+
+KOH_tourney.7 = {	  #generate the next matchup
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		is_at_war = no
+		liege = { is_at_war = no }
+	}	
+	
+	immediate = {
+		
+		if = {
+			limit = {
+				scope:host = {
+					has_variable_list = tourney_participants
+					any_in_list = {
+						variable = tourney_participants
+						is_alive = yes
+						NOT = { has_character_flag = removed }	
+						NOT = { has_character_flag = lost_tournament }
+						NOT = { this = scope:host }						
+						count > 1
+					}
+				}			
+			}
+			scope:host = {
+				random_in_list = {
+					variable = tourney_participants
+					limit = {				
+						is_alive = yes
+						NOT = { has_character_flag = removed }
+						NOT = { has_character_flag = lost_tournament }
+						NOT = { this = scope:host }
+					}
+
+					weight = {   #results in bracket elimination, independent from the number of participants
+						base = 1000000
+						modifier = {
+							factor = { 
+								value = 1 
+								divide = var:bracket 
+							}
+						}
+					}
+					
+					add_character_flag = jouster1
+					save_scope_as = jouster1
+				}	
+			}
+			scope:host = {
+				random_in_list = {
+					variable = tourney_participants
+					limit = {				
+						is_alive = yes
+						NOT = { has_character_flag = removed }
+						NOT = { has_character_flag = lost_tournament }
+						NOT = { has_character_flag = jouster1 }
+						NOT = { this = scope:host }
+					}
+
+					weight = {   #results in bracket elimination, independent from the number of participants
+						base = 1000000
+						modifier = {
+							factor = { 
+								value = 1 
+								divide = var:bracket 
+							}
+						}
+					}
+					
+					add_character_flag = jouster2
+					save_scope_as = jouster2
+				}	
+			}
+
+			scope:host = {
+				every_in_list = {
+					variable = tourney_participants
+					limit = {
+						is_alive = yes
+						OR = {
+							NOT = { has_character_flag = OnlyMyJousts }
+							scope:jouster1 = this
+							scope:jouster2 = this
+						}
+					}
+					trigger_event = {
+						id = KOH_tourney.10   #inform all participants about the next matchup
+					}				
+				}
+			}
+
+			trigger_event = {
+				id = KOH_tourney.11   #inform the host about the next matchup and perform the joust. 
+				days = 1
+			}		
+		}
+		
+		else_if = {
+			limit = {
+				scope:host = {
+					has_variable_list = tourney_participants
+					any_in_list = {
+						variable = tourney_participants
+						is_alive = yes
+						NOT = { has_character_flag = removed }	
+						NOT = { has_character_flag = lost_tournament }
+						NOT = { this = scope:host }						
+						count = 1
+					}
+				}			
+			}
+
+			scope:host = {
+				every_in_list = {
+					variable = tourney_participants
+					limit = {
+						NOT = { has_character_flag = removed }	
+						NOT = { has_character_flag = lost_tournament }
+						NOT = { this = scope:host }
+						is_alive = yes						
+					}
+					add_character_flag = winner
+					save_scope_as = winner
+				}
+			}
+			
+			scope:loser = {
+				trigger_event = {
+					id = KOH_tourney.151   #inform the second place and handout prize money + prestige
+				}				
+			}				
+			
+			scope:host = {
+				every_in_list = {
+					variable = tourney_participants
+					limit = {
+						is_alive = yes
+						NOT = { has_character_flag = winner }
+					}
+					trigger_event = {
+						id = KOH_tourney.14   #inform all participantgs but the winner about the winner of the tournament
+					}				
+				}
+			}
+
+			scope:winner = {
+				trigger_event = {
+					id = KOH_tourney.15   #inform the winner and handout prize money + prestige
+				}				
+			}
+			
+			trigger_event = {
+				id = KOH_tourney.16   #inform the host about the winner of the tournament and finish
+				days = 1
+			}
+		}
+	}	
+}
+
+KOH_tourney.6 = {     #welcome all remaining participants
+	type = character_event
+	title = KOH_tourney.6.t
+	desc = KOH_tourney.6.desc
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	
+	immediate = {
+		set_variable = {
+			name = bracket
+			value = 1
+		}	
+	}
+	
+	option = {
+		name = KOH_tourney.6.a	
+		ai_chance = {
+			base = 0
+		}		
+	}
+	option = {
+		name = KOH_tourney.6.b	
+		add_character_flag = OnlyMyJousts
+		ai_chance = {
+			base = 100
+		}		
+	}	
+}
+
+KOH_tourney.10 = {   #inform all participants about the next matchup
+	type = character_event
+	title = KOH_tourney.10.t
+	desc = KOH_tourney.10.desc
+
+	theme = physical_health
+	override_background = {
+		event_background = army_camp
+	}
+	
+	left_portrait = {
+		character = scope:jouster1
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:jouster2
+		animation = happiness
+	}	
+	
+	option = {
+		name = KOH_tourney.10.a
+		ai_chance = {
+			base = 100
+		}		
+	}
+}
+
+KOH_tourney.14 = {    #inform all participants but the winner about the winner of the tournament
+	type = character_event
+	title = KOH_tourney.14.t
+	desc = KOH_tourney.14.desc
+
+	theme = feast_activity
+	#override_background = {
+	#	event_background = army_camp
+	#}
+	
+	left_portrait = {
+		character = scope:winner
+		animation = happiness
+	}
+	
+	immediate = {
+		set_variable = {
+			name = bracket
+			value = 1
+		}	
+	}
+
+	option = {
+		name = KOH_tourney.14.a	
+		remove_character_flag = attending_tournament
+		remove_character_flag = OnlyMyJousts
+		remove_character_flag = removed
+		remove_character_flag = lost_tournament
+		
+		add_prestige = 10
+
+		ai_chance = {
+			base = 100
+		}		
+	}
+}
+
+KOH_tourney.15 = {     #inform the winner and handout prize money + prestige
+	type = character_event
+	title = KOH_tourney.15.t
+	desc = KOH_tourney.15.desc
+
+	theme = feast_activity
+	#override_background = {
+	#	event_background = army_camp
+	#}
+	
+	left_portrait = {
+		character = scope:winner
+		animation = happiness
+	}
+	
+	immediate = {
+		set_variable = {
+			name = bracket
+			value = 1
+		}	
+	}	
+	
+	option = {
+		name = KOH_tourney.15.a	
+		
+		create_character_memory = {
+			type = KOH_tournament_winner 
+			participants = {
+				TourneyHost = scope:host
+			}
+		}		
+		
+		if = {
+			limit = {
+				scope:host = {
+					has_character_flag = king_tier_tournament
+				}
+			}
+			add_gold = 250
+			add_prestige = 1200			
+		}
+		
+		else = {
+			add_gold = 100
+			add_prestige = 300
+		}	
+		
+		add_character_modifier = {
+			modifier = Tourney_Winner
+			years = 5
+		}		
+		remove_character_flag = attending_tournament
+		remove_character_flag = OnlyMyJousts
+		remove_character_flag = removed
+		remove_character_flag = lost_tournament
+		remove_character_flag = jouster1
+		remove_character_flag = jouster2		
+		ai_chance = {
+			base = 100
+		}		
+	}
+	after = {
+		remove_character_flag = attending_tournament
+		remove_character_flag = OnlyMyJousts
+		remove_character_flag = removed
+		remove_character_flag = lost_tournament
+		remove_character_flag = jouster1
+		remove_character_flag = jouster2		
+	}
+}
+
+KOH_tourney.151 = {     #inform the second place and handout prize money + prestige
+	type = character_event
+	title = KOH_tourney.151.t
+	desc = KOH_tourney.151.desc
+
+	theme = feast_activity
+	#override_background = {
+	#	event_background = army_camp
+	#}
+	
+	left_portrait = {
+		character = scope:loser
+		animation = happiness
+	}
+	
+	immediate = {
+		set_variable = {
+			name = bracket
+			value = 1
+		}	
+	}	
+	
+	option = {
+		name = KOH_tourney.151.a	
+		
+		create_character_memory = {
+			type = koh_tournament_second_place
+			participants = {
+				TourneyHost = scope:host
+			}
+		}		
+		
+		if = {
+			limit = {
+				scope:host = {
+					has_character_flag = king_tier_tournament
+				}
+			}
+			add_gold = 50
+			add_prestige = 150			
+		}
+		
+		else = {
+			add_gold = 25
+			add_prestige = 75
+		}	
+		
+		add_character_modifier = {
+			modifier = Tourney_Second_Place
+			years = 5
+		}		
+		
+		ai_chance = {
+			base = 100
+		}		
+	}
+}
+
+KOH_tourney.16 = {    #inform the host about the winner of the tournament and finish
+	type = character_event
+	title = KOH_tourney.16.t
+	desc = KOH_tourney.16.desc
+
+	theme = feast_activity
+	#override_background = {
+	#	event_background = army_camp
+	#}
+	
+	left_portrait = {
+		character = scope:winner
+		animation = happiness
+		outfit_tags = { military_outfit } 
+	}
+	
+	trigger = {
+		is_at_war = no
+		liege = { is_at_war = no }
+	}	
+	
+	option = {
+		name = KOH_tourney.16.a	
+		scope:winner = {
+			remove_character_flag = winner
+		}
+		show_as_tooltip = {
+			scope:winner = {
+				if = {
+					limit = {
+						scope:host = {
+							has_character_flag = king_tier_tournament
+						}
+					}
+					add_gold = 250
+					add_prestige = 1200			
+				}
+				
+				else = {
+					add_gold = 100
+					add_prestige = 300
+				}
+				add_character_modifier = {
+					modifier = Tourney_Winner
+					years = 5
+				}	
+			}	
+		}
+		ai_chance = {
+			base = 100
+		}		
+	}
+	
+	after = {
+		scope:host = {
+			remove_character_flag = holding_epic_tournament
+			remove_character_flag = king_tier_tournament			
+			clear_variable_list = tourney_participants
+			clear_variable_list = potential_tourney_participants	
+		}
+	}	
+}
+
+KOH_tourney.11 = {    #inform the host about the next matchup and perform the joust. 
+	type = character_event
+	title = KOH_tourney.11.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					scope:host = {
+						NOT = {
+							has_character_flag = tourney_round_one
+						}
+					}
+				}
+				desc = KOH_tourney.11.desc.tourney_round_one
+			}
+			triggered_desc = {
+				trigger = {
+					scope:host = {
+						has_character_flag = tourney_round_one
+						NOT = {
+							has_character_flag = tourney_round_two
+						}
+					}
+				}
+				desc = KOH_tourney.11.desc.tourney_round_two
+			}
+			triggered_desc = {
+				trigger = {
+					scope:host = {
+						has_character_flag = tourney_round_one
+						has_character_flag = tourney_round_two
+						NOT = {
+							has_character_flag = tourney_round_three
+						}
+					}
+				}
+				desc = KOH_tourney.11.desc.tourney_round_three
+			}
+			triggered_desc = {
+				trigger = {
+					scope:host = {
+						has_character_flag = tourney_round_one
+						has_character_flag = tourney_round_two
+						has_character_flag = tourney_round_three
+						NOT = {
+							has_character_flag = tourney_round_four
+						}
+					}
+				}
+				desc = KOH_tourney.11.desc.tourney_round_four
+			}
+			triggered_desc = {
+				trigger = {
+					scope:host = {
+						has_character_flag = tourney_round_one
+						has_character_flag = tourney_round_two
+						has_character_flag = tourney_round_three
+						has_character_flag = tourney_round_four
+						NOT = {
+							has_character_flag = tourney_round_five
+						}
+					}
+				}
+				desc = KOH_tourney.11.desc.tourney_round_five
+			}
+			desc = KOH_tourney.11.desc
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = tourney_round_one
+				}
+			}
+			add_character_flag = tourney_round_one
+		}
+		else_if = {
+			limit = {
+				has_character_flag = tourney_round_one
+				NOT = {
+					has_character_flag = tourney_round_two
+				}
+			}
+			add_character_flag = tourney_round_two
+		}
+		else_if = {
+			limit = {
+				has_character_flag = tourney_round_one
+				has_character_flag = tourney_round_two
+				NOT = {
+					has_character_flag = tourney_round_three
+				}
+			}
+			add_character_flag = tourney_round_three
+		}
+		else_if = {
+			limit = {
+				has_character_flag = tourney_round_one
+				has_character_flag = tourney_round_two
+				has_character_flag = tourney_round_three
+				NOT = {
+					has_character_flag = tourney_round_four
+				}
+			}
+			add_character_flag = tourney_round_four
+		}
+		else = {
+			limit = {
+				has_character_flag = tourney_round_one
+				has_character_flag = tourney_round_two
+				has_character_flag = tourney_round_three
+				has_character_flag = tourney_round_four
+				NOT = {
+					has_character_flag = tourney_round_five
+				}
+			}
+			add_character_flag = tourney_round_five
+		}
+	}
+
+	theme = physical_health
+	override_background = {
+		event_background = army_camp
+	}
+	
+	left_portrait = {
+		character = scope:jouster1
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:jouster2
+		animation = happiness
+	}
+
+	trigger = {
+		is_at_war = no
+		liege = { is_at_war = no }
+	}	
+	
+	option = {
+		name = KOH_tourney.11.a	
+		
+		hidden_effect = {
+			trigger_event = {     # recursive master event
+				id = KOH_tourney.121   # begin joust calculation
+			}
+		}
+		ai_chance = {
+			base = 100
+		}		
+	}
+}
+
+KOH_tourney.111 = {    #you were wounded
+	type = character_event
+	title = KOH_tourney.111.t
+	desc = KOH_tourney.111.desc
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+
+	option = {
+		name = KOH_tourney.111.a	
+		increase_wounds_effect = { REASON = duel }
+		
+		ai_chance = {
+			base = 100
+		}		
+	}
+}
+
+KOH_tourney.112 = {    #you were killed
+	type = character_event
+	title = KOH_tourney.112.t
+	desc = KOH_tourney.112.desc
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	
+	left_portrait = {
+		character = this
+		animation = worry
+	}
+
+	option = {
+		name = KOH_tourney.112.a	
+		death = { death_reason = death_jousting_tournament }
+		
+		ai_chance = {
+			base = 100
+		}		
+	}
+}
+
+KOH_tourney.12 = {    #inform participants about the match result
+	type = character_event
+	title = KOH_tourney.12.t
+	desc = KOH_tourney.12.desc
+
+	theme = recovery
+	override_background = {
+		event_background = army_camp
+	}
+	
+	left_portrait = {
+		character = scope:victor
+		animation = happiness 
+	}
+	right_portrait = {
+		character = scope:loser
+		animation = pain 
+	}	
+	
+	trigger = {
+		scope:host = {
+			is_at_war = no
+			liege = { is_at_war = no }
+		}	
+	}	
+	
+	option = {
+		name = KOH_tourney.12.a
+		if = {
+			limit = {
+				this = scope:victor
+			}
+			if = {
+				limit = {
+					scope:host = {
+						has_character_flag = king_tier_tournament
+					}
+				}
+				add_prestige = 20				
+			}		
+			
+			else = {
+				add_prestige = 10
+			}			
+		}
+		if = {
+			limit = {
+				this = scope:loser
+			}
+			if = {
+				limit = {
+					scope:host = {
+						has_character_flag = king_tier_tournament
+					}
+					is_alive = yes
+				}
+				add_prestige = -20				
+			}		
+			
+			else_if = {
+				limit = {
+					is_alive = yes
+				}
+				add_prestige = -10
+			}
+		}		
+		ai_chance = {
+			base = 100
+		}		
+	}
+}
+# MADE INTO TOAST
+# KOH_tourney.13 = {    #inform host about the match result
 # 	type = character_event
-# 	title = KOH_Tournaments.1038.t
-# 	desc = KOH_Tournaments.1038.d
-# 	theme = war
+# 	title = KOH_tourney.13.t
+# 	desc = KOH_tourney.13.desc
+
+# 	theme = recovery
+# 	override_background = {
+# 		event_background = army_camp
+# 	}
+	
+# 	left_portrait = {
+# 		character = scope:victor
+# 		animation = happiness 
+# 	}
+# 	right_portrait = {
+# 		character = scope:loser
+# 		animation = pain 
+# 	}
+
 # 	trigger = {
-# 		NOT = { has_character_flag = no_msg_death }
-# 		NOT = { has_character_flag = tournament_has_ended }
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1038.a
-# 	}
-# 	option = {
-# 		name = KOH_Tournaments.4.b
-# 		add_character_flag = no_msg_death
-# 	}
-# }
-
-# # Message about maimed
-# KOH_Tournaments.1039 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1039.t
-# 	desc = KOH_Tournaments.1039.d
-# 	theme = war
-# 	trigger = {
-# 		NOT = { has_character_flag = no_msg_maimed }
-# 		NOT = { has_character_flag = tournament_has_ended }
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1039.b
-# 	}
-# 	option = {
-# 		name = KOH_Tournaments.1039.b
-# 		add_character_flag = no_msg_maimed
-# 	}
-# }
-
-# # Message about wounded
-# KOH_Tournaments.1040 = {
-
-# 	title = KOH_Tournaments.1040.t
-# 	desc = KOH_Tournaments.1040.d
-# 	theme = war
-# 	trigger = {
-# 		NOT = { has_character_flag = no_msg_wounded }
-# 		NOT = { has_character_flag = tournament_has_ended }
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1040.a
-# 	}
-# 	option = {
-# 		name = KOH_Tournaments.1040.b
-# 		add_character_flag = no_msg_wounded
-# 	}
-# }
-
-# # Tournament is over
-# KOH_Tournaments.1002 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1002.t
-# 	desc = KOH_Tournaments.1002.d
-# 	theme = war
-# 	option = {
-# 		name = KOH_Tournaments.1002.a
-# 		custom_tooltip = KOH_Tournaments.1002.a.tt
-# 		remove_character_flag = tournament_60_days
-# 		remove_character_flag = tournament_begins
-# 		remove_character_flag = attending_tournament
-# 		remove_character_flag = attending_tournament_event
-# 		remove_character_flag = tournament_third_place
-# 		remove_character_flag = tournament_second_place
-# 		remove_character_flag = tournament_winner
-# 		add_character_flag = tournament_has_ended
-# 		clear_variable_list = your_realm_peeps
-# 		every_vassal_or_below = {
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-# 			}
-# 		every_courtier = {
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-# 			}
-# 		every_close_or_extended_family_member = {
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 			}
-# 		}
-
-# 		every_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = {
-# 				has_character_flag = attending_tournament
-# 			}
-# 			add_character_flag = tournament_has_ended
-# 			remove_character_flag = tournament_third_place
-# 			remove_character_flag = tournament_second_place
-# 			remove_character_flag = tournament_winner
-# 			hidden_effect = {
-# 				add_add_opinion = {
-# 					modifier = pleased_opinion
-# 					target = root
-# 				}
-# 			}
-# 			remove_character_flag = attending_tournament
-# 			remove_character_flag = attending_tournament_event
-# 			remove_character_flag = do_not_disturb
-# 		}
-# 		every_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = {
-# 				has_character_flag = attending_tournament
-# 				NOT = {
-# 					character = root
-# 				}
-# 				NOT = {
-# 					has_character_flag = tournament_third_place
-# 				}
-# 				NOT = {
-# 					has_character_flag = tournament_second_place
-# 				}
-# 				NOT = {
-# 					has_character_flag = tournament_winner
-# 				}
-# 			}
-# 			hidden_effect = {
-# 				random_list = {
-# 					10 = {
-# 						trigger_event = { id = KOH_Tournaments.1003 }
-# 					}
-# 					10 = {
-# 						trigger_event = { id = KOH_Tournaments.1004 }
-# 					}
-# 					10 = {
-# 						trigger_event = { id = KOH_Tournaments.1005 }
-# 					}
-# 					10 = {
-# 						trigger_event = { id = KOH_Tournaments.1006 }
-# 					}
-# 					10 = {
-# 						trigger_event = { id = KOH_Tournaments.1007 }
-# 					}
-# 					10 = {
-# 						trigger_event = { id = KOH_Tournaments.1008 }
-# 					}
-# 				}
-# 				add_add_opinion = {
-# 					modifier = pleased_opinion
-# 					who = PREV
-# 				}
-# 				add_character_flag = tournament_has_ended
-# 				remove_character_flag = attending_tournament
-# 				remove_character_flag = attending_tournament_event
-# 				remove_character_flag = do_not_disturb
-# 				remove_character_flag = tourney_score_15
-# 				remove_character_flag = tourney_score_14
-# 				remove_character_flag = tourney_score_13
-# 				remove_character_flag = tourney_score_12
-# 				remove_character_flag = tourney_score_11
-# 				remove_character_flag = tourney_score_10
-# 				remove_character_flag = tourney_score_09
-# 				remove_character_flag = tourney_score_08
-# 				remove_character_flag = tourney_score_07
-# 				remove_character_flag = tourney_score_06
-# 				remove_character_flag = tourney_score_05
-# 				remove_character_flag = tourney_score_04
-# 				remove_character_flag = tourney_score_03
-# 				remove_character_flag = tourney_score_02
-# 				remove_character_flag = tourney_score_01
-# 				remove_character_flag = tourney_score_00
-# 			}
-# 		}
-# 	}
-# }
-
-# # End of tournament event
-# KOH_Tournaments.1003 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1003.t
-# 	desc = KOH_Tournaments.1003.d
-# 	theme = war
-
-# 	option = {
-# 		name = KOH_Tournaments.1003.a
-# 		add_prestige = 50
-# 	}
-# }
-
-# # End of tournament event
-# KOH_Tournaments.1004 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1004.t
-# 	desc = KOH_Tournaments.1004.d
-# 	theme = war
-# 	option = {
-# 		name = KOH_Tournaments.1004.a
-# 		add_prestige = 100
-# 	}
-# }
-
-# # End of tournament event
-# KOH_Tournaments.1005 = {
-# 		type = character_event 
-# 	title = KOH_Tournaments.1005.t
-# 	desc = KOH_Tournaments.1005.d
-# 	theme = war
-# 	option = {
-# 		name = KOH_Tournaments.1005.a
-# 		add_prestige = -50
-# 	}
-# }
-
-# # End of tournament event
-# KOH_Tournaments.1006 = {
-# 	type = character_event 
-# 	title = KOH_Tournaments.1006.t
-# 	desc = KOH_Tournaments.1006.d
-# 	theme = war
-# 	option = {
-# 		name = KOH_Tournaments.1006.a
-# 		add_prestige = -100
-# 	}
-# }
-
-# # End of tournament event
-# KOH_Tournaments.1007 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1007
-# 	desc = KOH_Tournaments.1007
-# 	theme = war
-# 	option = {
-# 		name = KOH_Tournaments.1007.a
-# 		add_martial_skill = 1
-# 	}
-# }
-
-# # End of tournament event
-# KOH_Tournaments.1008 = {
-# 		type = character_event 
-# 	title = KOH_Tournaments.1008.t
-# 	desc = KOH_Tournaments.1008.d
-# 	theme = war
-
-# 	option = {
-# 		name = KOH_Tournaments.1008.a
-# 		add_martial_skill = -1
-# 	}
-# }
-
-# # Character is killed
-# KOH_Tournaments.1009 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1009.t
-# 	desc = KOH_Tournaments.1009.d 
-# 	theme = war
-# 	trigger = {
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		top_liege = {
-# 			has_character_flag = tournament_begins
-# 			NOT = {
-# 				has_character_flag = tournament_has_ended
-# 			}
-# 		}
-# 	}
-
-# 	immediate = {
-# 		remove_character_flag = attending_tournament
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1009.a
-# 		death = {
-# 			death_reason = death_jousting_tournament
-# 		}
-# 		hidden_effect = {
-# 			if = {
-# 				limit = {
-# 					top_liege = {
-# 						NOT = {
-# 							character = ROOT
-# 						}
-# 					}
-# 				}
-# 				top_liege = { trigger_event = KOH_Tournaments.1038 }
-# 			}
-# 		}
-# 	}
-# }
-
-# # Character is maimed
-# KOH_Tournaments.1010 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1010,t
-# 	desc = KOH_Tournaments.1010.d
-# 	theme = war
-
-# 	trigger = {
-# 		AND = {
-# 			has_character_flag = attending_tournament
-# 			NOT = {
-# 				has_trait = maimed
-# 			}
-# 			NOT = {
-# 				has_character_flag = tournament_has_ended
-# 			}
-# 			top_liege = {
-# 				has_character_flag = tournament_begins
-# 				NOT = {
-# 					has_character_flag = tournament_has_ended
-# 				}
-# 			}
-# 		}
+# 		is_at_war = no
+# 		liege = { is_at_war = no }
 # 	}	
-
-# 	immediate = {
-# 		remove_character_flag = attending_tournament
-# 		remove_character_flag = do_not_disturb
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1010.a
-# 		add_trait = maimed
-# 		hidden_effect = {
-# 			if = {
-# 				limit = {
-# 					top_liege = {
-# 						NOT = {
-# 							character = ROOT
-# 						}
-# 					}
-# 				}
-# 				top_liege = { trigger_event = { id = KOH_Tournaments.1039 } }
-# 			}
-# 		}
-# 	}
-# }
-
-# # Character is wounded
-# KOH_Tournaments.1011 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1011.t
-# 	desc = KOH_Tournaments.1011.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = {
-# 			has_trait = wounded
-# 		}
-# 		NOT = {
-# 			has_trait = maimed
-# 		}
-# 		top_liege = {
-# 			has_character_flag = tournament_begins
-# 			NOT = {
-# 				has_character_flag = tournament_has_ended
-# 			}
-# 		}
-# 	}
-
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1011.a
-# 		add_trait = wounded
-# 		hidden_tooltip = {
-# 			if = {
-# 				limit = {
-# 					top_liege = {
-# 						NOT = {
-# 							character = ROOT
-# 						}
-# 					}
-# 				}
-# 				top_liege = { trigger_event = { 	id = KOH_Tournaments.1040 } }
-# 			}
-# 		}
-# 	}
-# }
-
-# # Character becomes craven
-# KOH_Tournaments.1012 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1012.t
-# 	desc = KOH_Tournaments.1012.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = {
-# 			has_trait = craven
-# 		}
-# 		top_liege = {
-# 			has_character_flag = tournament_begins
-# 			NOT = {
-# 				has_character_flag = tournament_has_ended
-# 			}
-# 		}
-# 	}
-
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1012
-# 		add_trait = craven
-# 	}
-# }
-
-# # Character becomes brave
-# KOH_Tournaments.1013 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1013.t
-# 	desc = KOH_Tournaments.1013.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = {
-# 			has_trait = brave
-# 		}
-# 		top_liege = {
-# 			has_character_flag = tournament_begins
-# 			NOT = {
-# 				has_character_flag = tournament_has_ended
-# 			}
-# 		}
-# 	}
-
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1013
-# 		add_trait = brave
-# 	}
-# }
-
-# # Character becomes tough soldier
-# KOH_Tournaments.1014 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1014.t
-# 	desc = KOH_Tournaments.1014.d	
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		has_trait = education_martial_1
-# 		top_liege = {
-# 			has_character_flag = tournament_begins
-# 			NOT = {
-# 				has_character_flag = tournament_has_ended
-# 			}
-# 		}
-# 	}
-
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1014
-# 		remove_trait = education_martial_1
-# 		add_trait = education_martial_2
-# 	}
-# }
-
-# # Character becomes skilled tactician
-# KOH_Tournaments.1015 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1015.t
-# 	desc = KOH_Tournaments.1015.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		has_trait = education_martial_2
-# 		top_liege = {
-# 			has_character_flag = tournament_begins
-# 			NOT = {
-# 				has_character_flag = tournament_has_ended
-# 			}
-# 		}
-# 	}
-
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1015.a
-# 		remove_trait = education_martial_2
-# 		add_trait = education_martial_3
-# 	}
-# }
-
-# # Character becomes brilliant strategist
-# KOH_Tournaments.1016 = {
-# 		type = character_event 
-# 	title = KOH_Tournaments.1016.t
-# 	desc = KOH_Tournaments.1016.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		has_trait = education_martial_3
-# 		top_liege = {
-# 			has_character_flag = tournament_begins
-# 			NOT = {
-# 				has_character_flag = tournament_has_ended
-# 			}
-# 		}
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1016.a
-# 		remove_trait = education_martial_3
-# 		add_trait = education_martial_4
-# 	}
-# }
-
-# # Character becomes skilled tactician
-# KOH_Tournaments.1017 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1017
-# 	desc = KOH_Tournaments.1017
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		has_trait = education_martial_4
-# 		top_liege = {
-# 			has_character_flag = tournament_begins
-# 			NOT = {
-# 				has_character_flag = tournament_has_ended
-# 			}
-# 		}
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1017.a
-# 		remove_trait = education_martial_4
-# 		add_trait = education_martial_3
-# 	}
-# }
-
-# # Character becomes tough soldier
-# KOH_Tournaments.1018 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1018.t
-# 	desc = KOH_Tournaments.1018.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		has_trait = education_martial_3
-# 		top_liege = {
-# 			has_character_flag = tournament_begins
-# 			NOT = {
-# 				has_character_flag = tournament_has_ended
-# 			}
-# 		}
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1018.a
-# 		remove_trait = education_martial_3
-# 		add_trait = education_martial_2
-# 	}
-# }
-
-# # Character becomes misguided warrior
-# KOH_Tournaments.1019 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1019.t
-# 	desc = KOH_Tournaments.1019.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		has_trait = education_martial_2
-# 		top_liege = {
-# 			has_character_flag = tournament_begins
-# 			NOT = {
-# 				has_character_flag = tournament_has_ended
-# 			}
-# 		}
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1019.a
-# 		remove_trait = education_martial_2
-# 		add_trait = education_martial_1
-# 	}
-# }
-
-# # Character gets top placement in the tournament
-# KOH_Tournaments.1020 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1020.t
-# 	theme = war
-# 	desc = {
-# 		trigger = {
-# 			has_character_flag = tournament_winner
-# 		}
-# 		text = KOH_Tournaments.1020.da
-# 	}
-
-# 	desc = {
-# 		trigger = {
-# 			has_character_flag = tournament_second_place
-# 		}
-# 		text = KOH_Tournaments.1020.db
-# 	}
-
-# 	desc = {
-# 		trigger = {
-# 			has_character_flag = tournament_third_place
-# 		}
-# 		text = KOH_Tournaments.1020.dc
-# 	}
-
-# 	trigger = {
-# 		AND = {
-# 			has_character_flag = attending_tournament
-# 			OR = {
-# 				has_character_flag = tournament_winner
-# 				has_character_flag = tournament_second_place
-# 				has_character_flag = tournament_third_place
-# 			}
-# 		}
-# 	}
-
-# 	option = {
-# 		trigger = {
-# 			has_character_flag = tournament_winner
-# 		}
-# 		name = KOH_Tournaments.1020.a
-# 		add_gold = 100
-# 		add_prestige = 300
-# 		hidden_effect= {
-# 			if = {
-# 				limit = {
-# 					top_liege = {
-# 						NOT = {
-# 							character = ROOT
-# 						}
-# 					}
-# 				}
-# 				top_liege = { trigger_event = { id = KOH_Tournaments.1034 days = 3} }
-# 			}
-# 		}
-# 	}
-
-# 	option = {
-# 		trigger = {
-# 			has_character_flag = tournament_second_place
-# 		}
-# 		name = KOH_Tournaments.1020.b
-# 		add_gold = 75
-# 		add_prestige = 250
-# 		hidden_effect = {
-# 			if = {
-# 				limit = {
-# 					top_liege = {
-# 						NOT = {
-# 							character = ROOT
-# 						}
-# 					}
-# 				}
-# 				top_liege = { trigger_event = {  id = KOH_Tournaments.1035 days = 2 } }
-# 			}
-# 		}
-# 	}
-
-# 	option = {
-# 		trigger = {
-# 			has_character_flag = tournament_third_place
-# 		}
-# 		name = KOH_Tournaments.1020.c
-# 		add_gold = 50
-# 		add_prestige = 200
-# 		hidden_effect = {
-# 			if = {
-# 				limit = {
-# 					top_liege = {
-# 						NOT = {
-# 							character = ROOT
-# 						}
-# 					}
-# 				}
-# 				top_liege = { trigger_event = { id = KOH_Tournaments.1036 days = 1} }
-# 			}
-# 		}
-# 	}
-# }
-
-# # Inform about winner
-# KOH_Tournaments.1034 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1034.t
-# 	desc = KOH_Tournaments.1034.d
-# 	theme = war
-# 	option = {
-# 		name = KOH_Tournaments.1034.a
-# 		add_opinion = {
-# 			modifier = pleased_opinion
-# 			who = FROM
-# 		}
-# 		trigger_event = KOH_Tournaments.1002 
-# 	}
-# }
-
-# # Inform about second place
-# KOH_Tournaments.1035 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1035.t
-# 	desc = KOH_Tournaments.1035.d
-# 	theme = war
-# 	option = {
-# 		name = KOH_Tournaments.1035.a
-# 		add_opinion = {
-# 			modifier = pleased_opinion
-# 			who = FROM
-# 		}
-# 	}
-# }
-
-# # Inform about third place
-# KOH_Tournaments.1036 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1036.t
-# 	desc = KOH_Tournaments.1036.d
-# 	theme = war
-# 	option = {
-# 		name = KOH_Tournaments.1036.a
-# 		add_opinion = {
-# 			modifier = pleased_opinion
-# 			who = FROM
-# 		}
-# 	}
-# }
-
-# # Character becomes homosexual
-# KOH_Tournaments.1023 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1023.t
-# 	desc = KOH_Tournaments.1023.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_sexuality = homosexual
-# 			has_trait = celibate
-# 		}
-# 		NOT = { has_trait = eunuch }
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1023.a
-# 		set_sexuality = homosexual
-# 	}
-# }
-
-# # Character becomes syphilitic
-# KOH_Tournaments.1024 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1024.t
-# 	desc = KOH_Tournaments.1024.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_trait = great_pox
-# 			has_trait = celibate
-# 		}
-# 		NOT = { has_trait = eunuch }
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1024
-# 		add_trait = great_pox
-# 	}
-# }
-
-# # Character becomes drunkard
-# KOH_Tournaments.1025 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1025.t 
-# 	desc = KOH_Tournaments.1025.d 
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		NOT = {
-# 			has_trait = drunkard
-# 		}
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1025
-# 		add_trait = drunkard
-# 	}
-# }
-
-# # Character becomes duelist
-# KOH_Tournaments.1026 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1026.t
-# 	desc = KOH_Tournaments.1026.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 		martial =< 5
-# 		NOR = {
-# 			has_trait = content
-# 			has_trait = kind
-# 			has_trait = craven
-# 		}
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1026.a
-# 		add_trait = duelist
-# 	}
-# }
-
-# # Character gains intrigue
-# KOH_Tournaments.1027 = {
-# 		type = character_event 
-# 	title = KOH_Tournaments.1027.t
-# 	desc = KOH_Tournaments.1027.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1027.a
-# 		add_intrigue_skill = 1
-# 	}
-# }
-
-# # Character loses intrigue
-# KOH_Tournaments.1028 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1028.t
-# 	desc = KOH_Tournaments.1028.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1028.a
-# 		add_intrigue_skill = -1
-# 	}
-# }
-
-# # Character gains stewardship
-# KOH_Tournaments.1029 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1029.t
-# 	desc = KOH_Tournaments.1029.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1029.a
-# 		add_stewardship_skill = 1
-# 	}
-# }
-
-# # Character loses stewardship
-# KOH_Tournaments.1030 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1030.t
-# 	desc = KOH_Tournaments.1030.d
-# 	theme = war
-
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 	}
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1030.a
-# 		change_stewardship = -1
-# 	}
-# }
-
-# # Character gains diplomacy
-# KOH_Tournaments.1031 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1031.t
-# 	desc = KOH_Tournaments.1031.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 	}
-
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1031.a
-# 		add_diplomacy_skill = 1
-# 	}
-# }
-
-# # Character loses diplomacy
-# KOH_Tournaments.1032 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1032.t
-# 	desc = KOH_Tournaments.1032.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = attending_tournament
-# 		NOT = {
-# 			has_character_flag = tournament_has_ended
-# 		}
-# 		NOT = { has_character_flag = attending_tournament_event }
-# 	}
-
-
-# 	immediate = {
-# 		add_character_flag = attending_tournament_event
-# 	}
-
-# 	option = {
-# 		name = KOH_Tournaments.1032.a
-# 		change_diplomacy = -1
-# 	}
-# }
-
-# # Invitations have gone out
-# KOH_Tournaments.1033 = {
-# 	type = character_event
-# 	title = KOH_Tournaments.1033.t
-# 	desc = KOH_Tournaments.1033.d
-# 	theme = war
-# 	option = {
-# 		name = KOH_Tournaments.1033
-# 		hidden_effect = {
-# 			trigger_event = { 	id = KOH_Tournaments.1001 days = 10 } # Tournament start
-# 			clear_variable_list = your_realm_peeps
-# 			every_vassal_or_below = {
-		
-# 					add_to_variable_list = {
-# 						name = your_realm_peeps
-# 						target = prev
-# 					}
-		
-# 			}
-# 			every_courtier = {
-			
-# 					add_to_variable_list = {
-# 						name = your_realm_peeps
-# 						target = prev
-# 					}
-			
-# 			}
-# 			every_close_or_extended_family_member = {
-			
-# 					add_to_variable_list = {
-# 						name = your_realm_peeps
-# 						target = prev
-# 					}
-				
-# 			}
-
-# 			every_in_list = {
-# 				variable = your_realm_peeps
-# 				limit = {
-# 					NOT = { has_council_position = councillor_court_chaplain }
-# 					age >= 16
-# 					NOT = { age = 50 }
-# 					NOT = { has_trait = incapable }
-# 					is_imprisoned = no	
-# 					is_female = no
-# 				}
-# 				remove_character_flag = tournament_has_ended
-# 				trigger_event = { id = KOH_Tournaments.1000 }
-# 			}
-# 		}
-# 	}
-# }
-
-# # Ruler has died, the tournament is over
-# KOH_Tournaments.1041 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1041.t
-# 	desc = KOH_Tournaments.1041.d
-# 	theme = war
-# 	trigger = {
-# 		has_character_flag = tournament_begins
-# 	}
 	
-# 	immediate = {		
-# 		remove_character_flag = tournament_begins
-# 		remove_character_flag = winner
-# 		remove_character_flag = second_place
-# 		remove_character_flag = third_place
-# 		remove_character_flag = attending_tournament
-# 		remove_character_flag = attending_tournament_event
-# 		remove_character_flag = tournament_third_place
-# 		remove_character_flag = tournament_second_place
-# 		remove_character_flag = tournament_winner
-# 		remove_character_flag = do_not_disturb
-# 		every_vassal_or_below = {
-			
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-			
-# 		}
-# 		every_courtier = {
-		
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-		
-# 		}
-# 		every_close_or_extended_family_member = {
-		
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-		
-# 		}
-
-# 		every_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = {
-# 				has_character_flag = attending_tournament
-# 			}
-# 			trigger_event = {
-# 				id = KOH_Tournaments.1042
-# 				days = 2
-# 			}
-# 			add_character_flag = tournament_has_ended
-# 			remove_character_flag = tournament_third_place
-# 			remove_character_flag = tournament_second_place
-# 			remove_character_flag = tournament_winner
-# 			remove_character_flag = attending_tournament
-# 			remove_character_flag = attending_tournament_event
-# 			remove_character_flag = do_not_disturb
-# 		}
-# 	}
-
 # 	option = {
-# 		name = KOH_Tournaments.1041.a
-# 	}
-# }
-
-# #The tournament has been cancelled due to Ruler's death
-# KOH_Tournaments.1042 = {
-# 		type = character_event
-# 	title = KOH_Tournaments.1042.t
-# 	desc = KOH_Tournaments.1042.b
-# 	theme = war
-# 	option = {
-# 		name = KOH_Tournaments.1042.a
-# 	}
-# }
-
-# #Probabilities:
-# #Combat Rating >= 3: 10% Wound, 10% Maim, 10% Dead, 70% Unscathed
-# #CR = 2: 15% Wound, 15% Maim, 15% Dead, 55% Unscathed
-# #CR = 1: 20% Wound, 20% Maim, 20% Dead, 40% Unscathed
-# #CR = 0: 25% Wound, 25% Maim, 25% Dead, 25% Unscathed
-# #CR = -1: 30% Wound, 30% Maim, 30% Dead, 10% Unscathed
-# #CR = -2: 33% Wound, 33% Maim, 33% Dead
-# #CR <= -3: 50% Maim, 50% Dead
-
-# #Tournament attender event for random occurences
-# KOH_Tournaments.1050 = {
-# 	type = character_even
-
-# 	immediate = {
-# 		random_list = {
-# 			25 = { #character is killed
-# 				modifier = {
-# 					factor = 0.667
-# 					prowess = 3 #prowess?
-# 				}
-# 				modifier = {
-# 					factor = 0.75
-# 					prowess = 2
-# 				}
-# 				modifier = {
-# 					factor = 0.8
-# 					prowess = 1
-# 				}
-# 				modifier = {
-# 					factor = 1.2
-# 					NOT = { prowess = 0 }
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1009 days = 1 }
-# 			}
-# 			25 = { #character maimed
-# 				modifier = {
-# 					factor = 0.667
-# 					prowess = 3
-# 				}
-# 				modifier = {
-# 					factor = 0.75
-# 					prowess = 2
-# 				}
-# 				modifier = {
-# 					factor = 0.8
-# 					prowess = 1
-# 				}
-# 				modifier = {
-# 					factor = 1.2
-# 					NOT = { prowess = 0 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					has_trait = maimed
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1010 days = 1 }
-# 			}
-# 			25 = { #character wounded
-# 				modifier = {
-# 					factor = 0.667
-# 					prowess = 3
-# 				}
-# 				modifier = {
-# 					factor = 0.75
-# 					prowess = 2
-# 				}
-# 				modifier = {
-# 					factor = 0.8
-# 					prowess = 1
-# 				}
-# 				modifier = {
-# 					factor = 1.2
-# 					NOT = { prowess = 0 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = -2 }
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1011 days = 1 }
-# 			}
-# 			25 = { #character survives unscathed
-# 				modifier = {
-# 					factor = 1.273
-# 					prowess = 3
-# 				}
-# 				modifier = {
-# 					factor = 1.375
-# 					prowess = 2
-# 				}
-# 				modifier = {
-# 					factor = 1.6
-# 					prowess = 1
-# 				}
-# 				modifier = {
-# 					factor = 0.4
-# 					NOT = { prowess = 0 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = -1 }
-# 				}
-# 			}
-# 		}
-		
-# 		### Non-injury events get their own list, since injuries are so common
-# 		random_list = {
-# 			40 = { #gain craven
-# 				modifier = {
-# 					factor = 0.5
-# 					prowess = 4
-# 				}
-# 				modifier = {
-# 					factor = 0.5
-# 					prowess = 3
-# 				}
-# 				modifier = {
-# 					factor = 0.5
-# 					prowess = 2
-# 				}
-# 				modifier = {
-# 					factor = 0.5
-# 					prowess = 1
-# 				}
-# 				modifier = {
-# 					factor = 0.5
-# 					prowess = 1
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					NOT = { prowess = 1 }
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					NOT = { prowess = 0 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					has_trait = craven
-# 				}
-# 				trigger_event = { id = KOH_Tournaments.1012 days = 1 }
-# 			}
-# 			40 = { #gain brave
-# 				modifier = {
-# 					factor = 1.5
-# 					prowess = 4
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					prowess = 3
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					prowess = 2
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					prowess = 1
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					prowess = 1
-# 				}
-# 				modifier = {
-# 					factor = 0.5
-# 					NOT = { prowess = 1 }
-# 				}
-# 				modifier = {
-# 					factor = 0.5
-# 					NOT = { prowess = 0 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					has_trait = brave
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1013 days = 1 }
-# 			}
-# 			40 = { #promoted to tough soldier
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { has_trait = education_martial_2 }
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1014 days = 1 }
-# 			}
-# 			40 = { #promoted to skilled tactician
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { has_trait = education_martial_3 }
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments70015 days = 1 }
-# 			}
-# 			40 = { #promoted to brilliant strategist
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { has_trait = education_martial_4 }
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1016 days = 1 }
-# 			}
-# 			40 = { #demoted to skilled tactician
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { has_trait = education_martial_3 }
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1017 days = 1 }
-# 			}
-# 			40 = { #demoted to tough soldier
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { has_trait = education_martial_2 }
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1018 days = 1 }
-# 			}
-# 			40 = { #demoted to misguided warrior
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { has_trait = education_martial_1 }
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1019 days = 1 }
-# 			}
-# 			13 = { #gain homosexual
-# 				modifier = {
-# 					factor = 1.2
-# 					has_trait = drunkard
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = hedonist
-# 				}
-# 				modifier = {
-# 					factor = 1.2
-# 					has_trait = lustful
-# 				}
-# 				modifier = {
-# 					factor = 0.5
-# 					has_trait = temperate
-# 				}
-# 				modifier = {
-# 					factor = 0.3
-# 					has_trait = chaste
-# 				}
-# 				modifier = {
-# 					factor = 0.3
-# 					has_trait = zealous
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					OR = {
-# 						has_sexuality = homosexual
-# 						has_trait = celibate
-# 						has_trait = eunuch
-# 					}
-# 				}
-# 				trigger_event = { id = KOH_Tournaments.1023 days = 1 }
-# 			}
-# 			13 = { #gain syphilitic
-# 				modifier = {
-# 					factor = 1.2
-# 					has_trait = drunkard
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = hedonist
-# 				}
-# 				modifier = {
-# 					factor = 1.2
-# 					has_trait = lustful
-# 				}
-# 				modifier = {
-# 					factor = 0.5
-# 					has_trait = temperate
-# 				}
-# 				modifier = {
-# 					factor = 0.3
-# 					has_trait = chaste
-# 				}
-# 				modifier = {
-# 					factor = 0.3
-# 					has_trait = zealous
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					OR = {
-# 						has_trait = great_pox
-# 						has_trait = celibate
-# 						has_trait = eunuch
-# 					}
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1024 days = 1 }
-# 			}
-# 			20 = { #gain drunkard
-# 				modifier = {
-# 					factor = 1.3
-# 					has_trait = gluttonous
-# 				}
-# 				modifier = {
-# 					factor = 1.1
-# 					has_trait = lustful
-# 				}
-# 				modifier = {
-# 					factor = 0.3
-# 					has_trait = temperate
-# 				}
-# 				modifier = {
-# 					factor = 0.5
-# 					has_trait = chaste
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					has_trait = drunkard
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1025 days = 1 }
-# 			}
-# 			20 = { #gain duelist
-# 				modifier = {
-# 					factor = 1.3
-# 					has_trait = diligent
-# 				}
-# 				modifier = {
-# 					factor = 1.3
-# 					has_trait = wrathful
-# 				}
-# 				modifier = {
-# 					factor = 1.3
-# 					has_trait = brave
-# 				}
-# 				modifier = {
-# 					factor = 1.3
-# 					has_trait = strong
-# 				}
-# 				modifier = {
-# 					factor = 1.3
-# 					martial = 10
-# 				}
-# 				modifier = {
-# 					factor = 1.3
-# 					martial = 15
-# 				}
-# 				modifier = {
-# 					factor = 1.3
-# 					martial = 20
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					OR = {
-# 						has_trait = content
-# 						has_trait = kind
-# 						has_trait = craven
-# 						NOT = { has_trait = strong }
-# 					}
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1026 days = 1 }
-# 			}
-# 			40 = { #increase intrigue
-# 				modifier = {
-# 					factor = 1.2
-# 					has_trait = education_intrigue_4
-# 				}
-# 				modifier = {
-# 					factor = 1.1
-# 					has_trait = education_intrigue_3
-# 				}
-# 				modifier = {
-# 					factor = 0.9
-# 					has_trait = education_intrigue_2
-# 				}
-# 				modifier = {
-# 					factor = 0.7
-# 					has_trait = education_intrigue_1
-# 				}
-# 				modifier = {
-# 					factor = 0.7
-# 					NOR = {
-# 						has_trait = education_intrigue_4
-# 						has_trait = education_intrigue_3
-# 						has_trait = education_intrigue_2
-# 						has_trait = education_intrigue_1
-# 					}
-# 				}
-# 				modifier = {
-# 					factor = 1.1
-# 					has_trait = deceitful
-# 				}
-# 				modifier = {
-# 					factor = 0.7
-# 					has_trait = honest
-# 				}
-# 				modifier = {
-# 					factor = 0.25
-# 					martial = 10
-# 				}
-# 				modifier = {
-# 					factor = 1.2
-# 					NOT = {
-# 						martial = 5
-# 					}
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1027 days = 1 }
-# 			}
-# 			40 = { #decrease intrigue
-# 				modifier = {
-# 					factor = 0.8
-# 					has_trait = education_intrigue_4
-# 				}
-# 				modifier = {
-# 					factor = 0.9
-# 					has_trait = education_intrigue_3
-# 				}
-# 				modifier = {
-# 					factor = 1.1
-# 					has_trait = education_intrigue_2
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = education_intrigue_1
-# 				}
-# 				modifier = {
-# 					factor = 0.7
-# 					NOR = {
-# 						has_trait = education_intrigue_4
-# 						has_trait = education_intrigue_3
-# 						has_trait = education_intrigue_2
-# 						has_trait = education_intrigue_1
-# 					}
-# 				}
-# 				modifier = {
-# 					factor = 0.9
-# 					has_trait = deceitful
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = honest
-# 				}
-# 				modifier = {
-# 					factor = 0.25
-# 					martial = 10
-# 				}
-# 				modifier = {
-# 					factor = 1.2
-# 					NOT = {
-# 						martial = 5
-# 					}
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1028 days = 1 }
-# 			}
-# 			40 = { #increase stewardship
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = education_stewardship_4
-# 				}
-# 				modifier = {
-# 					factor = 1.1
-# 					has_trait = education_stewardship_2
-# 				}
-# 				modifier = {
-# 					factor = 0.9
-# 					has_trait = education_stewardship_2
-# 				}
-# 				modifier = {
-# 					factor = 0.8
-# 					has_trait = education_stewardship_1
-# 				}
-# 				modifier = {
-# 					factor = 0.7
-# 					NOR = {
-# 						has_trait = education_stewardship_4
-# 						has_trait = education_stewardship_3
-# 						has_trait = education_stewardship_2
-# 						has_trait = education_stewardship_1
-# 					}
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = diligent
-# 				}
-# 				modifier = {
-# 					factor = 0.9
-# 					has_trait = slothful
-# 				}
-# 				trigger_event = { 	type = KOH_Tournaments.1029 days = 1 }
-# 			}
-# 			40 = { #decrease stewardship
-# 				modifier = {
-# 					factor = 0.8
-# 					has_trait = education_stewardship_4
-# 				}
-# 				modifier = {
-# 					factor = 0.9
-# 					has_trait = education_stewardship_3
-# 				}
-# 				modifier = {
-# 					factor = 1.1
-# 					has_trait = education_stewardship_2
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = education_stewardship_1
-# 				}
-# 				modifier = {
-# 					factor = 0.7
-# 					NOR = {
-# 						has_trait = education_stewardship_4
-# 						has_trait = education_stewardship_2
-# 						has_trait = education_stewardship_2
-# 						has_trait = education_stewardship_1
-# 					}
-# 				}
-# 				modifier = {
-# 					factor = 0.9
-# 					has_trait = diligent
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = slothful
-# 				}
-# 				modifier = {
-# 					factor = 0.25
-# 					martial = 10
-# 				}
-# 				modifier = {
-# 					factor = 1.2
-# 					NOT = {
-# 						martial = 5
-# 					}
-# 				}
-# 				trigger_event = { 	id = KOH_Tournaments.1030 days = 1 }
-# 			}
-# 			40 = { #increase diplomacy
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = education_diplomacy_4
-# 				}
-# 				modifier = {
-# 					factor = 1.1
-# 					has_trait = education_diplomacy_3
-# 				}
-# 				modifier = {
-# 					factor = 0.9
-# 					has_trait = education_diplomacy_2
-# 				}
-# 				modifier = {
-# 					factor = 0.8
-# 					has_trait = education_diplomacy_1
-# 				}
-# 				modifier = {
-# 					factor = 0.7
-# 					NOR = {
-# 						has_trait = education_diplomacy_4
-# 						has_trait = education_diplomacy_3
-# 						has_trait = education_diplomacy_2
-# 						has_trait = education_diplomacy_1
-# 					}
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = gregarious
-# 				}
-# 				modifier = {
-# 					factor = 0.9
-# 					has_trait = shy
-# 				}
-# 				trigger_event = { 	type = KOH_Tournaments.1031 days = 1 }
-# 			}
-# 			40 = { #decrease diplomacy
-# 				modifier = {
-# 					factor = 0.8
-# 					has_trait = education_diplomacy_4
-# 				}
-# 				modifier = {
-# 					factor = 0.9
-# 					has_trait = education_diplomacy_3
-# 				}
-# 				modifier = {
-# 					factor = 1.1
-# 					has_trait = education_diplomacy_2
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = education_diplomacy_1
-# 				}
-# 				modifier = {
-# 					factor = 0.7
-# 					NOR = {
-# 						has_trait = education_diplomacy_4
-# 						has_trait = education_diplomacy_3
-# 						has_trait = education_diplomacy_2
-# 						has_trait = education_diplomacy_1
-# 					}
-# 				}
-# 				modifier = {
-# 					factor = 0.9
-# 					has_trait = gregarious
-# 				}
-# 				modifier = {
-# 					factor = 1.5
-# 					has_trait = shy
-# 				}
-# 				modifier = {
-# 					factor = 0.25
-# 					martial = 10
-# 				}
-# 				modifier = {
-# 					factor = 1.2
-# 					NOT = {
-# 						martial = 5
-# 					}
-# 				}
-# 				trigger_event = { 	type = KOH_Tournaments.1032 days = 1 }
-# 			}
-# 			1000 = {}
-# 		}
-# 	}
-# }
-
-
-# ###########################################
-# #SCORING, LOOK AWAY FRAGILE EYES		  #
-# ###########################################
-
-# KOH_Tournaments.1060 = {
-# 		type = character_event
-# 		hidden = yes
-# 	immediate = {
-# 		random_list = {
-# 			10 = {
-# 				add_character_flag = tourney_score_15
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 13 }
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_14
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 12 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 17
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_13
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 11 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 16
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_12
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 10 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 15
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_11
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 9 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 14
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_10
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 8 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 13
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_09
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 7 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 12
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_08
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 6 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 11
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_07
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 5 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 10
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_06
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 4 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 9
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_05
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 3 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 8
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_04
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 2 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 7
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_03
-# 				modifier = {
-# 					factor = 0
-# 					NOT = { prowess = 1 }
-# 				}
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 6
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_02
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 5
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_01
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 4
-# 				}
-# 			}
-# 			10 = {
-# 				add_character_flag = tourney_score_00
-# 				modifier = {
-# 					factor = 0
-# 					prowess = 3
-# 				}
-# 			}
-# 		}
-# 	}
-# }
-
-# ###########################################
-# # First place   WINNER!                   #
-# ###########################################
-
-
-# KOH_Tournaments.1061 = {
-# 		type = character_event
-# 		hidden = yes
-# 	immediate = {
-# 		clear_variable_list = your_realm_peeps
-# 		every_vassal_or_below = {
-		
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-		
-# 		}
-# 		every_courtier = {
-		
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-		
-# 		}
-# 		every_close_or_extended_family_member = {
-		
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-		
-# 		}
-
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_15 }
-# 			remove_character_flag = tourney_score_15
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_14 }
-# 			remove_character_flag = tourney_score_14
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_13 }
-# 			remove_character_flag = tourney_score_13
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_12 }
-# 			remove_character_flag = tourney_score_12
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_11 }
-# 			remove_character_flag = tourney_score_11
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_10 }
-# 			remove_character_flag = tourney_score_10
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_09 }
-# 			remove_character_flag = tourney_score_09
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_08 }
-# 			remove_character_flag = tourney_score_08
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_07 }
-# 			remove_character_flag = tourney_score_07
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_06 }
-# 			remove_character_flag = tourney_score_06
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_05 }
-# 			remove_character_flag = tourney_score_05
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_04 }
-# 			remove_character_flag = tourney_score_04
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_03 }
-# 			remove_character_flag = tourney_score_03
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_02 }
-# 			remove_character_flag = tourney_score_02
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_01 }
-# 			remove_character_flag = tourney_score_01
-# 			add_character_flag = tournament_winner
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_00 }
-# 			remove_character_flag = tourney_score_00
-# 			add_character_flag = tournament_winner
-# 		}
-# 	}
-# }
-
-# ###########################################
-# # Second place                            #
-# ###########################################
-
-
-# KOH_Tournaments.1062 = {
-# 		type = character_event
-# 		hidden = yes
-
-# 		immediate = {
-# 			clear_variable_list = your_realm_peeps
-# 			every_vassal_or_below = {
-				
-# 					add_to_variable_list = {
-# 						name = your_realm_peeps
-# 						target = prev
-# 					}
-			
-# 			}
-# 			every_courtier = {
-				
-# 					add_to_variable_list = {
-# 						name = your_realm_peeps
-# 						target = prev
-# 					}
-			
-# 			}
-# 			every_close_or_extended_family_member = {
-				
-# 					add_to_variable_list = {
-# 						name = your_realm_peeps
-# 						target = prev
-# 					}
-				
-# 			}
-
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_15 }
-# 			remove_character_flag = tourney_score_15
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_14 }
-# 			remove_character_flag = tourney_score_14
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_13 }
-# 			remove_character_flag = tourney_score_13
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_12 }
-# 			remove_character_flag = tourney_score_12
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_11 }
-# 			remove_character_flag = tourney_score_11
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_10 }
-# 			remove_character_flag = tourney_score_10
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_09 }
-# 			remove_character_flag = tourney_score_09
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_08 }
-# 			remove_character_flag = tourney_score_08
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_07 }
-# 			remove_character_flag = tourney_score_07
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_06 }
-# 			remove_character_flag = tourney_score_06
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_05 }
-# 			remove_character_flag = tourney_score_05
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_04 }
-# 			remove_character_flag = tourney_score_04
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_03 }
-# 			remove_character_flag = tourney_score_03
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_02 }
-# 			remove_character_flag = tourney_score_02
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_01 }
-# 			remove_character_flag = tourney_score_01
-# 			add_character_flag = tournament_second_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_00 }
-# 			remove_character_flag = tourney_score_00
-# 			add_character_flag = tournament_second_place
-# 		}
-# 	}
-# }
-
-# ###########################################
-# # Third place                           #
-# ###########################################
-
-
-# KOH_Tournaments.1063 = {
-# 		type = character_event
-# 		hidden = yes
-# 	immediate = {
-# 		clear_variable_list = your_realm_peeps
-# 		every_vassal_or_below = {
-		
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-		
-# 		}
-# 		every_courtier = {
-			
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-			
-# 		}
-# 		every_close_or_extended_family_member = {
-		
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-			
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_15 }
-# 			remove_character_flag = tourney_score_15
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_14 }
-# 			remove_character_flag = tourney_score_14
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_13 }
-# 			remove_character_flag = tourney_score_13
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_12 }
-# 			remove_character_flag = tourney_score_12
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_11 }
-# 			remove_character_flag = tourney_score_11
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_10 }
-# 			remove_character_flag = tourney_score_10
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_09 }
-# 			remove_character_flag = tourney_score_09
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_08 }
-# 			remove_character_flag = tourney_score_08
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_07 }
-# 			remove_character_flag = tourney_score_07
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_06 }
-# 			remove_character_flag = tourney_score_06
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_05 }
-# 			remove_character_flag = tourney_score_05
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_04 }
-# 			remove_character_flag = tourney_score_04
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_03 }
-# 			remove_character_flag = tourney_score_03
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_02 }
-# 			remove_character_flag = tourney_score_02
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_01 }
-# 			remove_character_flag = tourney_score_01
-# 			add_character_flag = tournament_third_place
-# 		}
-# 		random_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = { has_character_flag = tourney_score_00 }
-# 			remove_character_flag = tourney_score_00
-# 			add_character_flag = tournament_third_place
-# 		}
-# 	}
-# }
-
-# ###########################################
-# # Notify winners						  #
-# ###########################################
-
-# KOH_Tournaments.1064 = {
-# 		type = character_event
-	
-# 	immediate = {
-# 		clear_variable_list = your_realm_peeps
-# 		every_vassal_or_below = {
-			
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-			
-# 		}
-# 		every_courtier = {
-			
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-			
-# 		}
-# 		every_close_or_extended_family_member = {
-			
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-			
-# 		}
-
-			
-# 		every_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = {
-# 				OR = {
-# 					has_character_flag = tournament_winner
-# 					has_character_flag = tournament_second_place
-# 					has_character_flag = tournament_third_place
-# 				}
-# 			}
-# 			trigger_event = { id = KOH_Tournaments.1020 }
-# 		}
-# 	}
-# }
-
-
-# ###########################################
-# # Flag management                         #
-# ###########################################
-
-# # Safety catch - clears character flags and modifiers
-# KOH_Tournaments.1999 = {
-# 		type = character_event
-	
-# 	immediate = {
-# 		remove_character_flag = do_not_disturb
-# 		remove_character_flag = attending_tournament
-# 		remove_character_flag = no_msg_death
-# 		remove_character_flag = no_msg_maimed
-# 		remove_character_flag = no_msg_wounded
-# 		remove_character_flag = tournament_has_ended
-# 		remove_character_flag = attending_tournament_event
-# 		remove_character_flag = tournament_winner
-# 		remove_character_flag = winner
-# 		remove_character_flag = tournament_second_place
-# 		remove_character_flag = second_place
-# 		remove_character_flag = tournament_third_place
-# 		remove_character_flag = third_place
-# 		remove_character_flag = tournament_begins
-# 		every_vassal_or_below = {
-			
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-			
-# 		}
-# 		every_courtier = {
-		
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-			
-# 		}
-# 		every_close_or_extended_family_member = {
-			
-# 				add_to_variable_list = {
-# 					name = your_realm_peeps
-# 					target = prev
-# 				}
-			
-# 		}	
-# 		every_in_list = {
-# 			variable = your_realm_peeps
-# 			limit = {
-# 				has_character_flag = attending_tournament
-# 			}
-# 			remove_character_flag = tournament_winner
-# 			remove_character_flag = tournament_third_place
-# 			remove_character_flag = tournament_second_place
-# 			remove_character_flag = attending_tournament
-# 			remove_character_flag = attending_tournament_event
-# 			remove_character_flag = do_not_disturb
-# 			remove_character_flag = tournament_has_ended
+# 		name = KOH_tourney.13.a
+# 		ai_chance = {
+# 			base = 100
 # 		}		
 # 	}
+		
+# 	after = {
+# 		trigger_event = {    
+# 			id = KOH_tourney.7    #reiterate matchups
+# 			days = 1
+# 		}		
+# 	}	
 # }
 
+KOH_tourney.121 = {     # recursive joust master event
+	type = character_event
+	hidden = yes
+	
+	immediate = {
+		random_list = {
+			1 = {  # jouster1 hits
+				modifier = {
+					factor = { 
+						value = 1 
+						add = scope:jouster1.prowess
+					}
+				}
+					
+				scope:jouster1 = {
+					save_scope_as = opponent				
+					trigger_event = {    
+						id = KOH_tourney.122    # jouster1 hit!
+					}						
+				}
+					
+				scope:jouster2 = {
+					trigger_event = {    
+						id = KOH_tourney.123    # jouster2 was hit
+					}
+				}			
+			}
+			1 = {  # jouster2 hits
+				modifier = {
+					factor = { 
+						value = 1 
+						add = scope:jouster2.prowess
+					}
+				}
+					
+				scope:jouster2 = {
+					save_scope_as = opponent				
+					trigger_event = {    
+						id = KOH_tourney.122    # jouster2 hit!
+					}						
+				}					
+					
+				scope:jouster1 = {
+					trigger_event = {    
+						id = KOH_tourney.123    # jouster1 was hit
+					}					
+				}					
+			}			
+		}
+	}
+}
+
+KOH_tourney.122 = {    # You hit!
+	type = character_event
+	title = KOH_tourney.122.t
+	desc = KOH_tourney.122.desc
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	
+	left_portrait = {
+		character = this
+		animation = happiness 
+	}	
+	
+	option = {
+		name = KOH_tourney.122.a
+		ai_chance = {
+			base = 100
+		}		
+	}	
+}
+
+KOH_tourney.123 = {    # You were hit
+	type = character_event
+	title = KOH_tourney.123.t
+	desc = KOH_tourney.123.desc
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	
+	left_portrait = {
+		character = this
+		animation = worry 
+	}	
+	
+	option = {
+		name = KOH_tourney.123.a
+		trigger_event = {    
+			id = KOH_tourney.124    # Can you stay mounted?
+		}		
+		ai_chance = {
+			base = 100
+		}		
+	}	
+}
+
+KOH_tourney.124 = {    # Can you stay mounted?
+	type = character_event
+	hidden = yes	
+	
+	immediate = {
+		random_list = {
+			100 = {  # you kept balance
+				modifier = {
+					factor = { # Prowess directly helps to stay mounted when hit
+						value = 0 
+						add = this.prowess
+						add = this.prowess
+						divide = 100
+						max = 0.5 
+					}
+				}
+					
+				scope:opponent = {
+					trigger_event = {    
+						id = KOH_tourney.127    # inform opponent
+					}
+				}
+				
+				trigger_event = {    
+					id = KOH_tourney.125     # reiteration
+				}
+			}
+			100 = {  # you lost
+				modifier = {
+					factor = { # Prowess directly helps to stay mounted when hit
+						value = 100 
+						subtract = this.prowess
+						subtract = this.prowess
+						divide = 100
+						min = 0.5 
+					}
+				}
+					
+				scope:opponent = {
+					trigger_event = {    
+						id = KOH_tourney.128    # inform opponent
+					}
+				}
+				
+				trigger_event = {    
+					id = KOH_tourney.126    # You lost
+				}				
+			}			
+		}		
+	}	
+}
+
+KOH_tourney.125 = {     # reiteration
+	type = character_event
+	title = KOH_tourney.125.t
+	desc = KOH_tourney.125.desc
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	
+	left_portrait = {
+		character = this
+		animation = happiness 
+	}	
+	
+	option = {
+		name = KOH_tourney.125.a
+		trigger_event = {    
+			id = KOH_tourney.121    # reiteration
+		}		
+		ai_chance = {
+			base = 100
+		}		
+	}	
+}
+
+KOH_tourney.126 = {     
+	type = character_event
+	title = KOH_tourney.126.t
+	desc = KOH_tourney.126.desc
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	
+	left_portrait = {
+		character = this
+		animation = pain 
+	}		
+	
+	option = {
+		name = KOH_tourney.126.a
+		hidden_effect = {
+			add_character_flag = lost_tournament
+			save_scope_as = loser
+						
+			random_list = {
+				8 = {  # nothing bad happened 
+					modifier = {
+						add = this.prowess
+					}
+				}
+				4 = {  # wounded: 30.8% chance with prowess 0, 17.4% chance with prowess 10, 12.1% chance with prowess 20
+					trigger_event = {
+						id = KOH_tourney.111   #wounded
+					}
+					#increase_wounds_effect = { REASON = tourney_joust }
+				}
+				1 = {  # killed: 7.7% chance with prowess 0, 4.3% chance with prowess 10, 3.0% chance with prowess 20
+					trigger_event = {
+						id = KOH_tourney.112   #dead
+					}
+					scope:host = {
+						send_interface_message = {
+							type = msg_border_raid_bad
+							title = KOH_tourney.112.t.host.t
+							desc =  KOH_tourney.112.tt.host
+							left_icon = scope:loser
+						}
+					}
+					#death = { death_reason = death_jousting_tournament }
+				}
+			}					
+				
+					
+			scope:opponent = {
+				save_scope_as = victor
+				change_variable = {
+					name = bracket
+					multiply = 1000
+				}						
+			}
+
+			scope:jouster1 = {
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					remove_character_flag = jouster1				
+				}
+			}
+			
+			scope:jouster2 = {
+				if = {
+					limit = {
+						is_alive = yes
+					}
+					remove_character_flag = jouster2				
+				}		
+			}
+			
+			scope:host = {
+				every_in_list = {
+					variable = tourney_participants
+					limit = {
+						is_alive = yes
+						NOT = { this = scope:host }
+						OR = {
+							NOT = { has_character_flag = OnlyMyJousts }
+							scope:jouster1 = this
+							scope:jouster2 = this
+						}
+					}
+					# trigger_event = { #MAKE TOAST
+					# 	id = KOH_tourney.12   #inform participants about the match result
+					# 	days = 1
+					# }				
+				}
+			}		
+		 
+			scope:host = { #MAKE TOAST
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = KOH_tourney.13.t
+					custom_tooltip = KOH_tourney.13.desc
+					left_icon = scope:jouster1
+					right_icon = scope:jouster2
+				}
+				trigger_event = {    
+					id = KOH_tourney.7    #reiterate matchups
+					days = 1
+				}
+			}
+		}	
+		ai_chance = {
+			base = 100
+		}		
+	}	
+}
+
+KOH_tourney.127 = {     # inform opponent: Survived
+	type = character_event
+	title = KOH_tourney.127.t
+	desc = KOH_tourney.127.desc
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	
+	left_portrait = {
+		character = this
+		animation = worry 
+	}	
+	
+	option = {
+		name = KOH_tourney.127.a
+		
+		ai_chance = {
+			base = 100
+		}		
+	}	
+}
+
+KOH_tourney.128 = {     # inform opponent: Beaten
+	type = character_event
+	title = KOH_tourney.128.t
+	desc = KOH_tourney.128.desc
+
+	theme = default
+	override_background = {
+		event_background = army_camp
+	}
+	
+	left_portrait = {
+		character = this
+		animation = happiness 
+	}	
+	
+	option = {
+		name = KOH_tourney.128.a
+		
+		ai_chance = {
+			base = 100
+		}		
+	}	
+}

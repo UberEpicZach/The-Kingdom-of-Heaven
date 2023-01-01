@@ -59,7 +59,6 @@ KOH_richard_bride.1 = {
 
 		character:204510 = {
 			set_sexuality = homosexual
-			add_trait = unwed
 		}
 		hidden_effect = {
 			character:205518 = {
@@ -101,6 +100,9 @@ KOH_richard_bride.2 = {
 			flag = had_event_richard_bride.2
 		}
 		hidden_effect = {
+			character:204510 = {
+				remove_trait = unwed
+			}
 			character:205518 = {
 				remove_trait = unwed
 			}
@@ -231,10 +233,13 @@ KOH_richard_bride.3 = {
 		}
 			hidden_effect = {
 				character:205518 = {
-				remove_trait = unwed
+					remove_trait = unwed
 				}
 				character:206501 = {
-				remove_trait = unwed
+					remove_trait = unwed
+				}
+				character:204510 = {
+					remove_trait = unwed
 				}
 			}
 		every_ruler = {
@@ -364,11 +369,16 @@ KOH_richard_bride.4 = {
 		name = richard.bride.4.a
 
 		character:204510 = {
-			set_relation_soulmate = character:205506
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:205506
+			}
 		}
 		character:232000 = {
-			remove_trait = bastard
+			remove_trait = bastard_founder
 			add_trait = legitimized_bastard
+			dynasty = 106
 		}
 		hidden_effect = {
 			character:KOH0046 = {
@@ -421,11 +431,16 @@ KOH_richard_bride.5 = {
 		name = richard.bride.5.a
 
 		character:205506 = {
-			set_relation_soulmate = character:204510
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:204510
+			}
 		}
 		character:232000 = {
-			remove_trait = bastard
+			remove_trait = bastard_founder
 			add_trait = legitimized_bastard
+			dynasty = 106
 		}
 		hidden_effect = {
 			character:KOH0046 = {
@@ -489,6 +504,9 @@ KOH_richard_bride.6 = {
 	option = {
 		name = richard.bride.6.a
 
+		character:204510 = {
+			remove_trait = unwed
+		}
 		character:205518 = {
 			remove_trait = unwed
 		}
@@ -1469,7 +1487,11 @@ KOH_balian_women.16 = {
 			opinion = 10
 		}
 		character:223570 = {
-			set_relation_soulmate = character:223522
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:223522
+			}
 		}
 		hidden_effect = {
 			character:223522 = {
@@ -1542,7 +1564,11 @@ KOH_balian_women.17 = {
 			opinion = 10
 		}
 		character:223570 = {
-			set_relation_soulmate = character:215560
+			set_relation_soulmate = { 
+				reason = soulmate_love_at_court 
+				copy_reason = lover 
+				target = character:215560
+			}
 		}
 		hidden_effect = {
 			character:215560 = {
@@ -2533,6 +2559,11 @@ KOH_georgian_wedding.8 = {
 				divorce = character:222828
 				set_relation_lover = character:466516
 				add_prestige = 300
+				make_tributary = {
+					TYPE = tributary_permanent
+					SUZERAIN = character:466517
+					TRIBUTARY = title:k_caucasus.holder
+		}
 			}
 		}
 		character:466516 = {
