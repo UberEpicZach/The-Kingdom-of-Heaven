@@ -1,4 +1,34 @@
-﻿#Temujin's ancestors
+﻿#Borjigin Gen12
+jalair1 = {
+	name="Guan Ua"
+	dynasty=mongol1
+	dynasty_house=house_
+	religion="tengri_pagan"
+	culture="mongol"
+	
+	1150.1.2 = {
+		birth = yes
+	}
+	1190.1.2 = {
+		death = yes
+	}
+}
+jalair2 = {
+	name="Mukhali"
+	dynasty=mongol1
+	dynasty_house=house_
+	religion="tengri_pagan"
+	culture="mongol"
+	martial=16
+	father=jalair1
+	1170.1.2 = {
+		birth = yes
+	}
+	1223.1.2 = {
+		death = yes
+	}
+}
+#Temujin's ancestors
 #Mother of Bodonchar Munkhag
 303250 = {
 	name="Alan_Gua" #Alan Gua
@@ -1088,8 +1118,8 @@
 	name = "Temujin"
 	# AKA: Genghis Khan
 	dynasty = 11100
-	martial = 15
-	diplomacy = 13
+	martial = 25
+	diplomacy = 19
 	intrigue = 13
 	stewardship = 13
 	religion = "tengri_pagan"
