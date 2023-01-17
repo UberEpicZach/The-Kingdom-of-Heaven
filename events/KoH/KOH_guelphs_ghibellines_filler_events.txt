@@ -237,7 +237,7 @@ KOH_guelphs_ghibellines_filler.0005 = { #start
 	immediate = {
 		add_character_flag = {
 			flag = stronger_walls
-			years = 5
+			years = 10
 		}
 	}
 
@@ -618,13 +618,13 @@ KOH_guelphs_ghibellines_filler.0012 = { #start
 			tier = tier_county
 		}
 		NOT = {
-			has_character_flag = stronger_walls
+			has_character_flag = merchants_and_mercenaries
 		}
 	}
 
 	immediate = {
 		add_character_flag = {
-			flag = stronger_walls
+			flag = merchants_and_mercenaries
 			years = 5
 		}
 	}
@@ -652,5 +652,689 @@ KOH_guelphs_ghibellines_filler.0012 = { #start
 		name = KOH_guelphs_ghibellines_filler.0012.c
 		add_piety = minor_piety_loss
 		add_prestige = minor_prestige_loss
+	}
+}
+
+####################################
+# 		  The Rats      		   #
+#        ZombieSchrodCat		   #
+#            013-017               #
+####################################
+
+KOH_guelphs_ghibellines_filler.0013 = { #start
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0013.t
+	desc = KOH_guelphs_ghibellines_filler.0013.desc
+
+	theme = skull  
+	override_background = {
+		event_background = market 
+	}
+
+	right_portrait = {
+		character = root
+		animation = disgust 
+	}
+
+
+	trigger = {
+		is_landed = yes
+		exists = title:e_hre.holder
+		OR = {
+			has_trait = KOH_guelph
+			has_trait = KOH_ghibelline
+		}
+		any_held_title = {
+			tier = tier_county
+		}
+		NOT = {
+			has_character_flag = the_rats_in_city
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = the_rats_in_city
+			years = 5
+		}
+	}
+
+	option = { #pay to expand the rat catcher guild
+		name = KOH_guelphs_ghibellines_filler.0013.a
+		remove_short_term_gold = 50
+		trigger_event = KOH_guelphs_ghibellines_filler.0014 
+	}
+
+	option = { #have my soldiers kill the vermin
+		name = KOH_guelphs_ghibellines_filler.0013.b
+		hidden_effect = {
+			random_list = {
+				50 = {
+					trigger_event = KOH_guelphs_ghibellines_filler.0015
+				}
+				50 = {
+					trigger_event = KOH_guelphs_ghibellines_filler.0016 
+				}
+			}
+		}
+	}
+
+	option = { #bring in cats
+		name = KOH_guelphs_ghibellines_filler.0013.c
+		trigger = {
+			learning > 10
+		}
+		trigger_event = KOH_guelphs_ghibellines_filler.0017
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0014 = {#rat catchers
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0014.t
+	desc = KOH_guelphs_ghibellines_filler.0014.desc
+
+	theme = healthcare 
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness 
+	}
+
+	option = { #clean city
+		name = KOH_guelphs_ghibellines_filler.0014.a
+		add_character_modifier = {
+			modifier = clean_city
+			years = 10
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0015 = {#soldiers - rat gambling
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0015.t
+	desc = KOH_guelphs_ghibellines_filler.0015.desc
+
+	theme = skull
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = anger 
+	}
+
+	option = { #now even more rats!
+		add_prestige = minor_prestige_loss
+		name = KOH_guelphs_ghibellines_filler.0015.a
+		add_character_modifier = {
+			modifier = infested_city
+			years = 10
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0016 = {#soldiers - effective at killing
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0016.t
+	desc = KOH_guelphs_ghibellines_filler.0016.desc
+
+	theme = healthcare 
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = { #now even more rats!
+		name = KOH_guelphs_ghibellines_filler.0016.a
+		add_prestige = minor_prestige_gain
+		add_character_modifier = {
+			modifier = clean_city
+			years = 10
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0017 = {#cats have rid the city of rats
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0017.t
+	desc = KOH_guelphs_ghibellines_filler.0017.desc
+
+	theme = healthcare 
+	override_background = {
+		event_background = throne_room
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = { #cats rid the city of rats
+		name = KOH_guelphs_ghibellines_filler.0017.a
+		add_character_modifier = {
+			modifier = clean_city
+			years = 10
+		}
+	}
+}
+
+####################################
+# 		 A Differnces of Opinon	   #
+#        ZombieSchrodCat		   #
+#            018-021               #
+####################################
+
+KOH_guelphs_ghibellines_filler.0018 = { #start
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0018.t
+	desc = KOH_guelphs_ghibellines_filler.0018.desc
+
+	theme = stewardship  
+	override_background = {
+		event_background = tavern 
+	}
+
+	right_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	left_portrait = {
+		character = scope:trade_route_partner
+		animation = personality_honorable
+	}
+
+	trigger = {
+		is_landed = yes
+		exists = title:e_hre.holder
+		OR = {
+			has_trait = KOH_guelph
+			has_trait = KOH_ghibelline
+		}
+		is_at_war = no
+		liege = {
+			any_vassal = {
+				has_trait = KOH_guelph
+				NOT = { this = root }
+			}
+		}
+		liege = {
+			any_vassal = {
+				has_trait = KOH_ghibelline
+				NOT = { this = root }
+			}
+		}
+		any_held_title = {
+			tier = tier_county
+		}
+		NOT = {
+			has_character_flag = trade_between_cities
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_trait = KOH_ghibelline
+			}
+			liege = {
+				random_vassal = {
+					limit = {
+						has_trait = KOH_guelph
+						NOT = { this = root }
+					}
+					save_scope_as = trade_route_partner
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_trait = KOH_guelph
+			}
+			liege = {
+				random_vassal = {
+					limit = {
+						has_trait = KOH_ghibelline
+						NOT = { this = root }
+					}
+					save_scope_as = trade_route_partner
+				}
+			}
+		}
+		add_character_flag = {
+			flag = trade_between_cities
+			years = 5
+		}
+	}
+
+	option = { #diplomacy
+		name = KOH_guelphs_ghibellines_filler.0018.a
+		duel = {
+			skill = diplomacy
+			target = scope:trade_route_partner
+			50 = { #success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				send_interface_toast = {
+					add_prestige = minor_prestige_gain
+					trigger_event = KOH_guelphs_ghibellines_filler.0019  
+				}
+			}
+			50 = { #failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				send_interface_toast = {
+					add_prestige = minor_prestige_loss
+					trigger_event = KOH_guelphs_ghibellines_filler.0020
+				}
+			}
+		}
+	}
+
+	option = { #stewardship
+		name = KOH_guelphs_ghibellines_filler.0018.b
+		duel = {
+			skill = stewardship
+			target = scope:trade_route_partner
+			50 = { #success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				send_interface_toast = {
+					add_prestige = minor_prestige_gain
+					trigger_event = KOH_guelphs_ghibellines_filler.0019 
+				}
+			}
+			50 = { #failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				send_interface_toast = {
+					add_prestige = minor_prestige_loss
+					trigger_event = KOH_guelphs_ghibellines_filler.0020 
+				}
+			}
+		}
+	}
+
+	option = { #intrigue
+		name = KOH_guelphs_ghibellines_filler.0018.c
+		duel = {
+			skill = intrigue
+			target = scope:trade_route_partner
+			50 = { #success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				send_interface_toast = {
+					add_prestige = minor_prestige_gain
+					trigger_event = KOH_guelphs_ghibellines_filler.0021
+				}
+			}
+			50 = { #failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				send_interface_toast = {
+					add_prestige = minor_prestige_loss
+					trigger_event = KOH_guelphs_ghibellines_filler.0020 
+				}
+			}
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0019 = {#trade establish
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0019.t
+	desc = KOH_guelphs_ghibellines_filler.0019.desc
+
+	theme = stewardship
+	override_background = {
+		event_background = tavern
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness 
+	}
+
+	left_portrait = {
+		character = scope:trade_route_partner
+		animation = happiness
+	}
+
+	option = { #good deal
+		name = KOH_guelphs_ghibellines_filler.0019.a
+		add_stress = minor_stress_loss
+		add_character_modifier = {
+			modifier = trade_route_difference_of_opinion
+			years = 10
+		}
+		scope:trade_route_partner = {
+			add_character_modifier = {
+				modifier = trade_route_difference_of_opinion
+				years = 10
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { can_set_relation_potential_friend_trigger = { CHARACTER = scope:trade_route_partner } }
+				set_relation_potential_friend = scope:trade_route_partner
+			}
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0020 = {#trade failed
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0020.t
+	desc = KOH_guelphs_ghibellines_filler.0020.desc
+
+	theme = stewardship
+	override_background = {
+		event_background = tavern
+	}
+
+	right_portrait = {
+		character = root
+		animation = anger
+	}
+
+	option = { #waste of time
+		name = KOH_guelphs_ghibellines_filler.0020.a
+		add_stress = minor_stress_gain
+		hidden_effect = {
+			if = {
+				limit = { can_set_relation_potential_rival_trigger = { CHARACTER = scope:trade_route_partner } }
+				set_relation_potential_rival = scope:trade_route_partner
+			}
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0021 = {#trade establish - fearful
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0021.t
+	desc = KOH_guelphs_ghibellines_filler.0021.desc
+
+	theme = stewardship
+	override_background = {
+		event_background = tavern
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness 
+	}
+
+	left_portrait = {
+		character = scope:trade_route_partner
+		animation = fear
+	}
+
+	option = { #good deal - though I'll be feared
+		name = KOH_guelphs_ghibellines_filler.0021.a
+		add_stress = minor_stress_loss
+		add_dread = minor_dread_gain
+		add_character_modifier = {
+			modifier = trade_route_difference_of_opinion
+			years = 10
+		}
+		scope:trade_route_partner = {
+			add_character_modifier = {
+				modifier = trade_route_difference_of_opinion
+				years = 10
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { can_set_relation_potential_rival_trigger = { CHARACTER = scope:trade_route_partner } }
+				set_relation_potential_rival = scope:trade_route_partner
+			}
+		}
+	}
+}
+
+####################################
+# 		 The Party Trick     	   #
+#        ZombieSchrodCat		   #
+#            022-024               #
+####################################
+
+KOH_guelphs_ghibellines_filler.0022 = { #start
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0022.t
+	desc = KOH_guelphs_ghibellines_filler.0022.desc
+
+	theme = party  
+	override_background = {
+		event_background = feast
+	}
+
+	right_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	left_portrait = {
+		character = scope:KOH_party_joker
+		animation = personality_honorable
+	}
+
+	lower_center_portrait = {
+		character = scope:KOH_party_victim
+		animation = personality_honorable
+	}
+
+	trigger = {
+		is_landed = yes
+		exists = title:e_hre.holder
+		OR = {
+			has_trait = KOH_guelph
+			has_trait = KOH_ghibelline
+		}
+		is_at_war = no
+		liege = {
+			any_vassal = {
+				has_trait = KOH_guelph
+				NOT = { this = root }
+			}
+		}
+		liege = {
+			any_vassal = {
+				has_trait = KOH_ghibelline
+				NOT = { this = root }
+			}
+		}
+		any_held_title = {
+			tier = tier_county
+		}
+		NOT = {
+			has_character_flag = KOH_party_trick
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_trait = KOH_ghibelline
+			}
+			liege = {
+				random_vassal = {
+					limit = {
+						has_trait = KOH_guelph
+						NOT = { this = root }
+					}
+					save_scope_as = KOH_party_victim
+				}
+			}
+			liege = {
+				random_vassal = {
+					limit = {
+						has_trait = KOH_ghibelline
+						NOT = { this = root }
+					}
+					save_scope_as = KOH_party_joker
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_trait = KOH_guelph
+			}
+			liege = {
+				random_vassal = {
+					limit = {
+						has_trait = KOH_ghibelline
+						NOT = { this = root }
+					}
+					save_scope_as = KOH_party_victim
+				}
+			}
+			liege = {
+				random_vassal = {
+					limit = {
+						has_trait = KOH_guelph
+						NOT = { this = root }
+					}
+					save_scope_as = KOH_party_joker
+				}
+			}
+		}
+		add_character_flag = {
+			flag = KOH_party_trick
+			years = 15
+		}
+	}
+
+	option = { #serve spoiled wine
+		name = KOH_guelphs_ghibellines_filler.0022.a
+		trigger_event = KOH_guelphs_ghibellines_filler.0023
+	}
+
+	option = { #this is beneth me
+		name = KOH_guelphs_ghibellines_filler.0022.b
+		add_prestige = minor_prestige_gain
+	}
+
+	option = { #warn the potential victim
+		name = KOH_guelphs_ghibellines_filler.0022.c
+		trigger_event = KOH_guelphs_ghibellines_filler.0024
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0023 = {#spoiled wine
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0023.t
+	desc = KOH_guelphs_ghibellines_filler.0023.desc
+
+	theme = party
+	override_background = {
+		event_background = feast
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness 
+	}
+
+	left_portrait = {
+		character = scope:KOH_party_joker
+		animation = happiness
+	}
+
+	option = { #serve spoiled wine
+		name = KOH_guelphs_ghibellines_filler.0023.a
+		add_stress = minor_stress_loss
+		add_dread = minor_dread_gain
+		reverse_add_opinion = {
+			modifier = grateful_opinion
+			target = scope:KOH_party_joker
+			opinion = 20
+		}
+		reverse_add_opinion = {
+			modifier = insult_opinion
+			target = scope:KOH_party_victim
+			opinion = -20
+		}
+		hidden_effect = {
+			if = {
+				limit = { can_set_relation_potential_friend_trigger = { CHARACTER = scope:KOH_party_joker } }
+				set_relation_potential_friend = scope:KOH_party_joker
+			}
+			if = {
+				limit = { can_set_relation_potential_rival_trigger = { CHARACTER = scope:KOH_party_victim } }
+				set_relation_potential_rival = scope:KOH_party_victim
+			}
+		}
+	}
+}
+
+KOH_guelphs_ghibellines_filler.0024 = {#warn the poential vitim
+	type = character_event
+	title = KOH_guelphs_ghibellines_filler.0024.t
+	desc = KOH_guelphs_ghibellines_filler.0024.desc
+
+	theme = party
+	override_background = {
+		event_background = feast
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness 
+	}
+
+	left_portrait = {
+		character = scope:KOH_party_victim
+		animation = happiness
+	}
+
+	option = { 
+		name = KOH_guelphs_ghibellines_filler.0024.a
+		add_piety = minor_piety_gain
+		reverse_add_opinion = {
+			modifier = grateful_opinion
+			target = scope:KOH_party_victim
+			opinion = 20
+		}
+		reverse_add_opinion = {
+			modifier = insult_opinion
+			target = scope:KOH_party_joker
+			opinion = -20
+		}
+		hidden_effect = {
+			if = {
+				limit = { can_set_relation_potential_friend_trigger = { CHARACTER = scope:KOH_party_victim } }
+				set_relation_potential_friend = scope:KOH_party_victim
+			}
+			if = {
+				limit = { can_set_relation_potential_rival_trigger = { CHARACTER = scope:KOH_party_joker } }
+				set_relation_potential_rival = scope:KOH_party_joker
+			}
+		}
 	}
 }
