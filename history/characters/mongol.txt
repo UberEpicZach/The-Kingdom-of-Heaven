@@ -1,12 +1,27 @@
 ﻿#Borjigin Gen12
-jalair1 = {
-	name="Guan Ua"
+jalair0 = {
+	name="Telegetu Bayan"
 	dynasty=mongol1
-	dynasty_house=house_
+	dynasty_house=house_Ca'at
 	religion="tengri_pagan"
 	culture="mongol"
 	
-	1150.1.2 = {
+	1129.3.2 = {
+		birth = yes
+	}
+	1190.5.2 = {
+		death = yes
+	}
+}
+jalair1 = {
+	name="Guan Ua"
+	dynasty=mongol1
+		dynasty_house=house_Ca'at
+	religion="tengri_pagan"
+	culture="mongol"
+	father=jalair0
+	
+	1138.5.6 = {
 		birth = yes
 	}
 	1190.1.2 = {
@@ -16,12 +31,135 @@ jalair1 = {
 jalair2 = {
 	name="Mukhali"
 	dynasty=mongol1
-	dynasty_house=house_
+	dynasty_house=house_Ca'at
 	religion="tengri_pagan"
 	culture="mongol"
 	martial=16
+	trait=intellect_good_1
+	trait=generous
+	trait=strong
+	trait=gregarious
+	trait=loyal
+	trait=ruthless
+	
+	mother=jalair5
 	father=jalair1
-	1170.1.2 = {
+	1170.8.2 = {
+		birth = yes
+	}
+	1223.1.2 = {
+		death = yes
+	}
+}
+jalair3 = {
+	name="Chila'un Cayichi"
+	dynasty=mongol1
+	dynasty_house=house_Ca'at
+	religion="tengri_pagan"
+	culture="mongol"
+	father=jalair0
+	
+	1142.5.6 = {
+		birth = yes
+	}
+	1190.1.2 = {
+		death = yes
+	}
+}
+jalair4 = {
+	name="Buqa"
+	dynasty=mongol1
+	dynasty_house=house_Ca'at
+	religion="tengri_pagan"
+	culture="mongol"
+	martial=16
+	mother=jalair5
+	father=jalair1
+	1170.8.2 = {
+		birth = yes
+	}
+	1223.1.2 = {
+		death = yes
+	}
+}
+jalair5 = {
+	name="Kokui"
+	dynasty=mongol1
+	religion="tengri_pagan"
+	culture="mongol"
+	female=yes
+	
+	1150.8.2 = {
+		birth = yes
+	}
+	1170.1.1={
+	add_spouse=jalair1
+	}
+	1223.1.2 = {
+		death = yes
+	}
+}
+jalair6 = {
+	name="Jebke"
+	dynasty=mongol1
+	dynasty_house=house_Ca'at
+	religion="tengri_pagan"
+	culture="mongol"
+
+	father=jalair0
+	1156.8.2 = {
+		birth = yes
+	}
+	1223.1.2 = {
+		death = yes
+	}
+}
+jalair7 = {
+	name="Tongge"
+	dynasty=mongol1
+	dynasty_house=house_Ca'at
+	religion="tengri_pagan"
+	culture="mongol"
+
+	father=jalair3
+	1176.8.2 = {
+		birth = yes
+	}
+	1223.1.2 = {
+		death = yes
+	}
+}
+jalair8 = {
+	name="Qasi"
+	dynasty=mongol1
+	dynasty_house=house_Ca'at
+	religion="tengri_pagan"
+	culture="mongol"
+
+	father=jalair3
+	1176.8.2 = {
+		birth = yes
+	}
+	1223.1.2 = {
+		death = yes
+	}
+}
+shigi_qutuqu={
+	name="Shigi Qutuqu"
+
+	religion="tengri_pagan"
+	culture="mongol"
+
+	mother=172004
+	trait=child_of_consort#not actually
+	trait=just
+	trait=scholar
+	trait=calm
+	trait=kind
+	stewardship=7
+	learning=7
+	
+	1180.8.2 = {
 		birth = yes
 	}
 	1223.1.2 = {
@@ -55,6 +193,9 @@ jalair2 = {
 	847.1.2 = {
 		birth = yes
 	}
+		885.1.2 = {
+	dynasty_house=house_salji'ut
+	}
 	903.1.2 = {
 		death = yes
 	}
@@ -68,6 +209,9 @@ jalair2 = {
 	mother=303250
 	849.1.2 = {
 		birth = yes
+	}
+		885.1.2 = {
+	dynasty_house=house_qatajin
 	}
 	913.1.2 = {
 		death = yes
@@ -96,6 +240,9 @@ jalair2 = {
 	852.1.2 = {
 		birth = yes
 	}
+		885.1.2 = {
+	dynasty_house=house_belgunut
+	}
 	892.1.2 = {
 		death = yes
 	}
@@ -108,6 +255,9 @@ jalair2 = {
 	mother=303250
 	856.1.2 = {
 		birth = yes
+	}
+		885.1.2 = {
+	dynasty_house=house_bugunut
 	}
 	903.1.2 = {
 		death = yes
@@ -124,9 +274,24 @@ jalair2 = {
 	885.1.2 = {
 		birth = yes
 	}
-	#885.1.2 = {
-	#	dynasty = 1040067 # Baarin
-	#}
+	885.1.2 = {
+	dynasty_house=house_baarin
+	}
+	943.1.2 = {
+		death = yes
+	}
+}
+3032570 = {
+	name="Baaridai" #ancestor of the Baarin tribe
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"
+	father=303257
+	dynasty_house=house_baarin
+	905.1.2 = {
+		birth = yes
+	}
+	
 	943.1.2 = {
 		death = yes
 	}
@@ -153,6 +318,10 @@ jalair2 = {
 	887.1.1={
 		birth=yes
 	}
+	888.1.2 = {
+	dynasty_house=house_jewurit
+	}
+	
 	960.1.1={
 		death=yes
 	}
@@ -182,6 +351,235 @@ jalair2 = {
 		birth = yes
 	}
 	999.1.1 = {
+		death = yes
+	}
+}
+3032601 = {
+	name="Hachin" # Father of Khaidu
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"
+	father=303259
+	940.1.1 = {
+		birth = yes
+	}
+	999.1.1 = {
+		death = yes
+	}
+}
+3032602 = {
+	name="Noyagidai" # Father of Khaidu
+	dynasty=11100
+	dynasty_house=house_noyakin
+	religion="tengri_pagan"
+	culture="mongol"
+	father=3032601
+	trait=authoritative
+	960.1.1 = {
+		birth = yes
+	}
+	1029.1.1 = {
+		death = yes
+	}
+}
+3032603 = {
+	name="Qachi'u" # Father of Khaidu
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"
+	father=303259
+	950.1.1 = {
+		birth = yes
+	}
+	1009.1.1 = {
+		death = yes
+	}
+}
+3032604 = {
+	name="Barulatai" # Father of Khaidu
+	dynasty=11100
+	dynasty_house=house_barulas
+	religion="tengri_pagan"
+	culture="mongol"
+	father=3032603
+	trait=rude
+	970.1.1 = {
+		birth = yes
+	}
+	1012.1.1 = {
+		death = yes
+	}
+}
+3032605 = {
+	name="Qachi'u" # Father of Khaidu
+	dynasty=11100
+	dynasty_house=house_noyakin
+	religion="tengri_pagan"
+	culture="mongol"
+	father=303259
+	trait=authoritative
+	955.1.1 = {
+		birth = yes
+	}
+	1000.1.1 = {
+		death = yes
+	}
+}
+3032606 = {
+	name="Barula" # Father of Khaidu
+	dynasty=11100
+	dynasty_house=house_barulas
+	religion="tengri_pagan"
+	culture="mongol"
+	father=3032605
+	trait=giant
+	trait=rude
+	975.1.1 = {
+		birth = yes
+	}
+	1011.1.1 = {
+		death = yes
+	}
+}
+3032607 = {
+	name="Barulas" # Father of Khaidu
+	dynasty=11100
+	dynasty_house=house_barulas
+	religion="tengri_pagan"
+	culture="mongol"
+	father=3032605
+	trait=dwarf
+	trait=rude
+	975.1.1 = {
+		birth = yes
+	}
+	1018.1.1 = {
+		death = yes
+	}
+}
+3032609 = {
+	name="Qarandai" # Father of Khaidu
+	dynasty=11100
+	dynasty_house=house_buda'at
+	religion="tengri_pagan"
+	culture="mongol"
+	father=303259
+	958.1.1 = {
+		birth = yes
+	}
+	1002.1.1 = {
+		death = yes
+	}
+}
+3032610 = {
+	name="Qachi'un" # Father of Khaidu
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"
+	father=303259
+	960.1.1 = {
+		birth = yes
+	}
+	995.1.1 = {
+		death = yes
+	}
+}
+3032611 = {
+	name="Adarkidai" # Father of Khaidu
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"
+	father=3032610
+	trait=authoritative
+	trait=stubborn
+	990.1.1 = {
+		birth = yes
+	}
+	1055.1.1 = {
+		death = yes
+	}
+}
+3032612 = {
+	name="Nachin" # Father of Khaidu
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"
+	father=303259
+	prowess=20
+	960.1.1 = {
+		birth = yes
+	}
+	995.1.1 = {
+		death = yes
+	}
+}
+3032613 = {
+	name="Nachin" # Father of Khaidu
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"
+	father=303259
+	prowess=20
+	960.1.1 = {
+		birth = yes
+	}
+	995.1.1 = {
+		death = yes
+	}
+}
+3032614 = {
+	name="Uru'udai" # Father of Khaidu
+	dynasty=11100
+	dynasty_house=uru'ut
+	religion="tengri_pagan"
+	culture="mongol"
+	father=3032613
+	990.1.1 = {
+		birth = yes
+	}
+	1076.1.1 = {
+		death = yes
+	}
+}
+3032615 = {
+	name="Mangqutai" # Father of Khaidu
+	dynasty=11100
+	dynasty_house=mangqut
+	religion="tengri_pagan"
+	culture="mongol"
+	father=3032613
+	990.1.1 = {
+		birth = yes
+	}
+	1072.1.1 = {
+		death = yes
+	}
+}
+3032616 = {
+	name="Shiju'udai" # Father of Khaidu
+	dynasty=11100
+	dynasty_house=mangqut
+	religion="tengri_pagan"
+	culture="mongol"
+	father=3032613
+	994.1.1 = {
+		birth = yes
+	}
+	1075.1.1 = {
+		death = yes
+	}
+}
+3032617 = {
+	name="Doqoladai" # Father of Khaidu
+	dynasty=11100
+	dynasty_house=mangqut
+	religion="tengri_pagan"
+	culture="mongol"
+	father=3032613
+	994.1.1 = {
+		birth = yes
+	}
+	1075.1.1 = {
 		death = yes
 	}
 }
@@ -440,10 +838,24 @@ jalair2 = {
 	culture="mongol"
 	dynasty_house = house_jurkin
 	father=303268
-	1110.1.1={
+	1090.1.1={
 		birth=yes
 	}
 	1140.1.1={
+		death=yes
+	}
+}
+3032721 = {
+	name="Qutuqtu"
+	dynasty=11100
+	religion="tengri_pagan"
+	culture="mongol"
+	dynasty_house = house_jurkin
+	father=303272
+	1110.1.1={
+		birth=yes
+	}
+	1160.1.1={
 		death=yes
 	}
 }
@@ -452,7 +864,7 @@ jalair2 = {
 	dynasty=11100
 	religion="tengri_pagan"
 	culture="mongol"
-	father=303268
+	father=3032721
 	trait=deceitful
 	trait=disloyal
 	dynasty_house = house_jurkin
@@ -474,7 +886,7 @@ jalair2 = {
 	dynasty_house = house_jurkin
 	religion="tengri_pagan"
 	culture="mongol"
-	father=303268
+	father=3032720
 	trait=deceitful
 	trait=disloyal
 	
@@ -2621,7 +3033,7 @@ jalair2 = {
 	religion = "tengri_pagan"
 	culture = "mongol"
 	father = 172001
-	martial = 25
+	martial = 20
 	diplomacy = 4
 	intrigue = 6
 	stewardship = 6
