@@ -4,7 +4,10 @@ Includes = {
 	"jomini/jomini_water_default.fxh"
 	"jomini/jomini_water_pdxmesh.fxh"
 	"jomini/jomini_water.fxh"
-	"jomini/jomini_fog_of_war.fxh"
+	# MOD(godherja-snowfall)
+	#"jomini/jomini_fog_of_war.fxh"
+	"gh_atmospheric.fxh"
+	# END MOD
 	"jomini/jomini_mapobject.fxh"
 	"standardfuncsgfx.fxh"
 }
@@ -42,7 +45,8 @@ PixelShader =
 				float4 Water = CalcWater( Input, Depth );
 
 				#ifdef WATER_COLOR_OVERLAY
-					#ifdef PDX_OSX // Not enough texture slots, so use only secondary colors on water.
+					// Not enough texture slots, so use only secondary colors on water.
+					#if defined( PDX_OSX ) && defined( PDX_OPENGL )
 						ApplySecondaryColorGame( Water.rgb, float2( Input.UV01.x, 1.0f - Input.UV01.y ) );
 					#else
 						float3 BorderColor;
@@ -59,7 +63,10 @@ PixelShader =
 					#endif
 				#endif
 				
-				Water.rgb = ApplyFogOfWarMultiSampled( Water.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				// MOD(godherja-snowfall)
+				//Water.rgb = ApplyFogOfWarMultiSampled( Water.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				Water.rgb = GH_ApplyAtmosphericEffects( Water.rgb, Input.WorldSpacePos, FogOfWarAlpha, 0.4f );
+				// END MOD
 				Water.rgb = ApplyDistanceFog( Water.rgb, Input.WorldSpacePos );
 
 				Water.rgb = FlatMapLerp > 0.0f ? lerp( Water.rgb, PdxTex2D( FlatMapTexture, Input.UV01 ).rgb, FlatMapLerp ) : Water.rgb;
@@ -104,7 +111,10 @@ PixelShader =
 						ApplySecondaryColorGame( Water.rgb, float2( Input.UV01.x, 1.0f - Input.UV01.y ) );
 				#endif
 				
-				Water.rgb = ApplyFogOfWarMultiSampled( Water.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				// MOD(godherja-snowfall)
+				//Water.rgb = ApplyFogOfWarMultiSampled( Water.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				Water.rgb = GH_ApplyAtmosphericEffects( Water.rgb, Input.WorldSpacePos, FogOfWarAlpha, 0.4f );
+				// END MOD
 				Water.rgb = ApplyDistanceFog( Water.rgb, Input.WorldSpacePos );
 
 				Water.rgb = FlatMapLerp > 0.0f ? lerp( Water.rgb, PdxTex2D( FlatMapTexture, Input.UV01 ).rgb, FlatMapLerp ) : Water.rgb;

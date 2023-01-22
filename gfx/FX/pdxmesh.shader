@@ -7,7 +7,10 @@ Includes = {
 	"cw/pdxterrain.fxh"
 	"jomini/jomini_fog.fxh"
 	"jomini/jomini_lighting.fxh"
-	"jomini/jomini_fog_of_war.fxh"
+	# MOD(godherja-snowfall)
+	#"jomini/jomini_fog_of_war.fxh"
+	"gh_atmospheric.fxh"
+	# END MOD
 	"jomini/jomini_water.fxh"
 	"jomini/jomini_mapobject.fxh"
 	"constants.fxh"
@@ -471,7 +474,10 @@ PixelShader =
 				#endif
 				
 				#ifndef UNDERWATER
-					Color = ApplyFogOfWar( Color, Input.WorldSpacePos, FogOfWarAlpha );
+					// MOD(godherja-snowfall)
+					//Color = ApplyFogOfWar( Color, Input.WorldSpacePos, FogOfWarAlpha );
+					Color = GH_ApplyAtmosphericEffects( Color, Input.WorldSpacePos, FogOfWarAlpha );
+					// END MOD
 					Color = ApplyDistanceFog( Color, Input.WorldSpacePos );
 				#endif
 				

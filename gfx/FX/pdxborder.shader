@@ -2,7 +2,10 @@ Includes = {
 	"cw/camera.fxh"
 	"jomini/jomini_flat_border.fxh"
 	"jomini/jomini_fog.fxh"
-	"jomini/jomini_fog_of_war.fxh"
+	# MOD(godherja-snowfall)
+	#"jomini/jomini_fog_of_war.fxh"
+	"gh_atmospheric.fxh"
+	# END MOD
 	"standardfuncsgfx.fxh"
 }
 
@@ -71,8 +74,11 @@ PixelShader =
 			PDX_MAIN
 			{
 				float4 Diffuse = PdxTex2D( BorderTexture, Input.UV );
-				
-				Diffuse.rgb = ApplyFogOfWar( Diffuse.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+
+				// MOD(godherja-snowfall)
+				//Diffuse.rgb = ApplyFogOfWar( Diffuse.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				Diffuse.rgb = GH_ApplyAtmosphericEffects( Diffuse.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				// END MOD
 				Diffuse.rgb = ApplyDistanceFog( Diffuse.rgb, Input.WorldSpacePos );
 				Diffuse.a *= _Alpha;
 				
@@ -90,11 +96,14 @@ PixelShader =
 			PDX_MAIN
 			{
 				float4 Diffuse = PdxTex2D( BorderTexture, Input.UV );
-				
+
 				float vPulseFactor = saturate( smoothstep( 0.0f, 1.0f, 0.4f + sin( GlobalTime * 2.5f ) * 0.25f ) );
 				Diffuse.rgb = saturate( Diffuse.rgb * vPulseFactor );
 				
-				Diffuse.rgb = ApplyFogOfWar( Diffuse.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				// MOD(godherja-snowfall)
+				//Diffuse.rgb = ApplyFogOfWar( Diffuse.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				Diffuse.rgb = GH_ApplyAtmosphericEffects( Diffuse.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				// END MOD
 				Diffuse.rgb = ApplyDistanceFog( Diffuse.rgb, Input.WorldSpacePos );
 				Diffuse.a *= _Alpha;
 				
@@ -121,7 +130,10 @@ PixelShader =
 
 				Diffuse.rgb = saturate( Diffuse.rgb * colorMult );
 
-				Diffuse.rgb = ApplyFogOfWar( Diffuse.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				// MOD(godherja-snowfall)
+				//Diffuse.rgb = ApplyFogOfWar( Diffuse.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				Diffuse.rgb = GH_ApplyAtmosphericEffects( Diffuse.rgb, Input.WorldSpacePos, FogOfWarAlpha );
+				// END MOD
 				Diffuse.rgb = ApplyDistanceFog( Diffuse.rgb, Input.WorldSpacePos );
 				Diffuse.a *= _Alpha;
 
