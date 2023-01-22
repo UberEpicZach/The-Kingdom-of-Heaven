@@ -396,93 +396,6 @@ window = {
 				}
 			}
 
-			#################
-			### Suzerain ####
-			#################
-
-			container = {
-				name = "suzerain"
-				datacontext = "[CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter]"
-				#visible = false
-				visible = "[CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').IsSet]"
-				parentanchor = bottom|right
-				widgetanchor = top|left
-				position = { -105 -250 }
-				allow_outside = yes
-
-				using = Animation_Character_Window_Refresh
-
-				portrait_head_small = {
-					blockoverride "portrait_transformation"
-					{
-						portrait_scale = { -1 1 }
-						portrait_offset = { 1 0 }
-					}
-
-					blockoverride "coa" {
-						coa_realm_tiny = {
-							visible = "[And(CharacterWindow.GetCharacter.IsAlive, CharacterWindow.HasLiegeTitleEvenWhenDead)]"
-							parentanchor = bottom|left
-							position = { 3 -2 }
-							scale = 0.85
-						}
-
-						coa_title_tiny = {
-							visible = "[And(Not(CharacterWindow.GetCharacter.IsAlive), CharacterWindow.HasLiegeTitleEvenWhenDead)]"
-							datacontext = "[CharacterWindow.GetCharacter.GetLiegeTitleEvenWhenDead]"
-							parentanchor = bottom|left
-							position = { 3 -2 }
-							scale = 0.85
-						}
-					}
-				}
-
-				text_label_center = {
-					parentanchor = top|hcenter
-					position = { 0 85 }
-					text = "trib_suzerain"
-					allow_outside = yes
-				}
-
-				portrait_opinion = {
-					name = "suzerain_opinion"
-					parentanchor = top|hcenter
-					position = { 0 110 }
-
-					datacontext = "[CharacterWindow.GetCharacter]"
-					visible = "[And( Character.GetLiege.IsValid, And( Character.IsAlive, Not(Character.IsLocalPlayer ) ) )]"
-
-					blockoverride "dread_logic" {
-						visible = "[Character.ShouldShowDreadEffectIconFor( CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter )]"
-						frame = "[Character.GetDreadEffectIconFrameFor( CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter )]"
-						tooltip = "[Character.GetDreadEffectTooltipFor( CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter )]"
-					}
-
-					blockoverride "opinion_text"
-					{
-						text = "[Character.GetOpinionOf( CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter )|=]"
-						fonttintcolor = "[Character.GetOpinionOfTint( CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter )]"
-					}
-
-					blockoverride "ott_heading_text"
-					{
-						text = "[Character.GetOpinionHeadingText( CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter )]"
-					}
-
-					blockoverride "ott_opinion_value_text"
-					{
-						text = "[Character.GetOpinionOf( CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter )|=]"
-						fonttintcolor = "[Character.GetOpinionOfTint( CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter )]"
-					}
-
-					blockoverride "ott_opinion_breakdown_text"
-					{
-						text = "[Character.GetOpinionBreakdownText( CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter )]"
-					}
-				}
-			}
-			# End Suzerain
-
 			### Host
 			container = {
 				name = "host"
@@ -928,7 +841,7 @@ window = {
 							text_single = {
 								name = "character_age"
 								raw_text = " [Character.GetAge]"
-								default_format = "#low"
+								default_format = "#high"
 								tooltip = "[Character.GetDeathOrBirthDateInfo]"
 								fontsize = 20
 								align = nobaseline
@@ -1310,7 +1223,7 @@ window = {
 										text_single = {
 											name = "skill_value"
 											text = "[SkillItem.GetValue]"
-											default_format = "#high"
+											default_format = "#high;bold"
 											align = nobaseline
 
 											background = {
@@ -1346,6 +1259,7 @@ window = {
 									name = "prowess_value"
 									text = "[CharacterWindow.GetCharacter.GetProwess|0]"
 									align = nobaseline
+									default_format = "#high;bold"
 								}
 							}
 
@@ -1379,7 +1293,7 @@ window = {
 									size = { 0 25 }
 									onclick = "[DefaultOnFaithClick(Faith.GetID)]"
 									text = "FAITH_CHARACTER_WINDOW"
-									default_format = "#clickable;italic"
+									default_format = "#clickable;italic;bold"
 									align = left|nobaseline
 									margin_left = 5
 
@@ -1392,7 +1306,7 @@ window = {
 									size = { 0 25 }
 									onclick = "[DefaultOnCultureClick(Culture.GetID)]"
 									text = "CULTURE_CHARACTER_WINDOW"
-									default_format = "#clickable;italic"
+									default_format = "#clickable;italic;bold"
 									align = left|nobaseline
 									margin_left = 5
 
@@ -1486,7 +1400,7 @@ window = {
 							autoresize = yes
 							maximumsize = { 118 50 }
 							text = "[DynastyHouse.GetBaseNameNoTooltip]"
-							default_format = "#high"
+							default_format = "#high;bold"
 							align = top|hcenter
 						}
 
@@ -1581,7 +1495,7 @@ window = {
 							text_single = {
 								name = "domain_limit"
 								text = "[Character.GetDomainSize]/[Character.GetDomainLimit]"
-								default_format = "#high"
+								default_format = "#high;bold"
 								align = center|nobaseline
 							}
 						}
@@ -1696,7 +1610,7 @@ window = {
 									text_single = {
 										name = "total_dread"
 										text = "[Character.GetDread|0]"
-										default_format = "#high"
+										default_format = "#high;bold"
 										align = center|nobaseline
 										fontsize_min = 12
 										max_width = 50
@@ -1717,7 +1631,7 @@ window = {
 									text_single = {
 										name = "total_gold"
 										text = "[Character.GetGold|0]"
-										default_format = "#high"
+										default_format = "#high;bold"
 										align = center|nobaseline
 										fontsize_min = 12
 										max_width = 50
@@ -1738,7 +1652,7 @@ window = {
 									text_single = {
 										name = "prestige"
 										text = "[Character.GetPrestige|0]"
-										default_format = "#high"
+										default_format = "#high;bold"
 										align = center|nobaseline
 										fontsize_min = 12
 										max_width = 50
@@ -1759,7 +1673,7 @@ window = {
 									text_single = {
 										name = "piety"
 										text = "[Character.GetPiety|0]"
-										default_format = "#high"
+										default_format = "#high;bold"
 										align = center|nobaseline
 										fontsize_min = 12
 										max_width = 50
@@ -1792,7 +1706,7 @@ window = {
 									text_single = {
 										name = "military_total_strength"
 										text = "[CharacterWindow.GetCachedMilitaryStrengthText]"
-										default_format = "#high"
+										default_format = "#high;bold"
 										align = center|nobaseline
 										fontsize_min = 12
 										max_width = 80
@@ -2068,10 +1982,7 @@ window = {
 					layoutpolicy_horizontal = expanding
 
 					onclick = "[CharacterWindow.SetTab('family')]"
-					# Clear Custom Tab visbility
-					onclick = "[GetVariableSystem.Clear('char_gui_tabs')]"
-					# Do not show selected if custom tab is selected
-					down = "[And(CharacterWindow.IsTabShown('family'),Not(GetVariableSystem.Exists('char_gui_tabs')))]"
+					down = "[CharacterWindow.IsTabShown('family')]"
 
 					using = tooltip_above
 
@@ -2086,7 +1997,7 @@ window = {
 						text_single = {
 							align = center
 							text = "[CharacterWindow.GetTabItemsCount('family')]"
-							default_format = "#low"
+							default_format = "#high;bold"
 							margin_right = 15
 							min_width = 30
 
@@ -2101,10 +2012,7 @@ window = {
 					layoutpolicy_horizontal = expanding
 
 					onclick = "[CharacterWindow.SetTab('relations')]"
-					# Clear Custom Tab visbility
-					onclick = "[GetVariableSystem.Clear('char_gui_tabs')]"
-					# Do not show selected if custom tab is selected
-					down = "[And(CharacterWindow.IsTabShown('relations'),Not(GetVariableSystem.Exists('char_gui_tabs')))]"
+					down = "[CharacterWindow.IsTabShown('relations')]"
 
 					using = tooltip_above
 
@@ -2119,7 +2027,7 @@ window = {
 						text_single = {
 							align = center
 							text = "[CharacterWindow.GetTabItemsCount('relations')]"
-							default_format = "#low"
+							default_format = "#high;bold"
 							margin_right = 15
 							min_width = 30
 
@@ -2135,10 +2043,7 @@ window = {
 					layoutpolicy_horizontal = expanding
 
 					onclick = "[CharacterWindow.SetTab('court')]"
-					# Clear Custom Tab visbility
-					onclick = "[GetVariableSystem.Clear('char_gui_tabs')]"
-					# Do not show selected if custom tab is selected
-					down = "[And(CharacterWindow.IsTabShown('court'),Not(GetVariableSystem.Exists('char_gui_tabs')))]"
+					down = "[CharacterWindow.IsTabShown('court')]"
 
 					using = tooltip_above
 
@@ -2153,7 +2058,7 @@ window = {
 						text_single = {
 							align = center
 							text = "[CharacterWindow.GetTabItemsCount('court')]"
-							default_format = "#low"
+							default_format = "#high;bold"
 							margin_right = 15
 							min_width = 30
 
@@ -2170,10 +2075,7 @@ window = {
 					layoutpolicy_horizontal = expanding
 
 					onclick = "[CharacterWindow.SetTab('vassals')]"
-					# Clear Custom Tab visbility
-					onclick = "[GetVariableSystem.Clear('char_gui_tabs')]"
-					# Do not show selected if custom tab is selected
-					down = "[And(CharacterWindow.IsTabShown('vassals'),Not(GetVariableSystem.Exists('char_gui_tabs')))]"
+					down = "[CharacterWindow.IsTabShown('vassals')]"
 
 					using = tooltip_above
 
@@ -2188,43 +2090,9 @@ window = {
 						text_single = {
 							align = center
 							text = "[CharacterWindow.GetTabItemsCount('vassals')]"
-							default_format = "#low"
+							default_format = "#high;bold"
 							margin_right = 15
 							min_width = 30
-
-							using = Animation_Character_Window_Refresh
-						}
-					}
-				}
-
-				# Custom tab
-				button_tab = {
-					name = "tribs_button"
-					datacontext = "[CharacterWindow.GetCharacter]"
-					visible = "[Not(IsDataModelEmpty(Character.MakeScope.GetList('all_tributaries')))]"
-					layoutpolicy_horizontal = expanding
-
-					onclick = "[GetVariableSystem.Set('char_gui_tabs','tribs')]"
-					down = "[GetVariableSystem.HasValue('char_gui_tabs','tribs')]"
-
-					using = tooltip_above
-
-					hbox = {
-
-						text_single = {
-							layoutpolicy_horizontal = expanding
-							align = center
-							text = "CV_TAB_TRIBS"
-							#visible = ""
-							default_format = "#low"
-						}
-
-						text_single = {
-							align = center
-							text = "[GetDataModelSize(Character.MakeScope.GetList('all_tributaries'))]"
-							default_format = "#low"
-							margin_right = 15
-							min_width = 24
 
 							using = Animation_Character_Window_Refresh
 						}
@@ -2248,8 +2116,7 @@ window = {
 
 				widget = {
 					name = "family"
-					# Modify visbility to include custom tab variable
-					visible = "[And(CharacterWindow.IsTabShown('family'),Not(GetVariableSystem.Exists('char_gui_tabs')))]"
+					visible = "[CharacterWindow.IsTabShown('family')]"
 					size = { 100% 100% }
 
 					using = Animation_Tab_Switch
@@ -2614,8 +2481,7 @@ window = {
 
 				widget = {
 					name = "relations"
-					# Modify visbility to include custom tab variable
-					visible = "[And(CharacterWindow.IsTabShown('relations'),Not(GetVariableSystem.Exists('char_gui_tabs')))]"
+					visible = "[CharacterWindow.IsTabShown('relations')]"
 					size = { 100% 100% }
 
 					using = Animation_Tab_Switch
@@ -2752,7 +2618,6 @@ window = {
 										visible = "[GreaterThan_int32( GetDataModelSize( CharacterWindow.GetRelationsOfType( GetRelation( 'lover' ) ) ), '(int32)5' )]"
 										onclick = "[CharacterWindow.ToggleExpandedRelation( 'lovers' )]"
 									}
-
 								}
 
 								vbox_character_row_item = {
@@ -2768,6 +2633,7 @@ window = {
 									{
 										text = "GUARDIAN_LABEL"
 									}
+
 
 									blockoverride "expand_button" {}
 
@@ -2896,7 +2762,7 @@ window = {
 									}
 
 									blockoverride "expand_button_inside" {
-										visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'friend' ) )), '(int32)7' )]"
+										visible = "[GreaterThan_int32( GetDataModelSize( CharacterWindow.GetRelationsOfType( GetRelation( 'friend' ) ) ), '(int32)7' )]"
 										onclick = "[CharacterWindow.ToggleExpandedRelation( 'friends' )]"
 									}
 								}
@@ -3083,8 +2949,8 @@ window = {
 
 				vbox_character_list = {
 					datacontext = "[CharacterWindow.GetCourt]"
-					# Modify visbility to include custom tab variable
-					visible = "[And(CharacterWindow.IsTabShown('court'),Not(GetVariableSystem.Exists('char_gui_tabs')))]"
+					visible = "[CharacterWindow.IsTabShown('court')]"
+
 					blockoverride "sort_dropdown" {
 						dropdown_sort_characterlist = {
 							# unique name needed to distinct from vassal sort options
@@ -3163,8 +3029,7 @@ window = {
 				####################################
 
 				vbox_character_list = {
-					# Modify visbility to include custom tab variable
-					visible = "[And(CharacterWindow.IsTabShown('vassals'),Not(GetVariableSystem.Exists('char_gui_tabs')))]"
+					visible = "[CharacterWindow.IsTabShown('vassals')]"
 					datacontext = "[CharacterWindow.GetVassals]"
 
 					blockoverride "sort_dropdown" {
@@ -3197,6 +3062,7 @@ window = {
 							}
 						}
 					}
+
 					blockoverride "character_count"
 					{
 						hbox = {
@@ -3228,43 +3094,6 @@ window = {
 						}
 					}
 				}
-
-				####################################
-				######### CUSTOM TRIBS TAB #########
-				####################################
-				vbox_character_list = {
-					visible = "[GetVariableSystem.HasValue('char_gui_tabs','tribs')]"
-					spacing = 3
-					layoutpolicy_vertical = expanding
-					layoutpolicy_horizontal = expanding
-					blockoverride "sort_buttons" {}
-					blockoverride "character_count" {}
-					blockoverride "scrollbox_margins" {
-						margin = { 0 5 }
-						margin_right = 10
-					}
-
-					blockoverride "container_implementation" {
-						fixedgridbox = {
-							name = "characters_grid"
-							datamodel = "[Character.MakeScope.GetList('all_tributaries')]"
-							addcolumn = 590
-							addrow = 90
-							setitemsizefromcell = yes
-							item = {
-								widget_tribs_list_item = {
-									datacontext = "[Scope.GetCharacter]"
-									layoutpolicy_horizontal = expanding
-									blockoverride "own_vassal" {}
-								}
-							}
-						}
-					}
-					blockoverride "scrollbox_empty_visibility" {
-						visible = "[IsDataModelEmpty(Character.MakeScope.GetList('all_tributaries'))]"
-					}
-				}
-				# End custom tribs tab section
 			}
 
 			### EXPANDED VIEWS
@@ -3543,7 +3372,6 @@ window = {
 									tooltip = "[DiplomacyItem.GetTooltip]"
 									using = tooltip_se
 
-
 									hbox = {
 										spacing = 20
 
@@ -3784,6 +3612,7 @@ window = {
 			}
 		}
 	}
+
 
 	######################################################
 	################ TYPES AND TEMPLATES #################

@@ -10,16 +10,29 @@
 	}
 }
 2090 = {	#BASTOGNE
-	holding = city_holding
+	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 2449 = {	#CLERVAUX
 	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 2699 = {	#VIANDEN
-	holding = city_holding
+	holding = castle_holding
+	culture = french
+	religion = catholic
+	1337.1.1 = {
+		buildings = {
+			castle_02
+		}
+	}
 }
 2089 = {	#DIEKIRCH
+	culture = french
 	holding = church_holding
+	religion = catholic
 }
 
 ###c_bouillon
@@ -29,27 +42,23 @@
 	holding = castle_holding
 }
 2686 = {	#CHINY
-	holding = none
 	culture = french
 	religion = catholic
 	975.1.1 = {
-		holding = city_holding
-	}
-	1100.1.1 = {
 		holding = castle_holding
 	}
 }
 2687 = {	#SAINT HUBERT
-	holding = church_holding
 	culture = french
+	holding = church_holding
 	religion = catholic
 }
 2095 = {	#VIRTON
 	culture = french
-	religion = catholic
-	holding = none
+	holding = castle_holding
 	1180.1.1 = {
 		holding = city_holding
+	religion = catholic
 	}
 }
 
@@ -60,10 +69,14 @@
 	holding = castle_holding
 }
 2094 = {	#LA ROCHE
-	holding = none
+	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 2096 = {	#HUY
 	holding = city_holding
+	religion = catholic
+	culture = french
 }
 
 ###c_namur
@@ -73,37 +86,50 @@
 	holding = castle_holding
 }
 2116 = {	#CHARLEROI
-	holding = city_holding
+	holding = castle_holding
+	religion = catholic
+	culture = french
+	religion = catholic
 }
 2122 = {	#COUVIN
 	holding = church_holding
+	religion = catholic
+	culture = french
 }
 
 ##d_brabant ###################################
 ###c_brabant
 2105 = {	#LEUVEN
-	culture = dutch
+	culture = franconian
 	religion = catholic
 	holding = castle_holding
 }
 2107 = {	#BRUSSELS
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2111 = {	#TURNHOUT
-	holding = none
+	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 
 ###c_antwerpen
 2106 = {	#ANTWERP
-	culture = dutch
+	culture = franconian
 	religion = catholic
 	holding = castle_holding
 }
 2108 = {	#ROSENDAAL
-	holding = none
+	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 2109 = {	#BREDA
-	holding = none
+	holding = castle_holding
+	culture = french
+	religion = catholic
 	1050.1.1 = {
 		holding = city_holding
 	}
@@ -111,17 +137,21 @@
 
 ###c_hainaut
 2117 = {	#MONS
-	culture = dutch
+	culture = french
 	religion = catholic
 	holding = castle_holding
 }
 2127 = {	#TOURNAI
+	culture = french
+	religion = catholic
 	holding = city_holding
+	religion = catholic
 }
 2120 = {	#ATH
-	holding = none
+	culture = french
+	religion = catholic
 	1160.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 
@@ -133,9 +163,13 @@
 }
 2121 = {	# MALBODEN
 	holding = church_holding
+	culture = french
+	religion = catholic
 }
 2119 = {	#VALENCIENNES
-	holding = city_holding
+	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 
 ##d_julich ###################################
@@ -143,26 +177,13 @@
 2092 = {	#AACHEN
 	culture = franconian
 	religion = catholic
-	holding = city_holding
+	holding = castle_holding
 	special_building = palace_of_aachen_01
-	867.1.1 = {
-		buildings = {
-			curtain_walls_01
-			hunting_grounds_01
-		}
-	}
-	1066.1.1 = {
-		buildings = {
-			curtain_walls_01
-			hunting_grounds_01
-			cereal_fields_01
-		}
-	}
 }
 2448 = {	#LIMBOURG
-	holding = none
 	culture = franconian
 	religion = catholic
+	holding = castle_holding
 	1000.1.1 = {
 		holding = castle_holding
 	}
@@ -170,16 +191,18 @@
 2093 = {	#DUREN
 	culture = franconian
 	religion = catholic
-	holding = castle_holding
-}
-2683 = {	#ESCHWEILER
-	holding = none
-	culture = franconian
+	holding = city_holding
 	religion = catholic
 }
-2684 = {	#PRUM
-	holding = church_holding
+2683 = {	#ESCHWEILER
 	culture = franconian
+	religion = catholic
+	holding = castle_holding
+}
+2684 = {	#PRUM
+	culture = franconian
+	religion = catholic
+	holding = church_holding
 	religion = catholic
 }
 
@@ -190,19 +213,22 @@
 	holding = castle_holding
 }
 2102 = {	#GLADBACH
-	holding = none
-	974.1.1 = {
-		holding = church_holding
-	}
+	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 2435 = {	#WEZEL
-	holding = none
+	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 2101 = {	#MOERS
-	holding = none
+	holding = castle_holding
 	1150.1.1 = {
 		holding = city_holding
 	}
+	culture = french
+	religion = catholic
 }
 
 ###c_maastricht
@@ -212,10 +238,14 @@
 	holding = castle_holding
 }
 2100 = {	#EINDHOVEN
-	holding = none
+	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 2110 = {	#TILBURG
 	holding = city_holding
+	culture = french
+	religion = catholic
 }
 
 ##d_upper_lorraine ###################################
@@ -223,23 +253,23 @@
 2083 = {	#TRIER
 	culture = franconian
 	religion = catholic
-	holding = castle_holding
-	1066.1.1 = {
-		buildings = {
-			cereal_fields_01
-			pastures_01
-			military_camps_01
-		}
-	}
+	holding = church_holding
+	religion = catholic
 }
 2085 = {	#BEDA
-	holding = none
+	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 2700 = {	#KONZ
-	holding = none
+	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 2703 = {	#WADERN
 	holding = city_holding
+	culture = french
+	religion = catholic
 }
 
 ###c_nancy
@@ -253,19 +283,18 @@
 	culture = french
 	religion = catholic
 }
-2713 = {	#BLANKENBERG = L�NSTADT / LUNEVILLE
-	holding = none
+2713 = {	#BLANKENBERG = LÜNSTADT / LUNEVILLE
+	holding = castle_holding
 	950.1.1 = {
-		culture = french
-		religion = catholic
-		holding = castle_holding
+		holding = city_holding
 	}
-}
-2714 = {	#SALM
 	culture = french
 	religion = catholic
-	holding = city_holding
-	#1225
+}
+2714 = {	#SALM
+	holding = castle_holding
+	culture = french
+	religion = catholic
 }
 
 ###c_metz
@@ -273,21 +302,32 @@
 	culture = franconian
 	religion = catholic
 	holding = castle_holding
+	1337.1.1 = {
+		buildings = {
+			city_02
+		}
+	}
 }
 2698 = {	#SAARBURG
-	holding = none
+	holding = castle_holding
+	culture = franconian
+	religion = catholic
 	964.1.1 = {
 		holding = castle_holding
 	}
 }
 2705 = {	#FORBACH
-	holding = none
+	holding = castle_holding
 	1066.1.1 = {
 		holding = city_holding
 	}
+	culture = franconian
+	religion = catholic
 }
 2711 = {	#FAULQUEMONT
-	holding = church_holding
+	holding = castle_holding
+	culture = franconian
+	religion = catholic
 }
 
 ###c_saarbrucken
@@ -297,13 +337,19 @@
 	holding = castle_holding
 }
 2726 = {	#ZWEIBRUCKEN
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 	1170.1.1 = {
 		holding = city_holding
 	}
+	culture = franconian
+	religion = catholic
 }
 2725 = {	#BITSCH
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_puttlingen
@@ -313,7 +359,9 @@
 	holding = castle_holding
 }
 2712 = {	#FINSTIGEN
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_neufchateau
@@ -328,7 +376,10 @@
 	holding = castle_holding
 }
 2192 = {	#LURE
+	culture = french
+	religion = catholic
 	holding = church_holding
+	religion = catholic
 }
 
 ##d_lower_lorraine ###################################
@@ -338,28 +389,26 @@
 	religion = catholic
 	holding = castle_holding
 	special_building_slot = holy_site_cologne_cathedral_01
-	867.1.1 = {
+	1337.1.1 = {
 		buildings = {
-			cereal_fields_01
-		}
-	}
-	1066.1.1 = {
-		buildings = {
-			cereal_fields_01
-			curtain_walls_01
-			farm_estates_01
-			regimental_grounds_01
+			city_03
 		}
 	}
 }
 2087 = {	#BONN
+	culture = franconian
 	holding = city_holding
+	religion = catholic
 }
 2682 = {	#NEUSS
+	culture = franconian
+	religion = catholic
 	holding = castle_holding
 }
 2685 = {	#NAUENAHR
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_dortmund
@@ -369,10 +418,15 @@
 	holding = castle_holding
 }
 2677 = {	#ESSEN
+	culture = franconian
+	religion = catholic
 	holding = church_holding
+	religion = catholic
 }
 2675 = {	#RECKLINGHAUSEN
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 	1000.1.1 = {
 		holding = city_holding
 	}
@@ -385,7 +439,9 @@
 	holding = castle_holding
 }
 2681 = {	#BILSTEIN
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_mark
@@ -395,10 +451,14 @@
 	holding = castle_holding
 }
 2678 = {	#HAGEN
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 }
 2676 = {	#HUKESWAG
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 	1066.1.1 = {
 		holding = city_holding
 	}
@@ -413,20 +473,22 @@
 2086 = {	#ADENAU
 	culture = franconian
 	religion = catholic
-	holding = none
+	holding = castle_holding
 	960.1.1 = {
 		holding = castle_holding
+	culture = french
+	religion = catholic
 	}
 }
 2697 = {	#COCHEM
-	holding = city_holding
 	culture = franconian
+	holding = city_holding
 	religion = catholic
 }
 2696 = {	#SPONHEM
-	holding = castle_holding
 	culture = franconian
 	religion = catholic
+	holding = castle_holding
 }
 
 ###c_bergh
@@ -436,7 +498,10 @@
 	holding = castle_holding
 }
 2688 = {	#SIEGBURG
+	culture = franconian
+	religion = catholic
 	holding = city_holding
+	religion = catholic
 }
 
 ###c_sayn
@@ -446,10 +511,14 @@
 	holding = castle_holding
 }
 2690 = {	#WIED
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 }
 2691 = {	#ISENBURG
-	holding = none
+	culture = franconian
+	religion = catholic
+	holding = castle_holding
 	1100.1.1 = {
 		holding = city_holding
 	}

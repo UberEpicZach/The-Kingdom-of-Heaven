@@ -440,9 +440,8 @@ PixelShader =
 
 				float3 FinalColor = CalculateSunLighting( MaterialProps, LightingProps, EnvironmentMap );
 
-				// MOD(godherja)
-				// Moved below application of border and highlight colors,
-				// otherwise our nice FoW clouds from Vic3 get obscured by them.
+				// MOD(godherja-snowfall)
+				// Moved below application of border and highlight colors.
 				// #ifndef UNDERWATER
 				// 	FinalColor = ApplyFogOfWar( FinalColor, Input.WorldSpacePos, FogOfWarAlpha );
 				// 	FinalColor = ApplyDistanceFog( FinalColor, Input.WorldSpacePos );

@@ -1,0 +1,20 @@
+﻿pdxmesh = {
+	name = "belfort_mesh"
+	file = "belfort.mesh"
+	scale = 1
+	meshsettings = {
+		name = "belfort"
+		index = 0
+		texture_diffuse = "belfort_atlas_diffuse.dds"
+		texture_normal = "building_indian_atlas_normal.dds"
+		texture_specular = "building_indian_atlas_properties.dds"
+		texture = { file = "belfort_unique.dds" index = 5 }
+		shader = "snap_to_terrain_atlas"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "belfort_entity"
+	pdxmesh = "belfort_mesh"
+}

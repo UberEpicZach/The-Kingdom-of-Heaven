@@ -1,0 +1,20 @@
+﻿pdxmesh = {
+	name = "castel_monte_mesh"
+	file = "castel_monte.mesh"
+	scale = 1
+	meshsettings = {
+		name = "castel_monte"
+		index = 0
+		texture_diffuse = "building_mediterranean_atlas_diffuse.dds"
+		texture_normal = "building_mediterranean_atlas_normal.dds"
+		texture_specular = "building_mediterranean_atlas_properties.dds"
+		texture = { file = "castel_monte_unique.dds" index = 5 }
+		shader = "standard_atlas"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "castel_monte_entity"
+	pdxmesh = "castel_monte_mesh"
+}

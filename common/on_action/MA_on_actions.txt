@@ -1,0 +1,114 @@
+﻿#################
+##MEDIEVAL ARTS##
+#################
+
+############
+#ON_ACTIONS#
+
+#Embellish City Chain (selections)
+MA_embellish_city_events = {
+	random_events = {
+		#accident in the workplace
+		#townsmen happy for renovation
+		#discover they are scamming you
+		#a foreign councillor working in your capital admires your works
+		#neighbouring ruler hears tales of works and would like a piece
+		#religious fanatic claims you want to build a second Babel
+
+		#Shared
+		50 = MA_events_unique.0001 #foreign artisan offers expertise
+		50 = MA_events_unique.0003 #court chaplain wants to be consulted for new temple construction
+		50 = MA_events_unique.0004 #noble wants larger mansion
+	}
+}
+#On Death
+on_death = {
+	on_actions = {
+		MA_on_death
+	}
+}
+MA_on_death = {
+	effect = {
+		if = {
+			limit = {
+				exists = var:MA_can_receive_patronage_perk_3_bonus
+			}
+			player_heir = {
+				set_variable = { name = MA_can_receive_patronage_perk_3_bonus value = this }
+			}
+		}
+	}
+}
+#On Culture Creation
+on_culture_created = {
+	on_actions = {
+		MA_on_culture_created
+	}
+}
+MA_on_culture_created = {
+	effect = {
+		if = {
+			limit = {
+				any_parent_culture = {
+					has_same_culture_heritage = root
+					MA_aesthetic_tradition = { TRADITION = latin }
+				}
+			}
+			set_variable = { name = MA_latin_culture value = this }
+		}
+		else_if = {
+			limit = {
+				any_parent_culture = {
+					has_same_culture_heritage = root
+					MA_aesthetic_tradition = { TRADITION = byzantine }
+				}
+			}
+			set_variable = { name = MA_byzantine_culture value = this }
+		}
+		else_if = {
+			limit = {
+				any_parent_culture = {
+					has_same_culture_heritage = root
+					MA_aesthetic_tradition = { TRADITION = islamic }
+				}
+			}
+			set_variable = { name = MA_islamic_culture value = this }
+		}
+		else_if = {
+			limit = {
+				any_parent_culture = {
+					has_same_culture_heritage = root
+					MA_aesthetic_tradition = { TRADITION = african }
+				}
+			}
+			set_variable = { name = MA_african_culture value = this }
+		}
+		else_if = {
+			limit = {
+				any_parent_culture = {
+					has_same_culture_heritage = root
+					MA_aesthetic_tradition = { TRADITION = pagan }
+				}
+			}
+			set_variable = { name = MA_pagan_culture value = this }
+		}
+		else_if = {
+			limit = {
+				any_parent_culture = {
+					has_same_culture_heritage = root
+					MA_aesthetic_tradition = { TRADITION = steppe }
+				}
+			}
+			set_variable = { name = MA_steppe_culture value = this }
+		}
+		else_if = {
+			limit = {
+				any_parent_culture = {
+					has_same_culture_heritage = root
+					MA_aesthetic_tradition = { TRADITION = eastern }
+				}
+			}
+			set_variable = { name = MA_eastern_culture value = this }
+		}
+	}
+}

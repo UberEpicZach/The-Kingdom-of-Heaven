@@ -505,125 +505,125 @@ widget = {
 
 			vbox = {
 				vbox = {
-				widget_hud_main_tab = {
-					name = "tab_court_tutorial_uses_this"
+					widget_hud_main_tab = {
+						name = "tab_court_tutorial_uses_this"
 
-					blockoverride "maintab_button"
-					{
-						texture = "gfx/interface/skinned/hud_maintab/maintab_court.dds"
+						blockoverride "maintab_button"
+						{
+							texture = "gfx/interface/skinned/hud_maintab/maintab_court.dds"
 
-						onclick = "[ToggleGameViewData( 'court_window', GetPlayer.GetID )]"
-						shortcut = "court_window"
+							onclick = "[ToggleGameViewData( 'court_window', GetPlayer.GetID )]"
+							shortcut = "court_window"
 							tooltip = "COURT_BUTTON"
-						down = "[IsGameViewOpen( 'court_window' )]"
+							down = "[IsGameViewOpen( 'court_window' )]"
+						}
+
+						state = {
+							name = _mouse_hierarchy_enter
+							on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_court_leave','hud_tab_glow_court_enter')]"
+						}
+
+						state = {
+							name = _mouse_hierarchy_leave
+							on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_court_enter','hud_tab_glow_court_leave')]"
+						}
 					}
 
-					state = {
-						name = _mouse_hierarchy_enter
-						on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_court_leave','hud_tab_glow_court_enter')]"
-					}
+					widget_hud_main_tab = {
+						name = "tab_intrigue"
 
-					state = {
-						name = _mouse_hierarchy_leave
-						on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_court_enter','hud_tab_glow_court_leave')]"
-					}
-				}
+						blockoverride "maintab_button"
+						{
+							texture = "gfx/interface/skinned/hud_maintab/maintab_intrigue.dds"
 
-				widget_hud_main_tab = {
-					name = "tab_intrigue"
-
-					blockoverride "maintab_button"
-					{
-						texture = "gfx/interface/skinned/hud_maintab/maintab_intrigue.dds"
-
-						onclick = "[ToggleGameViewData('intrigue_window', GetPlayer.GetID)]"
-						shortcut = "intrigue_window"
+							onclick = "[ToggleGameViewData('intrigue_window', GetPlayer.GetID)]"
+							shortcut = "intrigue_window"
 							tooltip = "INTRIGUE_BUTTON"
-						down = "[IsGameViewOpen('intrigue_window')]"
+							down = "[IsGameViewOpen('intrigue_window')]"
+						}
+
+						state = {
+							name = _mouse_hierarchy_enter
+							on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_intrigue_leave','hud_tab_glow_intrigue_enter')]"
+						}
+
+						state = {
+							name = _mouse_hierarchy_leave
+							on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_intrigue_enter','hud_tab_glow_intrigue_leave')]"
+						}
 					}
 
-					state = {
-						name = _mouse_hierarchy_enter
-						on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_intrigue_leave','hud_tab_glow_intrigue_enter')]"
-					}
+					widget_hud_main_tab = {
+						name = "tab_factions"
 
-					state = {
-						name = _mouse_hierarchy_leave
-						on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_intrigue_enter','hud_tab_glow_intrigue_leave')]"
-					}
-				}
+						blockoverride "maintab_button"
+						{
+							texture = "gfx/interface/skinned/hud_maintab/maintab_factions.dds"
 
-				widget_hud_main_tab = {
-					name = "tab_factions"
-
-					blockoverride "maintab_button"
-					{
-						texture = "gfx/interface/skinned/hud_maintab/maintab_factions.dds"
-
-						onclick = "[ToggleGameView('factions_window')]"
-						shortcut = "factions_window"
+							onclick = "[ToggleGameView('factions_window')]"
+							shortcut = "factions_window"
 							tooltip = "FACTION_BUTTON"
-						down = "[IsGameViewOpen('factions_window')]"
+							down = "[IsGameViewOpen('factions_window')]"
+						}
+
+						state = {
+							name = _mouse_hierarchy_enter
+							on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_factions_leave','hud_tab_glow_factions_enter')]"
+						}
+
+						state = {
+							name = _mouse_hierarchy_leave
+							on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_factions_enter','hud_tab_glow_factions_leave')]"
+						}
 					}
 
-					state = {
-						name = _mouse_hierarchy_enter
-						on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_factions_leave','hud_tab_glow_factions_enter')]"
-					}
+					widget_hud_main_tab = {
+						name = "tab_decisions"
 
-					state = {
-						name = _mouse_hierarchy_leave
-						on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_factions_enter','hud_tab_glow_factions_leave')]"
-					}
-				}
+						blockoverride "maintab_button"
+						{
+							texture = "gfx/interface/skinned/hud_maintab/maintab_decisions.dds"
 
-				widget_hud_main_tab = {
-					name = "tab_decisions"
-
-					blockoverride "maintab_button"
-					{
-						texture = "gfx/interface/skinned/hud_maintab/maintab_decisions.dds"
-
-						onclick = "[ToggleGameView('decisions')]"
-						shortcut = "decision_window"
+							onclick = "[ToggleGameView('decisions')]"
+							shortcut = "decision_window"
 							tooltip = "DECISIONS_BUTTON"
-						down = "[IsGameViewOpen('decisions')]"
+							down = "[IsGameViewOpen('decisions')]"
+						}
+
+						state = {
+							name = _mouse_hierarchy_enter
+							on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_decisions_leave','hud_tab_glow_decisions_enter')]"
+						}
+
+						state = {
+							name = _mouse_hierarchy_leave
+							on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_decisions_enter','hud_tab_glow_decisions_leave')]"
+						}
 					}
 
-					state = {
-						name = _mouse_hierarchy_enter
-						on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_decisions_leave','hud_tab_glow_decisions_enter')]"
-					}
-
-					state = {
-						name = _mouse_hierarchy_leave
-						on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_decisions_enter','hud_tab_glow_decisions_leave')]"
-					}
-				}
-
-					}
 				}
 			}
+		}
 
-			# Invisible button to ensure that these shortcuts don't get hidden
-			button = {
-				size = { 0 0 }
-				onclick = "[ToggleCharacter( GetPlayer.GetID )]"
-				shortcut = "character_window"
-			}
+		# Invisible button to ensure that these shortcuts don't get hidden
+		button = {
+			size = { 0 0 }
+			onclick = "[ToggleCharacter( GetPlayer.GetID )]"
+			shortcut = "character_window"
+		}
 
-			widget = {
-				datacontext = "[GetPlayer]"
-				datacontext = "[AccessLocalPlayerCachedData]"
-				datacontext = "[LocalPlayerCachedData.AccessNewArtifacts]"
-				datacontext = "[LocalPlayerCachedData.AccessCourtEvents]"
-				datacontext = "[Character.GetCourtGrandeurData]"
-				visible = "[And( And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), HasDlcFeature( 'royal_court' ))]"
-				enabled = "[Character.HasRoyalCourt]"
+		widget = {
+			datacontext = "[GetPlayer]"
+			datacontext = "[AccessLocalPlayerCachedData]"
+			datacontext = "[LocalPlayerCachedData.AccessNewArtifacts]"
+			datacontext = "[LocalPlayerCachedData.AccessCourtEvents]"
+			datacontext = "[Character.GetCourtGrandeurData]"
+			visible = "[And( And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)), HasDlcFeature( 'royal_court' ))]"
+			enabled = "[Character.HasRoyalCourt]"
 
 			parentanchor = bottom
-				position = { 4 50 }
-				size = { 45 45 }
+			position = { 4 50 }
+			size = { 45 45 }
 
 			icon = {
 				name = "royal_court_button_background"
@@ -754,7 +754,7 @@ widget = {
 
 						widget_royal_court_notification = {
 							visible = "[And( GreaterThanOrEqualTo_int32( CourtGrandeurData.GetCurrentLevel, CourtGrandeurData.GetMinimumExpectedLevel ), Or( GreaterThan_int32( LocalPlayerNewArtifacts.GetNumNewArtifactsOfCategory( 'court' ), '(int32)0' ), Or( GreaterThan_int32( LocalPlayerCourtEvents.GetNumberCourtEvents, '(int32)0' ), GreaterThan_int32( Character.GetNumPendingCourtEvents, '(int32)0' ) ) ) )]"
-						}	
+						}
 
 						widget_below_cgv_expectations = {
 							visible = "[LessThan_int32( CourtGrandeurData.GetCurrentLevel, CourtGrandeurData.GetMinimumExpectedLevel )]"
@@ -1077,7 +1077,7 @@ icon = {
 								layoutpolicy_horizontal = expanding
 
 								text = "CURRENT_DATE"
-								default_format = "#date"
+								default_format = "#high;bold"
 								autoresize = no
 								align = right|nobaseline
 								using = Font_Size_Medium
@@ -2724,7 +2724,7 @@ widget = {
 				}
 			}
 		}
-			
+
 		## Map Modes
 		map_modes = {
 			filter_mouse = all
@@ -4205,7 +4205,7 @@ types HUD
 			text = "[PlayerValueItem.GetBalance|1=]"
 			max_width = 110
 
-			default_format = "#low"
+			default_format = "#high"
 		}
 
 		text_single = {
@@ -4214,7 +4214,7 @@ types HUD
 			text = "[PlayerValueItem.GetBalance|1=]"
 			max_width = 110
 
-			default_format = "#N"
+			default_format = "#high"
 		}
 	}
 
@@ -4331,13 +4331,6 @@ types HUD
 									datacontext = "[InGameTopbar.GetIncomeBalanceBreakdown]"
 								}
 
-								blockoverride "jankcome_gold" {
-									text_single = {
-										layoutpolicy_vertical = expanding
-										text = "T4N_tributaries_income_gold"
-									}
-								}
-
 								blockoverride "expenses"
 								{
 									datacontext = "[InGameTopbar.GetExpensesBalanceBreakdown]"
@@ -4370,7 +4363,7 @@ types HUD
 										visible = "[GreaterThanOrEqualTo_CFixedPoint(GetPlayer.GetGold, '(CFixedPoint)0')]"
 										text = "[GetPlayer.GetGold|0]"
 										max_width = 50
-										default_format = "#high"
+										default_format = "#high;bold"
 										using = Font_Size_Medium
 									}
 
@@ -4379,7 +4372,7 @@ types HUD
 										visible = "[LessThan_CFixedPoint(GetPlayer.GetGold, '(CFixedPoint)0')]"
 										text = "[GetPlayer.GetGold|0]"
 										max_width = 50
-										default_format = "#N"
+										default_format = "#high"
 										using = Font_Size_Medium
 									}
 
@@ -4389,7 +4382,7 @@ types HUD
 											visible = "[GreaterThanOrEqualTo_CFixedPoint(GetPlayerBalance, '(CFixedPoint)0')]"
 											text = "CURRENT_BALANCE"
 											max_width = 50
-											default_format = "#low"
+											default_format = "#high"
 										}
 
 										text_single = {
@@ -4397,7 +4390,7 @@ types HUD
 											visible = "[LessThan_CFixedPoint(GetPlayerBalance, '(CFixedPoint)0')]"
 											text = "CURRENT_BALANCE"
 											max_width = 50
-											default_format = "#N"
+											default_format = "#high"
 										}
 									}
 								}
@@ -4437,7 +4430,7 @@ types HUD
 									name = "prestige_value"
 									text = "[GetPlayer.GetPrestige|0]"
 									max_width = 50
-									default_format = "#high"
+									default_format = "#high;bold"
 									using = Font_Size_Medium
 								}
 
@@ -4446,14 +4439,7 @@ types HUD
 						}
 
 						tooltipwidget = {
-							widget_resource_value_tooltip = {
-								blockoverride "resurces_meme" {
-									text_single = {
-										layoutpolicy_horizontal = expanding
-										text = "PRESTIGE_INCOME_TRIBUTARIES"
-									}
-								}
-							}
+							widget_resource_value_tooltip = {}
 						}
 					}
 
@@ -4474,14 +4460,7 @@ types HUD
 
 						using = tooltip_ne
 						tooltipwidget = {
-							widget_resource_value_tooltip = {
-								blockoverride "resurces_meme" {
-									text_single = {
-										layoutpolicy_horizontal = expanding
-										text = "PIETY_INCOME_TRIBUTARIES"
-									}
-								}
-							}
+							widget_resource_value_tooltip = {}
 						}
 
 						hbox = {
@@ -4505,7 +4484,7 @@ types HUD
 										text = "[GetPlayer.GetPiety|0]"
 
 										max_width = 50
-										default_format = "#high"
+										default_format = "#high;bold"
 										using = Font_Size_Medium
 									}
 
@@ -4565,7 +4544,7 @@ types HUD
 										text = "[GetPlayer.GetDynasty.GetPrestige|0]"
 
 										max_width = 50
-										default_format = "#high"
+										default_format = "#high;bold"
 										using = Font_Size_Medium
 									}
 
@@ -4583,7 +4562,7 @@ types HUD
 										text = "[GetPlayer.GetDynasty.GetPrestige|0]"
 
 										max_width = 50
-										default_format = "#low"
+										default_format = "#high;bold"
 										using = Font_Size_Medium
 									}
 
@@ -4649,7 +4628,7 @@ types HUD
 									text_single = {
 										name = "strength"
 										text = "[ArmyComposition.GetSoldierCountString]"
-										default_format = "#high"
+										default_format = "#high;bold"
 										align = nobaseline
 									}
 
@@ -4701,7 +4680,7 @@ types HUD
 								text = "[Character.GetDomainSize]/[Character.GetDomainLimit]"
 								align = nobaseline
 								margin_bottom = 1
-
+								default_format = "#high;bold"
 								max_width = 110
 							}
 						}

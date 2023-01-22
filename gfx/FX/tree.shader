@@ -194,13 +194,13 @@ PixelShader =
 			SLightingProperties LightingProps = GetSunLightingProperties( WorldSpacePos, ShadowTexture );
 	
 			float3 Color = CalculateSunLighting( MaterialProps, LightingProps, EnvironmentMap );
-			
+
 			// MOD(godherja-snowfall)
 			//Color = ApplyFogOfWar( Color, WorldSpacePos, FogOfWarAlpha );
 			Color = GH_ApplyAtmosphericEffects( Color, WorldSpacePos, FogOfWarAlpha );
-			// END MOD			
+			// END MOD
 			Color = ApplyDistanceFog( Color, WorldSpacePos );
-						
+			
 			Color.rgb = lerp( Color.rgb, BorderColor, BorderPostLightingBlend );
 
 			DebugReturn( Color, MaterialProps, LightingProps, EnvironmentMap );

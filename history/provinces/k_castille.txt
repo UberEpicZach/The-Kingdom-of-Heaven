@@ -1,128 +1,133 @@
-# Visigothic culture break-up moved backwards in time to around ~800; probably still being a bit overly-generous at that, but it's a decent date for it.
-
 ###c_burgos
 1906 = {	# BURGOS
 	# Misc
-	culture = visigothic
+	culture = castilian
 	religion = catholic
 	
 	holding = castle_holding
 	
 	# History
-	800.1.1 = { culture = castilian }
-	1066.1.1 = {
-		buildings = {
-			curtain_walls_01
-			hunting_grounds_01
-			military_camps_01
-		}
-	}
+	945.1.1 = { culture = castilian }
 }
 1907 = {	# ATAPUERCA
-	holding = none
-	culture = visigothic
+	holding = castle_holding
+	culture = castilian
 	religion = catholic
 }
 1908 = {	# LERMA
-	holding = church_holding
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 1905 = {	# PALENCIA
-	holding = city_holding
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
+	1212.1.1 = {
+		buildings = {
+			generic_university
+		}
+	}
 }
 
 ###c_valladolid
 1897 = {	# VALLADOLID
 	# Misc
 	culture = visigothic
-	religion = mozarabic_church
+	religion = catholic
 	
 	holding = castle_holding
 	
 	# History
-	800.1.1 = { culture = castilian }
-	950.1.1 = { religion = catholic }
+	945.1.1 = { culture = castilian }
+	1293.1.1 = {
+		special_building = generic_university
+	}
 }
 1896 = {	# SIMANCAS
-	holding = none
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 	
 	1066.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 	}
 }
 1898 = {	# ARANDA DE DUERO
-	holding = church_holding
-	culture = visigothic
+	culture = castilian
 	religion = catholic
-
-	800.1.1 = { culture = castilian }
+	holding = castle_holding
 }
 
 ###c_soria
 1901 = {	# SORIA
 	#Misc
 	culture = visigothic
-	religion = mozarabic_church
+	religion = catholic
 	
 	holding = castle_holding
 	
 	# History
-	800.1.1 = { culture = castilian }
-	950.1.1 = { religion = catholic }
+	950.1.1 = { culture = castilian }
 }
 1899 = {	# SAN ESTEBAN
-	holding = church_holding
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 1900 = {	# OSMA
-	holding = city_holding
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 1909 = {	# SAN LEONARDO DE YAGUE
-	holding = none
-	culture = visigothic
+	holding = castle_holding
+	culture = castilian
 	religion = catholic
-
-	800.1.1 = { culture = castilian }
 }
 
 ###c_cuellar
 1924 = {	# SEGOVIA
 	# Misc
 	culture = visigothic
-	religion = mozarabic_church
+	religion = catholic
 	
 	holding = castle_holding
 	
 	# History
-	800.1.1 = { culture = andalusian }
-	867.1.1 = { special_building_slot = alcazar_of_segovia_01 }
 	955.1.1 = { culture = castilian }
-	1120.1.1 = { special_building_slot = alcazar_of_segovia_01 }
-	1170.1.1 = { religion = catholic }
+	867.1.1 = { special_building_slot = alcazar_of_segovia_01 }
+	1120.1.1 = { special_building = alcazar_of_segovia_01 }
 }
 1925 = {	# CUELLAR
-	holding = church_holding
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 1926 = {	# UCEDA
-	holding = city_holding
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 
 ###c_olmedo
 1915 = {	# OLMEDO
 	# Misc
 	culture = visigothic
-	religion = mozarabic_church
+	religion = catholic
 	
 	holding = castle_holding
 	
 	# History
-	800.1.1 = { culture = andalusian }
-	955.1.1 = { culture = asturleonese }
-	1170.1.1 = { religion = catholic }
+	955.1.1 = { culture = castilian }
 }
 1922 = {	# CORACERA
-	holding = none
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 	
 	1066.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 	}
 }
 
@@ -133,20 +138,28 @@
 	religion = catholic
 	
 	# History
-	800.1.1 = { culture = castilian }
+	945.1.1 = {
+		culture = castilian
+	}
 }
 1802 = {	# SANTANDER
-	holding = city_holding
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 1815 = {	# REINOSA
-	holding = none
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 	
 	1066.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 1812 = {	# MEDINA DE POMAR
-	holding = none
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 
 ###c_amaya
@@ -158,18 +171,16 @@
 	holding = castle_holding
 	
 	# History
-	800.1.1 = { culture = castilian }
+	945.1.1 = { culture = castilian }
 }
 1813 = {	# MIRANDA DE EBRO
 	holding = castle_holding
-	culture = visigothic
+	culture = castilian
 	religion = catholic
-
-	800.1.1 = { culture = castilian }
 	
 }
 1904 = {	# SEDANO
-	holding = church_holding
-	culture = visigothic
+	holding = castle_holding
+	culture = castilian
 	religion = catholic
 }

@@ -1,0 +1,31 @@
+pdxmesh = {
+	name = "western_city_01_indian_c_mesh"
+	file = "western_city_01_indian_c.mesh"
+
+	meshsettings = {
+		name = "western_city_01_indian_cShape"
+		index = 0
+		texture_diffuse = "building_indian_atlas_diffuse.dds"
+		texture_normal = "building_indian_atlas_normal.dds"
+		texture_specular = "building_indian_atlas_properties.dds"
+		texture = { file = "western_city_01_c_unique.dds" index = 5 }
+		shader = "snap_to_terrain_atlas_usercolor"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "western_city_01_indian_c_decal_planeShape"
+		index = 0
+		texture_diffuse = "western_city_01_decal_diffuse.dds"
+		texture_normal = "western_city_01_decal_normal.dds"
+		texture_specular = "western_city_01_decal_properties.dds"
+		shader = "decal_local"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "LocalDecals"
+	}
+}
+
+entity = {
+	name = "western_city_01_indian_c_entity"
+	pdxmesh = "western_city_01_indian_c_mesh"
+}

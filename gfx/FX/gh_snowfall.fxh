@@ -42,7 +42,7 @@ PixelShader = {
 
 		// TODO: Add wind velocity and tile size variation between layers?
 
-		static const float  GH_SNOWFALL_VERTICAL_SPEED = 5.0f;
+		static const float  GH_SNOWFALL_VERTICAL_SPEED = 20.0f;
 		static const float2 GH_SNOWFALL_WIND_VELOCITY  = float2(-10.0f, 2.5f);
 
 		static const float GH_SNOWFALL_LAYER_TILE_SIZE = 60.0f;

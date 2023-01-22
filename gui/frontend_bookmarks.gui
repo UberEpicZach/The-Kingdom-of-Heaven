@@ -532,7 +532,7 @@ widget = {
 								scrollwidget = {
 
 									hbox = {
-										position = { 261 -15 }
+										position = { 5 -15 }
 										spacing = 5
 
 										hbox = {
@@ -3340,20 +3340,6 @@ types BookmarkPortraits
 					}
 				}
 
-				margin_widget = {
-					parentanchor = center|hcenter
-					size = { 100% 100 }
-					margin = { 10 0 }
-					margin_left = 15
-
-					icon = {
-						size = { 100% 100% }
-						parentanchor = center
-						texture = "gfx/interface/component_masks/mask_fade_halfcircle.dds"
-						color = { 0.58 0.55 0.5 1 }
-					}
-				}
-
 				flowcontainer = {
 					margin_left = 15
 
@@ -3482,24 +3468,6 @@ types BookmarkPortraits
 								duration = 1
 								next = pulse_a
 								using = Animation_Curve_Default
-							}
-						}
-
-						flowcontainer = {
-							parentanchor = bottom|hcenter
-							widgetanchor = center
-							direction = vertical
-							margin_bottom = 6
-
-							text_single = {
-								parentanchor = hcenter
-								text = "BOOKMARK_CHARACTER_TITLE"
-								default_format = "#light_background"
-							}
-
-							text_single = {
-								parentanchor = hcenter
-								text = "[BookmarkCharacter.GetDifficulty]"
 							}
 						}
 

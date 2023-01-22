@@ -2,59 +2,77 @@
 ##d_cyrenaica ###################################
 ###c_barqa
 6104 = {	#BARQA-AL-MARJ
-	culture = butr
+	culture = bedouin
 	religion = ashari
 	holding = castle_holding
 	
 	# History
 	1050.1.1 = { #Area conquered by tribals and turned into nomadic pastures
-		holding = tribal_holding
+		holding = castle_holding
 		culture = bedouin
 	}
 	1150.1.1 = {
 		culture = maghrebi
 	}
+	1337.1.1 = { culture = bedouin }
 }
 6102 = {	#WADI MASUS
-	holding = none
+	culture = bedouin
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 6103 = {	#JABAL_AL-GHARBI
-	holding = none
+	culture = bedouin
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 6105 = {	#BENGHAZI
-	holding = city_holding
+	culture = bedouin
+	religion = ashari
+	holding = castle_holding
 	
 	# History
 	1050.1.1 = { #Area conquered by tribals and turned into nomadic pastures
-		holding = none
+		holding = castle_holding
 	}
+	1337.1.1 = { culture = bedouin }
 }
 
 ###c_awjila
 6106 = {	#AWJILA
-	culture = butr
+	culture = bedouin
 	religion = ashari
 	holding = castle_holding
 	
 	# History
 	1050.1.1 = { #Area conquered by tribals and turned into nomadic pastures
-		holding = tribal_holding
+		holding = castle_holding
 		culture = bedouin
 	}
 	1150.1.1 = {
 		culture = maghrebi
 	}
+	1337.1.1 = { culture = bedouin }
 }
 6107 = {	#JALU
-	holding = city_holding
+	culture = bedouin
+	religion = ashari
+	holding = castle_holding
 	
 	# History
 	1050.1.1 = { #Area conquered by tribals and turned into nomadic pastures
-		holding = none
+		holding = castle_holding
 	}
+	1337.1.1 = { culture = bedouin }
 }
 6108 = {	#JAKHARRAD
-	holding = none
+	culture = bedouin
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
+	religion = ashari
 }
 
 ###c_derna
@@ -66,36 +84,36 @@
 	
 	# History
 	1050.1.1 = { #Area conquered by tribals and turned into nomadic pastures
-		holding = tribal_holding
+		holding = castle_holding
 		culture = bedouin
 	}
 	1150.1.1 = {
 		culture = maghrebi
 	}
+	1337.1.1 = { culture = bedouin }
 }
 6100 = {	#WADI_MAKHIL
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 6101 = {	#MARAWA
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 
 ###c_tobruk
 6098 = {	#TOBRUK
-	culture = butr
+	culture = egyptian
 	religion = ashari
 	holding = castle_holding
 	
 	# History
 	1050.1.1 = { #Area conquered by tribals and turned into nomadic pastures
-		holding = tribal_holding
-	}
-	1180.1.1 = {
-		holding = city_holding
-		buildings = {
-			guild_halls_02
-			plantations_02
-		}
+		holding = castle_holding
 	}
 }
 
@@ -103,8 +121,8 @@
 ###c_alexandria
 6053 = {	#ALEXANDRIA
 	culture = egyptian
-	religion = coptic
-	holding = castle_holding
+	religion = ashari
+	holding = city_holding
 	867.1.1 = {
 		buildings = {
 			common_tradeport_02
@@ -117,103 +135,71 @@
 			military_camps_01
 		}
 	}
-	1180.1.1 = {
-		buildings = {
-			castle_03
-			guild_halls_05
-			common_tradeport_04
-			orchards_03
-			watchtowers_04
-		}
-	}
 }
 6094 = {	#AL-HAMAM
-	holding = none
+	culture = egyptian
+	religion = coptic
+	holding = castle_holding
 }
 6116 = {	#WADI_NATRUN
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_03
-			plantations_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_sullum
 6097 = {	#SULLUM
-	culture = butr
-	religion = coptic
+	culture = egyptian
+	religion = ashari
 	holding = castle_holding
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			common_tradeport_02
-			plantations_02
-		}
-	}
 }
 6095 = {	#QASR_ASH_SHAMMAS
-	#holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6096 = {	#KANAIS_AL-HADID
-	holding = church_holding
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_siwa
 6093 = {	#SIWA	
 	culture = egyptian
-	religion = coptic
+	religion = ashari
 	holding = castle_holding
 }
 6092 = {	#AIN_AL-GHANBI
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6117 = {	#QARA
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ##d_delta ###################################
 ###c_damietta
 6046 = {	#DUMIYAT
 	culture = egyptian
-	religion = coptic
-	holding = castle_holding
+	religion = ashari
+	holding = city_holding
 	900.1.1 = {
 		religion = ashari
 	}
-	1180.1.1 = {
-		buildings = {
-			castle_03
-			common_tradeport_05
-			watchtowers_06
-			orchards_04
-			cereal_fields_04
-		}
-	}	
 }
 6043 = {	#DAQAHLA
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_03
-			orchards_03
-			cereal_fields_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6045 = {	#TINNIS
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			common_tradeport_04
-			orchards_04
-			cereal_fields_04
-		}
-	}	
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_al-buhaira
@@ -224,140 +210,68 @@
 	900.1.1 = {
 		religion = ashari
 	}
-	1180.1.1 = {
-		buildings = {
-			castle_03
-			common_tradeport_05
-			guild_halls_04
-			orchards_04
-			cereal_fields_04
-		}
-	}
 }
 6054 = {	#DAMANHUR
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			guild_halls_03
-			orchards_03
-			cereal_fields_03
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6055 = {	#RAMSIS
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_03
-			orchards_03
-			cereal_fields_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_al-gharbiya
 6051 = {	#MINUF
 	culture = egyptian
-	religion = coptic
+	religion = ashari
 	holding = castle_holding
 	900.1.1 = {
 		religion = ashari
 	}
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			watchtowers_03
-			orchards_03
-			cereal_fields_02
-			regimental_grounds_03
-		}
-	}
 }
 6047 = {	#SAMANNUD
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_03
-			orchards_03
-			cereal_fields_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6048 = {	#BURULLUS
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			watchtowers_04
-			common_tradeport_04
-			cereal_fields_03
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6049 = {	#NASTARAWA
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			common_tradeport_03
-			cereal_fields_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6050 = {	#IBYAR
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_03
-			orchards_03
-			cereal_fields_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_sharkiya
 6040 = {	#BILBAYS
 	culture = egyptian
-	religion = coptic
+	religion = ashari
 	holding = castle_holding
 	900.1.1 = {
 		religion = ashari
 	}
-	1180.1.1 = {
-		buildings = {
-			castle_03
-			watchtowers_04
-			camel_farms_05
-			military_camps_05
-			outposts_04
-		}
-	}
+	1337.1.1 = { culture = bedouin }
 }
 6041 = {	#QALYUB
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			guild_halls_03
-			orchards_03
-			cereal_fields_03
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6044 = {	#FAQUS
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_03
-			camel_farms_03
-			pastures_03
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 
 ##d_cairo ###################################
@@ -383,56 +297,26 @@
 			orchards_01
 			regimental_grounds_01
 			camel_farms_01
-		}
-	}
-	1179.1.1 = {
-		effect = { add_building_slot = 2 }
-	}
-	1180.1.1 = {
-		buildings = {
 			castle_04
-			watchtowers_06
-			regimental_grounds_05
-			camel_farms_05
-			military_camps_05
-			orchards_04
-			cereal_fields_04
 		}
 	}
 }
 6039 = {	#QUZLUM
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			common_tradeport_03
-			guild_halls_03
-			camel_farms_03
-
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
+	
+	1337.1.1 = { culture = bedouin }
 }
 6065 = {	#ATFIH
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			guild_halls_03
-			cereal_fields_03
-			orchards_03
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6066 = {	#HULWAN-CAIRO
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_03
-			cereal_fields_03
-			orchards_03
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_giza
@@ -446,59 +330,36 @@
 	900.1.1 = {
 		religion = ashari
 	}
-	1180.1.1 = {
-		buildings = {
-			castle_03
-			orchards_04
-			pastures_03
-			regimental_grounds_03
-			cereal_fields_03
-		}
-	}
 }
 6056 = {	#ABU_GHALIB
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_03
-			orchards_02
-			cereal_fields_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6058 = {	#BUSIR
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_03
-			orchards_02
-			cereal_fields_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_fayyum
 6060 = {	#AL-FAYYUM
 	culture = egyptian
-	religion = coptic
+	religion = ashari
 	holding = castle_holding
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			orchards_03
-			camel_farms_03
-			pastures_03
-			plantations_02
-		}
-	}
+	1337.1.1 = { culture = bedouin }
 }
 6059 = {	#TIRSA
-	#holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 6061 = {	#IQNA
-	#holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 
 ##d_al-wahat ###################################
@@ -507,21 +368,16 @@
 	culture = butr
 	religion = ashari
 	holding = castle_holding
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			orchards_03
-			camel_farms_03
-			pastures_03
-			plantations_02
-		}
-	}
 }
 6090 = {	#BAWITI
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6091 = {	#AL-HARRA
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_farafra
@@ -529,37 +385,27 @@
 	culture = butr
 	religion = ashari
 	holding = castle_holding
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			orchards_03
-			camel_farms_03
-			pastures_03
-			plantations_02
-		}
-	}
+	1337.1.1 = { culture = bedouin }
 }
 
 ###c_dakhla
 6085 = {	#MUT
 	culture = egyptian
-	religion = coptic
+	religion = ashari
 	holding = castle_holding
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			orchards_03
-			camel_farms_03
-			pastures_03
-			plantations_02
-		}
-	}
+	1337.1.1 = { culture = bedouin }
 }
 6086 = {	#TUNAYDA
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 6087 = {	#AL-QASR-DAKHLA
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 
 ###c_kharga
@@ -567,18 +413,13 @@
 	culture = egyptian
 	religion = coptic
 	holding = castle_holding
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			orchards_03
-			camel_farms_03
-			pastures_03
-			plantations_02
-		}
-	}
+	1337.1.1 = { culture = bedouin }
 }
 6084 = {	#BARIS
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 
 ##d_al-said ###################################
@@ -590,43 +431,26 @@
 	1171.1.1 = {
 		religion = ashari
 	}
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			orchards_04
-			cereal_fields_04
-			regimental_grounds_04
-			camel_farms_04
-		}
-	}
 }
 6074 = {	#HUW
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			guild_halls_04
-			orchards_04
-			cereal_fields_04
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6075 = {	#FAW
-	#holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6076 = {	#QINA
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_04
-			orchards_04
-			cereal_fields_03
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6078 = {	#ARMANT
-	#holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_bahnasa
@@ -637,117 +461,57 @@
 	900.1.1 = {
 		religion = ashari
 	}
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			orchards_04
-			cereal_fields_04
-			regimental_grounds_04
-			camel_farms_04
-		}
-	}
 }
 6062 = {	#AHNAS
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			guild_halls_03
-			orchards_04
-			cereal_fields_03
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6064 = {	#IHRIT
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_03
-			orchards_03
-			cereal_fields_03
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_ushmun
 6067 = {	#AL-USHMUNAIN
 	culture = egyptian
-	religion = coptic
+	religion = ashari
 	holding = castle_holding
 	#1171.1.1 = { religion = ashari}
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			orchards_04
-			cereal_fields_03
-			regimental_grounds_03
-		}
-	}
 }
 6068 = {	#ANSINA
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			guild_halls_02
-			orchards_03
-			cereal_fields_03
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6069 = {	#MANFALUT
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_03
-			orchards_02
-			cereal_fields_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_asyut
 6070 = {	#ASYUT
 	culture = egyptian
-	religion = coptic
+	religion = ashari
 	holding = castle_holding
 	#1171.1.1 = { religion = ashari}
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			orchards_04
-			cereal_fields_03
-			regimental_grounds_03
-			camel_farms_02
-		}
-	}
 }
 6071 = {	#BAWIT
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_02
-			orchards_03
-			cereal_fields_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6072 = {	#IKHMIN
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			guild_halls_03
-			orchards_02
-			cereal_fields_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6073 = {	#IBSHAYA
-	#holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_aswan
@@ -756,23 +520,21 @@
 	religion = coptic
 	holding = castle_holding
 	#1171.1.1 = { religion = ashari}
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			orchards_03
-			cereal_fields_04
-			regimental_grounds_03
-		}
-	}
 }
 6079 = {	#UDFU
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6080 = {	#ZARNIKH
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 6082 = {	#ASWAN-WEST
-	holding = none
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
 }
 
 
@@ -782,25 +544,11 @@
 	culture = bedouin
 	religion = ashari
 	holding = castle_holding
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			camel_farms_02
-			hill_forts_03
-			quarries_02
-		}
-	}
 }
 6122 = {	#SAFAGA
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			guild_halls_02
-			common_tradeport_03
-			quarries_02
-		}
-	}
+	culture = bedouin
+	religion = ashari
+	holding = castle_holding
 }
 
 ###c_jabal_quzlum
@@ -808,22 +556,21 @@
 	culture = bedouin
 	religion = ashari
 	holding = castle_holding
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			hill_forts_03
-			quarries_04
-		}
-	}
 }
 6119 = {	#CENTRAL_JBL _QUZLUM
-	holding = none
+	culture = bedouin
+	religion = ashari
+	holding = castle_holding
 }
 6120 = {	#SOUTH_JBL _QUZLUM
-	holding = none
+	culture = bedouin
+	religion = ashari
+	holding = castle_holding
 }
 6121 = {	#UM SHASHOBA
-	holding = none
+	culture = bedouin
+	religion = ashari
+	holding = castle_holding
 }
 
 ##d_sinai ###################################
@@ -832,41 +579,27 @@
 	culture = egyptian
 	religion = ashari
 	holding = castle_holding
-	1180.1.1 = {
-		buildings = {
-			castle_02
-			watchtowers_04
-			common_tradeport_02
-			military_camps_04
-			camel_farms_03
-		}
-	}
+	
+	1337.1.1 = { culture = bedouin }
 }
 6036 = {	#WARRADA
-	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_02
-			monastic_schools_02
-			camel_farms_03
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
+	
+	1337.1.1 = { culture = bedouin }
 }
 5970 = {	#AL-ARISH
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			common_tradeport_02
-			guild_halls_03
-			camel_farms_02
-		}
-	}
+	culture = egyptian
+	religion = ashari
+	holding = castle_holding
+	
+	1337.1.1 = { culture = bedouin }
 }
 
 ###c_sinai
 6033 = {	#AT-TUR
-	culture = bedouin
+	culture = levantine
 	religion = ashari
 	holding = castle_holding
 	909.1.1 = {
@@ -875,57 +608,40 @@
 	1171.1.1 = {
 		religion = ashari
 	}
+	1337.1.1 = { culture = bedouin }
 }
 6032 = {	#SAINT CATHERINE
+	culture = egyptian
+	religion = orthodox
 	holding = church_holding
-	1180.1.1 = {
-		buildings = {
-			temple_03
-			monastic_schools_05
-			pastures_04
-		}
-	}
 }
 6034 = {	#FARAN
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			common_tradeport_02
-			pastures_03
-			camel_farms_02
-		}
-	}
+	culture = levantine
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 6035 = {	#QALAT_JUNDI
-	#holding = none
+	culture = levantine
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 6037 = {	#TIH
-	#holding = none
+	culture = levantine
+	religion = ashari
+	holding = castle_holding
+	1337.1.1 = { culture = bedouin }
 }
 
 ###c_firaun
 6030 = {	#FIRAUN
-	culture = bedouin
+	culture = levantine
 	religion = ashari
 	holding = castle_holding
-	1180.1.1 = {
-		buildings = {
-			castle_03
-			hill_forts_05
-			military_camps_04
-			camel_farms_04
-			outposts_04
-		}
-	}
 }
 6031 = {	#DAHAB
-	holding = city_holding
-	1180.1.1 = {
-		buildings = {
-			city_02
-			common_tradeport_02
-			camel_farms_02
-		}
-	}
+	culture = levantine
+	religion = ashari
+	holding = castle_holding
 }

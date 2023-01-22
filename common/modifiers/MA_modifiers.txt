@@ -1,0 +1,42 @@
+﻿#################
+##MEDIEVAL ARTS##
+#################
+
+###########
+#MODIFIERS#
+
+MA_embellished_city = {
+	icon = fashion_positive
+	development_growth_factor = 0.1
+	build_speed = -0.1
+}
+MA_mausoleum_city = {
+	icon = family_positive
+	monthly_county_control_change_add = 0.3
+}
+MA_religious_city = {
+	icon = piety_positive
+	county_opinion_add = 30
+}
+MA_scholarly_city = {
+	icon = treatment_positive
+	development_growth = 0.3
+}
+MA_secret_temple_passage = {
+	icon = intrigue_positive
+	hostile_scheme_resistance_mult = 0.25
+}
+MA_constructed_grand_temple = {
+	icon = piety_positive
+	same_faith_opinion = 10
+}
+MA_constructed_grand_school = {
+	icon = learning_positive
+	monthly_lifestyle_xp_gain_mult = 0.1
+}
+MA_inspired_by_famed_city = {
+	icon = learning_positive
+	development_growth_factor = 0.15
+	build_speed = -0.15
+	build_gold_cost = -0.15
+}

@@ -1,0 +1,46 @@
+﻿NCamera = {
+	PANNING_WIDTH =  11680
+	PANNING_HEIGHT = 5760
+}
+
+NGraphics = {
+	WINTER_GRAPHICS_DEFAULT_FADE_SPEED = 0.035				# Snow fade speed used when the game is paused
+	WINTER_GRAPHICS_FADE_SPEEDS = { 0 0 0 0.05 0.085 } 		# Snow fade speed based on the current game speed if the game is unpaused. If 0 is defined for a speed, it will use WINTER_GRAPHICS_DEFAULT_FADE_SPEED instead
+
+	ERRORHOOF_DIVISOR = 100
+
+	# Court
+	COURT_EMISSIVE_STRENGTH = 5			# Strength of all emissive materials in the court shader
+	COURT_GEMCUBE_STRENGTH = 1			# Strength of cubemap in the gemcube shader
+	COURT_HOVER_GROW = 2.5				# Speed for hover effect increase in royal court scene
+	COURT_HOVER_FADE = -8.				# Speed for hover effect fade in royal court scene
+}
+
+NMapName = {
+	MIN_OPACITY = 1.0			# minimum opacity. Names hidden by draw distance will still fade to 0
+	MAX_OPACITY = 1.0
+	ZOOM_STEPS_VISIBLE_SCALES = {	# Each map-name has a scale. This list contains min-max values for each zoom step. If a name's scale is outside that range it will not be visible
+		# min (hides names that are too small)
+		# max (hides names when they get to large)
+		0.0		50.0 	#50		0	Closest zoomed in
+		0.0		50.0 	#75		1
+		0.0		50.0	#100 	2
+		0.0		50.0	#150 	3
+		0.0		50.0	#200 	4
+		0.0		50.0	#275 	5
+		0.0		50.0	#375 	6
+		0.0		50.0	#500 	7
+		0.0		50.0	#650 	8
+		0.0		50.0	#850 	9
+		0.11	50.0	#1100 	10
+		0.12	50.0	#1400 	11	Flat map
+		0.13	50.0	#1750 	12
+		0.14	50.0	#2150 	13
+		0.15	50.0	#2600 	14
+		0.17	50.0	#3050 	15
+		0.19	50.0	#3500 	16
+		0.21	50.0	#4000 	17
+		0.23	50.0	#4500 	18
+		0.27	50.0	#5000	19	Farthest out
+	}
+}

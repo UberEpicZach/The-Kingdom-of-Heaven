@@ -1,5 +1,3 @@
-# Visigothic culture break-up moved backwards in time to around ~800; probably still being a bit overly-generous at that, but it's a decent date for it.
-
 ###c_leon
 1816 = {	# LEON
 	# Misc
@@ -9,30 +7,31 @@
 	holding = castle_holding
 	
 	#History
-	800.1.1 = { culture = asturleonese }
-	1066.1.1 = {
-		buildings = {
-			pastures_01
-			barracks_01
-			military_camps_01
-		}
-	}
+	945.1.1 = { culture = castilian }
 }
 1822 = {	# SARRIA
-	holding = city_holding
+	culture = castilian
+	religion = catholic
+	holding = castle_holding
 }
 1824 = {	# VILLABLINO
 	holding = church_holding
+	culture = castilian
+	religion = catholic
 }
 1825 = {	# GUARDO/Cea
-	holding = none
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 	
 	1066.1.1 = {
 		holding = castle_holding
 	}
 }
 1911 = {	# VALENCIA DE CAMPOS
-	holding = none
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 
 ###c_benavente
@@ -44,10 +43,12 @@
 	holding = castle_holding
 	
 	#History
-	800.1.1 = { culture = asturleonese }
+	945.1.1 = { culture = castilian }
 }
 1827 = {	# ZAMORA
 	holding = church_holding
+	culture = castilian
+	religion = catholic
 }
 
 ###c_zamora
@@ -59,56 +60,69 @@
 	holding = castle_holding
 	
 	#History
-	800.1.1 = { culture = asturleonese }
+	945.1.1 = { culture = castilian }
 }
 1895 = {	# TORO
 	holding = church_holding
+	culture = castilian
+	religion = catholic
 }
 1910 = {	# VILLAFAFILA
-	holding = city_holding
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 
 ###c_salamanca
 1913 = {	# BEJAR
 	# Misc
 	culture = visigothic
-	religion = mozarabic_church
+	religion = catholic
 	
 	holding = castle_holding
 	
 	# History
-	800.1.1 = { culture = andalusian }
-	955.1.1 = { culture = asturleonese }
-	1170.1.1 = { faith = catholic }
+	955.1.1 = { culture = castilian }
+	1218.1.1 = {
+		special_building = generic_university
+	}
 }
 1828 = {	# SALAMANCA
 	holding = church_holding
+	culture = castilian
+	religion = catholic
 }
 1829 = {	# CIDUAD RODRIGO/Ciudad Rodrigo
-	holding = city_holding
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 
 ###c_avila
 1912 = {	# AVILA
 	# Misc
 	culture = visigothic
-	religion = mozarabic_church
+	religion = catholic
 	
 	holding = castle_holding
 	
 	# History
-	800.1.1 = { culture = andalusian }
-	955.1.1 = { culture = asturleonese }
-	1170.1.1 = { faith = catholic }
+	955.1.1 = { culture = castilian }
 }
 1914 = {	# MEDINA DEL CAMPO
-	holding = city_holding
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 1921 = {	# LA ADRADA
-	holding = none
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 1916 = {	# SIERRA DE GREDOS
 	holding = church_holding
+	culture = castilian
+	religion = catholic
 }
 
 ###c_asturias_de_oviedo
@@ -120,20 +134,24 @@
 	holding = castle_holding
 	
 	# History
-	800.1.1 = { culture = asturleonese }
-	802.1.1 = {
-		special_building_slot = cathedral_of_the_holy_saviour
-		special_building = cathedral_of_the_holy_saviour
+	950.1.1 = {
+		culture = castilian
 	}
 }
 1817 = {	# RIANO
 	holding = church_holding
+	culture = castilian
+	religion = catholic
 }
 1798 = {	# VILLAVICIOSA
-	holding = city_holding
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 1796 = {	# GIJON
-	holding = none
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 
 ###c_pravia
@@ -145,14 +163,22 @@
 	holding = castle_holding
 	
 	# History
-	800.1.1 = { culture = asturleonese }
+	950.1.1 = {
+		culture = castilian
+	}
 }
 1794 = {	# LUARCA
 	holding = church_holding
+	culture = castilian
+	religion = catholic
 }
 1823 = {	# CANGAS DEL NARCEA
-	holding = none
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }
 1793 = {	# CARBALLIDO
-	holding = none
+	holding = castle_holding
+	culture = castilian
+	religion = catholic
 }

@@ -14,9 +14,11 @@
 2160 = {	#ROHAN
 	culture = breton
 	religion = catholic
-	holding = none
+	holding = castle_holding
 	1104.1.1 = {
-		holding = city_holding
+		culture = breton
+	religion = catholic
+	holding = castle_holding
 	}
 }
 
@@ -29,13 +31,17 @@
 2151 = {	#RAIS
 	culture = breton
 	religion = catholic
-	holding = city_holding
+	holding = castle_holding
 }
 2153 = {	#GUERANDE
-	holding = church_holding
+	culture = breton
+	religion = catholic
+	holding = castle_holding
 }
 2166 = {	#CHATEAUBRIANT
-	holding = none
+	culture = breton
+	religion = catholic
+	holding = castle_holding
 	1100.1.1 = {
 		holding = castle_holding
 	}
@@ -48,10 +54,14 @@
 	holding = castle_holding
 }
 2155 = {	#LORIENT
-	holding = none
+	culture = breton
+	religion = catholic
+	holding = castle_holding
 }
 2159 = {	#CORNOUAILLES
-	holding = church_holding
+	culture = breton
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_french_leon
@@ -59,9 +69,16 @@
 	culture = breton
 	religion = catholic
 	holding = castle_holding
+	1337.1.1 = {
+		buildings = {
+			castle_02
+		}
+	}
 }
 2158 = {	#StPol de Leon
-	holding = church_holding
+	culture = breton
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_penthievre
@@ -71,10 +88,14 @@
 	holding = castle_holding
 }
 2161 = {	#TREGUIER
-	holding = church_holding
+	culture = breton
+	religion = catholic
+	holding = castle_holding
 }
 2164 = {	#SAINT MALO
-	holding = city_holding
+	culture = breton
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_rennes
@@ -82,14 +103,9 @@
 	culture = breton
 	religion = catholic
 	holding = castle_holding
-	1066.1.1 = {
-		buildings = {
-			ramparts_01
-			outposts_01
-			hunting_grounds_01
-		}
-	}
 }
 2282 = {	#COMBOURG
-	holding = city_holding
+	culture = breton
+	religion = catholic
+	holding = castle_holding
 }

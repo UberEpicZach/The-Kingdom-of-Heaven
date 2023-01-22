@@ -7,17 +7,28 @@
 	holding = castle_holding
 }
 2062 = {	# ORANGE
-	culture = occitan
+	culture = french
 	religion = catholic
-	holding = city_holding
+	holding = castle_holding
 }
 2059 = {	#AVIGNON
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
+	1337.1.1 = {
+		buildings = { 
+			castle_04
+		}
+	}
 }
 2067 = {	#VAISON
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1125.1.1 = {
-		holding = city_holding
+		culture = french
+	religion = catholic
+	holding = castle_holding
 	}
 }
 
@@ -28,24 +39,28 @@
 	holding = castle_holding
 }
 2024 = {	#DRAGUIGNIAN
-	holding = none
-}
-2025 = {	#CASTELLANE
-	holding = church_holding
-}
-2018 = {	#MARSEILLE
-	culture = occitan
+	culture = french
 	religion = catholic
 	holding = castle_holding
-	1066.1.1 = {
+}
+2025 = {	#CASTELLANE
+	culture = french
+	religion = catholic
+	holding = castle_holding
+}
+2018 = {	#MARSEILLE
+	culture = french
+	religion = catholic
+	holding = castle_holding
+	1337.1.1 = {
 		buildings = {
-			common_tradeport_01
-			curtain_walls_01
-			barracks_01
+			city_02
 		}
 	}
 }
 2023 = {	#AIX
+	culture = french
+	religion = catholic
 	holding = castle_holding
 }
 
@@ -56,22 +71,28 @@
 	holding = castle_holding
 }
 2020 = {	#GRASSE
-	holding = none
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 8720 = {	#BARCELONNETTE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1231.1.1 = {
-		holding = city_holding
+		culture = french
 	}
 }
 8721 = {	#PUGET
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	#1257
 }
 2026 = {	#DIGNE
-	holding = none
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_forcalquier
@@ -81,19 +102,27 @@
 	holding = castle_holding
 }
 2060 = {	#APT
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2027 = {	#EMBRUN
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2028 = {	#GAP
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1050.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 8718 = {	#BRIANCON
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ##d_savoie ###################################
@@ -104,18 +133,26 @@
 	holding = castle_holding
 }
 2029 = {	#SAINT-MICHEL-DE-MAURIENNE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2455 = {	#CHAMBERY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1050.1.1 = {
-		holding = city_holding
+		culture = french
+	religion = catholic
+	holding = castle_holding
 	}
 }
 2069 = {	#BELLEY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1050.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 
@@ -126,7 +163,9 @@
 	holding = castle_holding
 }
 2038 = {	# MARTIGNY
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_geneva
@@ -136,17 +175,25 @@
 	holding = castle_holding
 }
 2034 = {	#ANNECY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1050.1.1 = {
-		holding = city_holding
+		culture = french
+	religion = catholic
+	holding = castle_holding
 	}
 }
 2036 = {	#THONON-LES-BAINS
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	#1270
 }
 8719 = {	#FAUCIGNY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1050.1.1 = {
 		holding = castle_holding
 	}
@@ -159,13 +206,17 @@
 	holding = castle_holding
 }
 2042 = {	#PINEROLO
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1064.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 2456 = {	#CANAVESE = SUSA
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ##d_dauphine ###################################
@@ -176,17 +227,21 @@
 	holding = castle_holding
 }
 2070 = {	#VILLARS = Villars-les-Dombes
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	920.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 2301 = {	#BEAUJEU
 	culture = french
 	religion = catholic
-	holding = none
+	holding = castle_holding
 	1000.1.1 = {
-		holding = castle_holding
+		culture = french
+	religion = catholic
+	holding = castle_holding
 	}
 }
 
@@ -197,10 +252,14 @@
 	holding = castle_holding
 }
 2298 = {	#MONTBRISON
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2305 = {	#ROANNE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1050.1.1 = {
 		holding = castle_holding
 	}
@@ -213,7 +272,9 @@
 	holding = castle_holding
 }
 3258 = {	#ANNONAY
-	holding = church_holding
+	culture = occitan
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_viennois
@@ -223,20 +284,24 @@
 	holding = castle_holding
 }
 2033 = {	#VIENNE
-	culture = occitan
+	culture = french
 	religion = catholic
 	holding = castle_holding
 }
 2032 = {	#CHARTREUSE = PALADRU
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1100.1.1 = {
 		holding = castle_holding
 	}
 }
 2068 = {	#ROMANS
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	917.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 
@@ -247,10 +312,14 @@
 	holding = castle_holding
 }
 2066 = {	#DIE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2064 = {	#VALENCE
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ##d_upper_burgundy ###################################
@@ -261,22 +330,32 @@
 	holding = castle_holding
 }
 2077 = {	#VESOUL
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	890.1.1 = {
 		holding = castle_holding
 	}
 }
 2075 = {	#MORTEAU
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2459 = {	#ORNANS
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1150.1.1 = {
-		holding = city_holding
+		culture = french
+	religion = catholic
+	holding = castle_holding
 	}
 }
 2383 = {	#GY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_bresse
@@ -286,9 +365,11 @@
 	holding = castle_holding
 }
 2457 = {	#CHAMPAGNOLE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	950.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 
@@ -299,13 +380,19 @@
 	holding = castle_holding
 }
 2191 = {	#QUINGEY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2073 = {	#LONS-LE-SAUNIER
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2072 = {	#SALINS
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ##d_transjurania ###################################
@@ -316,10 +403,14 @@
 	holding = castle_holding
 }
 2037 = {	#LAUSANNE
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2047 = {	#THUN
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_aargau
@@ -329,7 +420,9 @@
 	holding = castle_holding
 }
 2048 = {	#LUCERNE
-	holding = church_holding
+	culture = swabian
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_neuchatel
@@ -339,5 +432,7 @@
 	holding = castle_holding
 }
 2074 = {	#PONTARLIER
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }

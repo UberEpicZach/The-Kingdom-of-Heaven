@@ -5,45 +5,42 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
-	769.1.1 = {
-		special_building_slot = notre_dame_01
-	}
-	867.1.1 = {
+	1150.1.1 = {
 		buildings = {
-			farm_estates_01
-			curtain_walls_01
+			generic_university
 		}
 	}
-	1066.1.1 = {
+	1214.1.1 = {
+		special_building_slot = notre_dame_01
+	}
+	1337.1.1 = {
 		buildings = {
-			castle_02
-			farm_estates_02
-			curtain_walls_01
-			regimental_grounds_01
+			city_04
 		}
 	}
 }
 2357 = {	#SAINT DENIS
-	holding = church_holding
-	867.1.1 = {
-		buildings = {
-			temple_02
-		}
-	}
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2356 = {	#MONTREUIL
 	culture = french
 	religion = catholic
-	holding = city_holding
+	holding = castle_holding
 }
 2334 = {	#VERSAILLES
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1000.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 	}
 }
 2335 = {	#MONTLHERY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1015.1.1 = {
 		holding = castle_holding
 	}
@@ -61,16 +58,22 @@
 	holding = castle_holding
 }
 2353 = {	#BRAY
+	culture = french
+	religion = catholic
 	holding = castle_holding
 }
 2337 = {	#NEMOURS
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1120.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 	}
 }
 2342 = {	#MONTEREAU
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_vermandois
@@ -83,8 +86,11 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+	holding = castle_holding
 }
 2399 = {	#LAON
+	culture = french
+	religion = catholic
 	holding = church_holding
 }
 
@@ -95,16 +101,20 @@
 	holding = castle_holding
 }
 2360 = {	#CREPY
-	holding = city_holding
 	culture = french
 	religion = catholic
+	holding = castle_holding
 }
 2398 = {	#COUCY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1150.1.1 = {
-		culture = french
-		religion = catholic
 		holding = castle_holding
+		buildings = { 
+			castle_04
+			curtain_walls_06
+		}
 	}
 }
 
@@ -117,7 +127,7 @@
 2185 = {	#CORBIE
 	culture = french
 	religion = catholic
-	holding = castle_holding
+	holding = city_holding
 }
 2186 = {	#PERONNE
 	culture = french
@@ -139,7 +149,7 @@
 2183 = {	#BEAUVAIS
 	culture = french
 	religion = catholic
-	holding = church_holding
+	holding = castle_holding
 }
 2332 = {	#MONTFORT
 	culture = french
@@ -154,10 +164,14 @@
 	holding = castle_holding
 }
 2188 = {	#NOYON
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2187 = {	#SAINT-QUENTIN
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ##d_berry ###################################
@@ -168,10 +182,14 @@
 	holding = castle_holding
 }
 2279 = {	#CHATEAUROUX
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2276 = {	#LA HAYE, today known as "Descartes" in Indre-et-Loire
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_tourraine
@@ -179,19 +197,16 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
-	1066.1.1 = {
-		buildings = {
-			cereal_fields_01
-			hunting_grounds_01
-			military_camps_01
-		}
-	}
 }
 2273 = {	#TOURRAINE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2275 = {	#LOCHES
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_blois
@@ -201,10 +216,14 @@
 	holding = castle_holding
 }
 2318 = {	#CONTRES
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2316 = {	#ROMORANTIN
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_issoudun
@@ -214,12 +233,14 @@
 	holding = castle_holding
 }
 2277 = {	#VALENCAY
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2312 = {	#BOURGES
 	culture = french
 	religion = catholic
-	holding = church_holding
+	holding = castle_holding
 }
 
 ##d_anjou ###################################
@@ -228,23 +249,43 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+	1150.1.1 = {
+		holding = castle_holding
+		buildings = { 
+			castle_04
+			curtain_walls_06
+		}
+	}
+	1337.1.1 = {
+		buildings = {
+			city_02
+		}
+	}
 }
 2263 = {	#LUIGNE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1186.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 2268 = {	#LA FLECHE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1050.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 	}
 }
 2269 = {	#LE LUDE
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2262 = {	#CRAON
+	culture = french
+	religion = catholic
 	holding = castle_holding
 }
 
@@ -253,9 +294,16 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+	1337.1.1 = {
+		buildings = { 
+			castle_04
+		}
+	}
 }
 2260 = {	#MELAY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_maine
@@ -265,13 +313,17 @@
 	holding = castle_holding
 }
 2272 = {	#COURCILLON	= Dissay-sous-Courcillon
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1050.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 	}
 }
 2271 = {	#SARTHE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_sable
@@ -281,38 +333,42 @@
 	holding = castle_holding
 }
 2266 = {	#MAYENNE
+	culture = french
+	religion = catholic
 	holding = castle_holding
 }
 2265 = {	#LAVAL
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1050.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 	}
 }
 
 ##d_normandy ###################################
 ###c_rouen
 2179 = {	#ROUEN
-	culture = norman
+	culture = french
 	religion = catholic
 	holding = castle_holding
 	960.1.1 = {	culture = norman }
 	1100.11.11 = { culture = french }
-	1066.1.1 = {
+	1337.1.1 = {
 		buildings = {
-			castle_02
-			ramparts_01
-			barracks_01
-			hunting_grounds_01
-			logging_camps_01
+			city_02
 		}
 	}
 }
 2180 = {	#GISORS
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2175 = {	#HARCOURT
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_evreux
@@ -324,25 +380,33 @@
 	1100.11.11 = { culture = french }
 }
 2330 = {	#VERNON
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2328 = {	#VERNEUIL
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_bayeux
 2170 = {	#BAYEUX
-	culture = norman
+	culture = french
 	religion = catholic
 	holding = castle_holding
 	960.1.1 = {	culture = norman }
 	1100.11.11 = { culture = french }
 }
 2172 = {	#CAEN
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2173 = {	#FALAISE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_avranches
@@ -354,12 +418,16 @@
 	1100.11.11 = { culture = french }
 }
 2169 = {	#CHERBOURG
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2168 = {	#COUTANCES
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1050.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 
@@ -372,10 +440,14 @@
 	1100.11.11 = { culture = french }
 }
 2171 = {	#MORTAIN
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2326 = {	#ARGENTAN
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_lisieux
@@ -387,29 +459,36 @@
 	1100.11.11 = { culture = french }
 }
 2327 = {	#SEES
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_eu
 2178 = {	#EU
-	culture = norman
+	culture = french
 	religion = catholic
 	holding = castle_holding
 	960.1.1 = {	culture = norman }
+	1100.11.11 = { culture = french }
 }
 2176 = {	#FECAMP
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2177 = {	#DIEPPE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1000.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 	}
 }
 2182 = {	#AUMALE
-	culture = norman
+	culture = french
 	religion = catholic
-	holding = none
+	holding = castle_holding
 	996.1.1 = {
 		holding = castle_holding
 	}
@@ -421,23 +500,28 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
-	1066.1.1 = {
+	1235.1.1 = {
 		buildings = {
-			farm_estates_01
-			cereal_fields_02
+			generic_university
 		}
 	}
 }
 2320 = {	#BEAUGENCY
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2317 = {	#OLIVET
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	950.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 	}
 }
 2315 = {	#VIERZON
+	culture = french
+	religion = catholic
 	holding = castle_holding
 }
 
@@ -446,11 +530,20 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+	1337.1.1 = {
+		buildings = { 
+			castle_03
+		}
+	}
 }
 2340 = {	#COURTENAY
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2341 = {	#CHATEAU RENARD
+	culture = french
+	religion = catholic
 	holding = castle_holding
 }
 
@@ -461,6 +554,8 @@
 	holding = castle_holding
 }
 2321 = {	#CHATEAUDUN
+	culture = french
+	religion = catholic
 	holding = castle_holding
 }
 
@@ -476,14 +571,11 @@
 	holding = castle_holding
 }
 2323 = {	#NOGENT-LE-ROTROU
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2324 = {	#Perche / Mortagne
-	holding = none
-}
-
-###c_lepuiset
-9674 = {	#Le Puiset
 	culture = french
 	religion = catholic
 	holding = castle_holding
@@ -496,13 +588,17 @@
 	holding = castle_holding
 }
 2463 = {	#SULLY SUR LOIRE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1100.1.1 = {
 		holding = castle_holding
 	}
 }
 2313 = {	#HERRY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ##d_champagne ###################################
@@ -511,20 +607,11 @@
 	culture = french
 	religion = catholic
 	holding = church_holding
-	867.1.1 = {
-		buildings = {
-			monastic_schools_01
-		}
-	}
-	1066.1.1 = {
-		buildings = {
-			monastic_schools_02
-			hunting_grounds_01
-		}
-	}
 }
 2366 = {	#EPERNAY
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2362 = {	#CHATILLON = Chatillon-sur-Marne
 	culture = french
@@ -532,6 +619,8 @@
 	holding = castle_holding
 }
 2361 = {	#CHATEAU THIERRY
+	culture = french
+	religion = catholic
 	holding = castle_holding
 }
 
@@ -540,15 +629,11 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
-	1066.1.1 = {
-		buildings = {
-			cereal_fields_02
-			curtain_walls_01
-		}
-	}
 }
 2375 = {	#CLAIRVAUX
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2373 = {	#JOINVILLE
 	culture = french
@@ -556,7 +641,9 @@
 	holding = castle_holding
 }
 2372 = {	#BAR SUR AUBE
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_coulommiers = Provins
@@ -564,22 +651,18 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
-	1066.1.1 = {
-		buildings = {
-			castle_02
-			cereal_fields_02
-			curtain_walls_01
-			hunting_grounds_01
-		}
-	}
 }
 2364 = {	#COULOMMIERS
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2365 = {	#ROMILLY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1150.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 
@@ -590,20 +673,26 @@
 	holding = castle_holding
 }
 2355 = {	#CRECY
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_chalons
 2392 = {	#CHALONS
 	culture = french
 	religion = catholic
-	holding = church_holding
+	holding = castle_holding
 }
 2389 = {	#SAINT DIZIER
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2367 = {	#VITRY EN PERTHOIS
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_rethel
@@ -618,13 +707,17 @@
 	holding = castle_holding
 }
 2394 = {	#MEZIERES
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	900.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 2396 = {	#ROMIGNY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_sens
@@ -634,16 +727,22 @@
 	holding = castle_holding
 }
 2368 = {	#NOGENT
+	culture = french
+	religion = catholic
 	holding = castle_holding
 }
 2369 = {	#AUBE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1145.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 	}
 }
 2370 = {	#BAR SUR SEINE
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ##d_burgundy ###################################
@@ -654,10 +753,14 @@
 	holding = castle_holding
 }
 2382 = {	#GRAY
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2381 = {	#CHAUMONT
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_chalon
@@ -667,15 +770,21 @@
 	holding = castle_holding
 }
 2377 = {	#CITEAUX
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1066.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 2376 = {	#BEAUNE
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2347 = {	#AUTUN
+	culture = french
+	religion = catholic
 	holding = castle_holding
 }
 
@@ -686,10 +795,14 @@
 	holding = castle_holding
 }
 2345 = {	#DONZY
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2350 = {	#CHABLIS
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_tonnerrois
@@ -699,17 +812,21 @@
 	holding = castle_holding
 }
 2379 = {	#MONTBARD
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_avalois
 2349 = {	#VEZELAY
 	culture = french
 	religion = catholic
-	holding = monastery_holding
+	holding = castle_holding
 }
 2378 = {	#MORVAN
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_macon
@@ -719,12 +836,14 @@
 	holding = castle_holding
 }
 2304 = {	#CLUNY
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2303 = {	#SEMUR EN BRIONNAIS
 	culture = french
 	religion = catholic
-	holding = city_holding
+	holding = castle_holding
 }
 
 ###c_nevers
@@ -734,12 +853,16 @@
 	holding = castle_holding
 }
 2307 = {	#MOULINS
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2344 = {	#POUGUES LES EAUX
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 	1061.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 
@@ -751,10 +874,14 @@
 	holding = castle_holding
 }
 2395 = {	#VERDUN
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = church_holding
 }
 2081 = {	#b_argonne/SAINT-MIHIEL
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_briey
@@ -764,7 +891,9 @@
 	holding = castle_holding
 }
 2080 = {	#HAYANGE
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_langres
@@ -774,10 +903,14 @@
 	holding = church_holding
 }
 2386 = {	#GRAND
-	holding = none
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 2385 = {	#CHAMPS
-	holding = church_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_vaucouleurs
@@ -787,9 +920,9 @@
 	holding = castle_holding
 }
 2079 = {	#TOUL
-	holding = castle_holding
 	culture = french
 	religion = catholic
+	holding = church_holding
 }
 
 ##d_flanders ###################################
@@ -798,19 +931,26 @@
 	culture = dutch
 	religion = catholic
 	holding = castle_holding
-	1066.1.1 = {
+	1337.1.1 = {
 		buildings = {
-			common_tradeport_02
-			curtain_walls_01
-			farm_estates_01
+			city_02
 		}
 	}
 }
 2114 = {	#GENT
-	holding = church_holding
+	culture = dutch
+	religion = catholic
+	holding = castle_holding
+	1337.1.1 = {
+		buildings = {
+			city_03
+		}
+	}
 }
 2124 = {	#ROESELARE
-	holding = city_holding
+	culture = dutch
+	religion = catholic
+	holding = castle_holding
 }
 
 ###c_yperen
@@ -818,31 +958,49 @@
 	culture = dutch
 	religion = catholic
 	holding = castle_holding
+	1337.1.1 = {
+		buildings = {
+			city_02
+		}
+	}
 }
 2128 = {	#VEURNE
-	holding = none
+	culture = dutch
+	religion = catholic
+	holding = castle_holding
 	877.1.1 = {
-		holding = church_holding
+		holding = castle_holding
 	}
 }
 2131 = {	#DUNKIRK
-	holding = none
+	culture = dutch
+	religion = catholic
+	holding = castle_holding
 	975.1.1 = {
-		holding = city_holding
+		holding = castle_holding
 	}
 }
 
 ###c_guines
 2130 = {	#CALAIS
-	culture = dutch
+	culture = french
 	religion = catholic
 	holding = castle_holding
 }
 2129 = {	#GRAVELINES
-	holding = church_holding
+	culture = dutch
+	religion = catholic
+	holding = castle_holding
 }
 2133 = {	#SAINT OMER
-	holding = city_holding
+	culture = french
+	religion = catholic
+	holding = castle_holding
+	1337.1.1 = {
+		buildings = {
+			city_02
+		}
+	}
 }
 
 ###c_lille
@@ -850,14 +1008,21 @@
 	culture = dutch
 	religion = catholic
 	holding = castle_holding
+	1337.1.1 = {
+		buildings = {
+			city_02
+		}
+	}
 }
 2123 = {	#COURTRAI
-	holding = city_holding
+	culture = dutch
+	religion = catholic
+	holding = castle_holding
 }
 2134 = {	#AIRE
 	culture = french
 	religion = catholic
-	holding = none
+	holding = castle_holding
 	1059.1.1 = {
 		holding = castle_holding
 	}
@@ -868,22 +1033,25 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+	1150.1.1 = {
+		holding = castle_holding
+		buildings = { 
+			castle_04 
+		}
+	}
 }
-2135 = {	#HESDIN
-	culture = french
-	religion = catholic
-	holding = castle_holding
-}
-
-###c_ponthieu
 2136 = {	#MONTREUIL SUR MER
 	culture = french
 	religion = catholic
-	holding = church_holding
+	holding = castle_holding
 }
 2137 = {	#ABBEVILLE
 	culture = french
 	religion = catholic
 	holding = castle_holding
 }
-
+2135 = {	#HESDIN
+	culture = french
+	religion = catholic
+	holding = castle_holding
+}

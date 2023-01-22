@@ -149,16 +149,9 @@
 	# Misc
 	culture = kurdish
 	religion = nestorian
-	holding = castle_holding
+	
 	# History
 	867.1.1 = { religion = ashari }
-	1066.1.1 = {
-		buildings = {
-			camel_farms_01
-			regimental_grounds_01
-			pastures_01
-		}
-	}
 	1200.1.1 = { religion = yazidi }
 
 }
@@ -404,17 +397,13 @@
 	# Misc
 	culture = armenian
 	religion = armenian_apostolic
-	holding = city_holding
 	
 	# History
-	1098.1.1 = {
-		culture = french #Outremer
-		religion = catholic
-	}
-	1150.1.1 = { 
-		religion = ashari
+	1164.1.1 = {
 		culture = kurdish
+		religion = ashari
 	}
+
 }
 
 # 4870 - HARRAN
@@ -423,14 +412,7 @@
 	religion = armenian_apostolic
 	
 	# History
-	1098.1.1 = {
-		culture = french #Outremer
-		religion = catholic
-	}
-	1150.1.1 = { 
-		religion = ashari
-		culture = kurdish
-	}
+	1098.1.1 = { culture = armenian }
 	1170.1.1 = {
 		culture = levantine
 		religion = ashari
@@ -461,14 +443,11 @@
 	religion = armenian_apostolic
 	
 	# History
-	1098.1.1 = {
-		culture = french #Outremer
-		religion = catholic
-	}
-	1150.1.1 = { 
-		religion = ashari
+	1164.1.1 = {
 		culture = kurdish
+		religion = ashari
 	}
+
 }
 
 # 4873 - TALL_AMMAR
@@ -491,14 +470,7 @@
 	religion = armenian_apostolic
 	
 	# History
-	1098.1.1 = {
-		culture = french #Outremer
-		religion = catholic
-	}
-	1150.1.1 = { 
-		religion = ashari
-		culture = kurdish
-	}
+	1098.1.1 = { culture = armenian }
 	1170.1.1 = {
 		culture = levantine
 		religion = ashari
@@ -511,9 +483,10 @@
 	
 	# Misc
 	culture = levantine
-	religion = ashari
+	religion = orthodox
 	
 	# History
+	1270.1.1 = { religion = ashari }
 
 }
 
@@ -547,14 +520,7 @@
 	religion = armenian_apostolic
 	
 	# History
-	1098.1.1 = {
-		culture = french #Outremer
-		religion = catholic
-	}
-	1150.1.1 = { 
-		religion = ashari
-		culture = kurdish
-	}
+	1098.1.1 = { culture = armenian }
 	1170.1.1 = {
 		culture = levantine
 		religion = ashari
@@ -692,31 +658,3 @@
 
 }
 
-# 4847 - Hisn Kaifa
-4847 = {	# 4847 - Hisn Kaifa
-	
-	# Misc
-	culture = kurdish
-	religion = ashari
-	holding = castle_holding
-	
-}
-
-# 4857 - Tall Fafan
-4857 = {	# 4857 - Tall Fafan
-	
-	# Misc
-	culture = kurdish
-	religion = ashari
-	holding = castle_holding
-	
-}
-
-4857 = {	# 4857 - Arzan
-	
-	# Misc
-	culture = kurdish
-	religion = ashari
-	holding = city_holding
-	
-}

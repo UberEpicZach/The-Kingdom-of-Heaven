@@ -28,7 +28,7 @@ PixelShader =
 			PDX_MAIN
 			{		
 				float4 Color = CalcRiverSurface( Input );
-				
+
 				// MOD(godherja-snowfall)
 				//Color.rgb = ApplyFogOfWar( Color.rgb, Input.WorldSpacePos, FogOfWarAlpha );
 				Color.rgb = GH_ApplyAtmosphericEffects( Color.rgb, Input.WorldSpacePos, FogOfWarAlpha );

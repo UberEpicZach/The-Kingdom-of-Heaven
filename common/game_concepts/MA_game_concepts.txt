@@ -1,0 +1,123 @@
+﻿#################
+##MEDIEVAL ARTS##
+#################
+
+###############
+#GAME CONCEPTS#
+
+#Aesthetics
+aesthetic_tradition = {
+	alias = { aesthetic_traditions }
+}
+latin_aesthetic = {
+	alias = { latin_aesthetics latin }
+	parent = aesthetic_tradition
+}
+pagan_aesthetic = {
+	alias = { pagan_aesthetics pagan }
+	parent = aesthetic_tradition
+}
+byzantine_aesthetic = {
+	alias = { byzantine_aesthetics byzantine }
+	parent = aesthetic_tradition
+}
+islamic_aesthetic = {
+	alias = { islamic_aesthetics islamic }
+	parent = aesthetic_tradition
+}
+african_aesthetic = {
+	alias = { african_aesthetics african }
+	parent = aesthetic_tradition
+}
+steppe_aesthetic = {
+	alias = { steppe_aesthetics steppe }
+	parent = aesthetic_tradition
+}
+eastern_aesthetic = {
+	alias = { eastern_aesthetics eastern }
+	parent = aesthetic_tradition
+}
+art_style = {
+	alias = { art_styles style styles }
+	parent = aesthetic_tradition
+}
+#Buildings
+architectural_building = {
+	alias = { architectural_buildings }
+	parent = art_style
+}
+religious_building = {
+	alias = { religious_buildings }
+	parent = architectural_building
+}
+secular_building = {
+	alias = { secular_buildings }
+	parent = architectural_building
+}
+narthex = {
+	parent = architectural_building
+}
+basilica = {
+	parent = architectural_building
+}
+crypt = {
+	parent = architectural_building
+}
+apse = {
+	parent = architectural_building
+}
+baptistery = {
+	parent = architectural_building
+}
+nave = {
+	parent = architectural_building
+}
+aisle = {
+	alias = { aisles }
+	parent = architectural_building
+}
+chancel = {
+	parent = architectural_building
+}
+facade = {
+	parent = architectural_building
+}
+vault = {
+	parent = architectural_building
+}
+barrel_vault = {
+	parent = vault
+}
+rib_vault = {
+	parent = vault
+}
+dome = {
+	parent = vault
+}
+capitals = {
+	parent = architectural_building
+}
+round_arches = {
+	parent = architectural_building
+}
+pointed_arches = {
+	parent = architectural_building
+}
+horseshoe_arches = {
+	parent = architectural_building
+}
+tympanum = {
+	parent = architectural_building
+}
+transept = {
+	parent = architectural_building
+}
+rotunda = {
+	parent = architectural_building
+}
+steeple = {
+	parent = architectural_building
+}
+famed_city = {
+	alias = { famed_cities }
+}

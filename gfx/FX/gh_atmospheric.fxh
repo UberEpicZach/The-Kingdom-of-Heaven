@@ -1,5 +1,5 @@
 Includes = {
-	"gh_vic3_fog_of_war.fxh"
+	"jomini/jomini_fog_of_war.fxh" # Replaces "gh_vic3_fog_of_war.fxh"
 	"gh_snowfall.fxh"
 }
 
