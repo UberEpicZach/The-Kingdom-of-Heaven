@@ -365,36 +365,40 @@ KOH_Italian_Familes_Monthly = {
 	}
 
 	effect = {
-		every_ruler = {
-			limit = {
-				AND = {
-					exists = house
-					house = {
-						has_house_modifier = dynasty_guelph
+		faith:catholic = {
+			every_faith_character = {
+				limit = {
+					AND = {
+						culture = { has_cultural_pillar = heritage_latin }
+						exists = house
+						house = {
+							has_house_modifier = dynasty_guelph
+						}
+						is_landed = yes
+						is_adult = yes
+						is_female = no
 					}
-					is_landed = yes
-					is_adult = yes
-					is_female = no
 				}
+				add_character_flag = guelph_cb
+				add_trait = KOH_guelph
 			}
-			add_character_flag = guelph_cb
-			add_trait = KOH_guelph
-		}
-
-		every_ruler = {
-			limit = {
-				AND = {
-					exists = house
-					house = {
-						has_house_modifier = dynasty_ghibelline
+	
+			every_faith_character = {
+				limit = {
+					AND = {
+						culture = { has_cultural_pillar = heritage_latin }
+						exists = house
+						house = {
+							has_house_modifier = dynasty_ghibelline
+						}
+						is_landed = yes
+						is_adult = yes
+						is_female = no
 					}
-					is_landed = yes
-					is_adult = yes
-					is_female = no
 				}
+				add_character_flag = ghibelline_cb
+				add_trait = KOH_ghibelline
 			}
-			add_character_flag = ghibelline_cb
-			add_trait = KOH_ghibelline
 		}
 	}
 }
@@ -785,6 +789,7 @@ KOH_ON_START = {
 					}
 				}
 				trigger_event = KOH_ItalianCommunes.1
+				trigger_event = KOH_guelphs_ghibellines.1
 			}
 		}
 	}

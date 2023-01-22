@@ -1,5 +1,270 @@
 ﻿namespace = KOH_ItalianCommunes
 
+scripted_trigger koh_likes_trigger = {
+	exists = $COMPARE$
+	OR = {
+		has_relation_friend = $COMPARE$
+		has_relation_best_friend = $COMPARE$
+		has_relation_soulmate = $COMPARE$
+		has_relation_lover = $COMPARE$
+		is_close_family_of = $COMPARE$
+		opinion = {
+			target = $COMPARE$
+			value >= 30
+		}
+	}
+}
+
+scripted_trigger koh_dislikes_trigger = {
+	exists = $COMPARE$
+	OR = {
+		has_relation_rival = $COMPARE$
+		has_relation_nemesis = $COMPARE$
+		opinion = {
+			target = $COMPARE$
+			value <= -30
+		}
+	}
+}
+
+scripted_effect create_characters_for_cities = {
+	save_scope_as = republican_head
+	while = {
+		count = 5
+
+		create_character = {
+			location = scope:republican_head.capital_province
+			culture = scope:republican_head.culture
+			faith = scope:republican_head.faith
+			dynasty = generate
+			age = { 50 70 }
+			save_scope_as = new_character
+		}
+		scope:new_character = {
+			save_scope_as = DynastyHead
+
+			if = {
+				limit = {
+					scope:republican_head = {
+						has_trait = KOH_guelph
+					}
+				}
+				random_list = {
+					30 = {
+						trigger = {
+							koh_likes_trigger = { COMPARE = scope:republican_head }
+						}
+						add_trait = KOH_guelph
+						house = { add_house_modifier = dynasty_guelph }
+					}
+					20 = {
+						trigger = {
+							koh_dislikes_trigger = { COMPARE = scope:republican_head }
+						}
+						add_trait = KOH_ghibelline
+						house = { add_house_modifier = dynasty_ghibelline }
+					}
+					20 = {
+						random_list = {
+							30 = {
+								trigger = {
+									opinion = {
+										target = scope:republican_head
+										value >= 10
+									}
+								}
+								add_trait = KOH_guelph
+								house = { add_house_modifier = dynasty_guelph }
+							}
+							20 = {
+								trigger = {
+									opinion = {
+										target = scope:republican_head
+										value <= -10
+									}
+								}
+								add_trait = KOH_ghibelline
+								house = { add_house_modifier = dynasty_ghibelline }
+							}
+							# 20 = {
+							# 	#nothing
+							# }
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:republican_head = {
+						has_trait = KOH_ghibelline
+					}
+				}
+				random_list = {
+					30 = {
+						trigger = {
+							koh_likes_trigger = { COMPARE = scope:republican_head }
+						}
+						add_trait = KOH_ghibelline
+						house = { add_house_modifier = dynasty_ghibelline }
+					}
+					20 = {
+						trigger = {
+							koh_dislikes_trigger = { COMPARE = scope:republican_head }
+						}
+						add_trait = KOH_guelph
+						house = { add_house_modifier = dynasty_guelph }
+					}
+					20 = {
+						#Nothing
+					}
+				}
+			}
+
+			set_employer = scope:republican_head
+			create_character = {
+				location = scope:republican_head.capital_province
+				culture = scope:republican_head.culture
+				faith = scope:republican_head.faith
+				dynasty = scope:DynastyHead.dynasty
+				gender_female_chance = 30
+				age = { 16 40 }
+				save_scope_as = new_character1
+			}
+			scope:new_character1 = {
+				set_employer = scope:republican_head
+				set_father = scope:DynastyHead
+				set_house = father.house
+			}
+			create_character = {
+				location = scope:republican_head.capital_province
+				culture = scope:republican_head.culture
+				faith = scope:republican_head.faith
+				dynasty = scope:DynastyHead.dynasty
+				gender_female_chance = 30
+				age = { 16 40 }
+				save_scope_as = new_character2
+			}
+			scope:new_character2 = {
+				set_employer = scope:republican_head
+				set_father = scope:DynastyHead
+				set_house = father.house
+			}
+			random_list = {
+				30 = {
+
+				}
+				40 = {
+					create_character = {
+						location = scope:republican_head.capital_province
+						culture = scope:republican_head.culture
+						faith = scope:republican_head.faith
+						dynasty = scope:DynastyHead.dynasty
+						gender_female_chance = 30
+						age = { 16 40 }
+						save_scope_as = new_character3
+					}
+					scope:new_character3 = {
+						set_employer = scope:republican_head
+						set_father = scope:DynastyHead
+						set_house = father.house
+					}
+				}
+				30 = {
+					create_character = {
+						location = scope:republican_head.capital_province
+						culture = scope:republican_head.culture
+						faith = scope:republican_head.faith
+						gender_female_chance = 30
+						#dynasty = scope:DynastyHead.dynasty
+						age = { 16 40 }
+						save_scope_as = new_character4
+						scope:new_character4 = {
+							set_employer = scope:republican_head
+							set_father = scope:DynastyHead
+							set_house = father.house
+						}
+					}
+					create_character = {
+						location = scope:republican_head.capital_province
+						culture = scope:republican_head.culture
+						faith = scope:republican_head.faith
+						#dynasty = scope:DynastyHead.dynasty
+						gender_female_chance = 30
+						age = { 16 40 }
+						save_scope_as = new_character5
+						scope:new_character5 = {
+							set_employer = scope:republican_head
+							set_father = scope:DynastyHead
+							set_house = father.house
+						}
+					}
+				}
+				10 = {
+					create_character = {
+						location = scope:republican_head.capital_province
+						culture = scope:republican_head.culture
+						faith = scope:republican_head.faith
+						gender_female_chance = 30
+						#dynasty = scope:DynastyHead.dynasty
+						age = { 16 40 }
+						save_scope_as = new_character6
+						scope:new_character4 = {
+							set_employer = scope:republican_head
+							set_father = scppe:DynastyHead
+							set_house = father.house
+						}
+					}
+					create_character = {
+						location = scope:republican_head.capital_province
+						culture = scope:republican_head.culture
+						faith = scope:republican_head.faith
+						gender_female_chance = 30
+						#dynasty = scope:DynastyHead.dynasty
+						age = { 16 40 }
+						save_scope_as = new_character7
+						scope:new_character4 = {
+							set_employer = scope:republican_head
+							set_father = scppe:DynastyHead
+							set_house = father.house
+						}
+					}
+					create_character = {
+						location = scope:republican_head.capital_province
+						culture = scope:republican_head.culture
+						faith = scope:republican_head.faith
+						#dynasty = scope:DynastyHead.dynasty
+						gender_female_chance = 30
+						age = { 16 40 }
+						save_scope_as = new_character8
+						scope:new_character4 = {
+							set_employer = scope:republican_head
+							set_father = scppe:DynastyHead
+							set_house = father.house
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					has_trait = KOH_guelph
+				}
+				every_child = {
+					add_trait = KOH_guelph
+				}
+			}
+			if = {
+				limit = {
+					has_trait = KOH_ghibelline
+				}
+				every_child = {
+					add_trait = KOH_ghibelline
+				}
+			}
+		}
+	}
+}
+
 KOH_ItalianCommunes.1 = {
 	type = character_event
 	hidden = yes
@@ -7,6 +272,8 @@ KOH_ItalianCommunes.1 = {
 	left_portrait = root
 
 	immediate = {
+		create_characters_for_cities = yes
+
 		if = {
 			limit = {
 				exists = house

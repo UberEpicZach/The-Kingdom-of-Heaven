@@ -1,6 +1,228 @@
-﻿# namespace = KOH_guelphs_ghibellines
+﻿namespace = KOH_guelphs_ghibellines
+
+KOH_guelphs_ghibellines.1 = {
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				has_government = republic_government
+				culture = { has_cultural_pillar = heritage_latin }
+				is_from_ruler_designer = no # Do not modify the family of somoene from the ruler designer
+				#Is in need of family
+				OR = {
+					NOT = {
+						exists = player_heir
+					}
+					NOT = {
+						any_child = {
+							count >= 1
+						}
+					}
+				}
+				#Allowed to get family
+				NOT = { # Otherwise historical characters sometimes generate inappropriate children
+					any_child = {
+						count >= 4
+					}
+				}
+				NOR = {
+					has_trait = celibate
+					has_trait = eunuch
+				}
+				age >= 17 #Because you need ~1 year of pregnancy
+				is_landed = yes
+				primary_title = {
+					is_holy_order = no
+				}
+			}
+			AND = {
+				exists = liege_or_court_owner
+				liege_or_court_owner = {
+					has_government = republic_government
+					culture = { has_cultural_pillar = heritage_latin }
+				}
+				culture = { has_cultural_pillar = heritage_latin }
+				#Allowed to get family
+				NOT = { # Otherwise historical characters sometimes generate inappropriate children
+					any_child = {
+						count >= 4
+					}
+				}
+				NOR = {
+					has_trait = celibate
+					has_trait = eunuch
+				}
+				age >= 17 #Because you need ~1 year of pregnancy
+			}
+		}
+	}
 
 
+	immediate = {
+		if = {
+			limit = { faith = { has_doctrine_parameter = marriage_event } }
+			add_character_flag = ignore_marriage_event
+		}
+		game_rule_create_spouse_and_children = { CHARACTER = root }
+
+		#In case your created player heir is an older woman (past childbearing age or with a very short window)
+		if = {
+			limit = {
+				exists = player_heir
+				player_heir = {
+					is_female = yes
+					age >= 40
+				}
+				#Nothing else should need to be checked, they shouldn't be celibate or something like that
+			}
+			player_heir = {
+				save_scope_as = childless_heir
+			 	game_rule_create_spouse_and_children = { CHARACTER = scope:childless_heir }
+			}
+		}
+	}
+}
+
+
+
+scripted_trigger koh_scope_opposite_trigger = {
+   OR = {
+        # I have 1, they have 2
+        AND = {
+            root = { has_trait = $T1$ }
+            $SCOPE$ = { has_trait = $T2$ }
+        }
+        # I have 2, they have 1
+        AND = {
+            $SCOPE$ = { has_trait = $T1$ }
+            root = { has_trait = $T2$ }
+        }
+    }
+}
+
+KOH_guelphs_ghibellines.2 = { #Child DInner with Enemy Faction
+	title = KOH_guelphs_ghibellines.2.t
+	desc = KOH_guelphs_ghibellines.2.desc
+	theme = unfriendly
+	left_portrait = {
+		character = this
+	}
+	
+	trigger = {
+		save_temporary_scope_as = tempruler
+		is_landed = yes
+		exists = title:e_hre.holder
+		OR = {
+			has_trait = KOH_guelph
+			has_trait = KOH_ghibelline
+		}
+		any_held_title = {
+			tier = tier_county
+		}
+		any_child = {
+			count >= 1
+			age >= 16
+			NOT = { age >= 30 }
+			is_married = no
+			is_betrothed = no
+			attracted_to_opposite_gender_trigger = yes
+			save_temporary_scope_as = tempchild
+		}
+		any_courtier_or_guest = {
+			attracted_to_opposite_gender_trigger = yes
+			has_dynasty = yes
+			is_married = no
+			is_betrothed = no
+			NOT = { is_close_or_extended_family_of = scope:tempchild age >= 30}
+			age >= 16
+			sex_opposite_of = scope:tempchild
+			# OR = {
+			# 	if = {
+			# 		limit = {
+			# 			scope:tempruler = {
+			# 				has_trait = KOH_guelph
+			# 			}
+			# 			has_trait = KOH_ghibelline
+			# 		}
+			# 	}
+			# 	if = {
+			# 		limit = {
+			# 			scope:tempruler = {
+			# 				has_trait = KOH_ghibelline
+			# 			}
+			# 			has_trait = KOH_guelph
+			# 		}
+			# 	}
+			# }
+		}
+	}
+
+	immediate = {
+		capital_barony = {
+			save_scope_as = capital
+		}
+		save_scope_as = ruler
+		random_child = {
+			limit = {
+				count >= 1
+				age >= 16
+				NOT = { age >= 30 }
+				attracted_to_opposite_gender_trigger = yes
+				is_married = no
+				is_betrothed = no
+			}
+			save_scope_as = child
+		}
+
+
+		random_courtier_or_guest = {
+			limit = {
+				attracted_to_opposite_gender_trigger = yes
+				has_dynasty = yes
+				NOT = { is_close_or_extended_family_of = scope:child age >= 30 }
+				age >= 16
+				sex_opposite_of = scope:child
+				is_married = no
+				is_betrothed = no
+				# OR = {
+				# 	if = {
+				# 		limit = {
+				# 			scope:ruler = {
+				# 				has_trait = KOH_guelph
+				# 			}
+				# 			father = {
+				# 				has_trait = KOH_ghibelline
+				# 			}
+				# 		}
+				# 	}
+				# 	if = {
+				# 		limit = {
+				# 			scope:ruler = {
+				# 				has_trait = KOH_ghibelline
+				# 			}
+				# 			father = {
+				# 				has_trait = KOH_guelph
+				# 			}
+				# 		}
+				# 	}
+				# }
+			}
+			save_scope_as = lover
+		}
+	}
+
+	option = {
+		name = KOH_guelphs_ghibellines.2.t
+		add_gold = 10
+		scope:child = { add_gold = 10}
+		scope:lover = { add_gold = 10 }
+	}
+}
+
+
+##OLD LOMBARD LEAGUE STUFF
 # KOH_guelphs_ghibellines.1 = { #forming a league
 # 	title = KOH_guelphs_ghibellines.1.t
 # 	desc = KOH_guelphs_ghibellines.1.desc
@@ -594,3 +816,4 @@
 # 		name = KOH_guelphs_ghibellines.4.b
 # 	}
 # }
+
