@@ -729,7 +729,13 @@ Jerusalem_ReynaldImprison = {
 }
 
 cyprus_emperor = {
-	character:223020 = { 
+	character:223020 = {
+		hidden_effect = {
+			add_character_modifier = {
+				modifier = instantsiege
+				days = 3
+			}
+		} 
 		create_dynamic_title = {
 			tier = kingdom
 			name = "Empire_of_Cyprus"
