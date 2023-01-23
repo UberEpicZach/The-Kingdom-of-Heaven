@@ -1103,6 +1103,7 @@ KoH_byzantinecrisis.9 = {
 				target = scope:Emperor
 				target_title = title:e_byzantium
 				claimant = character:215500
+				save_scope_as=war
 			}
 
 			spawn_army = {
@@ -1116,6 +1117,7 @@ KoH_byzantinecrisis.9 = {
 				levies = {
 					value = 10000
 				}
+				war=scope:war
 				location = province:496
 				origin = province:496
 			}
@@ -1303,7 +1305,7 @@ KoH_byzantinecrisis.13 = {
 			name = ByzantineArmy
 			men_at_arms = {
 				type = cataphract
-				stacks = 100
+				stacks = 30
 			}
 			levies = {
 				value = 100
@@ -1316,7 +1318,7 @@ KoH_byzantinecrisis.13 = {
 			name = ByzantineArmy
 			men_at_arms = {
 				type = cataphract
-				stacks = 100
+				stacks = 30
 			}
 			levies = {
 				value = 100
@@ -1329,7 +1331,7 @@ KoH_byzantinecrisis.13 = {
 			name = ByzantineArmy
 			men_at_arms = {
 				type = cataphract
-				stacks = 100
+				stacks = 30
 			}
 			levies = {
 				value = 100
