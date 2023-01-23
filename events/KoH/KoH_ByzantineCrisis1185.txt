@@ -1105,22 +1105,32 @@ KoH_byzantinecrisis.9 = {
 				claimant = character:215500
 				save_scope_as=war
 			}
+			 random_character_war = {
+                limit = {
+                    using_cb = claim_cb
+                    primary_defender = title:e_byzantium.holder
+                    primary_attacker = character:215500
+                }
+                save_scope_as = PeasantMobWar
+            }
 
-			spawn_army = {
-				uses_supply = no
-				inheritable = yes
-				name = Peasants_of_constantinople
-				men_at_arms = {
-					type = mangonel
-					stacks = 5
-				}
-				levies = {
-					value = 10000
-				}
-				war=scope:war
-				location = province:496
-				origin = province:496
-			}
+            spawn_army = {
+                uses_supply = no
+                inheritable = yes
+                name = Peasants_of_constantinople
+                men_at_arms = {
+                    type = mangonel
+                    stacks = 5
+                }
+                levies = {
+                    value = 10000
+                }
+                war = scope:PeasantMobWar
+                location = province:496
+                origin = province:496
+            }
+
+
 		}
 	}
 
