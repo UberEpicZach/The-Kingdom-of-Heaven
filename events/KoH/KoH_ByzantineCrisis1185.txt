@@ -51,11 +51,15 @@ KoH_byzantinecrisis.1 = {
 				levies = {
 					value = 2500
 				}
+				men_at_arms = {
+					type = mangonel
+					stacks = 2
+				}
 				location = province:757
 			}
 
 			start_war = {
-				casus_belli = claim_cb
+				casus_belli = cyprus_claim_cb
 				target = scope:cyprus_ruler
 				target_title = title:d_cyprus
 				claimant = character:223020
@@ -526,9 +530,11 @@ KoH_byzantinecrisis.6 = {
 		scope:NormanKing = {
 			add_gold = 1000
 			add_prestige = 500
-			add_character_modifier = {
-				modifier = instantsiege
-				days = 3
+			hidden_effect = {
+				add_character_modifier = {
+					modifier = instantsiege
+					days = 3
+				}
 			}
 
 			spawn_army = {
@@ -728,7 +734,7 @@ KoH_byzantinecrisis.8 = { #Arrest Council
 	theme = war
 	override_background = {
 		event_background = armory
-		}
+	}
 	
 	left_portrait = {
 		character = root
@@ -1103,34 +1109,32 @@ KoH_byzantinecrisis.9 = {
 				target = scope:Emperor
 				target_title = title:e_byzantium
 				claimant = character:215500
-				save_scope_as=war
 			}
-			 random_character_war = {
-                limit = {
-                    using_cb = claim_cb
-                    primary_defender = title:e_byzantium.holder
-                    primary_attacker = character:215500
-                }
-                save_scope_as = PeasantMobWar
-            }
 
-            spawn_army = {
-                uses_supply = no
-                inheritable = yes
-                name = Peasants_of_constantinople
-                men_at_arms = {
-                    type = mangonel
-                    stacks = 5
-                }
-                levies = {
-                    value = 10000
-                }
-                war = scope:PeasantMobWar
-                location = province:496
-                origin = province:496
-            }
+			random_character_war = {
+				limit = {
+					using_cb = claim_cb
+					primary_defender = title:e_byzantium.holder
+					primary_attacker = character:215500
+				}
+				save_scope_as = PeasantMobWar
+			}
 
-
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = Peasants_of_constantinople
+				men_at_arms = {
+					type = mangonel
+					stacks = 5
+				}
+				levies = {
+					value = 10000
+				}
+				war = scope:PeasantMobWar
+				location = province:496
+				origin = province:496
+			}
 		}
 	}
 
@@ -1171,7 +1175,7 @@ KoH_byzantinecrisis.10 = {
 	desc = KoH_byzantinecrisis.10.d
 	theme = war
 	override_background = {
-		event_background = wilderness_desert
+		event_background = docks
 	}
 	
 	left_portrait = {
@@ -1195,7 +1199,7 @@ KoH_byzantinecrisis.11 = { #ship goes wacko lmao
 	desc = KoH_byzantinecrisis.11.d
 	theme = war
 	override_background = {
-		event_background = wilderness_desert
+		event_background = fp1_ocean
 	}
 	
 	left_portrait = {
@@ -1243,7 +1247,7 @@ KoH_byzantinecrisis.12 = {
 	desc = KoH_byzantinecrisis.12.d
 	theme = war
 	override_background = {
-		event_background = wilderness_desert
+		event_background = docks
 	}
 	
 	left_portrait = {
@@ -1254,12 +1258,14 @@ KoH_byzantinecrisis.12 = {
 	option = {
 		name = KoH_byzantinecrisis.12.a
 	
-		add_realm_law_skip_effects = single_heir_succession_law
+		hidden_effect = {
+			add_realm_law_skip_effects = single_heir_succession_law
 
-		title:e_byzantium.holder = { set_designated_heir = character:215500 }
+			title:e_byzantium.holder = { set_designated_heir = character:215500 }
 
-		set_player_character = character:215500
-
+			set_player_character = character:215500
+		
+		}
 		character:215500 = {
 			trigger_event = {
 				id = KoH_byzantinecrisis.13
@@ -1293,7 +1299,7 @@ KoH_byzantinecrisis.13 = {
 	desc = KoH_byzantinecrisis.13.d
 	theme = war
 	override_background = {
-		event_background = wilderness_desert
+		event_background = market_east
 	}
 	
 	left_portrait = {
