@@ -14,8 +14,12 @@ become_greatest_of_khans_decision = {
 	major = yes
 	desc = become_greatest_of_khans_decision_desc
 
-	ai_check_interval = 0
+	ai_check_interval = 4
 
+ai_will_do={
+base = 100
+}
+ai_goal=yes
 	is_shown = {
 		highest_held_title_tier >= tier_duchy
 		is_landed = yes

@@ -368,6 +368,44 @@ temujin.0009 = { # The Siege of Santarem
 		name = temujin.0009.a
 	}
 }
+temujin.00095 = { # The Siege of Santarem
+	type = character_event
+	title = temujin.0009.t
+	desc = temujin.0009.desc
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+	immediate = {
+		character:3031390 = {save_scope_as = uduyit}
+		character:172004 = {save_scope_as = borte}
+		character:194414 = {save_scope_as = qoaqchin}
+		character:303282 = {save_scope_as = sochigel}
+		character:3032555 = {save_scope_as = jamukha}
+		character:303211 = {save_scope_as = toghril}
+		character:companion0007 = {save_scope_as = alert}
+		character:3031393 = {save_scope_as=chilger}
+
+		add_character_flag = bortereturned
+		remove_trait = unwed
+		scope:uduyit = {
+			remove_concubine = scope:borte
+		}
+		scope:borte  = {
+			divorce = scope:chilger
+			marry = root
+		}
+		add_prestige = 500
+		add_piety = 500
+	}
+    override_background = { event_background = army_camp }
+	
+
+	option = {
+		name = temujin.0009.a
+	}
+}
 temujin.00035 = {
 	type = character_event
 	theme = abduct_scheme
