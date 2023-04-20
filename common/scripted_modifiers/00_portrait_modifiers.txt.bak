@@ -54,10 +54,26 @@ portrait_fp1_norse_clothing_modifier = {
 	}
 }
 
+### FP2 ###
+
+portrait_fp2_iberian_christian_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_iberia_clothing_trigger = yes
+	}
+}
+
+portrait_fp2_iberian_muslim_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_iberia_muslim_clothing_trigger = yes
+	}
+}
+
 # Different likelyhood of a clean shaven look in different cultures
 portrait_clean_shaven_clothing_modifier = {
     modifier = {
-        add = 0
+        add = 10
         portrait_western_clothing_trigger = yes
     }
     modifier = {
@@ -66,8 +82,56 @@ portrait_clean_shaven_clothing_modifier = {
     }
     modifier = {
         add = -10
+        portrait_indian_clothing_trigger = yes
+    }	
+    modifier = {
+        add = -50
+        portrait_seljuk_clothing_trigger = yes
+    }
+    modifier = {
+        add = -50
+        portrait_northern_slav_clothing_trigger = yes
+    }	
+    modifier = {
+        add = -30
         portrait_steppe_clothing_trigger = yes
     }
+    modifier = {
+        add = -30
+        portrait_turkish_clothing_trigger = yes
+    }
+    modifier = {
+        add = -30
+        portrait_western_turk_clothing_trigger = yes
+    }	
+    modifier = {
+        add = -30
+        portrait_magyar_clothing_trigger = yes
+    }	
+    modifier = {
+        add = -30
+        portrait_cuman_clothing_trigger = yes
+    }		
+    modifier = {
+        add = -20
+        portrait_south_slav_clothing_trigger = yes
+    }		
+    modifier = {
+        add = -20
+        portrait_armenian_clothing_trigger = yes
+    }	
+    modifier = {
+        add = -20
+        portrait_bulgarian_clothing_trigger = yes
+    }	
+    modifier = {
+        add = -20
+        portrait_georgian_clothing_trigger = yes
+    }
+    modifier = {
+        add = -20
+        portrait_byzantine_clothing_trigger = yes
+    }	
     modifier = {
         add = -50
         portrait_mena_clothing_trigger = yes
@@ -79,7 +143,11 @@ portrait_western_beards_clothes_modifier = {
 		add = 70
         OR = {
             portrait_western_clothing_trigger = yes
-            portrait_byzantine_clothing_trigger = yes
+            portrait_german_clothing_trigger = yes			
+            #portrait_byzantine_clothing_trigger = yes
+            portrait_french_clothing_trigger = yes
+            portrait_west_slav_clothing_trigger = yes	
+            portrait_south_slav_clothing_trigger = yes				
         }
 	}
 }
@@ -89,14 +157,26 @@ portrait_mean_beards_clothes_modifier = {
 		add = 70
 		OR = {
 			portrait_mena_clothing_trigger = yes
+			portrait_dde_abbasid_clothing_trigger = yes	
+			portrait_bedouin_clothing_trigger = yes				
 			portrait_african_clothing_trigger = yes
 		}
+	}
+}
+
+portrait_byzantine_beards_clothes_modifier = {
+	modifier = {
+		add = 70
+        OR = {
+            portrait_byzantine_clothing_trigger = yes		
+        }
 	}
 }
 
 portrait_scottish_unique_haircut = {
 	modifier = {
 		add = 60
+		exists = culture
 		culture = culture:scottish
 	}
 }
@@ -104,7 +184,77 @@ portrait_scottish_unique_haircut = {
 portrait_frankish_unique_haircut = {
 	modifier = {
 		add = 60
-		culture.culture_group = culture_group:frankish_group
+		exists = culture
+		culture = { has_cultural_pillar = heritage_frankish }
+	}
+}
+
+
+
+### Court Amenity triggers get used a lot in the portrait modifiers. We can use these scripted modifiers instead ###
+
+court_fashion_level_4_modifier = {
+    modifier = {
+        add = 50
+        court_fashion_level_4_trigger = {
+            CULTURE_INPUT = $INPUT_PARAMETER$
+        }
+    }
+}
+
+court_fashion_level_4_headgear_modifier = {
+    modifier = {
+        add = 50
+        court_fashion_level_4_headgear_trigger = {
+            CULTURE_INPUT = $INPUT_PARAMETER$
+        }
+    }
+}
+
+court_fashion_level_5_modifier = {
+    modifier = {
+        add = 50
+        court_fashion_level_5_trigger = {
+            CULTURE_INPUT = $INPUT_PARAMETER$
+        }
+    }
+}
+
+portrait_dde_abbasid_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_dde_abbasid_clothing_trigger = yes
+	}
+}
+
+portrait_bedouin_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_bedouin_clothing_trigger = yes
+	}
+}
+
+#######################
+###### Han Chinese #######
+#######################
+
+portrait_han_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_han_clothing_trigger = yes
+	}
+}
+
+
+
+#######################
+###### Turkish #######
+#######################
+
+portrait_turkish_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_turkish_clothing_trigger = yes
 	}
 }
 
@@ -144,15 +294,128 @@ portrait_iranian_clothing_modifier = {
 		add = 50
         portrait_iranian_clothing_trigger = yes
 	}
+}
+
+portrait_early_eastern_iranian_clothing_modifier = {
 	modifier = {
         add = 50
         portrait_early_eastern_iranian_trigger = yes
     }
-	modifier = {
-        add = 50
-        portrait_early_islamic_iranian_trigger = yes
-    }
 }
+
+#######################
+###### South indian #######
+#######################
+
+portrait_south_indian_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_south_indian_clothing_trigger = yes
+	}
+}
+
+
+#######################
+###### Italian #######
+#######################
+
+portrait_italian_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_italian_clothing_trigger = yes
+	}
+}
+
+#######################
+###### Irish #######
+#######################
+
+portrait_gaelic_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_gaelic_clothing_trigger = yes
+	}
+}
+
+#######################
+###### Sub Saharan tribal #######
+#######################
+
+portrait_central_african_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_central_african_clothing_trigger = yes
+	}
+}
+
+#######################
+###### Balto-Finnic #######
+#######################
+
+portrait_balto_finnic_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_balto_finnic_clothing_trigger = yes
+	}
+}
+
+
+#######################
+###### Eastern slavic #######
+#######################
+
+portrait_northern_slav_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_northern_slav_clothing_trigger = yes
+	}
+}
+
+
+#######################
+###### West Slav #######
+#######################
+
+portrait_west_slav_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_west_slav_clothing_trigger = yes
+	}
+}
+
+
+
+#######################
+###### German #######
+#######################
+
+portrait_german_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_german_clothing_trigger = yes
+	}
+}
+
+#######################
+###### South Slav #######
+#######################
+
+portrait_south_slav_clothing_modifier = {
+	modifier = {
+		add = 50
+        portrait_south_slav_clothing_trigger = yes
+	}
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

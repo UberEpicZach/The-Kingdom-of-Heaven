@@ -1,0 +1,36 @@
+﻿monastic_government = {
+	#create_cadet_branches = yes
+	#rulers_should_have_dynasty = yes
+	#dynasty_named_realms = yes
+
+	fallback = 2
+
+	primary_holding = monastery_holding
+	religious = yes
+	required_county_holdings = { monastery_holding }
+
+	can_get_government = {
+		religion = religion:christianity_religion
+		NOT = {
+			faith = {
+				has_doctrine = doctrine_theocracy_lay_clergy
+				#has_doctrine = doctrine_theocracy_temporal
+			}
+		}
+		faith = { has_doctrine = tenet_monasticism }
+	}
+
+	ai = {
+		arrange_marriage = no
+	}
+
+	court_generate_spouses = no
+	court_generate_commanders = no
+
+	vassal_contract = { 
+		monastic_government_obligations
+		#avouerie_obligations
+	}
+	
+	color = hsv{ 0.50 0.50 1.00 }
+}

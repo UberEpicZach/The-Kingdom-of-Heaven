@@ -10,7 +10,7 @@ tib_abu_yaqub_yusuf_death.1 = { # Reflection of his rule
 		character = root
 		animation = personality_rational
 	}
-    override_background = { event_background = garden }
+    override_background = { reference = garden }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.1}
@@ -38,7 +38,7 @@ tib_abu_yaqub_yusuf_death.2 = { # The war against Ibn Mardanish
 		character = character:73241 # Muhammad ibn Sa'd ibn Mardanish
 		animation = idle
 	}
-    override_background = { event_background = battlefield }
+    override_background = { reference = battlefield }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.2}
@@ -66,7 +66,7 @@ tib_abu_yaqub_yusuf_death.3 = { # Revolts on the east of the Maghreb
 		character = root
 		animation = war_over_win
 	}
-    override_background = { event_background = wilderness_desert }
+    override_background = { reference = wilderness_desert }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.3}
@@ -104,7 +104,7 @@ tib_abu_yaqub_yusuf_death.4 = { # Revolts on the west of the Maghreb, VS Qaraqus
     lower_right_portrait = {
         character = character:226000 # Saladin
     }
-    override_background = { event_background = terrain }
+    override_background = { reference = terrain }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.4}
@@ -132,7 +132,7 @@ tib_abu_yaqub_yusuf_death.5 = { # Plague
 	#	character = root
 	#	animation = war_defender
 	#}
-    override_background = { event_background = battlefield }
+    override_background = { reference = battlefield }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.5}
@@ -160,7 +160,7 @@ tib_abu_yaqub_yusuf_death.6 = { # Present day, peace at the moment
 		character = root
 		animation = worry
 	}
-    override_background = { event_background = garden }
+    override_background = { reference = garden }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.6}
@@ -193,7 +193,7 @@ tib_abu_yaqub_yusuf_death.7 = { # Ready for departure to Andalusia, accompanied 
 		character = character:32980
 		animation = happiness
 	}
-    override_background = { event_background = docks }
+    override_background = { reference = docks }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.7 }
@@ -238,7 +238,7 @@ tib_abu_yaqub_yusuf_death.8 = { # March towards Lisbon through Santarem!
 		character = character:almohad0012 # Requested military support form Seville
 		animation = personality_honorable
 	}
-    override_background = { event_background = army_camp }
+    override_background = { reference = army_camp }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.8 }
@@ -309,7 +309,7 @@ tib_abu_yaqub_yusuf_death.9 = { # The Siege of Santarem
 		character = root
 		animation = war_attacker
 	}
-    override_background = { event_background = army_camp }
+    override_background = { reference = army_camp }
 	trigger = {
 		this = character:224000
 		location = {
@@ -369,7 +369,7 @@ tib_abu_yaqub_yusuf_death.91 = { # A Grave News has Arrived!
         character = title:k_portugal.holder # Fernando of Leon
 		animation = stress
     }
-    override_background = { event_background = army_camp }
+    override_background = { reference = army_camp }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.91 }
@@ -439,7 +439,7 @@ tib_abu_yaqub_yusuf_death.10 = { # A Grave News has Arrived!
     lower_right_portrait = {
         character = character:208500 # Fernando of Leon
     }
-    override_background = { event_background = army_camp }
+    override_background = { reference = army_camp }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.10 }
@@ -480,7 +480,7 @@ tib_abu_yaqub_yusuf_death.11 = { # Surrounded
 		character = scope:christian_combatant
 		animation = aggressive_sword
 	}
-    override_background = { event_background = army_camp }
+    override_background = { reference = army_camp }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.11 }
@@ -614,7 +614,7 @@ tib_abu_yaqub_yusuf_death.12 = { # The Angel of Death has Arrived...
         character = scope:christian_combatant_7
         animation = aggressive_spear
     }
-    override_background = { event_background = battlefield }
+    override_background = { reference = battlefield }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_abu_yaqub_yusuf_death.12 }

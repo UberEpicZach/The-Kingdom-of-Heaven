@@ -131,6 +131,12 @@ name_of_the_building = {
 	
 	# Building flags
 	flag = castle
+
+	# Effects applied on building completion
+	# scopes: root refers to the buildings province
+	on_complete = {
+		<effects>
+	}
 	
 	# How desirable is the building for the AI
 	ai_value = {

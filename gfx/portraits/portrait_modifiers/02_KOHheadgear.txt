@@ -1,7 +1,9 @@
 ﻿
 KOHheadgear = {
+
 	usage = game
-	selection_behavior = max
+	selection_behavior = weighted_random
+	priority = 4
 
 	######################################################
 	################## KINGDOM OF HEAVEN #################
@@ -13,12 +15,6 @@ KOHheadgear = {
 	#KOH#
 	imperial_no_portrait = {
 		dna_modifiers = {
-			accessory = {
-				mode = add				
-				gene = headgear
-				template = no_headgear
-				value = 0.5
-			}
 		}
 		weight = {
 			base = 0
@@ -31,12 +27,6 @@ KOHheadgear = {
 
 	portrait_dragon = {
 		dna_modifiers = {
-			accessory = {
-				mode = add				
-				gene = headgear
-				template = no_headgear
-				value = 0.5
-			}
 		}
 		weight = {
 			base = 0
@@ -49,12 +39,6 @@ KOHheadgear = {
 	
 	french_war = {
 		dna_modifiers = {
-			accessory = {
-				mode = add				
-				gene = headgear
-				template = no_headgear
-				value = 0.5
-			}
 			morph = {
 				mode = add
 				gene = gene_bs_ear_outward
@@ -63,7 +47,7 @@ KOHheadgear = {
 			}		
 			accessory = {
 				mode = add
-				gene = headgearKOH
+				gene = headgear
 				template = french_war
 				range = { 0 1 } # For the randomness to work correctly
 			}
@@ -120,12 +104,6 @@ KOHheadgear = {
 	###French war helmet closed face	
 	french_war_closed = {
 		dna_modifiers = {
-			accessory = {
-				mode = add				
-				gene = headgear
-				template = no_headgear
-				value = 0.5
-			}
 			morph = {
 				mode = add
 				
@@ -154,7 +132,7 @@ KOHheadgear = {
 			}		
 			accessory = {
 				mode = add
-				gene = headgearKOH
+				gene = headgear
 				template = french_war_closed
 				range = { 0 1 } # For the randomness to work correctly
 			}
@@ -224,12 +202,6 @@ KOHheadgear = {
 	
 	italian_war = {
 		dna_modifiers = {
-			accessory = {
-				mode = add				
-				gene = headgear
-				template = no_headgear
-				value = 0.5
-			}
 			morph = {
 				mode = add
 				
@@ -240,7 +212,7 @@ KOHheadgear = {
 		
 			accessory = {
 				mode = add
-				gene = headgearKOH
+				gene = headgear
 				template = italian_war
 				range = { 0 1 } # For the randomness to work correctly
 			}
@@ -296,12 +268,6 @@ KOHheadgear = {
 	###Italian war helmet closed face	
 	italian_war_closed = {
 		dna_modifiers = {
-			accessory = {
-				mode = add				
-				gene = headgear
-				template = no_headgear
-				value = 0.5
-			}
 			morph = {
 				mode = add
 				
@@ -330,7 +296,7 @@ KOHheadgear = {
 			}		
 			accessory = {
 				mode = add
-				gene = headgearKOH
+				gene = headgear
 				template = italian_war_closed
 				range = { 0 1 } # For the randomness to work correctly
 			}			
@@ -425,12 +391,6 @@ KOHheadgear = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = no_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = headgearKOH
 				template = baldwin_sub_saharan_imperial
 				range = { 0 1 } # For the randomness to work correctly
 			}
@@ -507,14 +467,8 @@ KOHheadgear = {
 	saladin = {
 		dna_modifiers = {
 			accessory = {
-				mode = add				
-				gene = headgear
-				template = no_headgear
-				value = 0.5
-			}
-			accessory = {
 				mode = add
-				gene = headgearKOH
+				gene = headgear
 				template = ayyubid_royalty_war 
 				#value = 100
 				range = { 1 1 } # For the randomness to work correctly
@@ -536,15 +490,9 @@ KOHheadgear = {
 	richard_king = {
 		dna_modifiers = {
 			accessory = {
-				mode = add				
-				gene = headgear
-				template = no_headgear
-				value = 0.5
-			}
-			accessory = {
 				
 				mode = add
-				gene = headgearKOH
+				gene = headgear
 				template = royal_helmet 
 				range = { 0 1 } # For the randomness to work correctly
 			}
@@ -579,15 +527,9 @@ KOHheadgear = {
 	richard_not_king = {
 		dna_modifiers = {
 			accessory = {
-				mode = add				
-				gene = headgear
-				template = no_headgear
-				value = 0.5
-			}
-			accessory = {
 				
 				mode = add
-				gene = headgearKOH
+				gene = headgear
 				template = royal_helmet_without_crown 
 				range = { 0 1 } # For the randomness to work correctly
 			}
@@ -609,12 +551,6 @@ KOHheadgear = {
 	}
 	altair = {
 		dna_modifiers = {
-			accessory = {
-				mode = add				
-				gene = headgear
-				template = no_headgear
-				value = 0.5
-			}
 			accessory = {
 				mode = add
 				gene = headgear
@@ -638,12 +574,6 @@ KOHheadgear = {
 	}
 	sinan = {
 		dna_modifiers = {
-			accessory = {
-				mode = add				
-				gene = headgear
-				template = no_headgear
-				value = 0.5
-			}
 			accessory = {
 				mode = add
 				gene = headgear

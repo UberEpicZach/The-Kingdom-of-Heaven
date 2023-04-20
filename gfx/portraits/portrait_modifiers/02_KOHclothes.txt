@@ -1,8 +1,8 @@
-﻿
-KOHclothes = {
-	usage = game
-	selection_behavior = max
+﻿KOHclothes = {
 
+    usage = game
+    selection_behavior = weighted_random
+    priority = 4
 	######################################################
 	################## KINGDOM OF HEAVEN #################
 	################## KINGDOM OF HEAVEN #################
@@ -10,17 +10,21 @@ KOHclothes = {
 	################## KINGDOM OF HEAVEN #################
 	################## KINGDOM OF HEAVEN #################
 	######################################################
-
-
 	imperial_no_portrait = {
 		dna_modifiers = {
-			accessory = {
-				mode = add				
-				gene = clothesKOH
-				template = no_clothesKOH
-				value = 0.5
-			}
-		}
+            accessory = {
+                mode = add
+                gene = clothes
+                template = no_clothes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloak
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }   
 		weight = {
 			base = 0
 			modifier = {
@@ -29,16 +33,21 @@ KOHclothes = {
 			}
 		}
 	}
-
 	portrait_dragon = {
 		dna_modifiers = {
-			accessory = {
-				mode = add				
-				gene = clothesKOH
-				template = no_clothesKOH
-				value = 0.5
-			}
-		}
+            accessory = {
+                mode = add
+                gene = clothes
+                template = no_clothes
+                range = { 0 1 } # For the randomness to work correctly
+            }
+            accessory = {
+                mode = add
+                gene = cloaks
+                template = no_cloak
+                range = { 0 1 } # For the randomness to work correctly
+            }
+        }   
 		weight = {
 			base = 0
 			modifier = {
@@ -47,66 +56,62 @@ KOHclothes = {
 			}
 		}
 	}
-
-	no_clothesKOH = {
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = clothesKOH
-                template = no_clothesKOH
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }   
-        outfit_tags = { no_clothes }
-        weight = {
-            base = 0
-            modifier = {
-                add = 1000
-                should_be_fully_naked_portrait_trigger = yes
-            }
-            modifier = {
-            	add = -1000
-            	should_show_nudity = no
-            }
-        }
-    }
- 
-
+	# no_clothes = {
+	# 	dna_modifiers = {
+	# 		accessory = {
+	# 			mode = add
+	# 			gene = clothes
+	# 			template = no_clothes
+	# 			range = {
+	# 				0
+	# 				1
+	# 			}
+	# 			# For the randomness to work correctly
+	# 		}
+	# 	}
+	# 	outfit_tags = {
+	# 		no_clothes
+	# 	}
+	# 	weight = {
+	# 		base = 0
+	# 		modifier = {
+	# 			add = 1000
+	# 			should_be_fully_naked_portrait_trigger = yes
+	# 		}
+	# 		modifier = {
+	# 			add = -1000
+	# 			should_show_nudity = no
+	# 		}
+	# 	}
+	# }
 	baldwin = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = koh_jerusalem
-				value = 0.0
+				value = 0
 				#range = { 1 1 } # For the randomness to work correctly
 			}
 		}
 		weight = {
 			base = 0
 			modifier = {
-				add = 30
+				add = 130
 				portrait_baldwin_trigger = yes
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
 			modifier = {
-				add = 1300
+				add = 5300
 				this = character:223523
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
 		}
 	}
-
 	# #EPE VERSION
 	# baldwin_epe = {
 	# 	dna_modifiers = {
@@ -124,7 +129,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = koh_jerusalem
 	# 			value = 0.0
 	# 			#range = { 1 1 } # For the randomness to work correctly
@@ -144,37 +149,28 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	jerusalem_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = koh_jerusalem
-				value = 0.0
+				value = 0
 				#range = { 1 1 } # For the randomness to work correctly
 			}
-
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
 		}
-
 		weight = {
 			base = 0
 			modifier = {
@@ -184,9 +180,14 @@ KOHclothes = {
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						top_liege = { has_primary_title = title:k_jerusalem }
+						top_liege = {
+							has_primary_title = title:k_jerusalem
+						}
 						has_primary_title = title:k_jerusalem
-						AND = { exists = title:k_jerusalem.holder is_knight_of = title:k_jerusalem.holder }
+						AND = {
+							exists = title:k_jerusalem.holder
+							is_knight_of = title:k_jerusalem.holder
+						}
 						OR = {
 							AND = {
 								exists = title:k_jerusalem.holder
@@ -196,13 +197,12 @@ KOHclothes = {
 						}
 					}
 				}
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
 		}
 	}
-
 	# jerusalem_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -219,12 +219,11 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = koh_jerusalem
 	# 			value = 0.0
 	# 			#range = { 1 1 } # For the randomness to work correctly
 	# 		}
-
 	# 		morph = {
 	# 			mode = modify_multiply
 	# 			gene = gene_bs_bust
@@ -238,7 +237,6 @@ KOHclothes = {
 	# 			template = body_shape_average_clothed
 	# 		}
 	# 	}
-
 	# 	weight = {
 	# 		base = 0
 	# 		modifier = {
@@ -263,54 +261,51 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	saladin = {
 		dna_modifiers = {
+			
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = ayyubid_war_nobility_clothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
 				add = 30
 				portrait_saladin_trigger = yes
 				is_female = no
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
 			modifier = {
 				add = 130
 				this = character:226000
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
 		}
 	}
-
 	# saladin_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -327,7 +322,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = ayyubid_war_nobility_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -359,31 +354,28 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	richard = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = RichardClothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
 		}
@@ -394,7 +386,7 @@ KOHclothes = {
 				portrait_wear_armor_trigger = yes
 				portrait_richard_trigger = yes
 				is_female = no
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
@@ -402,13 +394,12 @@ KOHclothes = {
 				add = 130
 				portrait_wear_armor_trigger = yes
 				this = character:204510
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
 		}
 	}
-
 	# richard_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -425,7 +416,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = RichardClothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -459,47 +450,43 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	ayyubid_war = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = ayyubid_war_nobility_clothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
 				portrait_wear_armor_trigger = yes
 				portrait_ayyubid_clothing_trigger = yes
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
 		}
 	}
-
 	# ayyubid_war_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -516,7 +503,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = ayyubid_war_nobility_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -543,47 +530,49 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	ibelin_knight_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = ibelin_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
 				add = 151
-				is_male = yes 
+				is_male = yes
 				age >= 18
 				has_religion = religion:christianity_religion
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:c_ibelin }
+						liege = {
+							has_primary_title = title:c_ibelin
+						}
 						has_primary_title = title:c_ibelin
-						AND = { exists = title:c_ibelin.holder is_knight_of = title:c_ibelin.holder }
+						AND = {
+							exists = title:c_ibelin.holder
+							is_knight_of = title:c_ibelin.holder
+						}
 						OR = {
 							AND = {
 								exists = title:c_ibelin.holder
@@ -593,13 +582,12 @@ KOHclothes = {
 						}
 					}
 				}
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
 		}
 	}
-
 	# ibelin_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -616,7 +604,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = ibelin_knight_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -658,41 +646,40 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	templar_knight_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = templar_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
 		}
-		outfit_tags = { war_outfit }	
+		outfit_tags = {
+			war_outfit
+		}
 		weight = {
 			base = 0
 			modifier = {
 				add = 180
 				this = character:223590
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
@@ -700,9 +687,9 @@ KOHclothes = {
 				add = 2000
 				OR = {
 					AND = {
-						portrait_templar_trigger = yes 
+						portrait_templar_trigger = yes
 						portrait_wear_armor_trigger = yes
-					}	
+					}
 					AND = {
 						religion = religion:christianity_religion
 						has_government = holy_order_government
@@ -743,13 +730,12 @@ KOHclothes = {
 						}
 					}
 				}
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
 		}
 	}
-
 	# templar_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -766,7 +752,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = templar_knight_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -844,34 +830,31 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	english_knight_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = english_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -880,15 +863,20 @@ KOHclothes = {
 				age >= 18
 				portrait_wear_armor_trigger = yes
 				has_religion = religion:christianity_religion
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:k_england }
+						liege = {
+							has_primary_title = title:k_england
+						}
 						has_primary_title = title:k_england
-						AND = { exists = title:k_england.holder is_knight_of = title:k_england.holder }
-						has_culture = culture:english 
+						AND = {
+							exists = title:k_england.holder
+							is_knight_of = title:k_england.holder
+						}
+						has_culture = culture:english
 						OR = {
 							AND = {
 								exists = title:k_england.holder
@@ -897,11 +885,10 @@ KOHclothes = {
 							}
 						}
 					}
-				}	
+				}
 			}
 		}
 	}
-
 	# english_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -918,7 +905,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = english_knight_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -961,7 +948,6 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	#teutonic_knight_clothes = {
 	#	dna_modifiers = {
 	#		accessory = {
@@ -1035,34 +1021,31 @@ KOHclothes = {
 	#		}
 	#	}
 	#}
-
 	french_knight_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = french_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -1072,10 +1055,15 @@ KOHclothes = {
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:k_france }
+						liege = {
+							has_primary_title = title:k_france
+						}
 						has_primary_title = title:k_france
-						AND = { exists = title:k_france.holder is_knight_of = title:k_france.holder }
-						has_culture = culture:french 
+						AND = {
+							exists = title:k_france.holder
+							is_knight_of = title:k_france.holder
+						}
+						has_culture = culture:french
 						OR = {
 							AND = {
 								exists = title:k_france.holder
@@ -1085,13 +1073,12 @@ KOHclothes = {
 						}
 					}
 				}
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
-				}	
+				}
 			}
 		}
 	}
-
 	# french_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1108,7 +1095,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = french_knight_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -1150,35 +1137,31 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-		
-
 	hospitaller_knight_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = hospitaller_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -1187,7 +1170,7 @@ KOHclothes = {
 					AND = {
 						portrait_hospitaller_trigger = yes
 						portrait_wear_armor_trigger = yes
-					}	
+					}
 					AND = {
 						religion = religion:christianity_religion
 						has_government = holy_order_government
@@ -1228,13 +1211,12 @@ KOHclothes = {
 						}
 					}
 				}
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 			}
 		}
 	}
-
 	# hospitaller_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1251,7 +1233,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = hospitaller_knight_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -1321,34 +1303,31 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	hre_knight_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = hre_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -1358,10 +1337,17 @@ KOHclothes = {
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:e_hre }
+						liege = {
+							has_primary_title = title:e_hre
+						}
 						has_primary_title = title:e_hre
-						AND = { exists = title:e_hre.holder is_knight_of = title:e_hre.holder }
-						culture = { has_cultural_pillar = heritage_central_germanic }
+						AND = {
+							exists = title:e_hre.holder
+							is_knight_of = title:e_hre.holder
+						}
+						culture = {
+							has_cultural_pillar = heritage_central_germanic
+						}
 						OR = {
 							AND = {
 								exists = title:e_hre.holder
@@ -1371,13 +1357,12 @@ KOHclothes = {
 						}
 					}
 				}
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
-				}	
+				}
 			}
 		}
 	}
-
 	# hre_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1394,7 +1379,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = hre_knight_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -1436,35 +1421,31 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
-
 	hungary_knight_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = hungarian_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -1472,14 +1453,19 @@ KOHclothes = {
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:k_hungary }
+						liege = {
+							has_primary_title = title:k_hungary
+						}
 						has_primary_title = title:k_hungary
-						AND = { exists = title:k_hungary.holder is_knight_of = title:k_hungary.holder }
+						AND = {
+							exists = title:k_hungary.holder
+							is_knight_of = title:k_hungary.holder
+						}
 						has_culture = culture:hungarian
 						OR = {
 							AND = {
@@ -1489,11 +1475,10 @@ KOHclothes = {
 							}
 						}
 					}
-				}	
+				}
 			}
 		}
 	}
-
 	# hungary_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1510,7 +1495,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = hungarian_knight_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -1552,34 +1537,31 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	antioch_knight_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = antioch_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -1588,14 +1570,19 @@ KOHclothes = {
 				age >= 18
 				portrait_wear_armor_trigger = yes
 				has_religion = religion:christianity_religion
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:d_antioch }
+						liege = {
+							has_primary_title = title:d_antioch
+						}
 						has_primary_title = title:d_antioch
-						AND = { exists = title:d_antioch.holder is_knight_of = title:d_antioch.holder }
+						AND = {
+							exists = title:d_antioch.holder
+							is_knight_of = title:d_antioch.holder
+						}
 						#has_culture_group = culture_group:central_germanic_group
 						OR = {
 							AND = {
@@ -1605,11 +1592,10 @@ KOHclothes = {
 							}
 						}
 					}
-				}	
+				}
 			}
 		}
 	}
-
 	# antioch_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1626,7 +1612,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = antioch_knight_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -1669,34 +1655,31 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	bavarian_knight_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = no_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			accessory = {
-				mode = add
-				gene = clothesKOH
 				template = bavarian_knight_clothes
-				range = { 0 1 } # For the randomness to work correctly
+				range = {
+					0
+					1
+				}
+				# For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_bust
-				value = 1.0
+				value = 1
 				template = bust_clothes
 			}
 			morph = {
 				mode = modify_multiply
 				gene = gene_bs_body_shape
-				value = 1.0
+				value = 1
 				template = body_shape_average_clothed
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -1704,14 +1687,19 @@ KOHclothes = {
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
-				NOT = { 
+				NOT = {
 					exists = global_var:EPE_is_loaded
 				}
 				AND = {
 					OR = {
-						liege = { has_primary_title = title:d_bavaria }
+						liege = {
+							has_primary_title = title:d_bavaria
+						}
 						has_primary_title = title:d_bavaria
-						AND = { exists = title:d_bavaria.holder is_knight_of = title:d_bavaria.holder }
+						AND = {
+							exists = title:d_bavaria.holder
+							is_knight_of = title:d_bavaria.holder
+						}
 						has_culture = culture:bavarian
 						OR = {
 							AND = {
@@ -1720,11 +1708,10 @@ KOHclothes = {
 							}
 						}
 					}
-				}	
+				}
 			}
 		}
 	}
-
 	#bavarian_knight_clothes_epe = {
 	#	dna_modifiers = {
 	#		accessory = {
@@ -1741,7 +1728,7 @@ KOHclothes = {
 	#		}
 	#		accessory = {
 	#			mode = add
-	#			gene = clothesKOH
+	#			gene = clothes
 	#			template = bavarian_knight_clothes
 	#			range = { 0 1 } # For the randomness to work correctly
 	#		}
@@ -1784,7 +1771,6 @@ KOHclothes = {
 	#		}
 	#	}
 	#}
-
 	# bavarian_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1801,7 +1787,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = bavarian_knight_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}
@@ -1843,7 +1829,6 @@ KOHclothes = {
 	# 		}
 	# 	}
 	# }
-
 	# bluecrown_knight_clothes = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1854,7 +1839,7 @@ KOHclothes = {
 	# 		}
 	# 		accessory = {
 	# 			mode = add
-	# 			gene = clothesKOH
+	# 			gene = clothes
 	# 			template = bluecrown_knight_clothes
 	# 			range = { 0 1 } # For the randomness to work correctly
 	# 		}

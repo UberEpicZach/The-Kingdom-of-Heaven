@@ -597,7 +597,7 @@ character_view_bg = {
 		trigger = {
 			religion = religion:christianity_religion
 			OR = {
-				has_trait = reveler_1
+				has_trait = lifestyle_reveler
 				has_trait = reveler_2
 				has_trait = reveler_3
 			}
@@ -627,9 +627,9 @@ character_view_bg = {
 		trigger = {
 			religion = religion:christianity_religion
 			OR = {
-				has_trait = hunter_1
-				has_trait = hunter_2
-				has_trait = hunter_3
+				has_trait = lifestyle_hunter
+				has_trait = lifestyle_hunter
+				has_trait = lifestyle_hunter
 			}
 		}
 	}
@@ -666,9 +666,7 @@ character_view_bg = {
 		trigger = {
 			religion = religion:christianity_religion
 			OR = {
-				has_trait = physician_1
-				has_trait = physician_2
-				has_trait = physician_3
+				has_trait = lifestyle_physician
 			}
 		}
 	}
