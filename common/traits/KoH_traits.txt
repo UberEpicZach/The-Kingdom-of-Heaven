@@ -261,17 +261,20 @@ eyes_aflame = {
 	stress_gain_mult = -0.25
 	
 	ai_war_cooldown = -1
-	ai_war_chance = 3	
+	#ai_war_chance= 99
+	
 	
 	desc = {
 		desc = trait_eyes_aflame_desc
 	}
 	shown_in_ruler_designer = no
-	ai_energy = very_high_positive_ai_value
-	ai_boldness = dominant_positive_ai_value
+	ai_energy = dominant_positive_ai_value
+	ai_boldness = small_negative_ai_value
 	ai_greed = dominant_positive_ai_value
-	ai_rationality = high_negative_ai_value
-	ai_zeal = dominant_negative_ai_value
+	ai_rationality = dominant_negative_ai_value
+	ai_compassion = dominant_negative_ai_value
+	ai_vengefulness = dominant_positive_ai_value
+	#ai_zeal = dominant_negative_ai_value
 }
 
 

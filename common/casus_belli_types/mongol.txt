@@ -185,7 +185,7 @@
 		}
 
 		# Truce
-		add_truce_attacker_victory_effect = yes
+		add_truce_attacker_victory_effect = no
 	}
 
 	on_white_peace_desc = {
@@ -318,8 +318,8 @@
 	use_de_jure_wargoal_only = yes
 
 	# The war will last 2 years at most
-	defender_ticking_warscore_delay = { months = 3 }
-	defender_ticking_warscore = 0.15
+	defender_ticking_warscore_delay = { months = 9 }
+	defender_ticking_warscore = 0.01
 
 
 	max_defender_score_from_occupation = 100
@@ -379,6 +379,7 @@ mongol_duchy_conquest_cb = {
 	ai_can_target_all_titles = {
 		always = yes
 	}
+	ai_score=100
 	ai_score_mult = {
 		value = mongol_conquest_ai_score_value
 

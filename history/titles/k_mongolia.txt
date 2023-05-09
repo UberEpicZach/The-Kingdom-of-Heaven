@@ -410,8 +410,13 @@ c_ulaanbaatar = {
 	1171.1.1 = {
 		holder = 125501		#Temujin GENGHIS KHAN Borjigin
 		liege=d_ovorkhangai
-
-	}
+effect = {
+            vassal_contract_set_obligation_level = {
+                type = religious_rights
+                level = religious_rights_protected
+            }
+		}
+		}
 	1189.1.1 = {
 		liege = d_ogrash
 	}
@@ -480,12 +485,12 @@ c_khentii = {
 		holder = 93055		#Yesügei Borjigin
 	}
 	1171.1.1 = {
-		holder = 125501		#Temujin GENGHIS KHAN Borjigin
-		liege=d_ovorkhangai
-		
+		holder = 3032800 	
+		liege=d_uda_valley
 	
 	}
 	1189.1.1 = {
+holder=125501
 		liege = d_ogrash
 	}
 }
@@ -553,8 +558,8 @@ c_naushki = {
 		holder = 93055		#Yesügei Borjigin
 	}
 	1171.1.1 = {
-		holder = 125501		#Temujin GENGHIS KHAN Borjigin
-		liege=d_ovorkhangai
+		holder = 3032752		#Temujin GENGHIS KHAN Borjigin
+
 	}
 	1189.1.1 = {
 		liege = d_ogrash
@@ -920,7 +925,7 @@ c_ikh_bogd = {
 		holder = 303232		#fictional Tayan Jirkin
 	}
 	1180.1.6 = {
-		holder = 303214		#fictional Taibuka Jirkin
+		holder = 303216		#fictional Taibuka Jirkin
 	}
 	1193.6.10 = {
 		holder = 303234		#fictional Qatarqa Jirkin
@@ -953,7 +958,7 @@ c_bombogor = {
 		holder = 303232		#fictional Tayan Jirkin
 	}
 	1180.1.6 = {
-		holder = 303214		#fictional Taibuka Jirkin
+		holder = 303216		#Ilqa Senggum
 	}
 	1193.6.10 = {
 		holder = 303234		#fictional Qatarqa Jirkin
@@ -986,7 +991,7 @@ c_khasagt_khairkhan = {
 		holder = 303232		#fictional Tayan Jirkin
 	}
 	1180.1.6 = {
-		holder = 303233		#fictional Taibuka Jirkin
+		holder = 303233		#Ilqa Senggum
 	}
 	1193.6.10 = {
 		holder = 303234		#fictional Qatarqa Jirkin
