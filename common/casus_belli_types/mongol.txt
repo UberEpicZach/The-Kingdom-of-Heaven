@@ -385,17 +385,13 @@ mongol_duchy_conquest_cb = {
 		# As a feudal gov, do not attack tribal
 		
 		add = {
-			if={
-			limit={scope:character=
-			character:125501
-			}
-			add=10000
-			
+			if = {
+				limit = { 
+					scope:attacker = character:125501
+				}
+				add=10000
 			}
 		}
-
-
-		
 	}
 
 	valid_to_start = {

@@ -60,8 +60,8 @@ tradition_corsairs = {
 			if = {
 				limit = {
 					NOR = {
-						any_in_list = { list = traits this = flag:ethos_bellicose }
-						any_in_list = { list = traits this = flag:ethos_spiritual }
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
 					}
 				}
 				add = {
@@ -108,7 +108,7 @@ tradition_corsairs = {
 		if = {
 			limit = {
 				NOT = {
-					any_in_list = { list = traits this = flag:ethos_bellicose }
+					culture_pillar:ethos_bellicose = { is_in_list = traits }
 				}
 			}
 			multiply = 0

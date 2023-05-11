@@ -931,12 +931,6 @@ KoH_byzantinecrisis.8 = { #Arrest Council
 				}
 			}
 			50 = {
-				fire_councillor = cp:councillor_chancellor
-				fire_councillor = cp:councillor_marshal
-				fire_councillor = cp:councillor_steward
-				fire_councillor = cp:councillor_spymaster
-				fire_councillor = cp:councillor_court_chaplain
-
 				hidden_effect = {
 					cp:councillor_chancellor = {
 						add_opinion = {
@@ -1074,6 +1068,12 @@ KoH_byzantinecrisis.8 = { #Arrest Council
 						}
 					}
 				}
+
+				fire_councillor = cp:councillor_chancellor
+				fire_councillor = cp:councillor_marshal
+				fire_councillor = cp:councillor_steward
+				fire_councillor = cp:councillor_spymaster
+				fire_councillor = cp:councillor_court_chaplain
 			}
 		}
 	}
@@ -1259,35 +1259,46 @@ KoH_byzantinecrisis.12 = {
 		name = KoH_byzantinecrisis.12.a
 	
 		hidden_effect = {
-			add_realm_law_skip_effects = single_heir_succession_law
+			if = { 
+				limit = {
+					NOT = {
+						has_realm_law = single_heir_succession_law
+					}
+				}
+				add_realm_law_skip_effects = single_heir_succession_law
+			}
 
 			title:e_byzantium.holder = { set_designated_heir = character:215500 }
 
-			set_player_character = character:215500
-		
-		}
-		character:215500 = {
-			trigger_event = {
-				id = KoH_byzantinecrisis.13
-				days = 10
+			if = {
+				limit = {
+					is_ai = no 
+				}
+				set_player_character = character:215500
+			} 	
+			character:215500 = {
+				trigger_event = {
+					id = KoH_byzantinecrisis.13
+					days = 10
+				}
 			}
-		}
 
-		character:215529 = {
-			death = {
-				death_reason = death_rabble
+			character:215529 = {
+				death = {
+					death_reason = death_rabble
+				}
 			}
-		}
 
-		character:215518 = {
-			death = {
-				death_reason = death_rabble
+			character:215518 = {
+				death = {
+					death_reason = death_rabble
+				}
 			}
-		}
 
-		character:KOH0035 = {
-			death = {
-				death_reason = death_rabble
+			character:KOH0035 = {
+				death = {
+					death_reason = death_rabble
+				}
 			}
 		}
 	}

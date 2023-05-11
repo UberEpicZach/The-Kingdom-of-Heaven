@@ -34,9 +34,9 @@ KOH_richard_bride.1 = {
 
 		hidden_effect = {
 			trigger_event = {
-						id = KOH_richard_bride.2
-						days = 1
-					}
+				id = KOH_richard_bride.2
+				days = 1
+			}
 		}
 	}
 
@@ -68,9 +68,9 @@ KOH_richard_bride.1 = {
 				remove_trait = unwed
 			}
 			trigger_event = {
-						id = KOH_richard_bride.4
-						days = 1
-					}
+				id = KOH_richard_bride.4
+				days = 1
+			}
 		}
 	}
 }
@@ -167,7 +167,7 @@ KOH_richard_bride.2 = {
 		name = richard.bride.2.b
 
 		character:204510 = {
-			marry = character:206501
+			break_betrothal = character:205518
 		}
 		create_alliance = {
 			target = scope:navarra_ruler
@@ -195,10 +195,13 @@ KOH_richard_bride.2 = {
 			modifier = pleased_opinion
 			opinion = 5
 		}
+		character:204510 = {
+			marry = character:206501
+		}
 		hidden_effect = {
 			character:KOH0046 = {
 				create_betrothal = character:205518
-				}
+			}
 		}
 	}
 }

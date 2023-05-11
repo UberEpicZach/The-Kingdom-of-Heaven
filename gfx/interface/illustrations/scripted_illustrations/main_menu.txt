@@ -5,11 +5,19 @@
 # Where <file> is the file name without the file ending (E.G., "frontend_west")
 main_menu_background = {
 	texture = {
+		reference = "main_menu/fp2_frontend_iberian.dds"
+
+		trigger = {
+			fp2_should_use_iberian_graphics_trigger = yes
+		}
+	}
+
+	texture = {
 		reference = "main_menu/frontend_tribal.dds"
 
 		trigger = {
 			fp1_should_use_norse_graphics_trigger = no
-			has_government = tribal_government
+			government_has_flag = government_is_tribal
 		}
 	}
 
@@ -18,7 +26,7 @@ main_menu_background = {
 
 		trigger = {
 			fp1_should_use_norse_graphics_trigger = yes
-			has_government = tribal_government
+			government_has_flag = government_is_tribal
 		}
 	}
 
@@ -27,7 +35,7 @@ main_menu_background = {
 
 		trigger = {
 			fp1_should_use_norse_graphics_trigger = yes
-			NOT = { has_government = tribal_government }
+			NOT = { government_has_flag = government_is_tribal }
 		}
 	}
 
