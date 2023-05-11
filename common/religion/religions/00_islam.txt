@@ -47,6 +47,9 @@
 	#Special Doctrine for Islamic Syncretism
 	doctrine = special_doctrine_is_islamic_faith
 
+	#Allow Pilgrimages by default
+	doctrine = doctrine_pilgrimage_mandatory_hajj
+
 	traits = {
 		virtues = { temperate generous just }
 		sins = { gluttonous greedy arbitrary drunkard }
@@ -57,7 +60,7 @@
 	}
 
 	custom_faith_icons = {
-		custom_faith_1 custom_faith_2 custom_faith_3 custom_faith_4 custom_faith_5 custom_faith_6 custom_faith_7 custom_faith_8 custom_faith_9 custom_faith_10 dualism_custom_1 zoroastrian_custom_1 zoroastrian_custom_2 buddhism_custom_1 buddhism_custom_2 buddhism_custom_3 buddhism_custom_4 taoism_custom_1 yazidi_custom_1 sunni_custom_2 sunni_custom_3 sunni_custom_4 muhakkima_1 muhakkima_2 muhakkima_4 muhakkima_5 muhakkima_6 judaism_custom_1 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut custom_faith_fp1_yggdrasil
+		custom_faith_1 custom_faith_2 custom_faith_3 custom_faith_4 custom_faith_5 custom_faith_6 custom_faith_7 custom_faith_8 custom_faith_9 custom_faith_10 dualism_custom_1 zoroastrian_custom_1 zoroastrian_custom_2 buddhism_custom_1 buddhism_custom_2 buddhism_custom_3 buddhism_custom_4 taoism_custom_1 yazidi_custom_1 sunni_custom_2 sunni_custom_3 sunni_custom_4 muhakkima_1 muhakkima_2 muhakkima_4 muhakkima_5 muhakkima_6 judaism_custom_1 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut custom_faith_fp1_yggdrasil custom_faith_boromian_circles custom_faith_lotus custom_faith_aum_tibetan custom_faith_pentagram custom_faith_pentagram_inverted custom_faith_burning_bush custom_faith_allah custom_faith_gankyil custom_faith_eye_of_providence custom_faith_dove custom_faith_ichthys custom_faith_lamb custom_faith_black_sheep custom_faith_ankh custom_faith_chi_rho custom_faith_hamsa custom_faith_cool_s
 	}
 
 	holy_order_names = {
@@ -445,7 +448,7 @@
 			holy_site = damascus
 
 			doctrine = tenet_unrelenting_faith
-			doctrine = tenet_mendicant_preachers
+			doctrine = tenet_aniconism
 			doctrine = tenet_gnosticism
 
 			#Shia
@@ -458,6 +461,7 @@
 			doctrine = doctrine_witchcraft_shunned
 			doctrine = doctrine_monogamy
 			doctrine = doctrine_gender_equal # While the differences between men and women were a bit more complex, Equal is a suitable abstraction for lack of male-pref
+			doctrine = doctrine_pilgrimage_forbidden
 
 			localization = {		
 				PriestMale = islam_shia_priest
@@ -638,6 +642,7 @@
 			doctrine = doctrine_spiritual_head
 			doctrine = doctrine_adultery_women_crime
 			doctrine = doctrine_clerical_gender_either
+			doctrine = doctrine_pilgrimage_forbidden
 
 			localization = {		
 				PriestMale = islam_shia_priest
@@ -678,6 +683,7 @@
 			doctrine = doctrine_adultery_men_crime
 			doctrine = doctrine_witchcraft_shunned
 			doctrine = doctrine_clerical_gender_either
+			doctrine = doctrine_pilgrimage_forbidden
 
 			localization = {		
 				PriestMale = islam_shia_priest
@@ -728,6 +734,7 @@
 			doctrine = doctrine_adultery_men_crime
 			doctrine = doctrine_witchcraft_shunned
 			doctrine = doctrine_clerical_gender_either
+			doctrine = doctrine_pilgrimage_forbidden
 
 			localization = {		
 				PriestMale = islam_shia_priest

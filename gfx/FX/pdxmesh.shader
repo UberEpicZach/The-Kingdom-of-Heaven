@@ -542,6 +542,18 @@ RasterizerState SelectionRasterizerState
 	SlopeScaleDepthBias = 2
 }
 
+RasterizerState TravelArrowMarkerRasterizerState
+{
+	DepthBias = -60000
+	SlopeScaleDepthBias = 2
+}
+
+RasterizerState TravelArrowMarkerShadowRasterizerState
+{
+	DepthBias = 40000
+	SlopeScaleDepthBias = 2
+}
+
 RasterizerState NoCulling
 {
 	cullmode = none
@@ -769,6 +781,23 @@ Effect selection_markerShadow
 	
 	Defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" }
 	RasterizerState = ShadowRasterizerState
+}
+
+Effect travel_arrow_marker
+{
+	VertexShader = "VS_standard"
+	PixelShader = "PS_standard"
+	BlendState = "alpha_blend"
+	DepthStencilState = "depth_no_write"
+	RasterizerState = TravelArrowMarkerRasterizerState
+	Defines = { "NO_FOG" }
+}
+Effect travel_arrow_markerShadow
+{
+	VertexShader = "VertexPdxMeshStandardShadow"
+	PixelShader = "PixelPdxMeshAlphaBlendShadow"
+	RasterizerState = TravelArrowMarkerShadowRasterizerState
+	Defines = { "NO_FOG" }
 }
 
 Effect material_test

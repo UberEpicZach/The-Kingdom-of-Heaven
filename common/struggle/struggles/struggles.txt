@@ -1,5 +1,4 @@
 ﻿iberian_struggle = {
-	# has_fp2_dlc_trigger = yes  #TODO_CD_AN Request support for dlc locking on struggles
 
 	##################################################
 	# Setup
@@ -131,7 +130,7 @@
 
 				involved_character_modifier = {
 					mercenary_hire_cost_mult = -0.3
-					ai_war_chance = 0.25
+					ai_war_chance = 5
 					ai_war_cooldown = -0.25
 				}
 
@@ -289,6 +288,8 @@
 			war_effects = {
 				###### Common
 
+				# Nothing
+
 				##### Involved
 				involved_parameters = {
 					struggle_cb_cost_minor = yes
@@ -301,8 +302,8 @@
 
 				involved_character_modifier = {
 					same_culture_mercenary_hire_cost_mult = -0.3
-					ai_war_chance = 6
-					ai_war_cooldown = -0.2
+					ai_war_chance = 10
+					ai_war_cooldown = -0.5
 					army_pursuit_mult = 0.2
 					army_siege_value_mult = 0.2
 					enemy_hard_casualty_modifier = 0.5

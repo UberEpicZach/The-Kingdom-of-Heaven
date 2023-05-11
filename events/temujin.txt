@@ -4,7 +4,7 @@ temujin.0001 = {
 	type = character_event
 	theme = murder_scheme
 	override_background = {
-		event_background = wilderness_steppe
+		reference = wilderness_steppe
 	}
 	title = temujin.0001.t
 	desc = temujin.0001.desc
@@ -39,7 +39,7 @@ temujin.0002 = {
 	type = character_event
 	theme = murder_scheme
 	override_background = {
-		event_background = wilderness_mountains
+		reference = wilderness_mountains
 	}
 	title = temujin.0002.t
 	desc = temujin.0002.desc
@@ -86,7 +86,7 @@ temujin.0003 = {
 	type = character_event
 	theme = abduct_scheme
 	override_background = {
-		event_background = wilderness_steppe
+		reference = wilderness_steppe
 	}
 	title = temujin.0003.t
 	desc = temujin.0003.desc
@@ -349,7 +349,7 @@ temujin.0009 = { # The Siege of Santarem
 		add_prestige = 500
 		add_piety = 500
 	}
-    override_background = { event_background = army_camp }
+    override_background = { reference = army_camp }
 	trigger = {
 		this = character:125501
 		has_trait=unwed
@@ -400,7 +400,7 @@ temujin.00095 = { # The Siege of Santarem
 		add_prestige = 500
 		add_piety = 500
 	}
-    override_background = { event_background = army_camp }
+    override_background = { reference = army_camp }
 	
 	trigger={
 	has_trait=unwed
@@ -413,7 +413,7 @@ temujin.00035 = {
 	type = character_event
 	theme = abduct_scheme
 	override_background = {
-		event_background = wilderness_steppe
+		reference = wilderness_steppe
 	}
 	title = temujin.0005.t
 	desc = temujin.0005.desc
@@ -438,7 +438,7 @@ temujin.0020 = {
 	type = character_event
 	theme = claim_throne_scheme
 	override_background = {
-		event_background = wilderness_steppe
+		reference = wilderness_steppe
 	}
 	title = temujin.0020.t
 	desc = temujin.0020.desc

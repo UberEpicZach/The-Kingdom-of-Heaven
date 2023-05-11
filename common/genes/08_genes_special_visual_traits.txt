@@ -614,7 +614,7 @@ special_genes = {
 					setting = { attribute = "body_no_left_arm"  value = { min = 1.0 max = 1.0 }	}
 				}
 				female = {}
-				boy = {}
+				boy = male
 				girl = {}
 			}
 
@@ -636,6 +636,7 @@ special_genes = {
 
 		gene_spindly = {
 
+			# Update this with either a new blend shape or an additive animation
 			spindly = {
 				index = 0
 				male = {

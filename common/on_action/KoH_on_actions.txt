@@ -37,9 +37,17 @@ yearly_playable_pulse = {
 # 	}
 # }
 
+on_army_monthly = {
+	events = {
+		KoH_generalgeneric.6
+	}
+}
+
 on_army_enter_province = {
 	events = {
 		tib_abu_yaqub_yusuf_death.9
+		KoH_generalgeneric.3
+		KoH_generalgeneric.6
 	}
 }
 
@@ -372,6 +380,9 @@ KOH_Parition = {
 
 KOH_ON_START = {
 	effect = {
+		title:c_jerusalem.holder = {
+			add_realm_law = male_preference_law
+		}
 
 		#khwarazmian
 		character:230000 = {

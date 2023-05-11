@@ -65,6 +65,8 @@ special_genes = {
 					1 = male_hair_fp2_iberian_christian_01 
 					1 = male_hair_fp2_iberian_christian_02
 					1 = male_hair_fp2_iberian_christian_03
+					1 = m_hair_ep2_western_01
+					1 = m_hair_ep2_western_02
 					##EPE
 					1 = male_hair_ethiopian_01
 					1 = male_hair_ethiopian_02
@@ -125,6 +127,8 @@ special_genes = {
 					1 = female_hair_fp2_iberian_christian_01 
 					1 = female_hair_fp2_iberian_christian_02
 					1 = female_hair_fp2_iberian_christian_03
+					1 = f_hair_ep2_western_01
+					1 = f_hair_ep2_western_02
 					##EPE
 					1 = female_hair_ethiopian_03
 					1 = female_hair_ethiopian_03_jewelry				
@@ -2834,6 +2838,36 @@ special_genes = {
 					3 = female_hair_western_02 # Long wavy
 					3 = female_hair_custom_05 # Long Curly hair
 					3 = female_hair_custom_06 # Byzantine Hair Brushed Back
+				}
+				boy = male
+				girl = female
+			}
+			
+			ep2_hairstyles_western = {
+				index = 59
+				male = {
+					2 = m_hair_ep2_western_01
+					2 = m_hair_ep2_western_02
+				}
+
+				female = {
+					2 = f_hair_ep2_western_01
+					2 = f_hair_ep2_western_02
+				}
+				boy = male
+				girl = female
+			}
+
+			ep2_hairstyles_western_common = { # Without jewelry for use by commoners
+				index = 60
+				male = {
+					2 = m_hair_ep2_western_01
+					2 = m_hair_ep2_western_02
+				}
+
+				female = {
+					2 = f_hair_ep2_western_01
+					2 = f_hair_ep2_western_02
 				}
 				boy = male
 				girl = female
