@@ -219,7 +219,7 @@ temujin.0005 = {
 
 	option = {	
 		name = temujin.0005.b
-		add_presige=-2000
+		add_prestige=-2000
 
 		ai_chance = {
 			base = 0
@@ -470,11 +470,12 @@ temujin.0030 = { # The Siege of Santarem
 	title = temujin.0030.t
 	desc = temujin.0030.desc
 	theme = martial
+	    override_background = { event_background = army_camp }
 	left_portrait = {
 		character = root
 		animation = war_attacker
 	}
-	left_portrait = {
+	right_portrait = {
 		character = scope:toghril
 		animation = war_attacker
 	}
@@ -488,7 +489,7 @@ temujin.0030 = { # The Siege of Santarem
 	}}
 	character:125501 = {save_scope_as = temujin}
 	}
-    override_background = { event_background = army_camp }
+
 	trigger = {
 		this = character:125501
 		is_at_war_as_attacker=yes
@@ -536,7 +537,78 @@ temujin.0030 = { # The Siege of Santarem
 		}
 	}
 }
-senggum_jealousy = {
+temujin.0031 = { # The Siege of Santarem
+	type = character_event
+	title = temujin.0030.t
+	desc = temujin.0030.desc
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+	right_portrait = {
+		character = scope:toghril
+		animation = war_attacker
+	}
+	immediate = {
+	
+    character:303211 = {save_scope_as = toghril}
+	
+    character:303211 = {
+	primary_title={
+	save_scope_as = primt
+	}}
+	character:125501 = {save_scope_as = temujin}
+	}
+    override_background = { event_background = army_camp }
+	trigger = {
+		this = character:125501
+		is_at_war_as_defender=yes
+		character:303211={
+		is_war_leader=yes
+		is_at_war_as_defender=yes
+		}
+		
+		NOT = { has_character_flag = bortereturned }
+	}
+
+	option = {
+	trigger={
+	NOT={
+	has_character_flag=kerweakclaims
+	}
+	}
+		name = temujin.0030.a
+		scope:toghril={
+		every_held_title={
+		scope:temujin={
+		
+		make_claim_weak=prev
+		add_character_flag = kerweakclaims
+		}
+		
+		}
+		
+		}
+	}
+	option = {
+	trigger={
+	
+	has_character_flag=kerweakclaims
+	
+	}
+		name = temujin.0030.b
+		scope:toghril={
+		every_held_title={
+		scope:temujin={
+		
+		make_claim_strong=prev
+		}
+		}
+		}
+	}
+}
+temujin.1000 = {
 	type = character_event
 	theme = alliance
 	title =senggum_jealousy.t
@@ -546,7 +618,9 @@ senggum_jealousy = {
 		character = root
 		animation = shock
 	}
-	
+	trigger = {
+		this = character:303211
+		}
 	
 	right_portrait = {
 		character = scope:temujin
@@ -554,17 +628,11 @@ senggum_jealousy = {
 	}
 		
 	option = {	# Flee to Mount Qaldun
-		name = temujin.0007.a
-		scope:temujin = {
-			trigger_event= {
-				id = temujin.0008
-				days = 5
-			}
-		}
-		create_alliance = {
+		name = senggum_jealousy.a
+		
+		break_alliance = {
 			target = scope:temujin
-			allied_through_owner = scope:temujin
-			allied_through_target = root
+			
 		}
 		scope:temujin = {
 			every_character_war = {add_attacker=root}

@@ -912,6 +912,18 @@ KOH_pulse_monthly = {
         delay = { months = 1 }
 		KOH_pulse_monthly
 	}
+	random_events = {
+		chance_of_no_event = {
+			value = 30
+			if = {
+				limit = {
+					is_at_war = yes # Won't get spammed while at war
+				}
+				add = 10
+			}
+		}
+		
+		}
 
 	effect = {
 		if = {
@@ -1059,20 +1071,40 @@ KOH_on_war_started = {
 }
 
 on_war_won_attacker = {
+if={
+limit = { scope:attacker = character:303211 }
+
+scope:war = {
+			every_war_participant = {
+				
+					trigger_event = { id =temujin.0030 days = 1 }
+				}
+			}
+			
+		}
 	events = {
 		KoH_SicillianConflict.2
+		
 	}
-	random_events = {
-		chance_to_happen = 25
-		200 = 0
-
-		100 = temujin.0030
-	}
+	 
+	
 }
 
 on_war_won_defender = {
+if={
+limit = { scope:attacker = character:303211 }
+
+scope:war = {
+			every_war_participant = {
+				
+					trigger_event = { id =temujin.0031 days = 1 }
+				}
+			}
+			
+		}
 	events = {
 		KoH_SicillianConflict.2
+		
 	}
 }
 
