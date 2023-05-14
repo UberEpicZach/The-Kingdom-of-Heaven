@@ -336,7 +336,7 @@ mongol_duchy_conquest_cb = {
 
 	allowed_for_character = {
 		can_use_conquest_cbs_trigger = yes
-		heritage = heritage_mongolic
+		
 		
 	}
 
@@ -360,7 +360,7 @@ mongol_duchy_conquest_cb = {
 			text = struggle_involvement_cb_check_failure
 			struggle_blocks_invasion_conquest_cb_trigger = yes
 		}
-		casus_belli_block = { SCOPEATK = scope:attacker SCOPEDEF = root }
+		#casus_belli_block = { SCOPEATK = scope:attacker SCOPEDEF = root }
 	}
 
 	allowed_against_character = {
