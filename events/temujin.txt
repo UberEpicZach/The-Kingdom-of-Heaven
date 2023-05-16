@@ -470,7 +470,6 @@ temujin.0030 = { # The Siege of Santarem
 	title = temujin.0030.t
 	desc = temujin.0030.desc
 	theme = martial
-	    override_background = { event_background = army_camp }
 	left_portrait = {
 		character = root
 		animation = war_attacker
@@ -494,7 +493,9 @@ temujin.0030 = { # The Siege of Santarem
 		this = character:125501
 		is_at_war_as_attacker=yes
 		character:303211={
-		is_war_leader=yes
+	    any_character_war={
+		is_war_leader=character:303211
+		}
 		is_at_war_as_attacker=yes
 		}
 		
@@ -560,12 +561,14 @@ temujin.0031 = { # The Siege of Santarem
 	}}
 	character:125501 = {save_scope_as = temujin}
 	}
-    override_background = { event_background = army_camp }
+    override_background = { reference = army_camp }
 	trigger = {
 		this = character:125501
 		is_at_war_as_defender=yes
 		character:303211={
-		is_war_leader=yes
+		any_character_war={
+		is_war_leader=character:303211
+		}
 		is_at_war_as_defender=yes
 		}
 		
@@ -636,13 +639,10 @@ temujin.1000 = {
 	option = {	# Flee to Mount Qaldun
 		name = senggum_jealousy.a
 		
-		break_alliance = {
-			target = scope:temujin
+		break_alliance =  character:125501
 			
-		}
-		scope:temujin = {
-			every_character_war = {add_attacker=root}
-		}
+		
+		
 
 		ai_chance = {
 			base = 2

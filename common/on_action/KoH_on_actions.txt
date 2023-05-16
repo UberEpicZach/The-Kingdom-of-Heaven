@@ -454,7 +454,7 @@ KOH_ON_START = {
 				limit = {
 					exists = global_var:CFP_is_loaded
 				}
-				hidden_effect_new_artifact = {
+				hidden_effect_new_object = {
 					set_artifact_rarity_illustrious = yes
 					character:140 = {
 						save_scope_as = owner
@@ -917,7 +917,9 @@ KOH_pulse_monthly = {
 			value = 30
 			if = {
 				limit = {
+				root={
 					is_at_war = yes # Won't get spammed while at war
+				}
 				}
 				add = 10
 			}
@@ -1071,10 +1073,11 @@ KOH_on_war_started = {
 }
 
 on_war_won_attacker = {
+scope:war = {
 if={
 limit = { scope:attacker = character:303211 }
 
-scope:war = {
+
 			every_war_participant = {
 				
 					trigger_event = { id =temujin.0030 days = 1 }
@@ -1091,10 +1094,11 @@ scope:war = {
 }
 
 on_war_won_defender = {
+scope:war = {
 if={
 limit = { scope:attacker = character:303211 }
 
-scope:war = {
+
 			every_war_participant = {
 				
 					trigger_event = { id =temujin.0031 days = 1 }
