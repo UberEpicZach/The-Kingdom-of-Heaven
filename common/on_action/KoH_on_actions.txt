@@ -42,7 +42,6 @@ on_army_monthly = {
 		KoH_generalgeneric.6
 	}
 }
-
 on_army_enter_province = {
 	events = {
 		tib_abu_yaqub_yusuf_death.9
@@ -63,17 +62,20 @@ on_death = {
 on_kotr_death = {
 	trigger ={
 		has_court_position = King_of_the_germans_court_position
-	}
-	effect = {
-		if = {
-			limit = {
-				exists = title:k_king_of_the_germans.holder
-				scope:employee = title:k_king_of_the_germans.holder
-			}
-			destroy_title = title:k_king_of_the_germans
-		}
+	}	
+	effect = {		
+		if = {			
+			limit = {		
+				exists = title:k_king_of_the_germans.holder			
+				scope:employee = title:k_king_of_the_germans.holder		
+					
+			}		
+		destroy_title = title:k_king_of_the_germans		
+		}	
+					
 	}
 }
+
 
 KOH_holy_orders = {
 	effect = {
@@ -509,12 +511,12 @@ KOH_ON_START = {
 				modifier = EmperorVassals
 			}
 		}
-		title:e_hre.holder = {
-			trigger_event = {
-				id = KOH_Pentecost.1
-				days = 40
-			}
-		}
+		#title:e_hre.holder = {
+		#	trigger_event = {
+		#		id = KOH_Pentecost.1
+		#		days = 40
+		#	}
+		#}
 		#Starts Balian's Event Chain
 		character:223570 = {
 			if = {
@@ -661,7 +663,7 @@ KOH_ON_START = {
 				}
 			}
 		}
-		
+	
 		character:204510 = {
 			if = {
 				 limit = {
@@ -695,7 +697,7 @@ KOH_ON_START = {
 				}
 			}
 		}
-		#Portugal Decision
+		Portugal Decision
 		title:k_portugal.holder = {
 			if = {
 				limit = {
@@ -707,7 +709,7 @@ KOH_ON_START = {
 				}
 				set_global_variable = {
 					name = form_portugal_decision
-					value = scope:portugal_former
+					value = title:k_portugal.holder
 				}
 				every_sub_realm_county = {
 					limit = {
@@ -915,14 +917,14 @@ KOH_pulse_monthly = {
 	random_events = {
 		chance_of_no_event = {
 			value = 30
-			if = {
-				limit = {
-				root={
-					is_at_war = yes # Won't get spammed while at war
-				}
-				}
-				add = 10
-			}
+			#if = {
+			#	limit = {
+			#	root={
+			#		is_at_war = yes # Won't get spammed while at war
+			#	}
+			#	}
+			#	add = 10
+			#}
 		}
 		
 		}
