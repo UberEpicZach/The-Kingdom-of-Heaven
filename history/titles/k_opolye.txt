@@ -1,11 +1,26 @@
-# k_opolye = {
-# #
-# # Commented out Development
-# #1 }
-# 	#
-# # Commented out Development
-# # 3 }
-# }
+k_opolye = {
+	1169.1.2 = {
+		holder = 222676
+	}
+	1174.6.29 = {
+		holder = 222730
+	}
+	1175.1.2 = {
+		holder = 222682
+	}
+	1176.6.20 = {
+		holder = 222670
+	}
+	1212.4.15 = {
+		holder = 125184
+	}
+	1216.1.2 = {
+		holder = 222686
+	}
+	1218.2.2 = {
+		holder = 125184
+	}
+}
 
 d_opolye = {
 #
@@ -42,26 +57,31 @@ d_opolye = {
 	
 	#1069.4.15 our date for Fragmentation of Kievan Rus'
 	#1093 Vladimir Monomakh moves capital to Suzdal
-	1093.1.2 = {
-		holder = 666	#Vladimir Monomakh
-	}
-	1108.1.2 = {
-		holder = 222672		#Yuri "Dolgorukiy" Vladimirovich
-	}
 	1157.5.15 = {
-		holder = 222676		#Saint Andrei Bogolyubsky Yuryevich
+		holder = 222676
+		#law = agnatic_succession
+		#law = succ_gavelkind
+	}
+	1169.4.15 = {
+		liege = k_opolye
 	}
 	1174.6.29 = {
-		holder = 222682 	#Mikhail Yuryevich
+		holder = 222730
 	}
-	1174.9.1 = {
-		holder = 222730		#Yaropolk Rostislavich
-	}
-	1175.6.15 = {
-		holder = 222682		#Mikhail Yuryevich
+	1175.1.2 = {
+		holder = 222682
 	}
 	1176.6.20 = {
-		holder = 222670		#Vsevolod III the Big Nest
+		holder = 222670
+	}
+	1212.4.15 = {
+		holder = 125184
+	}
+	1216.1.2 = {
+		holder = 222686
+	}
+	1218.2.2 = {
+		holder = 125184
 	}
 }
 
@@ -116,15 +136,15 @@ c_yaroslavl = {
 	1044.3.15 = {
 		holder = 302262		#Koz'ma Timerovich, fictional
 	}
-1054.2.20 = {
-	holder = 630
-}
-1073.1.2 = {
-	holder = 656
-}
-1076.12.27 = {
-	holder = 630
-}
+	1054.2.20 = {
+		holder = 630
+	}
+	1073.1.2 = {
+		holder = 656
+	}
+	1076.12.27 = {
+		holder = 630
+	}
 	
 	#1093 Vladimir Monomakh moves capital to Suzdal
 	1093.1.2 = {
@@ -202,15 +222,15 @@ c_vladimir = {
 	1052.6.22 = {
 		holder = 302265		#Iliya Zalesky, fictional
 	}
-1054.2.20 = {
-	holder = 630
-}
-1073.1.2 = {
-	holder = 656
-}
-1076.12.27 = {
-	holder = 630
-}
+	1054.2.20 = {
+		holder = 630
+	}
+	1073.1.2 = {
+		holder = 656
+	}
+	1076.12.27 = {
+		holder = 630
+	}
 	
 	#1093 Vladimir Monomakh moves capital to Suzdal
 	1093.1.2 = {
@@ -288,15 +308,15 @@ c_suzdal = {
 	1044.3.15 = {
 		holder = 302262		#Koz'ma Timerovich, fictional
 	}
-1054.2.20 = {
-	holder = 630
-}
-1073.1.2 = {
-	holder = 656
-}
-1076.12.27 = {
-	holder = 630
-}
+	1054.2.20 = {
+		holder = 630
+	}
+	1073.1.2 = {
+		holder = 656
+	}
+	1076.12.27 = {
+		holder = 630
+	}
 	
 	#1093 Vladimir Monomakh moves capital to Suzdal
 	1093.1.2 = {
@@ -487,42 +507,41 @@ c_moskva = {
 
 
 d_ryazan = {
-	#1078 Ryazan Principality started existing after splitting from Chernigov principality. However it wasn't independent yet, so we're not adding it, since a d_ can't be liege of another d_
-	
-1095.1.2 = {
-	holder = 125096
-}
-1096.9.6 = {
-	holder = 662
-}
-#Council of Lyubech
-1097.1.1 = {
-	liege = k_ruthenia
-}
-1129.1.2 = {
-	holder = 125078
-}
-1143.1.2 = {
-	holder = 222757
-}
-1145.1.2 = {
-	holder = 222744
-}
-1153.1.2 = {
-	holder = 222742
-}
-1167.3.14 = {
-        liege = 0 # civil war on side of the side of Vladimir
-}
-1177.6.30 = {
-	holder = 222745
-}
-1207.1.2 = {
-	holder = 222670
-}
-1212.4.15 = {
-	holder = 222751
-}
+	#1078 Ryazan Principality started existing after splitting from Chernigov principality. However it wasn't independent yet, so we're not adding it, since a d_ can't be liege of another d_	
+	1095.1.2 = {
+		holder = 125096
+	}
+	1096.9.6 = {
+		holder = 662
+	}
+	#Council of Lyubech
+	1097.1.1 = {
+		liege = k_ruthenia
+	}
+	1129.1.2 = {
+		holder = 125078
+	}
+	1143.1.2 = {
+		holder = 222757
+	}
+	1145.1.2 = {
+		holder = 222744
+	}
+	1153.1.2 = {
+		holder = 222742
+	}
+	1167.3.14 = {
+			liege = 0 # civil war on side of the side of Vladimir
+	}
+	1177.6.30 = {
+		holder = 222745
+	}
+	1207.1.2 = {
+		holder = 222670
+	}
+	1212.4.15 = {
+		holder = 222751
+	}
 	
 	
 	
@@ -549,6 +568,7 @@ c_ryazan = {
 	882.1.2 = {
 		holder = 40606	#Oleg/Helgi the Seer
 		liege = k_ruthenia
+		government = feudal_government
 	}
 	912.1.2 = {
 		holder = 600	#Igor/Helgi, son of Rurik

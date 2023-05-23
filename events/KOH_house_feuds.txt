@@ -1,226 +1,226 @@
-﻿namespace = KOH_house_feuds
-KOH_house_feuds.0001 = {
-	type = character_event
-	title = KOH_house_feuds.0001.t
-	desc = {
-		desc = KOH_house_feuds.0001.desc
-		triggered_desc = {
-			trigger = { exists = scope:other_house_feud_story }
-			desc = KOH_house_feuds.0001.target
-		}
-	}
-	theme = rival_relation
-	override_background = { reference = bedchamber }
-	left_portrait = {
-		character = character:144228
-		animation = boredom
-		outfit_tags = { nightgown }
-	}
-	lower_right_portrait = character:144056
+﻿# namespace = KOH_house_feuds
+# KOH_house_feuds.0001 = {
+# 	type = character_event
+# 	title = KOH_house_feuds.0001.t
+# 	desc = {
+# 		desc = KOH_house_feuds.0001.desc
+# 		triggered_desc = {
+# 			trigger = { exists = scope:other_house_feud_story }
+# 			desc = KOH_house_feuds.0001.target
+# 		}
+# 	}
+# 	theme = rival_relation
+# 	override_background = { reference = bedchamber }
+# 	left_portrait = {
+# 		character = character:144228
+# 		animation = boredom
+# 		outfit_tags = { nightgown }
+# 	}
+# 	lower_right_portrait = character:144056
 
-	trigger = {
-		#DLC check
-		has_bp1_dlc_trigger = yes
-		# #Standard checks
-		# is_available_adult = yes
-		# # Is valid feuder
-		# house_feud_house_head_trigger = yes
-		# # Someone to feud with
-		# any_relation = {
-		# 	type = rival
-		# 	exists = house
-		# 	this = this.house.house_head
-		# 	house_feud_attacker_trigger = { VICTIM_HEAD = character:144228 }
-		# }
-	}
+# 	trigger = {
+# 		#DLC check
+# 		has_bp1_dlc_trigger = yes
+# 		# #Standard checks
+# 		# is_available_adult = yes
+# 		# # Is valid feuder
+# 		# house_feud_house_head_trigger = yes
+# 		# # Someone to feud with
+# 		# any_relation = {
+# 		# 	type = rival
+# 		# 	exists = house
+# 		# 	this = this.house.house_head
+# 		# 	house_feud_attacker_trigger = { VICTIM_HEAD = character:144228 }
+# 		# }
+# 	}
 
-	weight_multiplier = {
-		base = 1
-		modifier = {
-			factor = 2
-			any_relation = {
-				type = rival
-				house_feud_attacker_trigger = { VICTIM_HEAD = character:144228 }
-				has_relation_nemesis = character:144228
-			}
-		}
-		modifier = {
-			factor = 2
-			any_relation = {
-				type = rival
-				house_feud_attacker_trigger = { VICTIM_HEAD = character:144228 }
-				primary_title.tier = character:144228.primary_title.tier
-			}
-		}
-	}
+# 	weight_multiplier = {
+# 		base = 1
+# 		modifier = {
+# 			factor = 2
+# 			any_relation = {
+# 				type = rival
+# 				house_feud_attacker_trigger = { VICTIM_HEAD = character:144228 }
+# 				has_relation_nemesis = character:144228
+# 			}
+# 		}
+# 		modifier = {
+# 			factor = 2
+# 			any_relation = {
+# 				type = rival
+# 				house_feud_attacker_trigger = { VICTIM_HEAD = character:144228 }
+# 				primary_title.tier = character:144228.primary_title.tier
+# 			}
+# 		}
+# 	}
 
-	immediate = {
-		play_music_cue = "mx_cue_negative"
-		random_relation = {
-			type = rival
-			limit = {
-				house_feud_attacker_trigger = { VICTIM_HEAD = character:144228 }
-			}
-			weight = {
-				base = 1
-				modifier = {
-					factor = 1000
-					has_relation_nemesis = character:144228
-				}
-				modifier = {
-					factor = 2
-					primary_title.tier = character:144228.primary_title.tier
-				}
-			}
-			house_feud_save_head_and_attacker_effect = yes
-		}
-		house_feud_rival_story_effect = { RIVAL = character:144056 }
-	}
+# 	immediate = {
+# 		play_music_cue = "mx_cue_negative"
+# 		random_relation = {
+# 			type = rival
+# 			limit = {
+# 				house_feud_attacker_trigger = { VICTIM_HEAD = character:144228 }
+# 			}
+# 			weight = {
+# 				base = 1
+# 				modifier = {
+# 					factor = 1000
+# 					has_relation_nemesis = character:144228
+# 				}
+# 				modifier = {
+# 					factor = 2
+# 					primary_title.tier = character:144228.primary_title.tier
+# 				}
+# 			}
+# 			house_feud_save_head_and_attacker_effect = yes
+# 		}
+# 		house_feud_rival_story_effect = { RIVAL = character:144056 }
+# 	}
 
-	option = { # Start Feud
-		name = KOH_house_feuds.0001.a
-		house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = character:144056 }
-		random_owned_story = {
-			limit = { story_type = story_cycle_house_feud }
-			set_variable = {
-				name = house_feud_reason
-				value = flag:head_rivalry
-			}
-			house_feud_save_victim_attacker_effect = yes
-		}
+# 	option = { # Start Feud
+# 		name = KOH_house_feuds.0001.a
+# 		house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = character:144056 }
+# 		random_owned_story = {
+# 			limit = { story_type = story_cycle_house_feud }
+# 			set_variable = {
+# 				name = house_feud_reason
+# 				value = flag:head_rivalry
+# 			}
+# 			house_feud_save_victim_attacker_effect = yes
+# 		}
 
-		# Stress effects in scripted_effect
-		ai_chance = {
-			base = 25
-			ai_value_modifier = {
-				ai_boldness = 1
-				ai_vengefulness = 1
-			}
-		}
-	}
+# 		# Stress effects in scripted_effect
+# 		ai_chance = {
+# 			base = 25
+# 			ai_value_modifier = {
+# 				ai_boldness = 1
+# 				ai_vengefulness = 1
+# 			}
+# 		}
+# 	}
 
-	option = { # Remain rivals
-		name = KOH_house_feuds.0001.b
-		house_feud_forgiving_stress_effect = yes
-		ai_chance = {
-			base = 25
-			ai_value_modifier = {
-				ai_boldness = -0.5
-				ai_vengefulness = 0.5
-			}
-		}
-	}
-}
+# 	option = { # Remain rivals
+# 		name = KOH_house_feuds.0001.b
+# 		house_feud_forgiving_stress_effect = yes
+# 		ai_chance = {
+# 			base = 25
+# 			ai_value_modifier = {
+# 				ai_boldness = -0.5
+# 				ai_vengefulness = 0.5
+# 			}
+# 		}
+# 	}
+# }
 
-KOH_house_feuds.0002 = {
-	type = character_event
-	title = KOH_house_feuds.0002.t
-	desc = {
-		desc = KOH_house_feuds.0002.desc
-		triggered_desc = {
-			trigger = { exists = scope:other_house_feud_story }
-			desc = KOH_house_feuds.0002.target
-		}
-	}
-	theme = rival_relation
-	override_background = { reference = bedchamber }
-	left_portrait = {
-		character = character:144056
-		animation = boredom
-		outfit_tags = { nightgown }
-	}
-	lower_right_portrait = character:144228
+# KOH_house_feuds.0002 = {
+# 	type = character_event
+# 	title = KOH_house_feuds.0002.t
+# 	desc = {
+# 		desc = KOH_house_feuds.0002.desc
+# 		triggered_desc = {
+# 			trigger = { exists = scope:other_house_feud_story }
+# 			desc = KOH_house_feuds.0002.target
+# 		}
+# 	}
+# 	theme = rival_relation
+# 	override_background = { reference = bedchamber }
+# 	left_portrait = {
+# 		character = character:144056
+# 		animation = boredom
+# 		outfit_tags = { nightgown }
+# 	}
+# 	lower_right_portrait = character:144228
 
-	trigger = {
-		#DLC check
-		has_bp1_dlc_trigger = yes
-		#Standard checks
-		# is_available_adult = yes
-		# # Is valid feuder
-		# house_feud_house_head_trigger = yes
-		# # Someone to feud with
-		# any_relation = {
-		# 	type = rival
-		# 	exists = house
-		# 	this = this.house.house_head
-		# 	house_feud_attacker_trigger = { VICTIM_HEAD = character:144056 }
-		# }
-	}
+# 	trigger = {
+# 		#DLC check
+# 		has_bp1_dlc_trigger = yes
+# 		#Standard checks
+# 		# is_available_adult = yes
+# 		# # Is valid feuder
+# 		# house_feud_house_head_trigger = yes
+# 		# # Someone to feud with
+# 		# any_relation = {
+# 		# 	type = rival
+# 		# 	exists = house
+# 		# 	this = this.house.house_head
+# 		# 	house_feud_attacker_trigger = { VICTIM_HEAD = character:144056 }
+# 		# }
+# 	}
 
-	weight_multiplier = {
-		base = 1
-		modifier = {
-			factor = 2
-			any_relation = {
-				type = rival
-				house_feud_attacker_trigger = { VICTIM_HEAD = character:144056 }
-				has_relation_nemesis = character:144056
-			}
-		}
-		modifier = {
-			factor = 2
-			any_relation = {
-				type = rival
-				house_feud_attacker_trigger = { VICTIM_HEAD = character:144056 }
-				primary_title.tier = character:144056.primary_title.tier
-			}
-		}
-	}
+# 	weight_multiplier = {
+# 		base = 1
+# 		modifier = {
+# 			factor = 2
+# 			any_relation = {
+# 				type = rival
+# 				house_feud_attacker_trigger = { VICTIM_HEAD = character:144056 }
+# 				has_relation_nemesis = character:144056
+# 			}
+# 		}
+# 		modifier = {
+# 			factor = 2
+# 			any_relation = {
+# 				type = rival
+# 				house_feud_attacker_trigger = { VICTIM_HEAD = character:144056 }
+# 				primary_title.tier = character:144056.primary_title.tier
+# 			}
+# 		}
+# 	}
 
-	immediate = {
-		play_music_cue = "mx_cue_negative"
-		random_relation = {
-			type = rival
-			limit = {
-				house_feud_attacker_trigger = { VICTIM_HEAD = character:144056 }
-			}
-			weight = {
-				base = 1
-				modifier = {
-					factor = 1000
-					has_relation_nemesis = character:144056
-				}
-				modifier = {
-					factor = 2
-					primary_title.tier = character:144056.primary_title.tier
-				}
-			}
-			house_feud_save_head_and_attacker_effect = yes
-		}
-		house_feud_rival_story_effect = { RIVAL = character:144228 }
-	}
+# 	immediate = {
+# 		play_music_cue = "mx_cue_negative"
+# 		random_relation = {
+# 			type = rival
+# 			limit = {
+# 				house_feud_attacker_trigger = { VICTIM_HEAD = character:144056 }
+# 			}
+# 			weight = {
+# 				base = 1
+# 				modifier = {
+# 					factor = 1000
+# 					has_relation_nemesis = character:144056
+# 				}
+# 				modifier = {
+# 					factor = 2
+# 					primary_title.tier = character:144056.primary_title.tier
+# 				}
+# 			}
+# 			house_feud_save_head_and_attacker_effect = yes
+# 		}
+# 		house_feud_rival_story_effect = { RIVAL = character:144228 }
+# 	}
 
-	option = { # Start Feud
-		name = KOH_house_feuds.0002.a
-		house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = character:144228 }
-		random_owned_story = {
-			limit = { story_type = story_cycle_house_feud }
-			set_variable = {
-				name = house_feud_reason
-				value = flag:head_rivalry
-			}
-			house_feud_save_victim_attacker_effect = yes
-		}
+# 	option = { # Start Feud
+# 		name = KOH_house_feuds.0002.a
+# 		house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = character:144228 }
+# 		random_owned_story = {
+# 			limit = { story_type = story_cycle_house_feud }
+# 			set_variable = {
+# 				name = house_feud_reason
+# 				value = flag:head_rivalry
+# 			}
+# 			house_feud_save_victim_attacker_effect = yes
+# 		}
 
-		# Stress effects in scripted_effect
-		ai_chance = {
-			base = 25
-			ai_value_modifier = {
-				ai_boldness = 1
-				ai_vengefulness = 1
-			}
-		}
-	}
+# 		# Stress effects in scripted_effect
+# 		ai_chance = {
+# 			base = 25
+# 			ai_value_modifier = {
+# 				ai_boldness = 1
+# 				ai_vengefulness = 1
+# 			}
+# 		}
+# 	}
 
-	option = { # Remain rivals
-		name = KOH_house_feuds.0002.b
-		house_feud_forgiving_stress_effect = yes
-		ai_chance = {
-			base = 25
-			ai_value_modifier = {
-				ai_boldness = -0.5
-				ai_vengefulness = 0.5
-			}
-		}
-	}
-}
+# 	option = { # Remain rivals
+# 		name = KOH_house_feuds.0002.b
+# 		house_feud_forgiving_stress_effect = yes
+# 		ai_chance = {
+# 			base = 25
+# 			ai_value_modifier = {
+# 				ai_boldness = -0.5
+# 				ai_vengefulness = 0.5
+# 			}
+# 		}
+# 	}
+# }
