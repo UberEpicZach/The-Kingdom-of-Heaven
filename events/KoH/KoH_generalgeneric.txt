@@ -142,6 +142,7 @@ KoH_generalgeneric.3 = {
 					has_active_diarchy = yes
 					has_diarchy_active_parameter = diarchy_is_regency
 				}
+				basic_eligible_for_diarchy_trigger = yes
 			}
 		}
 		NOT = {
@@ -154,11 +155,19 @@ KoH_generalgeneric.3 = {
 	immediate = {
 		scope:army.location = { save_scope_as = current_location }
 		scope:army = {
-			army_commander = { trigger_event = KoH_generalgeneric.4 }
+			army_commander = { 
+				if = {
+					limit = {
+						basic_eligible_for_diarchy_trigger = yes
+					}
+					trigger_event = KoH_generalgeneric.4 
+				}
+			}
 			army_owner = {
 				every_knight = {
 					limit = {
 						is_ruler = yes
+						basic_eligible_for_diarchy_trigger = yes
 						location = scope:current_location
 					}
 					trigger_event = KoH_generalgeneric.4
@@ -167,7 +176,23 @@ KoH_generalgeneric.3 = {
 		}
 	}
 	option = {
-
+		show_as_tooltip = {
+			start_diarchy = temporary_regency
+		}
+		hidden_effect = {
+			scope:army = {
+				army_commander = { trigger_event = KoH_generalgeneric.4 }
+				army_owner = {
+					every_knight = {
+						limit = {
+							is_ruler = yes
+							location = scope:current_location
+						}
+						trigger_event = KoH_generalgeneric.4
+					}
+				}
+			}
+		}
 	}
 }
 
