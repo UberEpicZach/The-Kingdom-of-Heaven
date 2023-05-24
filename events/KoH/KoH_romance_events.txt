@@ -225,26 +225,26 @@ KOH_richard_bride.3 = {
 	}
 
 	trigger = {
-			is_adult = yes
-			NOT = { has_character_flag = had_event_richard_bride.3 }
-			is_ai = no
+		is_adult = yes
+		NOT = { has_character_flag = had_event_richard_bride.3 }
+		is_ai = no
 	}
 
 	immediate = {
 		add_character_flag = {
 			flag = had_event_richard_bride.3
 		}
-			hidden_effect = {
-				character:205518 = {
-					remove_trait = unwed
-				}
-				character:206501 = {
-					remove_trait = unwed
-				}
-				character:204510 = {
-					remove_trait = unwed
-				}
+		hidden_effect = {
+			character:205518 = {
+				remove_trait = unwed
 			}
+			character:206501 = {
+				remove_trait = unwed
+			}
+			character:204510 = {
+				remove_trait = unwed
+			}
+		}
 		every_ruler = {
             limit = {
                 any_held_title = {
@@ -298,49 +298,52 @@ KOH_richard_bride.3 = {
 		name = richard.bride.3.b
 
 		random_list = {
-				40 = {
-					add_opinion = {
-						target = character:204510
-						modifier = romantic_gesture_opinion
-						opinion = 10
-					}
-					character:204510 = {
-						set_sexuality = homosexual
-						add_trait = unwed
-					}
-					hidden_effect = {
-						trigger_event = {
+			40 = {
+				add_opinion = {
+					target = character:204510
+					modifier = romantic_gesture_opinion
+					opinion = 10
+				}
+				character:204510 = {
+					set_sexuality = homosexual
+					add_trait = unwed
+				}
+				hidden_effect = {
+					trigger_event = {
 						id = KOH_richard_bride.5
 						days = 1
-						}
 					}
 				}
-				60 = {
-					add_opinion = {
-						target = character:204510
-						modifier = lover_let_me_down_opinion
-						opinion = -10
-					}
-					character:204510 = {
-						marry = character:206501
-					}
-					character:204510 = {
-						create_alliance = {
-							target = scope:navarra_ruler
-							allied_through_owner = character:204510
-							allied_through_target = character:206501
-						}
-					}
-					hidden_effect = {
-						character:KOH0046 = {
-							create_betrothal = character:205518
-						}
-					}
-					trigger_event = {
-						id = KOH_flemish_war.1
-						days = 10
+			}
+			60 = {
+				character:204510 = {
+					break_betrothal = character:205518
+				}
+				add_opinion = {
+					target = character:204510
+					modifier = lover_let_me_down_opinion
+					opinion = -10
+				}
+				character:204510 = {
+					marry = character:206501
+				}
+				character:204510 = {
+					create_alliance = {
+						target = scope:navarra_ruler
+						allied_through_owner = character:204510
+						allied_through_target = character:206501
 					}
 				}
+				hidden_effect = {
+					character:KOH0046 = {
+						create_betrothal = character:205518
+					}
+				}
+				trigger_event = {
+					id = KOH_flemish_war.1
+					days = 10
+				}
+			}
 		}
 	}
 }
@@ -517,6 +520,9 @@ KOH_richard_bride.6 = {
 			remove_trait = unwed
 		}
 		character:204510 = {
+			break_betrothal = character:205518
+		}
+		character:204510 = {
 			marry = character:206501
 		}
 		create_alliance = {
@@ -526,8 +532,8 @@ KOH_richard_bride.6 = {
 		}
 		character:KOH0046 = {
 			create_betrothal = character:205518
-			}
 		}
+	}
 }
 
 

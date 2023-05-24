@@ -77,79 +77,79 @@ on_kotr_death = {
 }
 
 
-KOH_holy_orders = {
-	effect = {
-		character:223523 = {
-			if = {
-				limit = {
-					is_alive = yes
-					is_landed = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.1 #Templar Creation
-					days = -1
-				}
-			}
-		}
-	 	character:223523 = {
-			if = {
-				limit = {
-					is_alive = yes
-					is_landed = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.2 #Hospitaller Creation
-					days = -1
-				}
-			}
-		}
-		character:207510 = {
-			if = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.5 #Calvatra Creation
-					days = -1
-				}
-			}
-		}
-		character:207510 = {
-			if = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.7 #Santigo creation
-					days = -1
-				}
-			}
-		}
+# KOH_holy_orders = {
+# 	effect = {
+# 		character:223523 = {
+# 			if = {
+# 				limit = {
+# 					is_alive = yes
+# 					is_landed = yes
+# 				}
+# 				trigger_event = {
+# 					id = KoH_holy_orders.1 #Templar Creation
+# 					days = -1
+# 				}
+# 			}
+# 		}
+# 	 	character:223523 = {
+# 			if = {
+# 				limit = {
+# 					is_alive = yes
+# 					is_landed = yes
+# 				}
+# 				trigger_event = {
+# 					id = KoH_holy_orders.2 #Hospitaller Creation
+# 					days = -1
+# 				}
+# 			}
+# 		}
+# 		character:207510 = {
+# 			if = {
+# 				limit = {
+# 					is_alive = yes
+# 				}
+# 				trigger_event = {
+# 					id = KoH_holy_orders.5 #Calvatra Creation
+# 					days = -1
+# 				}
+# 			}
+# 		}
+# 		character:207510 = {
+# 			if = {
+# 				limit = {
+# 					is_alive = yes
+# 				}
+# 				trigger_event = {
+# 					id = KoH_holy_orders.7 #Santigo creation
+# 					days = -1
+# 				}
+# 			}
+# 		}
 
-		character:227012 = {
-			if = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.102 #Assassin Buffs
-					days = 1
-				}
-			}
-		}
-		character:227012 = {
-			if = {
-				limit = {
-					is_alive = yes
-				}
-				trigger_event = {
-					id = KoH_holy_orders.103 #Assassin Buffs
-					days = -1
-				}
-			}
-		}
-	}
-}
+# 		character:227012 = {
+# 			if = {
+# 				limit = {
+# 					is_alive = yes
+# 				}
+# 				trigger_event = {
+# 					id = KoH_holy_orders.102 #Assassin Buffs
+# 					days = 1
+# 				}
+# 			}
+# 		}
+# 		character:227012 = {
+# 			if = {
+# 				limit = {
+# 					is_alive = yes
+# 				}
+# 				trigger_event = {
+# 					id = KoH_holy_orders.103 #Assassin Buffs
+# 					days = -1
+# 				}
+# 			}
+# 		}
+# 	}
+# }
  
 on_natural_death_second_chance = { #Added a perk requirement
 	trigger = {
@@ -163,9 +163,218 @@ on_game_start_after_lobby = {
 		#MyMo_ongamestart
 		khwarezmid_invasion
 		KOH_Parition
+		KOH_fix_provinces
 	}
 }
 
+KOH_fix_provinces = {
+	effect = {
+		province:496 = {
+			add_building = castle_03
+			add_building = city_03
+			add_building = common_tradeport_06
+			add_building = guild_halls_06
+			add_building = farm_estates_05
+			add_building = regimental_grounds_05
+			add_building = cereal_fields_05
+		}
+		province:1846 = {
+			add_building = common_tradeport_01
+		}
+		province:1919 = {
+			add_province_modifier = extra_building_slot
+			add_building = farm_estates_01
+		}
+		province:1978 = {
+			add_province_modifier = extra_building_slot
+			add_building = quarries_01
+		}
+		province:1981 = {
+			add_province_modifier = extra_building_slot
+			add_building = curtain_walls_01
+			add_building= cereal_fields_01
+		}
+		province:1995 = {
+			add_province_modifier = extra_building_slot
+			add_building = cereal_fields_01
+			add_building =regimental_grounds_01
+		}
+		province:2142 = {
+			add_province_modifier = extra_building_slot
+			add_building = outposts_01
+		}
+		province:2012 = {
+			add_province_modifier = extra_building_slot
+			add_building = hill_farms_01
+		}
+		province:2214 = {
+			add_province_modifier = extra_building_slot
+			add_building = military_camps_01
+		}
+		province:2252 = {
+			add_province_modifier = extra_building_slot
+			add_building = military_camps_01 
+		}
+		province:6223 = {
+			add_province_modifier = extra_building_slot
+			add_building = watchtowers_01
+		}
+		province:6155 = {
+			add_province_modifier = extra_building_slot
+			add_building = military_camps_01
+		}
+		province:6158 = {
+			add_province_modifier = extra_building_slot
+			add_building = camel_farms_01
+		}
+		province:6134 = {
+			add_province_modifier = extra_building_slot
+			add_building = quarries_01
+		}
+		province:6144 = {
+			add_province_modifier = extra_building_slot
+			add_building = pastures_01
+		}
+		province:1862 = {
+			add_province_modifier = extra_building_slot
+			add_building = barracks_01
+		}
+		province:1887 = {
+			add_province_modifier = extra_building_slot
+			add_building = military_camps_01
+		}
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+
+		
+	}
+}
 on_title_gain = {
 	on_actions = {
 		on_gain_HRE
@@ -1025,7 +1234,7 @@ KOH_events_tri_yearly_pulse = {
 		900 = KoH_hashshashin.101
 		900 = KoH_hashshashin.7
 		#generalgeneric
-		100 = KoH_generalgeneric.1
+		#100 = KoH_generalgeneric.1
 		100 = KoH_generalgeneric.2
 		100 = doublet.0001
 	}
@@ -1115,9 +1324,9 @@ limit = { scope:attacker = character:303211 }
 }
 
 on_siege_completion={
-events={
-temujin.0009
-}
+	events = {
+		temujin.0009
+	}
 }
 # MyMo_ongamestart = {
 # 	effect = {

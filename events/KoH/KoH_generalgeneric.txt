@@ -1,59 +1,59 @@
 ﻿namespace = KoH_generalgeneric
 
 
-KoH_generalgeneric.1 = { #Lost At Sea!
-	title = KoH_generalgeneric.1.t
-	desc = KoH_generalgeneric.1.desc
-	theme = StormWaves
-	left_portrait = {
-		character = this
-	}
-	right_portrait = {
-		character = scope:KnightDisaster
-	}
+# KoH_generalgeneric.1 = { #Lost At Sea!
+# 	title = KoH_generalgeneric.1.t
+# 	desc = KoH_generalgeneric.1.desc
+# 	theme = StormWaves
+# 	left_portrait = {
+# 		character = this
+# 	}
+# 	right_portrait = {
+# 		character = scope:KnightDisaster
+# 	}
 
-	trigger = {		
-		is_commanding_army = yes
-		is_sea = yes
-		any_knight = {
-			is_at_same_location = root
-		}
-	}
+# 	trigger = {		
+# 		is_commanding_army = yes
+# 		is_sea = yes
+# 		any_knight = {
+# 			is_at_same_location = root
+# 		}
+# 	}
 
-	immediate = {
-		commanding_army.location = { save_scope_as = current_location }
+# 	immediate = {
+# 		commanding_army.location = { save_scope_as = current_location }
 
-		every_knight = {
-			limit = {
-				is_at_same_location = root
-			}
-			save_scope_as = KnightDisaster
-		}
-	}
+# 		every_knight = {
+# 			limit = {
+# 				is_at_same_location = root
+# 			}
+# 			save_scope_as = KnightDisaster
+# 		}
+# 	}
 
-	option = { 
-		name = KoH_generalgeneric.1.a
+# 	option = { 
+# 		name = KoH_generalgeneric.1.a
 		
-		random = {
-			chance = 50
-			scope:KnightDisaster = {
-				death = {
-					death_reason = death_lost_at_sea
-				}
-			}
-		}
-	}
+# 		random = {
+# 			chance = 50
+# 			scope:KnightDisaster = {
+# 				death = {
+# 					death_reason = death_lost_at_sea
+# 				}
+# 			}
+# 		}
+# 	}
 
-	option = {
-		name = KoH_generalgeneric.1.b
+# 	option = {
+# 		name = KoH_generalgeneric.1.b
 
-		scope:KnightDisaster = {
-			death = {
-				death_reason = death_lost_at_sea
-			}
-		}
-	}
-}
+# 		scope:KnightDisaster = {
+# 			death = {
+# 				death_reason = death_lost_at_sea
+# 			}
+# 		}
+# 	}
+# }
 
 KoH_generalgeneric.2 = { #Lost At Sea!
 	title = KoH_generalgeneric.2.t
@@ -122,9 +122,16 @@ KoH_generalgeneric.2 = { #Lost At Sea!
 #root = owner of the army
 #scope:army = the army itself.
 KoH_generalgeneric.3 = {
-	title = KoH_generalgeneric.1.t
-	desc = KoH_generalgeneric.1.desc
+	title = KoH_generalgeneric.3.t
+	desc = KoH_generalgeneric.3.desc
 	
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = marshal
+	}
+
 	trigger = {
 		is_at_war = yes
 		scope:army = {
