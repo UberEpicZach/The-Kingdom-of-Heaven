@@ -180,7 +180,7 @@
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						top_liege = {
+						top_liege ?= {
 							has_primary_title = title:k_jerusalem
 						}
 						has_primary_title = title:k_jerusalem
@@ -246,7 +246,7 @@
 	# 			portrait_wear_armor_trigger = yes
 	# 			AND = {
 	# 				OR = {
-	# 					top_liege = { has_primary_title = title:k_jerusalem }
+	# 					top_liege ?= { has_primary_title = title:k_jerusalem }
 	# 					has_primary_title = title:k_jerusalem
 	# 					AND = { exists = title: is_knight_of = title:k_jerusalem.holder
 	# 					OR = {
@@ -565,7 +565,7 @@
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						liege = {
+						liege ?= {
 							has_primary_title = title:c_ibelin
 						}
 						has_primary_title = title:c_ibelin
@@ -631,7 +631,7 @@
 	# 			portrait_wear_armor_trigger = yes
 	# 			AND = {
 	# 				OR = {
-	# 					liege = { has_primary_title = title:c_ibelin }
+	# 					liege ?= { has_primary_title = title:c_ibelin }
 	# 					has_primary_title = title:c_ibelin
 	# 					AND = { exists = title: is_knight_of = title:c_ibelin.holder
 	# 					OR = {
@@ -700,8 +700,8 @@
 						is_landed = no
 						portrait_templar_trigger = yes
 						portrait_wear_armor_trigger = yes
-						exists = liege
-						liege = {
+				
+						liege ?= {
 							has_government = holy_order_government
 						}
 					}
@@ -796,8 +796,8 @@
 	# 					is_landed = no
 	# 					portrait_templar_trigger = yes
 	# 					portrait_wear_armor_trigger = yes
-	# 					exists = liege
-	# 					liege = {
+	# 			
+	# 					liege ?= {
 	# 						has_government = holy_order_government
 	# 					}
 	# 				}
@@ -868,7 +868,7 @@
 				}
 				AND = {
 					OR = {
-						liege = {
+						liege ?= {
 							has_primary_title = title:k_england
 						}
 						has_primary_title = title:k_england
@@ -933,7 +933,7 @@
 	# 			exists = global_var:EPE_is_loaded
 	# 			AND = {
 	# 				OR = {
-	# 					liege = { has_primary_title = title:k_england }
+	# 					liege ?= { has_primary_title = title:k_england }
 	# 					has_primary_title = title:k_england
 	# 					AND = { exists = title: is_knight_of = title:k_england.holder
 	# 					has_culture = culture:english 
@@ -988,8 +988,8 @@
 	#					is_landed = no
 	#					portrait_hospitaller_trigger = yes
 	#					portrait_wear_armor_trigger = yes
-	#					exists = liege
-	#					liege = {
+	#			
+	#					liege ?= {
 	#						has_government = holy_order_government
 	#					}
 	#				}
@@ -1055,7 +1055,7 @@
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						liege = {
+						liege ?= {
 							has_primary_title = title:k_france
 						}
 						has_primary_title = title:k_france
@@ -1121,7 +1121,7 @@
 	# 			portrait_wear_armor_trigger = yes
 	# 			AND = {
 	# 				OR = {
-	# 					liege = { has_primary_title = title:k_france }
+	# 					liege ?= { has_primary_title = title:k_france }
 	# 					has_primary_title = title:k_france
 	# 					AND = { exists = title: is_knight_of = title:k_france.holder
 	# 					has_culture = culture:french 
@@ -1178,8 +1178,8 @@
 						is_landed = no
 						portrait_hospitaller_trigger = yes
 						portrait_wear_armor_trigger = yes
-						exists = liege
-						liege = {
+				
+						liege ?= {
 							has_government = holy_order_government
 						}
 					}
@@ -1266,8 +1266,8 @@
 	# 					is_landed = no
 	# 					portrait_hospitaller_trigger = yes
 	# 					portrait_wear_armor_trigger = yes
-	# 					exists = liege
-	# 					liege = {
+	# 			
+	# 					liege ?= {
 	# 						has_government = holy_order_government
 	# 					}
 	# 				}
@@ -1334,7 +1334,7 @@
 				portrait_wear_armor_trigger = yes
 				AND = {
 					OR = {
-						liege = {
+						liege ?= {
 							has_primary_title = title:e_hre
 						}
 						has_primary_title = title:e_hre
@@ -1402,7 +1402,7 @@
 	# 			portrait_wear_armor_trigger = yes
 	# 			AND = {
 	# 				OR = {
-	# 					liege = { has_primary_title = title:e_hre }
+	# 					liege ?= { has_primary_title = title:e_hre }
 	# 					has_primary_title = title:e_hre
 	# 					AND = { exists = title: is_knight_of = title:e_hre.holder
 	# 					culture = { has_cultural_pillar = heritage_central_germanic }
@@ -1455,7 +1455,7 @@
 				}
 				AND = {
 					OR = {
-						liege = {
+						liege ?= {
 							has_primary_title = title:k_hungary
 						}
 						has_primary_title = title:k_hungary
@@ -1519,7 +1519,7 @@
 	# 			exists = global_var:EPE_is_loaded
 	# 			AND = {
 	# 				OR = {
-	# 					liege = { has_primary_title = title:k_hungary }
+	# 					liege ?= { has_primary_title = title:k_hungary }
 	# 					has_primary_title = title:k_hungary
 	# 					AND = { exists = title: is_knight_of = title:k_hungary.holder
 	# 					has_culture = culture:hungarian
@@ -1572,7 +1572,7 @@
 				}
 				AND = {
 					OR = {
-						liege = {
+						liege ?= {
 							has_primary_title = title:d_antioch
 						}
 						has_primary_title = title:d_antioch
@@ -1637,7 +1637,7 @@
 	# 			exists = global_var:EPE_is_loaded
 	# 			AND = {
 	# 				OR = {
-	# 					liege = { has_primary_title = title:d_antioch }
+	# 					liege ?= { has_primary_title = title:d_antioch }
 	# 					has_primary_title = title:d_antioch
 	# 					AND = { exists = title: is_knight_of = title:d_antioch.holder
 	# 					#has_culture_group = culture_group:central_germanic_group
@@ -1689,7 +1689,7 @@
 				}
 				AND = {
 					OR = {
-						liege = {
+						liege ?= {
 							has_primary_title = title:d_bavaria
 						}
 						has_primary_title = title:d_bavaria
@@ -1752,7 +1752,7 @@
 	#			exists = global_var:EPE_is_loaded
 	#			AND = {
 	#				OR = {
-	#					liege = { has_primary_title = title:d_bavaria }
+	#					liege ?= { has_primary_title = title:d_bavaria }
 	#					has_primary_title = title:d_bavaria
 	#					is_knight_of = title:d_bavaria.holder
 	#					has_culture = culture:bavarian
@@ -1811,7 +1811,7 @@
 	# 			exists = global_var:EPE_is_loaded
 	# 			AND = {
 	# 				OR = {
-	# 					liege = { has_primary_title = title:d_bavaria }
+	# 					liege ?= { has_primary_title = title:d_bavaria }
 	# 					has_primary_title = title:d_bavaria
 	# 					AND = { exists = title: is_knight_of = title:d_bavaria.holder
 	# 					has_culture = culture:bavarian
@@ -1865,7 +1865,7 @@
 	# 			}
 	# 			AND = {
 	# 				OR = {
-	# 					liege = { has_primary_title = title:d_bavaria }
+	# 					liege ?= { has_primary_title = title:d_bavaria }
 	# 					has_primary_title = title:d_bavaria
 	# 					AND = { exists = title: is_knight_of = title:d_bavaria.holder
 	# 					has_culture = culture:bavarian
