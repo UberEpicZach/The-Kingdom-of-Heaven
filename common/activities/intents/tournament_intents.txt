@@ -11,6 +11,25 @@ win_contest_intent = {
 			}
 			is_healthy = yes
 		}
+		trigger_if = {
+			limit = {
+				exists = involved_activity
+			}
+			OR = {
+				# Tournament has any non-martial contest
+				involved_activity = {
+					OR = {
+						has_phase = tournament_phase_horse_race
+						has_phase = tournament_phase_board_game
+						has_phase = tournament_phase_recital
+					}
+				}
+				# Tournament only has martial contest and character can compete 
+				can_be_combatant_based_on_gender_trigger = { 
+					ARMY_OWNER = involved_activity.activity_host
+				}
+			}
+		}
 	}
 
 	on_invalidated = {

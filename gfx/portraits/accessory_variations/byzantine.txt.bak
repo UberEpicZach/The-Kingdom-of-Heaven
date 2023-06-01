@@ -822,9 +822,8 @@ variation = {
 	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_byzantine_common_01.dds" }	
 }
 
-
 variation = {
-	name = "byzantine_war_nobility_01"
+	name = "byzantine_war_nobility_01_low"
 	
 	# patterns are sampled using UV-set 2
 	# uv-coordinates will be modified with scale, rotation, and offset before the texture is sampled
@@ -832,21 +831,21 @@ variation = {
 	pattern = { 
 		weight = 1
 		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
-		r = { textures = "western_silk_plain_01" 		layout = "plain_fabric_layout" }
-		g = { textures = "western_linen_plain_01" 		layout = "plain_fabric_layout" }
-		b = { textures = "leather_plain_01" 			layout = "plain_fabric_layout" }
-		a = { textures = "leather_plain_03"				layout = "plain_fabric_layout" }
+		r = { textures = "western_linen_plain_01" 				layout = "plain_fabric_layout" }
+		g = { textures = "leather_plain_01" 					layout = "plain_fabric_layout" }
+		b = { textures = "byzantine_metal_lamellar" 			layout = "lamellar_layout" }
+		a = { textures = "western_chainmail_01"					layout = "plain_fabric_layout" }
 	}	
 
 	# Color palette textures are 16-wide and N-high.
 	# Shaders will chose a row in the texture at random, and each column will be sampled once.
 	# First column will be masked by the red channel in the masks, second by the green, etc.
 	# If more than one color palette texture is provided one will be chosen at random (uniformly, no weights)
-	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_byzantine_common_01.dds" }	
+	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_byzantine_war_nobility_low_01.dds" }	
 }
 
 variation = {
-	name = "jewish_head_01"
+	name = "female_byzantine_war_nobility_01_low"
 	
 	# patterns are sampled using UV-set 2
 	# uv-coordinates will be modified with scale, rotation, and offset before the texture is sampled
@@ -855,39 +854,64 @@ variation = {
 		weight = 1
 		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
 		r = { textures = "western_linen_plain_01" 				layout = "plain_fabric_layout" }
-		g = { textures = "western_wool_plain_01" 				layout = "plain_fabric_layout" }
-		b = { textures = "western_wool_plain_01" 				layout = "plain_fabric_layout" }
-		a = { textures = "western_silk_plain_01"				layout = "plain_fabric_layout" }
+		g = { textures = "western_linen_plain_01" 				layout = "plain_fabric_layout" }
+		b = { textures = "byzantine_metal_lamellar" 			layout = "lamellar_layout" }
+		a = { textures = "western_chainmail_01"					layout = "plain_fabric_layout" }
 	}
 
+	# Color palette textures are 16-wide and N-high.
+	# Shaders will chose a row in the texture at random, and each column will be sampled once.
+	# First column will be masked by the red channel in the masks, second by the green, etc.
+	# If more than one color palette texture is provided one will be chosen at random (uniformly, no weights)
+	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_byzantine_war_nobility_low_01.dds" }	
+	}
+
+variation = {
+	name = "byzantine_war_nobility_01_high"
+
+	# patterns are sampled using UV-set 2
+	# uv-coordinates will be modified with scale, rotation, and offset before the texture is sampled
+	# If more than one pattern_layout is provided one will be chosen at random (uniformly, no weights)
 	pattern = { 
 		weight = 1
 		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
-		r = { textures = "western_linen_plain_01" 				layout = "plain_fabric_layout" }
-		g = { textures = "byzantine_silk_brocade_02" 				layout = "plain_fabric_layout" }
-		b = { textures = "western_silk_plain_01" 				layout = "plain_fabric_layout" }
-		a = { textures = "western_silk_plain_01"				layout = "plain_fabric_layout" }
-	}
-
-
-	pattern = { 
-		weight = 1
-		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
-		r = { textures = "western_linen_plain_01" 				layout = "plain_fabric_layout" }
-		g = { textures = "byzantine_silk_brocade_01" 				layout = "plain_fabric_layout" }
-		b = { textures = "western_silk_plain_01" 				layout = "plain_fabric_layout" }
-		a = { textures = "western_silk_plain_01"				layout = "plain_fabric_layout" }
+		r = { textures = "byzantine_silk_brocade_01" 			layout = "western_silk_brocade_01_layout" }
+		g = { textures = "leather_plain_01" 					layout = "plain_fabric_layout" }
+		b = { textures = "byzantine_metal_lamellar" 			layout = "lamellar_layout" }
+		a = { textures = "western_chainmail_01"					layout = "plain_fabric_layout" }
 	}	
 
 	# Color palette textures are 16-wide and N-high.
 	# Shaders will chose a row in the texture at random, and each column will be sampled once.
 	# First column will be masked by the red channel in the masks, second by the green, etc.
 	# If more than one color palette texture is provided one will be chosen at random (uniformly, no weights)
-	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_jewish.dds" }	
+	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_byzantine_war_nobility_high_01.dds" }	
 }
 
 variation = {
-	name = "jewish_high_01"
+	name = "female_byzantine_war_nobility_01_high"
+	
+	# patterns are sampled using UV-set 2
+	# uv-coordinates will be modified with scale, rotation, and offset before the texture is sampled
+	# If more than one pattern_layout is provided one will be chosen at random (uniformly, no weights)
+	pattern = { 
+		weight = 1
+		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
+		r = { textures = "byzantine_silk_brocade_01" 			layout = "western_silk_brocade_01_layout" }
+		g = { textures = "byzantine_silk_trim_01" 				layout = "small_trim_layout" }
+		b = { textures = "byzantine_metal_lamellar" 			layout = "lamellar_layout" }
+		a = { textures = "western_chainmail_01"					layout = "plain_fabric_layout" }
+	}	
+
+	# Color palette textures are 16-wide and N-high.
+	# Shaders will chose a row in the texture at random, and each column will be sampled once.
+	# First column will be masked by the red channel in the masks, second by the green, etc.
+	# If more than one color palette texture is provided one will be chosen at random (uniformly, no weights)
+	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_byzantine_war_nobility_high_01.dds" }	
+	}
+
+variation = {
+	name = "byzantine_headgear_war_nobility_01"
 	
 	# patterns are sampled using UV-set 2
 	# uv-coordinates will be modified with scale, rotation, and offset before the texture is sampled
@@ -896,18 +920,9 @@ variation = {
 		weight = 1
 		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
 		r = { textures = "western_linen_plain_01" 				layout = "plain_fabric_layout" }
-		g = { textures = "byzantine_silk_brocade_01" 				layout = "plain_fabric_layout" }
-		b = { textures = "byzantine_silk_brocade_01" 				layout = "plain_fabric_layout" }
-		a = { textures = "western_silk_plain_01"				layout = "plain_fabric_layout" }
-	}
-
-	pattern = { 
-		weight = 1
-		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
-		r = { textures = "western_linen_plain_01" 				layout = "plain_fabric_layout" }
-		g = { textures = "byzantine_silk_brocade_02" 				layout = "plain_fabric_layout" }
-		b = { textures = "byzantine_silk_brocade_02" 				layout = "plain_fabric_layout" }
-		a = { textures = "western_silk_plain_01"				layout = "plain_fabric_layout" }
+		g = { textures = "leather_plain_01" 					layout = "plain_fabric_layout" }
+		b = { textures = "leather_plain_01" 					layout = "plain_fabric_layout" }
+		a = { textures = "western_chainmail_01"					layout = "plain_fabric_layout" }
 	}
 
 	
@@ -916,9 +931,132 @@ variation = {
 	# Shaders will chose a row in the texture at random, and each column will be sampled once.
 	# First column will be masked by the red channel in the masks, second by the green, etc.
 	# If more than one color palette texture is provided one will be chosen at random (uniformly, no weights)
-	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_jewish.dds" }	
+	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_byzantine_war_nobility_low_01.dds" }	
+}
+
+variation = {
+	name = "byzantine_headgear_female_wedding_01"
+	
+	# patterns are sampled using UV-set 2
+	# uv-coordinates will be modified with scale, rotation, and offset before the texture is sampled
+	# If more than one pattern_layout is provided one will be chosen at random (uniformly, no weights)
+	pattern = { 
+		weight = 1
+		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
+		r = { textures = "byzantine_silk_brocade_01" 	layout = "plain_fabric_layout" }
+		g = { textures = "byzantine_silk_brocade_02" 		layout = "small_trim_layout" }
+		b = { textures = "byzantine_silk_trim_01" 		layout = "small_trim_layout" }
+		a = { textures = "byzantine_silk_trim_02"		layout = "small_trim_layout" }
+	}	
+	pattern = { 
+		weight = 1
+		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
+		r = { textures = "byzantine_silk_brocade_01" 	layout = "plain_fabric_layout" }
+		g = { textures = "byzantine_silk_brocade_03" 		layout = "small_trim_layout" }
+		b = { textures = "byzantine_silk_trim_02" 		layout = "small_trim_layout" }
+		a = { textures = "byzantine_silk_trim_03"		layout = "small_trim_layout" }
+	}
+	pattern = { 
+		weight = 1
+		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
+		r = { textures = "byzantine_silk_brocade_01" 	layout = "plain_fabric_layout" }
+		g = { textures = "byzantine_silk_brocade_04" 		layout = "small_trim_layout" }
+		b = { textures = "byzantine_silk_trim_03" 		layout = "small_trim_layout" }
+		a = { textures = "byzantine_silk_trim_04"		layout = "small_trim_layout" }
+	}
+	pattern = { 
+		weight = 1
+		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
+		r = { textures = "byzantine_silk_brocade_02" 	layout = "plain_fabric_layout" }
+		g = { textures = "byzantine_silk_brocade_01" 		layout = "small_trim_layout" }
+		b = { textures = "byzantine_silk_trim_04" 		layout = "small_trim_layout" }
+		a = { textures = "byzantine_silk_trim_01"		layout = "small_trim_layout" }
+	}
+	pattern = { 
+		weight = 3
+		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
+		r = { textures = "western_silk_plain_01" 	layout = "plain_fabric_layout" }
+		g = { textures = "byzantine_silk_brocade_03" 		layout = "small_trim_layout" }
+		b = { textures = "byzantine_silk_trim_01" 		layout = "small_trim_layout" }
+		a = { textures = "byzantine_silk_trim_02"		layout = "small_trim_layout" }
+	}	
+
+	# Color palette textures are 16-wide and N-high.
+	# Shaders will chose a row in the texture at random, and each column will be sampled once.
+	# First column will be masked by the red channel in the masks, second by the green, etc.
+	# If more than one color palette texture is provided one will be chosen at random (uniformly, no weights)
+	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_byzantine_wedding.dds" }	
+}
+
+
+variation = {
+	name = "Byzantine_emperor_war_cloak"
+	
+	# patterns are sampled using UV-set 2
+	# uv-coordinates will be modified with scale, rotation, and offset before the texture is sampled
+	# If more than one pattern_layout is provided one will be chosen at random (uniformly, no weights)
+	pattern = { 
+		weight = 1
+		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
+		r = { textures = "western_silk_plain_01" layout = "western_silk_brocade_01_layout" }
+		g = { textures = "western_linen_trim_01" layout = "edge_trim_layout" }
+		b = { textures = "western_silk_trim_01" layout = "small_trim_layout" }
+		a = { textures = "western_wool_belt_01"	layout = "small_trim_layout" }
+	}	
+
+		
+	# Color palette textures are 16-wide and N-high.
+	# Shaders will chose a row in the texture at random, and each column will be sampled once.
+	# First column will be masked by the red channel in the masks, second by the green, etc.
+	# If more than one color palette texture is provided one will be chosen at random (uniformly, no weights)
+	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_Byzantine_emperor_war_cloak.dds" }	
+}
+
+variation = {
+	name = "Byzantine_high_noble_war_cloak"
+	
+	# patterns are sampled using UV-set 2
+	# uv-coordinates will be modified with scale, rotation, and offset before the texture is sampled
+	# If more than one pattern_layout is provided one will be chosen at random (uniformly, no weights)
+	pattern = { 
+		weight = 1
+		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
+		r = { textures = "western_linen_fine_plain_01" layout = "western_silk_brocade_01_layout" }
+		g = { textures = "western_linen_trim_01" layout = "edge_trim_layout" }
+		b = { textures = "western_silk_trim_01" layout = "small_trim_layout" }
+		a = { textures = "western_wool_belt_01"	layout = "small_trim_layout" }
+	}	
+
+		
+	# Color palette textures are 16-wide and N-high.
+	# Shaders will chose a row in the texture at random, and each column will be sampled once.
+	# First column will be masked by the red channel in the masks, second by the green, etc.
+	# If more than one color palette texture is provided one will be chosen at random (uniformly, no weights)
+	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_Byzantine_high_noble_war_cloak.dds" }	
 }
 
 
 
 
+variation = {
+	name = "byzantine_headress_01"
+	
+	# patterns are sampled using UV-set 2
+	# uv-coordinates will be modified with scale, rotation, and offset before the texture is sampled
+	# If more than one pattern_layout is provided one will be chosen at random (uniformly, no weights)
+	pattern = { 
+		weight = 1
+		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
+		r = { textures = "western_silk_plain_01" layout = "western_silk_brocade_01_layout" }
+		g = { textures = "western_linen_trim_01" layout = "edge_trim_layout" }
+		b = { textures = "western_silk_trim_01" layout = "small_trim_layout" }
+		a = { textures = "western_wool_belt_01"	layout = "small_trim_layout" }
+	}	
+
+		
+	# Color palette textures are 16-wide and N-high.
+	# Shaders will chose a row in the texture at random, and each column will be sampled once.
+	# First column will be masked by the red channel in the masks, second by the green, etc.
+	# If more than one color palette texture is provided one will be chosen at random (uniformly, no weights)
+	color_palette = { weight = 1		texture = "gfx/portraits/accessory_variations/textures/color_palette_byzantine_headress_01.dds" }	
+}

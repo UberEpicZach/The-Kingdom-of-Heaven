@@ -233,7 +233,11 @@ special_genes = {
 					3 = f_headgear_sec_fp2_iberian_muslim_war_nob_01_hi
 
 				# EP2 # 	
+					1 = f_headgear_sec_ep2_western_era1_com_01
+					1 = f_headgear_sec_ep2_western_era1_com_02
 					1 = f_headgear_sec_ep2_western_era1_nob_01
+					1 = f_headgear_sec_ep2_western_era1_nob_02
+					1 = f_headgear_sec_ep2_western_era1_nob_01_hi
 					1 = f_headgear_sec_ep2_western_era1_roy_01
 					1 = f_headgear_sec_ep2_western_era1_war_nob_01
 					1 = f_headgear_sec_ep2_western_era2_war_nob_01
@@ -1390,7 +1394,6 @@ special_genes = {
 					1 = male_headgear_secular_rtt_nobility_01_low
 				}
 				female = {
-					3 = empty
 					1 = female_headgear_secular_rtt_nobility_01_low
 				}
 				boy = male
@@ -1792,7 +1795,9 @@ special_genes = {
 					20 = m_headgear_sec_ep2_western_era1_com_01
 				}
 				female = {
-				#	10 = f_headgear_sec_ep2_western_era1_com_01
+					20 = empty
+					10 = f_headgear_sec_ep2_western_era1_com_01
+					10 = f_headgear_sec_ep2_western_era1_com_02
 				}
 				boy = male
 				girl = female
@@ -1801,12 +1806,30 @@ special_genes = {
 			ep2_western_era1_nobility = {
 				index = 108
 				male = {
-					20 = m_headgear_sec_ep2_western_era1_nob_01
-					20 = m_headgear_sec_ep2_western_era1_nob_02
+					10 = empty
+					10 = m_headgear_sec_ep2_western_era1_nob_01
+					10 = m_headgear_sec_ep2_western_era1_nob_02
 				}
 
 				female = {
+					20 = empty
 					10 = f_headgear_sec_ep2_western_era1_nob_01
+					10 = f_headgear_sec_ep2_western_era1_nob_02
+				}
+
+				boy = male
+				girl = female
+			}
+
+			ep2_western_era1_high_nobility = {
+				index = 109
+				male = {
+					10 = m_headgear_sec_ep2_western_era1_nob_01
+					10 = m_headgear_sec_ep2_western_era1_nob_02
+				}
+
+				female = {
+					10 = f_headgear_sec_ep2_western_era1_hi_nob_01
 				}
 
 				boy = male
@@ -1814,7 +1837,7 @@ special_genes = {
 			}
 
 			ep2_western_era1_royalty = {
-				index = 109
+				index = 110
 				male = {
 					20 = m_headgear_sec_ep2_western_era1_roy_01
 				}
@@ -1826,7 +1849,7 @@ special_genes = {
 			}
 
 			ep2_western_era1_imperial = {
-				index = 110
+				index = 111
 				male = {
 					20 = m_headgear_sec_ep2_western_era1_imp_01
 				}
@@ -1837,8 +1860,66 @@ special_genes = {
 				girl = female
 			}
 
+			ep2_western_era3_common = {
+				index = 112
+				male = {
+					20 = empty
+					10 = male_headgear_secular_western_common_01
+					10 = male_headgear_secular_western_common_02
+					20 = male_headgear_secular_dde_hre_common_01
+					20 = male_headgear_secular_dde_hre_common_02
+				}
+				female = {
+					5 = female_headgear_secular_western_nobility_01
+					5 = female_headgear_secular_western_nobility_02
+					10 = female_headgear_secular_dde_hre_common_01
+					10 = female_headgear_secular_dde_hre_common_02
+				}
+				boy = male
+				girl = female
+			}
+
+			ep2_western_era3_nobility = {
+				index = 113
+				male = {
+					20 = empty
+					10 = male_headgear_secular_western_common_01
+					10 = male_headgear_secular_western_common_02
+					20 = male_headgear_secular_dde_hre_common_01
+					20 = male_headgear_secular_dde_hre_common_02
+				}
+
+				female = {
+					5 = female_headgear_secular_western_nobility_01
+					5 = female_headgear_secular_western_nobility_01_2
+					5 = female_headgear_secular_western_nobility_02
+					5 = female_headgear_secular_western_nobility_03
+					10 = female_headgear_secular_dde_hre_common_01
+					10 = female_headgear_secular_dde_hre_common_02
+				}
+
+				boy = male
+				girl = female
+			}
+
+			western_era3_royalty = {
+				index = 114
+				male = {
+					1 = male_headgear_secular_western_royalty_01
+					1 = male_headgear_secular_western_royalty_02
+					1 = male_headgear_secular_dde_hre_royalty_02
+				}
+				female = {
+					1 = female_headgear_secular_western_royalty_01
+					1 = female_headgear_secular_western_royalty_02
+					1 = female_headgear_secular_dde_hre_royalty_01
+				}
+				boy = male
+				girl = female
+			}
+
 			ep2_mena_war_nobility = {
-				index = 111
+				index = 115
 				male = {
 					20 = m_headgear_sec_ep2_mena_war_nob_01
 				}
@@ -1852,7 +1933,7 @@ special_genes = {
 			}
 
 			ep2_steppe_war_nobility = {
-				index = 112
+				index = 116
 				male = {
 					20 = m_headgear_sec_ep2_steppe_war_nob_01
 				}
@@ -1866,7 +1947,7 @@ special_genes = {
 			}
 
 			ep2_byzantine_war_nobility = {
-				index = 113
+				index = 117
 				male = {
 					20 = m_headgear_sec_ep2_byzantine_war_nob_01
 				}
@@ -1880,7 +1961,7 @@ special_genes = {
 			}
 
 			ep2_indian_war_nobility = {
-				index = 114
+				index = 118
 				male = {
 					20 = m_headgear_sec_ep2_indian_war_nob_01
 				}
@@ -1899,11 +1980,11 @@ special_genes = {
 
 
 			sp2_western_imperial = {
-				index = 120
+				index = 119
 				male = {
 					1 = m_headgear_sec_sp2_western_imp_01
 				}
-					female = {
+				female = {
 					1 = f_headgear_sec_sp2_western_imp_01
 				}
 				boy = male
@@ -1911,7 +1992,7 @@ special_genes = {
 			}
 			
 			sp2_western_high_nobility = {
-				index = 121
+				index = 120
 				male = {
 					1 = m_headgear_sec_sp2_western_hi_nob_01
 				}
@@ -1921,21 +2002,9 @@ special_genes = {
 				boy = male
 				girl = female
 			}
-		
-			sp2_western_royalty = {
-				index = 116
-				male = {
-					1 = m_headgear_sec_sp2_western_roy_01
-				}
-				female = {
-					1 = f_headgear_sec_sp2_western_roy_01
-				}
-				boy = male
-				girl = female
-			}
 
 			reward_western_royalty = {
-				index = 115
+				index = 121
 				male = {
 					1 = male_headgear_secular_western_royalty_03
 				}
@@ -1949,7 +2018,7 @@ special_genes = {
 			## EP2 - Weddings ##
 
 			western_wedding = {
-				index = 117
+				index = 122
 				male = {
 					1 = m_headgear_spec_ep2_western_wedding
 				}
@@ -1961,7 +2030,7 @@ special_genes = {
 			}
 
 			mena_wedding = {
-				index = 118
+				index = 123
 				male = {
 					#1 = m_headgear_spec_ep2_mena_wedding
 				}
@@ -1973,7 +2042,7 @@ special_genes = {
 			}
 
 			byzantine_wedding = {
-				index = 119
+				index = 124
 				male = {
 					1 = m_headgear_spec_ep2_byzantine_wedding
 				}
@@ -1985,7 +2054,7 @@ special_genes = {
 			}
 
 			ayyubid_royalty_war = {
-				index = 120
+				index = 125
 				male = {
 					1 = male_headgear_ayyubid_war_royality_01
 					
@@ -2000,7 +2069,7 @@ special_genes = {
 
 
 			royal_helmet = { 
-				index = 121
+				index = 126
 				male = {
 					1 = royal_helmet
 				}
@@ -2012,7 +2081,7 @@ special_genes = {
 			}
 
 			french_war = {
-				index = 122
+				index = 127
 				male = {
 					#1 = male_western_great_helm_01			
 					4 = male_headgear_secular_western_war_nobility_01
@@ -2036,7 +2105,7 @@ special_genes = {
 			}		
 		
 			italian_war = {
-				index = 123
+				index = 128
 				male = {					
 					1 = male_headgear_secular_dde_hre_war_nobility_02	
 					1 = male_headgear_secular_dde_hre_war_nobility_02b						
@@ -2057,7 +2126,7 @@ special_genes = {
 
 
 			iberia_war = {
-				index = 124
+				index = 129
 				male = {
 					4 = male_iberian_nasalhelm_01			
 					3 = male_early_west_nasalhelm_01
@@ -2078,7 +2147,7 @@ special_genes = {
 			
 
 			hungarian_war = {
-				index = 125
+				index = 130
 				male = {
 					4 = male_headgear_secular_western_war_nobility_01
 					4 = male_headgear_secular_crusades_western_war_nobility_01				
@@ -2099,7 +2168,7 @@ special_genes = {
 			}
 					
 			norman_war = {
-				index = 126
+				index = 131
 				male = {
 					5 = male_headgear_secular_western_war_nobility_01
 					4 = male_headgear_secular_crusades_western_war_nobility_01	
@@ -2124,7 +2193,7 @@ special_genes = {
 		
 			###French war helmet closed face		
 			french_war_closed = {
-				index = 127
+				index = 132
 				male = {
 					1 = male_western_great_helm_01	
 					1 = male_western_great_helm_02			
@@ -2140,7 +2209,7 @@ special_genes = {
 
 			###Italian war helmet closed face	
 			italian_war_closed = {
-				index = 128
+				index = 133
 				male = {
 					5 = male_norman_fpl_helmet_01
 					5 = male_norman_fpl_helmet_02						
@@ -2158,7 +2227,7 @@ special_genes = {
 
 			###Teutonic war helmet closed face		
 			teutonic_war_closed = {
-				index = 129
+				index = 134
 				male = {
 					3 = male_great_helm_01_teutonic
 					3 = male_great_helm_02_teutonic					
@@ -2176,7 +2245,7 @@ special_genes = {
 
 			#Royal Helmet but without the Crown
 			royal_helmet_without_crown = { 
-				index = 130
+				index = 135
 				male = {
 					1 = royal_helmet_without_crown
 				}
@@ -2205,8 +2274,18 @@ special_genes = {
 
 		secondary_headgears = {
 
-			western_wedding = {
+				no_headgear = {
 				index = 0
+				male = {
+					1 = empty
+				}
+				female = male
+				boy = male
+				girl = male
+			}
+
+			western_wedding = {
+				index = 1
 				male = {
 					1 = m_headgear_spec_ep2_western_wedding
 				}
@@ -2218,7 +2297,7 @@ special_genes = {
 			}
 
 			mena_wedding = {
-				index = 1
+				index = 2
 				male = {
 					1 = m_headgear_spec_ep2_mena_wedding
 				}
@@ -2230,7 +2309,7 @@ special_genes = {
 			}
 
 			byzantine_wedding = {
-				index = 2
+				index = 3
 				male = {
 					1 = m_headgear_spec_ep2_byzantine_wedding
 				}
@@ -2242,7 +2321,7 @@ special_genes = {
 			}
 
 			coa_crest = {
-				index = 3
+				index = 4
 				male = {
 					1 = m_headgear_sec_ep2_western_war_nob_crest_01
 				}
@@ -2253,7 +2332,76 @@ special_genes = {
 				girl = female
 			}
 		}
+		
+				# Additive headgear are used in combination with other headgear. Usually crowns worn over veils, or crowns on helmets
 
+		additive_headgear = {
 
+			western_veils = {
+				index = 0
+				male = {
+					
+				}
+				female = {
+					20 = empty
+					10 = female_headgear_secular_western_nobility_01
+					10 = female_headgear_secular_western_nobility_01_2
+					10 = female_headgear_secular_western_nobility_02
+					10 = female_headgear_secular_western_nobility_03
+				}
+				
+				girl = female
+			}
+
+			ep2_western_era1_veils = {
+				index = 1
+				male = {
+				
+				}
+				female = {
+					20 = empty
+					10 = f_headgear_sec_ep2_western_era1_com_01
+					10 = f_headgear_sec_ep2_western_era1_com_02
+					10 = f_headgear_sec_ep2_western_era1_nob_01
+					10 = f_headgear_sec_ep2_western_era1_nob_02
+				}
+				
+				girl = female				
+			}
+
+			ep2_western_era2_veils = {
+				index = 2
+				male = {
+				
+				}
+				female = {
+					30 = empty
+					10 = female_headgear_secular_western_nobility_01
+					10 = female_headgear_secular_western_nobility_01_2
+					10 = female_headgear_secular_western_nobility_02
+					10 = female_headgear_secular_western_nobility_03
+				}
+			
+				girl = female				
+			}
+
+			ep2_western_era3_veils = {
+				index = 3
+				male = {
+			
+				}
+				female = {
+					30 = empty
+					10 = female_headgear_secular_western_nobility_01
+					10 = female_headgear_secular_western_nobility_01_2
+					10 = female_headgear_secular_western_nobility_02
+					10 = female_headgear_secular_western_nobility_03
+					10 = female_headgear_secular_dde_hre_common_01
+					10 = female_headgear_secular_dde_hre_common_02
+				}
+			
+				girl = female				
+			}			
 		}
+	}
 }

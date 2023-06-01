@@ -376,6 +376,12 @@ activity_type = {
 	# Do all phases in this activity take place in the same province, defaults to yes
 	is_single_location = bool
 
+	# The planner type - how the activity planner shows things.
+	# Available types:
+	#  province - (Default) show the province name (province name)
+	#  holder - show holder information (opinion, character pin)
+	planner_type = province
+
 	### Brief: ai_will_do (scripted value int32)
 	# How likely is the AI to elect to host this activity if valid? This value 
 	# must also exceed define ACTIVITY_SCORE_THRESHOLD to be eligible. Once all
@@ -787,6 +793,22 @@ activity_type = {
 		music = "music_cue_track_name"
 	}
 
+	# Locale Background for the activity. Used exclusively by activities that 
+	# use the locale window. Multiple can be read in, first one is picked from
+	# order they are read in.
+	locale_background = {
+		# root = the activity
+		# scope:activity = the activity
+		# scope:host = host of the activity
+		trigger = {
+			<triggers>
+		}
+		texture = "texture_path"
+		environment = "environment name"
+		ambience = "ambience_event_path"
+		music = "music_cue_track_name"
+	}
+
 	# Can read in multiple, they will be displayed left to right based on this order
 	window_characters = {
 		key = { # Will be localized as activity_window_character_key
@@ -830,10 +852,14 @@ activity_type = {
 					}
 
 					animation = throne_room_conversation_1
+					# Instead of 'animation' you can also define a 'scripted_animation'
+					scripted_animation = key_of_scripted_animation
 				}
 
 				# 1 default animation if all triggers fail. Convention is to always have some always-valid trigger and not use this field
 				animation = throne_room_conversation_3
+				# Instead of 'animation' you can also define a 'scripted_animation'
+				scripted_animation = key_of_scripted_animation
 			}
 			animation = whatever
 		}

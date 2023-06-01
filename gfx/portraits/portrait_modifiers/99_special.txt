@@ -232,6 +232,20 @@ special_shrink_body = {
     }
 }
 
+additive_headgears = {
+
+	usage = game
+	additive_headgears = {
+			dna_modifiers = {
+			morph = {
+				mode = add
+				gene = gene_bs_additive_headgears
+				template = additive_headgears
+				value = 1 # For the randomness to work correctly
+			}
+		}
+	}
+}
 
 special_prophet = {
 
@@ -285,7 +299,7 @@ special_prophet = {
 			}
 			accessory = {
 				mode = add
-				gene = props
+				gene = props_left
 				template = prophet_shield
 				value = 0.5
 			}

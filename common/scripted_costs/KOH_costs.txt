@@ -1,0 +1,13 @@
+﻿# Cost of adopting a court language
+adopt_court_language = {
+	prestige = massive_prestige_value
+	gold = {	
+		if = {
+			limit = {
+				primary_title = title:k_papal_state
+				is_ai = yes
+			}
+			value = 999999
+		}
+	}
+}

@@ -70,86 +70,86 @@ on_kotr_death = {
 				scope:employee = title:k_king_of_the_germans.holder		
 					
 			}		
-		destroy_title = title:k_king_of_the_germans		
+			destroy_title = title:k_king_of_the_germans		
 		}	
 					
 	}
 }
 
 
-# KOH_holy_orders = {
-# 	effect = {
-# 		character:223523 = {
-# 			if = {
-# 				limit = {
-# 					is_alive = yes
-# 					is_landed = yes
-# 				}
-# 				trigger_event = {
-# 					id = KoH_holy_orders.1 #Templar Creation
-# 					days = -1
-# 				}
-# 			}
-# 		}
-# 	 	character:223523 = {
-# 			if = {
-# 				limit = {
-# 					is_alive = yes
-# 					is_landed = yes
-# 				}
-# 				trigger_event = {
-# 					id = KoH_holy_orders.2 #Hospitaller Creation
-# 					days = -1
-# 				}
-# 			}
-# 		}
-# 		character:207510 = {
-# 			if = {
-# 				limit = {
-# 					is_alive = yes
-# 				}
-# 				trigger_event = {
-# 					id = KoH_holy_orders.5 #Calvatra Creation
-# 					days = -1
-# 				}
-# 			}
-# 		}
-# 		character:207510 = {
-# 			if = {
-# 				limit = {
-# 					is_alive = yes
-# 				}
-# 				trigger_event = {
-# 					id = KoH_holy_orders.7 #Santigo creation
-# 					days = -1
-# 				}
-# 			}
-# 		}
+KOH_holy_orders = {
+	effect = {
+		character:223523 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.1 #Templar Creation
+					days = -1
+				}
+			}
+		}
+	 	character:223523 = {
+			if = {
+				limit = {
+					is_alive = yes
+					is_landed = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.2 #Hospitaller Creation
+					days = -1
+				}
+			}
+		}
+		character:207510 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.5 #Calvatra Creation
+					days = -1
+				}
+			}
+		}
+		character:207510 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.7 #Santigo creation
+					days = -1
+				}
+			}
+		}
 
-# 		character:227012 = {
-# 			if = {
-# 				limit = {
-# 					is_alive = yes
-# 				}
-# 				trigger_event = {
-# 					id = KoH_holy_orders.102 #Assassin Buffs
-# 					days = 1
-# 				}
-# 			}
-# 		}
-# 		character:227012 = {
-# 			if = {
-# 				limit = {
-# 					is_alive = yes
-# 				}
-# 				trigger_event = {
-# 					id = KoH_holy_orders.103 #Assassin Buffs
-# 					days = -1
-# 				}
-# 			}
-# 		}
-# 	}
-# }
+		character:227012 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.102 #Assassin Buffs
+					days = 1
+				}
+			}
+		}
+		character:227012 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				trigger_event = {
+					id = KoH_holy_orders.103 #Assassin Buffs
+					days = -1
+				}
+			}
+		}
+	}
+}
  
 on_natural_death_second_chance = { #Added a perk requirement
 	trigger = {
@@ -648,13 +648,7 @@ KOH_ON_START = {
 				value = title:k_papal_state
 			}
 		}
-		
-		# every_living_character = {
-		# 	set_variable = {
-		# 		name = Chivalry
-		# 		value = 0
-		# 	}
-		# }
+
 		#Makes Henry II not die early
 		character:204500 = {
 			add_character_modifier = {
@@ -720,12 +714,25 @@ KOH_ON_START = {
 				modifier = EmperorVassals
 			}
 		}
-		#title:e_hre.holder = {
-		#	trigger_event = {
-		#		id = KOH_Pentecost.1
-		#		days = 40
-		#	}
-		#}
+		title:e_hre.holder = {
+			if = {
+				limit = {
+					title:e_hre.holder = {
+						is_ai = yes
+					}
+				}
+				trigger_event = KOH_Pentecost.1
+			}
+			else = {
+				trigger_event = {
+					id = KOH_Pentecost.1
+					days = 20
+				}
+			}
+			title:c_aachen.holder = {
+				add_gold = -400
+			}
+		}
 		#Starts Balian's Event Chain
 		character:223570 = {
 			if = {

@@ -22,7 +22,7 @@ diplomatic_intent = {
 
 	# Handle target character invalidation
 	is_target_valid = {
-		scope:target = {
+		scope:target ?= {
 			is_ai = yes
 			is_landed = yes
 			OR = {
@@ -93,6 +93,10 @@ matchmaking_intent = {
 banquet_mischief_intent = {
 	icon = intent_crash_wedding
 	on_invalidated = { trigger_event = activity_system.0090 }
+
+	is_shown = {
+		has_dlc_feature = advanced_activities
+	}
 
 	ai_will_do = {
 		value = 20

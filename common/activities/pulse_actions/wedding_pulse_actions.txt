@@ -845,6 +845,15 @@ bonding_spouse_family = {
 				is_close_family_of = scope:activity.special_guest:spouse_1
 				is_close_family_of = scope:activity.special_guest:spouse_2
 			}
+			trigger_if = {
+				limit = {
+					is_close_family_of = scope:activity.special_guest:spouse_1
+				}
+				can_set_relation_friend_trigger = { CHARACTER = scope:activity.special_guest:spouse_2 }
+			}
+			trigger_else = {
+				can_set_relation_friend_trigger = { CHARACTER = scope:activity.special_guest:spouse_1 }
+			}
 		}
 	}
 

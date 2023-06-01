@@ -1,0 +1,75 @@
+widget = {
+	name = "tournament_active_phase_background"
+	size = { 100% 100% }
+	alwaystransparent = no
+
+	visible = "[And( Activity.IsCurrentPhaseActive, Not( IsContestType( 'tournament_phase_ceremony' ) ) )]"
+
+	datacontext = "[Activity.GetCurrentPhase]"
+	datacontext = "[Activity.GetCurrentPhase.GetPhase]"
+
+	## If this shows up, we're missing handling for a contest type
+	background = {
+		using = Placeholder_Pink_Checkered_Texture
+	}
+
+	background = {
+		texture = "gfx/interface/illustrations/activity_backgrounds/contest_bg_archery.dds"
+		
+		visible = "[IsBowContest]"
+	}
+
+	background = {
+		texture = "gfx/interface/illustrations/activity_backgrounds/contest_bg_boardgames.dds"
+		
+		visible = "[IsWitContest]"
+	}
+
+	background = {
+		texture = "gfx/interface/illustrations/activity_backgrounds/contest_bg_melee.dds"
+		
+		visible = "[IsFootContest]"
+	}
+
+	background = {
+		texture = "gfx/interface/illustrations/event_scenes/genericcamp.dds"
+		
+		visible = "[IsContestType( 'tournament_phase_melee' )]"
+	}
+
+	background = {
+		texture = "gfx/interface/illustrations/activity_backgrounds/contest_bg_horseracing.dds"
+		
+		visible = "[Or( IsContestType( 'tournament_phase_horse_race' ), IsContestType( 'tournament_phase_joust' ) )]"
+	}
+
+	background = {
+		#texture = "gfx/interface/illustrations/activity_backgrounds/contest_bg_ceremony.dds"
+		
+		visible = "[IsContestType( 'tournament_phase_ceremony' )]"
+	}
+
+	background = {
+		texture = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_western_welcome.dds"
+		
+		visible = "[IsContestType( 'tour_phase_cultural_festival' )]"
+	}
+
+	background = {
+		texture = "gfx/interface/illustrations/activity_backgrounds/activity_feast.dds"
+		
+		visible = "[IsContestType( 'feast_phase_meal' )]"
+	}
+
+	background = {
+		texture = "gfx/interface/illustrations/activity_backgrounds/activity_feast.dds"
+		
+		visible = "[IsContestType( 'feast_phase_toast' )]"
+	}
+
+	background = {
+		texture = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_western_neutral.dds"
+		
+		visible = "[IsContestType( 'activity_planning_stage' )]"
+	}
+}

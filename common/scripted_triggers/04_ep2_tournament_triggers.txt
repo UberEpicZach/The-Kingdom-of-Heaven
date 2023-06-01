@@ -1,0 +1,51 @@
+﻿activity_is_valid_tournament_contestant = {
+	exists = involved_activity
+	is_alive = yes
+	is_adult = yes
+	is_imprisoned = no
+	# Exclude clergy who don't fight
+	trigger_if = {
+		limit = { is_clergy = yes }
+		faith = { has_doctrine_parameter = clergy_can_fight }
+	}
+	# Has not opted out
+	NOR = {
+		has_character_flag = tournament_not_competing
+		is_in_guest_subset = { name = spectator }
+	}
+	trigger_if = {
+		limit = {
+			involved_activity = {
+				NOR = {
+					AND = {
+						has_phase = tournament_phase_horse_race
+						has_current_phase = tournament_phase_horse_race
+					}
+					AND = {
+						has_phase = tournament_phase_board_game
+						has_current_phase = tournament_phase_board_game
+					}
+					AND = {
+						has_phase = tournament_phase_recital
+						has_current_phase = tournament_phase_recital
+					}
+				}
+			}
+		}
+		# Only martial sex competes
+		can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = involved_activity.activity_host }
+		# Is fit innit
+		is_healthy = yes
+	}
+	# Mulan is clever enough not to reveal themselves
+	trigger_if = {
+		limit = {
+			involved_activity = { AND = { has_phase = tournament_phase_wrestling has_current_phase = tournament_phase_wrestling } }
+		}
+		NOT = { has_character_modifier = ignores_gender_army_rules }
+	}
+	NOR = {
+		has_trait = incapable
+		has_trait = infirm
+	}
+}

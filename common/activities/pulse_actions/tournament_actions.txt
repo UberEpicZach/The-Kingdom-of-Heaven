@@ -230,6 +230,16 @@ tournament_studied_techniques = {
 							}
 						}
 					}
+					1 = {
+						# Add Blademaster Trait XP - only if you are a blademaster
+						trigger = {
+							has_trait = lifestyle_blademaster 
+						}
+						add_trait_xp = {
+							trait = lifestyle_blademaster
+							value = lifestyle_blademaster_xp_gain_minor_value
+						}
+					}
 				}
 			}
 		}

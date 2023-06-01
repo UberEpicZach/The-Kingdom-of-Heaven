@@ -121,8 +121,8 @@
 				historical_succession_access_single_heir_dynasty_house_trigger = yes
 			}
 			OR = {
-				has_government = feudal_government
-				has_government = clan_government
+				government_has_flag = government_is_feudal
+				government_has_flag = government_is_clan
 			}
 			culture = {
 				has_innovation = innovation_heraldry
@@ -497,11 +497,16 @@ succession_gender_laws = {
 			can_change_succession_law_trigger = yes
 		}
 		should_start_with = {
-			faith = {
-				has_doctrine = doctrine_gender_male_dominated
-				religion_tag = islam_religion
+							OR = {
+				AND = {
+					faith = {
+						has_doctrine = doctrine_gender_male_dominated
+						religion_tag = islam_religion
+					}
+				}
+				culture = { has_cultural_parameter = male_only_inheritance }
+				has_government = monastic_government ##MYMO
 			}
-			has_government = monastic_government ##MYMO
 		}
 		succession = {
 			gender_law = male_only
@@ -543,9 +548,19 @@ succession_gender_laws = {
 			trigger_else = {
 				custom_tooltip = {
 					text = MUST_HAVE_MALE_DOMINATED_OR_EQUAL
-				faith = {
-					NOT = { has_doctrine = doctrine_gender_female_dominated }
+									faith = {
+						NOT = { has_doctrine = doctrine_gender_female_dominated }
+					}
 				}
+				custom_tooltip = {
+					text = culture_not_female_only_tt
+					OR = {
+						faith = { has_doctrine = doctrine_gender_male_dominated }
+						NOT = {
+							culture = { has_cultural_parameter = female_only_inheritance }
+						}
+					}
+				}	
 			}
 			NOT = { has_government = monastic_government } ##MYMO
 		}
@@ -775,6 +790,21 @@ succession_gender_laws = {
 			always = no
 		}
 		can_keep = {
+			# Inverted gender rules.
+			trigger_if = {
+				limit = { has_game_rule = inversed_gender_equality }
+				custom_tooltip = {
+					text = culture_not_male_only_tt
+					OR = {
+						faith = { has_doctrine = doctrine_gender_female_dominated }
+						NOT = {
+							culture = { has_cultural_parameter = male_only_inheritance }
+						}
+					}
+				}
+			}
+			# Other rules.
+			trigger_else = {
 			custom_tooltip = {
 				text = female_only_law_faith_or_culture_trigger
 				OR = {
@@ -782,6 +812,7 @@ succession_gender_laws = {
 					culture = { has_cultural_parameter = female_only_inheritance }
 				}
 			}
+		}
 		}
 		can_pass = {
 			can_change_succession_law_trigger = yes
@@ -801,6 +832,12 @@ succession_gender_laws = {
 
 		should_start_with = {
 			OR = {
+				AND = {
+					faith = {
+						has_doctrine = doctrine_gender_female_dominated
+						religion_tag = islam_religion
+					}
+				}
 				culture = { has_cultural_parameter = female_only_inheritance }
 			}
 		}

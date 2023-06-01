@@ -1,0 +1,13 @@
+﻿on_travel_plan_start = {
+	trigger = { is_ruler = yes }
+	on_actions = {
+		on_travel_plan_start_RICE
+	}
+}
+
+
+on_travel_plan_start_RICE = {
+	events = {
+		RICE_ancestor_worship.0004		# Ancestor Worship start
+	}
+}
