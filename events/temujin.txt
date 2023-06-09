@@ -618,8 +618,8 @@ temujin.1000 = {
 	desc = senggum_jealousy.desc
 	
 	left_portrait = {
-		character = root
-		animation = shock
+		character = scope:senggum
+		animation = beg
 	}
 	trigger = {
 		this = character:303211
@@ -633,11 +633,12 @@ temujin.1000 = {
 	
 	  character:303211 = {save_scope_as = toghril}
 	
+	  character:303216 = {save_scope_as = senggum}
    
 	character:125501 = {save_scope_as = temujin}}
 		
 	option = {	# Flee to Mount Qaldun
-		name = senggum_jealousy.a
+		name = senggum.a
 		
 		break_alliance =  character:125501
 			
@@ -646,6 +647,305 @@ temujin.1000 = {
 
 		ai_chance = {
 			base = 2
+			
+			
+			modifier={
+			opinion={
+			target=scope:temujin
+			value<0
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-10
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-20
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-30
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-40
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-50
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-60
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-70
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-80
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-90
+			
+			}
+			
+			factor=1.5
+			}
+
 		}
+	}
+		option = {	# Flee to Mount Qaldun
+		name = senggum_jealousy.b
+		add_opinion = { modifier = Senggum_jealousy
+		years = 20 
+		target = scope:senggum
+		}	
+		
+		
+
+		ai_chance = {
+			base = 10
+		}
+	}
+		option = {	# Flee to Mount Qaldun
+		name = senggum_jealousy.c
+		add_opinion = { modifier = Senggum_jealousy
+		years = 20 
+		target = scope:temujin 
+		}	
+		
+		
+
+		ai_chance = {
+			base = 40
+		}
+	}
+	option = {	# Flee to Mount Qaldun
+		name = senggum_jealousy.d
+		trigger={
+		OR={
+		AND={
+		OR={
+		any_child={
+		is_male=yes
+		is_betrothed=no
+		is_married=no
+		}
+		scope:senggum:
+		{
+		any_child={
+		is_male=yes
+		is_betrothed=no
+		is_married=no
+		}
+		}
+		}
+		scope:temujin={
+		any_child={
+		is_female=yes
+		}
+		}
+		}
+		
+			AND={
+		OR={
+		any_child={
+		is_female=yes
+		is_betrothed=no
+		is_married=no
+		}
+		scope:senggum:
+		{
+		any_child={
+		is_female=yes
+		is_betrothed=no
+		is_married=no
+		}
+		}
+		}
+		scope:temujin={
+		any_child={
+		is_male=yes
+		}
+		}
+		}
+		
+		}
+		
+		}
+		break_alliance =  character:125501
+			
+	
+		
+
+		ai_chance = {
+			base = 2
+			if={
+			limit={
+			opinion={
+			target=scope:temujin
+			value<10
+			
+			}
+			}
+			add=1
+			}
+			if={
+			limit={
+			opinion={
+			target=scope:temujin
+			value<0
+			
+			}
+			}
+			add=1
+			}
+			if={
+			limit={
+			opinion={
+			target=scope:temujin
+			value<-10
+			
+			}
+			}
+			add=2
+			}
+			if={
+			limit={
+			opinion={
+			target=scope:temujin
+			value<-20
+			
+			}
+			}
+			add=3
+			}
+			if={
+			limit={
+			opinion={
+			target=scope:temujin
+			value<-30
+			
+			}
+			}
+			add=5
+			}
+			if={
+			limit={
+			opinion={
+			target=scope:temujin
+			value<-40
+			
+			}
+			}
+			add=8
+			}
+			if={
+			limit={
+			opinion={
+			target=scope:temujin
+			value<-50
+			
+			}
+			}
+			add=13
+			}
+			if={
+			limit={
+			opinion={
+			target=scope:temujin
+			value<-60
+			
+			}
+			}
+			add=21
+			}
+			if={
+			limit={
+			opinion={
+			target=scope:temujin
+			value<-70
+			
+			}
+			}
+			add=34
+			}
+			if={
+			limit={
+			opinion={
+			target=scope:temujin
+			value<-80
+			
+			}
+			}
+			add=55
+			}
+			if={
+			limit={
+			opinion={
+			target=scope:temujin
+			value<-90
+			
+			}
+			}
+			add=89
+			}
+			if={
+			limit={
+			always=yes
+			}
+			}
+			multiply=5
+			}
+		}
+		
 	}
 }
