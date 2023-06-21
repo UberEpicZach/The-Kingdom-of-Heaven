@@ -1854,27 +1854,29 @@
 	}
 
 	special_guests = {
-		special_guest_champion = {
+		honorary_guest_regular = {
 			is_required = no
+
 			can_pick = {
+				NOT = { this = scope:host }
+				is_healthy = yes
+				is_adult = yes
+				NOT = { is_spouse_of = scope:host }
 				trigger_if = {
 					limit = {
-						scope:host = { employs_court_position = champion_court_position }
+						scope:host = { is_ai = yes }
 					}
-					employer = scope:host
-					has_court_position = champion_court_position
-				}
-				trigger_else_if = {
-					limit = {
-						scope:host = { can_employ_court_position_type = champion_court_position }
+					OR = {
+						is_vassal_of = scope:host
+						target_is_vassal_or_below = scope:host
+						has_relation_friend = scope:host
+						has_relation_lover = scope:host
 					}
-					liege = scope:host
-					can_be_employed_as = champion_court_position
 				}
-				trigger_else = {
-					liege = scope:host
-					can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = scope:host }
-				}
+			}
+			
+			ai_will_do = {
+				value = 10
 			}
 		}
 	}

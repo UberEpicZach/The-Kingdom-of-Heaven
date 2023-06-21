@@ -325,7 +325,7 @@ KOH_Pentecost.2 = {
 
 	immediate = {
 		# assuming we're scoped to Frederick
-		#save_scope_as = frederick
+		save_scope_as = frederick
 		# character:7557 = {
 		# 	save_scope_as = konrad
 		# }
@@ -384,6 +384,7 @@ KOH_Pentecost.2 = {
 		open_view_data = {
 			view = activity_list_detail_host_window
 			data = activity_type:activity_KOH_pentecost
+			player = scope:frederick
 		}
 
 		ai_chance = {
@@ -951,6 +952,12 @@ KOH_Pentecost.7 = {
 			title:k_papal_state.holder = {
 				invite_to_activity = scope:activity
 				accept_activity_invite = scope:activity
+				hidden_effect = {
+					add_character_modifier = {
+						modifier = koh_imperial_roads
+						days = 50
+					}
+				}
 			}
 		}
 
@@ -1029,6 +1036,17 @@ KOH_Pentecost.8 = {
 				value = yes
 			}
 		}
+		character:212600 = {
+			invite_to_activity = scope:activity
+			accept_activity_invite = scope:activity
+			hidden_effect = {
+				add_character_modifier = {
+					modifier = koh_imperial_roads
+					days = 70
+				}
+			}
+		}
+		
 
 		reverse_add_opinion = {
 			modifier = pentecost_accepted_my_suggestion_opinion
@@ -1368,6 +1386,7 @@ KOH_Pentecost.10 = {
 				list = invited
 				limit = { NOT = { this = scope:frederick } }
 				trigger_event = KOH_Pentecost.1001
+				
 			}
 		}
 	}
@@ -1389,7 +1408,12 @@ KOH_Pentecost.1001 = {
 			}
 			invite_to_activity = scope:activity
 			accept_activity_invite = scope:activity
+			add_character_modifier = {
+				modifier = koh_imperial_roads
+				days = 30
+			}
 		}
+		
  
 		trigger = {
 			can_join_activity = scope:activity
