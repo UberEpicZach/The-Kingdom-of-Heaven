@@ -623,6 +623,7 @@ temujin.1000 = {
 	}
 	trigger = {
 		this = character:303211
+		is_allied_to=scope:temujin
 		}
 	
 	right_portrait = {
@@ -827,124 +828,98 @@ temujin.1000 = {
 		
 
 		ai_chance = {
-			base = 2
-			if={
-			limit={
-			opinion={
-			target=scope:temujin
-			value<10
-			
-			}
-			}
-			add=1
-			}
-			if={
-			limit={
+			base = 5
+			modifier={
 			opinion={
 			target=scope:temujin
 			value<0
 			
 			}
+			
+			factor=1.5
 			}
-			add=1
-			}
-			if={
-			limit={
+				modifier={
 			opinion={
 			target=scope:temujin
 			value<-10
 			
 			}
+			
+			factor=1.5
 			}
-			add=2
-			}
-			if={
-			limit={
+				modifier={
 			opinion={
 			target=scope:temujin
 			value<-20
 			
 			}
+			
+			factor=1.5
 			}
-			add=3
-			}
-			if={
-			limit={
+				modifier={
 			opinion={
 			target=scope:temujin
 			value<-30
 			
 			}
+			
+			factor=1.5
 			}
-			add=5
-			}
-			if={
-			limit={
+				modifier={
 			opinion={
 			target=scope:temujin
 			value<-40
 			
 			}
+			
+			factor=1.5
 			}
-			add=8
-			}
-			if={
-			limit={
+				modifier={
 			opinion={
 			target=scope:temujin
 			value<-50
 			
 			}
+			
+			factor=1.5
 			}
-			add=13
-			}
-			if={
-			limit={
+				modifier={
 			opinion={
 			target=scope:temujin
 			value<-60
 			
 			}
+			
+			factor=1.5
 			}
-			add=21
-			}
-			if={
-			limit={
+				modifier={
 			opinion={
 			target=scope:temujin
 			value<-70
 			
 			}
+			
+			factor=1.5
 			}
-			add=34
-			}
-			if={
-			limit={
+				modifier={
 			opinion={
 			target=scope:temujin
 			value<-80
 			
 			}
+			
+			factor=1.5
 			}
-			add=55
-			}
-			if={
-			limit={
+				modifier={
 			opinion={
 			target=scope:temujin
 			value<-90
 			
 			}
+			
+			factor=1.5
 			}
-			add=89
-			}
-			if={
-			limit={
-			always=yes
-			}
-			}
-			multiply=5
-			}
+			
 		}
 		
 	}

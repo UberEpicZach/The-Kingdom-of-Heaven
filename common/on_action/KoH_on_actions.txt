@@ -6,13 +6,26 @@
 		#KOH_investiture
 	}
 }
-
+senggum_jealousy={
+	trigger = {
+		this = character:303211
+		is_allied_to=scope:temujin
+		current_date > 1187.1.1
+		}
+random_events = {
+		50 = 0
+		100 = temujin.1000
+		
+		}
+}
 yearly_playable_pulse = {
 	on_actions = {
 		delay = { months = 2 }
     	#KOH_pulse_monthly
 		KOH_yearly
+		senggum_jealousy
 	}
+	
 }
 
 # # Called from code once a quarter for "playable" (count+) characters.
@@ -1131,18 +1144,8 @@ KOH_pulse_monthly = {
 		KOH_pulse_monthly
 	}
 	random_events = {
-		chance_of_no_event = {
-			value = 30
-			#if = {
-			#	limit = {
-			#	root={
-			#		is_at_war = yes # Won't get spammed while at war
-			#	}
-			#	}
-			#	add = 10
-			#}
-		}
-		100000 = temujin.1000
+		1 = 0
+		100 = temujin.1000
 		
 		}
 
