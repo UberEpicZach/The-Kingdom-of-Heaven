@@ -15,11 +15,22 @@ world_buffing.1 = {
 		NOT = {
 			this = character:223570
 			this = character:125501
+			this = character:3032752
+			this = character:3032752
+			this=character:3032800
+			this=character:217214
+		
 		}
 	}
 	
 	option = {
 	
+	if={
+		limit={
+			this=character:3032661
+		}
+		add_prestige = -500
+	}
 		if = {
 			limit = { 
 				has_government = republic_government 
