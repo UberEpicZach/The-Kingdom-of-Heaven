@@ -533,12 +533,12 @@ succession_gender_laws = {
 		can_keep = {
 			custom_description = {
 				text = change_law_male_preference_faith_requirement
-									faith = {
-						NOT = { has_doctrine = doctrine_gender_female_dominated }
-					}
+				faith = {
+					NOT = { has_doctrine = doctrine_gender_female_dominated }
 				}
-				custom_tooltip = {
-					text = culture_not_female_only_tt
+			}
+			custom_tooltip = {
+				text = culture_not_female_only_tt
 					OR = {
 						faith = { has_doctrine = doctrine_gender_male_dominated }
 						NOT = {
@@ -546,7 +546,7 @@ succession_gender_laws = {
 						}
 					}
 				}	
-			}
+			
 			NOT = { has_government = monastic_government } ##MYMO
 		}
 		can_pass = {
@@ -604,7 +604,7 @@ succession_gender_laws = {
 					AND = { #Culture is male dominated but faith is female dominated
 						faith = { has_doctrine = doctrine_gender_female_dominated }
 						NOT = { culture = { has_cultural_parameter = female_only_inheritance } }
-				}
+					}
 				}
 			}
 		}

@@ -79,7 +79,7 @@ wifelover = {
 assassins_mongol_trigger_koh = {
     NOT = { exists = global_var:mongols_provoke_assassins }
     exists = global_var:assassin_holy_order_title.holder
-    global_var:assassin_holy_order_title.holder = { has_government = holy_order_county_government }
+    global_var:assassin_holy_order_title.holder = { has_government = assassins_government }
 	OR = {
 		AND = {
 			exists = title:e_mongol_empire
