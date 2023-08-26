@@ -3,7 +3,7 @@
   SENT_INVITATIONS_TO_PENTECOST:0 "You have sent out the invitations for the Pentecost Celebrations!"
 
   KOH_Pentecost.1.t:0 "Pentecost: Preparations for the Pentecost"
-  KOH_Pentecost.1.desc:0 "My victories have been widespread and numerous. Celebrations are in order to cement my name as one of the great kings. I announced to all in the central sphere of Europe that I will hold a grand Diet in the [SCOPE.sTitle('mainz_county').GetName] during this year’s Pentecost celebrations. I am determined to display the chivalry and piety of my realm to the known world. \n\nMy coffers are sadly finite, but our appetites are not."
+  KOH_Pentecost.1.desc:0 "My victories have been widespread and numerous. Celebrations are in order to cement my name as one of the great kings. I announced to all in the central sphere of Europe that I will hold a grand Diet in the [GetTitleByKey('c_mainz').GetNameNoTier] during this year’s Pentecost celebrations. I am determined to display the chivalry and piety of my realm to the known world. \n\nMy coffers are sadly finite, but our appetites are not."
   KOH_Pentecost.1.a:0 "Gather the bookkeepers!"
   KOH_Pentecost.1.a.tt:0 "The planning for the Feast of Pentecost begins"
   KOH_Pentecost.1.b:0 "I have better things to focus on!"
@@ -26,17 +26,17 @@
   KOH_Pentecost.3.b:0 "We shall have the mêlée and riding tournaments!"
 
   KOH_Pentecost.4.t:0 "Pentecost: An Issue of Finances"
-  KOH_Pentecost.4.desc:0 "A document is passed into my hands, bearing poor tidings. \n\nThe extravagance of our planning has had some unintended consequences on certain assets, and my accountants warn that such liberal spending will have consequences. \n\nTwo parties have emerged among my fiscal advisors, prominently [chancellor.GetTitledFirstName] and [steward.GetTitledFirstName]. One advocates for the 'acquisition' of funds from the Jewish population; the other senses an opportunity to use the great wealth amassed by the Archbishop of [SCOPE.sTitle('mainz_county').GetNameNoTier], [konrad.GetFirstName]."
+  KOH_Pentecost.4.desc:0 "A document is passed into my hands, bearing poor tidings. \n\nThe extravagance of our planning has had some unintended consequences on certain assets, and my accountants warn that such liberal spending will have consequences. \n\nTwo parties have emerged among my fiscal advisors, prominently [chancellor.GetTitledFirstName] and [steward.GetTitledFirstName]. One advocates for the 'acquisition' of funds from the Jewish population; the other senses an opportunity to use the great wealth amassed by the Archbishop of [GetTitleByKey('c_mainz').GetNameNoTier], [konrad.GetFirstName]."
   KOH_Pentecost.4.a:0 "I’m sure [konrad.GetFirstName] will understand."
   KOH_Pentecost.4.b:0 "Prepare the Writs of Taxation, [steward.GetFirstName]!"
   KOH_Pentecost.4.c:0 "I will find other means."
 
   KOH_Pentecost.5.t:0 "Pentecost: A Pious Plea"
   KOH_Pentecost.5.desc:0 "An understandably angry [SCOPE.sC('konrad').GetCharacterViewName] has sent an envoy to my camp from the insides of Mainz."... and you dare demand more from his Holiness after he has already taken the burden of hosting such an event?""
-  KOH_Pentecost.5.a:0 "I promise [SCOPE.sTitle('mainz_county').GetNameNoTier] will surely prosper!"
+  KOH_Pentecost.5.a:0 "I promise [GetTitleByKey('c_mainz').GetNameNoTier] will surely prosper!"
   KOH_Pentecost.5.a.tt:0 "Explain diplomatically that [konrad.GetFirstName] must spend money to see a profit."
   KOH_Pentecost.5.b:0 "It is no matter, my friends..."
-  KOH_Pentecost.5.b.tt:0 "Perhaps funding could be obtained from [SCOPE.sTitle('mainz_county').GetNameNoTier] through more... unconventional means, like adjusting the census records."
+  KOH_Pentecost.5.b.tt:0 "Perhaps funding could be obtained from [GetTitleByKey('c_mainz').GetNameNoTier] through more... unconventional means, like adjusting the census records."
   KOH_Pentecost.5.c:0 "Tell [konrad.GetFirstName] that he has my goodwill."
 
   KOH_Pentecost.5.succeed.t:0 "Pentecost: Success"
@@ -73,25 +73,31 @@
   KOH_Pentecost.9.b:0 "I will free the archbishop, on the condition that [SCOPE.sC('lion').GetCharacterViewName] may not attend the Diet."
 
   KOH_Pentecost.10.t:0 "Pentecost: Public Works"
-  KOH_Pentecost.10.desc:0 "The extra laborers I have employed in [SCOPE.sTitle('mainz_county').GetNameNoTier] have toiled to exhaustion. A few final preparations are in order, particularly regarding the matter of infrastructure. Over 35,000 people are expected to attend, eclipsing the city’s current population twice over! The question remains: what should be done to remedy the traffic?"
+  KOH_Pentecost.10.desc:0 "The extra laborers I have employed in [GetTitleByKey('c_mainz').GetNameNoTier] have toiled to exhaustion. A few final preparations are in order, particularly regarding the matter of infrastructure. Over 35,000 people are expected to attend, eclipsing the city’s current population twice over! The question remains: what should be done to remedy the traffic?"
   KOH_Pentecost.10.a:0 "The current infrastructure suffices..."
   KOH_Pentecost.10.b:0 "The local paths must be paved."
   KOH_Pentecost.10.c:0 "The city itself should be expanded!"
 
   KOH_Pentecost.1001.opening:0 "An Imperial Invite"
-  KOH_Pentecost.1001.desc:0 "A messenger has arrived in the court of [ROOT.Char.GetCapitalLocation.GetCounty.GetTitle.GetNameNoTier] bearing the seal of the Emperor. We are invited to attend the [SCOPE.sTitle('mainz_county').GetNameNoTier] court for the Feast of Pentecost."
+  KOH_Pentecost.1001.desc:0 "A messenger has arrived in the court of [ROOT.Char.GetCapitalLocation.GetCounty.GetTitle.GetNameNoTier] bearing the seal of the Emperor. We are invited to attend the [GetTitleByKey('c_mainz').GetNameNoTier] court for the Feast of Pentecost."
   KOH_Pentecost.1001.a:0 "I shall attend!"
   KOH_Pentecost.1001.b:0 "I shall sit this out."
 
-  KOH_Pentecost.11.t:0 "Pentecost: Awestruck"
-  KOH_Pentecost.11.desc:0 "My entire court has now temporarily located to [SCOPE.sTitle('mainz_county').GetNameNoTier] for the upcoming Diet. Upon our arrival at the gates, the party is greeted with the sight of a truly imperial city, worthy of the emperor's presence. \n\nConstruction on the newer district of Weisenau by the Rhine has yielded spectacular results! Merchants have already gathered, selling foreign wares to laborers, who indulge in dates and pastries. \n\n[SCOPE.sC('konrad').GetCharacterViewName] greets me with a smile. "Wonderful job, my liege. Please, accept my gratitude for the funding of these works!""
+
+### CULTURAL FESTIVAL ###
+
+
+  KOH_Pentecost.11.t:0 "Pentecost: Awestruck" 
+  KOH_Pentecost.11.desc:0 "My entire court has now temporarily located to [GetTitleByKey('c_mainz').GetNameNoTier] for the upcoming Diet. Upon our arrival at the gates, the party is greeted with the sight of a truly imperial city, worthy of the emperor's presence. \n\nConstruction on the newer district of Weisenau by the Rhine has yielded spectacular results! Merchants have already gathered, selling foreign wares to laborers, who indulge in dates and pastries. \n\n[stop_host_scope.GetCharacterViewName] greets me with a smile. "Wonderful job, my liege. Please, accept my gratitude for the funding of these works!""
   KOH_Pentecost.11.a:0 "Why, thank you!"
 
   KOH_Pentecost.12.t:0 "Pentecost: A Reception"
-  KOH_Pentecost.12.desc:0 "This afternoon, [SCOPE.sTitle('mainz_county').GetNameNoTier] is certainly abustle. Horse carts hailing from across the land bring lords and ladies, wares, and tales of far off places. \n\nAs tens of thousands of guests wander the narrow streets of the seat of the Archbishop’s domain, the whispering threat of plague is but a murmur in the back of the mind. Few are cynical enough to worry of pestilence when there are such delights at every turn. Scholars from across Europe have come to record the events, and miles of fluttering tents line the outside of the city walls. \n\nAll persons of status are received at the imposing St. Martin’s Cathedral; It is not long before a dispute breaks out! [SCOPE.sC('count_hainaut').GetCharacterViewName] has been offered the title of Swordbearer, but some argue he is not worthy of such an honor! [SCOPE.sC('duke_lorraine').GetCharacterViewName] has been presented as an alternative candidate for the role."
+  KOH_Pentecost.12.desc:0 "This afternoon, [GetTitleByKey('c_mainz').GetNameNoTier] is certainly abustle. Horse carts hailing from across the land bring lords and ladies, wares, and tales of far off places. \n\nAs tens of thousands of guests wander the narrow streets of the seat of the Archbishop’s domain, the whispering threat of plague is but a murmur in the back of the mind. Few are cynical enough to worry of pestilence when there are such delights at every turn. Scholars from across Europe have come to record the events, and miles of fluttering tents line the outside of the city walls. \n\nAll persons of status are received at the imposing St. Martin’s Cathedral; It is not long before a dispute breaks out! [SCOPE.sC('count_hainaut').GetCharacterViewName] has been offered the title of Swordbearer, but some argue he is not worthy of such an honor! [SCOPE.sC('duke_lorraine').GetCharacterViewName] has been presented as an alternative candidate for the role."
   KOH_Pentecost.12.a:0 "The choice is obvious! [SCOPE.sC('count_hainaut').GetFirstName]!"
   KOH_Pentecost.12.b:0 "Perhaps the opposition has a point."
 
+### BANQUET ###
+ 
   KOH_Pentecost.13.t:0 "Pentecost: Papal Concordat"
   KOH_Pentecost.13.desc:0 "The first segment of the Diet has been devoted to the promised concordat between [SCOPE.sC('pope').GetCharacterViewName] and myself. The major question that longs to be resolved by all attendees is the status of Matilda of Tuscany’s succession. The Pope wishes for ownership over Tuscany, and concession to other papal demands. \n\nWhile a great blow to the empire’s authority, conceding could end the long dispute between the Holy Roman Empire and her Church. \n\nA resolution seems unlikely to be made, unless one side concedes. My [chancellor.GetCouncilTitle], [chancellor.GetTitledFirstName], however, views this as an opportunity. He suggests proposing a compromise in which Tuscany remains imperial territory, but the Papacy receives two-tenths of Italy’s imperial revenue. He claims this would appease both parties."
   KOH_Pentecost.13.a:0 ""It is perhaps best we bend the knee...""
@@ -136,7 +142,7 @@
   KOH_Pentecost.19.b:0 ""I've had quite enough, I think.""
 
   KOH_Pentecost.20.t:0 "Pentecost: Ingelheim"
-  KOH_Pentecost.20.desc:0 "To end the games, a grand mêlée tournament, the most barbaric of all challenges, and yet the greatest tradition of them all, is to be fought at Ingelheim, near [SCOPE.sTitle('mainz_county').GetNameNoTier]. There have been reports from late arrivals of a brewing storm coming from Frankish lands. Many advise that the mêlée not continue, lest the priests make a fuss."
+  KOH_Pentecost.20.desc:0 "To end the games, a grand mêlée tournament, the most barbaric of all challenges, and yet the greatest tradition of them all, is to be fought at Ingelheim, near [GetTitleByKey('c_mainz').GetNameNoTier]. There have been reports from late arrivals of a brewing storm coming from Frankish lands. Many advise that the mêlée not continue, lest the priests make a fuss."
   KOH_Pentecost.20.a:0 "We will try our luck."
 
   KOH_Pentecost.21.t:0 "Pentecost: The Grand Mêlée"
@@ -286,3 +292,18 @@
 
   PENTECOST_POPE_ANGRY:0 ""
   PENTECOST_POPE_ANGERED:0 ""
+
+
+  ###FLAVOR EVENTS
+
+  KOH_Pentecost.24.t: "Pentecost Plays"
+  KOH_Pentecost.24.desc: "The city square is filled with people as a Pentecost plays begin. These religious plays depict events from the Bible, particularly related to the Holy Spirit and Pentecost. As a scene depicting the descent of the Holy Spirit unfolds, the attendees are visibly moved."
+  KOH_Pentecost.24.a: "Discuss the Scene with Others"
+  KOH_Pentecost.24.a.f: "Engage in a discussion about the scene depicted and its theological implications."
+  KOH_Pentecost.24.b: "Reflect on your Personal Faith"
+  KOH_Pentecost.24.b.f: "Use the opportunity to reflect on your personal faith and connection with the Holy Spirit."
+  KOH_Pentecost.24.c: "Donate to the Church"
+  KOH_Pentecost.24.c.f: "Make a donation to the church in honor of the Holy Spirit and the celebration of Pentecost."
+
+ pentecost_peasants_donation_log_title:0 "Donated to the Church during Pentecost"
+ pentecost_peasants_donation_log:0 "[CHARACTER.GetShortUIName|U] made a donation to the Church after watching a religious Pentecost Play"

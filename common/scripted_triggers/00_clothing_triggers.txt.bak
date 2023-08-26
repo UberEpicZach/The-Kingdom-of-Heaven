@@ -35,6 +35,7 @@ should_be_fully_naked_portrait_trigger = {
 should_be_topless_portrait_trigger = {
 	exists = this
 	OR = {
+		has_character_flag = should_be_topless
 		has_character_flag = single_combat_stripped_to_waist
 		activity_tournament_shirtless_trigger = yes
 	}
@@ -113,12 +114,22 @@ portrait_wear_armor_trigger = {
 			}
 		}
 	}
+	portrait_ep2_wedding_clothes_trigger = no
 	OR = {
+		# Mercenaries
 		AND = {
 			is_ruler = yes
 			government_has_flag = government_is_mercenary
 		}
+		# Holy Orders
+		AND = {
+			is_ruler = yes
+			government_has_flag = government_is_holy_order
+		}
+		has_trait = order_member
+		# Commanding an army
 		is_commanding_army = yes
+		# Knight in an army
 		exists = knight_army
 		AND = {
 			OR = {
@@ -133,6 +144,7 @@ portrait_wear_armor_trigger = {
 				liege = { is_at_war = yes }
 			}
 		}
+		# Marshal lower than Duke
 		AND = {
 			has_council_position = councillor_marshal
 			OR = {
@@ -141,9 +153,12 @@ portrait_wear_armor_trigger = {
 			}
 		}
 		has_character_flag = wear_armor
+		# Serving Varangian
 		has_character_flag = is_currently_varangian
+		# In a Duel
 		has_character_flag = single_combat_duel_armor
 		has_character_flag = forced_knight_armor
+		# In a Tournament
 		activity_tournament_armor_trigger = yes
 		has_character_flag = attending_tournament
 		has_character_flag = event_war_clothes
@@ -350,31 +365,43 @@ is_dwarf_height = {
 }
 
 portrait_byzantine_clothing_trigger = {
-	scope:culture = {
-		portrait_byzantine_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_byzantine = yes
+		scope:culture = {
+			portrait_byzantine_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_byzantine_clothing_spouse_trigger = {
-    culture = {
-        portrait_byzantine_clothing_contents_trigger = yes
-    }
+	OR = {
+		style_changing_reformer_byzantine = yes
+		culture = {
+			portrait_byzantine_clothing_contents_trigger = yes
+		}
+	}
 }
 
 portrait_byzantine_clothing_contents_trigger = {
-    has_clothing_gfx = byzantine_clothing_gfx 
+	has_clothing_gfx = byzantine_clothing_gfx
 }
 
 portrait_indian_clothing_trigger = {
-	scope:culture = {
-		portrait_indian_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_indian = yes
+		scope:culture = {
+			portrait_indian_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_indian_clothing_spouse_trigger = {
-    culture = {
-        portrait_indian_clothing_contents_trigger = yes
-    }
+	OR = {
+		style_changing_reformer_indian = yes
+		culture = {
+			portrait_indian_clothing_contents_trigger = yes
+		}
+	}
 }
 
 portrait_indian_clothing_contents_trigger = {
@@ -382,15 +409,21 @@ portrait_indian_clothing_contents_trigger = {
 }
 
 portrait_mena_clothing_trigger = {
-	scope:culture = {
-		portrait_mena_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_mena = yes
+		scope:culture = {
+			portrait_mena_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_mena_clothing_spouse_trigger = {
-    culture = {
-        portrait_mena_clothing_contents_trigger = yes
-    }
+	OR = {
+		style_changing_reformer_mena = yes
+		culture = {
+			portrait_mena_clothing_contents_trigger = yes
+		}
+	}
 }
 
 portrait_mena_clothing_contents_trigger = {
@@ -398,14 +431,20 @@ portrait_mena_clothing_contents_trigger = {
 }
 
 portrait_african_clothing_trigger = {
-	scope:culture = {
-		portrait_african_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_african = yes
+		scope:culture = {
+			portrait_african_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_african_clothing_spouse_trigger = {
-	culture = {
-		portrait_african_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_african = yes
+		culture = {
+			portrait_african_clothing_contents_trigger = yes
+		}
 	}
 }
 
@@ -414,14 +453,20 @@ portrait_african_clothing_contents_trigger = {
 }
 
 portrait_northern_clothing_trigger = {
-	scope:culture = {
-		portrait_northern_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_northern = yes
+		scope:culture = {
+			portrait_northern_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_northern_clothing_spouse_trigger = {
-	culture = {
-		portrait_northern_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_northern = yes
+		culture = {
+			portrait_northern_clothing_contents_trigger = yes
+		}
 	}
 }
 
@@ -434,6 +479,7 @@ portrait_northern_clothing_contents_trigger = {
 portrait_fp2_iberian_muslim_clothing_trigger = {
 	has_fp2_dlc_trigger = yes
 	OR = {
+		style_changing_reformer_iberian_muslim = yes
 		scope:culture = { portrait_fp2_iberian_muslim_clothing_contents_trigger = yes }
 		trigger_if = {
 			limit = { exists = this	}
@@ -451,6 +497,7 @@ portrait_fp2_iberian_muslim_clothing_trigger = {
 portrait_fp2_iberian_muslim_clothing_spouse_trigger = {
 	has_fp2_dlc_trigger = yes
 	OR = {
+		style_changing_reformer_iberian_muslim = yes
 		culture = {
 			portrait_fp2_iberian_muslim_clothing_contents_trigger = yes
 		}
@@ -471,6 +518,7 @@ portrait_fp2_iberian_muslim_clothing_contents_trigger = {
 portrait_fp2_iberian_christian_clothing_trigger = {
 	has_fp2_dlc_trigger = yes
 	OR = {
+		style_changing_reformer_iberian_christian = yes
 		scope:culture = { portrait_fp2_iberian_christian_clothing_contents_trigger = yes }
 		trigger_if = {
 			limit = { exists = this }
@@ -488,6 +536,7 @@ portrait_fp2_iberian_christian_clothing_trigger = {
 portrait_fp2_iberian_christian_clothing_spouse_trigger = {
 	has_fp2_dlc_trigger = yes
 	OR = {
+		style_changing_reformer_iberian_christian = yes
 		culture = {
 			portrait_fp2_iberian_christian_clothing_contents_trigger = yes
 		}
@@ -509,13 +558,20 @@ portrait_fp2_iberian_christian_clothing_contents_trigger = {
 
 portrait_fp1_norse_clothing_trigger = {
 	has_fp1_dlc_trigger = yes
-	scope:culture = { portrait_fp1_norse_clothing_contents_trigger = yes }
+	OR = {
+		style_changing_reformer_fp1_norse = yes
+		scope:culture = { portrait_fp1_norse_clothing_contents_trigger = yes }
+	}
+	
 }
 
 portrait_fp1_norse_clothing_spouse_trigger = {
 	has_fp1_dlc_trigger = yes
-	culture = {
-		portrait_fp1_norse_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_fp1_norse = yes
+		culture = {
+			portrait_fp1_norse_clothing_contents_trigger = yes
+		}
 	}
 }
 
@@ -524,14 +580,20 @@ portrait_fp1_norse_clothing_contents_trigger = {
 }
 
 portrait_steppe_clothing_trigger = {
-	scope:culture = {
-		portrait_steppe_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_mongol = yes
+		scope:culture = {
+			portrait_steppe_clothing_contents_trigger = yes
+		}
 	}
 }
 
 portrait_steppe_clothing_spouse_trigger = {
-	culture = {
-		portrait_steppe_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_mongol = yes
+		culture = {
+			portrait_steppe_clothing_contents_trigger = yes
+		}
 	}
 }
 
@@ -552,23 +614,34 @@ portrait_western_clothing_spouse_trigger = {
 }
 
 portrait_western_clothing_contents_trigger = {
-	has_clothing_gfx = western_clothing_gfx
-	NOR = {
-		has_clothing_gfx = byzantine_clothing_gfx
-		has_clothing_gfx = northern_clothing_gfx
+	OR = {
+		style_changing_reformer_western = yes
+		AND = {
+			has_clothing_gfx = western_clothing_gfx
+			NOR = {
+				has_clothing_gfx = byzantine_clothing_gfx
+				has_clothing_gfx = northern_clothing_gfx
+			}
+		}
 	}
 }
 
 portrait_dde_hre_clothing_trigger = {
-	scope:culture = {
-		portrait_dde_hre_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_dde_hre = yes
+		scope:culture = {
+			portrait_dde_hre_clothing_contents_trigger = yes
+		}
 	}
 	has_dlc = "Garments of the Holy Roman Empire"
 }
 
 portrait_dde_hre_clothing_spouse_trigger = {
-	culture = {
-		portrait_dde_hre_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_dde_hre = yes
+		culture = {
+			portrait_dde_hre_clothing_contents_trigger = yes
+		}
 	}
 	has_dlc = "Garments of the Holy Roman Empire"
 }
@@ -578,15 +651,21 @@ portrait_dde_hre_clothing_contents_trigger = {
 }
 
 portrait_dde_abbasid_clothing_trigger = {
-	scope:culture = {
-		portrait_dde_abbasid_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_dde_abbasid = yes
+		scope:culture = {
+			portrait_dde_abbasid_clothing_contents_trigger = yes
+		}
 	}
 	has_dlc = "Fashion of the Abbasid Court"
 }
 
 portrait_dde_abbasid_clothing_spouse_trigger = {
-	culture = {
-		portrait_dde_abbasid_clothing_contents_trigger = yes
+	OR = {
+		style_changing_reformer_dde_abbasid = yes
+		culture = {
+			portrait_dde_abbasid_clothing_contents_trigger = yes
+		}
 	}
 	has_dlc = "Fashion of the Abbasid Court"
 }
@@ -629,12 +708,22 @@ portrait_can_use_noble_headgear_trigger = {
 }
 
 
-
 ### General clothing triggers ### 
 
-portrait_era1_trigger = {
-	current_year < 1100
-	scope:year_of_birth < 975
+portrait_era1_trigger = { # Intended to primarily cover the years 850 to 1000
+	OR = {
+		AND = {
+			scope:year_of_birth < 1000
+			OR = {
+				current_year < 1000
+				is_alive = no 
+			}
+		}
+		AND = { # Children under 16 will use the same fashion as characters over 25
+			scope:year_of_birth < 1000
+			scope:age < 16
+		}		
+	}
 }
 
 portrait_era2_trigger = { # Intended to primarily cover the years 1000 to 1150

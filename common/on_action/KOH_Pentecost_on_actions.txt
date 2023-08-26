@@ -1,10 +1,91 @@
 ﻿events_during_pentecost_on_action = {
 	first_valid = {
 		KOH_Pentecost.13
-		KOH_Pentecost.15
+		# KOH_Pentecost.15 #MOVE TO DURING DINNER
 
-		KOH_Pentecost.16
+		#KOH_Pentecost.16 #MOVE TO DURING DINNER
 
 		KOH_Pentecost.1801
+	}
+}
+
+on_pentecost_festival_liege = {
+	random_events = {
+		200 = 0
+		250 = KOH_Pentecost.24
+		50 = cultural_festival.2001 # Performer messes up in front of you
+		50 = cultural_festival.2010 # King/Queen of Love and Beauty / Grim and Grievance
+		50 = cultural_festival.2020 # You enjoy a cultural demonstration based on the time of the year/culture
+		50 = cultural_festival.2030 # You tax people that go into the cultural festival
+		50 = cultural_festival.2040 # You are horrified by the culture in the cultural festival
+		50 = cultural_festival.2050 # Local dance is too scandalous
+		50 = cultural_festival.2060 # You bring sophisticated entertainments from the capital to a low-dev county
+		50 = cultural_festival.2070 # You encounter a band of mercenaries enjoying the festivities, recruit?
+		50 = cultural_festival.2080 # Do you want to buy a miraculous tonic?
+		50 = cultural_festival.2090 # Arrest the performers over made-up accussations
+		50 = cultural_festival.2100 # A guild is contributing to the festival
+		50 = cultural_festival.2110 # A puppy breaks into stage
+		50 = cultural_festival.3020 # Bilateral: Make your vassal pay you homage
+		50 = cultural_festival.3050 # Bilateral: You struggle to stay awake during a boring performance
+		50 = cultural_festival.3060 # Bilateral: You take someone out to dance
+		50 = cultural_festival.4000 # You end up in a conversation in a language you don't know
+		50 = cultural_festival.4100 # Your courtier made a cultural faux pas
+		50 = cultural_festival.4310 # Bilateral: You ask about your old gift
+		50 = cultural_festival.9000 # Something is not quite right about backstage, investigate?
+		50 = cultural_festival.9010 # Your kid becomes entranced by the local culture
+		50 = cultural_festival.9020 # A human sacrifice is happening
+		50 = cultural_festival.9040 # Encounter a fortune teller
+		50 = cultural_festival.9050 # Sexy dancing
+	}
+}
+
+on_pentecost_festival_vassal = {
+	random_events = {
+		200 = 0
+		250 = KOH_Pentecost.24
+		50 = cultural_festival.3000 # Bilateral: Make a play about your liege
+		50 = cultural_festival.3010 # Bilateral: Make a fountain run with alcohol/juice
+		50 = cultural_festival.3030 # Bilateral: Make the liege a judge in a local farm animal contest
+		50 = cultural_festival.3040 # Bilateral: Set up a sword in the stone type of activity
+		50 = cultural_festival.3070 # Bilateral: Hold a Feast of Fools-esque ceremony
+		50 = cultural_festival.4100 # Your courtier made a cultural faux pas
+		50 = cultural_festival.4200 # Bilateral: You make a parade
+		50 = cultural_festival.4300 # Bilateral: Exchange gifts
+		50 = cultural_festival.4310 # Bilateral: You ask about your old gift
+		50 = cultural_festival.9030 # attempt to get religious protection
+	}
+}
+
+pentecost_tournament_active_state_pulse = {
+	trigger = {
+		NOT = { has_character_flag = busy_in_contest_event }
+		exists = scope:activity
+	}
+	random_events = {
+		chance_of_no_event = {
+			value = 25
+			if = {
+				limit = { is_ai = yes }
+				value = 50
+			}
+		}
+		# Flavor
+		10 = tournament_events.1270 # Congratulate Winner
+		0 = tournament_events.1280 # Stand Collapses
+		# Spectator Events
+		50 = tournament_events.1400
+		50 = tournament_events.1401 # You block someone else's view
+		50 = tournament_events.1402 # Someone blocks your view
+		50 = tournament_events.1403 # Priest harangues the crowd
+		50 = tournament_events.1404 # Gossip with friend about hot knights
+		50 = tournament_events.1405
+		50 = tournament_events.1406
+		50 = tournament_events.1407
+		50 = tournament_events.1408
+		50 = tournament_events.1409
+		50 = tournament_events.1410
+		# Intents
+		150 = tournament_events.6010 # General Murder
+		50 = tournament_events.6510 # Alluring Triumph
 	}
 }

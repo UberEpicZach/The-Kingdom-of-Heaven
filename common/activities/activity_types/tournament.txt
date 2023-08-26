@@ -64,6 +64,26 @@
 				tournament_clear_tournament_variables_effect = yes
 			}
 		}
+		# Reset the achievement
+		if = {
+			limit = {
+				exists = global_var:started_little_william_marshal_achievement
+				exists = global_var:little_william_marshal_achievement_tally
+				scope:activity = {
+					any_attending_character = {
+						is_ai = no
+					}
+				}
+			}
+			set_global_variable = {
+				name = little_william_marshal_achievement_tally
+				value = 0
+			}
+			set_global_variable = {
+				name = started_little_william_marshal_achievement
+				value = 0
+			}
+		}
 	}
 
 	on_host_death = {
@@ -1026,6 +1046,7 @@
 			value = standard_travel_entourage_additions
 			if = {
 				limit = {
+					bannable_serving_diarch_trigger = no
 					OR = {
 						is_knight_of = scope:owner
 						scope:owner.court_position:champion_court_position ?= this
@@ -1040,6 +1061,7 @@
 			}
 			if = {
 				limit = {
+					bannable_serving_diarch_trigger = no
 					is_landed = no
 					OR = {
 						is_spouse_of = scope:owner
@@ -1138,7 +1160,7 @@
 				scope:activity.var:archery_winner ?= { add_to_list = characters }
 			}
 			scripted_animation = {
-				animation = hunting_Shortbow_rest_arrow_default
+				animation = hunting_shortbow_rest_arrow_default
 			}
 		}
 		horse_race_winner = {
@@ -4298,10 +4320,37 @@
 				exists = global_var:little_william_marshal_achievement_tally # Won tally
 				global_var:started_little_william_marshal_achievement >= 3 # At least 3 contests held
 				global_var:little_william_marshal_achievement_tally >= global_var:started_little_william_marshal_achievement # Won all of them
+				# The variable was changed during this player's tournament and not during a player's tournament happening in parallel
+				scope:activity = {
+					any_attending_character = {
+						is_ai = no
+					}
+				}
 			}
 			set_global_variable = {
 				name = finished_little_william_marshal_achievement
 				value = yes
+			}
+			set_global_variable = {
+				name = little_william_marshal_achievement_tally
+				value = 0
+			}
+			set_global_variable = {
+				name = started_little_william_marshal_achievement
+				value = 0
+			}
+		}
+		else_if = {	# RESET THE COUNTER!
+			limit = {
+				this = scope:host
+				exists = global_var:started_little_william_marshal_achievement # Overall tally
+				exists = global_var:little_william_marshal_achievement_tally # Won tally
+				# The variable was changed during this player's tournament and not during a player's tournament happening in parallel
+				scope:activity = {
+					any_attending_character = {
+						is_ai = no
+					}
+				}
 			}
 			set_global_variable = {
 				name = little_william_marshal_achievement_tally

@@ -3054,9 +3054,7 @@ notifications_message_feed = {
 
 ### Toasts
 notifications_toasts = {
-	widgetanchor = center
 	parentanchor = top|hcenter
-	position = { 0 165 }
 	layer = middle
 }
 
@@ -4672,13 +4670,6 @@ types HUD
 								blockoverride "income"
 								{
 									datacontext = "[InGameTopbar.GetIncomeBalanceBreakdown]"
-								}
-
-								blockoverride "jankcome_gold" {
-									text_single = {
-										layoutpolicy_vertical = expanding
-										text = "T4N_tributaries_income_gold"
-									}
 								}
 
 								blockoverride "expenses"

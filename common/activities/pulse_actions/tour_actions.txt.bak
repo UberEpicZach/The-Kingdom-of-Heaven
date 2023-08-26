@@ -734,6 +734,7 @@ liege_local_tax = {
 		scope:host.location = {
 			has_holding = yes
 		}
+		scope:host.location.tour_tax_gold_value >= 1
 	}
 
 	weight = 3

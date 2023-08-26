@@ -120,8 +120,8 @@ activity_feast = {
 					is_alive = no
 					scope:host = { has_variable = murder_feast_killed_var }
 				}
- 			}
-			#activity_host = { trigger_event = feast.2010 }
+			}
+			activity_host = { trigger_event = feast.2010 }
 			every_attending_character = {
 				limit = {
 					NOT = { this = scope:host }
@@ -3683,9 +3683,6 @@ activity_feast = {
 				}
 			}
 		}
-		# Glory management.
-		## We want to toss out a little glory to knights who go socialize and make themselves known
-		accolades_activity_complete_feast_glory_effect = yes
 		# Achievements.
 		scope:host = {
 			if = {

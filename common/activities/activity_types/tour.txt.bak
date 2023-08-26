@@ -92,10 +92,7 @@
 			primary_title = { save_scope_as = host_title }
 			# Inform your heir if you have one
 			player_heir ?= {
-				trigger_event = {
-					id = activity_system.1010
-					days = 1
-				}
+				trigger_event = activity_system.1010
 			}
 		}
 		# Inform all the other attendees
@@ -105,10 +102,7 @@
 				limit = {
 					NOT = { this = scope:host.player_heir }
 				}
-				trigger_event = {
-					id = activity_system.1011
-					days = 1
-				}
+				trigger_event = activity_system.1011
 			}
 		}
 	}
@@ -479,6 +473,7 @@
 
 	province_filter = realm
 	is_single_location = no
+	planner_type = holder
 
 	is_location_valid = {
 		ep2_phase_general_location_checks = yes
@@ -672,6 +667,14 @@
 				}
 			}
 			tour_type_taxation = {
+				is_valid = {
+					custom_tooltip = {
+						text = CB_TRIBAL_COST
+						NOT = {
+							government_has_flag = government_is_tribal
+						}
+					}
+				}
 				ai_will_do = {
 					value = 50
 					if = { # Warlike AI's want to fill their coffers
@@ -2232,18 +2235,22 @@
 	# scope:host = host of the activity
 	on_complete = {
 		# Clean up character flag preventing visited vassals from starting other activities
-		every_in_list = {
-			variable = tour_vassals_to_visit
-			if = {
-				limit = {
-					has_character_flag = being_visited_on_tour 
+		if = {
+			limit = {
+				scope:host = this
+			}
+			scope:activity = {
+				every_in_list = {
+					variable = tour_vassals_to_visit
+					if = {
+						limit = {
+							has_character_flag = being_visited_on_tour
+						}
+						remove_character_flag = being_visited_on_tour
+					}
 				}
-				remove_character_flag = being_visited_on_tour
 			}
 		}
-		# Glory management.
-		## We want to toss out a little glory to knights who go socialize and make themselves known
-		accolades_activity_complete_tour_glory_effect = yes
 		# Dynasty Legacy
 		if = {
 			limit = {
@@ -2356,36 +2363,41 @@
 		}
 		host_has_taken_freebie_activity_effect = yes
 		# Achievements.
-		scope:host = {
-			if = {
-				limit = {
-					highest_held_title_tier >= tier_empire
-					scope:activity = {
-						has_variable_list = imperial_march_achievement_list
-						variable_list_size = {
-							name = imperial_march_achievement_list
-							value >= achievement_imperial_march_achievement_powerful_vassal_tally_value
-						}
-					}
-				}
-				set_global_variable = {
-					name = finished_imperial_march_achievement
-					value = yes
-				}
+		if = {
+			limit = {
+				scope:host = this
 			}
-			if = {
-				limit = {
-					scope:activity = {
-						has_variable_list = the_grandest_tour_achievement_tally_list
-						variable_list_size = {
-							name = the_grandest_tour_achievement_tally_list
-							value >= 10
+			scope:host = {
+				if = {
+					limit = {
+						highest_held_title_tier >= tier_empire
+						scope:activity = {
+							has_variable_list = imperial_march_achievement_list
+							variable_list_size = {
+								name = imperial_march_achievement_list
+								value >= achievement_imperial_march_achievement_powerful_vassal_tally_value
+							}
 						}
 					}
+					set_global_variable = {
+						name = finished_imperial_march_achievement
+						value = yes
+					}
 				}
-				set_global_variable = {
-					name = finished_the_grandest_tour_achievement
-					value = yes
+				if = {
+					limit = {
+						scope:activity = {
+							has_variable_list = the_grandest_tour_achievement_tally_list
+							variable_list_size = {
+								name = the_grandest_tour_achievement_tally_list
+								value >= 10
+							}
+						}
+					}
+					set_global_variable = {
+						name = finished_the_grandest_tour_achievement
+						value = yes
+					}
 				}
 			}
 		}

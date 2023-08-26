@@ -1247,7 +1247,7 @@ KOH_Pentecost.10 = {
 	type = character_event
 	theme = stewardship
 	override_background = {
-		event_background = wilderness
+		reference = wilderness
 	}
 
 	right_portrait = {
@@ -1358,11 +1358,9 @@ KOH_Pentecost.10 = {
 		custom_description = {
 			text = send_invitations_to_pentecost
 
-			scope:activity = {
-				set_variable = {
-					name = invite_guests
-					value = yes
-				}
+			set_variable = {
+				name = invite_guests
+				value = yes
 			}
 			
 			if = {
@@ -1451,25 +1449,29 @@ KOH_Pentecost.1001 = {
 KOH_Pentecost.11 = {
 	title = KOH_Pentecost.11.t
 	desc = KOH_Pentecost.11.desc
-	type = character_event
+	window = widget_activity_locale_fullscreen_event
+	type = activity_event
 	theme = stewardship
 	override_background = {
-		event_background = market_west
+		reference = market_west
 	}
 	right_portrait = {
-		character = scope:frederick
+		character = root
 		animation = happiness
 	}
 
 	left_portrait = {
-		character = scope:konrad
+		character = scope:stop_host_scope
 		animation = admiration
 	}
 
 	immediate = {
+		stop_host_scope = {
+			save_scope_as = konrad
+		}
 		reverse_add_opinion = {
 			modifier = built_city_of_diets_for_me_opinion
-			target = scope:konrad
+			target = scope:stop_host_scope
 		}
 
 		add_prestige = medium_prestige_gain
@@ -1478,13 +1480,16 @@ KOH_Pentecost.11 = {
 	option = {
 		name = KOH_Pentecost.11.a
 
-		scope:konrad = {
+		scope:stop_host_scope = {
 			vassal_contract_increase_obligation_level = feudal_government_taxes
 		}
 	}
 
 	after = {
-		trigger_event = KOH_Pentecost.12
+		trigger_event = {
+			id = KOH_Pentecost.12
+			days = { 2 4 }
+		}
 	}
 }
 
@@ -1508,10 +1513,11 @@ scripted_effect appoint_swordbearer = {
 KOH_Pentecost.12 = {
 	title = KOH_Pentecost.12.t
 	desc = KOH_Pentecost.12.desc
-	type = character_event
+	type = activity_event
 	theme = stewardship
+	window = widget_activity_locale_fullscreen_event
 	override_background = {
-		event_background = market_west
+		reference = alley_day
 	}
 
 	right_portrait = {
@@ -1525,6 +1531,9 @@ KOH_Pentecost.12 = {
 	}
 
 	immediate = {
+		stop_host_scope = {
+			save_scope_as = konrad
+		}
 		title:c_hainaut.holder = {
 			save_scope_as = count_hainaut
 			add_character_flag = {
@@ -1581,6 +1590,7 @@ KOH_Pentecost.12 = {
 		}
 		trigger_event = {
 			on_action = events_during_pentecost_on_action
+			days = { 5 10 }
 		}
 	}
 }
@@ -1638,10 +1648,11 @@ scripted_effect transfer_to_pope = {
 KOH_Pentecost.13 = { #ADD TOAST NOTIFICATIONS
 	title = KOH_Pentecost.13.t
 	desc = KOH_Pentecost.13.desc
-	type = character_event
+	type = activity_event
+	window = widget_activity_locale_fullscreen_event
 	theme = stewardship
 	override_background = {
-		event_background = feast
+		reference = feast
 	}
 	right_portrait = {
 		character = cp:councillor_steward
@@ -1831,7 +1842,8 @@ KOH_Pentecost.13 = { #ADD TOAST NOTIFICATIONS
 KOH_Pentecost.14 = {
 	title = KOH_Pentecost.14.t
 	desc = KOH_Pentecost.14.desc
-	type = character_event
+	type = activity_event
+	window = widget_activity_locale_fullscreen_event
 	theme = stewardship
 
 	right_portrait = {
@@ -1896,7 +1908,8 @@ KOH_Pentecost.14 = {
 KOH_Pentecost.15 = {
 	title = KOH_Pentecost.15.t
 	desc = KOH_Pentecost.15.desc
-	type = character_event
+	type = activity_event
+	window = widget_activity_locale_fullscreen_event
 	theme = feast_activity
 
 	right_portrait = {
@@ -1912,6 +1925,10 @@ KOH_Pentecost.15 = {
 	}
 
 	immediate = {
+		character:212605 = { 
+			save_scope_as = lion
+		}
+
 		title:d_ostfalen = {
 			save_scope_as = welf_land
 		}
@@ -2059,7 +2076,7 @@ KOH_Pentecost.15 = {
 		add_prestige = medium_prestige_gain
 
 		ai_chance = {
-			base 85
+			base = 85
 		}
 	}
 
@@ -2081,7 +2098,7 @@ KOH_Pentecost.15 = {
 KOH_Pentecost.16 = {
 	title = KOH_Pentecost.16.t
 	desc = KOH_Pentecost.16.desc
-	type = character_event
+	type = activity_event
 	theme = feast_activity
 
 	right_portrait = {
@@ -2207,7 +2224,7 @@ KOH_Pentecost.16 = {
 KOH_Pentecost.17 = {
 	title = KOH_Pentecost.17.t
 	desc = KOH_Pentecost.17.desc
-	type = character_event
+	type = activity_event
 	theme = stewardship
 	override_background = { reference = courtyard }
 
@@ -2561,7 +2578,7 @@ KOH_Pentecost.23 = {
 	type = character_event
 	theme = stewardship
 	override_background = {
-		event_background = market_west
+		reference = market_west
 	}
 	right_portrait = {
 		character = scope:frederick
@@ -2582,3 +2599,197 @@ KOH_Pentecost.23 = {
 		add_stress = minor_stress_loss
 	}
 }
+
+##FLAVOUR EVENTS
+
+###Pentecost Plays
+
+# Pentecost Plays Event
+KOH_Pentecost.24 = {
+	window = widget_activity_locale_fullscreen_event
+	type = activity_event
+	title = KOH_Pentecost.24.t
+    #title = "Pentecost Plays"
+	desc = KOH_Pentecost.24.desc
+	theme = faith
+	override_background = {
+		reference = market_west
+	}
+
+	left_portrait = {
+		character = root
+		animation = throne_room_conversation_3
+	}
+
+	right_portrait = {
+		character = scope:performer
+		animation = happiness
+	}
+
+    weight_multiplier = {
+        base = 1
+    }
+
+    immediate = {
+        play_music_cue = Festival_Sounds
+
+		create_character = {
+			template = merchant_template
+			dynasty = none
+			location = scope:activity.activity_location
+			save_scope_as = performer
+		}
+    }
+
+    option = {
+        name = KOH_Pentecost.24.a
+		flavor = KOH_Pentecost.24.a.f
+        add_piety = 30
+        scope:activity = {
+			random_attending_character = {
+            	limit = { 
+                	is_adult = yes
+                	has_faith = root.faith
+            	}
+				add_opinion = {
+					target = root
+					modifier = pious_opinion
+					months = 24
+				}
+			}
+			random_attending_character = {
+            	limit = { 
+                	is_adult = yes
+                	has_faith = root.faith
+            	}
+				add_opinion = {
+					target = root
+					modifier = pious_opinion
+					months = 24
+				}
+			}
+        }
+    }
+
+    option = {
+		name = KOH_Pentecost.24.b
+        #name = "Reflect on your Personal Faith"
+		flavor = KOH_Pentecost.24.b.f
+        #desc = "Use the opportunity to reflect on your personal faith and connection with the Holy Spirit."
+        add_piety = 20
+        add_stress = minor_stress_loss
+    }
+
+    option = {
+		name = KOH_Pentecost.24.c
+		flavor = KOH_Pentecost.24.c.f
+       # desc = "Make a donation to the church in honor of the Holy Spirit and the celebration of Pentecost."
+		#pious_type_option_effect = yes
+
+		scope:activity = {
+			add_activity_log_entry = {
+				key = pentecost_peasants_donation_log
+				score = 25
+				tags = { random good }
+				character = root
+
+				#Effect
+				root = {
+					remove_short_term_gold = 100
+					add_piety = minor_piety_gain
+				}
+			}
+		}
+    }
+}
+
+# Sacred Art Exhibition Event
+KOH_Pentecost.25 = {
+	window = widget_activity_locale_fullscreen_event
+	type = activity_event
+    #title = "Sacred Art Exhibition"
+	title = KOH_Pentecost.25.t
+	desc = KOH_Pentecost.25.desc
+    #desc = "Local artists have been working tirelessly to create works inspired by religious themes. Today, their creations are displayed in a grand exhibition. Attendees wander through the exhibit, admiring the skill and devotion that went into each piece. Some attendees may even purchase the artworks, affecting their wealth and relationships with the artists."
+	theme = faith
+	override_background = {
+		reference = alley_day
+	}
+
+    trigger = {
+        has_faith = faith:catholic
+		is_adult = yes
+    }
+
+    weight_multiplier = {
+        base = 1
+    }
+
+    immediate = {
+        play_music_cue = mx_cue_personal_positive
+
+		create_character = {
+			template = local_beauty_character
+			dynasty = none
+			location = scope:activity.activity_location
+			save_scope_as = performer
+		}
+    }
+
+    option = {
+		name = KOH_Pentecost.25.a #"Purchase Artwork"
+        flavor = KOH_Pentecost.25.a.f #"Purchase one or more pieces of art from the exhibition."
+        remove_short_term_gold = 50
+        every_courtier = {
+            limit = { 
+                is_adult = yes
+                has_trait = artist
+            }
+            add_opinion = {
+                target = root
+                modifier = opinion_art_purchase
+                months = 36
+            }
+        }
+        add_artifact = religious_painting
+    }
+
+    option = {
+        name = "Hire an Artist"
+		flavor = KOH_Pentecost.25.b.f # "Hire one of the talented artists for a personal project or as a court artist."
+        remove_short_term_gold = 100
+        every_courtier = {
+            limit = { 
+                is_adult = yes
+                has_trait = artist
+            }
+            add_opinion = {
+                target = root
+                modifier = opinion_employment
+                months = 48
+            }
+        }
+        character_event = {
+            id = ArtistHired.0001
+        }
+    }
+
+    option = {
+        name = "Donate to the Artists"
+		flavor = KOH_Pentecost.25.c.f # "Make a donation to support the local artists."
+        remove_short_term_gold = 30
+        add_prestige = 20
+        every_courtier = {
+            limit = { 
+                is_adult = yes
+                has_trait = artist
+            }
+            add_opinion = {
+                target = root
+                modifier = opinion_donation
+                months = 24
+            }
+        }
+    }
+}
+

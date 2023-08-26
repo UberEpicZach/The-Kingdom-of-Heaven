@@ -535,15 +535,36 @@
 							}
 					}
 
-					else_if = {
-						limit = { scope:this_title.tier = tier_empire }
+						scope:this_title = { add_to_temporary_list = titles_to_grant }
+					}
 
+					else_if = {
+						limit = {
+							scope:this_title.tier = tier_empire
+						}
+
+						hidden_effect = {
 						add_opinion = {
 							target = scope:actor
 							modifier = received_title_empire
 						}
-
-						hidden_effect = {
+							if = {
+								limit = {
+									is_lowborn = yes
+								}
+								scope:actor = {
+									every_vassal = {
+										limit = {
+											has_vassal_stance = courtly
+										}
+										add_opinion = {
+											target = scope:actor
+											modifier = courtly_lowborn_grant_opinion
+											opinion = -5
+										}
+									}
+								}
+							}
 							if = {
 								limit = {
 									is_a_faction_member = yes
@@ -587,6 +608,17 @@
 					}
 				}
 				custom_tooltip = grant_title_to_bastard_dynasty_warning
+			}
+		} # every_in_list
+
+
+		# The accumulated discontent reduction of the recipient
+		scope:recipient = {
+			if = {
+				limit = {
+					is_a_faction_member = yes
+				}
+				add_joined_faction_discontent = grant_title_opinion_sum_discontent_calc
 			}
 		}
 
@@ -634,6 +666,23 @@
 				}
 			}
 			custom_tooltip = grant_title_modifier_stack_baronies
+		}
+		if = {
+			limit = {
+				scope:actor = {
+					any_vassal = {
+						has_vassal_stance = courtly
+					}
+				}
+				scope:recipient = {
+					is_lowborn = yes
+				}
+				any_in_list = {
+					list = titles_to_grant
+					tier >= tier_county
+				}
+			}
+			custom_tooltip = grant_title_modifier_courtly_lowborn_grant_penalty
 		}
 		if = {
 			limit = {
@@ -1086,6 +1135,23 @@
 							character = scope:actor
 						}
 					}
+				}
+			}
+		}
+
+		# Achievements.
+		scope:actor = {
+			if = {
+				limit = {
+					has_variable_list = candidate_a_knights_tale_achievement
+					is_target_in_variable_list = {
+						name = candidate_a_knights_tale_achievement
+						target = scope:recipient
+					}
+				}
+				set_global_variable = {
+					name = finished_a_knights_tale_achievement
+					value = yes
 				}
 			}
 		}

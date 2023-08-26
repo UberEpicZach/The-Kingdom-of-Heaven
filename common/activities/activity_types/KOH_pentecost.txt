@@ -1236,28 +1236,30 @@
 					process_tour_achievement_tallies_effect = yes
 					scope:activity = { progress_activity_phase_after = { months = 1 } }
 				}
-			}
-
-			on_enter_phase = {
 				if = {
 					limit = { 
-						this = scope:host
-						OR = {
-							has_character_flag = KOH_Pentecost_10_a
-							has_character_flag = KOH_Pentecost_10_b
+						this = scope:host 
+						scope:host = {
+							OR = {
+								has_character_flag = KOH_Pentecost_10_a
+								has_character_flag = KOH_Pentecost_10_b
+							}
 						} 
 					}
 					
-					trigger_event = KOH_Pentecost.12
+					scope:host = { trigger_event = KOH_Pentecost.12 }
 				}
 				if = {
 					limit = { 
 						this = scope:host
-						has_character_flag = KOH_Pentecost_10_c
+						scope:host = { has_character_flag = KOH_Pentecost_10_c }
 					}
 					
-					trigger_event = KOH_Pentecost.11
+					scope:host = { trigger_event = KOH_Pentecost.11 }
 				}
+			}
+
+			on_enter_phase = {
 			}
 
 			on_monthly_pulse = {
@@ -1288,7 +1290,7 @@
 					save_scope_as = cultural_festival_scope
 				}
 				tour_monthly_pulse_effect = {
-					ON_ACTION_POOL = on_tour_festival
+					ON_ACTION_POOL = on_pentecost_festival
 				}
 			}
 
@@ -1835,7 +1837,7 @@
    		   add = -5000
    		}
 		modifier = {
-			NOT = { scope:activity = { has_variable = invite_guests } }
+			NOT = { scope:host = { has_variable = invite_guests } }
 			add = -9000
 		}
 	}
@@ -2023,9 +2025,9 @@
 					limit = {
 						has_active_locale = tournament_locale_artisans
 						OR = {
-							has_current_phase = tournament_phase_melee
+							#has_current_phase = tournament_phase_melee
 							has_current_phase = tournament_phase_joust
-							has_current_phase = tournament_phase_duel
+							#has_current_phase = tournament_phase_duel
 						}
 					}
 					if = {
@@ -2130,7 +2132,7 @@
 					limit = {
 						has_active_locale = tournament_locale_artisans
 						OR = {
-							has_current_phase = tournament_phase_horse_race
+							#has_current_phase = tournament_phase_horse_race
 							has_current_phase = tournament_phase_joust
 						}
 					}
@@ -2166,7 +2168,7 @@
 				if = {
 					limit = {
 						has_active_locale = tournament_locale_artisans
-						has_current_phase = tournament_phase_archery
+						#has_current_phase = tournament_phase_archery
 					}
 					if = {
 						limit = {
@@ -2201,9 +2203,9 @@
 					limit = {
 						has_active_locale = tournament_locale_artisans
 						OR = {
-							has_current_phase = tournament_phase_melee
+							#has_current_phase = tournament_phase_melee
 							has_current_phase = tournament_phase_joust
-							has_current_phase = tournament_phase_duel
+							#has_current_phase = tournament_phase_duel
 						}
 					}
 					if = {
@@ -2457,7 +2459,7 @@
 	}
 
 	on_active_state_pulse = { # Character scope
-		trigger_event = { on_action = tournament_active_state_pulse }
+		trigger_event = { on_action = pentecost_tournament_active_state_pulse }
 	}
 
 	on_complete = { # Character scope
