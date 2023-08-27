@@ -1135,7 +1135,7 @@ KoH_holy_orders.102 = {
 				location = capital_province
 			}
 		}
-
+		set_global_variable = { name = assassin_holy_order_title value = title:k_nizari_state }
 		title:k_nizari_state.holder = {
 			every_vassal = {
 				every_courtier = {

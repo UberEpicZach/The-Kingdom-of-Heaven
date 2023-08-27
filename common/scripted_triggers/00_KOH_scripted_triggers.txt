@@ -79,11 +79,19 @@ wifelover = {
 assassins_mongol_trigger_koh = {
     NOT = { exists = global_var:mongols_provoke_assassins }
     exists = global_var:assassin_holy_order_title.holder
-    global_var:assassin_holy_order_title.holder = { has_government = assassins_government }
+    global_var:assassin_holy_order_title.holder = { has_government = assassin_government }
 	OR = {
 		AND = {
 			exists = title:e_mongol_empire
+			top_liege = title:e_mongol_empire.holder
+		}
+		AND = {
+			exists = title:e_mongol_empire
 			character_is_realm_neighbor = title:e_mongol_empire.holder
+		}
+		AND = {
+			exists = title:e_ilkhanate
+			top_liege = title:e_ilkhanate.holder
 		}
 		AND = {
 			exists = title:e_ilkhanate
