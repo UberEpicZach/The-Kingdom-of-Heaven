@@ -1382,9 +1382,8 @@ KOH_Pentecost.10 = {
 			}
 			every_in_list = {
 				list = invited
-				limit = { NOT = { this = scope:frederick } }
+				limit = { NOT = { has_character_flag = PentecostInvitesSent  this = scope:frederick } }
 				trigger_event = KOH_Pentecost.1001
-				
 			}
 		}
 	}
@@ -1395,8 +1394,20 @@ KOH_Pentecost.1001 = {
 	opening = KOH_Pentecost.1001.opening
 	desc = KOH_Pentecost.1001.desc
 	type = letter_event
+	cooldown = { years = 125 } # Should be replaced with a playthrough cooldown (but global vars are too heavy atm)
+
 
 	sender = scope:frederick
+
+	trigger = {
+		NOT = {
+			has_character_flag = PentecostInvitesSent
+		}
+	}
+
+	immediate = {
+		add_character_flag = PentecostInvitesSent
+	}
 
 	option = {
 		name = KOH_Pentecost.1001.a
@@ -2740,18 +2751,14 @@ KOH_Pentecost.25 = {
 		name = KOH_Pentecost.25.a #"Purchase Artwork"
         flavor = KOH_Pentecost.25.a.f #"Purchase one or more pieces of art from the exhibition."
         remove_short_term_gold = 50
-        every_courtier = {
-            limit = { 
-                is_adult = yes
-                has_trait = artist
-            }
+        scope:performer = {
             add_opinion = {
                 target = root
                 modifier = opinion_art_purchase
                 months = 36
             }
         }
-        add_artifact = religious_painting
+        #add_artifact = religious_painting
     }
 
     option = {

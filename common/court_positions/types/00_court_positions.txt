@@ -4396,9 +4396,9 @@ court_jester_court_position = {
 	is_shown_character = {
 		scope:employee = {
 			is_imprisoned = no
-		}
-		NOT = {
-			government_has_flag = government_is_assassin
+			NOT = {
+				government_has_flag = government_is_assassin
+			}
 		}
 	}
 
