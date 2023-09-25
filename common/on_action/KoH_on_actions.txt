@@ -7,17 +7,24 @@
 		KOH_assassins_start
 	}
 }
-senggum_jealousy={
+
+travel_event_tombola = {
+	events = {
+		KoH_balians_adventure.10
+		KoH_balians_adventure.101
+		KoH_balians_adventure.11
+	}
+}
+senggum_jealousy = {
 	trigger = {
 		this = character:303211
 		is_allied_to=scope:temujin
 		current_date > 1187.1.1
-		}
-random_events = {
+	}
+	random_events = {
 		50 = 0
-		100 = temujin.1000
-		
-		}
+		100 = temujin.1000	
+	}
 }
 yearly_playable_pulse = {
 	on_actions = {
