@@ -1,8 +1,8 @@
 ﻿KOHclothes = {
 
-    usage = game
-    selection_behavior = weighted_random
-	priority = 6
+	usage = game
+	selection_behavior = weighted_random
+	priority = 4
 	######################################################
 	################## KINGDOM OF HEAVEN #################
 	################## KINGDOM OF HEAVEN #################
@@ -97,18 +97,14 @@
 		weight = {
 			base = 0
 			modifier = {
-				add = 1230
+				add = 2230
 				portrait_baldwin_trigger = yes
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 			modifier = {
 				add = 5300
 				this = character:223523
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 		}
 	}
@@ -155,8 +151,8 @@
 				mode = add
 				gene = clothes
 				template = koh_jerusalem
-				value = 0.0
-				#range = { 1 1 } # For the randomness to work correctly
+				#value = 0.0
+				range = { 0 1 } # For the randomness to work correctly
 			}
 			morph = {
 				mode = modify_multiply
@@ -197,9 +193,7 @@
 						}
 					}
 				}
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 		}
 	}
@@ -293,16 +287,12 @@
 				add = 350
 				portrait_saladin_trigger = yes
 				is_female = no
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 			modifier = {
 				add = 450
 				this = character:226000
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 		}
 	}
@@ -386,17 +376,13 @@
 				portrait_wear_armor_trigger = yes
 				portrait_richard_trigger = yes
 				is_female = no
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 			modifier = {
 				add = 130
 				portrait_wear_armor_trigger = yes
 				this = character:204510
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 		}
 	}
@@ -481,9 +467,7 @@
 				add = 100
 				portrait_wear_armor_trigger = yes
 				portrait_ayyubid_clothing_trigger = yes
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 		}
 	}
@@ -582,9 +566,7 @@
 						}
 					}
 				}
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 		}
 	}
@@ -679,9 +661,7 @@
 			modifier = {
 				add = 180
 				this = character:223590
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 			modifier = {
 				add = 2000
@@ -730,9 +710,7 @@
 						}
 					}
 				}
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 		}
 	}
@@ -863,9 +841,7 @@
 				age >= 18
 				portrait_wear_armor_trigger = yes
 				has_religion = religion:christianity_religion
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 				AND = {
 					OR = {
 						liege ?= {
@@ -1073,9 +1049,7 @@
 						}
 					}
 				}
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 		}
 	}
@@ -1208,9 +1182,7 @@
 						}
 					}
 				}
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 		}
 	}
@@ -1354,9 +1326,7 @@
 						}
 					}
 				}
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 			}
 		}
 	}
@@ -1450,9 +1420,7 @@
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 				AND = {
 					OR = {
 						liege ?= {
@@ -1567,9 +1535,7 @@
 				age >= 18
 				portrait_wear_armor_trigger = yes
 				has_religion = religion:christianity_religion
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 				AND = {
 					OR = {
 						liege ?= {
@@ -1684,9 +1650,7 @@
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
-				NOT = {
-					exists = global_var:EPE_is_loaded
-				}
+				
 				AND = {
 					OR = {
 						liege ?= {
