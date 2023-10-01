@@ -18,9 +18,10 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
+			hunting_grounds_04
 			logging_camps_03
-			watchtowers_06
-			common_tradeport_04
+			cereal_fields_03
+			farm_estates_04
 		}
 	}
 }
@@ -28,6 +29,17 @@
 	holding = none
 	949.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			cereal_fields_01
+			hunting_grounds_01
+			guild_halls_04
+		}
 	}
 }
 
@@ -42,8 +54,8 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			common_tradeport_04
-			watchtowers_06
+			logging_camps
+			cereal_fields
 		}
 	}
 }
@@ -51,6 +63,17 @@
 	holding = none
 	1110.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_01
+			logging_camps_01
+			building_stables_04
+		}
 	}
 }
 2933 = {	#ARNSTEIN
@@ -78,11 +101,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watchtowers_06
+			logging_camps_03
+			barracks_04
 		}
 	}
 }
@@ -101,8 +122,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			cereal_fields_03
-			watermills_04
+			watchtowers_06
+			blacksmiths_01
+			pastures_03
 		}
 	}
 }
@@ -121,8 +143,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			guild_halls_03
-			pastures_03
+			logging_camps_03
+			watermills_04
+			farm_estates_04
 		}
 	}
 }
@@ -138,9 +161,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			common_tradeport_03
-			logging_camps_03
-			guild_halls_03
+			hunting_grounds_04
+			farm_estates_04
+			windmills_03
 		}
 	}
 }
@@ -157,15 +180,30 @@
 	1184.1.1 = {
 		effect = {
 			add_province_modifier = extra_building_slot
+			add_province_modifier = extra_building_slot
 		}
 		buildings = {
+			watermills_04
+			pastures_03
+			curtain_walls_01
+			cereal_fields_03
 			watchtowers_06
-			farm_estates_04
 		}
 	}
 }
 2934 = {	#SANGERHAUSEN
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			farm_estates_04
+			hunting_grounds_04
+			guild_halls_03
+		}
+	}
 }
 
 ###c_mersenburg
@@ -188,9 +226,13 @@
 	1184.1.1 = {
 		effect = {
 			add_province_modifier = extra_building_slot
+			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			guild_halls_03
+			barracks
+			curtain_walls
+			hunting_grounds
+			guild_halls
 		}
 	}
 }
@@ -199,9 +241,23 @@
 	1000.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			curtain_walls_01
+		}
+	}
 }
 3018 = {	#HALLE
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_01
+			windmills_03
+		}
+	}
 }
 
 ##d_angria ###################################
@@ -212,28 +268,45 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			guild_halls_03
-			building_stables_04
+			building_windmills_01
+			farm_estates_04
 		}
 	}
 }
 2840 = {	#MINDEN
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+		}
+	}
 }
 2837 = {	#BRUCHHAUSEN
 	holding = none
 	1185.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			pastures_01
+			watermills_04
+		}
+	}
 }
 2839 = {	#HOYA
 	holding = none
 	1130.1.1 = {
 		holding = castle_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			guild_halls_05
+		}
 	}
 }
 
@@ -244,17 +317,21 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			cereal_fields_03
-			farm_estates_04
+			curtain_walls_01
+			blacksmiths_01
 		}
 	}
 }
 2909 = {	#SCHWALENBERG
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			cereal_fields_01
+		}
+	}
 }
 2910 = {	#EVERSTEIN
 	holding = none
@@ -267,23 +344,41 @@
 	holding = church_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			hunting_grounds_04
-			windmills_03
-			logging_camps_03
+			barracks_04
+			pastures_01
 		}
 	}
 }
 2794 = {	#VERDEN
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_03
+			windmills_03
+			blacksmiths_01
+		}
+	}
 }
 2796 = {	#ZEVEN
 	holding = none
 	985.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_03
+			logging_camps_01
+			guild_halls_04
+		}
 	}
 }
 
@@ -294,12 +389,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			farm_estates_04
-			windmills_03
+			building_windmills_01
+			watermills_04
 		}
 	}
 }
@@ -317,12 +409,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			logging_camps_03
-			common_tradeport_03
+			guild_halls_03
+			barracks_04
 		}
 	}
 }
@@ -340,14 +429,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_03
-			logging_camps_03
-			windmills_03
-			hunting_grounds_04
+			pastures_02
+			curtain_walls_01
 		}
 	}
 }
@@ -356,6 +440,13 @@
 }
 2911 = {	#DASSEL
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			building_stables_04
+		}
+	}
 }
 
 ###c_oldenburg
@@ -365,17 +456,21 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_05
-			common_tradeport_03
+			watchtowers_06
+			pastures_01
 		}
 	}
 }
 2436 = {	#LEER
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+			cereal_fields_01
+		}
+	}
 }
 2442 = {	#TWISTRINGEN
 	holding = none
@@ -389,12 +484,8 @@
 	holding = church_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_03
-			watermills_04
+			pastures
 		}
 	}
 }
@@ -407,12 +498,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			guild_halls_03
-			common_tradeport_03
+			cereal_fields_03
+			windmills_03
 		}
 	}
 }
@@ -421,9 +509,26 @@
 	1070.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			pastures_01
+		}
+	}
 }
 2445 = {	#CLOPPENBURG
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds
+			guild_halls
+			pastures
+		}
+	}
 }
 
 ###c_tecklenburg
@@ -433,12 +538,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watermills_04
-			common_tradeport_03
+			curtain_walls_01
+			building_stables_04
 		}
 	}
 }
@@ -447,6 +549,13 @@
 }
 2439 = {	#MEPPEN
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+			barracks_04
+		}
+	}
 }
 2430 = {	#BENTHEIM
 	holding = none
@@ -457,14 +566,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_04
-			cereal_fields_03
-			common_tradeport_05
-			watermills_04
+			guild_halls_04
+			blacksmiths_01
 		}
 	}
 }
@@ -476,22 +580,35 @@
 	holding = church_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_04
-			watchtowers_06
-			watermills_04
-			hunting_grounds_04
+			guild_halls_05
+			farm_estates_04
 		}
 	}
 }
 2671 = {	#WARENDORF
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_03
+			farm_estates_04
+			cereal_fields_03
+		}
+	}
 }
 2672 = {	#AHLEN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			guild_halls_03
+		}
+	}
 }
 2674 = {	#SOEST
 	holding = none
@@ -509,9 +626,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			common_tradeport_03
-			watermills_04
-			watchtowers_06
+			windmills_03
+			farm_estates_04
+			pastures_02
 		}
 	}
 }
@@ -521,6 +638,17 @@
 2843 = {	#BUREN
 	holding = city_holding
 	#1298 castle
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			cereal_fields_03
+			building_windmills_01
+			logging_camps_01
+		}
+	}
 }
 
 ###c_paderborn
@@ -530,12 +658,8 @@
 	holding = church_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_04
-			watermills_04
+			hunting_grounds_04
 		}
 	}
 }
@@ -544,9 +668,23 @@
 	977.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+			logging_camps_03
+		}
+	}
 }
 2841 = {	#WIEDENBRUCK
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+			pastures_03
+		}
+	}
 }
 2842 = {	#LIPPSTADT
 	holding = none
@@ -565,7 +703,8 @@
 		}
 		buildings = {
 			pastures_03
-			watchtowers_06
+			curtain_walls_01
+			cereal_fields_03
 		}
 	}
 }
@@ -577,11 +716,25 @@
 	986.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_03
+			watermills_04
+		}
+	}
 }
 2904 = {	#CELLE
 	holding = none
 	985.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+			hunting_grounds_04
+		}
 	}
 }
 
@@ -592,12 +745,8 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_04
-			cereal_fields_03
+			farm_estates_04
 		}
 	}
 }
@@ -605,6 +754,13 @@
 	holding = none
 	950.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+			blacksmiths_01
+		}
 	}
 }
 
@@ -618,12 +774,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
 			farm_estates_04
-			watermills_04
+			pastures_01
 		}
 	}
 }
@@ -631,6 +784,13 @@
 	holding = none
 	959.1.1 = {
 		holding = castle_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			watchtowers_06
+		}
 	}
 }
 2805 = {	#AHRENSBURG
@@ -648,13 +808,8 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			pastures_03
-			guild_halls_03
-			logging_camps_03
+			pastures_02
 		}
 	}
 }
@@ -663,9 +818,27 @@
 	1150.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_03
+			curtain_walls_01
+			logging_camps_01
+		}
+	}
 }
 2905 = {	#GIFHORN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			logging_camps_03
+		}
+	}
 }
 
 ###c_stendal
@@ -679,13 +852,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_05
-			common_tradeport_04
-			farm_estates_04
+			guild_halls_03
+			windmills_03
 		}
 	}
 }
@@ -697,6 +866,17 @@
 	holding = none
 	1005.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			logging_camps_03
+			guild_halls_05
+			watermills_04
+		}
 	}
 }
 
@@ -715,18 +895,22 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			pastures_03
-			windmills_03
+			curtain_walls_01
+			guild_halls_05
 		}
 	}
 }
 3035 = {	#RADEBEUL
 	968.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+			curtain_walls_01
+		}
 	}
 }
 3034 = {	#GROSSENHAIN
@@ -743,12 +927,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_05
-			farm_estates_04
+			blacksmiths_01
+			cereal_fields_03
 		}
 	}
 }
@@ -756,6 +937,13 @@
 	holding = none
 	990.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			building_stables_04
+			hunting_grounds_01
+		}
 	}
 }
 3028 = {	#FREIBERG
@@ -777,12 +965,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_04
-			cereal_fields_03
+			pastures_01
+			hunting_grounds_04
 		}
 	}
 }
@@ -790,6 +975,12 @@
 	holding = none
 	1170.1.1 = {
 		holding = castle_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			farm_estates_04
+		}
 	}
 }
 
@@ -811,7 +1002,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			logging_camps_03
+			windmills_03
+			barracks_04
+			watchtowers_06
 		}
 	}
 }
@@ -819,6 +1012,17 @@
 	holding = none
 	1046.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			blacksmiths_01
+			watchtowers_06
+			curtain_walls_01
+		}
 	}
 }
 3017 = {	#DEVIN
@@ -846,9 +1050,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			watermills_04
-			farm_estates_04
+			watchtowers_06
 			windmills_03
+			pastures_02
 		}
 	}
 }
@@ -857,6 +1061,18 @@
 		975.1.1 = {
 			holding = city_holding
 		}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			blacksmiths_01
+			pastures_01
+			farm_estates_04
+			guild_halls_04
+		}
+	}
 }
 
 ###c_vogtland
@@ -877,8 +1093,10 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			pastures_03
-			common_tradeport_05
+			logging_camps_03
+			watermills_04
+			hunting_grounds_01
+			building_windmills_01
 		}
 	}
 }
@@ -887,17 +1105,45 @@
 	1150.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_01
+			farm_estates_04
+		}
+	}
 }
 3038 = {	#GERA
 	holding = none
 	995.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			farm_estates_04
+			hunting_grounds_04
+			cereal_fields_03
+		}
+	}
 }
 2997 = {	#CHEB
 	holding = none
 	1040.1.1 = {
 		holding = castle_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures
+			hunting_grounds
+		}
 	}
 }
 3001 = {	#REHAU
@@ -918,8 +1164,10 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			logging_camps_03
-			watchtowers_06
+			windmills_03
+			building_stables_04
+			guild_halls_03
+			building_windmills_01
 		}
 	}
 }
@@ -931,6 +1179,13 @@
 	holding = none
 	1150.1.1 = {
 		holding = castle_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			cereal_fields_01
+		}
 	}
 }
 
@@ -944,12 +1199,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			guild_halls_03
-			watermills_04
+			pastures_03
+			building_windmills_01
 		}
 	}
 }
@@ -957,6 +1209,12 @@
 	holding = none
 	1000.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_01
+		}
 	}
 }
 3136 = {	#SPREMBERG
@@ -974,12 +1232,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			logging_camps_03
-			common_tradeport_05
+			pastures_03
+			cereal_fields_03
 		}
 	}
 }
@@ -1002,12 +1257,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			pastures_03
-			watermills_04
+			windmills_03
+			cereal_fields_01
 		}
 	}
 }
@@ -1030,8 +1282,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			common_tradeport_05
-			barracks_04
+			watermills_04
+			building_windmills_01
+			watchtowers_06
 		}
 	}
 }
@@ -1057,8 +1310,10 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			pastures_03
+			logging_camps_03
 			farm_estates_04
+			blacksmiths_01
+			pastures_03
 		}
 	}
 }
@@ -1073,12 +1328,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watchtowers_06
-			watermills_04
+			pastures_03
+			windmills_03
 		}
 	}
 }
@@ -1101,8 +1353,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			guild_halls_03
-			watchtowers_06
+			windmills
+			pastures
+			logging_camps
 		}
 	}
 }
@@ -1110,6 +1363,17 @@
 	holding = none
 	1150.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			barracks_04
+			pastures_01
+			watchtowers_06
+		}
 	}
 }
 
@@ -1138,10 +1402,13 @@
 	1184.1.1 = {
 		effect = {
 			add_province_modifier = extra_building_slot
+			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			cereal_fields_03
-			logging_camps_03
+			building_stables
+			cereal_fields
+			guild_halls
+			pastures
 		}
 	}
 }
@@ -1160,12 +1427,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watermills_04
-			windmills_03
+			cereal_fields_03
+			logging_camps_01
 		}
 	}
 }
@@ -1183,12 +1447,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watermills_04
-			logging_camps_03
+			building_stables_04
+			cereal_fields_03
 		}
 	}
 }
@@ -1205,7 +1466,10 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			building_stables_04
+			watermills_04
+			pastures_03
+			curtain_walls_01
+			farm_estates_04
 		}
 	}
 }
@@ -1215,12 +1479,9 @@
 	religion = catholic
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			cereal_fields_03
-			hunting_grounds_04
+			windmills_03
+			watchtowers_06
 		}
 	}
 }
@@ -1243,14 +1504,20 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			common_tradeport_05
-			common_tradeport_04
-			watchtowers_06
+			pastures
+			watchtowers
 		}
 	}
 }
 2920 = {	#GOTTINGEN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_03
+			building_stables_04
+		}
+	}
 }
 
 ###c_gleichenstein
@@ -1260,20 +1527,29 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watchtowers_06
 			watermills_04
 		}
 	}
 }
 2928 = {	#EBELEBEN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_03
+			windmills_03
+		}
+	}
 }
 2921 = {	#MUHLHAUSEN
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+		}
+	}
 }
 
 ###c_orlamunde
@@ -1287,14 +1563,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			hunting_grounds_04
-			common_tradeport_03
-			cereal_fields_03
-			guild_halls_03
+			building_windmills_01
+			hunting_grounds_01
 		}
 	}
 }
@@ -1313,8 +1584,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			windmills_03
-			building_stables_04
+			hunting_grounds_04
+			pastures_01
+			logging_camps_01
 		}
 	}
 }
@@ -1329,13 +1601,8 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			windmills_03
-			watchtowers_06
-			hunting_grounds_04
+			pastures
 		}
 	}
 }
@@ -1344,17 +1611,43 @@
 	1066.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+			guild_halls_04
+		}
+	}
 }
 3006 = {	#GLEICHEN
 	holding = none
 	950.1.1 = {
 		holding = castle_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			guild_halls_03
+		}
+	}
 }
 3007 = {	#BEICHTINEN
 	holding = none
 	1100.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_05
+			hunting_grounds_04
+			pastures_03
+			blacksmiths_01
+		}
 	}
 }
 
@@ -1372,8 +1665,8 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			guild_halls_03
-			windmills_03
+			blacksmiths
+			guild_halls
 		}
 	}
 }
@@ -1398,12 +1691,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			farm_estates_04
-			barracks_04
+			logging_camps_03
+			guild_halls_05
 		}
 	}
 }
@@ -1413,13 +1703,9 @@
 	religion = catholic
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_05
-			common_tradeport_03
-			barracks_04
+			building_windmills_01
+			building_stables_04
 		}
 	}
 }
@@ -1433,12 +1719,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
 			hunting_grounds_04
-			pastures_03
+			guild_halls_05
 		}
 	}
 }
@@ -1448,12 +1731,9 @@
 	religion = catholic
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			guild_halls_03
-			windmills_03
+			curtain_walls_01
+			cereal_fields_03
 		}
 	}
 }
@@ -1472,24 +1752,48 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
 			pastures_03
+			blacksmiths_01
 		}
 	}
 }
 2854 = {	#LIMBURG
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			farm_estates_04
+			cereal_fields_01
+			logging_camps_03
+			watermills_04
+		}
+	}
 }
 2741 = {	#RUSSELSHEIM
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			hunting_grounds_04
+		}
+	}
 }
 2863 = {	#HANAU
 	holding = none
 	1143.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			building_stables_04
+		}
 	}
 }
 2856 = {	#KRONBERG
@@ -1506,12 +1810,8 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_05
-			hunting_grounds_04
+			windmills_03
 			cereal_fields_03
 		}
 	}
@@ -1531,12 +1831,8 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
 			pastures_03
-			hunting_grounds_04
 		}
 	}
 }
@@ -1548,21 +1844,30 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_04
-			watchtowers_06
-			building_stables_04
+			hunting_grounds_01
+			pastures_02
 		}
 	}
 }
 2742 = {	#SELIGENSTADT
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			watchtowers_06
+		}
+	}
 }
 2735 = {	#WEINHEIM
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+		}
+	}
 }
 
 ###c_worms
@@ -1576,8 +1881,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			pastures_03
-			logging_camps_03
+			hunting_grounds
+			guild_halls
+			curtain_walls
 		}
 	}
 }
@@ -1592,26 +1898,43 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			hunting_grounds_04
-			farm_estates_04
+			blacksmiths_01
+			logging_camps_03
 		}
 	}
 }
 2744 = {	#HOCKENHEIM
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+			pastures_03
+		}
+	}
 }
 2733 = {	#HEIDELBERG
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+		}
+	}
 }
 2724 = {	#WEISSENBURG
 	holding = none
 }
 2730 = {	#PIRMASENS
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			cereal_fields_03
+		}
+	}
 }
 
 ###c_vaihingen
@@ -1621,19 +1944,20 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			cereal_fields_03
-			logging_camps_03
-			building_stables_04
-			common_tradeport_05
+			watermills_04
+			hunting_grounds_04
 		}
 	}
 }
 2743 = {	#HEILBRONN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+		}
+	}
 }
 2772 = {	#LOWENSTEIN
 	culture = franconian
@@ -1642,12 +1966,9 @@
 	#1123
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			pastures_03
-			hunting_grounds_04
+			hunting_grounds_01
+			pastures_02
 		}
 	}
 }
@@ -1663,15 +1984,35 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
+			cereal_fields_03
 			watchtowers_06
+			hunting_grounds_01
 		}
 	}
 }
 2738 = {	#MOSBACH
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_stables
+			blacksmiths
+			guild_halls
+		}
+	}
 }
 2868 = {	#WERTHEIM
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+			logging_camps_01
+		}
+	}
 }
 
 ###c_kaiserlautern
@@ -1681,14 +2022,8 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_05
-			watermills_04
-			windmills_03
-			farm_estates_04
+			pastures
 		}
 	}
 }
@@ -1702,8 +2037,8 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			farm_estates_04
-			common_tradeport_04
+			watchtowers
+			pastures
 		}
 	}
 }
@@ -1713,11 +2048,9 @@
 	religion = catholic
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watchtowers_06
+			barracks_04
+			hunting_grounds_01
 		}
 	}
 }
@@ -1727,12 +2060,9 @@
 	religion = catholic
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_05
-			barracks_04
+			hunting_grounds_01
+			building_windmills_01
 		}
 	}
 }
@@ -1742,12 +2072,9 @@
 	religion = catholic
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watchtowers_06
-			cereal_fields_03
+			logging_camps_03
+			pastures_03
 		}
 	}
 }
@@ -1760,21 +2087,30 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
+			guild_halls_05
 			cereal_fields_03
-			barracks_04
-			hunting_grounds_04
 		}
 	}
 }
 2869 = {	#HOCHBERG
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			farm_estates_04
+			cereal_fields_01
+		}
+	}
 }
 2871 = {	#HAMMELBURG
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+		}
+	}
 }
 
 ###c_ansbach
@@ -1788,10 +2124,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			pastures_03
-			common_tradeport_03
-			common_tradeport_04
-			barracks_04
+			logging_camps_01
+			watchtowers_06
+			curtain_walls_01
 		}
 	}
 }
@@ -1800,6 +2135,13 @@
 	1103.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			watermills_04
+		}
+	}
 }
 2880 = {	#TRUBENDING
 	culture = franconian
@@ -1807,12 +2149,8 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			pastures_03
-			barracks_04
+			guild_halls_05
 		}
 	}
 }
@@ -1824,16 +2162,21 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			pastures_03
+			cereal_fields_01
+			logging_camps_03
 		}
 	}
 }
 2995 = {	#LICHTENFELS
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			blacksmiths_01
+		}
+	}
 }
 
 ###c_hohenlohe
@@ -1847,13 +2190,24 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			common_tradeport_03
-			watchtowers_06
+			pastures
+			curtain_walls
 		}
 	}
 }
 2872 = {	#WEINSBERG
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			logging_camps_03
+			pastures_01
+			blacksmiths_01
+		}
+	}
 }
 2887 = {	#HALL
 	holding = none
@@ -1877,8 +2231,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			watchtowers_06
-			logging_camps_03
+			watchtowers
+			pastures
+			farm_estates
 		}
 	}
 }
@@ -1890,6 +2245,13 @@
 	1000.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			guild_halls_03
+		}
+	}
 }
 
 ###c_bamberg
@@ -1899,23 +2261,44 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_03
-			hunting_grounds_04
+			curtain_walls_01
+			hunting_grounds_01
 		}
 	}
 }
 2992 = {	#GREIFFENST
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			logging_camps
+			pastures
+			windmills
+		}
+	}
 }
 2873 = {	#CASEL
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures
+		}
+	}
 }
 2890 = {	#IPHOFEN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			watermills_04
+		}
+	}
 }
 
 ###c_nordlingen
@@ -1929,8 +2312,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			pastures_03
-			farm_estates_04
+			logging_camps_01
+			building_stables_04
+			guild_halls_04
 		}
 	}
 }
@@ -1939,6 +2323,13 @@
 }
 2888 = {	#CRAILSHEIM
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+			guild_halls_03
+		}
+	}
 }
 
 ###c_wiltberg
@@ -1948,11 +2339,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			logging_camps_03
+			guild_halls_04
+			pastures_03
 		}
 	}
 }
@@ -1962,12 +2351,9 @@
 	religion = catholic
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			hunting_grounds_04
-			guild_halls_03
+			logging_camps_01
+			pastures_03
 		}
 	}
 }
@@ -1984,7 +2370,10 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			logging_camps_03
+			blacksmiths_01
+			hunting_grounds_01
+			barracks_04
+			curtain_walls_01
 		}
 	}
 }
@@ -1997,13 +2386,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
 			guild_halls_03
-			building_stables_04
-			common_tradeport_03
+			watchtowers_06
 		}
 	}
 }
@@ -2016,16 +2401,21 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_03
+			watchtowers_06
+			cereal_fields_03
 		}
 	}
 }
 2915 = {	#HOFGEISMAR
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			watchtowers_06
+			pastures_03
+		}
+	}
 }
 2922 = {	#MUNDEN
 	holding = church_holding
@@ -2033,11 +2423,9 @@
 	religion = catholic
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			windmills_03
+			building_stables_04
+			guild_halls_04
 		}
 	}
 }
@@ -2049,19 +2437,20 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			guild_halls_03
-			windmills_03
-			logging_camps_03
-			pastures_03
+			building_stables_04
+			cereal_fields_01
 		}
 	}
 }
 2923 = {	#HERSFELD
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			windmills_03
+		}
+	}
 }
 2867 = {	#LAUTERBACH
 	holding = none
@@ -2072,12 +2461,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			windmills_03
-			pastures_03
+			logging_camps_03
+			guild_halls_03
 		}
 	}
 }
@@ -2089,19 +2475,21 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watchtowers_06
-			guild_halls_03
-			logging_camps_03
-			common_tradeport_05
+			pastures_03
+			cereal_fields_01
 		}
 	}
 }
 2853 = {	#SOLMS
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+			pastures_02
+		}
+	}
 }
 2851 = {	#DIEZ
 	holding = none
@@ -2118,7 +2506,10 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			pastures_03
+			cereal_fields_01
+			windmills_03
+			pastures_01
+			building_windmills_01
 		}
 	}
 }
@@ -2135,8 +2526,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			common_tradeport_04
-			windmills_03
+			hunting_grounds_01
+			blacksmiths_01
+			cereal_fields_01
 		}
 	}
 }
@@ -2150,10 +2542,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			watchtowers_06
-			logging_camps_03
-			cereal_fields_03
-			building_stables_04
+			guild_halls_04
+			blacksmiths_01
+			building_windmills_01
 		}
 	}
 }
@@ -2167,9 +2558,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			common_tradeport_04
-			common_tradeport_03
-			farm_estates_04
+			logging_camps_01
+			windmills_03
+			barracks_04
 		}
 	}
 }
@@ -2182,12 +2573,9 @@
 	holding = church_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			windmills_03
-			guild_halls_03
+			pastures_01
+			cereal_fields_01
 		}
 	}
 }
@@ -2203,12 +2591,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watermills_04
-			farm_estates_04
+			logging_camps_03
+			watchtowers_06
 		}
 	}
 }
@@ -2220,13 +2605,8 @@
 	holding = church_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			barracks_04
-			cereal_fields_03
-			building_stables_04
+			watchtowers_06
 		}
 	}
 }
@@ -2240,8 +2620,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			pastures_03
-			hunting_grounds_04
+			windmills_03
+			blacksmiths_01
+			curtain_walls_01
 		}
 	}
 }
@@ -2253,17 +2634,20 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			guild_halls_03
-			common_tradeport_05
+			hunting_grounds
 		}
 	}
 }
 2461 = {	#SCHWYZ
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			watchtowers_06
+			pastures_02
+		}
+	}
 }
 3107 = {	#ENGELBERG
 	holding = none
@@ -2271,6 +2655,12 @@
 }
 2050 = {	#BASEL
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+		}
+	}
 }
 
 ##d_alsace ###################################
@@ -2281,11 +2671,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watchtowers_06
+			pastures_02
+			building_stables_04
 		}
 	}
 }
@@ -2293,6 +2681,13 @@
 	holding = none
 	1120.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			windmills_03
+			hunting_grounds_01
+		}
 	}
 }
 2723 = {	#LICHTBERG
@@ -2306,17 +2701,20 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			windmills_03
-			building_stables_04
+			hunting_grounds_01
+			cereal_fields_01
 		}
 	}
 }
 2750 = {	#SANKT BLASIEN
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+		}
+	}
 }
 2752 = {	#OFFENBURG
 	holding = none
@@ -2337,14 +2735,21 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
+			barracks_04
 			watchtowers_06
-			guild_halls_03
-			hunting_grounds_04
+			pastures_01
 		}
 	}
 }
 2719 = {	#SELESTAT
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			watermills_04
+		}
+	}
 }
 
 ###c_sundgau
@@ -2354,11 +2759,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watermills_04
+			guild_halls_04
+			building_stables_04
 		}
 	}
 }
@@ -2368,12 +2771,8 @@
 	religion = catholic
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watermills_04
-			cereal_fields_03
+			pastures_01
 		}
 	}
 }
@@ -2386,12 +2785,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_03
-			building_stables_04
+			windmills_03
+			watermills_04
 		}
 	}
 }
@@ -2408,9 +2804,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			windmills_03
-			common_tradeport_03
-			farm_estates_04
+			building_windmills_01
+			cereal_fields_01
+			logging_camps_01
 		}
 	}
 }
@@ -2423,11 +2819,8 @@
 	holding = city_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			farm_estates_04
+			pastures_02
 			windmills_03
 		}
 	}
@@ -2437,17 +2830,40 @@
 	1150.1.1 = {
 		holding = castle_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+		}
+	}
 }
 2770 = {	#HELFENSTEIN
 	holding = none
 	1066.1.1 = {
 		holding = castle_holding
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			barracks_04
+			building_stables_04
+			curtain_walls_01
+		}
+	}
 }
 2766 = {	#SCHELKLINGEN
 	holding = none
 	1127.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+		}
 	}
 }
 
@@ -2462,8 +2878,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			common_tradeport_03
-			watchtowers_06
+			watermills_04
+			hunting_grounds_04
+			guild_halls_04
 		}
 	}
 }
@@ -2471,6 +2888,13 @@
 	holding = none
 	1066.1.1 = {	#1077
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			building_windmills_01
+		}
 	}
 }
 2774 = {	#BERGE
@@ -2488,12 +2912,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			farm_estates_04
-			watchtowers_06
+			barracks_04
+			curtain_walls_01
 		}
 	}
 }
@@ -2503,14 +2924,8 @@
 	religion = catholic
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			cereal_fields_03
-			building_stables_04
-			common_tradeport_05
-			guild_halls_03
+			blacksmiths_01
 		}
 	}
 }
@@ -2520,11 +2935,8 @@
 	religion = catholic
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watchtowers_06
+			pastures_01
 		}
 	}
 }
@@ -2536,12 +2948,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			cereal_fields_03
 			windmills_03
+			curtain_walls_01
 		}
 	}
 }
@@ -2550,11 +2959,29 @@
 	1050.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			pastures_01
+			farm_estates_04
+		}
+	}
 }
 2747 = {	#CALW
 	holding = none
 	1037.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds_01
+			windmills_03
+			watermills_04
+		}
 	}
 }
 
@@ -2565,12 +2992,9 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
 			farm_estates_04
-			common_tradeport_04
+			pastures_03
 		}
 	}
 }
@@ -2582,6 +3006,12 @@
 	1000.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+		}
+	}
 }
 
 ###c_hohenberg
@@ -2591,19 +3021,24 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_03
-			barracks_04
-			farm_estates_04
-			common_tradeport_05
+			building_windmills_01
 		}
 	}
 }
 2756 = {	#ROTTWEIL
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			farm_estates_04
+			logging_camps_01
+			hunting_grounds_01
+		}
+	}
 }
 
 ###c_furstenberg
@@ -2613,13 +3048,8 @@
 	holding = castle_holding
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			pastures_03
-			farm_estates_04
-			logging_camps_03
+			guild_halls_03
 		}
 	}
 }

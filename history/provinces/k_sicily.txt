@@ -30,27 +30,26 @@
 	1184.1.1 = {
 		effect = {
 			add_province_modifier = extra_building_slot
-		}
-		effect = {
 			add_province_modifier = extra_building_slot
-		}
-			add_province_modifier = extra_building_slot
-			# add_province_modifier = extra_building_slot
-			# add_province_modifier = extra_building_slot
-			# add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			common_tradeport_06
-			curtain_walls_04
-			farm_estates_05
-			curtain_walls_05
-			castle_02
-			city_02
+			guild_halls_05
+			cereal_fields_01
+			pastures_02
+			windmills_03
+			hunting_grounds_04
 		}
 	}
 }
 2636 = {	#TRAPANI
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			farm_estates_04
+			windmills_03
+		}
+	}
 }
 2645 = {	#CALATAFIMI
 	holding = none
@@ -60,6 +59,13 @@
 	holding = none
 	1066.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			logging_camps_03
+		}
 	}
 }
 
@@ -82,18 +88,35 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			guild_halls_03
-			common_tradeport_03
-			watchtowers_06
+			pastures_01
 			guild_halls_05
+			curtain_walls_01
 		}
 	}
 }
 2634 = {	#CEFALU
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+			blacksmiths_01
+		}
+	}
 }
 2639 = {	#CATANIA
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds_04
+			pastures_02
+			cereal_fields_01
+		}
+	}
 }
 
 ###c_siracusa
@@ -122,10 +145,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			cereal_fields_03
-			common_tradeport_05
-			guild_halls_05
-			windmills_03
+			pastures_02
+			logging_camps_03
+			building_stables_04
 		}
 	}
 }
@@ -134,6 +156,13 @@
 }
 2642 = {	#CALTAGIRONE
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			guild_halls_05
+		}
+	}
 }
 
 ###c_agrigento
@@ -151,13 +180,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
 			pastures_03
-			windmills_03
-			watermills_04
+			hunting_grounds_04
 		}
 	}
 }
@@ -166,6 +191,20 @@
 }
 2641 = {	#CALTANISETTA
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_03
+			curtain_walls_01
+			cereal_fields_03
+			building_stables_04
+			blacksmiths_01
+		}
+	}
 }
 
 ###c_malta
@@ -187,8 +226,10 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
+			guild_halls_04
+			logging_camps_03
 			pastures_03
-			guild_halls_05
+			building_stables_04
 		}
 	}
 }
@@ -206,8 +247,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			guild_halls_05
-			guild_halls_03
+			barracks_04
+			curtain_walls_01
+			logging_camps_03
 		}
 	}
 }
@@ -216,16 +258,41 @@
 }
 2607 = {	#ISERNIA
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			pastures_02
+		}
+	}
 }
 2615 = {	#MELFI
 	holding = none
 	1045.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			farm_estates_04
+			hunting_grounds_01
+		}
+	}
 }
 8757 = {	#ARIANO
 	holding = city_holding
 	#Ancient city
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			curtain_walls_01
+			guild_halls_03
+			hunting_grounds_04
+		}
+	}
 }
 
 ###c_foggia
@@ -243,12 +310,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_05
-			building_stables_04
+			pastures_02
+			barracks_04
 		}
 	}
 }
@@ -257,6 +321,13 @@
 }
 8758 = {	#VIESTE
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+			pastures_03
+		}
+	}
 }
 
 ##d_capua ###################################
@@ -268,18 +339,20 @@
 	1098.1.1 = { culture = sicilian }
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			guild_halls_05
-			cereal_fields_03
-			pastures_03
+			logging_camps
 		}
 	}
 }
 2593 = {	#GAETA
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_02
+			logging_camps_03
+		}
+	}
 }
 2602 = {	#CASSINO
 	holding = none
@@ -296,10 +369,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
+			watermills_04
 			pastures_03
-			common_tradeport_03
-			building_stables_04
-			common_tradeport_04
+			cereal_fields_01
 		}
 	}
 }
@@ -333,8 +405,8 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			watchtowers_06
-			guild_halls_04
+			guild_halls
+			farm_estates
 		}
 	}
 }
@@ -346,6 +418,13 @@
 			guild_halls_01
 		}
 	}
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			guild_halls_05
+		}
+	}
 }
 8756 = {	#AVERSA
 	holding = none
@@ -353,6 +432,13 @@
 		holding = city_holding
 		#Founded in 1030
 		#Bishopric since 1053
+	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+			farm_estates_04
+		}
 	}
 }
 
@@ -375,14 +461,25 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			logging_camps_03
-			barracks_04
-			common_tradeport_05
+			guild_halls_05
+			cereal_fields_03
+			pastures_03
 		}
 	}
 }
 2614 = {	#SIPONTO
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_03
+			barracks_04
+			watchtowers_06
+		}
+	}
 }
 2618 = {	#VENOSA
 	holding = none
@@ -390,6 +487,18 @@
 }
 2617 = {	#ACERENZA
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_windmills_01
+			pastures_03
+			farm_estates_04
+			cereal_fields_03
+		}
+	}
 }
 
 ###c_bari
@@ -400,22 +509,30 @@
 	1057.1.1 = { culture = sicilian }
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			guild_halls_04
-			barracks_04
-			guild_halls_05
-			common_tradeport_04
+			building_windmills_01
 		}
 	}
 }
 2624 = {	#MATERA
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			cereal_fields_03
+		}
+	}
 }
 2621 = {	#TARANTO
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			curtain_walls_01
+		}
+	}
 }
 
 ###c_lecce
@@ -429,12 +546,9 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			logging_camps_03
-			hunting_grounds_04
+			guild_halls_04
+			cereal_fields_01
 		}
 	}
 }
@@ -449,13 +563,8 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			guild_halls_05
-			pastures_03
-			hunting_grounds_04
+			guild_halls
 		}
 	}
 }
@@ -485,18 +594,20 @@
 	1091.1.1 = { culture = sicilian	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			guild_halls_04
-			common_tradeport_05
-			pastures_03
+			windmills_03
+			building_windmills_01
 		}
 	}
 }
 2613 = {	#MARATEA
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+		}
+	}
 }
 2616 = {	#POTENZA
 	holding = none
@@ -513,12 +624,9 @@
 	1091.1.1 = { culture = sicilian	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			common_tradeport_04
-			building_stables_04
+			pastures_03
+			building_windmills_01
 		}
 	}
 }
@@ -536,21 +644,31 @@
 	1074.1.1 = { religion = catholic }
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			watermills_04
-			hunting_grounds_04
+			pastures_02
+			guild_halls_05
 		}
 	}
 }
 2626 = {	#SQUILLUCE
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_01
+			guild_halls_05
+		}
+	}
 }
 8751 = {	#TROPEA
 	holding = church_holding
 	#set as church_holding to have all 3 holding types
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+		}
+	}
 }
 
 ###c_cosenza
@@ -568,9 +686,9 @@
 			add_province_modifier = extra_building_slot
 		}
 		buildings = {
-			guild_halls_03
-			hunting_grounds_04
-			pastures_03
+			cereal_fields_01
+			hunting_grounds_01
+			watchtowers_06
 		}
 	}
 }
@@ -578,6 +696,12 @@
 	holding = none
 	1064.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls
+		}
 	}
 }
 8752 = {	#BELVEDERE
@@ -595,17 +719,28 @@
 	}
 
 	1184.1.1 = {
-		effect = {
-			add_province_modifier = extra_building_slot
-		}
 		buildings = {
-			guild_halls_03
+			farm_estates_04
+			pastures_01
 		}
 	}
 }
 2625 = {	#COTRONE
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+			pastures_01
+		}
+	}
 }
 8753 = {	#CATANZARO
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+		}
+	}
 }

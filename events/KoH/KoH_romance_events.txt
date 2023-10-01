@@ -647,9 +647,9 @@ KOH_balian_women.2 = {
 
 		hidden_effect = {
 			trigger_event = {
-						id = KoH_balians_adventure.22
-						days = 5
-					}
+				id = KoH_balians_adventure.22
+				days = 5
+			}
 		}
 	}
 }
@@ -882,9 +882,22 @@ KOH_balian_women.7 = {
 
 		hidden_effect = {
 			trigger_event = {
-						id = KOH_balian_women.8
-						days = 10
+				id = KOH_balian_women.8
+				days = 60
 			}
+		}
+	}
+
+	after = {
+		start_travel_plan = {
+			destination = title:b_ibelin.title_province
+			return_trip = no
+			players_use_planner = no
+			#companion = scope:companion1
+			#companion = scope:companion2
+			#companion = scope:companion3
+			on_arrival_event = travel_completion_event.1000
+			on_arrival_destinations = last
 		}
 	}
 }
@@ -1004,8 +1017,8 @@ KOH_balian_women.9 = {
 
 		hidden_effect = {
 			trigger_event = {
-						id = KOH_balian_women.10
-						days = 10
+				id = KOH_balian_women.10
+				days = 60
 			}
 		}
 	}
@@ -1048,9 +1061,9 @@ KOH_balian_women.10 = {
 
 		hidden_effect = {
 			trigger_event = {
-						id = KOH_balian_women.11
-						days = 5
-					}
+				id = KOH_balian_women.11
+				days = 5
+			}
 		}
 	}
 
@@ -1061,7 +1074,7 @@ KOH_balian_women.10 = {
 
 		trigger_event = {
 			id = KOH_balian_women.12
-				days = 5
+			days = 5
 		}
 	}
 }
