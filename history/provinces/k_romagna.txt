@@ -22,6 +22,16 @@
 }
 2549 = {	#IMOLA
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures
+			guild_halls
+		}
+	}
 }
 2548 = {	#FORLI
 	holding = city_holding
@@ -176,6 +186,13 @@
 	holding = none
 	1010 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			watermills_04
+		}
 	}
 }
 
@@ -487,6 +504,13 @@
 
 8759 = {	#AGNONE
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			guild_halls_05
+		}
+	}
 }
 
 ###c_abruzzi
@@ -510,6 +534,17 @@
 }
 2595 = {	#ATRI
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			watermills_04
+			pastures_03
+			hunting_grounds_04
+		}
+	}
 }
 
 ##d_latium ###################################
@@ -548,9 +583,27 @@
 }
 2576 = {	#OSTIA
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+			farm_estates_04
+		}
+	}
 }
 2577 = {	#VATICAN
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			watchtowers
+			guild_halls
+			pastures
+		}
+	}
 }
 2578 = {	#PALO
 	holding = none
@@ -560,6 +613,13 @@
 }
 2579 = {	#FARFA
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_01
+			hunting_grounds_04
+		}
+	}
 }
 
 ###c_viterbo
@@ -582,9 +642,32 @@
 }
 2573 = {	#SUTRI
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			curtain_walls_01
+			barracks_04
+			building_windmills_01
+		}
+	}
 }
 2571 = {	#CIVITAVECCHIA
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_stables_04
+			pastures_03
+			hunting_grounds_01
+			guild_halls_03
+		}
+	}
 }
 
 ###c_tivoli
@@ -606,10 +689,34 @@
 }
 2590 = {	#VELLETRI
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+		}
+	}
 }
 2591 = {	#SEGNI
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			barracks_04
+			hunting_grounds_01
+			guild_halls_05
+			logging_camps_01
+		}
+	}
 }
 2592 = {	#TERRACINA
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+		}
+	}
 }
