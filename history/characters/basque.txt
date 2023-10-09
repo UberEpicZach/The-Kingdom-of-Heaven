@@ -1,4 +1,109 @@
-﻿7562 = {
+﻿qasi.0001 = {
+	name = "AbU__Tawr"
+	dynasty = 12293
+
+	father = 73808
+
+	religion = muwalladi
+	culture = basque
+
+	720.1.1 = {
+		birth = yes
+	}
+	782.1.1 = {
+		death = yes
+	}
+}
+
+qasi.0002 = {
+	name = "AbU__Salama"
+	dynasty = 12293
+
+	father = 73808
+
+	religion = muwalladi
+	culture = basque
+
+	720.1.1 = {
+		birth = yes
+	}
+	790.1.1 = {
+		death = yes
+	}
+}
+
+qasi.0003 = {
+	name = "Yunus"
+	dynasty = 12293
+
+	father = 73810
+	mother = 73811
+
+	religion = muwalladi
+	culture = basque
+
+	792.1.1 = {
+		birth = yes
+	}
+	851.1.1 = {
+		death = yes
+	}
+}
+
+qasi.0004 = {
+	name = "Yuwartas"
+	dynasty = 12293
+
+	father = 73810
+	mother = 73811
+
+	religion = muwalladi
+	culture = basque
+
+	794.1.1 = {
+		birth = yes
+	}
+	862.1.1 = {
+		death = yes
+	}
+}
+
+qasi.0005 = {
+	name = "Lubb"
+	dynasty = 12293
+
+	father = 73810
+	mother = 73811
+
+	religion = muwalladi
+	culture = basque
+
+	798.1.1 = {
+		birth = yes
+	}
+	865.1.1 = {
+		death = yes
+	}
+}
+
+qasi.0006 = {
+	name = "Garcia"
+	dynasty = 12293
+
+	father = 73810
+	mother = 73811
+
+	religion = muwalladi
+	culture = basque
+
+	800.1.1 = {
+		birth = yes
+	}
+	851.1.1 = {
+		death = yes
+	}
+}
+7562 = {
 	name = "Antso" # Sanche (IV) Garcia de Gascogne, Duke of Gascogne (920-955) & Count of Bordeaux et al. (920-955)
 	dynasty = 388
 	religion = catholic
@@ -434,7 +539,7 @@
 	religion = catholic
 	culture = basque
 	trait = brave
-	trait = hunter_1
+	trait = lifestyle_hunter
 	trait = education_stewardship_1
 
 	father = 70129 # Count Fortún Ochoa of Asturias de Santillana
@@ -993,7 +1098,6 @@
 	stewardship = 4
 	religion = catholic
 	culture = basque
-	trait = blademaster_1
 	trait = wrathful
 	trait = education_martial_1
 
@@ -1002,6 +1106,18 @@
 	}
 	787.1.1 = {
 		add_spouse = 73811 # Óneca
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+                trait = lifestyle_blademaster
+                value = {
+                    integer_range = {
+                        min = small_lifestyle_random_xp_low
+                        max = small_lifestyle_random_xp_high
+                    }
+                }
+            }
+		}
 	}
 	796.1.1 = {
 		death = yes
@@ -1057,7 +1173,10 @@
 	}
 	851.7.1 = {
 		effect = {
-			set_relation_rival = { reason = rival_historical target = character:73818 }  # Musa ibn Musa and García Íñiguez raided the others land constantly
+			set_relation_rival = {
+				target = character:73818
+				reason = rival_historical
+			}# Musa ibn Musa and García Íñiguez raided the others land constantly
 		}
 	}
 	876.1.1 = {
@@ -4369,7 +4488,10 @@
 	}
 	863.1.1 = {
 		effect = {
-			set_relation_rival = { reason = rival_historical target = character:yemeni0030 } # Historically actually this guy's son, Yahya Tuyyibid (the emir used the Tuyyibid to try to stop the ibn Musa power), but the son isn't in power yet, so we make it just the current Tuyyibid.
+			set_relation_rival = {
+				target = character:yemeni0030
+				reason = rival_historical
+			}# Historically actually this guy's son, Yahya Tuyyibid (the emir used the Tuyyibid to try to stop the ibn Musa power), but the son isn't in power yet, so we make it just the current Tuyyibid.
 		}
 	}
 	867.1.1 = {
@@ -4382,7 +4504,10 @@
 			# Plus a bit of spending money, so he can buy a duchy.
 			add_gold = 150
 			# And he's not on great terms with the incumbent rulers of Zaragoza.
-			set_relation_rival = { reason = rival_historical target = character:levantine0008 }
+			set_relation_rival = {
+				target = character:levantine0008
+				reason = rival_historical
+			}
 		}
 	}
 	875.4.27 = {
@@ -4476,7 +4601,10 @@
 	}
 	867.7.1 = {
 		effect = {
-			set_relation_rival = { reason = rival_historical target = character:73815 }  # Isma'il ibn Musa and his nephew Muhammad ibn Lubb fought for the headship of their house and control of their lands
+			set_relation_rival = {
+				target = character:73815
+				reason = rival_historical
+			} # Isma'il ibn Musa and his nephew Muhammad ibn Lubb fought for the headship of their house and control of their lands
 		}
 	}
 	873.1.1 = {
@@ -4701,7 +4829,10 @@
 	}
 	867.7.1 = {
 		effect = {
-			set_relation_rival = { reason = rival_historical target = character:73815 }  # Isma'il ibn Furtun and his cousin Muhammad ibn Lubb fought for the control of their lands
+			set_relation_rival = {
+				target = character:73815
+				reason = rival_historical
+			} # Isma'il ibn Furtun and his cousin Muhammad ibn Lubb fought for the control of their lands
 		}
 	}
 	869.1.1 = {
@@ -4876,7 +5007,10 @@
 	}
 	1055.1.1 = {
 		effect = {
-			set_relation_rival = { reason = rival_historical target = character:107500 }  #He was in constant and various conflicts with Castile culminating in the so-called War of the Three Sanchos (1067-1068)
+			set_relation_rival = {
+				target = character:107500
+				reason = rival_historical
+			} #He was in constant and various conflicts with Castile culminating in the so-called War of the Three Sanchos (1067-1068)
 			set_relation_friend = { reason = friend_generic_history target = character:110500 }  #Gave land to his uncle King Ramiro I because of, among other things, friendship
 			set_relation_lover = { reason = lover_history target = character:108520 }  #Had a lover named Jimena
 		}
@@ -4922,6 +5056,7 @@
 }
 106011 = {
 	name = "Ramiro" # Ramiro Garcés, Count of Nájera (1059-1063)
+	dna = 106011_ramiro
 	dynasty = 442 # Jimena Dynasty
 	martial = 7
 	diplomacy = 8
@@ -5466,7 +5601,7 @@
 		birth = yes
 	}
 	1073.1.1 = {
-		trait = education_diplomacy_1
+		add_trait = education_diplomacy_1
 	}
 	1108.1.1 = {
 		death = yes
@@ -7373,6 +7508,2624 @@
 		death = yes
 	}
 }
+
+basque0001 = {
+	name = "Nunila" # Nunila Jimena, wife of King Fruela II of León (70030 - asturleonese.txt)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_intrigue_1
+
+	892.1.1 = {
+		birth = yes
+	}
+	913.11.25 = {
+		death = yes
+	}
+}
+
+basque0002 = {
+	name = "Urraka" # Urraca ibn Abdallah, wife of King Fruela II of León (70030 - asturleonese.txt)
+	female = yes
+	dynasty_house = house_musa # Banu Musa
+	religion = mozarabic_church
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 200027 # Abdallah ibn Muhammad
+
+	901.1.1 = {
+		birth = yes
+	}
+	951.1.1 = {
+		death = yes
+	}
+}
+
+basque0003 = {
+	name = "Bermudo" # Bermudo López, Count of Viscaya (768-793)
+	dynasty = 8750 # Álava Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = 200158 # Count Lope of Viscaya
+	mother = 200060 # Countess Ermesinda Froilaz (visigothic.txt)
+
+	748.1.1 = {
+		birth = yes
+	}
+	793.1.1 = {
+		death = yes
+	}
+}
+
+basque0004 = {
+	name = "Hermesenda" # Ermesinda López, wife of Lope de Arrosta (200061)
+	female = yes
+	dynasty = 8750 # Álava Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 200158 # Count Lope of Viscaya
+	mother = 200060 # Countess Ermesinda Froilaz (visigothic.txt)
+
+	750.1.1 = {
+		birth = yes
+	}
+	795.1.1 = {
+		death = yes
+	}
+}
+
+basque0005 = {
+	name = "Nepociano" # Nepociano López
+	dynasty = 8750 # Álava Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = 200158 # Count Lope of Viscaya
+	mother = 200060 # Countess Ermesinda Froilaz (visigothic.txt)
+
+	752.1.1 = {
+		birth = yes
+	}
+	800.1.1 = {
+		death = yes
+	}
+}
+
+basque0006 = {
+	name = "Diego" # Diego Nepociániz
+	dynasty = 8750 # Álava Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = basque0005 # Nepociano López
+
+	775.1.1 = {
+		birth = yes
+	}
+	825.1.1 = {
+		death = yes
+	}
+}
+
+basque0007 = {
+	name = "Nepociano" # Nepociano Díaz, King of Asturias (842-843) & Count of Amaya, Asturias de Oviedo, Asturias de Santillana, Benavente, León, Pravia & Zamora (842-843)
+	dynasty = 8750 # Álava Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = 200158 # Count Lope of Viscaya
+	mother = 200060 # Countess Ermesinda Froilaz (visigothic.txt)
+
+	800.1.1 = {
+		birth = yes
+	}
+	843.1.1 = {
+		add_trait = blind # Blinded by King Ramiro I of Asturias
+	}
+	850.1.1 = {
+		death = {
+			death_reason = blind
+		}
+	}
+}
+
+basque0008 = {
+	name = "Egilo_n" # Egilón de Álava, Count of Viscaya (862-867)
+	#dynasty = 8750 # Álava Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_2
+
+	831.1.1 = {
+		birth = yes
+	}
+	851.7.1 = {
+		employer = 70292 # King García I of Navarra
+	}
+	880.1.1 = {
+		death = yes
+	}
+}
+
+basque0009 = {
+	name = "Gartzia" # García Ennecones
+	dynasty = ennecones # Ennecones Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	918.1.1 = {
+		birth = yes
+	}
+	938.1.1 = {
+		add_spouse = galician0042 # Elvira Menéndez (galician.txt)
+	}
+	968.1.1 = {
+		death = yes
+	}
+}
+
+basque0010 = {
+	name = "Ximena" # Jimena Garcés
+	female = yes
+	dynasty = ennecones # Ennecones Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = basque0009 # García Ennecones
+	mother = galician0042 # Elvira Menéndez (galician.txt)
+
+	939.1.1 = {
+		birth = yes
+	}
+	989.1.1 = {
+		death = yes
+	}
+}
+
+basque0011 = {
+	name = "Gudigeva" # Gudigeva Núñez, wife of Pedro Muñoz (castilian0084 - castilian.txt)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	986.1.1 = {
+		birth = yes
+	}
+	1036.1.1 = {
+		death = yes
+	}
+}
+
+basque0012 = {
+	name = "Vela" # Vela, father of the assasins of Duke Sancho II of Castille
+	dynasty_house = house_vela # House Vela
+	religion = catholic
+	culture = basque
+	trait = education_intrigue_1
+
+	father = basque0023 # Sancho Muñoz, not sure, was a son of Count Munio Velaz
+
+	956.1.1 = {
+		birth = yes
+	}
+	1006.1.1 = {
+		death = yes
+	}
+}
+
+basque0013 = {
+	name = "Errodrigo" # Rodrigo Velaz
+	dynasty_house = house_vela # House Vela
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_2
+
+	father = basque0012 # Vela
+
+	980.1.1 = {
+		birth = yes
+	}
+	1030.1.1 = {
+		death = yes
+	}
+}
+
+basque0014 = {
+	name = "Errodrigo" # Rodrigo Velaz
+	dynasty_house = house_vela # House Vela
+	religion = catholic
+	culture = basque
+	trait = education_intrigue_3 # Assasinated Duke Sancho II of Castille
+
+	father = basque0012 # Vela
+
+	982.1.1 = {
+		birth = yes
+	}
+	1032.1.1 = {
+		death = yes
+	}
+}
+
+basque0015 = {
+	name = "Diego" # Diego Velaz
+	dynasty_house = house_vela # House Vela
+	religion = catholic
+	culture = basque
+	trait = education_intrigue_2
+
+	father = basque0012 # Vela
+
+	984.1.1 = {
+		birth = yes
+	}
+	1034.1.1 = {
+		death = yes
+	}
+}
+
+basque0016 = {
+	name = "Ximena" # Jimena, wife of Munio Fernández (asturleonese0184 - asturleonese.txt)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	969.1.1 = {
+		birth = yes
+	}
+	1019.1.1 = {
+		death = yes
+	}
+}
+
+basque0017 = {
+	name = "Piarres" # Pedro Muñoz de Marañón
+	dynasty = 7026 # Marañón Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	1066.1.1 = {
+		birth = yes
+		employer = 106000 # King Sancho IV of Navarra
+	}
+	1116.8.1 = {
+		death = yes
+	}
+}
+
+basque0018 = {
+	name = "Errodrigo" # Rodrigo Pérez de Marañón
+	dynasty = 7026 # Marañón Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = basque0017 # Pedro Muñoz de Marañón
+
+	1100.1.1 = {
+		birth = yes
+	}
+	1135.1.1 = {
+		death = yes
+	}
+}
+
+basque0019 = {
+	name = "Orti" # Fortún Álvarez
+	dynasty = 8741 # Herraméliz Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 200093 # Count Álvaro Herraméliz of Viscaya
+	mother = 107681 # Countess Sancha Sánchez
+
+	933.1.1 = {
+		birth = yes
+	}
+	983.1.1 = {
+		death = yes
+	}
+}
+
+basque0020 = {
+	name = "Beila" # Vela Álvarez
+	dynasty = 8741 # Herraméliz Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = 200093 # Count Álvaro Herraméliz of Viscaya
+	mother = 107681 # Countess Sancha Sánchez
+
+	935.1.1 = {
+		birth = yes
+	}
+	985.1.1 = {
+		death = yes
+	}
+}
+
+basque0021 = {
+	name = "Azeari" # Aznar Muñoz
+	dynasty_house = house_vela # House Vela
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = 200160 # Count Munio Velaz of Burgos
+	mother = basque0055 # Countes Velasquita Sánchez
+
+	927.1.1 = {
+		birth = yes
+	}
+	977.1.1 = {
+		death = yes
+	}
+}
+
+basque0022 = {
+	name = "Lope" # Lope Muñoz
+	dynasty_house = house_vela # House Vela
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = 200160 # Count Munio Velaz of Burgos
+	mother = basque0055 # Countes Velasquita Sánchez
+
+	928.1.1 = {
+		birth = yes
+	}
+	1015.1.1 = {
+		death = yes
+	}
+}
+
+basque0023 = {
+	name = "Antso" # Sancho Muñoz
+	dynasty_house = house_vela # House Vela
+	religion = catholic
+	culture = basque
+	trait = education_intrigue_1
+
+	father = 200160 # Count Munio Velaz of Burgos
+	mother = basque0055 # Countes Velasquita Sánchez
+
+	929.1.1 = {
+		birth = yes
+	}
+	979.1.1 = {
+		death = yes
+	}
+}
+
+basque0024 = {
+	name = "Belaskita" # Velasquita Muñoz
+	female = yes
+	dynasty_house = house_vela # House Vela
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 200160 # Count Munio Velaz of Burgos
+	mother = basque0055 # Countes Velasquita Sánchez
+
+	930.1.1 = {
+		birth = yes
+	}
+	980.1.1 = {
+		death = yes
+	}
+}
+
+basque0025 = {
+	name = "Gartzia" # García Aznárez
+	dynasty_house = house_vela # House Vela
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = basque0021 # Aznar Muñoz
+
+	951.1.1 = {
+		birth = yes
+	}
+	1001.1.1 = {
+		death = yes
+	}
+}
+
+basque0026 = {
+	name = "Orti" # Fortún Íñiguez I
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 70290 # Íñigo Jiménez
+	mother = 73811 # Óneca
+
+	790.1.1 = {
+		birth = yes
+	}
+	813.1.1 = {
+		add_spouse = basque0128 # Awriyah ibn Lubb
+	}
+	843.1.1 = {
+		death = yes
+	}
+}
+
+basque0027 = {
+	name = "Oneka" # Óneca Galíndez, wife of King Íñigo 'Arista' of Navarra (70291)
+	female = yes
+	dynasty = 12285 # Belascotenes Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = 200193 # Galindo Belascotenes
+
+	789.1.1 = {
+		birth = yes
+	}
+	839.1.1 = {
+		death = yes
+	}
+}
+
+basque0028 = {
+	name = "Goldegrodo" # Goldegrodo, wife of Duke Galindo I of Aragón (70303)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	820.1.1 = {
+		birth = yes
+	}
+	851.7.1 = {
+		employer = 70292 # King García I of Navarra
+	}
+	870.1.1 = {
+		death = yes
+	}
+}
+
+basque0029 = {
+	name = "Urraka" # Urraca ibn Mutarrif, wife of King García I of Navarra (70292)
+	female = yes
+	dynasty = 12293 # Banu Qasi Dynasty
+	religion = mozarabic_church
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 200205 # Mutarrif ibn Musa
+
+	800.1.1 = {
+		birth = yes
+	}
+	865.1.1 = {
+		death = yes
+	}
+}
+
+basque0030 = {
+	name = "Tota" # Toda, fictional wife of Sancho Garcés (70295)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	836.1.1 = {
+		birth = yes
+	}
+	886.1.1 = {
+		death = yes
+	}
+}
+
+basque0031 = {
+	name = "Antso" # Sancho Aznárez
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = 70296 # Aznar Sánchez
+	mother = 70294 # Emiress Óneca Fortúnez
+
+	883.1.1 = {
+		birth = yes
+	}
+	900.1.1 = {
+		death = yes
+	}
+}
+
+basque0032 = {
+	name = "Ximena" # Jimena Velázquez, wife of Baron Íñigo Garcés of Tafalla (basque0048)
+	female = yes
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 73781 # Velasco Fortúnez
+
+	887.1.1 = {
+		birth = yes
+	}
+	948.1.1 = {
+		death = yes
+	}
+}
+
+basque0033 = {
+	name = "Tota" # Toda Velázquez, wife of Íñigo Manzones (basque0035)
+	female = yes
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 73781 # Velasco Fortúnez
+
+	889.1.1 = {
+		birth = yes
+	}
+	950.1.1 = {
+		death = yes
+	}
+}
+
+basque0034 = {
+	name = "Antsa" # Sancha Velázquez, wife of Galindo Jiménez (basque0036)
+	female = yes
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 73781 # Velasco Fortúnez
+
+	891.1.1 = {
+		birth = yes
+	}
+	952.1.1 = {
+		death = yes
+	}
+}
+
+basque0035 = {
+	name = "Eneko" # Íñigo Manzones
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	883.1.1 = {
+		birth = yes
+	}
+	909.1.1 = {
+		add_matrilineal_spouse = basque0033 # Toda Velázquez
+	}
+	933.1.1 = {
+		death = yes
+	}
+}
+
+basque0036 = {
+	name = "Garindo" # Galindo Jiménez
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	885.1.1 = {
+		birth = yes
+	}
+	910.1.1 = {
+		add_matrilineal_spouse = basque0034 # Sancha Velázquez
+	}
+	935.1.1 = {
+		death = yes
+	}
+}
+
+basque0037 = {
+	name = "Orti" # Fortún Aznárez 'Orbita'
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = 73780 # Aznar Fortúnez
+
+	907.1.1 = {
+		birth = yes
+	}
+	957.1.1 = {
+		death = yes
+	}
+}
+
+basque0038 = {
+	name = "Gartzia" # García Fortúnez
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = basque0037 # Fortún Aznárez
+
+	930.1.1 = {
+		birth = yes
+	}
+	980.1.1 = {
+		death = yes
+	}
+}
+
+basque0039 = {
+	name = "Orti" # Fortún Íñiguez II
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 73779 # Íñigo Fortúnez I
+	mother = 73770 # Sancha Garcés
+
+	903.1.1 = {
+		birth = yes
+	}
+	953.1.1 = {
+		death = yes
+	}
+}
+
+basque0040 = {
+	name = "Gartzia" # García Fortúnez
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = basque0039 # Fortún Íñiguez II
+
+	922.1.1 = {
+		birth = yes
+	}
+	972.1.1 = {
+		death = yes
+	}
+}
+
+basque0041 = {
+	name = "Eneko" # Íñigo Fortúnez II
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = basque0039 # Fortún Íñiguez II
+
+	924.1.1 = {
+		birth = yes
+	}
+	974.1.1 = {
+		death = yes
+	}
+}
+
+basque0042 = {
+	name = "Antsa" # Sancha Fortúnez
+	female = yes
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = basque0039 # Fortún Íñiguez II
+
+	926.1.1 = {
+		birth = yes
+	}
+	976.1.1 = {
+		death = yes
+	}
+}
+
+basque0043 = {
+	name = "Oria" # Oria Íñiguez, wife of Munio García (basque0045)
+	female = yes
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 73779 # Íñigo Fortúnez I
+	mother = 73770 # Sancha Garcés
+
+	904.1.1 = {
+		birth = yes
+	}
+	954.1.1 = {
+		death = yes
+	}
+}
+
+basque0044 = {
+	name = "Lopa" # Lopa Íñiguez, wife of Sancho López (basque0046)
+	female = yes
+	dynasty = iniga # Íñiga Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 73779 # Íñigo Fortúnez I
+	mother = 73770 # Sancha Garcés
+
+	905.1.1 = {
+		birth = yes
+	}
+	954.1.1 = {
+		death = yes
+	}
+}
+
+basque0045 = {
+	name = "Munio" # Munio García
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	898.1.1 = {
+		birth = yes
+	}
+	924.1.1 = {
+		add_matrilineal_spouse = basque0043 # Oria Íñiguez
+	}
+	948.1.1 = {
+		death = yes
+	}
+}
+
+basque0046 = {
+	name = "Antso" # Sancho López
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	901.1.1 = {
+		birth = yes
+	}
+	925.1.1 = {
+		add_matrilineal_spouse = basque0044 # Lopa Íñiguez
+	}
+	951.1.1 = {
+		death = yes
+	}
+}
+
+basque0047 = {
+	name = "Oneka" # Óneca de Sangüesa, wife of Baron García Jiménez of Tafalla (70121)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	840.1.1 = {
+		birth = yes
+	}
+	890.1.1 = {
+		death = yes
+	}
+}
+
+basque0048 = {
+	name = "Eneko" # Íñigo Garcés, Baron of Tafalla (905-933)
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+
+	father = 70121 # Baron García Jiménez of Tafalla
+	mother = basque0047 # Baroness Óneca de Sangüesa
+
+	865.1.1 = {
+		birth = yes
+	}
+	881.1.1 = {
+		trait = education_intrigue_2
+	}
+	903.1.1 = {
+		add_spouse = basque0032 # Jimena Velázquez
+	}
+	933.1.1 = {
+		death = yes
+	}
+}
+
+basque0049 = {
+	name = "Gartzia" # García Íñiguez
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+
+	father = basque0048 # Baron Íñigo Garcés of Tafalla
+	mother = basque0032 # Baroness Jimena Velázquez
+
+	904.1.1 = {
+		birth = yes
+	}
+	905.1.1 = {
+		death = {
+			death_reason = death_murder
+		}
+	}
+}
+
+basque0050 = {
+	name = "Semeno" # Jimeno Íñiguez
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = basque0048 # Baron Íñigo Garcés of Tafalla
+	mother = basque0032 # Baroness Jimena Velázquez
+
+	906.1.1 = {
+		birth = yes
+	}
+	925.1.1 = {
+		add_spouse = basque0133 # Awriyah ibn Lubb
+	}
+	940.1.11 = {
+		employer = 3200 # Caliph Abd al-Rahman III of Andalusia
+	}
+	956.1.1 = {
+		death = yes
+	}
+}
+
+basque0051 = {
+	name = "Orti" # Fortún Íñiguez
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_intrigue_1
+
+	father = basque0048 # Baron Íñigo Garcés of Tafalla
+	mother = basque0032 # Baroness Jimena Velázquez
+
+	908.1.1 = {
+		birth = yes
+	}
+	925.1.1 = {
+		add_spouse = basque0134 # Munia ibn Lubb
+	}
+	940.1.1 = {
+		employer = 3200 # Caliph Abd al-Rahman III of Andalusia
+	}
+	958.1.1 = {
+		death = yes
+	}
+}
+
+basque0052 = {
+	name = "Antso" # Sancho Íñiguez
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = basque0048 # Baron Íñigo Garcés of Tafalla
+	mother = basque0032 # Baroness Jimena Velázquez
+
+	910.1.1 = {
+		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
+	}
+	925.1.1 = {
+		add_spouse = basque0133 # Toda ibn Lubb
+	}
+	940.1.1 = {
+		employer = 3200 # Caliph Abd al-Rahman III of Andalusia
+	}
+	960.1.1 = {
+		death = yes
+	}
+}
+
+basque0053 = {
+	name = "Tota" # Toda Íñiguez, wife of García Íñiguez de Olza (basque0054)
+	female = yes
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_2
+
+	father = basque0048 # Baroness Íñigo Garcés of Tafalla
+	mother = basque0032 # Broness Jimena Velázquez
+
+	912.1.1 = {
+		birth = yes
+	}
+	962.1.1 = {
+		death = yes
+	}
+}
+
+basque0054 = {
+	name = "Gartzia" # García Íñiguez de Olza
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	907.1.1 = {
+		birth = yes
+	}
+	930.1.1 = {
+		add_matrilineal_spouse = basque0053 # Toda Íñiguez
+	}
+	957.1.1 = {
+		death = yes
+	}
+}
+
+basque0055 = {
+	name = "Belaskita" # Velasquita Sánchez, wife of Count Munio Velaz of Burgos (200160 - castilian.txt), Galindo de Ribagorza (occitan0069 - occitan.txt) & Fortún Galíndez (basque0063)
+	female = yes
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = 70122 # King Sancho I of Navarra
+	mother = 70297 # Queen Toda Aznárez
+
+	910.1.1 = {
+		birth = yes
+	}
+	960.1.1 = {
+		death = yes
+	}
+}
+
+basque0056 = {
+	name = "Munia" # Munia Sánchez
+	female = yes
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 70122 # King Sancho I of Navarra
+	mother = 70297 # Queen Toda Aznárez
+
+	915.1.1 = {
+		birth = yes
+	}
+	940.1.1 = {
+		death = yes
+	}
+}
+
+basque0057 = {
+	name = "Orbita" # Orbita Sánchez, wife of Sheik Musa Aznar ibn Muhammad al-Tawil of Huesca (andalusian0013 - andalusian.txt)
+	female = yes
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 70122 # King Sancho I of Navarra
+	mother = 70297 # Queen Toda Aznárez
+
+	926.1.1 = {
+		birth = yes
+	}
+	976.1.1 = {
+		death = yes
+	}
+}
+
+basque0058 = {
+	name = "Gaila" # Gaila, wife of Count García Aznárez of Ipuskoa (200168)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_2
+
+	975.1.1 = {
+		birth = yes
+	}
+	1048.1.1 = {
+		death = yes
+	}
+}
+
+basque0059 = {
+	name = "Belaskita" # Velasquita Garcés, wife of Sancho Fortúnez (basque0060)
+	female = yes
+	dynasty_house = house_vela # House Vela
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = 200168 # Count García Aznárez of Ipuskoa
+	mother = basque0058 # Gaila
+
+	1002.1.1 = {
+		birth = yes
+	}
+	1049.1.1 = {
+		death = yes
+	}
+}
+
+basque0060 = {
+	name = "Antso" # Sancho Fortúnez
+	dynasty = sancho_fortunez # Sancho Fortúnez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	1000.1.1 = {
+		birth = yes
+	}
+	1020.1.1 = {
+		add_spouse = basque0059 # Velasquita Garcés
+	}
+	1065.11.30 = {
+		death = yes
+	}
+}
+
+basque0061 = {
+	name = "Eneko" # Íñigo Sánchez
+	dynasty = sancho_fortunez # Sancho Fortúnez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = basque0060 # Sancho Fortúnez
+	mother = basque0059 # Velasquita Garcés
+
+	1021.1.1 = {
+		birth = yes
+	}
+	1064.1.22 = {
+		death = yes
+	}
+}
+
+basque0062 = {
+	name = "Gartzia" # García Sánchez
+	dynasty = sancho_fortunez # Sancho Fortúnez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = basque0060 # Sancho Fortúnez
+	mother = basque0059 # Velasquita Garcés
+
+	1023.1.1 = {
+		birth = yes
+	}
+	1054.9.1 = {
+		employer = 106000 # King Sancho IV of Navarra
+	}
+	1087.1.1 = {
+		death = yes
+	}
+}
+
+basque0063 = {
+	name = "Orti" # Fortún Galíndez, Count of Nájera (950-970)
+	dynasty = galindez # Galíndez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = basque0064 # Galindo
+
+	908.1.1 = {
+		birth = yes
+	}
+	950.1.1 = {
+		add_spouse = basque0055 # Velasquita Sánchez
+	}
+	972.11.30 = {
+		death = yes
+	}
+}
+
+basque0064 = {
+	name = "Garindo" # Galindo
+	dynasty = galindez # Galíndez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	865.1.1 = {
+		birth = yes
+	}
+	915.1.1 = {
+		death = yes
+	}
+}
+
+basque0065 = {
+	name = "Tota" # Toda Garcés
+	female = yes
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 70123 # King García II of Navarra
+	mother = 70275 # Queen Andregoto Galíndez, Duchess of Aragón
+
+	939.1.1 = {
+		birth = yes
+	}
+	966.1.1 = {
+		death = yes
+	}
+}
+
+basque0066 = {
+	name = "Semeno" # Jimeno Garcés II
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 70123 # King García II of Navarra
+	mother = 70275 # Queen Andregoto Galíndez, Duchess of Aragón
+
+	946.1.1 = {
+		birth = yes
+	}
+	979.2.15 = {
+		death = yes
+	}
+}
+
+basque0067 = {
+	name = "Ramiro" # Ramiro Garcés de Viguera, Count of Nájera (970-981)
+	dynasty_house = house_viguera # House of Viguera
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = 70123 # King García II of Navarra
+	mother = 70275 # Queen Andregoto Galíndez, Duchess of Aragón
+
+	944.1.1 = {
+		birth = yes
+	}
+	966.1.1 = {
+		add_spouse = basque0068 # Sancha Sánchez
+	}
+	981.7.9 = {
+		death = {
+			death_reason = death_battle
+			killer = 3206 # Muhammad ibn Abu Amir 'al-Mansur'
+		}
+	}
+}
+
+basque0068 = {
+	name = "Antsa" # Sancha Sánchez, wife of Count Ramiro Garcés I of Nájera (basque0067)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	948.1.1 = {
+		birth = yes
+	}
+	998.1.1 = {
+		death = yes
+	}
+}
+
+basque0069 = {
+	name = "Antso" # Sancho Ramírez de Viguera, Count of Nájera (981-1002)
+	dynasty_house = house_viguera # House of Viguera
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_3
+
+	father = basque0067 # Count Ramiro Garcés I of Nájera
+	mother = basque0068 # Countess Sancha Sánchez
+
+	967.1.1 = {
+		birth = yes
+	}
+	1002.1.1 = {
+		death = yes
+	}
+}
+
+basque0070 = {
+	name = "Gartzia" # García Ramírez de Viguera, Count of Nájera (1002-1030)
+	dynasty_house = house_viguera # House of Viguera
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = basque0067 # Count Ramiro Garcés I of Nájera
+	mother = basque0068 # Countess Sancha Sánchez
+
+	969.1.1 = {
+		birth = yes
+	}
+	992.1.1 = {
+		add_spouse = basque0071 # Toda
+	}
+	1030.1.1 = {
+		death = yes
+	}
+}
+
+basque0071 = {
+	name = "Tota" # Toda, wife of Count García Ramírez of Nájera
+	female = yes
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 70123 # King García II of Navarra
+	mother = 70275 # Queen Andregoto Galíndez, Duchess of Aragón
+
+	973.1.1 = {
+		birth = yes
+	}
+	1023.1.1 = {
+		death = yes
+	}
+}
+
+basque0072 = {
+	name = "Tota" # Toda Garcés de Viguera, wife of Count Fortún Sánchez of Nájera (basque0073)
+	female = yes
+	dynasty_house = house_viguera # House of Viguera
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = basque0070 # Count García Ramírez of Nájera
+	mother = basque0071 # Countess Toda
+
+	993.1.1 = {
+		birth = yes
+	}
+	1050.1.1 = {
+		death = yes
+	}
+}
+
+basque0073 = {
+	name = "Orti" # Fortún Sánchez, Count of Nájera (1030-1054)
+	dynasty = sanchez_2 # Sánchez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_3
+
+	father = basque0076 # Sancho
+
+	992.1.1 = {
+		birth = yes
+	}
+	1011.1.1 = {
+		add_spouse = basque0072 # Toda Garcés de Viguera
+	}
+	1054.9.1 = {
+		death = {
+			death_reason = death_battle
+			killer = 107510 # King Fernando I of León
+		}
+	}
+}
+
+basque0074 = {
+	name = "Antso" # Sancho Fortúnez, Count of Nájera (1054-1059)
+	dynasty = sanchez_2 # Sánchez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = basque0073 # Count Fortún Sánchez of Nájera
+	mother = basque0072 # Countess Toda Garcés de Viguera
+
+	1012.1.1 = {
+		birth = yes
+	}
+	1034.1.1 = {
+		add_spouse = basque0075 # Sancha Aiorez
+	}
+	1059.6.19 = {
+		death = yes
+	}
+}
+
+basque0075 = {
+	name = "Antsa" # Sancha Aiorez, wife of Count Sancho Fortúnez of Nájera (basque0074)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	1017.1.1 = {
+		birth = yes
+	}
+	1059.6.19 = {
+		employer = 106011 # Count Ramiro Garcés of Nájera
+	}
+	1067.1.1 = {
+		death = yes
+	}
+}
+
+basque0076 = {
+	name = "Antso" # Sancho
+	dynasty = sanchez_2 # Sánchez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	968.1.1 = {
+		birth = yes
+	}
+	1018.1.1 = {
+		death = yes
+	}
+}
+
+basque0077 = {
+	name = "Eneko" # Íñigo Sánchez
+	dynasty = sanchez_2 # Sánchez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = basque0076 # Sancho
+
+	991.1.1 = {
+		birth = yes
+	}
+	1035.10.20 = {
+		death = yes
+	}
+}
+
+basque0078 = {
+	name = "Azeari" # Aznar Sánchez
+	dynasty = sanchez_2 # Sánchez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = basque0076 # Sancho
+
+	994.1.1 = {
+		birth = yes
+	}
+	1055.3.11 = {
+		death = yes
+	}
+}
+
+basque0079 = {
+	name = "Orti" # Fortún Aznárez
+	dynasty = sanchez_2 # Sánchez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = basque0078 # Aznar Sánchez
+
+	1020.1.1 = {
+		birth = yes
+	}
+	1059.6.19 = {
+		employer = 106011 # Count Ramiro Garcés of Nájera
+	}
+	1080.1.1 = {
+		death = yes
+	}
+}
+
+basque0080 = {
+	name = "Auriol" # Aurelio Sánchez
+	dynasty = sanchez_2 # Sánchez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = basque0076 # Sancho
+
+	995.1.1 = {
+		birth = yes
+	}
+	1045.1.1 = {
+		death = yes
+	}
+}
+
+basque0081 = {
+	name = "Gartzia" # García Sánchez
+	dynasty = sanchez_2 # Sánchez Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_intrigue_1
+
+	father = basque0076 # Sancho
+
+	997.1.1 = {
+		birth = yes
+	}
+	1047.1.1 = {
+		death = yes
+	}
+}
+
+basque0082 = {
+	name = "Fronilde" # Fronilde Garcés de Viguera
+	female = yes
+	dynasty_house = house_viguera # House of Viguera
+	religion = catholic
+	culture = basque
+	trait = education_intrigue_1
+
+	father = basque0070 # Count García Sánchez of Nájera
+	mother = basque0071 # Countess Toda
+
+	995.1.1 = {
+		birth = yes
+	}
+	1054.1.1 = {
+		death = yes
+	}
+}
+
+basque0083 = {
+	name = "Ramiro" # Ramiro Sánchez
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = 70124 # King Sancho II of Navarra
+	mother = 107682 # Queen Urraca Fernández (castilian.txt)
+
+	967.1.1 = {
+		birth = yes
+	}
+	992.1.1 = {
+		death = yes
+	}
+}
+
+basque0084 = {
+	name = "Gontzal" # Gonzalo Sánchez
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_3
+
+	father = 70124 # King Sancho II of Navarra
+	mother = 107682 # Queen Urraca Fernández (castilian.txt)
+
+	969.1.1 = {
+		birth = yes
+	}
+	997.1.1 = {
+		death = yes
+	}
+}
+
+basque0085 = {
+	name = "Elbira" # Elvira Garcés, Nun
+	female = yes
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = devoted
+	trait = education_learning_1
+
+	father = 106040 # King García III of Navarra
+	mother = 106041 # Queen Jimena Fernández de Cea
+
+	994.1.1 = {
+		birth = yes
+	}
+	1044.1.1 = {
+		death = yes
+	}
+}
+
+basque0086 = {
+	name = "Gartzia" # García Garcés
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+
+	father = 106040 # King García III of Navarra
+	mother = 106041 # Queen Jimena Fernández de Cea
+
+	996.1.1 = {
+		birth = yes
+	}
+	1006.1.1 = {
+		death = yes
+	}
+}
+
+basque0087 = {
+	name = "Maior" # Mayor Sánchez, wife of Duke Pons II of Toulouse (334)
+	female = yes
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 106030 # King Sancho III of Navarra
+	mother = 107650 # Queen Muniadona Sánchez (castilian.txt)
+
+	1014.1.1 = {
+		birth = yes
+	}
+	1044.1.1 = {
+		death = yes
+	}
+}
+
+basque0088 = {
+	name = "Ximena" # Jimena Sánchez, wife of King Bermudo III of León (70075)
+	female = yes
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 106030 # King Sancho III of Navarra
+	mother = 107650 # Queen Muniadona Sánchez (castilian.txt)
+
+	1018.1.1 = {
+		birth = yes
+	}
+	1062.1.1 = {
+		death = yes
+	}
+}
+
+basque0089 = {
+	name = "Andregoto" # Andregoto Sánchez
+	female = yes
+	dynasty = maceratiz # Macerátiz Dynasty
+	religion = catholic
+	culture = basque
+
+	father = basque0096 # Sancho Macerátiz
+	mother = 106020 # Andregoto Galíndez de Estigi
+
+	1052.1.1 = {
+		birth = yes
+	}
+	1068.1.1 = {
+		trait = education_diplomacy_1
+	}
+	1102.1.1 = {
+		death = yes
+	}
+}
+
+basque0090 = {
+	name = "Antsa" # Sancha Garcés
+	female = yes
+	dynasty = 442 # Jimena Dynasty
+	religion = catholic
+	culture = basque
+	trait = devoted
+	trait = education_learning_1
+
+	father = 106010 # King García IV of Navarra
+	trait = bastard
+
+	1032.1.1 = {
+		birth = yes
+	}
+	1054.9.1 = {
+		employer = 106000 # King Sancho IV of Navarra
+	}
+	1082.1.1 = {
+		death = yes
+	}
+}
+
+basque0091 = {
+	name = "Lope" # Lope Íñiguez de Marañón
+	dynasty = 8615 # Ochoa Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	981.1.1 = {
+		birth = yes
+	}
+	1031.1.1 = {
+		death = yes
+	}
+}
+
+basque0092 = {
+	name = "Semeno" # Jimeno Ochoa
+	dynasty = 8615 # Ochoa Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = basque0091 # Lope Íñiguez de Marañón
+ 
+	1007.1.1 = {
+		birth = yes
+	}
+	1032.1.1 = {
+		death = yes
+	}
+}
+
+basque0093 = {
+	name = "Lope" # Lope Ochoa
+	dynasty = 8615 # Ochoa Dynasty
+	religion = catholic
+	culture = basque
+
+	father = basque0091 # Lope Íñiguez de Marañón
+ 
+	1009.1.1 = {
+		birth = yes
+	}
+	1024.1.1 = {
+		death = yes
+	}
+}
+
+basque0094 = {
+	name = "Andregoto" # Andregoto, wife of Baron Jimeno Fortúnez of Logroño (70134)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	1058.1.1 = {
+		birth = yes
+	}
+	1059.6.19 = {
+		employer = 106011 # Count Ramiro Garcés of Nájera
+	}
+	1108.1.1 = {
+		death = yes
+	}
+}
+
+basque0095 = {
+	name = "Mentzia" # Mencía Jiménez
+	female = yes
+	dynasty = 8615 # Ochoa Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	1079.1.1 = {
+		birth = yes
+	}
+	1129.1.1 = {
+		death = yes
+	}
+}
+
+basque0096 = {
+	name = "Antso" # Sancho Macerátiz
+	dynasty = maceratiz # Macerátiz Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	1025.1.1 = {
+		birth = yes
+	}
+	1048.1.1 = {
+		add_spouse = 106020 # Andregoto Galíndez de Estigi
+	}
+	1054.9.1 = {
+		employer = 106000 # King Sancho IV of Navarra
+	}
+	1075.1.1 = {
+		death = yes
+	}
+}
+
+basque0097 = {
+	name = "Andregoto" # Andregoto Galíndez, wife of Duke Sanche I of Gascogne (168106)
+	female = yes
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = basque0098 # Galindo
+ 
+	783.1.1 = {
+		birth = yes
+	}
+	833.1.1 = {
+		death = yes
+	}
+}
+
+basque0098 = {
+	name = "Garindo" # Galindo, Ancestor of Galinda Dynasty
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+ 
+	758.1.1 = {
+		birth = yes
+	}
+	808.1.1 = {
+		death = yes
+	}
+}
+
+basque0099 = {
+	name = "Azeari" # Aznar Sanche de Comminges, Count of Comminges (812-836)
+	dynasty_house = house_comminges # House of Comminges
+	religion = catholic
+	culture = basque
+	trait = education_intrigue_2
+
+	father = 168106 # Duke Sanche I of Gascogne
+	mother = basque0097 # Duchess Matrona Galíndez
+ 
+	801.1.1 = {
+		birth = yes
+	}
+	836.1.1 = {
+		death = yes
+	}
+}
+
+basque0102 = {
+	name = "Antso" # Sanche Mitarra II
+	dynasty = 388
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = 163060 # Duke Sanche III Mitarra of Gascogne
+	mother = 168126 # Duchess Quixilo
+
+	852.1.1 = {
+		birth = yes
+	}
+	902.1.1 = {
+		death = yes
+	}
+}
+
+basque0103 = {
+	name = "Andregoto" # Andregoto de Gascogne, wife of Count Raimond de Bordeaux
+	female = yes
+	dynasty = 388
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 7563 # Duke Garcia II of Gascogne
+	#mother =   # Aminia d'Angouleme
+ 
+	880.1.1 = {
+		birth = yes
+	}
+	928.1.1 = {
+		death = yes
+	}
+}
+
+basque0104 = {
+	name = "Gersenda" # Garsinda de Gascogne, wife of Duke Raimond-Pons of Toulouse (330)
+	female = yes
+	dynasty = 388
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_2
+
+	father = 7563 # Duke Garcia II of Gascogne
+	#mother =   # Aminia d'Angouleme
+ 
+	905.1.1 = {
+		birth = yes
+	}
+	972.1.1 = {
+		death = yes
+	}
+}
+
+basque0105 = {
+	name = "Belaskita" # Velasquita Galíndez, wife of Íñigo López de Estigi (basque0107)
+	female = yes
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_2
+
+	father = 70274 # Duke Galindo III of Aragón
+	mother = 73770 # Duchess Sancha Garcés
+
+	919.1.1 = {
+		birth = yes
+	}
+	969.1.1 = {
+		death = yes
+	}
+}
+
+basque0106 = {
+	name = "Fakilo" # Faquilo, wife of Count Donat Loup of Bigorre (168124)
+	female = yes
+	religion = catholic
+	culture = basque
+
+	858.1.1 = {
+		birth = yes
+	}
+	874.1.1 = {
+		trait = education_diplomacy_1
+	}
+	908.1.1 = {
+		death = yes
+	}
+}
+
+basque0107 = {
+	name = "Eneko" # Íñigo López de Estigi
+	dynasty = estigi # Estigi Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	910.1.1 = {
+		birth = yes
+	}
+	938.1.1 = {
+		add_spouse = basque0105 # Velasquita Galíndez
+	}
+	960.1.1 = {
+		death = yes
+	}
+}
+
+basque0108 = {
+	name = "Lope" # Lope, name unknown, Íñiguez de Estigi
+	dynasty = estigi # Estigi Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = basque0107 # Íñigo López de Estigi
+	mother = basque0105 # Velasquita Galíndez
+
+	950.1.1 = {
+		birth = yes
+	}
+	1000.1.1 = {
+		death = yes
+	}
+}
+
+basque0109 = {
+	name = "Oria" # Auria, wife of Count Centulle I of Béarn (138162)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	868.1.1 = {
+		birth = yes
+	}
+	918.1.1 = {
+		death = yes
+	}
+}
+
+basque0110 = {
+	name = "Garindo" # Galindo, name unknown, López de Estigi
+	dynasty = estigi # Estigi Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = basque0108 # Lope Íñiguez de Estigi
+
+	980.1.1 = {
+		birth = yes
+	}
+	1030.1.1 = {
+		death = yes
+	}
+}
+
+basque0111 = {
+	name = "Redemptus" # Redemptus Galíndez, Bishop
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+	trait = devoted
+	trait = education_learning_3
+
+	father = 70274 # Duke Galindo III of Aragón
+	mother = 54001 # Duchess Acibella de Gascogne
+ 
+	903.1.1 = {
+		birth = yes
+	}
+	953.1.1 = {
+		death = yes
+	}
+}
+
+basque0112 = {
+	name = "Miron" # Mirón Galíndez
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+
+	father = 70274 # Duke Galindo III of Aragón
+	mother = 54001 # Duchess Acibella de Gascogne
+ 
+	905.1.1 = {
+		birth = yes
+	}
+	915.1.1 = {
+		death = yes
+	}
+}
+
+basque0113 = {
+	name = "Guntislo" # Guntislo Galíndez
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_3
+
+	father = 70274 # Duke Galindo III of Aragón
+	trait = bastard
+ 
+	907.1.1 = {
+		birth = yes
+	}
+	929.1.1 = {
+		add_spouse = basque0114 # Oria
+	}
+	957.1.1 = {
+		death = yes
+	}
+}
+
+basque0114 = {
+	name = "Oria" # Oria, wife of Guntislo Galíndez (basque0113)
+	female = yes
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+ 
+	910.1.1 = {
+		birth = yes
+	}
+	960.1.1 = {
+		death = yes
+	}
+}
+
+basque0115 = {
+	name = "Semeno" # Jimeno Guntíslez
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = basque0113 # Guntislo Galíndez
+	mother = basque0114 # Oria
+ 
+	931.1.1 = {
+		birth = yes
+	}
+	981.1.1 = {
+		death = yes
+	}
+}
+
+basque0116 = {
+	name = "Antso" # Sancho Galíndez
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = 70274 # Duke Galindo III of Aragón
+	trait = bastard
+ 
+	909.1.1 = {
+		birth = yes
+	}
+	959.1.1 = {
+		death = yes
+	}
+}
+
+basque0117 = {
+	name = "Belasko" # Velasco Galíndez
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_intrigue_1
+
+	father = 70274 # Duke Galindo III of Aragón
+	trait = bastard
+ 
+	911.1.1 = {
+		birth = yes
+	}
+	961.1.1 = {
+		death = yes
+	}
+}
+
+basque0118 = {
+	name = "Bancio" # Bancio Galíndez
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 70274 # Duke Galindo III of Aragón
+	trait = bastard
+ 
+	913.1.1 = {
+		birth = yes
+	}
+	963.1.1 = {
+		death = yes
+	}
+}
+
+basque0119 = {
+	name = "Garindo" # Galindo Bances
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = basque0118 # Bancio Galíndez
+ 
+	935.1.1 = {
+		birth = yes
+	}
+	958.1.1 = {
+		death = yes
+	}
+}
+
+basque0120 = {
+	name = "Azeari" # Aznar Galíndez
+	dynasty = galinda # Galinda Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+
+	father = 70274 # Duke Galindo III of Aragón
+	trait = bastard
+ 
+	915.1.1 = {
+		birth = yes
+	}
+	965.1.1 = {
+		death = yes
+	}
+}
+
+basque0123 = {
+	name = "Belasko" # Velasco
+	dynasty = 778 # Haro Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_martial_1
+ 
+	977.1.1 = {
+		birth = yes
+	}
+	1027.1.1 = {
+		death = yes
+	}
+}
+
+basque0124 = {
+	name = "Garindo" # Galindo Velázquez
+	dynasty = 778 # Haro Dynasty
+	religion = catholic
+	culture = basque
+	trait = education_stewardship_1
+
+	father = basque0123 # Velasco
+ 
+	1002.1.1 = {
+		birth = yes
+	}
+	1047.11.18 = {
+		death = yes
+	}
+}
+
+basque0125 = {
+	name = "Gartzia" # García Velázquez
+	dynasty = 778 # Haro Dynasty
+	religion = catholic
+	culture = basque
+	trait = devoted
+	trait = education_learning_1
+
+	father = basque0123 # Velasco
+ 
+	1004.1.1 = {
+		birth = yes
+	}
+	1057.1.1 = {
+		death = yes
+	}
+}
+
+basque0126 = {
+	name = "Marzuq" # Marzuq ibn Uskara
+	dynasty = uskara # Uskara Dynasty
+	religion = muwalladi
+	culture = basque
+	trait = education_martial_1
+ 
+	741.1.1 = {
+		birth = yes
+	}
+	791.1.1 = {
+		death = yes
+	}
+}
+
+basque0127 = {
+	name = "Bahlul" # Bahlul ibn Marzuq, Walih of Zaragoza (798-802) & Sheik of Huesca (797-800 & 800-802), Albarracin, Calatayud, Fraga, Tudela & Zaragoza (798-802), Lleida & Tarragona (801-802)
+	dynasty = uskara # Uskara Dynasty
+	religion = muwalladi
+	culture = basque
+	trait = education_martial_3
+
+	father = basque0126 # Marzuq ibn Uskara
+ 
+	768.1.1 = {
+		birth = yes
+	}
+	802.12.1 = {
+		death = {
+			death_reason = death_murder_known
+			killer = andalusian0079 # Sheik Jalaf ibn Rashid of Huesca
+		}
+	}
+}
+
+basque0128 = {
+	name = "Oria" # Awriyah, name unknown, ibn Lubb, wife of Fortún Íñiguez I (basque0026)
+	female = yes
+	dynasty = 12293 # Banu Qasi Dynasty
+	religion = mozarabic_church
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 71921 # Lubb ibn Musa
+ 
+	796.1.1 = {
+		birth = yes
+	}
+	846.1.1 = {
+		death = yes
+	}
+}
+
+basque0129 = {
+	name = "Gartzia" # Garsiya ibn Lubb
+	dynasty = 12293 # Banu Qasi Dynasty
+	religion = muwalladi
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 73810 # Emir Musa ibn Furtun of Zaragoza
+	mother = 200204 # Emiress Nadia
+ 
+	775.1.1 = {
+		birth = yes
+	}
+	800.1.1 = {
+		death = yes
+	}
+}
+
+basque0130 = {
+	name = "Orti" # Furtun, name unknown, ibn Zahir
+	dynasty = 12293 # Banu Qasi Dynasty
+	religion = muwalladi
+	culture = basque
+	trait = education_martial_1
+
+	father = 200203 # Zahir ibn Furtun
+ 
+	769.1.1 = {
+		birth = yes
+	}
+	819.1.1 = {
+		death = yes
+	}
+}
+
+basque0131 = {
+	name = "Yunus" # Yunus, name unknown, ibn Zahir, Walih of Logroño (819-821)
+	dynasty = 12293 # Banu Qasi Dynasty
+	religion = muwalladi
+	culture = basque
+	trait = education_intrigue_1
+
+	father = 200203 # Zahir ibn Furtun
+ 
+	771.1.1 = {
+		birth = yes
+	}
+	821.1.1 = {
+		death = yes
+	}
+}
+
+basque0132 = {
+	name = "Tota" # Toda, fictional wife of Sheik Furtun ibn Musa of Tudela (73829)
+	female = yes
+	religion = muwalladi
+	culture = basque
+	trait = education_stewardship_1
+ 
+	844.1.1 = {
+		birth = yes
+	}
+	894.1.1 = {
+		death = yes
+	}
+}
+
+basque0133 = {
+	name = "Oria" # Awriyah, name unknown, ibn Lubb, wife of Jimeno Íñiguez (basque0050)
+	female = yes
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_intrigue_1
+
+	father = 200026 # Emir Lubb ibn Muhammad of Toledo
+	mother = andalusian0005 # Sheikess Sayyida ibn Muhammad
+ 
+	906.1.1 = {
+		birth = yes
+	}
+	956.1.1 = {
+		death = yes
+	}
+}
+
+basque0134 = {
+	name = "Munia" # Munya, name unknown, ibn Lubb, wife of Fortún Íñiguez (basque0051)
+	female = yes
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 200026 # Emir Lubb ibn Muhammad of Fraga
+	mother = andalusian0005 # Sheikess Sayyida ibn Muhammad
+ 
+	907.1.1 = {
+		birth = yes
+	}
+	957.1.1 = {
+		death = yes
+	}
+}
+
+basque0135 = {
+	name = "Tota" # Toda, name unknown, ibn Lubb, wife of Sancho Íñiguez (basque0052)
+	female = yes
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 200026 # Emir Lubb ibn Muhammad of Toledo
+	mother = andalusian0005 # Sheikess Sayyida ibn Muhammad
+ 
+	908.1.1 = {
+		birth = yes
+	}
+	958.1.1 = {
+		death = yes
+	}
+}
+
+basque0136 = {
+	name = "Abdala" # Abdallah ibn Lubb
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 200026 # Emir Lubb ibn Muhammad of Toledo
+	mother = andalusian0005 # Sheikess Sayyida ibn Muhammad
+ 
+	904.1.1 = {
+		birth = yes
+	}
+	929.1.1 = {
+		death = yes
+	}
+}
+
+basque0137 = {
+	name = "Orti" # Furtun ibn Lubb
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 200026 # Emir Lubb ibn Muhammad of Zaragoza
+	mother = andalusian0005 # Sheikess Sayyida ibn Muhammad
+ 
+	902.1.1 = {
+		birth = yes
+	}
+	927.1.1 = {
+		death = yes
+	}
+}
+
+basque0138 = {
+	name = "Yunus" # Yunus ibn Muhammad, Sheik of Fraga (915-926)
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 73815 # Emir Muhammad ibn Lubb of Zaragoza
+ 
+	876.1.1 = {
+		birth = yes
+	}
+	926.1.1 = {
+		death = yes
+	}
+}
+
+basque0139 = {
+	name = "Orti" # Furtun ibn Abdallah
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 200027 # Abdallah ibn Muhammad
+ 
+	898.1.1 = {
+		birth = yes
+	}
+	948.1.1 = {
+		death = yes
+	}
+}
+
+basque0140 = {
+	name = "Muza" # Musa ibn Muhammad
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_martial_1
+
+	father = 73815 # Emir Muhammad ibn Lubb of Zaragoza
+ 
+	871.1.1 = {
+		birth = yes
+	}
+	896.1.1 = {
+		death = yes
+	}
+}
+
+basque0141 = {
+	name = "Yusuf" # Yusuf ibn Muhammad
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 73815 # Emir Muhammad ibn Lubb of Zaragoza
+ 
+	873.1.1 = {
+		birth = yes
+	}
+	923.1.1 = {
+		death = yes
+	}
+}
+
+basque0142 = {
+	name = "Ismail" # Isma'il ibn Mutarrif
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_diplomacy_1
+
+	father = 73824 # Sheik Mutarrif ibn Musa of Huesca
+ 
+	867.1.1 = {
+		birth = yes
+	}
+	890.1.1 = {
+		religion = mozarabic_church
+	}
+	917.1.1 = {
+		death = yes
+	}
+}
+
+basque0143 = {
+	name = "Muza" # Musa ibn Abdallah
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_martial_1
+
+	father = 200027 # Abdallah ibn Muhammad
+ 
+	896.1.1 = {
+		birth = yes
+	}
+	946.1.1 = {
+		death = yes
+	}
+}
+
+basque0144 = {
+	name = "Abdala" # Abdallah ibn Abdallah
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_martial_1
+
+	father = 200027 # Abdallah ibn Muhammad
+ 
+	900.1.1 = {
+		birth = yes
+	}
+	950.1.1 = {
+		death = {
+			death_reason = death_drowned
+		}
+	}
+}
+
+basque0145 = {
+	name = "Lope" # Musa ibn Muhammad
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_martial_1
+
+	father = 200030 # Sheik Muhammad ibn Lubb of Lleida
+ 
+	922.1.1 = {
+		birth = yes
+	}
+	972.1.1 = {
+		death = yes
+	}
+}
+
+basque0146 = {
+	name = "Oneka" # Óneca, name unknwon, ibn Mutarrif, wife of Ramon I de Ribagorça (70272)
+	female = yes
+	dynasty_house = house_musa # House Banu Musa
+	religion = mozarabic_church
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 73817 # Mutarrif ibn Lubb
+ 
+	874.1.1 = {
+		birth = yes
+	}
+	924.1.1 = {
+		death = yes
+	}
+}
+
+basque0147 = {
+	name = "Lope" # Lubb ibn Muhammad
+	dynasty_house = house_musa # House Banu Musa
+	religion = muwalladi
+	culture = basque
+	trait = education_stewardship_1
+
+	father = 73823 # Muhammad ibn Isma'il
+ 
+	896.1.1 = {
+		birth = yes
+	}
+	921.1.1 = {
+		death = yes
+	}
+}
+
+basque0148 = {
+	name = "Muzna" # Muzna, wife of Sultan Muhammad ibn Abdallah of Andalusia (73686 - levantine.txt)
+	female = yes
+	religion = muwalladi
+	culture = basque
+	trait = education_diplomacy_1
+ 
+	872.1.1 = {
+		birth = yes
+	}
+	922.1.1 = {
+		death = yes
+	}
+}
+
+basque0149 = {
+	name = "Subh" # Subh, wife of Sultan al-Hakam II of Andalusia (73686 - andalusian.txt)
+	female = yes
+	religion = muwalladi
+	culture = basque
+	trait = education_diplomacy_1
+ 
+	940.1.1 = {
+		birth = yes
+	}
+	999.12.11 = {
+		death = yes
+	}
+}
+
 168141 = {
 	name = "Duoda" # Duoda Sanche de Vasconie, wife of Duke Bernard de Septimania of Barcelona (163063 - frankish.txt)
 	female = yes

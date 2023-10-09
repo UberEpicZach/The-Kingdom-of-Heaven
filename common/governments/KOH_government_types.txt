@@ -22,6 +22,8 @@
 		title_revocation_rights
 		jizya_special_rights
 	}
+	
+	flag = government_is_feudal
 
 	color = hsv{ 0.67 1.00 0.78 }
 }
@@ -32,6 +34,8 @@ republic_government = {
 	required_county_holdings = { city_holding castle_holding church_holding }
 	create_cadet_branches = yes
 	rulers_should_have_dynasty = yes
+
+	flag = government_is_republic
 
 	vassal_contract = { republic_government_obligations }
 	color = hsv{ 0.00 1.00 0.98 }
@@ -59,6 +63,8 @@ free_imperial_city_government = {
 		build_speed = -0.15
 		build_gold_cost = -0.05
 	}
+
+	flag = government_is_republic
 
 	vassal_contract = { free_imperial_city_government_obligations }
 	color = hsv{ 0.00 1.00 0.98 }
@@ -99,6 +105,32 @@ holy_order_county_government = {
 		use_scripted_guis = yes
 		perform_religious_reformation = no
 	}
+
+	flag = government_is_holy_order
+
+
+	vassal_contract = { theocracy_government_obligations }
+
+	valid_holdings = { castle_holding city_holding }
+	color = hsv{ 0.00 0.00 0.66 }
+}
+
+# For the assassins
+assassin_government = {
+	court_generate_spouses = yes
+	court_generate_commanders = 5
+	council = yes
+	primary_holding = castle_holding
+
+	ai = {
+		arrange_marriage = yes
+		use_goals = no
+		use_scripted_guis = yes
+		perform_religious_reformation = yes
+	}
+	
+	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	flag = government_is_assassin
 
 	vassal_contract = { theocracy_government_obligations }
 

@@ -1,0 +1,209 @@
+﻿#Scripted Modifiers used for Activities
+base_activity_modifier = {
+	# TOURNAMENT OPTIONS
+	modifier = {
+		scope:tournament_option_accommodations ?= flag:tournament_accommodations_bad 
+		add = -10
+		desc = ACTIVITY_GUEST_OPTIONS_TOURNAMENT_ACCOMMODATIONS_BAD
+	}
+	modifier = {
+		scope:tournament_option_accommodations ?= flag:tournament_accommodations_normal 
+		add = 5
+		desc = ACTIVITY_GUEST_OPTIONS_TOURNAMENT_ACCOMMODATIONS_NORMAL
+	}
+	modifier = {
+		scope:tournament_option_accommodations ?= flag:tournament_accommodations_good
+		add = 10
+		desc = ACTIVITY_GUEST_OPTIONS_TOURNAMENT_ACCOMMODATIONS_GOOD
+	}
+	modifier = {
+		scope:tournament_option_prizes ?= flag:tournament_prizes_bad 
+		add = -10
+		desc = ACTIVITY_GUEST_OPTIONS_TOURNAMENT_PRIZES_BAD
+	}
+	modifier = {
+		scope:tournament_option_prizes ?= flag:tournament_prizes_normal 
+		add = 5
+		desc = ACTIVITY_GUEST_OPTIONS_TOURNAMENT_PRIZES_NORMAL
+	}
+	modifier = {
+		scope:tournament_option_prizes ?= flag:tournament_prizes_good
+		add = 10
+		desc = ACTIVITY_GUEST_OPTIONS_TOURNAMENT_PRIZES_GOOD
+	}
+	# TOUR OPTIONS
+	modifier = {
+		scope:tour_luxuries ?= flag:tour_luxuries_bad 
+		add = -10
+		desc = ACTIVITY_GUEST_OPTION_TOUR_LUXURIES_BAD
+	}
+	modifier = {
+		scope:tour_luxuries ?= flag:tour_luxuries_normal 
+		add = 5
+		desc = ACTIVITY_GUEST_OPTION_TOUR_LUXURIES_NORMAL
+	}
+	modifier = {
+		scope:tour_luxuries ?= flag:tour_luxuries_good
+		add = 10
+		desc = ACTIVITY_GUEST_OPTION_TOUR_LUXURIES_GOOD
+	}
+	modifier = {
+		scope:tour_luxuries ?= flag:tour_furniture_normal
+		add = 15
+		desc = ACTIVITY_GUEST_OPTION_TOUR_FURNITURE_NORMAL
+	}
+	modifier = {
+		scope:tour_luxuries ?= flag:tour_furniture_good
+		add = 20
+		desc = ACTIVITY_GUEST_OPTION_TOUR_FURNITURE_GOOD
+	}
+	# WEDDING OPTIONS
+	modifier = {
+		scope:wedding_option_entertainment ?= flag:wedding_entertainment_bad
+		add = -10
+		desc = ACTIVITY_GUEST_OPTION_WEDDING_ENTERTAINMENT_BAD
+	}
+	modifier = {
+		scope:wedding_option_entertainment ?= flag:wedding_entertainment_normal
+		add = 5
+		desc = ACTIVITY_GUEST_OPTION_WEDDING_ENTERTAINMENT_NORMAL
+	}
+	modifier = {
+		scope:wedding_option_entertainment ?= flag:wedding_entertainment_good
+		add = 10
+		desc = ACTIVITY_GUEST_OPTION_WEDDING_ENTERTAINMENT_GOOD
+	}
+	modifier = {
+		scope:wedding_option_food ?= flag:wedding_food_bad
+		add = -10
+		desc = ACTIVITY_GUEST_OPTION_WEDDING_FOOD_BAD
+	}
+	modifier = {
+		scope:wedding_option_food ?= flag:wedding_food_normal
+		add = 5
+		desc = ACTIVITY_GUEST_OPTION_WEDDING_FOOD_NORMAL
+	}
+	modifier = {
+		scope:wedding_option_food ?= flag:wedding_food_good
+		add = 10
+		desc = ACTIVITY_GUEST_OPTION_WEDDING_FOOD_GOOD
+	}
+	modifier = {
+		scope:wedding_option_decoration ?= flag:wedding_decoration_bad
+		add = -10
+		desc = ACTIVITY_GUEST_OPTION_WEDDING_DECORATION_BAD
+	}
+	modifier = {
+		scope:wedding_option_decoration ?= flag:wedding_decoration_normal
+		add = 5
+		desc = ACTIVITY_GUEST_OPTION_WEDDING_DECORATION_NORMAL
+	}
+	modifier = {
+		scope:wedding_option_decoration ?= flag:wedding_decoration_good
+		add = 10
+		desc = ACTIVITY_GUEST_OPTION_WEDDING_DECORATION_GOOD
+	}
+	# FEAST OPTIONS
+	modifier = {
+		scope:feast_option_food ?= flag:feast_food_bad
+		add = -10
+		desc = ACTIVITY_GUEST_OPTION_FEAST_FOOD_BAD
+	}
+	modifier = {
+		scope:feast_option_food ?= flag:feast_food_normal
+		add = 5
+		desc = ACTIVITY_GUEST_OPTION_FEAST_FOOD_NORMAL
+	}
+	modifier = {
+		scope:feast_option_food ?= flag:feast_food_good
+		add = 10
+		desc = ACTIVITY_GUEST_OPTION_FEAST_FOOD_GOOD
+	}
+	modifier = {
+		scope:feast_option_courses ?= flag:feast_courses_bad
+		add = -10
+		desc = ACTIVITY_GUEST_OPTION_FEAST_COURSES_BAD
+	}
+	modifier = {
+		scope:feast_option_courses ?= flag:feast_courses_normal
+		add = 5
+		desc = ACTIVITY_GUEST_OPTION_FEAST_COURSES_NORMAL
+	}
+	modifier = {
+		scope:feast_option_courses ?= flag:feast_courses_good
+		add = 10
+		desc = ACTIVITY_GUEST_OPTION_FEAST_COURSES_GOOD
+	}
+	
+    ################
+	#   DISTANCE   #
+	################
+	modifier = {
+		# Special guests should not consider their lateness
+		NOT = { is_in_list = special_guests }
+		scope:estimated_arrival_diff_days < 0
+		NOT = { }
+		add = -1000
+		desc = ACTIVITY_GUEST_TRAVEL_LATE_REASON
+	}
+	modifier = {
+		# Special guests should not consider their lateness
+		NOT = { is_in_list = special_guests }
+		scope:estimated_arrival_diff_days > 0
+		scope:estimated_arrival_diff_days <= 7
+		add = -10
+		desc = ACTIVITY_GUEST_TRAVEL_BARELY_REASON
+	}
+	modifier = {
+		# Special guests should not consider their lateness
+		NOT = { is_in_list = special_guests }
+		scope:estimated_arrival_diff_days > 7
+		scope:estimated_arrival_diff_days <= 14
+		add = 10
+		desc = ACTIVITY_GUEST_TRAVEL_BARELY_REASON
+	}
+	modifier = {
+		# Special guests should not consider their lateness
+		NOT = { is_in_list = special_guests }
+		scope:estimated_arrival_diff_days > 14
+		scope:estimated_arrival_diff_days <= 30
+		add = 15
+		desc = ACTIVITY_GUEST_TRAVEL_NORMAL_REASON
+	}
+	modifier = {
+		# Special guests should not consider their lateness
+		NOT = { is_in_list = special_guests }
+		scope:estimated_arrival_diff_days > 30
+		scope:estimated_arrival_diff_days <= 60
+		add = 20
+		desc = ACTIVITY_GUEST_TRAVEL_NORMAL_REASON
+	}
+	modifier = {
+		# Special guests should not consider their lateness
+		NOT = { is_in_list = special_guests }
+		scope:estimated_arrival_diff_days > 60
+		add = 25
+		desc = ACTIVITY_GUEST_TRAVEL_EXTRA_TIME_REASON
+	}
+
+    #KOH CHANGED
+    modifier = {
+		# Special guests should not consider their lateness
+		AND = {
+            this = title:e_hre.holder
+            has_character_flag = hosting_pentecost
+        }
+		add = -10000
+		desc = ACTIVITY_GUEST_PENTECOST_HOSTING
+	}
+
+	    #KOH CHANGED
+		modifier = {
+			# Special guests should not consider their lateness
+			AND = {
+				has_trait = KOH_Free_City
+			}
+			add = -10000
+			desc = ACTIVITY_GUEST_TRAVEL_EXTRA_TIME_REASON
+		}
+}

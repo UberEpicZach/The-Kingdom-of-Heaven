@@ -1,35 +1,66 @@
-﻿# change_chivalry_effect = {
-# 	hidden_effect = {
-# 		remove_character_modifier = chivalry
-# 		remove_character_modifier = chivalry_1
-# 		remove_character_modifier = chivalry_2
-# 		remove_character_modifier = chivalry_3
-# 		remove_character_modifier = chivalry_4
-# 		remove_character_modifier = chivalry_5
-# 		remove_character_modifier = chivalry_6
-# 		remove_character_modifier = chivalry_7
-# 		remove_character_modifier = chivalry_8
-# 		remove_character_modifier = chivalry_9
-# 		remove_character_modifier = chivalry_10
-# 	}
-# 	switch = {
-# 		trigger = var:Chivalry # Why is this capitalized? T_T
-# 		1 = { add_character_modifier = chivalry_1 }
-# 		2 = { add_character_modifier = chivalry_2 }
-# 		3 = { add_character_modifier = chivalry_3 }
-# 		4 = { add_character_modifier = chivalry_4 }
-# 		5 = { add_character_modifier = chivalry_5 }
-# 		6 = { add_character_modifier = chivalry_6 }
-# 		7 = { add_character_modifier = chivalry_7 }
-# 		8 = { add_character_modifier = chivalry_8 }
-# 		9 = { add_character_modifier = chivalry_9 }
-# 		10 = { add_character_modifier = chivalry_10 }
+﻿jerusalem_historical_set_up = {
+	every_county_in_region = {
+		region = world_middle_east_jerusalem
+		limit = { NOT = { this = title:c_jerusalem }}
+		set_county_culture = culture:levantine
+	}
+	title:c_jerusalem = {
+		set_county_culture = culture:outremer
+	}
+	every_county_in_region = {
+		region = world_middle_east_jerusalem
+		limit = { 
+			NOT = { this = title:c_jerusalem }
+			top_liege = title:c_jerusalem.holder
+		}
+		random = {
+			chance = 20
+			set_county_culture = culture:outremer
+		}
+	}
+	title:k_jerusalem.holder = {
+		add_realm_law = male_preference_law
+		set_culture = culture:outremer
+		culture:outremer = {
+			if = {
+				limit = {
+					OR = {
+						has_cultural_pillar = heritage_frankish
+						any_parent_culture = { has_cultural_pillar = heritage_frankish }
+					}
+				}
+				set_name_list = name_list_outremer
+			}
+			if = {
+				limit = {
+					NOT = { has_innovation = innovation_men_at_arms }
+				}
+				add_innovation = innovation_men_at_arms
+			}
+			if = {
+				limit = {
+					NOT = { has_innovation = innovation_desert_tactics }
+				}
+				add_innovation = innovation_desert_tactics
+			}
+			
+			get_all_innovations_from = culture:french
+			get_all_innovations_from = culture:levantine
+			set_language_from = culture:french
+			set_heritage_from = culture:french
+			add_cultural_tradition = tradition_dryland_dwellers
+			add_cultural_tradition = tradition_philosopher_culture
+		}
+		every_vassal_or_below = {
+			limit = {
+				has_culture = culture:french
+			}
+			set_culture = title:k_jerusalem.holder.culture
+		}
+	}
+}
 
-# 		fallback = { add_character_modifier = chivalry }
-# 	}
-# }
-
-add_my_faction ={
+add_my_faction = {
 	root = {
 	set_variable = {
 		name = claiming_title
@@ -74,7 +105,7 @@ add_my_faction ={
 	}
 }
 
-MothersFaction ={
+MothersFaction = {
 	title:c_bordeaux.holder = {
 	set_variable = {
 		name = claiming_title
@@ -547,7 +578,7 @@ give_assassins_castle = {
 			# If it doesn't have a free building slot, give it one.
 			if = {
 				limit = { free_building_slots = 0 }
-				add_building_slot = 1
+				add_province_modifier = extra_building_slot
 			}
 			# Add the building.
 			add_building = temple_03
@@ -560,7 +591,7 @@ give_assassins_castle = {
 			# If it doesn't have a free building slot, give it one.
 			if = {
 				limit = { free_building_slots = 0 }
-				add_building_slot = 1
+				add_province_modifier = extra_building_slot
 			}
 			# Add the building.
 			add_building = pastures_01
@@ -573,7 +604,7 @@ give_assassins_castle = {
 			# If it doesn't have a free building slot, give it one.
 			if = {
 				limit = { free_building_slots = 0 }
-				add_building_slot = 1
+				add_province_modifier = extra_building_slot1
 			}
 			# Add the building.
 			add_building = curtain_walls_08
@@ -586,7 +617,7 @@ give_assassins_castle = {
 			# If it doesn't have a free building slot, give it one.
 			if = {
 				limit = { free_building_slots = 0 }
-				add_building_slot = 1
+				add_province_modifier = extra_building_slot
 			}
 			# Add the building.
 			add_building = military_camps_07
@@ -802,31 +833,31 @@ investitureopinioneffect = {
 		}
 	}
 }
-create_house_feud_effect = {
-	house_feud_save_head_and_attacker_effect = yes
-	house_feud_rival_story_effect = { RIVAL = $KOHFEUDTARGET$ }
-	house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = $KOHFEUDTARGET$ }
-	random_owned_story = {
-		limit = { story_type = story_cycle_house_feud }
-		set_variable = {
-			name = house_feud_reason
-			value = flag:head_rivalry
-		}
-		house_feud_save_victim_attacker_effect = yes
-	}
-	$KOHFEUDTARGET$ = {
-		house_feud_rival_story_effect = { RIVAL = prev }
-		house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = prev }
-		random_owned_story = {
-			limit = { story_type = story_cycle_house_feud }
-			set_variable = {
-				name = house_feud_reason
-				value = flag:head_rivalry
-			}
-			house_feud_save_victim_attacker_effect = yes
-		}
-	}
-}
+# create_house_feud_effect = {
+# 	house_feud_save_head_and_attacker_effect = yes
+# 	house_feud_rival_story_effect = { RIVAL = $KOHFEUDTARGET$ }
+# 	house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = $KOHFEUDTARGET$ }
+# 	random_owned_story = {
+# 		limit = { story_type = story_cycle_house_feud }
+# 		set_variable = {
+# 			name = house_feud_reason
+# 			value = flag:head_rivalry
+# 		}
+# 		house_feud_save_victim_attacker_effect = yes
+# 	}
+# 	$KOHFEUDTARGET$ = {
+# 		house_feud_rival_story_effect = { RIVAL = prev }
+# 		house_feud_start_or_reciprocate_tooltip_effect = { FEUD_TARGET = prev }
+# 		random_owned_story = {
+# 			limit = { story_type = story_cycle_house_feud }
+# 			set_variable = {
+# 				name = house_feud_reason
+# 				value = flag:head_rivalry
+# 			}
+# 			house_feud_save_victim_attacker_effect = yes
+# 		}
+# 	}
+# }
 
 fix_variable_error = {
     save_scope_as = $ERROR$ 

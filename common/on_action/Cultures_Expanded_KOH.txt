@@ -1,0 +1,463 @@
+﻿on_game_start_after_lobby = {
+    on_actions = {
+		KOH_CE_ON_START
+        #make_belocroat_culture_effect_setup 
+    }
+}
+
+KOH_CE_ON_START = {
+	trigger = {
+		exists = global_var:CE_is_loaded
+	}
+	effect = {
+		culture:outremer = {
+			add_culture_tradition = tradition_outremer_armie
+			add_culture_tradition = tradition_dryland_dwellers
+		}
+
+
+		ce_arpitan_1066_setup_effect = yes
+		ce_britain_1066_setup_effect = yes
+		title:c_devon = { set_county_culture = culture:cornish }
+		culture:nitravan = { save_scope_as = nitravan }
+		culture:slovien = { save_scope_as = slovien }
+		
+		#ce_balkans_1066_setup_effect
+		# Culture Name Changes
+		culture:nitravan = {
+			set_culture_name = {
+				noun = "slovak"
+				collective_noun = "slovak_collective_noun"
+				prefix = "slovak_prefix"
+			}
+		}
+		culture:slovien = {
+			set_culture_name = {
+				noun = "moravian_noun"
+				collective_noun = "moravian_c_noun"
+				prefix = "moravian_prefix"
+			}
+		}
+		culture:slavonian = {
+			set_culture_name = {
+				noun = "n_slavonian_noun"
+				collective_noun = "n_slavonian_collective_noun"
+				prefix = "n_slavonian_prefix"
+			}
+		}
+		culture:carantanian = {
+			set_culture_name = {
+				noun = "slovene"
+				collective_noun = "slovene_collective_noun"
+				prefix = "slovene_prefix"
+			}
+		}
+
+		#Traditions
+		culture:slovien = {
+			remove_culture_tradition = tradition_equitable
+		}
+		culture:slovien = {
+			add_culture_tradition = tradition_xenophilic
+		}
+		culture:slovien = {
+			add_culture_tradition = tradition_agrarian
+		}
+		culture:slovien = {
+			add_culture_tradition = tradition_stand_and_fight
+		}
+		culture:nitravan = {
+			remove_culture_tradition = tradition_modest
+		}
+		culture:nitravan = {
+			add_culture_tradition = tradition_festivities
+		}
+		culture:nitravan = {
+			add_culture_tradition = tradition_loyal_soldiers
+		}
+		culture:carantanian = {
+			add_culture_tradition = tradition_astute_diplomats
+		}
+
+		#Language Fixes
+		culture:czech = {
+			set_culture_pillar = language_czecho_slovak
+		}
+		culture:slovien = {
+			set_culture_pillar = language_czecho_slovak
+		}
+		culture:nitravan = {
+			set_culture_pillar = language_czecho_slovak
+		}
+
+		# Tradition Edits
+		culture:vlach = {
+			remove_culture_tradition = tradition_xenophilic
+			remove_culture_tradition = tradition_staunch_traditionalists
+			remove_culture_tradition = tradition_hussar
+		}
+		culture:vlach = {
+			add_culture_tradition = tradition_fierce_independence
+			add_culture_tradition = tradition_hill_dwellers
+		}
+
+			# County Culture Shifts
+	
+		#Nitravans
+		title:c_poszony = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_nyitra = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_hont = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_zolyom = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_bars = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_trenscen = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_lipto = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_orava = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_gemer = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_gemer = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_borsod = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_abauj = {
+			set_county_culture = culture:nitravan
+		}
+		title:c_spis = {
+			set_county_culture = culture:nitravan
+		}
+		
+		#Moravians
+		title:c_znojmo = {
+			set_county_culture = culture:slovien
+		}
+		title:c_prerov = {
+			set_county_culture = culture:slovien
+		}
+		title:c_olomouc = {
+			set_county_culture = culture:slovien
+		}
+		title:c_brno = {
+			set_county_culture = culture:slovien
+		}
+		title:c_jihlava = {
+			set_county_culture = culture:slovien
+		}
+		
+		#Croatian
+		title:c_vodica = {
+			set_county_culture = culture:croatian
+		}
+		title:c_pset = {
+			set_county_culture = culture:croatian
+		}
+		title:c_vrbas = {
+			set_county_culture = culture:croatian
+		}
+		title:c_zavrsje = {
+			set_county_culture = culture:croatian
+		}
+		title:c_donjikraji = {
+			set_county_culture = culture:croatian
+		}
+		title:c_pagania = {
+			set_county_culture = culture:croatian
+		}
+		
+		#Serbian
+		title:c_vhrbosna = {
+			set_county_culture = culture:serbian
+		}
+		title:c_soli = {
+			set_county_culture = culture:serbian
+		}
+		title:c_rama = {
+			set_county_culture = culture:serbian
+		}
+		title:c_usora = {
+			set_county_culture = culture:serbian
+		}
+		title:c_branicevo = {
+			set_county_culture = culture:serbian
+		}
+
+		#Vlach
+		title:c_hunyad = {
+			set_county_culture = culture:hungarian
+		}		
+		title:c_feher = {
+			set_county_culture = culture:saxon
+		}		
+		title:c_fogaras = {
+			set_county_culture = culture:saxon
+		}
+		title:c_barcasag = {
+			set_county_culture = culture:saxon
+		}
+		title:c_avlonas = {
+			set_county_culture = culture:vlach
+		}
+		title:c_aetolia = {
+			set_county_culture = culture:vlach
+		}
+		title:c_thessaliotis = {
+			set_county_culture = culture:vlach
+		}
+		# title:c_thessalia = {
+		# 	set_county_culture = culture:vlach
+		# }
+		# title:c_neopatras = {
+		# 	set_county_culture = culture:vlach
+		# }
+		title:c_rhodopes = {
+			set_county_culture = culture:vlach
+		}
+		title:c_suceava = {
+			set_county_culture = culture:vlach
+		}
+		title:c_dorohoi = {
+			set_county_culture = culture:vlach
+		}
+		title:c_iasi = {
+			set_county_culture = culture:vlach
+		}
+		title:c_krasso = {
+			set_county_culture = culture:vlach
+		}
+		title:c_krasso = {
+			set_county_faith = faith:orthodox
+		} 
+		#Bulgars
+		title:c_philippopolis = {
+			set_county_culture = culture:bulgarian
+		}
+		#Bulgars
+		title:c_vidin = {
+			set_county_culture = culture:bulgarian
+		}
+		
+		#Pechenegs
+		title:c_cetatea_alba = {
+			set_county_culture = culture:pecheneg
+		}
+		title:c_chilia = {
+			set_county_culture = culture:pecheneg
+		}
+		title:c_lapusna = {
+			set_county_culture = culture:pecheneg
+		}
+		title:c_orhei = {
+			set_county_culture = culture:pecheneg
+		}
+		title:c_soroca = {
+			set_county_culture = culture:pecheneg
+		}
+		title:c_tigheci = {
+			set_county_culture = culture:pecheneg
+		}
+
+		#Language Fixes
+		culture:serbian = {
+			set_culture_pillar = language_slavonic
+		}
+		culture:croatian = {
+			set_culture_pillar = language_slavonic
+		}
+		culture:bosnian = {
+			set_culture_pillar = language_slavonic
+		}
+		culture:carantanian = {
+			set_culture_pillar = language_slavonic
+		}
+
+		# Scopes
+		culture:croatian = { save_scope_as = croatian }
+		culture:russian = { save_scope_as = russian }
+
+		# Innovations
+		culture:belocroat = {
+			get_all_innovations_from = scope:russian
+		}
+		culture:nitravan = {
+			get_all_innovations_from = scope:slovien
+		}
+
+		#Slavonians
+		title:c_zagorje = {
+			set_county_culture = culture:slavonian
+		}
+		title:c_vukovar = {
+			set_county_culture = culture:slavonian
+		}
+		title:c_pozega = {
+			set_county_culture = culture:slavonian
+		}
+		title:c_zagreb = {
+			set_county_culture = culture:slavonian
+		}
+		title:c_vrbas = {
+			set_county_culture = culture:slavonian
+		}
+		title:c_szerem = {
+			set_county_culture = culture:slavonian
+		}
+		title:c_keve = {
+			set_county_culture = culture:mogyer
+		}
+		
+		# #Paganian/ Neretljanian/ Neretanian
+		# title:c_pagania = {
+		# 	set_county_culture = culture:neretljanian
+		# }
+		
+		# #Docleans/ Dukljans
+		# title:c_pomorje = {
+		# 	set_county_culture = culture:doclean
+		# }
+		# title:c_duklja = {
+		# 	set_county_culture = culture:doclean
+		# }
+		
+		# #Doclean 2
+		# title:c_travunia = {
+		# 	set_county_culture = culture:doclean
+		# }
+			
+		#Heritage Fixes
+		culture:carantanian = {
+			set_culture_pillar = heritage_south_slavic
+		}
+		
+		# Belocroat 
+		title:c_saris = {
+			set_county_culture = culture:russian
+		}	
+		title:c_zemplen = {
+			set_county_culture = culture:russian
+		}
+		title:c_ungvar = {
+			set_county_culture = culture:russian
+		}
+		title:c_bereg = {
+			set_county_culture = culture:russian
+		}
+		title:c_marmaros = {
+			set_county_culture = culture:russian
+		}
+
+		# Historical Character Culture Shifts
+		character:146179 = {
+			set_culture = culture:belocroat
+		}
+		character:146180 = {
+			set_culture = culture:russian
+		}
+		character:146181 = {
+			set_culture = culture:russian
+		}
+		character:146182 = {
+			set_culture = culture:russian
+		}
+		character:146183 = {
+			set_culture = culture:russian
+		}
+		character:146184 = {
+			set_culture = culture:russian
+		}
+		character:168296 = {
+			set_culture = culture:slavonian
+		}
+		character:168295 = {
+			set_culture = culture:slavonian
+		}
+		character:168294 = {
+			set_culture = culture:slavonian
+		}
+		character:168293 = {
+			set_culture = culture:slavonian
+		}
+		character:168292 = {
+			set_culture = culture:slavonian
+		}
+		if = {
+			limit = {
+				title:k_croatia.holder = {
+					highest_held_title_tier = tier_kingdom
+					culture = { has_cultural_pillar = heritage_south_slavic }
+				}
+			}
+			title:k_croatia.holder = {
+				learn_slavonic_language_effect = yes
+			}
+		}
+
+
+		ce_baltic_1066_setup_effect = yes
+		title:c_allenstein.holder = {
+			set_culture = culture:galindian
+		}
+		title:c_zemigalians.holder = {
+			set_culture = culture:zemgalian
+		}
+		ce_burman_1066_setup_effect = yes
+		ce_byzantine_1066_setup_effect = yes
+		culture:arberian = {
+			set_culture_name = {
+            	noun = "albanian"
+            	collective_noun = "albanian_collective_noun"
+            	prefix = "albanian_prefix"
+			}
+		}
+		character:215008 = {
+			set_culture = culture:arberian
+		}
+		character:232538 = {
+			set_culture = culture:arberian
+		}
+		character:232539 = {
+			set_culture = culture:arberian
+		}
+		character:34446 = {
+			set_culture = culture:arberian
+		}
+		character:34447 = {
+			set_culture = culture:arberian
+		}
+		character:34448 = {
+			set_culture = culture:arberian
+		}
+		title:c_metzovo = {
+			set_county_culture = culture:greek
+		}
+		ce_coptic_1066_setup_effect = yes
+		title:c_alexandria = {
+			set_county_culture = culture:egyptian
+		}		
+		title:c_fayyum = {
+			set_county_culture = culture:egyptian
+		}		
+		title:c_giza = {
+			set_county_culture = culture:egyptian
+		}
+		culture:turkish = {
+			add_culture_tradition = tradition_turkic_raiders
+		}
+	}
+}

@@ -1,0 +1,541 @@
+﻿##ASSASSINS EVENT CHAIN
+
+namespace = assassins_event_chain #Always set a namespace to avoid weird errors
+
+assassins_event_chain.01 = { #Rashid ad-Din Sinan's Ambitions
+	type = character_event #The possible events are letter_event/court_event/activity_event. you can experiment with the different ones
+	title = assassins_event_chain.01.t #self-explanatory, it's the title
+
+    immediate = {
+		create_character = {
+			template = assassin_character #Templates are made in the scripted_character_templates folder
+			dynasty = none #I don't want this character to be in a dynasty
+			location = root.location #Where should the character be? Root is the person receiving the event
+			save_scope_as = assassin_messenger #What should this character be known as
+		}
+		root = {
+			save_scope_as = muhammed
+		}
+	}
+
+	left_portrait = {
+		character = root #this is which characters will be seen on the portrait
+		animation = war_defender
+	}
+	right_portrait = {
+		character=scope:assassin_messenger
+		animation = scheme
+	}
+
+    desc = assassins_event_chain.01.desc #The event description. It's a key refering to a file in localizatio
+
+	option = {
+		name = assassins_event_chain.01.a
+		custom_tooltip = assassins_event_chain.01.a.desc
+
+		character:227012 = {
+			save_scope_as = rashid
+			trigger_event = {
+				id = assassins_event_chain.02
+				days = 30
+			}
+		}
+	}
+
+	option = { # A choice that can be picked
+		name = assassins_event_chain.01.b
+		custom_tooltip = assassins_event_chain.01.b.desc
+
+		trigger = {
+			NOT = {
+				is_ai = yes
+			}
+		}
+	}
+
+	theme = "intrigue" #The theme for the event, essentially the background, which can be found in 00_event_themes.txt
+}
+
+assassins_event_chain.02 = { #An Imperious Request
+	type = letter_event 
+	opening = assassins_event_chain.02.opening
+	desc = assassins_event_chain.02.desc
+	sender = character:144228
+
+	immediate = {
+		reverse_add_opinion = {
+			target = scope:muhammed
+			modifier = disappointed_opinion
+			opinion = -50
+		}
+	}
+	option = { # A choice that can be picked
+		
+		name = assassins_event_chain.02.a #The name of the first option
+		custom_tooltip = assassins_event_chain.02.a.desc
+
+		character:144228 = {
+			trigger_event = {
+				id = assassins_event_chain.03
+				days = 30
+			}
+		}
+
+	}
+
+	option = {
+		name = assassins_event_chain.02.b
+		custom_tooltip = assassins_event_chain.02.b.desc
+
+		trigger = {
+			NOT = {
+				root = {
+					is_ai = yes
+				}
+			}
+		}
+	}
+
+}
+
+assassins_event_chain.03 = { #Paths of Action
+	type = character_event
+	desc = assassins_event_chain.03.desc
+	title = assassins_event_chain.03.t
+	theme = court
+	left_portrait = {
+		character = scope:assassin_messenger
+		animation = disapproval
+	}
+	right_portrait = {
+		character = scope:rashid
+		animation = anger
+	}
+
+	option = {
+		name = assassins_event_chain.03.a
+
+		root = {
+			trigger_event = {
+				id = assassins_event_chain.04
+				days = 30
+			}
+		}
+
+		custom_tooltip = assassins_event_chain.03.a.desc
+	}
+	option = {
+		name = assassins_event_chain.03.b
+		start_scheme = {
+			target = scope:rashid
+			type = murder
+		}
+		custom_tooltip = assassins_event_chain.03.b.desc
+	}
+	option = {
+		name = assassins_event_chain.03.c
+		custom_tooltip = assassins_event_chain.03.c.desc
+
+		if = {
+			limit = {
+				scope:rashid = {
+					is_ai = yes
+				}
+			}
+			duel = {
+				skill = diplomacy
+				target = scope:rashid
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
+						min = -19
+					}
+					trigger_event = {
+						id = assassins_event_chain.11
+						days = 30
+					}
+					custom_tooltip = "You successfully negotiate."
+				}
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -1
+						min = -19
+					}
+					custom_tooltip = "You fail to convince him, this may only be resolved through war."
+					trigger_event = {
+						id = assassins_event_chain.04
+						days = 30
+					}
+				}
+			}
+		}
+		else = {
+			trigger_event = {
+				id = assassins_event_chain.05
+				days = 30
+			}
+		}
+	}
+}
+
+assassins_event_chain.04 = { #The Power Struggle
+	type = character_event
+	desc = assassins_event_chain.04.desc
+	title = assassins_event_chain.04.t
+	theme = war
+	right_portrait = {
+		character = root
+		animation = anger
+	}
+	left_portrait = {
+		character = scope:rashid
+		animation = war_attacker
+	}
+
+	option = { #war
+		name = assassins_event_chain.04.a
+		custom_tooltip = assassins_event_chain.04.a.desc
+		scope:rashid = {
+			start_war = {
+				casus_belli = claim_cb
+				target = scope:muhammed
+				target_title = title:k_nizari_state
+				claimant = scope:rashid
+			}
+		}
+	}
+	option = {
+		name = assassins_event_chain.04.b
+		custom_tooltip = assassins_event_chain.04.b.desc
+
+		if = {
+			limit = {
+				scope:rashid = {
+					is_ai = yes
+				}
+			}
+			duel = {
+				skill = diplomacy
+				target = scope:rashid
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
+						min = -19
+					}
+					trigger_event = {
+						id = assassins_event_chain.09
+						days = 30
+					}
+				}
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -1
+						min = -19
+					}
+					scope:rashid = {
+						start_war = {
+							casus_belli = claim_cb
+							target = scope:muhammed
+							target_title = title:k_nizari_state
+							claimant = character:227012
+						}
+					}
+				}
+			}
+		}
+		else = {
+			trigger_event = {
+				id = assassins_event_chain.06
+				days = 30
+			}
+		}
+	}
+}
+
+assassins_event_chain.05 = { #An Olive Branch
+	type = character_event
+	desc = assassins_event_chain.05.desc
+	title = assassins_event_chain.05.t
+	theme = friend_relation
+
+	left_portrait = {
+		character = scope:muhammed
+		animation = forgiving
+	}
+	right_portrait = {
+		character = scope:rashid
+		animation = personality_rational
+	}
+
+	option = { #yes
+		name = assassins_event_chain.05.a
+		custom_tooltip = assassins_event_chain.05.a.desc
+
+		trigger_event = {
+			id = assassins_event_chain.11
+			days = 30
+		}
+	}
+	option = { #no
+		name = assassins_event_chain.05.b
+		custom_tooltip = assassins_event_chain.05.b.desc
+
+		trigger_event = {
+			id = assassins_event_chain.04
+		}
+	}
+
+}
+
+assassins_event_chain.06 = { #Perhaps, Peace?
+	type = character_event
+	desc = assassins_event_chain.06.desc
+	title = assassins_event_chain.06.t
+	theme = diplomacy_foreign_affairs_focus
+
+	left_portrait = {
+		character = scope:rashid
+		animation = war_over_tie
+	}
+	right_portrait = {
+		character = scope:muhammed
+		animation = war_over_tie
+	}
+
+	option = {
+		name = assassins_event_chain.06.a
+		custom_tooltip = assassins_event_chain.06.a.desc
+
+		trigger_event = {
+			id = assassins_event_chain.09
+			days = 30
+		}
+	}
+	option = {
+		name = assassins_event_chain.06.b
+		custom_tooltip = assassins_event_chain.06.b.desc
+
+		start_war = {
+			casus_belli = claim_cb
+			target = scope:muhammed
+			target_title = title:k_nizari_state
+			claimant = character:227012
+		}
+	}
+}
+
+assassins_event_chain.08 = { #An Eerie Silence
+	type = character_event
+	desc = assassins_event_chain.08.desc
+	title = assassins_event_chain.08.t
+	theme = murder_scheme
+	left_portrait = {
+		character = scope:rashid
+		animation = worry
+	}
+	right_portrait = {
+		character = cp:councillor_spymaster
+		animation = scheme
+	}
+
+	option = {
+		name = assassins_event_chain.08.a
+		custom_tooltip = assassins_event_chain.08.a.desc
+
+		start_scheme = {
+			target = scope:muhammed
+			type = murder
+		}
+	}
+	option = {
+		name = assassins_event_chain.08.b
+		custom_tooltip = assassins_event_chain.08.b.desc
+	}
+}
+
+assassins_event_chain.09 = { #Truce and Stalemate
+	type = character_event
+	desc = assassins_event_chain.09.desc
+	title = assassins_event_chain.09.t
+	theme = diplomacy_foreign_affairs_focus
+
+	left_portrait = {
+		character = scope:rashid
+		animation = war_over_tie
+	}
+	right_portrait = {
+		character = scope:muhammed
+		animation = war_over_tie
+	}
+
+	option = {
+		name = assassins_event_chain.09.a
+		custom_tooltip = assassins_event_chain.09.a.desc
+
+		trigger_event = {
+			id = assassins_event_chain.16
+			days = 30
+		}
+	}
+}
+
+assassins_event_chain.11 = { #Mutual Understanding
+	type = character_event
+	desc = assassins_event_chain.11.desc
+	title = assassins_event_chain.11.t
+	theme = diplomacy_foreign_affairs_focus
+
+	left_portrait = {
+		character = scope:muhammed
+		animation = personality_forgiving
+	}
+
+	right_portrait = {
+		character = scope:rashid
+		animation = personality_callous
+	}
+
+	option = {
+		name = assassins_event_chain.11.a
+		custom_tooltip = assassins_event_chain.11.a.desc
+
+		scope:rashid = {
+			trigger_event = {
+				id = assassins_event_chain.12
+				days = 30
+			}
+		}
+	}
+	option = {
+		name = assassins_event_chain.11.b
+		custom_tooltip = assassins_event_chain.11.b.desc
+
+		scope:rashid = {
+			trigger_event = {
+				id = assassins_event_chain.13
+				days = 30
+			}
+		}
+	}
+}
+
+assassins_event_chain.12 = { #A New Friend
+	type = character_event
+	desc = assassins_event_chain.12.desc
+	title = assassins_event_chain.12.t
+	theme = friend_relation
+
+	left_portrait = { 
+		character = scope:muhammed
+		animation = personality_honorable
+	}
+	right_portrait = {
+		character = scope:rashid
+		animation = personality_content
+	}
+
+	option = {
+		name = assassins_event_chain.12.a
+		custom_tooltip = assassins_event_chain.12.a.desc
+
+		scope:muhammed = {
+			trigger_event = {
+				id = assassins_event_chain.18
+				days = 30
+			}
+		}
+	}
+	option = {
+		name = assassins_event_chain.12.b
+		custom_tooltip = assassins_event_chain.12.b.desc
+
+		scope:muhammed = {
+			trigger_event = {
+				id = assassins_event_chain.19
+				days = 30
+			}
+		}
+	}
+}
+
+assassins_event_chain.13 = { #Mutual Understanding 2
+	type = character_event
+	desc = assassins_event_chain.13.desc
+	title = assassins_event_chain.13.t
+	theme = rival_relation
+
+	left_portrait = {
+		character = scope:muhammed
+		animation = disgust
+	}
+	right_portrait = {
+		character = scope:rashid
+		animation = dismissal
+	}
+
+	option = {
+		name = assassins_event_chain.13.a
+		custom_tooltip = assassins_event_chain.13.a.desc
+
+		scope:muhammed = {
+			trigger_event = {
+				id = assassins_event_chain.19
+				days = 30
+			}
+		}
+	}
+}
+
+assassins_event_chain.18 = { #Unified Vision
+	type = character_event
+	desc = assassins_event_chain.18.desc
+	title = assassins_event_chain.18.t
+	theme = friend_relation
+	
+	left_portrait = { 
+		character = scope:muhammed
+		animation = personality_honorable
+	}
+	right_portrait = {
+		character = scope:rashid
+		animation = personality_content
+	}
+
+	option = {
+		name = assassins_event_chain.18.a
+		custom_tooltip = assassins_event_chain.18.a.desc
+
+		set_relation_friend = {
+			target = scope:rashid
+		}
+	}
+}
+
+assassins_event_chain.19 = { #Delicate Balance
+	type = character_event
+	desc = assassins_event_chain.19.desc
+	title = assassins_event_chain.19.t
+	theme = rival_relation
+
+	left_portrait = {
+		character = scope:muhammed
+		animation = disgust
+	}
+	right_portrait = {
+		character = scope:rashid
+		animation = dismissal
+	}
+
+	option = {
+		name = assassins_event_chain.19.a
+		custom_tooltip = assassins_event_chain.19.a.desc
+
+		set_relation_rival = {
+			target = scope:rashid
+		}
+	}
+}

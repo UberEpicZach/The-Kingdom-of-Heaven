@@ -4,15 +4,118 @@
 		#on_artifact_initialization
 		KOH_Italian_Familes
 		#KOH_investiture
+		KOH_assassins_start
+		delay = { days = 1 }
+		KOH_ON_START_DELAYED
 	}
 }
 
+
+KOH_ON_START_DELAYED = {	
+	effect = {
+		every_county_in_region = {
+			region = world_middle_east_jerusalem
+			limit = { NOT = { this = title:c_jerusalem }}
+			set_county_culture = culture:levantine
+		}
+		every_county_in_region = {
+			region = world_middle_east_jerusalem
+			limit = { 
+				NOT = { this = title:c_jerusalem }
+				top_liege = title:c_jerusalem.holder
+			}
+			random = {
+				chance = 20
+				set_county_culture = culture:outremer
+			}
+		}		
+		if = {
+			limit = {
+				exists = global_var:SE_is_loaded
+			}
+			title:k_jerusalem.holder = {
+				every_held_title = {
+					limit = {
+						has_title_law = male_only_law
+					}
+					clear_title_laws = yes
+				}
+				if = {
+					limit = {
+						has_realm_law = male_only_law
+					}	
+					remove_realm_law = male_only_law
+				}
+				every_vassal_or_below = {
+					every_held_title = {
+						limit = {
+							has_title_law = male_only_law
+						}
+						clear_title_laws = yes
+					}
+					if = {
+						limit = {
+							has_realm_law = male_only_law
+						}	
+						remove_realm_law = male_only_law
+					}
+				}
+			}
+			title:k_jerusalem = {
+				add_title_law = outremer_elective_succession_law
+			}
+			
+			culture:outremer = {
+				add_culture_tradition = tradition_crusader_states
+			}
+		}
+					
+	}
+}
+
+
+
+travel_event_tombola = {
+	events = {
+		KoH_balians_adventure.10
+		KoH_balians_adventure.101
+		#KoH_balians_adventure.11
+		KoH_balians_adventure.13
+	}
+}
+
+balian_adventure_ending = {
+	events = {
+		KoH_balians_adventure.21
+		KoH_balians_adventure.20
+	}
+}
+
+balian_adventure_ending2 = {
+	events = {
+
+	}
+}
+
+senggum_jealousy = {
+	trigger = {
+		this = character:303211
+		is_allied_to=scope:temujin
+		current_date > 1187.1.1
+	}
+	random_events = {
+		50 = 0
+		100 = temujin.1000	
+	}
+}
 yearly_playable_pulse = {
 	on_actions = {
 		delay = { months = 2 }
     	#KOH_pulse_monthly
 		KOH_yearly
+		senggum_jealousy
 	}
+	
 }
 
 # # Called from code once a quarter for "playable" (count+) characters.
@@ -37,9 +140,16 @@ yearly_playable_pulse = {
 # 	}
 # }
 
+on_army_monthly = {
+	events = {
+		KoH_generalgeneric.6
+	}
+}
 on_army_enter_province = {
 	events = {
 		tib_abu_yaqub_yusuf_death.9
+		KoH_generalgeneric.3
+		KoH_generalgeneric.6
 	}
 }
 
@@ -77,17 +187,20 @@ five_year_everyone_pulse = {
 on_kotr_death = {
 	trigger ={
 		has_court_position = King_of_the_germans_court_position
-	}
-	effect = {
-		if = {
-			limit = {
-				exists = title:k_king_of_the_germans.holder
-				scope:employee = title:k_king_of_the_germans.holder
-			}
-			destroy_title = title:k_king_of_the_germans
-		}
+	}	
+	effect = {		
+		if = {			
+			limit = {		
+				exists = title:k_king_of_the_germans.holder			
+				scope:employee = title:k_king_of_the_germans.holder		
+					
+			}		
+			destroy_title = title:k_king_of_the_germans		
+		}	
+					
 	}
 }
+
 
 KOH_holy_orders = {
 	effect = {
@@ -175,9 +288,251 @@ on_game_start_after_lobby = {
 		#MyMo_ongamestart
 		khwarezmid_invasion
 		KOH_Parition
+		KOH_fix_provinces
+		KOH_COA_TEMP
+		delay = { days = 2 }
+		KOH_COA_TEMP
 	}
 }
 
+
+KOH_COA_TEMP = {
+	effect = {
+		title:c_acre = { set_coa = holder.house	}
+		title:b_beaufort = { set_coa = holder.house	}
+		title:b_beirut = { set_coa = holder.house	}
+		title:d_palestine = { set_coa = title:k_jerusalem }
+		title:c_jerusalem = { set_coa = title:k_jerusalem }
+		title:c_ghazza = { set_coa = title:c_ascalon }
+		title:b_bethgibelin = { set_coa = lessee.house	}
+		title:b_blanchegarde = { set_coa = holder.house	}
+		title:b_bethlehem = { set_coa = holder.house	}
+		title:d_urdunn = { set_coa = holder.house	}
+		title:d_ascalon = { set_coa = holder.house	}
+		title:c_jaffa = { set_coa = holder.house	}
+		title:b_gibelet = { set_coa = holder.house	}
+		title:b_hebron = { set_coa = holder.house	}
+		title:c_ibelin = { set_coa = holder.house	}
+		title:c_kerak = { set_coa = holder.house	}
+		title:b_kerak = { set_coa = holder.house	}
+		title:c_montforte = { set_coa = holder.house	}
+		title:d_oultrejourdain = { set_coa = holder.house	}
+		title:c_tiberias = { set_coa = holder.house	}
+		title:b_torone = { set_coa = holder.house	}
+		title:b_toron = { set_coa = lessee.house	}
+		title:d_lebanon = { set_coa = holder.house	}
+		title:b_kerake = { set_coa = lessee.house	}
+	}
+}
+
+KOH_fix_provinces = {
+	effect = {
+		province:496 = {
+			add_building = castle_03
+			add_building = city_03
+			add_building = common_tradeport_06
+			add_building = guild_halls_06
+			add_building = farm_estates_05
+			add_building = regimental_grounds_05
+			add_building = cereal_fields_05
+		}
+		province:1846 = {
+			add_building = common_tradeport_01
+		}
+		province:1919 = {
+			add_province_modifier = extra_building_slot
+			add_building = farm_estates_01
+		}
+		province:1978 = {
+			add_province_modifier = extra_building_slot
+			add_building = quarries_01
+		}
+		province:1981 = {
+			add_province_modifier = extra_building_slot
+			add_building = curtain_walls_01
+			add_building= cereal_fields_01
+		}
+		province:1995 = {
+			add_province_modifier = extra_building_slot
+			add_building = cereal_fields_01
+			add_building =regimental_grounds_01
+		}
+		province:2142 = {
+			add_province_modifier = extra_building_slot
+			add_building = outposts_01
+		}
+		province:2012 = {
+			add_province_modifier = extra_building_slot
+			add_building = hill_farms_01
+		}
+		province:2214 = {
+			add_province_modifier = extra_building_slot
+			add_building = military_camps_01
+		}
+		province:2252 = {
+			add_province_modifier = extra_building_slot
+			add_building = military_camps_01 
+		}
+		province:6223 = {
+			add_province_modifier = extra_building_slot
+			add_building = watchtowers_01
+		}
+		province:6155 = {
+			add_province_modifier = extra_building_slot
+			add_building = military_camps_01
+		}
+		province:6158 = {
+			add_province_modifier = extra_building_slot
+			add_building = camel_farms_01
+		}
+		province:6134 = {
+			add_province_modifier = extra_building_slot
+			add_building = quarries_01
+		}
+		province:6144 = {
+			add_province_modifier = extra_building_slot
+			add_building = pastures_01
+		}
+		province:1862 = {
+			add_province_modifier = extra_building_slot
+			add_building = barracks_01
+		}
+		province:1887 = {
+			add_province_modifier = extra_building_slot
+			add_building = military_camps_01
+		}
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+		# province: = {
+		# 	add_province_modifier = extra_building_slot
+		# 	add_building = 
+		# }
+
+		
+	}
+}
 on_title_gain = {
 	on_actions = {
 		on_gain_HRE
@@ -284,6 +639,17 @@ on_gain_HRE = {
 			trigger_event = {
 				days = 1
 				id = KOH_diets.1
+			}
+		}
+	}
+}
+
+KOH_assassins_start = {
+	effect = {
+		character:144228 = {
+			trigger_event = {
+				id = assassins_event_chain.01
+				days = 15
 			}
 		}
 	}
@@ -411,6 +777,7 @@ KOH_Parition = {
 
 KOH_ON_START = {
 	effect = {
+		jerusalem_historical_set_up = yes
 
 		#khwarazmian
 		character:230000 = {
@@ -465,13 +832,7 @@ KOH_ON_START = {
 				value = title:k_papal_state
 			}
 		}
-		
-		# every_living_character = {
-		# 	set_variable = {
-		# 		name = Chivalry
-		# 		value = 0
-		# 	}
-		# }
+
 		#Makes Henry II not die early
 		character:204500 = {
 			add_character_modifier = {
@@ -482,7 +843,7 @@ KOH_ON_START = {
 				limit = {
 					exists = global_var:CFP_is_loaded
 				}
-				hidden_effect_new_artifact = {
+				hidden_effect_new_object = {
 					set_artifact_rarity_illustrious = yes
 					character:140 = {
 						save_scope_as = owner
@@ -538,9 +899,22 @@ KOH_ON_START = {
 			}
 		}
 		title:e_hre.holder = {
-			trigger_event = {
-				id = KOH_Pentecost.1
-				days = 40
+			if = {
+				limit = {
+					title:e_hre.holder = {
+						is_ai = yes
+					}
+				}
+				trigger_event = KOH_Pentecost.1
+			}
+			else = {
+				trigger_event = {
+					id = KOH_Pentecost.1
+					days = 20
+				}
+			}
+			title:c_aachen.holder = {
+				add_gold = -400
 			}
 		}
 		#Starts Balian's Event Chain
@@ -689,7 +1063,7 @@ KOH_ON_START = {
 				}
 			}
 		}
-		
+	
 		character:204510 = {
 			if = {
 				 limit = {
@@ -723,7 +1097,7 @@ KOH_ON_START = {
 				}
 			}
 		}
-		#Portugal Decision
+		Portugal Decision
 		title:k_portugal.holder = {
 			if = {
 				limit = {
@@ -735,7 +1109,7 @@ KOH_ON_START = {
 				}
 				set_global_variable = {
 					name = form_portugal_decision
-					value = scope:portugal_former
+					value = title:k_portugal.holder
 				}
 				every_sub_realm_county = {
 					limit = {
@@ -960,6 +1334,11 @@ KOH_pulse_monthly = {
         delay = { months = 1 }
 		KOH_pulse_monthly
 	}
+	random_events = {
+		1 = 0
+		100 = temujin.1000
+		
+		}
 
 	effect = {
 		if = {
@@ -1042,7 +1421,7 @@ KOH_events_tri_yearly_pulse = {
 				add = 10
 			}
 		}
-		23000 = 0 # 20000?
+		3000 = 0 # 20000?
 		
 		# Dirt
 		100 = chivalry.1	# Serfdom
@@ -1050,16 +1429,17 @@ KOH_events_tri_yearly_pulse = {
 		100 = chivalry.6		# Change Fighting Stance
 		10 = chivalry.9 		# Dragon? # THREE EVENTS NEED LOC
 		100 = chivalry.11		# Adulter Knight #NEEDS LOC
-		100 = chivalry.14		# Recruit a Knight #NEEDS LOC
+		#100 = chivalry.14		# Recruit a Knight #NEEDS LOC
 		
 		#100 = KoH_religiousflavour.15 #Chain, Waldensians in Lyon
 		#Hashshashin's
-		900 = KoH_hashshashin.101
+		2000 = KoH_hashshashin.101
 		900 = KoH_hashshashin.7
 		#generalgeneric
-		100 = KoH_generalgeneric.1
+		#100 = KoH_generalgeneric.1
 		100 = KoH_generalgeneric.2
 		100 = doublet.0001
+		
 	}
 }
 
@@ -1107,16 +1487,45 @@ KOH_on_war_started = {
 }
 
 on_war_won_attacker = {
+scope:war = {
+if={
+limit = { scope:attacker = character:303211 }
+
+
+			every_war_participant = {
+				
+					trigger_event = { id =temujin.0030 days = 1 }
+				}
+			}
+			
+		}
 	events = {
 		KoH_SicillianConflict.2
+		
 	}
+	 
+	
 }
 
 on_war_won_defender = {
+scope:war = {
+if={
+limit = { scope:attacker = character:303211 }
+
+
+			every_war_participant = {
+				
+					trigger_event = { id =temujin.0031 days = 1 }
+				}
+			}
+			
+		}
 	events = {
 		KoH_SicillianConflict.2
+		
 	}
 }
+
 on_siege_completion={
 	events = {
 		temujin.0009

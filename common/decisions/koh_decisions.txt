@@ -91,9 +91,9 @@ khamag_khan_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
 	major = yes
 	desc = khamag_khan_decision_desc
-	ai_goal=yes
+	#ai_goal=yes
 
-	ai_check_interval = 120
+	ai_check_interval = 2
 
 	is_shown = {
 		has_culture = culture:mongol
@@ -107,11 +107,11 @@ khamag_khan_decision = {
 
 	is_valid = {
 		prestige_level >= 2
+		prestige>=1250
 	}
 
 	is_valid_showing_failures_only = {
 		is_adult = yes
-		is_available = yes
 	}
 
 	cost = {
@@ -124,7 +124,29 @@ khamag_khan_decision = {
 	}
 
 	effect = {
-		save_scope_as = decision_taker
+		save_scope_as = usurper
+		save_scope_as = decision_taker	
+		if = {
+			limit = {
+				NOT = {
+					this = character:125501
+				}
+			}
+			character:125501 = {
+				trigger_event = temujin.0020
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					this=character:3032555
+				}
+			}
+			character:3032555 = {
+				trigger_event = temujin.0020
+			}
+		}
+		
 
 		#you actually need this entire block to change the hands of the title!, 
 		#else it will *say* you'll get the title but you won't actually get it
@@ -133,7 +155,20 @@ khamag_khan_decision = {
 			save_scope_as = title_change
 			add_claim_on_loss = no
 		}
+		
 		title:d_ogrash = {
+			change_title_holder = {
+				holder = scope:decision_taker
+				change = scope:title_change
+			}
+		}
+		title:c_khentii = {
+			change_title_holder = {
+				holder = scope:decision_taker
+				change = scope:title_change
+			}
+		}
+		title:c_naushki = {
 			change_title_holder = {
 				holder = scope:decision_taker
 				change = scope:title_change
@@ -164,11 +199,14 @@ khamag_khan_decision = {
 	ai_potential = {
 		always = yes
 	}
-
 	ai_will_do = {
-		base = 100
+        base = 100
 	}
 }
+
+
+
+	
 
 
 

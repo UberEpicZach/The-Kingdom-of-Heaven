@@ -11,7 +11,7 @@ tib_accension_of_yaqub.1 = { # Mourn the death of his father
 		animation = grief
 	}
 
-    override_background = { event_background = temple_mosque }
+    override_background = { reference = temple_mosque }
 
 	immediate = {
 		add_character_flag = {
@@ -41,7 +41,7 @@ tib_accension_of_yaqub.11 = { # Vows for revenge against Portugal
 		character = title:k_portugal.holder
 	}
 
-    override_background = { event_background = corridor_night }
+    override_background = { reference = corridor_night }
 
 	immediate = {
 		add_character_flag = {
@@ -69,7 +69,7 @@ tib_accension_of_yaqub.2 = { # Given bay'ah by the shaykhs and sayyids, keep the
         character = root
 		animation = sadness
 	}
-    override_background = { event_background = council_chamber }
+    override_background = { reference = council_chamber }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.2}
@@ -98,7 +98,7 @@ tib_accension_of_yaqub.3 = { # First course of action, managing the realm at And
         character = root
 		animation = personality_rational
 	}
-    override_background = { event_background = throne_room }
+    override_background = { reference = throne_room }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.3}
@@ -135,7 +135,7 @@ tib_accension_of_yaqub.4 = { # First course of action, managing the realm at And
         character = root
 		animation = personality_rational
 	}
-    override_background = { event_background = throne_room }
+    override_background = { reference = throne_room }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.4}
@@ -164,7 +164,7 @@ tib_accension_of_yaqub.51 = { # Banu Ghaniya seizes the Tunisian provinces with 
         character = title:d_mallorca.holder
 		animation = celebrate_sword
 	}
-    override_background = { event_background = battlefield }
+    override_background = { reference = battlefield }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.51}
@@ -233,7 +233,7 @@ tib_accension_of_yaqub.5 = { # Ya'qub's reaction to the lost of Ifriqiya territo
         character = root
 		animation = disbelief
 	}
-    override_background = { event_background = throne_room }
+    override_background = { reference = throne_room }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.5}
@@ -263,7 +263,7 @@ tib_accension_of_yaqub.6 = { # Assembled the troops to clean the mess before con
         character = root
 		animation = marshal
 	}
-    override_background = { event_background = army_camp }
+    override_background = { reference = army_camp }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.6}
@@ -309,7 +309,7 @@ tib_accension_of_yaqub.61 = { # Continue defense
         character = title:d_mallorca.holder
 		animation = anger
 	}
-    override_background = { event_background = army_camp }
+    override_background = { reference = army_camp }
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_tib_accension_of_yaqub.61}

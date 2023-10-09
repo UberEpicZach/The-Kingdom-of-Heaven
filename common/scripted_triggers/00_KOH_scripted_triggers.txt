@@ -44,27 +44,27 @@ familytrigger = {
 }
 
 
-is_sea = {
-    exists = commanding_army.location
-	commanding_army.location = {
-		NOR = {
-			terrain = plains
-			terrain = farmlands
-			terrain = hills
-			terrain = mountains
-			terrain = desert
-			terrain = desert_mountains
-			terrain = oasis
-			terrain = jungle
-			terrain = forest
-			terrain = taiga
-			terrain = wetlands
-			terrain = steppe
-			terrain = floodplains
-			terrain = drylands 
-		}
-	}
-}
+# is_sea = {
+#     exists = commanding_army.location
+# 	commanding_army.location = {
+# 		NOR = {
+# 			terrain = plains
+# 			terrain = farmlands
+# 			terrain = hills
+# 			terrain = mountains
+# 			terrain = desert
+# 			terrain = desert_mountains
+# 			terrain = oasis
+# 			terrain = jungle
+# 			terrain = forest
+# 			terrain = taiga
+# 			terrain = wetlands
+# 			terrain = steppe
+# 			terrain = floodplains
+# 			terrain = drylands 
+# 		}
+# 	}
+# }
 
 
 wifelover = {
@@ -79,11 +79,19 @@ wifelover = {
 assassins_mongol_trigger_koh = {
     NOT = { exists = global_var:mongols_provoke_assassins }
     exists = global_var:assassin_holy_order_title.holder
-    global_var:assassin_holy_order_title.holder = { has_government = holy_order_county_government }
+    global_var:assassin_holy_order_title.holder = { has_government = assassin_government }
 	OR = {
 		AND = {
 			exists = title:e_mongol_empire
+			top_liege = title:e_mongol_empire.holder
+		}
+		AND = {
+			exists = title:e_mongol_empire
 			character_is_realm_neighbor = title:e_mongol_empire.holder
+		}
+		AND = {
+			exists = title:e_ilkhanate
+			top_liege = title:e_ilkhanate.holder
 		}
 		AND = {
 			exists = title:e_ilkhanate
@@ -178,6 +186,26 @@ diplomacy_family_0007_election_title_trigger = {
 			any_elector = {
 				diplomacy_family_0007_elector_trigger = { CANDIDATE = scope:election_candidate TITLE = scope:election_title }
 			}
+		}
+	}
+}
+
+testingarmy_diarchy = {
+	is_at_war = yes
+	any_army = {
+		exists = army_commander
+		location = { save_temporary_scope_as = current_location }
+		army_commander = {
+			this = root
+			NOT = {
+				has_active_diarchy = yes
+				has_diarchy_active_parameter = diarchy_is_regency
+			}
+		}
+	}
+	NOT = {
+		any_realm_province = { 
+			this = scope:current_location
 		}
 	}
 }

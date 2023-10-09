@@ -60,8 +60,8 @@ tradition_corsairs = {
 			if = {
 				limit = {
 					NOR = {
-						any_in_list = { list = traits this = flag:ethos_bellicose }
-						any_in_list = { list = traits this = flag:ethos_spiritual }
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
 					}
 				}
 				add = {
@@ -108,7 +108,114 @@ tradition_corsairs = {
 		if = {
 			limit = {
 				NOT = {
-					any_in_list = { list = traits this = flag:ethos_bellicose }
+					culture_pillar:ethos_bellicose = { is_in_list = traits }
+				}
+			}
+			multiply = 0
+		}
+	}
+}
+
+tradition_turkic_raiders = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = battle.dds
+	}
+	
+	is_shown = { # Replaces Practiced Pirates
+		NOR = {
+			#has_cultural_tradition = tradition_warrior_culture
+			has_cultural_tradition = tradition_practiced_pirates
+			has_cultural_tradition = tradition_corsairs
+		}
+		OR = {
+			AND = {
+				has_cultural_pillar = heritage_turkic
+			}
+			any_parent_culture_or_above = {
+				OR = {
+					this = culture:turkish
+				}
+			}
+		}
+	}
+	can_pick = {
+		culture_not_pacifistic_trigger = yes
+	}
+	
+	parameters = {
+		culture_can_raid_over_land_even_if_feudal = yes
+		unlocks_border_raid_casus_belli = yes
+	}
+	character_modifier = {
+		knight_limit = 2
+		prowess = 2
+		ai_boldness = 70
+        max_loot_mult = 0.5
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_spiritual_desc
+				}
+			}
+			if = {
+				limit = {
+					trigger_if = {
+						limit = {
+							scope:character = {
+								is_ai = no
+							}
+						}
+						NOT = {
+							any_ruler = {
+								count >= 3
+								culture = prev
+								primary_title.tier >= tier_county
+								OR = {	
+									has_trait = strong
+									has_trait = physique_good
+								}
+							}
+						}
+					}
+					trigger_else = {
+						always = no
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = strong_rulers_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 100
+		if = {
+			limit = {
+				NOT = {
+					culture_pillar:ethos_bellicose = { is_in_list = traits }
 				}
 			}
 			multiply = 0

@@ -10,16 +10,19 @@ k_bulgaria = {
 	632.1.1 = {
 		holder = 159117
 	}
-	665.1.1 = {
+	665.1.2 = {
 		holder = 159127
+	}
+	668.1.1 = {
+		holder = 0
 	}
 	680.1.1 = {
 		holder = 159118
 	}
-	700.1.1 = {
+	701.1.2 = {
 		holder = 159120
 	}
-	721.1.1 = {
+	721.1.2 = {
 		holder = 145934
 	}
 	722.1.1 = {
@@ -55,20 +58,35 @@ k_bulgaria = {
 	777.1.1 = {
 		holder = 159122
 	}
-	802.1.1 = {
+	802.1.2 = {
 		holder = 159123
 	}
-	814.1.1 = {
+	814.1.2 = {
 		holder = 159124
 	}
-	831.1.1 = {
+	831.1.2 = {
 		holder = 159125
 	}
-	836.1.1 = {
+	836.1.2 = {
 		holder = 70384 #Fruzin
 	}
 	852.1.1 = {
 		holder = 70382 #Boris
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = {
+					set_court_language = language_greek # Much of the clergy and nobility were speaking Greek, only replaced in 893 when there was a mass-reconversion to Old Bulgarian
+					if = {
+						limit = { NOT = { knows_court_language_of = this } }
+						learn_court_language_of = this
+					}
+				}
+			}
+		}
 	}
 	889.1.1 = {
 		holder = 70383 #Vladimir
@@ -78,6 +96,17 @@ k_bulgaria = {
 	#}
 	893.1.1 = {
 		holder = 712 #Simeon
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					has_dlc_feature = royal_court
+				}
+				holder = {
+					set_court_language = language_south_slavic
+				}
+			}
+		}
 	}
 	927.5.27 = {
 		holder = 714 #Petar I
@@ -239,7 +268,7 @@ d_vidin = {
 		holder = 34445
 	}
 	1156.1.1 = {
-		holder = 34281
+		holder = 159544
 	}
 	1185.1.1 = {
 		liege = "k_bulgaria"
@@ -349,7 +378,7 @@ c_vidin = {
 		holder = 34445
 	}
 	1156.1.1 = {
-		holder = 34281
+		holder = 159544
 	}
 	1185.1.1 = {
 		liege = "k_bulgaria"
@@ -447,7 +476,7 @@ c_branicevo = {
 		holder = 34445
 	}
 	1156.1.1 = {
-		holder = 34281
+		holder = 159544
 	}
 	1185.1.1 = {
 		liege = "k_bulgaria"
@@ -712,7 +741,12 @@ c_turnovo = {
 	852.1.1 = {
 		holder = 70382 #Boris
 	}
-	
+	889.1.1 = {
+		holder = 70383 #Vladimir
+	}
+	893.1.1 = {
+		holder = 712 #Simeon
+	}
 	1066.1.1 = {
 		holder = 1748
 	}
@@ -972,11 +1006,13 @@ c_nikopolis = {
 	852.1.1 = {
 		holder = 70382 #Boris
 	}
-	
-	1066.1.1 = {
-		holder = 34464
+	889.1.1 = {
+		holder = 70383 #Vladimir
 	}
-	1073.1.1 = {
+	893.1.1 = {
+		holder = 712 #Simeon
+	}
+	1066.1.1 = {
 		holder = 1748
 		liege = d_turnovo	#as theme of Moesia
 	}
@@ -1136,6 +1172,12 @@ c_dorostorum = {
 	852.1.1 = {
 		holder = 70382 #Boris
 	}
+	889.1.1 = {
+		holder = 70383 #Vladimir
+	}
+	893.1.1 = {
+		holder = 712 #Simeon
+	}
 	1066.1.1 = {
 		holder = 20479
 	}
@@ -1220,6 +1262,12 @@ c_dorostorum = {
 
 }
 
+b_dorostorum = {
+	1066.1.1 = {
+		holder = 20479
+		effect = { set_capital_barony = yes }
+	}
+}
 
 c_vratsa = {
 	330.1.1 = {
@@ -1282,7 +1330,12 @@ c_vratsa = {
 	852.1.1 = {
 		holder = 70382 #Boris
 	}
-	
+	889.1.1 = {
+		holder = 70383 #Vladimir
+	}
+	893.1.1 = {
+		holder = 712 #Simeon
+	}
 	1066.1.1 = {
 		holder = 34464
 		liege = d_bulgaria	#as Bulgarian theme
@@ -1438,6 +1491,12 @@ c_aytos = {
 	}
 	852.1.1 = {
 		holder = 70382 #Boris
+	}
+	889.1.1 = {
+		holder = 70383 #Vladimir
+	}
+	893.1.1 = {
+		holder = 712 #Simeon
 	}
 	1066.1.1 = {
 		holder = 1748
@@ -1709,7 +1768,12 @@ c_constanta = {
 	852.1.1 = {
 		holder = 70382 #Boris
 	}
-	
+	889.1.1 = {
+		holder = 70383 #Vladimir
+	}
+	893.1.1 = {
+		holder = 712 #Simeon
+	}
 	1063.1.1 = {
 		holder = 1740
 		liege = d_turnovo	#as theme of Moesia
@@ -1884,29 +1948,59 @@ d_bulgaria = {
 		holder = 70383
 		liege = "k_bulgaria"
 	}
-	1060.1.1 = {
+	893.1.1 = {
+		holder = 712 #Simeon
+	}
+	976.6.14 = { # Samuel was co-Emperor and appointed successor to Roman between 977-991, Roman had been castrated in Byzantine captivity. He was recaptured in 991, afterwards Samuel became de-facto Emperor, although he didn't assume de-jure Emperorship until 997 when he died
+		liege = k_bulgaria
+		holder = 728 # Samuil
+	}
+	991.4.1 = {
+		liege = 0
 		holder = 0
 	}
-	
-	1066.1.1 = {
-		holder = 90035	#Nikephoros Synadenos
-		liege = e_byzantium	#as Bulgarian theme
+	1065.1.1 = {
+		holder = 34464 # Nikephoros Karantenos Doux of Skopje ?-1073
+		liege = e_byzantium
 	}
-	1081.10.18 = {
-		holder = 90093
-		liege = "e_byzantium"
+	1073.1.1 = {
+		holder = 70416 # Damian Dalassenos Doux of Skopje 1073-?
 	}
-	1093.1.1 = {
-		holder = 90092
+	1077.9.1 = {
+		holder = 20502
 	}
-	1098.1.1 = {
-		holder = 232512
+	1078.6.1 = {
+		holder = 41308
 	}
-	1149.1.1 = {
-		holder = 215035
+	1079.1.1 = {
+		holder = 70416 # Damian Dalassenos Doux of Skopje 1073-?
 	}
-	1185.9.12 = {
-		holder = 215508
+	1090.1.1 = {
+		holder = 34466 # Ioannes Taronites Doux of Skopje ?-1092-?
+	}
+	1106.1.1 = {
+		holder = 20511
+	}
+	1110.1.1 = {
+		holder = 215528
+	}
+	1130.1.1 = {
+		holder = 223022
+	}
+	1143.4.8 = {
+		holder = 231057
+	}
+	1154.1.1 = {
+		holder = 34405
+	}
+	1173.1.1 = {
+		holder = 215060
+	}
+	1184.1.1 = {
+		holder = 34412
+	}
+	1186.1.1 = {
+		holder = 34589
 	}
 	1200.1.1 = {
 		holder = 215513
@@ -1986,25 +2080,38 @@ c_naissus = {
 		holder = 1735
 		liege = d_rashka	#as theme of Sirmium
 	}
-	1071.8.26 = {
-		liege = "k_bulgaria"
-		holder = 20493
+	1059.1.1 = {
+		holder = 1734 # Romanos Diogenes # exarchos of Sofia(before being emperor)
+	}
+	1065.1.1 = {
+		holder = 34464 # Nikephoros Karantenos Doux of Skopje ?-1073
 	}
 	1073.1.1 = {
-		liege = "d_vidin"
-	holder = 41537
+		holder = 70416 # Damian Dalassenos Doux of Skopje 1073-?
 	}
-	1094.3.12 = {
-		holder = 34468
+	1090.1.1 = {
+		holder = 34466 # Ioannes Taronites Doux of Skopje ?-1092-?
 	}
-	1118.1.1 = {
-		holder = 34470
+	1106.1.1 = {
+		holder = 20511
 	}
-	1147.1.1 = {
-		holder = 34445
+	1110.1.1 = {
+		holder = 215528
 	}
-	1156.1.1 = {
-		holder = 34281
+	1130.1.1 = {
+		holder = 223022
+	}
+	1143.4.8 = {
+		holder = 231057
+	}
+	1154.1.1 = {
+		holder = 34405
+	}
+	1173.1.1 = {
+		holder = 215060
+	}
+	1184.1.1 = {
+		holder = 34412
 	}
 	1186.1.1 = {
 		liege = "k_serbia"
@@ -2091,6 +2198,9 @@ c_pomoravlje = {
 	860.1.1 = {
 		holder = 70383
 		liege = "d_vidin"
+	}
+	893.1.1 = {
+		holder = 712 #Simeon
 	}
 	1066.1.1 = {
 		holder = 20482
@@ -2183,24 +2293,38 @@ c_velbazhd = {
 		holder = 70383
 		liege = "d_vidin"
 	}
-	1066.1.1 = {
-		holder = 20484
-		liege = d_bulgaria #as Bulgarian theme
+	893.1.1 = {
+		holder = 712 #Simeon
 	}
-	1078.1.1 = {
-		holder = 20481
+	1065.1.1 = {
+		holder = 34464 # Nikephoros Karantenos Doux of Skopje ?-1073
 	}
-	1107.1.1 = {
-		holder = 42014
+	1073.1.1 = {
+		holder = 70416 # Damian Dalassenos Doux of Skopje 1073-?
 	}
-	1108.1.1 = {
-		holder = 34441
+	1090.1.1 = {
+		holder = 34466 # Ioannes Taronites Doux of Skopje ?-1092-?
 	}
-	1143.1.1 = {
-		holder = 34442
+	1106.1.1 = {
+		holder = 20511
 	}
-	1168.1.1 = {
-		holder = 34281
+	1110.1.1 = {
+		holder = 215528
+	}
+	1130.1.1 = {
+		holder = 223022
+	}
+	1143.4.8 = {
+		holder = 231057
+	}
+	1154.1.1 = {
+		holder = 34405
+	}
+	1173.1.1 = {
+		holder = 215060
+	}
+	1184.1.1 = {
+		holder = 34412
 	}
 	1203.1.1 = {
 		holder = 34282
@@ -2261,6 +2385,9 @@ c_pirin = {
 	860.1.1 = {
 		holder = 70383
 		liege = "d_vidin"
+	}
+	893.1.1 = {
+		holder = 712 #Simeon
 	}
 	1060.1.1 = {
 		holder = 20484
@@ -2345,23 +2472,41 @@ c_strumica = {
 		holder = 70383
 		liege = "d_vidin"
 	}
+	893.1.1 = {
+		holder = 712 #Simeon
+	}
 	1060.1.1 = {
 		holder = 20484
 	}
-	1066.1.1 = {
-		liege = "d_bulgaria"	#as Bulgarian theme
+	1065.1.1 = {
+		holder = 34464 # Nikephoros Karantenos Doux of Skopje ?-1073
 	}
-	1078.1.1 = {
-		holder = 20480
+	1073.1.1 = {
+		holder = 70416 # Damian Dalassenos Doux of Skopje 1073-?
 	}
-	1116.1.1 = {
-		holder = 125752
+	1090.1.1 = {
+		holder = 34466 # Ioannes Taronites Doux of Skopje ?-1092-?
+	}
+	1106.1.1 = {
+		holder = 20511
+	}
+	1110.1.1 = {
+		holder = 215528
 	}
 	1130.1.1 = {
-		holder = 125753
+		holder = 223022
 	}
-	1170.1.1 = {
-		holder = 215001
+	1143.4.8 = {
+		holder = 231057
+	}
+	1154.1.1 = {
+		holder = 34405
+	}
+	1173.1.1 = {
+		holder = 215060
+	}
+	1184.1.1 = {
+		holder = 34412
 	}
 	1185.9.12 = {
 		liege = "d_strymon"
@@ -2439,25 +2584,51 @@ c_skopje = {
 		holder = 70383
 		liege = "d_vidin"
 	}
-	
-	1066.1.1 = {
-		holder = 90035
-		liege = d_bulgaria	#as Bulgarian theme
+	893.1.1 = {
+		holder = 712 #Simeon
 	}
-	1078.1.1 = {
-		holder = 20481
+	1065.1.1 = {
+		holder = 34463 # Georgi Voiteh exarchos of Skopje
 	}
-	1107.1.1 = {
-		holder = 42014
+	1071.8.26 = {
+		liege = k_bulgaria
+		holder = 20493
 	}
-	1108.1.1 = {
-		holder = 34441
+	1073.1.1 = {
+		liege = d_bulgaria
+		holder = 70416 # Damian Dalassenos Doux of Skopje 1073-?
 	}
-	1143.1.1 = {
-		holder = 34442
+	1082.4.1 = {
+		liege = d_apulia
+		holder = 1140 # Bohemond de Hauteville
 	}
-	1168.1.1 = {
-		holder = 34281
+	1083.11.1 = {
+		liege = d_bulgaria
+		holder = 70416
+	}
+	1090.1.1 = {
+		holder = 34466 # Ioannes Taronites Doux of Skopje ?-1092-?
+	}
+	1106.1.1 = {
+		holder = 20511
+	}
+	1110.1.1 = {
+		holder = 215528
+	}
+	1130.1.1 = {
+		holder = 223022
+	}
+	1143.4.8 = {
+		holder = 231057
+	}
+	1154.1.1 = {
+		holder = 34405
+	}
+	1173.1.1 = {
+		holder = 215060
+	}
+	1184.1.1 = {
+		holder = 34412
 	}
 	1203.1.1 = {
 		holder = 34282
@@ -2532,26 +2703,51 @@ c_ohrid = {
 		holder = 70383
 		liege = "d_vidin"
 	}
-	
+	893.1.1 = {
+		holder = 712 #Simeon
+	}
 	1066.1.1 = {
 		holder = 90035	#Nikephoros Synadenos
 		liege = d_bulgaria	#as Bulgarian theme
 	}
-	1078.1.1 = {
-		holder = 20481
-		liege = "d_dyrrachion"
+	1072.2.1 = {
+		liege = k_bulgaria
+		holder = 20493
+	}
+	1073.1.1 = {
+		liege = d_bulgaria
+		holder = 70416 # Damian Dalassenos Doux of Skopje 1073-?
+	}
+	1082.4.1 = {
+		liege = d_apulia
+		holder = 1140 # Bohemond de Hauteville
+	}
+	1083.11.1 = {
+		liege = d_bulgaria
+	}
+	1084.1.1 = {
+		holder = 42017
 	}
 	1107.1.1 = {
-		holder = 42014
+		holder = 20511
 	}
-	1108.1.1 = {
-		holder = 34441
+	1110.1.1 = {
+		holder = 215528
 	}
-	1143.1.1 = {
-		holder = 34442
+	1130.1.1 = {
+		holder = 223022
 	}
-	1168.1.1 = {
-		holder = 34281
+	1143.4.8 = {
+		holder = 231057
+	}
+	1154.1.1 = {
+		holder = 34405
+	}
+	1173.1.1 = {
+		holder = 215060
+	}
+	1184.1.1 = {
+		holder = 34412
 	}
 	1203.1.1 = {
 		holder = 34282
@@ -2657,6 +2853,9 @@ d_philippopolis = {
 	}
 	852.1.1 = {
 		holder = 70382
+	}
+	889.1.1 = {
+		holder = 70383 #Vladimir
 	}
 	893.1.1 = {
 		holder = 712

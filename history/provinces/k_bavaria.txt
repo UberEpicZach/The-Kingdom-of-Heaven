@@ -19,11 +19,27 @@
 			pastures_01
 		}
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			farm_estates
+			hunting_grounds
+		}
+	}
 }
 2965 = {	#TEGERNHEIM
 	holding = none
 	900.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+		}
 	}
 }
 2941 = {	#ABENSBERG
@@ -31,11 +47,24 @@
 	1135.1.1 = {
 		holding = castle_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			curtain_walls_01
+		}
+	}
 }
 2963 = {	#LEONSBERG
 	holding = none
 	1230.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+		}
 	}
 }
 
@@ -44,6 +73,18 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_windmills_01
+			hunting_grounds_01
+			barracks_04
+			logging_camps_01
+		}
+	}
 }
 2946 = {	#AHEIM
 	holding = none
@@ -53,6 +94,17 @@
 	1000.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_05
+			watchtowers_06
+			cereal_fields_03
+		}
+	}
 }
 
 ###c_eschenlohe
@@ -60,6 +112,16 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures
+			blacksmiths
+		}
+	}
 }
 2948 = {	#TOLZ
 	holding = none
@@ -71,12 +133,33 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_01
+			building_stables_04
+		}
+	}
 }
 2943 = {	#FREISING
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+			hunting_grounds_04
+		}
+	}
 }
 2939 = {	#ILMMUNSTER
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+			building_stables_04
+		}
+	}
 }
 
 ###c_geisenhausen
@@ -84,9 +167,23 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			watchtowers_06
+			hunting_grounds_01
+		}
+	}
 }
 2958 = {	#ERDING
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			hunting_grounds_01
+		}
+	}
 }
 
 ###c_frontenhausen
@@ -94,6 +191,13 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			blacksmiths_01
+		}
+	}
 }
 2961 = {	#DORNBERG
 	holding = none
@@ -103,11 +207,25 @@
 	1120.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			hunting_grounds_04
+		}
+	}
 }
 2981 = {	#BURGHAUSEN
 	holding = none
 	1020.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			guild_halls_05
+		}
 	}
 }
 
@@ -116,11 +234,25 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+			cereal_fields_03
+		}
+	}
 }
 2984 = {	#MARQUARTSTEIN
 	holding = none
 	1066.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			pastures_03
+		}
 	}
 }
 
@@ -129,9 +261,28 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			curtain_walls_01
+			logging_camps_03
+			pastures_03
+			guild_halls_03
+		}
+	}
 }
 2940 = {	#MUNCHSMUNSTER
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+			pastures_03
+		}
+	}
 }
 2938 = {	#NIEDERSCHONENFELD
 	holding = none
@@ -142,15 +293,41 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			barracks_04
+			logging_camps_03
+			watermills_04
+			pastures_02
+		}
+	}
 }
 2969 = {	#WALDKIRCHEN
 	holding = none
 }
 2970 = {	#SCHARDING
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+			farm_estates_04
+		}
+	}
 }
 2968 = {	#DEGGENDORF
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			windmills_03
+			logging_camps_03
+		}
+	}
 }
 
 ##d_nordgau ###################################
@@ -159,16 +336,42 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			hunting_grounds_01
+		}
+	}
 }
 2879 = {	#HIRSCHBERG
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_02
+			cereal_fields_01
+			curtain_walls_01
+			building_stables_04
+		}
+	}
 }
 2882 = {	#NEUE WEISSENBURG
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			farm_estates_04
+		}
+	}
 }
 
 ###c_leuchtenburg
@@ -176,12 +379,26 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_03
+			watermills_04
+		}
+	}
 }
 2994 = {	#KULMBACH
 	holding = none
 }
 2993 = {	#BAYREUTH
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			watchtowers_06
+			guild_halls_05
+		}
+	}
 }
 
 ###c_parsberg
@@ -189,6 +406,13 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_01
+			logging_camps_01
+		}
+	}
 }
 2986 = {	#LENGENFELD
 	holding = none
@@ -199,9 +423,27 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_02
+			cereal_fields_01
+		}
+	}
 }
 2991 = {	#NEUMARKT
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			watchtowers_06
+			guild_halls_04
+			pastures_03
+		}
+	}
 }
 
 ###c_hohenburg
@@ -209,12 +451,37 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			guild_halls_05
+		}
+	}
 }
 2967 = {	#CHAM
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+			pastures_02
+		}
+	}
 }
 2966 = {	#WENZENBACH
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			curtain_walls_01
+			farm_estates_04
+			cereal_fields_03
+		}
+	}
 }
 
 ##d_salzburg ###################################
@@ -223,21 +490,64 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			blacksmiths_01
+			logging_camps_01
+			cereal_fields_03
+		}
+	}
 }
 2973 = {	#BRAUNAU
 	holding = none
 	1120.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+			cereal_fields_01
+		}
+	}
 }
 2983 = {	#TRAUNSTEIN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+			cereal_fields_01
+		}
+	}
 }
 2978 = {	#HALLEIN
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_02
+			barracks_04
+		}
+	}
 }
 2982 = {	#LAUFEN
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds_01
+			blacksmiths_01
+			windmills_03
+		}
+	}
 }
 
 ###c_berchtesgaden
@@ -245,12 +555,30 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			building_windmills_01
+		}
+	}
 }
 2985 = {	#LAUKENTAL
 	holding = none
 }
 2976 = {	#KITZBUHEL
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			farm_estates_04
+			watchtowers_06
+			watermills_04
+		}
+	}
 }
 
 ###c_hallstatt
@@ -258,15 +586,41 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			windmills_03
+			pastures_03
+		}
+	}
 }
 3130 = {	#LIEZEN
 	holding = none
 	1125.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			cereal_fields_03
+		}
+	}
 }
 3133 = {	#WELS
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds_04
+			blacksmiths_01
+			guild_halls_05
+			watchtowers_06
+		}
+	}
 }
 
 ###c_linz
@@ -287,14 +641,48 @@
 			hunting_grounds_01
 		}
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls
+			pastures
+			cereal_fields
+		}
+	}
 }
 3132 = {	#STEYR
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			curtain_walls_01
+			windmills_03
+			watermills_04
+			guild_halls_04
+		}
+	}
 }
 3072 = {	#LEONFELDEN
 	holding = none
 	1000.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			cereal_fields_01
+			guild_halls_03
+			pastures_03
+		}
 	}
 }
 
@@ -303,6 +691,17 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			cereal_fields_01
+			building_stables_04
+			farm_estates_04
+		}
+	}
 }
 2979 = {	#STRASSWALCHEN
 	holding = none
@@ -311,6 +710,13 @@
 	holding = none
 	1000.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+			guild_halls_04
+		}
 	}
 }
 
@@ -327,6 +733,17 @@
 			pastures_01
 		}
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures
+			cereal_fields
+			blacksmiths
+		}
+	}
 }
 2779 = {	#FRIEDBERG
 	holding = none
@@ -337,6 +754,17 @@
 }
 2784 = {	#KAUFBEUREN
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds_01
+			guild_halls_04
+			building_stables_04
+		}
+	}
 }
 
 ###c_alpsee
@@ -344,9 +772,23 @@
 	culture = swabian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			guild_halls_05
+		}
+	}
 }
 2781 = {	#PEITING
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_02
+			cereal_fields_01
+		}
+	}
 }
 2790 = {	#HOHENSCHWANGAU
 	holding = none
@@ -357,12 +799,31 @@
 	culture = swabian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_02
+		}
+	}
 }
 2776 = {	#MARSETTEN
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_stables_04
+		}
+	}
 }
 2785 = {	#MEMMINGEN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+			farm_estates_04
+		}
+	}
 }
 
 ###c_ravensburg
@@ -370,6 +831,17 @@
 	culture = swabian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds_01
+			barracks_04
+			building_stables_04
+		}
+	}
 }
 2787 = {	#BREGENZ
 	holding = none
@@ -380,11 +852,29 @@
 	culture = swabian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_05
+			watchtowers_06
+			curtain_walls_01
+		}
+	}
 }
 2775 = {	#KIRCHBERG
 	holding = none
 	1000.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			building_stables_04
+		}
 	}
 }
 
@@ -397,11 +887,29 @@
 	950.1.1 = {
 		culture = bavarian
 	}
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			logging_camps_01
+		}
+	}
 }
 3111 = {	#KOFLACH
 	holding = none
 	1066.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			farm_estates_04
+			curtain_walls_01
+			guild_halls_04
+		}
 	}
 }
 3118 = {	#KAPFENBERG
@@ -409,11 +917,24 @@
 	1050.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+		}
+	}
 }
 3110 = {	#LEOBEN
 	holding = none
 	900.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			building_stables_04
+			pastures_01
+		}
 	}
 }
 3116 = {	#FELDBACH
@@ -429,11 +950,29 @@
 	950.1.1 = {
 		culture = bavarian
 	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			farm_estates_04
+		}
+	}
 }
 3120 = {	#OBERWART
 	holding = none
 	1050.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			curtain_walls_01
+			cereal_fields_03
+			pastures_02
+		}
 	}
 }
 
@@ -442,11 +981,33 @@
 	culture = carantanian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			windmills_03
+			cereal_fields_01
+			blacksmiths_01
+		}
+	}
 }
 3103 = {	#MARIBOR
 	holding = none
 	1164.1.1 = {
 		holding = castle_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds
+			guild_halls
+			curtain_walls
+		}
 	}
 }
 3106 = {	#WINDISCHE BUHEL
@@ -461,6 +1022,13 @@
 	950.1.1 = {
 		culture = bavarian
 	}
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_01
+			curtain_walls_01
+		}
+	}
 }
 3119 = {	#OSTFURSTENFELD
 	holding = none
@@ -472,17 +1040,39 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_01
+		}
+	}
 }
 3085 = {	#ERNSTBRUNN
 	holding = none
 	1045.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+		}
+	}
 }
 3084 = {	#FLORIDSDORF
 	holding = none
 	1014.1.1 = {
 		holding = castle_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			cereal_fields
+			guild_halls
+		}
 	}
 }
 3091 = {	#PADUN
@@ -493,6 +1083,13 @@
 	1000.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			watchtowers_06
+		}
+	}
 }
 
 ###c_hohenau
@@ -500,11 +1097,23 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+		}
+	}
 }
 3079 = {	#LAA
 	holding = none
 	1125.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+		}
 	}
 }
 3082 = {	#MISTELBACH
@@ -517,6 +1126,17 @@
 	culture = bavarian
 	religion = catholic
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			barracks_04
+			pastures_03
+			building_stables_04
+		}
+	}
 }
 3122 = {	#MARIAZELL
 	holding = none
@@ -526,6 +1146,12 @@
 	976.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+		}
+	}
 }
 
 ###c_freistadt
@@ -533,14 +1159,38 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_03
+			watermills_04
+			guild_halls_05
+		}
+	}
 }
 3090 = {	#SPITZ
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls
+		}
+	}
 }
 3076 = {	#ZWETTL
 	holding = none
 	1137.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+			pastures_03
+		}
 	}
 }
 3074 = {	#GMUND
@@ -553,6 +1203,13 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			pastures_03
+		}
+	}
 }
 3124 = {	#WAIDHOFEN
 	holding = none
@@ -563,6 +1220,12 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps
+		}
+	}
 }
 3075 = {	#WILD
 	holding = none
@@ -572,11 +1235,29 @@
 	1050.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_04
+			hunting_grounds_04
+			cereal_fields_01
+		}
+	}
 }
 3078 = {	#HAUGSDORF
 	holding = none
 	1050.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+			logging_camps_01
+		}
 	}
 }
 
@@ -587,12 +1268,37 @@
 	religion = catholic
 	holding = castle_holding
 	special_building_slot = schwaz_mines_01
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			watermills_04
+		}
+	}
 }
 2954 = {	#BOZEN = Bolzano
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_04
+			blacksmiths_01
+			farm_estates_04
+		}
+	}
 }
 2953 = {	#KUFSTEIN
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+			windmills_03
+		}
+	}
 }
 
 ###c_brixen
@@ -600,6 +1306,12 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps
+		}
+	}
 }
 2952 = {	#BRUNECK
 	holding = none
@@ -611,17 +1323,36 @@
 	culture = bavarian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+		}
+	}
 }
 3137 = {	#OBERVALLACH
 	holding = none
 	995.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			guild_halls_05
+		}
+	}
 }
 2951 = {	#MATREI
 	holding = none
 	1170.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			pastures
+		}
 	}
 }
 
@@ -631,14 +1362,39 @@
 	culture = carantanian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			cereal_fields_03
+			guild_halls_05
+			pastures_02
+		}
+	}
 }
 3113 = {	#SANKT VEIT
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+			building_stables_04
+		}
+	}
 }
 3108 = {	#WOLFSBERG
 	holding = none
 	1000.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+			watchtowers_06
+		}
 	}
 }
 
@@ -650,6 +1406,12 @@
 	950.1.1 = {
 		culture = bavarian
 	}
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+		}
+	}
 }
 3114 = {	#MURAU
 	holding = none
@@ -660,11 +1422,24 @@
 	1140.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+		}
+	}
 }
 3115 = {	#TAMSWEG
 	holding = none
 	1165.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			farm_estates_04
+			guild_halls_05
+		}
 	}
 }
 
@@ -676,17 +1451,37 @@
 	950.1.1 = {
 		culture = bavarian
 	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+			curtain_walls_01
+		}
+	}
 }
 3112 = {	#JUDENBURG
 	holding = none
 	1066.1.1 = {	#1st mention in 1074
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			pastures_02
+		}
+	}
 }
 3126 = {	#ADMONT
 	holding = none
 	1066.1.1 = {	#founded in 1074
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_01
+			guild_halls_03
+		}
 	}
 }
 
@@ -695,9 +1490,23 @@
 	culture = carantanian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			guild_halls_03
+		}
+	}
 }
 3127 = {	#FELDKIRCHEN
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			windmills_03
+		}
+	}
 }
 3083 = {	#SPITTAL
 	holding = none
@@ -710,6 +1519,13 @@
 	culture = carantanian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			watchtowers_06
+			guild_halls_04
+		}
+	}
 }
 3102 = {	#KRSKO
 	holding = none
@@ -719,6 +1535,17 @@
 	1050.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_05
+			pastures_03
+			watermills_04
+		}
+	}
 }
 
 ###c_ljubljana
@@ -726,6 +1553,13 @@
 	culture = carantanian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			pastures_02
+		}
+	}
 }
 3097 = {	#DOBOVEC
 	holding = none
@@ -743,9 +1577,27 @@
 	culture = croatian
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			barracks_04
+			pastures_01
+			hunting_grounds_01
+		}
+	}
 }
 2519 = {	#PIRAN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+			logging_camps_03
+		}
+	}
 }
 2520 = {	#PAZIN
 	holding = none
@@ -756,6 +1608,17 @@
 		culture = croatian
 		religion = catholic
 		holding = castle_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			watchtowers_06
+			guild_halls_04
+			farm_estates_04
+		}
 	}
 }
 2522 = {	#LABIN

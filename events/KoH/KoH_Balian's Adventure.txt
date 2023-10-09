@@ -22,6 +22,7 @@ KoH_balians_adventure.1 = {
 		add_character_flag = {
 			flag = had_event_balians_adventure.1
 		}
+		add_character_flag = in_pilgrimage_event_chain
 	}
 
 	option = {
@@ -88,6 +89,14 @@ KoH_balians_adventure.3 = {
 		NOT = { has_character_flag = had_event_balians_adventure.3}
 	}
 	immediate = {
+		character:144166 = {
+			add_character_flag = {
+				flag = wear_armor
+				days = 10
+			}
+		}
+
+
 		add_character_flag = {
 			flag = had_event_balians_adventure.3
 		}
@@ -104,9 +113,9 @@ KoH_balians_adventure.3 = {
 		trigger_event = {
 			id = KoH_balians_adventure.4
 			days = 6
-			}
-		
 		}
+		
+	}
 		
 }
 
@@ -119,7 +128,7 @@ KoH_balians_adventure.4 = {
 	
 	left_portrait = {
 		character = root
-		animation = anger
+		animation = sword_yield_start
 	}
 
 	right_portrait = {
@@ -135,16 +144,7 @@ KoH_balians_adventure.4 = {
 		add_character_flag = {
 			flag = had_event_balians_adventure.4
 		}
-		if = {
-			limit = {
-				AND = {
-					this = character:223570
-					is_ai = no
-				}
-			}
-			pan_camera_to_title = title:b_lepuiset
-			}
-		}
+	}
 
 	option = {
 		name = KoH_balians_adventure.4.a
@@ -163,7 +163,27 @@ KoH_balians_adventure.4 = {
 
 		trigger_event = {
 			id = KoH_balians_adventure.5
-			days = 6
+			days = 10
+		}
+
+		add_character_flag = current_adventure_wtf_vanilla
+
+		start_travel_plan = {
+			destination = title:b_messina.title_province
+			return_trip = no
+			players_use_planner = no
+			#companion = scope:companion1
+			#companion = scope:companion2
+			#companion = scope:companion3
+			on_arrival_event = KoH_balians_adventure.11
+			on_arrival_destinations = last
+		}
+
+		current_travel_plan = {
+			add_travel_waypoint = title:b_messina.title_province
+			add_travel_waypoint = title:b_napoli.title_province
+			add_travel_waypoint = title:b_roma.title_province
+			add_travel_waypoint = title:b_genoa.title_province
 		}
 	}
 }
@@ -174,12 +194,12 @@ KoH_balians_adventure.5 = {
 	desc = KoH_balians_adventure.5.d
 	theme = death
 	override_background = {
-		event_background = tavern
+		reference = bp1_crossroads_inn
 	}
 	
 	left_portrait = {
 		character = root
-		animation = worry
+		animation = jockey_gallop
 	}
 	trigger = {
 		is_adult = yes
@@ -188,17 +208,8 @@ KoH_balians_adventure.5 = {
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balians_adventure.5
-		}
-		if = {
-			limit = {
-				AND = {
-					this = character:223570
-					is_ai = no
-				}
-			}
-			pan_camera_to_title = title:b_nevers
-			}
-		}
+		}	
+	}
 
 	option = {
 		name = KoH_balians_adventure.5.a
@@ -217,20 +228,21 @@ KoH_balians_adventure.6 = {
 	title = KoH_balians_adventure.6.t
 	desc = KoH_balians_adventure.6.d
 
-	theme = war
+	theme = travel
 	override_background = {
-		event_background = wilderness_forest_pine
+		reference = wilderness_forest_pine
 	}
 
 	left_portrait = {
 		character = character:144166
 		animation = personality_bold
+		camera = camera_event_right_pointing_left
 	}
 
 	right_portrait = {
 		character = character:800501
-		animation = angry
-		outfit_tags = { war_outfit1 }	
+		animation = jockey_idle
+		camera = camera_event_right
 	}
 	trigger = {
 		is_adult = yes
@@ -238,6 +250,22 @@ KoH_balians_adventure.6 = {
 	}
 
 	immediate = {
+		add_character_flag = {
+			flag = wear_armor
+			days = 10
+		}
+		character:800501 = {
+			add_character_flag = {
+				flag = wear_armor
+				days = 10
+			}
+		}
+		character:144166 = {
+			add_character_flag = {
+				flag = wear_armor
+				days = 10
+			}
+		}
 		add_character_flag = {
 			flag = had_event_balians_adventure.6
 		}
@@ -250,21 +278,16 @@ KoH_balians_adventure.6 = {
 			gender_female_chance = 0
 			save_scope_as = combatant_2
 		}
-
-		if = {
-			limit = {
-				AND = {
-					this = character:223570
-					is_ai = no
-				}	
-			}
-			pan_camera_to_title = title:b_ambert
-		}
 	}	
 	
 	option = {
 		name = KoH_balians_adventure.6.a
 		
+		current_travel_plan = {
+			set_travel_leader = character:144166
+			delay_travel_plan = { days = 10 }
+		}
+
 		character:223570 = {
 			add_prowess_skill = 3
 		}
@@ -285,24 +308,32 @@ KoH_balians_adventure.7 = { #A challenger approaches
 
 	theme = war
 	override_background = {
-		event_background = wilderness_forest_pine
+		reference = wilderness_forest_pine
 	}
 
 	left_portrait = {
 		character = root
-		animation = war_defender
-		outfit_tags = { war_outfit1 }	
+		animation = sword_coup_degrace
 	}
 	right_portrait = {
 		character = scope:combatant_2
-		animation = war_attacker
-		outfit_tags = { war_outfit1 }	
+		animation = aggressive_sword
 	}
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_balians_adventure.7}
 	}
 	immediate = {
+		add_character_flag = {
+			flag = wear_armor
+			days = 10
+		}
+		scope:combatant_2 = {
+			add_character_flag = {
+				flag = wear_armor
+				days = 10
+			}
+		}
 		add_character_flag = {
 			flag = had_event_balians_adventure.7
 		}
@@ -350,24 +381,32 @@ KoH_balians_adventure.8 = { #A challenger approaches
 	
 	theme = war
 	override_background = {
-		event_background = wilderness_forest_pine
+		reference = wilderness_forest_pine
 	}
 	
 	left_portrait = {
 		character = root
-		animation = war_over_win
-		outfit_tags = { war_outfit1 }	
+		animation = celebrate_sword
 	}
 	right_portrait = {
 		character = scope:combatant_2
-		animation = severelywounded
-		outfit_tags = { war_outfit1 }	
+		animation = sword_yield_start
 	}
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_balians_adventure.8}
 	}
 	immediate = {
+		add_character_flag = {
+			flag = wear_armor
+			days = 10
+		}
+		scope:combatant_2 = {
+			add_character_flag = {
+				flag = wear_armor
+				days = 10
+			}
+		}
 		add_character_flag = {
 			flag = had_event_balians_adventure.8
 		}
@@ -392,13 +431,13 @@ KoH_balians_adventure.8 = { #A challenger approaches
 			}
 		}
 		character:144166 = {
-			add_trait = wounded_2
+			add_trait = wounded_1
 		}
 		
-		trigger_event = {
-			id = KoH_balians_adventure.10
-			days = 1
-		}
+		# trigger_event = {
+		# 	id = KoH_balians_adventure.10
+		# 	days = {4 6}
+		# }
 	}
 }
 
@@ -410,24 +449,32 @@ KoH_balians_adventure.9 = { #A challenger approaches
 	
 	theme = war
 	override_background = {
-		event_background = wilderness_forest_pine
-		}
+		reference = wilderness_forest_pine
+	}
 	
 	left_portrait = {
 		character = root
-		animation = severelywounded
-		outfit_tags = { war_outfit1 }	
+		animation = sword_yield_start
 	}
 	right_portrait = {
 		character = scope:combatant_2
-		animation = war_over_win
-		outfit_tags = { war_outfit1 }	
+		animation = celebrate_sword
 	}
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_balians_adventure.9}
 	}
 	immediate = {
+		add_character_flag = {
+			flag = wear_armor
+			days = 10
+		}
+		scope:combatant_2 = {
+			add_character_flag = {
+				flag = wear_armor
+				days = 10
+			}
+		}
 		add_character_flag = {
 			flag = had_event_balians_adventure.9
 		}
@@ -447,13 +494,13 @@ KoH_balians_adventure.9 = { #A challenger approaches
 				death_reason = death_battle }
 		}
 		character:144166 = {
-			add_trait = wounded_2
+			add_trait = wounded_1
 		}
 
-		trigger_event = {
-			id = KoH_balians_adventure.10
-			days = 13
-		}
+		# trigger_event = {
+		# 	id = KoH_balians_adventure.10
+		# 	days = 13
+		# }
 		character:800501 = { #Hugh Gets Murdered
 			death = {
 				killer = character:144166
@@ -471,10 +518,9 @@ KoH_balians_adventure.10 = {
 
 	theme = death
 	override_background = {
-		event_background = italy
+		reference = italy
 	}
 
-	
 	left_portrait = {
 		character = root
 		animation = idle
@@ -487,25 +533,265 @@ KoH_balians_adventure.10 = {
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_balians_adventure.10}
+		this = character:223570
+		character:223570 = {
+			is_travelling = yes
+			current_travel_plan = {
+				travel_plan_owner = root
+			}
+		}
+		location = province:2070
 	}
 	immediate = {
+		location.barony = {
+			save_scope_as = travel_stop
+		}
 		add_character_flag = {
 			flag = had_event_balians_adventure.10
-		}
-		if = {
-			limit = {
-				AND = {
-					this = character:223570
-					is_ai = no
-				}	
-			}
-			pan_camera_to_title = title:b_chiusi
 		}
 	}
 
 	option = {
 		name = KoH_balians_adventure.10.a
 		
+		# hidden_effect = {
+		# 	character:223570 = {
+		# 		remove_trait = kinslayer_3
+		# 		remove_trait = legitimized_bastard
+		# 	}
+		# 	character:144166 = {
+		# 		add_trait = pneumonic
+		# 		remove_trait = wounded_2
+		# 	}
+		# }
+
+		# trigger_event = {
+		# 	id = KoH_balians_adventure.11
+		# 	days = 11
+		
+		# }
+	}
+}
+#ROME
+KoH_balians_adventure.101 = {
+	type = character_event
+	title = KoH_balians_adventure.101.t
+	desc = KoH_balians_adventure.101.d
+
+	theme = travel
+	override_background = {
+		reference = italy
+	}
+
+	
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+	
+	right_portrait = {
+		character = character:144166
+		animation = idle
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.101}
+		this = character:223570
+		character:223570 = {
+			is_travelling = yes
+			current_travel_plan = {
+				travel_plan_owner = root
+			}
+		}
+		location = province:2575
+	}
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.101
+		}
+		current_travel_plan = {
+			delay_travel_plan = { days = 7 }
+		}
+	}
+
+	option = {
+		name = KoH_balians_adventure.101.a
+		
+		# hidden_effect = {
+		# 	character:223570 = {
+		# 		remove_trait = kinslayer_3
+		# 		remove_trait = legitimized_bastard
+		# 	}
+		# 	character:144166 = {
+		# 		add_trait = pneumonic
+		# 		remove_trait = wounded_2
+		# 	}
+		# }
+
+		trigger_event = KoH_balians_adventure.102
+
+		# trigger_event = {
+		# 	id = KoH_balians_adventure.11
+		# 	days = 11
+		
+		# }
+	}
+}
+
+KoH_balians_adventure.102 = {
+	type = character_event
+	title = KoH_balians_adventure.102.t
+	desc = KoH_balians_adventure.102.d
+
+	theme = travel
+	override_background = {
+		reference = italy
+	}
+
+	
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+	
+	right_portrait = {
+		character = character:144166
+		animation = idle
+	}
+
+	trigger = {
+		NOT = { has_character_flag = had_event_balians_adventure.102}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.102
+		}
+	}
+
+	option = {
+		name = KoH_balians_adventure.102.a
+		
+		trigger_event = KoH_balians_adventure.104
+
+		# trigger_event = {
+		# 	id = KoH_balians_adventure.11
+		# 	days = 11
+		
+		# }
+	}
+}
+
+# KoH_balians_adventure.103 = {
+# 	type = character_event
+# 	title = KoH_balians_adventure.103.t
+# 	desc = KoH_balians_adventure.103.d
+
+# 	theme = war
+# 	override_background = {
+# 		reference = italy
+# 	}
+
+	
+# 	left_portrait = {
+# 		character = root
+# 		animation = idle
+# 	}
+	
+# 	right_portrait = {
+# 		character = character:144166
+# 		animation = idle
+# 	}
+
+# 	trigger = {
+# 		NOT = { has_character_flag = had_event_balians_adventure.103}
+# 	}
+
+# 	immediate = {
+# 		add_character_flag = {
+# 			flag = had_event_balians_adventure.103
+# 		}
+# 	}
+
+# 	option = {
+# 		name = KoH_balians_adventure.103.a
+		
+# 		trigger_event = KoH_balians_adventure.104
+
+# 		# trigger_event = {
+# 		# 	id = KoH_balians_adventure.11
+# 		# 	days = 11
+		
+# 		# }
+# 	}
+# }
+
+KoH_balians_adventure.104 = {
+	type = character_event
+	title = KoH_balians_adventure.104.t
+	desc = KoH_balians_adventure.104.d
+
+	theme = death
+	override_background = {
+		reference = italy
+	}
+
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	
+	right_portrait = {
+		character = character:144166
+		animation = sick
+		outfit_tags = { nightgown }
+	}
+
+	trigger = {
+		NOT = { has_character_flag = had_event_balians_adventure.104}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.104
+		}
+	}
+
+	option = {
+		name = KoH_balians_adventure.104.a
+		
+		#trigger_event = KoH_balians_adventure.104
+	}
+}
+#messina
+KoH_balians_adventure.11 = {
+	type = character_event
+	title = KoH_balians_adventure.11.t
+	desc = KoH_balians_adventure.11.d
+	theme = travel
+	override_background = {
+		reference = docks
+	}
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.11 }
+		this = character:223570
+		character:223570 = {
+			is_travelling = yes
+			current_travel_plan = {
+				travel_plan_owner = root
+			}
+		}
+		location = province:2633
+	}
+
+	immediate = {
 		hidden_effect = {
 			character:223570 = {
 				remove_trait = kinslayer_3
@@ -516,53 +802,23 @@ KoH_balians_adventure.10 = {
 				remove_trait = wounded_2
 			}
 		}
-
-		trigger_event = {
-			id = KoH_balians_adventure.11
-			days = 11
-		
+		set_location = {
+			location = province:2633
+			stick_to_location = yes
 		}
-	}
-}
-
-KoH_balians_adventure.11 = {
-	type = character_event
-	title = KoH_balians_adventure.11.t
-	desc = KoH_balians_adventure.11.d
-	theme = war 
-	override_background = {
-		event_background = docks
-	}
-	
-	left_portrait = {
-		character = root
-		animation = worry
-	}
-	trigger = {
-		is_adult = yes
-		NOT = { has_character_flag = had_event_balians_adventure.11}
-	}
-
-	immediate = {
 		add_character_flag = {
 			flag = had_event_balians_adventure.11
 		}
-		if = {
-			limit = {
-				AND = {
-					this = character:223570
-					is_ai = no
-				}	
-			}
-			pan_camera_to_title = title:b_messina
-			}
-		}
+		# current_travel_plan = {
+		# 	delay_travel_plan = { days = 4 }
+		# }
+	}
 
 	option = {
 		name = KoH_balians_adventure.11.a
 		trigger_event = {
 			id = KoH_balians_adventure.12
-			days = 3
+			days = 5
 		}
 	}
 }
@@ -572,9 +828,9 @@ KoH_balians_adventure.12 = {
 	title = KoH_balians_adventure.12.t
 	desc = KoH_balians_adventure.12.d
 
-	theme = war
+	theme = travel
 	override_background = {
-		event_background = temple
+		reference = temple
 	}
 	left_portrait = {
 		character = root
@@ -583,7 +839,7 @@ KoH_balians_adventure.12 = {
 	
 	right_portrait = {
 		character = character:144166
-		animation = severelywounded
+		animation = sick
 	}
 	trigger = {
 		is_adult = yes
@@ -602,10 +858,10 @@ KoH_balians_adventure.12 = {
 			add_trait = balian_of_ibelin
 		}
 
-		trigger_event = {
-			id = KoH_balians_adventure.13
-			days = 10
-		}
+		# trigger_event = {
+		# 	id = KoH_balians_adventure.13
+		# 	days = 10
+		# }
 
 		character:144166 = {
 			death = {
@@ -627,6 +883,19 @@ KoH_balians_adventure.12 = {
 			change = scope:title_change
 		}
 		resolve_title_and_vassal_change = scope:title_change
+
+		hidden_effect = {
+			start_travel_plan = {
+				destination = title:b_ibelin.title_province
+				return_trip = no
+				players_use_planner = no
+				#companion = scope:companion1
+				#companion = scope:companion2
+				#companion = scope:companion3
+				on_arrival_event = travel_completion_event.1000
+				on_arrival_destinations = last
+			}
+		}
 	}
 }
 
@@ -644,22 +913,21 @@ KoH_balians_adventure.13 = {
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_balians_adventure.13}
+		this = character:223570
+		character:223570 = {
+			is_travelling = yes
+			current_travel_plan = {
+				travel_plan_owner = root
+			}
+		}
+		location = province:8661
 	}
 
 	immediate = {
 		add_character_flag = {
 			flag = had_event_balians_adventure.13
 		}
-		if = {
-			limit = {
-				AND = {
-					this = character:223570
-					is_ai = no
-				}	
-			}
-			pan_camera_to_province = province:8663
-			}	
-		}	
+	}	
 
 	option = {
 		name = KoH_balians_adventure.13.a
@@ -669,9 +937,33 @@ KoH_balians_adventure.13 = {
 			months = 2
 
 		}
+	}
+	after = {
+		current_travel_plan ?= { abort_travel_plan = yes }
+		set_location = {
+			location = province:6038
+			stick_to_location = yes
+		}
 		trigger_event = {
 			id = KoH_balians_adventure.14
-			days = 3
+			days = 4
+		}
+		add_character_flag = {
+			flag = recently_invalidated_hostage
+			days = 2
+		}
+		hidden_effect = {
+			start_travel_plan = {
+				destination = title:b_jerusalem.title_province
+				return_trip = no
+				players_use_planner = no
+				#companion = scope:companion1
+				#companion = scope:companion2
+				#companion = scope:companion3
+				on_arrival_on_action = balian_adventure_ending
+				on_arrival_destinations = last
+			}
+			current_travel_plan ?= { delay_travel_plan = { days = 10 } }
 		}
 	}
 }
@@ -697,15 +989,6 @@ KoH_balians_adventure.14 = {
 		add_character_flag = {
 			flag = had_event_balians_adventure.14
 		}
-		if = {
-			limit = {
-				AND = {
-					this = character:223570
-					is_ai = no
-				}	
-			}
-				pan_camera_to_province = province:6038
-			}	
 		create_character = {
 			template = new_warrior_character
 			name = "Muhammed al-Fais"
@@ -714,15 +997,15 @@ KoH_balians_adventure.14 = {
             culture = culture:egyptian
             gender_female_chance = 0
 			save_scope_as = combatant_3
-			}	
 		}	
+	}	
 
 	option = {
 		name = KoH_balians_adventure.14.a
 
 		trigger_event = {
 			id = KoH_balians_adventure.15
-			}
+		}
     }
 }
 
@@ -733,19 +1016,18 @@ KoH_balians_adventure.15 = {
 	desc = KoH_balians_adventure.15.d
 	theme = desert_plains
 	override_background = {
-		event_background = oasis
+		reference = oasis
 	}
 	
 	left_portrait = {
 		character = character:KOH0041
-		animation = personality_greedy
+		animation = jockey_idle
 		outfit_tags = { common_mena }
 	}
 	
 	right_portrait = {
 		character = scope:combatant_3
-		animation = rage
-		outfit_tags = { war_outfitmena }
+		animation = jockey_idle
 	}
 	trigger = {
 		is_adult = yes
@@ -753,6 +1035,10 @@ KoH_balians_adventure.15 = {
 	}
 
 	immediate = {
+		scope:combatant_3 = {
+			add_character_flag = wear_armor
+		}
+
 		add_character_flag = {
 			flag = had_event_balians_adventure.15
 		}
@@ -775,17 +1061,17 @@ KoH_balians_adventure.16 = {
 	desc = KoH_balians_adventure.16.d
 	theme = desert_plains
 	override_background = {
-		event_background = oasis
+		reference = oasis
 	}
 	
 	left_portrait = {
 		character = character:KOH0041
-		animation = personality_greedy
+		animation = jockey_idle
 		outfit_tags = { common_mena }
 	}
 	right_portrait = {
 		character = root
-		animation = disbelief
+		animation = aggressive_sword
 		outfit_tags = { beggar_rags }
 	}
 	
@@ -815,19 +1101,22 @@ KoH_balians_adventure.17 = {
 	title = KoH_balians_adventure.17.t
 	desc = KoH_balians_adventure.17.d
 	theme = desert_plains
+	window = duel_event
 	override_background = {
-		event_background = oasis
+		reference = oasis
 	}
 	
 	left_portrait = {
 		character = scope:combatant_3
-		animation = rage
+		animation = aggressive_sword
 		outfit_tags = { war_outfitmena }
+		camera = camera_event_duel_left
 	}
 	right_portrait = {
 		character = root
-		animation = disapproval
+		animation = aggressive_sword
 		outfit_tags = { beggar_rags }
+		camera = camera_event_duel_right
 	}
 	
 	trigger = {
@@ -881,7 +1170,7 @@ KoH_balians_adventure.18 = {
 	desc = KoH_balians_adventure.18.d
 	theme = desert_plains
 	override_background = {
-		event_background = oasis
+		reference = oasis
 	}
 	
 	left_portrait = {
@@ -927,8 +1216,8 @@ KoH_balians_adventure.18 = {
 			knight_increase_prowess_chance_effect = yes
 		}
 		trigger_event = {
-			id = KoH_balians_adventure.21
-			days = 10
+			id = KoH_balians_adventure.181
+			days = 5
 		}
 	}
 	option = {
@@ -939,10 +1228,41 @@ KoH_balians_adventure.18 = {
 			add_prestige = 50
 			knight_increase_prowess_chance_effect = yes
 		}
-		trigger_event = {
-			id = KoH_balians_adventure.20
-			days = 5
+		# trigger_event = {
+		# 	id = KoH_balians_adventure.20
+		# 	days = 5
+		# }
+		add_character_flag = KoH_balians_adventure_18_b
+	}
+}
+
+KoH_balians_adventure.181 = {
+	type = character_event
+	title = KoH_balians_adventure.181.t
+	desc = KoH_balians_adventure.181.d
+	theme = desert_plains
+	
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+		outfit_tags = { beggar_rags }
+	}
+
+	trigger = {
+		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.181 }
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_balians_adventure.181
 		}
+		current_travel_plan ?= {
+			delay_travel_plan = { days = 15 }
+		}
+	}
+	option = {
+		name = KoH_balians_adventure.181.a
 	}
 }
 
@@ -953,7 +1273,7 @@ KoH_balians_adventure.19 = {
 	desc = KoH_balians_adventure.19.d
 	theme = desert_plains
 	override_background = {
-		event_background = oasis
+		reference = oasis
 	}
 	left_portrait = {
 		character = character:KOH0041
@@ -981,9 +1301,9 @@ KoH_balians_adventure.19 = {
 	}
 	option = {
 		name = KoH_balians_adventure.19.a
-		trigger_event = {
-			id = KoH_balians_adventure.21
-		}
+		# trigger_event = {
+		# 	id = KoH_balians_adventure.21
+		# }
 	}
 }
 
@@ -992,9 +1312,9 @@ KoH_balians_adventure.20 = {
 	type = character_event
 	title = KoH_balians_adventure.20.t
 	desc = KoH_balians_adventure.20.d
-	theme = war
+	theme = faith
 	override_background = {
-		event_background = jerusalem
+		reference = jerusalem
 	}
 	left_portrait = {
 		character = character:KOH0041
@@ -1008,22 +1328,26 @@ KoH_balians_adventure.20 = {
 
 	trigger = {
 		is_adult = yes
+		NOT = { has_character_flag = had_event_balians_adventure.181 }
 		NOT = { has_character_flag = had_event_balians_adventure.20}
+		this = character:223570
+		character:223570 = {
+			is_travelling = yes
+			current_travel_plan = {
+				travel_plan_owner = root
+			}
+		}
+		location = title:b_jerusalem.title_province
 	}
 
 	immediate = {
+		set_location = {
+			location = title:b_jerusalem.title_province
+			stick_to_location = yes
+		}
 		add_character_flag = {
 			flag = had_event_balians_adventure.20
 		}
-		if = {
-			limit = {
-				AND = {
-					this = character:223570
-					is_ai = no
-				}	
-			}
-				pan_camera_to_province = province:5965
-			}
 		reverse_add_opinion = {
 			target = character:KOH0041
 			modifier = respect_opinion
@@ -1038,14 +1362,14 @@ KoH_balians_adventure.20 = {
 	option = {
 		name = KoH_balians_adventure.20.a
 		
-		root= {
+		root = {
 			add_trait = pilgrim
 			add_piety = minor_piety_gain
 		}
 	}
 	option = {
 		name = KoH_balians_adventure.20.b
-		root= {
+		root = {
 			add_trait = pilgrim
 			add_piety = medium_piety_gain
 		}
@@ -1068,9 +1392,9 @@ KoH_balians_adventure.21 = {
 	type = character_event
 	title = KoH_balians_adventure.21.t
 	desc = KoH_balians_adventure.21.d
-	theme = war
+	theme = faith
 	override_background = {
-		event_background = jerusalem
+		reference = jerusalem
 	}
 	left_portrait = {
 		character = root
@@ -1080,9 +1404,22 @@ KoH_balians_adventure.21 = {
 	trigger = {
 		is_adult = yes
 		NOT = { has_character_flag = had_event_balians_adventure.21}
+		NOT = { has_character_flag = KoH_balians_adventure_18_b }
+		this = character:223570
+		character:223570 = {
+			is_travelling = yes
+			current_travel_plan = {
+				travel_plan_owner = root
+			}
+		}
+		location = title:b_jerusalem.title_province
 	}
 
 	immediate = {
+		set_location = {
+			location = title:b_jerusalem.title_province
+			stick_to_location = yes
+		}
 		add_character_flag = {
 			flag = had_event_balians_adventure.21
 		}
@@ -1090,32 +1427,23 @@ KoH_balians_adventure.21 = {
  			modifier = stress_starvation_minor
 			days = 30
 		}
-		if = {
-			limit = {
-				AND = {
-					this = character:223570
-					is_ai = no
-				}	
-			}
-			pan_camera_to_province = province:5965
-			}
 	}
 	option = {
 		name = KoH_balians_adventure.21.a
 		
-		root= {
+		root = {
 			add_trait = pilgrim
 			add_piety = minor_piety_gain
 		}
 	}
 	option = {
 		name = KoH_balians_adventure.21.b
-		root= {
+		root = {
 			add_trait = pilgrim
 			add_piety = medium_piety_gain
 		}
 	}
-	after= {	
+	after = {	
 		if = {
 			limit = {
 				character:223570 = { is_ai = no }
@@ -1125,6 +1453,7 @@ KoH_balians_adventure.21 = {
 				days = 10
 			}
 		}
+		remove_character_flag = in_pilgrimage_event_chain
 	}
 }
 
@@ -1134,9 +1463,9 @@ KoH_balians_adventure.22 = {
 	type = character_event
 	title = KoH_balians_adventure.22.t
 	desc = KoH_balians_adventure.22.d
-	theme = war
+	theme = faith
 	override_background = {
-		event_background = mena_baldwin
+		reference = jerusalem_palace
 	}
 	
 	left_portrait = {
@@ -1155,21 +1484,13 @@ KoH_balians_adventure.22 = {
 		add_character_flag = {
 			flag = had_event_balians_adventure.22
 		}
-		if = {
-			limit = {
-				AND = {
-					this = character:223570
-					is_ai = no
-				}	
-			}
-			pan_camera_to_province = province:5965
-		}
+		remove_character_flag = current_adventure_wtf_vanilla
 	}	
 	option = {
 		name = KoH_balians_adventure.22.a
 		trigger_event = {
 			id = KOH_balian_women.4
-			days = 1
+			days = 3
 		}
 	}	
 }

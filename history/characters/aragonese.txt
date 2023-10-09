@@ -8,7 +8,7 @@
 	religion = catholic
 	culture = aragonese
 	trait = brave
-	trait = hunter_1
+	trait = lifestyle_hunter
 	trait = education_martial_4
 
 	father = 110500 # King Sancho I of Aragon
@@ -433,7 +433,7 @@
 	religion = catholic
 	culture = aragonese
 	trait = brave
-	trait = blademaster_1
+	trait = lifestyle_blademaster
 	trait = education_martial_2
 
 	father = 110500 # King Sancho I of Aragon
@@ -487,6 +487,7 @@
 }
 110500 = {
 	name = "Sancho" # Sancho (I & V) Ramírez de Aragón, King of Aragon (1063-1094) & Navarra (1076-1094), Count of Alto Aragón (1063-1094) & Navarra (1076-1094)
+	dna = 110500_sancho_of_aragon
 	dynasty_house = house_jimena_aragon
 	martial = 6
 	diplomacy = 7
@@ -555,7 +556,6 @@
 	culture = aragonese
 	trait = scholar
 	trait = chaste
-	trait = mystic_2
 	trait = education_learning_3
 
 	father = 110510 # King Ramiro I of Aragon
@@ -566,6 +566,18 @@
 	}
 	1063.5.8 = {
 		employer = 110500 # King Sancho I of Aragón
+		effect = {
+			add_trait = lifestyle_mystic
+			add_trait_xp = {
+                trait = lifestyle_mystic
+                value = {
+                    integer_range = {
+                        min = medium_lifestyle_random_xp_low
+                        max = medium_lifestyle_random_xp_high
+                    }
+                }
+            }
+        }
 	}
 	1086.7.17 = {
 		death = yes
@@ -644,6 +656,10 @@
 	1063.5.8 = {
 		employer = 110500 # King Sancho I of Aragón
 	}
+	1066.4.1 = {
+		# Regent for her young step-son, Ermengol of Urgell.
+		employer = 110550
+	}
 	1097.8.16 = {
 		death = {
 			death_reason = death_natural_causes
@@ -676,6 +692,38 @@
 		trait = devoted
 	}
 	1110.11.1 = {
+aragonese0001 = {
+	name = "Blasco" # Blasco Artález d'Alagona 'the Old'
+	dynasty = 8685
+	religion = catholic
+	culture = aragonese
+	trait = education_intrigue_1
+
+	father = aragonese0002
+ 
+	1256.1.1 = {
+		birth = yes
+	}
+	1279.1.1 = {
+		add_spouse = 30793
+		dynasty_house = house_alagona # House of Alagona, Founder
+	}
+	1302.1.1 = {
+		death = yes
+	}
+}
+
+aragonese0002 = {
+	name = "Artal" # Artal (IV) Blázquez de Alagón
+	dynasty = 8685
+	religion = catholic
+	culture = aragonese
+	trait = education_stewardship_3
+ 
+	1228.1.1 = {
+		birth = yes
+	}
+	1295.1.1 = {
 		death = {
 			death_reason = death_old_age
 		}

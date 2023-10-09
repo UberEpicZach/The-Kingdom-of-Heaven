@@ -81,6 +81,7 @@
 	trait=temperate
 	trait=patient
 	trait=greedy
+	trait=stubborn
 	diplomacy=2
 	
 	trait=kinslayer_3
@@ -89,6 +90,21 @@
 	}
 	1152.1.2 = {
 		add_spouse = 303219 #Yazad Khatun
+		add_perk=defensive_negotiations_perk
+		
+	}
+	1181.1.1={
+	create_alliance={
+	target=character:125501
+	allied_through_owner =character:303211
+						allied_through_target = character:125501
+	}
+	character:125501 = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+					add_opinion = {
+						modifier = perk_negotiated_alliance_opinion
+						target = character:303211
+					}
+				}
 	}
 	1199.1.2 = {
 		give_nickname = nick_wang_khan
@@ -154,20 +170,7 @@
 		death = yes
 	}
 }
-303215 = {
-	name = "Abaqu"
-	dynasty = 1041002		#Khereid
-	religion = nestorian
-	culture = kerait
-	father = 303211
-	mother = 303219
-	1168.1.2 = {
-		birth = yes
-	}
-	1200.1.2 = {
-		death = yes
-	}
-}
+
 303216 = {
 	name = "Ilqa_Sangun"
 	dynasty = 1041002		#Khereid

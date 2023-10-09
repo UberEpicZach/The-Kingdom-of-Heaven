@@ -17,6 +17,16 @@
 			military_camps_01
 		}
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_stables
+			pastures
+		}
+	}
 }
 1907 = {	# ATAPUERCA
 	holding = none
@@ -25,9 +35,23 @@
 }
 1908 = {	# LERMA
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			farm_estates_04
+			pastures_03
+		}
+	}
 }
 1905 = {	# PALENCIA
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+			pastures_03
+		}
+	}
 }
 
 ###c_valladolid
@@ -41,12 +65,26 @@
 	# History
 	800.1.1 = { culture = castilian }
 	950.1.1 = { religion = catholic }
+
+	1184.1.1 = {
+		buildings = {
+			building_stables_04
+			windmills_03
+		}
+	}
 }
 1896 = {	# SIMANCAS
 	holding = none
 	
 	1066.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+			logging_camps_03
+		}
 	}
 }
 1898 = {	# ARANDA DE DUERO
@@ -55,6 +93,13 @@
 	religion = catholic
 
 	800.1.1 = { culture = castilian }
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+			guild_halls_03
+		}
+	}
 }
 
 ###c_soria
@@ -68,12 +113,35 @@
 	# History
 	800.1.1 = { culture = castilian }
 	950.1.1 = { religion = catholic }
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures
+			hunting_grounds
+		}
+	}
 }
 1899 = {	# SAN ESTEBAN
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+			building_stables_04
+		}
+	}
 }
 1900 = {	# OSMA
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+		}
+	}
 }
 1909 = {	# SAN LEONARDO DE YAGUE
 	holding = none
@@ -97,12 +165,37 @@
 	955.1.1 = { culture = castilian }
 	1120.1.1 = { special_building_slot = alcazar_of_segovia_01 }
 	1170.1.1 = { religion = catholic }
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			logging_camps_03
+			guild_halls_05
+			hunting_grounds_04
+			cereal_fields_01
+		}
+	}
 }
 1925 = {	# CUELLAR
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			building_windmills_01
+		}
+	}
 }
 1926 = {	# UCEDA
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+		}
+	}
 }
 
 ###c_olmedo
@@ -117,12 +210,31 @@
 	800.1.1 = { culture = andalusian }
 	955.1.1 = { culture = asturleonese }
 	1170.1.1 = { religion = catholic }
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds_04
+			farm_estates_04
+			pastures_03
+			watermills_04
+		}
+	}
 }
 1922 = {	# CORACERA
 	holding = none
 	
 	1066.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			windmills_03
+			watchtowers_06
+		}
 	}
 }
 
@@ -137,12 +249,26 @@
 }
 1802 = {	# SANTANDER
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			building_windmills_01
+		}
+	}
 }
 1815 = {	# REINOSA
 	holding = none
 	
 	1066.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_03
+			farm_estates_04
+		}
 	}
 }
 1812 = {	# MEDINA DE POMAR
@@ -159,6 +285,12 @@
 	
 	# History
 	800.1.1 = { culture = castilian }
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+		}
+	}
 }
 1813 = {	# MIRANDA DE EBRO
 	holding = castle_holding
@@ -167,9 +299,27 @@
 
 	800.1.1 = { culture = castilian }
 	
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_04
+			logging_camps_03
+			hunting_grounds_01
+		}
+	}
 }
 1904 = {	# SEDANO
 	holding = church_holding
 	culture = visigothic
 	religion = catholic
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+			building_windmills_01
+		}
+	}
 }

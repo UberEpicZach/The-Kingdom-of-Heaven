@@ -34,9 +34,9 @@ KOH_richard_bride.1 = {
 
 		hidden_effect = {
 			trigger_event = {
-						id = KOH_richard_bride.2
-						days = 1
-					}
+				id = KOH_richard_bride.2
+				days = 1
+			}
 		}
 	}
 
@@ -68,9 +68,9 @@ KOH_richard_bride.1 = {
 				remove_trait = unwed
 			}
 			trigger_event = {
-						id = KOH_richard_bride.4
-						days = 1
-					}
+				id = KOH_richard_bride.4
+				days = 1
+			}
 		}
 	}
 }
@@ -167,7 +167,7 @@ KOH_richard_bride.2 = {
 		name = richard.bride.2.b
 
 		character:204510 = {
-			marry = character:206501
+			break_betrothal = character:205518
 		}
 		create_alliance = {
 			target = scope:navarra_ruler
@@ -195,10 +195,13 @@ KOH_richard_bride.2 = {
 			modifier = pleased_opinion
 			opinion = 5
 		}
+		character:204510 = {
+			marry = character:206501
+		}
 		hidden_effect = {
 			character:KOH0046 = {
 				create_betrothal = character:205518
-				}
+			}
 		}
 	}
 }
@@ -222,26 +225,26 @@ KOH_richard_bride.3 = {
 	}
 
 	trigger = {
-			is_adult = yes
-			NOT = { has_character_flag = had_event_richard_bride.3 }
-			is_ai = no
+		is_adult = yes
+		NOT = { has_character_flag = had_event_richard_bride.3 }
+		is_ai = no
 	}
 
 	immediate = {
 		add_character_flag = {
 			flag = had_event_richard_bride.3
 		}
-			hidden_effect = {
-				character:205518 = {
-					remove_trait = unwed
-				}
-				character:206501 = {
-					remove_trait = unwed
-				}
-				character:204510 = {
-					remove_trait = unwed
-				}
+		hidden_effect = {
+			character:205518 = {
+				remove_trait = unwed
 			}
+			character:206501 = {
+				remove_trait = unwed
+			}
+			character:204510 = {
+				remove_trait = unwed
+			}
+		}
 		every_ruler = {
             limit = {
                 any_held_title = {
@@ -295,49 +298,52 @@ KOH_richard_bride.3 = {
 		name = richard.bride.3.b
 
 		random_list = {
-				40 = {
-					add_opinion = {
-						target = character:204510
-						modifier = romantic_gesture_opinion
-						opinion = 10
-					}
-					character:204510 = {
-						set_sexuality = homosexual
-						add_trait = unwed
-					}
-					hidden_effect = {
-						trigger_event = {
+			40 = {
+				add_opinion = {
+					target = character:204510
+					modifier = romantic_gesture_opinion
+					opinion = 10
+				}
+				character:204510 = {
+					set_sexuality = homosexual
+					add_trait = unwed
+				}
+				hidden_effect = {
+					trigger_event = {
 						id = KOH_richard_bride.5
 						days = 1
-						}
 					}
 				}
-				60 = {
-					add_opinion = {
-						target = character:204510
-						modifier = lover_let_me_down_opinion
-						opinion = -10
-					}
-					character:204510 = {
-						marry = character:206501
-					}
-					character:204510 = {
-						create_alliance = {
-							target = scope:navarra_ruler
-							allied_through_owner = character:204510
-							allied_through_target = character:206501
-						}
-					}
-					hidden_effect = {
-						character:KOH0046 = {
-							create_betrothal = character:205518
-						}
-					}
-					trigger_event = {
-						id = KOH_flemish_war.1
-						days = 10
+			}
+			60 = {
+				character:204510 = {
+					break_betrothal = character:205518
+				}
+				add_opinion = {
+					target = character:204510
+					modifier = lover_let_me_down_opinion
+					opinion = -10
+				}
+				character:204510 = {
+					marry = character:206501
+				}
+				character:204510 = {
+					create_alliance = {
+						target = scope:navarra_ruler
+						allied_through_owner = character:204510
+						allied_through_target = character:206501
 					}
 				}
+				hidden_effect = {
+					character:KOH0046 = {
+						create_betrothal = character:205518
+					}
+				}
+				trigger_event = {
+					id = KOH_flemish_war.1
+					days = 10
+				}
+			}
 		}
 	}
 }
@@ -378,7 +384,7 @@ KOH_richard_bride.4 = {
 		character:232000 = {
 			remove_trait = bastard_founder
 			add_trait = legitimized_bastard
-			dynasty = 106
+			set_house = 106
 		}
 		hidden_effect = {
 			character:KOH0046 = {
@@ -440,7 +446,7 @@ KOH_richard_bride.5 = {
 		character:232000 = {
 			remove_trait = bastard_founder
 			add_trait = legitimized_bastard
-			dynasty = 106
+			set_house = 106
 		}
 		hidden_effect = {
 			character:KOH0046 = {
@@ -514,6 +520,9 @@ KOH_richard_bride.6 = {
 			remove_trait = unwed
 		}
 		character:204510 = {
+			break_betrothal = character:205518
+		}
+		character:204510 = {
 			marry = character:206501
 		}
 		create_alliance = {
@@ -523,8 +532,8 @@ KOH_richard_bride.6 = {
 		}
 		character:KOH0046 = {
 			create_betrothal = character:205518
-			}
 		}
+	}
 }
 
 
@@ -540,7 +549,7 @@ KOH_balian_women.1 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = ibelin
+		reference = ibelin
 	}
 	left_portrait = {
 		character = root
@@ -608,7 +617,7 @@ KOH_balian_women.2 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = ibelin
+		reference = ibelin
 	}
 	left_portrait = {
 		character = root
@@ -638,9 +647,9 @@ KOH_balian_women.2 = {
 
 		hidden_effect = {
 			trigger_event = {
-						id = KoH_balians_adventure.22
-						days = 5
-					}
+				id = KoH_balians_adventure.22
+				days = 5
+			}
 		}
 	}
 }
@@ -654,7 +663,7 @@ KOH_balian_women.3 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = ibelin
+		reference = ibelin
 	}
 	left_portrait = {
 		character = root
@@ -694,7 +703,7 @@ KOH_balian_women.4 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = mena_room
+		reference = mena_room
 	}
 	left_portrait = {
 		character = root
@@ -744,7 +753,7 @@ KOH_balian_women.5 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = mena_room
+		reference = mena_room
 	}
 	left_portrait = root
 	right_portrait = {
@@ -801,7 +810,7 @@ KOH_balian_women.6 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = mena_room
+		reference = mena_room
 	}
 	left_portrait = {
 		character = root
@@ -845,7 +854,7 @@ KOH_balian_women.7 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = mena_room
+		reference = mena_room
 	}
 	left_portrait = {
 		character = root
@@ -873,9 +882,22 @@ KOH_balian_women.7 = {
 
 		hidden_effect = {
 			trigger_event = {
-						id = KOH_balian_women.8
-						days = 10
+				id = KOH_balian_women.8
+				days = 60
 			}
+		}
+	}
+
+	after = {
+		start_travel_plan = {
+			destination = title:b_ibelin.title_province
+			return_trip = no
+			players_use_planner = no
+			#companion = scope:companion1
+			#companion = scope:companion2
+			#companion = scope:companion3
+			on_arrival_event = travel_completion_event.1000
+			on_arrival_destinations = last
 		}
 	}
 }
@@ -889,7 +911,7 @@ KOH_balian_women.8 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = bedchamber
+		reference = bedchamber
 	}
 	left_portrait = root
 	right_portrait = {
@@ -958,7 +980,7 @@ KOH_balian_women.9 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = bedchamber
+		reference = bedchamber
 	}
 	left_portrait = {
 		character = root
@@ -995,8 +1017,8 @@ KOH_balian_women.9 = {
 
 		hidden_effect = {
 			trigger_event = {
-						id = KOH_balian_women.10
-						days = 10
+				id = KOH_balian_women.10
+				days = 60
 			}
 		}
 	}
@@ -1011,7 +1033,7 @@ KOH_balian_women.10 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = bedchamber
+		reference = bedchamber
 	}
 	left_portrait = {
 		character = root
@@ -1039,9 +1061,9 @@ KOH_balian_women.10 = {
 
 		hidden_effect = {
 			trigger_event = {
-						id = KOH_balian_women.11
-						days = 5
-					}
+				id = KOH_balian_women.11
+				days = 5
+			}
 		}
 	}
 
@@ -1052,7 +1074,7 @@ KOH_balian_women.10 = {
 
 		trigger_event = {
 			id = KOH_balian_women.12
-				days = 5
+			days = 5
 		}
 	}
 }
@@ -1067,7 +1089,7 @@ KOH_balian_women.11 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = mena_room
+		reference = mena_room
 	}
 	left_portrait = {
 		character = root
@@ -1119,7 +1141,7 @@ KOH_balian_women.12 = {
 	}
 	theme = marriage
 	override_background = {
-		event_background = mena_baldwin
+		reference = mena_baldwin
 	}
 	left_portrait = {
 		character = character:223523 #Baudouin
@@ -1231,7 +1253,7 @@ KOH_balian_women.13 = {
 	}
 	theme = marriage
 	override_background = {
-		event_background = mena_baldwin
+		reference = mena_baldwin
 	}
 	left_portrait = {
 		character = root
@@ -1291,7 +1313,7 @@ KOH_balian_women.14 = {
 	}
 	theme = marriage
 	override_background = {
-		event_background = mena_baldwin
+		reference = mena_baldwin
 	}
 	left_portrait = {
 		character = root
@@ -1399,7 +1421,7 @@ KOH_balian_women.15 = {
 	}
 	theme = marriage
 	override_background = {
-		event_background = mena_baldwin
+		reference = mena_baldwin
 	}
 	left_portrait = {
 		character = root
@@ -1452,7 +1474,7 @@ KOH_balian_women.16 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = ibelin
+		reference = ibelin
 	}
 
 	left_portrait = {
@@ -1529,7 +1551,7 @@ KOH_balian_women.17 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = ibelin
+		reference = ibelin
 	}
 
 	left_portrait = {
@@ -1606,7 +1628,7 @@ KOH_balian_women.18 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = ibelin
+		reference = ibelin
 	}
 	left_portrait = {
 		character = root
@@ -1659,7 +1681,7 @@ KOH_balian_women.19 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = bedchamber
+		reference = bedchamber
 	}
 	left_portrait = {
 		character = root
@@ -1711,7 +1733,7 @@ KOH_balian_women.20 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = bedchamber
+		reference = bedchamber
 	}
 	left_portrait = {
 		character = root
@@ -1764,7 +1786,7 @@ KOH_balian_women.21 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = mena_room
+		reference = mena_room
 	}
 	left_portrait = {
 		character = character:223570
@@ -1825,7 +1847,7 @@ KOH_balian_women.22 = {
 	}
 	theme = seduction
 	override_background = {
-		event_background = mena_room
+		reference = mena_room
 	}
 	left_portrait = {
 		character = character:223570
@@ -1880,7 +1902,7 @@ KOH_balian_women.23 = {
 	}
 	theme = war
 	override_background = {
-		event_background = bedchamber
+		reference = bedchamber
 	}
 	left_portrait = {
 		character = character:223500
@@ -1925,7 +1947,7 @@ KOH_balian_women.24 = {
 	}
 	theme = marriage
 	override_background = {
-		event_background = mena_baldwin
+		reference = mena_baldwin
 	}
 	left_portrait = {
 		character = root
@@ -1977,7 +1999,7 @@ KOH_balian_women.25 = {
 	}
 	theme = marriage
 	override_background = {
-		event_background = mena_baldwin
+		reference = mena_baldwin
 	}
 	left_portrait = {
 		character = character:223570
@@ -2245,7 +2267,7 @@ KOH_georgian_wedding.3 = {
 			divorce = character:222828
 		}
 		hidden_effect = {
-			character:466547 = {
+			character:466517 = {
 				add_trait = unwed
 			}
 			trigger_event = {
@@ -2265,7 +2287,7 @@ KOH_georgian_wedding.4 = {
 	}
 	theme = marriage
 	override_background = {
-		event_background = garden
+		reference = garden
 	}
 	left_portrait = {
 		character = character:466517 #Tamar
@@ -2337,7 +2359,7 @@ KOH_georgian_wedding.5 = {
 	}
 	theme = marriage
 	override_background = {
-		event_background = garden
+		reference = garden
 	}
 	left_portrait = {
 		character = character:466517 #Tamar
@@ -2534,7 +2556,7 @@ KOH_georgian_wedding.8 = {
 	}
 	theme = marriage
 	override_background = {
-		event_background = garden
+		reference = garden
 	}
 	left_portrait = {
 		character = character:466517 #Tamar
@@ -2559,11 +2581,11 @@ KOH_georgian_wedding.8 = {
 				divorce = character:222828
 				set_relation_lover = character:466516
 				add_prestige = 300
-				make_tributary = {
-					TYPE = tributary_permanent
-					SUZERAIN = character:466517
-					TRIBUTARY = title:k_caucasus.holder
-		}
+				# make_tributary = {
+				# 	TYPE = tributary_permanent
+				# 	SUZERAIN = character:466517
+				# 	TRIBUTARY = title:k_caucasus.holder
+				# }
 			}
 		}
 		character:466516 = {

@@ -127,9 +127,9 @@ stress_gain_remove = {
 	random_creation = 0
 	good = yes
 	shown_in_ruler_designer = no
-	hidden_effect = {
+
 		stress_gain_mult = -1
-	}
+	
 	desc = {
 		desc = stress_gain_remove_desc
 	}
@@ -159,8 +159,8 @@ KOH_Free_City = {
 	good = yes
 	flag = can_not_marry
 	can_have_children = no
-	can_inherit = no
-	blocks_from_claim_inheritance = yes
+	inheritance_blocker = all
+	claim_inheritance_blocker = all
 	hostile_scheme_resistance_mult = -100
 	enemy_hostile_scheme_success_chance_add = -100
 	personal_scheme_power_mult = -100
@@ -253,25 +253,28 @@ eyes_aflame = {
 	monthly_diplomacy_lifestyle_xp_gain_mult = 1
 	monthly_martial_lifestyle_xp_gain_mult = 1
 	monthly_stewardship_lifestyle_xp_gain_mult = 1
-	health=major_health_boost
 
+	health = 0.90
 	monthly_piety_gain_mult = 0.2
 	monthly_prestige = 1
 	
 	stress_gain_mult = -0.25
 	
 	ai_war_cooldown = -1
-	ai_war_chance = 3	
+	#ai_war_chance= 99
+	
 	
 	desc = {
-		desc = trait_richard_the_lionheart_desc
+		desc = trait_eyes_aflame_desc
 	}
 	shown_in_ruler_designer = no
-	ai_energy = very_high_positive_ai_value
+	ai_energy = dominant_positive_ai_value
 	ai_boldness = dominant_positive_ai_value
 	ai_greed = dominant_positive_ai_value
-	ai_rationality = high_negative_ai_value
-	ai_zeal = dominant_negative_ai_value
+	ai_rationality = dominant_negative_ai_value
+	ai_compassion = dominant_negative_ai_value
+	ai_vengefulness = dominant_positive_ai_value
+	#ai_zeal = dominant_negative_ai_value
 }
 
 
@@ -287,7 +290,7 @@ koh_dragon = {
 }
 
 one_handed = {
-	health_trait = yes
+	category=health
 	learning = 1
 	prowess = -4
 	
@@ -335,7 +338,7 @@ fredrick_barbarossa = {
 	levy_size = 0.1
 	birth = 0
 	random_creation = 0
-	fame = yes
+	category=fame
 	tolerance_advantage_mod = 12
 	opposite_opinion = -100
 	shown_in_ruler_designer = no
@@ -367,24 +370,24 @@ lion_of_the_empire = {
 	ai_honor = low_negative_ai_value
 }
 assassin_member = {
-	lifestyle = yes
+	category=lifestyle
 	flag = can_not_marry
 	potential = {
 		exists = title:k_nizari_state.holder
 		has_lifestyle = assassin_lifestyle
 	}
 
-	can_inherit = no
-	education = yes
+		inheritance_blocker = all
+category=education
     prowess = 15
 	dread_baseline_add = 40
 	monthly_piety = 3
 	intrigue = 6
 	same_opinion_if_same_faith = 25
-	blocks_from_claim_inheritance_from_dynasty = yes
-	blocks_from_claim_inheritance = yes
+	
+	claim_inheritance_blocker = all
 	flag = can_not_marry
-	can_inherit = no
+
 	birth = 0
 	random_creation = 0
 	desc = {

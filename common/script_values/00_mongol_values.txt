@@ -232,3 +232,38 @@ mongol_successor_faith_chance = {
 		}
 	}
 }
+mongol_conquest_ai_score_value = {
+	value = 80
+	scope:attacker = {
+		
+		# Do I have a negative relationship with them?
+		if = {
+			limit = { has_relation_nemesis = scope:defender }
+			add = 60
+		}
+		else_if = {
+			limit = {
+				has_any_bad_relationship_with_character_trigger = { CHARACTER = scope:defender }
+			}
+			add = 40
+		}
+		# Do I have a positive relationship with them?
+		if = {
+			limit = {
+				OR = {
+					has_relation_soulmate = scope:defender
+					has_relation_best_friend = scope:defender
+				}
+			}
+			add = -50
+		}
+		else_if = {
+			limit = {
+				has_any_good_relationship_with_character_trigger = { CHARACTER = scope:defender }
+			}
+			add = -10
+		}
+		}
+		}
+		
+		

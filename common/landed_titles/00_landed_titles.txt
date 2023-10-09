@@ -217,6 +217,8 @@ d_sunni = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	
+	capital = c_baghdad
 }
 
 d_shiite = {
@@ -228,6 +230,8 @@ d_shiite = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	
+	capital = c_cairo
 }
 
 
@@ -262,10 +266,13 @@ d_muwalladi = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	
+	capital = c_toledo
 }
 
 e_golden_horde = {
 	color = { 243 180 17 }
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
@@ -274,6 +281,7 @@ e_golden_horde = {
 
 e_ilkhanate = {
 	color = { 140 180 20 }
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
@@ -282,6 +290,7 @@ e_ilkhanate = {
 
 e_chagatai = {
 	color = { 200 200 200 }
+	can_be_named_after_dynasty = no
 	
 
 	definite_form = yes
@@ -291,7 +300,7 @@ e_chagatai = {
 
 e_black_horde = {
 	color = { 50 50 50 }
-	
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
@@ -300,7 +309,7 @@ e_black_horde = {
 
 e_white_horde = {
 	color = { 230 230 230 }
-	
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
@@ -309,7 +318,7 @@ e_white_horde = {
 
 e_aarlud_khanate = {
 	color = { 80 152 200 }
-	
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
@@ -318,7 +327,7 @@ e_aarlud_khanate = {
 
 e_togskol_khanate = {
 	color = { 50 150 180 }
-	
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
@@ -372,7 +381,7 @@ e_kirghiz_khanate = {
 
 e_mongol_empire = {
 	color = { 130 180 240 }
-	
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 	
@@ -400,19 +409,6 @@ e_timurids = {
 }
 
 #Jewish Religious Heads
-d_rabbinism = {
-	color = { 0 80 255 }
-	
-	definite_form = yes
-	ruler_uses_title_name = no
-	landless = yes
-	no_automatic_claims = yes
-	always_follows_primary_heir = yes
-	destroy_if_invalid_heir = yes
-	
-	capital = c_jerusalem
-}
-
 d_karaism = {
 	color = { 0 100 255 }
 	definite_form = yes
@@ -421,7 +417,7 @@ d_karaism = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+	can_be_named_after_dynasty = no
 	capital = c_jerusalem
 }
 
@@ -433,7 +429,7 @@ d_haymanot = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+	can_be_named_after_dynasty = no
 	capital = c_semien
 }
 
@@ -445,7 +441,7 @@ d_malabarism = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+	can_be_named_after_dynasty = no
 	capital = c_jerusalem
 }
 
@@ -457,7 +453,7 @@ d_samaritan = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+	can_be_named_after_dynasty = no
 	capital = c_jerusalem
 }
 
@@ -469,7 +465,7 @@ d_kabarism = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+	can_be_named_after_dynasty = no
 	capital = c_jerusalem
 }
 
@@ -659,7 +655,7 @@ d_knights_hospitaler = {
 d_hashshashin = {
 
 	color = { 100 100 0 }
-	
+	definite_form = yes
 	
 	capital = c_shayzar
 	
@@ -667,7 +663,7 @@ d_hashshashin = {
 
 k_nizari_state = {
 	color = { 100 100 0 }
-	
+	definite_form = yes
 	
 	capital = c_alamut
 }
@@ -4673,6 +4669,609 @@ e_hre = {
 		}
 	}
 
+	k_burgundy = {
+		color = { 134 0 37 }
+		
+		
+		capital	= c_arles # Arles
+
+		can_create = {
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
+		}
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					OR = {
+						culture = culture:french
+						culture = culture:norman
+						culture = culture:occitan
+					}
+				}
+				add = @better_than_the_alternatives_score
+			}
+		}
+		
+		d_arles = {
+			color = { 195 37 67 }
+
+			capital	= c_arles # Arles
+
+			c_arles = {
+				color = { 180 30 70 }
+				
+
+				b_arles = {
+					province = 2017
+					
+					color = { 180 30 70 }
+					
+				}
+			}
+
+			c_venaissin = {
+				color = { 180 30 70 }
+				
+				
+				b_orange = {
+					province = 2062
+					
+					color = { 180 30 70 }
+					
+				}
+				b_avignon = {
+					province = 2059
+					
+					color = { 180 30 70 }
+					
+				}
+			}
+		}
+
+		d_provence = {
+			color = { 145 37 67 }
+			
+			
+			capital = c_provence # Aix-en-Provence
+			
+			c_provence = {
+				color = { 165 50 105 }
+				
+				
+				b_toulon = {
+					province = 2019
+					
+					color = { 165 50 105 }
+					
+				}
+				b_dragugnian = {
+					province = 2024
+					
+					color = { 165 50 105 }
+					
+				}
+				b_castellane = {
+					province = 2025
+					
+					color = { 165 50 105 }
+					
+				}
+			}
+			c_marseille = {
+				color = { 195 70 95 }
+				
+
+				b_marseille = {
+					province = 2018
+					
+					color = { 165 50 105 }
+					
+				}
+				b_aix = {
+					province = 2023
+					
+					color = { 165 50 105 }
+					
+				}
+			}
+			c_nice = {
+				color = { 195 75 90 }
+				
+				
+				b_nice = {
+					province = 2021
+					
+					color = { 195 75 90 }
+					
+				}
+				b_grasse = {
+					province = 2020
+					
+					color = { 195 75 90 }
+					
+				}
+				b_barcelonnette = {
+					province = 8720
+					
+					color = { 195 75 90 }
+					
+				}
+				b_puget = {
+					province = 8721
+					
+					color = { 195 75 90 }
+					
+				}
+				b_digne = {
+					province = 2026
+					
+					color = { 195 75 90 }
+					
+				}
+			}
+			c_forcalquier = {
+				color = { 165 20 65 }
+				
+				
+				b_forcalquier = {
+					province = 2061
+					
+					color = { 165 20 65 }
+					
+				}
+				b_vaison = {
+					province = 2067
+					
+					color = { 180 30 70 }
+					
+				}
+				b_apt = {
+					province = 2060
+					
+					color = { 165 20 65 }
+					
+				}
+				b_embrun = {
+					province = 2027
+					
+					color = { 165 20 65 }
+					
+				}
+				b_gap = {
+					province = 2028
+					
+					color = { 165 20 65 }
+					
+				}
+			}
+		}
+		
+		d_savoie = {
+			color = { 101 8 34 }
+			
+			
+			capital = c_savoie # Savoie
+			
+			c_savoie = {
+				color = { 81 8 14 }
+				
+				
+				b_moutiers = {
+					province = 2031
+					
+					color = { 81 8 14 }
+					
+				}
+				b_saint_michel_de_maurienne = {
+					province = 2029
+					
+					color = { 81 8 14 }
+					
+				}
+				b_chambery = {
+					province = 2455
+					
+					color = { 81 8 14 }
+					
+				}
+				b_belley = {
+					province = 2069
+					
+					color = { 81 8 14 }
+					
+				}
+			}
+			c_aosta = {
+				color = { 90 5 15 }
+				
+				
+				b_aosta = {
+					province = 2039
+					
+					color = { 90 5 15 }
+					
+				}
+				b_martigny = {
+					province = 2038
+					
+					color = { 90 5 15 }
+					
+				}
+			}
+			c_geneva = {
+				color = { 175 40 65 }
+				
+				
+				b_geneva = {
+					province = 2035
+					
+					color = { 175 40 65 }
+					
+				}
+				b_annecy = {
+					province = 2034
+					
+					color = { 175 40 65 }
+					
+				}
+				b_thonon_les_bains = {
+					province = 2036
+					
+					color = { 175 40 65 }
+					
+				}
+				b_faucigny = {
+					province = 8719
+					
+					color = { 175 40 65 }
+					
+				}
+			}
+			c_canavese = {
+				color = { 115 25 45 }
+				
+				
+				b_ivrea = {
+					province = 2040
+
+					color = { 115 25 45 }
+					
+				}
+				b_pinerolo = {
+					province = 2042
+
+					color = { 115 25 45 }
+					
+				}
+				b_canavese = {
+					province = 2456
+
+					color = { 115 25 45 }
+					
+				}
+			}
+		}
+		
+		d_dauphine = {
+			color = { 115 26 90 }
+			
+			
+			capital = c_lyon # Lyon
+			
+			c_lyon = {
+				color = { 95 6 70 }
+				
+				
+				b_lyon = {
+					province = 2065
+					
+					color = { 95 6 70 }
+					
+				}
+				b_villars = {
+					province = 2070
+					
+					color = { 95 6 70 }
+					
+				}
+			}
+			c_beaujeu = {
+				color = { 95 6 70 }
+				
+
+				b_beaujeu = {
+					province = 2301
+					
+					color = { 95 6 70 }
+					
+				}
+				b_roanne = {
+					province = 2305
+					
+					color = { 166 28 127 }
+					
+				}
+			}
+			c_forez = {
+				color = { 166 28 127 }
+				
+				
+				b_feurs = {
+					province = 2297
+					
+					color = { 166 28 127 }
+					
+				}
+				b_montbrison = {
+					province = 2298
+					
+					color = { 166 28 127 }
+					
+				}
+			}
+			c_viviers = {
+				color = { 195 70 95 }
+				
+				
+				b_viviers = {
+					province = 2063
+					
+					color = { 195 70 95 }
+					
+				}
+				b_annonay = {
+					province = 3258
+					
+					color = { 195 70 95 }
+					
+				}
+			}
+			c_grenoble = {
+				color = { 120 10 80 }
+				
+
+				b_grenoble = {
+					province = 2030
+					
+					color = { 120 10 80 }
+					
+				}
+				b_briancon = {
+					province = 8718
+					
+					color = { 165 20 65 }
+					
+				}
+			}
+			c_viennois = {
+				color = { 120 10 80 }
+				
+				
+				b_vienne = {
+					province = 2033
+					
+					color = { 120 10 80 }
+					
+				}
+				b_chartreuse = {
+					province = 2032
+					
+					color = { 120 10 80 }
+					
+				}
+				b_romans = {
+					province = 2068
+					
+					color = { 120 10 80 }
+					
+				}
+			}
+			c_valentinois = {
+				color = { 195 70 95 }
+				
+				
+				b_monteil = {
+					province = 8717
+					
+					color = { 195 70 95 }
+					
+				}
+				b_die = {
+					province = 2066
+					
+					color = { 195 70 95 }
+					
+				}
+				b_valence = {
+					province = 2064
+					
+					color = { 195 70 95 }
+					
+				}
+			}
+		}
+		
+		d_upper_burgundy = {
+			color = { 159 20 58 }
+			
+			
+			capital = c_besancon # Besancon
+			
+			cultural_names = {
+				name_list_french = franchecomte
+				name_list_german = freigrafschaft
+				 
+			}
+
+			c_besancon = {
+				color = { 139 10 38 }
+				
+				
+				b_besancon = {
+					province = 2076
+					
+					color = { 139 10 38 }
+					
+				}
+				b_vesoul = {
+					province = 2077
+					
+					color = { 139 10 38 }
+					
+				}
+				b_morteau = {
+					province = 2075
+					
+					color = { 139 10 38 }
+					
+				}
+				b_ornans = {
+					province = 2459
+					
+					color = { 139 10 38 }
+					
+				}
+				b_gy = {
+					province = 2383
+					
+					color = { 139 10 38 }
+					
+				}
+			}
+			c_montbelliard = {
+				color = { 215 200 215 }
+				
+
+				b_montbelliard = {
+					province = 2057
+
+					color = { 215 200 215 }
+					
+					}
+			}
+			c_bresse = {
+				color = { 199 82 112 }
+				
+				
+				b_bourg = {
+					province = 2071
+					
+					color = { 199 82 112 }
+					
+				}
+				b_champagnole = {
+					province = 2457
+					
+					color = { 199 82 112 }
+					
+				}
+			}
+			c_dole = {
+				color = { 170 35 70 }
+				
+				
+				b_dole = {
+					province = 2458
+					
+					color = { 170 35 70 }
+					
+				}
+				b_quingey = {
+					province = 2191
+					
+					color = { 170 35 70 }
+					
+				}
+				b_lons_le_saunier = {
+					province = 2073
+					
+					color = { 170 35 70 }
+					
+				}
+				b_salins = {
+					province = 2072
+					
+					color = { 170 35 70 }
+					
+				}
+			}
+		}
+		
+		d_transjurania = {
+			color = { 159 40 10 }
+			
+			
+			capital = c_bern
+			
+			c_bern = {
+				color = { 139 30 10 }
+				
+				
+				b_bern = {
+					province = 2046
+					
+					color = { 139 30 10 }
+					
+				}
+				b_lausanne = {
+					province = 2037
+					
+					color = { 139 30 10 }
+					
+				}
+				b_thun = {
+					province = 2047
+					
+					color = { 139 30 10 }
+					
+				}
+			}
+			c_aargau = {
+				color = { 150 70 15 }
+				
+				
+				b_biel = {
+					province = 2049
+					
+					color = { 150 70 15 }
+					
+				}
+				b_lucerne = {
+					province = 2048
+					
+					color = { 150 70 15 }
+					
+				}
+			}
+			c_neuchatel = {
+				color = { 135 55 45 }
+				
+				
+				b_neuchatel = {
+					province = 2460
+					
+					color = { 135 55 45 }
+					
+				}
+				b_pontarlier = {
+					province = 2074
+					
+					color = { 135 55 45 }
+					
+				}
+			}
+		}
+	}
+
 	
 	k_bavaria = {
 		color = { 70 80 80 }
@@ -5562,18 +6161,23 @@ e_hre = {
 			
 			capital = c_brabant #Leuven
 			
+			c_brussels = {
+				color = { 110 85 125 }
+
+				b_brussels = {
+					province = 2107
+
+					color = { 110 85 125 }
+					
+				}
+			}
+			
 			c_brabant = {
 				color = { 110 85 125 }
 				
 			
 				b_leuven = {
 					province = 2105
-
-					color = { 110 85 125 }
-					
-				}
-				b_brussels = {
-					province = 2107
 
 					color = { 110 85 125 }
 					
@@ -26521,12 +27125,6 @@ e_russia = {	#Kievan Rus
 						name_list_polish = cn_buczacz
 					}
 				}
-				b_moklekov = {
-					province = 5067
-					
-					color = { 130 212 7 }
-					
-				}
 			}
 			c_terebovl = {
 				color = { 177 247 71 }
@@ -26565,6 +27163,12 @@ e_russia = {	#Kievan Rus
 					cultural_names = {
 						name_list_polish = cn_czortkow
 					}
+				}
+				b_moklekov = {
+					province = 5067
+					
+					color = { 130 212 7 }
+					
 				}
 			}
 			c_zaslavl = {
@@ -27581,6 +28185,12 @@ e_russia = {	#Kievan Rus
 					color = { 121 189 74 }
 					
 				}
+				b_borzna = {
+					province = 5191
+		
+					color = { 108 135 2 }
+					
+				}
 			}
 			c_starodub = {
 				color = { 106 156 72 }
@@ -27617,12 +28227,6 @@ e_russia = {	#Kievan Rus
 				
 				b_novgorod_seversky = {
 					province = 567
-		
-					color = { 108 135 2 }
-					
-				}
-				b_borzna = {
-					province = 5191
 		
 					color = { 108 135 2 }
 					
@@ -44189,7 +44793,7 @@ e_persia = {
 				color = { 150 75 0 }
 				
 			
-				b_bamiyan = {
+				b_bamian = {
 					province = 4343
 
 					color = { 150 75 0 }
@@ -50763,601 +51367,6 @@ e_france = {
 			}
 		}
 	}
-	
-	k_burgundy = {
-		color = { 134 0 37 }
-		
-		
-		capital	= c_arles # Arles
-
-		can_create = {
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
-		}
-
-		can_create_on_partition = {
-			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
-			}
-		}
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					OR = {
-						culture = culture:french
-						culture = culture:norman
-						culture = culture:occitan
-					}
-				}
-				add = @better_than_the_alternatives_score
-			}
-		}
-		
-		d_provence = {
-			color = { 145 37 67 }
-			
-			
-			capital = c_provence # Aix-en-Provence
-			
-			c_venaissin = {
-				color = { 180 30 70 }
-				
-				
-				b_orange = {
-					province = 2062
-					
-					color = { 180 30 70 }
-					
-				}
-				b_avignon = {
-					province = 2059
-					
-					color = { 180 30 70 }
-					
-				}
-			}
-			c_arles = {
-				color = { 180 30 70 }
-				
-
-				b_arles = {
-					province = 2017
-					
-					color = { 180 30 70 }
-					
-				}
-			}
-			c_provence = {
-				color = { 165 50 105 }
-				
-				
-				b_toulon = {
-					province = 2019
-					
-					color = { 165 50 105 }
-					
-				}
-				b_dragugnian = {
-					province = 2024
-					
-					color = { 165 50 105 }
-					
-				}
-				b_castellane = {
-					province = 2025
-					
-					color = { 165 50 105 }
-					
-				}
-			}
-			c_marseille = {
-				color = { 195 70 95 }
-				
-
-				b_marseille = {
-					province = 2018
-					
-					color = { 165 50 105 }
-					
-				}
-				b_aix = {
-					province = 2023
-					
-					color = { 165 50 105 }
-					
-				}
-			}
-			c_nice = {
-				color = { 195 75 90 }
-				
-				
-				b_nice = {
-					province = 2021
-					
-					color = { 195 75 90 }
-					
-				}
-				b_grasse = {
-					province = 2020
-					
-					color = { 195 75 90 }
-					
-				}
-				b_barcelonnette = {
-					province = 8720
-					
-					color = { 195 75 90 }
-					
-				}
-				b_puget = {
-					province = 8721
-					
-					color = { 195 75 90 }
-					
-				}
-				b_digne = {
-					province = 2026
-					
-					color = { 195 75 90 }
-					
-				}
-			}
-			c_forcalquier = {
-				color = { 165 20 65 }
-				
-				
-				b_forcalquier = {
-					province = 2061
-					
-					color = { 165 20 65 }
-					
-				}
-				b_vaison = {
-					province = 2067
-					
-					color = { 180 30 70 }
-					
-				}
-				b_apt = {
-					province = 2060
-					
-					color = { 165 20 65 }
-					
-				}
-				b_embrun = {
-					province = 2027
-					
-					color = { 165 20 65 }
-					
-				}
-				b_gap = {
-					province = 2028
-					
-					color = { 165 20 65 }
-					
-				}
-			}
-		}
-		
-		d_savoie = {
-			color = { 101 8 34 }
-			
-			
-			capital = c_savoie # Savoie
-			
-			c_savoie = {
-				color = { 81 8 14 }
-				
-				
-				b_moutiers = {
-					province = 2031
-					
-					color = { 81 8 14 }
-					
-				}
-				b_saint_michel_de_maurienne = {
-					province = 2029
-					
-					color = { 81 8 14 }
-					
-				}
-				b_chambery = {
-					province = 2455
-					
-					color = { 81 8 14 }
-					
-				}
-				b_belley = {
-					province = 2069
-					
-					color = { 81 8 14 }
-					
-				}
-			}
-			c_aosta = {
-				color = { 90 5 15 }
-				
-				
-				b_aosta = {
-					province = 2039
-					
-					color = { 90 5 15 }
-					
-				}
-				b_martigny = {
-					province = 2038
-					
-					color = { 90 5 15 }
-					
-				}
-			}
-			c_geneva = {
-				color = { 175 40 65 }
-				
-				
-				b_geneva = {
-					province = 2035
-					
-					color = { 175 40 65 }
-					
-				}
-				b_annecy = {
-					province = 2034
-					
-					color = { 175 40 65 }
-					
-				}
-				b_thonon_les_bains = {
-					province = 2036
-					
-					color = { 175 40 65 }
-					
-				}
-				b_faucigny = {
-					province = 8719
-					
-					color = { 175 40 65 }
-					
-				}
-			}
-			c_canavese = {
-				color = { 115 25 45 }
-				
-				
-				b_ivrea = {
-					province = 2040
-
-					color = { 115 25 45 }
-					
-				}
-				b_pinerolo = {
-					province = 2042
-
-					color = { 115 25 45 }
-					
-				}
-				b_canavese = {
-					province = 2456
-
-					color = { 115 25 45 }
-					
-				}
-			}
-		}
-		
-		d_dauphine = {
-			color = { 115 26 90 }
-			
-			
-			capital = c_lyon # Lyon
-			
-			c_lyon = {
-				color = { 95 6 70 }
-				
-				
-				b_lyon = {
-					province = 2065
-					
-					color = { 95 6 70 }
-					
-				}
-				b_villars = {
-					province = 2070
-					
-					color = { 95 6 70 }
-					
-				}
-			}
-			c_beaujeu = {
-				color = { 95 6 70 }
-				
-
-				b_beaujeu = {
-					province = 2301
-					
-					color = { 95 6 70 }
-					
-				}
-				b_roanne = {
-					province = 2305
-					
-					color = { 166 28 127 }
-					
-				}
-			}
-			c_forez = {
-				color = { 166 28 127 }
-				
-				
-				b_feurs = {
-					province = 2297
-					
-					color = { 166 28 127 }
-					
-				}
-				b_montbrison = {
-					province = 2298
-					
-					color = { 166 28 127 }
-					
-				}
-			}
-			c_viviers = {
-				color = { 195 70 95 }
-				
-				
-				b_viviers = {
-					province = 2063
-					
-					color = { 195 70 95 }
-					
-				}
-				b_annonay = {
-					province = 3258
-					
-					color = { 195 70 95 }
-					
-				}
-			}
-			c_grenoble = {
-				color = { 120 10 80 }
-				
-
-				b_grenoble = {
-					province = 2030
-					
-					color = { 120 10 80 }
-					
-				}
-				b_briancon = {
-					province = 8718
-					
-					color = { 165 20 65 }
-					
-				}
-			}
-			c_viennois = {
-				color = { 120 10 80 }
-				
-				
-				b_vienne = {
-					province = 2033
-					
-					color = { 120 10 80 }
-					
-				}
-				b_chartreuse = {
-					province = 2032
-					
-					color = { 120 10 80 }
-					
-				}
-				b_romans = {
-					province = 2068
-					
-					color = { 120 10 80 }
-					
-				}
-			}
-			c_valentinois = {
-				color = { 195 70 95 }
-				
-				
-				b_monteil = {
-					province = 8717
-					
-					color = { 195 70 95 }
-					
-				}
-				b_die = {
-					province = 2066
-					
-					color = { 195 70 95 }
-					
-				}
-				b_valence = {
-					province = 2064
-					
-					color = { 195 70 95 }
-					
-				}
-			}
-		}
-		
-		d_upper_burgundy = {
-			color = { 159 20 58 }
-			
-			
-			capital = c_besancon # Besancon
-			
-			cultural_names = {
-				name_list_french = franchecomte
-				name_list_german = freigrafschaft
-				 
-			}
-
-			c_besancon = {
-				color = { 139 10 38 }
-				
-				
-				b_besancon = {
-					province = 2076
-					
-					color = { 139 10 38 }
-					
-				}
-				b_vesoul = {
-					province = 2077
-					
-					color = { 139 10 38 }
-					
-				}
-				b_morteau = {
-					province = 2075
-					
-					color = { 139 10 38 }
-					
-				}
-				b_ornans = {
-					province = 2459
-					
-					color = { 139 10 38 }
-					
-				}
-				b_gy = {
-					province = 2383
-					
-					color = { 139 10 38 }
-					
-				}
-			}
-			c_montbelliard = {
-				color = { 215 200 215 }
-				
-
-				b_montbelliard = {
-					province = 2057
-
-					color = { 215 200 215 }
-					
-					}
-			}
-			c_bresse = {
-				color = { 199 82 112 }
-				
-				
-				b_bourg = {
-					province = 2071
-					
-					color = { 199 82 112 }
-					
-				}
-				b_champagnole = {
-					province = 2457
-					
-					color = { 199 82 112 }
-					
-				}
-			}
-			c_dole = {
-				color = { 170 35 70 }
-				
-				
-				b_dole = {
-					province = 2458
-					
-					color = { 170 35 70 }
-					
-				}
-				b_quingey = {
-					province = 2191
-					
-					color = { 170 35 70 }
-					
-				}
-				b_lons_le_saunier = {
-					province = 2073
-					
-					color = { 170 35 70 }
-					
-				}
-				b_salins = {
-					province = 2072
-					
-					color = { 170 35 70 }
-					
-				}
-			}
-		}
-		
-		d_transjurania = {
-			color = { 159 40 10 }
-			
-			
-			capital = c_bern
-			
-			c_bern = {
-				color = { 139 30 10 }
-				
-				
-				b_bern = {
-					province = 2046
-					
-					color = { 139 30 10 }
-					
-				}
-				b_lausanne = {
-					province = 2037
-					
-					color = { 139 30 10 }
-					
-				}
-				b_thun = {
-					province = 2047
-					
-					color = { 139 30 10 }
-					
-				}
-			}
-			c_aargau = {
-				color = { 150 70 15 }
-				
-				
-				b_biel = {
-					province = 2049
-					
-					color = { 150 70 15 }
-					
-				}
-				b_lucerne = {
-					province = 2048
-					
-					color = { 150 70 15 }
-					
-				}
-			}
-			c_neuchatel = {
-				color = { 135 55 45 }
-				
-				
-				b_neuchatel = {
-					province = 2460
-					
-					color = { 135 55 45 }
-					
-				}
-				b_pontarlier = {
-					province = 2074
-					
-					color = { 135 55 45 }
-					
-				}
-			}
-		}
-	}
 }
 
 e_spain = {
@@ -57262,15 +57271,15 @@ e_sahara = {
 			c_azukki = { #AKA Azougi
 				color = { 77 76 76 }
 				
-				
-				b_azukki = { #AKA Azougi
-					province = 6479
+				b_ijil = { #AKA Idjil
+					province = 6475
 					
 					color = { 77 76 76 }
 					
 				}
-				b_ijil = { #AKA Idjil
-					province = 6475
+				
+				b_azukki = { #AKA Azougi
+					province = 6479
 					
 					color = { 77 76 76 }
 					
@@ -61052,15 +61061,15 @@ e_arabia = {
 			c_irbid = {
 				color = { 230 250 190 }
 				
-				
-				b_irbid = {
-					province = 5958
+				b_jarash = {
+					province = 5985
 					
 					color = { 230 250 190 }
 					
 				}
-				b_jarash = {
-					province = 5985
+				
+				b_irbid = {
+					province = 5958
 					
 					color = { 230 250 190 }
 					
@@ -61815,7 +61824,7 @@ e_abyssinia = {
 			color = { 162 133 85 }
 			
 			
-			capital = c_faras
+			capital = c_qasr_ibrim
 			
 			c_qasr_ibrim = {
 				color = { 165 135 85 }
@@ -77707,6 +77716,12 @@ e_deccan = {
 			c_kandy = { #Malaya Rata
 				color = { 150 135 100 }
 				
+				b_malaya_rata = { #Samantakuta
+					province = 3288
+					
+					color = { 150 135 100 }
+					
+				}
 				
 				b_senkadagalapura = {
 					province = 3278
@@ -77716,12 +77731,6 @@ e_deccan = {
 				}
 				b_matale = {
 					province = 3279
-					
-					color = { 150 135 100 }
-					
-				}
-				b_malaya_rata = { #Samantakuta
-					province = 3288
 					
 					color = { 150 135 100 }
 					
@@ -83154,6 +83163,15 @@ k_winideheim = {
 
 k_sorbia = {
 	color = { 75 15 15 }
+	
+
+	cultural_names = {
+		name_list_polabian = cn_polabia
+		#Kingdom of Polabia
+	}
+}
+k_kerait = {
+	color = { 15 15 85 }
 	
 
 	cultural_names = {

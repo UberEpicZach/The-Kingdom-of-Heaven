@@ -4,7 +4,7 @@ temujin.0001 = {
 	type = character_event
 	theme = murder_scheme
 	override_background = {
-		event_background = wilderness_steppe
+		reference = wilderness_steppe
 	}
 	title = temujin.0001.t
 	desc = temujin.0001.desc
@@ -39,7 +39,7 @@ temujin.0002 = {
 	type = character_event
 	theme = murder_scheme
 	override_background = {
-		event_background = wilderness_mountains
+		reference = wilderness_mountains
 	}
 	title = temujin.0002.t
 	desc = temujin.0002.desc
@@ -86,7 +86,7 @@ temujin.0003 = {
 	type = character_event
 	theme = abduct_scheme
 	override_background = {
-		event_background = wilderness_steppe
+		reference = wilderness_steppe
 	}
 	title = temujin.0003.t
 	desc = temujin.0003.desc
@@ -219,7 +219,7 @@ temujin.0005 = {
 
 	option = {	
 		name = temujin.0005.b
-		add_presige=-2000
+		add_prestige=-2000
 
 		ai_chance = {
 			base = 0
@@ -349,9 +349,10 @@ temujin.0009 = { # The Siege of Santarem
 		add_prestige = 500
 		add_piety = 500
 	}
-    override_background = { event_background = army_camp }
+    override_background = { reference = army_camp }
 	trigger = {
 		this = character:125501
+		has_trait=unwed
 		location = {
 			this = province:7517
 		}
@@ -368,11 +369,51 @@ temujin.0009 = { # The Siege of Santarem
 		name = temujin.0009.a
 	}
 }
+temujin.00095 = { # The Siege of Santarem
+	type = character_event
+	title = temujin.0009.t
+	desc = temujin.0009.desc
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+	immediate = {
+		character:3031390 = {save_scope_as = uduyit}
+		character:172004 = {save_scope_as = borte}
+		character:194414 = {save_scope_as = qoaqchin}
+		character:303282 = {save_scope_as = sochigel}
+		character:3032555 = {save_scope_as = jamukha}
+		character:303211 = {save_scope_as = toghril}
+		character:companion0007 = {save_scope_as = alert}
+		character:3031393 = {save_scope_as=chilger}
+
+		add_character_flag = bortereturned
+		remove_trait = unwed
+		scope:uduyit = {
+			remove_concubine = scope:borte
+		}
+		scope:borte  = {
+			divorce = scope:chilger
+			marry = root
+		}
+		add_prestige = 500
+		add_piety = 500
+	}
+    override_background = { reference = army_camp }
+	
+	trigger={
+	has_trait=unwed
+	}
+	option = {
+		name = temujin.0009.a
+	}
+}
 temujin.00035 = {
 	type = character_event
 	theme = abduct_scheme
 	override_background = {
-		event_background = wilderness_steppe
+		reference = wilderness_steppe
 	}
 	title = temujin.0005.t
 	desc = temujin.0005.desc
@@ -391,53 +432,495 @@ temujin.00035 = {
 	}
 }
 
-temujin.0004 = {
+
+
+temujin.0020 = {
 	type = character_event
-	theme = murder_scheme
+	theme = claim_throne_scheme
 	override_background = {
-		event_background = wilderness_steppe
+		reference = wilderness_steppe
 	}
-	title = temujin.0004.t
-	desc = temujin.0004.desc
+	title = temujin.0020.t
+	desc = temujin.0020.desc
 	
 	left_portrait = {
 		character = root
-		animation = shock
+		animation = rage
 	}
 	
 	
 	right_portrait = {
-		character = scope:borte
-		animation = shock
+		character = scope:usurper
+		animation = war_over_win
 	}
 
-	immediate = {
-		character:companion0007 = {save_scope_as = alert }
-		character:3031393 = {save_scope_as = chilger }
-	}
+	
 		
 	option = {	# Flee to Mount Qaldun
-		name = temujin.0004.a
-		scope:temujin = {
-			add_trait = unwed
-			add_trait = calm
+	name = temujin.0020.a
+	this = {
+			set_relation_rival={reason=rival_claimed_throne target=scope:usurper}
+			
+		}
+	
+	}
+}
+temujin.0030 = { # The Siege of Santarem
+	type = character_event
+	title = temujin.0030.t
+	desc = temujin.0030.desc
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+	right_portrait = {
+		character = scope:toghril
+		animation = war_attacker
+	}
+	immediate = {
+	
+    character:303211 = {save_scope_as = toghril}
+	
+    character:303211 = {
+	primary_title={
+	save_scope_as = primt
+	}}
+	character:125501 = {save_scope_as = temujin}
+	}
+
+	trigger = {
+		this = character:125501
+		is_at_war_as_attacker=yes
+		character:303211={
+	    any_character_war={
+		is_war_leader=character:303211
+		}
+		is_at_war_as_attacker=yes
 		}
 		
-		scope:chilger = {
-			remove_trait = unwed
-			marry = scope:borte
-		}
-		scope:borte = {
-			release_from_prison = yes
-			make_pregnant = { 
-				father= scope:temujin 
-				number_of_children = 1 
-				known_bastard = no 
-			}
+		NOT = { has_character_flag = bortereturned }
+	}
+
+	option = {
+	trigger={
+	NOT={
+	has_character_flag=kerweakclaims
+	}
+	}
+		name = temujin.0030.a
+		scope:toghril={
+		every_held_title={
+		scope:temujin={
+		
+		make_claim_weak=prev
+		add_character_flag = kerweakclaims
 		}
 		
+		}
+		
+		}
+	}
+	option = {
+	trigger={
+	
+	has_character_flag=kerweakclaims
+	
+	}
+		name = temujin.0030.b
+		scope:toghril={
+		every_held_title={
+		scope:temujin={
+		
+		make_claim_strong=prev
+		}
+		}
+		}
+	}
+}
+temujin.0031 = { # The Siege of Santarem
+	type = character_event
+	title = temujin.0030.t
+	desc = temujin.0030.desc
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+	right_portrait = {
+		character = scope:toghril
+		animation = war_attacker
+	}
+	immediate = {
+	
+    character:303211 = {save_scope_as = toghril}
+	
+    character:303211 = {
+	primary_title={
+	save_scope_as = primt
+	}}
+	character:125501 = {save_scope_as = temujin}
+	}
+    override_background = { reference = army_camp }
+	trigger = {
+		this = character:125501
+		is_at_war_as_defender=yes
+		character:303211={
+		any_character_war={
+		is_war_leader=character:303211
+		}
+		is_at_war_as_defender=yes
+		}
+		
+		NOT = { has_character_flag = bortereturned }
+	}
+
+	option = {
+	trigger={
+	NOT={
+	has_character_flag=kerweakclaims
+	}
+	}
+		name = temujin.0030.a
+		scope:toghril={
+		every_held_title={
+		scope:temujin={
+		
+		make_claim_weak=prev
+		add_character_flag = kerweakclaims
+		}
+		
+		}
+		
+		}
+	}
+	option = {
+	trigger={
+	
+	has_character_flag=kerweakclaims
+	
+	}
+		name = temujin.0030.b
+		scope:toghril={
+		every_held_title={
+		scope:temujin={
+		
+		make_claim_strong=prev
+		}
+		}
+		}
+	}
+}
+temujin.1000 = {
+	type = character_event
+	theme = alliance
+	title =senggum_jealousy.t
+	desc = senggum_jealousy.desc
+	
+	left_portrait = {
+		character = scope:senggum
+		animation = beg
+	}
+	trigger = {
+		this = character:303211
+		is_allied_to = scope:temujin
+	}
+	
+	right_portrait = {
+		character = scope:temujin
+		animation = personality_vengeful
+	}
+	immediate={
+	
+	  character:303211 = {save_scope_as = toghril}
+	
+	  character:303216 = {save_scope_as = senggum}
+   
+	character:125501 = {save_scope_as = temujin}}
+		
+	option = {	# Flee to Mount Qaldun
+		name = senggum.a
+		
+		break_alliance =  character:125501
+			
+		
+		
+
 		ai_chance = {
 			base = 2
+			
+			
+			modifier={
+			opinion={
+			target=scope:temujin
+			value<0
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-10
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-20
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-30
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-40
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-50
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-60
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-70
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-80
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-90
+			
+			}
+			
+			factor=1.5
+			}
+
 		}
+	}
+		option = {	# Flee to Mount Qaldun
+		name = senggum_jealousy.b
+		add_opinion = { modifier = Senggum_jealousy
+		years = 20 
+		target = scope:senggum
+		}	
+		
+		
+
+		ai_chance = {
+			base = 10
+		}
+	}
+		option = {	# Flee to Mount Qaldun
+		name = senggum_jealousy.c
+		add_opinion = { modifier = Senggum_jealousy
+		years = 20 
+		target = scope:temujin 
+		}	
+		
+		
+
+		ai_chance = {
+			base = 40
+		}
+	}
+	option = {	# Flee to Mount Qaldun
+		name = senggum_jealousy.d
+		trigger={
+		OR={
+		AND={
+		OR={
+		any_child={
+		is_male=yes
+		is_betrothed=no
+		is_married=no
+		}
+		scope:senggum:
+		{
+		any_child={
+		is_male=yes
+		is_betrothed=no
+		is_married=no
+		}
+		}
+		}
+		scope:temujin={
+		any_child={
+		is_female=yes
+		}
+		}
+		}
+		
+			AND={
+		OR={
+		any_child={
+		is_female=yes
+		is_betrothed=no
+		is_married=no
+		}
+		scope:senggum:
+		{
+		any_child={
+		is_female=yes
+		is_betrothed=no
+		is_married=no
+		}
+		}
+		}
+		scope:temujin={
+		any_child={
+		is_male=yes
+		}
+		}
+		}
+		
+		}
+		
+		}
+		break_alliance =  character:125501
+			
+	
+		
+
+		ai_chance = {
+			base = 5
+			modifier={
+			opinion={
+			target=scope:temujin
+			value<0
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-10
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-20
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-30
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-40
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-50
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-60
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-70
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-80
+			
+			}
+			
+			factor=1.5
+			}
+				modifier={
+			opinion={
+			target=scope:temujin
+			value<-90
+			
+			}
+			
+			factor=1.5
+			}
+			
+		}
+		
 	}
 }

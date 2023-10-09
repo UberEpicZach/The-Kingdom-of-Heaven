@@ -22,6 +22,12 @@
 			regimental_grounds_01
 		}
 	}
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds
+		}
+	}
 }
 2357 = {	#SAINT DENIS
 	holding = church_holding
@@ -30,16 +36,38 @@
 			temple_02
 		}
 	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+		}
+	}
 }
 2356 = {	#MONTREUIL
 	culture = french
 	religion = catholic
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls
+			pastures
+		}
+	}
 }
 2334 = {	#VERSAILLES
 	holding = none
 	1000.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+		}
 	}
 }
 2335 = {	#MONTLHERY
@@ -47,11 +75,29 @@
 	1015.1.1 = {
 		holding = castle_holding
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds_04
+			farm_estates_04
+			cereal_fields_03
+		}
+	}
 }
 2336 = {	#ETAMPES
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_03
+			building_stables_04
+		}
+	}
 }
 
 ###c_brie_francaise
@@ -59,18 +105,49 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			blacksmiths_01
+		}
+	}
 }
 2353 = {	#BRAY
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			logging_camps
+			pastures
+		}
+	}
 }
 2337 = {	#NEMOURS
 	holding = none
 	1120.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+			barracks_04
+		}
+	}
 }
 2342 = {	#MONTEREAU
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			cereal_fields_03
+		}
+	}
 }
 
 ###c_vermandois
@@ -78,14 +155,39 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			farm_estates_04
+			logging_camps_03
+			blacksmiths_01
+		}
+	}
 }
 2400 = {	#ROUCY
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			logging_camps_01
+		}
+	}
 }
 2399 = {	#LAON
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			watchtowers_06
+			windmills_03
+		}
+	}
 }
 
 ###c_valois
@@ -93,11 +195,30 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_stables_04
+			windmills_03
+		}
+	}
 }
 2360 = {	#CREPY
 	holding = city_holding
 	culture = french
 	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			logging_camps_03
+			watchtowers_06
+			pastures_03
+			barracks_04
+		}
+	}
 }
 2398 = {	#COUCY
 	holding = none
@@ -106,6 +227,13 @@
 		religion = catholic
 		holding = castle_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			farm_estates_04
+			guild_halls_03
+		}
+	}
 }
 
 ###c_amiens
@@ -113,16 +241,36 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			pastures_03
+		}
+	}
 }
 2185 = {	#CORBIE
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_02
+			logging_camps_01
+		}
+	}
 }
 2186 = {	#PERONNE
 	culture = french
 	religion = catholic
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures
+		}
+	}
 }
 
 ###c_beaumont
@@ -130,21 +278,55 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			watchtowers
+			pastures
+		}
+	}
 }
 2181 = {	#MANTES
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_03
+			guild_halls_04
+			watchtowers_06
+		}
+	}
 }
 2183 = {	#BEAUVAIS
 	culture = french
 	religion = catholic
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			windmills_03
+			guild_halls_05
+		}
+	}
 }
 2332 = {	#MONTFORT
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+		}
+	}
 }
 
 ###c_clermont
@@ -152,12 +334,38 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			logging_camps_03
+		}
+	}
 }
 2188 = {	#NOYON
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			logging_camps_03
+			cereal_fields_01
+			blacksmiths_01
+			curtain_walls_01
+		}
+	}
 }
 2187 = {	#SAINT-QUENTIN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+			barracks_04
+		}
+	}
 }
 
 ##d_berry ###################################
@@ -166,12 +374,42 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_03
+			guild_halls_05
+			watermills_04
+		}
+	}
 }
 2279 = {	#CHATEAUROUX
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			curtain_walls_01
+			cereal_fields_01
+			watchtowers_06
+			logging_camps_03
+		}
+	}
 }
 2276 = {	#LA HAYE, today known as "Descartes" in Indre-et-Loire
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			logging_camps_01
+		}
+	}
 }
 
 ###c_tourraine
@@ -186,12 +424,31 @@
 			military_camps_01
 		}
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_03
+			guild_halls_04
+			windmills_03
+			blacksmiths_01
+		}
+	}
 }
 2273 = {	#TOURRAINE
 	holding = none
 }
 2275 = {	#LOCHES
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			cereal_fields_03
+		}
+	}
 }
 
 ###c_blois
@@ -199,12 +456,26 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_03
+			pastures_03
+		}
+	}
 }
 2318 = {	#CONTRES
 	holding = none
 }
 2316 = {	#ROMORANTIN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+			windmills_03
+		}
+	}
 }
 
 ###c_issoudun
@@ -212,14 +483,39 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_03
+			pastures_03
+		}
+	}
 }
 2277 = {	#VALENCAY
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_03
+			building_windmills_01
+			building_stables_04
+		}
+	}
 }
 2312 = {	#BOURGES
 	culture = french
 	religion = catholic
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+			cereal_fields_03
+		}
+	}
 }
 
 ##d_anjou ###################################
@@ -228,11 +524,25 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+			logging_camps_01
+		}
+	}
 }
 2263 = {	#LUIGNE
 	holding = none
 	1186.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_01
+			windmills_03
+		}
 	}
 }
 2268 = {	#LA FLECHE
@@ -240,12 +550,32 @@
 	1050.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+			hunting_grounds_01
+		}
+	}
 }
 2269 = {	#LE LUDE
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+			windmills_03
+		}
+	}
 }
 2262 = {	#CRAON
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures
+		}
+	}
 }
 
 ###c_saumur
@@ -253,6 +583,13 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			pastures_03
+		}
+	}
 }
 2260 = {	#MELAY
 	holding = none
@@ -263,11 +600,25 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_03
+			watchtowers_06
+		}
+	}
 }
 2272 = {	#COURCILLON	= Dissay-sous-Courcillon
 	holding = none
 	1050.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+			pastures_02
+		}
 	}
 }
 2271 = {	#SARTHE
@@ -279,14 +630,42 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+		}
+	}
 }
 2266 = {	#MAYENNE
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			watchtowers_06
+			guild_halls_03
+			pastures_03
+		}
+	}
 }
 2265 = {	#LAVAL
 	holding = none
 	1050.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			blacksmiths_01
+			logging_camps_01
+			barracks_04
+		}
 	}
 }
 
@@ -307,12 +686,36 @@
 			logging_camps_01
 		}
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			logging_camps
+			building_windmills
+		}
+	}
 }
 2180 = {	#GISORS
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+			watermills_04
+		}
+	}
 }
 2175 = {	#HARCOURT
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_01
+			hunting_grounds_01
+		}
+	}
 }
 
 ###c_evreux
@@ -322,9 +725,27 @@
 	holding = castle_holding
 	960.1.1 = {	culture = norman }
 	1100.11.11 = { culture = french }
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+			guild_halls_05
+		}
+	}
 }
 2330 = {	#VERNON
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_windmills_01
+			watchtowers_06
+			logging_camps_01
+		}
+	}
 }
 2328 = {	#VERNEUIL
 	holding = none
@@ -337,9 +758,23 @@
 	holding = castle_holding
 	960.1.1 = {	culture = norman }
 	1100.11.11 = { culture = french }
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+			pastures_02
+		}
+	}
 }
 2172 = {	#CAEN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+			watermills_04
+		}
+	}
 }
 2173 = {	#FALAISE
 	holding = none
@@ -352,14 +787,35 @@
 	holding = castle_holding
 	960.1.1 = {	culture = norman }
 	1100.11.11 = { culture = french }
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			logging_camps_01
+		}
+	}
 }
 2169 = {	#CHERBOURG
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_stables_04
+			pastures_01
+		}
+	}
 }
 2168 = {	#COUTANCES
 	holding = none
 	1050.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			farm_estates_04
+		}
 	}
 }
 
@@ -370,12 +826,37 @@
 	holding = castle_holding
 	960.1.1 = {	culture = norman }
 	1100.11.11 = { culture = french }
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+			curtain_walls_01
+		}
+	}
 }
 2171 = {	#MORTAIN
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_05
+			building_windmills_01
+			pastures_03
+		}
+	}
 }
 2326 = {	#ARGENTAN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			watchtowers_06
+			watermills_04
+		}
+	}
 }
 
 ###c_lisieux
@@ -385,9 +866,27 @@
 	holding = castle_holding
 	960.1.1 = {	culture = norman }
 	1100.11.11 = { culture = french }
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			watchtowers_06
+			barracks_04
+			building_stables_04
+		}
+	}
 }
 2327 = {	#SEES
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			guild_halls_05
+		}
+	}
 }
 
 ###c_eu
@@ -396,14 +895,34 @@
 	religion = catholic
 	holding = castle_holding
 	960.1.1 = {	culture = norman }
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+			pastures_02
+		}
+	}
 }
 2176 = {	#FECAMP
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+			cereal_fields_03
+		}
+	}
 }
 2177 = {	#DIEPPE
 	holding = none
 	1000.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+		}
 	}
 }
 2182 = {	#AUMALE
@@ -412,6 +931,16 @@
 	holding = none
 	996.1.1 = {
 		holding = castle_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls
+			windmills
+		}
 	}
 }
 
@@ -427,18 +956,50 @@
 			cereal_fields_02
 		}
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_windmills_01
+			blacksmiths_01
+			building_stables_04
+		}
+	}
 }
 2320 = {	#BEAUGENCY
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			watchtowers_06
+		}
+	}
 }
 2317 = {	#OLIVET
 	holding = none
 	950.1.1 = {
 		holding = city_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			hunting_grounds_04
+		}
+	}
 }
 2315 = {	#VIERZON
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_02
+			watchtowers_06
+		}
+	}
 }
 
 ###c_montargis
@@ -446,12 +1007,32 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+		}
+	}
 }
 2340 = {	#COURTENAY
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			pastures_03
+		}
+	}
 }
 2341 = {	#CHATEAU RENARD
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			cereal_fields_03
+		}
+	}
 }
 
 ###c_vendome
@@ -459,9 +1040,22 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps
+		}
+	}
 }
 2321 = {	#CHATEAUDUN
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			pastures_03
+		}
+	}
 }
 
 ###c_chartres
@@ -469,17 +1063,44 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+		}
+	}
 }
 2322 = {	#CHARTRES
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			guild_halls_03
+		}
+	}
 }
 2323 = {	#NOGENT-LE-ROTROU
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+			cereal_fields_01
+		}
+	}
 }
 2324 = {	#Perche / Mortagne
-	holding = none
+	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+			pastures_01
+		}
+	}
 }
 
 ###c_lepuiset
@@ -487,6 +1108,12 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+		}
+	}
 }
 
 ###c_sancerre
@@ -494,11 +1121,34 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_03
+			cereal_fields_01
+			hunting_grounds_01
+			building_windmills_01
+		}
+	}
 }
 2463 = {	#SULLY SUR LOIRE
 	holding = none
 	1100.1.1 = {
 		holding = castle_holding
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			farm_estates
+			watermills
+			cereal_fields
+		}
 	}
 }
 2313 = {	#HERRY
@@ -522,17 +1172,49 @@
 			hunting_grounds_01
 		}
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			barracks_04
+			pastures_02
+			curtain_walls_01
+		}
+	}
 }
 2366 = {	#EPERNAY
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			watchtowers_06
+		}
+	}
 }
 2362 = {	#CHATILLON = Chatillon-sur-Marne
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+			building_stables_04
+		}
+	}
 }
 2361 = {	#CHATEAU THIERRY
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			building_windmills_01
+		}
+	}
 }
 
 ###c_troyes
@@ -546,6 +1228,13 @@
 			curtain_walls_01
 		}
 	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+			pastures_03
+		}
+	}
 }
 2375 = {	#CLAIRVAUX
 	holding = none
@@ -554,9 +1243,23 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			hunting_grounds_01
+		}
+	}
 }
 2372 = {	#BAR SUR AUBE
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+			guild_halls_03
+		}
+	}
 }
 
 ###c_coulommiers = Provins
@@ -572,14 +1275,33 @@
 			hunting_grounds_01
 		}
 	}
+
+	1184.1.1 = {
+		buildings = {
+			windmills_03
+		}
+	}
 }
 2364 = {	#COULOMMIERS
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_01
+			watchtowers_06
+		}
+	}
 }
 2365 = {	#ROMILLY
 	holding = none
 	1150.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+		}
 	}
 }
 
@@ -588,9 +1310,23 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			watchtowers_06
+		}
+	}
 }
 2355 = {	#CRECY
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+			cereal_fields_01
+		}
+	}
 }
 
 ###c_chalons
@@ -598,12 +1334,38 @@
 	culture = french
 	religion = catholic
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			curtain_walls_01
+			pastures_01
+		}
+	}
 }
 2389 = {	#SAINT DIZIER
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_05
+			blacksmiths_01
+			cereal_fields_03
+			watchtowers_06
+		}
+	}
 }
 2367 = {	#VITRY EN PERTHOIS
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+			pastures_03
+		}
+	}
 }
 
 ###c_rethel
@@ -611,16 +1373,39 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls
+		}
+	}
 }
 2393 = {	#GRANDPRE
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls
+			logging_camps
+		}
+	}
 }
 2394 = {	#MEZIERES
 	holding = none
 	900.1.1 = {
 		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_04
+			farm_estates_04
+		}
 	}
 }
 2396 = {	#ROMIGNY
@@ -632,14 +1417,40 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_02
+			building_windmills_01
+		}
+	}
 }
 2368 = {	#NOGENT
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds_01
+			cereal_fields_03
+			blacksmiths_01
+			guild_halls_03
+		}
+	}
 }
 2369 = {	#AUBE
 	holding = none
 	1145.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+			hunting_grounds_04
+		}
 	}
 }
 2370 = {	#BAR SUR SEINE
@@ -652,12 +1463,26 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			windmills_03
+		}
+	}
 }
 2382 = {	#GRAY
 	holding = none
 }
 2381 = {	#CHAUMONT
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+			pastures_03
+		}
+	}
 }
 
 ###c_chalon
@@ -665,18 +1490,52 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_01
+		}
+	}
 }
 2377 = {	#CITEAUX
 	holding = none
 	1066.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_01
+			logging_camps_03
+			blacksmiths_01
+			cereal_fields_01
+		}
+	}
 }
 2376 = {	#BEAUNE
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+		}
+	}
 }
 2347 = {	#AUTUN
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			logging_camps
+			barracks
+		}
+	}
 }
 
 ###c_auxerre
@@ -684,9 +1543,27 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_04
+			farm_estates_04
+			pastures_03
+		}
+	}
 }
 2345 = {	#DONZY
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+			pastures_03
+		}
+	}
 }
 2350 = {	#CHABLIS
 	holding = none
@@ -697,9 +1574,27 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_stables_04
+			logging_camps_01
+			curtain_walls_01
+		}
+	}
 }
 2379 = {	#MONTBARD
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_stables_04
+			pastures_02
+		}
+	}
 }
 
 ###c_avalois
@@ -707,6 +1602,13 @@
 	culture = french
 	religion = catholic
 	holding = monastery_holding
+
+	1184.1.1 = {
+		buildings = {
+			windmills_03
+			farm_estates_04
+		}
+	}
 }
 2378 = {	#MORVAN
 	holding = none
@@ -717,14 +1619,38 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls
+			logging_camps
+		}
+	}
 }
 2304 = {	#CLUNY
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			pastures_02
+		}
+	}
 }
 2303 = {	#SEMUR EN BRIONNAIS
 	culture = french
 	religion = catholic
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_01
+			watermills_04
+		}
+	}
 }
 
 ###c_nevers
@@ -732,6 +1658,13 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_03
+			building_windmills_01
+		}
+	}
 }
 2307 = {	#MOULINS
 	holding = none
@@ -741,6 +1674,18 @@
 	1061.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			curtain_walls_01
+			guild_halls_04
+			watchtowers_06
+			watermills_04
+		}
+	}
 }
 
 ##d_bar ###################################
@@ -749,12 +1694,32 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+			hunting_grounds_04
+		}
+	}
 }
 2395 = {	#VERDUN
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_stables_04
+		}
+	}
 }
 2081 = {	#b_argonne/SAINT-MIHIEL
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+			watermills_04
+		}
+	}
 }
 
 ###c_briey
@@ -762,9 +1727,22 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			windmills_03
+		}
+	}
 }
 2080 = {	#HAYANGE
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			cereal_fields_03
+		}
+	}
 }
 
 ###c_langres
@@ -772,12 +1750,29 @@
 	culture = french
 	religion = catholic
 	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures
+			watchtowers
+		}
+	}
 }
 2386 = {	#GRAND
 	holding = none
 }
 2385 = {	#CHAMPS
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+			curtain_walls_01
+		}
+	}
 }
 
 ###c_vaucouleurs
@@ -785,11 +1780,34 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_windmills_01
+			cereal_fields_01
+			logging_camps_03
+		}
+	}
 }
 2079 = {	#TOUL
 	holding = castle_holding
 	culture = french
 	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_03
+			cereal_fields_03
+			barracks_04
+			blacksmiths_01
+		}
+	}
 }
 
 ##d_flanders ###################################
@@ -805,12 +1823,32 @@
 			farm_estates_01
 		}
 	}
+
+	1184.1.1 = {
+		buildings = {
+			blacksmiths_01
+			pastures_03
+		}
+	}
 }
 2114 = {	#GENT
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			building_stables_04
+			pastures_02
+		}
+	}
 }
 2124 = {	#ROESELARE
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+		}
+	}
 }
 
 ###c_yperen
@@ -818,17 +1856,41 @@
 	culture = dutch
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			farm_estates_04
+			guild_halls_04
+			building_windmills_01
+		}
+	}
 }
 2128 = {	#VEURNE
 	holding = none
 	877.1.1 = {
 		holding = church_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+			cereal_fields_01
+		}
+	}
 }
 2131 = {	#DUNKIRK
 	holding = none
 	975.1.1 = {
 		holding = city_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+		}
 	}
 }
 
@@ -837,12 +1899,37 @@
 	culture = dutch
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			windmills_03
+			farm_estates_04
+			blacksmiths_01
+		}
+	}
 }
 2129 = {	#GRAVELINES
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			windmills_03
+			watermills_04
+		}
+	}
 }
 2133 = {	#SAINT OMER
 	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_05
+			watchtowers_06
+		}
+	}
 }
 
 ###c_lille
@@ -850,9 +1937,28 @@
 	culture = dutch
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			watchtowers_06
+			barracks_04
+		}
+	}
 }
 2123 = {	#COURTRAI
 	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_stables_04
+			building_windmills_01
+			hunting_grounds_01
+			pastures_03
+		}
+	}
 }
 2134 = {	#AIRE
 	culture = french
@@ -861,6 +1967,13 @@
 	1059.1.1 = {
 		holding = castle_holding
 	}
+
+	1184.1.1 = {
+		buildings = {
+			building_windmills_01
+			hunting_grounds_04
+		}
+	}
 }
 
 ###c_boulogne
@@ -868,11 +1981,25 @@
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			pastures_01
+			logging_camps_01
+		}
+	}
 }
 2135 = {	#HESDIN
 	culture = french
 	religion = catholic
 	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			curtain_walls_01
+		}
+	}
 }
 
 ###c_ponthieu
@@ -880,10 +2007,22 @@
 	culture = french
 	religion = catholic
 	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			watermills_04
+		}
+	}
 }
 2137 = {	#ABBEVILLE
 	culture = french
 	religion = catholic
 	holding = castle_holding
-}
 
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_04
+			watchtowers_06
+		}
+	}
+}

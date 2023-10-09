@@ -313,7 +313,7 @@
 	religion = "catholic"
 	culture = "sardinian"
 	trait = lustful
-	trait = blademaster_1
+	trait = lifestyle_blademaster
 	trait = education_martial_1
 
 	father = 71631
@@ -762,11 +762,11 @@
 	1112.12.1 = {
 		birth = yes
 	}
-	1127.1.1 = {
-		effect = {
-			set_relation_friend = { reason = friend_generic_history target = character:235188 } 
-		}
-	}
+	#1127.1.1 = {
+	#	effect = {
+	#		set_relation_friend = { reason = friend_generic_history target = character:235188 } 
+	#	}
+	#}
 	1129.1.1 = {
 		add_spouse = 144524
 	}

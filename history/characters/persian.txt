@@ -93,13 +93,38 @@
 	}
 }
 
+GKOH_1 = {
+	name = "Hassan II"
+	intrigue = 13
+	learning = 18
+	dynasty = KOH_salam
+	trait = "theologian"
+	trait = "zealous"
+	trait = "ambitious"
+	trait = "gregarious"
+	religion = "nizari"
+	culture = "persian"
+	1126.1.1 = {
+		birth = yes
+	}
+	1166.1.1 = {
+		death = yes # murdered
+	}
+
+}
+
 144228 = {
 	name = "Nur_al-Din_Muhammed"
 	intrigue = 16
 	dynasty = KOH_salam
+	father = GKOH_1
 	religion = "nizari"
 	culture = "persian"
-	1130.1.1 = {
+	trait = "calm"
+	trait = "zealous"
+	trait = "deceitful"
+	trait = education_learning_4
+	1148.1.1 = {
 		birth = yes
 	}
 
@@ -400,7 +425,7 @@
 	religion = "nizari"
 	culture = "persian"
 	trait = diligent
-	trait = zealous
+	trait = cynical
 	trait = assassin_member
 	trait = education_intrigue_4
 	
@@ -3684,7 +3709,7 @@ hunas_5 = {
 	trait="ambitious"
 	#trait=sympathy_mazdayasnaism
 	trait=brave
-	#trait="hunter_2"
+	#trait="lifestyle_hunter"
 	trait="gregarious"
 	##trait="siege_leader"
 	898.3.13={
@@ -5214,7 +5239,7 @@ KOH0030 = {
 	trait = calm
 	trait = education_intrigue_4
 	trait = athletic
-	trait = blademaster_3
+	trait = lifestyle_blademaster
 	1165.1.1 = {
 		birth = yes
 		effect = {

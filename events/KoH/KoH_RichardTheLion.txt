@@ -6,7 +6,7 @@ KoH_RichardTheLionheart.1 = {
 	desc = KoH_RichardTheLionheart.1.d
 	theme = mental_health
 	override_background = {
-		event_background = throne_room
+		reference = throne_room
 	}
 	left_portrait = {
 		character = root
@@ -275,7 +275,7 @@ KoH_RichardTheLionheart.2023 = { #Geoffery goes to Joust!
 	desc = KoH_RichardTheLionheart.2023.d
 	theme = mental_health
 	override_background = {
-		event_background = bedchamber
+		reference = bedchamber
 	}
 
 	left_portrait = {
@@ -320,7 +320,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 	desc = KoH_RichardTheLionheart.2024.d
 	theme = mental_health
 	override_background = {
-		event_background = bedchamber
+		reference = bedchamber
 	}
 
 	left_portrait = {
@@ -356,7 +356,7 @@ KoH_RichardTheLionheart.2024 = { #Geoffery goes to a Joust!
 				location = root.location
 				mother = character:205740
 				father = character:204511
-				dynasty = 106
+				dynasty = character:205740.dynasty
 				faith = faith:catholic
 				trait = beauty_good_2
 				save_scope_as = arthur
@@ -567,7 +567,7 @@ KoH_RichardTheLionheart.2 = { #Death in Joust
 	}
 	theme = mental_health
 	override_background = {
-		event_background = bedchamber
+		reference = bedchamber
 	}
 
 	left_portrait = {
@@ -613,7 +613,7 @@ KoH_RichardTheLionheart.202 = { #Henry makes action against Brittney
 	theme = mental_health
 
 	override_background = {
-		event_background = bedchamber
+		reference = bedchamber
 	}
 
 	left_portrait = {
@@ -1476,12 +1476,12 @@ KoH_RichardTheLionheart.13 = {
 			set_primary_title_to = title:k_england
 		}
 
-		character:204510 = {
-			trigger_event = {
-				id = KoH_RichardTheLionheart.14
-				days = 10
-			}
-		}
+		# character:204510 = {
+		# 	trigger_event = {
+		# 		id = KoH_RichardTheLionheart.14
+		# 		days = 10
+		# 	}
+		# }
 	}
 }
 

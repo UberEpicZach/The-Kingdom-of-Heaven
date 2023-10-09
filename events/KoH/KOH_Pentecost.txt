@@ -1,13 +1,13 @@
 ﻿namespace = KOH_Pentecost
 
-scripted_effect end_the_diet = {
-	scope:diet = {
-		every_participant = {
-			trigger_event = KOH_Pentecost.23
-		}
-		complete_activity = no # presumably this will cancel all the notifications about the generic diet ending
-	}
-}
+# scripted_effect end_the_diet = {
+# 	scope:activity = {
+# 		every_participant = {
+# 			trigger_event = KOH_Pentecost.23
+# 		}
+# 		complete_activity = no # presumably this will cancel all the notifications about the generic diet ending
+# 	}
+# }
 
 
 scripted_trigger everyone_has_responded = {
@@ -24,7 +24,7 @@ scripted_effect tournament_outcome_effect = {
 		desc = $KEY$.desc
 		tooltip = $KEY$.tt
 		left_icon = this
-		goto = scope:diet.activity_province
+		goto = scope:activity.activity_province
 
 		add_prestige = $PRESTIGE$
 	}
@@ -143,7 +143,7 @@ scripted_effect handle_winner = {
 			desc = $KEY$.win.desc
 			tooltip = $KEY$.win.tt
 			left_icon = this
-			goto = scope:diet.activity_province
+			goto = scope:activity.activity_province
 
 			$KEY$_prize = yes
 		}
@@ -162,7 +162,7 @@ scripted_effect inform_losers = {
 			desc = $KEY$.lose.desc
 			tooltip = $KEY$.lose.tt
 			left_icon = scope:$KEY$_winner
-			goto = scope:diet.activity_province
+			goto = scope:activity.activity_province
 		}
 	}
 	
@@ -177,7 +177,7 @@ scripted_effect inform_watchers = {
 			desc = $KEY$.watch.desc
 			tooltip = $KEY$.watch.tt
 			left_icon = scope:$KEY$_winner
-			goto = scope:diet.activity_province
+			goto = scope:activity.activity_province
 
 			show_as_tooltip = {
 				scope:$KEY$_winner = {
@@ -278,6 +278,12 @@ KOH_Pentecost.1 = {
 
         trigger_event = KOH_Pentecost.2
 
+		# open_view_data = {
+		# 	view = activity_list_detail_host_window
+		# 	data = activity_type:activity_KOH_pentecost
+		# }
+
+
 		ai_chance = {
 			base = 100 # doesn't matter what it is as long as it's non-zero
 		}
@@ -320,55 +326,65 @@ KOH_Pentecost.2 = {
 	immediate = {
 		# assuming we're scoped to Frederick
 		save_scope_as = frederick
-		character:7557 = {
-			save_scope_as = konrad
-		}
+		# character:7557 = {
+		# 	save_scope_as = konrad
+		# }
 
-		if = {
-			limit = { title:d_mainz.title_capital_county.holder = title:d_mainz.holder }
-			title:d_mainz.title_capital_county = {
-				save_scope_as = mainz_county
-			}
-		}
-		else = {
-			title:d_mainz.holder.capital_county = {
-				save_scope_as = mainz_county
-			}
-		}
+		# if = {
+		# 	limit = { title:d_mainz.title_capital_county.holder = title:d_mainz.holder }
+		# 	title:d_mainz.title_capital_county = {
+		# 		save_scope_as = mainz_county
+		# 	}
+		# }
+		# else = {
+		# 	title:d_mainz.holder.capital_county = {
+		# 		save_scope_as = mainz_county
+		# 	}
+		# }
 
-	    scope:mainz_county.title_province = {
-            spawn_activity = {
-                type = activity_diet
-                owner = root
-            }
-        }
+	    # scope:mainz_county.title_province = {
+        # 	set_global_variable = {
+		# 		name = pentecost_host_location
+		# 		value = yes
+		# 	}
+        # }
 
-        activity = {
-        	save_scope_as = diet
-        }
+		# start_travel_plan = {
+		# 	destination = scope:mainz_county.title_province
+		# 	on_start_on_action = petition_liege_start
+		# 	on_travel_planner_cancel_on_action = petition_liege_travel_planner_exit 
+		# 	on_arrival_event = KOH_Pentecost.3
+		# 	on_arrival_destinations = all_but_last
+		# }
 
 
-        #booleans
-        save_scope_value_as = {
-        	name = pope_coming
-        	value = yes # this one starts as yes so if you rip off konrad the pope doesn't even ask
-        }
-        save_scope_value_as = {
-        	name = lion_coming
-        	value = no
-        }
-        save_scope_value_as = {
-        	name = many_tournaments
-        	value = no
-        }
+        # #booleans
+        # set_variable = {
+        # 	name = pope_coming
+        # 	value = yes # this one starts as yes so if you rip off konrad the pope doesn't even ask
+        # }
+        # set_variable = {
+        # 	name = lion_coming
+        # 	value = no
+        # }
+        # set_variable = {
+        # 	name = many_tournaments
+        # 	value = no
+        # }
 	}
 
-	option = { # southern circles
+	option = { #OPEN ACTIVITY WINDOW
 		name = KOH_Pentecost.2.a
 
-		save_scope_value_as = {
-			name = invite_width
-			value = 0
+		add_character_flag = {
+			flag = hosting_pentecost
+			days = 40
+		}
+
+		open_view_data = {
+			view = activity_list_detail_host_window
+			data = activity_type:activity_KOH_pentecost
+			player = scope:frederick
 		}
 
 		ai_chance = {
@@ -376,46 +392,47 @@ KOH_Pentecost.2 = {
 		}
 	}
 
-	option = { # all germans
-		name = KOH_Pentecost.2.b
-		custom_tooltip = KOH_Pentecost.cost_1
+	# option = { # all germans
+	# 	name = KOH_Pentecost.2.b
+	# 	custom_tooltip = KOH_Pentecost.cost_1
 
-		add_prestige = minor_prestige_gain
+	# 	add_prestige = minor_prestige_gain
 
-		save_scope_value_as = {
-			name = invite_width
-			value = 1
-		}
+	# 	set_variable = {
+	# 		name = invite_width
+	# 		value = 1
+	# 	}
 
-		ai_chance = {
-			base = 0
-		}
-	}
+	# 	ai_chance = {
+	# 		base = 0
+	# 	}
+	# }
 
-	option = { # all vassals
-		name = KOH_Pentecost.2.c
-		custom_tooltip = KOH_Pentecost.cost_2
+	# option = { # all vassals
+	# 	name = KOH_Pentecost.2.c
+	# 	custom_tooltip = KOH_Pentecost.cost_2
 
-		add_prestige = major_prestige_gain
+	# 	add_prestige = major_prestige_gain
 
-		save_scope_value_as = {
-			name = invite_width
-			value = 2
-		}
+	# 	set_variable = {
+	# 		name = invite_width
+	# 		value = 2
+	# 	}
 
-		ai_chance = {
-			base = 50
-		}
-	}
+	# 	ai_chance = {
+	# 		base = 50
+	# 	}
+	#}
 
-	after = {
-		trigger_event = {
-			id = KOH_Pentecost.3
-			days = 10
-		}
-	}
+	# after = {
+	# 	trigger_event = {
+	# 		id = KOH_Pentecost.3
+	# 		days = 10
+	# 	}
+	# }
 }
 
+#COVERED BY ACTIVITY INTERFACE
 KOH_Pentecost.3 = {
 	title = KOH_Pentecost.3.t
 	desc = KOH_Pentecost.3.desc
@@ -434,10 +451,29 @@ KOH_Pentecost.3 = {
 
 	immediate = {
 		# this shouldn't be necessary
-		save_scope_value_as = {
-			name = spending
-			value = 0
+		scope:activity = {
+			set_variable = {
+				name = spending
+				value = 0
+			}
 		}
+
+		character:7557 = {
+			save_scope_as = konrad
+		}
+
+		if = {
+			limit = { title:d_mainz.title_capital_county.holder = title:d_mainz.holder }
+			title:d_mainz.title_capital_county = {
+				save_scope_as = mainz_county
+			}
+		}
+		else = {
+			title:d_mainz.holder.capital_county = {
+				save_scope_as = mainz_county
+			}
+		}
+
 	}
 
 	option = {
@@ -445,9 +481,11 @@ KOH_Pentecost.3 = {
 
 		add_prestige = minor_prestige_loss
 
-		save_scope_value_as = {
-			name = spending
-			value = scope:invite_width
+		scope:activity = {
+			set_variable = {
+				name = spending
+				value = var:invite_width
+			}
 		}
 	}
 
@@ -455,18 +493,22 @@ KOH_Pentecost.3 = {
 		name = KOH_Pentecost.3.b
 		custom_tooltip = KOH_Pentecost.cost_2
 
-		save_scope_value_as = {
-			name = spending
-			value = {
-				value = scope:invite_width
-				add = 2
+		scope:activity = {
+			set_variable = {
+				name = spending
+				value = {
+					value = var:invite_width
+					add = 2
+				}
 			}
 		}
 
-        save_scope_value_as = {
-        	name = many_tournaments
-        	value = yes
-        }
+        scope:activity = {
+			set_variable = {
+        		name = many_tournaments
+        		value = yes
+        	}
+		}
 	}
 
 	after = {
@@ -504,6 +546,8 @@ scripted_effect no_funding = {
 		}
 	}
 }
+
+#HOW ARE WE PAYING FOR THIS?
 KOH_Pentecost.4 = {
 	title = KOH_Pentecost.4.t
 	desc = KOH_Pentecost.4.desc
@@ -529,16 +573,51 @@ KOH_Pentecost.4 = {
 		character = cp:councillor_chancellor
 	}
 
+	immediate = {
+		save_scope_as = frederick
+		add_character_flag = arrived_at_tournament_flag
+
+		cp:councillor_steward = {
+			save_scope_as = steward
+		}
+
+		cp:councillor_chancellor = {
+			save_scope_as = chancellor
+		}
+
+		character:7557 = {
+			save_scope_as = konrad
+		}
+
+		if = {
+			limit = { title:d_mainz.title_capital_county.holder = title:d_mainz.holder }
+			title:d_mainz.title_capital_county = {
+				save_scope_as = mainz_county
+			}
+		}
+		else = {
+			title:d_mainz.holder.capital_county = {
+				save_scope_as = mainz_county
+			}
+		}
+	}
+
 	option = {
 		name = KOH_Pentecost.4.a
 
-		trigger_event = KOH_Pentecost.5
+		trigger_event = {
+			id = KOH_Pentecost.5
+			days = {4 6}
+		}
 	}
 
 	option = {
 		name = KOH_Pentecost.4.b
 
-		trigger_event = KOH_Pentecost.6
+		trigger_event = {
+			id = KOH_Pentecost.6
+			days = {4 6}
+		}
 	}
 
 	option = {
@@ -551,7 +630,10 @@ KOH_Pentecost.4 = {
 
 		no_funding = yes
 
-		trigger_event = KOH_Pentecost.7
+		trigger_event = {
+			id = KOH_Pentecost.7
+			days = {4 6}
+		}
 	}
 }
 
@@ -559,6 +641,8 @@ KOH_Pentecost.4 = {
 scripted_effect konrad_pays = {
 	add_piety = minor_piety_loss
 	add_gold = medium_gold_value
+	success_msg = yes
+
 }
 scripted_effect success_msg = {
 	send_interface_message = {
@@ -613,7 +697,7 @@ KOH_Pentecost.5 = {
 					target = scope:konrad
 				}
 				add_piety = medium_piety_loss
-
+				fail_msg = yes
 				no_funding = yes
 			}
 		}
@@ -657,9 +741,11 @@ KOH_Pentecost.5 = {
 				add_piety_level = -1
 				add_piety = major_piety_loss
 
-				save_scope_value_as = {
-					name = pope_coming
-					value = no
+				scope:activity = {
+					set_variable = {
+						name = pope_coming
+						value = no
+					}
 				}
 			}
 		}
@@ -672,7 +758,10 @@ KOH_Pentecost.5 = {
 	}
 
 	after = {
-		trigger_event = KOH_Pentecost.7
+		trigger_event = {
+			id = KOH_Pentecost.7
+			days = {4 6}
+		}
 	}
 }
 
@@ -808,7 +897,7 @@ KOH_Pentecost.6 = {
 	}
 }
 
-
+#POPE WANTS TO COME
 KOH_Pentecost.7 = {
 	title = KOH_Pentecost.7.t
 	desc = KOH_Pentecost.7.desc
@@ -826,24 +915,28 @@ KOH_Pentecost.7 = {
 	}
 
 	trigger = {
-		scope:pope_coming = yes # some things stop him asking
+		scope:activity = { var:pope_coming = yes } # some things stop him asking
 		title:k_papal_state = { # checking there's a pope to invite
 			is_title_created = yes
 		}
 	}
 
 	on_trigger_fail = {
-		trigger_event = KOH_Pentecost.8
+		trigger_event = {
+			id = KOH_Pentecost.8
+			days = { 7 14 }
+		}
 	}
 
 	immediate = {
 		title:k_papal_state.holder = {
 			save_scope_as = pope
 		}
-
-		save_scope_value_as = { # default
-			name = pope_coming
-			value = no
+		scope:activity = {
+			set_variable = { # default
+				name = pope_coming
+				value = no
+			}
 		}
 	}
 
@@ -851,9 +944,21 @@ KOH_Pentecost.7 = {
 		name = KOH_Pentecost.7.a
 
 		custom_tooltip = KOH_Pentecost.7.a.tt
-		save_scope_value_as = {
-			name = pope_coming
-			value = yes
+		scope:activity = {
+			set_variable = {
+				name = pope_coming
+				value = yes
+			}
+			title:k_papal_state.holder = {
+				invite_to_activity = scope:activity
+				accept_activity_invite = scope:activity
+				hidden_effect = {
+					add_character_modifier = {
+						modifier = koh_imperial_roads
+						days = 50
+					}
+				}
+			}
 		}
 
 		reverse_add_opinion = {
@@ -909,7 +1014,10 @@ KOH_Pentecost.8 = {
 	}
 
 	on_trigger_fail = {
-		trigger_event = KOH_Pentecost.10
+		trigger_event = {
+			id = KOH_Pentecost.10
+			days = { 5 15 }
+		}
 	}
 
 	immediate = {
@@ -922,10 +1030,23 @@ KOH_Pentecost.8 = {
 		name = KOH_Pentecost.8.a
 		custom_tooltip = KOH_Pentecost.8.a.tt
 
-		save_scope_value_as = {
-			name = lion_coming
-			value = yes
+		scope:activity = {
+			set_variable = {
+				name = lion_coming
+				value = yes
+			}
 		}
+		character:212600 = {
+			invite_to_activity = scope:activity
+			accept_activity_invite = scope:activity
+			hidden_effect = {
+				add_character_modifier = {
+					modifier = koh_imperial_roads
+					days = 70
+				}
+			}
+		}
+		
 
 		reverse_add_opinion = {
 			modifier = pentecost_accepted_my_suggestion_opinion
@@ -970,7 +1091,9 @@ KOH_Pentecost.9 = {
 	}
 
 	trigger = {
-		scope:pope_coming = yes
+		scope:activity = {
+			var:pope_coming = yes
+		}
 	}
 
 	on_trigger_fail = {
@@ -982,11 +1105,25 @@ KOH_Pentecost.9 = {
 
 		add_piety = medium_piety_loss
 
-		save_scope_value_as = {
-			name = pope_coming
-			value = no
+		scope:activity = {
+			set_variable = {
+				name = pope_coming
+				value = no
+			}
 		}
 
+		title:k_papal_state.holder = {
+			scope:activity.activity_host ?= { save_scope_as = host }
+			current_travel_plan.travel_leader ?= { save_scope_as = travel_leader }
+
+			involved_activity ?= {
+				root = { remove_from_activity = involved_activity }
+			}
+			current_travel_plan = {
+				reroute_to_home = yes
+			}
+		}
+		
 		scope:pope = {
 			remove_opinion = {
 				modifier = pentecost_open_to_talks_opinion
@@ -1110,7 +1247,7 @@ KOH_Pentecost.10 = {
 	type = character_event
 	theme = stewardship
 	override_background = {
-		event_background = wilderness
+		reference = wilderness
 	}
 
 	right_portrait = {
@@ -1126,21 +1263,26 @@ KOH_Pentecost.10 = {
 	option = {
 		name = KOH_Pentecost.10.a
 
+		add_character_flag = KOH_Pentecost_10_a
+
 		scope:mainz_county = {
 			add_county_modifier = {
 				modifier = pentecost_site_overcrowding_modifier
 				years = 10
 			}
 		}
+		#KOH ADD TO ACTIVITY CULTURAL FESTIVAL
 
-		trigger_event = {
-			id = KOH_Pentecost.12
-			days = 45
-		}
+		# trigger_event = {
+		# 	id = KOH_Pentecost.12
+		# 	days = 45
+		# }
 	}
 
 	option = {
 		name = KOH_Pentecost.10.b
+
+		add_character_flag = KOH_Pentecost_10_b
 
 		remove_short_term_gold = {
 			value = Pentecost_base_cost
@@ -1159,15 +1301,18 @@ KOH_Pentecost.10 = {
 				MULTIPLE = 16
 			}
 		}
-
-		trigger_event = {
-			id = KOH_Pentecost.12
-			days = 45
-		}
+		
+		#KOH ADD TO ACTIVITY CULTURAL FESTIVAL
+		# trigger_event = {
+		# 	id = KOH_Pentecost.12
+		# 	days = 45
+		# }
 	}
 
 	option = {
 		name = KOH_Pentecost.10.c
+
+		add_character_flag = KOH_Pentecost_10_c
 
 		remove_short_term_gold = {
 			value = Pentecost_base_cost
@@ -1192,10 +1337,11 @@ KOH_Pentecost.10 = {
 			always = yes
 		}
 
-		trigger_event = {
-			id = KOH_Pentecost.11
-			days = 45
-		}
+		#KOH ADD TO ACTIVITY
+		# trigger_event = {
+		# 	id = KOH_Pentecost.11
+		# 	days = 45
+		# }
 	}
 
 	immediate = {
@@ -1212,19 +1358,19 @@ KOH_Pentecost.10 = {
 		custom_description = {
 			text = send_invitations_to_pentecost
 
-			scope:diet = {
-				invite_character_to_activity = prev
-				accept_invitation_for_character = prev
+			set_variable = {
+				name = invite_guests
+				value = yes
 			}
-
+			
 			if = {
-				limit = { scope:invite_width = 0 }
+				limit = { scope:activity = { var:invite_width = 0 } }
 				add_to_invited = {
 					LISTNAME = KOH_Pentecost_southern_circle_vassal_title
 				}
 			}
 			else_if = {
-				limit = { scope:invite_width = 1 }
+				limit = { scope:activity = { var:invite_width = 1 } }
 				add_to_invited = {
 					LISTNAME = KOH_Pentecost_german_vassal_title
 				}
@@ -1236,10 +1382,7 @@ KOH_Pentecost.10 = {
 			}
 			every_in_list = {
 				list = invited
-				limit = { NOT = { this = scope:frederick } }
-				scope:diet = {
-					invite_character_to_activity = prev
-				}
+				limit = { NOT = { has_character_flag = PentecostInvitesSent  this = scope:frederick } }
 				trigger_event = KOH_Pentecost.1001
 			}
 		}
@@ -1251,18 +1394,38 @@ KOH_Pentecost.1001 = {
 	opening = KOH_Pentecost.1001.opening
 	desc = KOH_Pentecost.1001.desc
 	type = letter_event
+	cooldown = { years = 125 } # Should be replaced with a playthrough cooldown (but global vars are too heavy atm)
+
 
 	sender = scope:frederick
 
+	trigger = {
+		NOT = {
+			has_character_flag = PentecostInvitesSent
+		}
+	}
+
+	immediate = {
+		add_character_flag = PentecostInvitesSent
+	}
+
 	option = {
 		name = KOH_Pentecost.1001.a
-
-		scope:diet = {
-			accept_invitation_for_character = prev
+		if = {
+			limit = {
+				can_join_activity = scope:activity
+			}
+			invite_to_activity = scope:activity
+			accept_activity_invite = scope:activity
+			add_character_modifier = {
+				modifier = koh_imperial_roads
+				days = 30
+			}
 		}
+		
  
 		trigger = {
-			is_available_for_activity_trigger = yes
+			can_join_activity = scope:activity
 		}
 
 		show_as_unavailable = {
@@ -1278,7 +1441,7 @@ KOH_Pentecost.1001 = {
 	option = {
 		name = KOH_Pentecost.1001.b
 
-		scope:diet = {
+		scope:activity = {
 			decline_invitation_for_character = prev
 		}
 
@@ -1297,25 +1460,29 @@ KOH_Pentecost.1001 = {
 KOH_Pentecost.11 = {
 	title = KOH_Pentecost.11.t
 	desc = KOH_Pentecost.11.desc
-	type = character_event
+	window = widget_activity_locale_fullscreen_event
+	type = activity_event
 	theme = stewardship
 	override_background = {
-		event_background = market_west
+		reference = market_west
 	}
 	right_portrait = {
-		character = scope:frederick
+		character = root
 		animation = happiness
 	}
 
 	left_portrait = {
-		character = scope:konrad
+		character = scope:stop_host_scope
 		animation = admiration
 	}
 
 	immediate = {
+		stop_host_scope = {
+			save_scope_as = konrad
+		}
 		reverse_add_opinion = {
 			modifier = built_city_of_diets_for_me_opinion
-			target = scope:konrad
+			target = scope:stop_host_scope
 		}
 
 		add_prestige = medium_prestige_gain
@@ -1324,13 +1491,16 @@ KOH_Pentecost.11 = {
 	option = {
 		name = KOH_Pentecost.11.a
 
-		scope:konrad = {
+		scope:stop_host_scope = {
 			vassal_contract_increase_obligation_level = feudal_government_taxes
 		}
 	}
 
 	after = {
-		trigger_event = KOH_Pentecost.12
+		trigger_event = {
+			id = KOH_Pentecost.12
+			days = { 2 4 }
+		}
 	}
 }
 
@@ -1354,10 +1524,11 @@ scripted_effect appoint_swordbearer = {
 KOH_Pentecost.12 = {
 	title = KOH_Pentecost.12.t
 	desc = KOH_Pentecost.12.desc
-	type = character_event
+	type = activity_event
 	theme = stewardship
+	window = widget_activity_locale_fullscreen_event
 	override_background = {
-		event_background = market_west
+		reference = alley_day
 	}
 
 	right_portrait = {
@@ -1371,6 +1542,9 @@ KOH_Pentecost.12 = {
 	}
 
 	immediate = {
+		stop_host_scope = {
+			save_scope_as = konrad
+		}
 		title:c_hainaut.holder = {
 			save_scope_as = count_hainaut
 			add_character_flag = {
@@ -1411,20 +1585,23 @@ KOH_Pentecost.12 = {
 
 	after = {
 		# set up so events don't happen twice
-		save_scope_value_as = {
-			name = met_with_pope
-			value = no
-		}
-		save_scope_value_as = {
-			name = met_with_lion
-			value = no
-		}
-		save_scope_value_as = {
-			name = had_bishop_squabble
-			value = no
+		scope:activity = {
+			set_variable = {
+				name = met_with_pope
+				value = no
+			}
+			set_variable = {
+				name = met_with_lion
+				value = no
+			}
+			set_variable = {
+				name = had_bishop_squabble
+				value = no
+			}	
 		}
 		trigger_event = {
 			on_action = events_during_pentecost_on_action
+			days = { 5 10 }
 		}
 	}
 }
@@ -1482,10 +1659,11 @@ scripted_effect transfer_to_pope = {
 KOH_Pentecost.13 = { #ADD TOAST NOTIFICATIONS
 	title = KOH_Pentecost.13.t
 	desc = KOH_Pentecost.13.desc
-	type = character_event
+	type = activity_event
+	window = widget_activity_locale_fullscreen_event
 	theme = stewardship
 	override_background = {
-		event_background = feast
+		reference = feast
 	}
 	right_portrait = {
 		character = cp:councillor_steward
@@ -1503,16 +1681,20 @@ KOH_Pentecost.13 = { #ADD TOAST NOTIFICATIONS
 	}
 
 	trigger = {
-		scope:pope_coming = yes
-		scope:met_with_pope = no
+		scope:activity = {
+			var:pope_coming = yes
+			var:met_with_pope = no
+		}
 	}
 
 	immediate = {
 		cp:councillor_steward = { save_scope_as = steward }
 
-		save_scope_value_as = {
-			name = excommunication_chance
-			value = -1 # so we can work out if the pope says no
+		scope:activity = {
+			set_variable = {
+				name = excommunication_chance
+				value = -1 # so we can work out if the pope says no
+			}
 		}
 
 		title:d_toscana = {
@@ -1609,9 +1791,11 @@ KOH_Pentecost.13 = { #ADD TOAST NOTIFICATIONS
 				custom_description = {
 					text = pentecost_pope_angered
 					object = scope:pope
-					save_scope_value_as = {
-						name = excommunication_chance
-						value = 5
+					scope:activity = {
+						set_variable = {
+							name = excommunication_chance
+							value = 5
+						}	
 					}
 				}
 			}
@@ -1635,9 +1819,11 @@ KOH_Pentecost.13 = { #ADD TOAST NOTIFICATIONS
 				custom_description = {
 					text = pentecost_pope_angered
 					object = scope:pope
-					save_scope_value_as = {
-						name = excommunication_chance
-						value = 50
+					scope:activity = {
+						set_variable = {
+							name = excommunication_chance
+							value = 50
+						}
 					}
 				}
 			}
@@ -1645,9 +1831,11 @@ KOH_Pentecost.13 = { #ADD TOAST NOTIFICATIONS
 	}
 
 	after = {
-		save_scope_value_as = {
-			name = met_with_pope
-			value = yes
+		scope:activity = {
+			set_variable = {
+				name = met_with_pope
+				value = yes
+			}
 		}
 		if = {
 			limit = { scope:excommunication_chance < 0 } # the pope says yes
@@ -1665,7 +1853,8 @@ KOH_Pentecost.13 = { #ADD TOAST NOTIFICATIONS
 KOH_Pentecost.14 = {
 	title = KOH_Pentecost.14.t
 	desc = KOH_Pentecost.14.desc
-	type = character_event
+	type = activity_event
+	window = widget_activity_locale_fullscreen_event
 	theme = stewardship
 
 	right_portrait = {
@@ -1690,15 +1879,19 @@ KOH_Pentecost.14 = {
 		}
 
 		#excommunicated?
-		save_scope_value_as = {
-			name = excommunicated
-			value = no
+		scope:activity = {
+			set_variable = {
+				name = excommunicated
+				value = no
+			}
 		}
 		random = {
 			chance = scope:excommunication_chance
-			save_scope_value_as = {
-				name = excommunicated
-				value = yes
+			scope:activity = {
+				set_variable = {
+					name = excommunicated
+					value = yes
+				}
 			}
 			add_excommunication_tooltip_only_effect = yes # this is here so you don't get the alerts till you click the button
 		}
@@ -1726,7 +1919,8 @@ KOH_Pentecost.14 = {
 KOH_Pentecost.15 = {
 	title = KOH_Pentecost.15.t
 	desc = KOH_Pentecost.15.desc
-	type = character_event
+	type = activity_event
+	window = widget_activity_locale_fullscreen_event
 	theme = feast_activity
 
 	right_portrait = {
@@ -1735,11 +1929,17 @@ KOH_Pentecost.15 = {
 	}
 
 	trigger = {
-		scope:lion_coming = yes
-		scope:met_with_lion = no
+		scope:activity = {
+			var:lion_coming = yes
+			var:met_with_lion = no
+		}
 	}
 
 	immediate = {
+		character:212605 = { 
+			save_scope_as = lion
+		}
+
 		title:d_ostfalen = {
 			save_scope_as = welf_land
 		}
@@ -1887,14 +2087,16 @@ KOH_Pentecost.15 = {
 		add_prestige = medium_prestige_gain
 
 		ai_chance = {
-			base 85
+			base = 85
 		}
 	}
 
 	after = {
-		save_scope_value_as = {
-			name = met_with_lion
-			value = yes
+		scope:activity = {
+			set_variable = {
+				name = met_with_lion
+				value = yes
+			}
 		}
 
 		trigger_event = {
@@ -1907,7 +2109,7 @@ KOH_Pentecost.15 = {
 KOH_Pentecost.16 = {
 	title = KOH_Pentecost.16.t
 	desc = KOH_Pentecost.16.desc
-	type = character_event
+	type = activity_event
 	theme = feast_activity
 
 	right_portrait = {
@@ -1927,9 +2129,11 @@ KOH_Pentecost.16 = {
 	immediate = {
 		add_character_flag = had_event_KOH_Pentecost_16
 
-		save_scope_value_as = {
-			name = disappointed_phillip
-			value = no
+		scope:activity = {
+			set_variable = {
+				name = disappointed_phillip
+				value = no
+			}
 		}
 
 		character:213181 = {
@@ -1983,9 +2187,11 @@ KOH_Pentecost.16 = {
 			target = scope:phillip
 		}
 
-		save_scope_value_as = {
-			name = disappointed_phillip
-			value = yes
+		scope:activity = {
+			set_variable = {
+				name = disappointed_phillip
+				value = yes
+			}
 		}
 	}
 
@@ -2014,7 +2220,7 @@ KOH_Pentecost.16 = {
 
 	after = {
 		if = { 
-			limit = { scope:disappointed_phillip = yes }
+			limit = { scope:activity = { var:disappointed_phillip = yes } }
 			trigger_event = KOH_Pentecost.17
 		}
 		else = {
@@ -2029,9 +2235,9 @@ KOH_Pentecost.16 = {
 KOH_Pentecost.17 = {
 	title = KOH_Pentecost.17.t
 	desc = KOH_Pentecost.17.desc
-	type = character_event
+	type = activity_event
 	theme = stewardship
-	override_background = { event_background = courtyard }
+	override_background = { reference = courtyard }
 
 	right_portrait = {
 		character = scope:phillip
@@ -2085,7 +2291,7 @@ KOH_Pentecost.1801 = {
 	hidden = yes
 
 	immediate = {
-		scope:diet = {
+		scope:activity = {
 			every_participant = {
 				add_to_list = participants_not_responded
 				trigger_event = KOH_Pentecost.18
@@ -2163,12 +2369,12 @@ KOH_Pentecost.1901 = {
 
 		if = {
 			limit = {
-				scope:many_tournaments = no
+				scope:activity = { var:many_tournaments = no }
 			}
 			end_the_diet = yes
 		}
 		else = {
-			scope:diet = {
+			scope:activity = {
 				every_participant = {
 					add_to_list = participants_not_responded
 					trigger_event = KOH_Pentecost.19
@@ -2244,7 +2450,7 @@ KOH_Pentecost.20 = {
 		hidden_effect = {
 			random_list = {
 				50 = {
-					scope:diet = {
+					scope:activity = {
 						every_participant = {
 							add_to_list = participants_not_responded
 							trigger_event = KOH_Pentecost.21
@@ -2252,7 +2458,7 @@ KOH_Pentecost.20 = {
 					}
 				}
 				50 = {
-					scope:diet = {
+					scope:activity = {
 						every_participant = {
 							add_to_list = participants_not_responded # just so everyone gets the last event at the same time
 							trigger_event = KOH_Pentecost.22
@@ -2383,7 +2589,7 @@ KOH_Pentecost.23 = {
 	type = character_event
 	theme = stewardship
 	override_background = {
-		event_background = market_west
+		reference = market_west
 	}
 	right_portrait = {
 		character = scope:frederick
@@ -2404,3 +2610,193 @@ KOH_Pentecost.23 = {
 		add_stress = minor_stress_loss
 	}
 }
+
+##FLAVOUR EVENTS
+
+###Pentecost Plays
+
+# Pentecost Plays Event
+KOH_Pentecost.24 = {
+	window = widget_activity_locale_fullscreen_event
+	type = activity_event
+	title = KOH_Pentecost.24.t
+    #title = "Pentecost Plays"
+	desc = KOH_Pentecost.24.desc
+	theme = faith
+	override_background = {
+		reference = market_west
+	}
+
+	left_portrait = {
+		character = root
+		animation = throne_room_conversation_3
+	}
+
+	right_portrait = {
+		character = scope:performer
+		animation = happiness
+	}
+
+    weight_multiplier = {
+        base = 1
+    }
+
+    immediate = {
+        play_music_cue = Festival_Sounds
+
+		create_character = {
+			template = merchant_template
+			dynasty = none
+			location = scope:activity.activity_location
+			save_scope_as = performer
+		}
+    }
+
+    option = {
+        name = KOH_Pentecost.24.a
+		flavor = KOH_Pentecost.24.a.f
+        add_piety = 30
+        scope:activity = {
+			random_attending_character = {
+            	limit = { 
+                	is_adult = yes
+                	has_faith = root.faith
+            	}
+				add_opinion = {
+					target = root
+					modifier = pious_opinion
+					months = 24
+				}
+			}
+			random_attending_character = {
+            	limit = { 
+                	is_adult = yes
+                	has_faith = root.faith
+            	}
+				add_opinion = {
+					target = root
+					modifier = pious_opinion
+					months = 24
+				}
+			}
+        }
+    }
+
+    option = {
+		name = KOH_Pentecost.24.b
+        #name = "Reflect on your Personal Faith"
+		flavor = KOH_Pentecost.24.b.f
+        #desc = "Use the opportunity to reflect on your personal faith and connection with the Holy Spirit."
+        add_piety = 20
+        add_stress = minor_stress_loss
+    }
+
+    option = {
+		name = KOH_Pentecost.24.c
+		flavor = KOH_Pentecost.24.c.f
+       # desc = "Make a donation to the church in honor of the Holy Spirit and the celebration of Pentecost."
+		#pious_type_option_effect = yes
+
+		scope:activity = {
+			add_activity_log_entry = {
+				key = pentecost_peasants_donation_log
+				score = 25
+				tags = { random good }
+				character = root
+
+				#Effect
+				root = {
+					remove_short_term_gold = 100
+					add_piety = minor_piety_gain
+				}
+			}
+		}
+    }
+}
+
+# Sacred Art Exhibition Event
+KOH_Pentecost.25 = {
+	window = widget_activity_locale_fullscreen_event
+	type = activity_event
+    #title = "Sacred Art Exhibition"
+	title = KOH_Pentecost.25.t
+	desc = KOH_Pentecost.25.desc
+    #desc = "Local artists have been working tirelessly to create works inspired by religious themes. Today, their creations are displayed in a grand exhibition. Attendees wander through the exhibit, admiring the skill and devotion that went into each piece. Some attendees may even purchase the artworks, affecting their wealth and relationships with the artists."
+	theme = faith
+	override_background = {
+		reference = alley_day
+	}
+
+    trigger = {
+        has_faith = faith:catholic
+		is_adult = yes
+    }
+
+    weight_multiplier = {
+        base = 1
+    }
+
+    immediate = {
+        play_music_cue = mx_cue_personal_positive
+
+		create_character = {
+			template = local_beauty_character
+			dynasty = none
+			location = scope:activity.activity_location
+			save_scope_as = performer
+		}
+    }
+
+    option = {
+		name = KOH_Pentecost.25.a #"Purchase Artwork"
+        flavor = KOH_Pentecost.25.a.f #"Purchase one or more pieces of art from the exhibition."
+        remove_short_term_gold = 50
+        scope:performer = {
+            add_opinion = {
+                target = root
+                modifier = opinion_art_purchase
+                months = 36
+            }
+        }
+        #add_artifact = religious_painting
+    }
+
+    option = {
+        name = "Hire an Artist"
+		flavor = KOH_Pentecost.25.b.f # "Hire one of the talented artists for a personal project or as a court artist."
+        remove_short_term_gold = 100
+        every_courtier = {
+            limit = { 
+                is_adult = yes
+                has_trait = artist
+            }
+            add_opinion = {
+                target = root
+                modifier = opinion_employment
+                months = 48
+            }
+        }
+        character_event = {
+            id = ArtistHired.0001
+        }
+    }
+
+    option = {
+        name = "Donate to the Artists"
+		flavor = KOH_Pentecost.25.c.f # "Make a donation to support the local artists."
+        remove_short_term_gold = 30
+        add_prestige = 20
+        every_courtier = {
+            limit = { 
+                is_adult = yes
+                has_trait = artist
+            }
+            add_opinion = {
+                target = root
+                modifier = opinion_donation
+                months = 24
+            }
+        }
+    }
+}
+

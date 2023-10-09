@@ -1,59 +1,59 @@
 ﻿namespace = KoH_generalgeneric
 
 
-KoH_generalgeneric.1 = { #Lost At Sea!
-	title = KoH_generalgeneric.1.t
-	desc = KoH_generalgeneric.1.desc
-	theme = StormWaves
-	left_portrait = {
-		character = this
-	}
-	right_portrait = {
-		character = scope:KnightDisaster
-	}
+# KoH_generalgeneric.1 = { #Lost At Sea!
+# 	title = KoH_generalgeneric.1.t
+# 	desc = KoH_generalgeneric.1.desc
+# 	theme = StormWaves
+# 	left_portrait = {
+# 		character = this
+# 	}
+# 	right_portrait = {
+# 		character = scope:KnightDisaster
+# 	}
 
-	trigger = {		
-		is_commanding_army = yes
-		is_sea = yes
-		any_knight = {
-			is_at_same_location = root
-		}
-	}
+# 	trigger = {		
+# 		is_commanding_army = yes
+# 		is_sea = yes
+# 		any_knight = {
+# 			is_at_same_location = root
+# 		}
+# 	}
 
-	immediate = {
-		commanding_army.location = { save_scope_as = current_location }
+# 	immediate = {
+# 		commanding_army.location = { save_scope_as = current_location }
 
-		every_knight = {
-			limit = {
-				is_at_same_location = root
-			}
-			save_scope_as = KnightDisaster
-		}
-	}
+# 		every_knight = {
+# 			limit = {
+# 				is_at_same_location = root
+# 			}
+# 			save_scope_as = KnightDisaster
+# 		}
+# 	}
 
-	option = { 
-		name = KoH_generalgeneric.1.a
+# 	option = { 
+# 		name = KoH_generalgeneric.1.a
 		
-		random = {
-			chance = 50
-			scope:KnightDisaster = {
-				death = {
-					death_reason = death_lost_at_sea
-				}
-			}
-		}
-	}
+# 		random = {
+# 			chance = 50
+# 			scope:KnightDisaster = {
+# 				death = {
+# 					death_reason = death_lost_at_sea
+# 				}
+# 			}
+# 		}
+# 	}
 
-	option = {
-		name = KoH_generalgeneric.1.b
+# 	option = {
+# 		name = KoH_generalgeneric.1.b
 
-		scope:KnightDisaster = {
-			death = {
-				death_reason = death_lost_at_sea
-			}
-		}
-	}
-}
+# 		scope:KnightDisaster = {
+# 			death = {
+# 				death_reason = death_lost_at_sea
+# 			}
+# 		}
+# 	}
+# }
 
 KoH_generalgeneric.2 = { #Lost At Sea!
 	title = KoH_generalgeneric.2.t
@@ -76,11 +76,13 @@ KoH_generalgeneric.2 = { #Lost At Sea!
 			is_adult = yes
 			is_imprisoned = no
 			has_religion = religion:christianity_religion
+			exists = location
 		}
 		any_spouse = {
 			is_adult = yes
 			is_imprisoned = no
 			has_religion = religion:christianity_religion
+			exists = location
 		}
 		wifelover = yes
 	}
@@ -110,5 +112,191 @@ KoH_generalgeneric.2 = { #Lost At Sea!
 
 	option = { 
 		name = KoH_generalgeneric.2.a
+	}
+}
+
+
+#Crusader trait gained during GHW.
+#Fired on_army_enter_province
+#Hidden first event fires for the owner of the army.
+#root = owner of the army
+#scope:army = the army itself.
+KoH_generalgeneric.3 = {
+	title = KoH_generalgeneric.3.t
+	desc = KoH_generalgeneric.3.desc
+	
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = marshal
+	}
+
+	trigger = {
+		is_at_war = yes
+		scope:army = {
+			exists = army_commander
+			location = { save_temporary_scope_as = current_location }
+			army_commander = {
+				NOT = {
+					has_active_diarchy = yes
+					has_diarchy_active_parameter = diarchy_is_regency
+				}
+				basic_eligible_for_diarchy_trigger = yes
+			}
+		}
+		NOT = {
+			any_realm_province = { 
+				this = scope:current_location
+			}
+		}
+	}
+
+	immediate = {
+		scope:army.location = { save_scope_as = current_location }
+		scope:army = {
+			army_commander = { 
+				if = {
+					limit = {
+						basic_eligible_for_diarchy_trigger = yes
+					}
+					trigger_event = KoH_generalgeneric.4 
+				}
+			}
+			army_owner = {
+				every_knight = {
+					limit = {
+						is_ruler = yes
+						basic_eligible_for_diarchy_trigger = yes
+						location = scope:current_location
+					}
+					trigger_event = KoH_generalgeneric.4
+				}
+			}
+		}
+	}
+	option = {
+		show_as_tooltip = {
+			start_diarchy = temporary_regency
+		}
+		hidden_effect = {
+			scope:army = {
+				army_commander = { trigger_event = KoH_generalgeneric.4 }
+				army_owner = {
+					every_knight = {
+						limit = {
+							is_ruler = yes
+							location = scope:current_location
+						}
+						trigger_event = KoH_generalgeneric.4
+					}
+				}
+			}
+		}
+	}
+}
+
+KoH_generalgeneric.4 = {
+	hidden = yes
+
+	trigger = {
+		basic_eligible_for_diarchy_trigger = yes
+	}
+
+	immediate = {
+		start_diarchy = temporary_regency
+		set_variable = is_in_regency_because_of_commanding_army
+	}
+}
+
+KoH_generalgeneric.5 = {
+	hidden = yes
+	
+	trigger = {
+		scope:army = {
+			exists = army_commander
+			location = { save_temporary_scope_as = current_location }
+			army_commander = {
+				has_active_diarchy = yes
+				has_diarchy_active_parameter = diarchy_is_regency
+			}
+		}
+		any_realm_province = { 
+			this = scope:current_location
+		}
+	}
+
+	immediate = {
+		scope:army.location = { save_scope_as = current_location }
+		scope:army = {
+			army_commander = { end_diarchy = yes }
+			army_owner = {
+				every_knight = {
+					limit = {
+						is_ruler = yes
+						location = scope:current_location
+					}
+					end_diarchy = yes 
+				}
+			}
+		}
+	}
+}
+
+KoH_generalgeneric.6 = {
+	hidden = yes
+	
+	trigger = {
+		has_active_diarchy = yes
+		has_diarchy_active_parameter = diarchy_is_regency
+		OR = {
+			AND = {
+				is_commanding_army = no
+				has_variable = is_in_regency_because_of_commanding_army
+			}
+
+			AND = {
+				scope:army = {
+					exists = army_commander
+					location = { save_temporary_scope_as = current_location }
+					army_commander = { 
+						any_realm_province = { 
+							this = scope:current_location
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		scope:army = {
+		location = { save_temporary_scope_as = current_location }
+			army_commander = { 
+				end_diarchy = yes
+				if = {
+					limit = {
+						has_variable = is_in_regency_because_of_commanding_army
+					}
+					remove_variable = is_in_regency_because_of_commanding_army
+				}
+			}
+			army_owner = {
+				every_knight = {
+					limit = {
+						is_ruler = yes
+						exists = location
+						location = scope:current_location
+					}
+					end_diarchy = yes 
+					if = {
+						limit = {
+							has_variable = is_in_regency_because_of_commanding_army
+						}
+						remove_variable = is_in_regency_because_of_commanding_army
+					}
+				}
+			}
+		}
 	}
 }
