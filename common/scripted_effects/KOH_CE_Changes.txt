@@ -1,66 +1,35 @@
-﻿jerusalem_historical_set_up = {
-	every_county_in_region = {
-		region = world_middle_east_jerusalem
-		limit = { NOT = { this = title:c_jerusalem }}
-		set_county_culture = culture:levantine
-	}
-	title:c_jerusalem = {
-		set_county_culture = culture:outremer
-	}
-	every_county_in_region = {
-		region = world_middle_east_jerusalem
-		limit = { 
-			NOT = { this = title:c_jerusalem }
-			top_liege = title:c_jerusalem.holder
-		}
-		random = {
-			chance = 20
-			set_county_culture = culture:outremer
-		}
-	}
-	title:k_jerusalem.holder = {
-		add_realm_law = male_preference_law
-		set_culture = culture:outremer
-		culture:outremer = {
-			if = {
-				limit = {
-					OR = {
-						has_cultural_pillar = heritage_frankish
-						any_parent_culture = { has_cultural_pillar = heritage_frankish }
-					}
-				}
-				set_name_list = name_list_outremer
-			}
-			if = {
-				limit = {
-					NOT = { has_innovation = innovation_men_at_arms }
-				}
-				add_innovation = innovation_men_at_arms
-			}
-			if = {
-				limit = {
-					NOT = { has_innovation = innovation_desert_tactics }
-				}
-				add_innovation = innovation_desert_tactics
-			}
-			
-			get_all_innovations_from = culture:french
-			get_all_innovations_from = culture:levantine
-			set_language_from = culture:french
-			set_heritage_from = culture:french
-			add_cultural_tradition = tradition_dryland_dwellers
-			add_cultural_tradition = tradition_philosopher_culture
-		}
-		every_vassal_or_below = {
-			limit = {
-				has_culture = culture:french
-			}
-			set_culture = title:k_jerusalem.holder.culture
-		}
-	}
-}
+﻿# change_chivalry_effect = {
+# 	hidden_effect = {
+# 		remove_character_modifier = chivalry
+# 		remove_character_modifier = chivalry_1
+# 		remove_character_modifier = chivalry_2
+# 		remove_character_modifier = chivalry_3
+# 		remove_character_modifier = chivalry_4
+# 		remove_character_modifier = chivalry_5
+# 		remove_character_modifier = chivalry_6
+# 		remove_character_modifier = chivalry_7
+# 		remove_character_modifier = chivalry_8
+# 		remove_character_modifier = chivalry_9
+# 		remove_character_modifier = chivalry_10
+# 	}
+# 	switch = {
+# 		trigger = var:Chivalry # Why is this capitalized? T_T
+# 		1 = { add_character_modifier = chivalry_1 }
+# 		2 = { add_character_modifier = chivalry_2 }
+# 		3 = { add_character_modifier = chivalry_3 }
+# 		4 = { add_character_modifier = chivalry_4 }
+# 		5 = { add_character_modifier = chivalry_5 }
+# 		6 = { add_character_modifier = chivalry_6 }
+# 		7 = { add_character_modifier = chivalry_7 }
+# 		8 = { add_character_modifier = chivalry_8 }
+# 		9 = { add_character_modifier = chivalry_9 }
+# 		10 = { add_character_modifier = chivalry_10 }
 
-add_my_faction = {
+# 		fallback = { add_character_modifier = chivalry }
+# 	}
+# }
+
+add_my_faction ={
 	root = {
 	set_variable = {
 		name = claiming_title
@@ -105,7 +74,7 @@ add_my_faction = {
 	}
 }
 
-MothersFaction = {
+MothersFaction ={
 	title:c_bordeaux.holder = {
 	set_variable = {
 		name = claiming_title

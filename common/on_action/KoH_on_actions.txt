@@ -5,8 +5,75 @@
 		KOH_Italian_Familes
 		#KOH_investiture
 		KOH_assassins_start
+		delay = { days = 1 }
+		KOH_ON_START_DELAYED
 	}
 }
+
+
+KOH_ON_START_DELAYED = {	
+	effect = {
+		every_county_in_region = {
+			region = world_middle_east_jerusalem
+			limit = { NOT = { this = title:c_jerusalem }}
+			set_county_culture = culture:levantine
+		}
+		every_county_in_region = {
+			region = world_middle_east_jerusalem
+			limit = { 
+				NOT = { this = title:c_jerusalem }
+				top_liege = title:c_jerusalem.holder
+			}
+			random = {
+				chance = 20
+				set_county_culture = culture:outremer
+			}
+		}		
+		if = {
+			limit = {
+				exists = global_var:SE_is_loaded
+			}
+			title:k_jerusalem.holder = {
+				every_held_title = {
+					limit = {
+						has_title_law = male_only_law
+					}
+					clear_title_laws = yes
+				}
+				if = {
+					limit = {
+						has_realm_law = male_only_law
+					}	
+					remove_realm_law = male_only_law
+				}
+				every_vassal_or_below = {
+					every_held_title = {
+						limit = {
+							has_title_law = male_only_law
+						}
+						clear_title_laws = yes
+					}
+					if = {
+						limit = {
+							has_realm_law = male_only_law
+						}	
+						remove_realm_law = male_only_law
+					}
+				}
+			}
+			title:k_jerusalem = {
+				add_title_law = outremer_elective_succession_law
+			}
+			
+			culture:outremer = {
+				add_culture_tradition = tradition_crusader_states
+			}
+		}
+					
+	}
+}
+
+
 
 travel_event_tombola = {
 	events = {
@@ -671,9 +738,7 @@ KOH_Parition = {
 
 KOH_ON_START = {
 	effect = {
-		title:c_jerusalem.holder = {
-			add_realm_law = male_preference_law
-		}
+		jerusalem_historical_set_up = yes
 
 		#khwarazmian
 		character:230000 = {

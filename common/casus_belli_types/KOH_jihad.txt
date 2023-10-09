@@ -146,73 +146,73 @@
 			KOH_Saladin_Jihad = {}
 		}
 	}
+	white_peace_possible = no
+	# on_white_peace_desc = {
+	# 	desc = religious_war_white_peace_desc
+	# }
 
-	on_white_peace_desc = {
-		desc = religious_war_white_peace_desc
-	}
+	# on_white_peace = { #add
+	# 	scope:attacker = {
+	# 		show_pow_release_message_effect = yes
+	# 	}
 
-	on_white_peace = { #add
-			scope:attacker = {
-				show_pow_release_message_effect = yes
-			}
+	# 	# press claims
+	# 	every_in_list = {
+	# 		list = target_titles
+	# 		if = {
+	# 			limit = { scope:claimant = { has_weak_claim_on = prev } }
+	# 			scope:claimant = {
+	# 				make_claim_strong = prev
+	# 			}
+	# 		}
+	# 	}
 
-			# press claims
-			every_in_list = {
-				list = target_titles
-				if = {
-					limit = { scope:claimant = { has_weak_claim_on = prev } }
-					scope:claimant = {
-						make_claim_strong = prev
-					}
-				}
-			}
+	# 	# Create an 'helper' claim CB which we won't execute, but can use to determine how much Prestige should be given to war participants.
+	# 	setup_claim_cb = {
+	# 		titles = target_titles
+	# 		attacker = scope:attacker
+	# 		defender = scope:defender
+	# 		claimant = scope:claimant
+	# 		victory = no
+	# 	}
+	# 	# Prestige loss for the attacker
+	# 	scope:attacker = {
+	# 		add_prestige = {
+	# 			value = scope:cb_prestige_factor # Set by 'setup_claim_cb'
+	# 			multiply = -5.0
+	# 		}
+	# 	}
+	# 	# Allies on both sides get full prestige value for helping in the war, based on their war participation.
+	# 	modify_allies_of_participants_fame_values = {
+	# 		WINNER = scope:attacker
+	# 		FAME_BASE = scope:cb_prestige_factor # Set by 'setup_claim_cb'
+	# 		IS_RELIGIOUS_WAR = no
+	# 		WINNER_ALLY_FAME_SCALE = 10
+	# 		LOSER_ALLY_FAME_SCALE = 10
+	# 	}
+	# 	# Defender neither gains nor loses any prestige.
 
-			# Create an 'helper' claim CB which we won't execute, but can use to determine how much Prestige should be given to war participants.
-			setup_claim_cb = {
-				titles = target_titles
-				attacker = scope:attacker
-				defender = scope:defender
-				claimant = scope:claimant
-				victory = no
-			}
-			# Prestige loss for the attacker
-			scope:attacker = {
-				add_prestige = {
-					value = scope:cb_prestige_factor # Set by 'setup_claim_cb'
-					multiply = -5.0
-				}
-			}
-			# Allies on both sides get full prestige value for helping in the war, based on their war participation.
-			modify_allies_of_participants_fame_values = {
-				WINNER = scope:attacker
-				FAME_BASE = scope:cb_prestige_factor # Set by 'setup_claim_cb'
-				IS_RELIGIOUS_WAR = no
-				WINNER_ALLY_FAME_SCALE = 10
-				LOSER_ALLY_FAME_SCALE = 10
-			}
-			# Defender neither gains nor loses any prestige.
+	# 	if = {
+	# 		limit = {
+	# 			NOT = { scope:claimant = scope:attacker }
+	# 			scope:attacker = {
+	# 				can_add_hook = {
+	# 					type = favor_hook
+	# 					target = scope:claimant
+	# 				}
+	# 			}
+	# 		}
+	# 		scope:attacker = {
+	# 			add_hook = {
+	# 				target = scope:claimant
+	# 				type = favor_hook
+	# 			}
+	# 		}
+	# 	}
 
-			if = {
-				limit = {
-					NOT = { scope:claimant = scope:attacker }
-					scope:attacker = {
-						can_add_hook = {
-							type = favor_hook
-							target = scope:claimant
-						}
-					}
-				}
-				scope:attacker = {
-					add_hook = {
-						target = scope:claimant
-						type = favor_hook
-					}
-				}
-			}
-
-			# Truce
-			add_truce_white_peace_effect = yes
-		}
+	# 	# Truce
+	# 	add_truce_white_peace_effect = yes
+	# }
 
 	on_defeat_desc = {
 		desc = religious_war_defeat_desc
@@ -275,9 +275,14 @@
 	cb_name = "HOLY_WAR_KINGDOM_NAME"
 
 	is_holy_war = yes
-
+	defender_capital_gives_war_score = yes
+	attacker_score_from_occupation_scale = 100	
 	interface_priority = 80
-
+	max_attacker_score_from_battles = 100
+	full_occupation_by_defender_gives_victory = yes 		# Full occupation by the defender won't automatically give 100% warscore
+	full_occupation_by_attacker_gives_victory = yes
+	defender_capital_gives_war_score = yes 		# Full occupation by the attacker won't automatically give 100% warscore				# How much War Score the Attacker can gain from battles in total
+	max_attacker_score_from_occupation = 150
 	use_de_jure_wargoal_only = yes
 
 	attacker_wargoal_percentage = 0.8

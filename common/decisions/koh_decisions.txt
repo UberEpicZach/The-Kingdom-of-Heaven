@@ -126,25 +126,25 @@ khamag_khan_decision = {
 	effect = {
 		save_scope_as = usurper
 		save_scope_as = decision_taker	
-		if={
-		limit={
-		not={
-		this=character:125501
+		if = {
+			limit = {
+				NOT = {
+					this = character:125501
+				}
+			}
+			character:125501 = {
+				trigger_event = temujin.0020
+			}
 		}
-		}
-		character:125501 = {
-			trigger_event = temujin.0020
-		}
-		}
-		if={
-		limit={
-		not={
-		this=character:3032555
-		}
-		}
-		character:3032555 = {
-			trigger_event = temujin.0020
-		}
+		if = {
+			limit = {
+				NOT = {
+					this=character:3032555
+				}
+			}
+			character:3032555 = {
+				trigger_event = temujin.0020
+			}
 		}
 		
 
@@ -201,9 +201,7 @@ khamag_khan_decision = {
 	}
 	ai_will_do = {
         base = 100
-}
-
-	
+	}
 }
 
 
