@@ -49,8 +49,13 @@ spawn_temujin_character_effect = {
 			give_temujin_land_effect = yes
 			add_gold = 5000
 			add_dread = high_dread
+					spawn_temujins_court_effect = yes
 			form_the_mongol_empire_effect = yes
 			add_prestige = 25000
+					if = {
+						limit = { NOT = { has_perk = peacemaker_perk } }
+						add_perk = peacemaker_perk
+					}
 			dynasty = {
 				add_dynasty_prestige_level = 5
 				add_dynasty_prestige = 10000
@@ -58,6 +63,7 @@ spawn_temujin_character_effect = {
 				add_dynasty_perk = warfare_legacy_2
 				add_dynasty_perk = warfare_legacy_3
 				add_dynasty_perk = warfare_legacy_4
+						add_dynasty_perk = warfare_legacy_5
 				if = {
 					limit = {
 						has_dlc_feature = hybridize_culture
@@ -88,6 +94,10 @@ spawn_temujin_character_effect = {
 			spawn_temujins_court_effect = yes
 			form_the_mongol_empire_effect = yes
 			add_prestige = 25000
+			if = {
+				limit = { NOT = { has_perk = peacemaker_perk } }
+				add_perk = peacemaker_perk
+			}
 			dynasty = {
 				add_dynasty_prestige_level = 5
 				add_dynasty_prestige = 10000
@@ -95,6 +105,7 @@ spawn_temujin_character_effect = {
 				add_dynasty_perk = warfare_legacy_2
 				add_dynasty_perk = warfare_legacy_3
 				add_dynasty_perk = warfare_legacy_4
+				add_dynasty_perk = warfare_legacy_5
 				if = {
 					limit = {
 						has_dlc_feature = hybridize_culture
@@ -132,7 +143,7 @@ form_the_mongol_empire_effect = {
 	if = {
 		limit = {
 			NOT = {
-				has_government = tribal_government
+				government_has_flag = government_is_tribal
 			}
 		}
 		change_government = tribal_government
@@ -202,45 +213,11 @@ spawn_mongol_troops_effect = {
 			stacks = 5
 		}
 		men_at_arms = {
-			type = mangonel
+			type = trebuchet
 			stacks = 5
 		}
 		men_at_arms = {
-			type = mangonel
-			stacks = 5
-		}
-		location = capital_province
-		origin = capital_province
-	}
-	spawn_army = {
-		uses_supply = no
-		inheritable = no
-		name = mongol_event_troops
-		levies = {
-			value = 5000
-		}
-		men_at_arms = {
-			type = horse_archers
-			stacks = 10
-		}
-		men_at_arms = {
-			type = horse_archers
-			stacks = 10
-		}
-		men_at_arms = {
-			type = light_horsemen
-			stacks = 10
-		}
-		men_at_arms = {
-			type = light_horsemen
-			stacks = 10
-		}
-		men_at_arms = {
-			type = armored_horsemen
-			stacks = 3
-		}
-		men_at_arms = {
-			type = mangonel
+			type = trebuchet
 			stacks = 5
 		}
 		location = capital_province
@@ -274,7 +251,7 @@ spawn_mongol_troops_effect = {
 			stacks = 3
 		}
 		men_at_arms = {
-			type = mangonel
+			type = trebuchet
 			stacks = 5
 		}
 		location = capital_province
@@ -308,7 +285,41 @@ spawn_mongol_troops_effect = {
 			stacks = 3
 		}
 		men_at_arms = {
-			type = mangonel
+			type = trebuchet
+			stacks = 5
+		}
+		location = capital_province
+		origin = capital_province
+	}
+	spawn_army = {
+		uses_supply = no
+		inheritable = no
+		name = mongol_event_troops
+		levies = {
+			value = 5000
+		}
+		men_at_arms = {
+			type = horse_archers
+			stacks = 10
+		}
+		men_at_arms = {
+			type = horse_archers
+			stacks = 10
+		}
+		men_at_arms = {
+			type = light_horsemen
+			stacks = 10
+		}
+		men_at_arms = {
+			type = light_horsemen
+			stacks = 10
+		}
+		men_at_arms = {
+			type = armored_horsemen
+			stacks = 3
+		}
+		men_at_arms = {
+			type = trebuchet
 			stacks = 5
 		}
 		location = capital_province
@@ -341,7 +352,7 @@ spawn_mongol_troops_condensed_effect = {
 			stacks = 14
 		}
 		men_at_arms = {
-			type = mangonel
+			type = trebuchet
 			stacks = 25
 		}
 		location = capital_province
@@ -365,6 +376,10 @@ spawn_mongol_successor_state_troops_effect = {
 			type = light_horsemen
 			stacks = 5
 		}
+		men_at_arms = {
+			type = trebuchet
+			stacks = 3
+		}
 		location = capital_province
 		origin = capital_province
 	}
@@ -383,6 +398,10 @@ spawn_mongol_successor_state_troops_effect = {
 			type = light_horsemen
 			stacks = 5
 		}
+		men_at_arms = {
+			type = trebuchet
+			stacks = 3
+		}
 		location = capital_province
 		origin = capital_province
 	}
@@ -400,6 +419,10 @@ spawn_mongol_successor_state_troops_effect = {
 		men_at_arms = {
 			type = light_horsemen
 			stacks = 5
+		}
+		men_at_arms = {
+			type = trebuchet
+			stacks = 3
 		}
 		location = capital_province
 		origin = capital_province

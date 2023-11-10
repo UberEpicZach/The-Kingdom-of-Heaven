@@ -1691,11 +1691,11 @@ guest_tells_fantastic_joke = {
 				OR = {
 					has_court_position = court_jester_court_position
 					AND = {
-					aptitude:court_jester_court_position >= 3
+					aptitude:court_jester_court_position >= 2
 						has_personality_extroverted_trigger = yes
 						has_trait_levelheaded_trigger = no
 					}
-					aptitude:court_jester_court_position >= 5
+					aptitude:court_jester_court_position >= 4
 				}
 			}
 			weight = {

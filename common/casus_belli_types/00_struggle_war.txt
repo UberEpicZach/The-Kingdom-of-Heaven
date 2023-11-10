@@ -15,6 +15,10 @@
 		}
 	}
 
+	attacker_score_from_occupation_scale = 150
+	attacker_score_from_battles_scale = 150
+	defender_score_from_battles_scale = 150
+
 	allowed_against_character = {
 		OR = {
 			# Keep the CB if your house completed the Hostility ending
@@ -32,16 +36,13 @@
 			scope:attacker = {
 				any_character_struggle = {
 					involvement = involved
+					is_struggle_type = iberian_struggle # FP3 Update: restricting to FP2 for now
 					is_secondary_character_involvement_either_trigger = { CHAR = scope:defender }
 				}
 			}
 		}
 
-		NOT = {
-			scope:attacker = {
-				any_liege_or_above = { this = scope:defender }
-			}
-		}
+		NOT = { scope:attacker = { any_liege_or_above = { this = scope:defender } } }
 	}
 	
 	target_titles = all

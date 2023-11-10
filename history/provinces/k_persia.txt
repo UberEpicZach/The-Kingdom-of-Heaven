@@ -1,4 +1,5 @@
-﻿##d_isfahan ###################################
+﻿#k_persia
+##d_isfahan ###################################
 ###c_isfahan
 4106 = {	#Isfahan
 	culture = persian
@@ -16,7 +17,7 @@
 		buildings = {
 			cereal_fields_02
 			barracks_01
-			hunting_grounds_01
+			#hunting_grounds_01
 		}
 	}
 }
@@ -28,7 +29,7 @@
 	holding = city_holding
 }
 4108 = {	#Wazwan	#AKA Vazvan
-	holding = none
+	holding = church_holding
 }
 
 ###c_ardestan
@@ -82,9 +83,11 @@
 ##d_kirman ###################################
 ###c_kirman
 4076 = {	#Khabis
-	culture = persian
-	religion = ashari
+	culture = baloch #FP3 change after research
+	religion = mutazila
 	holding = castle_holding
+	950.1.1 = { religion = ashari }
+	1050.1.1 = { culture = persian } #FP3 change after research
 }
 4077 = {	#Zarand_PER
 	holding = city_holding
@@ -107,9 +110,10 @@
 
 ###c_behabad
 4073 = {	#Behabad
-	culture = persian
+	culture = baloch
 	religion = mazdayasna
 	holding = castle_holding
+	1050.1.1 = { culture = persian } #FP3 change after research 
 }
 4072 = {	#Nayband	#AKA Nay Band, Naiband
 	holding = city_holding	#placeholder
@@ -123,9 +127,12 @@
 
 ###c_bam
 4083 = {	#Bamm
-	culture = persian
-	religion = ashari
+	culture = baloch #FP3 change after research 
+	religion = azariqa
 	holding = castle_holding
+	890.1.1 = { religion = ashari }
+	1050.1.1 = { culture = persian } #FP3 change after research 
+
 }
 4082 = {	#Kashid
 	holding = city_holding	#placeholder
@@ -145,7 +152,8 @@
 	culture = persian
 	religion = mazdayasna
 	holding = castle_holding
-	790.1.1 = { religion = ashari }
+	790.1.1 = { religion = mutazila }
+	950.1.1 = { religion = ashari }
 }
 4087 = {	#Bimand
 	holding = city_holding	#placeholder
@@ -159,7 +167,8 @@
 	culture = persian
 	religion = mazdayasna
 	holding = castle_holding
-	790.1.1 = { religion = ashari }
+	790.1.1 = { religion = mutazila }
+	950.1.1 = { religion = ashari }
 }
 4090 = {	#Maghun
 	holding = city_holding	#placeholder
@@ -227,6 +236,10 @@
 	religion = mazdayasna
 	holding = castle_holding
 	800.1.1 = { religion = ashari }
+	837.1.1 = {
+		religion = mutazila
+	}
+	940.1.1 = { religion = ashari }
 }
 4097 = {	#Muralziyan
 	holding = church_holding	#placeholder
@@ -244,10 +257,10 @@
 	culture = persian
 	religion = mazdayasna
 	holding = castle_holding
-	864.1.1 = { religion = zayidi }
+	864.1.1 = { religion = imami }
 	1066.1.1 = {
 		buildings = {
-			pastures_01
+			#pastures_01
 			hunting_grounds_01
 			barracks_01
 		}
@@ -272,7 +285,7 @@
 	religion = mazdayasna	
 	holding = castle_holding
 	1060.1.1 = {
-		religion = ashari
+		religion = maturidi
 	}
 }
 4045 = {	#Simnan		#AKA Semnan
@@ -283,7 +296,7 @@
 ###c_qom
 4109 = {	#Qom
 	culture = persian
-	religion = ashari
+	religion = imami
 	holding = castle_holding
 }
 4110 = {	#Aba-Qomi
@@ -317,8 +330,9 @@
 ###c_nihawand
 4116 = {	#Nihawand	#AKA Nahavand
 	culture = persian
-	religion = ashari
+	religion = khurramism #based on Cambridge History of Iran, they had a series of fortresses in the mountains here
 	holding = castle_holding
+	935.1.1 = { religion = ashari } #khurramites exterminated by Imad al-Dawla, the Buyid founder 
 }
 4114 = {	#Abtaa
 	holding = none
@@ -349,6 +363,7 @@
 	culture = persian
 	religion = mazdayasna
 	holding = castle_holding
+	special_building = maharloo_lake_01
 	800.1.1 = { religion = ashari }
 }
 4176 = {	#Sarwistan-Shirazi-Runiz
@@ -413,7 +428,8 @@
 	culture = persian
 	religion = mazdayasna
 	holding = castle_holding
-	800.1.1 = { religion = ashari }
+	800.1.1 = { religion = mutazila }
+	890.1.1 = { religion = ashari }
 }
 4301 = {	#Jannaba
 	holding = church_holding	#placeholder
@@ -434,12 +450,13 @@
 }
 
 ###c_istakhr
-4118 = {	#Istakhr
+4118 = {	#Istakhr #Early Muslim town, Zoroastrian stronghold, abandoned in 10th century in favor of Shiraz
 	culture = kurdish
 	religion = ismaili
 	holding = castle_holding
+	special_building = tomb_of_cyrus_01
 	1160.1.1 = {
-		religion = ashari
+		religion = maturidi
 		culture = persian
 	}
 }
@@ -464,7 +481,7 @@
 	religion = mazdayasna
 	holding = castle_holding
 	1337.1.1 = {
-		religion = ashari
+		religion = maturidi
 	}
 }
 4197 = {	#Bushkanat	#AKA Bushehr
@@ -493,7 +510,7 @@
 	religion = mazdayasna
 	holding = castle_holding
 	1337.1.1 = {
-		religion = ashari
+		religion = maturidi
 	}
 }
 4194 = {	#Siraf
@@ -562,9 +579,10 @@
 	religion = mazdakism
 	holding = castle_holding
 	867.1.1 = {
-		religion = ashari
+		religion = mutazila
 		culture = bedouin
 	}
+	940.1.1 = { religion = ashari }
 }
 6009 = {	#Al-Madhar
 	holding = city_holding	#placeholder
@@ -612,8 +630,9 @@
 ###c_tustar
 4256 = {	#Tustar
 	culture = persian
-	religion = ashari
+	religion = mutazila
 	holding = castle_holding
+	890.1.1 = { religion = ashari }
 }
 4257 = {	#Gondishapur	#AKA Gundeshapur
 	holding = city_holding
@@ -633,9 +652,9 @@
 ###c_abbadan
 6017 = {	#Abbadan
 	culture = bedouin
-	religion = ashari
+	religion = mutazila
 	holding = castle_holding
-	867.1.1 = { religion = ashari }
+	890.1.1 = { religion = ashari }
 }
 6016 = {	#Bayan
 	holding = city_holding	#placeholder
@@ -686,15 +705,18 @@
 }
 
 ###c_saimara
-4786 = {	#As-saimara
+4261 = {	#Saburkhawasht #actually Khorramabad, Saburkhawasht or Shapurkhast was the name of a Sasanian city in the same place that was destroyed in the late 7th century. A prominent castle in the same area was Dez-e Sīāh, "the Black Fortress", where the governors of Lurestan ruled from the mid-12th century; since this is a castle holding, I went with that name. 
 	culture = kurdish
 	religion = ashari
 	holding = castle_holding
+	special_building = falak_ol_aflak_citadel_01
+}
+4786 = {	#As-saimara
+	culture = kurdish
+	religion = ashari
+	holding = city_holding
 }
 4260 = {	#Andamish
-	holding = city_holding	#placeholder
-}
-4261 = {	#Saburkhawasht
 	holding = none
 }
 

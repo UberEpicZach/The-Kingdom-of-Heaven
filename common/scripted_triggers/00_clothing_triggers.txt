@@ -554,6 +554,58 @@ portrait_fp2_iberian_christian_clothing_contents_trigger = {
 	has_clothing_gfx = iberian_christian_clothing_gfx
 }
 
+### FP3 - Sands of Time  ###
+#iranian
+portrait_fp3_iranian_clothing_trigger = {
+	has_fp3_dlc_trigger = yes
+	OR = {
+		style_changing_reformer_iranian = yes
+		scope:culture = {
+			portrait_fp3_iranian_clothing_contents_trigger = yes
+		}
+	}
+}
+
+portrait_fp3_iranian_clothing_spouse_trigger = {
+	has_fp3_dlc_trigger = yes
+	OR = {
+		style_changing_reformer_iranian = yes
+		culture = {
+			portrait_fp3_iranian_clothing_contents_trigger = yes
+		}
+	}
+}
+
+portrait_fp3_iranian_clothing_contents_trigger = {
+	has_clothing_gfx = iranian_clothing_gfx
+}
+
+#turkic
+portrait_fp3_turkic_clothing_trigger = {
+	has_fp3_dlc_trigger = yes
+	OR = {
+		style_changing_reformer_turkic = yes
+		scope:culture = {
+			portrait_fp3_turkic_clothing_contents_trigger = yes
+		}
+	}
+}
+
+portrait_fp3_turkic_clothing_spouse_trigger = {
+	has_fp3_dlc_trigger = yes
+	OR = {
+		style_changing_reformer_turkic = yes
+		culture = {
+			portrait_fp3_turkic_clothing_contents_trigger = yes
+		}
+	}
+}
+
+portrait_fp3_turkic_clothing_contents_trigger = {
+	has_clothing_gfx = turkic_clothing_gfx
+}
+
+
 ### FP1 ###
 
 portrait_fp1_norse_clothing_trigger = {
@@ -1000,6 +1052,19 @@ portrait_low_nobles_trigger = {
 					portrait_$CULTURE_INPUT$_clothing_spouse_trigger = yes
 				}
 			}
+			AND = { # Viziers of rulers
+				OR = {
+					is_ruler = no
+					highest_held_title_tier = tier_barony
+				}
+				exists = liege
+				is_diarch = yes
+				liege = {
+					has_diarchy_active_parameter = diarchy_is_vizierate
+					highest_held_title_tier = tier_county
+					portrait_$CULTURE_INPUT$_clothing_trigger = yes
+				}
+			}
 		}		
 	}
 	trigger_else = { 
@@ -1020,7 +1085,7 @@ portrait_high_nobles_trigger = {
 	trigger_if = {
 		limit = { exists = this } # To check if this is an actual character
 		OR = {
-			AND = {
+			AND = { # Rulers
 				OR = {
 					highest_held_title_tier >= tier_duchy # Most cultures do not have specific clothes for royalty and imperial tier, so we use the high nobility for anything from duke/duchess and up
 					AND = {
@@ -1038,7 +1103,7 @@ portrait_high_nobles_trigger = {
 				} 
 				portrait_$CULTURE_INPUT$_clothing_trigger = yes
 			}
-			AND = {
+			AND = { # Spouses of rulers
 				exists = primary_spouse
 				OR = {
 					is_ruler = no
@@ -1059,9 +1124,22 @@ portrait_high_nobles_trigger = {
 					portrait_$CULTURE_INPUT$_clothing_spouse_trigger = yes
 				}
 			}
+			AND = { # Viziers of rulers
+				exists = liege
+				is_diarch = yes
+				OR = {
+					is_ruler = no
+					highest_held_title_tier = tier_barony
+				}
+				liege = {
+					has_diarchy_active_parameter = diarchy_is_vizierate
+					highest_held_title_tier >= tier_duchy
+					portrait_$CULTURE_INPUT$_clothing_trigger = yes
+				}
+			}
 		}
 	}
-	trigger_else = { 
+	trigger_else = { # Fallback
 		scope:highest_held_title_tier >= tier_duchy # We use scope in case this is not an actual character (for the Hybrid Culture preview window)
 		portrait_$CULTURE_INPUT$_clothing_trigger = yes
 	}
@@ -1078,7 +1156,7 @@ portrait_high_nobles_headgear_trigger = {
 	exists = this
 	portrait_can_use_noble_headgear_trigger = yes
 	OR = {
-		AND = {
+		AND = { # Rulers
 			OR = {
 				highest_held_title_tier = tier_duchy
 				AND = {
@@ -1096,7 +1174,7 @@ portrait_high_nobles_headgear_trigger = {
 			} 
 			portrait_$CULTURE_INPUT$_clothing_trigger = yes
 		}
-		AND = {
+		AND = { # Spouses of rulers
 			exists = primary_spouse
 			OR = {
 				is_ruler = no
@@ -1112,6 +1190,19 @@ portrait_high_nobles_headgear_trigger = {
 					AND = { is_ruler = yes government_has_flag = government_is_theocracy }
 				}
 				portrait_$CULTURE_INPUT$_clothing_spouse_trigger = yes
+			}
+		}
+		AND = { # Viziers of rulers
+			exists = liege
+			is_diarch = yes
+			OR = {
+				is_ruler = no
+				highest_held_title_tier = tier_barony
+			}
+			liege = {
+				has_diarchy_active_parameter = diarchy_is_vizierate
+				highest_held_title_tier >= tier_duchy
+				portrait_$CULTURE_INPUT$_clothing_trigger = yes
 			}
 		}
 	}	
@@ -1247,27 +1338,27 @@ portrait_imperial_trigger = {
 				}
 				portrait_$CULTURE_INPUT$_clothing_trigger = yes
 			}
-#			AND = { # Right now this is commented out so that imperial spouses "only" get royal tier headgear. Might wanna change in the future. 
-#				exists = primary_spouse
-#				OR = {
-#					is_ruler = no
-#					highest_held_title_tier = tier_barony
-#				}
-#				primary_spouse = {
-#					highest_held_title_tier = tier_empire
-#					NOR = {
-#						AND = {
-#							government_has_flag = government_is_republic
-#							primary_title.tier > tier_barony
-#						}
-#						AND = { 
-#							is_ruler = yes 
-#							government_has_flag = government_is_theocracy 
-#						}
-#					}
-#					portrait_$CULTURE_INPUT$_clothing_spouse_trigger = yes
-#				}
-#			}
+			AND = {  
+				exists = primary_spouse
+				OR = {
+					is_ruler = no
+					highest_held_title_tier = tier_barony
+				}
+				primary_spouse = {
+					highest_held_title_tier = tier_empire
+					NOR = {
+						AND = {
+							government_has_flag = government_is_republic
+							primary_title.tier > tier_barony
+						}
+						AND = { 
+							is_ruler = yes 
+							government_has_flag = government_is_theocracy 
+						}
+					}
+					portrait_$CULTURE_INPUT$_clothing_spouse_trigger = yes
+				}
+			}
 		}
 	}
 	trigger_else = {
