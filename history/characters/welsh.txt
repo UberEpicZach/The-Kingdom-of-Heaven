@@ -304,7 +304,7 @@
 		add_spouse = 214808 #Crisiant ferch Gronw
 	}
 	1169.11.1 = {
-		death = "1170.11.28" 
+		death = "1169.11.1"
 	}
 }
 
@@ -2030,7 +2030,7 @@
 	}
 	840.1.1 = {
 		add_spouse = 159802
-		set_relation_rival = { reason = rival_historical target = character:159801 } 	#Not a great fan of his brother-in-law.
+		set_relation_rival = { target = character:159801 reason = rival_historical }	#Not a great fan of his brother-in-law.
 	}
 	#867.1.1 = {
 	#	effect = {
@@ -2064,7 +2064,7 @@
 		birth = "1053.1.2"
 	}
 	1066.1.1 = {
-		set_relation_rival = { reason = rival_historical target = character:6358 } 
+		set_relation_rival = { target = character:6358 reason = rival_historical }
 	}
 	1068.1.1 = {
 		death = "1068.1.1" #Battle of Mechain

@@ -2398,9 +2398,9 @@ d_knights_templar = {
 	1179.1.1 = {
 		holder = 144613
 	}
-	# 1184.1.1 = {
-	# 	holder = 231001
-	# }
+	1184.1.1 = {
+		holder = 231001
+	}
 	1189.10.1 = {
 		holder = 34349
 	}
@@ -2544,9 +2544,9 @@ d_knights_hospitaler = {
 	1172.1.1 = {
 		holder = 147006
 	}
-	# 1177.1.1 = {
-	# 	holder = 231000
-	# }
+	1177.1.1 = {
+		holder = 231000
+	}
 	1187.5.1 = {
 		holder = 147007
 	}
@@ -2631,6 +2631,7 @@ d_hashshashin = {
 		holder = 227012
 		government = assassin_government
 		# set_capital_county = title:c_alamut
+		liege = k_nizari_state
 	}
 	1192.1.1 = {
 		holder = 144228
@@ -2651,8 +2652,11 @@ d_hashshashin = {
 
 k_nizari_state = {
 	1162.1.1 = {
-		holder = 144228
+		holder = GKOH_1
 		government = assassin_government
+	}
+	1166.1.1 = {
+		holder = 144228
 	}
 }
 
@@ -5479,6 +5483,40 @@ d_imami = { # Twelver Imams
 	}
 }
 
+d_samaritan = { # Samaritan High Priesthood, worth noting a lot of these dates are guesses, the pre-17th century High Priests are not very well-documented
+	620.1.1 = {
+		holder = samaritan_priesthood_eleazar_viii
+	}
+	660.1.1 = {
+		holder = samaritan_priesthood_netaniel_vi
+	}
+	725.1.1 = {
+		holder = samaritan_priesthood_eleazar_ix
+	}
+	782.1.1 = {
+		holder = samaritan_priesthood_akabon_vii
+	}
+	843.1.1 = {
+		liege = "e_arabia"
+		holder = samaritan_priesthood_eleazar_x # Eleazar X
+	}
+	901.1.1 = {
+		holder = samaritan_priesthood_akabon_viii
+	}
+	943.1.1 = {
+		holder = samaritan_priesthood_eleazar_xi
+	}
+	973.1.1 = {
+		holder = samaritan_priesthood_akabon_ix
+	}
+	1012.1.1 = {
+		holder = samaritan_priesthood_eleazar_xii
+	}
+	1066.1.1 = {
+		liege = "k_egypt"
+		holder = samaritan_priesthood_simeon_i # Simeon I
+	}
+}
 
 k_king_of_the_germans = {
 	918.12.23 = {

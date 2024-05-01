@@ -811,9 +811,15 @@ children_bonding = {
 				num_of_relation_friend < 2
 				location = scope:province
 				can_set_relation_friend_trigger = { CHARACTER = scope:second }
-				number_of_traits_in_common = {
-					target = scope:second
-					value >= 1
+			}
+			weight = {
+				base = 1
+				modifier = {
+					factor = 10
+					number_of_traits_in_common = {
+						target = scope:second
+						value >= 1
+					}
 				}
 			}
 			save_scope_as = first
@@ -1661,11 +1667,11 @@ guest_tells_fantastic_joke = {
 			OR = {
 				has_court_position = court_jester_court_position
 				AND = {
-					aptitude:court_jester_court_position >= 3
+					aptitude:court_jester_court_position >= 2
 					has_personality_extroverted_trigger = yes
 					has_trait_levelheaded_trigger = no
 				}
-				aptitude:court_jester_court_position >= 5
+				aptitude:court_jester_court_position >= 4
 			}
 		}
 	}

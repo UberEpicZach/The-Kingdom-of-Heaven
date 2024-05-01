@@ -223,9 +223,8 @@ great_holy_war.0001 = {
 		}
 
 		#Attackers Pledge to the Crusade. (AI only)
-		every_ruler = {
+		every_faith_ruler = {
 			limit = {
-				faith = scope:the_faith
 				is_ai = yes
 				is_landed = yes
 				highest_held_title_tier >= tier_county

@@ -1,0 +1,722 @@
+#k_romagna
+##d_romagna ###################################
+###c_ravenna
+2546 = {	#RAVENNA
+	culture = cisalpine
+	religion = catholic
+	holding = church_holding
+	900.1.1 = {
+		culture = italian
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			watermills_04
+			common_tradeport_04
+			hunting_grounds_04
+		}
+	}
+}
+2549 = {	#IMOLA
+	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures
+			guild_halls
+		}
+	}
+}
+2548 = {	#FORLI
+	holding = city_holding
+	culture = cisalpine
+	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			windmills_03
+		}
+	}
+}
+2547 = {	#RIMINI
+	holding = city_holding
+	culture = cisalpine
+	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			watermills_04
+			windmills_03
+		}
+	}
+}
+
+###c_bologna
+2542 = {	#BOLOGNA
+	culture = cisalpine
+	religion = catholic
+	holding = castle_holding
+	1066.1.1 = {
+		buildings = {
+			cereal_fields_01
+			hunting_grounds_01
+			military_camps_01
+		}
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		special_building_slot = generic_university
+		special_building = generic_university
+	}
+}
+2529 = {	#CONA
+	holding = none
+	culture = cisalpine
+	religion = catholic
+}
+2550 = {	#MONTE SOLE
+	holding = none
+	culture = cisalpine
+	religion = catholic
+}
+
+###c_ferrara
+2527 = {	#FERRARA
+	culture = cisalpine
+	religion = catholic
+	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_stables_04
+			pastures_03
+			cereal_fields_03
+		}
+	}
+}
+2526 = {	#POMPOSA
+	holding = monastery_holding
+	culture = cisalpine
+	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_03
+		}
+	}
+}
+2528 = {	#COMACCHIO
+	holding = city_holding
+	culture = cisalpine
+	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_stables_04
+			logging_camps_03
+			pastures_03
+		}
+	}
+}
+
+###c_casentino
+2553 = {	#CASENTINO
+	culture = cisalpine
+	religion = catholic
+	holding = castle_holding
+	900.1.1 = {
+		culture = italian
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_stables_04
+			watermills_04
+			watchtowers_06
+		}
+	}
+}
+2552 = {	#MONTEFELTRO
+	holding = none
+	religion = catholic
+	1140.1.1 = {
+		holding = castle_holding
+		culture = italian
+		religion = catholic
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			hunting_grounds_04
+			common_tradeport_03
+		}
+	}
+}
+2551 = {	#CAMALDOLI
+	holding = none
+	1010 = {
+		holding = church_holding
+	}
+
+	1184.1.1 = {
+		buildings = {
+			hunting_grounds_01
+			watermills_04
+		}
+	}
+}
+
+##d_ancona ###################################
+###c_ancona
+2594 = {	#ANCONA
+	culture = italian
+	religion = catholic
+	holding = castle_holding
+	1066.1.1 = {
+		buildings = {
+			common_tradeport_05
+			barracks_02
+			watchtowers_05
+		}
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			cereal_fields_03
+			guild_halls_04
+			pastures_03
+		}
+	}
+}
+2583 = {	#CAGLI
+	holding = city_holding
+	culture = cisalpine
+	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			common_tradeport_03
+			guild_halls_04
+			barracks_04
+			guild_halls_05
+		}
+	}
+}
+2582 = {	#GUBBIO
+	holding = castle_holding
+	culture = cisalpine
+	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_04
+			watchtowers_06
+			windmills_03
+		}
+	}
+}
+2587 = {	#CAMERINO
+	holding = none
+	culture = cisalpine
+	religion = catholic
+}
+
+###c_urbino
+2555 = {	#URBINO
+	culture = italian
+	religion = catholic
+	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			cereal_fields_03
+		}
+	}
+}
+2584 = {	#CIVITAS CASTELLI = Citta di Castello
+	holding = city_holding
+	culture = cisalpine
+	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_04
+			farm_estates_04
+			common_tradeport_05
+		}
+	}
+}
+2556 = {	#PESARO
+	holding = castle_holding
+	culture = cisalpine
+	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_05
+			watchtowers_06
+			hunting_grounds_04
+		}
+	}
+}
+
+###c_fermo
+2598 = {	#FERMO
+	culture = italian
+	religion = catholic
+	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			cereal_fields_03
+		}
+	}
+}
+2597 = {	#ASCOLI PICENO
+	holding = church_holding
+	culture = cisalpine
+	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			barracks_04
+			farm_estates_04
+			building_stables_04
+		}
+	}
+}
+2599 = {	#MACERATA
+	holding = none
+}
+
+##d_spoleto ###################################
+###c_spoleto
+2585 = {	#SPOLETO
+	culture = lombard
+	religion = catholic
+	holding = castle_holding
+	1022.1.1 = {
+		culture = italian
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			cereal_fields_03
+			farm_estates_04
+			common_tradeport_05
+		}
+	}
+}
+2581 = {	#ASSISSI
+	culture = lombard
+	religion = catholic
+	holding = city_holding
+	1022.1.1 = {
+		culture = italian
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			barracks_04
+			cereal_fields_03
+		}
+	}
+}
+2586 = {	#TERNI
+	culture = lombard
+	religion = catholic
+	holding = city_holding
+	1022.1.1 = {
+		culture = italian
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			windmills_03
+			barracks_04
+			common_tradeport_04
+			common_tradeport_03
+		}
+	}
+}
+
+###c_orvieto
+2568 = {	#ORVIETO
+	culture = lombard
+	religion = catholic
+	holding = castle_holding
+	1022.1.1 = {
+		culture = italian
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			common_tradeport_04
+			common_tradeport_03
+			cereal_fields_03
+		}
+	}
+}
+2566 = {	#PERUGIA
+	holding = church_holding
+	culture = cisalpine
+	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			common_tradeport_04
+			guild_halls_05
+			watermills_04
+		}
+	}
+}
+
+###c_teramo
+2596 = {	#TERAMO
+	culture = lombard
+	religion = catholic
+	holding = castle_holding
+	1022.1.1 = {
+		culture = italian
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			common_tradeport_04
+			guild_halls_03
+		}
+	}
+}
+2588 = {	#RIETI
+	holding = city_holding
+	culture = cisalpine
+	religion = catholic
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_05
+			common_tradeport_04
+			windmills_03
+		}
+	}
+}
+
+###c_lanciano
+2604 = {	#LANCIANO
+	culture = lombard
+	religion = catholic
+	holding = castle_holding
+	1022.1.1 = {
+		culture = sicilian
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			common_tradeport_04
+			pastures_03
+			farm_estates_04
+		}
+	}
+}
+2603 = {	#CLUIELI
+	holding = none
+	culture = cisalpine
+	religion = catholic
+}
+
+8759 = {	#AGNONE
+	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			logging_camps_03
+			guild_halls_05
+		}
+	}
+}
+
+###c_abruzzi
+2600 = {	#AVEZZANO
+	culture = lombard
+	religion = catholic
+	holding = castle_holding
+	1022.1.1 = {
+		culture = sicilian
+	}
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			pastures_03
+			logging_camps_03
+		}
+	}
+}
+2595 = {	#ATRI
+	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			watermills_04
+			pastures_03
+			hunting_grounds_04
+		}
+	}
+}
+
+##d_latium ###################################
+###c_roma
+2575 = {	#ROMA
+	culture = italian
+	religion = catholic
+	holding = castle_holding
+	#
+	buildings = {
+		castle_02
+		farm_estates_01
+	}
+	special_building = the_colosseum_01
+	duchy_capital_building = aurelian_walls_01
+	1066.1.1 = {
+		buildings = {
+			castle_02
+			farm_estates_02
+			curtain_walls_01
+			cereal_fields_02
+		}
+	}
+
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			barracks_04
+			windmills_03
+			guild_halls_03
+		}
+	}
+}
+2576 = {	#OSTIA
+	holding = city_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+			farm_estates_04
+		}
+	}
+}
+2577 = {	#VATICAN
+	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			watchtowers
+			guild_halls
+			pastures
+		}
+	}
+}
+2578 = {	#PALO
+	holding = none
+}
+2574 = {	#PATERNO
+	holding = none
+}
+2579 = {	#FARFA
+	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			cereal_fields_01
+			hunting_grounds_04
+		}
+	}
+}
+
+###c_viterbo
+2572 = {	#VITERBO
+	culture = italian
+	religion = catholic
+	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_05
+			windmills_03
+			common_tradeport_03
+			watermills_04
+		}
+	}
+}
+2573 = {	#SUTRI
+	holding = church_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			curtain_walls_01
+			barracks_04
+			building_windmills_01
+		}
+	}
+}
+2571 = {	#CIVITAVECCHIA
+	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			building_stables_04
+			pastures_03
+			hunting_grounds_01
+			guild_halls_03
+		}
+	}
+}
+
+###c_tivoli
+2589 = {	#TIVOLI
+	culture = italian
+	religion = catholic
+	holding = castle_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			guild_halls_04
+			watchtowers_06
+			guild_halls_05
+		}
+	}
+}
+2590 = {	#VELLETRI
+	holding = church_holding
+
+	1184.1.1 = {
+		buildings = {
+			guild_halls_03
+		}
+	}
+}
+2591 = {	#SEGNI
+	holding = city_holding
+
+	1184.1.1 = {
+		effect = {
+			add_province_modifier = extra_building_slot
+		}
+		buildings = {
+			barracks_04
+			hunting_grounds_01
+			guild_halls_05
+			logging_camps_01
+		}
+	}
+}
+2592 = {	#TERRACINA
+	holding = castle_holding
+
+	1184.1.1 = {
+		buildings = {
+			barracks_04
+		}
+	}
+}

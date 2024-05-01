@@ -572,9 +572,9 @@
 	}
 }
 
-41552 = {
+41552 = { # AKA: Mariam, or Maria of Alania
 	name = "Martha"
-	# AKA: Mariam
+	dna = 41552_maria
 	female = yes
 	dynasty_house = house_bagrationi # Georgian Bagrationi cadets
 	martial = 7
@@ -583,16 +583,26 @@
 	stewardship = 8
 	religion = "orthodox"
 	culture = "georgian"
-	trait = honest
+	trait = ambitious #Involved in the second imperial coup 
 	trait = diligent
-	trait = education_intrigue_2
+	trait = generous #Noted for her charity
+	trait = curious
+	disallow_random_traits = yes
 	father = 9952
 	mother = 9953
-	1042.1.1 = {
-		birth = "1042.1.1"
+	1053.1.1 = {
+		birth = "1053.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
-	1090.1.1 = {
-		death = "1090.1.1"
+	1066.1.2 = {
+		effect = {
+			create_betrothal = character:1736 #In real life they were married at this time, but we don't marry underage characters in this game so bethrothal it is
+	}
+	}
+	1118.1.1 = {
+		death = "1118.1.1"
 	}
 }
 
@@ -2992,7 +3002,8 @@
 	culture = "georgian"
 	trait = humble
 	trait = just
-	trait = education_martial_2
+	trait = rowdy
+	disallow_random_traits = yes
 	father = 41541
 	mother = 41528
 	854.1.1 = {
@@ -3198,6 +3209,23 @@
 		death = "876.1.1"
 	}
 }
+
+extra_georgians_1 = { #unnamed in the sources, but known to have married Alp Arslan
+	name = "Chiora"
+	dynasty_house = house_bagrationi # Georgian Bagrationi cadets
+	religion = "orthodox"
+	culture = "georgian"
+	female = yes 
+	mother = 41553
+	father = extra_armenians_1
+	1045.1.1 = {
+		birth = yes
+	}
+	1090.1.1 = {
+		death = yes
+	}
+}
+
 
 KOH0037 = {
 	name = "Martha" #name unknown, wife of Andronikos

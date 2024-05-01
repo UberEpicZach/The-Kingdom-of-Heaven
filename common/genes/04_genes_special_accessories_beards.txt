@@ -66,10 +66,15 @@ special_genes = {
 					1 = male_beard_fp2_iberian_muslim_01 # Thick Groomed Beard
 					1 = male_beard_fp2_iberian_muslim_02 # Scholar's beard
 					1 = male_beard_fp2_iberian_muslim_03 # Forked beard
+					1 = m_beard_fp3_iranian_01
+					1 = m_beard_fp3_iranian_02
+					1 = m_beard_fp3_iranian_03
 					1 = m_beard_ep2_western_01
 					1 = m_beard_ep2_western_02
 					1 = m_beard_ep2_western_03
 					1 = m_beard_sp2_western_01 # The Ultimate Moustache 
+					1 = m_beard_sp3_western_01
+
 				}
 				female = {
 					1 = empty
@@ -114,7 +119,7 @@ special_genes = {
 				index = 2
 
 				male = {
-					5 = empty
+					# 30 = empty
 					20 = male_beard_western_01 # Standard full beard
 					10 = male_beard_western_02 # Standard goatee
 					10 = male_beard_western_03 # Short beard
@@ -136,7 +141,7 @@ special_genes = {
 				index = 3
 
 				male = {
-					5 = empty
+					# 30 = empty
 					20 = male_beard_western_01 # Standard full beard
 					10 = male_beard_western_02 # Standard goatee
 					10 = male_beard_western_03 # Short beard
@@ -264,7 +269,7 @@ special_genes = {
 				index = 10
 				set_tags = "very_curly_hair"
 				male = {
-					10 = empty
+					# 30 = empty
 					20 = male_beard_sub_saharan_01 # Full african beard medium
 					20 = male_beard_sub_saharan_02 # Stylish african goatee
 					10 = male_beard_sub_saharan_03 # Full african beard long		
@@ -400,10 +405,9 @@ special_genes = {
 				index = 19
 
 				male = {
-					1 = empty
-					10 = m_beard_ep2_western_01 # Tidy short beard with slightly pointy mustache
-					10 = m_beard_ep2_western_02 # Long flowy forked beard
-					10 = m_beard_ep2_western_03 # Mustache from m_beard_ep2_western_01
+					5 = m_beard_ep2_western_01 # Tidy short beard with slightly pointy mustache
+					5 = m_beard_ep2_western_02 # Long flowy forked beard
+					5 = m_beard_ep2_western_03 # Mustache from m_beard_ep2_western_01
 				}
 
 				female = {
@@ -516,6 +520,69 @@ special_genes = {
 				}
 			}
 			
+			#FP3
+			#iranian
+			fp3_iranian_beards_straight = {
+				index = 25
+
+				male = {
+					5 = m_beard_fp3_iranian_01  # Medium beard with bun
+					2 = m_beard_fp3_iranian_03 	# Babylonian beard
+					1 = male_beard_indian_01 #Handlebar Moustache
+				}
+				female = {
+					1 = empty
+				}
+			}
+
+			fp3_iranian_beards_curly = {
+				index = 26
+
+				male = {
+					5 = m_beard_fp3_iranian_02 # Long pointy beard
+					2 = m_beard_fp3_iranian_03 	# Babylonian beard
+					1 = male_beard_indian_01 #Handlebar Moustache
+				}
+				female = {
+					1 = empty
+				}
+			}
+
+			#turkic
+			fp3_turkic_beards_straight = {
+				index = 27
+
+				male = {
+					5 = m_beard_fp3_iranian_02 # Long pointy beard
+				}
+				female = {
+					1 = empty
+				}
+			}
+
+			fp3_turkic_beards_curly = {
+				index = 28
+
+				male = {
+					5 = m_beard_fp3_iranian_02 # Long pointy beard
+				}
+				female = {
+					1 = empty
+				}
+			}
+
+			scripted_character_beards_04 = {
+				index = 29
+				male = {
+					1 = m_beard_fp3_iranian_01 # Medium beard with bun
+					1 = m_beard_fp3_iranian_02 # Long pointy beard
+					1 = m_beard_fp3_iranian_03 # Babylonian beard
+				}
+				female = {
+					1 = empty
+				}
+			}
+			
 			
 			############################################################################################################################################
 			######################################################### EPE ADDED HEADGEAR ###############################################################
@@ -525,7 +592,7 @@ special_genes = {
 			####Byzantine 
 			##########################################################################					
 			byzantine_beards_straight = {
-				index = 25
+				index = 29
 
 				male = {
 					# 30 = empty
@@ -545,7 +612,7 @@ special_genes = {
 			}	
 
 			byzantine_beards_curly = {
-				index = 26
+				index = 30
 
 				male = {
 					# 30 = empty
@@ -567,7 +634,7 @@ special_genes = {
 			##########################################################################	
 
 			east_slav_beards_straight = {
-				index = 27
+				index = 31
 
 				male = {
 					# 10 = empty
@@ -596,7 +663,7 @@ special_genes = {
 			}
 
 			east_slav_beards_curly = {
-				index = 28
+				index = 32
 
 				male = {
 					# 10 = empty
@@ -622,7 +689,7 @@ special_genes = {
 			##########################################################################	
 			
 			han_thin_beards_straight = {
-				index = 30
+				index = 33
 
 				male = {
 					1 = empty
@@ -641,7 +708,7 @@ special_genes = {
 			}
 
 			han_beards_curly = {
-				index = 31
+				index = 34
 
 				male = {
 					# 5 = empty
@@ -660,7 +727,7 @@ special_genes = {
 ##########################################################################	
 
 			gaelic_beards_straight = {
-				index = 32
+				index = 35
 
 				male = {
 				# 30 = empty
@@ -690,7 +757,7 @@ special_genes = {
 			}
 
 			gaelic_beards_curly = {
-				index = 33
+				index = 36
 
 				male = {
 					# 30 = empty
@@ -720,7 +787,7 @@ special_genes = {
 ##########################################################################	
 
 			turkic_thin_beards_straight = {
-				index = 34
+				index = 37
 
 				male = {
 					1 = empty
@@ -741,7 +808,7 @@ special_genes = {
 			}
 
 			turkic_beards_straight = {
-				index = 35
+				index = 38
 
 				male = {
 					1 = empty
@@ -766,7 +833,7 @@ special_genes = {
 				}
 			}
 			turkic_beards_curly = {
-				index = 36
+				index = 39
 
 				male = {
 					# 5 = empty
@@ -788,7 +855,7 @@ special_genes = {
 ##########################################################################	
 
 			seljuk_thin_beards_straight = {
-				index = 37
+				index = 40
 
 				male = {
 					1 = empty
@@ -809,7 +876,7 @@ special_genes = {
 			}
 
 			seljuk_beards_straight = {
-				index = 38
+				index = 41
 
 				male = {
 					1 = empty
@@ -827,7 +894,7 @@ special_genes = {
 				}
 			}
 			seljuk_beards_curly = {
-				index = 39
+				index = 42
 
 				male = {
 					# 5 = empty
@@ -851,7 +918,7 @@ special_genes = {
 #######################
 
 			iranian_beards_straight = {
-				index = 40
+				index = 43
 
 				male = {
 				5 = male_beard_western_08
@@ -881,7 +948,7 @@ special_genes = {
 			}	
 
 			iranian_beards_curly = {
-				index = 41
+				index = 44
 
 				male = {
 				# 0 = empty
@@ -900,71 +967,6 @@ special_genes = {
 				5 = male_beard_western_8d #	
 				5 = male_beard_western_8e #	
 				5 = male_beard_western_8f #		
-				}
-				female = {
-					1 = empty
-				}
-			}
-			
-			
-			
-			#FP3
-			#iranian
-			fp3_iranian_beards_straight = {
-				index = 42
-
-				male = {
-					5 = m_beard_fp3_iranian_01  # Medium beard with bun
-					2 = m_beard_fp3_iranian_03 	# Babylonian beard
-					1 = male_beard_indian_01 #Handlebar Moustache
-				}
-				female = {
-					1 = empty
-				}
-			}
-
-			fp3_iranian_beards_curly = {
-				index = 43
-
-				male = {
-					5 = m_beard_fp3_iranian_02 # Long pointy beard
-					2 = m_beard_fp3_iranian_03 	# Babylonian beard
-					1 = male_beard_indian_01 #Handlebar Moustache
-				}
-				female = {
-					1 = empty
-				}
-			}
-
-			#turkic
-			fp3_turkic_beards_straight = {
-				index = 44
-
-				male = {
-					5 = m_beard_fp3_iranian_02 # Long pointy beard
-				}
-				female = {
-					1 = empty
-				}
-			}
-
-			fp3_turkic_beards_curly = {
-				index = 45
-
-				male = {
-					5 = m_beard_fp3_iranian_02 # Long pointy beard
-				}
-				female = {
-					1 = empty
-				}
-			}
-
-			scripted_character_beards_04 = {
-				index = 46
-				male = {
-					1 = m_beard_fp3_iranian_01 # Medium beard with bun
-					1 = m_beard_fp3_iranian_02 # Long pointy beard
-					1 = m_beard_fp3_iranian_03 # Babylonian beard
 				}
 				female = {
 					1 = empty

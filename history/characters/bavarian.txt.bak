@@ -80,6 +80,7 @@
 
 167813 = {
 	name = "Liutswind"
+	dna = 167813_liutswind
 	female = yes
 	dynasty = 9556
 	religion = "catholic"
@@ -246,6 +247,7 @@
 
 7945 = {
 	name = "Arnulf"
+	dna = 7945_arnulf
 	dynasty = 25061
 	martial = 4
 	diplomacy = 8
@@ -3264,6 +3266,7 @@
 
 7987 = {
 	name = "Hemma"
+	dna = 7987_hemma
 	female = yes
 	dynasty = 650
 	martial = 5
@@ -3280,7 +3283,7 @@
 		birth = "808.1.1"
 	}
 	874.6.1 = {
-		trait = incapable #Stroke, became speechless and paralyzed
+		add_trait = incapable #Stroke, became speechless and paralyzed
 	}
 	876.1.31 = {
 		death = "876.1.31"
@@ -3652,21 +3655,6 @@
 		death = "947.2.10"
 	}
 }
-
-# 168141 = {
-# 	name = "Dhuoda"
-# 	female = yes
-# 	dynasty = 650
-# 	religion = "catholic"
-# 	culture = bavarian
-# 	father = 7985
-# 	802.1.1 = {
-# 		birth = "802.1.1"
-# 	}
-# 	843.1.1 = {
-# 		death = "843.1.1"
-# 	}
-# }
 
 163180 = {
 	name = "Judith"
@@ -9069,7 +9057,19 @@
 	#	employer = 20257
 	#}
 	1081.1.1 = {
-		trait = lifestyle_blademaster	#Add adult trait
+		add_trait = lifestyle_blademaster	#Add adult trait
+		effect = {
+			add_trait = lifestyle_blademaster
+			add_trait_xp = {
+                trait = lifestyle_blademaster
+                value = {
+                    integer_range = {
+                        min = small_lifestyle_random_xp_low
+                        max = small_lifestyle_random_xp_high
+                    }
+                }
+            }
+		}
 	}
 	1096.1.1 = {
 		death = "1096.1.1"
@@ -9094,7 +9094,7 @@
 		employer = 70622
 	}
 	1082.1.1 = {
-		trait = lifestyle_hunter	#Add adult trait
+		add_trait = lifestyle_hunter	#Add adult trait
 	}
 	1115.11.20 = {
 		death = "1115.11.20"

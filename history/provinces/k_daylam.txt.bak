@@ -3,7 +3,7 @@
 ###c_gilan
 4001 = {	#Daylam
 	culture = daylamite
-	religion = mazdayasna
+	religion = afridunism
 	holding = castle_holding
 	900.1.1 = { religion = zayidi }
 	1187.1.1 = { religion = ismaili }
@@ -20,6 +20,7 @@
 	culture = daylamite
 	religion = zayidi
 	holding = castle_holding	
+	special_building_slot = soltaniyeh_01
 	1130.1.1 = { religion = ismaili }
 }
 4326 = {	#Afshar
@@ -35,7 +36,7 @@
 	religion = zayidi
 	holding = castle_holding
 	1060.1.1 = { religion = nizari }
-	1130.1.1 = { religion = ashari }
+	1130.1.1 = { religion = maturidi }
 }
 4006 = {	#Alamut
 	holding = castle_holding
@@ -65,7 +66,7 @@
 ###c_mazandaran
 4312 = {	#Amul
 	culture = daylamite
-	religion = mazdayasna
+	religion = afridunism
 	holding = castle_holding
 	1060.1.1 = { religion = zayidi }
 }
@@ -81,7 +82,7 @@
 ###c_ruyan
 4005 = {	#Ruyan
 	culture = daylamite
-	religion = mazdayasna
+	religion = afridunism
 	holding = castle_holding
 	1060.1.1 = { religion = zayidi }
 }
@@ -93,16 +94,17 @@
 }
 
 ###c_baduspan
-4317 = {	#Uram
+4316 = {	#Firrim
 	culture = daylamite
-	religion = mazdayasna
+	religion = afridunism
+	special_building = mount_damavand_01
 	holding = castle_holding
 	1060.1.1 = { religion = zayidi }
 }
 4315 = {	#Larijan
 	holding = city_holding	#placeholder
 }
-4316 = {	#Firrim
+4317 = {	#Uram
 	holding = none
 }
 
@@ -110,7 +112,7 @@
 ###c_gurgan
 4029 = {	#Gurgan
 	culture = daylamite
-	religion = mazdayasna
+	religion = khurramism
 	holding = castle_holding
 	1060.1.1 = { religion = zayidi }
 }
@@ -120,10 +122,13 @@
 	#Set as church_holding to have all 3 types of holdings
 }
 4030 = {	#Bakrabad
-	holding = none
+	holding = city_holding
+	special_building = great_wall_of_gorgan_01
+	#Allows Great Wall of Gurgan building to span it's full length, and was a silk manufacturing centre of nearby Old Gurgan
 }
 4031 = {	#Abaskun
 	holding = city_holding
+	special_building = great_wall_of_gorgan_01
 	#Prosperous coastal city in the middle ages
 }
 
@@ -134,7 +139,7 @@
 	holding = castle_holding
 	1060.1.1 = {
 		culture = turkish
-		religion = ashari
+		religion = maturidi
 	}
 }
 4033 = {	#Dihistan
@@ -164,9 +169,10 @@
 	1066.1.1 = {
 		buildings = {
 			watchtowers_01
-			hunting_grounds_01
+			#hunting_grounds_01
 			military_camps_01
 		}
+		religion = maturidi
 	}
 }
 4536 = {	#Marand
@@ -180,6 +186,7 @@
 }
 4540 = {	#Ahar
 	holding = castle_holding
+	special_building = rainbow_mountains_01
 	#Ancient city
 }
 4541 = {	#Dizmar
@@ -206,6 +213,9 @@
 	870.1.1 = {
 		religion = ashari
 	}
+	1060.1.1 = {
+		religion = maturidi
+	}
 }
 4002 = {	#Khalkhal
 	holding = city_holding
@@ -227,6 +237,7 @@
 	}
 	1050.1.1 = {
 		culture = turkish
+		religion = maturidi
 	}
 }
 4003 = {	#Kursara
@@ -280,25 +291,28 @@
 
 ##d_shirvan ###################################
 ###c_shirvan
-668 = {		#Shirvan
+5771 = {		#Baku
 	culture = persian
 	religion = mazdayasna
 	holding = castle_holding
 	900.1.1 = {
 		religion = ashari
 	}
-}
-5771 = {	#Baku
-	holding = city_holding
-	1066.1.1 = {
-		buildings = {
-			guild_halls_01
-			common_tradeport_01
-			pastures_01
-		}
+	1060.1.1 = {
+		religion = maturidi
 	}
 }
 5772 = {	#Maras
+	holding = city_holding
+	1066.1.1 = {
+		buildings = {
+			#guild_halls_01
+			common_tradeport_01
+			#pastures_01
+		}
+	}
+}
+668 = {	#Maskut
 	holding = none
 }
 5773 = {	#Salyan
@@ -312,6 +326,9 @@
 	holding = castle_holding
 	900.1.1 = {
 		religion = ashari
+	}
+	1060.1.1 = {
+		religion = maturidi
 	}
 }
 5774 = {	#Kabala
@@ -335,9 +352,10 @@
 	1066.1.1 = {
 		buildings = {
 			pastures_01
-			hunting_grounds_01
+			#hunting_grounds_01
 			military_camps_01
 		}
+		religion = maturidi
 	}
 }
 5778 = {	#Mingachevir
@@ -354,6 +372,9 @@
 	holding = castle_holding
 	900.1.1 = {
 		religion = ashari
+	}
+	1060.1.1 = {
+		religion = maturidi
 	}
 }
 5788 = {	#Gabarawan

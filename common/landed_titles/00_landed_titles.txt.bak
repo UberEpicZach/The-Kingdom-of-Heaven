@@ -334,7 +334,7 @@ e_golden_horde = {
 
 	definite_form = yes
 
-	capital = c_karakorum
+	capital = c_itil
 }
 
 e_ilkhanate = {
@@ -394,7 +394,7 @@ e_togskol_khanate = {
 
 e_baruun_khanate = {
 	color = { 100 180 50 }
-	
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
@@ -45491,180 +45491,150 @@ e_persia = {
 				}
 			}
 			c_bakriya = {
-				color = { 133 170 52 }
-				
+				color = { 70 125 120 }
 				
 				b_hani = {
 					province = 4861
 					
-					color = { 133 170 52 }
-					
+					color = { 70 125 120 }
 				}
 				b_hisn_di-l-qarnain = {
 					province = 4862
 					
-					color = { 133 170 52 }
-					
+					color = { 70 125 120  }
 				}
 				b_qulb = {
 					province = 4864
 					
-					color = { 133 170 52 }
-					
+					color = { 70 125 120  }
 				}
 				b_erkne = {
 					province = 4865
 					
-					color = { 133 170 52 }
-					
+					color = { 70 125 120  }
 				}
 				b_shimshat = {
 					province = 4863
 					
-					color = { 133 170 52 }
-					
+					color = { 70 125 120  }
 				}
 			}
 		}
 		
 		d_euphrates = {
-			color = { 120 180 60 }
-			
+			color = { 30 180 120 }
 			
 			capital = c_rahba
 			
 			c_rahba = {
-				color = { 120 180 60 }
-				
+				color = { 30 180 120 }
 				
 				b_al-rahba = {
 					province = 4889
 					
-					color = { 120 180 60 }
-					
+					color = { 30 180 120 }
 				}
 				b_ad-daliya = {
 					province = 4888
 					
-					color = { 120 180 60 }
-					
+					color = { 30 180 120 }
 				}
 			}
 			c_hadithat-ana = {
-				color = { 125 175 65 }
-				
+				color = { 60 200 120 }
 				
 				b_hadithat-ana = {
 					province = 4885
 					
-					color = { 125 175 65 }
-					
+					color = { 60 200 120 }
 				}
 				b_sukayr_al-abbas = {
 					province = 4884
 					
-					color = { 125 175 65 }
-					
+					color = { 60 200 120 }
 				}
 			}
 			c_al-haditha = {
-				color = { 115 185 70 }
-				
+				color = { 70 160 80 }
 				
 				b_al-haditha-furat = {
 					province = 4886
 					
-					color = { 115 185 70 }
-					
+					color = { 70 160 80 }
 				}
 				b_ana = {
 					province = 4887
 					
-					color = { 115 185 70 }
-					
+					color = { 70 160 80 }
 				}
 			}
 		}
 		
 		d_kurdistan = {
-			color = { 6 150 2 }
-			
+			color = { 60 210 150 }
 			
 			capital = c_irbil
 			
 			c_irbil = {
-				color = { 50 145 6 }
-				
+				color = { 60 210 150 }
 				
 				b_irbil = {
 					province = 4777
 					
-					color = { 50 145 6 }
-					
+					color = { 60 210 150 }
 				}
 				b_al-haditha = {
 					province = 4808
 					
-					color = { 50 145 6 }
-					
+					color = { 60 210 150 }
 				}
 				b_as-sinn = {
 					province = 4809
 					
-					color = { 50 145 6 }
-					
+					color = { 60 210 150 }
 				}
 			}
 			c_kurdistan = {
-				color = { 46 150 2 }
-				
+				color = { 40 190 130 }
 				
 				b_tall_haftun = {
 					province = 4774
 					
-					color = { 46 150 2 }
-					
+					color = { 40 190 130 }
 				}
 				b_khuftiyan = {
 					province = 4773
 					
-					color = { 46 150 2 }
-					
+					color = { 40 190 130 }
 				}
 				b_shaqlabadh = {
 					province = 4775
 					
-					color = { 46 150 2 }
-					
+					color = { 40 190 130 }
 				}
 				b_bamardani = {
 					province = 4776
 					
-					color = { 46 150 2 }
-					
+					color = { 40 190 130 }
 				}
 			}
 			c_shahrazur = {
-				color = { 43 146 10 }
-				
+				color = { 80 230 180 }
 				
 				b_shahrazur = {
 					province = 4780
 					
-					color = { 43 146 10 }
-					
+					color = { 80 230 180 }
 				}
 				b_khuftidkan = {
 					province = 4778
 					
-					color = { 43 146 10 }
-					
+					color = { 80 230 180 }
 				}
 				b_tiranshah = {
 					province = 4779
 					
-					color = { 43 146 10 }
-					
+					color = { 80 230 180 }
 				}
 			}
 		}
@@ -46741,7 +46711,7 @@ e_carpathia = {
 			}
 		}
 		
-		d_nyitra = {
+		d_nyitra = {	#Nitra
 			color = { 228 62 90 }
 			
 			
@@ -46750,9 +46720,9 @@ e_carpathia = {
 				name_list_mogyer = cn_nyitra
 			}
 			
-			capital = c_nyitra	#Nyitra
+			capital = c_nyitra	#Nyitra/Nitra
 			
-			c_nyitra = {
+			c_nyitra = {	#Nitra
 				color = { 228 62 90 }
 				
 				
@@ -46761,7 +46731,7 @@ e_carpathia = {
 					name_list_mogyer = cn_nyitra
 				}
 				
-				b_nyitra = {
+				b_nyitra = {	#Nitra
 					province = 3831
 					
 					color = { 228 62 90 }
@@ -46864,7 +46834,7 @@ e_carpathia = {
 					name_list_mogyer = cn_arva
 				}
 				
-				b_arva = {
+				b_arva = { #Orava
 					province = 525
 					
 					color = { 255 40 65 }
@@ -46875,7 +46845,7 @@ e_carpathia = {
 						name_list_mogyer = cn_arva
 					}
 				}
-				b_twardosczino = {
+				b_twardosczino = { #Tvrdošín/Tvrdosin
 					province = 3810
 					
 					color = { 255 40 65 }
@@ -46887,7 +46857,7 @@ e_carpathia = {
 					}
 				}
 			}
-			c_trenscen = {
+			c_trenscen = {	#Trenčín
 				color = { 205 85 100 }
 				
 				
@@ -47153,8 +47123,7 @@ e_carpathia = {
 			}
 			
 			c_ungvar = {
-				color = { 156 15 15 }
-				
+				color = { 146 25 15 }
 				
 				cultural_names = {
 					name_list_slovien = cn_uzhorod
@@ -47288,7 +47257,7 @@ e_carpathia = {
 						name_list_hungarian = cn_szepesseg
 					}
 				}
-				b_kesmark = {
+				b_kesmark = { #Kežmarok/Kezmarok
 					province = 3861
 					
 					color = { 115 0 0 }
@@ -48069,6 +48038,18 @@ e_carpathia = {
 					
 					color = { 255 150 150 }
 					
+					cultural_names = {
+						name_list_czech = cn_kysak
+						name_list_slovien = cn_kysak
+						name_list_polish = cn_kysak
+						name_list_pommeranian = cn_kysak
+						name_list_polabian = cn_kysak
+						name_list_croatian = cn_kiseg
+						name_list_bosnian = cn_kiseg
+						name_list_serbian = cn_kiseg
+					}
+				}
+			}
 					
 					cultural_names = {
 						name_list_czech = cn_kysak
@@ -57445,6 +57426,13 @@ e_arabia = {
 	
 	capital = c_damascus # Damascus
 	
+	can_destroy = {
+		custom_tooltip = {
+			text = persian_struggle.tt.forbid_title_destruction
+			NOT = { exists = struggle:persian_struggle }
+		}
+	}
+
 	definite_form = yes
 		
 	ai_primary_priority = {
@@ -58581,8 +58569,7 @@ e_arabia = {
 		}
 		
 		d_bahrain = {
-			color = { 20 100 30 }
-			
+			color = { 80 120 10 }
 			
 			capital = c_qatif
 			
@@ -59245,7 +59232,9 @@ e_arabia = {
 			c_alexandria = {
 				color = { 102 221 136 }
 				
-				
+				#b_alexandria = {
+				#	pentarchy = yes
+				#}
 				b_alexandria = {
 					province = 6053
 					

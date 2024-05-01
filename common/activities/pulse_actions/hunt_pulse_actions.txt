@@ -1170,6 +1170,17 @@ hunt_fervor_gain = {
 			tags = { pulse_action }
 			character = scope:root_scope
 			# Effect
+			scope:root_scope = {
+				if = {
+					limit = {
+						has_trait = lifestyle_mystic
+					}
+					add_trait_xp = {
+						trait = lifestyle_mystic
+						value = lifestyle_mystic_xp_gain_minor_value
+					}
+				}
+			}
 			activity_host.faith = {
 				change_fervor = {
 					value = miniscule_fervor_value

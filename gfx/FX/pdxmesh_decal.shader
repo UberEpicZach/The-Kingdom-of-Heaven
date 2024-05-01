@@ -10,6 +10,8 @@ Includes = {
 	# END MOD
 	"bordercolor.fxh"
 	"dynamic_masks.fxh"
+	"legend.fxh"
+	"disease.fxh"
 }
 
 PixelShader =

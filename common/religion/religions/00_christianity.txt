@@ -36,6 +36,9 @@
 	#Allow pilgrimages
 	doctrine = doctrine_pilgrimage_encouraged
 
+	#Funeral tradition
+	doctrine = doctrine_funeral_stoic
+
 	traits = {
 		virtues = { forgiving compassionate chaste }
 		sins = { vengeful sadistic lustful }
@@ -221,6 +224,7 @@
 		DeathDeityNamePossessive = christianity_death_deity_name_possessive
 		DeathDeitySheHe = CHARACTER_SHEHE_HE
 		DeathDeityHerHis = CHARACTER_HERHIS_HIS
+		DeathDeityHerHim = CHARACTER_HERHIM_HIM
 		WitchGodName = christianity_witchgodname_the_horned_god
 		WitchGodNamePossessive = christianity_witchgodname_the_horned_god_possessive
 		WitchGodHerHis = CHARACTER_HERHIS_HIS
@@ -461,7 +465,7 @@
 		armenian_apostolic = {
 			color = { 0.8 0.4 0.1 }
 			religious_head = d_apostolic_church
-			icon = christianity_Armenian
+			icon = christianity_armenian
 
 			holy_site = jerusalem
 			holy_site = antioch
@@ -653,7 +657,7 @@
 
 		iconoclast = {
 			color = { 0.5 0.2 0.4 }
-			icon = christianity_Iconoclasm
+			icon = christianity_iconoclasm
 			religious_head = d_iconoclast
 
 			#Shared with Orthodox
@@ -899,6 +903,7 @@
 			doctrine = tenet_vows_of_poverty
 			doctrine = tenet_rite
 			doctrine = tenet_monasticism
+			doctrine = doctrine_funeral_bewailment # Keening
 
 
 			holy_order_names = {

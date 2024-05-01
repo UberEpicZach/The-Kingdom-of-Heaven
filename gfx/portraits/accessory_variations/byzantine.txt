@@ -28,6 +28,17 @@ pattern_textures = {
 	normal		= "gfx/portraits/accessory_variations/textures/patterns/byzantine/byzantine_silk_brocade_04_normal.dds"
 	properties	= "gfx/portraits/accessory_variations/textures/patterns/byzantine/byzantine_silk_brocade_04_properties.dds"
 }
+
+
+## CE1 ##
+pattern_textures = {
+	name = "fp4_byzantine_01"
+	colormask	= "gfx/portraits/accessory_variations/textures/patterns/fp4/fp4_byzantine_01_masks.dds"
+	normal		= "gfx/portraits/accessory_variations/textures/patterns/fp4/fp4_byzantine_01_normal.dds"
+	properties	= "gfx/portraits/accessory_variations/textures/patterns/fp4/fp4_byzantine_01_properties.dds"
+}
+
+
 #####################
 ####byzantine EPE####
 #####################
@@ -270,6 +281,12 @@ pattern_layout = {
 	offset 		= { x = { min = 0	max = 0 }    y = { min = 0	max = 0 } } 
 }
 pattern_layout = {
+	name = "fp4_plain_fabric_layout_01"	
+	scale 		= { min = 0.1	max = 0.1 }
+	rotation 	= { min = 0	max = 0 }	
+	offset 		= { x = { min = 0	max = 0 }    y = { min = 0	max = 0 } } 
+}
+pattern_layout = {
 	name = "small_trim_layout"	
 	scale 		= { min = 0.125	max = 0.125 }
 	rotation 	= { min = 0	max = 0 }	
@@ -468,6 +485,22 @@ variation = {
 		g = { textures = "byzantine_silk_trim_03" 		layout = "small_trim_layout" }
 		b = { textures = "byzantine_silk_trim_04" 	layout = "small_trim_layout" }
 		a = { textures = "byzantine_silk_trim_01"		layout = "small_trim_layout" }
+	}
+	pattern = { 
+		weight = 1
+		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
+		r = { textures = "fp4_byzantine_01" 				layout = "fp4_plain_fabric_layout_01" }
+		g = { textures = "byzantine_silk_brocade_01" 		layout = "small_trim_layout" }
+		b = { textures = "byzantine_silk_trim_02" 			layout = "small_trim_layout" }
+		a = { textures = "byzantine_silk_trim_02"			layout = "small_trim_layout" }
+	}
+	pattern = { 
+		weight = 1
+		#r,g,b,a here refers to the channels in the pattern_mask scripted in the entity
+		r = { textures = "fp4_byzantine_01" 				layout = "fp4_plain_fabric_layout_01" }
+		g = { textures = "byzantine_silk_brocade_02" 		layout = "small_trim_layout" }
+		b = { textures = "byzantine_silk_trim_01" 			layout = "small_trim_layout" }
+		a = { textures = "byzantine_silk_trim_03"			layout = "small_trim_layout" }
 	}
 	pattern = { 
 		weight = 1

@@ -1,12 +1,30 @@
-﻿224007 = {
+﻿224002 = {
+	name = "Khaleel"
+	dynasty = 12226
+	martial = 6
+	diplomacy = 7
+	intrigue = 4
+	stewardship = 8
+	religion = "ismaili"
+	culture = "andalusian"
+	trait = education_martial_2
+	1157.1.1 = {
+		birth = "1157.1.1"
+	}
+	1212.1.1 = {
+		death = "1212.1.1"
+	}
+}
+
+224007 = {
 	name = "Abdallah"
 	dynasty = 12215
 	martial = 7
 	diplomacy = 4
 	intrigue = 6
 	stewardship = 5
-	religion = muwalladi
-	culture = andalusian
+	religion = "muwalladi"
+	culture = "andalusian"
 	trait = chaste
 	trait = arbitrary
 	trait = education_martial_3
@@ -20,8 +38,8 @@
 224008 = {
 	name = "Muhammad"
 	dynasty = 12192
-	religion = muwalladi
-	culture = andalusian
+	religion = "muwalladi"
+	culture = "andalusian"
 	father = 73204
 	1113.1.1 = {
 		birth = "1113.1.1"
@@ -48,8 +66,8 @@
 	diplomacy = 6
 	intrigue = 8
 	stewardship = 7
-	religion = muwalladi
-	culture = andalusian
+	religion = "muwalladi"
+	culture = "andalusian"
 	trait = greedy
 	trait = education_intrigue_1
 	father = 73245
@@ -67,8 +85,8 @@
 	diplomacy = 7
 	intrigue = 7
 	stewardship = 5
-	religion = muwalladi
-	culture = andalusian
+	religion = "muwalladi"
+	culture = "andalusian"
 	trait = education_martial_2
 	1116.1.1 = {
 		birth = "1116.1.1"
@@ -98,8 +116,8 @@
 	diplomacy = 4
 	intrigue = 7
 	stewardship = 5
-	religion = muwalladi
-	culture = andalusian
+	religion = "muwalladi"
+	culture = "andalusian"
 	trait = greedy
 	trait = wrathful
 	trait = education_martial_2
@@ -117,8 +135,8 @@
 	diplomacy = 4
 	intrigue = 6
 	stewardship = 6
-	religion = muwalladi
-	culture = andalusian
+	religion = "muwalladi"
+	culture = "andalusian"
 	trait = calm
 	trait = brave
 	trait = education_martial_2
@@ -136,8 +154,8 @@
 	diplomacy = 4
 	intrigue = 5
 	stewardship = 7
-	religion = muwalladi
-	culture = andalusian
+	religion = "muwalladi"
+	culture = "andalusian"
 	trait = diligent
 	trait = education_intrigue_2
 	father = 464010
@@ -151,8 +169,8 @@
 73621 = {
 	name = "Sa_d"
 	dynasty = 12211
-	religion = muwalladi
-	culture = andalusian
+	religion = "muwalladi"
+	culture = "andalusian"
 	father = 73243
 	1158.1.1 = {
 		birth = "1158.1.1"
@@ -164,8 +182,8 @@
 73622 = {
 	name = "Zayyan"
 	dynasty = 12211
-	religion = muwalladi
-	culture = andalusian
+	religion = "muwalladi"
+	culture = "andalusian"
 	father = 73621
 	1184.1.1 = {
 		birth = "1184.1.1"
@@ -185,6 +203,31 @@
 		death = "1241.1.1"
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#TODO_CD_HISTORY; remove after confirmation
+
 20816 = {
 	name = "Bilal"
 	dynasty = 101046
@@ -1987,6 +2030,9 @@ mardanish_the_founder = {
                 }
 			}
 		}
+		effect = {
+			make_character_crypto_religionist_effect = { CRYPTO_RELIGION = faith:mozarabic_church }
+		}
 	}
 	889.1.1 = {
 		death = yes
@@ -2961,6 +3007,105 @@ mardanish_the_founder = {
 		death = "1100.1.1"
 	}
 }
+
+224007 = {
+	name = "Abdallah"
+	dynasty = 12215
+	martial = 7
+	diplomacy = 4
+	intrigue = 6
+	stewardship = 5
+	religion = muwalladi
+	culture = andalusian
+	trait = chaste
+	trait = arbitrary
+	trait = education_martial_3
+	1074.1.1 = {
+		birth = "1074.1.1"
+	}
+	1130.1.1 = {
+		death = "1130.1.1"
+	}
+}
+
+224008 = {
+	name = "Muhammad"
+	dynasty = 12192
+	religion = muwalladi
+	culture = andalusian
+	father = 73204
+	1113.1.1 = {
+		birth = "1113.1.1"
+	}
+	1145.1.1 = {
+		add_pressed_claim = title:d_badajoz
+	}
+	1146.1.1 = {
+		add_pressed_claim = title:d_valencia
+		add_pressed_claim = title:d_mallorca
+		add_pressed_claim = title:d_murcia
+		add_pressed_claim = title:d_cordoba
+		add_pressed_claim = title:d_sevilla
+		add_pressed_claim = title:d_granada
+	}
+	1150.1.1 = {
+		death = "1150.1.1"
+	}
+}
+
+224012 = {
+	name = "Tariq"
+	dynasty = 12212
+	martial = 8
+	diplomacy = 6
+	intrigue = 8
+	stewardship = 7
+	religion = muwalladi
+	culture = andalusian
+	trait = greedy
+	trait = education_intrigue_1
+	father = 73245
+	1099.1.1 = {
+		birth = "1099.1.1"
+	}
+	1144.1.1 = {
+		death = "1144.1.1"
+	}
+}
+
+224014 = {
+	name = "Hakam"
+	dynasty = 12216
+	martial = 8
+	diplomacy = 7
+	intrigue = 7
+	stewardship = 5
+	religion = muwalladi
+	culture = andalusian
+	trait = education_martial_2
+	1116.1.1 = {
+		birth = "1116.1.1"
+	}
+	1170.1.1 = {
+		death = "1170.1.1"
+	}
+}
+
+224016 = {
+	name = "Abd-al-Malik"
+	dynasty = 12232
+
+	religion = ismaili
+	culture = andalusian
+
+	1146.1.1 = {
+		birth = yes
+	}
+	1200.1.1 = {
+		death = yes
+	}
+}
+
 224017 = {
 	name = "Ya_qub"
 	dynasty = 12231
@@ -2981,6 +3126,67 @@ mardanish_the_founder = {
 		death = "1118.1.1"
 	}
 }
+
+224023 = {
+	name = "Ibrahim"
+	dynasty = 574
+	martial = 5
+	diplomacy = 4
+	intrigue = 7
+	stewardship = 5
+	religion = muwalladi
+	culture = andalusian
+	trait = greedy
+	trait = wrathful
+	trait = education_martial_2
+	1094.1.1 = {
+		birth = "1094.1.1"
+	}
+	1148.1.1 = {
+		death = "1148.1.1"
+	}
+}
+
+224024 = {
+	name = "Ali"
+	dynasty = 12223
+	martial = 4
+	diplomacy = 4
+	intrigue = 6
+	stewardship = 6
+	religion = muwalladi
+	culture = andalusian
+	trait = calm
+	trait = brave
+	trait = education_martial_2
+	1122.1.1 = {
+		birth = "1122.1.1"
+	}
+	1178.1.1 = {
+		death = "1178.1.1"
+	}
+}
+
+224025 = {
+	name = "Amr"
+	dynasty = 12224
+	martial = 5
+	diplomacy = 4
+	intrigue = 5
+	stewardship = 7
+	religion = muwalladi
+	culture = andalusian
+	trait = diligent
+	trait = education_intrigue_2
+	father = 464010
+	1079.1.1 = {
+		birth = "1079.1.1"
+	}
+	1147.1.1 = {
+		death = "1147.1.1"
+	}
+}
+
 464010 = {
 	name = "Muhammad"
 	dynasty = 12224
@@ -6453,7 +6659,7 @@ andalusian_0001 = { #Arzachel, historical scholar in Toledo
 }
 
 andalusian_0002 = { #Abenguefith, historical scholar in Toledo 
-	name = "Ibn_al-Wafid"
+	name = "Ibn_al-WA_fid"
 	dynasty = andalusiandyn001 
 	religion = muwalladi
 	culture = andalusian 
