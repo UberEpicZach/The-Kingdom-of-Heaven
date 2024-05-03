@@ -58,6 +58,36 @@
 # world_burma
 # > custom_arakan_mountains
 
+# sea_atlantic_ocean
+# > sea_north_atlantic
+# >> sea_baltic_sea
+# >> sea_north_sea
+# >> sea_english_channel
+# >> sea_irish_sea
+# >> sea_bay_of_biscay
+# >> sea_macaronesia
+# >> sea_mediterranean_sea
+# >>> sea_western_mediterranean_sea
+# >>> sea_ionian_sea
+# >>> sea_adriatic_sea
+# >>> sea_aegean_sea
+# >>> sea_black_sea
+# > sea_south_atlantic
+# >> sea_gulf_of_guinea
+
+# sea_indian_ocean
+# > sea_bay_of_somalia
+# > sea_red_sea
+# > sea_gulf_of_aden
+# > sea_persian_gulf
+# > sea_arabian_sea
+# > sea_bay_of_bengal
+
+# sea_inland_steppe_seas
+# > sea_caspian_sea
+# > sea_aral_sea
+
+
  
 world_europe_west_britannia = {
 	duchies = {
@@ -932,6 +962,7 @@ material_hsb_seashell = {
 
 
 world_persian_empire = { 
+	generate_modifiers = yes
 	regions = {
 		world_persia
 		world_khorasan
@@ -943,6 +974,7 @@ world_persian_empire = {
 		world_mesopotamia
 		world_jazira
 	}
+	duchies = { d_shirvan }
 }
 custom_eastern_baltic = {
 	duchies = {
@@ -1882,7 +1914,7 @@ special_mongol_empire_conquest_region_prio_2 = {
 	}
 }
 
-# Central Steppes + Caucasus + Moldavia
+# Central Steppes + Moldavia
 special_mongol_empire_conquest_region_prio_3 = {
 	duchies = {
 		# k_cuman
@@ -1893,10 +1925,6 @@ special_mongol_empire_conquest_region_prio_3 = {
 		d_itil d_pecheneg
 		# k_caucasus
 		d_khazaria d_azov d_alania d_ciscaucasia
-		# k_georgia
-		d_tao-klarjeti d_abkhazia d_georgia d_kakheti 
-		# k_armenia
-		d_mesopotamia d_vaspurakan d_greater_armenia
 	}
 }
 
@@ -1912,9 +1940,13 @@ special_mongol_empire_conquest_region_prio_4 = {
 	}
 }
 
-# Russia + Anatolia
+# Russia + Anatolia + Caucasus
 special_mongol_empire_conquest_region_prio_5 = {
 	duchies = {
+		# k_georgia
+		d_tao-klarjeti d_abkhazia d_georgia
+		# k_armenia
+		d_mesopotamia d_vaspurakan d_greater_armenia
 		# k_ruthenia
 		d_kiev d_turov d_pereyaslavl d_chernigov d_karachev d_novosil
 		# k_wallachia
@@ -2015,8 +2047,25 @@ special_mongol_empire_chagatai_region = {
 	}
 }
 
+chagatai_de_jure_region = {
+	duchies = {
+		#Turkestan
+		d_zhetysu d_tarbagatai d_chah d_syr_darya d_muyunkum d_alakol d_ili-alatau
+		d_osrushana d_soghd d_khuttal d_badakhshan d_ferghana
+		#Dzungaria
+		d_altay d_kara_khoja d_gurbantunggut d_naiman_gobi
+		#Khotan
+		d_khotan d_kashgar d_karashar d_charkliq
+	}
+}
+
 special_mongol_empire_golden_horde_region = {
 	duchies = {
+		#Turkestan
+		d_transcaspiana d_jemba d_barsuki d_aral_il d_khorezm
+		#Siberia
+		d_ostyaki d_konda d_pelym d_kazym d_sibir d_ishim d_tara d_lanikaz
+		d_salair d_ala_tau d_vasyugan_mire d_baraba_steppe d_kulyndy_steppe
 		#Russia
 		d_novgorod d_vepsia d_luki d_kiev d_karachev d_novosil d_opolye d_nizhny_novgorod d_turov d_chernigov d_ryazan d_pereyaslavl
 		#Pontic Steppe
@@ -3368,6 +3417,50 @@ dlc_fp2_lyonese_monk_region = {
 ### END FP2 Regions
 
 #####################
+# FP3 Regions
+#####################
+dlc_fp3_eastern_persian_frontier_regions = {
+	regions = {
+		world_khorasan
+		world_transoxiana
+		world_makran
+		world_kabulistan
+	}
+}
+
+dlc_fp3_greater_persian_frontier_regions = {
+	duchies = {
+		#Sindh
+		d_sauvira d_bhakkar 
+		#Punjab
+		d_multan d_lahore d_gandhara
+		# k_syr_darya
+		d_syr_darya d_chah d_muyunkum
+		# k_oghuz_il
+		d_transcaspiana d_jemba d_aral_il d_barsuki
+		# k_daylam
+		d_daylam d_tabaristan d_gurgan d_azerbaijan
+	}
+	regions = {
+		world_khorasan
+		world_transoxiana
+		world_makran
+		world_kabulistan
+		world_mesopotamia
+		world_asia_minor
+		world_jazira
+	}
+}
+
+dlc_fp3_seljuk_birth_region = {
+	duchies = {
+		d_transcaspiana d_barsuki d_jemba d_aral_il d_syr_darya d_uzboy d_khorezm d_atyrau
+	}
+}
+
+### END FP3 Regions
+
+#####################
 # Achievements - 1.4
 #####################
 
@@ -3902,5 +3995,48 @@ board_game_fidchell_region = {
 		d_albany d_the_isles d_galloway d_western_isles d_lothian d_moray
 		#Norway
 		d_northern_isles
+	}
+}
+
+# Used for historical black death origin
+world_central_asia = {
+	duchies = {
+		#Dzungaria
+		d_altay d_kara_khoja d_gurbantunggut d_naiman_gobi
+		#Turkestan
+		d_transcaspiana d_barsuki d_zhetysu d_tarbagatai d_jemba d_aral_il d_chah d_syr_darya d_muyunkum d_alakol d_ili-alatau
+		#Cumania
+		d_kurgan d_mugodzhar_hills d_atyrau d_turgay d_kush-murun d_saryarka d_kazakh d_kentarlau d_karkaraly d_karabas d_betpa d_semey
+	}
+}
+
+# Consumption zone
+world_atlantic = {
+	duchies = {
+		#Iberia
+		d_galicia d_asturias d_cantabria d_viscaya
+		#Frenches
+		d_gascogne d_aquitaine d_poitou d_brittany d_normandy
+	}
+	regions = {
+		#Britland and Ireland
+		world_europe_west_britannia
+	}
+}
+
+# Ancient Troy
+troy_region = {
+	counties = {
+		c_abydos
+	}
+}
+
+# Israel
+israel_region = {
+	duchies = {
+		d_sinai # Not part of the original tribes, but very significant
+	}
+	regions = {
+		ghw_region_jerusalem
 	}
 }

@@ -267,41 +267,38 @@ on_game_start_after_lobby = {
 		khwarezmid_invasion
 		KOH_Parition
 		KOH_fix_provinces
-		KOH_COA_TEMP
-		delay = { days = 2 }
-		KOH_COA_TEMP
 	}
 }
 
 
-KOH_COA_TEMP = {
-	effect = {
-		title:c_acre = { set_coa = holder.house	}
-		title:b_beaufort = { set_coa = holder.house	}
-		title:b_beirut = { set_coa = holder.house	}
-		title:d_palestine = { set_coa = title:k_jerusalem }
-		title:c_jerusalem = { set_coa = title:k_jerusalem }
-		title:c_ghazza = { set_coa = title:c_ascalon }
-		title:b_bethgibelin = { set_coa = lessee.house	}
-		title:b_blanchegarde = { set_coa = holder.house	}
-		title:b_bethlehem = { set_coa = holder.house	}
-		title:d_urdunn = { set_coa = holder.house	}
-		title:d_ascalon = { set_coa = holder.house	}
-		title:c_jaffa = { set_coa = holder.house	}
-		title:b_gibelet = { set_coa = holder.house	}
-		title:b_hebron = { set_coa = holder.house	}
-		title:c_ibelin = { set_coa = holder.house	}
-		title:c_kerak = { set_coa = holder.house	}
-		title:b_kerak = { set_coa = holder.house	}
-		title:c_montforte = { set_coa = holder.house	}
-		title:d_oultrejourdain = { set_coa = holder.house	}
-		title:c_tiberias = { set_coa = holder.house	}
-		title:b_torone = { set_coa = holder.house	}
-		title:b_toron = { set_coa = lessee.house	}
-		title:d_lebanon = { set_coa = holder.house	}
-		title:b_kerake = { set_coa = lessee.house	}
-	}
-}
+# KOH_COA_TEMP = {
+# 	effect = {
+# 		title:c_acre = { set_coa = holder.house	}
+# 		title:b_beaufort = { set_coa = holder.house	}
+# 		title:b_beirut = { set_coa = holder.house	}
+# 		title:d_palestine = { set_coa = title:k_jerusalem }
+# 		title:c_jerusalem = { set_coa = title:k_jerusalem }
+# 		title:c_ghazza = { set_coa = title:c_ascalon }
+# 		title:b_bethgibelin = { set_coa = lessee.house	}
+# 		title:b_blanchegarde = { set_coa = holder.house	}
+# 		title:b_bethlehem = { set_coa = holder.house	}
+# 		title:d_urdunn = { set_coa = holder.house	}
+# 		title:d_ascalon = { set_coa = holder.house	}
+# 		title:c_jaffa = { set_coa = holder.house	}
+# 		title:b_gibelet = { set_coa = holder.house	}
+# 		title:b_hebron = { set_coa = holder.house	}
+# 		title:c_ibelin = { set_coa = holder.house	}
+# 		title:c_kerak = { set_coa = holder.house	}
+# 		title:b_kerak = { set_coa = holder.house	}
+# 		title:c_montforte = { set_coa = holder.house	}
+# 		title:d_oultrejourdain = { set_coa = holder.house	}
+# 		title:c_tiberias = { set_coa = holder.house	}
+# 		title:b_torone = { set_coa = holder.house	}
+# 		title:b_toron = { set_coa = lessee.house	}
+# 		title:d_lebanon = { set_coa = holder.house	}
+# 		title:b_kerake = { set_coa = lessee.house	}
+# 	}
+# }
 
 KOH_fix_provinces = {
 	effect = {
