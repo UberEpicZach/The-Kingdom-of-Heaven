@@ -177,30 +177,35 @@
 		weight = {
 			base = 0
 			modifier = {
-				add = 120
+				add = 50
 				is_male = yes
 				age >= 18
 				portrait_wear_armor_trigger = yes
-				AND = {
-					OR = {
-						top_liege ?= {
-							has_primary_title = title:k_jerusalem
-						}
-						has_primary_title = title:k_jerusalem
-						AND = {
-							exists = title:k_jerusalem.holder
-							is_knight_of = title:k_jerusalem.holder
-						}
-						OR = {
-							AND = {
-								exists = title:k_jerusalem.holder
-								is_councillor_of = title:k_jerusalem.holder
-								has_council_position = councillor_marshal
-							}
-						}
+				OR = {
+					AND = {
+						exists = title:k_jerusalem.holder
+						is_knight_of = title:k_jerusalem.holder
 					}
 				}
 			}
+			# modifier = {
+			# 	add = 70
+			# 	is_male = yes
+			# 	age >= 18
+			# 	portrait_wear_armor_trigger = yes
+			# 	AND = {
+			# 		OR = {
+			# 			has_primary_title = title:k_jerusalem
+			# 			OR = {
+			# 				AND = {
+			# 					exists = title:k_jerusalem.holder
+			# 					is_councillor_of = title:k_jerusalem.holder
+			# 					has_council_position = councillor_marshal
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
 		}
 	}
 	# jerusalem_clothes_epe = {
@@ -350,48 +355,48 @@
 	# 		}
 	# 	}
 	# }
-	richard = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = RichardClothes
-				range = {
-					0
-					1
-				}
-				# For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1
-				template = body_shape_average_clothed
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 30
-				portrait_wear_armor_trigger = yes
-				portrait_richard_trigger = yes
-				is_female = no
+	# richard = {
+	# 	dna_modifiers = {
+	# 		accessory = {
+	# 			mode = add
+	# 			gene = clothes
+	# 			template = RichardClothes
+	# 			range = {
+	# 				0
+	# 				1
+	# 			}
+	# 			# For the randomness to work correctly
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_bust
+	# 			value = 1
+	# 			template = bust_clothes
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_body_shape
+	# 			value = 1
+	# 			template = body_shape_average_clothed
+	# 		}
+	# 	}
+	# 	weight = {
+	# 		base = 0
+	# 		modifier = {
+	# 			add = 30
+	# 			portrait_wear_armor_trigger = yes
+	# 			portrait_richard_trigger = yes
+	# 			is_female = no
 				
-			}
-			modifier = {
-				add = 130
-				portrait_wear_armor_trigger = yes
-				this = character:204510
+	# 		}
+	# 		modifier = {
+	# 			add = 130
+	# 			portrait_wear_armor_trigger = yes
+	# 			this = character:204510
 				
-			}
-		}
-	}
+	# 		}
+	# 	}
+	# }
 	# richard_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -520,62 +525,62 @@
 	# 		}
 	# 	}
 	# }
-	ibelin_knight_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = ibelin_knight_clothes
-				range = {
-					0
-					1
-				}
-				# For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1
-				template = body_shape_average_clothed
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 151
-				is_male = yes
-				age >= 18
-				has_religion = religion:christianity_religion
-				portrait_wear_armor_trigger = yes
-				AND = {
-					OR = {
-						liege ?= {
-							has_primary_title = title:c_ibelin
-						}
-						has_primary_title = title:c_ibelin
-						AND = {
-							exists = title:c_ibelin.holder
-							is_knight_of = title:c_ibelin.holder
-						}
-						OR = {
-							AND = {
-								exists = title:c_ibelin.holder
-								is_councillor_of = title:c_ibelin.holder
-								has_council_position = councillor_marshal
-							}
-						}
-					}
-				}
+	# ibelin_knight_clothes = {
+	# 	dna_modifiers = {
+	# 		accessory = {
+	# 			mode = add
+	# 			gene = clothes
+	# 			template = ibelin_knight_clothes
+	# 			range = {
+	# 				0
+	# 				1
+	# 			}
+	# 			# For the randomness to work correctly
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_bust
+	# 			value = 1
+	# 			template = bust_clothes
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_body_shape
+	# 			value = 1
+	# 			template = body_shape_average_clothed
+	# 		}
+	# 	}
+	# 	weight = {
+	# 		base = 0
+	# 		modifier = {
+	# 			add = 151
+	# 			is_male = yes
+	# 			age >= 18
+	# 			has_religion = religion:christianity_religion
+	# 			portrait_wear_armor_trigger = yes
+	# 			AND = {
+	# 				OR = {
+	# 					liege ?= {
+	# 						has_primary_title = title:c_ibelin
+	# 					}
+	# 					has_primary_title = title:c_ibelin
+	# 					AND = {
+	# 						exists = title:c_ibelin.holder
+	# 						is_knight_of = title:c_ibelin.holder
+	# 					}
+	# 					OR = {
+	# 						AND = {
+	# 							exists = title:c_ibelin.holder
+	# 							is_councillor_of = title:c_ibelin.holder
+	# 							has_council_position = councillor_marshal
+	# 						}
+	# 					}
+	# 				}
+	# 			}
 				
-			}
-		}
-	}
+	# 		}
+	# 	}
+	# }
 	# ibelin_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -814,63 +819,63 @@
 	# 		}
 	# 	}
 	# }
-	english_knight_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = english_knight_clothes
-				range = {
-					0
-					1
-				}
-				# For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1
-				template = body_shape_average_clothed
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 102
-				is_male = yes
-				age >= 18
-				portrait_wear_armor_trigger = yes
-				has_religion = religion:christianity_religion
+	# english_knight_clothes = {
+	# 	dna_modifiers = {
+	# 		accessory = {
+	# 			mode = add
+	# 			gene = clothes
+	# 			template = english_knight_clothes
+	# 			range = {
+	# 				0
+	# 				1
+	# 			}
+	# 			# For the randomness to work correctly
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_bust
+	# 			value = 1
+	# 			template = bust_clothes
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_body_shape
+	# 			value = 1
+	# 			template = body_shape_average_clothed
+	# 		}
+	# 	}
+	# 	weight = {
+	# 		base = 0
+	# 		modifier = {
+	# 			add = 102
+	# 			is_male = yes
+	# 			age >= 18
+	# 			portrait_wear_armor_trigger = yes
+	# 			has_religion = religion:christianity_religion
 				
-				AND = {
-					OR = {
-						liege ?= {
-							has_primary_title = title:k_england
-						}
-						has_primary_title = title:k_england
-						AND = {
-							exists = title:k_england.holder
-							is_knight_of = title:k_england.holder
-						}
-						has_culture = culture:english
-						OR = {
-							AND = {
-								exists = title:k_england.holder
-								is_councillor_of = title:k_england.holder
-								has_council_position = councillor_marshal
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+	# 			AND = {
+	# 				OR = {
+	# 					liege ?= {
+	# 						has_primary_title = title:k_england
+	# 					}
+	# 					has_primary_title = title:k_england
+	# 					AND = {
+	# 						exists = title:k_england.holder
+	# 						is_knight_of = title:k_england.holder
+	# 					}
+	# 					has_culture = culture:english
+	# 					OR = {
+	# 						AND = {
+	# 							exists = title:k_england.holder
+	# 							is_councillor_of = title:k_england.holder
+	# 							has_council_position = councillor_marshal
+	# 						}
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# }
 	# english_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1003,62 +1008,62 @@
 	#		}
 	#	}
 	#}
-	french_knight_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = french_knight_clothes
-				range = {
-					0
-					1
-				}
-				# For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1
-				template = body_shape_average_clothed
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 102
-				is_male = yes
-				age >= 18
-				portrait_wear_armor_trigger = yes
-				AND = {
-					OR = {
-						liege ?= {
-							has_primary_title = title:k_france
-						}
-						has_primary_title = title:k_france
-						AND = {
-							exists = title:k_france.holder
-							is_knight_of = title:k_france.holder
-						}
-						has_culture = culture:french
-						OR = {
-							AND = {
-								exists = title:k_france.holder
-								is_councillor_of = title:k_france.holder
-								has_council_position = councillor_marshal
-							}
-						}
-					}
-				}
+	# french_knight_clothes = {
+	# 	dna_modifiers = {
+	# 		accessory = {
+	# 			mode = add
+	# 			gene = clothes
+	# 			template = french_knight_clothes
+	# 			range = {
+	# 				0
+	# 				1
+	# 			}
+	# 			# For the randomness to work correctly
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_bust
+	# 			value = 1
+	# 			template = bust_clothes
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_body_shape
+	# 			value = 1
+	# 			template = body_shape_average_clothed
+	# 		}
+	# 	}
+	# 	weight = {
+	# 		base = 0
+	# 		modifier = {
+	# 			add = 102
+	# 			is_male = yes
+	# 			age >= 18
+	# 			portrait_wear_armor_trigger = yes
+	# 			AND = {
+	# 				OR = {
+	# 					liege ?= {
+	# 						has_primary_title = title:k_france
+	# 					}
+	# 					has_primary_title = title:k_france
+	# 					AND = {
+	# 						exists = title:k_france.holder
+	# 						is_knight_of = title:k_france.holder
+	# 					}
+	# 					has_culture = culture:french
+	# 					OR = {
+	# 						AND = {
+	# 							exists = title:k_france.holder
+	# 							is_councillor_of = title:k_france.holder
+	# 							has_council_position = councillor_marshal
+	# 						}
+	# 					}
+	# 				}
+	# 			}
 				
-			}
-		}
-	}
+	# 		}
+	# 	}
+	# }
 	# french_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1278,64 +1283,64 @@
 	# 		}
 	# 	}
 	# }
-	hre_knight_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = hre_knight_clothes
-				range = {
-					0
-					1
-				}
-				# For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1
-				template = body_shape_average_clothed
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 110
-				is_male = yes
-				age >= 18
-				portrait_wear_armor_trigger = yes
-				AND = {
-					OR = {
-						liege ?= {
-							has_primary_title = title:e_hre
-						}
-						has_primary_title = title:e_hre
-						AND = {
-							exists = title:e_hre.holder
-							is_knight_of = title:e_hre.holder
-						}
-						culture = {
-							has_cultural_pillar = heritage_central_germanic
-						}
-						OR = {
-							AND = {
-								exists = title:e_hre.holder
-								is_councillor_of = title:e_hre.holder
-								has_council_position = councillor_marshal
-							}
-						}
-					}
-				}
+	# hre_knight_clothes = {
+	# 	dna_modifiers = {
+	# 		accessory = {
+	# 			mode = add
+	# 			gene = clothes
+	# 			template = hre_knight_clothes
+	# 			range = {
+	# 				0
+	# 				1
+	# 			}
+	# 			# For the randomness to work correctly
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_bust
+	# 			value = 1
+	# 			template = bust_clothes
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_body_shape
+	# 			value = 1
+	# 			template = body_shape_average_clothed
+	# 		}
+	# 	}
+	# 	weight = {
+	# 		base = 0
+	# 		modifier = {
+	# 			add = 110
+	# 			is_male = yes
+	# 			age >= 18
+	# 			portrait_wear_armor_trigger = yes
+	# 			AND = {
+	# 				OR = {
+	# 					liege ?= {
+	# 						has_primary_title = title:e_hre
+	# 					}
+	# 					has_primary_title = title:e_hre
+	# 					AND = {
+	# 						exists = title:e_hre.holder
+	# 						is_knight_of = title:e_hre.holder
+	# 					}
+	# 					culture = {
+	# 						has_cultural_pillar = heritage_central_germanic
+	# 					}
+	# 					OR = {
+	# 						AND = {
+	# 							exists = title:e_hre.holder
+	# 							is_councillor_of = title:e_hre.holder
+	# 							has_council_position = councillor_marshal
+	# 						}
+	# 					}
+	# 				}
+	# 			}
 				
-			}
-		}
-	}
+	# 		}
+	# 	}
+	# }
 	# hre_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1394,62 +1399,62 @@
 	# 		}
 	# 	}
 	# }
-	hungary_knight_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = hungarian_knight_clothes
-				range = {
-					0
-					1
-				}
-				# For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1
-				template = body_shape_average_clothed
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 110
-				is_male = yes
-				age >= 18
-				portrait_wear_armor_trigger = yes
+	# hungary_knight_clothes = {
+	# 	dna_modifiers = {
+	# 		accessory = {
+	# 			mode = add
+	# 			gene = clothes
+	# 			template = hungarian_knight_clothes
+	# 			range = {
+	# 				0
+	# 				1
+	# 			}
+	# 			# For the randomness to work correctly
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_bust
+	# 			value = 1
+	# 			template = bust_clothes
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_body_shape
+	# 			value = 1
+	# 			template = body_shape_average_clothed
+	# 		}
+	# 	}
+	# 	weight = {
+	# 		base = 0
+	# 		modifier = {
+	# 			add = 110
+	# 			is_male = yes
+	# 			age >= 18
+	# 			portrait_wear_armor_trigger = yes
 				
-				AND = {
-					OR = {
-						liege ?= {
-							has_primary_title = title:k_hungary
-						}
-						has_primary_title = title:k_hungary
-						AND = {
-							exists = title:k_hungary.holder
-							is_knight_of = title:k_hungary.holder
-						}
-						has_culture = culture:hungarian
-						OR = {
-							AND = {
-								exists = title:k_hungary.holder
-								is_councillor_of = title:k_hungary.holder
-								has_council_position = councillor_marshal
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+	# 			AND = {
+	# 				OR = {
+	# 					liege ?= {
+	# 						has_primary_title = title:k_hungary
+	# 					}
+	# 					has_primary_title = title:k_hungary
+	# 					AND = {
+	# 						exists = title:k_hungary.holder
+	# 						is_knight_of = title:k_hungary.holder
+	# 					}
+	# 					has_culture = culture:hungarian
+	# 					OR = {
+	# 						AND = {
+	# 							exists = title:k_hungary.holder
+	# 							is_councillor_of = title:k_hungary.holder
+	# 							has_council_position = councillor_marshal
+	# 						}
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# }
 	# hungary_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1508,63 +1513,63 @@
 	# 		}
 	# 	}
 	# }
-	antioch_knight_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = antioch_knight_clothes
-				range = {
-					0
-					1
-				}
-				# For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1
-				template = body_shape_average_clothed
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 110
-				is_male = yes
-				age >= 18
-				portrait_wear_armor_trigger = yes
-				has_religion = religion:christianity_religion
+	# antioch_knight_clothes = {
+	# 	dna_modifiers = {
+	# 		accessory = {
+	# 			mode = add
+	# 			gene = clothes
+	# 			template = antioch_knight_clothes
+	# 			range = {
+	# 				0
+	# 				1
+	# 			}
+	# 			# For the randomness to work correctly
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_bust
+	# 			value = 1
+	# 			template = bust_clothes
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_body_shape
+	# 			value = 1
+	# 			template = body_shape_average_clothed
+	# 		}
+	# 	}
+	# 	weight = {
+	# 		base = 0
+	# 		modifier = {
+	# 			add = 110
+	# 			is_male = yes
+	# 			age >= 18
+	# 			portrait_wear_armor_trigger = yes
+	# 			has_religion = religion:christianity_religion
 				
-				AND = {
-					OR = {
-						liege ?= {
-							has_primary_title = title:d_antioch
-						}
-						has_primary_title = title:d_antioch
-						AND = {
-							exists = title:d_antioch.holder
-							is_knight_of = title:d_antioch.holder
-						}
-						#has_culture_group = culture_group:central_germanic_group
-						OR = {
-							AND = {
-								exists = title:d_antioch.holder
-								is_councillor_of = title:d_antioch.holder
-								has_council_position = councillor_marshal
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+	# 			AND = {
+	# 				OR = {
+	# 					liege ?= {
+	# 						has_primary_title = title:d_antioch
+	# 					}
+	# 					has_primary_title = title:d_antioch
+	# 					AND = {
+	# 						exists = title:d_antioch.holder
+	# 						is_knight_of = title:d_antioch.holder
+	# 					}
+	# 					#has_culture_group = culture_group:central_germanic_group
+	# 					OR = {
+	# 						AND = {
+	# 							exists = title:d_antioch.holder
+	# 							is_councillor_of = title:d_antioch.holder
+	# 							has_council_position = councillor_marshal
+	# 						}
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# }
 	# antioch_knight_clothes_epe = {
 	# 	dna_modifiers = {
 	# 		accessory = {
@@ -1624,61 +1629,61 @@
 	# 		}
 	# 	}
 	# }
-	bavarian_knight_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = bavarian_knight_clothes
-				range = {
-					0
-					1
-				}
-				# For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 1
-				template = bust_clothes
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_body_shape
-				value = 1
-				template = body_shape_average_clothed
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 110
-				is_male = yes
-				age >= 18
-				portrait_wear_armor_trigger = yes
+	# bavarian_knight_clothes = {
+	# 	dna_modifiers = {
+	# 		accessory = {
+	# 			mode = add
+	# 			gene = clothes
+	# 			template = bavarian_knight_clothes
+	# 			range = {
+	# 				0
+	# 				1
+	# 			}
+	# 			# For the randomness to work correctly
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_bust
+	# 			value = 1
+	# 			template = bust_clothes
+	# 		}
+	# 		morph = {
+	# 			mode = modify_multiply
+	# 			gene = gene_bs_body_shape
+	# 			value = 1
+	# 			template = body_shape_average_clothed
+	# 		}
+	# 	}
+	# 	weight = {
+	# 		base = 0
+	# 		modifier = {
+	# 			add = 110
+	# 			is_male = yes
+	# 			age >= 18
+	# 			portrait_wear_armor_trigger = yes
 				
-				AND = {
-					OR = {
-						liege ?= {
-							has_primary_title = title:d_bavaria
-						}
-						has_primary_title = title:d_bavaria
-						AND = {
-							exists = title:d_bavaria.holder
-							is_knight_of = title:d_bavaria.holder
-						}
-						has_culture = culture:bavarian
-						OR = {
-							AND = {
-								is_councillor_of = title:d_bavaria.holder
-								has_council_position = councillor_marshal
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+	# 			AND = {
+	# 				OR = {
+	# 					liege ?= {
+	# 						has_primary_title = title:d_bavaria
+	# 					}
+	# 					has_primary_title = title:d_bavaria
+	# 					AND = {
+	# 						exists = title:d_bavaria.holder
+	# 						is_knight_of = title:d_bavaria.holder
+	# 					}
+	# 					has_culture = culture:bavarian
+	# 					OR = {
+	# 						AND = {
+	# 							is_councillor_of = title:d_bavaria.holder
+	# 							has_council_position = councillor_marshal
+	# 						}
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# }
 	#bavarian_knight_clothes_epe = {
 	#	dna_modifiers = {
 	#		accessory = {
