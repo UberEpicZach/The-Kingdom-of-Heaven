@@ -1,9 +1,9 @@
 pdxmesh = {
-	name = "male_headgear_baldwin_face_mask_01.mesh"
+	name = "male_headgear_baldwin_face_mask_01_mesh"
 	file = "male_headgear_baldwin_face_mask_01.mesh"
 
 	meshsettings = {
-		name = "male_headgear_baldwin_face_mask_01Shape"
+		name = "male_headgear_baldwin_face_mask_01"
 		index = 0
 		texture_diffuse = "male_headgear_baldwin_face_mask_01_diffuse.dds"
 		texture_normal = "male_headgear_baldwin_face_mask_01_normal.dds"
@@ -13,7 +13,7 @@ pdxmesh = {
 	}
 
 	meshsettings = {
-		name = "PDXmat_male_headgear_baldwin_head_bandage_01Shape"
+		name = "male_headgear_baldwin_head_bandage_01"
 		index = 1
 		texture_diffuse = "male_headgear_special_head_bandage_01_diffuse.dds"
 		texture_normal = "male_headgear_special_head_bandage_01_normal.dds"
@@ -25,6 +25,5 @@ pdxmesh = {
 
 entity = {
 	name = "male_headgear_baldwin_face_mask_01_entity" 
-	pdxmesh = "male_headgear_baldwin_face_mask_01.mesh"
-
+	pdxmesh = "male_headgear_baldwin_face_mask_01_mesh"
 }

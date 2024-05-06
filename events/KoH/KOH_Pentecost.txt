@@ -1441,9 +1441,9 @@ KOH_Pentecost.1001 = {
 	option = {
 		name = KOH_Pentecost.1001.b
 
-		scope:activity = {
-			decline_invitation_for_character = prev
-		}
+		# scope:activity = {
+		# 	decline_invitation_for_character = prev
+		# }
 
 		add_prestige = {
 			value = miniscule_prestige_loss
@@ -1477,7 +1477,7 @@ KOH_Pentecost.11 = {
 	}
 
 	immediate = {
-		stop_host_scope = {
+		scope:stop_host_scope = {
 			save_scope_as = konrad
 		}
 		reverse_add_opinion = {
@@ -1542,7 +1542,7 @@ KOH_Pentecost.12 = {
 	}
 
 	immediate = {
-		stop_host_scope = {
+		scope:stop_host_scope = {
 			save_scope_as = konrad
 		}
 		title:c_hainaut.holder = {
@@ -2293,6 +2293,9 @@ KOH_Pentecost.1801 = {
 	immediate = {
 		scope:activity = {
 			every_participant = {
+				limit = {
+					NOT = { is_in_list = participants_not_responded }
+				}
 				add_to_list = participants_not_responded
 				trigger_event = KOH_Pentecost.18
 			}
@@ -2355,6 +2358,7 @@ scripted_effect gyrum_prize = {
 	add_prestige = massive_prestige_gain
 	add_gold = medium_gold_value
 }
+
 KOH_Pentecost.1901 = {
 	hidden = yes
 	trigger = {
@@ -2371,7 +2375,7 @@ KOH_Pentecost.1901 = {
 			limit = {
 				scope:activity = { var:many_tournaments = no }
 			}
-			end_the_diet = yes
+			#end_the_diet = yes
 		}
 		else = {
 			scope:activity = {
@@ -2566,7 +2570,7 @@ KOH_Pentecost.2301 = {
 			KEY = grand_melee
 		}
 
-		end_the_diet = yes
+		#end_the_diet = yes
 	}
 }
 
@@ -2578,7 +2582,7 @@ KOH_Pentecost.2302 = {
 	}
 
 	immediate = {
-		end_the_diet = yes
+		#end_the_diet = yes
 	}
 }
 

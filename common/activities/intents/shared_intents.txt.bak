@@ -53,7 +53,7 @@ murder_attendee_intent = {
 	}
 
 	on_target_invalidated = {
-		trigger_event = activity_system.0091
+		trigger_event = activity_system.0092
 	}
 
 	ai_will_do = {
@@ -136,7 +136,7 @@ woo_attendee_intent = {
 			has_relation_lover = scope:target
 		}
 		NOT = {
-			has_any_bad_relationship_with_character_trigger = { CHARACTER = scope:target }
+			has_any_only_moderate_bad_relationship_with_character_trigger = { CHARACTER = scope:target }
 		}
 		OR = {
 			has_perk = unshackled_lust_perk
@@ -162,7 +162,7 @@ woo_attendee_intent = {
 	}
 
 	on_target_invalidated = {
-		trigger_event = activity_system.0091
+		trigger_event = activity_system.0092
 	}
 
 	ai_will_do = {
@@ -288,15 +288,15 @@ befriend_attendee_intent = {
 			has_relation_friend = scope:target
 		}
 		NOT = {
-			has_any_bad_relationship_with_character_trigger = { CHARACTER = scope:target }
+			has_any_only_moderate_bad_relationship_with_character_trigger = { CHARACTER = scope:target }
 		}
 		OR = {			
 			can_start_scheme = {
-				type = seduce
+				type = befriend
 				target = scope:target
 			}
 			is_scheming_against = {
-				type = seduce
+				type = befriend
 				target = scope:target
 			}
 			can_set_relation_friend_trigger = { CHARACTER = scope:target }
@@ -304,7 +304,7 @@ befriend_attendee_intent = {
 	}
 
 	on_target_invalidated = {
-		trigger_event = activity_system.0091
+		trigger_event = activity_system.0092
 	}
 
 	ai_will_do = {
