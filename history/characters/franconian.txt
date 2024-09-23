@@ -15,6 +15,7 @@
 	trait = ambitious
 	trait = stubborn
 	trait = trusting
+	sexuality = heterosexual
 	father = 90095
 	mother = 91002
 	806.1.1 = {
@@ -38,7 +39,7 @@
 #Karlmann of Bavaria
 42018 = {
 	name = "Karlmann"
-	#dna = 42018_king_karlmann
+	dna = 42018_karlmann
 	dynasty = 25061
 	martial = 8
 	diplomacy = 5
@@ -51,6 +52,7 @@
 	trait = greedy
 	trait = zealous
 	trait = humble
+	sexuality = heterosexual
 	father = 90107 #(Ludwig the German)
 	mother = 7987
 	830.1.14 = {
@@ -67,12 +69,12 @@
 	850.1.1 = {
 		effect = {
 			set_relation_lover = { reason = lover_history target = character:167813 }  # Liutswind
-			set_relation_rival = { reason = rival_historical target = character:167812 }  # Liutswind's brother, Ernst
+			set_relation_rival = { target = character:167812 reason = rival_historical } # Liutswind's brother, Ernst
 		}
 	}
 	860.1.1 = {
 		effect = {
-			set_relation_rival = { reason = rival_historical target = character:90107 } 
+			set_relation_rival = { target = character:90107 reason = rival_historical }
 			add_opinion = {
 				target = character:90107 #Karlmann had a "conflictual" relationship with his father
 				modifier = hate_opinion
@@ -99,6 +101,7 @@
 42019 = {
 	name = "Ludwig"
 	# AKA: Ludwig 'der Junge'
+	dna = 42019_ludwig
 	dynasty = 25061
 	martial = 6
 	diplomacy = 8
@@ -123,6 +126,7 @@
 
 90105 = {
 	name = "Karl" # AKA: Karl 'Pinguis'
+	dna = 90105_karl
 	dynasty = 25061
 	martial = 4
 	diplomacy = 5
@@ -1693,6 +1697,7 @@
 	culture = franconian
 	father = 10084
 	mother = 20209
+	trait = lifestyle_hunter
 	984.1.1 = {
 		birth = "984.1.1"
 	}
@@ -1700,7 +1705,9 @@
 		add_spouse = 1385
 	}
 	1015.5.13 = {
-		death = "1015.5.13"
+		death = {
+			death_reason = death_hunting_mistakenly_shot
+		}
 	}
 }
 
@@ -1962,7 +1969,7 @@
 
 11061 = {
 	name = "Heinrich"
-	dynasty = 653
+	dynasty_house = house_babenberg
 	martial = 6
 	diplomacy = 5
 	intrigue = 6
@@ -2040,7 +2047,7 @@
 
 1434 = {
 	name = "Heinrich"
-	dynasty = 653
+	dynasty_house = house_babenberg
 	martial = 4
 	diplomacy = 4
 	intrigue = 6
@@ -2064,7 +2071,7 @@
 1435 = {
 	name = "Elika"
 	female = yes
-	dynasty = 653
+	dynasty_house = house_babenberg
 	martial = 8
 	diplomacy = 7
 	intrigue = 4
@@ -2086,7 +2093,7 @@
 1437 = {
 	name = "Judith"
 	female = yes
-	dynasty = 653
+	dynasty_house = house_babenberg
 	martial = 5
 	diplomacy = 7
 	intrigue = 6
@@ -2123,7 +2130,7 @@
 20261 = {
 	name = "Otto"
 	# AKA: Kuno
-	dynasty = 653
+	dynasty_house = house_babenberg
 	martial = 6
 	diplomacy = 7
 	intrigue = 5
@@ -2520,7 +2527,7 @@
 
 30671 = {
 	name = "Burchard"
-	dynasty_house = house_Lechsgemund
+	dynasty_house = house_babenberg
 	religion = "catholic"
 	culture = franconian
 	father = 31528
@@ -2558,7 +2565,7 @@
 	name = "Beatrix"
 	# AKA: Adelaide
 	female = yes
-	dynasty = 653
+	dynasty_house = house_babenberg
 	martial = 4
 	diplomacy = 6
 	intrigue = 7
@@ -8756,6 +8763,9 @@ KOH_FRANKCONIAN02 = { #COUNTS OF SCHWARZBURG Schwarzburg
 	1030.1.1 = {
 		add_spouse = 20264
 	}
+	1035.1.1 = {
+		remove_spouse = 20264 # Added for simplicity - Was actually married until 1039 when Oda became a widow
+	}
 	1039.1.2 = {
 		death = "1039.1.2"
 	}
@@ -9486,7 +9496,7 @@ KOH_FRANKCONIAN02 = { #COUNTS OF SCHWARZBURG Schwarzburg
 	stewardship = 5
 	religion = "catholic"
 	culture = franconian
-	trait = bastard
+	trait = bastard_founder
 	trait = honest
 	trait = temperate
 	trait = education_stewardship_1
@@ -9733,20 +9743,29 @@ KOH_FRANKCONIAN02 = { #COUNTS OF SCHWARZBURG Schwarzburg
 	name = "Gottfried"
 	# AKA: Godefroi 'le Bossu'
 	dynasty_house = house_wigeriche
+	dna = gottfried_the_hunchback
 	martial = 5
 	diplomacy = 5
 	intrigue = 5
 	stewardship = 5
+	health = 2
 	religion = "catholic"
 	culture = franconian
 	trait = calm
 	trait = honest
+	trait = chaste
 	trait = education_intrigue_1
 	trait = hunchbacked
 	father = 11030
 	mother = 11031
 	1040.1.1 = {
 		birth = "1040.1.1"
+	}
+	1065.1.1 = {
+		effect = {
+			give_nickname = nick_the_hunchback
+			create_betrothal = character:7757
+		}
 	}
 	1069.1.1 = {
 		add_spouse = 7757
@@ -16449,6 +16468,27 @@ KOH_FRANKCONIAN02 = { #COUNTS OF SCHWARZBURG Schwarzburg
 	}
 	1338.1.1 = {
 		death = "1338.1.1"
+	}
+}
+
+212371 = {
+	name = "Kunigunde"
+	# AKA: Kunigunde von Zieghain
+	female = yes
+	dynasty = 7173
+	martial = 4
+	diplomacy = 7
+	intrigue = 7
+	stewardship = 6
+	religion = "catholic"
+	culture = franconian
+	trait = temperate
+	trait = education_intrigue_1
+	1150.1.1 = {
+		birth = "1150.1.1"
+	}
+	1198.1.1 = {
+		death = "1198.1.1"
 	}
 }
 

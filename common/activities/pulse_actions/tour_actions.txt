@@ -139,18 +139,20 @@ courtiers_became_lovers = {
 					num_of_relation_lover < 2
 					is_physically_able_ai_adult = yes
 					is_participant_in_activity = scope:activity
-					save_temporary_scope_as = first_lover
+					save_temporary_scope_as = first_lover_temp
 					scope:province.county.holder = {
 						any_courtier_or_guest = {
-							NOT = { this = scope:first_lover }
+							NOT = { this = scope:first_lover_temp }
 							might_cheat_on_every_partner_trigger = yes
-							NOT = { has_relation_lover = scope:first_lover }
-							matching_gender_and_sexuality_trigger = {
-								CHARACTER_1 = this
-								CHARACTER_2 = scope:first_lover
-							}
+							NOT = { has_relation_lover = scope:first_lover_temp }
+							num_of_relation_lover < 2
 							is_physically_able_ai_adult = yes
-							NOT = { has_relation_lover = scope:first_lover }
+							NOT = { has_relation_lover = scope:first_lover_temp }
+							save_temporary_scope_as = second_lover_temp
+							matching_gender_and_sexuality_trigger = {
+								CHARACTER_1 = scope:second_lover_temp
+								CHARACTER_2 = scope:first_lover_temp
+							}
 						}
 					}
 				}
@@ -162,14 +164,15 @@ courtiers_became_lovers = {
 				limit = {
 					NOT = { this = scope:first }
 					might_cheat_on_every_partner_trigger = yes
+					NOT = { has_relation_lover = scope:first }
 					num_of_relation_lover < 2
-					NOT = { has_relation_lover = scope:first_lover }
-					matching_gender_and_sexuality_trigger = {
-						CHARACTER_1 = this
-						CHARACTER_2 = scope:first
-					}
 					is_physically_able_ai_adult = yes
 					NOT = { has_relation_lover = scope:first }
+					save_temporary_scope_as = second_lover_temp
+					matching_gender_and_sexuality_trigger = {
+						CHARACTER_1 = scope:second_lover_temp
+						CHARACTER_2 = scope:first
+					}
 				}
 				weight = {
 					base = 1
@@ -947,20 +950,20 @@ levied_tax = {
 				scope:second = {
 					if = {
 						limit = {
-							gold >= scope:host.medium_gold_value
-						}
-						pay_short_term_gold = {
-							target = scope:host
-							gold = scope:host.medium_gold_value
-						}
-					}
-					else_if = {
-						limit = {
 							gold >= scope:host.minor_gold_value
 						}
 						pay_short_term_gold = {
 							target = scope:host
 							gold = scope:host.minor_gold_value
+						}
+					}
+					else_if = {
+						limit = {
+							gold >= scope:host.tiny_gold_value
+						}
+						pay_short_term_gold = {
+							target = scope:host
+							gold = scope:host.tiny_gold_value
 						}
 					}
 					else = {
@@ -1019,15 +1022,6 @@ local_mayor_tax = {
 				# Effects
 				scope:first = {
 					if = {
-						limit = {
-							gold >= scope:host.major_gold_value
-						}
-						pay_short_term_gold = {
-							target = scope:host
-							gold = scope:host.major_gold_value
-						}
-					}
-					else_if = {
 						limit = {
 							gold >= scope:host.medium_gold_value
 						}
@@ -1093,15 +1087,6 @@ tax_rich_local = {
 				# Effects
 				scope:first = {
 					if = {
-						limit = {
-							gold >= scope:host.major_gold_value
-						}
-						pay_short_term_gold = {
-							target = scope:host
-							gold = scope:host.major_gold_value
-						}
-					}
-					else_if = {
 						limit = {
 							gold >= scope:host.medium_gold_value
 						}
@@ -1196,20 +1181,20 @@ church_tax = {
 				scope:first = {
 					if = {
 						limit = {
-							gold >= scope:host.medium_gold_value
-						}
-						pay_short_term_gold = {
-							target = scope:host
-							gold = scope:host.medium_gold_value
-						}
-					}
-					else_if = {
-						limit = {
 							gold >= scope:host.minor_gold_value
 						}
 						pay_short_term_gold = {
 							target = scope:host
 							gold = scope:host.minor_gold_value
+						}
+					}
+					else_if = {
+						limit = {
+							gold >= scope:host.tiny_gold_value
+						}
+						pay_short_term_gold = {
+							target = scope:host
+							gold = scope:host.tiny_gold_value
 						}
 					}
 					else = {
@@ -1311,20 +1296,20 @@ local_baron_tax = {
 				scope:first = {
 					if = {
 						limit = {
-							gold >= scope:host.medium_gold_value
-						}
-						pay_short_term_gold = {
-							target = scope:host
-							gold = scope:host.medium_gold_value
-						}
-					}
-					else_if = {
-						limit = {
 							gold >= scope:host.minor_gold_value
 						}
 						pay_short_term_gold = {
 							target = scope:host
 							gold = scope:host.minor_gold_value
+						}
+					}
+					else_if = {
+						limit = {
+							gold >= scope:host.tiny_gold_value
+						}
+						pay_short_term_gold = {
+							target = scope:host
+							gold = scope:host.tiny_gold_value
 						}
 					}
 					else = {

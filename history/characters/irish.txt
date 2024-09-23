@@ -6483,6 +6483,7 @@
 
 83357 = {
 	name = "Brian"
+	dna = 83357_brian
 	dynasty_house = house_british_isles_briain
 	martial = 6
 	diplomacy = 6
@@ -6508,23 +6509,43 @@
 	name = "Murchad"
 	dna = 83355_petty_king_murchad
 	dynasty_house = house_british_isles_briain
-	martial = 8
-	diplomacy = 6
-	intrigue = 8
+	martial = 12
+	diplomacy = 10
+	intrigue = 3
 	stewardship = 6
-	learning = 6
+	learning = 3
+	prowess = 12
 	religion = "insular_celtic"
 	culture = "irish"
 	trait = temperate
-	trait = wrathful
+	trait = gregarious
 	trait = impatient
-	trait = education_martial_3
+	trait = education_diplomacy_3
+	trait = rough_terrain_expert
 	sexuality = heterosexual
 	father = 902 #Donnchad son Brian Bóruma
 	1027.1.1 = {
 		birth = "1027.1.1"
 		effect = {
 			add_character_flag = has_scripted_appearance
+			refund_all_perks = yes
+			remove_all_perk_lifestyle_traits_effect = yes
+			add_diplomacy_lifestyle_perk_points = -10
+			add_perk = befriend_perk
+			add_perk = confidants_perk
+			add_perk = flatterer_perk
+			add_perk = groomed_to_rule_perk
+			add_perk = familial_familiar_perk
+			add_perk = thicker_than_water_perk
+			add_perk = friendly_counsel_perk
+			add_perk = sound_foundations_perk
+			add_perk = family_man_perk
+			add_trait = family_first
+			add_perk = thoughtful_perk
+			add_perk = ducal_conquest_perk
+			add_perk = forced_vassalage_perk
+			add_gold = 100
+			add_prestige = 400
 		}	
 	}
 	1068.7.1 = {
@@ -10529,6 +10550,7 @@
 
 166126 = {
 	name = "BE_binn"
+	dna = 166126_bebinn
 	female = yes
 	dynasty_house = house_british_isles_briain
 	religion = "insular_celtic"

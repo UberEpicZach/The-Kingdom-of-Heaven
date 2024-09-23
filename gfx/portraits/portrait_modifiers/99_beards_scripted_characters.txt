@@ -996,63 +996,63 @@ beards_scripted_characters = {
         }
     }
 
-    male_beard_custom_01 = { # Long narrow wavy
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = beards
-                template = han_beards_straight
-                value = 0.28 # For the randomness to work correctly
-            }
-        }   
-        weight = {
-            base = 0
-        }
-    }
+    # male_beard_custom_01 = { # Long narrow wavy
+    #     dna_modifiers = {
+    #         accessory = {
+    #             mode = add
+    #             gene = beards
+    #             template = han_beards_straight
+    #             value = 0.28 # For the randomness to work correctly
+    #         }
+    #     }   
+    #     weight = {
+    #         base = 0
+    #     }
+    # }
 
-    male_mustache_iranian_05 = { # Iranian Mustache
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = beards
-                template = iranian_beards_straight
-                value = 0.90 # For the randomness to work correctly
-            }
-        }   
-        weight = {
-            base = 0
-            modifier = {
-                add = 200
-                exists = this
-                exists = character:163101 #yaqub_saffarid
-                this = character:163101 #yaqub_saffarid
-            }
-        }
-    }
+    # male_mustache_iranian_05 = { # Iranian Mustache
+    #     dna_modifiers = {
+    #         accessory = {
+    #             mode = add
+    #             gene = beards
+    #             template = iranian_beards_straight
+    #             value = 0.90 # For the randomness to work correctly
+    #         }
+    #     }   
+    #     weight = {
+    #         base = 0
+    #         modifier = {
+    #             add = 200
+    #             exists = this
+    #             exists = character:163101 #yaqub_saffarid
+    #             this = character:163101 #yaqub_saffarid
+    #         }
+    #     }
+    # }
 
-    male_beard_custom_06 = { # Short Stylish Goatee
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = beards
-                template = custom_beards
-                value = 0.60 # For the randomness to work correctly
-            }
-        }   
-        weight = {
-            base = 0
-            modifier = {
-                add = 200
-                exists = this
-                exists = character:223570 #Balian
-                this = character:223570 #Balian
-            }
-            modifier = {
-                add = 200
-                exists = this
-                exists = character:144166 #godfrey
-                this = character:144166 #godfrey
-            }
-        }
-    }
+    # male_beard_custom_06 = { # Short Stylish Goatee
+    #     dna_modifiers = {
+    #         accessory = {
+    #             mode = add
+    #             gene = beards
+    #             template = custom_beards
+    #             value = 0.60 # For the randomness to work correctly
+    #         }
+    #     }   
+    #     weight = {
+    #         base = 0
+    #         modifier = {
+    #             add = 200
+    #             exists = this
+    #             exists = character:223570 #Balian
+    #             this = character:223570 #Balian
+    #         }
+    #         modifier = {
+    #             add = 200
+    #             exists = this
+    #             exists = character:144166 #godfrey
+    #             this = character:144166 #godfrey
+    #         }
+    #     }
+    # }
 }

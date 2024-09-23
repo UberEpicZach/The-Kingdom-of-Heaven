@@ -109,21 +109,22 @@ courtiers_became_lovers = {
 				num_of_relation_lover < 2
 				is_participant_in_activity = scope:activity
 				is_physically_able_ai_adult = yes
-				save_temporary_scope_as = first_lover
+				save_temporary_scope_as = first_lover_temp
 			}
 		}
 		scope:province.county.holder = {
 			any_courtier_or_guest = {
-				NOT = { this = scope:first_lover }
+				NOT = { this = scope:first_lover_temp }
 				might_cheat_on_every_partner_trigger = yes
-				NOT = { has_relation_lover = scope:first_lover }
+				NOT = { has_relation_lover = scope:first_lover_temp }
 				num_of_relation_lover < 2
-				matching_gender_and_sexuality_trigger = {
-					CHARACTER_1 = this
-					CHARACTER_2 = scope:first_lover
-				}
 				is_physically_able_ai_adult = yes
-				NOT = { has_relation_lover = scope:first_lover }
+				NOT = { has_relation_lover = scope:first_lover_temp }
+				save_temporary_scope_as = second_lover_temp
+				matching_gender_and_sexuality_trigger = {
+					CHARACTER_1 = scope:second_lover_temp
+					CHARACTER_2 = scope:first_lover_temp
+				}
 			}
 		}
 	}

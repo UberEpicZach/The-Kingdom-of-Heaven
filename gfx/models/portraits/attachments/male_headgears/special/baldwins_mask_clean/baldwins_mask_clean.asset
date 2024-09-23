@@ -1,0 +1,43 @@
+pdxmesh = {
+	name = "baldwins_mask_clean_mesh"
+	file = "baldwins_mask_clean.mesh"
+
+		#blend_shape = { id = "Baldwins_Mask_bs_fat"		type = "Baldwins_Mask_bs_fat.mesh" }
+
+	meshsettings = {
+		name = "baldwins_mask_clean"
+		index = 0
+		texture_diffuse = "PDXmat_baldwins_mask_clean_diffuse.dds"
+		texture_normal = "PDXmat_baldwins_mask_clean_normal.dds"
+		texture_specular = "PDXmat_baldwins_mask_clean_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	
+	meshsettings = {
+		name = "mask_strap"
+		index = 0
+		texture_diffuse = "male_headgear_secular_crusades_western_war_nobility_01_diffuse.dds"
+		texture_normal = "male_headgear_secular_crusades_western_war_nobility_01_normal.dds"
+		texture_specular = "male_headgear_secular_crusades_western_war_nobility_01_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+	
+	meshsettings = {
+		name = "male_headgear_baldwin_head_bandage_01"
+		index = 0
+		texture_diffuse = "male_headgear_special_head_bandage_01_diffuse.dds"
+		texture_normal = "male_headgear_special_head_bandage_01_normal.dds"
+		texture_specular = "male_headgear_special_head_bandage_01_properties.dds"
+		shader = "portrait_attachment"
+		shader_file = "gfx/FX/jomini/portrait.shader"
+	}
+}
+
+entity = {
+	name = "baldwins_mask_clean_entity"
+	pdxmesh = "baldwins_mask_clean_mesh"
+	
+	#attribute = { name = "bs_fat_1"								blend_shape = "Baldwins_Mask_bs_fat" }
+}

@@ -38,6 +38,7 @@
 
 10008 = {
 	name = "Fredesende"
+	dynasty = 752
 	female = yes
 	martial = 4
 	diplomacy = 5
@@ -46,7 +47,9 @@
 	religion = "catholic"
 	culture = "norman"
 	trait = education_intrigue_4
-	999.1.1 = {
+	father = 246
+	mother = 6801
+	995.1.1 = {
 		birth = yes
 	}
 	1050.1.1 = {
@@ -444,7 +447,7 @@
 	trait = greedy
 	trait = ambitious
 	trait = physique_good_2
-	trait = education_martial_4
+	trait = education_martial_5
 	sexuality = heterosexual
 	father = 1120
 	mother = 10008
@@ -465,6 +468,35 @@
 	}
 	1058.1.1 = {
 		add_spouse = 1123
+		effect = {
+			add_gold = 100
+			learn_language = language_italian
+			refund_all_perks = yes
+			remove_all_perk_lifestyle_traits_effect = yes
+			add_martial_lifestyle_perk_points = -15
+			add_perk = bellum_justum_perk
+			add_perk = parthian_tactics_perk
+			add_perk = envelopment_perk
+			add_perk = organized_retreat_perk
+			add_perk = hit_and_run_perk
+			add_perk = engineered_for_destruction_perk
+			add_perk = living_off_the_land_perk
+			add_perk = sappers_perk
+			add_perk = strategist_perk
+			add_trait = strategist
+			add_perk = stalwart_leader_perk
+			add_perk = chivalric_dominance_perk
+			add_perk = never_back_down_perk
+			add_perk = kingsguard_perk
+			add_prestige_level = 1
+			add_perk = meritocracy_perk
+			add_perk = large_levies_perk
+			add_perk = soon_forgiven_perk
+			add_perk = toe_the_line_perk
+			add_character_modifier = {
+				modifier = guiscard_modifier
+			}
+		}
 	}
 	1085.7.17 = {
 		death = "1085.7.17"
@@ -498,6 +530,7 @@
 
 1132 = {
 	name = "Roger"
+	dna = 1132_roger_of_messina
 	dynasty = 678
 	martial = 8
 	diplomacy = 7
@@ -710,6 +743,7 @@
 
 1140 = {
 	name = "Bohemond"
+	dna = 1140_bohemond
 	dynasty = 678
 	martial = 8
 	diplomacy = 7
@@ -729,6 +763,9 @@
 	mother = 10003
 	1055.1.1 = {
 		birth = "1055.1.1"
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
 	}
 	1105.1.1 = {
 		add_spouse = 205511
@@ -1377,7 +1414,7 @@
 	trait = just
 	trait = cynical
 	trait = education_stewardship_2
-	trait = bastard
+	trait = bastard_founder
 	1060.1.2 = {
 		birth = "1060.1.2"
 	}
@@ -1545,6 +1582,7 @@
 	culture = "norman"
 	trait = arrogant
 	trait = bastard
+	trait = disinherited
 	trait = education_learning_2
 	father = 160403
 	1041.1.2 = {
@@ -3509,7 +3547,7 @@
 
 41014 = {
 	name = "Richard" # de Tonbridge FitzGilbert de Clare
-	dynasty = 364
+	dynasty_house = house_brionne # may need changing to Clare if later start dates are introduced
 	religion = "catholic"
 	culture = "norman"
 	father = 41013
@@ -3545,7 +3583,7 @@
 
 41017 = {
 	name = "Robert"
-	dynasty = 364
+	dynasty_house = house_brionne # may need changing to Clare if later start dates are introduced
 	martial = 9
 	diplomacy = 4
 	intrigue = 8
@@ -6456,7 +6494,7 @@
 41210 = {
 	name = "Avice"
 	female = yes
-	dynasty = 364
+	dynasty_house = house_brionne # may need changing to Clare if later start dates are introduced
 	father = 41014 #Richard de Tonbridge FitzGilbert de Clare
 	mother = 41015 #Rohese Giffard
 	religion = "catholic"
@@ -6715,7 +6753,7 @@
 
 204792 = {
 	name = "Gilbert"
-	dynasty = 364
+	dynasty_house = house_brionne # may need changing to Clare if later start dates are introduced
 	martial = 7
 	diplomacy = 5
 	intrigue = 7
@@ -7891,3 +7929,17 @@ norman0018 = {
 	}
 }
 
+71535 = {
+	name = "Plaisance" # Placencia de Normandía, wife of King Sancho IV of Navarra (106000 - basque.txt)
+	female = yes
+	religion = catholic
+	culture = norman
+	trait = education_diplomacy_1
+
+	1050.1.1 = {
+		birth = yes
+	}
+	1088.4.14 = {
+		death = yes
+	}
+}

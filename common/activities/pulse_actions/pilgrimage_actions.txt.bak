@@ -152,6 +152,15 @@ apa_prayer = { #Solitary Prayer
 			
 			scope:first = {
 				add_piety = medium_piety_gain
+				if = {
+					limit = {
+						has_trait = lifestyle_mystic
+					}
+					add_trait_xp = {
+						trait = lifestyle_mystic
+						value = lifestyle_mystic_xp_gain_minor_value
+					}
+				}
 			}
 		}
 	}
@@ -346,6 +355,15 @@ apa_silent_contemplation = {
 			
 			scope:first = {
 				add_piety = minor_piety_value
+				if = {
+					limit = {
+						has_trait = lifestyle_mystic
+					}
+					add_trait_xp = {
+						trait = lifestyle_mystic
+						value = lifestyle_mystic_xp_gain_minor_value
+					}
+				}
 				stress_impact = {
 					base = minor_stress_impact_loss
 				}
@@ -391,6 +409,15 @@ apa_spiritual_journey = {
 			
 			scope:first = {
 				add_piety = minor_piety_value
+				if = {
+					limit = {
+						has_trait = lifestyle_mystic
+					}
+					add_trait_xp = {
+						trait = lifestyle_mystic
+						value = lifestyle_mystic_xp_gain_minor_value
+					}
+				}
 				add_opinion = {
 					modifier = respect_opinion
 					opinion = 20
@@ -399,6 +426,15 @@ apa_spiritual_journey = {
 			}
 			scope:second = {
 				add_piety = minor_piety_value
+				if = {
+					limit = {
+						has_trait = lifestyle_mystic
+					}
+					add_trait_xp = {
+						trait = lifestyle_mystic
+						value = lifestyle_mystic_xp_gain_minor_value
+					}
+				}
 				add_opinion = {
 					modifier = respect_opinion
 					opinion = 20
@@ -708,7 +744,7 @@ apa_sight_seeing_group = {
 		}
 
 		add_activity_log_entry = {
-			key = apa_sight_seeing
+			key = apa_sight_seeing_group
 			tags = { pulse_action }
 			character = scope:first
 			character = scope:second
@@ -920,6 +956,15 @@ apa_studying_scripture = {
 			
 			scope:first = {
 				add_learning_lifestyle_xp = medium_lifestyle_xp
+				if = {
+					limit = {
+						has_trait = lifestyle_mystic
+					}
+					add_trait_xp = {
+						trait = lifestyle_mystic
+						value = lifestyle_mystic_xp_gain_minor_value
+					}
+				}
 			}
 		}
 	}
@@ -1130,6 +1175,15 @@ apa_pilgrim_hospitals = {
 				if = {
 					limit = { has_character_flag = will_get_scar }
 					add_trait = scarred
+					add_trait_xp = {
+		                trait = scarred
+		                value = {
+		                    integer_range = {
+		                        min = 5
+		                        max = 25
+		                    }
+		                }
+		            }
 					remove_character_flag = will_get_scar
 				}
 			}
@@ -1155,6 +1209,15 @@ apa_comet_sighted = {
 			character = scope:first
 			
 			scope:first = {
+				if = {
+					limit = {
+						has_trait = lifestyle_mystic
+					}
+					add_trait_xp = {
+						trait = lifestyle_mystic
+						value = lifestyle_mystic_xp_gain_minor_value
+					}
+				}
 				stress_impact = {
 					base = minor_stress_impact_loss
 				}
@@ -1182,6 +1245,15 @@ apa_good_omen = {
 			
 			scope:first = {
 				add_piety = minor_piety_gain
+				if = {
+					limit = {
+						has_trait = lifestyle_mystic
+					}
+					add_trait_xp = {
+						trait = lifestyle_mystic
+						value = lifestyle_mystic_xp_gain_minor_value
+					}
+				}
 				stress_impact = {
 					base = minor_stress_impact_loss
 				}
